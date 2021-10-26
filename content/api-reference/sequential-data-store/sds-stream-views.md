@@ -3,9 +3,8 @@ uid: sds-stream-views
 
 ---
 
-# Stream views
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact 
-with stream views. For more information, see [Stream views](xref:sdsStreamViews).
+# Stream Views
+The API in this section interacts with stream views.
 
 ## `List Stream Views`
 
@@ -13,36 +12,20 @@ with stream views. For more information, see [Stream views](xref:sdsStreamViews)
 
 Returns a list of `SdsStreamView`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}&orderby={orderby}
-```
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
+?query={query}&skip={skip}&count={count}&orderby={orderby}
+<br/>Namespace identifier.<br/><br/>
+`[optional] string query`
+<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
+<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
+<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
 
-#### Parameters
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
-`[Optional] string query`  
-Query identifier. 
-See [Search in SDS](xref:sdsSearching) for information about specifying the search parameter.
-<br/><br/>
-`[Optional] int skip`  
-Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
-<br/><br/>
-`[Optional] int count`  
-Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
-<br/><br/>
-`[Optional] string orderby`  
-Parameter representing sorted order.
-A field name is required.
-The sorting is based on the stored values for a given field (of type `string`). 
-For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 
-Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values ``asc`` or ``desc``, respectively.
-For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending. 
-If no value is specified, there is no sorting of results.
-<br/><br/>
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -54,7 +37,8 @@ If no value is specified, there is no sorting of results.
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -112,19 +96,20 @@ Content-Type: application/json
 
 Returns the `SdsStreamView`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -136,7 +121,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -186,19 +172,20 @@ Content-Type: application/json
 
 If an `SdsStreamView` with a matching identifier already exists, the stream view passed in is compared with the existing stream view. If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned. If no matching identifier is found, the specified stream view is created.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -212,7 +199,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([SdsStreamView](#schemasdsstreamview))
 
 ```json
@@ -226,16 +214,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
     {
       "SourceId": "string",
       "TargetId": "string",
-      "SdsStreamView": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "SdsStreamView": "<SdsStreamView>"
     }
   ]
 }
@@ -249,19 +228,20 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
 
 Creates or updates the definition of a `SdsStreamView`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -274,7 +254,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([SdsStreamView](#schemasdsstreamview))
 
 ```json
@@ -288,16 +269,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
     {
       "SourceId": "string",
       "TargetId": "string",
-      "SdsStreamView": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "SdsStreamView": "<SdsStreamView>"
     }
   ]
 }
@@ -311,19 +283,20 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 
 Deletes a stream view from the specified tenant and namespace.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -335,22 +308,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVi
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
 ---
 
 ## `Get Stream View Map`
@@ -359,19 +316,20 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVi
 
 Returns the `SdsStreamViewMap` corresponding to the specified streamViewId.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -383,7 +341,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -412,7 +371,8 @@ Content-Type: application/json
         }
     ]
 }
-```> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -439,11 +399,11 @@ Content-Type: application/json
 
 A contract defining the stream view
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|An unique identifier for the SdsStreamView|
+|Id|string|false|true|A unique identifier for the SdsStreamView|
 |Name|string|false|true|An optional user-friendly name for the SdsStreamView|
 |Description|string|false|true|A brief description of the SdsStreamView|
 |SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream|
@@ -461,16 +421,7 @@ A contract defining the stream view
     {
       "SourceId": "string",
       "TargetId": "string",
-      "SdsStreamView": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "SdsStreamView": "<SdsStreamView>"
     }
   ]
 }
@@ -488,7 +439,7 @@ A contract defining the stream view
 
 A contract defining the stream view property
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -506,13 +457,7 @@ A contract defining the stream view property
     "Description": "string",
     "SourceTypeId": "string",
     "TargetTypeId": "string",
-    "Properties": [
-      {
-        "SourceId": "string",
-        "TargetId": "string",
-        "SdsStreamView": null
-      }
-    ]
+    "Properties": "[<SdsStreamViewProperty>]"
   }
 }
 
@@ -527,9 +472,9 @@ A contract defining the stream view property
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-Contains the error message format that follows the OCS error standards
+The error response contains standard details on the cause and resolution of the error.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -564,7 +509,7 @@ Contains the error message format that follows the OCS error standards
 
 A contract defining the stream view map
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -581,13 +526,7 @@ A contract defining the stream view map
       "SourceId": "string",
       "TargetId": "string",
       "Mode": 0,
-      "StreamViewMap": {
-        "SourceTypeId": "string",
-        "TargetTypeId": "string",
-        "Properties": [
-          null
-        ]
-      }
+      "StreamViewMap": "<SdsStreamViewMap>"
     }
   ]
 }
@@ -605,7 +544,7 @@ A contract defining the stream view map
 
 A contract defining stream view map property
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -622,14 +561,7 @@ A contract defining stream view map property
   "StreamViewMap": {
     "SourceTypeId": "string",
     "TargetTypeId": "string",
-    "Properties": [
-      {
-        "SourceId": "string",
-        "TargetId": "string",
-        "Mode": null,
-        "StreamViewMap": null
-      }
-    ]
+    "Properties": "[<SdsStreamViewMapProperty>]"
   }
 }
 
@@ -644,11 +576,10 @@ A contract defining stream view map property
 <a id="tocSsdsstreamviewmode"></a>
 <a id="tocssdsstreamviewmode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
-|None|0|
 |FieldAdd|1|
 |FieldRemove|2|
 |FieldRename|4|

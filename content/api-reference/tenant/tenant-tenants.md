@@ -12,25 +12,27 @@ APIs to manage an OCS Customer Tenant. A tenant represents the set of services, 
 
 Returns a specific `Tenant` by the identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[TenantWithProperties](#schematenantwithproperties)|The `Tenant` with Id `tenantId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([TenantWithProperties](#schematenantwithproperties))
 
 ```json
@@ -53,6 +55,7 @@ GET /api/v1/Tenants/{tenantId}
     }
   ],
   "ExternalAccountId": "string",
+  "TenantType": "string",
   "Entitlements": [
     {
       "EntitlementDefinitionId": "string",
@@ -65,7 +68,7 @@ GET /api/v1/Tenants/{tenantId}
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -80,25 +83,26 @@ Allowed for these roles:
 
 Checks if a `Tenant` with a specific identifier exists.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/Tenants/{tenantId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|HTTP 200 status code if a `Tenant` with `tenantId` exists.|
-|400|None|Missing or invalid inputs.<br/>|
-|404|None|Client or tenant not found.<br/>|
+|400|None|Missing or invalid inputs.|
+|404|None|Client or tenant not found.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -113,17 +117,18 @@ Allowed for these roles:
 
 Updates a specified `Tenant` object.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The updated details of the Tenant.<br/>
 
@@ -146,20 +151,22 @@ The updated details of the Tenant.<br/>
       "CurrentState": 0
     }
   ],
-  "ExternalAccountId": "string"
+  "ExternalAccountId": "string",
+  "TenantType": "string"
 }
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Tenant](#schematenant)|The updated `Tenant` with Id `tenantId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([Tenant](#schematenant))
 
 ```json
@@ -181,11 +188,12 @@ The updated details of the Tenant.<br/>
       "CurrentState": 0
     }
   ],
-  "ExternalAccountId": "string"
+  "ExternalAccountId": "string",
+  "TenantType": "string"
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -200,25 +208,26 @@ Allowed for these roles:
 
 Returns an icon specified by its `Tenant` identifier.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Icon
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|string|The icon associated with the `Tenant`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -233,17 +242,18 @@ Allowed for these roles:
 
 Creates or updates the icon for a `Tenant`. Note that the icon size must be less than `65536`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Icon
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Request Body
+<h4>Request Body</h4>
 
 The Base64 encoded PNG icon for the Tenant.<br/>
 
@@ -251,16 +261,16 @@ The Base64 encoded PNG icon for the Tenant.<br/>
 "string"
 ```
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|string|The updated icon associated with the `Tenant`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -275,26 +285,27 @@ Allowed for these roles:
 
 Deletes the icon for a `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Icon
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|string|HTTP status code: 200 on successful deletion or another HTTP status codes on failure.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|400|None|Missing or invalid inputs.|
+|403|None|Forbidden.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -309,25 +320,27 @@ Allowed for these roles:
 
 Returns the `RegionBase` list for the specified `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Regions
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RegionBase](#schemaregionbase)|The `RegionBase` list associated with the `Tenant`.|
-|403|None|Forbidden.<br/>|
-|404|None|Client or tenant not found.<br/>|
+|403|None|Forbidden.|
+|404|None|Client or tenant not found.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([RegionBase](#schemaregionbase))
 
 ```json
@@ -339,7 +352,7 @@ GET /api/v1/Tenants/{tenantId}/Regions
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -356,7 +369,7 @@ Allowed for these roles:
 <a id="tocStenantwithproperties"></a>
 <a id="tocstenantwithproperties"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -368,6 +381,7 @@ Allowed for these roles:
 |Alias|string|false|true|Specifies a unique alias for this tenant.|
 |Features|[[FeatureState](#schemafeaturestate)]|false|true|List of feature states for this tenant. Returned during GET methods.|
 |ExternalAccountId|string|false|true|External account identifier for this tenant.|
+|TenantType|string|false|true|Gets or sets tenant type.|
 |Entitlements|[[TenantEntitlementInstance](#schematenantentitlementinstance)]|false|true|[An instance of an entitlement.]|
 
 ```json
@@ -390,6 +404,7 @@ Allowed for these roles:
     }
   ],
   "ExternalAccountId": "string",
+  "TenantType": "string",
   "Entitlements": [
     {
       "EntitlementDefinitionId": "string",
@@ -414,19 +429,19 @@ Allowed for these roles:
 
 Status codes describing a tenant's current provisioning state.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Creating|0|
-|Active|1|
-|Deactivating|2|
-|Deactivated|3|
-|Reactivating|4|
-|Deleting|5|
-|Deleted|6|
-|Purging|7|
-|IsHomeTenant|8|
+|Property|Value|Description|
+|---|---|---|
+|Creating|0|Provisioning cannot be completed until all the Product Services (AF, Sds, etc.) are provisioned successfully. In this state, the tenant is provisioned in Azure AD, and created in the System DB. The provisioning engine now sets the state to Creating, notifies all Services to Activate, and waits for a completion message from all of the services. The customer cannot access any Product Services yet.|
+|Active|1|The tenant is successfully provisioned (a completion message has been received from all Services). This is now a fully Active, functional tenant with full access to all Services.|
+|Deactivating|2|A currently Active tenant is being deactivated (perhaps they haven’t paid their bill). The provisioning engine sets the state to Deactivating and notifies the system services to Deactivate. Until the engine receives a completion message from these services, it will be in this state. The services may become partially non-functional and inaccessible.|
+|Deactivated|3|The tenant is successfully Deactivated (a completion message has been received from all Services). The Services are non-functional and inaccessible to customers. The customer data is still intact and some background activities may still be active.|
+|Reactivating|4|A currently Deactivated tenant needs to be reinstated. The provisioning engine sets the state to Reactivating, notifies the Services to Reactivate, and waits for the completion message from all of the Services. Once completed, the tenant will be Active again. Until they are Active again, the PICS Services may not be fully functional yet.|
+|Deleting|5|The tenant no longer wants to use PICS services or needs to be decommissioned for some reason. The provisioning engine sets the state to Deleting, notifies the Services to Delete, and waits for the completion message from all of the Services. The PICS Services may become partially non-functional and inaccessible.|
+|Deleted|6|The tenant is successfully Deleted. The customer data is marked as Deleted. The PICS Services are non-functional and inaccessible. Records may still need to be archived for a period of time determined by SLA, and may not be physically removed yet for possible auditing requirements.|
+|Purging|7|All customer records from all PICS services, Azure resources, databases, etc., are permanently and physically removed. Data and other resources are now unrecoverable|
+|IsHomeTenant|8|State of the home tenant so it does not return from GetAllTenants|
 
 ---
 
@@ -439,7 +454,7 @@ Status codes describing a tenant's current provisioning state.
 
 Representation of a server-side database interpretation of a feature state.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -470,7 +485,7 @@ Representation of a server-side database interpretation of a feature state.
 
 Representation of a server-side database interpretation of a feature.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -500,7 +515,7 @@ Representation of a server-side database interpretation of a feature.
 
 An instance of an entitlement.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -532,7 +547,7 @@ An instance of an entitlement.
 
 The type of entitlement.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -551,7 +566,7 @@ The type of entitlement.
 
 The limit type of entitlement.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -569,7 +584,7 @@ The limit type of entitlement.
 
 Representation of a server-side database interpretation of a tenant.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -581,6 +596,7 @@ Representation of a server-side database interpretation of a tenant.
 |Alias|string|false|true|Specifies a unique alias for this tenant.|
 |Features|[[FeatureState](#schemafeaturestate)]|false|true|List of feature states for this tenant. Returned during GET methods.|
 |ExternalAccountId|string|false|true|External account identifier for this tenant.|
+|TenantType|string|false|true|Gets or sets tenant type.|
 
 ```json
 {
@@ -601,7 +617,8 @@ Representation of a server-side database interpretation of a tenant.
       "CurrentState": 0
     }
   ],
-  "ExternalAccountId": "string"
+  "ExternalAccountId": "string",
+  "TenantType": "string"
 }
 
 ```
@@ -617,13 +634,13 @@ Representation of a server-side database interpretation of a tenant.
 
 Represents a region within an OCS environment for OCS customers to see.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|Identifier for the region.|
 |Name|string|false|true|Name associated with the region.|
-|AdministrativeEndpointsWritable|boolean|false|false|Value indicating whether value indicating whether administrative endpoints are writable in the region.|
+|AdministrativeEndpointsWritable|boolean|false|false|Value indicating whether administrative endpoints are writable in the region.|
 |BaseAddress|string|false|true|Base address for the region.|
 
 ```json

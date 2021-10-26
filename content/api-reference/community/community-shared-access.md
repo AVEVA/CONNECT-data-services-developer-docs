@@ -8,7 +8,7 @@ uid: shared-access-routes
 
 Shared Access requests are special requests for a shared resource in a community. Currently, streams are the only shared resources.
 
-In order to make a request a Shared Access request, a `community-id` header with a Community identifier (validated to be a `Guid`) must be included. This must be a valid community that has the signed in user as a member.
+To request Shared Access, include a `community-id` header with a Community identifier (validated to be a `Guid`). This identifier must be for a valid community that includes the signed in user as a member.
 
 When a resource is shared in a community, users with the **Community Member** role are able to access metadata and data for that resource. Community members are limited to read-only access.
 

@@ -8,7 +8,7 @@ After you export an edge system configuration, you have to manually deploy the c
 
 For details on how to deploy, refer to the specific edge system product documentation: 
 
- - [Edge Data Store](xref:https://docs.osisoft.com/bundle/edge-data-store/page/configuration/configuration.html)
+ - [Edge Data Store](https://docs.osisoft.com/bundle/edge-data-store/page/configuration/configuration.html)
 
  - [PI Adapter for BACnet](https://docs.osisoft.com/bundle/pi-adapter-bacnet/page/configuration/configuration.html)
  

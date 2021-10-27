@@ -16,6 +16,6 @@ For details on how to deploy, refer to the specific edge system product document
  
  - [PI Adapter for Modbus TCP](xref:https://docs.osisoft.com/bundle/pi-adapter-modbus/page/configuration/configuration.html))
  
- - [PI Adapter for OPC UA](xref:https://docs.osisoft.com/bundle/pi-adapter-opc-ua/page/configuration/configuration.html)
+ - [PI Adapter for OPC UA](https://docs.osisoft.com/bundle/pi-adapter-opc-ua/page/configuration/configuration.html)
 
 After deploying the configuration, import the configuration file, including any modification made in the field, to the corresponding edge system in OCS to have an accurate record of the configuration.

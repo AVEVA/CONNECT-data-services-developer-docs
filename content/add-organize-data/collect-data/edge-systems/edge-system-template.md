@@ -2,7 +2,7 @@
 uid: EdgeSystemTemplates
 ---
 
-# Configuration templates
+# Add and edit edge system configuration templates
 
 You can create and edit edge system configuration templates in OCS. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 

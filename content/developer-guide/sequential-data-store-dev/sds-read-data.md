@@ -26,11 +26,11 @@ This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [
 
 { 
 
-               “Error”: “The request is not valid.”, 
+               "Error": "The request is not valid.", 
 
-               “Reason”: “Exceeded the maximum return count of 250000 events.” 
+               "Reason": "Exceeded the maximum return count of 250000 events." 
 
-               “Resolution”: “Reduce query size and resubmit the request.” 
+               "Resolution": "Reduce query size and resubmit the request." 
 
 } 
 ```
@@ -81,7 +81,7 @@ In addition, the following methods support reading multiple values:
 <!-- removing per Chris M feedback
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
  ```text
-	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
 **Parameters**  
@@ -179,8 +179,8 @@ properties that occur between data in a stream:
 |GUID                       |Default value                   |         |
 |Version                    |Default value                   |         |
 |IDictionary or IEnumerable |Default value                   |Dictionary, Array, List, and so on. |
-|Empty Type		|Not supported                  	 | |
-|Object Type 		|Not supported                   	| |
+|Empty Type        |Not supported                       | |
+|Object Type         |Not supported                       | |
 
 
 *When extreme values are involved in an interpolation (for example
@@ -308,9 +308,9 @@ All stream view transformations are HTTP GET requests. Specify the stream view I
 
 All single stream data reads support stream view transformations.
 ```text
-	# Get 100 events from start index 
+    # Get 100 events from start index 
  GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform?startIndex={startIndex}&count=100&streamViewId={streamViewId}
- 	# Get last value
+     # Get last value
  GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last?streamViewId={streamViewId}
  
 ```

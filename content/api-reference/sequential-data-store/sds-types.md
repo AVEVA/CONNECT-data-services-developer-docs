@@ -593,7 +593,7 @@ A contract defining the type of data to read or write in a SdsStream
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-<h4>Enumerated Values</h4>
+<h4>Enumerated values</h4>
 
 |Property|Value|
 |---|---|
@@ -755,7 +755,7 @@ A contract defining a property of a SdsType
 
 Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects
 
-<h4>Enumerated Values</h4>
+<h4>Enumerated values</h4>
 
 |Property|Value|
 |---|---|
@@ -778,7 +778,7 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.
 
-<h4>Enumerated Values</h4>
+<h4>Enumerated values</h4>
 
 |Property|Value|
 |---|---|

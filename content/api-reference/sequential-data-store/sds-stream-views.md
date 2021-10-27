@@ -585,7 +585,6 @@ A contract defining stream view map property
 
 |Property|Value|
 |---|---|
-|None|0|
 |FieldAdd|1|
 |FieldRemove|2|
 |FieldRename|4|

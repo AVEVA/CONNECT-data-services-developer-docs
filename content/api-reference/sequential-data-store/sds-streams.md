@@ -641,7 +641,7 @@ A contract defining the type of data to read or write in a SdsStream
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-<h4>Enumerated Values</h4>
+<h4>Enumerated values</h4>
 
 |Property|Value|Description|
 |---|---|---|

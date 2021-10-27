@@ -36,7 +36,7 @@ Use the following procedure to create an edge system configuration template and 
 
 1. To import a configuration, select **Import Configuration**, then browse to the JSON file that contains the configuration, and select **Import**.
 
-1. (Optional) In the **Section Select** field, select the section of the configuration to modify or select `JSON Configuration` to see the entire configuration.
+1. **Optional:** In the **Section Select** field, select the section of the configuration to modify or select `JSON Configuration` to see the entire configuration.
 
 1. Modify the JSON as needed. Refer to the specific edge system documentation for configuration guidelines.
 

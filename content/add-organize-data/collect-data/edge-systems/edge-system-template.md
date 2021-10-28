@@ -42,7 +42,7 @@ To create an edge system configuration template and export it for use, complete 
 
  Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
 
- Errors in the JSON syntax are underlined. Hold the mouse over the underlined text to see an explanation of the issue. The overall status of the JSON syntax is displayed over the right pane.  
+ Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 
 1. To export the completed configuration, do one of the following:
 

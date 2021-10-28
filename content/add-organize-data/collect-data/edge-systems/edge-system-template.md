@@ -20,7 +20,7 @@ You can create and edit edge system configuration templates in OCS. Once the con
 
 ## Add a new template
 
-Use the following procedure to create an edge system configuration template and export it for use:
+To create an edge system configuration template and export it for use, complete the following procedure:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 

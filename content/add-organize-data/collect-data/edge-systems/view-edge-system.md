@@ -26,7 +26,7 @@ To view an edge system, complete the following procedure:
 
 1. To review the configuration details, click the `Configuration` tab.
 
-1. Click the **View Trend** ![View Trend](images/view-trend-icon.png) to open a trend showing diagnostic data in a new window.
+1. To open a trend showing diagnostic data in a new window, click the **View Trend** ![View Trend](images/view-trend-icon.png).
 
   The level where you click the icon determines what data is included. Click the icon at the top level to see all available diagnostic data for the device. Click the icon at the edge system level to see the diagnostic data available for that edge system. Click the icon at the component level to see the diagnostic data available for that component. 
 

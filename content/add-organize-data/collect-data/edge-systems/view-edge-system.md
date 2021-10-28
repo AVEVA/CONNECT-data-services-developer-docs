@@ -20,7 +20,7 @@ To view an edge system, complete the following procedure:
 
   **Note:** You can filter for multiple tags using `and` and `or` syntax to refine the filter.
 
-1. Click on a device to see open the right pane that displays information for that device. 
+1. To open the right pane that displays information for a device, click on the device. 
 
 1. Click on the `Details` tab to see the edge system installed on the device and the configured components.
 

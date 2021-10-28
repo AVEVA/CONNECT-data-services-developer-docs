@@ -20,7 +20,7 @@ You can import an edge system configuration from the field to its corresponding 
 
 ## Import an edge system configuration
 
-Use the following procedure to import an edge system configuration from the field to the corresponding edge system digital twin:
+To import an edge system configuration from the field to the corresponding edge system digital twin, complete the following procedure:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 

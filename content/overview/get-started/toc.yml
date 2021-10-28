@@ -1,5 +1,4 @@
 - name: Get started with AVEVA™ Data Hub
-  href: adh-setup/toc.yml
   topicHref: gs-adh.md
 - name: Get started with connections
   href: connections/toc.yml

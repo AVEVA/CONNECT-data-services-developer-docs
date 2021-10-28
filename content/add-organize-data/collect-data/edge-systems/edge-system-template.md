@@ -58,7 +58,7 @@ To create an edge system configuration template and export it for use, complete 
 
 ## Edit an existing template
 
-Use the following procedure to modify an edge system configuration template and export it for use:
+To modify an edge system configuration template and export it for use, complete the following procedure:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 

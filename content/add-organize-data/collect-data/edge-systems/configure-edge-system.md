@@ -48,7 +48,7 @@ To edit an edge system configuration and export it for use, complete the followi
 
 1. To create the configuration, do one of the following:
 
- - Select **Start With Default** to use the default configuration for the edge system type.
+ - To use the default configuration for the edge system type, select **Start With Default**. 
  
  - Select **Import Configuration** to select a JSON file that contains the configuration.
 

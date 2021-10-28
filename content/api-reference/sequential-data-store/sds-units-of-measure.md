@@ -22,8 +22,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
@@ -45,35 +45,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-[
-{
-    "Id":"count",
-    "Abbreviation":"count",
-    "Name":"count",
-    "DisplayName":"count",
-    "QuantityId":"Quantity",
-    "ConversionFactor":1
-},
-{
-    "Id":"Ampere hour",
-    "Abbreviation":"Ah",
-    "Name":"Ampere hour",
-    "DisplayName":"Ampere hour",
-    "QuantityId":"Electric Charge",
-    "ConversionFactor":3600
-},
-{
-    "Id":"coulomb",
-    "Abbreviation":"C",
-    "Name":"coulomb",
-    "DisplayName":"coulomb",
-    "QuantityId":"Electric Charge",
-    "ConversionFactor":1
-}
-]
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -106,8 +80,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string uomId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string uomId`
 <br/>The unit of measure identifier<br/><br/>
 
 <h3>Response</h3>
@@ -127,17 +101,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "Id":"ounce",
-    "Abbreviation":"oz",
-    "Name":"ounce",
-    "DisplayName":"ounce",
-    "QuantityId":"Mass",
-    "ConversionFactor":0.028349523
-}
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json

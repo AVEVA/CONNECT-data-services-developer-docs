@@ -4,17 +4,7 @@ uid: sds-stream-data-transform
 ---
 
 # Stream Data Transform
-The API in this section transforms data from the specified stream.
-- [Reading with SdsStreamViews](https://ocs-docs.osisoft.com/Content_Portal/Documentation/SequentialDataStore/Reading_Data.html#reading-with-sdsstreamviews):Changing the shape of the returned data.
-When transforming data with an SdsStreamView, the data read is converted to the target type specified in the SdsStreamView. 
-All stream view transformations are HTTP GET requests. 
-Specify the stream view ID `(streamViewId={streamViewId})` at the end of the transformation endpoint.
-When data is requested with an SdsStreamView, the read characteristics defined by the target type of the SdsStreamView determine what is returned. 
-- [Unit of measure conversions](xref:sdsReadingData#unit-conversion-of-data): Converting the unit of measure of the data. 
-SDS supports assigning Units of Measure (UOM) to stream data.
-If stream data has UOM information associated, SDS supports reading data with unit conversions applied.
-On each read data request, unit conversions are specified by a user defined collection of SdsStreamPropertyOverride objects in read requests. 
-All unit conversions of data are HTTP POST requests with a request body containing a collection of SdsStreamPropertyOverride objects. 
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#stream-data-transform
 
 ## `Get First (GET Method)`
 
@@ -32,11 +22,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -68,11 +58,11 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -104,11 +94,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -140,11 +130,11 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -164,22 +154,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamDataTransform_List Data (GET Method)"></a>
 
-Returns a collection of stored values at indexes based on request parameters.
-  
-SDS supports four ways of specifying which stored events to return:
-- [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
-    
-    **Parameters**: Accepts ``index`` and ``searchMode``.
-- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
-    
-    **Parameters**: Accepts a ``filter`` expression. 
-- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
-    Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
-    
-    **Parameters**: Accepts ``startIndex`` and ``count``.
-- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
-    
-    **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#list-values
 
 <h3>Request</h3>
 
@@ -191,23 +166,23 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string index`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string filter`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>`[optional] string startIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] string index`
 <br/>The index.<br/><br/>`[optional] integer searchMode`
 <br/>The `SdsSearchMode`, type of search: Exact (the default), ExactOrNext, Next, ExactOrPrevious, or Previous.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] boolean reversed`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#skip<br/><br/>`[optional] boolean reversed`
 <br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string continuationToken`
-<br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#boundaryType<br/><br/>`[optional] integer startBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startBoundaryType<br/><br/>`[optional] integer endBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endBoundaryType<br/><br/>`[optional] string continuationToken`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#continuationToken<br/><br/>
 
 <h3>Response</h3>
 
@@ -227,22 +202,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 <a id="opIdStreamDataTransform_Get Data (POST Method)"></a>
 
-Returns a collection of stored values at indexes based on request parameters.
-  
-SDS supports four ways of specifying which stored events to return:
-- [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
-    
-    **Parameters**: Accepts ``index`` and ``searchMode``.
-- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
-    
-    **Parameters**: Accepts a ``filter`` expression. 
-- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
-    Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
-    
-    **Parameters**: Accepts ``startIndex`` and ``count``.
-- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
-    
-    **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#list-values
 
 <h3>Request</h3>
 
@@ -254,23 +214,23 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string index`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string filter`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>`[optional] string startIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] string index`
 <br/>The index.<br/><br/>`[optional] integer searchMode`
 <br/>The `SdsSearchMode`, type of search: Exact (the default), ExactOrNext, Next, ExactOrPrevious, or Previous.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] boolean reversed`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#skip<br/><br/>`[optional] boolean reversed`
 <br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string continuationToken`
-<br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#boundaryType<br/><br/>`[optional] integer startBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startBoundaryType<br/><br/>`[optional] integer endBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endBoundaryType<br/><br/>`[optional] string continuationToken`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#continuationToken<br/><br/>
 
 <h3>Response</h3>
 
@@ -290,21 +250,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamDataTransform_List Data Interpolated (GET Method)"></a>
 
-Returns a collection of values based on request parameters.
-The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
-Interpolation is not supported for streams with compound indexes.
-
-SDS supports two ways of specifying which stored events to return: index collection and interval.
-
-[Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
-If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
-
-**Parameters**: Accepts ``index``.
-
-[Interval](xref:sdsReadingDataApi#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
-If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
-
-**Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#interpolated-values
 
 <h3>Request</h3>
 
@@ -316,15 +262,15 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string index`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string index`
 <br/>One or more indexes.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
@@ -344,21 +290,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 <a id="opIdStreamDataTransform_Get Data Interpolated (POST Method)"></a>
 
-Returns a collection of values based on request parameters.
-The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
-Interpolation is not supported for streams with compound indexes.
-
-SDS supports two ways of specifying which stored events to return: index collection and interval.
-
-[Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
-If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
-
-**Parameters**: Accepts ``index``.
-
-[Interval](xref:sdsReadingDataApi#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
-If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
-
-**Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#interpolated-values
 
 <h3>Request</h3>
 
@@ -370,15 +302,15 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string index`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string index`
 <br/>One or more indexes.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
@@ -410,15 +342,15 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string startIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] string filter`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>
 
 <h3>Response</h3>
 
@@ -450,15 +382,15 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string startIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] string filter`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>
 
 <h3>Response</h3>
 
@@ -490,19 +422,19 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer intervals`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string startIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer intervals`
 <br/>The number of intervals requested.<br/><br/>`[optional] string sampleBy`
 <br/>Property or properties to use when sampling.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#boundaryType<br/><br/>`[optional] integer startBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startBoundaryType<br/><br/>`[optional] integer endBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endBoundaryType<br/><br/>`[optional] string filter`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>
 
 <h3>Response</h3>
 
@@ -534,19 +466,19 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer intervals`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>`[optional] string startIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer intervals`
 <br/>The number of intervals requested.<br/><br/>`[optional] string sampleBy`
 <br/>Property or properties to use when sampling.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
-<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
-<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#boundaryType<br/><br/>`[optional] integer startBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startBoundaryType<br/><br/>`[optional] integer endBoundaryType`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endBoundaryType<br/><br/>`[optional] string filter`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>
 
 <h3>Response</h3>
 

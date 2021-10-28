@@ -4,7 +4,9 @@ uid: ViewEdgeSystem
 
 # View and monitor an edge system
 
-View and monitor the health status and configuration information for edge systems, including Edge Data Store and PI Adapters, for a selected namespace. You can filter and sort the list of edge devices, and open a trend displaying diagnostic data for a specific device or component. Note that an edge system appears on the `Edge Systems` page once it is writing data to OCS.
+View and monitor the health status and configuration information for edge systems, including Edge Data Store and PI Adapters, for a selected namespace. You can filter and sort the list of edge devices, and open a trend displaying diagnostic data for a specific device or component. 
+
+**Note:** An edge system appears on the `Edge Systems` page once it is writing data to OCS.
 
 Use the following procedure to view an edge system:
 

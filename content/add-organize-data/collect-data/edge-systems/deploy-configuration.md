@@ -14,7 +14,7 @@ For details on how to deploy, refer to the specific edge system product document
  
  - [PI Adapter for DNP3](https://docs.osisoft.com/bundle/pi-adapter-dnp3/page/configuration/configuration.html)
  
- - [PI Adapter for Modbus TCP](xref:https://docs.osisoft.com/bundle/pi-adapter-modbus/page/configuration/configuration.html)
+ - [PI Adapter for Modbus TCP](https://docs.osisoft.com/bundle/pi-adapter-modbus/page/configuration/configuration.html)
  
  - [PI Adapter for OPC UA](https://docs.osisoft.com/bundle/pi-adapter-opc-ua/page/configuration/configuration.html)
 

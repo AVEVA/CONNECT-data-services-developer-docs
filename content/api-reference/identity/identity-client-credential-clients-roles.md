@@ -22,24 +22,24 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string clientId`
+<br/>##clientId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>##query-searchstring<br/><br/>`[optional] integer skip`
+<br/>##skip<br/><br/>`[optional] integer count`
+<br/>##count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|##400|
+|401|[ErrorResponse](#schemaerrorresponse)|##401|
+|403|[ErrorResponse](#schemaerrorresponse)|##403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|None|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|##500|
 
 <h4>Example response body</h4>
 
@@ -84,18 +84,18 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string clientId`
+<br/>##clientId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified client credential client roles|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|##401|
+|403|None|##403|
 |404|None|Client or tenant not found|
-|500|None|Internal server error.|
+|500|None|##500|
 
 <h3>Authorization</h3>
 
@@ -122,8 +122,8 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string clientId`
+<br/>##clientId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -148,12 +148,12 @@ Updates roles list<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of updated client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|##400|
+|401|[ErrorResponse](#schemaerrorresponse)|##401|
+|403|[ErrorResponse](#schemaerrorresponse)|##403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|##408|
+|500|[ErrorResponse](#schemaerrorresponse)|##500|
 
 <h4>Example response body</h4>
 
@@ -198,24 +198,24 @@ GET /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string clientId`
+<br/>##clientId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>##query-searchstring<br/><br/>`[optional] integer skip`
+<br/>##skip<br/><br/>`[optional] integer count`
+<br/>##count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|##400|
+|401|[ErrorResponse](#schemaerrorresponse)|##401|
+|403|[ErrorResponse](#schemaerrorresponse)|##403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|None|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|##500|
 
 <h4>Example response body</h4>
 
@@ -260,18 +260,18 @@ HEAD /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string clientId`
+<br/>##clientId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified client credential client roles|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|##401|
+|403|None|##403|
 |404|None|Client or tenant not found|
-|500|None|Internal server error.|
+|500|None|##500|
 
 <h3>Authorization</h3>
 
@@ -298,8 +298,8 @@ PUT /api/v1/Tenants/{tenantId}/Clients/{clientId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string clientId`
+<br/>##clientId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -324,12 +324,12 @@ Updates roles list<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of updated client credential client roles|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|##400|
+|401|[ErrorResponse](#schemaerrorresponse)|##401|
+|403|[ErrorResponse](#schemaerrorresponse)|##403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|##408|
+|500|[ErrorResponse](#schemaerrorresponse)|##500|
 
 <h4>Example response body</h4>
 

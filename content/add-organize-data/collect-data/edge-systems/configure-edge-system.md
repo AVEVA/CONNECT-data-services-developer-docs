@@ -54,7 +54,7 @@ To edit an edge system configuration and export it for use, complete the followi
 
 1. In the **Section Select** field, select the section of the configuration to modify or select `JSON Configuration` to see the entire configuration.
 
-1. Modify the JSON as needed. Refer to the specific edge system documentation for configuration guidelines.
+1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation. 
 
  Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
 

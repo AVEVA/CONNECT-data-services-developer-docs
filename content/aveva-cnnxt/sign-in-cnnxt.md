@@ -27,7 +27,7 @@ To sign in as a single user, follow these steps:
 
 ## Corporate sign-in: Federation for single sign-on
 
-Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on using the user account from the corporate domain.
+Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
 
 If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA™ Connect. 
 

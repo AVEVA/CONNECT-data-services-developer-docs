@@ -16,7 +16,7 @@ To view an edge system, complete the following procedure:
 
 1. **Optional:** To sort by a column in descending order, click on the column header. To sort in ascending order, click again.
 
-1. **Optional:** Click on the filter icon in a column header to filter the edge systems shown based on that column.
+1. **Optional:** To filter the edge systems shown based on a specific column, click the filter icon in the column header. 
 
   **Note:** You can filter for multiple tags using `and` and `or` syntax to refine the filter.
 

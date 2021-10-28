@@ -62,7 +62,7 @@ To edit an edge system configuration and export it for use, complete the followi
 
 1. To export the completed configuration, do one of the following:
 
- - Select **Export Section** in the right pane to export just the selected section. 
+ - To export just the selected section, select **Export Section** in the right pane.  
 
  - Select **Export Configuration** to export the entire configuration in one file.
 

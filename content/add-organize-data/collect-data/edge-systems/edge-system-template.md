@@ -82,7 +82,7 @@ To modify an edge system configuration template and export it for use, complete 
 
  - To export just the selected section, click **Export Section** in the right pane. 
 
- - Click **Export Configuration** to export the entire configuration in one file.
+ - To export the entire configuration in one file, click **Export Configuration**. 
 
  The JSON file is downloaded to your browser.
 

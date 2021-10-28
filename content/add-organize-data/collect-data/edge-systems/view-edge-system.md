@@ -42,4 +42,4 @@ Use the following procedure to remove an edge system:
 
 1. Click **More Options** and select **Remove Edge System**.
 
-1. Click **Remove** to confirm removing the selected edge system from the list.
+1. To confirm removing the selected edge system from the list, click **Remove**. 

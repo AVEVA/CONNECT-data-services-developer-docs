@@ -8,7 +8,7 @@ View and monitor the health status and configuration information for edge system
 
 **Note:** An edge system appears on the `Edge Systems` page once it is writing data to OCS.
 
-Use the following procedure to view an edge system:
+To view an edge system, complete the following procedure:
 
 1. From the left pane, select **Data Collection** > **Edge Systems**.
 

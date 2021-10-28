@@ -70,4 +70,4 @@ To edit an edge system configuration and export it for use, complete the followi
 
 1. When you have finished configuring the edge system, select **Save & Close**.
 
-1. Select **Save & Close** to confirm the changes. 
+1. To confirm the changes, select **Save & Close**.  

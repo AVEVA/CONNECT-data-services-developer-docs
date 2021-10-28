@@ -88,4 +88,4 @@ To modify an edge system configuration template and export it for use, complete 
 
 1. When you have finished configuring the edge system, click **Save & Close**.
 
-1. Click **Save & Close** to confirm the changes. 
+1. To confirm the changes, click **Save & Close**. 

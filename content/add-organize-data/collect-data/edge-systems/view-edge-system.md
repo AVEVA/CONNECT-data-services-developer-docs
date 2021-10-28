@@ -22,7 +22,7 @@ To view an edge system, complete the following procedure:
 
 1. To open the right pane that displays information for a device, click on the device. 
 
-1. Click on the `Details` tab to see the edge system installed on the device and the configured components.
+1. To see the edge system installed on the device and the configured components, click the `Details` tab
 
 1. Click on the `Configuration` tab to review the configuration details.
 

@@ -18,4 +18,4 @@ For details on how to deploy, refer to the specific edge system product document
  
  - [PI Adapter for OPC UA](https://docs.osisoft.com/bundle/pi-adapter-opc-ua/page/configuration/configuration.html)
 
-After deploying the configuration, import the configuration file, including any modification made in the field, to the corresponding edge system in OCS to have an accurate record of the configuration.
+After deploying the configuration, to have an accurate record of the configuration, import the configuration file, including any modification made in the field, to the corresponding edge system in OCS.

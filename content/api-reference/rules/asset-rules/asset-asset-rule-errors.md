@@ -20,16 +20,16 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RuleError](#schemaruleerror)[]|An `IEnumerable<T>`|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|None|
 
@@ -118,16 +118,16 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |202|None|No content.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |500|[ResponseBody](#schemaresponsebody)|None|
 
@@ -148,18 +148,18 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rul
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |202|None|No content.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 ---
 ## Definitions

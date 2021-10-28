@@ -21,8 +21,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -36,9 +36,9 @@ Defaults to false.<br/><br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RuleModel](#schemarulemodel)[]|The `RuleModel` objects.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|400|[ResponseBody](#schemaresponsebody)|##400|
+|403|[ResponseBody](#schemaresponsebody)|##403|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 <h4>Example response body</h4>
 
@@ -175,8 +175,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -222,10 +222,10 @@ The RuleModel object to create.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[RuleModel](#schemarulemodel)|A link to the `RuleModel` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|400|[ResponseBody](#schemaresponsebody)|##400|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the same identifier already exists.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 <h4>Example response body</h4>
 
@@ -343,18 +343,18 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RuleModel](#schemarulemodel)|The specified rule.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 <h4>Example response body</h4>
 
@@ -457,9 +457,9 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -506,10 +506,10 @@ The RuleModel object.<br/>
 |---|---|---|
 |201|[RuleModel](#schemarulemodel)|A link to the `RuleModel` object.|
 |302|None|An equivalent rule with the same identifier and definition already exists.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|400|[ResponseBody](#schemaresponsebody)|##400|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |409|[ResponseBody](#schemaresponsebody)|A non-equivalent rule with the specified identifier already exists.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 <h4>Example response body</h4>
 
@@ -628,9 +628,9 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -684,9 +684,9 @@ The RuleModel object to create or update.<br/>
 |---|---|---|
 |200|[RuleModel](#schemarulemodel)|The updated `RuleModel` object or a link to the new `RuleModel` object.|
 |201|[RuleModel](#schemarulemodel)|The updated `RuleModel` object or a link to the new `RuleModel` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|400|[ResponseBody](#schemaresponsebody)|##400|
+|403|[ResponseBody](#schemaresponsebody)|##403|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 <h4>Example response body</h4>
 
@@ -827,9 +827,9 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
@@ -843,9 +843,9 @@ Defaults to false.<br/><br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 ---
 
@@ -864,19 +864,19 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/>##tenantId<br/><br/>`string namespaceId`
+<br/>##namespaceId<br/><br/>`string ruleId`
+<br/>##ruleId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |409|[ResponseBody](#schemaresponsebody)|The automation identifier was invalid.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 ---
 ## Definitions

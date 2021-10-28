@@ -24,7 +24,7 @@ To view an edge system, complete the following procedure:
 
 1. To see the edge system installed on the device and the configured components, click the `Details` tab
 
-1. Click on the `Configuration` tab to review the configuration details.
+1. To review the configuration details, click the `Configuration` tab.
 
 1. Click the **View Trend** ![View Trend](images/view-trend-icon.png) to open a trend showing diagnostic data in a new window.
 

@@ -64,7 +64,7 @@ To edit an edge system configuration and export it for use, complete the followi
 
  - To export just the selected section, select **Export Section** in the right pane.  
 
- - Select **Export Configuration** to export the entire configuration in one file.
+ -  To export the entire configuration in one file, select **Export Configuration**.
 
  The JSON file is downloaded to your browser.
 

@@ -14,7 +14,7 @@ To view an edge system, complete the following procedure:
 
 1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
 
-1. **Optional:** Click on a column header to sort by that column in descending order. Click again to sort in ascending order.
+1. **Optional:** To sort by a column in descending order, click on the column header. To sort in ascending order, click again.
 
 1. **Optional:** Click on the filter icon in a column header to filter the edge systems shown based on that column.
 

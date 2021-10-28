@@ -34,7 +34,7 @@ To view an edge system, complete the following procedure:
 
 You can remove edge systems from the list of edge systems in OCS, but the edge system remains on the device. After an edge system is removed from OCS and it is no longer sending data to OCS, you can no longer see or manage it from OCS. If an edge system sends data to OCS after it has been removed from the list of edge systems, it will reappear in the list of edge systems.
 
-Use the following procedure to remove an edge system:
+To remove an edge system, complete the following procedure:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 

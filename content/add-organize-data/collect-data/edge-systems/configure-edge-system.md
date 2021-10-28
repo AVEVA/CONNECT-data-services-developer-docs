@@ -20,7 +20,7 @@ You can import an edge system configuration from the field to its corresponding 
 
 ## Import an edge system configuration
 
-To import an edge system configuration from the field to the corresponding edge system digital twin, complete the following procedure:
+To import an edge system configuration from the field to the corresponding edge system digital twin:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 
@@ -30,7 +30,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 ## Edit an edge system configuration
 
-To edit an edge system configuration and export it for use, complete the following procedure:
+To edit an edge system configuration and export it for use:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 
@@ -40,11 +40,11 @@ To edit an edge system configuration and export it for use, complete the followi
 
 1. In the right pane, select **Edit Edge System** or ![Edit](images/pencil-icon.png).
 
-1. To manage the tags for an edge system, click **Add Tag** ![Add Tag](images/edge-system-add-tag.png) and then do the following:
+1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](images/edge-system-add-tag.png) and then do the following:
 
  - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 
- - To delete a tag, click **X** in the tag bubble.
+ - To delete a tag, select **X** in the tag bubble.
 
 1. To create the configuration, do one of the following:
 
@@ -52,7 +52,7 @@ To edit an edge system configuration and export it for use, complete the followi
  
  - To select a JSON file that contains the configuration, select **Start With Default**. 
 
-1. In the **Section Select** field, select the section of the configuration to modify or select `JSON Configuration` to see the entire configuration.
+1. **Optional:** In the **Section Select** field, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation. 
 
@@ -64,7 +64,7 @@ To edit an edge system configuration and export it for use, complete the followi
 
  - To export just the selected section, select **Export Section** in the right pane.  
 
- -  To export the entire configuration in one file, select **Export Configuration**.
+ - To export the entire configuration in one file, select **Export Configuration**.
 
  The JSON file is downloaded to your browser.
 

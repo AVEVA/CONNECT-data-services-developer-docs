@@ -20,7 +20,7 @@ You can create and edit edge system configuration templates in OCS. Once the con
 
 ## Add a new template
 
-To create an edge system configuration template and export it for use, complete the following procedure:
+To create an edge system configuration template and export it for use:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 
@@ -30,13 +30,13 @@ To create an edge system configuration template and export it for use, complete 
 
 1. In the **Configuration Template Name** field, enter a name to identify the template.
 
-1. In the **Type** and **Version** fields, select the edge system type and version to create the template for.
+1. In the **Type** and **Version** fields, select the edge system type and version for which to create the template.
 
   The default configuration for the selected edge system type displays.
 
 1. To import a configuration, select **Import Configuration**, then browse to the JSON file that contains the configuration, and select **Import**.
 
-1. **Optional:** In the **Section Select** field, select the section of the configuration to modify or select `JSON Configuration` to see the entire configuration.
+1. **Optional:** In the **Section Select** field, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
@@ -46,19 +46,19 @@ To create an edge system configuration template and export it for use, complete 
 
 1. To export the completed configuration, do one of the following:
 
- - To export just the selected section, click **Export Section** in the right pane. 
+ - To export just the selected section, select **Export Section** in the right pane. 
 
- - To export the entire configuration in one file, click **Export Configuration**.
+ - To export the entire configuration in one file, select **Export Configuration**.
 
  The JSON file is downloaded to your browser.
 
-1. When you have finished configuring the edge system, click **Save & Close**.
+1. When you have finished configuring the edge system, select **Save & Close**.
 
-1. Click **Save & Close** to confirm the changes. 
+1. Select **Save & Close** to confirm the changes. 
 
 ## Edit an existing template
 
-To modify an edge system configuration template and export it for use, complete the following procedure:
+To modify an edge system configuration template and export it for use:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 
@@ -70,7 +70,7 @@ To modify an edge system configuration template and export it for use, complete 
 
 1. Modify the template name, **Type**, and **Version** as needed.
 
-1. In the **Section Select** field, select the section of the configuration to modify or select `JSON Configuration` to see the entire configuration.
+1. **Optional:** In the **Section Select** field, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
@@ -80,12 +80,12 @@ To modify an edge system configuration template and export it for use, complete 
 
 1. To export the completed configuration, do one of the following:
 
- - To export just the selected section, click **Export Section** in the right pane. 
+ - To export just the selected section, select **Export Section** in the right pane. 
 
- - To export the entire configuration in one file, click **Export Configuration**. 
+ - To export the entire configuration in one file, select **Export Configuration**. 
 
  The JSON file is downloaded to your browser.
 
-1. When you have finished configuring the edge system, click **Save & Close**.
+1. When you have finished configuring the edge system, select **Save & Close**.
 
-1. To confirm the changes, click **Save & Close**. 
+1. To confirm the changes, select **Save & Close**. 

@@ -1,5 +1,5 @@
 ---
-uid:config-heritage-osi
+uid: config-heritage-osi
 ---
 
 # Configuration of AVEVA™ Connect for heritage OSIsoft users

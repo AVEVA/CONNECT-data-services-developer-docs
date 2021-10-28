@@ -2,5 +2,5 @@
 uid: cnnxt-roles.md
 ---
 
-# AVEVA Connect roles
+# AVEVA™ Connect roles
 

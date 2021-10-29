@@ -1,12 +1,8 @@
 - name: What is AVEVA™ Connect?
   href: what-is-cnnxt.md
-- name: Sign in to AVEVA™ Connect 
-  href: sign-in-cnnxt.md
-- name: Sign out of AVEVA™ Connect 
-  href: sign-out-cnnxt.md
-- name: Launch a service 
-  href: launch-service.md
-- name: AVEVA™ Cloud Services Catalog 
+- name: Sign in to and out of AVEVA™ Connect 
+  href: sign-in-out-cnnxt.md
+- name: AVEVA™ Cloud Services Catalog and services 
   href: aveva-cloud-svcs-cat.md
 - name: Service status
   href: service-status.md     

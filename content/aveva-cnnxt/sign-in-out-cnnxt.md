@@ -2,7 +2,7 @@
 uid: sign-in-cnnxt.md
 ---
 
-# Sign in to AVEVA™ Connect
+# Sign in to and out of AVEVA™ Connect
 
 This topic explains how to sign in to and out of AVEVA™ Connect for the following types of accounts:
 
@@ -60,3 +60,15 @@ Follow these steps to sign in as a third-party user using a connection code.
 1.	Click on the desired account.
 
     **Result:** The AVEVA™ Connect home page is displayed for the selected account.
+
+# Sign out of AVEVA™ Connect
+
+Some AVEVA™ Connect application environments are independent of each other. To switch between application environments you should sign out before attempting to sign in to another application.
+
+When you have completed your session within AVEVA™ Connect, you must sign out. To do this, click the profile icon (top-right) in AVEVA™ Connect, and then click **Sign Out**. 
+
+![Sign out of Connect](images/sign-out-cnnxt.png)
+ 
+Within an application, the log out process is similar. 
+
+![Sign out of an application](images/sign-out-app.png)

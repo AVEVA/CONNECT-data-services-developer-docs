@@ -21,15 +21,15 @@ GET /api/v1/Tenants/{tenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[TenantWithProperties](#schematenantwithproperties)|The `Tenant` with Id `tenantId`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|##400.|
+|403|None|##403.|
 
 <h4>Example response body</h4>
 
@@ -92,15 +92,15 @@ HEAD /api/v1/Tenants/{tenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|HTTP 200 status code if a `Tenant` with `tenantId` exists.|
-|400|None|Missing or invalid inputs.|
-|404|None|Client or tenant not found.|
+|400|None|##400.|
+|404|None|##404.|
 
 <h3>Authorization</h3>
 
@@ -126,7 +126,7 @@ PUT /api/v1/Tenants/{tenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -161,8 +161,8 @@ The updated details of the Tenant.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Tenant](#schematenant)|The updated `Tenant` with Id `tenantId`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|##400.|
+|403|None|##403.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 <h4>Example response body</h4>
@@ -217,15 +217,15 @@ GET /api/v1/Tenants/{tenantId}/Icon
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|string|The icon associated with the `Tenant`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|##400.|
+|403|None|##403.|
 
 <h3>Authorization</h3>
 
@@ -251,7 +251,7 @@ PUT /api/v1/Tenants/{tenantId}/Icon
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -266,8 +266,8 @@ The Base64 encoded PNG icon for the Tenant.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|string|The updated icon associated with the `Tenant`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|##400.|
+|403|None|##403.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 <h3>Authorization</h3>
@@ -294,15 +294,15 @@ DELETE /api/v1/Tenants/{tenantId}/Icon
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|string|HTTP status code: 200 on successful deletion or another HTTP status codes on failure.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|##400.|
+|403|None|##403.|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 <h3>Authorization</h3>
@@ -329,15 +329,15 @@ GET /api/v1/Tenants/{tenantId}/Regions
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[RegionBase](#schemaregionbase)|The `RegionBase` list associated with the `Tenant`.|
-|403|None|Forbidden.|
-|404|None|Client or tenant not found.|
+|403|None|##403.|
+|404|None|##404.|
 
 <h4>Example response body</h4>
 

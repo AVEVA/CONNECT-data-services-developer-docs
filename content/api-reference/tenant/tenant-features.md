@@ -21,15 +21,15 @@ GET /api/v1/Tenants/{tenantId}/Features
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)[]|An array of all `Feature`s for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|##400.|
+|403|None|##403.|
 
 <h4>Example response body</h4>
 
@@ -73,16 +73,16 @@ GET /api/v1/Tenants/{tenantId}/Features/{id}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string id`
-<br/>Feature state identifier.<br/><br/>
+<br/>##tenantId.<br/><br/>`string id`
+<br/>##featurestateId.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)|The state of the `Feature` for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|##400.|
+|403|None|##403.|
 
 <h4>Example response body</h4>
 

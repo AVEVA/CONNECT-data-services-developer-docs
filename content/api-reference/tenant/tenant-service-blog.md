@@ -66,7 +66,7 @@ GET /api/v1/ServiceBlog/Entries/{id}
 <h4>Parameters</h4>
 
 `string id`
-<br/>Service blog identifier.<br/><br/>
+<br/>##blogId.<br/><br/>
 
 <h3>Response</h3>
 

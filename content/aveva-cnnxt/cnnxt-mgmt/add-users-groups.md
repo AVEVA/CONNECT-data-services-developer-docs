@@ -8,7 +8,7 @@ uid: add-users-groups
 
 ## Add users
 
-To add users who will access a service, perform the following steps:
+To add users who will access a service via AVEVA™ Connect, perform the following steps:
 
 1.	From the AVEVA™ Connect home page, click the menu icon, then select **User Management**.
 
@@ -54,3 +54,4 @@ Perform the following steps to create a group and add users to the group:
 7.	Click Save.
  
     **Result:** The group is created, and the specified users are added to the group.
+

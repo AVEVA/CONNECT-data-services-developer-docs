@@ -1,10 +1,11 @@
 ---
 uid: sds-units-of-measure
-
 ---
 
-# Units Of Measure
-The API in this section interacts with units of measure. Read/Get operations only. Update/Write operations interact through the quantity API.
+# Units of measure
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with `Units`.
+The APIs are for GET (read) methods. Update (write) operations on `Units` go through [Quantities](xref:sds-quantities).
+For more information on unit of measure, see [Units of measure](xref:unitsOfMeasure).
 
 ## `List Units of Measure`
 
@@ -12,23 +13,24 @@ The API in this section interacts with units of measure. Read/Get operations onl
 
 Returns a list of all available units of measure in the system.
 
-<h3>Request</h3>
-
+### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
-?skip={skip}&count={count}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units?skip={skip}&count={count}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[Optional] int skip`  
+Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+<br/><br/>
+`[Optional] int count`  
+Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -40,8 +42,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response
 
 ```json
@@ -97,20 +98,19 @@ Content-Type: application/json
 
 Returns the unit of measure corresponding to the specified uomId within a given namespace.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string uomId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string uomId`
 <br/>The unit of measure identifier<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -122,8 +122,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Units/{uomId}
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response
 
 ```json
@@ -165,7 +164,7 @@ Content-Type: application/json
 
 DataContract representing a unit of measure
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -199,9 +198,9 @@ DataContract representing a unit of measure
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-The error response contains standard details on the cause and resolution of the error.
+Contains the error message format that follows the OCS error standards
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

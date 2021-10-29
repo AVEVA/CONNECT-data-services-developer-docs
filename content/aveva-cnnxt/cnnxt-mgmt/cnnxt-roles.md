@@ -6,7 +6,9 @@ uid: cnnxt-roles.md
 
 There are two built-in roles, each with its own capabilities, in AVEVA™ Connect:
 
-- Customer Administrator: This role is mapped to the Tenant Administrator role in AVEVA™ Data Hub.
+- Customer Administrator
+
+  **Note:** The Customer Administrator role is mapped to the Tenant Administrator role in AVEVA™ Data Hub.
 
 -  Authorized Officer
 

@@ -8,7 +8,7 @@ A namespace is a logical unit of organization for data within a tenant. Each ten
 
 When you create a namespace, data processing resources are allocated; for example, SDS and asset service, and the associated storage resources to support that namespace. Each namespace and its resources are distinct and separate from all other namespaces. The resources are scoped to the namespace. Which means, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 
-Data stored within a namespace is tied to that namespace and its region, and you cannot directly transfer the data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in OCS, then import it into the destination namespace.
+Data stored within a namespace is tied to that namespace and its region, and you cannot directly transfer the data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA™ Data Hub, then import it into the destination namespace.
 
 ## PI Server counterpart
 

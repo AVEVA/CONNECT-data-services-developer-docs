@@ -6,6 +6,10 @@
   topicHref: add-users-groups.md
 - name: Create folders
   topicHref: create-folders.md
+- name: Namespaces in AVEVA™ Connect
+  topicHref: namespace-cnnxt.md
+- name: Rename an AVEVA™ Connect folder and a namespace
+  topicHref: rename-folder-namespace.md
 - name: Assign roles to groups
   topicHref: assign-roles-groups.md
 - name: Assign users to groups

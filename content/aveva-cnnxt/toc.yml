@@ -10,8 +10,6 @@
   href: aveva-cloud-svcs-cat.md
 - name: Service status
   href: service-status.md     
-- name: Configuration for Heritage OSIsoft users
-  href: config-heritage-osi-cnnxt.md
 - name: User and access management
   href: cnnxt-mgmt/toc.yml
   topicHref: user-access-adh.md

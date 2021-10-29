@@ -12,27 +12,25 @@ APIs to manage default access to entities governed by an AccessControlList.
 
 Retrieves the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The root `AccessControlList` for `Namespace`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
 ```json
@@ -59,18 +57,17 @@ GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 
 Modifies the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 PUT /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>
 
-<h4>Request Body</h4>
+### Request Body
 
 The new root AccessControlList for Namespaces.<br/>
 
@@ -90,17 +87,16 @@ The new root AccessControlList for Namespaces.<br/>
 }
 ```
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|The new `AccessControlList` for `Namespace`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|400|None|Missing or invalid inputs.<br/>|
+|403|None|Forbidden.<br/>|
 |405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
 ```json
@@ -129,7 +125,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocSaccesscontrollist"></a>
 <a id="tocsaccesscontrollist"></a>
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -161,7 +157,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocSaccesscontrolentry"></a>
 <a id="tocsaccesscontrolentry"></a>
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -191,7 +187,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocStrustee"></a>
 <a id="tocstrustee"></a>
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -217,7 +213,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocStrusteetype"></a>
 <a id="tocstrusteetype"></a>
 
-<h4>Enumerated Values</h4>
+#### Enumerated Values
 
 |Property|Value|
 |---|---|
@@ -234,7 +230,7 @@ The new root AccessControlList for Namespaces.<br/>
 <a id="tocSaccesstype"></a>
 <a id="tocsaccesstype"></a>
 
-<h4>Enumerated Values</h4>
+#### Enumerated Values
 
 |Property|Value|
 |---|---|

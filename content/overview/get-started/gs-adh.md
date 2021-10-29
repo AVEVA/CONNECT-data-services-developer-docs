@@ -12,3 +12,5 @@ AVEVA™ Data Hub consists of several different areas of core functionality:
 - Data collection
 - Data organization
 - Data analysis
+
+[More content with links to start up tasks, such as logging on to Data Hub to come.]

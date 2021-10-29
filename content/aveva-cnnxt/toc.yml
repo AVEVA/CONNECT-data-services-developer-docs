@@ -12,6 +12,6 @@
   href: service-status.md     
 - name: Configuration for Heritage OSIsoft users
   href: config-heritage-osi-cnnxt.md
-- name: Overview of user and access management in AVEVA™ Connect
+- name: User and access management
   href: cnnxt-mgmt/toc.yml
   topicHref: user-access-adh.md

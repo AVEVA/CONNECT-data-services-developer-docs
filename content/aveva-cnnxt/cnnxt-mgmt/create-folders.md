@@ -8,6 +8,8 @@ If you need to restrict the context in which your users and/or groups are assign
 
 A folder is used to partition data and you can use child folders to partition the data even further. For example, you can create folders to divide up assets in your organization.
 
+**Important:** When you turn on the AVEVA™ Data Hub service and set up a folder in AVEVA™ Connect, a namespace is also created using the name of the Connect folder. 
+
 Perform the following steps to create folders in AVEVA™ Connect.
 
 1.	From the navigation menu, select **Folder Management**, then click **+**.

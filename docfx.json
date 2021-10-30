@@ -26,6 +26,8 @@
         "files": [
 	  "content/**/**.md",
 	  "content/**/toc.yml",
+    "content/_images/**",
+    "content/_images/icons/**.svg",
           "toc.yml",
           "**.md"
         ],

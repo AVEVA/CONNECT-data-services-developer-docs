@@ -31,7 +31,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 |200|[RuleError](#schemaruleerror)[]|An `IEnumerable<T>`|
 |403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|None|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 <h4>Example response body</h4>
 
@@ -129,7 +129,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 |202|None|No content.|
 |403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|None|
+|500|[ResponseBody](#schemaresponsebody)|##500|
 
 ---
 

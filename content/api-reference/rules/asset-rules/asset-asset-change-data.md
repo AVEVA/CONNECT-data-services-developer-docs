@@ -105,7 +105,7 @@ Defaults to 100.<br/><br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AssetChangeData](#schemaassetchangedata)[]|The collection of `AssetChangeData` for the ruleId.|
-|400|[ResponseBody](#schemaresponsebody)|None|
+|400|[ResponseBody](#schemaresponsebody)|##400|
 |403|[ResponseBody](#schemaresponsebody)|##403|
 |500|[ResponseBody](#schemaresponsebody)|##500|
 

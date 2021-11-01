@@ -37,6 +37,11 @@ When viewing streams from the **Sequential Data Store** page, you can view each 
 1. Optional: Toggle the **Filter Communities** panel by clicking the **filter** icon ![filter icon](images/filter_alt_black_18dp.svg) and select a community to filter for.
 
     Filtering the page by communities displays only streams that are shared within the selected communities.
+    
+    <details>
+        <summary>Filter Communities</summary>
+        <img src="images/filter-pane.png" alt="Filter Communities"></img>
+    </details>
 
 1. Select a stream.
 

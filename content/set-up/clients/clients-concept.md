@@ -14,7 +14,7 @@ You must have the Tenant Administrator role to add and manage clients in a tenan
 
 ## <a name="client-credentials-client"></a>Client-credentials clients
 
-Use client-credentials clients for server-to-server communication that does not require user interaction. The client typically authenticates with the token endpoint using its client ID and secret. A secret is a unique key generated for each client to connect to OSIsoft assets, resources, and services for a time-limited period. Because secrets allow access to data, you need to keep them secure.
+Use client-credentials clients for server-to-server communication that does not require user interaction. The client typically authenticates with the token endpoint using its client ID and secret. A secret is a unique key generated for each client to connect to assets, resources, and services for a time-limited period. Because secrets allow access to data, you need to keep them secure.
 
 ### <a name="client-credentials-pi-server"></a>Client-credentials client PI Server counterpart
 
@@ -22,13 +22,13 @@ Client-credentials clients are very similar to Microsoft Windows service account
 
 ### <a name="client-credentials-bp"></a>Client-credentials client best practices
 
-OSIsoft recommends the following best practices with a client credentials client:
+We recommend the following best practices with a client credentials client:
 
 - Create a separate client-credentials client for each device or instance of an application that connects to OCS. This ensures that secrets can be discretely managed for individual applications and that you know which applications are connecting to OCS.
 
 - Ensure that client secrets are stored securely where they are used.
 
-- Use secrets that expire and rotate them on a schedule. When it is time to switch to a new secret, OSIsoft recommends that you create the new secret, redirect the application to use the new secret, and only delete the old secret from the client when it is no longer being used.
+- Use secrets that expire and rotate them on a schedule. When it is time to switch to a new secret, we recommend that you create the new secret, redirect the application to use the new secret, and only delete the old secret from the client when it is no longer being used.
 
 ##  <a name="authorization-code-client"></a>Authorization code clients
 
@@ -42,7 +42,7 @@ Authorization code clients have no direct PI Server equivalent, but they are sim
 
 ### <a name="authorization-code-bp"></a>Authorization code client best practices
 
-OSIsoft recommends the following best practices for an authorization code client:
+We recommend the following best practices for an authorization code client:
 
 - Use authorization code clients in web applications or with services where users must be authenticated and it is not possible to store a client secret securely.
 
@@ -58,7 +58,7 @@ Hybrid clients have no direct PI Server equivalent, but they are similar to the 
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 
-OSIsoft recommends the following best practices for a hybrid client:
+We recommend the following best practices for a hybrid client:
 
 - Use hybrid clients in web applications or services where users authenticate against OCS through a web browser, but a secure backend that stores the secrets performs the actual authentication.
 

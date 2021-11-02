@@ -6,7 +6,7 @@
   topicHref: aveva-cnnxt/cnnxt-intro.md  
 - name: Get started with AVEVA™ Data Hub
   href: overview/get-started/toc.yml
-  topicHref: overview/get-started/gs-adh.md
+  topicHref: overview/get-started/gs-overview.md
 - name: Set up the environment
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md

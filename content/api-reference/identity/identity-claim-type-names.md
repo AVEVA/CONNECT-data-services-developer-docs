@@ -1,4 +1,7 @@
+---
+uid: identity-claim-type-names
 
+---
 
 # Claim Type Names
 An identity provider claim type name is the attribute needed when creating an identity provider claim.
@@ -7,35 +10,37 @@ An identity provider claim type name is the attribute needed when creating an id
 
 <a id="opIdClaimTypeNames_List All Identity Provider Claim Type Names"></a>
 
-Gets all identity provider claim type names for an identity provider on a tenant.
+Returns all identity provider claim type names for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 ?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider unique identifier<br/><br/>
+<br/>Identity provider identifier.<br/><br/>
 `[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Number of identity providers to skip<br/><br/>`[optional] integer count`
-<br/>Maximum number of identity providers to return.<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[]|List of identity provider type names found|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[])
 
 ```json
 [
@@ -47,7 +52,7 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -60,29 +65,30 @@ Allowed for these roles:
 
 <a id="opIdClaimTypeNames_Get All Identity Provider Claim Type Names Header"></a>
 
-Gets header for all identity provider claim type names for an identity provider on a tenant.
+Returns a header for all identity provider claim type names for an identity provider on a tenant.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider unique identifier<br/><br/>
+<br/>Identity provider identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type names|
-|401|None|Unauthorized|
-|403|None|Forbidden|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider not found|
-|500|None|Internal server error|
+|500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -95,31 +101,33 @@ Allowed for these roles:
 
 <a id="opIdClaimTypeNames_Get Identity Provider Claim Type Name"></a>
 
-Gets an identity provider claim type name from an identity provider.
+Returns an identity provider claim type name from an identity provider.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimTypeNameId`
-<br/>Identity provider claim type name unique identifier<br/><br/>
+<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
+<br/>Identity provider claim type name identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaim](#schemaidentityproviderclaim)|Identity provider claim type name specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or identity provider claim type name not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
-#### Example response body
-> 200 Response
+<h4>Example response body</h4>
+
+> 200 Response ([IdentityProviderClaim](#schemaidentityproviderclaim))
 
 ```json
 {
@@ -128,11 +136,12 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -145,30 +154,31 @@ Allowed for these roles:
 
 <a id="opIdClaimTypeNames_Get Identity Provider Claim Type Name Header"></a>
 
-Gets an identity provider claim type name header from an identity provider.
+Returns an identity provider claim type name header from an identity provider.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProviderClaimTypeNameId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider unique identifier<br/><br/>`string identityProviderClaimTypeNameId`
-<br/>Identity provider claim type name unique identifier<br/><br/>
+<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
+<br/>Identity provider claim type name identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type name specified|
-|401|None|Unauthorized|
-|403|None|Forbidden|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider or identity provider claim type name not found|
-|500|None|Internal server error|
+|500|None|Internal server error.|
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -185,15 +195,15 @@ Allowed for these roles:
 <a id="tocSidentityproviderclaimtypename"></a>
 <a id="tocsidentityproviderclaimtypename"></a>
 
-Claim type name associated with an identity provider.
+Claim type name associated with an identity provider
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|guid|false|false|Claim type name unique identifier.|
-|TypeName|string|false|true|Claim type name.|
-|IdentityProviderId|guid|false|false|Unique identifier of identity provider associated with this claim type name.|
+|Id|guid|false|false|Claim type name identifier|
+|TypeName|string|false|true|Claim type name|
+|IdentityProviderId|guid|false|false|Identifier of identity provider associated with this claim type name|
 
 ```json
 {
@@ -215,15 +225,15 @@ Claim type name associated with an identity provider.
 
 Object returned whenever there is an error
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|Operation unique identifier of action that caused the error.|
-|Error|string|true|false|Error description.|
-|Reason|string|true|false|Reason for the error.|
-|Resolution|string|true|false|Resolution to resolve the error.|
-|DynamicProperties|object|false|true|Additional properties.|
+|OperationId|string|true|false|Operation identifier of action that caused the error|
+|Error|string|true|false|Error description|
+|Reason|string|true|false|Reason for the error|
+|Resolution|string|true|false|Resolution to resolve the error|
+|DynamicProperties|object|false|true|Additional properties|
 
 ```json
 {
@@ -252,14 +262,15 @@ Object returned whenever there is an error
 
 Object representing a claim from an identity provider to map to a role
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|guid|false|false|Identity provider claim unique identifier.|
-|TypeName|string|false|true|Type name for this identity provider claim.|
-|Value|string|false|true|Value for this identity provider claim.|
-|RoleIds|string[]|false|true|List of role Ids that this claim on this identity provider will map to.|
+|Id|guid|false|false|Identity provider claim identifier|
+|TypeName|string|false|true|Type name for this identity provider claim|
+|Value|string|false|true|Value for this identity provider claim|
+|RoleIds|string[]|false|true|List of role identifiers that this claim on this identity provider will map|
+|IsBuiltIn|boolean|false|false|Indicates if this claim entry is built-in. When this value is true, callers cannot modify or delete the claim.|
 
 ```json
 {
@@ -268,7 +279,8 @@ Object representing a claim from an identity provider to map to a role
   "Value": "string",
   "RoleIds": [
     "string"
-  ]
+  ],
+  "IsBuiltIn": true
 }
 
 ```

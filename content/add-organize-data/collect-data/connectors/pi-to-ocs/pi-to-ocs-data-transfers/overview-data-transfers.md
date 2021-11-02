@@ -4,16 +4,22 @@ uid: overview-data-transfers
 
 # Overview of data transfers
 
-To transfer PI System data to OCS, you must first create a data transfer by setting filter criteria and choosing PI points for the transfer. After, you will stream the selected PI points from your on-premises PI System to OCS.
+To transfer AF elements and PI System data to OCS, you must set filter criteria and select the data for the transfer. Then, you can stream the selected AF elements and PI points from your on-premises PI System to OCS.
 
 The following tasks must be performed before you can complete a data transfer:
 
-1.	Create a PI system connection.
-2.	Install the PI to OCS agent setup kit.
-3.	Confirm your PI System connection registration.
-4.	Create a data transfer.
-5.	Validate data flow.
+1. Download and install the PI to OCS Agent.
+2. Configure your PI System data source connections by adding the desired Data Archive and optional AF server.
+3. Create a data transfer by adding the desired AF elements and/or PI points.
 
-**Note:** If you have slow moving PI points that do not update often, you might want your data in OCS before it is archived on PI Data Archive. To accomplish this task, you will need to turn off compression for these PI points to ensure snapshot data is collected.  
+## Historical transfer
 
-OSIsoft recommends turning off compression only for slow moving PI points. In general, this practice is not required for most tags and can cause unnecessary overhead and data collection.
+During the creation of a transfer, you have the option of including historical data. You specify the start and end times for a historical data transfer. When the start time is in the past, that is before `*` in PI terminology, the PI to OCS Agent asks PI Data Archive for past data. The PI to OCS Agent retrieves the data between the start time and the time when the transfer started. The data it collects is referred to as the historical transfer.
+
+## Backfilling
+
+Backfilling is the process of transferring missing data. It happens when a PI to OCS Agent shuts down while it is transferring data. When a PI to OCS Agent is stopped or the PI to OCS Agent Windows service shuts down, it loses its update signup. For example, if the service shuts down for two hours, it will have to re-signup for updates when it becomes available; however, the PI to OCS Agent cannot use updates to retrieve the data for the two hours it was down. In this example, the backfill transfer job fills the gap for these two hours.
+
+## Historical transfer versus backfilling
+
+Historical transfer fills the gap between a configured, past start time and the time the transfer started. Backfilling fills the data for the time period that a configured transfer stopped up until the time the transfer resumed again.

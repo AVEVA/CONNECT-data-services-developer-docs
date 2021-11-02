@@ -96,7 +96,7 @@ This topic contains these sections:
 
 ## Verify the PI to OCS Agent is running and registered
 
-After installation, check that the PI to OCS Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in OCS.
+After installation, check that the PI to OCS Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in Aveva&trade; Data Hub.
 
 ### Procedure
 

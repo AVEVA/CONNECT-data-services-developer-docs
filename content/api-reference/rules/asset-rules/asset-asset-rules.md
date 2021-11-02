@@ -957,7 +957,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/exe
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|400|[ResponseBody](#schemaresponsebody)|##400|
+|400|[ResponseBody](#schemaresponsebody)|None|
 |403|[ResponseBody](#schemaresponsebody)|##403|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
 |409|[ResponseBody](#schemaresponsebody)|The automation identifier was invalid.|

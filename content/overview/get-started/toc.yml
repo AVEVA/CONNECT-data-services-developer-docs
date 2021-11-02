@@ -1,5 +1,9 @@
-- name: Introduction to the AVEVA™ Data Hub portal
+- name: Get started with AVEVA™ Data Hub
+  href: get-started/toc.yml
   topicHref: introduction-portal-interface.md
+- name: AVEVA™ Connect User Guide
+  href: aveva-cnnxt/toc.yml
+  topicHref: aveva-cnnxt/what-is-cnnxt.md 
 - name: Get started with connections
   href: connections/toc.yml
   topicHref: gs-connections.md

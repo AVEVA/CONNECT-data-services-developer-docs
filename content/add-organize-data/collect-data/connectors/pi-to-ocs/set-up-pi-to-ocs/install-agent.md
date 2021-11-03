@@ -11,7 +11,7 @@ When you install the PI to OCS Agent, make sure to follow these guidelines:
 * Enable read access to Data Archive security tables and the PI points and data to be transferred.
 * Enable read access to the AF server elements and attributes to be transferred.
 
-You can download the PI to OCS Agent from the PI to OCS Agents page on the OCS portal and then transfer it to the computer that will host the agent.
+You can download the PI to OCS Agent from the PI to OCS Agents page on the portal and then transfer it to the computer that will host the agent.
 
 **NOTE:** The PI to OCS Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to OCS Agent installation if Internet Explorer Enhanced Security configuration is enabled. See [Disable Internet Explorer Enhanced Security Configuration](xref:disable-ie-security) for details. 
 
@@ -32,12 +32,9 @@ This topic contains these sections:
 
 * [Verify the PI to OCS Agent is running and registered](#verify-the-pi-to-ocs-agent-is-running-and-registered)
 
-
 ## Install the PI to OCS Agent
 
-1. In the OCS portal, click the ![ ](../../images/waffle-button.png) icon, then click **Data Collection > PI to OCS Agents**.
-
-   **Result:** The `PI to OCS Agents` window opens.
+1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
 2. Click the **Download Agent** button.
 
@@ -59,11 +56,11 @@ This topic contains these sections:
 
    ![](../../images/agent-co-info.png)
 
-8. Enter your OCS tenant ID or company alias in the **Tenant Id or Company Alias** text box, then click **Next**.
+8. Enter your tenant ID or company alias in the **Tenant Id or Company Alias** text box, then click **Next**.
 
-   **Note:** You are logged on to your tenant account in OCS.  The account used to log on must be assigned to the OCS Tenant Administrator role to complete the PI to OCS Agent installation.
+   **Note:** You are logged on to your tenant account.  The account used to log on must be assigned to the Tenant Administrator role to complete the PI to OCS Agent installation.
 
-   **Result:** The PI to OCS Agent setup kit advances to the **Browser Login** page. An OCS message opens in your web browser regarding the status of the user authentication process. 
+   **Result:** The PI to OCS Agent setup kit advances to the **Browser Login** page. A message opens in your web browser regarding the status of the user authentication process. 
 
 9. Close the browser window, then click **Next** in the PI to OCS Agent wizard.
 
@@ -105,13 +102,13 @@ After installation, check that the PI to OCS Agent Windows service is running on
 
 1. On the host machine where you installed the agent, type *services.msc* in the text box next to the Windows menu button, then press ENTER.
 
-2. In the `Services` window, scroll to and verify that that the PI to OCS Agent’s status is running, then close the window.
+2. In the `Services` window, scroll to and verify that that the PI to OCS Agent's status is running, then close the window.
 
    ![](../../images/services-window.png)
 
-3. Navigate to the **PI to OCS Agents page** in OCS, then select the connection you just created.
+3. Navigate to the **PI to OCS Agents** page, then select the connection you just created.
 
-4. On the **Details** pane, Verify that "Registered" appears next to the **Agent Status** field.
+4. On the **Details** pane, verify that "Registered" appears next to the **Agent Status** field.
 
    ![Agent status](../../images/details-pane.png)
 

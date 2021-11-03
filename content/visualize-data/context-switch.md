@@ -22,15 +22,11 @@ Follow this procedure to switch assets in a trend:
 
 1. Click the ![Swap asset icon](images/swap-asset-icon.png) icon next to the asset name in the legend table to open the `Swap Asset` window. 
 
-   The `Swap Asset` window displays a list of assets of the same asset type. In the screen capture below, the listed assets are of the same asset type as the `Philadelphia Weather Station` asset. All assets are created with the `Weather Station` asset type.
-
-   ![Swap Asset dialog](images/swap-asset-dialog.png)
+   **Note:** The `Swap Asset` window displays a list of assets of the same asset type.
 
 1. Select the asset to view and click **Continue**.
 
-   The `Trend` page replaces the traces of the original asset with the new asset. The screen capture below shows that the `Philadelphia Weather station` is replaced with the `Oakland Weather Station 2` asset. The three traces that were previously displayed for the `Philadelphia Weather station` are now displayed for the `Oakland Weather Station 2` asset. 
-
-   ![Switched asset in trend](images/asset-swap.png)
+   **Note:** The `Trend` page replaces the traces of the original asset with the new asset.
 
 ## Asset switch in performance testing
 

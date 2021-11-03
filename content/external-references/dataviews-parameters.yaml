@@ -34,7 +34,7 @@ cache-data-preview:
 continuation-token:
   type: markdown
   value: |
-    Used only when [paging](DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+    Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
 
 # count
 count-data:

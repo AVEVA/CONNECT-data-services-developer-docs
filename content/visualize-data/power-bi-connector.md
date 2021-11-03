@@ -10,8 +10,14 @@ The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and 
 
 The following are required before you install and use OSIsoft Cloud Services Power BI Connector.
 
-- Microsoft Power BI Desktop
+- Operation Systems: Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2016, Windows Server 2019
+
+- For desktop installation: Microsoft Power BI Desktop 2.91.884.0 or later
+
+- For on-premises Data Gateway installation: Microsoft Power BI On-premises Data Gateway 3000.89.6 or later
+
 - Microsoft Edge WebView 2 Runtime
+
 - A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
 
 ## Install OSIsoft Cloud Services Power BI Connector
@@ -42,9 +48,9 @@ Use OSIsoft Cloud Services Power BI Connector to retrieve OCS Data Views for use
 
 1. Click **Continue** in the `Connecting to a third-party service` warning.
 
-1. In the `OSIsoft Cloud Services Data Views` window, enter the OCS tenant and namespace for the Data Views you want to access, and then click **OK**.<br>The OSIsoft Cloud Services sign-in window displays if you have not already signed into OCS.
+1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the Data Views you want to access, and then click **OK**.<br>The OSIsoft Cloud Services sign-in window displays if you have not already signed in.
 
-    - If you have not already signed into OCS, click **Sign in as different user** and complete the OCS user authentication process.
+    - If you have not already signed in, click **Sign in as different user** and complete the user authentication process.
 
 1. In the `OSIsoft Cloud Services Data Views` sign-in window, click **Connect**.<br>The `Navigator` pane displays.
 

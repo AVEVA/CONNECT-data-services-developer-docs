@@ -4,23 +4,71 @@ uid: PowerBIReleaseNotes
 
 # Release notes
 
+OSIsoft Cloud Services Power BI Connector 1.1.0.140
+
 ## Overview
 
-The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and makes them available in Microsoft Power BI for advanced data visualization and analysis.
-
-For more information, see [OSIsoft Cloud Services Power BI Connector](xref:PowerBI).
+The OSIsoft Cloud Services Power BI Connector allows OSIsoft Cloud Services Data Views to be imported into Power BI so the data can be visually analyzed or utilized in Power BI reports or dashboards. The OSIsoft Cloud Services Power BI Connector can be installed on Windows Operating System installations of Power BI Desktop. The connector can also be used with the Power BI Service through installation of an On-premises Data Gateway. Data sets using OSIsoft Cloud Services Data Views can be configured for scheduled refresh in the Power BI Service to create and share dynamically updating Power BI dashboards with data from OSIsoft Cloud Services.
 
 ## Known issues
 
-There are no known issues at this time.
+| Work item | Description |
+|-----------|-------------|
+| 248772    | When the same installer runs twice, the dialog appears offering the user the chance to uninstall the connector. If the user clicks on Uninstall option and then clicks on “Back” button, the user is brought to a screen from which she did not start. The uninstall will work, however, if the user moves forward through the screens. |
 
-## System requirements
+## Known limitations
 
-Refer to [System Requirements](xref:PowerBI#system-requirements).
+When loading a Data View which has multiple pages, the loading screen prints the JSON body of the call that is used to retrieve the pages of data.
 
-## Installation
+When selecting a Data View from the navigation table which does not have default start and end index values defined, the name of the previous Data View persists on the page title even though the user navigated away from it.
 
-Refer to [Install OSIsoft Cloud Services Power BI Connector](xref:PowerBI#install-osisoft-cloud-services-power-bi-connector).
+## Setup
+
+### Operating systems
+
+Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2016, Windows Server 2019
+
+### Other system requirements
+
+Supported Microsoft Power BI versions:
+
+- Microsoft Power BI Desktop 2.91.884.0 or later
+- Microsoft Power BI On-premises Data Gateway 3000.89.6 or later
+
+### Distribution kit files
+
+The installer is released as a self-extracting executable file that contains:
+
+- OCSDataviews.pqx
+- OCSDataviews_LICENSE
+
+### Installation and upgrade
+
+#### Desktop installation
+
+##### Before you install
+
+- Power BI Desktop is installed
+- User has Administrator rights on the local machine
+
+##### Installation
+
+The OSIsoft Cloud Services Power BI Connector installer will extract and install the connector for Power BI. See the accompanying [OSIsoft Cloud Services Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "OSIsoft Cloud Services Power BI Connector User Guide") for detailed Desktop installation instructions.
+
+#### On-premises Data Gateway installation
+
+##### Before you install
+
+- Microsoft Power BI On-premises Data Gateway is installed
+- User has Administrator rights on the local machine
+
+##### Installation
+
+See the accompanying [OSIsoft Cloud Services Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "OSIsoft Cloud Services Power BI Connector User Guide") for detailed Desktop installation instructions.
+
+### Uninstalling OSIsoft Cloud Services Power BI Connector
+
+Remove the product using **Uninstall a program** in the Windows Control Panel for both Desktop and on-prem data gateway installations.
 
 ## Security information and guidance
 
@@ -45,3 +93,7 @@ OSIsoft has selected the Common Vulnerability Scoring System (CVSS) to quantify 
 This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of OSIsoft Cloud Services Power BI Connector security vulnerabilities that are fixed in this release.
 
 No security-related information is applicable to this release.
+
+## Documentation overview
+
+[OSIsoft Cloud Services Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "OSIsoft Cloud Services Power BI Connector User Guide"): An introduction to OCS Power BI Connector for the end user. This user guide provides the installation procedure and a usage tutorial on the product features.

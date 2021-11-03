@@ -12,7 +12,7 @@ For information about adding or deleting tenants from an existing community, see
 
 **Note:** Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can perform this procedure.
 
-1. On the navigation bar, click **Communities**.
+1. In the left pane, select **Data Management** > **Communities**.
 
 2. On the `Communities` page, click **Add Community**.
 
@@ -26,7 +26,7 @@ For information about adding or deleting tenants from an existing community, see
 
 5. Click **Add User** ![Add User](images\add-button-white-background.png "Add User") beside each user who should be an Community Administrator. If necessary, you can filter the list of users by typing in the **Filter by name or e-mail** box.
 
-    **Note:** If you do not assign yourself the Community Administrator role, you cannot access details about the new community unless you use the OCS [Users](xref:ccUsers) feature to assign yourself the _new_community_name_ Community Member Role.
+    **Note:** If you do not assign yourself the Community Administrator role, you cannot access details about the new community unless you use the [Users](xref:ccUsers) feature to assign yourself the _new_community_name_ Community Member Role.
 
 6. Click **Create**.
 

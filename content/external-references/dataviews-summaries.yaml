@@ -82,7 +82,7 @@ dataviews-acl-get:
 dataviews-acl-update:
   type: markdown
   value: |
-    Updates the default [`AccessControlList`](hxref:accessControl#access-control-lists) for the DataViews collection.
+    Updates the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 # method summaries: requesting data
 data-interpolated-get:

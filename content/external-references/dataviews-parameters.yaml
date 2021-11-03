@@ -40,7 +40,7 @@ continuation-token:
 count-data:
   type: markdown
   value: |
-    The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](DataViewsQuickStartGetData#page-size).
+    The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 count-dataitems:
   type: text/plain
   value: |

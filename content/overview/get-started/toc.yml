@@ -1,6 +1,6 @@
 - name: Get started with AVEVA™ Data Hub
-  href: get-started/aveva-datahub/toc.yml
+  href: aveva-datahub/toc.yml
   topicHref: get-started/gs-overview.md
 - name: AVEVA™ Connect User Guide
-  href: get-started/aveva-cnnxt/toc.yml
+  href: aveva-cnnxt/toc.yml
   topicHref: get-started/aveva-cnnxt/what-is-cnnxt.md

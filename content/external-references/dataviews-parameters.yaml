@@ -90,7 +90,7 @@ end-index:
 form:
   type: markdown
   value: |
-    The requested data [output format](DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+    The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
  
 # group-count
 group-count:

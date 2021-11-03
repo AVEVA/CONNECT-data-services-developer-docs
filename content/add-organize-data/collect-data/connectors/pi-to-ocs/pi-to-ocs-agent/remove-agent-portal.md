@@ -8,7 +8,7 @@ You remove a PI to OCS Agent by first uninstalling it from the host machine and 
 
 * Step 1: Uninstall the agent from the host machine
 
-* Step 2: Remove the agent listing in OCS  
+* Step 2: Remove the agent listing in Aveva&trade; Data Hub  
 
 ## Step 1: Uninstall the PI to OCS Agent on the host machine
 
@@ -32,7 +32,7 @@ To remove the PI to OCS Agent application from a host machine, you uninstall it 
 
 1. Click the **Unregister agent from OCS** option, then click **Next**.
 
-   **Result:** The agent's associated client and connection information is also removed from OCS during the uninstall process.
+   **Result:** The agent's associated client and connection information is also removed from Aveva&trade; Data Hub during the uninstall process.
 
    **Note:** After uninstalling the agent from the host machine, you still need to remove the agent from the portal. 
 

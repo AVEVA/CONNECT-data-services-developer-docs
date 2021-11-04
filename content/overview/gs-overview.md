@@ -12,3 +12,5 @@ AVEVA™ Data Hub consists of several different areas of core functionality:
 - Data collection
 - Data organization
 - Data analysis
+
+The AVEVA Data Hub portal is accessed through AVEVA™ Connect. AVEVA™ Connect provides a central location to access your AVEVA™ services. For more information on using AVEVA™ Connect to manage users and permissions, see [Get started with AVEVA™ Connect](xref:what-is-cnnxt).  To access and get started using AVEVA™ Data Hub, see [](). 

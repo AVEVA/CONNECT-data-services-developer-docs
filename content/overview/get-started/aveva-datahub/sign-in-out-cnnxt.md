@@ -2,9 +2,9 @@
 uid: sign-in-cnnxt.md
 ---
 
-# Sign in to and out of AVEVA™ Connect
+# Sign in to AVEVA™ Connect and open AVEVA™ Data Hub
 
-This topic explains how to sign in to and out of AVEVA™ Connect for the following types of accounts:
+This topic explains how to sign in to [AVEVA™ Connect](https://connect.aveva.com/) for the following types of account and then launch the AVEVA™ Data Hub service:
 
 * [Single user sign-in](#single-user-sign-in)
 * [Corporate sign-in: Federation for single sign-on](#corporate-sign-in:-federation-for-single-sign-on)
@@ -15,14 +15,14 @@ This topic explains how to sign in to and out of AVEVA™ Connect for the follow
 
 To sign in as a single user, follow these steps:
 
-1.	Open the AVEVA™ Connect page. 
+1. Open the [AVEVA™ Connect page](https://connect.aveva.com/). 
 
-1.	Sign in with your credentials. 
+1. Sign in with your credentials. 
     
     **Result:** The AVEVA™ Connect home page is displayed.
 
     **Note:** If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login will be blocked. If this happens, contact AVEVA™ Global Customer Support to unlock your account.
-
+   
 <!--Be sure to link sign-in subtopics to the "Launch a service" topic.-->
 
 ## Corporate sign-in: Federation for single sign-on
@@ -61,7 +61,7 @@ Follow these steps to sign in as a third-party user using a connection code.
 
     **Result:** The AVEVA™ Connect home page is displayed for the selected account.
 
-# Sign out of AVEVA™ Connect
+## Sign out of AVEVA™ Connect
 
 Some AVEVA™ Connect application environments are independent of each other. To switch between application environments you should sign out before attempting to sign in to another application.
 

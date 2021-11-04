@@ -36,7 +36,7 @@ You can share streams with other tenants from the **Sequential Data Store** page
 
 **Result:** The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
 
-## Unshare streams from `Community Details`
+## Unshare streams from Community Details
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -52,7 +52,9 @@ You can share streams with other tenants from the **Sequential Data Store** page
 
 **Result:** The streams are unshared from the community. Other tenants in the community can no longer view them.
 
-## Unshare streams from the `Sequential Data Store`
+## Unshare streams from the Sequential Data Store
+
+In addition to unsharing streams, the Sequential Data Store provides many capabilities for managing streams. For more information, see [Manage streams](xref:manage-streams).
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 

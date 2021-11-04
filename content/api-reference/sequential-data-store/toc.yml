@@ -2,11 +2,13 @@
   href: sds-access-control-list.md
 - name: Streams
   href: sds-streams.md
-- name: Stream data
-  href: sds-stream-data.md
-- name: Stream bulk data
+- name: Bulk data
   href: sds-stream-bulk-data.md
-- name: Stream data transform
+- name: Read data
+  href: sds-read-data-api.md
+- name: Write data
+  href: sds-write-data-api.md
+- name: Transform data
   href: sds-stream-data-transform.md
 - name: Streams metadata
   href: sds-streams-metadata.md

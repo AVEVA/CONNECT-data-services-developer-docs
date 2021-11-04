@@ -12,7 +12,7 @@ To create a new community, see [Add a community](xref:add-community).
 
 Invite business partners to join a community so they can share data. 
 
-**Note:** The business partner must already belong to a tenant in OCS.
+**Note:** The business partner must already belong to a tenant in Aveva&trade; Data Hub.
 
 Two different users must perform the following procedure to invite and add a tenant to a community:
 
@@ -38,7 +38,7 @@ Two different users must perform the following procedure to invite and add a ten
 
 ## 2. Invitee accepts invite
 
-1. Open the email from OSIsoft Cloud Services Operations and follow the instructions.
+1. Open the email from AVEVA Operations and follow the instructions.
 
    A login dialog box opens.
 

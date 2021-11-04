@@ -47,53 +47,19 @@ Defaults to false.<br/><br/>
 ```json
 [
   {
-    "Id": "rule",
+    "Id": "ruleId",
     "Name": "name",
     "Description": "description",
+    "ExampleStreamId": "exampleId",
     "AutomationId": "00000000-0000-0000-0000-000000000000",
     "State": "Started",
     "Expressions": [
       {
-        "Field": "Name",
-        "Specifications": [
+        "Field": "Id",
+        "Specification": [
           {
-            "Type": "Wildcard"
-          },
-          {
-            "Type": "Delimiter",
-            "Value": "."
-          },
-          {
-            "Type": "Group",
-            "Name": "location",
-            "CharacterType": "Letter",
-            "CharacterLength": 3,
-            "ValueMappings": {
-              "PHX": "Phoenix",
-              "AUX": "Austin"
-            }
-          },
-          {
-            "Type": "Group",
-            "Name": "year",
-            "CharacterType": "Digit",
-            "CharacterLength": 3
-          },
-          {
-            "Type": "Delimiter",
-            "Value": "_"
-          },
-          {
-            "Type": "Group",
-            "Name": "equipment",
-            "RequiredDelimiters": [
-              ".",
-              "."
-            ]
-          },
-          {
-            "Type": "Delimiter",
-            "Value": "/*"
+            "Type": "Wildcard",
+            "Name": "id"
           }
         ]
       }
@@ -102,13 +68,47 @@ Defaults to false.<br/><br/>
       {
         "Field": "Metadata",
         "Value": {
-          "Location": "{location}",
-          "Equipment": "{equipment}"
+          "key": "{id}"
         }
       }
     ],
     "CreationTime": "0001-01-01T00:00:00",
-    "ModifiedTime": "0001-01-01T00:00:00"
+    "ModifiedTime": "0001-01-01T00:00:00",
+    "ErrorInfo": {
+      "ErrorCount": 2
+    }
+  },
+  {
+    "Id": "ruleId",
+    "Name": "name",
+    "Description": "description",
+    "ExampleStreamId": "exampleId",
+    "AutomationId": "00000000-0000-0000-0000-000000000000",
+    "State": "Started",
+    "Expressions": [
+      {
+        "Field": "Id",
+        "Specification": [
+          {
+            "Type": "Wildcard",
+            "Name": "id"
+          }
+        ]
+      }
+    ],
+    "Outputs": [
+      {
+        "Field": "Metadata",
+        "Value": {
+          "key": "{id}"
+        }
+      }
+    ],
+    "CreationTime": "0001-01-01T00:00:00",
+    "ModifiedTime": "0001-01-01T00:00:00",
+    "ErrorInfo": {
+      "ErrorCount": 2
+    }
   }
 ]
 ```
@@ -233,53 +233,19 @@ The RuleModel object to create.<br/>
 
 ```json
 {
-  "Id": "rule",
+  "Id": "ruleId",
   "Name": "name",
   "Description": "description",
+  "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
   "State": "Started",
   "Expressions": [
     {
-      "Field": "Name",
-      "Specifications": [
+      "Field": "Id",
+      "Specification": [
         {
-          "Type": "Wildcard"
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "."
-        },
-        {
-          "Type": "Group",
-          "Name": "location",
-          "CharacterType": "Letter",
-          "CharacterLength": 3,
-          "ValueMappings": {
-            "PHX": "Phoenix",
-            "AUX": "Austin"
-          }
-        },
-        {
-          "Type": "Group",
-          "Name": "year",
-          "CharacterType": "Digit",
-          "CharacterLength": 3
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "_"
-        },
-        {
-          "Type": "Group",
-          "Name": "equipment",
-          "RequiredDelimiters": [
-            ".",
-            "."
-          ]
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "/*"
+          "Type": "Wildcard",
+          "Name": "id"
         }
       ]
     }
@@ -288,13 +254,15 @@ The RuleModel object to create.<br/>
     {
       "Field": "Metadata",
       "Value": {
-        "Location": "{location}",
-        "Equipment": "{equipment}"
+        "key": "{id}"
       }
     }
   ],
   "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00"
+  "ModifiedTime": "0001-01-01T00:00:00",
+  "ErrorInfo": {
+    "ErrorCount": 2
+  }
 }
 ```
 
@@ -394,53 +362,19 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
 
 ```json
 {
-  "Id": "rule",
+  "Id": "ruleId",
   "Name": "name",
   "Description": "description",
+  "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
   "State": "Started",
   "Expressions": [
     {
-      "Field": "Name",
-      "Specifications": [
+      "Field": "Id",
+      "Specification": [
         {
-          "Type": "Wildcard"
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "."
-        },
-        {
-          "Type": "Group",
-          "Name": "location",
-          "CharacterType": "Letter",
-          "CharacterLength": 3,
-          "ValueMappings": {
-            "PHX": "Phoenix",
-            "AUX": "Austin"
-          }
-        },
-        {
-          "Type": "Group",
-          "Name": "year",
-          "CharacterType": "Digit",
-          "CharacterLength": 3
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "_"
-        },
-        {
-          "Type": "Group",
-          "Name": "equipment",
-          "RequiredDelimiters": [
-            ".",
-            "."
-          ]
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "/*"
+          "Type": "Wildcard",
+          "Name": "id"
         }
       ]
     }
@@ -449,13 +383,15 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
     {
       "Field": "Metadata",
       "Value": {
-        "Location": "{location}",
-        "Equipment": "{equipment}"
+        "key": "{id}"
       }
     }
   ],
   "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00"
+  "ModifiedTime": "0001-01-01T00:00:00",
+  "ErrorInfo": {
+    "ErrorCount": 2
+  }
 }
 ```
 
@@ -581,53 +517,19 @@ The RuleModel object.<br/>
 
 ```json
 {
-  "Id": "rule",
+  "Id": "ruleId",
   "Name": "name",
   "Description": "description",
+  "ExampleStreamId": "exampleId",
   "AutomationId": "00000000-0000-0000-0000-000000000000",
   "State": "Started",
   "Expressions": [
     {
-      "Field": "Name",
-      "Specifications": [
+      "Field": "Id",
+      "Specification": [
         {
-          "Type": "Wildcard"
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "."
-        },
-        {
-          "Type": "Group",
-          "Name": "location",
-          "CharacterType": "Letter",
-          "CharacterLength": 3,
-          "ValueMappings": {
-            "PHX": "Phoenix",
-            "AUX": "Austin"
-          }
-        },
-        {
-          "Type": "Group",
-          "Name": "year",
-          "CharacterType": "Digit",
-          "CharacterLength": 3
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "_"
-        },
-        {
-          "Type": "Group",
-          "Name": "equipment",
-          "RequiredDelimiters": [
-            ".",
-            "."
-          ]
-        },
-        {
-          "Type": "Delimiter",
-          "Value": "/*"
+          "Type": "Wildcard",
+          "Name": "id"
         }
       ]
     }
@@ -636,13 +538,15 @@ The RuleModel object.<br/>
     {
       "Field": "Metadata",
       "Value": {
-        "Location": "{location}",
-        "Equipment": "{equipment}"
+        "key": "{id}"
       }
     }
   ],
   "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00"
+  "ModifiedTime": "0001-01-01T00:00:00",
+  "ErrorInfo": {
+    "ErrorCount": 2
+  }
 }
 ```
 

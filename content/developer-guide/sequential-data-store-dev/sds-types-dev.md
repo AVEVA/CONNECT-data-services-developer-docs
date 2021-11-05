@@ -234,6 +234,7 @@ public class Simple
 {
     [SdsMember(IsKey = true, Order = 0)]
     public DateTime Time { get; set; }
+    [SdsMember(IsQuality = true)]
     public State State { get; set; }
     public Double Measurement { get; set; }
 }

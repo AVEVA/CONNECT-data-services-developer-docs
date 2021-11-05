@@ -1,5 +1,6 @@
 ---
 uid: community-search
+
 ---
 
 # Search
@@ -15,7 +16,7 @@ Searches for streams within a community by query
 
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/search/communities/{communityId}/streams
-?query={query}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&searchTenantId={searchTenantId}&searchTenantIds={searchTenantIds}&orderBy={orderBy}
+?query={query}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&orderBy={orderBy}
 ```
 
 <h4>Parameters</h4>
@@ -29,9 +30,7 @@ GET /api/v1-preview/tenants/{tenantId}/search/communities/{communityId}/streams
 <br/>The maximum number of results to return.<br/><br/>`[optional] integer pageSize`
 <br/>The number of results to return per page. Supercedes 'count' if specified. Will also cause a Link response header to be created with links to subsequent result sets. Those result sets are first, last, next or previous.<br/><br/>`[optional] integer maxPages`
 <br/>The maximum number of result records that can be returned. This is used in conjunction with pageSize.<br/><br/>`[optional] string continuationToken`
-<br/>If specified, this call retrieves a set of results as specified within the token. The possible result sets are first, last, next or previous.<br/><br/>`[optional] string searchTenantId`
-<br/>The tenant identifier of the stream to be searched. This parameter enables the API to search streams based on a tenant Id. By default this parameter holds an empty GUID.<br/><br/>`[optional] string searchTenantIds`
-<br/>The tenant identifiers of the streams to be searched. This parameter enables the API to search streams based on tenant Ids. If this parameter is specified, the format is a comma-separated string of tenant Ids.<br/><br/>`[optional] string orderBy`
+<br/>If specified, this call retrieves a set of results as specified within the token. The possible result sets are first, last, next or previous.<br/><br/>`[optional] string orderBy`
 <br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, Description, Self, TenantId, NamespaceId, TenantName, and CommunityId. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: NamespaceID DESC<br/><br/>
 
 <h3>Response</h3>
@@ -84,7 +83,7 @@ Searches for shared streams within a namespace by query.
 
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
-?query={query}&skip={skip}&count={count}
+?query={query}&skip={skip}&count={count}&orderBy={orderBy}
 ```
 
 <h4>Parameters</h4>
@@ -95,7 +94,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
 `[optional] string query`
 <br/>Query to execute. The query uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Maximum total results.<br/><br/>
+<br/>Maximum total results.<br/><br/>`[optional] string orderBy`
+<br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, and Description. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: TypeID DESC<br/><br/>
 
 <h3>Response</h3>
 
@@ -144,7 +144,7 @@ Searches for shared streams within a namespace by query.
 
 ```text 
 POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
-?query={query}&skip={skip}&count={count}
+?query={query}&skip={skip}&count={count}&orderBy={orderBy}
 ```
 
 <h4>Parameters</h4>
@@ -155,7 +155,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
 `[optional] string query`
 <br/>Query to execute. The query uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Maximum total results.<br/><br/>
+<br/>Maximum total results.<br/><br/>`[optional] string orderBy`
+<br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, and Description. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: TypeID DESC<br/><br/>
 
 <h4>Request Body</h4>
 

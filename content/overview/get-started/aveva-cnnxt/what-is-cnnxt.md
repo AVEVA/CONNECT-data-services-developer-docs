@@ -2,7 +2,7 @@
 uid: what-is-cnnxt
 ---
 
-# Get started with AVEVA™ Connect
+# Introduction to AVEVA™ Connect
 
 AVEVA™ Connect (https://connect.aveva.com/) is the common cloud platform on which AVEVA™ Data Hub sits. AVEVA™ Connect helps to organize your applications and projects and it facilitates managing security across applications that work together.
 

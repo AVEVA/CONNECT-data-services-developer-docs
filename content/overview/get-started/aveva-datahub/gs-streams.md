@@ -20,7 +20,7 @@ After creating your types, you can add streams and associate a type with the str
 
 1. From the **Streams** dropdown list, select **Streams** if it is not already selected. 
 
-1. Click the ![More Options button](images/more-options.png) icon, then click **Manage Default Permissions**.  
+1. Click the ![More Options button](../images/more-options.png) icon, then click **Manage Default Permissions**.  
 
    **Result:** The `Manage Default Permissions for New Streams` window opens. The default permissions for streams created in the selected namespace are configured here.
    

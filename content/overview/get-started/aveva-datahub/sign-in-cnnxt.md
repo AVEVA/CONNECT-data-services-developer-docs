@@ -2,9 +2,9 @@
 uid: sign-in-cnnxt.md
 ---
 
-# Sign in to AVEVA™ Connect and open AVEVA™ Data Hub
+# Navigate to AVEVA™ Data Hub via AVEVA™ Connect 
 
-This topic explains how to sign in to [AVEVA™ Connect](https://connect.aveva.com/) for the following types of account and then launch the AVEVA™ Data Hub service:
+This topic explains how to navigate to AVEVA™ Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
 
 * [Single user sign-in](#single-user-sign-in)
 * [Corporate sign-in: Federation for single sign-on](#corporate-sign-in:-federation-for-single-sign-on)
@@ -22,16 +22,34 @@ To sign in as a single user, follow these steps:
     **Result:** The AVEVA™ Connect home page is displayed.
 
     **Note:** If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login will be blocked. If this happens, contact AVEVA™ Global Customer Support to unlock your account.
-   
-<!--Be sure to link sign-in subtopics to the "Launch a service" topic.-->
 
+1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
+   
+   **Result:** The applications available from this namespace account are displayed below the folder. 
+     
+1. Click on the tile that represents AVEVA™ Data Hub.
+
+   **Result:** The AVEVA™ Data Hub window opens. 
+
+<!--VTT, 11/4/21 - Question for SME: Are these other sign in procedures necessary?-->
+   
 ## Corporate sign-in: Federation for single sign-on
 
 Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
 
+1. Open the [AVEVA™ Connect page](https://connect.aveva.com/). 
+
 If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA™ Connect. 
 
 **Note:** You may be prompted to sign into your corporate Sign-In page.
+
+1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
+   
+   **Result:** The applications available from this namespace account are displayed below the folder. 
+     
+1. Click on the tile that represents AVEVA™ Data Hub.
+
+   **Result:** The AVEVA™ Data Hub window opens. 
 
 ## Users with access to multiple accounts
 

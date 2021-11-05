@@ -40,13 +40,9 @@ Use this get started procedure to become familiar with OMF connections.
 
 12. Follow these tips to learn more about OMF connections.
 
-  **Tip:** Click **Manage Permissions** to open the `Manage Permissions` window.
+  **Tip:** Click **Manage Permissions** to open the `Manage Permissions` window. In this window, you configure permissions only on the connection object itself. Click **Cancel** to continue.
 
-     In this window, you configure permissions only on the connection object itself. Click **Cancel** to continue.
-
- **Tip:** Click **Edit Connection** to open the `Edit` window.
-
-     Use this window to edit the name and description of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, click **Next** until you get to the **Review** tab, and then click **Save**.
+ **Tip:** Click **Edit Connection** to open the `Edit` window. Use this window to edit the name and description of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, click **Next** until you get to the **Review** tab, and then click **Save**.
 
 ## Next step
 

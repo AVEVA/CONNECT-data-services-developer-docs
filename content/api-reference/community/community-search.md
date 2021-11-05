@@ -225,7 +225,7 @@ The StreamSearchResult object. This is the model representation exposed to calle
 |Name|string|false|true|The name|
 |TypeId|string|false|true|The type Id|
 |Description|string|false|true|The description|
-|Self|string|false|true|The self link|
+|Self|string|false|true|The base URL for shared access self link to access community data. For more information, see [Shared Access Requests](xref:shared-access-routes).|
 |TenantId|string|false|true|The Tenant Id of stream|
 |TenantName|string|false|true|The Tenant name of stream|
 |NamespaceId|string|false|true|The Namespace ID of stream|

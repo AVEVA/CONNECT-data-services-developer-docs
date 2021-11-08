@@ -6,14 +6,16 @@ uid: user-access-cnnxt
 
 As an Administrator, you set up users and control access to AVEVA™ Data Hub in AVEVA™ Connect. The following administrative tasks must be performed in AVEVA™ Connect before users can access and use AVEVA™ Data Hub:
 
-- Create new users for an account
+- Subscribe to the AVEVA™ Data Hub service
+ 
+- Create a folder and turn on the AVEVA™ Data Hub service
 
-- Create new groups
+- Create new groups and assign roles
 
-- Assign users to groups
+- Map a group to an AVEVA™ Data Hub role
 
-- Assign capability permissions to groups
+- Add and assign users to groups
 
-When a capability role is assigned to a group, all of the users in that group will be able to see the appropriate capability launch tile on their home page in AVEVA™ Connect.
+When a capability role is assigned to a group, all of the users in that group will be able to see the appropriate capability launch tile on their home page in AVEVA™ Connect. [Should this sentence be reworded?]
 
 **Question for AVEVA™ Connect SME reviewer:** Should admin tasks be performed in the order they appear in the Connect User Guide? ((1) Add users, (2) add groups, (3) create folders, (4) assign roles, and (5) assign users to groups?)

@@ -2,7 +2,7 @@
 uid: create-folders
 ---
 
-# Create folders
+# Create a folders
 
 If you need to restrict the context in which your users and/or groups are assigned access to a service, you must set up folders. 
 

@@ -1,16 +1,14 @@
-- name: Overview of user and access management
-  topicHref: user-access-adh.md
-- name: AVEVA™ Connect roles 
-  topicHref: cnnxt-roles.md
-- name: Add users and groups
-  topicHref: add-users-groups.md
-- name: Create folders
+- name: Subscribe to AVEVA™ Data Hub
+  topicHref: .md
+- name: Create a folder
   topicHref: create-folders.md
-- name: Namespaces in AVEVA™ Connect
-  topicHref: namespace-cnnxt.md
-- name: Rename an AVEVA™ Connect folder and a namespace
-  topicHref: rename-folder-namespace.md
-- name: Assign roles to groups
-  topicHref: assign-roles-groups.md
-- name: Assign users to groups
+- name: Turn on AVEVA™ Data Hub
+  topicHref: turn-on-adh.md
+- name: Create a group
+  topicHref: .md
+- name: Assign roles to a group
+  topicHref: .md
+- name: Map a group to an AVEVA™ Data Hub role
+  topicHref: .md
+- name: Add a user to AVEVA™ Connect
   topicHref: assign-users.md

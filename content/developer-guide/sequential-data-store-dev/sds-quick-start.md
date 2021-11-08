@@ -6,7 +6,7 @@ uid: sdsQuickStart
 
 Sequential Data Store (SDS) is a sophisticated data store. The steps described here show a very simple interaction with SDS.
 To follow along with the steps in this section, you need a tenant, a user account and associated security credentials. 
-Email [AVEVA support](mailto://cloudservices@osisoft.com) at OSIsoft Cloud Services to get access.
+Email [AVEVA support](mailto://cloudservices@osisoft.com) at Aveva&trade; Data Hub to get access.
 
 You will be mainly working on the [Aveva&trade; Data Hub portal](https://cloud.osisoft.com/). Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. 
 
@@ -191,7 +191,7 @@ Host: dat-b.osisoft.com
     "ExtrapolationMode": 0
 }
 ```
-To help users develop .NET client applications for SDS, OSIsoft provides client libraries through NuGet packages, 
+To help users develop .NET client applications for SDS, AVEVA provides client libraries through NuGet packages, 
 [OCSClients](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients consists of necessary libraries to connect to Aveva&trade; Data Hub and manage data. Note that SDS client libraries are only available in .NET.
 
 You can use ``SdsTypeBuilder`` in .NET client libraries to create types:

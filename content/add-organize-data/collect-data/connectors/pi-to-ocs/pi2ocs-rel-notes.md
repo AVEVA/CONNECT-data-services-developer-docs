@@ -9,7 +9,7 @@ uid: pi2ocs-rel-summary
 
 ## Overview
 
-This release covers the PI To OCS Agent, a component that is installed on-premises to replicate data and assets from the PI System to Aveva&trade; Data Hub.
+This release covers the PI To OCS Agent, a component that is installed on-premises to replicate data and assets from the PI System to AVEVA&trade; Data Hub.
 
 ## Fixes and enhancements
 
@@ -19,9 +19,9 @@ This is a Lighthouse Release. Prior to this, select customers had access to the 
 
 *PI to OCS Configuration Utility Improvements*
 
-**Respect Aveva&trade; Data Hub feature flags**
+**Respect AVEVA&trade; Data Hub feature flags**
 
-If a user is not authorized for a specific Aveva&trade; Data Hub feature, the PI to OCS configuration utility will respect that setting. Previously, it didn’t check if a user was authorized to configure an AF server for PI to OCS.
+If a user is not authorized for a specific AVEVA&trade; Data Hub feature, the PI to OCS configuration utility will respect that setting. Previously, it didn’t check if a user was authorized to configure an AF server for PI to OCS.
  
 **Improve experience when searching for referenced Data Archives**
 
@@ -40,7 +40,7 @@ Enhancements
 
 **AF support added to PI to OCS**
 
-PI to OCS is now able to transfer AF elements and attributes to Aveva&trade; Data Hub and create them as assets and metadata. PI to OCS will transfer the following AF objects to Aveva&trade; Data Hub:
+PI to OCS is now able to transfer AF elements and attributes to AVEVA&trade; Data Hub and create them as assets and metadata. PI to OCS will transfer the following AF objects to AVEVA&trade; Data Hub:
 
 * Elements
 * Attributes

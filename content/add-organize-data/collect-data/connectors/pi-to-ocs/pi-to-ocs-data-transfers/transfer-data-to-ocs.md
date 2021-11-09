@@ -2,7 +2,7 @@
 uid: transfer-data
 ---
 
-# Transfer data to Aveva&trade; Data Hub
+# Transfer data to AVEVA&trade; Data Hub
 
 You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point. This topic contains these sections:
 
@@ -64,7 +64,7 @@ During transfer creation, you will need to perform the following tasks:
 
 1. Optional: In the **Historical Start time** fields, enter a historical time context for the data retrieval.
 
-   **NOTE:** Aveva&trade; Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS.  See [Overview of data transfers](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/collect-data/connectors/pi-to-ocs/pi-to-ocs-data-transfers/overview-data-transfers.html) to learn more about transferring historical data.
+   **NOTE:** AVEVA&trade; Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS.  See [Overview of data transfers](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/collect-data/connectors/pi-to-ocs/pi-to-ocs-data-transfers/overview-data-transfers.html) to learn more about transferring historical data.
 
 1. Set the data privacy level for the transfer by selecting one of the following **Stream Metadata Replication Policy** settings: 
 
@@ -235,7 +235,7 @@ You can view attribute details for selected PI points in a transfer, and also hi
 
 ## Save a transfer
 
-Before you can transfer data to Aveva&trade; Data Hub, you must save the transfer to retain your PI point and/or AF element selections.
+Before you can transfer data to AVEVA&trade; Data Hub, you must save the transfer to retain your PI point and/or AF element selections.
 
 1. In the `Transfer` pane, click **Save**.
 
@@ -254,10 +254,10 @@ The `Details` pane provides information about the agent associated with the tran
 | ---------------- | ------------------------------------------------------------ |
 | **1**            | `Agent Overview:` Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
 | **2**            | `Transfer Overview:` Displays transfer details and progress. Also contains buttons to view, remove or stop a transfer. |
-| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to Aveva&trade; Data Hub. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as “real-time” events. Streaming events represent the number of current, real-time events transferred into Aveva&trade; Data Hub. |
-|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created:  <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to Aveva&trade; Data Hub.</li><li>**Total Assets Created**: The number of assets created in Aveva&trade; Data Hub.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
+| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to AVEVA&trade; Data Hub. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as “real-time” events. Streaming events represent the number of current, real-time events transferred into AVEVA&trade; Data Hub. |
+|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created:  <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to AVEVA&trade; Data Hub.</li><li>**Total Assets Created**: The number of assets created in AVEVA&trade; Data Hub.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
 
-## Transfer data to Aveva&trade; Data Hub
+## Transfer data to AVEVA&trade; Data Hub
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added.  During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. 
 

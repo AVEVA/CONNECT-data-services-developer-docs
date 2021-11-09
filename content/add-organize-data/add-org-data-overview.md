@@ -4,7 +4,7 @@ uid: lpaddorgdata
 
 # Add and organize data
 
-Aveva&trade; Data Hub provides a variety of methods to collect and organize data. You can transfer data from a PI Server or from an external application. With the Sequential Data Store (SDS), you can also retrieve, store, and organize any type of streaming data. You can attach meaning to data using these methods:
+AVEVA&trade; Data Hub provides a variety of methods to collect and organize data. You can transfer data from a PI Server or from an external application. With the Sequential Data Store (SDS), you can also retrieve, store, and organize any type of streaming data. You can attach meaning to data using these methods:
 
 
 

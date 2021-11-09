@@ -6,7 +6,7 @@ uid: bpOMFConnection
 
 Successful OMF connections depend on using the correct client credentials and configuring security correctly. We recommend the following best practices for OMF connections:
 
-- Each type of application or system that sends OMF data to Aveva&trade; Data Hub should have its own defined OMF connection, with the name and description referencing the data source.
+- Each type of application or system that sends OMF data to AVEVA&trade; Data Hub should have its own defined OMF connection, with the name and description referencing the data source.
 
 - Each application instance or each device that sends OMF data to OCS should have its own client credentials client and its own secret. Connections allow a list of clients to be defined. When each application instance or device has its own client, security is improved because secrets can be managed at a granular level.
 

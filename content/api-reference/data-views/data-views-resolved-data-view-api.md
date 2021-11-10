@@ -776,7 +776,8 @@ Holds a collection of items that were resolved at a specific time.
           "StreamReferenceName": "string",
           "TypeCode": 0,
           "Uom": "string",
-          "IsKey": true
+          "IsKey": true,
+          "StreamId": "string"
         }
       ],
       "IneligibleDataItemFields": [
@@ -786,7 +787,8 @@ Holds a collection of items that were resolved at a specific time.
           "StreamReferenceName": "string",
           "TypeCode": 0,
           "Uom": "string",
-          "IsKey": true
+          "IsKey": true,
+          "StreamId": "string"
         }
       ]
     }
@@ -818,7 +820,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |Tags|string[]|false|true|The collection of tags specified on this data item|
 |Metadata|[[MetadataValueOfObject](#schemametadatavalueofobject)]|false|true|The list of metadata value objects specified on this data item|
 |DataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of data fields this data item exposes|
-|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values|
+|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes. These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values.|
 
 ```json
 {
@@ -846,7 +848,8 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
       "StreamReferenceName": "string",
       "TypeCode": 0,
       "Uom": "string",
-      "IsKey": true
+      "IsKey": true,
+      "StreamId": "string"
     }
   ],
   "IneligibleDataItemFields": [
@@ -856,7 +859,8 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
       "StreamReferenceName": "string",
       "TypeCode": 0,
       "Uom": "string",
-      "IsKey": true
+      "IsKey": true,
+      "StreamId": "string"
     }
   ]
 }
@@ -1037,6 +1041,7 @@ A field exposed by some DataItem
 |TypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The field's data type|
 |Uom|string|false|true|The field's unit of measure unique identifier|
 |IsKey|boolean|false|false|Whether or not this field is its data item's primary key/index True if the field is its data item's primary key/index; false otherwise.|
+|StreamId|string|false|true|Stream id corresponding to the asset stream reference, if applicable|
 
 ```json
 {
@@ -1045,7 +1050,8 @@ A field exposed by some DataItem
   "StreamReferenceName": "string",
   "TypeCode": 0,
   "Uom": "string",
-  "IsKey": true
+  "IsKey": true,
+  "StreamId": "string"
 }
 
 ```
@@ -1145,7 +1151,8 @@ Holds a collection of items that were resolved at a specific time.
                 "StreamReferenceName": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true
+                "IsKey": true,
+                "StreamId": "string"
               }
             ],
             "IneligibleDataItemFields": [
@@ -1155,7 +1162,8 @@ Holds a collection of items that were resolved at a specific time.
                 "StreamReferenceName": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true
+                "IsKey": true,
+                "StreamId": "string"
               }
             ]
           }
@@ -1186,7 +1194,8 @@ Holds a collection of items that were resolved at a specific time.
                 "StreamReferenceName": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true
+                "IsKey": true,
+                "StreamId": "string"
               }
             ],
             "IneligibleDataItemFields": [
@@ -1196,7 +1205,8 @@ Holds a collection of items that were resolved at a specific time.
                 "StreamReferenceName": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true
+                "IsKey": true,
+                "StreamId": "string"
               }
             ]
           }
@@ -1262,7 +1272,8 @@ A group resolved by a data view
             "StreamReferenceName": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true
+            "IsKey": true,
+            "StreamId": "string"
           }
         ],
         "IneligibleDataItemFields": [
@@ -1272,7 +1283,8 @@ A group resolved by a data view
             "StreamReferenceName": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true
+            "IsKey": true,
+            "StreamId": "string"
           }
         ]
       }
@@ -1303,7 +1315,8 @@ A group resolved by a data view
             "StreamReferenceName": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true
+            "IsKey": true,
+            "StreamId": "string"
           }
         ],
         "IneligibleDataItemFields": [
@@ -1313,7 +1326,8 @@ A group resolved by a data view
             "StreamReferenceName": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true
+            "IsKey": true,
+            "StreamId": "string"
           }
         ]
       }
@@ -1374,7 +1388,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |Tags|string[]|false|true|The collection of tags specified on this data item|
 |Metadata|[[MetadataValueOfObject](#schemametadatavalueofobject)]|false|true|The list of metadata value objects specified on this data item|
 |DataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of data fields this data item exposes|
-|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values|
+|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes. These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values.|
 
 ```json
 {

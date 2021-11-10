@@ -64,4 +64,4 @@ Data views are subsets of data from one or more streams. You create and configur
 
 1. Click **Save** to create the data view and to continue editing, or click **Save and Close** to create the and exit.
 
-To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).
+To define a data view using the API, see [Define a data view](xref:DataViewsQuickStartDefine).

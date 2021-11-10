@@ -1,9 +1,10 @@
 ---
-uid: data-views-preview-data-views-resolved
+uid: ResolvedDataViewPreviewAPI
 
 ---
 
-# Preview Data Views Resolved
+# Preview resolved data views
+
 This portion of the overall [data views API](xref:DataViewsAPIOverview) specifies the resources that resolve per-user for an input data view. The preview APIs require a data view to be passed in the request body for each request, which provides the user the flexibility to change the data view on the fly without saving/updating it.
 
 ## `Get Available Field Sets`

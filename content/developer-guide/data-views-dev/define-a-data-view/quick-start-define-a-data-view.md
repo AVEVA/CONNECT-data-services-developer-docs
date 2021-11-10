@@ -83,7 +83,7 @@ The `DataItemResourceType` enumeration specifies the OCS resource type included 
 | Name | Enumeration Id | Details |
 |--|--|--|--|
 | Stream | 1 | [SDS streams](xref:sdsStreams)
-| Asset | 2 | [Assets](xref:AssetsProperties)
+| Asset | 2 | [Assets](xref:asset-and-asset-types-dev-guide)
 
 ### FieldSet
 A set of fields included in the data view, sharing a common role and query. One `DataView` is likely to include one `FieldSet` per query.

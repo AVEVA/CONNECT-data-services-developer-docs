@@ -138,7 +138,7 @@ Similar to `.Keys`, `.StreamReferenceNames` are evaluated in order specified unt
 
 ### Example: Defining data field sets with assets
 
-The following example presents a subset of the power inverter streams in the [asset examples](xref:DataViewsAssetExamples), returned by the `Query` [value](xref:AssetsSearchAPI) `"Id:*Inverter* AND Metadata/Value:Winterthur"`. 
+The following example presents a subset of the power inverter streams in the [asset examples](xref:DataViewsAssetExamples), returned by the `Query` [value](xref:assets-assets-search) `"Id:*Inverter* AND Metadata/Value:Winterthur"`. 
 
 | Site | Meter | Asset Id |
 |--|--|--|

@@ -2,6 +2,6 @@
   href: aveva-cloud-svcs-cat.md
 - name: View service status
   href: service-status.md     
-- name: User and access management
+- name: AVEVA™ Connect management and user access
   href: cnnxt-mgmt/toc.yml
   topicHref: cnnxt-mgmt/user-access-adh.md

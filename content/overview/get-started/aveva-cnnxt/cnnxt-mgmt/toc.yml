@@ -1,4 +1,4 @@
-- name: Subscribe to AVEVA™ Data Hub
+- name: Subscribe to AVEVA Data Hub
   topicHref: subscribe-adh.md
 - name: Create a folder
   topicHref: create-folder.md

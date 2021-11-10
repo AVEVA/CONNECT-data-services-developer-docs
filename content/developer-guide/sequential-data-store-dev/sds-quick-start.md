@@ -10,7 +10,8 @@ Email [OCS support](mailto://cloudservices@osisoft.com) at OSIsoft Cloud Service
 
 You will be mainly working on the [OSIsoft Cloud Services portal](https://cloud.osisoft.com/). Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. 
 
-## Before you get started 
+## Before you get started
+
 To work with SDS, you must first acquire a client identity, secret and authentication token. 
 
 ### Acquire client identity and secret
@@ -35,13 +36,7 @@ You use the tenant identity, client identity, and client secret to acquire an ac
 from Azure Active Directory. Select one of the clients from the list to see configuration information 
 and code samples in various languages which are shown on tabs in the right panel.
 
-## Step 1: Acquire namespace
-
-Log into the portal. In the left pane, select **Data Management** > **Namespaces**.
-
-You can use an existing namespace or create a new one.
-
-## Step 2: Create data types
+## Step 1: Create data types
 
 A type describes the structure of a single measured event or object. A stream has an associated 
 type and stores a stream of events or objects that take the shape of that type.
@@ -191,6 +186,7 @@ Host: dat-b.osisoft.com
     "ExtrapolationMode": 0
 }
 ```
+
 To help users develop .NET client applications for SDS, OSIsoft provides client libraries through NuGet packages, 
 [OCSClients](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients consists of necessary libraries to connect to OCS and manage data. Note that SDS client libraries are only available in .NET.
 
@@ -219,8 +215,7 @@ simpleType.Description = "Basic sample type";
 await config.CreateTypeAsync(simpleType);
 ```
 
-
-## Step 3: Create stream
+## Step 2: Create stream
 
 A stream has an associated type and stores a stream of events or objects that take the shape of that type. 
 For more information, see [Streams](xref:sds-streams).
@@ -245,6 +240,7 @@ Host: dat-b.osisoft.com
     "PropertyOverrides": null 
 }
 ```
+
 You can create a stream for simple events also by using .NET client libraries method:
 
 ```csharp
@@ -258,7 +254,7 @@ SdsStream simpleStream = new SdsStream()
 simpleStream = config.CreateStreamAsync(simpleStream);
 ```
 
-## Step 4: Write data
+## Step 3: Write data
 
 SDS supports a number of methods for adding and updating data. In this section, you will insert data. 
 Inserts fail if events with the same index already exist in the database.
@@ -282,6 +278,7 @@ Host: dat-b.osisoft.com
     }
 ]
 ```
+
 You can alternatively use .NET client libraries method ``InsertValueAsync``:
 
 ```csharp
@@ -295,7 +292,7 @@ Simple value = new Simple()
 await client.InsertValueAsync(simpleStream.Id, value);
 ```
 
-## Step 5: Read data
+## Step 4: Read data
 
 SDS includes different read methods for retrieving data from streams. 
 For more information, see [Read data](xref:sdsReadingData).
@@ -336,7 +333,6 @@ value = await client.GetDistinctValueAsync<Simple>(simpleStream.Id, index);
 
 Refer to the following sections to troubleshoot: 
 
-
 ### Handling transient service interruptions
 
 All applications that communicate with remote systems must manage transient faults. 
@@ -349,7 +345,6 @@ If you are directly calling into the OCS through SDS REST APIs (not using .NET),
 consider creating your own retry logic to handle errors identified as transient.
 In this case, we recommend a logic which returns HTTP status code ``503: Service Unavailable``:
 an immediate first retry followed by an exponential backoff.
-
 
 ### SDS client error
 

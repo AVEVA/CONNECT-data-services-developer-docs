@@ -2,9 +2,9 @@
 uid: aveva-svcs
 ---
 
-# Overview of AVEVA™ Cloud Services Catalog and services
+# Overview of AVEVA™ Cloud Services Catalog
 
-All Connect services are listed in the Service Catalog. You can view the catalog to discover AVEVA™ services.
+All AVEVA Connect services are listed in the service catalog. You can view the catalog to see the services your organization has subscribed to and also discover other AVEVA™ services.
 
 ## AVEVA™ Connect services
 

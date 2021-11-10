@@ -4,7 +4,7 @@
 - name: Get started
   href: overview/get-started/toc.yml
   topicHref: overview/gs-overview.md
-- name: Set up the environment
+- name: Security in AVEVA™ Data Hub
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md
 - name: Add and organize data

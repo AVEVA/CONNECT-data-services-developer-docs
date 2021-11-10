@@ -2,7 +2,7 @@
 uid: service-status
 ---
 
-# View your services' status
+# View service status
 
 AVEVA™ maintains the following real-time status dashboard, where you can get updates on the status and system health of its cloud offerings: https://status.connect.aveva.com/.
 

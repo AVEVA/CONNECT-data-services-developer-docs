@@ -1,10 +1,10 @@
 - name: Sign in to AVEVA™ Connect 
-  href: .md
+  href: sign-in-cnnxt.md
 - name: Sign out of AVEVA™ Connect 
-  href: .md  
+  href: sign-out-cnnxt.md  
 - name: Overview of AVEVA™ Cloud Services Catalog 
   href: aveva-cloud-svcs-cat.md
-- name: View your services' status
+- name: View service status
   href: service-status.md     
 - name: AVEVA™ Connect management and user access
   href: cnnxt-mgmt/toc.yml

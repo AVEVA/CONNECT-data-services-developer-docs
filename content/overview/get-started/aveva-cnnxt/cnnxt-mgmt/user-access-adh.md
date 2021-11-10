@@ -4,7 +4,7 @@ uid: user-access-cnnxt
 
 # Overview of user and access management
 
-As an Administrator, you set up users and control access to AVEVA™ Data Hub in AVEVA™ Connect. The following administrative tasks must be performed in AVEVA™ Connect before users can access and use AVEVA™ Data Hub:
+As the AVEVA™ Data Hub administrator, you set up users and control access to AVEVA™ Data Hub in AVEVA™ Connect. The following administrative tasks must be performed in AVEVA™ Connect before users can access and use AVEVA™ Data Hub:
 
 - Subscribe to the AVEVA™ Data Hub service
  

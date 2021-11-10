@@ -1,4 +1,4 @@
-- name: Folders and services
+- name: Folders and namespaces
   topicHref: namespaces/namespaces-concept.md
   href: namespaces/toc.yml
 - name: AVEVA™ Data Hub roles

@@ -11,7 +11,7 @@ The typical workflow for adding data field sets, and the data fields in them, is
 
 
 ### Example: Defining data field sets
-Let us take a subset of the power inverter streams in the [stream examples](xref:DataViewsExampleScenario), returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
+Let us take a subset of the power inverter streams in the [stream examples](xref:DataViewsStreamExamples), returned by the `Query` [value](xref:sdsSearching) `"TypeId:docs-pi-inverter AND Site:Winterthur"`. 
 
 | Site | Meter | Measurement | Stream Id | Tags |
 |--|--|--|--|--|

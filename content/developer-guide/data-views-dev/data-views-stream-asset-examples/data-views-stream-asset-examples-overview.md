@@ -1,10 +1,10 @@
 ---
-uid: DataViewsExamples
+uid: DataViewsStreamAndAssetExamples
 ---
 
-# Examples
+# Data views stream and asset examples
 
 The stream and asset examples defined in this section are used throughout the Data Views documentation.
 
-- [Stream examples](xref:DataViewsExampleScenario)
+- [Stream examples](xref:DataViewsStreamExamples)
 - [Asset examples](xref:DataViewsAssetExamples)

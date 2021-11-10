@@ -18,7 +18,7 @@ For each `/DataViews/{dataViewId}`, these resources show how the data view `./Re
 ## [Resolved data view preview API](xref:data-views-preview-data-views-resolved)
 For each `/DataView` provided in the request body, resources to show how the data view `./Resolved/` for your user context. This provides the flexibility to change the data view on the fly without saving/updating it.
 
-## [Data API](xref:data-views-data-views-data)
+## [Data API](xref:DataViewsDataAPI)
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range
 
 ## [Preview data API](xref:data-views-preview-data-views-data)

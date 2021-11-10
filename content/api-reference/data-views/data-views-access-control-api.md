@@ -1,5 +1,5 @@
 ---
-uid: data-views-access-control
+uid: DataViewsAccessControlAPI
 
 ---
 

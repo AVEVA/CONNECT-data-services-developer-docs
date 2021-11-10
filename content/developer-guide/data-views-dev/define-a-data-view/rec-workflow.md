@@ -19,7 +19,7 @@ This is not a one-way street. You are likely to keep adjusting the data fields i
 
 This section presents the main concepts behind creating data views.
 
-It is assumed that you are working with streams and assets as described in the [Stream examples](xref:DataViewsExampleScenario) and [Asset examples](xref:DataViewsAssetExamples). The data views API uses the same authentication scheme as the Sequential Data Store.
+It is assumed that you are working with streams and assets as described in the [stream examples](xref:DataViewsStreamExamples) and [asset examples](xref:DataViewsAssetExamples). The data views API uses the same authentication scheme as the Sequential Data Store.
 
 ### Create a data view
 Very little information is required to create a new data view. In fact, if you request that the system generate an identifier for the new data view, no information at all is necessary. However, it is recommended to specify a meaningful `.Id`, because the identifier cannot be changed later without recreating the data view. All other properties are modifiable.

@@ -8,5 +8,6 @@ Collect data from an external application or from PI Server directly to AVEVA&tr
 
 * Use PI to OCS to set up a transfer of data from an on-premises PI Server to AVEVA&trade; Data Hub. 
    PI to OCS maps PI Data Archive points to SDS types and streams.
+   PI to OCS transfers AF elements and attributes as AVEVA&trade; Data Hub assets and metadata and properties.
 * Use OSIsoft Message Format (OMF) to pass JSON messages to AVEVA&trade; Data Hub using an HTTP client. 
-   OMF is a platform-independent format that can provide a high-throughput data feed into OCS. 
+   OMF is a platform-independent format that can provide a high-throughput data feed into AVEVA&trade; Data Hub. 

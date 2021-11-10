@@ -10,9 +10,6 @@
   topicHref: preview-data-view-api/preview-data-view-api.md
 - name: Secure data views
   topicHref: secure-data-views/securing-data-views.md
-- name: Data views API reference
-  href: data-views-api-overview/toc.yml
-  topicHref: data-views-api-overview/data-views-api-overview.md
 - name: Data views stream and asset examples
   href: data-views-stream-asset-examples/toc.yml
   topicHref: data-views-stream-asset-examples/data-views-stream-asset-examples-overview.md

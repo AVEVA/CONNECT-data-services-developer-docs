@@ -8,7 +8,7 @@ The data view API provides mechanisms to create, read, update, and delete data v
 
 For a description of the `DataView` object type, see the [data views documentation](xref:DataViewsOverview).
 
-Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [API](xref:data-views-access-control).
+Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [access control](xref:DataViewsAccessControlAPI).
 
 ## `List Data Views`
 

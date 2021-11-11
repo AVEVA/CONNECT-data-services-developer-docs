@@ -764,16 +764,12 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
       }
     ],
     "Status": {
-      "StreamReferenceId": "string",
-      "StreamPropertyId": "string",
-      "ValueStatusMappings": [
-        {
-          "Value": null,
-          "Status": 0,
-          "DisplayName": "string"
-        }
-      ]
-    }
+      "DefinitionType": 0,
+      "Definition": null
+    },
+    "Tags": [
+      "string"
+    ]
   }
 }
 
@@ -931,7 +927,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
-|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
+|Tags|string[]|false|true|None|
 
 ```json
 {
@@ -958,16 +955,12 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
     }
   ],
   "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": 0,
-        "DisplayName": "string"
-      }
-    ]
-  }
+    "DefinitionType": 0,
+    "Definition": null
+  },
+  "Tags": [
+    "string"
+  ]
 }
 
 ```
@@ -1137,79 +1130,43 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 
 ---
 
-### StatusMapping
+### StatusConfiguration
 
-<a id="schemastatusmapping"></a>
-<a id="schema_StatusMapping"></a>
-<a id="tocSstatusmapping"></a>
-<a id="tocsstatusmapping"></a>
+<a id="schemastatusconfiguration"></a>
+<a id="schema_StatusConfiguration"></a>
+<a id="tocSstatusconfiguration"></a>
+<a id="tocsstatusconfiguration"></a>
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|StreamReferenceId|string|false|true|None|
-|StreamPropertyId|string|false|true|None|
-|ValueStatusMappings|[[ValueStatusMapping](#schemavaluestatusmapping)]|false|true|None|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
+|Definition|any|false|true|None|
 
 ```json
 {
-  "StreamReferenceId": "string",
-  "StreamPropertyId": "string",
-  "ValueStatusMappings": [
-    {
-      "Value": null,
-      "Status": 0,
-      "DisplayName": "string"
-    }
-  ]
+  "DefinitionType": 0,
+  "Definition": null
 }
 
 ```
 
 ---
 
-### ValueStatusMapping
+### StatusDefinitionType
 
-<a id="schemavaluestatusmapping"></a>
-<a id="schema_ValueStatusMapping"></a>
-<a id="tocSvaluestatusmapping"></a>
-<a id="tocsvaluestatusmapping"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Value|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|false|false|None|
-|DisplayName|string|false|true|None|
-
-```json
-{
-  "Value": null,
-  "Status": 0,
-  "DisplayName": "string"
-}
-
-```
-
----
-
-### StatusEnum
-
-<a id="schemastatusenum"></a>
-<a id="schema_StatusEnum"></a>
-<a id="tocSstatusenum"></a>
-<a id="tocsstatusenum"></a>
+<a id="schemastatusdefinitiontype"></a>
+<a id="schema_StatusDefinitionType"></a>
+<a id="tocSstatusdefinitiontype"></a>
+<a id="tocsstatusdefinitiontype"></a>
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
-|Unknown|0|
-|Good|1|
-|Warning|2|
-|Bad|3|
+|Unspecified|0|
+|StreamPropertyMapping|1|
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-uid: sign-in-cnnxt.md
+uid: sign-in-cnnxt
 ---
 
 # Sign in to AVEVA™ Connect 
@@ -24,8 +24,12 @@ To sign in as a single user, follow these steps:
     **Note:** If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login will be blocked. If this happens, contact AVEVA™ Global Customer Support to unlock your account.
 
 1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
-   
-   **Result:** The applications available from this namespace account are displayed below the folder. 
+
+   **Result:** A tile or set of tiles that represents the service(s) you have access to is displayed below the folder.    
+
+1.  Click anywhere on the appropriate tile to launch the AVEVA Data Hub service you wish to use.
+
+   **Result:** The AVEVA Data Hub portal opens. 
      
 <!--VTT, 11/4/21 - Question for SME: Are these other sign in procedures necessary?-->
    

@@ -1,10 +1,5 @@
 - name: Navigate to AVEVA™ Data Hub via AVEVA™ Connect
   topicHref: sign-in-cnnxt.md
-- name: Take a tour of the AVEVA™ Data Hub portal
-  topicHref: introduction-portal-interface.md
-- name: Transfer data into AVEVA™ Data Hub 
-  href: connections/toc.yml
-  topicHref: get-started/gs-connections.md
 - name: Get started with types
   topicHref: gs-types.md
 - name: Get started with streams

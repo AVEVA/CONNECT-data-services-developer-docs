@@ -1,11 +1,8 @@
-- name: Sign in to AVEVA™ Connect 
-  href: sign-in-cnnxt.md
-- name: Sign out of AVEVA™ Connect 
-  href: sign-out-cnnxt.md  
-- name: Overview of AVEVA™ Cloud Services Catalog 
-  href: aveva-cloud-svcs-cat.md
+- name: Subscribe to AVEVA Data Hub
+  href: subscribe-adh.md
+- name: Create a folder
+  href: create-folder.md
+- name: Enable AVEVA Data Hub for a folder
+  href: turn-on-adh.md    
 - name: View service status
-  href: service-status.md     
-- name: AVEVA™ Connect management and user access
-  href: cnnxt-mgmt/toc.yml
-  topicHref: cnnxt-mgmt/user-access-adh.md
+  href: service-status.md

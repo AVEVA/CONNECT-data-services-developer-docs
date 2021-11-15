@@ -14,12 +14,12 @@ You can view data streams shared within a community by browsing to its **Communi
 
     The **Communities** page opens, listing a card for each community.
 
-1. Browse to the community that you want to view stream data for and click **Details**.
-
-    The **Community details** page opens for the community. Use the **Filter Communities** field to find a community.
+1. Browse to the community that you want to shared streams for and click **Details**.
 
     > [!NOTE]
     > If the **Details** button is unavailable, you may require an invitation to the community. Contact your community administrator for an invitation.
+    
+    The **Community details** page opens for the community. 
 
 1. From the **Tenants** tab, select the community tenant that you want to view data for.
 
@@ -27,11 +27,13 @@ You can view data streams shared within a community by browsing to its **Communi
 
 1. From the right pane, select the **Streams** tab.
 
-**Result:** The **Streams** tab lists each data stream that the tenant is sharing with the community. To see more details about each stream, select a stream and then click the **launch** icon ![launch icon](images/launch_black_18dp.svg). 
+    ![Tenant shared streams](images/communities-shared-streams.png)
+
+**Result:** The **Streams** tab lists each data stream that the tenant is sharing with the community. To view shared streams and their details in the **Sequential Data Store** explorer, select a stream and then click the **launch** icon ![launch icon](images/launch_black_18dp.svg). 
 
 ## To view shared streams from Sequential Data Store
 
-When viewing the **Sequential Data Store** page, each stream lists whether is shared within a community. Additionally, you can use the **Filter Communities** panel to filter for streams shared within one or more community.
+When viewing the **Sequential Data Store** page, each stream lists whether it is shared within a community. Additionally, you can use the **Filter Communities** panel to filter for streams shared within one or more community.
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 

@@ -5,8 +5,8 @@
 - name: What does AVEVA™ Data Hub do? 
   href: what-does-adh-do.md
 - name: Get started with AVEVA™ Connect
-  href: overview/get-started/aveva-cnnxt/toc.yml
+  href: get-started/aveva-cnnxt/toc.yml
   topicHref: aveva-cloud-svcs-cat.md
 - name: AVEVA™ Connect user management
-  href: overview/get-started/aveva-cnnxt/cnnxt-mgmt/toc.yml
+  href: get-started/aveva-cnnxt/cnnxt-mgmt/toc.yml
   topicHref: user-access-adh.md

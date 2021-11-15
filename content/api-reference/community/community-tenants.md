@@ -1,5 +1,6 @@
 ---
 uid: community-tenants
+
 ---
 
 # Tenants

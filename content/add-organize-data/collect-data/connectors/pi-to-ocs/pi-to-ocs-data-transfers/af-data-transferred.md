@@ -2,9 +2,9 @@
 uid: af-data-transferred
 ---
 
-# What AF data is transferred to OCS?
+# What AF data is transferred to AVEVA&trade; Data Hub?
 
-You can transfer the following AF element data into OCS:
+You can transfer the following AF element data into AVEVA&trade; Data Hub:
 
 * Simple PI point attributes
 * Static attribute values

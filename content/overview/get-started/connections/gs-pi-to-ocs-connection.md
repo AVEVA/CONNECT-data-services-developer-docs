@@ -6,7 +6,7 @@ uid: gsPItoOCS
 
 Before you set up your PI to OCS connection, see [PI System best practices](xref:bpPISystemConnection) for recommendations on the PI OCS Agent.
 
-To use PI to OCS to transfer data from your PI System to OCS, you must complete the following tasks:
+To use PI to OCS to transfer data from your PI System to Aveva&trade; Data Hub, you must complete the following tasks:
 
 - Install the PI to OCS Agent.
 - Set up your PI to OCS connection in the PI to OCS Configuration Utility.
@@ -20,13 +20,13 @@ To use PI to OCS to transfer data from your PI System to OCS, you must complete 
 
 1. Select **Download Agent**, then follow the instructions in the [Install the PI to OCS Agent](xref:install-agent).
 
-1. After agent installation, follow the instructions in the [Run the PI to OCS Agent Configuration Utility](xref:pi-to-ocs-utility) to set up your PI to OCS connection and register your agent on OCS.
+1. After agent installation, follow the instructions in the [Run the PI to OCS Agent Configuration Utility](xref:pi-to-ocs-utility) to set up your PI to OCS connection and register your agent on Aveva&trade; Data Hub.
 
-1. After successful data source configuration, return to the `PI to OCS Agents` window in the OCS portal.
+1. After successful data source configuration, return to the `PI to OCS Agents` window in the Aveva&trade; Data Hub portal.
 
 1. Select your PI to OCS Agent connection in the `PI to OCS Agents` window, then select **Create Transfer** in the right pane.
 
-1. Follow the steps in the [Transfer data to OCS](xref:transfer-data) procedure to define transfer settings and transfer data into OCS.
+1. Follow the steps in the [Transfer data to OCS](xref:transfer-data) procedure to define transfer settings and transfer data into Aveva&trade; Data Hub.
 
 ## Next step
 

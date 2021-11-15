@@ -1,5 +1,3 @@
-- name: Navigate to AVEVA™ Data Hub via AVEVA™ Connect
-  topicHref: sign-in-cnnxt.md
 - name: Get started with types
   topicHref: gs-types.md
 - name: Get started with streams

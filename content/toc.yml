@@ -1,10 +1,10 @@
-- name: Get started with AVEVA™ Data Hub
+- name: AVEVA™ Data Hub
   href: overview/toc.yml
   topicHref: adh-content-portal-overview.md
 - name: Get started
   href: overview/get-started/toc.yml
   topicHref: overview/gs-overview.md
-- name: Security in AVEVA™ Data Hub
+- name: User management in AVEVA™ Data Hub
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md
 - name: Add and organize data

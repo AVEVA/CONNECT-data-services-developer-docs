@@ -4,9 +4,7 @@ uid: assign-roles-groups
 
 # Assign roles to groups
 
-You must assign a user or group to one or more access roles for the service they need to use.
-
-The roles available to assign differ depending on the service. 
+When a role is assigned to a group, all the users in that group will be able to see the tile for that capability or service on their home page in AVEVA™ Connect.You must assign a user or group to one or more access roles for the service they need to use. 
 
 Perform the following steps to assign roles to a group:
 

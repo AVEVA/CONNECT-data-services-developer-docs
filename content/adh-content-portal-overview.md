@@ -10,7 +10,7 @@ Use AVEVA™ Data Hub to add context to time-based operations data, and to enabl
 
 Select one of the following topics to get started using AVEVA™ Data Hub:
 
-- [Navigate to AVEVA™ Data Hub via AVEVA™ Connect](xref:sign-in-cnnxt)
+- [Sign in to AVEVA™ Data Hub via AVEVA™ Connect](xref:sign-in-cnnxt)
 - [Provide access to users or groups in AVEVA™ Connect](xref:user-access-cnnxt)
 - [Take a tour of the AVEVA™ Data Hub portal](xref:introPortalInterface)
 - [Bring your data in from different sources](xref:gsConnections)

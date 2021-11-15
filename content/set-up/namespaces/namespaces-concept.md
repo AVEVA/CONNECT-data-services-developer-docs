@@ -4,11 +4,11 @@ uid: ccNamespaces
 
 # Folders and namespaces
 
-When you first subscribe and turn on AVEVA™ Data Hub for your organization, you create a folder in AVEVA™ Connect that is linked to a namespace. Namespaces represent a logical unit of organization for data within a tenant. Each tenant may have more than one namespace. Before AVEVA™ Data Hub can receive data for a given tenant, a namespace must exist within the scope of that tenant. When you create a folder in AVEVA™ Connect, you specify the region where data will be stored; for example, West US.
+When you first subscribe and turn on AVEVA™ Data Hub for your organization, you create a folder in AVEVA™ Connect that is linked to a namespace. Namespaces represent a logical unit of organization for data within a tenant. Each tenant may have more than one folder/namespace. Before AVEVA™ Data Hub can receive data for a given tenant, a namespace must exist within the scope of that tenant. When you create a folder in AVEVA™ Connect, you specify the region where data will be stored; for example, West US.
 
-When you create a namespace, data processing resources are allocated; for example, SDS and asset service, and the associated storage resources to support that namespace. Each namespace and its resources are distinct and separate from all other namespaces. The resources are scoped to the namespace. Which means, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
+Data processing resources are allocated when you create a folder/namespace. For example, SDS and asset service, and the associated storage resources are allocated to support that namespace. Each namespace and its resources are distinct and separate from all other namespaces. The resources are scoped to the namespace. Which means, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 
-Data stored within a namespace is tied to that namespace and its region. You cannot directly transfer the data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA™ Data Hub, then import it into the destination namespace.
+Data stored within a folder/namespace is tied to that namespace and its region. You cannot directly transfer the data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA™ Data Hub, then import it into the destination namespace.
 
 ## PI Server counterpart
 

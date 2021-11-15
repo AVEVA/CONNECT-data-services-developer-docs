@@ -18,20 +18,20 @@ The following diagram shows how AVEVA™ Data Hub fits in an organization:
 
 ## Tenant management
 
-Customize AVEVA™ Data Hub to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. Authentication and authorization are also customizable on AVEVA™ Data Hub. Configuring the access control list (ACL) for an AVEVA™ Data Hub resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the AVEVA™ Data Hub REST API or the AVEVA™ Data Hub portal. 
+Customize AVEVA™ Data Hub to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage folders/namespaces for their tenant. Authentication and authorization are also customizable on AVEVA™ Data Hub. Configuring the access control list (ACL) for an AVEVA™ Data Hub resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the AVEVA™ Data Hub REST API or the AVEVA™ Data Hub portal. 
 <!--Angela Flores 6/29/21 all of the sub headings are far too detailed for this level introduction.THis information should be in the concept topics for these items. Or if we need to go into this level of detail, this should be broken out into five separate topics based on the list above. The OCS portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.-->
 
 ### Tenant 
 
-A tenant is the root-level resource in AVEVA™ Data Hub; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant with one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains namespaces where data is managed.
+A tenant is the root-level resource in AVEVA™ Data Hub; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant with one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains folders/namespaces where data is managed.
 
 ### Namespace 
 
-A namespace is a logical unit of organization for data within a tenant. Before collecting data in AVEVA™ Data Hub, you must create a namespace within the tenant. Each tenant can contain more than one namespace. Namespaces create separate instances of data and resources within a tenant. Resources within a namespace do not affect other namespaces within that tenant. In practice, namespaces may correspond to a specific set of infrastructure assets, but they commonly correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
+A namespace is a logical unit of organization for data within a tenant. Before collecting data in AVEVA™ Data Hub, you must create a folder in AVEVA Connect and turn on the AVEVA™ Data Hub service. When you create a folder, you are creating a namespace within the tenant. Each tenant can contain more than one folder/namespace. Namespaces create separate instances of data and resources within a tenant. Resources within a folder/namespace do not affect other folders/namespaces within that tenant. In practice, namespaces may correspond to a specific set of infrastructure assets, but they commonly correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
 
 ### Region 
 
-Regions are geographical area designations associated with AVEVA™ Data Hub resources, for example, types, streams, and data views. WestUS and WestEurope are regions. AVEVA™ Data Hub provisions a namespace within a single region. After you create a namespace, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
+Regions are geographical area designations associated with AVEVA™ Data Hub resources, for example, types, streams, and data views. WestUS and WestEurope are regions. AVEVA™ Data Hub provisions a folder/namespace within a single region. After you create a folder/namespace in AVEVA™ Connect, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
 
 ### Identity 
 
@@ -45,7 +45,7 @@ Identity is the authentication factor used to verify a user or client that reque
 
 ### User 
 
-A user is an individual identity that represents a person using AVEVA™ Data Hub. When users log in to AVEVA™ Data Hub, they authenticate through an identity provider, such as Google or Azure Active Directory. The identity provider authenticates the user, and upon successful authentication, passes a token back to AVEVA™ Data Hub verifying the identity of the user. This identity is used by AVEVA™ Data Hub to grant access for a specific time period. 
+A user is an individual identity that represents a person using AVEVA™ Data Hub. Users log in to AVEVA™ Data Hub via AVEVA™ Connect, they authenticate through an identity provider. The identity provider authenticates the user, and upon successful authentication, passes a token back to AVEVA™ Data Hub verifying the identity of the user. This identity is used by AVEVA™ Data Hub to grant access for a specific time period. 
 
 ### Clients 
 
@@ -158,7 +158,7 @@ Streams organize data brought from another system into AVEVA™ Data Hub. To def
 
 There are multiple techniques for sending data to AVEVA™ Data Hub. See [Data Collection](#data-collection). 
 
-Each stream is associated with a namespace. You can associate one or more streams with the same namespace. However, to move data between namespaces, you must read data out from one namespace and write it into another namespace. 
+Each stream is associated with a folder/namespace. You can associate one or more streams with the same namespace. However, to move data between namespaces, you must read data out from one namespace and write it into another namespace. 
 
 You can categorize streams using metadata, which is a dictionary of key value pairs used to store additional information. Metadata is not real-time information, and it is not updated at high frequency. Typically, metadata is static information that provides context for a stream. 
 

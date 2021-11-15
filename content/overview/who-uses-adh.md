@@ -54,4 +54,8 @@ The benefits of seamless integration of data infrastructure include:
 
 - New sources of operational data are available by storing the data in the cloud. 
 
-- Existing edge and PI Server data is integrated into AVEVA™ Data Hub. 
+- Existing edge and PI Server data is integrated into AVEVA™ Data Hub.
+
+## Business partners use AVEVA™ Data Hub to view and share data
+
+Business partners can share and view operational data across tenants using AVEVA™ Data Hub. Using the Communities feature, industrial companies can share their data streams with external business partners, service providers, and analytics providers. To learn more about this feature, see [Communities](xref:communities). 

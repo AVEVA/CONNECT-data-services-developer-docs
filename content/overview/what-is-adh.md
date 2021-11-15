@@ -62,15 +62,13 @@ AVEVA™ Data Hub also offers opportunities for many new types of data consumers
 
 ## Secure and robust data infrastructure
 
-AVEVA™ Data Hub is built from the ground up to ensure security. The AVEVA™ Data Hub platform is based on industry standard techniques to ensure the strongest possible data integrity. All users authenticate through trusted identity providers, such as Google, Microsoft, and Azure Active Directory. Authenticated users can only perform actions for which their role is authorized. Machine access to AVEVA™ Data Hub is controlled through a variety of defensive strategies. All data in AVEVA™ Data Hub is fully encrypted in transit and at rest. 
-
-AVEVA™ Data Hub is designed to prevent your data from being accessible to others. Each organization using AVEVA™ Data Hub, known as a tenant, sets up one or more logical units of work called a namespace. Each namespace is distinct. When a tenant requests a new namespace, AVEVA™ Data Hub automatically allocates the resources needed to support data infrastructure needs. The storage and backend services for each namespace are logically separated from all other namespaces. 
+AVEVA™ Data Hub is built from the ground up to ensure security. The AVEVA™ Data Hub platform is based on industry standard techniques to ensure the strongest possible data integrity. User authentication is handled through AVEVA™ Connect. Authenticated users can only perform actions for which their role is authorized. Machine access to AVEVA™ Data Hub is controlled through a variety of defensive strategies. All data in AVEVA™ Data Hub is fully encrypted in transit and at rest. 
 
 ## Elastic resource allocation
 
 Due to its microservice-based architecture, AVEVA™ Data Hub dynamically adapts to workload changes by automatically provisioning and de-provisioning resources. Each microservice performs a subset of the system’s overall capabilities, and when orchestrated together, they function as a complete platform. 
 
-When a tenant requests a new namespace, AVEVA™ Data Hub provisions a new set of microservices and all necessary data storage. As the tenant’s needs for the namespace grow, AVEVA™ Data Hub automatically provisions additional microservices and storage so the namespace can expand horizontally. Similarly, if requirements shrink, AVEVA™ Data Hub can reduce the number of required microservices and de-allocate storage. 
+When AVEVA™ Data Hub is turned on in a folder for a tenant in AVEVA™ Connect, a new set of microservices and all the necessary data storage is provisioned for that folder/namespace. As the tenant’s needs for the namespace grow, AVEVA™ Data Hub automatically provisions additional microservices and storage so the namespace can expand horizontally. Similarly, if requirements shrink, AVEVA™ Data Hub can reduce the number of required microservices and de-allocate storage. 
 
 ## Interruption resilience
 

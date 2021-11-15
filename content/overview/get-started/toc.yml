@@ -7,7 +7,7 @@
 - name: Get started with users
   topicHref: gs-users.md
 - name: Get started with clients
-  href: content/set-up/clients/toc.yml
+  href: set-up/../toc.yml
   topicHref: gs-clients.md
 - name: Get started with assets
   topicHref: gs-assets.md

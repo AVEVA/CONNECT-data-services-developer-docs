@@ -4,15 +4,15 @@ uid: remove-agent-portal
 
 ## Remove an agent
 
-You remove a PI to Data Hub Agent by first uninstalling it from the host machine and then the portal. There are two parts to removing an agent:
+You remove a PI to OCS Agent by first uninstalling it from the host machine and then the portal. There are two parts to removing an agent:
 
 * Step 1: Uninstall the agent from the host machine
 
-* Step 2: Remove the agent listing in OCS  
+* Step 2: Remove the agent listing in AVEVA&trade; Data Hub  
 
-## Step 1: Uninstall the Data Hub Agent on the host machine
+## Step 1: Uninstall the PI to OCS Agent on the host machine
 
-To remove the PI to Data Hub Agent application from a host machine, you uninstall it from the **Apps & features** window and then follow the prompts in the `PI to OCS Agent` window.
+To remove the PI to OCS Agent application from a host machine, you uninstall it from the **Apps & features** window and then follow the prompts in the `PI to OCS Agent` window.
 
 1. Click the Windows Start button, then click the **Settings** button.
 
@@ -32,7 +32,7 @@ To remove the PI to Data Hub Agent application from a host machine, you uninstal
 
 1. Click the **Unregister agent from OCS** option, then click **Next**.
 
-   **Result:** The agent's associated client and connection information is also removed from OCS during the uninstall process.
+   **Result:** The agent's associated client and connection information is also removed from AVEVA&trade; Data Hub during the uninstall process.
 
    **Note:** After uninstalling the agent from the host machine, you still need to remove the agent from the portal. 
 
@@ -42,9 +42,9 @@ To remove the PI to Data Hub Agent application from a host machine, you uninstal
 
 1. Click **Uninstall**, then click **Close**.
 
-   **Result:** The PI to Data Hub Agent application is uninstalled on the host machine.
+   **Result:** The PI to OCS Agent application is uninstalled on the host machine.
 
-## Step 2: Remove the PI to Data Hub Agent on the portal
+## Step 2: Remove the PI to OCS Agent on the portal
 
 After uninstalling an agent from a host machine, you also need to remove it from the portal.
 

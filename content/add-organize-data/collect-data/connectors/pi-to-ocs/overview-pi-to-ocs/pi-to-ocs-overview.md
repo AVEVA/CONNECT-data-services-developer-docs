@@ -4,9 +4,9 @@ uid: pi-to-ocs-overview
 
 # Overview of PI to Data Hub
 
-PI to Data Hub enables data transfer from an on-premises PI Server to OSIsoft Cloud Services (OCS). Transferring PI System data allows your organization to have data available wherever you go, so you can connect with the best in-class analytics, and with your community of vendors, service providers, and business partners. PI to Data Hub includes the following features:
+PI to Data Hub enables data transfer from an on-premises PI Server to AVEVA&trade; Data Hub. Transferring PI System data allows your organization to have data available wherever you go, so you can connect with the best in-class analytics, and with your community of vendors, service providers, and business partners. PI to Data Hub includes the following features:
 
-* Transfer of a selection of Data Archive PI points and AF elements from PI Servers to OCS Sequential Data Store (SDS) [streams](xref:sdsStreams). Some of the PI point attributes and asset information is transferred as SDS stream [metadata](xref:sds-streams-metadata) and properties.
+* Transfer of a selection of Data Archive PI points and AF elements from PI Servers to AVEVA&trade; Data Hub Sequential Data Store (SDS) [streams](xref:sdsStreams). Some of the PI point attributes and asset information is transferred as SDS stream [metadata](xref:sds-streams-metadata) and properties.
 
 * AF elements and attributes are transferred as assets and metadata and properties.
 
@@ -16,9 +16,9 @@ PI to Data Hub enables data transfer from an on-premises PI Server to OSIsoft Cl
 
 PI to Data Hub has the following components:
 
-- *PI to Data Hub Agent* - an on-premises component that serves as a bridge between the data source(s) and the OCS destination. The agent runs as a service and performs fast, secure data transfers.
+- *PI to Data Hub Agent* - an on-premises component that serves as a bridge between the data source(s) and the AVEVA&trade; Data Hub destination. The agent runs as a service and performs fast, secure data transfers.
 
-- *PI System connection* - a cloud component which resides within OCS and receives data from the on-premises PI to Data Hub Agent and stores it in SDS.
+- *PI System connection* - a cloud component which resides within AVEVA&trade; Data Hub and receives data from the on-premises PI to Data Hub Agent and stores it in SDS.
 
 **Note:** Storage in SDS is partitioned by namespace.
 

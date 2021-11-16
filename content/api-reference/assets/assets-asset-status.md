@@ -14,7 +14,7 @@ Returns status of an asset. Status of an asset is determined by an exact match o
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Last
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Last
 ```
 
 <h4>Parameters</h4>
@@ -72,7 +72,7 @@ Returns status summary of an asset. Statistics are computed using 'StepwiseConti
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Summary
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Summary
 ?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}
 ```
 
@@ -165,7 +165,7 @@ Returns status of multiple assets.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
 ```
 
 <h4>Parameters</h4>

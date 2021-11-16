@@ -14,7 +14,7 @@ Returns resolved view of specified asset.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolved
 ```
 
 <h4>Parameters</h4>
@@ -127,7 +127,7 @@ Returns multiple resolved assets.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Resolved
 ```
 
 <h4>Parameters</h4>

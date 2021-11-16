@@ -14,7 +14,7 @@ Searches all assets and returns a list of asset Ids and their matched fields. Us
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 ?skip={skip}&count={count}&orderBy={orderBy}&query={query}&filter={filter}
 ```
 
@@ -88,7 +88,7 @@ Searches for assets using facets. Asset facets are not case-sensitive. Only asse
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets
 ?count={count}&name={name}
 ```
 
@@ -155,7 +155,7 @@ Returns a list of suggested assets based on your search criteria. The autocomple
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Autocomplete
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Autocomplete
 ?term={term}&termCount={termCount}&facetCount={facetCount}
 ```
 

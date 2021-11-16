@@ -3,7 +3,7 @@
   topicHref: adh-content-portal-overview.md
 - name: Get started
   href: overview/get-started/toc.yml
-  topicHref: overview/gs-overview.md
+  topicHref: overview/get-started/gs-overview.md
 - name: User management in AVEVA™ Data Hub
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md

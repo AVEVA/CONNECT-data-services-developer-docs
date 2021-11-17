@@ -1,8 +1,14 @@
+- name: Subscribe to AVEVA Data Hub
+  href: subscribe-adh.md
+- name: Create a folder
+  href: create-folder.md
+- name: Turn on AVEVA Data Hub for a folder
+  href: turn-on-adh.md    
 - name: Create a group
-  topicHref: create-group.md
+  href: create-group.md
 - name: Assign roles to a group
   topicHref: assign-roles-group.md
 - name: Map a group to an AVEVA™ Data Hub role
-  topicHref: map-group-adh.md
+  href: map-group-adh.md
 - name: Add a user and assign to a group
-  topicHref: assign-users.md
+  href: assign-users.md

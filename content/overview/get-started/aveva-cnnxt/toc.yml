@@ -1,8 +1,7 @@
-- name: Subscribe to AVEVA Data Hub
-  href: subscribe-adh.md
-- name: Create a folder
-  href: create-folder.md
-- name: Enable AVEVA Data Hub for a folder
-  href: turn-on-adh.md    
-- name: View service status
-  href: service-status.md
+- name: Log on to AVEVA Connect
+  href: sign-in-cnnxt.md
+- name: Log out of AVEVA Connect
+  href: sign-out-cnnxt.md 
+- name: Initial set up of Data Hub in AVEVA Connect for admins
+  href: cnnxt-mgmt/toc.yml
+  topicHref: cnnxt-mgmt/initial-setup-cnnxt.md

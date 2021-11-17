@@ -1,4 +1,4 @@
-- name: Access control list
+- name: Access control
   href: sds-access-control-list.md
 - name: Quantities
   href: sds-quantities.md

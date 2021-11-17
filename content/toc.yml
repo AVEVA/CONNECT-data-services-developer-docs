@@ -2,8 +2,20 @@
   href: overview/toc.yml
   topicHref: adh-content-portal-overview.md
 - name: Get started
-  href: overview/get-started/toc.yml
   topicHref: overview/get-started/gs-overview.md
+  items:
+   - topicUid: gsTypes
+   - topicUid: gsStreams
+   - topicUid: gsRoles
+   - topicUid: gsUsers
+- name: Get started with clients
+  href: set-up/../toc.yml
+  topicHref: gs-clients.md
+  items:
+   - topicUid: gsAssets
+   - topicUid: gsAssetTypes
+   - topicUid: gsMetadataRules
+   - topicUid: gsStreamviews     
 - name: User management in AVEVA™ Data Hub
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md

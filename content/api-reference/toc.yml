@@ -21,7 +21,7 @@
   topicHref: rules/rules-overview.md
 - name: Asset store
   href: assets/toc.yml
-  topicHref: Assets/assets.md 
+  topicHref: Assets/assets.md
 - name: Communities (Preview)
   href: community/toc.yml
   topicHref: community/community-overview.md

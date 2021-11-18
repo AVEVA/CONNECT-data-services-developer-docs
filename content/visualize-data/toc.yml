@@ -3,9 +3,9 @@
 - name: Trend page
   topicHref: trend-ui.md
   items:
+    - topicUid: GettingStartedWithTrendData
     - topicUid: URLparameters
-- name: Context switch in visual trending
-  topicHref: context-switch.md
+    - topicUid: ContextSwitch
 - topicUid: PowerBI
   items:
   - topicUid: PowerBIReleaseNotes

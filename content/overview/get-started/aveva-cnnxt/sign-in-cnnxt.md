@@ -1,15 +1,30 @@
 ---
-uid: sign-in-cnnxt
+uid: sign-in-cnnxt.md
 ---
 
-# Sign in to AVEVA™ Connect 
+# Sign in to AVEVA™ Data Hub via AVEVA™ Connect 
 
 This topic explains how to navigate to AVEVA™ Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
 
-* [Single user sign-in](#single-user-sign-in)
-* [Corporate sign-in: Federation for single sign-on](#corporate-sign-in:-federation-for-single-sign-on)
-* [Users with access to multiple accounts](#users-with-access-to-multiple-accounts)
-* [Third-party user access](third-party-user-access)
+* Corporate sign-in: Federation for single sign-on
+* Single user sign-in
+* Third-party user access
+
+## Corporate sign-in: Federation for single sign-on
+
+Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
+
+1. Open the [AVEVA™ Connect page](https://connect.aveva.com/). 
+
+   **Note:** If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA™ Connect. You may be prompted to sign into your corporate Sign-In page.
+
+1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
+   
+   **Result:** The applications available from this namespace account are displayed below the folder. 
+     
+1. Click on the tile that represents AVEVA™ Data Hub.
+
+   **Result:** The AVEVA™ Data Hub portal opens. 
 
 ## Single user sign-in
 
@@ -24,36 +39,12 @@ To sign in as a single user, follow these steps:
     **Note:** If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login will be blocked. If this happens, contact AVEVA™ Global Customer Support to unlock your account.
 
 1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
-
-   **Result:** A tile or set of tiles that represents the service(s) you have access to is displayed below the folder.    
-
-1.  Click anywhere on the appropriate tile to launch the AVEVA Data Hub service you wish to use.
-
-   **Result:** The AVEVA Data Hub portal opens. 
-     
-<!--VTT, 11/4/21 - Question for SME: Are these other sign in procedures necessary?-->
-   
-## Corporate sign-in: Federation for single sign-on
-
-Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
-
-1. Open the [AVEVA™ Connect page](https://connect.aveva.com/). 
-
-If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA™ Connect. 
-
-**Note:** You may be prompted to sign into your corporate Sign-In page.
-
-1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
    
    **Result:** The applications available from this namespace account are displayed below the folder. 
      
 1. Click on the tile that represents AVEVA™ Data Hub.
 
-   **Result:** The AVEVA™ Data Hub window opens. 
-
-## Users with access to multiple accounts
-
-In some cases, you may have access to several accounts in AVEVA™ Connect, for example, to access a training environment. In such cases, you are presented with an additional screen to select an account to sign in to.
+   **Result:** The AVEVA™ Data Hub portal opens. 
 
 ## Third-party user access
 
@@ -78,3 +69,11 @@ Follow these steps to sign in as a third-party user using a connection code.
 1.	Click on the desired account.
 
     **Result:** The AVEVA™ Connect home page is displayed for the selected account.
+
+1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
+   
+   **Result:** The applications available from this namespace account are displayed below the folder. 
+     
+1. Click on the tile that represents AVEVA™ Data Hub.
+
+   **Result:** The AVEVA™ Data Hub portal opens.

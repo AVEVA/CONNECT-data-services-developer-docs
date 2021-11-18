@@ -1,7 +1,6 @@
-- name: Log on to AVEVA Connect
+- name: Sign in to AVEVA Connect
   href: sign-in-cnnxt.md
-- name: Log out of AVEVA Connect
-  href: sign-out-cnnxt.md 
-- name: Initial set up of Data Hub in AVEVA Connect for admins
-  href: cnnxt-mgmt/toc.yml
-  topicHref: cnnxt-mgmt/initial-setup-cnnxt.md
+- name: Sign out of AVEVA Connect
+  href: sign-out-cnnxt.md
+- name: AVEVA Cloud Services Catalog
+  href: aveva-cloud-svcs-cat.md

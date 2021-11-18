@@ -2,13 +2,14 @@
 uid: cnnxt-setup
 ---
 
-# Initial setup of Data Hub in AVEVA™ Connect for admins
+# Initial setup of Data Hub in AVEVA™ Connect
 
-AVEVA™ Connect is used to access and manage AVEVA™ Data Hub for your organization. As an administrator, you need to perform the following initial set up tasks in AVEVA Connect:
+As an administrator, you use AVEVA™ Connect to access and manage AVEVA™ Data Hub for your organization. You perform these initial tasks in AVEVA™ Connect to grant access and control who can access the Data Hub portal:
 
 - Subscribe to Data Hub
 - Create a folder and turn on the Data Hub service
-- Create a group and assign roles
-- Map a group to an AVEVA Data Hub role
-- Add users and assign to a group 
+- Create a group
+- Assign roles to groups
+- Map a group to an AVEVA™ Data Hub role
+- Add and assign users to a group 
    

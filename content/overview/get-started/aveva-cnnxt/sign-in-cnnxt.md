@@ -2,7 +2,7 @@
 uid: sign-in-cnnxt.md
 ---
 
-# Sign in to AVEVA™ Data Hub via AVEVA™ Connect 
+# Sign in to AVEVA™ Data Hub 
 
 This topic explains how to navigate to AVEVA™ Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
 

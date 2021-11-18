@@ -4,7 +4,7 @@
 - name: Get started
   href: overview/get-started/toc.yml
   topicHref: overview/get-started/gs-overview.md     
-- name: User management in AVEVA™ Data Hub
+- name: Manage users and permissions
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md
 - name: Add and organize data

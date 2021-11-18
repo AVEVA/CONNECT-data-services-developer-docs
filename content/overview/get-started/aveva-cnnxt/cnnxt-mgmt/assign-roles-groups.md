@@ -4,7 +4,7 @@ uid: assign-roles-groups
 
 # Assign roles to groups
 
-When a role is assigned to a group, all the users in that group will be able to see the tile for that capability or service on their home page in AVEVA™ Connect.You must assign a user or group to one or more access roles for the service they need to use. 
+When a role is assigned to a group, all the users in that group will be able to see the tile for the Data Hub portal on their home page in AVEVA™ Connect.You must assign a user or group to one or more access roles for the service they need to use. 
 
 Perform the following steps to assign roles to a group:
 
@@ -25,11 +25,11 @@ Perform the following steps to assign roles to a group:
 6.	Select the type of role:
 
     - Select Service role if you want to assign a functional role to the group
-    - Select Account role if you want to assign an administrative role (giving users and/or groups access to administer your AVEVA Connect account). 
+    - Select Account role if you want to assign an administrative role (giving users and/or groups access to administer your AVEVA Connect account) 
 
-7.	If you have selected Service role, select the required service and folder from the Service and Folder lists.
+7.	If you have selected **Service role**, select the required service and folder from the **Service** and **Folder** lists.
 
-8.	Select the required role from the Role list.
+8.	Select the required role from the **Role** list.
 
 9.	Select the required groups to assign this role. You can select multiple groups at once. You can search for the group names by typing a few letters in the **Enter group name(s)** field.
 

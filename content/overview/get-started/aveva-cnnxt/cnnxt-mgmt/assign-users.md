@@ -4,11 +4,11 @@ uid: assign-users
 
 # Add and assign users to groups
 
-Each user must be added to at least one functional group before being able to access a service via AVEVA™ Connect.
+Each user must be added to at least one functional group before being able to access the Data Hub portal via AVEVA™ Connect.
 
 Perform the following steps to add users to a group:
 
-1.	Click the menu icon, then select **User Management**.
+1.	From the AVEVA Connect home page, click the menu icon, then select **User Management**.
 
 2.	Click the **Groups** tab.
     

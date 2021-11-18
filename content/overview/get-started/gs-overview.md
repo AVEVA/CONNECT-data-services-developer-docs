@@ -56,4 +56,4 @@ In these get started exercises, you will do the following:
 
 ## Next step
 
-Start with [Get started with connections](xref:gsconnections).
+Start with [Get started with connections](xref:gsConnections).

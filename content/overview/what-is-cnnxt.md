@@ -21,9 +21,7 @@ Folders in AVEVA™ Connect are used to partition data. They work analogously to
 
 ### How are permissions managed?
 
-This content will be added once permissions have been sorted out in Connect & ADH. On the Connect side, users are added to groups before they can access a service. On the ADH side, permissions can be controlled by assigning groups to the built-in Data Hub roles (Tenant Admin, Tenant Contributor, etc.). 
-
-<!--V.Touati, 10/21/21: TBD per F. Scott. Talk about where permissions are managed here. Are they managed in DataHub and duplicated in Connect, or are permissions managed in Connect and just mirrored in DataHub?-->
+AVEVA Connect has two built-in permissions. All users are automatically provided with basic access to the customer account and added to the account's default user group. On the AVEVA Data Hub side, the administrator controls permissions by assigning groups to built-in Data Hub roles.
 
 If you are an administrator, you can learn more about AVEVA Connect in this guide and also on the official [AVEVA™ Connect User Documentation](https://help.connect.aveva.com/#/index/10/11) website.
 

@@ -8,5 +8,5 @@
   href: get-started/aveva-cnnxt/toc.yml
   topicHref: what-is-cnnxt.md
 - name: Set up Data Hub in AVEVA Connect (Admins)
-  href: cnnxt-mgmt/toc.yml
-  topicHref: cnnxt-mgmt/initial-setup-cnnxt.md 
+  href: get-started/aveva-cnnxt/cnnxt-mgmt/toc.yml
+  topicHref: get-started/aveva-cnnxt/cnnxt-mgmt/initial-setup-cnnxt.md 

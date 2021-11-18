@@ -4,9 +4,12 @@ uid: what-is-cnnxt
 
 # Overview of AVEVA™ Connect
 
-AVEVA™ Connect (https://connect.aveva.com/) is the common cloud platform on which AVEVA™ Data Hub sits. AVEVA™ Connect helps to organize your organization's projects and you use it to subscribe and manage access to services, such as AVEVA Data Hub.
+AVEVA™ Connect (https://connect.aveva.com/) is the common cloud platform on which AVEVA™ Data Hub sits. AVEVA™ Connect provides a central location for your organization's solutions. AVEVA Connect is used to perform the following tasks:
 
-Before you configure AVEVA™ Connect to work with AVEVA™ Data Hub, it is important to understand how solutions, folders, and permissions work.
+* [Subscribe to Data Hub and manage users and permissions](xref:what-is-cnnxt)
+* [Access the Data Hub portal](xref:sign-in-cnnxt).
+
+Before you configure AVEVA Connect to work with AVEVA™ Data Hub, it is important to understand how solutions, folders, and permissions work.
 
 ### What is a solution?
 
@@ -14,7 +17,7 @@ A solution is the product that AVEVA™ makes available to customers. AVEVA™ D
 
 ### What are folders used for?
 
-Folders in AVEVA™ Connect are used to partition data. They work analogously to folders in a traditional tree explorer. Many AVEVA™ products use projects to model the same concept. Folders represent your assets, but they can refer to any partition of data.
+Folders in AVEVA™ Connect are used to partition data. They work analogously to folders in a traditional tree explorer. Folders represent your assets, but they can refer to any partition of data.
 
 ### How are permissions managed?
 
@@ -22,5 +25,7 @@ This content will be added once permissions have been sorted out in Connect & AD
 
 <!--V.Touati, 10/21/21: TBD per F. Scott. Talk about where permissions are managed here. Are they managed in DataHub and duplicated in Connect, or are permissions managed in Connect and just mirrored in DataHub?-->
 
-Please refer to the [AVEVA™ Connect User Documentation](https://help.connect.aveva.com/#/index/10/11) for more information.
+If you are an administrator, you can learn more about AVEVA Connect in this guide and also on the official [AVEVA™ Connect User Documentation](https://help.connect.aveva.com/#/index/10/11) website.
+
+
  

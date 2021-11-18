@@ -1,3 +1,8 @@
+- name: Get started with namespaces
+  topicHref: gs-namespaces.md
+- name: Get started with connections
+  href: connections/toc.yml
+  topicHref: gs-connections.md
 - name: Get started with types
   topicHref: gs-types.md
 - name: Get started with streams

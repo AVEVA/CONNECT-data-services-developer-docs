@@ -2,14 +2,29 @@
 uid: sign-in-cnnxt.md
 ---
 
-# Navigate to AVEVA™ Data Hub via AVEVA™ Connect 
+# Sign in to AVEVA™ Data Hub via AVEVA™ Connect 
 
 This topic explains how to navigate to AVEVA™ Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
 
-* [Single user sign-in](#single-user-sign-in)
-* [Corporate sign-in: Federation for single sign-on](#corporate-sign-in:-federation-for-single-sign-on)
-* [Users with access to multiple accounts](#users-with-access-to-multiple-accounts)
-* [Third-party user access](third-party-user-access)
+* Corporate sign-in: Federation for single sign-on
+* Single user sign-in
+* Third-party user access
+
+## Corporate sign-in: Federation for single sign-on
+
+Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
+
+1. Open the [AVEVA™ Connect page](https://connect.aveva.com/). 
+
+   **Note:** If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA™ Connect. You may be prompted to sign into your corporate Sign-In page.
+
+1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
+   
+   **Result:** The applications available from this namespace account are displayed below the folder. 
+     
+1. Click on the tile that represents AVEVA™ Data Hub.
+
+   **Result:** The AVEVA™ Data Hub portal opens. 
 
 ## Single user sign-in
 
@@ -29,31 +44,7 @@ To sign in as a single user, follow these steps:
      
 1. Click on the tile that represents AVEVA™ Data Hub.
 
-   **Result:** The AVEVA™ Data Hub window opens. 
-
-<!--VTT, 11/4/21 - Question for SME: Are these other sign in procedures necessary?-->
-   
-## Corporate sign-in: Federation for single sign-on
-
-Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
-
-1. Open the [AVEVA™ Connect page](https://connect.aveva.com/). 
-
-If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA™ Connect. 
-
-**Note:** You may be prompted to sign into your corporate Sign-In page.
-
-1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
-   
-   **Result:** The applications available from this namespace account are displayed below the folder. 
-     
-1. Click on the tile that represents AVEVA™ Data Hub.
-
-   **Result:** The AVEVA™ Data Hub window opens. 
-
-## Users with access to multiple accounts
-
-In some cases, you may have access to several accounts in AVEVA™ Connect, for example, to access a training environment. In such cases, you are presented with an additional screen to select an account to sign in to.
+   **Result:** The AVEVA™ Data Hub portal opens. 
 
 ## Third-party user access
 
@@ -79,14 +70,10 @@ Follow these steps to sign in as a third-party user using a connection code.
 
     **Result:** The AVEVA™ Connect home page is displayed for the selected account.
 
-## Sign out of AVEVA™ Connect
+1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
+   
+   **Result:** The applications available from this namespace account are displayed below the folder. 
+     
+1. Click on the tile that represents AVEVA™ Data Hub.
 
-Some AVEVA™ Connect application environments are independent of each other. To switch between application environments you should sign out before attempting to sign in to another application.
-
-When you have completed your session within AVEVA™ Connect, you must sign out. To do this, click the profile icon (top-right) in AVEVA™ Connect, and then click **Sign Out**. 
-
-![Sign out of Connect](images/sign-out-cnnxt.png)
- 
-Within an application, the log out process is similar. 
-
-![Sign out of an application](images/sign-out-app.png)
+   **Result:** The AVEVA™ Data Hub portal opens.

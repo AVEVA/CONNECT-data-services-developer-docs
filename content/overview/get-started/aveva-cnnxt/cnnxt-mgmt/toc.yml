@@ -5,7 +5,7 @@
 - name: Create a group
   href: create-group.md
 - name: Assign roles to a group
-  href: assign-roles-group.md
+  href: assign-roles-groups.md
 - name: Map a group to an AVEVA™ Data Hub role
   href: map-group-adh.md
 - name: Add and assign users to a group

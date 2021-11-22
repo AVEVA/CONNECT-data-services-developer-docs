@@ -25,8 +25,6 @@
 - name: Communities (Preview)
   href: community/toc.yml
   topicHref: community/community-overview.md
-- name: Role-based access control
-  topicHref: ../developer-guide/identity-dev/dev-guide-role-based-access-control.md
 - name: HTTP status codes
   topicHref: http-status-codes.md
 - name: Samples

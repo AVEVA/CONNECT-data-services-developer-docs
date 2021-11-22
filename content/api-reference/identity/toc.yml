@@ -20,9 +20,11 @@
   href: identity-invitations.md
 - name: Secrets
   href: identity-secrets.md
+- name: Role-based access control
+  topicUid: accessControl 
 - name: Tenants roles
   href: identity-tenants-roles.md
 - name: Users roles
   href: identity-users-roles.md
-- name: Tenants Users
+- name: Tenants users
   href: identity-tenants-users.md 

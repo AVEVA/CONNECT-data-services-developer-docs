@@ -13,7 +13,7 @@ It is important to understand how solutions, folders, and permissions work befor
 
 ### What is a solution?
 
-A solution is the product that AVEVA™ makes available to customers. AVEVA™ Data Hub solutions are reflected as folders in AVEVA™ Connect. You can enable multiple applications and capabilities in AVEVA™ Connect on a folder where data is shared with multiple applications; for example, AVEVA™ Insight.
+AVEVA Data Hub solutions are reflected as folders and tiles in AVEVA Connect. You can have multiple applications and capabilities in AVEVA Connect on a folder where data is shared across users in different regions; for example, AVEVA Data Hub and AVEVA Insight can both apply to a single folder.
 
 ### What are folders used for?
 
@@ -21,9 +21,7 @@ Folders in AVEVA™ Connect are used to partition data. They work analogously to
 
 ### How are permissions managed?
 
-AVEVA Connect has two built-in permissions. All users are automatically provided with basic access to the customer account and added to the account's default user group. On the AVEVA Data Hub side, the administrator controls permissions by assigning groups to built-in Data Hub roles.
+AVEVA Connect automatically provides all users with basic access to the customer account and adds them to the account's default user group. On the AVEVA Data Hub side, the administrator controls permissions by assigning groups to built-in Data Hub roles.
 
 If you are an administrator, you can learn more about AVEVA Connect in this guide and also on the official [AVEVA™ Connect User Documentation](https://help.connect.aveva.com/#/index/10/11) website.
-
-
  

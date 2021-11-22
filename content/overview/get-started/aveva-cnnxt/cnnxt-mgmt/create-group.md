@@ -14,11 +14,11 @@ Perform the following steps to create a group and add users to the group:
 
 2.	Click the **Groups** tab. 
 
-    **Result:** The existing groups are listed.
+    **Result:** The existing groups display.
 
-3.	Click **+ Add group**. 
+3.	Click **Add group**. 
  
-    **Result:** The **Add group** area is displayed.
+    **Result:** The **Add group** pane displays.
 
 4.	Enter the required group name in the **Group name** field.
 
@@ -28,7 +28,7 @@ Perform the following steps to create a group and add users to the group:
 
 7. Click **Save**.
  
-   **Result:** The group is created, and the specified users are added to the group.
+   **Result:** The group is created and the selected users are assigned to the group.
 
-   **Note:** You can modify exisiting groups from the Groups tab. After you select an exisiting group from the list, you can add or remove exisiting users from that group and assign or revoke roles to the existing users in that group.
+   **Note:** The new group does not yet have permissions to perform tasks in AVEVA Data Hub until you assign a role to the group. You can modify exisiting groups from the Groups tab. After you select an exisiting group from the list, you can add or remove exisiting users from that group and assign or revoke roles to the existing users in that group.
    

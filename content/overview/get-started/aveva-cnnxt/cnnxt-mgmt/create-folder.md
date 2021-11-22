@@ -12,17 +12,23 @@ Perform the following steps to create a folder in AVEVA™ Connect:
 
 1. In the navigation menu, select **Folder Management**, then click the **Add Folder** button.
 
-   **Result:** The Add Folder area is displayed.
+   **Result:** The Add Folder window opens.
 
-1.	Enter the name of the new folder in the **Folder name** field
+1.	Enter the name of the new folder in the **Folder name** field.
 
-   **Note:** The new folder will be created in the selected region only and the region cannot be changed after the folder is created. You can click **Change** and select a different region.
+1. Optional: Click **Change** to select a different region.
 
-1. Select **Upload image** to use your own image or **Select stock image** to use an existing image for the new folder.
+1. Perform one of the following actions to select an image to represent the folder:
+ 
+   * To use your own image, click **Upload image** and then click Select image to upload. Navigate and select the desired image and click **Open**.
+
+   * To use an existing image, click **Select stock image** and select the desired image.
+
+1. Click **Save**.
     
-   **Note:** The image is used in the carousel of folders displayed on the AVEVA™ Connect home page users see.
+   **Result** The image appears in the carousel of folders displayed on the AVEVA™ Connect home page.
 
-1. In AVEVA Connect, navigate to the newly created folder and switch on the Data Hub service.
+1. On the displayed folder details page, switch on the Data Hub service, then click **Enable** to confirm the selection.
 
 2. Click the ellipse button on the bottom right of the Service tile and then click **Manage Roles** to ensure that the services turned on has the relevant permissions to be accessed by users.
 

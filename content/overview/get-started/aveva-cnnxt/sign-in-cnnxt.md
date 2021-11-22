@@ -6,13 +6,13 @@ uid: sign-in-cnnxt.md
 
 This topic explains how to navigate to AVEVA™ Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
 
-* Corporate sign-in: Federation for single sign-on
+* Corporate sign-in: federation for single sign-on
 * Single user sign-in
 * Third-party user access
 
-## Corporate sign-in: Federation for single sign-on
+## Corporate sign-in: federation for single sign-on
 
-Some AVEVA™ Connect accounts are configured to use Active Directory Federation, which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
+Some AVEVA™ Connect accounts use Active Directory Federation Services (AD FS), which enables authentication and authorization to AVEVA™ Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
 
 1. Open the [AVEVA™ Connect page](https://connect.aveva.com/). 
 
@@ -20,7 +20,7 @@ Some AVEVA™ Connect accounts are configured to use Active Directory Federation
 
 1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
    
-   **Result:** The applications available from this namespace account are displayed below the folder. 
+   **Result:** The available applications for this namespace account appear. 
      
 1. Click on the tile that represents AVEVA™ Data Hub.
 
@@ -68,11 +68,11 @@ Follow these steps to sign in as a third-party user using a connection code.
 
 1.	Click on the desired account.
 
-    **Result:** The AVEVA™ Connect home page is displayed for the selected account.
+    **Result:** The AVEVA™ Connect home page displays for the selected account.
 
 1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
    
-   **Result:** The applications available from this namespace account are displayed below the folder. 
+   **Result:** The applications available from this namespace account display below the folder. 
      
 1. Click on the tile that represents AVEVA™ Data Hub.
 

@@ -12,17 +12,17 @@ Perform the following steps to add users to a group:
 
 2.	Click the **Groups** tab.
     
-    **Result:** The existing groups are listed.
+    **Result:** The existing groups display.
 
 3.	Select the required group to which you want to add users. 
 
-    **Result:** On the **Users** tab, the list of existing users added to the group is displayed.
+    **Result:** On the **Users** tab, the list of added, existing users displays.
 
     **Note:** You can search for the required group by typing a few letters in the Filter by group name field.
 
 4.	Click **Add users** to add more users to the group. 
     
-    **Result:** The Add users area is displayed.
+    **Result:** The Add users pane displays.
 
 5.	Enter the usernames of the users you want to add to this group. You can add multiple users at a time. 
 

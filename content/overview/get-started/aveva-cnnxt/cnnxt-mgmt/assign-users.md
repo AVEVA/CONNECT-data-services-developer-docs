@@ -8,7 +8,7 @@ Each user must be added to at least one functional group before being able to ac
 
 Perform the following steps to add users to a group:
 
-1.	From the AVEVA Connect home page, click the menu icon, then select **User Management**.
+1.	From the Connect home page, click the menu icon, then select **User Management**.
 
 2.	Click the **Groups** tab.
     

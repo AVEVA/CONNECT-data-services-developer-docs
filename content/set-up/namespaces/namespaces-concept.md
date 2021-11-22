@@ -8,7 +8,7 @@ When you first subscribe and turn on AVEVA™ Data Hub for your organization, yo
 
 Data processing resources are allocated when you create a folder/namespace. For example, SDS and asset service, and the associated storage resources are allocated to support that namespace. Each namespace and its resources are distinct and separate from all other namespaces. The resources are scoped to the namespace. Which means, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 
-Data stored within a folder/namespace is tied to that namespace and its region. You cannot directly transfer the data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA™ Data Hub, then import it into the destination namespace.
+Data stored within a folder/namespace is tied to a namespace and its region. You cannot directly transfer the data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA™ Data Hub, then import it into the destination namespace.
 
 ## PI Server counterpart
 

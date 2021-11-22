@@ -10,7 +10,7 @@ To be assigned access to a service, users must belong to one or more groups (unl
 
 Perform the following steps to create a group and add users to the group:
 
-1.	Click the menu icon, then select **User Management**.
+1.	From the Connect home page, click the menu icon, then select **User Management**.
 
 2.	Click the **Groups** tab. 
 

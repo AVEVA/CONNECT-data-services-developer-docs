@@ -1,10 +1,10 @@
 ---
-uid: sign-in-cnnxt.md
+uid: sign-in-cnnxt
 ---
 
-# Sign in to AVEVA™ Data Hub 
+# Sign in to AVEVA Connect and navigate to AVEVA Data Hub 
 
-This topic explains how to navigate to AVEVA™ Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
+This topic explains how to navigate to AVEVA Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
 
 * Corporate sign-in: federation for single sign-on
 * Single user sign-in
@@ -22,7 +22,7 @@ Some AVEVA™ Connect accounts use Active Directory Federation Services (AD FS),
    
    **Result:** The available applications for this namespace account appear. 
      
-1. Click on the tile that represents AVEVA™ Data Hub.
+1. Click on the AVEVA™ Data Hub tile.
 
    **Result:** The AVEVA™ Data Hub portal opens. 
 
@@ -42,7 +42,7 @@ To sign in as a single user, follow these steps:
    
    **Result:** The applications available from this namespace account are displayed below the folder. 
      
-1. Click on the tile that represents AVEVA™ Data Hub.
+1. Click on AVEVA™ Data Hub tile.
 
    **Result:** The AVEVA™ Data Hub portal opens. 
 
@@ -74,6 +74,6 @@ Follow these steps to sign in as a third-party user using a connection code.
    
    **Result:** The applications available from this namespace account display below the folder. 
      
-1. Click on the tile that represents AVEVA™ Data Hub.
+1. Click on the AVEVA™ Data Hub tile.
 
    **Result:** The AVEVA™ Data Hub portal opens.

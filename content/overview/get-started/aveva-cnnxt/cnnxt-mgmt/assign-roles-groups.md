@@ -4,11 +4,11 @@ uid: assign-roles-groups
 
 # Assign roles to groups
 
-When a role is assigned to a group, all the users in that group will be able to see the tile for the Data Hub portal on their home page in AVEVA™ Connect.You must assign a user or group to one or more access roles for the service they need to use. 
+When a role is assigned to a group, all the users in that group will see the Data Hub tile on their home page in AVEVA™ Connect. You must assign a user or group to one or more roles based on the actions they need to take in Data Hub. 
 
 Perform the following steps to assign roles to a group:
 
-1.	Click the menu icon, then select **User Management**.
+1.	From the Connect home page, click the menu icon, then select **User Management**.
 
 2.	Click the **Groups** tab. 
 

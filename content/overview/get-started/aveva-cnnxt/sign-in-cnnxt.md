@@ -2,7 +2,7 @@
 uid: sign-in-cnnxt
 ---
 
-# Sign in to AVEVA Connect and navigate to AVEVA Data Hub 
+# Sign in to AVEVA Connect and navigate to Data Hub 
 
 This topic explains how to navigate to AVEVA Data Hub via [AVEVA™ Connect](https://connect.aveva.com/) for the following types of accounts:
 
@@ -58,7 +58,7 @@ Follow these steps to sign in as a third-party user using a connection code.
 
 1.	Click **Have a connection code?**.
 
-    ![Connection code screen](images/cnnxtn-code-3rd-party.png)
+    ![Connection code screen](./images/cnnxtn-code-3rd-party.png)
 
 1.	Enter your connection code. This is provided by AVEVA™.
  

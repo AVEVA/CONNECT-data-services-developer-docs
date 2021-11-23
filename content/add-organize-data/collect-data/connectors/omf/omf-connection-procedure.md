@@ -4,7 +4,7 @@ uid: gpOMFConnection
 
 # Configure an OMF connection
 
-To send OSIsoft Message Format (OMF) data to AVEVA&trade; Data Hub, you must first configure an OMF connection.
+To send Open Message Format (OMF) data to OCS, you must first configure an OMF connection.
 
 ## Procedure
 

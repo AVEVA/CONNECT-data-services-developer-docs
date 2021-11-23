@@ -48,7 +48,7 @@ Use Power BI Connector to retrieve AVEVA&trade; Data Hub Data Views for use in M
 
 1. Click **Continue** in the `Connecting to a third-party service` warning.
 
-1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the Data Views you want to access, and then click **OK**.<br>The OSIsoft Cloud Services sign-in window displays if you have not already signed in.
+1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the Data Views you want to access, and then click **OK**.<br>The sign-in window displays if you have not already signed in.
 
     - If you have not already signed in, click **Sign in as different user** and complete the user authentication process.
 

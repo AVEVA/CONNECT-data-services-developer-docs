@@ -4,11 +4,11 @@ uid: PowerBI
 
 # Power BI Connector
 
-The Aveva&trade; Data Hub Power BI Connector retrieves Data Views from Aveva&trade; Data Hub and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install Aveva&trade; Data Hub Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section.<br>
+The AVEVA&trade; Data Hub Power BI Connector retrieves Data Views from AVEVA&trade; Data Hub and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install AVEVA&trade; Data Hub Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section.<br>
 
 ## System requirements
 
-The following are required before you install and use Aveva&trade; Data Hub Power BI Connector.
+The following are required before you install and use AVEVA&trade; Data Hub Power BI Connector.
 
 - Operation Systems: Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2016, Windows Server 2019
 
@@ -18,13 +18,13 @@ The following are required before you install and use Aveva&trade; Data Hub Powe
 
 - Microsoft Edge WebView 2 Runtime
 
-- A user account with Administrator privileges to install Aveva&trade; Data Hub Power BI Connector on a local machine.
+- A user account with Administrator privileges to install AVEVA&trade; Data Hub Power BI Connector on a local machine.
 
-## Install Aveva&trade; Data Hub Power BI Connector
+## Install AVEVA&trade; Data Hub Power BI Connector
 
 1. Download the `OCSPowerBIConnector.exe` file from the [AVEVA Customer portal](https://customers.osisoft.com/s/products).
 
-1. Install Aveva&trade; Data Hub Power BI Connector by either the setup wizard or silent installation.
+1. Install AVEVA&trade; Data Hub Power BI Connector by either the setup wizard or silent installation.
 
     - Setup wizard
         - Double click the `OCSPowerBIConnector.exe` file and select **Next**.<br>
@@ -38,9 +38,9 @@ The following are required before you install and use Aveva&trade; Data Hub Powe
 
 ## Retrieve Data Views with Power BI Connector
 
-Use Power BI Connector to retrieve Aveva&trade; Data Hub Data Views for use in Microsoft Power BI.
+Use Power BI Connector to retrieve AVEVA&trade; Data Hub Data Views for use in Microsoft Power BI.
 
-1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The Aveva&trade; Data Hub Data Views connector file displays in the `All` pane.
+1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The AVEVA&trade; Data Hub Data Views connector file displays in the `All` pane.
 
    ![Get Data](./images/get-data.png)
 

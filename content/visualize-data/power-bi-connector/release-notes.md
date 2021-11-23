@@ -4,11 +4,11 @@ uid: PowerBIReleaseNotes
 
 # Release notes
 
-Aveva&trade; Data Hub Power BI Connector 1.1.0.140
+AVEVA&trade; Data Hub Power BI Connector 1.1.0.140
 
 ## Overview
 
-The Aveva&trade; Data Hub Power BI Connector allows Aveva&trade; Data Hub Data Views to be imported into Power BI so the data can be visually analyzed or utilized in Power BI reports or dashboards. The Power BI Connector can be installed on Windows Operating System installations of Power BI Desktop. The connector can also be used with the Power BI Service through installation of an On-premises Data Gateway. Data sets using Aveva&trade; Data Hub Data Views can be configured for scheduled refresh in the Power BI Service to create and share dynamically updating Power BI dashboards with data from Aveva&trade; Data Hub.
+The AVEVA&trade; Data Hub Power BI Connector allows AVEVA&trade; Data Hub Data Views to be imported into Power BI so the data can be visually analyzed or utilized in Power BI reports or dashboards. The Power BI Connector can be installed on Windows Operating System installations of Power BI Desktop. The connector can also be used with the Power BI Service through installation of an On-premises Data Gateway. Data sets using AVEVA&trade; Data Hub Data Views can be configured for scheduled refresh in the Power BI Service to create and share dynamically updating Power BI dashboards with data from AVEVA&trade; Data Hub.
 
 ## Known issues
 
@@ -53,7 +53,7 @@ The installer is released as a self-extracting executable file that contains:
 
 ##### Installation
 
-The Aveva&trade; Data Hub Power BI Connector installer will extract and install the connector for Power BI. See the accompanying [Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "Power BI Connector User Guide") for detailed Desktop installation instructions.
+The AVEVA&trade; Data Hub Power BI Connector installer will extract and install the connector for Power BI. See the accompanying [Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "Power BI Connector User Guide") for detailed Desktop installation instructions.
 
 #### On-premises Data Gateway installation
 
@@ -74,7 +74,7 @@ Remove the product using **Uninstall a program** in the Windows Control Panel fo
 
 ### AVEVA's commitment
 
-Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of Aveva&trade; Data Hub Power BI Connector is the highest quality and most secure version of the  Power BI Connector released to date. AVEVA's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
+Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of AVEVA&trade; Data Hub Power BI Connector is the highest quality and most secure version of the  Power BI Connector released to date. AVEVA's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
 
 ### Vulnerability communication
 
@@ -90,7 +90,7 @@ AVEVA has selected the Common Vulnerability Scoring System (CVSS) to quantify th
 
 ### Overview of new vulnerabilities found or fixed
 
-This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of Aveva&trade; Data Hub Power BI Connector security vulnerabilities that are fixed in this release.
+This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of AVEVA&trade; Data Hub Power BI Connector security vulnerabilities that are fixed in this release.
 
 No security-related information is applicable to this release.
 

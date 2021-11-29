@@ -130,7 +130,7 @@ You can assign an AF mapping to an AF identity. AF mappings enable a specific se
 
 1. Optional: Repeat steps 3-4 as needed.  
    
-5. Click **Close** to exit.
+1. Click **Close** to exit.
 
 ## Add a PI Data Archive
 
@@ -142,7 +142,7 @@ The list of available PI Data Archive servers is based on what servers are refer
 
 **Note:** If you are not adding an AF server, click the PI Data Archive icon on the first screen of the PI to OCS Agent Configuration Utility.
 
-1. Open the utility and connect to OCS. 
+1. Open the utility and connect to AVEVA&trade; Data Hub. 
  
    **Result**:  The first screen of the **PI to OCS Agent Configuration Utility** opens.
    
@@ -170,7 +170,7 @@ The list of available PI Data Archive servers is based on what servers are refer
 
 ## Create a PI mapping 
 
-PI mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity.  PI mappings can be created for a PI identity, user or group. Accounts assigned to a PI identity can read and transfer PI point data to OCS.  See ["What are PI identities and mappings?"](https://livelibrary.osisoft.com/LiveLibrary/content/en/server-v14/GUID-AD57C990-0DE6-4280-B9F3-1432C6E444C5) for more information. The following applies to PI mappings:
+PI mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity.  PI mappings can be created for a PI identity, user or group. Accounts assigned to a PI identity can read and transfer PI point data to AVEVA&trade; Data Hub.  See ["What are PI identities and mappings?"](https://livelibrary.osisoft.com/LiveLibrary/content/en/server-v14/GUID-AD57C990-0DE6-4280-B9F3-1432C6E444C5) for more information. The following applies to PI mappings:
 
 * The user account used to launch the utility must have permissions to create mappings.
 * You can edit mappings.
@@ -195,7 +195,7 @@ PI mappings enable access to data stored on a PI Data Archive by service account
 
 ## Set data privacy and add an agent description
 
-You can set data privacy settings and assign a descriptive name to an agent. Data privacy controls if a host name of a PI Data Archive is published and displayed in OSIsoft Cloud Services (OCS). By default, OCS does not publish host names. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` window as shown here. 
+You can set data privacy settings and assign a descriptive name to an agent. Data privacy controls if a host name of a PI Data Archive is published and displayed in AVEVA&trade; Data Hub. By default, AVEVA&trade; Data Hub does not publish host names. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` window as shown here. 
 
 ![Agent description and hostname displayed in PI to OCS Agents window](../../images/pi-to-ocs-agents-hostname.png)
 
@@ -215,13 +215,13 @@ This description appears where the agent is referenced and allows you to search 
 
 ## List of agent status states
 
-It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under the Agent Status field in the PI to OCS Configuration Utility.
+It may take a few minutes for a PI System to register with AVEVA&trade; Data Hub. The table below lists the various states that may appear under the Agent Status field in the PI to OCS Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |
 | Data  Source Connection Issue | Indicates  the PI To OCS Agent isn't able to connect to the PI Data Archive. Some  reasons for this status include the PI Data Archive is turned off, a firewall  issue is preventing connections or an incorrect name is configured for the  Data Archive (for example, trying to connect to a machine that doesn't  exist/was renamed). There may be additional reasons for this status. |
 | Data  Source Security Issue   | Indicates  the PI Data Archive connection is unsecure and security settings need to be  addressed. |
 | Missing Configuration         | The PI Data Archive server has not been configured in the PI to OCS Agent. |
-| Registration Failed           | Contact OSIsoft Customer support for assistance.             |
+| Registration Failed           | Contact AVEVA Customer support for assistance.             |
 | Registering                   | The PI to OCS Cloud portion is creating the necessary resources for your PI to OCS Agent. |
 | Shutdown                      | The last communication that the PI to OCS Cloud had with the agent was a shutdown message. |

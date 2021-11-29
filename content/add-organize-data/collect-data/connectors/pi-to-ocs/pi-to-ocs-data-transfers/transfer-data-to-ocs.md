@@ -4,6 +4,7 @@ uid: transfer-data
 
 # Transfer data to OCS
 <!-- AF 11/15/21 This topic appears in the TOC twice. It could also use to be broken into Define a data transfer and Start a data transfer. -->
+<!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to OCS landing pages).-->
 You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
@@ -206,6 +207,7 @@ To view PI point details, follow these steps:
 ## Save a transfer
 
 Before you can transfer data to OCS, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
+<!--VT, 11/29/21: Ok.-->
 
 To save the data transfer definition, follow these steps:
 
@@ -215,6 +217,7 @@ To save the data transfer definition, follow these steps:
 
 ## Overview of the Details pane
 <!--AF 11/15/21 - This section doesn't belong in this topic about how to define a transfer.-->
+<!-- VT, 11/29/21: I can move this into it's own topic; SMEs and myself wanted to explain what these fields represented.-->
 The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image show the sections in the `Details` pane, which you can expand and collaps using the arrows ( ![](../../images/chevrons.png) ):  
 
 ![](../../images/details-pane1.png)

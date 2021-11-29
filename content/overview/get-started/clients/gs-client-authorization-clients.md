@@ -4,7 +4,7 @@ uid: gsAuthorizationCodeClients
 
 # Get started with authorization code clients
 
-Authorization code clients are used with customer web applications that use Aveva&trade; Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. See the following topics for more information about authorization code clients:
+Authorization code clients are used with customer web applications that use AVEVA&trade; Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. See the following topics for more information about authorization code clients:
 
 - [Introduction to authorization code clients](xref:ccClients#authorization-code-client)
 

@@ -3,7 +3,7 @@ uid: gpAuthorizationCodeClient
 ---
 # Add an authorization code client
 
-Authorization code clients are used with customer web applications that use Aveva&trade; Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. See the following topics for more information about authorization code clients:
+Authorization code clients are used with customer web applications that use AVEVA&trade; Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. See the following topics for more information about authorization code clients:
 
 - [Introduction to authorization code clients](xref:ccClients#authorization-code-client)
 - [Authorization code client PI Server counterpart](xref:ccClients#authorization-code-pi-server)
@@ -22,15 +22,15 @@ Authorization code clients are used with customer web applications that use Avev
 
 1. Enter the URLs in the **Allowed Redirect URL(s)** text box, and click **+** to add it to the list.
 
-   The application specifies one of the URLs in this list when it authenticates against Aveva&trade; Data Hub, and the Aveva&trade; Data Hub identity server returns the results of the authentication to this URL.
+   The application specifies one of the URLs in this list when it authenticates against AVEVA&trade; Data Hub, and the AVEVA&trade; Data Hub identity server returns the results of the authentication to this URL.
 
 1. (Optional) Enter URLs in the **Allowed Logout Redirect URL(s)** text box, and click **+** to add it to the list. 
 
-   This is similar to the **Allowed Redirect URL(s)**. The application specifies a URL from this list when it logs out of Aveva&trade; Data Hub, and the Aveva&trade; Data Hub identity server sends the user to this URL after a successful log out.
+   This is similar to the **Allowed Redirect URL(s)**. The application specifies a URL from this list when it logs out of AVEVA&trade; Data Hub, and the AVEVA&trade; Data Hub identity server sends the user to this URL after a successful log out.
 
 1. (Optional) Enter URLs in the **Allowed CORS Origin(s)** text box, and click **+** to add it to the list.  
 
-   This can be used to designate other URLs from which the application is allowed to make requests against Aveva&trade; Data Hub. For example, this may be necessary if the user authenticates from an application running at one URL but the result of the authentication is sent to an application running at a different URL.
+   This can be used to designate other URLs from which the application is allowed to make requests against AVEVA&trade; Data Hub. For example, this may be necessary if the user authenticates from an application running at one URL but the result of the authentication is sent to an application running at a different URL.
    
 1. (Optional) Set the **Token Lifetime**.  
 

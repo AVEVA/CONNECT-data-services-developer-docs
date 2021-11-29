@@ -12,10 +12,10 @@ To get data view data:
 2. Specify the desired response format as csv, table-style json, or object-style json.
 3. Specify the page size.
 
-**Note:** If data spans into additional page(s), follow the hyperlinks in each HTTP `Link` header to retrieve the full requested dataset page by page. 
+**Note:** If data spans into additional page(s), follow the hyperlinks in each HTTP `Link` header to retrieve the full requested dataset page by page.
 
 ## Procedure: Get Data View Data
-It is assumed that you are working with streams as described in the [Stream examples](xref:DataViewsExampleScenario). The data views API uses the same authentication scheme as the Sequential Data Store.
+It is assumed that you are working with streams as described in the [stream examples](xref:DataViewsStreamExamples). The data views API uses the same authentication scheme as the Sequential Data Store.
 
 ### Get data using defaults
 The default start index, end index, and interval are configured in the `DataView` object. If not null, the get data request must include the startIndex, endIndex, and interval query parameters.

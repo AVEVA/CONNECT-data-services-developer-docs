@@ -1,5 +1,5 @@
 ---
-uid: DataViewsExampleScenario
+uid: DataViewsStreamExamples
 ---
 
 # Stream examples

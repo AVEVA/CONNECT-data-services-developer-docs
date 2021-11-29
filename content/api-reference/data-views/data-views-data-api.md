@@ -1,10 +1,11 @@
 ---
-uid: data-views-data-views-data
+uid: DataViewsDataAPI
 
 ---
 
-# Data Views Data
-The Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
+# Data views data
+
+The data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view. This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Interpolated Data`
 

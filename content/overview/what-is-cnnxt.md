@@ -23,5 +23,5 @@ Folders in AVEVA™ Connect are used to partition data. They work analogously to
 
 AVEVA Connect automatically provides all users with basic access to the customer account and adds them to the account's default user group. On the AVEVA Data Hub side, the administrator controls permissions by assigning groups to built-in Data Hub roles.
 
-If you are an administrator, you can learn more about AVEVA Connect in this guide and also on the official [AVEVA™ Connect User Documentation](https://help.connect.aveva.com/#/index/10/11) website.
+If you are an administrator, you can learn more about AVEVA Connect in this guide and at the [AVEVA™ Connect User Documentation](https://help.connect.aveva.com/) website.
  

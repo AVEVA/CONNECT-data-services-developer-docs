@@ -3,7 +3,7 @@ uid: omf-ingress-omf
 
 ---
 
-# OSIsoft Message Format
+# Open Message Format
 
 ## `Post OMF Message`
 
@@ -28,7 +28,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omf
 |---|---|---|---|
 |MessageType|string|true|Describes the type of message contained in the message body. One of: `type`, `container`, or `data`.|
 |MessageFormat|string|true|Describes the data serialization format employed in the message body. Currently limited to `json`.|
-|OmfVersion|string|true|Specifies the version of the OSIsoft Message Format used in the message. Current supported versions are `1.0`, `1.1`, and `1.2`.|
+|OmfVersion|string|true|Specifies the version of the Open Message Format used in the message. Current supported versions are `1.0`, `1.1`, and `1.2`.|
 |Action|string|false|Describes the action to be performed using the data in the message body. One of: `create`, `update`, or `delete`.
 If omitted, `create` is assumed.|
 |Compression|string|false|The compression algorithm used to compress the message body. Currently limited to `gzip`. 

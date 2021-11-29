@@ -2,13 +2,13 @@
 uid: PowerBI
 ---
 
-# OSIsoft Cloud Services Power BI Connector
+# Power BI Connector
 
-The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install OSIsoft Cloud Services Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section.<br>
+The AVEVA&trade; Data Hub Power BI Connector retrieves Data Views from AVEVA&trade; Data Hub and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install AVEVA&trade; Data Hub Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section.<br>
 
 ## System requirements
 
-The following are required before you install and use OSIsoft Cloud Services Power BI Connector.
+The following are required before you install and use AVEVA&trade; Data Hub Power BI Connector.
 
 - Operation Systems: Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2016, Windows Server 2019
 
@@ -18,13 +18,13 @@ The following are required before you install and use OSIsoft Cloud Services Pow
 
 - Microsoft Edge WebView 2 Runtime
 
-- A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
+- A user account with Administrator privileges to install AVEVA&trade; Data Hub Power BI Connector on a local machine.
 
-## Install OSIsoft Cloud Services Power BI Connector
+## Install AVEVA&trade; Data Hub Power BI Connector
 
-1. Download the `OCSPowerBIConnector.exe` file from the [OSIsoft Customer portal](https://customers.osisoft.com/s/products).
+1. Download the `OCSPowerBIConnector.exe` file from the [AVEVA Customer portal](https://customers.osisoft.com/s/products).
 
-1. Install OSIsoft Cloud Services Power BI Connector by either the setup wizard or silent installation.
+1. Install AVEVA&trade; Data Hub Power BI Connector by either the setup wizard or silent installation.
 
     - Setup wizard
         - Double click the `OCSPowerBIConnector.exe` file and select **Next**.<br>
@@ -34,13 +34,13 @@ The following are required before you install and use OSIsoft Cloud Services Pow
         - Open a command prompt window and type following command:<br>
         `.\OCSDataConnectorInstaller.exe -Y INSTALLDIR="<install path>" /quiet`<br>
 
-             **Note:** OSIsoft Cloud Services Power BI Connector supports silent installation for on-premises data gateway installations.
+             **Note:** Power BI Connector supports silent installation for on-premises data gateway installations.
 
-## Retrieve Data Views with OSIsoft Cloud Services Power BI Connector
+## Retrieve Data Views with Power BI Connector
 
-Use OSIsoft Cloud Services Power BI Connector to retrieve OCS Data Views for use in Microsoft Power BI.
+Use Power BI Connector to retrieve AVEVA&trade; Data Hub Data Views for use in Microsoft Power BI.
 
-1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The OSIsoft Cloud Services Data Views connector file displays in the `All` pane.
+1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The AVEVA&trade; Data Hub Data Views connector file displays in the `All` pane.
 
    ![Get Data](./images/get-data.png)
 
@@ -48,7 +48,7 @@ Use OSIsoft Cloud Services Power BI Connector to retrieve OCS Data Views for use
 
 1. Click **Continue** in the `Connecting to a third-party service` warning.
 
-1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the Data Views you want to access, and then click **OK**.<br>The OSIsoft Cloud Services sign-in window displays if you have not already signed in.
+1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the Data Views you want to access, and then click **OK**.<br>The sign-in window displays if you have not already signed in.
 
     - If you have not already signed in, click **Sign in as different user** and complete the user authentication process.
 

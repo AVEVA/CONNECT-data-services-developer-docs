@@ -35,7 +35,7 @@ Communities allow you to easily and securely share operational data with busines
 
 ### Connect with business partners
 
-Establish a community by [creating it](xref:add-community) and then [inviting other tenants](xref:managecommunity) owned by business partners. Each invitation is a three-way handshake. A [tenant administrator](xref:communityroles#tenant-administrator) from the establishing tenant, also known as the [community owner](xref:communityroles#community-owner), sends an email invitation to one or more OCS tenant administrators from another tenant. The business partner then accepts the invitation. The original tenant administrator who issued the invitation confirms it, allowing the partner to join the community. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
+Establish a community by [creating it](xref:add-community) and then [inviting other tenants](xref:managecommunity) owned by business partners. Each invitation is a three-way handshake. A [tenant administrator](xref:communityroles#tenant-administrator) from the establishing tenant, also known as the [community owner](xref:communityroles#community-owner), sends an email invitation to one or more AVEVA&trade; Data Hub tenant administrators from another tenant. The business partner then accepts the invitation. The original tenant administrator who issued the invitation confirms it, allowing the partner to join the community. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
 ### Scalable
 
@@ -47,7 +47,7 @@ Communities support multi-tenant management of users and permissions.
 
 Within each tenant, [community administrators](xref:communityroles#tenant-administrator#community-administrator) can independently [invite or remove users](xref:managecommunityusers), keeping user and permissions separate from other tenants in the community. Each tenant within the community has individual control over which of its users can access the community or share data within it. Community administrators cannot control users or permission in other tenants.
 
-Additionally, OCS provides [community roles](xref:communityroles) that allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
+Additionally, AVEVA&trade; Data Hub provides [community roles](xref:communityroles) that allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
 
 ### Secure data sharing
 
@@ -57,7 +57,7 @@ Any tenant invited to a community must accept the community invitation before th
 
 Each tenant in the community can [stop sharing their data streams](xref:ShareStreams#unshare-streams-from-community-details) at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history; when you share data streams, you provide the community with _access_ to your streams rather than copying data across tenants.
 
-Because tenants can share their data natively within OCS, IT departments no longer have to:
+Because tenants can share their data natively within AVEVA&trade; Data Hub, IT departments no longer have to:
 
 * Manage access for external users within a corporate firewall.
 * Create workarounds like VPNs or custom apps.
@@ -67,4 +67,4 @@ Because tenants can share their data natively within OCS, IT departments no long
 
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
-Communities can accommodate business partners who are not sharing data or do not have a PI system of their own. They can provision their own OCS tenant without sharing data, allowing them to participate in a partnership without purchasing the full PI System or other software.
+Communities can accommodate business partners who are not sharing data or do not have a PI system of their own. They can provision their own AVEVA&trade; Data Hub tenant without sharing data, allowing them to participate in a partnership without purchasing the full PI System or other software.

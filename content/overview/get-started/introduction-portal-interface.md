@@ -64,5 +64,15 @@ The table below provides a list and descriptions of these toolbar commands.
 | 1 - Change Namespace dropdown menu |Click to select a different namespace. |
 | 2 - View Notifications icon |Click to view OCS-generated notifications. | 
 | 3 - Question mark icon | Click to access the online documentation. |
-| 4 - User profile icon  | Click to view a menu of the following commands: The currently logged in user, tenant details, resource usage, feedback page, and sign out of the portal. |
+| 4 - User profile icon  | Click to view a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
 | 5 - Customize link | Click to customize the layout of the portal dashboard. |
+
+### Change user preferences
+
+The **Show user friendly property names** option controls how property names appear throughout the portal. This setting is specific to your login.
+
+To change your user preferences, perform the following steps:
+
+1. To open your user profile, select the **User profile** icon and select your name.
+
+1. To use friendly property names, turn on the the toggle under **Show user friendly property names**. The setting is saved automatically.

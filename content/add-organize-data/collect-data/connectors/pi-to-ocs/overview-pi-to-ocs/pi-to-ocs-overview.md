@@ -24,4 +24,4 @@ PI to Data Hub has the following components:
 
 The deployment of a PI to Data Hub Agent establishes a one-to-one connection from an on-premises Data Archive and optional AF server to AVEVA™ Data Hub. The following diagram shows a deployment of PI to Data Hub Agents that transfer data to AVEVA™ Data Hub.
 
-![PI to Data Hub](../../images/ocs-diagram.png)
+![PI to OCS](../../images/adh-diagram.png)

@@ -24,4 +24,4 @@ PI to OCS has the following components:
 
 The deployment of a PI to OCS Agent establishes a one-to-one connection from an on-premises Data Archive and optional AF server to OCS. The following diagram shows a deployment of PI to OCS Agents that transfer data to OCS PI System connections.
 
-![PI to OCS](../../images/ocs-diagram.png)
+![PI to OCS](../../images/adh-diagram.png)

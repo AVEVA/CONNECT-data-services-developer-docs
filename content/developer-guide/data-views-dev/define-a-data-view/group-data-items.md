@@ -29,7 +29,7 @@ Grouping can be used to separate the data items from each other, and to join dif
 Separating the data items from each other makes the data view's data records smaller and more granular. It is also possible to produce shapes that mimic physical or logical assets.
 
 #### Example scenario
-For the following examples, assume a subgroup of the [stream examples](xref:DataViewsExampleScenario) power inverter streams, produced by a `Query` [value](xref:sdsSearching) such as `"TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"`. This is to keep the example succinct.
+For the following examples, assume a subgroup of the [stream examples](xref:DataViewsStreamExamples) power inverter streams, produced by a `Query` [value](xref:sdsSearching) such as `"TypeId:docs-pi-inverter AND (Site:Rosemont OR Site:Winterthur)"`. This is to keep the example succinct.
 
 
 | Site | Meter | Inverter | Measurement | Stream Id |

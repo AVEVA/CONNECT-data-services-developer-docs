@@ -1,9 +1,10 @@
 ---
-uid: data-views-data-views-resolved
+uid: ResolvedDataViewAPI
 
 ---
 
-# Data Views Resolved
+# Resolved data views
+
 This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the [documentation](xref:ResolvedDataView) for resolved data views.
 
 ## `Get Data Items by Query`

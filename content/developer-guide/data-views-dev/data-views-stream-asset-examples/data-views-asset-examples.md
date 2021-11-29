@@ -4,7 +4,7 @@ uid: DataViewsAssetExamples
 
 # Asset examples
 
-This section defines some example assets that add context around the streams and types defined in [stream examples](xref:DataViewsExampleScenario) in order to illustrate how assets can be used within a data view.
+This section defines some example assets that add context around the streams and types defined in [stream examples](xref:DataViewsStreamExamples) in order to illustrate how assets can be used within a data view.
 
 ## Solar inverter assets
 Each solar inverter assets contain 2 stream references: power in and power out for the corresponding inverter stream. 

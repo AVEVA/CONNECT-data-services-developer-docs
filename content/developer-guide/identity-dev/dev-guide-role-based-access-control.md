@@ -16,6 +16,23 @@ Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), which
 
 A user or application that attempts to read, write, delete, or manage access control of an entity assigned an ACL must be assigned a trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
 
+### Collections with ACL endpoints
+
+The following endpoint collections include (or do not include) an endpoint for access control. Click the links below for more information on using access control for each supported collection.
+
+| Endpoint Collection | ACL Endpoint |
+|--|--|
+| [Asset store](xref:assets-access-control-list) | &#10004; |
+| Communities | ✘ |
+| [Data collection](xref:omf-ingress-access-control) | &#10004; |
+| [Data views](xref:DataViewsAccessControlAPI) | &#10004; |
+| Identity and access management | ✘ |
+| Operations | ✘ |
+| [Rules: Asset rules](xref:assets-access-control-list) | &#10004; |
+| [Rules: Metadata rules](xref:metadata-access-control-list) | &#10004; |
+| [Sequential Data Store](sds-access-control-list) | &#10004; |
+| [Tenant Management](xref:tenant-root-access-control) | &#10004; |  | 
+
 ### Notes
 
 - If an operation requires more than one access right, then an identity obtains those rights from multiple ACL entries.

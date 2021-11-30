@@ -36,7 +36,7 @@ To sign in as a single user, follow these steps:
     
     **Result:** The AVEVA™ Connect home page is displayed.
 
-    **Note:** If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login will be blocked. If this happens, contact AVEVA™ Global Customer Support to unlock your account.
+    **Note:** If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login will be blocked. If this happens, contact [AVEVA™ Customer Support](https://softwaresupport.aveva.com) to unlock your account.
 
 1. From the AVEVA™ Connect home page, click on the folder that represents your organization's services.
    

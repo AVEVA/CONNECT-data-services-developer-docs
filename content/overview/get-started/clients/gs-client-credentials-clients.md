@@ -4,27 +4,22 @@ uid: gsClientCredentialsClients
 
 # Get started with client-credentials clients
 
-Client-credentials clients are used for server-to-server communication where no user interaction is required. See the following topics for more information about client-credentials clients:
+Client-credentials clients are used for server-to-server communication where no user interaction is required. For more information about client-credentials clients, see [Client-credentials clients](xref:ccClients#client-credentials-client).
 
-- [Introduction to client-credentials clients](xref:ccClients#client-credentials-client)
-
-- [Client-credentials client PI Server counterpart](xref:ccClients#client-credentials-pi-server)
-
-- [Client-credentials client best practices](xref:ccClients#client-credentials-bp)
-
-## Create a client-credentials client
+To create a client-credentials client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. From the **Client Type** dropdown list, select **Client-Credentials**. This is the option that is displayed by default.
+1. From the **Client Type** field, select **Client-Credentials**. This is the option that is displayed by default.
 
 1. In the toolbar, click **Add Client**.
 
-1. Enter a name for the client. 
+  The `Add Client` window opens.
 
-   Use this name to identify the device or application that will use this client.
+1. In the **Name** field, enter a name for the client that identifies the device or application that will use this client.
 
 1. Select the **MyData.Role** role for the client.
+   
    By default, the client is assigned the Tenant Member role which cannot be removed. Roles can be modified after the client is created.
 
 1. (Optional) Set the **Token Lifetime**.  

@@ -30,7 +30,7 @@ The following endpoint collections include (or do not include) an endpoint for a
 | Operations | ✘ |
 | [Rules: Asset rules](xref:assets-access-control-list) | &#10004; |
 | [Rules: Metadata rules](xref:metadata-access-control-list) | &#10004; |
-| [Sequential Data Store](sds-access-control-list) | &#10004; |
+| [Sequential Data Store](xref:sds-access-control-list) | &#10004; |
 | [Tenant Management](xref:tenant-root-access-control) | &#10004; |  | 
 
 ### Notes

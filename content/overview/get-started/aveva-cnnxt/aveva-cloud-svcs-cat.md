@@ -4,11 +4,11 @@ uid: aveva-svcs
 
 # AVEVA™ Cloud Services Catalog
 
-All AVEVA Connect services are listed in the Services Catalog. View the catalog to see what services your organization is subscribed to and also discover other AVEVA™ services.
+AVEVA Data Hub is one of the services available on AVEVA Connect. All Connect services are listed in the Services Catalog in the AVEVA Connect portal. You can use this service catalog to see all the services your organization has subscribed to and also discover other AVEVA™ services.
 
 ## AVEVA™ Connect services
 
-The AVEVA™ Connect home page lists all the services you have access to as a set of tiles. A service is an application your organization has purchased for use. Click anywhere on the appropriate tile to launch the service you wish to use.
+The AVEVA™ Connect home page lists all the services you have access to as a set of tiles. To be viewed as a tile on the home page, each service must be subscribed to in the AVEVA Cloud Services Catalog and turned on in a folder in Connect. Click anywhere on the appropriate tile to launch the service you wish to use.
 
 ## Navigate to the Services Catalog
 

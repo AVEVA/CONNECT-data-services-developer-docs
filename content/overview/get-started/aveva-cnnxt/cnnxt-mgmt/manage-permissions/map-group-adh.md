@@ -6,7 +6,7 @@ uid: map-group-adh
 
 As an administrator, you can assign an existing AVEVA™ Connect group to a Data Hub role. There are five built-in roles which cannot be removed from a tenant:
 
-* Tenant Administrator: Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
+* Tenant Administrator: Administrator with full permissions and has the ability to add and remove users, clients, and secrets.
 
   **Note:** Do not assign the Tenant Administrator role to general users.
 

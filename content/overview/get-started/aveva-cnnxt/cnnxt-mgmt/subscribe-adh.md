@@ -4,7 +4,7 @@ uid: subscribe-adh
 
 # Subscribe to AVEVA™ Data Hub
 
-As an administrator, the first step after logging into AVEVA Connect is to subscribe to the AVEVA Data Hub service.
+As an administrator, the first step to subscribe to AVEVA Data Hub is to talk to your AVEVA Account Manager. After that, you log on to AVEVA Connect and turn on or subscribe to the AVEVA Data Hub service.
 
 **Note:**  If you have any questions or issues related to this procedure, contact [AVEVA customer support](https://softwaresupport.aveva.com).   
 

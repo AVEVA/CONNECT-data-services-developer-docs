@@ -26,11 +26,11 @@ This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [
 
 { 
 
-               “Error”: “The request is not valid.”, 
+               "Error": "The request is not valid.", 
 
-               “Reason”: “Exceeded the maximum return count of 250000 events.” 
+               "Reason": "Exceeded the maximum return count of 250000 events." 
 
-               “Resolution”: “Reduce query size and resubmit the request.” 
+               "Resolution": "Reduce query size and resubmit the request." 
 
 } 
 ```
@@ -114,6 +114,7 @@ The tenant identifier
 ``string namespaceId``  
 The namespace identifier
 
+-->
 
 ### Response format
 
@@ -124,7 +125,6 @@ The default response format for SDS is JSON, which is used in all examples in th
 Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.  
 
 To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
--->
 
 ## Indexes and reading data
 

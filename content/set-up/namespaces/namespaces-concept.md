@@ -4,13 +4,13 @@ uid: ccNamespaces
 
 # Folders and namespaces
 
-When you first subscribe and turn on AVEVA™ Data Hub for your organization, you create a folder in AVEVA™ Connect that is linked to a namespace. AVEVA™ Data Hub namespaces represent a logical unit of organization for data within a tenant. Each tenant may have more than one folder/namespace. Before AVEVA™ Data Hub can receive data for a given tenant, a namespace must exist within the scope of that tenant. When you create a folder in AVEVA™ Connect, you specify the region where data will be stored; for example, West US and Northern Europe.
+When you enable AVEVA™ Data Hub in an AVEVA Connect folder for your organization, you create a namespace in Data Hub that is linked to the folder. AVEVA™ Data Hub namespaces represent a logical unit of organization for data within a tenant. Each tenant may have more than one folder and namespace. Before AVEVA™ Data Hub can receive data for a given tenant, a namespace must exist within the scope of that tenant. The AVEVA Connect folder specifies the region where data will be stored for Data Hub; for example, West US or Northern Europe.
 
 Multiple folders in Connect can have Data Hub turned on.  Each folder represents an AVEVA Data Hub namespace, and all of the namespaces are part of one Data Hub tenant.
 
-Data processing resources are allocated to a namespace after you create a folder and turn on Data Hub. For example, SDS and asset service, and the associated storage resources are allocated to support a namespace. Each namespace and its resources are distinct and separate from all other namespaces. The resources are scoped to the namespace. Which means, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
+Data processing resources are allocated to a namespace after you create a folder and turn on AVEVA Data Hub. For example, SDS and asset service, and the associated storage resources are allocated to support a namespace. Each namespace and its resources are distinct and separate from all other namespaces. The resources are scoped to the namespace. Which means, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 
-Data stored within a folder/namespace is tied to a namespace and its region. You cannot directly transfer the data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA™ Data Hub, then import it into the destination namespace.
+Data stored within a folder and its namespace is tied to the namespace and its region. You cannot directly transfer this data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA™ Data Hub, then import it into the destination namespace.
 
 ## PI Server counterpart
 
@@ -18,14 +18,7 @@ A namespace is similar to a full PI Server. Much like a PI Server, a namespace h
 
 ## Namespace IDs
 
-The namespace ID must be unique across the tenant and meet these requirements:
-
-- Contains 100 or fewer characters
-- Can include alphanumeric characters, underscores (\_), dashes (-), spaces, and periods
-- May not contain two consecutive periods or two consecutive underscores
-- May not begin or end with a period
-- May not start with two consecutive underscores
-- May not include leading or trailing white spaces
+An AVEVA Data Hub namespace ID is defined by the solution ID in the AVEVA Connect folder. You can view a namespace's ID by clicking the Change Namespace down arrow in the Data Hub portal. The namespace description is synchronized with the AVEVA Connect folder name.
 
 ## Querying data across namespaces
 

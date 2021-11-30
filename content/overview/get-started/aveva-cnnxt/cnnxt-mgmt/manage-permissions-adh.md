@@ -1,7 +1,9 @@
 ---
-uid:
+uid: manage-permissions-connect
 ---
 
-# Manage permissions for Data Hub
+# Manage permissions in AVEVA Connect
 
-As an administrator, you manage permissions in AVEVA Connect to control what actions users can perform in Data Hub. You start in Connect by creating groups and assigning roles. Once you have created groups, added users, and assigned roles, you can map a group to a Data Hub role and/or user.
+Permissions are managed in both AVEVA Connect and AVEVA Data Hub. As a Data Hub administrator, you begin setting up permissions in Connect by creating groups, adding users, and assigning roles. Once these tasks are completed, you can map a group or user to a Data Hub role. 
+
+From within the AVEVA Data Hub portal, you can also add groups, users, roles, and clients. For more information, see [Manage users and permissions](xref:lpsetupADH).

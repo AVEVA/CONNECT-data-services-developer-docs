@@ -4,7 +4,7 @@ uid: map-user-adh
 
 # Map a user to an AVEVA™ Data Hub role
 
-As an administrator, you can assign an AVEVA™ Connect user to a Data Hub role. Role assignment determines the actions a user can take in Data Hub. There are five built-in roles:
+You can assign an AVEVA™ Connect user to a Data Hub role. Role assignment determines the actions a user can take in Data Hub. There are five built-in roles:
 
 * Tenant Administrator: Administrator with full permissions and has the ability to add and remove users, clients, and secrets.
 

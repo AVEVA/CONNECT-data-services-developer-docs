@@ -4,7 +4,7 @@ uid: map-group-adh
 
 # Map a group to an AVEVA™ Data Hub role
 
-As an administrator, you can assign an existing AVEVA™ Connect group to a Data Hub role. There are five built-in roles which cannot be removed from a tenant:
+You can assign an existing AVEVA™ Connect group to a Data Hub role. There are five built-in roles which cannot be removed from a tenant:
 
 * Tenant Administrator: Administrator with full permissions and has the ability to add and remove users, clients, and secrets.
 

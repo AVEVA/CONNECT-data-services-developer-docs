@@ -9,7 +9,7 @@ uid: pi2ocs-rel-summary
 
 ## Overview
 
-This release covers the PI To Data Hub Agent, a component that is installed on-premises to replicate data and assets from the PI System to OSIsoft Cloud Services.
+This release covers the PI To Data Hub Agent, a component that is installed on-premises to replicate data and assets from the PI System to AVEVA Data Hub.
 
 ## Fixes and enhancements
 
@@ -86,22 +86,22 @@ Uninstall the package "PI To Data Hub Agent".
 
 ## Security information and guidance
 
-### OSIsoft’s commitment
+### AVEVA's commitment
 
-Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of PI to Data Hub Agent is the highest quality and most secure version of the PI to Data Hub Agent released to date. OSIsoft's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
+Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, AVEVA is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of PI to Data Hub Agent is the highest quality and most secure version of the PI to Data Hub Agent released to date. AVEVA's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
 
 ### Vulnerability communication
 
-The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure Framework](https://ics-cert.us-cert.gov/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf)  developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://ics-cert.us-cert.gov/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, OSIsoft is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
-For more information, refer to [OSIsoft’s Ethical Disclosure Policy](https://www.osisoft.com/ethical-disclosure-policy).
+The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure Framework](https://ics-cert.us-cert.gov/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf)  developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://ics-cert.us-cert.gov/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, AVEVA is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
+For more information, refer to [AVEVA's Ethical Disclosure Policy](https://www.osisoft.com/ethical-disclosure-policy).
 
-To report a security vulnerability, refer to [OSIsoft's Report a Security Vulnerability](https://www.osisoft.com/report-a-security-vulnerability).
+To report a security vulnerability, refer to [AVEVA's Report a Security Vulnerability](https://www.osisoft.com/report-a-security-vulnerability).
 
 ### Vulnerability scoring
-OSIsoft has selected the [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/v2/guide) to quantify the severity of security vulnerabilities for disclosure. To calculate the CVSS scores, OSIsoft uses the [National Vulnerability Database (NVD)](https://nvd.nist.gov/cvss.cfm?calculator&version=2) calculator maintained by the National Institute of Standards and Technology (NIST). OSIsoft uses High, Medium and Low categories to aggregate the CVSS Base scores. This removes some of the opinion related errors of CVSS scoring. As noted in the [CVSS specification](https://www.first.org/cvss/specification-document), base scores range from 0 for the lowest severity to 10 for the highest severity.
+AVEVA has selected the [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/v2/guide) to quantify the severity of security vulnerabilities for disclosure. To calculate the CVSS scores, AVEVA uses the [National Vulnerability Database (NVD)](https://nvd.nist.gov/cvss.cfm?calculator&version=2) calculator maintained by the National Institute of Standards and Technology (NIST). AVEVA uses High, Medium and Low categories to aggregate the CVSS Base scores. This removes some of the opinion related errors of CVSS scoring. As noted in the [CVSS specification](https://www.first.org/cvss/specification-document), base scores range from 0 for the lowest severity to 10 for the highest severity.
 
 ### Overview of new vulnerabilities found or fixed
-This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of the PI to Data Hub Agent security vulnerabilities that are fixed in this release.
+This section is intended to provide relevant security-related information to guide your installation or upgrade decision. AVEVA is proactively disclosing aggregate information about the number and severity of the PI to Data Hub Agent security vulnerabilities that are fixed in this release.
 
 No security-related information is applicable to this release.
 
@@ -111,11 +111,11 @@ See the [PI to Data Hub documentation](https://docs.osisoft.com/bundle/data-hub/
 
 #### Technical Support and Resources
 
-For technical assistance, contact OSIsoft Technical Support at +1 510-297-5828 or log a case through the [OSIsoft Customer Portal](https://customers.osisoft.com/).
+For technical assistance, contact AVEVA Customer Support through the [AVEVA Customer Support Portal](https://www.aveva.com/en/support-and-success/support-contact/).
 
-Additionally, the [Contact Us](https://customers.osisoft.com/s/contactus)  page on the portal offers contact options for customers outside of the United States.
+Additionally, the [Contact AVEVA](https://www.aveva.com/en/contact/) page on the portal offers contact options for customers outside of the United States.
 
-When you contact OSIsoft Technical Support, be prepared to provide this information:
+When you contact AVEVA Customer Support, be prepared to provide this information:
 
 * Product name, version, and build numbers
 * Computer platform (CPU type, operating system,and version number)
@@ -126,17 +126,17 @@ When you contact OSIsoft Technical Support, be prepared to provide this informat
 
 The [PI Square](https://pisquare.osisoft.com/) community has resources to help you with your technical questions. [PI Developers Club](https://pisquare.osisoft.com/community/developers-club) program offers specific services to developers and system integrators.
 
-OSIsoft, LLC 1600 Alvarado Street San Leandro, CA 94577 USA Tel: (01) 510-297-5800 Fax: (01) 510-357-8136 Web: https://www.osisoft.com 
+AAVEVA Group plc, High Cross Madingley Road, Cambridge CB3 0HB, UK USA Tel: (01) 510-297-5800 Fax: (01) 510-357-8136 Web: https://www.aveva.com/ 
 PI to Data Hub Agent
 
-© 2021 by OSIsoft, LLC.
+© 2021 by AVEVA
 
-All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, mechanical, photocopying, recording, or otherwise, without the prior written permission of OSIsoft, LLC.
+All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, mechanical, photocopying, recording, or otherwise, without the prior written permission of AVEVA.
 
-OSIsoft, the OSIsoft logo and logotype, Managed PI, OSIsoft Advanced Services, OSIsoft Cloud Services, OSIsoft Connected Services, OSIsoft EDS, PI ACE, PI Advanced Computing Engine, PI AF SDK, PI API, PI Asset Framework, PI Audit Viewer, PI Builder, PI Cloud Connect, PI Connectors, PI Data Archive, PI DataLink, PI DataLink Server, PI Developers Club, PI Integrator for Business Analytics, PI Interfaces, PI JDBC Driver, PI Manual Logger, PI Notifications, PI ODBC Driver, PI OLEDB Enterprise, PI OLEDB Provider, PI OPC DA Server, PI OPC HDA Server, PI ProcessBook, PI SDK, PI Server, PI Square, PI System, PI System Access, PI Vision, PI Visualization Suite, PI Web API, PI WebParts, PI Web Services, RLINK and RtReports are all trademarks of OSIsoft, LLC.
+AVEVA, the AVEVA logo and logotype, Managed PI, OSIsoft Advanced Services, OSIsoft Cloud Services, OSIsoft Connected Services, OSIsoft EDS, PI ACE, PI Advanced Computing Engine, PI AF SDK, PI API, PI Asset Framework, PI Audit Viewer, PI Builder, PI Cloud Connect, PI Connectors, PI Data Archive, PI DataLink, PI DataLink Server, PI Developers Club, PI Integrator for Business Analytics, PI Interfaces, PI JDBC Driver, PI Manual Logger, PI Notifications, PI ODBC Driver, PI OLEDB Enterprise, PI OLEDB Provider, PI OPC DA Server, PI OPC HDA Server, PI ProcessBook, PI SDK, PI Server, PI Square, PI System, PI System Access, PI Vision, PI Visualization Suite, PI Web API, PI WebParts, PI Web Services, RLINK and RtReports are all trademarks of OSIsoft, LLC.
 
 All other trademarks or trade names used herein are the property of their respective owners.
 
 U.S. GOVERNMENT RIGHTS
 
-Use, duplication or disclosure by the US Government is subject to restrictions set forth in the OSIsoft, LLC license agreement and/or as provided in DFARS 227.7202, DFARS 252.227-7013, FAR 12-212, FAR 52.227-19, or their successors, as applicable.
+Use, duplication or disclosure by the US Government is subject to restrictions set forth in the AVEVA license agreement and/or as provided in DFARS 227.7202, DFARS 252.227-7013, FAR 12-212, FAR 52.227-19, or their successors, as applicable.

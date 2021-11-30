@@ -32,7 +32,7 @@ Authorization code clients are used with customer web applications that use AVEV
 
    This is similar to **Allowed Redirect URL(s)**. The application specifies a URL from this list when it logs out of AVEVA™ Data Hub, and the AVEVA™ Data Hub identity server sends the user to this URL after a successful log out.
 
-1. Optional: Enter URLs in the **Allowed Logout Redirect URL(s)** text box, and click **+**  to add it to the list. 
+1. (Optional) Enter URLs in the **Allowed Logout Redirect URL(s)** text box, and click **+**  to add it to the list. 
    
    This is similar to **Allowed Redirect URL(s)**. The application specifies a URL from this list when it logs out of AVEVA™ Data Hub, and the identity server sends the user to this URL after a successful log out.
 

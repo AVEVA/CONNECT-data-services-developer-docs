@@ -16,7 +16,7 @@ To work with SDS, you must first acquire a client identity, secret and authentic
 ### Acquire client identity and secret
 
 The application acts as a confidential client – an application that is capable of securely maintaining a secret.
-OSIsoft Cloud Services supports confidential client authentication flow with a client identifier (Client Id) and a client secret.
+AVEVA&trade; Data Hub supports confidential client authentication flow with a client identifier (Client Id) and a client secret.
 
 To acquire a client identity from the portal, open the navigation menu and select **Security** > **Clients**.
 

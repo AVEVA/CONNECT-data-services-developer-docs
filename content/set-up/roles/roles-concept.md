@@ -4,7 +4,7 @@ uid: ccRoles
 
 # Roles
 
-Roles are used to manage access to assets, resources, and services. Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity tries to access a resource, Aveva&trade; Data Hub checks the assigned roles against the permissions on the resource to determine their access level.
+Roles are used to manage access to assets, resources, and services. Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity tries to access a resource, AVEVA&trade; Data Hub checks the assigned roles against the permissions on the resource to determine their access level.
 
 There are five built-in roles which cannot be removed from a tenant:
 

@@ -2,11 +2,6 @@
   href: subscribe-adh.md
 - name: Create a folder and turn on AVEVA™ Data Hub
   href: create-folder.md
-- name: Create a group
-  href: create-group.md
-- name: Assign roles to a group
-  href: assign-roles-groups.md
-- name: Map a group to an AVEVA™ Data Hub role
-  href: map-group-adh.md
-- name: Add and assign users to a group
-  href: assign-users.md
+- name: Manage permissions
+  href: manage-permissions/toc.yml
+  topicHref: manage-permissions-adh.md

@@ -1,4 +1,4 @@
-- name: View PI to OCS Agent metrics
+- name: View PI to Data Hub Agent metrics
   href: view-pi-to-ocs-agent-metrics.md
 - name: Repair an agent 
   href: repair-agent.md

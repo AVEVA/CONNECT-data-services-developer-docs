@@ -8,7 +8,7 @@ You can export a list of all the PI points added to a transfer for your records.
 
 #### Procedure
 
-1. In the `PI to OCS Agents` window, select the agent that contains the transfer.
+1. In the `PI to Data Hub Agents` window, select the agent that contains the transfer.
  
 1. On the `Details` pane, click the **View Transfer** button .
 

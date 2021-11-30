@@ -4,11 +4,11 @@ uid: pi-point-change
 
 # What is a PI point type change?
 
-A PI point type change occurs when a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the OCS Sequential Data Store (SDS) database. When the PI to OCS Agent detects this change, it takes the following actions:
+A PI point type change occurs when a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the Sequential Data Store (SDS) database. When the PI to Data Hub Agent detects this change, it takes the following actions:
 
 - Displays the `PI Point Type Change Detected` message next to the **Current Activity** field in the Details pane as shown in the screenshot below 
 - Prevents data being sent from the source PI point to the SDS stream until the type is changed to match the corresponding SDS Stream type and the transfer is restarted 
-- Logs details about the corresponding SDS stream in both the Windows Event Viewer and OCS logs 
+- Logs details about the corresponding SDS stream in both the Windows Event Viewer and Data Hub logs 
 
 ![](../../images/pi-point-type-change.png)
 
@@ -21,7 +21,7 @@ A point change can occur for the following reasons:
 
 After you create an SDS stream, its underlying SdsType cannot change. As a result, new data from the PI point in question cannot be stored in the same stream. You can resume streaming data from the PI point to the existing SDS stream by taking the following corrective actions:
 
-- View the [Windows Event Viewer logs](xref:view-logs) or [OCS logs](xref:download-tenant-log) to determine which PI point incurred a PI point type change.
+- View the [Windows Event Viewer logs](xref:view-logs) or [logs](xref:download-tenant-log) to determine which PI point incurred a PI point type change.
 
     **Note:** The Windows Event Viewer logs is the preferred source of information for PI point type changes.
 

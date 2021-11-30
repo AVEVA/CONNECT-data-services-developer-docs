@@ -12,7 +12,7 @@ To confirm that SDS streams have been created and your data has being transferre
 
 1. Click the **Streams** button.
    
-   **Note:** By default, the grid displays the SDS streams created by the PI to OCS data transfer. The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page (50, 100, 200).
+   **Note:** By default, the grid displays the SDS streams created by the PI to Data Hub data transfer. The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page (50, 100, 200).
 
 1. Click the **Streams** down-arrow, then click **Types**.
 

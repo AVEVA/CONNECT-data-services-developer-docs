@@ -2,16 +2,16 @@
 uid: introPortalInterface
 ---
 
-# Introduction to the OCS portal
+# Introduction to the AVEVA&trade; Data Hub portal
 
-Access and interact with OCS through the web-based portal. When you first access the portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
+Access and interact with AVEVA&trade; Data Hub through the web-based portal. When you first access the portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
 ![Portal window](../images/portal-interface.png "Portal interface")
 <!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published. -->
 
-## OCS features
+## AVEVA&trade; Data Hub features
 
-Expanding the left pane opens a menu of OCS features. This pane is always available in the portal, and you can make menu selections even while collapsed.
+Expanding the left pane opens a menu of AVEVA&trade; Data Hub features. This pane is always available in the portal, and you can make menu selections even while collapsed.
 
 | Pane expanded | Pane collapsed |
 |:--:|:--:|
@@ -31,7 +31,7 @@ The following features can be accessed from the menu:
 
 - **Developer Tools**: Provides code samples, an API console, and an editor for the OSIsoft Message Format (OMF).
 
-- **Support**: Provides access to documentation, logs, support links, the OCS blog, and other useful information.
+- **Support**: Provides access to documentation, logs, support links, and other useful information.
 
 ## Feature pages
 
@@ -62,7 +62,7 @@ The table below provides a list and descriptions of these toolbar commands.
 | Numbered Item | Function |
 |---------------|----------|
 | 1 - Change Namespace dropdown menu |Click to select a different namespace. |
-| 2 - View Notifications icon |Click to view OCS-generated notifications. | 
+| 2 - View Notifications icon |Click to view AVEVA&trade; Data Hub-generated notifications. | 
 | 3 - Question mark icon | Click to access the online documentation. |
 | 4 - User profile icon  | Click to view a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
 | 5 - Customize link | Click to customize the layout of the portal dashboard. |

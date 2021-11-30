@@ -4,7 +4,7 @@ uid: transfer-data
 
 # Transfer data to AVEVA&trade; Data Hub
 
-You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point. This topic contains these sections:
+You initiate a data transfer from the `PI to Data Hub Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point. This topic contains these sections:
 
 1. [Create a transfer](#create-a-transfer)
 
@@ -20,11 +20,11 @@ You initiate a data transfer from the `PI to OCS Agents` window. A transfer can 
 
 1. [Save a transfer](#save-a-transfer)
 
-1. [Transfer data to OCS](#transfer-data-to-ocs)
+1. [Transfer data to Data Hub](#transfer-data-to-ocs)
 
 PI points can be added to a transfer explicitly (via a tag search) or implicitly (via AF element references). To learn more about the difference between implicit and explicit references, see [Overview of explicit vs. implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
 
-**Before you begin:** Download and install the PI to OCS Agent. Register your PI Data Archive and AF data sources using the PI to OCS Agent Configuration Utility. 
+**Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
 
 ## Create a transfer
 
@@ -44,15 +44,15 @@ During transfer creation, you will need to perform the following tasks:
 
 1. Initiate your data transfer and monitor its progress. 
 
-**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the Details pane in the PI to OCS Agents page.
+**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the Details pane in the PI to Data Hub Agents page.
 
 ![](../../images/af-indexing.png)
 
 ### Name the transfer and set data privacy settings 
 
-1. In the left pane, select **Data Collection** > **PI to OCS Agent**.
+1. In the left pane, select **Data Collection** > **PI to Data Hub Agent**.
 
-1. In the `PI to OCS Agents` window, select the agent for the data transfer.
+1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
 
 1. In the `Details` pane, click **Create Transfer**.
 
@@ -239,7 +239,7 @@ Before you can transfer data to AVEVA&trade; Data Hub, you must save the transfe
 
 1. In the `Transfer` pane, click **Save**.
 
-   **Result:** The transfer is saved and you are returned to the `PI to OCS Agents` window.
+   **Result:** The transfer is saved and you are returned to the `PI to Data Hub Agents` window.
 
 **Note:** To make changes to a transfer, you will have to remove and rebuild a new transfer.
 
@@ -261,7 +261,7 @@ The `Details` pane provides information about the agent associated with the tran
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added.  During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. 
 
-**Note:** Modifications to an AF database or Data Archive digital state table during a PI to OCS transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
+**Note:** Modifications to an AF database or Data Archive digital state table during a PI to Data Hub transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
 
 1. Stop the transfer.
 
@@ -271,7 +271,7 @@ Data is ready for transfer after the desired PI points and/or AF elements have b
 
 ### Start the data transfer
 
-1.  Optional: In the `PI to OCS Agents` window, select the PI to OCS Agent associated with the data transfer. 
+1.  Optional: In the `PI to Data Hub Agents` window, select the PI to Data Hub Agent associated with the data transfer. 
 
 1. Optional: In the `Details` pane, click the `Transfer Overview` down area to expand this section.
 

@@ -50,4 +50,4 @@ Use this get started procedure to become familiar with OMF connections.
 
 ## Next step
 
-If you have not already completed [Get started with PI to OCS connections](xref:gsPItoOCS), do this next. Otherwise, continue with [Get started with types](xref:gsTypes).
+If you have not already completed [Get started with PI to Data Hub connections](xref:gsPItoOCS), do this next. Otherwise, continue with [Get started with types](xref:gsTypes).

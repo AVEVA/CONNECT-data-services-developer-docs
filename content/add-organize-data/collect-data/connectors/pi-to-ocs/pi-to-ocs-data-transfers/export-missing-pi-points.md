@@ -12,7 +12,7 @@ Sometimes, PI points cannot be transferred because they have been removed on the
 
 ### Procedure
 
-1. In the **PI to OCS Agents** window, select the transfer that contains the unresolved PI points.
+1. In the **PI to Data Hub Agents** window, select the transfer that contains the unresolved PI points.
  
 1. Click the **View Transfer** button on the `Details` pane.
 

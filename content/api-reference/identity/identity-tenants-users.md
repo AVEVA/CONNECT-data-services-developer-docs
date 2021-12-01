@@ -609,7 +609,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 |200|None|Header for specified user's preferences|
 |401|None|##401|
 |403|None|##403|
-|404|None|User or tenant not found|
+|404|None|User or tenant or user's preferences not found.|
 |500|None|##500|
 
 <h3>Authorization</h3>

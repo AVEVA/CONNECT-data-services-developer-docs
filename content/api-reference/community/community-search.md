@@ -82,7 +82,7 @@ Searches for shared streams within a namespace by query.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
+GET /api/v1-preview/tenants/{tenantId}/search/namespaces/{namespaceId}/streams
 ?query={query}&skip={skip}&count={count}&orderBy={orderBy}
 ```
 
@@ -143,7 +143,7 @@ Searches for shared streams within a namespace by query.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
+POST /api/v1-preview/tenants/{tenantId}/search/namespaces/{namespaceId}/streams
 ?query={query}&skip={skip}&count={count}&orderBy={orderBy}
 ```
 

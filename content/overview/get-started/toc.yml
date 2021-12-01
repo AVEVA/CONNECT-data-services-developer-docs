@@ -1,4 +1,4 @@
-- name: Introduction to the OCS portal
+- name: Introduction to the AVEVA Data Hub portal
   topicHref: introduction-portal-interface.md
 - name: Get started with namespaces
   topicHref: gs-namespaces.md

@@ -2,16 +2,16 @@
 uid: introPortalInterface
 ---
 
-# Introduction to the OCS portal
+# Introduction to the AVEVA Data Hub portal
 
-Access and interact with OCS through the web-based portal. When you first access the portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
+Access and interact with AVEVA Data Hub through the web-based portal. When you first access the portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
 ![Portal window](../images/portal-interface.png "Portal interface")
 <!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published. -->
 
-## OCS features
+## AVEVA Data Hub features
 
-Expanding the left pane opens a menu of OCS features. This pane is always available in the portal, and you can make menu selections even while collapsed.
+Expanding the left pane opens a menu of AVEVA Data Hub features. This pane is always available in the portal, and you can make menu selections even while collapsed.
 
 | Pane expanded | Pane collapsed |
 |:--:|:--:|
@@ -29,9 +29,9 @@ The following features can be accessed from the menu:
 
 - **Security**: Allows you to specify identity providers for authentication and add groups, users, roles, and clients to your tenant.
 
-- **Developer Tools**: Provides code samples, an API console, and an editor for the OSIsoft Message Format (OMF).
+- **Developer Tools**: Provides code samples, an API console, and an editor for the Open Message Format (OMF).
 
-- **Support**: Provides access to documentation, logs, support links, the OCS blog, and other useful information.
+- **Support**: Provides access to documentation, logs, support links, the AVEVA Data Hub blog, and other useful information.
 
 ## Feature pages
 

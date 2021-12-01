@@ -6,9 +6,9 @@ uid: sdsQuickStart
 
 Sequential Data Store (SDS) is a sophisticated data store. The steps described here show a very simple interaction with SDS.
 To follow along with the steps in this section, you need a tenant, a user account and associated security credentials. 
-Email [AVEVA support](mailto://cloudservices@osisoft.com) at AVEVA&trade; Data Hub to get access.
+Contact your AVEVA account manager at https://softwaresupport.aveva.com to get access to AVEVA Data Hub.
 
-You will be mainly working on the [AVEVA&trade; Data Hub portal](https://cloud.osisoft.com/). Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. 
+You will be mainly working in the AVEVA&trade; Data Hub portal. Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. 
 
 ## Before you get started 
 To work with SDS, you must first acquire a client identity, secret and authentication token. 

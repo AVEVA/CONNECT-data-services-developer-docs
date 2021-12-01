@@ -372,7 +372,7 @@ null
 <a id="tocSdataview"></a>
 <a id="tocsdataview"></a>
 
-A declarative way to select, label and shape data from OSIsoft Cloud Services
+A declarative way to select, label and shape data
 
 <h4>Properties</h4>
 

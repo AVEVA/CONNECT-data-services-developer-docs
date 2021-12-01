@@ -1326,7 +1326,7 @@ Specifies summary direction for a Field
 <a id="tocSdataview"></a>
 <a id="tocsdataview"></a>
 
-A declarative way to select, label and shape data from OSIsoft Cloud Services
+A declarative way to select, label and shape data
 
 <h4>Properties</h4>
 
@@ -1870,7 +1870,7 @@ Holds a collection of items that were resolved at a specific time.
 <a id="tocSdataitem"></a>
 <a id="tocsdataitem"></a>
 
-A data item resolved by the data view. Can represent various DataItemResourceTypes from OSIsoft Cloud Services
+A data item resolved by the data view. Can represent various DataItemResourceTypes
 
 <h4>Properties</h4>
 
@@ -2439,7 +2439,7 @@ The value resolved by a grouping field defined in the data view
 <a id="tocSdataitemofobject"></a>
 <a id="tocsdataitemofobject"></a>
 
-A data item resolved by the data view. Can represent various DataItemResourceTypes from OSIsoft Cloud Services
+A data item resolved by the data view. Can represent various DataItemResourceTypes
 
 <h4>Properties</h4>
 

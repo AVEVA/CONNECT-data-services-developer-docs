@@ -4,7 +4,7 @@ uid: operations-health
 ---
 
 # Health
-APIs related to querying OCS service health states
+APIs related to querying AVEVA Data Hub service health states
 
 ## `Get Tenant Health`
 

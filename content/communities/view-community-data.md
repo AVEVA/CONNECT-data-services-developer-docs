@@ -16,11 +16,10 @@ You can view data streams shared within a community by browsing to its **Communi
 
 1. Browse to the community that you want to shared streams for and click **Details**.
 
-    > [!NOTE]
-    > If the **Details** button is unavailable, you may require an invitation to the community. Contact your community administrator for an invitation.
-    
     The **Community details** page opens for the community. 
-
+    
+    **Note:** If the **Details** button is unavailable, you may require an invitation to the community. Contact your community administrator for an invitation.
+    
 1. From the **Tenants** tab, select the community tenant that you want to view data for.
 
     Details for the community open in the right pane.
@@ -37,7 +36,7 @@ When viewing the **Sequential Data Store** page, each stream lists whether it is
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 
-1. Optional: Toggle the **Filter Communities** panel by clicking the **filter** icon ![filter icon](images/filter_alt_black_18dp.svg) and select a community to filter for.
+1. (Optional) Toggle the **Filter Communities** panel by clicking the **filter** icon ![filter icon](images/filter_alt_black_18dp.svg) and select a community to filter for.
 
     Filtering the page by communities displays only streams that are shared within the selected communities.
     

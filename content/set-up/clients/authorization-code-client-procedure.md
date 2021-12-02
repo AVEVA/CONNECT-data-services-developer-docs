@@ -3,7 +3,7 @@ uid: gpAuthorizationCodeClient
 ---
 # Add an authorization code client
 
-Authorization code clients provide a secure means of authenticating users to customer web applications that use OCS as their backend. Follow this procedure to add an authorization code client.
+Authorization code clients provide a secure means of authenticating users to customer web applications that use OCS as their backend. To add an authorization code client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
 

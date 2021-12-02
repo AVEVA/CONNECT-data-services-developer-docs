@@ -9,7 +9,7 @@ Authorization code clients provide a secure means of authenticating users to cus
 
 1. In the **Client Type** field, select **Authorization Code**.
 
-1. In the toolbar, click **Add Client**.
+1. In the toolbar, select **Add Client**.
 
   The `Add Client` window appears.
 

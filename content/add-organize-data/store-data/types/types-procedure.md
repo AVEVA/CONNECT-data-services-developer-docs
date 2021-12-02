@@ -12,7 +12,7 @@ To add a stream, follow these steps:
 
 1. From the **Streams** dropdown, select **Types**.
 
-1. Click **Add Type**.
+1. Select **Add Type**.
 
 1. In the `Add Type` pane, complete the following fields:
 

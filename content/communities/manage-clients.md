@@ -12,7 +12,7 @@ To perform the following procedures, you must be a [Community Administrator](xre
 
 ## Add clients to a community
 
-To add a client to a community, the client must already exist in AVEVA&trade; Data Hub. Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can create a client. For more information about creating clients, see [Add a client credentials client](xref:gpClientCredentialsClient).
+To add a client to a community, the client must already exist in AVEVA Data Hub. Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can create a client. For more information about creating clients, see [Add a client credentials client](xref:gpClientCredentialsClient).
 
 1. In the left pane, select **Data Management** > **Communities**.
 

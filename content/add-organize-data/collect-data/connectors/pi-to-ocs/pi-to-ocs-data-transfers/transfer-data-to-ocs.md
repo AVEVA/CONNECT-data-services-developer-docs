@@ -78,7 +78,7 @@ To build an AF element
 
 1. (Optional) Select **Root Asset**.
 
-1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then select **Select**. <!-- AF 11/15/21 UGH! I hate "select **Select**". Makes me want to use click. -->
+1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then choose **Select**. <!-- AF 11/15/21 UGH! I hate "select **Select**". Makes me want to use click. -->
 
 1. (Optional) In the **Element Name** field, enter search criteria to filter by part or all of an AF element name.
 

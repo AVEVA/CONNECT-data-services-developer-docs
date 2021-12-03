@@ -14,7 +14,7 @@ To share streams with other communities, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. If it is not already selected, select **Streams** at the top left.
+1. If it is not already selected, select **Streams** at the upper left.
 
 1. Select one or more streams to share.
 

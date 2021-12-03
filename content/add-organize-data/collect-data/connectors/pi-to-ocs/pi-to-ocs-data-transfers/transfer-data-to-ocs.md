@@ -47,7 +47,7 @@ To name the data transfer, follow these steps:
 
    ![](../../images/transfer-settings.png)
    
-1. In the **Name** and **Decription** fields, enter a name and description for the transfer.
+1. In the **Name** and **Description** fields, enter a name and description for the transfer.
 
 1. (Optional) In the **Historical Start time** fields, enter a historical time context for the data retrieval.
 

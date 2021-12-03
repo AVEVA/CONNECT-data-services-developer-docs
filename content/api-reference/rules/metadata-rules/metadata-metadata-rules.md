@@ -68,6 +68,7 @@ Defaults to false.<br/><br/>
             "Name": "location",
             "CharacterType": "Letter",
             "CharacterLength": 3,
+            "StrictValueMappings": true,
             "ValueMappings": {
               "PHX": "Phoenix",
               "AUX": "Austin"
@@ -254,6 +255,7 @@ The RuleModel object to create.<br/>
           "Name": "location",
           "CharacterType": "Letter",
           "CharacterLength": 3,
+          "StrictValueMappings": true,
           "ValueMappings": {
             "PHX": "Phoenix",
             "AUX": "Austin"
@@ -415,6 +417,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}
           "Name": "location",
           "CharacterType": "Letter",
           "CharacterLength": 3,
+          "StrictValueMappings": true,
           "ValueMappings": {
             "PHX": "Phoenix",
             "AUX": "Austin"
@@ -602,6 +605,7 @@ The RuleModel object.<br/>
           "Name": "location",
           "CharacterType": "Letter",
           "CharacterLength": 3,
+          "StrictValueMappings": true,
           "ValueMappings": {
             "PHX": "Phoenix",
             "AUX": "Austin"

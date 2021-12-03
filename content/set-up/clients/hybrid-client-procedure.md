@@ -18,7 +18,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in to the portal.
 
-1. In the **Allowed Redirect URL(s)** box, enter a URL and click **+** to add it to the list.
+1. In the **Allowed Redirect URL(s)** box, enter a URL and select **+** to add it to the list.
 
    The application specifies one of the URLs in this list when it authenticates against OCS, and the OCS identity server returns the results of the authentication to this URL.
 

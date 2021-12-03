@@ -196,7 +196,7 @@ To configure data privacy and add an agent description, follow these steps:
 
 ## List of agent status states
 
-It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under the Agent Status field in the PI to OCS Configuration Utility.
+It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under the **Agent Status** field in the PI to OCS Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |

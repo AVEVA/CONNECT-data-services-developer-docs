@@ -18,6 +18,6 @@ To review the data, follow these steps:
 
 1. (Optional) To view details about the stream metadata and type, select a stream.
 
-1. To review the types created, in the **Streams** dropdown, select **Types**.
+1. To review the types created, in the **Streams** dropdown list, select **Types**.
 
 1. (Optional) In the **Search** field, enter search criteria to locate specific types, and then press Enter.

@@ -12,4 +12,4 @@ Use the information in this section to programmatically access AVEVA Data Hub.
 
 ## Access to AVEVA Data Hub
 
-You must have an account to use AVEVA Data Hub. Go to the [AVEVA Data Hub page at ](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), click [Contact Us](https://www.osisoft.com/contact) and request an account.
+You must have an account to use AVEVA Data Hub. Go to the [AVEVA Data Hub](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), click [Contact Us](https://www.osisoft.com/contact) and request an account.

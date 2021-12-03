@@ -10,7 +10,7 @@ To review the data, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. To review the streams created, in the **Streams** dropdown, select **Streams**.
+1. To review the streams created, in the **Streams** dropdown list, select **Streams**.
    
    **Note:** By default, the grid displays the SDS streams created by the PI to OCS data transfer. The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page.
 

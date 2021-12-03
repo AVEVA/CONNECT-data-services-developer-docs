@@ -33,7 +33,7 @@ Authorization code clients provide a secure means of authenticating users to cus
 
 1. Select **Add**.  
 
-   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. Copy the client Id by clicking the **Copy** icon. After you close this window, you can also retrieve the client Id from the list of clients.
+   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. To copy the client Id, select the **Copy** icon. After you close this window, you can also retrieve the client Id from the list of clients.
 
 ## Related links
 

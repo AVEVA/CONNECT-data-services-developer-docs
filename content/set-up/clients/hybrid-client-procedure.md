@@ -22,7 +22,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
    The application specifies one of the URLs in this list when it authenticates against OCS, and the OCS identity server returns the results of the authentication to this URL.
 
-1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and click **+** to add it to the list. 
+1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+** to add it to the list. 
 
    The application specifies a URL from this list when it logs out of OCS, and the OCS identity server sends the user to this URL after a successful log out.
 

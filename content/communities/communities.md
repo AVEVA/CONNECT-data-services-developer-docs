@@ -25,7 +25,7 @@ Within this diagram, a [tenant administrator](xref:communityroles#tenant-adminis
 
 Both **Tenant A** and **Tenant B** have two streams stored in each of their tenants, as depicted by callout **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (callout **3**). 
 
-Both tenants are sharing only one of their data streams within the community: **Tenant A** is sharing their silver stream, and **Tenant B** is sharing their light blue stream (callout **4**). A data steward with sharing privileges must explicitly share a data stream.
+Both tenants are sharing only one of their data streams within the community: **Tenant A** is sharing their silver stream, and **Tenant B** is sharing their light purple stream (callout **4**). A data steward with sharing privileges must explicitly share a data stream.
 
 All data streams shared within the community can be viewed by any [community member](xref:communityroles#community-member) (callout **5**). Within a community, administrators or moderators can invite and manage which users within their tenant can participate in the community and view shared data.
 

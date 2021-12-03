@@ -10,7 +10,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. In the **Client Type** field, select **Client-Credentials**. This option is displayed by default.
 
-1. In the toolbar, click **Add Client**.
+1. In the toolbar, select **Add Client**.
 
   The `Add Client` window appears.
 

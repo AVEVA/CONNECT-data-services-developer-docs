@@ -64,7 +64,7 @@ To name the data transfer, follow these steps:
 
    The transfer is created and the `Transfer` page opens.
 
-**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Setting` window and modify thename, description, historical start and end times, and data privacy settings as needed.
+**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Setting` window and modify the name, description, historical start and end times, and data privacy settings as needed.
 
 ## Build an AF elements transfer list
 

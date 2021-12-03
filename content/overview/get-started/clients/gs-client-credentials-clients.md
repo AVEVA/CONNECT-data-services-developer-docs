@@ -22,26 +22,29 @@ To create a client-credentials client, follow these steps:
    
    By default, the client is assigned the Tenant Member role which cannot be removed. Roles can be modified after the client is created.
 
-1. (Optional) Set the **Token Lifetime**.  
-   Token Lifetime represents the length of time in seconds the access token functions before it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
+1. (Optional) In the **Token Lifetime** field, enter the length of time in second that the access token functions before it expires.
+   
+   The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
 1. Click **Continue**.
 
-1. In the `Add Secret` window, enter a description for the client secret.
+  The `Add Secret` window opens.
 
-1. Enter a date that the secret expires.
+1. (Optional) In the **Description** field, enter a description for the client secret.
 
-   Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
+1. In the **Expiration Date** field, enter a date and time that the secret expires.
 
-1. Click **Add**.
+   Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
 
- A window opens with the `Client Id` and `Client Secret`.
+1. Select **Add**.
+
+  The `Client Successfully Created` window opens and displays the **Client Id** and **Client Secret**.
     
-  **Important**: Click the **Copy** buttons to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+   **Important:** Select the **Copy** button to the right of each field to save the client secret and client Id. You need this information to connect your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
     
-1. Click **Close**.  
+1. Select **Close**.  
 
-   **Note:** In the list of secrets, the `Client Id` is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.
+   **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.
 
 ## Next step
 

@@ -4,25 +4,15 @@ uid: gsAssets
 
 # Get started with assets
 
-An asset is a container that includes metadata and references to streams related to a logical asset. For more information about assets, see the following topics:
+An asset is a container that includes metadata and references to streams related to a logical asset. For more information about assets, see [Assets](xref:ccAssets).
 
-- [Assets](xref:ccAssets)
-
-- [PI Server counterpart](xref:ccAssets#pi-server-counterpart)
-
-- [Assets best practices](xref:ccAssets#assets-best-practices)
-
-## Procedure
-
-Follow the procedure to create an asset.
+To create an asset, follow these steps:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 
-1. Click the **Change Namespace** button in the upper-right toolbar, then click **MyData** or another namespace in which you created your stream. 
-
 1. From the **Asset/Asset Types Selector** dropdown list, ensure that **Assets** is selected.
 
-1. In the toolbar, click **Add Asset**. 
+1. In the toolbar, select **Add Asset**. 
 
 1. In the `Select Type for New Asset` window, select **< None >** and click **Continue**.
 

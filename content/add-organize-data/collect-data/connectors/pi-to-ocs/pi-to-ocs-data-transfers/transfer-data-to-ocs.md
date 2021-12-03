@@ -244,7 +244,7 @@ Data is ready for transfer after the desired PI points and/or AF elements have b
 
   3. Restart the transfer to pick up these changes.
 
-## Start ae data transfer
+## Start a data transfer
 
 To start a data transfer, follow these steps:
 

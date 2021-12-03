@@ -14,7 +14,7 @@ Data views are subsets of data from one or more AVEVA Data Hub sources, such as 
 
 * Data view shape – A portion of a data view definition that determines if the data should be returned in the standard grouped row format or a narrow view which is a pivot of the standard table
 
-The ability to create data views in AVEVA Data Hub will mesh directly with OSIsoft's Data Science Enablement efforts, whereby users will be able to programmatically access data view content via an API for the purposes of advanced analytics. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.
+The ability to create data views in AVEVA Data Hub will mesh directly with AVEVA's Data Science Enablement efforts, whereby users will be able to programmatically access data view content via an API for the purposes of advanced analytics. The ultimate goal is to deliver shaped data that is ready for consumption because it is normalized, aligned, and interpolated.
 
 Understanding how the data view resolves into content is important both for the designer and the consumer. Data views provide extensive visibility into what data is included. The concept of "resolving" a data view is when the data view's queries and logic are executed to determine the data view's exact schema and content.
 

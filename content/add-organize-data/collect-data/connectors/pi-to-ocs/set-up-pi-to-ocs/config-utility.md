@@ -151,7 +151,7 @@ To add a PI Data Archive, follow these steps:
 
 ## Create a PI mapping 
 
-PI mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to OCS. For more information, see ["What are PI identities and mappings?"](https://livelibrary.osisoft.com/LiveLibrary/content/en/server-v14/GUID-AD57C990-0DE6-4280-B9F3-1432C6E444C5). You can also edit mappings with the utility.
+PI mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to OCS. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit mappings with the utility.
 
 **Note:** The user account used to launch the utility must have permissions to create mappings.
 

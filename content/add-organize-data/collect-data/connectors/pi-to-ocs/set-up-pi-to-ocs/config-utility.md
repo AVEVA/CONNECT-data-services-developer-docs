@@ -89,7 +89,7 @@ To select the default Data Archive, follow these steps:
 
 1. Select **File** > **Server Properties**.
 
-1. In the `PI AF Server Properties` window, select the **Default Data Server down arrow**, and then select the data server to be the default.<!--AF 11/12/21 what is Default Data Server down arrow???-->
+1. In the `PI AF Server Properties` window, select the **Default Data Server** down arrow, and then select the data server to be the default.<!--AF 11/12/21 what is Default Data Server down arrow???-->
 
 1. Select **Apply**, then select **OK** to save the selection.
  

@@ -15,7 +15,7 @@ Authorization code clients provide a secure means of authenticating users to cus
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client. 
 
-1. In the **Allowed Redirect URL(s)** box, enter a URL and click **+** to add it to the list.
+1. In the **Allowed Redirect URL(s)** box, enter a URL and select **+** to add it to the list.
 
    The application specifies one of the URLs in this list when it authenticates against OCS, and the OCS identity server returns the results of the authentication to this URL.
 

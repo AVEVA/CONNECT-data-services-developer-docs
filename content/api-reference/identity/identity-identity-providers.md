@@ -903,7 +903,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of All Groups that a User Belongs to on an Identity Provider"></a>
 
-Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the AVEVA Data Hub tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the AVEVA Data Hub tenant.
+Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
 
 <h3>Request</h3>
 

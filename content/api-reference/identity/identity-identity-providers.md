@@ -1034,7 +1034,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of All Users Belonging to Group on an Identity Provider"></a>
 
-Returns a list of all users belonging to a specific group on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the AVEVA Data Hub tenant.
+Returns a list of all users belonging to a specific group on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the tenant.
 
 <h3>Request</h3>
 

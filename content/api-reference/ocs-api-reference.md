@@ -8,7 +8,7 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Tenant Management](xref:AccountManagementOverview) - Use the information in this section to create, manage, and administer your account by assigning users, roles, and namespaces to your tenant.
 * [Identity and Access Management](xref:identityandaccessmanagement) - Use the information in this section to create, manage and administer users and clients.
-* [Sequential Data Store (SDS)](xref:sds) - Use the information in this section to learn about the AVEVA Data Hub Sequential Data Store. The SDS is optimized for sequential data operations.
+* [Sequential Data Store (SDS)](xref:sds) - Use the information in this section to learn about the Sequential Data Store. The SDS is optimized for sequential data operations.
 * [Data Collection and Open Message Format](xref:dataIngress) - Use OMF to achieve high-throughput asynchronous data ingress into the AVEVA Data Hub Sequential Data Store.
 * [Metadata Rules](xref:MetadataRulesOverview) - The metadata rules feature in the AVEVA Data Hub Portal simplifies the process of assigning metadata to streams.
 * [Data Views](xref:DataViewsOverview) - Use the information in this section to create user-selected subsets of data stored in AVEVA Data Hub which are mapped into customizable table formats.

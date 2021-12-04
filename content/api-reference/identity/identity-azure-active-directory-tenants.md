@@ -181,7 +181,7 @@ Allowed for these roles:
 
 ## `List All AAD Tenants from Tenant`
 
-<a id="opIdAzureActiveDirectoryTenants_List All AAD Tenants from OCS Tenant"></a>
+<a id="opIdAzureActiveDirectoryTenants_List All AAD Tenants from Tenant"></a>
 
 Returns all Azure Active Directory tenants from a tenant.
 

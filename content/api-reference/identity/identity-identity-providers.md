@@ -629,7 +629,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get an Identity Provider Consent from a Tenant"></a>
 
-Returns the consent information for an identity provider for a tenant. The ConsentState property, if returned, determines whether an identity provider consents to sharing access to its directory with the AVEVA Data Hub tenant. For example, the expected ConsentState's for AAD include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
+Returns the consent information for an identity provider for a tenant. The ConsentState property, if returned, determines whether an identity provider consents to sharing access to its directory with the tenant. For example, the expected ConsentState's for AAD include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
 
 <h3>Request</h3>
 

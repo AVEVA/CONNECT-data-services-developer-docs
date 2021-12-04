@@ -4,7 +4,7 @@ uid: tenant-features
 ---
 
 # Features
-APIs for managing the feature states of an AVEVA Data Hub Tenant.
+APIs for managing the feature states of a tenant.
 
 ## `List All`
 

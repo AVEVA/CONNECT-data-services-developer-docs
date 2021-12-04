@@ -715,7 +715,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Update Identity Provider Consent of a Tenant"></a>
 
-Updates the identity provider consent of a tenant. Currently only supports Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.All permissions to the AVEVA Data Hub tenant.
+Updates the identity provider consent of a tenant. Currently only supports Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
 
 <h3>Request</h3>
 

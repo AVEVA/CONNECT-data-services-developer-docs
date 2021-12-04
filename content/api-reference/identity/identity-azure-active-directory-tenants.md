@@ -148,7 +148,7 @@ Allowed for these roles:
 
 ## `Remove AAD Tenant from Tenant`
 
-<a id="opIdAzureActiveDirectoryTenants_Remove AAD Tenant from OCS Tenant"></a>
+<a id="opIdAzureActiveDirectoryTenants_Remove AAD Tenant from Tenant"></a>
 
 Removes Azure Active Directory tenant from a tenant. This is not supported currently.
 

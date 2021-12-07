@@ -51,7 +51,7 @@
             "content/visualize-data/images/**",
             "content/overview/images/**",
             "content/overview/get-started/images/**",
-            "content/overview/get-started/aveva-cnnxt/images**",
+            "content/overview/get-started/aveva-cnnxt/images/**",
             "content/overview/get-started/clients/images/**",
             "content/overview/get-started/connections/images/**",
             "content/developer-guide/images/**"

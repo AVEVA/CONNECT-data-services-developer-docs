@@ -6,17 +6,17 @@ uid: ViewEdgeSystem
 
 View and monitor the health status and configuration information for edge systems, including Edge Data Store and PI Adapters, for a selected namespace. You can filter and sort the list of edge devices, and open a trend displaying diagnostic data for a specific device or component. 
 
-**Note:** An edge system appears on the `Edge Systems` page once it is writing data to OCS.
+**Note:** An edge system appears on the `Software Management Edge Systems` page once it is writing health data to OCS. For information on configuring health endpoints, see the specific edge system product documentation.
 
 ## View an edge system
 
-To view an edge system:
+To view an edge system, follow these steps:
 
-1. From the left pane, select **Data Collection** > **Edge Systems**.
+1. From the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
-1. **Optional:** To sort by a column in descending order, click on the column header. To sort in ascending order, click again.
+1. **Optional:** To sort by a column in descending order, select the column header. To sort in ascending order, select the header again.
 
 1. **Optional:** To filter the edge systems shown based on a specific column, select the filter icon in the column header. 
 
@@ -40,13 +40,13 @@ To view an edge system:
 
 ## Remove an edge system
 
-You can remove edge systems from the list of edge systems in OCS, but the edge system remains on the device. After an edge system is removed from OCS and it is no longer sending data to OCS, you can no longer see or manage it from OCS. If an edge system sends data to OCS after it has been removed from the list of edge systems, it will reappear in the list of edge systems.
+You can remove edge systems from the list of edge systems in OCS, but the edge system remains on the device. After an edge system is removed from OCS and it is no longer sending data to OCS, you can no longer see or manage it from OCS. If an edge system sends health data to OCS after it has been removed from the list of edge systems, it will reappear in the list of edge systems.
 
-To remove an edge system:
+To remove an edge system, follow these steps:
 
-1. In the left pane, select **Data Management** > **Edge Systems**.
+1. In the left pane, select **Data Management** > **Software Management**.
 
-1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to remove.
 

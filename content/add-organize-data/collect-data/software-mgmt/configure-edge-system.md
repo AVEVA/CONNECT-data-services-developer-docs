@@ -1,12 +1,12 @@
 ---
-uid: EditEdgeSystem
+uid: ManageConfigurations
 ---
 
 # Manage edge system configurations
 
 You can import an edge system configuration from the field to its corresponding edge system digital twin as a record. You can also create a new configuration, using a default configuration or a configuration template. Once the configuration is complete, you can export the configuration file for each component or for the edge system to manually apply to the edge system. You can use an exported configuration file to configure other edge systems by importing it. The maximum size for a configuration file is 16 MB.
 
-**Note:** Configuration is available for the following edge system types:
+Configuration is available for the following edge system types:
 
  - Edge Data Store
 
@@ -18,23 +18,25 @@ You can import an edge system configuration from the field to its corresponding 
  
  - PI Adapter for OPC UA
 
+**Note:** An edge system appears on the `Software Management Edge Systems` page once it is writing health data to OCS. For information on configuring health endpoints, see the specific edge system product documentation.
+
 ## Import an edge system configuration
 
-To import an edge system configuration from the field to the corresponding edge system digital twin:
+To import an edge system configuration from the field to the corresponding edge system digital twin, follow these steps:
 
-1. In the left pane, select **Data Management** > **Edge Systems**.
+1. In the left pane, select **Data Management** > **Software Management**.
 
-1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to configure.
 
 ## Edit an edge system configuration
 
-To edit an edge system configuration and export it for use:
+To edit an edge system configuration and export it for use, follow these steps:
 
 1. In the left pane, select **Data Management** > **Edge Systems**.
 
-1. Verify that the **Edge Systems/Configuration Library** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to configure.
 
@@ -68,6 +70,6 @@ To edit an edge system configuration and export it for use:
 
  The JSON file is downloaded to your browser.
 
-1. When you have finished configuring the edge system, select **Save & Close**.
+1. When you have finished, select **Save & Close**.
 
 1. To confirm the changes, select **Save & Close**.  

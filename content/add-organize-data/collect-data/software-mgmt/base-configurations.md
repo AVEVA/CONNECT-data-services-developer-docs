@@ -1,10 +1,10 @@
 ---
-uid: EdgeSystemTemplates
+uid: AddBaseConfiguration
 ---
 
-# Add and edit edge system configuration templates
+# Add and edit base configurations
 
-You can create and edit edge system configuration templates in OCS. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
+You can create and edit base configurations for edge systems in OCS. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
 **Note:** You can create configuration templates for the following edge system types:
 
@@ -18,19 +18,19 @@ You can create and edit edge system configuration templates in OCS. Once the con
  
  - PI Adapter for OPC UA
 
-## Add a new template
+## Add a new base configuration
 
-To create an edge system configuration template and export it for use:
+To create a edge system base configuration and export it for use, follow these steps:
 
-1. In the left pane, select **Data Management** > **Edge Systems**.
+1. In the left pane, select **Data Management** > **Software Management**.
 
-1. Verify that the **Edge Systems/Configuration Library** selector is set to **Configuration Library**.
+1. Verify that the **Edge Systems/Base Configurations** selector is set to **Base Configurations**.
 
-1. Select **Add Template**.
+1. Select **New Base Configuration**.
 
-1. In the **Configuration Template Name** field, enter a name to identify the template.
+1. In the **Base Configuration Name** field, enter a name to identify the configuration.
 
-1. In the **Type** and **Version** fields, select the edge system type and version for which to create the template.
+1. In the **Type** and **Version** fields, select the edge system type and version for which to create the configuration.
 
   The default configuration for the selected edge system type displays.
 
@@ -52,17 +52,17 @@ To create an edge system configuration template and export it for use:
 
  The JSON file is downloaded to your browser.
 
-1. When you have finished configuring the edge system, select **Save & Close**.
+1. When you have finished, select **Save & Close**.
 
 1. Select **Save & Close** to confirm the changes. 
 
 ## Edit an existing template
 
-To modify an edge system configuration template and export it for use:
+To modify a base configuration and export it for use, follow these steps:
 
-1. In the left pane, select **Data Management** > **Edge Systems**.
+1. In the left pane, select **Data Management** > **Software Management**.
 
-1. Verify that the **Edge Systems/Configuration Library** selector is set to **Configuration Library**.
+1. Verify that the **Edge Systems/Base Configurations** selector is set to **Base Configurations**.
 
 1. Find and select the template to modify.
 
@@ -86,6 +86,6 @@ To modify an edge system configuration template and export it for use:
 
  The JSON file is downloaded to your browser.
 
-1. When you have finished configuring the edge system, select **Save & Close**.
+1. When you have finished, select **Save & Close**.
 
 1. To confirm the changes, select **Save & Close**. 

@@ -2,7 +2,7 @@
 uid: SoftwareMgmt
 ---
 
-# Software management
+# Software management (Preview)
 
 Software management provides a centralized location to monitor the health and manage the software configuration of edge systems, including Edge Data Store and PI Adapters. This gives you visibility into the data collection software that is deployed on remote devices. To be available in software management, an edge system must have an OCS health endpoint configured. For information on configuring health endpoints, see the specific edge system product documentation.
 

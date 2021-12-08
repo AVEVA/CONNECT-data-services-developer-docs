@@ -4,7 +4,7 @@ uid: omfIngressSpecification
 
 # OMF ingress specification
 
-[The Open Message Format (OMF) specification](http://omf-docs.osisoft.com) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by OSIsoft Cloud Services back-end system. 
+[The Open Message Format (OMF) specification](http://omf-docs.osisoft.com) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by AVEVA&trade; Data Hub back-end system. 
 
 ## Headers
 For a description of each of the headers, see [OMF specification](http://omf-docs.osisoft.com). Note that rather than using a ``producertoken``, data collection calls to AVEVA&trade; Data Hub require a bearer token to be attached in the header, as documented in the [OCS Quick Start](xref:sdsQuickStart) documentation. The bearer token is used to authenticate the sender and to authorize the sender for use with a particular tenant. The client ID associated with this token is used to route messages to a particular [topic](xref:omfIngressTopics) that it is mapped to.

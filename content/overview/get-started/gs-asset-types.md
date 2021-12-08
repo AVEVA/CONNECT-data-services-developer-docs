@@ -62,9 +62,9 @@ Follow the procedure to use the asset explorer to create an asset type.
     
 1. In the asset type pane, use the icons in the upper right of the toolbar to switch between the following:
 
-     -  ![Card view](images/card-view.png) &ndash; Card view displays the asset types as a series of tiles. 
-     -  ![Table view](images/table-view.png) &ndash; Table view displays the asset types in a table format.
-     -  ![Autorefresh](images/autorefresh-btn.png) &ndash; Autorefresh checks for updates and refreshes the screen with new results. 
+     -  ![Card view](../images/card-view.png) &ndash; Card view displays the asset types as a series of tiles. 
+     -  ![Table view](../images/table-view.png) &ndash; Table view displays the asset types in a table format.
+     -  ![Autorefresh](../images/autorefresh-btn.png) &ndash; Autorefresh checks for updates and refreshes the screen with new results. 
 
 ## Create an asset type from an asset
 
@@ -78,7 +78,7 @@ You can take an existing asset and use it as the basis for creating an asset typ
 
    **Note:** In the upper-right corner of the right pane, **Asset Type** is set to *< None >* indicating that this asset is not based on an asset type. 
 
-1. Click the ![More Options button](images/more-options.png) icon, then click **Save as Asset Type**.
+1. Click the ![More Options button](../images/more-options.png) icon, then click **Save as Asset Type**.
 
 1. In the `Create an Asset Type for MyData.Asset` window, enter the following:
    

@@ -2,7 +2,7 @@
 uid: ccClients
 ---
 
-# Clients
+# AVEVA Data Hub clients
 
 Clients allow applications to authenticate against AVEVA&trade; Data Hub from outside the portal. The following types of clients are supported, and each support different types of applications:
 

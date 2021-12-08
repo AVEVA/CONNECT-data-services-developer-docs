@@ -34,7 +34,7 @@ Open the [AVEVA™ Connect page](https://connect.aveva.com/).
 
 ## AVEVA™ Data Hub portal
 
-The AVEVA™ Data Hub portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the AVEVA™ Data Hub REST-based API. This introduction to AVEVA™ Data Hub uses the portal functionality. Before you start the exercises, see [Introduction to the AVEVA™ Data Hub portal](xref:introPortalInterface) to get an overview of the user interface.
+The AVEVA™ Data Hub portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the AVEVA™ Data Hub REST-based API. This introduction to AVEVA™ Data Hub uses the portal functionality. Before you start the exercises, see [Take a tour of the AVEVA™ Data Hub portal](xref:introPortalInterface) to get an overview of the user interface.
 
 ## Get started goals
 

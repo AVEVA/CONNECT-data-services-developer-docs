@@ -20,7 +20,7 @@ The Services Catalog is accessed from the AVEVA Connect home page.
 
     ![AVEVA™ Cloud Services Catalog](./images/cloud-svcs-cat.png)
 
-**Note:** **SUBSCRIBED** appears on service tiles that your organization has access to use. 
+    **Note:** **SUBSCRIBED** appears on service tiles that your organization has access to use. 
 
 1. Click **Learn more** on a tile to view information about that service.
  

@@ -26,7 +26,7 @@ Authorization code clients are used with customer web applications that use AVEV
 
 1. Enter the URLs in the **Allowed Redirect URL(s)** text box, and click  **+**  to add it to the list. 
 
-   The application specifies one of the URLs in this list when it authenticates against AVEVA™ Data Hub, and the AVEVA™ Data Hub identity server returns the results of the authentication to this URL.
+   The application specifies one of the URLs in this list when it authenticates, and Data Hub returns the results of the authentication to this URL.
 
 1. (Optional) Enter URLs in the **Allowed Logout Redirect URL(s)** text box, and click **+**  to add it to the list. 
 

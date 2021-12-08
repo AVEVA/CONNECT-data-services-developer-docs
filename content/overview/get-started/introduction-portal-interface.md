@@ -6,7 +6,7 @@ uid: introPortalInterface
 
 When you first access the AVEVA™ Data Hub portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
-![Portal window](../../images/portal-interface.png "AVEVA™ Data Hub portal interface")
+![Portal window](../images/portal-interface.png "AVEVA™ Data Hub portal interface")
 <!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published. -->
 
 ## AVEVA™ Data Hub features
@@ -15,7 +15,7 @@ Expanding the left pane opens a menu of AVEVA™ Data Hub features. This pane is
 
 | Pane expanded | Pane collapsed |
 |:--:|:--:|
-| ![pane expanded](../../images/left-pane-expanded.png) | ![pane collapsed](../../images/left-pane-collapsed.png) |
+| ![pane expanded](../images/left-pane-expanded.png) | ![pane collapsed](../images/left-pane-collapsed.png) |
 
 AVEVA&trade; Data Hub includes the following features:
 
@@ -37,7 +37,7 @@ AVEVA&trade; Data Hub includes the following features:
 
 Clicking a menu item takes you to the related feature page.
 
-![Feature details](../../images/feature-details.png "Feature details")
+![Feature details](../images/feature-details.png "Feature details")
 
 Most pages consist of two panes:
 
@@ -55,7 +55,7 @@ Most pages consist of two panes:
 
 The portal toolbar is located in the upper-right corner of the portal window.
 
-![Portal toolbar](../../images/top-right-portal-window.png)
+![Portal toolbar](../images/top-right-portal-window.png)
 
 The table below provides a list and descriptions of these toolbar commands.
 

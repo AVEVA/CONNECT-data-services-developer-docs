@@ -26,11 +26,11 @@ You can open the PI to OCS Agent Configuration Utility to change server connecti
 
 1. Click the Windows start button.
 
-2. On the Windows menu, scroll to and click **OSIsoft**, then click **PI to OCS Agent Configuration Utility**, then click **Yes**.
+1. On the Windows menu, scroll to and click **OSIsoft**, then click **PI to OCS Agent Configuration Utility**, then click **Yes**.
 
    **Result:** Upon successful authentication, the **PI to OCS Agent Configuration Utility** opens.
 
-3. Click **Connect to OSIsoft Cloud Services**.
+1. Click **Connect to OSIsoft Cloud Services**.
    
    **Note:** If you have not yet added an AF server or PI Data Archive server, see [Add an AF server](#add-an-af-server) or [Add a PI Data Archive](#add-a-pi-data-archive) for instructions.
  
@@ -134,11 +134,7 @@ You can assign an AF mapping to an AF identity. AF mappings enable a specific se
 
 ## Add a PI Data Archive
 
-After adding an AF server, you select the source PI Data Archive that contains the PI points you want to transfer. 
-
-**Note:** There is a one-to-one (1:1) Data Archive to PI to OCS Agent constraint for PI to OCS transfers. If your AF server references multiple Data Archives, only one Data Archive can be selected and configured for the transfer.  
-
-The list of available PI Data Archive servers is based on what servers are referenced by AF elements on the AF server you selected. If you are upgrading an agent, the PI to OCS Agent Configuration Utility maintains the previously selected PI Data Archive configuration.  
+After adding an AF server, you can select the source PI Data Archive that contains the PI points you want to transfer. The list of available PI Data Archive servers is based on what servers are referenced by AF elements on the AF server you selected. If you are upgrading an agent, the PI to OCS Agent Configuration Utility maintains the previously selected PI Data Archive configuration.  
 
 **Note:** If you are not adding an AF server, click the PI Data Archive icon on the first screen of the PI to OCS Agent Configuration Utility.
 
@@ -222,6 +218,6 @@ It may take a few minutes for a PI System to register with AVEVA&trade; Data Hub
 | Data  Source Connection Issue | Indicates  the PI To OCS Agent isn't able to connect to the PI Data Archive. Some  reasons for this status include the PI Data Archive is turned off, a firewall  issue is preventing connections or an incorrect name is configured for the  Data Archive (for example, trying to connect to a machine that doesn't  exist/was renamed). There may be additional reasons for this status. |
 | Data  Source Security Issue   | Indicates  the PI Data Archive connection is unsecure and security settings need to be  addressed. |
 | Missing Configuration         | The PI Data Archive server has not been configured in the PI to OCS Agent. |
-| Registration Failed           | Contact AVEVA Customer support for assistance.             |
+| Registration Failed           | Contact [AVEVA Customer Support](https://softwaresupport.aveva.com) for assistance.             |
 | Registering                   | The PI to OCS Cloud portion is creating the necessary resources for your PI to OCS Agent. |
 | Shutdown                      | The last communication that the PI to OCS Cloud had with the agent was a shutdown message. |

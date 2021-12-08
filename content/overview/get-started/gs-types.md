@@ -20,7 +20,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. From the **Streams** dropdown list, select **Types**.
 
-1. Click the ![More Options button](images/more-options.png) icon, then click **Manage Default Permissions**.
+1. Click the ![More Options button](../images/more-options.png) icon, then click **Manage Default Permissions**.
  
    **Result:** The `Manage Default Permissions for New Types` window opens.
 
@@ -44,7 +44,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 1. Complete the following fields for the first property:
 
-   - `**Key** &ndash; Select the checkbox.
+   - **Key** &ndash; Select the checkbox.
 
      **Note:** The `Key` field identifies this property as the index. 
 
@@ -84,13 +84,13 @@ After creating the namespace, the next step is to add one or more types. For mor
 
 The following steps explore information about the type you just created.
 
-1. Click the checkbox to select the `MyData.PumpState` type in the list. Click the ![More Options button](images/more-options.png) icon, then click **Manage Permissions**.
+1. Click the checkbox to select the `MyData.PumpState` type in the list. Click the ![More Options button](../images/more-options.png) icon, then click **Manage Permissions**.
 
     This opens the `Manage Permissions for MyData.PumpState` window where you can override the default permissions and set permissions for the specific type. You must be assigned the Tenant Administrator role to configure the type permissions.
 
     Review the permissions for the MyData.PumpState type, and when you have finished exploring this window, click **Cancel** to continue. 
 
-1. Click the ![More Options button](images/more-options.png) icon, then click **Get Type Streams**.
+1. Click the ![More Options button](../images/more-options.png) icon, then click **Get Type Streams**.
 
    This takes you to the **Streams** list and, by default, the typeId:MyData.PumpState query is used to filter any streams with the MyData.PumpState type. The list is currently empty, because streams have not yet been created with this type.
 

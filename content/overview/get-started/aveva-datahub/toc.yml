@@ -1,3 +1,5 @@
+- name: Take a tour of the AVEVA Data Hub portal
+  topicHref: /../aveva-datahub/introduction-portal-interface.md
 - name: Get started with namespaces
   topicHref: gs-namespaces.md
 - name: Get started with connections

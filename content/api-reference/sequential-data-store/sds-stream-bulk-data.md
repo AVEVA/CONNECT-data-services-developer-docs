@@ -10,7 +10,12 @@ The API in this section interacts with data from multiple streams.
 
 <a id="opIdStreamsData_List Window Values (GET Method)"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#join-values
+Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
+GET and POST join requests are supported.
+        
+[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
+
+[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
 
 <h3>Request</h3>
 
@@ -22,18 +27,18 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
 <br/>The `SdsJoinMode`, type of join: Inner, Outer, Interpolated, MergeLeft, or MergeRight.<br/><br/>`[optional] string startIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] integer boundaryType`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#boundaryType<br/><br/>`[optional] integer startBoundaryType`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startBoundaryType<br/><br/>`[optional] integer endBoundaryType`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endBoundaryType<br/><br/>`[optional] string filter`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
+<br/>Filter expression.<br/><br/>
 
 <h3>Response</h3>
 
@@ -54,7 +59,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 <a id="opIdStreamsData_Get Window Values (POST Method)"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/datacalls.yaml#join-values
+Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
+GET and POST join requests are supported.
+        
+[GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
+
+[POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
 
 <h3>Request</h3>
 
@@ -66,18 +76,18 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
 <br/>The `SdsJoinMode`, type of join: Inner, Outer, Interpolated, MergeLeft, or MergeRight.<br/><br/>`[optional] string startIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startindex<br/><br/>`[optional] string endIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endindex<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] integer boundaryType`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#boundaryType<br/><br/>`[optional] integer startBoundaryType`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#startBoundaryType<br/><br/>`[optional] integer endBoundaryType`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#endBoundaryType<br/><br/>`[optional] string filter`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#filter<br/><br/>
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
+<br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
+<br/>Filter expression.<br/><br/>
 
 <h3>Response</h3>
 

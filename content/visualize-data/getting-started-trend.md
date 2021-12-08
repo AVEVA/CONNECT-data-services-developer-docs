@@ -14,7 +14,7 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     1. Click the **Namespace** drop-down menu.
 
-        The **Select a Namespace or community** window opens.
+        The `Select a Namespace or community` window opens.
 
     1. Select a namespace or community that contains the stream data that you want to visualize.
 
@@ -46,7 +46,9 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
    The legend table below the trend displays the Trace view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
-1. Click on a trace to select it for further analysis.<br>The selected trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.
+1. Click on a trace to select it for further analysis.
+
+    The selected trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
 
@@ -56,10 +58,10 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     **Note:** When two cursors are locked, the Legend table displays summary calculations for the values between the two cursors, known as the Cursor view.
 
-1. Click the **Share** icon ![share](../_images/icons/reply_black_18dp.svg) in the menu bar to copy the URL of the workspace. 
+1. Click the **Share** (![share](../_images/icons/reply_black_18dp.svg)) icon in the menu bar to copy the URL of the workspace. 
 
     ![Cursor_view](images/Cursor_view.png)
 
-1. Click the **Share** icon ![share](../_images/icons/reply_black_18dp.svg) in the menu bar to copy the URL of the workspace. 
+1. Click the **Share** (![share](../_images/icons/reply_black_18dp.svg)) icon in the menu bar to copy the URL of the workspace. 
 
-    You can share this URL with colleagues to give them the same view of the trend which they can use to troubleshoot problems.
+    You can share this URL with colleagues to give them the same view of the trend that they can use to troubleshoot problems.

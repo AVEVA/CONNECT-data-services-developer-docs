@@ -27,16 +27,18 @@ Client-credentials clients are used for server-to-server communication where no 
 1. Select the **MyData.Role** role for the client.
    By default, the client is assigned the Tenant Member role which cannot be removed. Roles can be modified after the client is created.
 
+   **Note:** The **MyData.Role** role is used as an example in this exercise. 
+
 1. (Optional) Set the **Token Lifetime**.  
-   Token Lifetime represents the length of time in seconds the access token functions before it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
+   Token Lifetime represents the length of time in seconds that the access token for this Client is valid from the time issued until it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
 1. Click **Continue**.
 
-1. In the `Add Secret` window, enter a description for the client secret.
+1. In the `Add Secret` window, enter a description for the client secret. Enter a unique description if you plan to create multiple secrets.
 
 1. Enter a date that the secret expires.
 
-   Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
+   Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
 
 1. Click **Add**.
 
@@ -46,7 +48,7 @@ Client-credentials clients are used for server-to-server communication where no 
     
 1. Click **Close**.  
 
-   **Note:** In the list of secrets, the `Client Id` is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.
+   **Note:** The client ID is visible on the client. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret. Client modifications can take an hour before taking effect.
 
 ## Next step
 

@@ -6,4 +6,4 @@
   topicHref: connectors/omf/omf-overview.md
 - name: Software management (Preview)
   href: software-mgmt/toc.yml
-  topicHref: software-mgmt/edge-systems.md
+  topicHref: software-mgmt/software-management.md

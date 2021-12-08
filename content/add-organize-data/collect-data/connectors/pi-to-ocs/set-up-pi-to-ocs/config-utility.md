@@ -26,11 +26,11 @@ You can open the PI to OCS Agent Configuration Utility to change server connecti
 
 1. Click the Windows start button.
 
-2. On the Windows menu, scroll to and click **OSIsoft**, then click **PI to OCS Agent Configuration Utility**, then click **Yes**.
+1. On the Windows menu, scroll to and click **OSIsoft**, then click **PI to OCS Agent Configuration Utility**, then click **Yes**.
 
    **Result:** Upon successful authentication, the **PI to OCS Agent Configuration Utility** opens.
 
-3. Click **Connect to OSIsoft Cloud Services**.
+1. Click **Connect to OSIsoft Cloud Services**.
    
    **Note:** If you have not yet added an AF server or PI Data Archive server, see [Add an AF server](#add-an-af-server) or [Add a PI Data Archive](#add-a-pi-data-archive) for instructions.
  
@@ -130,7 +130,7 @@ You can assign an AF mapping to an AF identity. AF mappings enable a specific se
 
 1. Optional: Repeat steps 3-4 as needed.  
    
-5. Click **Close** to exit.
+1. Click **Close** to exit.
 
 ## Add a PI Data Archive
 
@@ -218,6 +218,6 @@ It may take a few minutes for a PI System to register with AVEVA&trade; Data Hub
 | Data  Source Connection Issue | Indicates  the PI To OCS Agent isn't able to connect to the PI Data Archive. Some  reasons for this status include the PI Data Archive is turned off, a firewall  issue is preventing connections or an incorrect name is configured for the  Data Archive (for example, trying to connect to a machine that doesn't  exist/was renamed). There may be additional reasons for this status. |
 | Data  Source Security Issue   | Indicates  the PI Data Archive connection is unsecure and security settings need to be  addressed. |
 | Missing Configuration         | The PI Data Archive server has not been configured in the PI to OCS Agent. |
-| Registration Failed           | Contact AVEVA Customer support for assistance.             |
+| Registration Failed           | Contact [AVEVA Customer Support](https://softwaresupport.aveva.com) for assistance.             |
 | Registering                   | The PI to OCS Cloud portion is creating the necessary resources for your PI to OCS Agent. |
 | Shutdown                      | The last communication that the PI to OCS Cloud had with the agent was a shutdown message. |

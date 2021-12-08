@@ -11,7 +11,7 @@ With AVEVA™ Data Hub, people in and out of your organization have flexible and
 Select one of the following topics to get started with AVEVA™ Data Hub:
 
 - [Sign in to AVEVA™ Data Hub via AVEVA™ Connect](xref:sign-in-cnnxt)
-- [Provide access to users or groups in AVEVA™ Connect](xref:cnnxt-setup)
+- [Manage permissions in AVEVA™ Connect](xref:manage-permissions-connect)
 - [Take a tour of the AVEVA™ Data Hub portal](xref:introPortalInterface)
 - [Bring your data in from different sources](xref:gsConnections)
 - [Visualize your data](xref:lpvisualizedata)

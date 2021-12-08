@@ -26,11 +26,11 @@ You can open the PI to OCS Agent Configuration Utility to change server connecti
 
 1. Click the Windows start button.
 
-2. On the Windows menu, scroll to and click **OSIsoft**, then click **PI to OCS Agent Configuration Utility**, then click **Yes**.
+1. On the Windows menu, scroll to and click **OSIsoft**, then click **PI to OCS Agent Configuration Utility**, then click **Yes**.
 
    **Result:** Upon successful authentication, the **PI to OCS Agent Configuration Utility** opens.
 
-3. Click **Connect to OSIsoft Cloud Services**.
+1. Click **Connect to OSIsoft Cloud Services**.
    
    **Note:** If you have not yet added an AF server or PI Data Archive server, see [Add an AF server](#add-an-af-server) or [Add a PI Data Archive](#add-a-pi-data-archive) for instructions.
  
@@ -130,7 +130,7 @@ You can assign an AF mapping to an AF identity. AF mappings enable a specific se
 
 1. Optional: Repeat steps 3-4 as needed.  
    
-5. Click **Close** to exit.
+1. Click **Close** to exit.
 
 ## Add a PI Data Archive
 

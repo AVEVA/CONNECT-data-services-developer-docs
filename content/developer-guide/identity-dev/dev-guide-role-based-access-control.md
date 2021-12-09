@@ -23,7 +23,7 @@ The following endpoint collections include (or do not include) an endpoint for a
 | Endpoint Collection | ACL Endpoint |
 |--|--|
 | [Asset store](xref:assets-access-control-list) | &#10004; |
-| Communities | ✘ |
+| [Communities](xref:community-communities#accesscontrollist) | &#10004; |
 | [Data collection](xref:omf-ingress-access-control) | &#10004; |
 | [Data views](xref:DataViewsAccessControlAPI) | &#10004; |
 | Identity and access management | ✘ |
@@ -31,7 +31,7 @@ The following endpoint collections include (or do not include) an endpoint for a
 | [Rules: Asset rules](xref:assets-access-control-list) | &#10004; |
 | [Rules: Metadata rules](xref:metadata-access-control-list) | &#10004; |
 | [Sequential Data Store](xref:sds-access-control-list) | &#10004; |
-| [Tenant Management](xref:tenant-root-access-control) | &#10004; |  | 
+| [Tenant Management](xref:tenant-root-access-control) | &#10004; |  
 
 ### Notes
 

@@ -21,7 +21,7 @@ A user or application that attempts to read, write, delete, or manage access con
 The following endpoint collections include (or do not include) an endpoint for access control. Click the links below for more information on using access control for each supported collection.
 
 | Endpoint Collection | ACL Endpoint |
-|--|--|
+|--|:--:|
 | [Asset store](xref:assets-access-control-list) | &#10004; |
 | [Communities](xref:community-communities#accesscontrollist) | &#10004; |
 | [Data collection](xref:omf-ingress-access-control) | &#10004; |

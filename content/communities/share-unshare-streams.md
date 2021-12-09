@@ -36,6 +36,10 @@ You can share streams with other tenants from the **Sequential Data Store** page
 
 **Result:** The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
 
+## View shared data
+
+After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.
+
 ## Unshare streams from Community Details
 
 1. In the left pane, select **Data Management** > **Communities**.

@@ -23,7 +23,7 @@ The following table describes each icon.
 Metadata Icon | Description
 --|--
 Database // TODO | Indicates the origin namespace of the stream data.
-![share](_images/icons/../../../_images/icons/share_black_18dp.svg) | Indicates that the stream originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
+![share](../_images/icons/share_black_18dp.svg) | Indicates that the stream originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
 Tenant // TODO | Indicates the tenant that is sharing the stream within the community. This icon displays only when the stream is shared within a community.
 
 Each stream property listed in the **Trend** view also lists metadata for the property:

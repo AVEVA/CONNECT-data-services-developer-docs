@@ -1,21 +1,21 @@
 ---
-uid: gsGetStartedOCS
+uid: gs-adh
 ---
 
-# Get started with OSIsoft Cloud Services 
+# Get started with AVEVA™ Data Hub 
 
-This is an introduction to the main features of OSIsoft Cloud Services (OCS) using the OCS portal. Each section includes a tutorial with step-by-step procedures with links to basic concepts and best practices.
+This is an introduction to the main features of AVEVA™ Data Hub using the portal. Each section includes a tutorial with step-by-step procedures with links to basic concepts and best practices.
 
 ## Before you begin
 
 Before you begin the get started exercises, obtain the following:
 
-- Request a tenant from your OSIsoft account manager. 
+- Request a tenant from your AVEVA™ account manager. 
 - You must have Tenant Administrator privileges. 
 
-## Log into the OCS Portal
+## Log into the AVEVA™ Data Hub Portal
 
-Once you have completed the pre-requisites, log into the OCS portal. 
+Once you have completed the pre-requisites, log into the AVEVA™ Data Hub portal. 
 
 1. In the web browser, enter the following URL: *https://cloud.osisoft.com* to open the OSIsoft Cloud Services web site. 
 
@@ -27,15 +27,15 @@ Once you have completed the pre-requisites, log into the OCS portal.
 
    <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
 
-## OCS portal
+## AVEVA™ Data Hub portal
 
-The OCS portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the OCS portal](xref:introPortalInterface) to get an overview of the user interface.
+The AVEVA™ Data Hub portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the AVEVA™ Data Hub portal](xref:introPortalInterface) to get an overview of the user interface.
 
 ## Get started goals
 
 In these get started exercises, you will do the following:
 
-1. Create a namespace that will contain all of your OCS resources, including an instance of the Sequential Data Store and the data streams.
+1. Create a namespace that will contain all of your AVEVA™ Data Hub resources, including an instance of the Sequential Data Store and the data streams.
 
 1. Create two connection types, one that brings in PI Data Archive data and another that brings in data using an OMF application.
 

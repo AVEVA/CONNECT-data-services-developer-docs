@@ -4,7 +4,7 @@ uid: ocsStatusCodes
 
 # HTTP status codes
 The server issues HTTP response status codes when a client makes a request over HTTP.
-In response to the requests made in OSIsoft Cloud Services, the system returns one of the codes listed in the table below.
+In response to the requests made in AVEVA Data Hub, the system returns one of the codes listed in the table below.
 To see what each code means in context, refer to the API documentation.   
 
 ## Status codes table

@@ -4,7 +4,7 @@ uid: identityHybridClient
 ---
 
 # Hybrid Clients
-Hybrid clients are used in typical, thick MVC clients with the presence of a user. These clients are issued a unique identifier and secret upon creation, which are later used for authentication against OCS. More than one secret can be created for a client. Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically have a longer lifetime than access tokens, and are used to request a new access token on behalf of the user without them having to log in. It is highly suggested that both the client secret and the refresh token be stored in a secure location.
+Hybrid clients are used in typical, thick MVC clients with the presence of a user. These clients are issued a unique identifier and secret upon creation, which are later used for authentication against AVEVA Data Hub. More than one secret can be created for a client. Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically have a longer lifetime than access tokens, and are used to request a new access token on behalf of the user without them having to log in. It is highly suggested that both the client secret and the refresh token be stored in a secure location.
 
 ## `List All Hybrid Clients (v1 path)`
 
@@ -521,7 +521,7 @@ Object used for hybrid clients
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |AllowOfflineAccess|boolean|false|true|Whether this client can request refresh tokens, by providing the *offline_access* scope.|
 |AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
 
@@ -610,7 +610,7 @@ Object used during hybrid client creation
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |SecretDescription|string|false|true|Description for the initial secret for the client|
 |SecretExpirationDate|date-time|false|true|Expiration date for the initial secret for the client. If set to null the secret will never expire. We advise against such practice.|
 
@@ -666,7 +666,7 @@ Object returned after a hybrid client is created
 |Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |ClientSecret|string|false|true|Client secret. This is the only time the secret will be available. Please store this secret somewhere safe.|
 |SecretId|string|false|true|Secret identifier|
 
@@ -756,7 +756,7 @@ Object used during hybrid client creation
 |Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |SecretDescription|string|false|true|Description for the initial secret for the client|
 |SecretExpirationDate|date-time|false|true|Expiration date for the initial secret for the client. If set to null the secret will never expire. We advise against such practice.|
 
@@ -808,7 +808,7 @@ Object used for hybrid clients
 |Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |AllowOfflineAccess|boolean|false|true|Whether client can request refresh tokens, by providing the *offline_access* scopes.|
 |AllowAccessTokensViaBrowser|boolean|false|true|Whether this hybrid client is allowed to receive access tokens through the browser. This is useful to harden flows that allow multiple response types (for example, by disallowing a hybrid flow client that is supposed to use code *id_token* to add the *token* response type, thus leaking the token to the browser).|
 

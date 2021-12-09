@@ -12,7 +12,7 @@ To create a new community, see [Add a community](xref:add-community).
 
 Invite business partners to join a community so they can share data. 
 
-**Note:** The business partner must already belong to a tenant in AVEVA&trade; Data Hub.
+**Note:** The business partner must already belong to a tenant in AVEVA Data Hub.
 
 Two different users must perform the following procedure to invite and add a tenant to a community:
 

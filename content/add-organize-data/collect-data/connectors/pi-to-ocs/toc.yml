@@ -1,4 +1,4 @@
-- name: PI to OCS introduction
+- name: PI to Data Hub introduction
   href: overview-pi-to-ocs/toc.yml
   topicHref: overview-pi-to-ocs/lp-intro.md
 - name: Set up PI to OCS
@@ -18,5 +18,5 @@
   topicHref: troubleshoot-pi-to-ocs/lp-troubleshoot.md
 - name: Known issues
   href: known-issues.md
-- name: PI to OCS release summary
+- name: PI to Data Hub release summary
   href: pi2ocs-rel-notes.md

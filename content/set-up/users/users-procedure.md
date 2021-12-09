@@ -2,9 +2,9 @@
 uid: gpUsers
 ---
 
-# Add a user
+# Add a user in AVEVA Data Hub
 
-A user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. See the following topics for more information about users:
+An AVEVA Data Hub user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. See the following topics for more information about users:
 
 - [Users](xref:ccUsers)
 - [PI Server counterpart](xref:ccUsers#users-pi-server)
@@ -18,17 +18,17 @@ Follow the procedure to invite a user to your tenant.
 
 1. In the toolbar, click **Add User**.
 
-1. If multiple identity providers are enabled in the tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. You can switch to a different option later.
+<!--12/2/21, VTT: Per SME (A. Woodall) Deleted this step because it only applies to OCS. 1. If multiple identity providers are enabled in the tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. You can switch to a different option later.-->
 
 1. Enter a first and last name for the user.  
 
-1. Enter the contact email. The invitation to your tenant is sent to the user at this address. Ensure that it is correct so that the invitation is not sent to an unintended recipient.
+1. Enter the contact email. A welcome to join the Data Hub tenant will be sent to the user at this address. Ensure that it is correct so that the email is not sent to an unintended recipient.
 
 1. Optional: Enable additional roles for the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is invited.
 
-1. Once the information has been entered, click **Invite**. An invitation is sent to the email address specified in the `Contact Email` field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
+1. Once the information has been entered, click **Invite**. An welcome email is sent to the email address specified in the `Contact Email` field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
 
-1. Once the user receives the invitation, they should log in using the identity provider you specified. Once they have logged in, the status of their user changes to *Active*.
+1. Once the user receives the welcome email, they should log in to Data Hub via Connect using the link in the email.
 
 ## Related links
 

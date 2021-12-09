@@ -16,9 +16,7 @@ The information in the sections that follow document the APIs and usage for each
 
 ## Access to AVEVA Data Hub
 
-You must acquire an account before interacting with the AVEVA Data Hub. 
-Go to the [AVEVA Data Hub page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), click [Contact Us](https://www.osisoft.com/contact) and request an AVEVA Data Hub account.
-
+You must acquire an account before interacting with the AVEVA Data Hub. To request an account, contact us at the [AVEVA Knowledge and Support Center](https://softwaresupport.aveva.com/).
 
 ## Architecture
 

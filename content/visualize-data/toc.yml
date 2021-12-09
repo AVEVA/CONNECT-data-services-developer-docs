@@ -4,6 +4,7 @@
   topicHref: trend-ui.md
   items:
     - topicUid: URLparameters
+    - topicUid: LegendTableReference
 - name: Context switch in visual trending
   topicHref: context-switch.md
 - topicUid: PowerBI

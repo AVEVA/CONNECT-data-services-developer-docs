@@ -8,12 +8,18 @@ AVEVA™ Data Hub is a cloud data platform for storing, retrieving, and analyzin
 
 AVEVA™ Data Hub offers the following capabilities: 
 
-- [Easy data collection](#easy-data-collection)
-- [Integration with external tools and applications](#integration-with-external-tools-and-applications) 
-- [Secure and robust data infrastructure](#secure-and-robust-data-infrastructure) 
-- [Elastic resource allocation](#elastic-resource-allocation) 
-- [Interruption resilience](#interruption-resilience) 
-- [Easy management and maintenance](#easy-management-and-maintenance )
+- [What is AVEVA™ Data Hub?](#what-is-aveva-data-hub)
+  - [Easy data collection](#easy-data-collection)
+    - [PI to Data Hub Agent](#pi-to-data-hub-agent)
+    - [Open Message Format](#open-message-format)
+    - [Edge Data Store](#edge-data-store)
+    - [PI Adapters](#pi-adapters)
+    - [REST API](#rest-api)
+  - [Integration with external tools and applications](#integration-with-external-tools-and-applications)
+  - [Secure and robust data infrastructure](#secure-and-robust-data-infrastructure)
+  - [Elastic resource allocation](#elastic-resource-allocation)
+  - [Interruption resilience](#interruption-resilience)
+  - [Easy management and maintenance](#easy-management-and-maintenance)
 
 ## Easy data collection
 
@@ -47,10 +53,14 @@ Developer-friendly REST APIs provide programmatic access to read and write seque
 
 ## Integration with external tools and applications
 
-AVEVA™ Data Hub allows you to integrate data with many different partner applications, data pipelines and workflows, collaboration tools, business intelligence (BI) and data exploration tools, and custom applications. A few examples include these tools: 
+AVEVA™ Data Hub allows you to integrate data with many different partner applications, data pipelines and workflows, collaboration tools, and business intelligence (BI), data analytics, visualization, and custom software/applications. 
+
+<!--Jason Ames 12/6/21 Commenting out this content until the Power BI connector is added to ADH.
+
+A few examples include these tools: 
 
 - Power BI 
-- Grafana 
+- Grafana -->
 
 You can integrate and view AVEVA™ Data Hub data in the following ways: 
 

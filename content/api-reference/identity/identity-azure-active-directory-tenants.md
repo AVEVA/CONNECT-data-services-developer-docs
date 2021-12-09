@@ -4,13 +4,13 @@ uid: identity-azure-active-directory-tenants
 ---
 
 # Azure Active Directory Tenants
-An Azure Active Directory tenant is used to map an existing [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) tenant from Azure to OSIsoft Cloud Services (OCS). We only allow one Azure Active Directory tenant per OCS tenant.
+An Azure Active Directory tenant is used to map an existing [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) tenant from Azure to AVEVA Data Hub. We only allow one Azure Active Directory tenant per tenant.
 
-## `Get AAD Tenant from OCS Tenant`
+## `Get AAD Tenant from Tenant`
 
 <a id="opIdAzureActiveDirectoryTenants_Get AAD Tenant from OCS Tenant"></a>
 
-Returns Azure Active Directory tenant from an OCS tenant.
+Returns Azure Active Directory tenant from a tenant.
 
 <h3>Request</h3>
 
@@ -21,7 +21,7 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Tenant identifier.<br/><br/>`string aadTenantId`
 <br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -32,7 +32,7 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -60,7 +60,7 @@ Allowed for these roles:
 
 <a id="opIdAzureActiveDirectoryTenants_Get AAD Tenant in Tenant"></a>
 
-Validates that Azure Active Directory tenant exists in this OCS tenant. This method is identical to the GET method but it does not return any objects in the body.
+Validates that Azure Active Directory tenant exists in this tenant. This method is identical to the GET method but it does not return any objects in the body.
 
 <h3>Request</h3>
 
@@ -71,7 +71,7 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Tenant identifier.<br/><br/>`string aadTenantId`
 <br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -82,7 +82,7 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 |400|None|Missing or invalid inputs.|
 |401|None|Unauthorized.|
 |403|None|Forbidden.|
-|404|None|OCS tenant not found|
+|404|None|Tenant not found|
 |500|None|Internal server error.|
 
 <h3>Authorization</h3>
@@ -94,11 +94,11 @@ Allowed for these roles:
 
 ---
 
-## `Add AAD Tenant to OCS Tenant`
+## `Add AAD Tenant to Tenant`
 
 <a id="opIdAzureActiveDirectoryTenants_Add AAD Tenant to OCS Tenant"></a>
 
-Adds an Azure Active Directory tenant to the OCS tenant.
+Adds an Azure Active Directory tenant to the Tenant.
 
 <h3>Request</h3>
 
@@ -109,7 +109,7 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Tenant identifier.<br/><br/>`string aadTenantId`
 <br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -120,7 +120,7 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Azure Active Directory tenant identifier is already in use on the specified Tenant.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
@@ -146,11 +146,11 @@ Allowed for these roles:
 
 ---
 
-## `Remove AAD Tenant from OCS Tenant`
+## `Remove AAD Tenant from Tenant`
 
-<a id="opIdAzureActiveDirectoryTenants_Remove AAD Tenant from OCS Tenant"></a>
+<a id="opIdAzureActiveDirectoryTenants_Remove AAD Tenant from Tenant"></a>
 
-Removes Azure Active Directory tenant from an OCS tenant. This is not supported currently.
+Removes Azure Active Directory tenant from a tenant. This is not supported currently.
 
 <h3>Request</h3>
 
@@ -161,7 +161,7 @@ DELETE /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Tenant identifier.<br/><br/>`string aadTenantId`
 <br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -179,11 +179,11 @@ Allowed for these roles:
 
 ---
 
-## `List All AAD Tenants from OCS Tenant`
+## `List All AAD Tenants from Tenant`
 
-<a id="opIdAzureActiveDirectoryTenants_List All AAD Tenants from OCS Tenant"></a>
+<a id="opIdAzureActiveDirectoryTenants_List All AAD Tenants from Tenant"></a>
 
-Returns all Azure Active Directory tenants from an OCS tenant.
+Returns all Azure Active Directory tenants from a tenant.
 
 <h3>Request</h3>
 
@@ -195,7 +195,7 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>OCS tenant identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] string query`
 <br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
@@ -237,7 +237,7 @@ Allowed for these roles:
 
 <a id="opIdAzureActiveDirectoryTenants_Get Total Count of AAD Tenant in Tenant"></a>
 
-Returns total number of Azure Active Directory tenants in a OCS tenant. This method is identical to the GET method but it does not return any objects in the body.
+Returns total number of Azure Active Directory tenants in a Tenant. This method is identical to the GET method but it does not return any objects in the body.
 
 <h3>Request</h3>
 
@@ -258,7 +258,7 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 |400|None|Missing or invalid inputs.|
 |401|None|Unauthorized.|
 |403|None|Forbidden.|
-|404|None|OCS tenant not found|
+|404|None|Tenant not found|
 |500|None|Internal server error.|
 
 <h3>Authorization</h3>
@@ -274,7 +274,7 @@ Allowed for these roles:
 
 <a id="opIdAzureActiveDirectoryTenants_Send Consent Email for AAD Tenant"></a>
 
-Sends consent for an Azure Active Directory tenant. OCS needs to be granted permission to interact with the Azure Active Directory tenant. Otherwise, users from this Azure Active Directory tenant cannot accept invitations from OCS and log in.
+Sends consent for an Azure Active Directory tenant. AVEVA Data Hub needs to be granted permission to interact with the Azure Active Directory tenant. Otherwise, users from this Azure Active Directory tenant cannot accept invitations from AVEVA Data Hub and log in.
 
 <h3>Request</h3>
 
@@ -285,7 +285,7 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}/SendCo
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Tenant identifier.<br/><br/>`string aadTenantId`
 <br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -310,7 +310,7 @@ ConsentInformation object<br/>
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h3>Authorization</h3>

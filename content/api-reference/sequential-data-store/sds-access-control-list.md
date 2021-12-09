@@ -2163,7 +2163,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-Contains the error message format that follows the OCS error standards
+Contains the error message format that follows the AVEVA Data Hub error standards
 
 #### Properties
 

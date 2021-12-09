@@ -62,6 +62,4 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     ![Cursor_view](images/Cursor_view.png)
 
-1. Click the **Share** (![share](../_images/icons/reply_black_18dp.svg)) icon in the menu bar to copy the URL of the workspace. 
-
     You can share this URL with colleagues to give them the same view of the trend that they can use to troubleshoot problems.

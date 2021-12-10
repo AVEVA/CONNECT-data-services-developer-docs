@@ -11,7 +11,8 @@ There are three message formats you can use to accomplish these tasks: type mess
 
 You can edit your message and utilize the following options for each message format provided:
 
-- Click **Copy OMF** to copy the message content to your clipboard. 
+- Select **Copy OMF** to copy the message content to the clipboard. 
+
 - Click **More Options** ![More Options](..\images\more-options.png "More Options") and **Format OMF** to reset template content alignment after making changes. 
 - Click **More Options** ![More Options](..\images\more-options.png "More Options") and **Download OMF** to download the message content to your local drive. 
 - Click **More Options** ![More Options](..\images\more-options.png "More Options") and **Reset Template** to delete any changes you have made to the message content. 

@@ -3,6 +3,7 @@ uid: omfEditor
 ---
 
 # OMF editor
+
 The Open Message Format (OMF) defines a set of message headers and message bodies. You write messages in JSON format that generate compliant messages for data ingress. The OMF specification is generic in that it does not specify a particular back-end system. You can use OMF to create types, create streams, and populate streams with data.
 
 The OMF Editor, found at **Developer Tools** > **OMF Editor**, helps build and validate OMF messages to be ingested by the Sequential Data Store.

@@ -74,8 +74,6 @@ To install the PI to OCS Agent, follow these steps:
 
     * **Agent Description** - Enter an optional name for the agent.
 
-      **Result:** The **Service Account** page opens.
-
 1. On the `Servive Account` page, select the service account type for the connection:
 
     * **NT Service** - Enter an NT account to connect to PI Data Archive.
@@ -88,7 +86,7 @@ To install the PI to OCS Agent, follow these steps:
 
 1. After the agent is installed, select **Close**.
 
-    **Result**: The PI to OCS Configuration Utility opens. See [Run the PI to OCS Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
+    The PI to OCS Configuration Utility opens. See [Run the PI to OCS Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
 
     **Note:** An agent cannot be registered until a PI Data Archive server has been added and configured in the PI to OCS Configuration Utility.
 

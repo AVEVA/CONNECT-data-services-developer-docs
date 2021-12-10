@@ -24,6 +24,7 @@ The following endpoint collections include (or do not include) an endpoint for a
 |--|:--:|
 | [Asset store](xref:assets-access-control-list) | &#10004; |
 | [Communities](xref:community-communities#accesscontrollist) | &#10004; |
+| [Communities: Tenants](xref:community-tenants) | &#10004; |
 | [Data collection](xref:omf-ingress-access-control) | &#10004; |
 | [Data views](xref:DataViewsAccessControlAPI) | &#10004; |
 | Identity and access management | ✘ |

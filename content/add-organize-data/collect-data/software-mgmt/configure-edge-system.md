@@ -34,7 +34,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 To edit an edge system configuration and export it for use, follow these steps:
 
-1. In the left pane, select **Data Management** > **Edge Systems**.
+1. In the left pane, select **Data Management** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
@@ -48,17 +48,11 @@ To edit an edge system configuration and export it for use, follow these steps:
 
  - To delete a tag, select **X** in the tag bubble.
 
-1. To create the configuration, do one of the following:
-
- - To use the default configuration for the edge system type, select **Start With Default**. 
- 
- - To select a JSON file that contains the configuration, select **Start With Default**. 
-
-1. **Optional:** In the **Section Select** field, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
+1. (Optional) In the **Section Select** field, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation. 
 
- Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
+ **Important:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
 
  Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

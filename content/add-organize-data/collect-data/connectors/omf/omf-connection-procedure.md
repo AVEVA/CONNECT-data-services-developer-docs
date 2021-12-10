@@ -4,9 +4,11 @@ uid: gpOMFConnection
 
 # Configure an OMF connection
 
-To send Open Message Format (OMF) data to AVEVA Data Hub, you must first configure an OMF connection. Follow this procedure to configure an OMF connection.
+To send Open Message Format (OMF) data to AVEVA Data Hub, you must first configure an OMF connection. 
 
 **Note:** An OMF connection requires a client credentials client.
+
+To configure an OMF connection, follow these steps:
 
 1. In the left pane, select **Data Collection** > **OMF Connections**.
 
@@ -14,7 +16,7 @@ To send Open Message Format (OMF) data to AVEVA Data Hub, you must first configu
 
   The `Add OMF Connection` window appears.
 
-1. In the `Add OMF Connection` window, complete the following fields, and then select **Next**.
+1. In the `Add OMF Connection` window, complete the following fields, and then select **Next**:
 
  - **Name** - Enter a name for the OMF connection.
 

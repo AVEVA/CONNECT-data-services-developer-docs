@@ -17,4 +17,5 @@ You can edit your message and utilize the following options for each message for
 
 - Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Download OMF** to download the message content to your local drive. 
 
-- Click **More Options** ![More Options](..\images\more-options.png "More Options") and **Reset Template** to delete any changes you have made to the message content. 
+- Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Reset Template** to delete any changes you have made to the message content. 
+

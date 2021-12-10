@@ -34,7 +34,7 @@ The following table shows whether endpoint collections have an endpoint for acce
 | [Sequential Data Store](xref:sds-access-control-list) | &#10004; |
 | [Tenant Management](xref:tenant-root-access-control) | &#10004; |
 
-<sup>1</sup>: Access control endpoints for communities and community tenants are organized within different endpoints. 
+<sup>1</sup>: Access control endpoints for communities and community tenants are accessed from different endpoints. 
 
 ### Notes
 

@@ -6,7 +6,7 @@ uid: sdsTypes
 
 The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate 
 events. Events are stored in streams.
-A primitive type is available in AVEVA&trade; Data Hub and is used within the API and REST definitions to identify a stream type.
+A primitive type is available in AVEVA Data Hub and is used within the API and REST definitions to identify a stream type.
 
 You can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or 
 complex or nested types using the [Properties collection of SdsTypes](#sdstypeproperty). 
@@ -313,7 +313,7 @@ the SDS before using `SdsTypeBuilder`. Base types are maintained within the SdsT
 ## SdsTypes outside of .NET framework
 You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you'll see how types are built and defined in
 [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. 
-For samples in other languages, go to [OCS code samples in GitHub](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/SDS_WAVEFORM_README.md).
+For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/SDS_WAVEFORM_README.md).
 
 ### SdsTypeCode, SdsTypeProperty and SdsType
 

@@ -197,7 +197,7 @@ GET /api/v1/tenants/{tenantId}/usage
 <a id="tocSusagedatarecord"></a>
 <a id="tocsusagedatarecord"></a>
 
-Usage within OCS
+Usage within AVEVA Data Hub
 
 #### Properties
 

@@ -4,6 +4,6 @@
     - topicUid: GettingStartedWithTrendData
     - topicUid: URLparameters
     - topicUid: ContextSwitch
-- topicUid: PowerBI
-  items:
-  - topicUid: PowerBIReleaseNotes
+#- topicUid: PowerBI
+#  items:
+#  - topicUid: PowerBIReleaseNotes

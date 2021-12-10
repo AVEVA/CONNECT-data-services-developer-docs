@@ -6,16 +6,20 @@ uid: pi-point-change
 
 A PI point type change occurs when a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the OCS Sequential Data Store (SDS) database. When the PI to OCS Agent detects this change, it takes the following actions:
 
-- Displays the `PI Point Type Change Detected` message next to the **Current Activity** field in the Details pane as shown in the screenshot below 
-- Prevents data being sent from the source PI point to the SDS stream until the type is changed to match the corresponding SDS Stream type and the transfer is restarted 
-- Logs details about the corresponding SDS stream in both the Windows Event Viewer and OCS logs 
+- Displays the `PI Point Type Change Detected` message next to the **Current Activity** field in the Details pane as shown in the screenshot below.
+ 
+- Prevents data being sent from the source PI point to the SDS stream until the type is changed to match the corresponding SDS Stream type and the transfer is restarted.
+ 
+- Logs details about the corresponding SDS stream in both the Windows Event Viewer and OCS logs. 
 
 ![](../../images/pi-point-type-change.png)
 
 A point change can occur for the following reasons:
 
 * The source PI point had an incorrect configuration of data and type. The data and point must be deleted and recreated.
+
 * The source PI point was misconfigured initially. For example, the point needed to be updated from `Float32` to `Float64`. The data is still relevant and should be kept.
+
 * Other reasons
 <!--Angela Flores 6/28/21 This list is oddly specific. Also, what is PI to OCS Services? And PI to OCS service? This topic still needs work. --> 
 <!--VT, 11/29/21: PI to OCS Services/service is the PI to OCS Agent. I had a discussion w/one of the Bonsai developers, Zane Odeh & he confirmed this info. They have been removed from this topic. This topic was updated recently. What other work is needed?-->

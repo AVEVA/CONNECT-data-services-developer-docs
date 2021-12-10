@@ -48,7 +48,7 @@ query-community:
 tenantId-OCS:
   type: text/plain
   value: |
-    OCS tenant identifier.
+    AVEVA Data Hub tenant identifier.
 tenantId-aad:
   type: text/plain
   value: |

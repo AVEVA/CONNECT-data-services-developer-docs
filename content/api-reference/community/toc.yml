@@ -8,11 +8,7 @@
   href: community-roles.md
 - name: Search 
   href: community-search.md
-<<<<<<< HEAD
 - name: Shared access requests
-=======
-- name: Shared access
->>>>>>> 66101717b83bfc8f88b10427372fae67d7889bcd
   href: community-shared-access.md
 - name: Summary 
   href: community-summary.md

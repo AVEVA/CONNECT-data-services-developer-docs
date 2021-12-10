@@ -15,5 +15,6 @@ You can edit your message and utilize the following options for each message for
 
 - Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Format OMF** to reset template content alignment after making changes. 
 
-- Click **More Options** ![More Options](..\images\more-options.png "More Options") and **Download OMF** to download the message content to your local drive. 
+- Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Download OMF** to download the message content to your local drive. 
+
 - Click **More Options** ![More Options](..\images\more-options.png "More Options") and **Reset Template** to delete any changes you have made to the message content. 

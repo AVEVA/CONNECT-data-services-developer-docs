@@ -18,7 +18,7 @@ A user or application that attempts to read, write, delete, or manage access con
 
 ### Collections with ACL endpoints
 
-The following endpoint collections include (or do not include) an endpoint for access control. Click the links below for more information on using access control for each supported collection.
+The following table shows whether endpoint collections have an endpoint for access control. For more information on using access control for each supported collection, select the collection link.
 
 | Endpoint Collection | ACL Endpoint |
 |--|:--:|

@@ -23,7 +23,7 @@ The following table shows whether endpoint collections have an endpoint for acce
 | Endpoint Collection | ACL Endpoint |
 |--|:--:|
 | [Asset store](xref:assets-access-control-list) | &#10004; |
-| [Communities](xref:community-communities#accesscontrollist)<sup>1</sup> | &#10004; |
+| [Communities: Communities](xref:community-communities#accesscontrollist)<sup>1</sup> | &#10004; |
 | [Communities: Tenants](xref:community-tenants)<sup>1</sup> | &#10004; |
 | [Data collection](xref:omf-ingress-access-control) | &#10004; |
 | [Data views](xref:DataViewsAccessControlAPI) | &#10004; |
@@ -34,7 +34,7 @@ The following table shows whether endpoint collections have an endpoint for acce
 | [Sequential Data Store](xref:sds-access-control-list) | &#10004; |
 | [Tenant Management](xref:tenant-root-access-control) | &#10004; |
 
-<sup>1</sup>: Access control endpoints for communities and community tenants are accessed from different endpoints. 
+<sup>1</sup>: The Communities collection contains two different access control endpoints—one for communities and one for community tenants.
 
 ### Notes
 

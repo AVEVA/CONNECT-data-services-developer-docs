@@ -447,7 +447,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Results|object|false|false|None|
+|Results|object|false|true|None|
 |Errors|[DataErrors](#schemadataerrors)|false|true|None|
 
 ```json
@@ -489,7 +489,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
 |OperationId|string|false|true|None|
 |Error|string|false|true|None|
 |Reason|string|false|true|None|
-|ChildErrors|object|false|false|None|
+|ChildErrors|object|false|true|None|
 
 ```json
 {

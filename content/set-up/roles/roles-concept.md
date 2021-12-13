@@ -6,13 +6,13 @@ uid: ccRoles
 
 Data Hub roles are used to manage access to assets, resources, and services. Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity tries to access a resource, AVEVA&trade; Data Hub checks the assigned roles against the permissions on the resource to determine their access level.
 
-There are six built-in Data Hub roles which cannot be removed from a tenant:
+There are six built-in Data Hub roles that cannot be removed from a tenant:
 
 - Tenant Administrator - Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
 
   **Note:** It is strongly recommended you do not assign the Tenant Administrator role to client-credential clients. This role can be assigned via the Tenant Management API.
 
-- Community Administrator - 
+- Community Administrator - A role with full administrative rights. These rights include all the privileges of a Community Moderator plus the ability to delete a community, invite and confirm tenant invitations, and remove tenants from the community. See [Community roles](xref:communityroles) for more information.
 
 - Tenant Contributor - Granted read and write permissions by default.
 

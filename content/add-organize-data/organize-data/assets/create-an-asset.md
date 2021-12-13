@@ -2,64 +2,49 @@
 uid: CreateConfigureAsset
 ---
 
-# Create and configure an asset
+# Add an asset
 
-Follow the procedures to create an asset, add and configure its metadata and properties, and select and configure a property whose status will be visible in the card or table view.
+Follow this procedure to create an asset, add and configure its metadata and properties, and select and configure a property whose status will be visible in the card or table view.
 
-## Create the asset
+To create an asset, follow these steps:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
- 
-1. Click the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
-5. Verify that the **Assets/Asset Type** selector is set to **Assets**.
+1. From the **Asset/Asset Types** selector, select **Assets**.
 
-5. Click the **+** in the toolbar to create a new asset.
+1. In the toolbar, select **Add Asset**. 
 
-     The `Select Type for New Asset` window opens. By default, the type selected is  <None>.
+1. In the `Select Type for New Asset` window, select **None** and select **Continue**.
 
-6. Accept the default and click **Continue**.
+1. In the right pane, complete the following fields:
 
-    The details blade opens on the right side. 
+   - **Asset** - Enter a name to identify the asset.
 
-1. Enter a name and description for the asset.
+   - **Description** - (Optional) Add a description for the asset. 
 
-## Add metadata to the asset
+1. Select the **Metadata** tab.
 
-1. Click the **Metadata** tab and click **Add Metadata**.
+1. For each metadata to add to the asset, select **Add Metadata** and complete the following fields:
 
-    **Note:** Metadata is static attributes about assets, for example, model or region.
+   - **Metadata** - Enter an identifier for the metadata.
 
-    Result: The fields for entering the metadata details appear. 
+   - **Value** - Enter the value for the metadata.
 
-    <!-- We need a definition for metadata that covers its use in different OCS contexts. --> 
+     **Note:** The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss)
 
-2. Enter a name for the metadata.
+   - **Type** - Select the value type from the dropdown list.
 
-3. Optional: Enter a value for the metadata and select a type.
-   
-    **Note:** The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss).
+   - **UOM** - If the type is `Integer` or `Double`, select the unit of measure for the value.
 
-    <!--WRITER NOTE: What date/time formats are supported? Is this the same as for PI Server? i.e., Microsoft standard date/time formats? -->
+1. Select the **Properties** tab. 
 
-4. (Optional) Select a UOM.
+1. For each property to add to the asset, select **Add Stream References** and complete the following steps:
 
-5. Continue adding metadata for the asset. 
-
-
-## Add properties to the asset
-
-1. Click the **Properties** tab. 
-
-1. Click **Add Stream References** to add a property.
-
-1. In the `Select Streams` window, select the stream you want.
+   1. In the `Select Streams` window, select the stream and select **Add**..
    
      **Note:** Use the search box to find the stream. You can search on the stream name, description, or the type. Use the asterisk (*)  as a wildcard character.
 
-1. Click **Add**. 
-  
-   **Result:** The stream reference appears in the right pane. This is the automatically generated user-friendly stream name. You can edit this name.
+     The stream reference appears in the right pane. This is the automatically generated user-friendly stream name. You can edit this name.
          
 1. Click the scroll bar to display the properties for the stream reference.
    

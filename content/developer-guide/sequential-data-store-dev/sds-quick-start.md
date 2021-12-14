@@ -6,9 +6,9 @@ uid: sdsQuickStart
 
 Sequential Data Store (SDS) is a sophisticated data store. The steps described here show a very simple interaction with SDS.
 To follow along with the steps in this section, you need a tenant, a user account and associated security credentials. 
-Email [AVEVA support](mailto://cloudservices@osisoft.com) at AVEVA&trade; Data Hub to get access.
+Email [AVEVA support](mailto://cloudservices@osisoft.com) at AVEVA Data Hub to get access.
 
-You will be mainly working on the [AVEVA&trade; Data Hub portal](https://cloud.osisoft.com/). Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. 
+You will be mainly working on the [AVEVA Data Hub portal](https://cloud.osisoft.com/). Sign into the portal using the credentials associated with the tenant. You will also need a namespace and administrative client keys. 
 
 ## Before you get started 
 To work with SDS, you must first acquire a client identity, secret and authentication token. 
@@ -16,7 +16,7 @@ To work with SDS, you must first acquire a client identity, secret and authentic
 ### Acquire client identity and secret
 
 The application acts as a confidential client – an application that is capable of securely maintaining a secret.
-AVEVA&trade; Data Hub supports confidential client authentication flow with a client identifier (Client Id) and a client secret.
+AVEVA Data Hub supports confidential client authentication flow with a client identifier (Client Id) and a client secret.
 
 To acquire a client identity from the portal, open the navigation menu and select **Security** > **Clients**.
 
@@ -54,7 +54,7 @@ SDS supports a wide variety of property types, both simple (integers, strings an
 and complex (lists, arrays and enumerations, for example). Properties can be of any complex type. 
 See [Types](xref:sdsTypes#sdstypecode) for a detailed list of supported data types.
 
-The type is defined in JSON and is posted on AVEVA&trade; Data Hub endpoint.
+The type is defined in JSON and is posted on AVEVA Data Hub endpoint.
 
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}  
@@ -192,7 +192,7 @@ Host: dat-b.osisoft.com
 }
 ```
 To help users develop .NET client applications for SDS, AVEVA provides client libraries through NuGet packages, 
-[OCSClients](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients consists of necessary libraries to connect to AVEVA&trade; Data Hub and manage data. Note that SDS client libraries are only available in .NET.
+[OCSClients](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients consists of necessary libraries to connect to AVEVA Data Hub and manage data. Note that SDS client libraries are only available in .NET.
 
 You can use ``SdsTypeBuilder`` in .NET client libraries to create types:
 
@@ -225,7 +225,7 @@ await config.CreateTypeAsync(simpleType);
 A stream has an associated type and stores a stream of events or objects that take the shape of that type. 
 For more information, see [Streams](xref:sds-streams).
 
-Define and post a JSON representation of stream to AVEVA&trade; Data Hub endpoint.
+Define and post a JSON representation of stream to AVEVA Data Hub endpoint.
 
 ```json 
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}  
@@ -265,7 +265,7 @@ Inserts fail if events with the same index already exist in the database.
 Update adds new events and replaces existing events.
 For more information, see [Write data](xref:sdsWritingData).
 
-Add data to SDS by posting a JSON serialized event to AVEVA&trade; Data Hub endpoint:
+Add data to SDS by posting a JSON serialized event to AVEVA Data Hub endpoint:
 
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
@@ -302,7 +302,7 @@ For more information, see [Read data](xref:sdsReadingData).
 The examples below are of reading value that was recently written.
 You need an index or indexes in a read data call, a timestamp of that value in this case.
 
-Read a value from SDS at a distinct index by making a REST API call to AVEVA&trade; Data Hub:
+Read a value from SDS at a distinct index by making a REST API call to AVEVA Data Hub:
 
 ```json
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index=2017-08-17T17:21:36.3494129Z 
@@ -345,7 +345,7 @@ Temporary service interruptions are a fact of life in real-world cloud applicati
 If you access SDS with .NET client libraries methods, transient fault handling is built in; 
 the SDS client automatically retries error codes identified as transient.
 
-If you are directly calling into AVEVA&trade; Data Hub through SDS REST APIs (not using .NET), you should 
+If you are directly calling into AVEVA Data Hub through SDS REST APIs (not using .NET), you should 
 consider creating your own retry logic to handle errors identified as transient.
 In this case, we recommend a logic which returns HTTP status code ``503: Service Unavailable``:
 an immediate first retry followed by an exponential backoff.
@@ -376,7 +376,7 @@ Handling timeout issues can be difficult and confusing in a distributed programm
 times out, for example, the request is terminated before the client receives a response from the server. Meanwhile, the application is
 unaware of the state of the server.
 
-One solution is to use the ``Request-Timeout`` header, which is recognized by many services in AVEVA&trade; Data Hub. Using the 
+One solution is to use the ``Request-Timeout`` header, which is recognized by many services in AVEVA Data Hub. Using the 
 header, you can tell the server how long to spend on a particular request before timing out. If possible, the server 
 terminates the request if the time it takes to process the request exceeds the timeout value set in the header.
 

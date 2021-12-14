@@ -1,5 +1,5 @@
 ---
-uid:
+uid: Assets
 ---
 
 # Asset store

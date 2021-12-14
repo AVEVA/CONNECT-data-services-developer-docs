@@ -16,11 +16,11 @@ Follow the procedure to invite a user to your tenant.
 
 1. In the left pane, select **Security** > **Users**.
 
-1. In the toolbar, click **Add User**.
+1. In the toolbar, select **Add User**.
 
 <!--12/2/21, VTT: Per SMEs (N. Parkah & A. Woodall) Deleted this step because it only applies to OCS. Old step: 1. If multiple identity providers are enabled in the tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. You can switch to a different option later.-->
 
-1. Enter a first and last name for the user.  
+1. In the **Contact First Name** and **Contact Last Name** fields, enter a first and last name for the user.  
 
 1. Enter the user's contact email. Ensure that it is correct so the email invitation the user receives is not sent to an unintended recipient.
 

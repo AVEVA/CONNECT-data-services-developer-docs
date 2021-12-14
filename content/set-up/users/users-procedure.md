@@ -22,7 +22,7 @@ Follow the procedure to invite a user to your tenant.
 
 1. Enter a first and last name for the user.  
 
-1. Enter the user's contact email. Ensure that it is correct so that the email is not sent to an unintended recipient.
+1. Enter the user's contact email. Ensure that it is correct so the email invitation the user receives is not sent to an unintended recipient.
 
 1. (Optional) On the **Tenant Roles** tab, assign additional roles to the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is added.
 

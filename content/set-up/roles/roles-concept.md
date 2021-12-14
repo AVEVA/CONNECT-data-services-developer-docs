@@ -24,7 +24,7 @@ There are six built-in Data Hub roles that cannot be removed from a tenant:
 
 You can add custom roles to further control access. By default, custom roles do not have any specific permissions. You must have the Tenant Administrator role to add and manage roles for a tenant. 
 
-Assigning a role to a user or client does not determine access. For any resource, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
+Access to resources is a combination of 1) the roles assigned to a user and group, and 2) the permissions set on the resources. For any resource, you set access on the resource for specific roles, rather than on specific users or clients. Access is managed for resources in the Manage Permissions dialog box. <!--VTT, 12/14/21: Need to link to new procedure on managing permissions via the Manage Permissions dialog box when it's published.-->   
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 

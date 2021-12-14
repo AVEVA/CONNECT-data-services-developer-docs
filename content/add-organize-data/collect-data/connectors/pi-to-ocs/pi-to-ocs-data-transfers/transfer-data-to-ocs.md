@@ -105,7 +105,7 @@ You build an AF elements transfer by setting query criteria and then selecting A
       * Click the operator down arrow, then select an operator (=, <>, <, >, =<, =>, In).
       * In the last text box, enter an attribute value.
 
-   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset’s UOM property set.
+   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
 
 1. Optional: Click the **Template** down arrow, then select a template to narrow your search by template name.
 
@@ -254,7 +254,7 @@ The `Details` pane provides information about the agent associated with the tran
 | ---------------- | ------------------------------------------------------------ |
 | **1**            | `Agent Overview:` Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
 | **2**            | `Transfer Overview:` Displays transfer details and progress. Also contains buttons to view, remove or stop a transfer. |
-| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to AVEVA&trade; Data Hub. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as “real-time” events. Streaming events represent the number of current, real-time events transferred into AVEVA&trade; Data Hub. |
+| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to AVEVA&trade; Data Hub. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as "real-time" events. Streaming events represent the number of current, real-time events transferred into AVEVA&trade; Data Hub. |
 |**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created:  <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to AVEVA&trade; Data Hub.</li><li>**Total Assets Created**: The number of assets created in AVEVA&trade; Data Hub.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
 
 ## Transfer data to AVEVA&trade; Data Hub

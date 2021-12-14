@@ -2,7 +2,7 @@
 uid: ccRoles
 ---
 
-# Roles
+# AVEVA Data Hub roles
 
 Roles are used to manage access to assets, resources, and services. Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity tries to access a resource, AVEVA&trade; Data Hub checks the assigned roles against the permissions on the resource to determine their access level.
 

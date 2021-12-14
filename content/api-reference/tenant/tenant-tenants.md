@@ -4,7 +4,7 @@ uid: tenant-tenants
 ---
 
 # Tenants
-APIs to manage an OCS Customer Tenant. A tenant represents the set of services, applications, data, and configuration state available to a customer. Users are associated with a tenant via at least one configured identity provider and access to resources can be managed for those users via the assignment of roles. Data and services provided by a tenant may also span geographical regions. A tenant has APIs to manage an OCS customer tenant. Unlike namespaces, tenants are not scoped to a region. Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes. Write operations for tenant management and identity and access management are only supported through the global base URL, such as https://dat-b.osisoft.com/Tenants/{tenantId}. Requests to local URLs will return a status of Method Not Allowed (405). Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes.
+APIs to manage an AVEVA Data Hub Customer Tenant. A tenant represents the set of services, applications, data, and configuration state available to a customer. Users are associated with a tenant via at least one configured identity provider and access to resources can be managed for those users via the assignment of roles. Data and services provided by a tenant may also span geographical regions. A tenant has APIs to manage an AVEVA Data Hub customer tenant. Unlike namespaces, tenants are not scoped to a region. Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes. Write operations for tenant management and identity and access management are only supported through the global base URL, such as https://dat-b.osisoft.com/Tenants/{tenantId}. Requests to local URLs will return a status of Method Not Allowed (405). Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes.
 
 ## `Get Tenant`
 
@@ -615,7 +615,7 @@ Representation of a server-side database interpretation of a tenant.
 <a id="tocSregionbase"></a>
 <a id="tocsregionbase"></a>
 
-Represents a region within an OCS environment for OCS customers to see.
+Represents a region within an AVEVA Data Hub environment for AVEVA Data Hub customers to see.
 
 #### Properties
 

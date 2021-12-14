@@ -70,9 +70,9 @@ Follow the procedure to create an asset.
 
 1. In the assets pane, use the icons in the upper-right to switch between the following views:
 
-   - ![Card view](images/card-view.png) &ndash; Card view displays the assets as a series of tiles.
+   - ![Card view](../images/card-view.png) &ndash; Card view displays the assets as a series of tiles.
     
-   - ![Table view](images/table-view.png) &ndash; Table view displays the assets in a table format. 
+   - ![Table view](../images/table-view.png) &ndash; Table view displays the assets in a table format. 
 
 ## Next step
 

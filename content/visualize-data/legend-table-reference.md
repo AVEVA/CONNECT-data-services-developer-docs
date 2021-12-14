@@ -4,7 +4,7 @@ uid: LegendTableReference
 
 # Legend table reference
 
-While visualizing data from the **Trend** page, you can toggle between a **Trend** <svg class="icon"><use href="../_images/icons/symbol-defs.svg#chart-line"/></svg> view and a **Cursor** <svg class="icon"><use href="../_images/icons/symbol-defs.svg#map-marker"/></svg> view to display different metadata about the stream within a selected time frame.
+While visualizing data from the **Trend** page, you can toggle between a **Trend** <svg class="icon"><use href="../symbol-defs.svg#chart-line"/></svg> view and a **Cursor** <svg class="icon"><use href="../symbol-defs.svg#map-marker"/></svg> view to display different metadata about the stream within a selected time frame.
 
 ![Trend page legend table](images/trend-page.png)
 
@@ -22,9 +22,9 @@ The following table describes each icon.
 
 Icon | Description
 --|--
-<svg class="icon"><use href="../_images/icons/symbol-defs.svg#database"/></svg> | Indicates the origin namespace of the stream data.
-<svg class="icon"><use href="../_images/icons/symbol-defs.svg#share-variant"/></svg> | Indicates that the stream originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
-<svg class="icon"><use href="../_images/icons/symbol-defs.svg#office-building"/></svg> | Indicates the tenant that is sharing the stream within the community. This icon displays only when the stream is shared within a community.
+<svg class="icon"><use href="../symbol-defs.svg#database"/></svg> | Indicates the origin namespace of the stream data.
+<svg class="icon"><use href="../symbol-defs.svg#share-variant"/></svg> | Indicates that the stream originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
+<svg class="icon"><use href="../symbol-defs.svg#office-building"/></svg> | Indicates the tenant that is sharing the stream within the community. This icon displays only when the stream is shared within a community.
 
 Each stream property listed in the **Trend** view also lists metadata for the property:
 
@@ -41,7 +41,7 @@ Max | The highest value recorded for the property for easy cursors that you have
 
 ## Cursor view
 
-The **Cursor** <svg class="icon"><use href="../_images/icons/symbol-defs.svg#map-marker"/></svg> view lists property values for each cursor added to the `Trend` pane. Cursors are listed chronologically according to their timestamps.
+The **Cursor** <svg class="icon"><use href="../symbol-defs.svg#map-marker"/></svg> view lists property values for each cursor added to the `Trend` pane. Cursors are listed chronologically according to their timestamps.
 
 ![Cursor view](images/cursor-view.png)
 

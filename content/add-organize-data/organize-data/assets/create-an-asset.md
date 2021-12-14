@@ -30,7 +30,7 @@ To create an asset, follow these steps:
 
    - **Value** - Enter the value for the metadata.
 
-     **Note:** The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss)
+      **Note:** The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss)
 
    - **Type** - Select the value type from the dropdown list.
 
@@ -38,47 +38,30 @@ To create an asset, follow these steps:
 
 1. Select the **Properties** tab. 
 
-1. For each property to add to the asset, select **Add Stream References** and complete the following steps:
-
-   1. In the `Select Streams` window, select the stream and select **Add**..
+1. Select **Add Stream References**, select the stream in the `Select Streams` window, and then select **Add**.
    
-     **Note:** Use the search box to find the stream. You can search on the stream name, description, or the type. Use the asterisk (*)  as a wildcard character.
+     **Tips:** To search for streams based on the stream name, description, or the type, enter the text to search for in the **Enter search query** field. Use the asterisk (*) as a wildcard character. To select multiple streams, hold the Ctrl key and select each stream or hold the Shift key and select the first and last stream in a group.
 
-     The stream reference appears in the right pane. This is the automatically generated user-friendly stream name. You can edit this name.
-         
-1. Click the scroll bar to display the properties for the stream reference.
+   Selected streams and their properties are listed in the **Properties** tab.
+
+1. If needed, modify the stream names to make them easier to identify.
    
-1. Click **Configure UOMs**. 
+1. To update the property units of measure for a stream, select **Configure UOMs** for the stream. 
 
-1. On the `Configure UOMs` page, make any changes to the property UOMs.
+    **Note:** Units of measure can be set only on numeric types.
 
-    **Note:** UOMs can be set only on numeric types.
+1. On the `Configure UOMs` page, update the property units of measure as needed and select **Save**.
 
-1. When you are done, click **Save**.
+    **Note:** When you select **Save**, any changes are immediately saved to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are still saved even if you do not save the new asset.
 
-    **Note:** Once you click **Save**, any changes are immediately made to the UOMs on the stream, regardless of any other actions you take on this asset. For example, the UOM changes to the stream are not reversed if you click **Cancel** on the **Properties** tab or if you delete the asset.
+1. To configure statuses for the asset, select the **Status** tab and select **Add Status Configuration**.
 
-## Add status tracking to the asset
+1. In the `Select Property` window, select the property that determines the asset status and select **Continue**.
 
-1. Click the **Status** tab.
+    You can only specify one property to determine the asset status, and that property must have enumerated states or string values.
 
-2. Click **Add Status Configuration**.
-
-3. In the `Select Property` window, click the property that you want to display status for. Click **Continue**.
-
-    **Note:** Only properties with enumerated states or string values can be selected for the asset status;  therefore, only these properties are displayed. 
-
-    You can only specify one property as the asset's status. 
-
-1. Click the status icons to map the icon for each value.
-    
     **Tip:** You can switch to a different property by clicking the ![Change property icon](images/change-property-icon.png) icon.
 
-## Save the asset
+1. For each value listed, select the status icon to map the value to a status. To add other values, select **Add Value Mapping**, enter the value, and select the corresponding status.
 
-1. Click **Save**. 
-
-## Related links
-
-- [Assets](xref:AssetsProperties) Properties
-- [Assets API](xref:AssetsAPI)
+1. To save the asset type, select **Save**. 

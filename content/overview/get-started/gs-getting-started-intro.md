@@ -2,7 +2,7 @@
 uid: gsGetStartedOCS
 ---
 
-# Get started with OSIsoft Cloud Services 
+# Get started 
 
 This is an introduction to the main features of OSIsoft Cloud Services (OCS) using the OCS portal. Each section includes a tutorial with step-by-step procedures with links to basic concepts and best practices.
 
@@ -11,13 +11,14 @@ This is an introduction to the main features of OSIsoft Cloud Services (OCS) usi
 Before you begin the get started exercises, obtain the following:
 
 - Request a tenant from your OSIsoft account manager. 
+
 - You must have Tenant Administrator privileges. 
 
 ## Log into the OCS Portal
 
-Once you have completed the pre-requisites, log into the OCS portal. 
+Once you have completed the prerequisites, log into the OCS portal. 
 
-1. In the web browser, enter the following URL: *https://cloud.osisoft.com* to open the OSIsoft Cloud Services web site. 
+1. In a web browser, enter the following URL: *https://cloud.osisoft.com* to open the OSIsoft Cloud Services web site. 
 
    **Note:** The latest versions of Microsoft Edge, Google Chrome, and Firefox are supported.
 

@@ -30,7 +30,7 @@ To install the OSIsoft Cloud Services Power BI Connector, follow these steps:
 
     - Setup wizard
 
-        - Double click the `OCSPowerBIConnector.exe` file and select **Next**.
+        - Double-click the `OCSPowerBIConnector.exe` file and select **Next**.
 
         - (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
 
@@ -56,7 +56,7 @@ To retrieve data views, follow these steps:
 
 1. Select **Continue** in the `Connecting to a third-party service` warning.
 
-1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the data views you want to access, and then click **OK**.
+1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the data views you want to access, and then select **OK**.
 
    The OSIsoft Cloud Services sign-in window displays if you have not already signed in.
 
@@ -128,7 +128,7 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
         | `RangeEnd` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<End date of the date range>` |
      
        **Note:** `RangeStart` and `RangeEnd` must be named and mixed-cased as is for incremental refresh to work. Type must always be `Date/Time`.
-
+   <!-- Jason Ames 12/14/21 - Something about this final indent breaks this display and puts the table and note in a code box. Maybe this many indent levels aren't supported?-->
      d. Edit the query function to use the `RangeStart` and `RangeEnd` parameters defined in the previous step. For example:
      
      `DateTimeZone.From(RangeStart), DateTimeZone.From(RangeEnd), #duration(0, 1, 0, 0)`
@@ -142,5 +142,5 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
        This builds a cache of data in Microsoft Power BI so you will not need to re-query the original data view. The following example image shows that incremental refresh is turned on, will cache 30 days of data, and the last 5 days will be a rolling refresh of data.
         
        ![Transform data](./images/mspowerbi-incremental-refresh.png)
-     
+   <!-- Jason Ames 12/14/21 - Same as note above. The paragraph and image below g don't display properly.-->     
     For more information about incremental refresh, see the Microsoft [Incremental refresh for datasets](https://docs.microsoft.com/en-us/power-bi/connect-data/incremental-refresh-overview) page.

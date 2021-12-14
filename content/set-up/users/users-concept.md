@@ -4,7 +4,7 @@ uid: ccUsers
 
 # AVEVA Data Hub users
 
-An AVEVA Data Hub user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. See [Roles](xref:ccRoles) for more information. In AVEVA Data Hub, users must be linked to a tenant from an enabled identity provider such as Azure Active Directory, Microsoft Accounts, or Google. Users log in to the portal using the credentials from that account.
+An AVEVA Data Hub user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. See [AVEVA Data Hub roles](xref:ccRoles) for more information. Users log in to the AVEVA Data Hub portal and are authenticated through AVEVA Connect.
 
 Note: Identity resources such as users and clients, are global across AVEVA Data Hub. These resources are not scoped to a particular namespace, but globally scoped across namespaces in Data Hub.
 

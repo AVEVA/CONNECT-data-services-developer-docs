@@ -27,7 +27,7 @@ Client-credentials clients are used for server-to-server communication where no 
 1. Select the **MyData.Role** role for the client.
    By default, the client is assigned the Tenant Member role which cannot be removed. Roles can be modified after the client is created.
 
-   **Note:** The **MyData.Role** role is used as an example in this exercise. 
+   **Note:** The **MyData.Role** role is a custom role in this exercise. 
 
 1. (Optional) Set the **Token Lifetime**.  
    Token Lifetime represents the length of time in seconds that the access token for this Client is valid from the time issued until it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
@@ -48,7 +48,7 @@ Client-credentials clients are used for server-to-server communication where no 
     
 1. Click **Close**.  
 
-   **Note:** The client ID is visible on the client. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret. Client modifications can take an hour before taking effect.
+   **Note:** The client ID is visible on the client. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret. Client modifications may take up to an hour before being visibly updated.
 
 ## Next step
 

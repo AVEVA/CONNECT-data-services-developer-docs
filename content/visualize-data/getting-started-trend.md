@@ -18,7 +18,7 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     1. Select a namespace or community that contains the stream data that you want to visualize.
 
-    1. In the `Add Traces` pane, click the **Add** <svg class="icon blue"><use href="../_images/icons/symbol-defs.svg#plus-thick"/></svg> icon to add the trace to the trend.
+    1. In the `Add Traces` pane, click the **Add** <svg class="icon blue"><use xlink:href="../_images/icons/symbol-defs.svg#plus-thick"/></svg> icon to add the trace to the trend.
 
     1. (Optional) Repeat the substeps to add more data from different namespace and communities to the trend.  
 

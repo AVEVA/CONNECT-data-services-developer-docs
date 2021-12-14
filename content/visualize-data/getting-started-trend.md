@@ -18,7 +18,7 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     1. Select a namespace or community that contains the stream data that you want to visualize.
 
-    1. In the `Add Traces` pane, click the **Add** <svg class="icon blue"><use xlink:href="../_images/icons/symbol-defs.svg#plus-thick"/></svg> icon to add the trace to the trend.
+    1. In the `Add Traces` pane, click the **Add** <svg class="icon blue"><use href="../_images/icons/symbol-defs.svg#plus-thick"/></svg> icon to add the trace to the trend.
 
     1. (Optional) Repeat the substeps to add more data from different namespace and communities to the trend.  
 
@@ -26,15 +26,15 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
    - Specify the stream name or description in the **Search** box to find the streams you are interested in.
 
-   - After you have finished adding the traces, click the **Close** <svg class="icon blue"><use xlink:href="../_images/icons/symbol-defs.svg#window-close"/></svg> icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
+   - After you have finished adding the traces, click the **Close** <svg class="icon blue"><use href="../_images/icons/symbol-defs.svg#window-close"/></svg> icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
 
 1. Click the ![Trend views menu](images/trend-views-icon.png) menu to choose one of the three views:
 
     | Trend View | Icon | Description |
     |--|--|--|
-    | Single mode | <svg class="icon"><use xlink:href="../_images/icons/symbol-defs.svg#chart-line"/></svg> | Each trace is displayed in its own trend. |
-    | Multiple mode | <svg class="icon"><use xlink:href="../_images/icons/symbol-defs.svg#chart-multiple"/></svg> | All measurements are plotted on the same scale. |
-    | Stacked mode | <svg class="icon"><use xlink:href="../_images/icons/symbol-defs.svg#layers"/></svg> | All measurements are plotted on its own scale. |
+    | Single mode | <svg class="icon"><use href="../_images/icons/symbol-defs.svg#chart-line"/></svg> | Each trace is displayed in its own trend. |
+    | Multiple mode | <svg class="icon"><use href="../_images/icons/symbol-defs.svg#chart-multiple"/></svg> | All measurements are plotted on the same scale. |
+    | Stacked mode | <svg class="icon"><use href="../_images/icons/symbol-defs.svg#layers"/></svg> | All measurements are plotted on its own scale. |
 
 1. Click the time picker and select the time range to view. If the time range does not appear in this list, click the **Custom Range** tab and specify the time range.
 

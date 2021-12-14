@@ -52,7 +52,7 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
 
-1. Click the **Add** (![add](../_images/icons/add_black_18dp.svg)) icon above the trace to lock the cursors in place.
+1. Click the **Add** <svg style="height:18px;width:18px;"><use href="../_images/icons/symbol-defs.svg#plus"/> (![add](../_images/icons/add_black_18dp.svg))  icon above the trace to lock the cursors in place.
     
     The **Add** (![add](../_images/icons/add_black_18dp.svg)) icon turns into a **Close** (![Close](../_images/icons/close_black_18dp.svg)) icon.  To unlock the cursor, click the **Close** (![Close](../_images/icons/close_black_18dp.svg)) icon.
 
@@ -62,4 +62,4 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     ![Cursor_view](images/Cursor_view.png)
 
-    You can share this URL with colleagues to give them the same view of the trend that they can use to troubleshoot problems.
+    You can share this URL with colleagues to give them the same view of the trend that they can use to troubleshoot problems. <svg class="icon blue"><use href="../_images/icons/symbol-defs.svg#account"/></svg>

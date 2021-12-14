@@ -20,7 +20,8 @@ A user or application that attempts to read, write, delete, or manage access con
 
 - If an operation requires more than one access right, then an identity obtains those rights from multiple ACL entries.
 - `AccessType.Denied` takes precedence over `AccessType.Allowed`.
-  - For example, an identity that has multiple roles, one of which is assigned AccessType.Denied will be forbidden the associated AccessRight, even if another Role they also have assigned to them is assigned AccessType.Allowed for the same Access Right.
+  <!--VTT, 12/14/21: Reworded this bullet per SME request, N. Parakh: For example, an identity that has multiple roles, one of which is assigned AccessType.Denied will be forbidden the associated AccessRight, even if another Role they also have assigned to them is assigned AccessType.Allowed for the same Access Right.-->
+  - For example, an identity that has multiple roles, one of which is assigned AccessType.Denied will be forbidden the associated AccessRight, even if another one of their roles is assigned AccessType.Allowed for the same Access Right.
 - Roles are the only TrusteeType currently supported for AccessControlList ACEs.
 - At least one role must be given Manage Permission access.
 

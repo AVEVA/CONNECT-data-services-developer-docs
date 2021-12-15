@@ -49,3 +49,5 @@ Continue with either of the following topics:
 - [Get started with client-credentials clients](xref:gsClientCredentialsClients) 
 
 - [Get started with authorization code clients](xref:gsAuthorizationCodeClients)
+
+When all three are complete, continue with [Get started with assets](xref:gsAssets).

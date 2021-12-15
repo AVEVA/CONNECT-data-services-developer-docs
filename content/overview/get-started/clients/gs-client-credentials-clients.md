@@ -55,3 +55,5 @@ Continue with either of the following:
 - [Get started with authorization code clients](xref:gsAuthorizationCodeClients)
 
 - [Get started with hybrid clients](xref:gsHybridClients)
+
+When all three are complete, continue with [Get started with assets](xref:gsAssets).

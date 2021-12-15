@@ -1,13 +1,10 @@
-- name: OSIsoft Cloud Services
-  href: ocs-content-portal-overview.md
-  items:
-   - topicUid: WhatIsOCS
-   - topicUid: WhoUsesOCS
-   - topicUid: WhatOCSdoes
+- name: AVEVA™ Data Hub
+  href: overview/toc.yml
+  topicHref: adh-content-portal-overview.md
 - name: Get started
   href: overview/get-started/toc.yml
-  topicHref: overview/get-started/gs-getting-started-intro.md
-- name: Set up the environment
+  topicHref: overview/get-started/gs-overview.md     
+- name: Manage users and permissions
   href: set-up/toc.yml
   topicHref: set-up/set-up-overview.md
 - name: Add and organize data
@@ -28,3 +25,5 @@
 - name: API reference
   href: api-reference/toc.yml
   topicHref: api-reference/ocs-api-reference.md
+- name: Technical support and other resources
+  topicHref: support.md

@@ -4,7 +4,7 @@ uid: gsOMF
 
 # Get started with OMF connections
 
-To send Open Message Format (OMF) data to AVEVA&trade; Data Hub, you must first configure an OMF connection. For more information about OMF connections, see [OMF best practices](xref:bpOMFConnection).
+To send Open Message Format (OMF) data to AVEVA™ Data Hub, you must first configure an OMF connection. For more information about OMF connections, see [OMF best practices](xref:bpOMFConnection).
 
 Use this get started procedure to become familiar with OMF connections.
 
@@ -40,13 +40,9 @@ Use this get started procedure to become familiar with OMF connections.
 
 12. Follow these tips to learn more about OMF connections.
 
-  **Tip:** Click **Manage Permissions** to open the `Manage Permissions` window.
+  **Tip:** Click **Manage Permissions** to open the `Manage Permissions` window. In this window, you configure permissions only on the connection object itself. Click **Cancel** to continue.
 
-     In this window, you configure permissions only on the connection object itself. Click **Cancel** to continue.
-
- **Tip:** Click **Edit Connection** to open the `Edit` window.
-
-     Use this window to edit the name and description of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, click **Next** until you get to the **Review** tab, and then click **Save**.
+ **Tip:** Click **Edit Connection** to open the `Edit` window. Use this window to edit the name and description of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, click **Next** until you get to the **Review** tab, and then click **Save**.
 
 ## Next step
 

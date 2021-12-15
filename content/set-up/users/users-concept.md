@@ -2,7 +2,7 @@
 uid: ccUsers
 ---
 
-# Users
+# AVEVA Data Hub users
 
 A user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. For more information on roles, see [Roles](xref:ccRoles). Users must be linked to a tenant from an enabled identity provider such as Azure Active Directory, Microsoft Accounts, or Google. Users log in to the portal using the credentials from that account.
 

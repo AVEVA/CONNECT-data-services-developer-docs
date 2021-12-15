@@ -24,7 +24,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
    Use this name to identify the application that will use this client.
 
-1. Optional: Select the **Allow Refresh Token** check box if the application uses refresh tokens to keep users logged in.
+1. (Optional) Select the **Allow Refresh Token** check box if the application uses refresh tokens to keep users logged in to AVEVA™ Data Hub.
 
 1. Enter the URLs in the **Allowed Redirect URL(s)** text box, and click **+** to add it to the list.  
    

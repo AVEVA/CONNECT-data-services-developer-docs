@@ -1,5 +1,5 @@
 ---
-uid: gsGetStartedOCS
+uid: gs-adh
 ---
 
 # Get started with AVEVA Data Hub 
@@ -10,16 +10,24 @@ This is an introduction to the main features of AVEVA Data Hub. Each section inc
 
 Before you begin the get started exercises, obtain the following:
 
-- Request a tenant from your AVEVA account manager. 
+- Request a tenant from your AVEVA™ account manager. 
 - You must have Tenant Administrator privileges. 
 
-## Log into the AVEVA Data Hub Portal via Connect
+## Log into the AVEVA™ Data Hub Portal
 
-Once you have completed the pre-requisites, log into the AVEVA Data Hub portal via Connect. See [Sign in to AVEVA Connect and navigate to Data Hub](xref:) for instructions.
+Once you have completed the pre-requisites, log into the AVEVA™ Data Hub portal. 
 
 ## AVEVA Data Hub portal
 
-The Data Hub portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the Data Hub REST-based API. This introduction to Data Hub uses the portal functionality. Before you start the exercises, see [Introduction to the AVEVA Data Hub portal](xref:introPortalInterface) to get an overview of the user interface.
+The AVEVA™ Data Hub portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the AVEVA™ Data Hub portal](xref:introPortalInterface) to get an overview of the user interface.
+
+   **Note:** The latest versions of Microsoft Edge, Google Chrome, and Firefox are supported.
+
+1. In the toolbar, click **Sign In**.
+
+1. In the `Specify Tenant Id` or `Company Alias` window, enter the tenant ID or the company alias for your tenant, and click **Continue**. 
+
+   <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
 
 ## Get started goals
 

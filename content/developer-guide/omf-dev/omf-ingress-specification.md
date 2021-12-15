@@ -16,7 +16,7 @@ Versions 1.0 and 1.1 of the spec are currently supported.
 OMF message types fall into three categories: *type*, *container*, and *data*, which are described below. 
 
 ### Type messages
-  A *type* message is interpreted by AVEVA&trade; Data Hub as an SdsType in the Sequential Data Store. 
+  A *type* message is interpreted by AVEVA Data Hub as an SdsType in the Sequential Data Store. 
   Because SdsTypes are immutable, update operations are not supported. The keywords in the 
   Type definition are interpreted as follows:
 

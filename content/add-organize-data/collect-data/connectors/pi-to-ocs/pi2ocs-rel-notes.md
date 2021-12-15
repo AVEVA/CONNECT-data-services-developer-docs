@@ -111,7 +111,7 @@ See the [PI to Data Hub documentation](https://docs.osisoft.com/bundle/data-hub/
 
 #### Technical Support and Resources
 
-For technical assistance, contact AVEVA Customer Support through the [AVEVA Customer Support Portal](https://www.aveva.com/en/support-and-success/support-contact/).
+For technical assistance, contact AVEVA Software Support through the [AVEVA Knowledge & Support website](https://softwaresupport.aveva.com/).
 
 Additionally, the [Contact AVEVA](https://www.aveva.com/en/contact/) page on the portal offers contact options for customers outside of the United States.
 

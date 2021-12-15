@@ -4,12 +4,12 @@ uid: transfer-data
 
 # Transfer data to AVEVA Data Hub
 <!-- AF 11/15/21 This topic appears in the TOC twice. It could also use to be broken into Define a data transfer and Start a data transfer. -->
-<!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to OCS landing pages).-->
-You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
+<!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to Data Hub landing pages).-->
+You initiate a data transfer from the `PI to Data Hub Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
 
-**Before you begin:** Download and install the PI to OCS Agent. Register your PI Data Archive and AF data sources using the PI to OCS Agent Configuration Utility. 
+**Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
 
 ## Create a transfer
 
@@ -29,17 +29,15 @@ Transfer creation consists of the following tasks:
 
 1. Initiate the data transfer and monitor its progress. 
 
-**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the `Details` pane in the `PI to OCS Agents` page. The following image shows AF indexing in progress:
+**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the Details pane in the PI to Data Hub Agents page.
 
 ![](../../images/af-indexing.png)
 
 ## Name the transfer and set data privacy settings 
 
-To name the data transfer, follow these steps: 
+1. In the left pane, select **Data Collection** > **PI to Data Hub Agent**.
 
-1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
-
-1. In the `PI to OCS Agents` window, select the agent for the data transfer.
+1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
 
 1. In the `Details` pane, select **Create Transfer**.
 
@@ -88,6 +86,8 @@ To build an AF element
 
 1. (Optional) In the **Attribute Value** fields, filter attribute values by specifying the following information:
 
+   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
+   
       * In the first field, enter an attribute name.
 
       * In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `=<`, `=>`, `In`).
@@ -236,7 +236,7 @@ Each section of the `Details` pane is described in the following table.
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. 
 
-**Note:** Modifications to an AF database or Data Archive digital state table during a PI to AVEVA Data Hub transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
+**Note:** Modifications to an AF database or Data Archive digital state table during a PI to Data Hub transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
 
   1. Stop the transfer.
 
@@ -248,7 +248,7 @@ Data is ready for transfer after the desired PI points and/or AF elements have b
 
 To start a data transfer, follow these steps:
 
-1. (Optional) In the `PI to OCS Agents` window, select the PI to OCS Agent associated with the data transfer. 
+1. (Optional) In the `PI to Data Hub Agents` window, select the PI to Data Hub Agent associated with the data transfer. 
 
 1. (Optional) In the `Details` pane, expand the `Transfer Overview` section.
 

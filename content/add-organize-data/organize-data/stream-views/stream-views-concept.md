@@ -26,7 +26,7 @@ While there is no direct counterpart for stream views in PI Server, the closest 
 
 The following best practices are recommended when working with stream views:
 
-* Stream views can be useful when you are using PI to OCS. PI to OCS creates streams with many additional flags, for example `IsQuestionable`, `IsSubstituted`, and `IsAnnotated`. 
+* Stream views can be useful when you are using PI to Data Hub. PI to Data Hub creates streams with many additional flags, for example `IsQuestionable`, `IsSubstituted`, and `IsAnnotated`. 
 You can use stream views to limit these properties or to give them a more meaningful name.
 
 * When you use a stream view, use caution when not all properties in the target type exist in the source type. Properties that are not mapped return their default value in the target type. For example, if the target type contains a property of data type double that is not mapped, data transformation gives that property a value of `0`.

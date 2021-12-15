@@ -68,3 +68,5 @@ Because tenants can share their data natively within AVEVA Data Hub, IT departme
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
 Communities can accommodate business partners who are not sharing data or do not have a PI system of their own. They can provision their own AVEVA Data Hub tenant without sharing data, allowing them to participate in a partnership without purchasing the full PI System or other software.
+
+TEST

@@ -126,7 +126,7 @@ When you contact AVEVA Customer Support, be prepared to provide this information
 
 The [PI Square](https://pisquare.osisoft.com/) community has resources to help you with your technical questions. [PI Developers Club](https://pisquare.osisoft.com/community/developers-club) program offers specific services to developers and system integrators.
 
-AAVEVA Group plc, High Cross Madingley Road, Cambridge CB3 0HB, UK Web: https://www.aveva.com/ 
+AVEVA Group plc, High Cross Madingley Road, Cambridge CB3 0HB, UK Web: https://www.aveva.com/ 
 PI to Data Hub Agent
 
 © 2021 by AVEVA

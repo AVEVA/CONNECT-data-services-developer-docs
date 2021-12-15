@@ -14,6 +14,8 @@ An AVEVA Data Hub user is an identity that has access to a tenant. Roles assigne
 
 Follow the procedure to invite a user to your tenant.
 
+<!--12/2/21, VTT: Per SMEs (N. Parkah & A. Woodall) Deleted this step because it only applies to OCS. Old step: 1. If multiple identity providers are enabled in the tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. You can switch to a different option later.-->
+
 1. In the left pane, select **Security** > **Users**.
 
 1. In the toolbar, select **Add User**.

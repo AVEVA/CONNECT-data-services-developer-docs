@@ -7,7 +7,7 @@ uid: introPortalInterface
 When you first access the AVEVA™ Data Hub portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
 ![Portal window](../images/portal-interface.png "AVEVA™ Data Hub portal interface")
-<!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published. -->
+<!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published.-->
 
 ## AVEVA™ Data Hub features
 

@@ -28,11 +28,11 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. Enter the URLs in the **Allowed Redirect URL(s)** text box, and click **+** to add it to the list.  
    
-   The application specifies one of the URLs in this list when it authenticates against AVEVA™ Data Hub, and the AVEVA™ Data Hub identity server returns the results of the authentication to this URL.
+   The application specifies one of the URLs in this list when it authenticates against Data Hub, and the Data Hub identity server returns the results of the authentication to this URL.
 
 1. (Optional) Enter URLs in the **Allowed Logout Redirect URL(s)** text box, and click **+** to add it to the list.  
    
-   This is similar to the **Allowed Redirect URL(s)**. The application specifies one of the URLs from this list when it logs a user out of AVEVA™ Data Hub, and the AVEVA™ Data Hub identity server sends the user to that URL after a successful log out.
+   This is similar to the **Allowed Redirect URL(s)**. The application specifies one of the URLs from this list when it logs a user out of Data Hub, and the Data Hub identity server sends the user to that URL after a successful log out.
 
 1. (Optional) Set the **Token Lifetime**.  
    

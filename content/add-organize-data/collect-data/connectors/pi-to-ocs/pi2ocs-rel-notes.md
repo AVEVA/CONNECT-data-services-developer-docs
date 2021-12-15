@@ -33,9 +33,11 @@ Previously, the agent description specified during PI to OCS Agent installation 
 
 This has been fixed.
 
+### Enhancements
+
 *PI to OCS Configuration Utility Improvements*
 
-Several improvements were made to the PI to OCS Configuration Utility to improve the user experience, including the following list:
+Several improvements were made to the PI to OCS Configuration Utility to improve the user experience, including the following items:
  
 •	Only allow supported versions of PI Data Archive and AF Servers to be configured as data sources
 •	Improve misleading error messaging

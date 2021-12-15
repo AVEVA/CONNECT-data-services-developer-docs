@@ -27,9 +27,9 @@ This has been fixed. Customers must upgrade to the latest version of the PI to O
 
 **During installation, the agent description not properly set in OCS.**
 
-Previously, the agent description specified during PI to OCS Agent installation wasn’t properly replicated to OCS. This has been fixed.
+Previously, the agent description specified during PI to OCS Agent installation wasn't properly replicated to OCS. This has been fixed.
 
-**Indexing Status may not change from “InProgress” to “Succeeded” after indexing is complete.**
+**Indexing Status may not change from "InProgress" to "Succeeded" after indexing is complete.**
 
 This has been fixed.
 
@@ -39,9 +39,9 @@ This has been fixed.
 
 Several improvements were made to the PI to OCS Configuration Utility to improve the user experience, including the following items:
  
-•	Only allow supported versions of PI Data Archive and AF Servers to be configured as data sources
-•	Improve misleading error messaging
-•	Add tool tips to provide more information about Agent Hostname, Description and Service Account 
+*	Only allow supported versions of PI Data Archive and AF Servers to be configured as data sources
+*	Improve misleading error messaging
+*	Add tool tips to provide more information about Agent Hostname, Description and Service Account 
 
 **Known issues**
 
@@ -49,7 +49,7 @@ Several improvements were made to the PI to OCS Configuration Utility to improve
 * The AF Server must have a default Data Archive server specified for PI to OCS to operate properly.
 * The configuration utility can become unresponsive on some systems. There are two workaround options:
   - Download and install a newer version of .NET Desktop Runtime (3.1.21 or later) from here 
-  - Go to C:\Program Files\OSIsoft\PIToOCS, right-click the PIToOcsConfigurationUtility.exe file and select **Properties** > **Compatibility** > **Change high DPI settings**, select “Use this setting to fix scaling problems for this program instead of the one in Settings”, then select **Ok** > **Apply**.
+  - Go to C:\Program Files\OSIsoft\PIToOCS, right-click the PIToOcsConfigurationUtility.exe file and select **Properties** > **Compatibility** > **Change high DPI settings**, select "Use this setting to fix scaling problems for this program instead of the one in Settings", then select **Ok** > **Apply**.
 
 ## System requirements
 
@@ -78,14 +78,14 @@ Uninstall the package "PI To OCS Agent".
 
 ## Security information and guidance
 
-### OSIsoft’s commitment
+### OSIsoft's commitment
 
 Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of PI to OCS Agent is the highest quality and most secure version of the PI to OCS Agent released to date. OSIsoft's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
 
 ### Vulnerability communication
 
 The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure Framework](https://ics-cert.us-cert.gov/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf)  developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://ics-cert.us-cert.gov/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, OSIsoft is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
-For more information, refer to [OSIsoft’s Ethical Disclosure Policy](https://www.osisoft.com/ethical-disclosure-policy).
+For more information, refer to [OSIsoft's Ethical Disclosure Policy](https://www.osisoft.com/ethical-disclosure-policy).
 
 To report a security vulnerability, refer to [OSIsoft's Report a Security Vulnerability](https://www.osisoft.com/report-a-security-vulnerability).
 
@@ -121,7 +121,7 @@ The [PI Square](https://pisquare.osisoft.com/) community has resources to help y
 OSIsoft, LLC 1600 Alvarado Street San Leandro, CA 94577 USA Tel: (01) 510-297-5800 Fax: (01) 510-357-8136 Web: https://www.osisoft.com 
 PI to OCS Agent
 
-© 2021 by OSIsoft, LLC.
+&copy; 2021 by OSIsoft, LLC.
 
 All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, mechanical, photocopying, recording, or otherwise, without the prior written permission of OSIsoft, LLC.
 

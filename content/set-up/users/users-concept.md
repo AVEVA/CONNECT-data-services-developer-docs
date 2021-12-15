@@ -6,7 +6,7 @@ uid: ccUsers
 
 A user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. For more information on roles, see [Roles](xref:ccRoles). Users must be linked to a tenant from an enabled identity provider such as Azure Active Directory, Microsoft Accounts, or Google. Users log in to the portal using the credentials from that account.
 
-Users log in through a user account into the [OCS Portal](https://cloud.osisoft.com), and users authenticate when using [Hybrid Clients](xref:ccClients#hybrid-client) and [Authorization Code Clients](xref:ccClients#authorization-code-client). Therefore, at least one user should already be added to a tenant when the portal is first accessed.
+Users log in through AVEVA Connect into the AVEVA Data Hub Portal, and users authenticate when using [Hybrid Clients](xref:ccClients#hybrid-client) and [Authorization Code Clients](xref:ccClients#authorization-code-client). Therefore, at least one user should already be added to a tenant when the portal is first accessed.
 
 You must have the Tenant Administrator role to add and manage users in a tenant.
 

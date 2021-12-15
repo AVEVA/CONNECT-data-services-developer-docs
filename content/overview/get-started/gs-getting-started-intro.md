@@ -2,9 +2,9 @@
 uid: gs-adh
 ---
 
-# Get started with AVEVA™ Data Hub 
+# Get started with AVEVA Data Hub 
 
-This is an introduction to the main features of AVEVA™ Data Hub using the portal. Each section includes a tutorial with step-by-step procedures with links to basic concepts and best practices.
+This is an introduction to the main features of AVEVA Data Hub. Each section includes a tutorial with step-by-step procedures with links to basic concepts and best practices.
 
 ## Before you begin
 
@@ -17,7 +17,9 @@ Before you begin the get started exercises, obtain the following:
 
 Once you have completed the pre-requisites, log into the AVEVA™ Data Hub portal. 
 
-1. In the web browser, enter the following URL: *https://cloud.osisoft.com* to open the OSIsoft Cloud Services web site. 
+## AVEVA Data Hub portal
+
+The AVEVA™ Data Hub portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the AVEVA™ Data Hub portal](xref:introPortalInterface) to get an overview of the user interface.
 
    **Note:** The latest versions of Microsoft Edge, Google Chrome, and Firefox are supported.
 
@@ -27,15 +29,11 @@ Once you have completed the pre-requisites, log into the AVEVA™ Data Hub porta
 
    <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
 
-## AVEVA™ Data Hub portal
-
-The AVEVA™ Data Hub portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the AVEVA™ Data Hub portal](xref:introPortalInterface) to get an overview of the user interface.
-
 ## Get started goals
 
 In these get started exercises, you will do the following:
 
-1. Create a namespace that will contain all of your AVEVA™ Data Hub resources, including an instance of the Sequential Data Store and the data streams.
+1. Create a namespace that will contain all of your Data Hub resources, including an instance of the Sequential Data Store and the data streams.
 
 1. Create two connection types, one that brings in PI Data Archive data and another that brings in data using an OMF application.
 

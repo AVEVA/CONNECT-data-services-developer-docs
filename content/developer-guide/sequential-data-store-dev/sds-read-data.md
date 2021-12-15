@@ -81,7 +81,7 @@ In addition, the following methods support reading multiple values:
 <!-- removing per Chris M feedback
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
  ```text
-    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
+	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
  ```
 
 **Parameters**  
@@ -114,6 +114,7 @@ The tenant identifier
 ``string namespaceId``  
 The namespace identifier
 
+-->
 
 ### Response format
 
@@ -121,10 +122,11 @@ Supported response formats include JSON, verbose JSON, and SDS.
 
 The default response format for SDS is JSON, which is used in all examples in this document. Default JSON responses do not include any values that are equal to the default value for their type.
 
-Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.  
+Verbose JSON responses include all values in the returned JSON payload, including defaults. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request. 
+
+Verbose has no impact on writes; writes return only error messages.
 
 To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
--->
 
 ## Indexes and reading data
 
@@ -179,8 +181,8 @@ properties that occur between data in a stream:
 |GUID                       |Default value                   |         |
 |Version                    |Default value                   |         |
 |IDictionary or IEnumerable |Default value                   |Dictionary, Array, List, and so on. |
-|Empty Type        |Not supported                       | |
-|Object Type         |Not supported                       | |
+|Empty Type		|Not supported                  	 | |
+|Object Type 		|Not supported                   	| |
 
 
 *When extreme values are involved in an interpolation (for example
@@ -308,9 +310,9 @@ All stream view transformations are HTTP GET requests. Specify the stream view I
 
 All single stream data reads support stream view transformations.
 ```text
-    # Get 100 events from start index 
+	# Get 100 events from start index 
  GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform?startIndex={startIndex}&count=100&streamViewId={streamViewId}
-     # Get last value
+ 	# Get last value
  GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last?streamViewId={streamViewId}
  
 ```

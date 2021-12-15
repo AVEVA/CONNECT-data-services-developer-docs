@@ -33,6 +33,8 @@ Roles are comparable to PI identities in PI Data Archive or identities in PI AF 
 The following best practices are recommended when you create and assign roles:
 
 - Consider whether the read access granted by the Tenant Member role is acceptable for all users and clients in your tenant. Specifically, if you plan to invite users from outside your organization, you may want to limit their read access. One way to do this is to create a custom role for external users so that their permissions can be explicitly managed.
+ 
+- When using PI to OCS, ensure write access to stream and asset collections. The PI to OCS Agent has write permission to the streams collection in OCS. By default, write permission is provided through the Tenant Contributor role on the automatically generated PIToOcs Agent Client User. Write permission to this collection is required to enable stream creation.
 
 - Use caution when granting the Tenant Administrator role. Make sure to assign a different role to users and clients who should not manage permissions. Avoid assigning the Tenant Administrator role to client-credentials clients.
 

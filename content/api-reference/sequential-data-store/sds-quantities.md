@@ -1,10 +1,11 @@
 ---
 uid: sds-quantities
-
 ---
 
 # Quantities
-The API in this section interacts with quantities and units of measure.
+The REST APIs provide programmatic access to read and write SDS data. 
+The APIs in this section interact with `Quantities`.
+For more information, see [Quantities](xref:unitsOfMeasure).
 
 ## `List Quantities`
 
@@ -12,23 +13,25 @@ The API in this section interacts with quantities and units of measure.
 
 Returns a list of all quantities available within a given namespace
 
-<h3>Request</h3>
-
+### Request
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
-?skip={skip}&count={count}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities?skip={skip}&count={count}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>
+`[Optional] int skip`  
+Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
+<br/><br/>
+`[Optional] int count`  
+Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
+<br/><br/>
 
-<h3>Response</h3>
+
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -40,8 +43,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response
 
 ```json
@@ -115,20 +117,19 @@ Content-Type: application/json
 
 Returns the quantity corresponding to the specified quantityId within a given namespace
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string quantityId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string quantityId`
 <br/>The quantity identifier<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -140,8 +141,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response
 
 ```json
@@ -192,21 +192,20 @@ Content-Type: application/json
 
 Returns the unit of measure associated with the specified uomId belonging to the quantity with the specified quantityId
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units/{uomId}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string quantityId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string quantityId`
 <br/>The quantity identifier<br/><br/>`string uomId`
 <br/>The unit of measure identifier<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -218,8 +217,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response
 
 ```json
@@ -257,20 +255,19 @@ Content-Type: application/json
 
 Returns the list of units of measure that belongs to the quantity with the specified quantityId
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/Units
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string quantityId`
+<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/><br/>`string quantityId`
 <br/>The quantity identifier<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -282,8 +279,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response
 
 ```json
@@ -335,7 +331,7 @@ Content-Type: application/json
 
 DataContract representing a measurable quantity. i.e. A unit of measure 'meter' would measure a quantity 'length'
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -375,7 +371,7 @@ DataContract representing a measurable quantity. i.e. A unit of measure 'meter' 
 
 DataContract representing a unit of measure
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -409,9 +405,9 @@ DataContract representing a unit of measure
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-The error response contains standard details on the cause and resolution of the error.
+Contains the error message format that follows the OCS error standards
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

@@ -4,13 +4,17 @@ uid: data-views-data-views
 ---
 
 # Data Views
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#class-dataviewscontroller
+The `DataView` API provides mechanisms to create, read, update, and delete data views. This is one portion of the whole [data views API](xref:DataViewsAPIOverview).
+
+For a description of the `DataView` object type, see the [DataView documentation](xref:DataViewsAPIOverview).
+
+Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [API](xref:data-views-access-control).
 
 ## `List Data Views`
 
 <a id="opIdDataViews_List Data Views"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataviews-get
+Returns a list of data views.
 
 <h3>Request</h3>
 
@@ -22,36 +26,48 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] integer skip`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#skip-dataviews<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-dataviews<br/><br/>
+<br/>An optional parameter representing the zero-based offset of the first data view to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>An optional parameter representing the maximum number of data views to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DataView](#schemadataview)[]|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataviews-get|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[DataView](#schemadataview)[]|A page of data views. A response header, Total-Count, indicates the total size of the collection.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Total-Count|integer|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#total-count-dataviews|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-standard-message|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Total-Count|integer|The total count of data views visible to the current user.|
+|200|Link|string|Hyperlinks to the first page and next page of results as applicable.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 201 Created
+Content-Type: application/json  
+{
+  [
+    {
+      "Id": "demo view 1",
+      ... etc.
+    },
+    {
+      "Id": "demo view 2",
+      ... etc.
+    }
+  ]
+}
 ```
-
 > 500 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -77,7 +93,7 @@ null
 
 <a id="opIdDataViews_Create Data View"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-create
+Creates a new data view with a system-generated identifier.
 
 <h3>Request</h3>
 
@@ -88,12 +104,12 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-no-id<br/>
+A `DataView` object whose `Id` is `null` or unspecified.<br/>
 
 ```json
 {
@@ -180,19 +196,30 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[DataView](#schemadataview)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#201-dataview-standard-message|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataview-create|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|201|[DataView](#schemadataview)|The data view as persisted, including values for optional parameters that were omitted in the request.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request is not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to create a data view.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 201 Response
 
 ```json
-null
+HTTP 201 Created
+Content-Type: application/json  
+{
+  "Id": "c79630cc-21dc-483e-8b37-46880e92c456",
+  "Name": "demo",
+  "Description": "demonstration",
+  "IndexField": { "Label": "Timestamp" },
+  "Queries": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -218,7 +245,7 @@ null
 
 <a id="opIdDataViews_Get Data View"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-get
+Returns the specified data view.
 
 <h3>Request</h3>
 
@@ -229,27 +256,43 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[DataView](#schemadataview)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataview-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataview-get|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataviewid-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[DataView](#schemadataview)|The requested data view.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to view the requested data view.|
+|404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+Content-Type: application/json  
+{
+  "Id": "demo",
+  "Name": "demo",
+  "IndexField": { "Label": "Timestamp" },
+  "Queries": [
+    { 
+      "Id": "weather",
+      "Kind": "Stream",
+      "Value":"*weather*" 
+    }
+  ],
+  "DataFieldSets": [],
+  "GroupingFields": [],
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
+}
 ```
-
 > 403 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -275,7 +318,7 @@ null
 
 <a id="opIdDataViews_Get or Create Data View"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-getorcreate
+This method creates the specified data view. If a data view with the same identifier already exists, the existing data view is compared with the specified data view. If they are identical, a redirect (`302 Found`) is returned with the `Location` response header indicating the URL where the data view may be retrieved using a Get function. If the data views do not match, the request fails with `409 Conflict`.
 
 <h3>Request</h3>
 
@@ -286,13 +329,13 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-no-id<br/>
+A `DataView` object whose `Id` is `null` or unspecified.<br/>
 
 ```json
 {
@@ -379,21 +422,32 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[DataView](#schemadataview)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#201-dataview-standard-message|
-|302|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#302-data-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|409|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#409-data-get|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|201|[DataView](#schemadataview)|The data view as persisted, including values for optional parameters that were omitted in the request.|
+|302|None|The specified data view already exists. A response header, `Location`, indicates the URL where the data view may be retrieved with the `GET` verb.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request is not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|409|[ErrorResponse](#schemaerrorresponse)|The specified data view conflicts with an existing data view that is not identical. To forcibly update the data view, see *Create Or Update Data View*.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 201 Response
 
 ```json
-null
+HTTP 201 Created
+Content-Type: application/json  
+{
+  "Id": "demo2",
+  "Name": "demo2",
+  "Description": "demonstration 2",
+  "IndexField": { "Label": "Timestamp" },
+  "Queries": [],
+  "DataFieldSets": [],
+  "GroupingFields": [],
+  "IndexTypeCode": "DateTime",
+  "Shape": "Standard"
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -419,7 +473,7 @@ null
 
 <a id="opIdDataViews_Create or Update Data View"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-createorupdate
+If a data view with the same identifier already exists, it is updated to the specified value. Otherwise, a new data view is created.
 
 <h3>Request</h3>
 
@@ -430,13 +484,13 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview<br/>
+A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
 
 ```json
 {
@@ -523,11 +577,11 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[DataView](#schemadataview)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#201-dataview-standard-message|
-|204|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#204-dataview-update-standard-message|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|201|[DataView](#schemadataview)|The data view as persisted, including values for optional parameters that were omitted in the request.|
+|204|None|Successfully updated the data view.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request is not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
@@ -620,7 +674,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 
 <a id="opIdDataViews_Delete Data View"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-delete
+Deletes the data view with the specified id.
 
 <h3>Request</h3>
 
@@ -631,18 +685,18 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#204-dataview-update-standard-message|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataviewid-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|204|None|Successfully updated the data view.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 ---
 ## Definitions

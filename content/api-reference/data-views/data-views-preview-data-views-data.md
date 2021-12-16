@@ -4,13 +4,13 @@ uid: data-views-preview-data-views-data
 ---
 
 # Preview Data Views Data
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#class-previewdataviewsdatacontroller
+The Preview Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Interpolated Data`
 
 <a id="opIdPreviewDataViewsData_Get Data View Interpolated Data"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#data-interpolated-get-preview
+Returns interpolated data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 <h3>Request</h3>
 
@@ -22,22 +22,33 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string startIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#start-index<br/><br/>`string endIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#end-index<br/><br/>`string interval`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#interval<br/><br/>`string form`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#form<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string startIndex`
+<br/>The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string endIndex`
+<br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string interval`
+<br/>The requested interval between index values. The default value is the ```.DefaultInterval``` of the data view. Optional if a default is specified.<br/><br/>`string form`
+<br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+<br/><br/>
 `[optional] string continuationToken`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#continuation-token<br/><br/>`[optional] integer countPerGroup`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-per-group<br/><br/>`[optional] integer groupCount`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#group-count<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-data<br/><br/>`[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache-data-preview<br/><br/>
+<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+<br/><br/>`[optional] integer countPerGroup`
+<br/>The number of rows per group. It overrides the endIndex.<br/><br/>`[optional] integer groupCount`
+<br/>The requested number of groups.<br/><br/>`[optional] integer count`
+<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
+<br/><br/>`[optional] string cache`
+<br/>Controls when the data view backing resources are to be forcibly refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
+
+| Value | Description | 
+|--|--|
+| `Refresh` | Force the resource to re-resolve.
+| `Preserve`| Use cached information, if available.  This is the default value for this API route.  
+<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -124,27 +135,165 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-data-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|string|Successfully retrieved data.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-data-get|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Link|string|Hyperlinks to the first page and next page of data as applicable. Absence of the next link indicates that there is no additional data to be retrieved.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+form=default
+HTTP 200 OK
+Content-Type: application/json
+[
+    {
+        "Time": "2018-01-01T00:00:00Z",
+        "Temperature": 24,
+        "Flowrate": 44,
+        "Volume": 245
+    },
+    {
+        "Time": "2018-01-01T00:00:01Z",
+        "Temperature": 24,
+        "Flowrate": 44,
+        "Volume": 245
+    },
+    {
+        "Time": "2018-01-01T00:00:02Z",
+        "Temperature": 24,
+        "Flowrate": 44,
+        "Volume": 245
+    }
+]
 ```
 
+```csv
+form=csv
+HTTP 200 OK
+Content-Type: text/csv
+2018-01-01T00:00:00Z,24,44,245
+2018-01-01T00:00:01Z,24,44,245
+2018-01-01T00:00:02Z,24,44,245
+```
+
+```csv
+form=csvh
+HTTP 200 OK
+Content-Type: text/csv
+Time,Temperature,Flowrate,Volume
+2018-01-01T00:00:00Z,24,44,245
+2018-01-01T00:00:01Z,24,44,245
+2018-01-01T00:00:02Z,24,44,245
+```
+
+```json
+form=table
+HTTP 200 OK
+Content-Type: application/json
+{
+   "Columns": [
+      {
+          "Name": "Time",
+          "Type": "DateTime"
+      },
+      {
+          "Name": "Temperature",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Flowrate",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Volume",
+          "Type": "Int32"
+      }
+  ],
+  "Rows": [
+    [
+      "2018-01-01T00:00:00Z",
+      24,
+      44,
+      245
+    ],
+    [
+      "2018-01-01T00:00:01Z",
+      24,
+      44,
+      245
+    ],
+    [
+      "2018-01-01T00:00:02Z",
+      24,
+      44,
+      245
+    ]
+  ]
+}
+```
+
+```json
+form=tableh
+HTTP 200 OK
+Content-Type: application/json
+{
+  "Columns": [
+      {
+          "Name": "Time",
+          "Type": "DateTime"
+      },
+      {
+          "Name": "Temperature",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Flowrate",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Volume",
+          "Type": "Int32"
+      }
+  ],
+  "Rows": [
+      [
+          "Time",
+          "Temperature",
+          "Flowrate",
+          "Volume"
+      ],
+      [
+          "2018-01-01T00:00:00Z",
+          24,
+          44,
+          245
+      ],
+      [
+          "2018-01-01T00:00:01Z",
+          24,
+          44,
+          245
+      ],
+      [
+          "2018-01-01T00:00:02Z",
+          24,
+          44,
+          245
+      ]
+   ]
+}
+```
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -170,7 +319,7 @@ null
 
 <a id="opIdPreviewDataViewsData_Get Data View Stored Data"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#data-stored-get-preview
+Returns stored data for the provided data view and index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 <h3>Request</h3>
 
@@ -182,21 +331,32 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string startIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#start-index<br/><br/>`string endIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#end-index<br/><br/>`string form`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#form<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string startIndex`
+<br/>The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string endIndex`
+<br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string form`
+<br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+<br/><br/>
 `[optional] string continuationToken`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#continuation-token<br/><br/>`[optional] integer countPerGroup`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-per-group<br/><br/>`[optional] integer groupCount`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#group-count<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-data<br/><br/>`[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache-data-preview<br/><br/>
+<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+<br/><br/>`[optional] integer countPerGroup`
+<br/>The number of rows per group. It overrides the endIndex.<br/><br/>`[optional] integer groupCount`
+<br/>The requested number of groups.<br/><br/>`[optional] integer count`
+<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
+<br/><br/>`[optional] string cache`
+<br/>Controls when the data view backing resources are to be forcibly refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
+
+| Value | Description | 
+|--|--|
+| `Refresh` | Force the resource to re-resolve.
+| `Preserve`| Use cached information, if available.  This is the default value for this API route.  
+<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -283,28 +443,166 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-data-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|409|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#409-data-get|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|string|Successfully retrieved data.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|409|[ErrorResponse](#schemaerrorresponse)|The specified data view conflicts with an existing data view that is not identical. To forcibly update the data view, see *Create Or Update Data View*.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-data-get|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Link|string|Hyperlinks to the first page and next page of data as applicable. Absence of the next link indicates that there is no additional data to be retrieved.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+form=default
+HTTP 200 OK
+Content-Type: application/json
+[
+    {
+        "Time": "2018-01-01T00:00:00Z",
+        "Temperature": 24,
+        "Flowrate": 44,
+        "Volume": 245
+    },
+    {
+        "Time": "2018-01-01T00:00:01Z",
+        "Temperature": 24,
+        "Flowrate": 44,
+        "Volume": 245
+    },
+    {
+        "Time": "2018-01-01T00:00:02Z",
+        "Temperature": 24,
+        "Flowrate": 44,
+        "Volume": 245
+    }
+]
 ```
 
+```csv
+form=csv
+HTTP 200 OK
+Content-Type: text/csv
+2018-01-01T00:00:00Z,24,44,245
+2018-01-01T00:00:01Z,24,44,245
+2018-01-01T00:00:02Z,24,44,245
+```
+
+```csv
+form=csvh
+HTTP 200 OK
+Content-Type: text/csv
+Time,Temperature,Flowrate,Volume
+2018-01-01T00:00:00Z,24,44,245
+2018-01-01T00:00:01Z,24,44,245
+2018-01-01T00:00:02Z,24,44,245
+```
+
+```json
+form=table
+HTTP 200 OK
+Content-Type: application/json
+{
+   "Columns": [
+      {
+          "Name": "Time",
+          "Type": "DateTime"
+      },
+      {
+          "Name": "Temperature",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Flowrate",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Volume",
+          "Type": "Int32"
+      }
+  ],
+  "Rows": [
+    [
+      "2018-01-01T00:00:00Z",
+      24,
+      44,
+      245
+    ],
+    [
+      "2018-01-01T00:00:01Z",
+      24,
+      44,
+      245
+    ],
+    [
+      "2018-01-01T00:00:02Z",
+      24,
+      44,
+      245
+    ]
+  ]
+}
+```
+
+```json
+form=tableh
+HTTP 200 OK
+Content-Type: application/json
+{
+  "Columns": [
+      {
+          "Name": "Time",
+          "Type": "DateTime"
+      },
+      {
+          "Name": "Temperature",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Flowrate",
+          "Type": "Int32"
+      },
+      {
+          "Name": "Volume",
+          "Type": "Int32"
+      }
+  ],
+  "Rows": [
+      [
+          "Time",
+          "Temperature",
+          "Flowrate",
+          "Volume"
+      ],
+      [
+          "2018-01-01T00:00:00Z",
+          24,
+          44,
+          245
+      ],
+      [
+          "2018-01-01T00:00:01Z",
+          24,
+          44,
+          245
+      ],
+      [
+          "2018-01-01T00:00:02Z",
+          24,
+          44,
+          245
+      ]
+   ]
+}
+```
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -800,8 +1098,8 @@ The shape of the data view. By default, each Field will resolve to one or more F
 
 |Property|Value|Description|
 |---|---|---|
-|Standard|0||
-|Narrow|1||
+|Standard|0|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
+|Narrow|1|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
 
 ---
 

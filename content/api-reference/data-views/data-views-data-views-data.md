@@ -4,13 +4,13 @@ uid: data-views-data-views-data
 ---
 
 # Data Views Data
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#class-dataviewsdatacontroller
+The Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Interpolated Data`
 
 <a id="opIdDataViewsData_Get Data View Interpolated Data"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#data-interpolated-get
+Returns interpolated data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 <h3>Request</h3>
 
@@ -22,42 +22,55 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>`string startIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#start-index<br/><br/>`string endIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#end-index<br/><br/>`string interval`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#interval<br/><br/>`string form`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#form<br/><br/>`string continuationToken`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#continuation-token<br/><br/>`integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-data<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>`string startIndex`
+<br/>The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string endIndex`
+<br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string interval`
+<br/>The requested interval between index values. The default value is the ```.DefaultInterval``` of the data view. Optional if a default is specified.<br/><br/>`string form`
+<br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+<br/><br/>`string continuationToken`
+<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+<br/><br/>`integer count`
+<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
+<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache-data<br/><br/>
+<br/>Controls when the data view backing resources are to be refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
+
+| Value | Description | 
+|--|--|
+| `Refresh` | Force the resource to re-resolve.  This is the default value for this API route.  
+| `Preserve`| Use cached information, if available.
+<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-data-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-data-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataviewid-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|string|Successfully retrieved data.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request could not be understood by the server due to malformed syntax.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-data-get|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Link|string|Hyperlinks to the first page and next page of data as applicable. Absence of the next link indicates that there is no additional data to be retrieved.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+{
+  "ERROR": "Parameter \"data-interpolated-get-multiple-formats\" could not be found in external reference file"
+}
 ```
 
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
@@ -85,7 +98,7 @@ null
 
 <a id="opIdDataViewsData_Get Data View Stored Data"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#data-stored-get
+Returns stored data for the provided index parameters with paging. See [documentation on paging](xref:DataViewsQuickStartGetData#paging) for further information.
 
 <h3>Request</h3>
 
@@ -97,42 +110,55 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>`string startIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#start-index<br/><br/>`string endIndex`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#end-index<br/><br/>`string form`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#form<br/><br/>`string continuationToken`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#continuation-token<br/><br/>`integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-data<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>`string startIndex`
+<br/>The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string endIndex`
+<br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string form`
+<br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
+<br/><br/>`string continuationToken`
+<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+<br/><br/>`integer count`
+<br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
+<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache-data<br/><br/>
+<br/>Controls when the data view backing resources are to be refreshed. Used only when requesting the first page of data. Ignored if used with the continuationToken. Values are:
+
+| Value | Description | 
+|--|--|
+| `Refresh` | Force the resource to re-resolve.  This is the default value for this API route.  
+| `Preserve`| Use cached information, if available.
+<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-data-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-data-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataviewid-standard-message|
-|409|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#409-data-get|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|string|Successfully retrieved data.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request could not be understood by the server due to malformed syntax.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
+|409|[ErrorResponse](#schemaerrorresponse)|The specified data view conflicts with an existing data view that is not identical. To forcibly update the data view, see *Create Or Update Data View*.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-data-get|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Link|string|Hyperlinks to the first page and next page of data as applicable. Absence of the next link indicates that there is no additional data to be retrieved.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+{
+  "ERROR": "Parameter \"data-stored-get-multiple-formats\" could not be found in external reference file"
+}
 ```
 
 > 400 Response ([ErrorResponse](#schemaerrorresponse))

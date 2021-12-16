@@ -4,13 +4,13 @@ uid: data-views-preview-data-views-resolved
 ---
 
 # Preview Data Views Resolved
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#class-previewdataviewsresolvedcontroller
+This portion of the overall [data views API](xref:DataViewsAPIOverview) specifies the resources that resolve per-user for an input data view. The preview APIs require a data view to be passed in the request body for each request, which provides the user the flexibility to change the data view on the fly without saving/updating it.
 
 ## `Get Available Field Sets`
 
 <a id="opIdPreviewDataViewsResolved_Get Available Field Sets"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#availablefieldsets-get
+Returns the collection of field sets that are available for use in the data view, and which are not already included in the data view.
 
 <h3>Request</h3>
 
@@ -22,14 +22,14 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -116,19 +116,58 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedItemsOfFieldSet](#schemaresolveditemsoffieldset)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-fieldsets-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[ResolvedItemsOfFieldSet](#schemaresolveditemsoffieldset)|An object with a "TimeOfResolution" and a collection of "Items", the `FieldSet`s that resolved and which are still available.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+{
+    "TimeOfResolution": "2019-12-13T01:23:45Z",
+    "Items": [
+        {
+            "QueryId": "weather",
+            "DataFields": [
+                {
+                    "Source": "Id",
+                    "Keys": [],
+                    "Label": "{IdentifyingValue} Id"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "SolarRadiation"
+                    ],
+                    "Label": "{IdentifyingValue} SolarRadiation {Uom} {SummaryType}"
+                },
+                {
+                    "Source": "Metadata",
+                    "Keys": [
+                        "Site"
+                    ],
+                    "Label": "{IdentifyingValue} Site {Uom}"
+                },
+                {
+                    "Source": "Tags",
+                    "Keys": [
+                        "Weather",
+                        "Low Resolution",
+                        "High Resolution",
+                        "Gen1",
+                        "Gen2",
+                    ],
+                    "Label": "{IdentifyingValue} Tags"
+                }
+            ]
+        }
+    ]
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -154,7 +193,7 @@ null
 
 <a id="opIdPreviewDataViewsResolved_Get All Field Sets"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#allfieldsets-get
+Returns the collection of all field sets eligible for use in the data view, including fields which are currently included in the data view.
 
 <h3>Request</h3>
 
@@ -166,14 +205,14 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -260,19 +299,65 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedItemsOfFieldSet](#schemaresolveditemsoffieldset)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-fieldsets-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[ResolvedItemsOfFieldSet](#schemaresolveditemsoffieldset)|An object with a "TimeOfResolution" and a collection of "Items", the `FieldSet`s that resolved and which are still available.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+{
+    "TimeOfResolution": "2019-12-13T01:23:45Z",
+    "Items": [
+        {
+            "QueryId": "weather",
+            "DataFields": [
+                {
+                    "Source": "Id",
+                    "Keys": [],
+                    "Label": "{IdentifyingValue} Id"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "SolarRadiation"
+                    ],
+                    "Label": "{IdentifyingValue} SolarRadiation {Uom} {SummaryType}"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "Temperature"
+                    ],
+                    "Label": "{IdentifyingValue} Temperature {Uom} {SummaryType}"
+                },
+                {
+                    "Source": "Metadata",
+                    "Keys": [
+                        "Site"
+                    ],
+                    "Label": "{IdentifyingValue} Site {Uom}"
+                },
+                {
+                    "Source": "Tags",
+                    "Keys": [
+                        "Weather",
+                        "Low Resolution",
+                        "High Resolution",
+                        "Gen1",
+                        "Gen2",
+                    ],
+                    "Label": "{IdentifyingValue} Tags"
+                }
+            ]
+        }
+    ]
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -298,7 +383,7 @@ null
 
 <a id="opIdPreviewDataViewsResolved_Get Statistics"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#statistics-get
+Returns the statistics about the size and shape on how the data view resolved. 
 
 <h3>Request</h3>
 
@@ -310,14 +395,14 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -404,19 +489,56 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedItemOfStatistics](#schemaresolveditemofstatistics)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-statistics-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[ResolvedItemOfStatistics](#schemaresolveditemofstatistics)|Successfully retrieved data.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+{
+    "TimeOfResolution": "2019-12-13T01:23:45Z",
+    "DataItemCount": 24,
+    "GroupCount": 2,
+    "FieldMappingCount": 10,
+    "DataFieldSets": [
+        {
+            "DataItemCount": 18,
+            "UnmappedDataItemCount": 3,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 0,
+                    "UnmappedGroupCount": 0
+                },
+                {
+                    "FieldMappingCount": 3,
+                    "DataMappingCount": 6,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        },
+        {
+            "DataItemCount": 6,
+            "UnmappedDataItemCount": 0,
+            "DataFields": [
+                {
+                    "FieldMappingCount": 2,
+                    "DataMappingCount": 4,
+                    "EmptyDataMappingCount": 2,
+                    "UnmappedGroupCount": 1
+                }
+            ]
+        }
+    ]
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -442,7 +564,7 @@ null
 
 <a id="opIdPreviewDataViewsResolved_Get Data Items by Query"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataitems-get
+Returns the paged collection of data items that are the results of an individual query, and which are eligible for use in the current data view. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
 <h3>Request</h3>
 
@@ -454,17 +576,17 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string queryId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#query<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string queryId`
+<br/>Query identifier.<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache<br/><br/>`[optional] integer skip`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#skip-dataitems<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-dataitems<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -551,28 +673,72 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedItemsOfDataItem](#schemaresolveditemsofdataitem)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataitems-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[ResolvedItemsOfDataItem](#schemaresolveditemsofdataitem)|An object with a "TimeOfResolution" and a collection of "Items", the `DataItem`s that resolved.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Total-Count|integer|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#total-count-dataitems|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-standard-message|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Total-Count|integer|The total count of data items visible to the current user.|
+|200|Link|string|Hyperlinks to the first page and next page of results as applicable.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+Content-Type: application/json  
+{
+  "TimeOfResolution": "2019-12-13T01:23:45Z",
+  "Items": [
+    {
+      "Id": "WS_BILT",
+      "Name": "WS_BILT",
+      "TypeId": "quickstart-omf-weather-gen1",
+      "ResourceType": "Stream",
+      "Tags": [
+        "Weather",
+        "High Resolution",
+        "Gen1"
+       ],
+       "Metadata": [
+         {
+           "Name": "Site",
+           "Value": "Biltmore",
+           "TypeCode": "String"
+         }
+       ],
+       "DataItemFields": [
+         {
+           "Id": "Timestamp",
+           "Name": "Timestamp",
+           "TypeCode": "DateTime",
+           "IsKey": true
+         },
+         {
+           "Id": "SolarRadiation",
+           "Name": "SolarRadiation",
+           "TypeCode": "Int32",
+           "IsKey": false
+         },
+         {
+           "Id": "Temperature",
+           "Name": "Temperature",
+           "TypeCode": "Double",
+           "IsKey": false
+         }
+      ],
+      "IneligibleDataItemFields": []
+    }
+  ]
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -598,7 +764,7 @@ null
 
 <a id="opIdPreviewDataViewsResolved_Get Ineligible Data Items by Query"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#ineligibledataitems-get
+Returns the paged collection of data items that are the results of an individual query, but which are not eligible for use in the current data view. A common reason for ineligibility is that the item's index property is of a different type than the data view expects. A data view has a collection of zero or more queries. Each query has an identifier. Those identifiers are used here as part of the request path.
 
 <h3>Request</h3>
 
@@ -610,17 +776,17 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string queryId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#query<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string queryId`
+<br/>Query identifier.<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache<br/><br/>`[optional] integer skip`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#skip-dataitems<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-dataitems<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -707,28 +873,57 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedItemsOfDataItem](#schemaresolveditemsofdataitem)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataitems-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[ResolvedItemsOfDataItem](#schemaresolveditemsofdataitem)|An object with a "TimeOfResolution" and a collection of "Items", the `DataItem`s that resolved.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Total-Count|integer|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#total-count-dataitems|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-standard-message|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Total-Count|integer|The total count of data items visible to the current user.|
+|200|Link|string|Hyperlinks to the first page and next page of results as applicable.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+Content-Type: application/json
+{
+  "TimeOfResolution": "2019-12-13T01:23:45Z",
+  "Items": [
+    {
+      "Id": "SOME_INELIGIBLE_STREAM",
+      "Name": "Some Ineligible Stream",
+      "TypeId": "type-with-different-index",
+      "ResourceType": "Stream",
+      "Tags": [],
+      "Metadata": [],
+      "DataItemFields": [],
+      "IneligibleDataItemFields": [
+         {
+           "Id": "Depth",
+           "Name": "Depth",
+           "TypeCode": "Double",
+           "IsKey": true
+         },
+         {
+           "Id": "Density",
+           "Name": "Density",
+           "TypeCode": "Double",
+           "IsKey": false
+         }
+      ]
+    }
+  ]
+}
 ```
-
+# access control responses
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -754,7 +949,7 @@ null
 
 <a id="opIdPreviewDataViewsResolved_Get Field Mappings"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#fieldmappings-get
+Returns the collection of field mappings resolved for the data view. These show the exact data behind every field, for each data item, for each group.
 
 <h3>Request</h3>
 
@@ -766,16 +961,16 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache<br/><br/>`[optional] integer skip`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#skip-fieldmappings<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-fieldmappings<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>An optional parameter representing the zero-based offset of the first field mapping to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>An optional parameter representing the maximum number of field mappings to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -862,27 +1057,77 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedItemsOfFieldMapping](#schemaresolveditemsoffieldmapping)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-fieldmappings-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[ResolvedItemsOfFieldMapping](#schemaresolveditemsoffieldmapping)|An object with a "TimeOfResolution" and a collection of "Items", the `FieldMapping`s that resolved.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Total-Count|integer|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#total-count-fieldmappings|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-standard-message|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Total-Count|integer|The total count of field mappings.|
+|200|Link|string|Hyperlinks to the first page and next page of results as applicable.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+{
+    "TimeOfResolution": "2019-12-13T01:23:45Z",
+    "Items": [
+      {
+        "Id": "Timestamp",
+        "Label": "Timestamp",
+        "FieldKind": "IndexField",
+        "TypeCode": "DateTime",
+        "DataMappings": [
+          {
+            "TypeCode": "DateTime"
+          },
+          {
+            "TypeCode": "DateTime"
+          },
+          {
+            "TypeCode": "DateTime"
+          }
+        ]
+      },
+      {
+        "Id": "Temperature",
+        "Label": "Temperature",
+        "FieldKind": "DataField",
+        "TypeCode": "Double",
+        "DataMappings": [
+          {
+            "TargetId": "WS_BILT",
+            "TargetFieldKey": "Temperature",
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
+          },
+          {
+            "TargetId": "WS_ROSE",
+            "TargetFieldKey": "Temperature",
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
+          },
+          {
+            "TargetId": "WS_WINT",
+            "TargetFieldKey": "AmbientTemperature",
+            "TypeCode": "Double",
+            "FieldSetIndex": 1,
+            "FieldIndex": 0
+          }
+        ]
+      },
+    ]
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -908,7 +1153,7 @@ null
 
 <a id="opIdPreviewDataViewsResolved_Get Groups"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#groups-get
+Returns the collection of `Group`s that resolved for the data view.
 
 <h3>Request</h3>
 
@@ -920,16 +1165,16 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string cache`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#cache<br/><br/>`[optional] integer skip`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#skip-groups<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#count-groups<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>An optional parameter representing the zero-based offset of the first group to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>An optional parameter representing the maximum number of groups to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#dataview-preview<br/>
+A `DataView` object to get the results for.<br/>
 
 ```json
 {
@@ -1016,28 +1261,84 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/resol
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[ResolvedItemsOfGroup](#schemaresolveditemsofgroup)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-groups-get|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message-preview|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[ResolvedItemsOfGroup](#schemaresolveditemsofgroup)|An object with a "TimeOfResolution" and a collection of "Items", the `Group`s that resolved.|
+|400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
 
 |Status|Header|Type|Description|
 |---|---|---|---|
-|200|Total-Count|integer|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#total-count-groups|
-|200|Link|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#link-standard-message|
-|200|Next-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#next-page-standard-message|
-|200|First-Page|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-headers.yaml#first-page-standard-message|
+|200|Total-Count|integer|The total count of groups.|
+|200|Link|string|Hyperlinks to the first page and next page of results as applicable.|
+|200|Next-Page|string|Hyperlink to the next page of results.|
+|200|First-Page|string|Hyperlink to the first page of results.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+Content-Type: application/json
+{
+  "TimeOfResolution": "2019-12-13T01:23:45Z",
+  "Items": [
+    {
+      "GroupingValues": [ 
+        {
+          "Value": "Biltmore",
+          "TypeCode": "String"
+        }
+      ],
+      "DataItems": {
+        "Query1": [
+          {
+            "Id": "WS_BILT",
+            "Name": "WS_BILT",
+            "TypeId": "quickstart-omf-weather-gen1",
+            "ResourceType": "Stream",
+            "Tags": [
+                "Weather",
+                "High Resolution",
+                "Gen1"
+            ],
+            "Metadata": [
+              {
+                "Name": "Site",
+                "Value": "Biltmore",
+                "TypeCode": "String"
+              }
+            ],
+            "DataItemFields": [
+                {
+                    "Id": "Timestamp",
+                    "Name": "Timestamp",
+                    "TypeCode": "DateTime",
+                    "IsKey": true
+                },
+                {
+                    "Id": "SolarRadiation",
+                    "Name": "SolarRadiation",
+                    "TypeCode": "Int32",
+                    "IsKey": false
+                },
+                {
+                    "Id": "Temperature",
+                    "Name": "Temperature",
+                    "TypeCode": "Double",
+                    "IsKey": false
+                }
+            ],
+            "IneligibleDataItemFields": []
+          }
+        ]
+      }
+    }
+  ]
+}
 ```
-
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -1591,8 +1892,8 @@ The shape of the data view. By default, each Field will resolve to one or more F
 
 |Property|Value|Description|
 |---|---|---|
-|Standard|0||
-|Narrow|1||
+|Standard|0|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
+|Narrow|1|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
 
 ---
 

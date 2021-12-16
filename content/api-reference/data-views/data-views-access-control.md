@@ -4,13 +4,13 @@ uid: data-views-access-control
 ---
 
 # Access Control
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#class-dataviewspermissionscontroller
+This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `List Data Views Access Rights`
 
 <a id="opIdCollectionAccessRights_List Data Views Access Rights"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataviews-accessrights-get
+Returns the access rights to the data views collection for the calling user or client.
 
 <h3>Request</h3>
 
@@ -21,25 +21,30 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/dataviews
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataviews-accessrights-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataviews-accessrights-get|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|Inline|A list of access rights to the data views collection.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to view the requested data view collection's access control list.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+[
+  "Read",
+  "Write",
+  "Delete",
+  "ManageAccessControl"
+]
 ```
-
 > 403 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -60,13 +65,13 @@ null
 ```
 
 # Access Control
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#class-dataviewspermissionscontroller
+This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `Get Data Views Access Control List`
 
 <a id="opIdCollectionAcl_Get Data Views Access Control List"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataviews-acl-get
+Returns the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -77,25 +82,53 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/dataviews
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataviews-acl-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataviews-acl-get|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[AccessControlList](#schemaaccesscontrollist)|The default access control list of the data views collection.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to view the requested data view collection's access control list.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+{
+  "RoleTrusteeAccessControlEntries": 
+  [
+    {
+      "Trustee": {
+        "Type": Role,
+        "RoleId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessType": Allowed,
+      "AccessRights": 1
+    },
+    {
+      "Trustee": {
+        "Type": Role,
+        "RoleId": "22222222-2222-2222-2222-222222222222"
+      },
+      "AccessType": Allowed,
+      "AccessRights": 15
+    },
+    {
+      "Trustee": {
+        "Type": User,
+        "RoleId": "33333333-3333-3333-3333-333333333333"
+      },
+      "AccessType": Denied,
+      "AccessRights": 8
+    }
+  ]
+}
 ```
-
 > 403 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -121,7 +154,7 @@ null
 
 <a id="opIdCollectionAcl_Update Data Views Access Control List"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataviews-acl-update.
+Updates the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -132,12 +165,12 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/dataviews
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#acl<br/>
+An [`AccessControlList`](xref:accessControl#access-control-lists).<br/>
 
 ```json
 {
@@ -159,19 +192,19 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/dataviews
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#204-dataviews-acl-update|
-|400|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message|
-|403|string|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataviews-acl-update|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|204|None|Successfully updated the default access control list of the data views collection.|
+|400|string|The request is not valid. See the response body for details.|
+|403|string|You are not authorized to update the data views collection's default access control list.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 # Access Control
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#class-dataviewspermissionscontroller
+This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `Get Data View Access Control List`
 
 <a id="opIdDataViewsPermissions_Get Data View Access Control List"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataviews-acl-get
+Returns the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -182,27 +215,55 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscon
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataview-acl-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataview-acl-get|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataview-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[AccessControlList](#schemaaccesscontrollist)|The access control list of the requested data view.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to view the requested data view's access control list.|
+|404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+{
+  "RoleTrusteeAccessControlEntries": 
+  [
+    {
+      "Trustee": {
+        "Type": Role,
+        "RoleId": "11111111-1111-1111-1111-111111111111"
+      },
+      "AccessType": Allowed,
+      "AccessRights": 1
+    },
+    {
+      "Trustee": {
+        "Type": Role,
+        "RoleId": "22222222-2222-2222-2222-222222222222"
+      },
+      "AccessType": Allowed,
+      "AccessRights": 15
+    },
+    {
+      "Trustee": {
+        "Type": User,
+        "RoleId": "33333333-3333-3333-3333-333333333333"
+      },
+      "AccessType": Denied,
+      "AccessRights": 8
+    }
+  ]
+}
 ```
-
 > 403 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -228,7 +289,7 @@ null
 
 <a id="opIdDataViewsPermissions_Update Data View Access Control List"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataviews-acl-update
+Updates the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
 
 <h3>Request</h3>
 
@@ -239,13 +300,13 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscon
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#acl<br/>
+An [`AccessControlList`](xref:accessControl#access-control-lists).<br/>
 
 ```json
 {
@@ -267,11 +328,11 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscon
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#204-dataview-acl-update|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataview-acl-update|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataview-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|204|None|Successfully updated the data view access control list.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request is not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to update the requested data view's access control list.|
+|404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 ---
 
@@ -279,7 +340,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accesscon
 
 <a id="opIdDataViewsPermissions_Get Data View Owner"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-owner-get
+Returns the owner [`Trustee`](xref:accessControl#owner) of the specified data view.
 
 <h3>Request</h3>
 
@@ -290,27 +351,30 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataview-owner-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataview-owner-get|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataview-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|[Trustee](#schematrustee)|The owner of the requested data view.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to view the requested data view's owner.|
+|404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+{
+    "Type": User,
+    "TenantId": "55555555-5555-5555-5555-555555555555",
+    "ObjectId": "44444444-4444-4444-4444-444444444444"
+}
 ```
-
 > 403 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -336,7 +400,7 @@ null
 
 <a id="opIdDataViewsPermissions_Update Data View Owner"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-owner-update
+Updates the owner [`Trustee`](xref:accessControl#owner) of the specified data view.
 
 <h3>Request</h3>
 
@@ -347,13 +411,13 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-parameters.yaml#owner<br/>
+A [`Trustee`](xref:accessControl#owner).<br/>
 
 ```json
 {
@@ -367,11 +431,11 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#204-dataviews-owner-update|
-|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#400-standard-message|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-dataview-owner-update|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataview-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|204|None|Successfully updated the data view owner.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request is not valid. See the response body for details.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized to update the requested data view's owner.|
+|404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 ---
 
@@ -379,7 +443,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/owner
 
 <a id="opIdDataViewsPermissions_List Data View Access Rights"></a>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-summaries.yaml#dataview-accessrights-get
+Returns the access rights to the requested data view for the calling user or client.
 
 <h3>Request</h3>
 
@@ -390,27 +454,32 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/accessrig
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#namespaceId<br/><br/>`string id`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/parameters.yaml#dataViewId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+<br/>Data view identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#200-dataview-accessrights-get|
-|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#403-standard-message|
-|404|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#404-dataview-standard-message|
-|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/dataviews-response-codes.yaml#500-standard-message|
+|200|Inline|A list of access rights to the requested data view.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|404|[ErrorResponse](#schemaerrorresponse)|The requested data view was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
-null
+HTTP 200 OK
+[
+  "Read",
+  "Write",
+  "Delete",
+  "ManageAccessControl"
+]
 ```
-
 > 403 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json

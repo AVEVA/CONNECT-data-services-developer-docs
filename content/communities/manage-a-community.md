@@ -42,7 +42,7 @@ To send an invite to a community, follow these steps:
 
 To accept an invitation, follow these steps:
 
-1. Open the email from OSIsoft Cloud Services Operations and follow the instructions.
+1. Open the invitation email and follow the instructions.
 
 1. On the login window, enter the tenant ID or tenant alias of the tenant from which you want to share data and select **Continue**. You must be a Tenant Administrator to accept the invitation.
 

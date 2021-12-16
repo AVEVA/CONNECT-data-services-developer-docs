@@ -122,7 +122,7 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
      
      c. Add the following parameters in the `Manage Parameters` window, and then select **OK**.
      
-        | Parameter              | Code                          |
+      | Parameter              | Code                          |
         |---------------------|-------------------------------|
         | `RangeStart` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<Start date of the date range>` |
         | `RangeEnd` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<End date of the date range>` |

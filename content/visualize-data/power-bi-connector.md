@@ -127,8 +127,8 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
         | `RangeStart` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<Start date of the date range>` |
         | `RangeEnd` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<End date of the date range>` |
      
-       **Note:** `RangeStart` and `RangeEnd` must be named and mixed-cased as is for incremental refresh to work. Type must always be `Date/Time`.
-   <!-- Jason Ames 12/14/21 - Something about this final indent breaks this display and puts the table and note in a code box. Maybe this many indent levels aren't supported?-->
+      **Note:** `RangeStart` and `RangeEnd` must be named and mixed-cased as is for incremental refresh to work. Type must always be `Date/Time`.
+
      d. Edit the query function to use the `RangeStart` and `RangeEnd` parameters defined in the previous step. For example:
      
      `DateTimeZone.From(RangeStart), DateTimeZone.From(RangeEnd), #duration(0, 1, 0, 0)`
@@ -139,8 +139,8 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
      
      g. Turn on `Incremental Refresh`, edit the values in the `Store rows in the last` fields, and select **Apply all** to save.
 
-       This builds a cache of data in Microsoft Power BI so you will not need to re-query the original data view. The following example image shows that incremental refresh is turned on, will cache 30 days of data, and the last 5 days will be a rolling refresh of data.
+      This builds a cache of data in Microsoft Power BI so you will not need to re-query the original data view. The following example image shows that incremental refresh is turned on, will cache 30 days of data, and the last 5 days will be a rolling refresh of data.
         
-       ![Transform data](./images/mspowerbi-incremental-refresh.png)
-   <!-- Jason Ames 12/14/21 - Same as note above. The paragraph and image below g don't display properly.-->     
+      ![Transform data](./images/mspowerbi-incremental-refresh.png)
+
     For more information about incremental refresh, see the Microsoft [Incremental refresh for datasets](https://docs.microsoft.com/en-us/power-bi/connect-data/incremental-refresh-overview) page.

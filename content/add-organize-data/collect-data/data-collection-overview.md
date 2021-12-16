@@ -14,4 +14,4 @@ Collect data from external sources and send it directly to OCS using the followi
 
   * OMF is a platform-independent format that can provide a high-throughput data feed into OCS. 
 
-* Use Edge Systems to monitor the health and manage the configuration of edge systems on remote devices.
+* Use Software management to monitor the health and manage the configuration of software configuration on edge systems.

@@ -37,7 +37,7 @@ To open the PI to OCS Agent Configuration Utility, follow these steps:
 
    Upon successful authentication, the PI to OCS Agent Configuration Utility opens.
 
-1. Select **Connect to OSIsoft Cloud Services**.
+1. Select **Connect to AVEVA Data Hub**.
    
 ## Add an AF server
 

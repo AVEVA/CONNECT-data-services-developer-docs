@@ -34,7 +34,7 @@ The following features can be accessed from the menu:
 
 ## Feature pages
 
-Clicking a menu item takes you to that item's feature page.
+Selecting a menu item takes you to that item's feature page.
 
 ![Feature details](../images/feature-details.png "Feature details")
 

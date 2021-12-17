@@ -24,7 +24,8 @@ To add a type, follow these steps:
 
    - **Name** &ndash; *MyData.PumpState*
 
-   - **Description** &ndash; *SDS Type used by MyData*
+   - **Description** - *SDS Type used by MyData*
+
 
     **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type in the **Base Type** field. When you add a base type, its properties populate the `Properties` list. You can then add other properties to the type.
 

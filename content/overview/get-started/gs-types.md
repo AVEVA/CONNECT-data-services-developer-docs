@@ -54,11 +54,12 @@ To add a type, follow these steps:
    
 1. To add a third property, select **Add Property** again and complete the fields as follows:
 
-   - **Id** &ndash; Enter *Pressure*.
+   - **Id** - Enter *Pressure*.
 
-   - **Type** &ndash; Select *Double*.
+   - **Type** - Select *Double*.
    
-   - **UOM** &ndash; Select *kilogram per cubic meter*.
+   - **UOM** - Select *kilogram per cubic meter*.
+
 
 1. To add a fourth property, select **Add Property** again and complete the fields as follows:
 

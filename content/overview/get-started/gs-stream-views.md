@@ -21,7 +21,8 @@ This procedure creates a stream view that maps the `MyData.PumpState` type to th
 
 1. From the **Streams/Types/Stream Views Selector** selector, select **Stream Views**.
 
-1. In the toolbar, click **Add Stream View**.
+1. In the toolbar, select **Add Stream View**.
+
 
 1. In the `Create Stream View` pane at Step 1: `Details`, complete the following fields:
 

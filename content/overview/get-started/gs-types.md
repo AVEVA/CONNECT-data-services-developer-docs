@@ -45,11 +45,12 @@ To add a type, follow these steps:
 
 1. To add a second property, select **Add Property** again and complete the fields as follows:
 
-   - **Id** &ndash; Enter *Temperature*.
+   - **Id** - Enter *Temperature*.
 
-   - **Type** &ndash; Select *Double*.
+   - **Type** - Select *Double*.
 
-   - **UOM** &dash; Select *degree Celsius*.
+   - **UOM** - Select *degree Celsius*.
+
    
 1. To add a third property, select **Add Property** again and complete the fields as follows:
 

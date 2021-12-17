@@ -40,7 +40,8 @@ To add a type, follow these steps:
 
    - **Type** &ndash; Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
 
-   - **UOM** &ndash; Leave this blank.
+   - **UOM** - Leave this blank.
+
 
 1. To add a second property, select **Add Property** again and complete the fields as follows:
 

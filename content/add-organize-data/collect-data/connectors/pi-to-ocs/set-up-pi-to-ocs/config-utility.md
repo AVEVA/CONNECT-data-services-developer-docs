@@ -33,11 +33,11 @@ The PI to Data Hub Agent Configuration Utility opens after you install or upgrad
 
 To open the PI to Data Hub Agent Configuration Utility, follow these steps:
 
-1. Select **Start** > **OSIsoft** > **PI to Data Hub Agent Configuration Utility**, and then select **Yes** to confirm.
+1. Select **Start** > **AVEVA** > **PI to Data Hub Agent Configuration Utility**, and then select **Yes** to confirm.
 
    Upon successful authentication, the PI to Data Hub Agent Configuration Utility opens.
 
-1. Select **Connect to OSIsoft Cloud Services**.
+1. Select **Connect to AVEVA Data Hub**.
    
 ## Add an AF server
 

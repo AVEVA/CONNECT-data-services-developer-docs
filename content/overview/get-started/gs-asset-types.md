@@ -22,7 +22,7 @@ To use the asset explorer to create an asset type, follow these steps:
 
 1. In the toolbar, select **Add Asset Type**.
 
-1. In the right page, complete the following fields:
+1. In the right pane, complete the following fields:
 
    - **Asset Type** - Enter *MyData.PumpType*.
 

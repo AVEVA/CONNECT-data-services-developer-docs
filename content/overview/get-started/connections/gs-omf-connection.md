@@ -24,7 +24,6 @@ To create an OMF connection, follow these steps:
 
 1. In the **Clients** tab, select a client in the `Available` list to add it to the `Selected` list. Select **Next**.
 
-    to the `Selected` list. Select **Next**.
 
     **Note:** For the purposes of this exercise, you may choose any client.
 

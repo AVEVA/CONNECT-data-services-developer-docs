@@ -4,7 +4,7 @@ uid: gsGetStartedOCS
 
 # Get started 
 
-This is an introduction to the main features of OSIsoft Cloud Services (OCS) using the OCS portal. Each section includes a tutorial with step-by-step procedures with links to basic concepts and best practices.
+This is an introduction to the main features of OSIsoft Cloud Services (OCS) using the OCS portal. Each section includes a tutorial with step-by-step procedures using the portal functionality with links to basic concepts and best practices. Before you start the exercises, see [Introduction to the OCS portal](xref:introPortalInterface) to get an overview of the user interface. Alternatively, you can accomplish the same tasks through the OCS REST-based API. 
 
 ## Before you begin
 
@@ -22,15 +22,13 @@ Once you have completed the prerequisites, log into the OCS portal.
 
    **Note:** The latest versions of Microsoft Edge, Google Chrome, and Firefox are supported.
 
-1. In the toolbar, click **Sign In**.
+1. In the toolbar, select **Sign In**.
 
-1. In the `Specify Tenant Id` or `Company Alias` window, enter the tenant ID or the company alias for your tenant, and click **Continue**. 
+1. In the `Specify Tenant Id` or `Company Alias` window, enter the tenant ID or the company alias for your tenant, and select **Continue**. 
 
    <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
 
-## OCS portal
-
-The OCS portal is a web-based application through which you can perform many tasks. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the OCS portal](xref:introPortalInterface) to get an overview of the user interface.
+1. Sign in as directed.
 
 ## Get started goals
 

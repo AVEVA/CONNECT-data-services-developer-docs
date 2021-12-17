@@ -18,7 +18,8 @@ To create a role, follow these steps:
 
 1. In the `Add Role` window, complete the following fields:
 
-   - **Name**  &ndash; Enter *MyData.Role*.
+   - **Name**  - Enter *MyData.Role*.
+
 
    - **Description** &ndash; Optionally, add a description for this role.
    

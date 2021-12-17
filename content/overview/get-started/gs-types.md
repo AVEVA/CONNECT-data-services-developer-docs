@@ -30,7 +30,8 @@ To add a type, follow these steps:
 
 1. To add a property, select **Add Property** and complete the fields as follows:
 
-   - **Key** &ndash; Select the checkbox.
+   - **Key** - Select the checkbox.
+
 
      **Note:** The `Key` field identifies this property as the index. 
 

@@ -27,7 +27,7 @@ AVEVA&trade; Data Hub includes the following features:
 
 - **Analytics**: Provides tools for shaping and querying large datasets.
 
-- **Security**: Allows you to specify identity providers for authentication and add groups, users, roles, and clients to your tenant.
+- **Security**: Allows you to add groups, users, roles, and clients to your tenant.
 
 - **Developer Tools**: Provides code samples, an API console, and an editor for the Open Message Format (OMF).
 

@@ -34,7 +34,7 @@ We recommend the following best practices with a client credentials client:
 
 Authorization code clients are used with customer web applications that use AVEVA&trade; Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
 
-Authorization code clients are used to authenticate using any browser. Upon successful authentication, an authorization code is provided to the client. This authorization code is exchanged for an access token using PKCE (Proof Code for Code Exchange) which is a more secure authentication flow. No refresh token is provided.
+Authorization code clients are used to authenticate using any supported browser. Upon successful authentication, an authorization code is provided to the client. This authorization code is exchanged for an access token using PKCE (Proof Code for Code Exchange) which is a more secure authentication flow. No refresh token is provided.
 
 ### <a name="authorization-code-pi-server"></a>Authorization code client PI Server counterpart
 
@@ -50,7 +50,7 @@ We recommend the following best practices for an authorization code client:
 
 ## <a name="hybrid-client"></a>Hybrid clients
 
-Hybrid clients are used by native and server-side web applications. This client utilizes the user credentials to authenticate with the identity provider. Once the user is authenticated, then the server-side client steps in and server-to-server communication commences. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
+Hybrid clients are used by native and server-side web applications. This client utilizes the user credentials to authenticate with the identity provider. Once the user is authenticated, then the server-side client steps in and server-to-server communication commences. Authentication can be performed using any supported browser. The server-side code retrieves an access token and a refresh token can also be provided.
 
 ### <a name="hybrid-client-pi-server"></a>Hybrid client PI Server counterpart
 
@@ -60,6 +60,6 @@ Hybrid clients have no direct PI Server equivalent, but they are similar to the 
 
 We recommend the following best practices for a hybrid client:
 
-- Use hybrid clients in web applications or services where users authenticate against AVEVA&trade; Data Hub through a web browser, but a secure backend that stores the secrets performs the actual authentication.
+- Use hybrid clients in web applications or services where users authenticate against AVEVA&trade; Data Hub through a supported browser, but a secure backend that stores the secrets performs the actual authentication.
 
 - Use caution when deciding whether to allow refresh tokens for your hybrid client. Where possible, it is a more secure practice to use an iframe to request a new token before the old token expires rather than use a refresh token.

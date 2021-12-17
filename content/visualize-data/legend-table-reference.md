@@ -4,13 +4,13 @@ uid: LegendTableReference
 
 # Legend table reference
 
-While visualizing data from the **Trend** page, you can toggle between a **Trend** <svg class="icon"><use href="../symbol-defs.svg#chart-line"/></svg> view and a **Cursor** <svg class="icon"><use href="../symbol-defs.svg#map-marker"/></svg> view to display different metadata about the stream within a selected time frame.
+While visualizing data from the **Trend** page, you can toggle between a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg) view to display different metadata about the stream within a selected time frame.
 
 ![Trend page legend table](images/trend-page.png)
 
 ## Trend view
 
-The **Trend** view lists each data stream depicted within the `Trend` pane. Each data stream includes traces, which are stream properties plotted within the `Trend` pane. For example, in the following image, a data stream related to weather is plotted within the `Trend` pane. The pane depicts the weather stream data for the **temperature** and **wind speed** properties.
+The **Trend** ![trend](../_icons/chart-line.svg) view lists each data stream depicted within the `Trend` pane. Each data stream includes traces, which are stream properties plotted within the `Trend` pane. For example, in the following image, a data stream related to weather is plotted within the `Trend` pane. The pane depicts the weather stream data for the **temperature** and **wind speed** properties.
 
 ![Trend view](images/trend-view.png)
 
@@ -22,9 +22,9 @@ The following table describes each icon.
 
 Icon | Description
 --|--
-<svg class="icon"><use href="../symbol-defs.svg#database"/></svg> | Indicates the origin namespace of the stream data.
-<svg class="icon"><use href="../symbol-defs.svg#share-variant"/></svg> | Indicates that the stream originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
-<svg class="icon"><use href="../symbol-defs.svg#office-building"/></svg> | Indicates the tenant that is sharing the stream within the community. This icon displays only when the stream is shared within a community.
+![database](../_icons/database.svg) | Indicates the origin namespace of the stream data.
+![share](../_icons/share-variant.svg) | Indicates that the stream originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
+![tenant](../_icons/office-building.svg) | Indicates the tenant that is sharing the stream within the community. This icon displays only when the stream is shared within a community.
 
 Each stream property listed in the **Trend** view also lists metadata for the property:
 
@@ -41,7 +41,7 @@ Max | The highest value recorded for the property for easy cursors that you have
 
 ## Cursor view
 
-The **Cursor** <svg class="icon"><use href="../symbol-defs.svg#map-marker"/></svg> view lists property values for each cursor added to the `Trend` pane. Cursors are listed chronologically according to their timestamps.
+The **Cursor** ![cursor](../_icons/map-marker.svg) view lists property values for each cursor added to the `Trend` pane. Cursors are listed chronologically according to their timestamps.
 
 ![Cursor view](images/cursor-view.png)
 

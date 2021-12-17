@@ -53,7 +53,7 @@
 					"content/overview/get-started/clients/images/**",
 					"content/overview/get-started/connections/images/**",
 					"content/developer-guide/images/**",
-					"content/symbol-defs.svg"
+					"content/_icons/**"
 				]
 			}
 		],

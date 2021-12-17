@@ -16,7 +16,7 @@ To create a hybrid client, follow these steps:
 
    The `Add Client` window appears.
 
-1.  In the **Name** field, enter a name to identify the device or application that will use this client.   
+1.  In the **Name** field, enter a name to identify the device or application that will use this client.
 
 1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in.
 

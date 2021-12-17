@@ -26,7 +26,8 @@ To create a client-credentials client, follow these steps:
    
    The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
-1. Click **Continue**.
+1. Select **Continue**.
+
 
   The `Add Secret` window opens.
 

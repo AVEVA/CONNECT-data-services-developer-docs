@@ -20,13 +20,14 @@ After creating types, you can add streams and associate a type with the stream. 
 
 1. In the `Add Stream` window, enter the following values for these fields:
 
-   - **Id** &ndash; *MyData.NorthAmerica.SLTC.PumpA*
+   - **Id** - *MyData.NorthAmerica.SLTC.PumpA*
 
    - **Name** - Leave this field blank. By default, it will take the value of the Stream Id.
 
-   - **Description** &ndash; *SDS Stream used by MyData*
+   - **Description** - *SDS Stream used by MyData*
 
-   - **Type** &ndash; *MyData.PumpState*
+   - **Type** - *MyData.PumpState*
+
 
 1. Select the **Tags** tab.
 

@@ -18,8 +18,8 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     1. Select a namespace or community that contains the stream data that you want to visualize.
 
-    1. In the `Add Traces` pane, click the **Add** 
-    ![add](../_icons/plus-thick.svg) icon to add the trace to the trend.
+    1. In the `Add Traces` pane, select the **Assets** or **Streams** tab, and then select the **Add** 
+    ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend.
 
     1. (Optional) Repeat the substeps to add more data from different namespace and communities to the trend.  
 
@@ -45,7 +45,7 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
    The trace will move in time increments displayed in the time range picker. For example, if the trend displays the last 8 hours, **Step backward** shows the previous 8-hour period. If it displays the last 30 days, **Step forward** shows the next 30-day period. Click the triangle to select another time range or specify a custom range.
 
-   The legend table below the trend displays the Trace view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
+   The [legend table](xref:LegendTableReference) below the trend displays the `Trace` view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
 1. Click on a trace to select it for further analysis.
 

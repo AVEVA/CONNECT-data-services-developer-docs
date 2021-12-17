@@ -4,17 +4,9 @@ uid: gsMetadataRules
 
 # Get started with metadata rules
 
-Metadata rules allow you to add metadata to streams. For more information about metadata rules and how to use them effectively, refer to the following topics:
+Metadata rules allow you to add metadata to streams. For more information about metadata rules and how to use them effectively, see [Metadata rules](xref:ccMetadataRules).
 
-- [Metadata rules](xref:ccMetadataRules)
-
-- [PI Server counterpart](xref:ccMetadataRules#pi-server-counterpart)
-
-- [Metadata best practices](xref:ccMetadataRules#metadata-best-practices)
-
-## Procedure
-
- The following are the main steps for creating a metadata rule and applying it to your streams. Click on each step to go to the procedure for that step. 
+The following are the main steps for creating a metadata rule and applying it to your streams. Click on each step to go to the procedure for that step. 
 
 1. [Select a stream](#step-1)
 
@@ -31,8 +23,6 @@ Metadata rules allow you to add metadata to streams. For more information about 
 The first step is to identify and select a stream whose name will be the basis for creating the metadata rule.
 
 1. In the left pane, select **Data Management** > **Metadata Management**.
-
-1. Click the **Change Namespace** button in the upper-right toolbar, then select **MyData**.
 
 1. Click **Add Metadata Rule**.
 

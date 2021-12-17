@@ -26,7 +26,7 @@ To use PI to Data Hub to transfer data from your PI System to AVEVA&trade; Data 
 
 1. Select your PI to Data Hub Agent connection in the `PI to Data Hub Agents` window, then select **Create Transfer** in the right pane.
 
-1. Follow the steps in the [Transfer data to OCS](xref:transfer-data) procedure to define transfer settings and transfer data into AVEVA&trade; Data Hub.
+1. Follow the steps in the [Transfer data to AVEVA&trade; Data Hub](xref:transfer-data) procedure to define transfer settings and transfer data into AVEVA&trade; Data Hub.
 
 ## Next step
 

@@ -62,11 +62,12 @@ To add a type, follow these steps:
 
 1. To add a fourth property, select **Add Property** again and complete the fields as follows:
 
-      - **Id** &ndash; Enter *Status*.
+      - **Id** - Enter *Status*.
 
-      - **Type** &ndash; Select *String*.
+      - **Type** - Select *String*.
 
-      - **UOM** &ndash; Leave this blank.
+      - **UOM** - Leave this blank.
+
 
       **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, use only the `Timestamp` property as an index.
 

@@ -4,7 +4,7 @@ uid: GettingStartedWithTrendData
 
 # Get started with trend data
 
-Use trace data in a trend to monitor assets, anticipate problems, and proactively perform preventative maintenance. The following procedure describes how to display traces in your trend and glean useful information from your data.
+Use trace data in a trend session to monitor assets, anticipate problems, and proactively perform preventative maintenance. The following procedure describes how to display traces in your trend and glean useful information from your data.
 
 Follow this procedure to create a trending session:
 
@@ -21,13 +21,13 @@ Follow this procedure to create a trending session:
     1. In the `Add Traces` pane, select the **Assets** or **Streams** tab, and then select the **Add** 
     ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
 
-    ![Add traces](images/add-traces.png)
-
     **Tip:** Specify the asset/stream name or description in the **Search** box to find the streams you are interested in.
+    
+    ![Add traces](images/add-traces.png)
 
     1. (Optional) Repeat these substeps to add more traces from different namespaces and communities to the trend session.  
 
-    **Tip:** After you have finished adding the traces, select the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
+    **Tip:** After you have finished adding the traces, select the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend session.
         
 1. From the **Change Y-axis Mode** ![Trend views menu](images/trend-views-icon.png) menu, select a view:
 
@@ -45,11 +45,11 @@ Follow this procedure to create a trending session:
     
     - Select the **Custom Range** tab to choose your own time range.
 
-1. Select **Step backward** ![step backward](../_icons/skip-backward.svg) or **Step forward** ![step forward](../_icons/skip-forward.svg) to move the time range of the data displayed in the trend.
+1. Select **Step backward** ![step backward](../_icons/skip-backward.svg) or **Step forward** ![step forward](../_icons/skip-forward.svg) to move the time range of the data displayed in the trend session.
 
-   The trace will move in time increments displayed in the time range picker. For example, if the trend displays the last 8 hours, **Step backward** shows the previous 8-hour period. If it displays the last 30 days, **Step forward** shows the next 30-day period. Select the triangle to select another time range or specify a custom range.
+   The trace will move in time increments displayed in the time range picker. For example, if the trend session displays the last 8 hours, **Step backward** ![step backward](../_icons/skip-backward.svg) shows the previous 8-hour period. If it displays the last 30 days, **Step forward** ![step forward](../_icons/skip-forward.svg) shows the next 30-day period. Select the triangle to select another time range or specify a custom range.
 
-   The [legend table](xref:LegendTableReference) below the trend displays the `Trace` view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
+   The [legend table](xref:LegendTableReference) displays the [Trend view](xref:LegendTableReference#trace-view) ![trend](../_icons/chart-line.svg). It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
 1. From the legend table, select a trace to select it for further analysis.
 
@@ -65,4 +65,4 @@ Follow this procedure to create a trending session:
 
 1. Select the **Share** ![share](../_icons/share.svg) icon in the menu bar to copy the URL of the workspace. 
 
-    You can share this URL with colleagues to give them the same view of the trend that they can use to troubleshoot problems.
+    You can share this URL with colleagues to give them the same view of the trend session that they can use to troubleshoot problems.

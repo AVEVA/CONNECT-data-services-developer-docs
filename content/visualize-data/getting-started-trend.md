@@ -6,29 +6,29 @@ uid: GettingStartedWithTrendData
 
 Use trace data in a trend to monitor assets, anticipate problems, and proactively perform preventative maintenance. The following procedure describes how to display traces in your trend and glean useful information from your data.
 
-## Procedure
+Follow this procedure to create a trending session:
 
 1. In the left pane, select **Visualization** > **Trend**.
    
-1. Add stream data from your tenant or a community the `Trend` pane.
+1. In the `Trend` pane, add asset or stream data to the trend session. 
+
+    Add assets from your tenant or add stream data from your tenant or a community.
 
     1. From the **Namespace** dropdown list (callout **1** in the image below), select a namespace or community that contains data that you want to visualize (callout **2**).
 
     ![Select namespace/community](images/select-namespace-community.png)
 
     1. In the `Add Traces` pane, select the **Assets** or **Streams** tab, and then select the **Add** 
-    ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend.
+    ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
 
     ![Add traces](images/add-traces.png)
 
+    **Tip:** Specify the asset/stream name or description in the **Search** box to find the streams you are interested in.
+
     1. (Optional) Repeat these substeps to add more data from different namespaces and communities to the visualization.  
 
-        **Tips:**
-
-        - Specify the stream name or description in the **Search** box to find the streams you are interested in.
-
-        - After you have finished adding the traces, click the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
-
+    **Tip:** After you have finished adding the traces, click the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
+        
 1. From the ![Trend views menu](images/trend-views-icon.png) menu, select a view:
 
     | Trend View | Icon | Description |
@@ -57,12 +57,12 @@ Use trace data in a trend to monitor assets, anticipate problems, and proactivel
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
 
-7. Click the **Add** ![add](../_icons/plus-thick.svg) icon above the trace to lock the cursors in place.
+1. Click the **Add** ![add](../_icons/plus-thick.svg) icon above the trace to lock the cursors in place.
     
     The **Add** ![add](../_icons/plus-thick.svg) icon turns into a **Close** ![close](../_icons/window-close.svg) icon. To unlock the cursor, click the **Close** ![close](../_icons/window-close.svg) icon.
 
     **Note:** When two cursors are locked, the [Legend table](xref:LegendTableReference) displays summary calculations for the values between the two cursors, known as the [Cursor view](xref:LegendTableReference#cursor-view) ![cursor](../_icons/map-marker.svg).
 
-8. Click the **Share** ![share](../_icons/share.svg) icon in the menu bar to copy the URL of the workspace. 
+1. Click the **Share** ![share](../_icons/share.svg) icon in the menu bar to copy the URL of the workspace. 
 
     You can share this URL with colleagues to give them the same view of the trend that they can use to troubleshoot problems.

@@ -25,11 +25,11 @@ Follow this procedure to create a trending session:
 
     **Tip:** Specify the asset/stream name or description in the **Search** box to find the streams you are interested in.
 
-    1. (Optional) Repeat these substeps to add more data from different namespaces and communities to the visualization.  
+    1. (Optional) Repeat these substeps to add more traces from different namespaces and communities to the trend session.  
 
-    **Tip:** After you have finished adding the traces, click the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
+    **Tip:** After you have finished adding the traces, select the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend.
         
-1. From the ![Trend views menu](images/trend-views-icon.png) menu, select a view:
+1. From the **Change Y-axis Mode** ![Trend views menu](images/trend-views-icon.png) menu, select a view:
 
     | Trend View | Icon | Description |
     |--|--|--|
@@ -39,15 +39,15 @@ Follow this procedure to create a trending session:
 
 1. From the **Time picker**, select the time range to view. 
 
+    ![Time picker](images/Time-picker.png)
+    
     - Select the **Quick Ranges** tab to choose a predefined time range.
     
     - Select the **Custom Range** tab to choose your own time range.
 
-    ![Time picker](images/Time-picker.png)
+1. Select **Step backward** ![step backward](../_icons/skip-backward.svg) or **Step forward** ![step forward](../_icons/skip-forward.svg) to move the time range of the data displayed in the trend.
 
-1. Click **Step backward** ![step backward](../_icons/skip-backward.svg) or **Step forward** ![step forward](../_icons/skip-forward.svg) to move the time range of the data displayed in the trend.
-
-   The trace will move in time increments displayed in the time range picker. For example, if the trend displays the last 8 hours, **Step backward** shows the previous 8-hour period. If it displays the last 30 days, **Step forward** shows the next 30-day period. Click the triangle to select another time range or specify a custom range.
+   The trace will move in time increments displayed in the time range picker. For example, if the trend displays the last 8 hours, **Step backward** shows the previous 8-hour period. If it displays the last 30 days, **Step forward** shows the next 30-day period. Select the triangle to select another time range or specify a custom range.
 
    The [legend table](xref:LegendTableReference) below the trend displays the `Trace` view. It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
@@ -57,12 +57,12 @@ Follow this procedure to create a trending session:
 
     ![Maximum and minimum cursors](images/Max_min_cursors.png)
 
-1. Click the **Add** ![add](../_icons/plus-thick.svg) icon above the trace to lock the cursors in place.
+1. Select the **Add** ![add](../_icons/plus-thick.svg) icon above the trace to lock the cursors in place.
     
-    The **Add** ![add](../_icons/plus-thick.svg) icon turns into a **Close** ![close](../_icons/window-close.svg) icon. To unlock the cursor, click the **Close** ![close](../_icons/window-close.svg) icon.
+    The **Add** ![add](../_icons/plus-thick.svg) icon turns into a **Close** ![close](../_icons/window-close.svg) icon. To unlock the cursor, select the **Close** ![close](../_icons/window-close.svg) icon.
 
     **Note:** When two cursors are locked, the [Legend table](xref:LegendTableReference) displays summary calculations for the values between the two cursors, known as the [Cursor view](xref:LegendTableReference#cursor-view) ![cursor](../_icons/map-marker.svg).
 
-1. Click the **Share** ![share](../_icons/share.svg) icon in the menu bar to copy the URL of the workspace. 
+1. Select the **Share** ![share](../_icons/share.svg) icon in the menu bar to copy the URL of the workspace. 
 
     You can share this URL with colleagues to give them the same view of the trend that they can use to troubleshoot problems.

@@ -4,7 +4,7 @@ uid: LegendTableReference
 
 # Legend table reference
 
-While visualizing data from the **Trend** page, you can toggle between a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg) view to display different metadata about the stream within a selected time frame.
+While visualizing data from the **Trend** page, you can toggle between a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg) view to display different trace information within a selected time frame.
 
 ![Trend page legend table](images/trend-page.png)
 

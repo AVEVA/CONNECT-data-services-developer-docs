@@ -10,11 +10,9 @@ While visualizing data from the **Trend** page, you can toggle between a **Trend
 
 ## Trend view
 
-The **Trend** ![trend](../_icons/chart-line.svg) view lists each data stream depicted within the `Trend` pane. Each data stream includes traces, which are stream properties plotted within the `Trend` pane. For example, in the following image, a data stream related to weather is plotted within the `Trend` pane. The pane depicts the weather stream data for the **temperature** and **wind speed** properties.
+The **Trend** ![trend](../_icons/chart-line.svg) view lists each trace depicted within the trend session. A _trace_ is a stream or asset property plotted in the session.
 
-![Trend view](images/trend-view.png)
-
-Each data stream name includes metadata icons (image below) that display more information about the data stream origin:
+Each trace is listed within the **Trend** ![trend](../_icons/chart-line.svg) view. Each trace listed includes icons (image below) that display more information about the trace origin:
 
 ![Metadata icons](images/metadata-icons.png)
 
@@ -22,11 +20,11 @@ The following table describes each icon.
 
 Icon | Description
 --|--
-![database](../_icons/database.svg) | Indicates the origin namespace of the stream data.
-![share](../_icons/share-variant.svg) | Indicates that the stream originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
-![tenant](../_icons/office-building.svg) | Indicates the tenant that is sharing the stream within the community. This icon displays only when the stream is shared within a community.
+![database](../_icons/database.svg) | Indicates the origin namespace of the trace.
+![share](../_icons/share-variant.svg) | Indicates that the trace originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
+![tenant](../_icons/office-building.svg) | Indicates the tenant that is sharing the trace within the community. This icon displays only when the trace is shared within a community.
 
-Each stream property listed in the **Trend** view also lists metadata for the property:
+Under each trace, the legend table lists each property added, along with additional data for the property:
 
 Column | Description
 --|--
@@ -37,7 +35,12 @@ UOM | The unit of measure.
 Min | The lowest value recorded for the property for easy cursors that you have set in the Trend view.
 Max | The highest value recorded for the property for easy cursors that you have set in the Trend view. 
 
-**Tip:** Select or clear a property checkbox to display or hide the property within the `Trend`  pane.
+Each property also includes controls to edit the trend session visualization:
+
+* Select or clear the property checkboxes to display or hide the trace property in the session graph.
+* Select the **Delete** ![trend](../_icons/delete.svg) icon to remove the trace property from the trend session.
+
+![Trend view](images/trend-view.png)
 
 ## Cursor view
 

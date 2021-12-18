@@ -49,7 +49,7 @@ Follow this procedure to create a trending session:
 
    The trace will move in time increments displayed in the time range picker. For example, if the trend session displays the last 8 hours, **Step backward** ![step backward](../_icons/skip-backward.svg) shows the previous 8-hour period. If it displays the last 30 days, **Step forward** ![step forward](../_icons/skip-forward.svg) shows the next 30-day period. Select the triangle to select another time range or specify a custom range.
 
-   The [legend table](xref:LegendTableReference) displays the [Trend view](xref:LegendTableReference#trace-view) ![trend](../_icons/chart-line.svg). It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
+   The [legend table](xref:LegendTableReference) displays the [Trend view](xref:LegendTableReference#trend-view) ![trend](../_icons/chart-line.svg). It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
 1. From the legend table, select a trace to select it for further analysis.
 

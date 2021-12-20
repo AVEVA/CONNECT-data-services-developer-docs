@@ -4,15 +4,7 @@ uid: gsTypes
 
 # Get started with types
 
-After creating the namespace, the next step is to add one or more types. For more information about types, see the following topics:
-
-- [Types](xref:ccTypes)
-
-- [PI Server counterpart](xref:ccTypes#types-pi-server)
-
-- [Types best practices](xref:bpTypes)
-
-## Procedure
+A type defines the shape and structure of events and how to associate events within a stream of data in SDS. A type is comprised of at least two properties, one of which serves as the primary index, most commonly a timestamp or DateTime. For more information about types, see [Types](xref:ccTypes), [PI Server counterpart](xref:ccTypes#types-pi-server), and [Types best practices](xref:bpTypes). In this getting started exercise, you will create an SDS type. 
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -38,7 +30,9 @@ After creating the namespace, the next step is to add one or more types. For mor
 
    - **Description** &ndash; *SDS Type used by MyData*
 
-    **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the **Base Type** list. When you add a base type, its properties populate the **Properties** list. You can then add other properties to the type.
+    **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the **Base Type** list. When you add a base type, its properties populate the **Properties** list. You can then add other properties to the type. 
+
+    **Note:** This procedure is part of an exercise in the Getting Started section.
 
 1. Click  **Add Property** to add a property.
 
@@ -80,7 +74,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
       **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, we will only use the Timestamp property as an index.
 
-1. Click **Apply**.
+1. Click **Save**.
 
 The following steps explore information about the type you just created.
 

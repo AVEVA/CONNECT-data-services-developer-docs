@@ -16,13 +16,13 @@ Follow this procedure to create a trending session:
 
     1. From the **Namespace** dropdown list (callout **1** in the image below), select a namespace or community that contains data that you want to visualize (callout **2**).
 
-    **Note:** Communities are only available for selection from the the **Streams** tab because they are used to share stream data.
+    **Note:** Communities are only available for selection from the **Streams** tab.
 
     ![Select namespace/community](images/select-namespace-community.png)
 
-    1. Select the **Add** ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
+    1. In the `Add Traces` pane, select the **Add** ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
 
-    **Tip:** Specify the asset name, stream name, or description in the **Search** box to find the trace you are interested in.
+    **Tip:** From the **Search** box, specify the asset name, stream name, or description to find the trace you are interested in.
     
     ![Add traces](images/add-traces.png)
 
@@ -52,7 +52,7 @@ Follow this procedure to create a trending session:
 
    The [legend table](xref:LegendTableReference) displays the [Trend view](xref:LegendTableReference#trend-view) ![trend](../_icons/chart-line.svg). It shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
-1. From the legend table, select a trace to select it for further analysis.
+1. From the legend table, select a trace to view it for further analysis.
 
     The selected trace is highlighted and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.
 

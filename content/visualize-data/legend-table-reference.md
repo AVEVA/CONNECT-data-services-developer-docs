@@ -4,13 +4,13 @@ uid: LegendTableReference
 
 # Legend table reference
 
-While visualizing data from the **Trend** page, you can toggle between a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg) view to display different trace information within a selected time frame.
+While viewing a trend session, you can toggle between a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg) view to display different trace information within a selected time frame.
 
 ![Trend page legend table](images/trend-page.png)
 
 ## Trend view
 
-The **Trend** ![trend](../_icons/chart-line.svg) view lists each trace depicted within the trend session. A _trace_ is a stream or asset property plotted in the session.
+The **Trend** ![trend](../_icons/chart-line.svg) view lists each trace depicted within the trend session. A _trace_ is a stream or asset property data plotted in the session.
 
 Each trace is listed within the **Trend** ![trend](../_icons/chart-line.svg) view. Each trace listed includes icons (image below) that display more information about the trace origin:
 
@@ -28,16 +28,16 @@ Under each trace, the legend table lists each property added, along with additio
 
 Column | Description
 --|--
-Name | The name of the stream property depicted within the `Trend` pane. The color swatch for each property corresponds to the visualization.
+Name | The name of the trace property depicted within the `Trend` pane. The color swatch for each property corresponds to its plotting within the trend session.
 Timestamp | The date and time of the trace.
 Value | The value of the property.
 UOM | The unit of measure.
-Min | The lowest value recorded for the property for easy cursors that you have set in the Trend view.
-Max | The highest value recorded for the property for easy cursors that you have set in the Trend view. 
+Min | The lowest value recorded for the property for easy cursors set in the **Trend** view.
+Max | The highest value recorded for the property for easy cursors set in the **Trend** view. 
 
 Each property also includes controls to edit the trend session visualization:
 
-* Select or clear the property checkboxes to display or hide the trace property in the session graph.
+* Select or clear the property checkboxes to display or hide the trace property in the trend session.
 * Select the **Delete** ![trend](../_icons/delete.svg) icon to remove the trace property from the trend session.
 
 ![Trend view](images/trend-view.png)

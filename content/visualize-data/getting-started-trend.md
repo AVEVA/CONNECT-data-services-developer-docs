@@ -21,13 +21,13 @@ Follow this procedure to create a trending session:
     1. In the `Add Traces` pane, select the **Assets** or **Streams** tab, and then select the **Add** 
     ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
 
-    **Tip:** Specify the asset/stream name or description in the **Search** box to find the streams you are interested in.
+    **Tip:** Specify the asset name, stream name, or description in the **Search** box to find the trace you are interested in.
     
     ![Add traces](images/add-traces.png)
 
     1. (Optional) Repeat these substeps to add more traces from different namespaces and communities to the trend session.  
 
-    **Tip:** After you have finished adding the traces, select the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend session.
+    **Tip:** After you have finished adding traces, select the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend session.
         
 1. From the **Change Y-axis Mode** ![Trend views menu](images/trend-views-icon.png) menu, select a view:
 
@@ -39,12 +39,12 @@ Follow this procedure to create a trending session:
 
 1. From the **Time picker**, select the time range to view. 
 
-    ![Time picker](images/Time-picker.png)
-    
     - Select the **Quick Ranges** tab to choose a predefined time range.
     
     - Select the **Custom Range** tab to choose your own time range.
-
+    
+    ![Time picker](images/Time-picker.png)
+    
 1. Select **Step backward** ![step backward](../_icons/skip-backward.svg) or **Step forward** ![step forward](../_icons/skip-forward.svg) to move the time range of the data displayed in the trend session.
 
    The trace will move in time increments displayed in the time range picker. For example, if the trend session displays the last 8 hours, **Step backward** ![step backward](../_icons/skip-backward.svg) shows the previous 8-hour period. If it displays the last 30 days, **Step forward** ![step forward](../_icons/skip-forward.svg) shows the next 30-day period. Select the triangle to select another time range or specify a custom range.
@@ -61,8 +61,8 @@ Follow this procedure to create a trending session:
     
     The **Add** ![add](../_icons/plus-thick.svg) icon turns into a **Close** ![close](../_icons/window-close.svg) icon. To unlock the cursor, select the **Close** ![close](../_icons/window-close.svg) icon.
 
-    **Note:** When two cursors are locked, the [Legend table](xref:LegendTableReference) displays summary calculations for the values between the two cursors, known as the [Cursor view](xref:LegendTableReference#cursor-view) ![cursor](../_icons/map-marker.svg).
+    **Note:** When two cursors are locked, the [legend table](xref:LegendTableReference) displays summary calculations for the values between the two cursors, known as the [Cursor view](xref:LegendTableReference#cursor-view) ![cursor](../_icons/map-marker.svg).
 
-1. Select the **Share** ![share](../_icons/share.svg) icon in the menu bar to copy the URL of the workspace. 
+1. Select the **Share** ![share](../_icons/share.svg) icon in the menu bar to copy the URL of the trend session. 
 
     You can share this URL with colleagues to give them the same view of the trend session that they can use to troubleshoot problems.

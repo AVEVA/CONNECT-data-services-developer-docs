@@ -16,7 +16,7 @@ Follow this procedure to create a trending session:
 
     1. From the **Namespace** dropdown list (callout **1** in the image below), select a namespace or community that contains data that you want to visualize (callout **2**).
 
-    **Note:** Communities are only available for selection when the **Streams** tab is selected.
+    **Note:** Communities are only available for selection from the the **Streams** tab because they are used to share stream data.
 
     ![Select namespace/community](images/select-namespace-community.png)
 

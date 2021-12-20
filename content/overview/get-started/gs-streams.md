@@ -72,13 +72,13 @@ After creating your types, you can add streams and associate a type with the str
 
 1. In the `Add Event` window, complete the following fields: 
 
-    - **Status** &ndash; Enter *Running*.
-
-    - **Pressure** &ndash; Enter *325*.
-
+    - **Timestamp** &ndash; Leave this setting as it appears, displaying the current time.
+     
     - **Temperature** &ndash; Enter *21*.
     
-    - **Timestamp** &ndash; Leave this setting as it appears, displaying the current time.
+    - **Pressure** &ndash; Enter *325*.
+ 
+    - **Status** &ndash; Enter *Running*.
 
 1. Click **Save**. 
 

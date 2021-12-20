@@ -4,7 +4,7 @@ uid: gsRoles
 
 # Get started with roles
 
-Roles are used to manage access to assets, resources, and services in AVEVA&trade; Data Hub. Roles are assigned to identities, which includes users, groups, and client-credentials clients. See the following topics for more information about roles:
+Use roles to manage access to assets, resources, and services in AVEVA Data Hub. Assign roles to identities, which include users, groups, and client-credentials clients. See the following topics for more information about roles:
 
 - [Roles](xref:ccRoles)
 
@@ -12,9 +12,7 @@ Roles are used to manage access to assets, resources, and services in AVEVA&trad
 
 - [Roles best practices](xref:ccRoles#roles-bp)
 
-## Procedure
-
-Follow the procedure to create role.
+Follow the procedure to create a role.
 
 1. In the left pane, select **Security** > **Roles**.
 
@@ -34,7 +32,7 @@ Follow the procedure to create role.
     
 1. Select the *MyData.Role* role and click **Manage Identities**.
 
-1. In the `Manage identities for MyData.Role Role` window, click the **Add Identity** dropdown list. 
+1. In the `Manage Identities for Role` window, click the **Add Identity** dropdown list. 
 
     The list displays all users and clients in the tenant. Click **+** to add any users or clients in the list to the role.
 

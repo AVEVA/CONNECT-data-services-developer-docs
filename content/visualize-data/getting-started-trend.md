@@ -4,22 +4,23 @@ uid: GettingStartedWithTrendData
 
 # Get started with trend data
 
-Use trace data in a trend session to monitor assets, anticipate problems, and proactively perform preventative maintenance. The following procedure describes how to display traces in your trend and glean useful information from your data.
+Use trace data in a trend session to monitor assets, anticipate problems, and proactively perform preventative maintenance.
 
 Follow this procedure to create a trending session:
 
 1. In the left pane, select **Visualization** > **Trend**.
    
-1. In the `Trend` pane, add asset or stream data to the trend session. 
+1. In the `Trend` pane, add asset data or stream data.
 
-    Add assets from your tenant or add stream data from your tenant or a community.
+    1. In the `Add Traces` pane, select the **Assets** or **Streams** tab.
 
     1. From the **Namespace** dropdown list (callout **1** in the image below), select a namespace or community that contains data that you want to visualize (callout **2**).
 
+    **Note:** Communities are only available for selection when the **Streams** tab is selected.
+
     ![Select namespace/community](images/select-namespace-community.png)
 
-    1. In the `Add Traces` pane, select the **Assets** or **Streams** tab, and then select the **Add** 
-    ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
+    1. Select the **Add** ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
 
     **Tip:** Specify the asset name, stream name, or description in the **Search** box to find the trace you are interested in.
     

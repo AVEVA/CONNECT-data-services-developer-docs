@@ -28,7 +28,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/replic
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|The Ok if the stream was refreshsed.|
+|200|None|Ok if the stream was refreshed.|
 |400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|

@@ -25,7 +25,7 @@ Follow the procedure to use the asset explorer to create an asset type.
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 
 1. Click the **Change Namespace** button in the upper-right toolbar, then select **MyData**.
-
+ 
 1. From the **Asset/Asset Types Selector** list, select **Asset Types**.
 
 1. In the menu bar, click **Add Asset Type** to open a panel on the right side.

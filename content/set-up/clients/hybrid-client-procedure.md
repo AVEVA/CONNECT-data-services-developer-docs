@@ -32,7 +32,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. Select **Add**.  
 
-  The `Add Secret` window opens.
+   The `Add Secret` window opens.
 
 1. (Optional) In the **Description** field, enter a description for the client secret.
 

@@ -12,13 +12,13 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. In the toolbar, select **Add Client**.
 
-  The `Add Client` window appears.
+   The `Add Client` window opens.
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client. 
 
-1. In the `Roles` are, select the roles that are appropriate for the client.  
+1. On the `Roles` tab, select the roles you wish to assign to the client.  
 
-   By default, the client has the `Account Member` role which cannot be removed. Roles can be modified after the client is created.
+   By default, the client has the `Tenant Member` role which cannot be removed. Roles can be modified after the client is created.
 
 1. (Optional) In the **Token Lifetime** field, enter the length of time in seconds that the access token functions before it expires.
 
@@ -26,7 +26,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. Select **Continue**. 
 
-  The `Add Secret` window opens.
+   The `Add Secret` window opens.
 
 1. (Optional) In the **Description** field, enter a description for the client secret.
 

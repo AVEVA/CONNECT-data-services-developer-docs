@@ -31,7 +31,7 @@ Authorization code clients provide a secure means of authenticating users to cus
 
    The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
-1. Select **Add**.  
+1. Select **Add**, then click **Close**.  
 
    The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. To copy the client Id, select the **Copy** icon. After you close this window, you can also retrieve the client Id from the list of clients.
 

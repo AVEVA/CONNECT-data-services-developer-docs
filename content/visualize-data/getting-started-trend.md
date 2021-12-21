@@ -6,29 +6,29 @@ uid: GettingStartedWithTrendData
 
 Use trace data in a trend session to monitor assets, anticipate problems, and proactively perform preventative maintenance.
 
-Follow this procedure to create a trending session:
+Follow this procedure to create a trending session: <!-- AF 12/21/21 - To create a trending session, follow these steps:-->
 
 1. In the left pane, select **Visualization** > **Trend**.
    
-1. In the `Trend` pane, add asset data or stream data.
+1. In the `Trend` pane, add asset data or stream data. <!-- AF 12/21/21 - In the `Trend` pane, for each trace to add to the trend, do the following: (Then remove the optional repeat step) -->
 
     1. In the `Add Traces` pane, select the **Assets** or **Streams** tab.
 
-    1. From the **Namespace** dropdown list (callout **1** in the image below), select a namespace or community that contains data that you want to visualize (callout **2**).
+    1. From the **Namespace** dropdown list (callout **1** in the following image), select a namespace or community that contains data that you want to visualize (callout **2**). <!-- AF 12/21/21 Why is this step second? It seems like it should be first. -->
 
     **Note:** Communities are only available for selection from the **Streams** tab.
 
-    ![Select namespace/community](images/select-namespace-community.png)
+    ![Select namespace/community](images/select-namespace-community.png) <!-- AF 12/21/21 - I don't think this image is completely necessary. I might add the icons that indicate which is a namespace and which is a community in line in the step. -->
 
     1. In the `Add Traces` pane, select the **Add** ![add](../_icons/plus-thick-alt.svg) icon to add a trace to the trend session.
 
-    **Tip:** From the **Search** box, specify the asset name, stream name, or description to find the trace you are interested in.
+    **Tip:** From the **Search** box, specify the asset name, stream name, or description to find the trace you are interested in. <!-- AF 12/21/21 - In the **Search** field,... -->
     
-    ![Add traces](images/add-traces.png)
+    ![Add traces](images/add-traces.png)<!-- AF 12/21/21 - I don't think this image is necessary. --> 
 
     1. (Optional) Repeat these substeps to add more traces from different namespaces and communities to the trend session.  
 
-    **Tip:** After you have finished adding traces, select the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display your trend session.
+    **Tip:** After you have finished adding traces, select the **Close** ![close](../_icons/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display the trend session.
         
 1. From the **Change Y-axis Mode** ![Trend views menu](images/trend-views-icon.png) menu, select a view:
 
@@ -56,7 +56,7 @@ Follow this procedure to create a trending session:
 
     The selected trace is highlighted and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.
 
-    ![Maximum and minimum cursors](images/Max_min_cursors.png)
+    ![Maximum and minimum cursors](images/Max_min_cursors.png) <!-- AF 12/21/21 I wish this image had better data in it. The trends are all flat and the names aren't realistic.-->
 
 1. Select the **Add** ![add](../_icons/plus-thick.svg) icon above the trace to lock the cursors in place.
     

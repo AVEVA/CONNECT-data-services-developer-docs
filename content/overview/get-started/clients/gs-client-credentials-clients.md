@@ -42,9 +42,9 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. Click **Add**.
 
- A window opens with the `Client Id` and `Client Secret`.
+   A window opens with the `Client Id` and `Client Secret`.
     
-  **Important**: Click the **Copy** buttons to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+   **Important**: Click the **Copy** buttons to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
     
 1. Click **Close**.  
 

@@ -28,7 +28,7 @@ This procedure creates a stream view that maps the `MyData.PumpState` type to th
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Click the **Namespace** selection button to open the `Select a Namespace` window. In the `Select a Namespace` window, click **MyData**. 
+1. Click the **Change Namespace** button in the upper-right toolbar, then click **MyData** or another namespace in which you created your stream. 
 
 1. From the **Streams/Types/Stream Views Selector** list, select **Stream Views**.
 

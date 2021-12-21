@@ -4,9 +4,9 @@ uid: LegendTableReference
 
 # Legend table reference
 
-While viewing a trend session, you can toggle between a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg) view to display different trace information within a selected time frame.
+While viewing a trend session, you can toggle between a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg) view to display different trace information within a selected time frame. <!--AF 12/21/21 This could be clarified to indicate that the views are only within the legend table area below the trend. -->
 
-![Trend page legend table](images/trend-page.png) <!-- AF 12/21/21 I think the images in this topic are useful, but the data in them looks like junk data. -->
+![Trend page legend table](images/trend-page.png) <!-- AF 12/21/21 I think the images in this topic are useful, but the data in them looks like junk data. Also why are the call outs teal? Other images use red. We should talk to Rainier about specifying one color for call outs, and maybe a backup for instances where the first color is hard to see. -->
 
 ## Trend view
 

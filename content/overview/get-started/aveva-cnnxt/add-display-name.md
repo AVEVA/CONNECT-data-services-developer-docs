@@ -6,7 +6,7 @@ uid: add-display-name
 
 You can add a user friendly name that displays on the Users page in AVEVA Connect.
 
-1. In AVEVA Connect, click the profile icon in the top right corner.
+1. In AVEVA Connect, select the profile icon in the top right corner.
  
 1. Click **My Profile**.
 

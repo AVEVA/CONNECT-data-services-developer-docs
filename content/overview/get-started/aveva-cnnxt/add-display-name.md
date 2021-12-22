@@ -8,7 +8,7 @@ You can add a user friendly name that displays on the Users page in AVEVA Connec
 
 1. In AVEVA Connect, select the profile icon in the top right corner.
  
-1. Click **My Profile**.
+1. Select **My Profile** to open the `My Profile` page.
 
    **Result:** The My Profile page opens.
  

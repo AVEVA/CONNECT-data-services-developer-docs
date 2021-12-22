@@ -30,14 +30,6 @@ You can download the PI to OCS Agent from the PI to OCS Agents page on the porta
 
 * The AF server elements and attributes to be transferred 
 
-## Installation process
-
-Complete the following procedures to install the PI to OCS Agent:
-
-* [Install the PI to OCS Agent](#install-the-pi-to-ocs-agent)
-
-* [Verify the PI to OCS Agent is running and registered](#verify-the-pi-to-ocs-agent-is-running-and-registered)
-
 ## Install the PI to OCS Agent
 
 To install the PI to OCS Agent, follow these steps:
@@ -98,7 +90,7 @@ To verify the installation, follow these steps:
 
 1. On the computer where the agent is installed, open the Microsoft Management Console (MMC) snap-in for Services. <!--Angela Flores 11/12/21 there is no mention of selecting a host machine for this installation before this point.>
 
-  **Tip:** Enter *services.msc* in Windows search to locate the application.
+   **Tip:** Enter *services.msc* in Windows search to locate the application.
 
 1. In the `Services` window, find the PI to OCS Agent service and verify that the status is `Running`, then close the window.
 

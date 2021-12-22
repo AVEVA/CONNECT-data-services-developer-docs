@@ -2,7 +2,7 @@
 uid: GettingStartedWithTrendData
 ---
 
-# Get started with trend data
+# View trend data
 
 Use trace data in a trend session to monitor assets, anticipate problems, and proactively perform preventative maintenance.
 

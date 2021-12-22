@@ -115,8 +115,6 @@ OMF topics aggregate OMF messages received from one or more clients and make the
 
 OMF itself does not define or depend on any binary message protocol, such as HTTP, AMQP, or Kafka. Instead, it is based on an abstract message type, where a message consists of a set of key/value pairs, which may include binary files, configuration files, and batch or Shell scripts. You can construct OMF messages using any message protocol that defines headers and bodies. <!--Angela Flores 6/29/21 First paragraph says it uses HTTP; this paragraph says it doesn't. Which is it? -->
 
-Refer to [OMF Message Format](https://omf-docs.osisoft.com/) for additional information about the OMF specification. <!--Angela Flores 6/29/21 Why link to the OMF spec, but not the EDS help, adapter help, etc.? -->
-
 #### Edge Data Store
 
 The Edge Data Store (EDS) is a software component that collects sequential data from edge devices and stores it locally until it can be transferred to permanent storage in AVEVA™ Data Hub. You can access the data on the edge device for queries and for displaying data trends.

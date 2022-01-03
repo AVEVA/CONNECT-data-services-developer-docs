@@ -8,7 +8,7 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Asset store](xref:Assets)—Use the information in this section to create or find assets of different types, along with their data and status.
 * [Communities (Preview)](xref:communityOverview)—AVEVA Data Hub Communities helps industrial companies share their operational data with external business partners, service providers, and analytics providers. 
-* [Data collection](xref:dataIngress)—You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the AVEVA Data Hub Sequential Data Store.
+* [Data collection](xref:dataIngress)—You use Open Message Format (OMF) to achieve high-throughput asynchronous data ingress into the AVEVA Data Hub Sequential Data Store.
 * [Data views](xref:DataViewsOverview)—Use the information in this section to create user-selected subsets of data stored in AVEVA Data Hub which are mapped into customizable table formats.
 * [Identity and access management](xref:identityandaccessmanagement)—Use the information in this section to create, manage and administer users and clients.
 * [Operations](xref:operationsOverview)—Use the information in this section to get metrics on AVEVA Data Hub operation. 

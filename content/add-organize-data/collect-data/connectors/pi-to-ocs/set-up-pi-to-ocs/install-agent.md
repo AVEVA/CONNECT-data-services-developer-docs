@@ -2,9 +2,9 @@
 uid: install-agent
 ---
 
-# Install the PI to OCS Agent
+# Install the PI to Data Hub Agent
 
-When you install the PI to OCS Agent, make sure to follow these guidelines:<!--Angela Flores 11/12/21 - This topic appears in the TOC twice once as Set up PI to OCS and once as Install the PI to OCS agent.>
+When you install the PI to Data Hub Agent, make sure to follow these guidelines:<!--Angela Flores 11/12/21 - This topic appears in the TOC twice once as Set up PI to Data Hub and once as Install the PI to Data Hub agent.>
 
 * Install the agent on a host computer separate from your PI Server deployment.
 
@@ -14,13 +14,13 @@ When you install the PI to OCS Agent, make sure to follow these guidelines:<!--A
 
 * Enable read access to the AF server elements and attributes to be transferred.
 
-You can download the PI to OCS Agent from the PI to OCS Agents page on the portal and then transfer it to the computer that will host the agent.
+You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on the portal and then transfer it to the computer that will host the agent.
 
-**Note:** The PI to OCS Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to OCS Agent installation if Internet Explorer Enhanced Security Configuration is enabled. For more information, see [Disable Internet Explorer Enhanced Security Configuration](xref:disable-ie-security). 
+**Note:** The PI to Data Hub Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to Data Hub Agent installation if Internet Explorer Enhanced Security Configuration is enabled. For more information, see [Disable Internet Explorer Enhanced Security Configuration](xref:disable-ie-security). 
 
 ## Configure access to PI Data Archive Security tables, PI point data, and optional AF server
 
-**Important:** The PI to OCS Agent requires the Windows service account to `Run as user`. Enable read access to the following PI Server data:
+**Important:** The PI to Data Hub Agent requires the Windows service account to `Run as user`. Enable read access to the following PI Server data:
 
 * Archive data (PIARCDATA Security table)
 
@@ -30,23 +30,31 @@ You can download the PI to OCS Agent from the PI to OCS Agents page on the porta
 
 * The AF server elements and attributes to be transferred 
 
-## Install the PI to OCS Agent
+## Installation process
 
-To install the PI to OCS Agent, follow these steps:
+Complete the following procedures to install the PI to Data Hub Agent:
 
-1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
+* [Install the PI to Data Hub Agent](#install-the-pi-to-ocs-agent)
+
+* [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-ocs-agent-is-running-and-registered)
+
+## Install the PI to Data Hub Agent
+
+To install the PI to Data Hub Agent, follow these steps:
+
+1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
 1. Select **Download Agent**.
 
 1. On the `Agent Installer Download` window, select **Download**. When the download completes, close the window.
 
-1. Navigate to the downloaded PI to OCS agent installation file.
+1. Navigate to the downloaded PI to Data Hub agent installation file.
 
-1. Right-click the PI to OCS Agent installation file, then select **Run as administrator**.
+1. Right-click the PI to Data Hub Agent installation file, then select **Run as administrator**.
 
 1. To confirm running the installation file, select **Yes**.
 
-1. On the `Welcome` page of the `PI to OCS Agent` window, select **Next**.
+1. On the `Welcome` page of the `PI to Data Hub Agent` window, select **Next**.
 
    The `Company Information` page opens.
 
@@ -54,7 +62,7 @@ To install the PI to OCS Agent, follow these steps:
 
 1. In the **Tenant Id or Company Alias** field, enter your tenant ID or company alias and select **Next**.
 
-   **Note:** You are logged on to your tenant account. The account used to log on must be assigned to the `Tenant Administrator` role to complete the PI to OCS Agent installation.
+   **Note:** You are logged on to your tenant account. The account used to log on must be assigned to the `Tenant Administrator` role to complete the PI to Data Hub Agent installation.
 
    A message opens in your web browser regarding the status of the user authentication process. 
 
@@ -62,7 +70,7 @@ To install the PI to OCS Agent, follow these steps:
 
 1. On the `Namespace` page, complete the following fields, then select **Next**:
 
-    * **Namespace** - Select the location where the transferred data will be stored. The region indicates where the namespace resides. Streaming data sent by the PI to OCS Agent only goes to the selected namespace's region.
+    * **Namespace** - Select the location where the transferred data will be stored. The region indicates where the namespace resides. Streaming data sent by the PI to Data Hub Agent only goes to the selected namespace's region.
 
     * **Agent Description** - Enter an optional name for the agent.
 
@@ -72,19 +80,19 @@ To install the PI to OCS Agent, follow these steps:
 
     * **This account** - Specify a user name and password (domain\account) to connect to PI Data Archive.
 
-    **Note:** The service account used to run the PI to OCS Service requires Administrator privileges. Read access to the PIARCDATA Security and PIPOINT Security tables, the PI points and data to be transferred, and the AF server, elements, and attribute data is required.
+    **Note:** The service account used to run the PI to Data Hub Service requires Administrator privileges. Read access to the PIARCDATA Security and PIPOINT Security tables, the PI points and data to be transferred, and the AF server, elements, and attribute data is required.
 
 1. Select **Install**.
 
 1. After the agent is installed, select **Close**.
 
-    The PI to OCS Configuration Utility opens. See [Run the PI to OCS Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
+    The PI to Data Hub Configuration Utility opens. See [Run the PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
 
-    **Note:** An agent cannot be registered until a PI Data Archive server has been added and configured in the PI to OCS Configuration Utility.
+    **Note:** An agent cannot be registered until a PI Data Archive server has been added and configured in the PI to Data Hub Configuration Utility.
 
-## Verify the PI to OCS Agent is running and registered
+## Verify the PI to Data Hub Agent is running and registered
 
-After installation, check that the PI to OCS Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in OCS. 
+After installation, check that the PI to Data Hub Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in OCS. 
 
 To verify the installation, follow these steps:
 
@@ -92,16 +100,16 @@ To verify the installation, follow these steps:
 
    **Tip:** Enter *services.msc* in Windows search to locate the application.
 
-1. In the `Services` window, find the PI to OCS Agent service and verify that the status is `Running`, then close the window.
+1. In the `Services` window, find the PI to Data Hub Agent service and verify that the status is `Running`, then close the window.
 
    ![](../../images/services-window.png)
 
-1. In the AVEVA Data Hub portal, in the left pane, select **Data Collection** > **PI to OCS Agents**.
+1. In the AVEVA Data Hub portal, in the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
-1. On the `PI to OCS Agents` page, select the connection you created.
+1. On the `PI to Data Hub Agents` page, select the connection you created.
 
 1. On the `Details` pane, verify that Registered appears next to the **Agent Status** field.
 
    ![Agent status](../../images/details-pane.png)
 
-   **Note:** The agent status is also displayed in the PI to OCS Configuration Utility. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-status-states).
+   **Note:** The agent status is also displayed in the PI to Data Hub Configuration Utility. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-status-states).

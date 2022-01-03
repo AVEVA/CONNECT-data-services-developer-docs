@@ -2,16 +2,16 @@
 uid: introPortalInterface
 ---
 
-# Take a tour of the AVEVA™ Data Hub portal
+# Take a tour of the AVEVA&trade; Data Hub portal
 
-When you first access the AVEVA™ Data Hub portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
+When you first access the AVEVA&trade; Data Hub portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
-![Portal window](../images/portal-interface.png "AVEVA™ Data Hub portal interface")
-<!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published. -->
+![Portal window](../images/portal-interface.png "AVEVA&trade; Data Hub portal interface")
+<!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published.-->
 
-## AVEVA™ Data Hub features
+## AVEVA&trade; Data Hub features
 
-Expanding the left pane opens a menu of AVEVA™ Data Hub features. This pane is always available, and you can make menu selections even while collapsed.
+Expanding the left pane opens a menu of AVEVA&trade; Data Hub features. This pane is always available, and you can make menu selections even while collapsed.
 
 | Pane expanded | Pane collapsed |
 |:--:|:--:|

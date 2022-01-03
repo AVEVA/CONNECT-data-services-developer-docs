@@ -21,7 +21,7 @@ This is a Lighthouse Release. Prior to this, select customers had access to the 
 
 **Respect AVEVA&trade; Data Hub feature flags**
 
-If a user is not authorized for a specific AVEVA&trade; Data Hub feature, the PI to Data Hub configuration utility will respect that setting. Previously, it didn’t check if a user was authorized to configure an AF server for PI to Data Hub.
+If a user is not authorized for a specific AVEVA&trade; Data Hub feature, the PI to Data Hub configuration utility will respect that setting. Previously, it didn't check if a user was authorized to configure an AF server for PI to Data Hub.
  
 **Improve experience when searching for referenced Data Archives**
 
@@ -77,7 +77,7 @@ Minimum requirements:
 
 ## Installation and upgrade
 
-Run the PIToOCSAgent.exe setup kit. Instructions are provided on-screen.
+Run the PIToDataHubAgent.exe setup kit. Instructions are provided on-screen.
 
 ## Uninstallation
 
@@ -111,7 +111,7 @@ See the [PI to Data Hub documentation](https://docs.osisoft.com/bundle/data-hub/
 
 #### Technical Support and Resources
 
-For technical assistance, contact AVEVA Customer Support through the [AVEVA Customer Support Portal](https://www.aveva.com/en/support-and-success/support-contact/).
+For technical assistance, contact AVEVA Software Support through the [AVEVA Knowledge & Support website](https://softwaresupport.aveva.com/).
 
 Additionally, the [Contact AVEVA](https://www.aveva.com/en/contact/) page on the portal offers contact options for customers outside of the United States.
 
@@ -126,10 +126,10 @@ When you contact AVEVA Customer Support, be prepared to provide this information
 
 The [PI Square](https://pisquare.osisoft.com/) community has resources to help you with your technical questions. [PI Developers Club](https://pisquare.osisoft.com/community/developers-club) program offers specific services to developers and system integrators.
 
-AAVEVA Group plc, High Cross Madingley Road, Cambridge CB3 0HB, UK USA Tel: (01) 510-297-5800 Fax: (01) 510-357-8136 Web: https://www.aveva.com/ 
+AVEVA Group plc, High Cross Madingley Road, Cambridge CB3 0HB, UK Web: https://www.aveva.com/ 
 PI to Data Hub Agent
 
-© 2021 by AVEVA
+&copy; 2021 by AVEVA
 
 All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, mechanical, photocopying, recording, or otherwise, without the prior written permission of AVEVA.
 

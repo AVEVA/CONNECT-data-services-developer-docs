@@ -11,9 +11,9 @@ You can transfer the following AF element data into AVEVA&trade; Data Hub:
 
 A simple PI point attribute consists of only a server and tag name. This data does not include any data retrieval qualifiers. The associated event data contains simple PI point attributes with the same historical and streaming transfer mechanism as points not associated with AF. 
 
-This table lists what AF objects can and cannot be included in a PI to OCS data transfer.
+This table lists what AF objects can and cannot be included in a PI to Data Hub data transfer.
 
-| AF Object                                                    | Included in a PI to OCS transfer?      |
+| AF Object                                                    | Included in a PI to Data Hub transfer?      |
 | ------------------------------------------------------------ | -------------------------------------- |
 | Elements                                                     | Yes                                    |
 | Attributes                                                   | Yes                                    |

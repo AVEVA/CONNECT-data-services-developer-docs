@@ -15,7 +15,7 @@ Message | ID   | Description
 Failed To Get Data Archive Info | 21 | The PI to Data Hub Agent has encountered an error while trying to get archive file information from the source PI Data Archive. The exception reason will be displayed. Depending on the exception, this call may or may not be automatically retried.
 Data Archive Version Not Supported | 24 | The source PI Data Archive version is not supported. Currently, the PI to Data Hub Agent only supports PI Data Archive 2016 R2 (3.4.415.1188) and above. Please upgrade your PI Data Archive if you wish to use PI to Data Hub.
 Failed To Perform Point Query - Element Invalid | 27 | One or more the query objects (Point Mask and/or Point Source Mask) is invalid. If this query is made from the portal, users should not get this error.
-Agent Registration Completed | 30 | The PI to Data Hub Agent registration was successful
+Agent Registration Completed | 30 | The PI to Data Hub Agent registration was successful.
 Agent Registration Failed | 33 | The PI to Data Hub Agent registration was not successful. The most frequent reasons why this would occur are as follows: 1) The source PI Data Archive was already tied to an existing Connection; and, 2) 	The Connection is already tied to another PI to Data Hub Agent.
 Agent Received Unregister Request | 60 | The PI to Data Hub Agent received an unregister request from the portal. As a result, the PI to Data Hub Agent will unregister and shutdown.
 Agent Unregistered | 62 | Confirmation message that the PI to Data Hub Agent is unregistered after receiving event ID 60.

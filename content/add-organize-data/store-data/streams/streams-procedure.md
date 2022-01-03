@@ -16,13 +16,13 @@ To add a stream, follow these steps:
 
 1. In the `Add Stream` pane, complete the following fields:
 
- - **Id** &ndash; (Optional) Enter an identifier for referencing the stream. If you do not enter an Id, a GUID is generated.
+   - **Id** &ndash; (Optional) Enter an identifier for referencing the stream. If you do not enter an Id, a GUID is generated.
    
- - **Name** &ndash; (Optional) Enter a user-friendly name for the stream. If you do not enter a name, the **Id** is used as the name. 
+   - **Name** &ndash; (Optional) Enter a user-friendly name for the stream. If you do not enter a name, the **Id** is used as the name. 
    
- - **Description** &ndash; (Optional) Enter a user-friendly description of the stream.
+   - **Description** &ndash; (Optional) Enter a user-friendly description of the stream.
    
- - **Type** &ndash; SDS type identifier of the type used in this stream.
+   - **Type** &ndash; SDS type identifier of the type used in this stream.
 
 1. To add tags to the stream, select the **Tags** tab.
 

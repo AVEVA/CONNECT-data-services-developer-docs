@@ -12,15 +12,13 @@ Follow the procedures to create an asset, add and configure its metadata and pro
  
 1. Click the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
-5. Verify that the **Assets/Asset Type** selector is set to **Assets**.
+1. Verify that the **Assets/Asset Type** selector is set to **Assets**.
 
-5. Click the **+** in the toolbar to create a new asset.
+1. Click the **+ Add Asset** in the toolbar to open the `Select Type for New Asset` window. By default, the type selected is **None**.
 
-     The `Select Type for New Asset` window opens. By default, the type selected is  <None>.
+1. Accept the default and click **Continue**.
 
-6. Accept the default and click **Continue**.
-
-    The details blade opens on the right side. 
+    The details pane opens on the right side. 
 
 1. Enter a name and description for the asset.
 
@@ -34,17 +32,17 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
     <!-- We need a definition for metadata that covers its use in different OCS contexts. --> 
 
-2. Enter a name for the metadata.
+1. Enter a name for the metadata.
 
-3. Optional: Enter a value for the metadata and select a type.
+1. (Optional) Enter a value for the metadata and select a type.
    
     **Note:** The value must match the selected type. The following date/time format is supported: MM/DD/(YY)YY hh:mm(:ss).
 
     <!--WRITER NOTE: What date/time formats are supported? Is this the same as for PI Server? i.e., Microsoft standard date/time formats? -->
 
-4. (Optional) Select a UOM.
+1. (Optional) Select a UOM.
 
-5. Continue adding metadata for the asset. 
+1. Continue adding metadata for the asset. 
 
 
 ## Add properties to the asset
@@ -65,7 +63,7 @@ Follow the procedures to create an asset, add and configure its metadata and pro
    
 1. Click **Configure UOMs**. 
 
-1. On the `Configure UOMs` page, make any changes to the property UOMs.
+1. On the `Configure UOMs` window, make any changes to the property UOMs.
 
     **Note:** UOMs can be set only on numeric types.
 
@@ -93,7 +91,4 @@ Follow the procedures to create an asset, add and configure its metadata and pro
 
 1. Click **Save**. 
 
-## Related links
-
-- [Assets](xref:AssetsProperties) Properties
-- [Assets API](xref:AssetsAPI)
+See also [Assets API](xref:Assets).

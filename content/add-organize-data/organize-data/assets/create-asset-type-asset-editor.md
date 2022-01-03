@@ -14,9 +14,9 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 4. Click the **Assets/Asset Type** selector and click **Assets Types** from the list.
 
-5. Click the **+** in the toolbar.
+5. Click the **+ Add Asset Type** button in the toolbar.
 
-    The details blade opens on the right side.
+    The details pane opens on the right side.
 
 6. Enter an Id and description for the asset type.
 
@@ -68,9 +68,9 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. In the `Select Property` window, click the property that you want to display status for. Click **Continue**.
 
-    **Note:** You can only specify one property with enumerated states as the the asset's status.
+    **Note:** You can only specify one property with enumerated states as the asset's status.
 
-1. Click the status icons to map the status (Good, Warning, Bad) for each value.
+1. Select **Add Value Mapping**, enter a value, then select the status icons to map the status (Good, Warning, Bad) for each value.
     
     **Tip:** You can switch to a different property by clicking the ![Change property icon](images/change-property-icon.png) icon.
     
@@ -78,6 +78,4 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. Click **Save**. 
 
-## Related links 
-- [Assets](xref:AssetsProperties) Properties
-- [Asset Types API](xref:AssetTypesAPI)
+See also [Asset Types API](xref:AssetTypesAPI).

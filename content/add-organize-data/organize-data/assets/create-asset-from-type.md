@@ -18,7 +18,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. Select the type from the list and click **Continue**.
    
-   **Result:** The details blade opens to the right.
+   **Result:** The details pane opens to the right.
 
 1. Enter a name and description for the asset.
 
@@ -32,9 +32,9 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. Click the **Properties** tab.
 
-1. Click the caret ![](images/caret.png) icon to reveal the stream reference configuration details. 
+1. Click anywhere in the stream row to reveal the stream reference configuration details. 
 
-1. Click **Choose a Stream** to open the `Select Stream` window.
+1. Click **Choose a Stream** ![](./images/change-property-icon.png) icon to open the `Select Stream` window.
 
 1. Select the stream from the list of streams.
 
@@ -44,7 +44,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. Click **Configure UOMs**. 
 
-1. On the `Configure UOMs` page, make any changes to the property UOMs.
+1. On the `Configure UOMs` window, make any changes to the property UOMs.
 
     **Note:** UOMs can be set only on numeric types.
 
@@ -54,7 +54,4 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. Click **Save** to save the asset.
 
-## Related links
-
-- [Assets](xref:AssetsProperties) Properties
-- [Asset Types API](xref:AssetTypesAPI)
+See also [Asset Types API](xref:assets-asset-types).

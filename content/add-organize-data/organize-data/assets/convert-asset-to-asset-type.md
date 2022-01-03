@@ -10,7 +10,7 @@ For more information on asset types, see [Asset types](xref:AssetTypes).
 
 1. Follow the instructions in [Create and configure an asset](xref:CreateConfigureAsset), and create the asset that will be the basis for the asset type.
 
-1. Click **Save as Asset Type**.
+1. Select the asset, choose **More Options**, then select **Save as Asset Type**.
 
    **Result:** The `Create an Asset Type` window opens.
 

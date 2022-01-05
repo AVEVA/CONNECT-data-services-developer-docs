@@ -12,7 +12,7 @@ Data views are subsets of data from one or more streams. You create and configur
 
 1. In the `Data Views` pane, click **Add Data View** and enter a name and description for the data view.
 
-1. Next to **Data View Shape**, select **Standard** or **Narrow** to enter the general shape of the data display. **Standard** for a typical wide table or **Narrow** to pivot your data into a Field, Value pair format.
+1. Next to **Data View Shape**, select **Standard** or **Narrow** to enter the general shape of the data display. Use **Standard** for a typical wide table or **Narrow** to pivot your data into a Field, Value pair format.
 
 ## Specify the source stream or asset for the data view
 
@@ -30,7 +30,7 @@ Data views are subsets of data from one or more streams. You create and configur
 
 1. **Optional:** Click **Add Query** to add additional queries.
 
-1. After viewing the available streams or assets, enter the appropriate query value in the **Query Value** search field, and then click **Apply**.
+1. After viewing the available streams or assets, select a stream name from the search results, and then click **Save**.
 
 1. Click **Save** to accept the query results as the basis of the data view.
 
@@ -50,7 +50,7 @@ Data views are subsets of data from one or more streams. You create and configur
 
 1. In the `Filter Fields...` pane, the **Index Field** and **Grouping Fields** sections are set by default. In the queries section, each data field selected previously in the `Add Data Fields` pane are listed as identifying fields. You can add, edit, or remove identifying fields by clicking on the **Add**, **Edit**, or **Remove** buttons.
 
-1. In the `Generate Preview` pane, click the **Auto Refresh** toggle button to enable or disable auto refresh. With auto refresh enabled, changes to any of the streams included in the data view is immediately reflected in the data view.
+1. In the `Generate Preview` pane, click the **Auto Refresh** toggle button to enable or disable auto refresh. With auto refresh enabled, changes to any of the streams included in the data view are immediately reflected in the data view.
 
 1. Click the date and time display to set the **Start Index** and **End Index** to enter the time period of the data to include in the data view. For interpolated data views, enter a `Time Interval`.
 

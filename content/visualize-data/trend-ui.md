@@ -12,8 +12,7 @@ The following image shows the important elements of the `Trend` page, and the ta
 
 | Number | Description                                                  |
 | ------ | ------------------------------------------------------------ |
-| 1      | Tenant &ndash; Click the triangle and select the tenant from the list. |
-| 2      | Namespace &ndash; Click the triangle and select the namespace from the list. |
+| 1      | Namespace &ndash; Click the triangle and select the namespace from the list. |
 | 3      | Trend pane &ndash; Displays the selected traces. Line traces are displayed for numeric data and heat maps are displayed for string or enumerated data. |
 | 4      | Add Traces pane &ndash; Click the plus symbol (+) to add the trace to the `Trend` pane. |
 | 5      | Trend mode &ndash; Click to toggle between the stacked, single-scale, and multi-scale view modes. |

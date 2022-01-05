@@ -24,12 +24,12 @@ These best practices are recommended to make it easier to add metadata to stream
 The following diagram shows metadata for two turbines named `GEO1` and `GEO2`, each with three data streams:
 
 - The color-coded data streams show the specific data each stream is tracking, which is detailed in the **Stream Metadata** column.
-- The basic description of the stream data is encoded in the stream name. For example, for the third stream in the table, the metadata rule translated, `GEO1_P.ACT_PV`, into meaningful information. You see that `GEO1` is the name of the turbine and that `Active Power` is the measurement in this stream.  
+- The basic description of the stream data is encoded in the stream name. For example, for the third stream in the table, the metadata rule translated `GEO1_P.ACT_PV` into meaningful information. You see that `GEO1` is the name of the turbine and that `Active Power` is the measurement in this stream.  
 - A metadata rule based on this stream naming pattern can capture active power values for all turbines in each wind farm. 
 
 ![Metadata and streams](images/streams.jpg) 
 
-Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, AVEVA&trade; Data Hub shows a stream selected for metadata rule and identifies characters you could use to divide the stream name into parts using a + sign. 
+Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, AVEVA Data Hub shows a stream selected for metadata rule and identifies characters you could use to divide the stream name into parts using a + sign. 
 
 ![Adding metadata](images/metadata1.png)
 
@@ -45,7 +45,7 @@ When the parts are combined, this metadata rule creates metadata for streams com
 
 ![Adding metadata to streams](images/metadata2.png)
  
-When you create a metadata rule, AVEVA&trade; Data Hub applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule; but the modified rule may capture a different set of streams.
+When you create a metadata rule, AVEVA&trade; Data Hub applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule, but the modified rule may capture a different set of streams.
 
 ## Related links
 

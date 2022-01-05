@@ -16,9 +16,9 @@ To add users from your own tenant to a community, follow these steps:
 
 1. Find the community where you want to add users and select **Details**.
 
-1. On the `Community Details` page, on the **My Users** tab, select **New User**.
+1. On the `Community Details` page, on the **My Users** tab, select **Add User**.
 
-1. Select users. If necessary, you can filter the list of users by typing in the **Filter users** field. You can also filter by role. Selecting any role shown at the top of the user list displays only users assigned that role.
+1. Select users. If necessary, you can filter the list of users by typing in the **Filter users** field.
 
 1. Select the roles to apply to users you are adding. You can assign the following roles:
 

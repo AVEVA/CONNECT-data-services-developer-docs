@@ -38,4 +38,4 @@ To remove a client from a community, follow these steps:
 
 1. Select a client to remove. If necessary, filter the list of clients by typing in the **Filter clients** field. 
 
-1. Select **Remove Client**. When prompted for confirmation, select **Remove Client** again.
+1. Select **Remove Client**. When prompted for confirmation, select **Remove**.

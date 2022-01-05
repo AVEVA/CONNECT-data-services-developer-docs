@@ -32,7 +32,7 @@ To share streams with other communities, follow these steps:
     
 1. To confirm that you want to share the streams with the chosen communities, select **Share**. From the **Share stream** window, select **Confirm**. Then select **Close**.
 
-**Result:** The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
+    **Result:** The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
 
 ## Unshare streams from Community Details
 
@@ -50,7 +50,7 @@ To stop sharing streams, follow these steps:
 
 1. On the **Streams** tab, select the streams you want to stop sharing, then select **Unshare Streams**. When prompted for confirmation, select **Unshare**.
 
-**Result:** The streams are unshared from the community. Other tenants in the community can no longer view them.
+   **Result:** The streams are unshared from the community. Other tenants in the community can no longer view them.
 
 ## Unshare streams from the Sequential Data Store
 
@@ -64,7 +64,7 @@ To stop sharing streams, follow these steps:
 
    ![Toggle switches](images\namespace-communities-switches.png)
 
-1. From the list, select a namespace or a community.
+1. From the list, select a community.
 
 1. Filter the page to display only the streams that are shared within a community.
 

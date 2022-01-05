@@ -34,7 +34,7 @@ To send an invite to a community, follow these steps:
 
 1. On the `Community Details` page, on the **Tenants** tab, select **Invite Tenant**.
 
-1. Enter the email address of the administrator of the tenant you would like to invite and select **Send**.
+1. Enter the email address of the administrator of the tenant you would like to invite and select **Invite**.
 
   An email is sent to the invitee.
 

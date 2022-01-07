@@ -416,19 +416,6 @@ Status codes describing a tenant's current provisioning state.
 
 #### Enumerated Values
 
-<<<<<<< HEAD
-|Property|Value|
-|---|---|
-|Creating|0|
-|Active|1|
-|Deactivating|2|
-|Deactivated|3|
-|Reactivating|4|
-|Deleting|5|
-|Deleted|6|
-|Purging|7|
-|IsHomeTenant|8|
-=======
 |Property|Value|Description|
 |---|---|---|
 |Creating|0|Status codes describing a tenant's current provisioning state.|
@@ -440,7 +427,6 @@ Status codes describing a tenant's current provisioning state.
 |Deleted|6|Status codes describing a tenant's current provisioning state.|
 |Purging|7|Status codes describing a tenant's current provisioning state.|
 |IsHomeTenant|8|Status codes describing a tenant's current provisioning state.|
->>>>>>> a05ed841d7bb6333bece6d0244deb51b3fdbd738
 
 ---
 

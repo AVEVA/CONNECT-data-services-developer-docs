@@ -109,34 +109,4 @@ No security-related information is applicable to this release.
 
 See the [PI to Data Hub documentation](https://docs.osisoft.com/bundle/data-hub/page/add-organize-data/collect-data/connectors/pi-to-ocs/main-landing-page.html).
 
-#### Technical Support and Resources
-
-For technical assistance, contact AVEVA Software Support through the [AVEVA Knowledge & Support website](https://softwaresupport.aveva.com/).
-
-Additionally, the [Contact AVEVA](https://www.aveva.com/en/contact/) page on the portal offers contact options for customers outside of the United States.
-
-When you contact AVEVA Customer Support, be prepared to provide this information:
-
-* Product name, version, and build numbers
-* Computer platform (CPU type, operating system,and version number)
-* Time that the difficulty started
-* Log files at that time
-* Details of any environment changes prior to the start of the issue
-* Summary of the issue, including any relevant log files during the time the issue occurred
-
-The [PI Square](https://pisquare.osisoft.com/) community has resources to help you with your technical questions. [PI Developers Club](https://pisquare.osisoft.com/community/developers-club) program offers specific services to developers and system integrators.
-
-AVEVA Group plc, High Cross Madingley Road, Cambridge CB3 0HB, UK Web: https://www.aveva.com/ 
-PI to Data Hub Agent
-
-&copy; 2021 by AVEVA
-
-All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means, mechanical, photocopying, recording, or otherwise, without the prior written permission of AVEVA.
-
-AVEVA, the AVEVA logo and logotype, Managed PI, OSIsoft Advanced Services, OSIsoft Cloud Services, OSIsoft Connected Services, OSIsoft EDS, PI ACE, PI Advanced Computing Engine, PI AF SDK, PI API, PI Asset Framework, PI Audit Viewer, PI Builder, PI Cloud Connect, PI Connectors, PI Data Archive, PI DataLink, PI DataLink Server, PI Developers Club, PI Integrator for Business Analytics, PI Interfaces, PI JDBC Driver, PI Manual Logger, PI Notifications, PI ODBC Driver, PI OLEDB Enterprise, PI OLEDB Provider, PI OPC DA Server, PI OPC HDA Server, PI ProcessBook, PI SDK, PI Server, PI Square, PI System, PI System Access, PI Vision, PI Visualization Suite, PI Web API, PI WebParts, PI Web Services, RLINK and RtReports are all trademarks of OSIsoft, LLC.
-
-All other trademarks or trade names used herein are the property of their respective owners.
-
-U.S. GOVERNMENT RIGHTS
-
-Use, duplication or disclosure by the US Government is subject to restrictions set forth in the AVEVA license agreement and/or as provided in DFARS 227.7202, DFARS 252.227-7013, FAR 12-212, FAR 52.227-19, or their successors, as applicable.
+©2021 OSIsoft, LLC

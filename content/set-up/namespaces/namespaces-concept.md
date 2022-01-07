@@ -32,3 +32,7 @@ An AVEVA Data Hub namespace ID is defined by the solution ID in the AVEVA Connec
 ## Querying data across namespaces
 
 When querying API endpoints, the namespace ID is part of the URL. The API URL takes the form `https://{server}/api/{version}/Tenants/{tenant id}/Namespaces/{namespace id}`, followed by the API path, such as `/Streams`.  Because the URL contains the namespace, it is not possible to make a single API request for data across multiple namespaces.
+
+## Namespace deletion
+
+A namespace gets removed or suspended when the administrator turns off the AVEVA Data Hub tile in a Connect folder. The customer has 30 days to get the namespace reactivated. After 30 days, AVEVA Connect initiates the namespace deletion.

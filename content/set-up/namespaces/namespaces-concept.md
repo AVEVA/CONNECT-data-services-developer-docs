@@ -10,11 +10,12 @@ The following list contains several important points related to folders and name
 - A namespace is linked to an associated AVEVA Connect folder. 
 - Namespaces represent a logical unit of organization for data within a tenant.
   - A Data Hub tenant is the equivalent of an AVEVA Connect account.
+  - An AVEVA Connect account can only be associated with one AVEVA Data Hub tenant.
   - Each tenant may have more than one namespace, and each namespace is associated with a unique folder in an AVEVA Connect account.
 - Before Data Hub can receive data for a given tenant, a namespace must exist within the scope of the AVEVA Data Hub tenant.
 - The Connect folder specifies the region where data will be stored for Data Hub; for example, West US or Northern Europe.
 
-Multiple folders in Connect can have Data Hub turned on.  Each folder represents an AVEVA Data Hub namespace, and all of the namespaces are part of one Data Hub tenant and one AVEVA Connect account.
+Multiple folders in AVEVA Connect can have AVEVA Data Hub turned on.  Each folder represents an AVEVA Data Hub namespace, and all of the namespaces are part of one tenant and one AVEVA Connect account.
 
 Data processing resources are allocated to a namespace after you create a folder and turn on AVEVA Data Hub. For example, SDS and asset services, and the associated storage resources are allocated to support a namespace. Each namespace and its resources are distinct and separate from all other namespaces. For example, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 

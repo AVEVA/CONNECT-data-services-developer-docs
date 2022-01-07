@@ -34,7 +34,7 @@ After creating your types, you can add streams and associate a type with the str
 
    - **Id** &ndash; *MyData.NorthAmerica.SLTC.PumpA*
    
-   - **Name** &ndash; Enter a descriptive property name 
+   - **Name** &ndash; Enter a descriptive stream name 
 
    - **Description** &ndash; *SDS Stream used by MyData*
 

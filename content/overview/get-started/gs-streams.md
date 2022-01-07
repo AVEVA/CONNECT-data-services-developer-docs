@@ -33,6 +33,8 @@ After creating your types, you can add streams and associate a type with the str
 1. In the `Add Stream` window, enter the following values for these fields:
 
    - **Id** &ndash; *MyData.NorthAmerica.SLTC.PumpA*
+   
+   - **Name** &ndash; Enter a descriptive property name 
 
    - **Description** &ndash; *SDS Stream used by MyData*
 

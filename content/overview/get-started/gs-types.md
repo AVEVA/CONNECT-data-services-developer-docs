@@ -50,6 +50,8 @@ After creating the namespace, the next step is to add one or more types. For mor
 
    - **Id** &ndash; Enter *Timestamp*.
 
+   - **Name** &ndash; Enter a descriptive property name. 
+
    - **Type** &ndash; Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
 
    - **UOM** &ndash; Leave this blank.

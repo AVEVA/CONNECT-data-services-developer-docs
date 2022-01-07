@@ -40,13 +40,24 @@ Hybrid clients are used by native and server-side web applications. Authenticati
    
    Token Lifetime represents the length of time in seconds the access token is valid before it expires. The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
-1. Click **Add**.  
+1. Select **Add**.  
 
-1. In the `Add Secret` dialog box, enter a description and expiration date for the secret, then click **Add**.
- 
-   **Note:** Enter a unique description if you plan to create multiple secrets. 
-                
-   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. To copy the `client Id`, click the **Copy** icon. Alternatively, after you close the window, you can retrieve the `client Id` from the list of clients.
+1. In the `Add Secret` window, enter a description for the secret. Include a unique description if you plan to create multiple secrets.
+
+1.	Enter an expiration date.
+
+    Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
+
+1.	Select **Add**.
+   
+    The **Client Successfully Created** window opens and displays the client Id and client secret Id.
+
+    **Important:** Select the **Copy** buttons to the right of the **Client Id** and **Client Secret** fields to save a copy of these Ids for your records. You will need to reference these Ids in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+
+1.	Select **Close**.
+
+    **Note:** The client ID is visible on the client. If you did not save the client secret, select the client in the list and use the Details pane to remove the old secret and add a new secret. Client modifications may take up to an hour before being visibly updated.
+
 
 ## Next step
 

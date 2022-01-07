@@ -34,17 +34,17 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. Click **Continue**.
 
-1. In the `Add Secret` window, enter a description for the client secret. Enter a unique description if you plan to create multiple secrets.
+1. In the `Add Secret` window, enter a description for the client secret. Include a unique description if you plan to create multiple secrets.
 
-1. Enter a date that the secret expires.
+1. Enter an expiration date.
 
    Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
 
 1. Click **Add**.
 
- A window opens with the `Client Id` and `Client Secret`.
+   A window opens with the `Client Id` and `Client Secret` Ids.
     
-  **Important**: Click the **Copy** buttons to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+    **Important**: Select the **Copy** buttons to the right of the **Client Id** and **Client Secret** fields to save a copy of these Ids for your records. You will need to reference these Ids in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
     
 1. Click **Close**.  
 

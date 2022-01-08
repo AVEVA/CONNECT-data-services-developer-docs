@@ -17,7 +17,7 @@ The examples cover the basics of interacting with AVEVA Data Hub, such as:
 
 Currently, the samples are available in these languages:
 
-* [.NET](https://github.com/osisoft/OSI-Samples-OCS/tree/master/docs/SDS_WAVEFORM_DOTNET_README.md) 
+* [.NET](https://github.com/osisoft/sample-ocs-waveform_libraries-dotnet) 
 * [Java](https://github.com/osisoft/sample-ocs-waveform-java)
 * [Python](https://github.com/osisoft/sample-ocs-waveform-python)
 * [NodeJs](https://github.com/osisoft/sample-ocs-waveform-nodejs)

@@ -6,8 +6,7 @@ uid: introPortalInterface
 
 When you first access the AVEVA&trade; Data Hub portal, several panes provide information about the system's health as well as quick links to popular documentation topics.
 
-![Portal window](../images/portal-interface.png "AVEVA&trade; Data Hub portal interface")
-<!--Angela Flores 6/23/21 - This screenshot has a stray tool tip from another application. It needs to be cleaned up. --> <!--VT, 8/4/21 - Screenshot replaced & published.-->
+![Portal window](../images/portal-interface.png "Portal interface")
 
 ## AVEVA&trade; Data Hub features
 
@@ -23,7 +22,7 @@ AVEVA&trade; Data Hub includes the following features:
 
 - **Data Collection**: Provides the ability to bring data from multiple sources and systems into an AVEVA&trade; Data Hub namespace.
 
-- **Visualization**: Allows you to view data trends and use assets to set up digital twins of real-world physical entities. <!--Angela Flores 6/23/21 - this is the only place in the documentation that uses the phrase "digital twins of real-world physical entities". What feature is that trying to describe? The only thing in the Visualization portion of the documentation is Trend. -->
+- **Visualization**: Allows you to view data trends and use assets to set up digital twins of real-world physical entities. 
 
 - **Analytics**: Provides tools for shaping and querying large datasets.
 
@@ -35,7 +34,7 @@ AVEVA&trade; Data Hub includes the following features:
 
 ## Feature pages
 
-Clicking a menu item takes you to the related feature page.
+Selecting a menu item takes you to that item's feature page.
 
 ![Feature details](../images/feature-details.png "Feature details")
 
@@ -57,15 +56,15 @@ The portal toolbar is located in the upper-right corner of the portal window.
 
 ![Portal toolbar](../images/top-right-portal-window.png)
 
-The table below provides a list and descriptions of these toolbar commands.
+The following table provides a list and descriptions of these toolbar commands.
 
 | Numbered Item | Function |
 |---------------|----------|
-| 1 - Change Namespace dropdown menu |Click to select a different namespace. |
-| 2 - View Notifications icon |Click to view AVEVA&trade; Data Hub-generated notifications. | 
-| 3 - Question mark icon | Click to access the online documentation. |
-| 4 - User profile icon  | Click to view a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
-| 5 - Customize link | Click to customize the layout of the portal dashboard. |
+| 1 - Change Namespace dropdown menu | Select to pick a different namespace. |
+| 2 - View Notifications icon | Select to view AVEVA&trade; Data Hub-generated notifications. | 
+| 3 - Question mark icon | Select to access the online documentation. |
+| 4 - User profile icon  | Select to view a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
+| 5 - Customize link | Select to customize the layout of the portal dashboard. |
 
 ### Change user preferences
 

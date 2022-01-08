@@ -4,7 +4,7 @@ uid: lpdatacollection
 
 # Collect data
 
-Collect data from an external application or from PI Server directly to AVEVA&trade; Data Hub using the following methods:
+Collect data from external sources and send it directly to AVEVA&trade; Data Hub using the following methods:
 
 * Use PI to Data Hub to set up a transfer of data from an on-premises PI Server to AVEVA&trade; Data Hub. 
   
@@ -16,4 +16,4 @@ Collect data from an external application or from PI Server directly to AVEVA&tr
   
   * OMF is a platform-independent format that can provide a high-throughput data feed into AVEVA&trade; Data Hub. 
 
-* Use Edge Systems to monitor the health and manage the configuration of edge systems on remote devices.
+* Use Software management to monitor the health and manage the configuration of software configuration on edge systems.

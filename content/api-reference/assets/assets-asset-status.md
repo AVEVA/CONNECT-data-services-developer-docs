@@ -178,14 +178,6 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
 
 Asset identifiers<br/>
 
-```json
-[
-  "AssetId-1",
-  "AssetId-2",
-  "AssetId-3"
-]
-```
-
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

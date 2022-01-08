@@ -1470,11 +1470,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessRig
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-
-["Read", "Write"]
+{
+  "ERROR": "Parameter \"get-type-access-rights\" could not be found in external reference file"
+}
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json

@@ -4,7 +4,7 @@
   href: sds-quantities.md
 - name: Streams
   href: sds-streams.md
-- name: Steams data bulk
+- name: Stream data bulk
   href: sds-stream-bulk-data.md
 - name: Stream data read
   href: sds-read-data-api.md

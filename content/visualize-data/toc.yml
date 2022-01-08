@@ -1,7 +1,8 @@
+- topicUid: GettingStartedWithTrendData
 - name: Trend page
   topicHref: trend-ui.md
   items:
-    - topicUid: GettingStartedWithTrendData
+    - topicUid: LegendTableReference
     - topicUid: URLparameters
     - topicUid: ContextSwitch
 #- topicUid: PowerBI

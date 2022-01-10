@@ -4,16 +4,27 @@ uid: ccNamespaces
 
 # Folders and namespaces
 
-The following list contains several important points related to folders and namespaces in AVEVA Data Hub:
+The following list contains important points for the administrator or developer who is setting up folders and namespaces:
  
-- When you enable a Data Hub tile and create a folder in AVEVA Connect, a namespace is automatically created in Data Hub. 
-- A namespace is linked to an associated AVEVA Connect folder. 
-- Namespaces represent a logical unit of organization for data within a tenant.
-  - A Data Hub tenant is the equivalent of an AVEVA Connect account.
+* When you enable an AVEVA Data Hub tile and create a folder in AVEVA Connect, a namespace is automatically created in AVEVA Data Hub.
+ 
+* A namespace is linked to an associated AVEVA Connect folder.
+
+* The folder name is saved as the namespace description. 
+
+* A namespace's description can only be changed by editing the associated AVEVA Connect folder name.
+ 
+* Namespaces represent a logical unit of organization for data within a tenant.
+
+* A Data Hub tenant is the equivalent of an AVEVA Connect account.
+
   - An AVEVA Connect account can only be associated with one AVEVA Data Hub tenant.
+
   - Each tenant may have more than one namespace, and each namespace is associated with a unique folder in an AVEVA Connect account.
-- Before Data Hub can receive data for a given tenant, a namespace must exist within the scope of the AVEVA Data Hub tenant.
-- The Connect folder specifies the region where data will be stored for Data Hub; for example, West US or Northern Europe.
+
+* Before Data Hub can receive data for a given tenant, a namespace must exist within the scope of the AVEVA Data Hub tenant.
+
+* The AVEVA Connect folder specifies the data storage region; for example, West US or Northern Europe.
 
 Multiple folders in AVEVA Connect can have AVEVA Data Hub turned on.  Each folder represents an AVEVA Data Hub namespace, and all of the namespaces are part of one tenant and one AVEVA Connect account.
 
@@ -35,4 +46,4 @@ When querying API endpoints, the namespace ID is part of the URL. The API URL ta
 
 ## Namespace deletion
 
-A namespace gets removed or suspended when the administrator turns off the AVEVA Data Hub tile in a Connect folder. The customer has 30 days to get the namespace reactivated. After 30 days, AVEVA Connect initiates the namespace deletion.
+A namespace gets suspended when the administrator turns off the AVEVA Data Hub tile in a Connect folder. The customer then has 30 days to get the namespace reactivated. During the 30-day suspension period, neither reading or writing to the namespace is permitted.  After 30 days, the namespace is deleted.

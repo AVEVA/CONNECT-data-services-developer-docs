@@ -4,7 +4,7 @@ uid: ccClients
 
 # AVEVA Data Hub clients
 
-Clients allow applications to authenticate against AVEVA&trade; Data Hub from outside the portal. The following types of clients are supported, and each support different types of applications:
+Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The following types of clients are supported, and each support different types of applications:
 
 - [Client-credentials clients](#client-credentials-client)
 
@@ -26,7 +26,7 @@ Client-credentials clients are very similar to Microsoft Windows service account
 
 We recommend the following best practices with a client credentials client:
 
-- Create a separate client-credentials client for each device or instance of an application that connects to AVEVA&trade; Data Hub. This ensures that secrets can be discretely managed for individual applications and that you know which applications are connecting to AVEVA&trade; Data Hub.
+- Create a separate client-credentials client for each device or instance of an application that connects to AVEVA Data Hub. This ensures that secrets can be discretely managed for individual applications and that you know which applications are connecting to AVEVA Data Hub.
 
 - Ensure that client secrets are stored securely where they are used.
 
@@ -34,7 +34,7 @@ We recommend the following best practices with a client credentials client:
 
 ##  <a name="authorization-code-client"></a>Authorization code clients
 
-Authorization code clients are used with customer web applications that use AVEVA&trade; Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
+Authorization code clients are used with customer web applications that use AVEVA Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
 
 Authorization code clients are used to authenticate using any supported browser. Upon successful authentication, an authorization code is provided to the client. This authorization code is exchanged for an access token using PKCE (Proof Code for Code Exchange) which is a more secure authentication flow. No refresh token is provided.
 
@@ -62,6 +62,6 @@ Hybrid clients have no direct PI Server equivalent, but they are similar to the 
 
 We recommend the following best practices for a hybrid client:
 
-- Use hybrid clients in web applications or services where users authenticate against AVEVA&trade; Data Hub through a supported browser, but a secure backend that stores the secrets performs the actual authentication.
+- Use hybrid clients in web applications or services where users authenticate against AVEVA Data Hub through a supported browser, but a secure backend that stores the secrets performs the actual authentication.
 
 - Use caution when deciding whether to allow refresh tokens for your hybrid client. Where possible, it is a more secure practice to use an iframe to request a new token before the old token expires rather than use a refresh token.

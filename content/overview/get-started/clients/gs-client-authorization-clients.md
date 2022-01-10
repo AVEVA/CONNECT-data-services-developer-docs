@@ -4,7 +4,7 @@ uid: gsAuthorizationCodeClients
 
 # Get started with authorization code clients
 
-Authorization code clients are used with customer web applications that use AVEVA&trade; Data Hub as their backend. They provide a secure means of authenticating users of the website to view AVEVA&trade; Data Hub assets. For more information about authorization code clients, see [Authorization code clients](xref:ccClients#authorization-code-client).
+Authorization code clients are used with customer web applications that use AVEVA Data Hub as their backend. They provide a secure means of authenticating users of the website to view AVEVA Data Hub assets. For more information about authorization code clients, see [Authorization code clients](xref:ccClients#authorization-code-client).
 
 To create an authorization code client, follow these steps:
 
@@ -26,11 +26,11 @@ To create an authorization code client, follow these steps:
 
 1. (Optional) Enter URLs in the **Allowed Logout Redirect URL(s)** text box, then click **+**  to add it to the list. 
    
-      This can be used to designate other URLs from which the application is allowed to make requests against AVEVA&trade; Data Hub. For example, this may be necessary if the user authenticates from an application running at `https://authenticate.com`, but the result of the authentication is sent to an application running at a different URL, for example, `https://application.com`.
+      This can be used to designate other URLs from which the application is allowed to make requests against AVEVA Data Hub. For example, this may be necessary if the user authenticates from an application running at `https://authenticate.com`, but the result of the authentication is sent to an application running at a different URL, for example, `https://application.com`.
    
 1. (Optional) Enter URLs in the **Allowed CORS Origin(s)** text box, then click **+** to add it to the list. <!--VTT, 12/13/21: New step added since it was missing. Requested by N. Parakh & A. Woodall.-->
    
-   Entering a URL in the Allowed CORS Origin(s) text box enables cross-origin requests to the client from selected sites. This can be used to designate other URLs from which the application is allowed to make requests against AVEVA&trade; Data Hub. For example, this may be necessary if the user authenticates from an application running at one URL but the result of the authentication is sent to an application running at a different URL.
+   Entering a URL in the Allowed CORS Origin(s) text box enables cross-origin requests to the client from selected sites. This can be used to designate other URLs from which the application is allowed to make requests against AVEVA Data Hub. For example, this may be necessary if the user authenticates from an application running at one URL but the result of the authentication is sent to an application running at a different URL.
 
 1. (Optional) Set the **Token Lifetime**. 
 

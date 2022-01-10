@@ -4,7 +4,7 @@ uid: min-sys-reqmnts
 
 # PI to Data Hub minimum system requirements
 
-These are the requirements to transfer data from an on-prem PI Server to AVEVA&trade; Data Hub:
+These are the requirements to transfer data from an on-prem PI Server to AVEVA Data Hub:
 
 * [System requirements](#system-requirements)
 * [Administrator privileges](#administrator-privileges)
@@ -32,7 +32,7 @@ The PI to Data Hub Agent must be installed on a local machine by a user account 
 
 ## Ensure write access to stream and asset collections 
 
-The PI to Data Hub Agent has write permission to the streams collection in AVEVA&trade; Data Hub. Write permission is provided by default through the Tenant Contributor role on the automatically generated PIToDataHub Agent Client User. Write permission to this collection is required to enable stream creation.
+The PI to Data Hub Agent has write permission to the streams collection in AVEVA Data Hub. Write permission is provided by default through the Tenant Contributor role on the automatically generated PIToDataHub Agent Client User. Write permission to this collection is required to enable stream creation.
 
 **Note:** If write access is removed, stream creation will fail.
 

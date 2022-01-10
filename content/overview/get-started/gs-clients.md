@@ -4,7 +4,7 @@ uid: gsClients
 
 # Get started with clients
 
-Clients provide a way for users or applications to authenticate against AVEVA&trade; Data Hub from applications other than the portal. AVEVA&trade; Data Hub supports different client types, each of which support different types of applications:
+Clients provide a way for users or applications to authenticate against AVEVA Data Hub from applications other than the portal. AVEVA Data Hub supports different client types, each of which support different types of applications:
 
 - Client-credentials clients – used for server-to-server communication where no user interaction is required.
 

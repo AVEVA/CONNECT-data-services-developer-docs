@@ -54,7 +54,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
     **Important:** Select the **Copy** buttons to the right of the **Client Id** and **Client Secret** fields to save a copy of these Ids for your records. You will need to reference these Ids in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
 
-1.	Select **Close**.
+1. Select **Close**.
 
     **Note:** The client ID is visible on the client. If you did not save the client secret, select the client in the list and use the Details pane to remove the old secret and add a new secret. Client modifications may take up to an hour before being visibly updated.
 

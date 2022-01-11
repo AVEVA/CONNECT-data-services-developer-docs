@@ -6,7 +6,7 @@ uid: manage-permissions
 
 You can grant or deny members of a role the ability to perform certain actions in the `Manage Permissions` window. Actions, also referred to as access control, include the ability to read, write or delete data, as well as change role permissions.
 
-Perform the following steps to manage role permissions in the AVEVA Data Hub portal.
+To manage role permissions in the AVEVA Data Hub portal, follow these steps:
 
 1. Select the **Change Namespace** button in the upper right toolbar, then select the desired namespace.
  

@@ -4,7 +4,7 @@ uid: pi2ocs-rel-summary
 
 # PI to Data Hub release summary
 
-## Release 1.7.0: September 20, 2021
+## Release 1.8.0: December 10, 2021
 
 
 ## Overview
@@ -27,7 +27,7 @@ If a user is not authorized for a specific AVEVA&trade; Data Hub feature, the PI
 
 The PI to Data Hub Configuration Utility now displays more information while the tool is searching for referenced Data Archives. Previously, that area was blank until one or more Data Archives were found. 
 
-**Editing a PI Mapping crashed the Configuration Utility**
+The 1.6.1204.0 and 1.7.0.0 versions of the PI To OCS Agent will fail to register and fail to appear in the OSIsoft Cloud Service portal on new installations. The PI to OCS Configuration Utility will also display an agent status of "Retrieving State".
 
 The PI to Data Hub Configuration Utility could crash if a user attempted to edit a PI mapping from within the tool. This has been fixed.
 
@@ -42,11 +42,7 @@ Enhancements
 
 PI to Data Hub is now able to transfer AF elements and attributes to AVEVA&trade; Data Hub and create them as assets and metadata. PI to Data Hub will transfer the following AF objects to AVEVA&trade; Data Hub:
 
-* Elements
-* Attributes
-* PI point references
-* Constant values/strings
-* Excluded attributes
+*PI to OCS Configuration Utility Improvements*
 
 Please consult the PI to Data Hub online documentation for more details on how to configure a transfer with AF elements and attributes.
  

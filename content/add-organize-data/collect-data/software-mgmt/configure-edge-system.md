@@ -18,7 +18,7 @@ Configuration is available for the following edge system types:
  
  - PI Adapter for OPC UA
 
-**Note:** An edge system appears on the `Software Management Edge Systems` page once it is writing health data to OCS. For information on configuring health endpoints, see the specific edge system product documentation.
+**Note:** An edge system appears on the `Software Management Edge Systems` page once it is writing health data to AVEVA Data Hub. For information on configuring health endpoints, see the specific edge system product documentation.
 
 ## Import an edge system configuration
 

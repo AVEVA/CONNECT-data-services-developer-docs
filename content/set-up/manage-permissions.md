@@ -8,7 +8,7 @@ You can grant or deny members of a role the ability to perform certain actions i
 
 Perform the following steps to manage role permissions in the AVEVA Data Hub portal.
 
-1. Click the **Change Namespace** button in the upper right toolbar, then select the desired namespace.
+1. Select the **Change Namespace** button in the upper right toolbar, then select the desired namespace.
  
    **Note:** Resource creators have complete access to the resource.   
 

@@ -48,7 +48,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
     Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
 
-1.	Select **Add**.
+1. Select **Add**.
    
     The **Client Successfully Created** window opens and displays the client Id and client secret Id.
 

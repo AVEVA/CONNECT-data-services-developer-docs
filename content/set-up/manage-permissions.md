@@ -12,7 +12,7 @@ Perform the following steps to manage role permissions in the AVEVA Data Hub por
  
    **Note:** Resource creators have complete access to the resource.   
 
-1. Click the **Manage Permissions** ![](./images/manage-permissions.png) button in the upper-right toolbar.
+1. Select the **Manage Permissions** ![](./images/manage-permissions.png) button in the upper-right toolbar.
 
    **Result:** The `Manage Permissions` window opens.
 

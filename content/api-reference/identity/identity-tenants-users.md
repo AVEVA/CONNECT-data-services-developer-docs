@@ -681,8 +681,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
 `[optional] array userId`
 <br/>Unordered list of identifiers of all users to return<br/><br/>`[optional] string query`
 <br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/><span style="background-color:red;color:white">ERROR: Parameter "skip.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>`[optional] integer count`
-<br/><span style="background-color:red;color:white">ERROR: Parameter "count.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -749,8 +749,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
 `[optional] array userId`
 <br/>Unordered list of identifiers for all users<br/><br/>`[optional] string query`
 <br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/><span style="background-color:red;color:white">ERROR: Parameter "skip.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>`[optional] integer count`
-<br/><span style="background-color:red;color:white">ERROR: Parameter "count.%20Currently%20not%20supported" could not be found in external reference file</span><br/><br/>
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 

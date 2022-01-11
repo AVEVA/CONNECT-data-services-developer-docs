@@ -1,7 +1,5 @@
 - name: Authorization code clients
   href: identity-authorization-code-clients.md
-- name: Azure Active Directory tenants
-  href: identity-azure-active-directory-tenants.md
 - name: Claims
   href: identity-claims.md
 - name: Claim type names

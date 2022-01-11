@@ -10,37 +10,37 @@ This is an introduction to the main features of AVEVA Data Hub using the portal.
 
 Before you begin the get started exercises, obtain the following:
 
-* Request a tenant from your AVEVA&trade; account manager.
+* Request a tenant from your AVEVA account manager.
+
 * Have a designated folder that is connected to a namespace created prior to beginning these exercises.
-* You must have Tenant Administrator privileges in AVEVA&trade; Data Hub.
 
-## Log into the AVEVA&trade; Data Hub
+* You must have Tenant Administrator privileges in AVEVA Data Hub.
 
-Once you have completed the prerequisites, log into AVEVA&trade; Connect.
+## Log into the AVEVA Data Hub
 
-1. In a web browser, enter the following URL to open AVEVA&trade; Connect: *http://datahub.connect.aveva.com*
+Once you have completed the prerequisites, log into AVEVA Connect.
+
+1. In a web browser, enter the following URL to open AVEVA Connect: *http://datahub.connect.aveva.com*
 
    **Notes:**
    
    * These browsers are supported for the most recent three versions, unless otherwise stated: Microsoft Edge, Google Chrome, Mozilla Firefox, and Internet Explorer 11.
 
-   * If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA&trade; Connect. You may be prompted to sign into your corporate Sign-In page.
+   * If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA Connect. You may be prompted to sign into your corporate Sign-In page.
 
-1. From the AVEVA&trade; Connect home page, click on the folder that represents your organization's services.
+1. From the AVEVA Connect home page, click on the folder that represents your organization's services.
 
    The applications available from this namespace account are displayed below the folder.
 
-1. Select the tile that represents AVEVA&trade; Data Hub.
+1. Select the tile that represents AVEVA Data Hub.
 
-   The AVEVA&trade; Data Hub portal opens.
+   The AVEVA Data Hub portal opens.
    
-   <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
-
 ## Get started goals
 
 In these get started exercises, you will do the following:
 
-1. Create a namespace that will contain all of your Data Hub resources, including an instance of the Sequential Data Store and the data streams.
+1. Create a namespace that will contain all of your AVEVA Data Hub resources, including an instance of the Sequential Data Store and the data streams.
 
 1. Create two connection types, one that brings in PI Data Archive data and another that brings in data using an OMF application.
 

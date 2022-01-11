@@ -30,7 +30,7 @@ Multiple folders in AVEVA Connect can have AVEVA Data Hub turned on.  Each folde
 
 Data processing resources are allocated to a namespace after you create a folder and turn on AVEVA Data Hub. For example, SDS and asset services, and the associated storage resources are allocated to support a namespace. Each namespace and its resources are distinct and separate from all other namespaces. For example, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 
-Data stored within a folder and its namespace is tied to the namespace and its region. You cannot directly transfer this data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA&trade; Data Hub, then [import it](xref:transfer-data) into the destination namespace.
+Data stored within a folder and its namespace is tied to the namespace and its region. You cannot directly transfer this data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA Data Hub, then [import it](xref:transfer-data) into the destination namespace.
 
 ## PI Server counterpart
 
@@ -38,7 +38,7 @@ A namespace is similar to a full PI Server. Much like a PI Server, a namespace h
 
 ## Namespace IDs
 
-An AVEVA Data Hub namespace ID is defined by the solution ID in the AVEVA Connect folder. You can view a namespace's ID by clicking the Change Namespace down arrow in the Data Hub portal. The namespace description is synchronized with the AVEVA Connect folder name.
+An AVEVA Data Hub namespace ID is defined by the solution ID in the AVEVA Connect folder. You can view a namespace's ID by clicking the Change Namespace down arrow in the AVEVA Data Hub portal. The namespace description is synchronized with the AVEVA Connect folder name.
 
 ## Querying data across namespaces
 

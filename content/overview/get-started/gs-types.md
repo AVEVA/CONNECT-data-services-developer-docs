@@ -48,7 +48,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
      **Note:** The `Key` field identifies this property as the index. 
 
-   - **Id** &ndash; Enter *Timestamp*.
+   - **Id** – Enter *Timestamp*.
 
    - **Name** &ndash; Enter a descriptive property name. 
 

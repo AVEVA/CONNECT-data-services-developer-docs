@@ -54,7 +54,7 @@ After creating the namespace, the next step is to add one or more types. For mor
 
    - **Type** – Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
 
-   - **UOM** &ndash; Leave this blank.
+   - **UOM** – Leave this blank.
 
 1. Click **Add Property** to add a second property and complete the fields:
 

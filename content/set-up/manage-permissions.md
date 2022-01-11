@@ -20,7 +20,7 @@ Perform the following steps to manage role permissions in the AVEVA Data Hub por
 
 1. In the **Role Access** table, select the **Allow** option next to the actions you want the role to be able to perform.
  
-1. In the **Role Access** table, select the **Deny** option next to any action (**Read**, **Write**, **Delete**, **Manage Permissions**) you do not want the role to perform.
+1. In the **Role Access** table, select the **Deny** option next to the actions you do not want the role to perform.
 
 1. After assigning permissions to the role, select **Save**.
   

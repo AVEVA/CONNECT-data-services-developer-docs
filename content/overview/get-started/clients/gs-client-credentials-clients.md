@@ -34,7 +34,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. Click **Continue**.
 
-1. In the `Add Secret` window, enter a description for the client secret. Include a unique description if you plan to create multiple secrets.
+1. In the `Add Secret` window, enter a description for the client secret. If you plan to create multiple secrets, include a unique description.
 
 1. Enter an expiration date.
 

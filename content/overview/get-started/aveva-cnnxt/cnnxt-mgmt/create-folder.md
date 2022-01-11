@@ -4,17 +4,17 @@ uid: create-folders
 
 # Create a folder and turn on AVEVA Data Hub
 
-Before users can access AVEVA™ Data Hub, you must create a folder in Connect and then turn on the AVEVA™ Data Hub service for that folder.  
+Before users can access AVEVA Data Hub, you must create a folder in AVEVA Connect and then turn on the AVEVA Data Hub service for that folder.  
 
 ## What is a folder?
 
 A folder is used to partition data into logical units that represent your organization's hierarchy. The folder is where data and resources are stored. For example, you can create folders to divide up assets or to represent geographical locations at your organization. 
 
-**Important:** When you create a folder and then turn on the AVEVA™ Data Hub service in AVEVA™ Connect, a namespace is created that shares the same name of the Connect folder. See [Folders and namespaces](xref:ccNamespaces) for more information.
+**Important:** When you create a folder and then turn on the AVEVA Data Hub service in AVEVA Connect, a namespace is created that shares the same name of the AVEVA Connect folder. See [Folders and namespaces](xref:ccNamespaces) for more information.
 
-Perform the following steps to create a folder in AVEVA™ Connect:
+Perform the following steps to create a folder in AVEVA Connect:
 
-1. From the Connect home page, click the menu icon, then select **Folder Management** and click the **Add Folder** button.
+1. From the AVEVA Connect home page, click the menu icon, then select **Folder Management** and click the **Add Folder** button.
 
    **Result:** The **Add Folder** window opens.
 
@@ -34,7 +34,7 @@ Perform the following steps to create a folder in AVEVA™ Connect:
 
 1. Click **Save**.
     
-   **Result** The image appears in the carousel of folders displayed on the AVEVA™ Connect home page.
+   **Result** The image appears in the carousel of folders displayed on the AVEVA Connect home page.
 
 1. On the displayed folder details page, switch on the AVEVA Data Hub service, then click **Enable** to confirm the selection.
 

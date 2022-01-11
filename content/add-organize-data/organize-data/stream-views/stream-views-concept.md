@@ -10,7 +10,7 @@ Using a stream view on data retrieval affects only the data retrieved, and does 
 
 For example, a process engineer and a maintenance technician might want to see different data that exists in the same stream. By creating a stream view, you can change the appearance of the data to meet the needs of both users, without changing the original data. In addition, you can use stream views to convert units of measure and change property names so they are more appropriate for a particular audience.
 
-Use the AVEVA&trade; Data Hub portal to set up stream views, or use REST APIs to define stream views programmatically. If you are using the .NET framework, client libraries are available to help create and use stream views.
+Use the AVEVA Data Hub portal to set up stream views, or use REST APIs to define stream views programmatically. If you are using the .NET framework, client libraries are available to help create and use stream views.
 
 For information about setting up a stream view, see [Get started with stream views](xref:gsStreamviews).
 

@@ -19,9 +19,9 @@ This is a Lighthouse Release. Prior to this, select customers had access to the 
 
 *PI to Data Hub Configuration Utility Improvements*
 
-**Respect AVEVA&trade; Data Hub feature flags**
+**Respect AVEVA Data Hub feature flags**
 
-If a user is not authorized for a specific AVEVA&trade; Data Hub feature, the PI to Data Hub configuration utility will respect that setting. Previously, it didn't check if a user was authorized to configure an AF server for PI to Data Hub.
+If a user is not authorized for a specific AVEVA Data Hub feature, the PI to Data Hub configuration utility will respect that setting. Previously, it didn't check if a user was authorized to configure an AF server for PI to Data Hub.
  
 **Improve experience when searching for referenced Data Archives**
 
@@ -40,7 +40,7 @@ Enhancements
 
 **AF support added to PI to Data Hub**
 
-PI to Data Hub is now able to transfer AF elements and attributes to AVEVA&trade; Data Hub and create them as assets and metadata. PI to Data Hub will transfer the following AF objects to AVEVA&trade; Data Hub:
+PI to Data Hub is now able to transfer AF elements and attributes to AVEVA Data Hub and create them as assets and metadata. PI to Data Hub will transfer the following AF objects to AVEVA Data Hub:
 
 *PI to OCS Configuration Utility Improvements*
 

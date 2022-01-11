@@ -8,7 +8,7 @@ You remove a PI to Data Hub Agent by first uninstalling it from the host machine
 
 * Step 1: Uninstall the agent from the host machine
 
-* Step 2: Remove the agent listing in AVEVA&trade; Data Hub  
+* Step 2: Remove the agent listing in AVEVA Data Hub  
 
 ## Step 1: Uninstall the PI to Data Hub Agent on the host machine
 

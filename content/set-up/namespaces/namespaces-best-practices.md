@@ -6,7 +6,7 @@ uid: bpNamespaces
 
 When creating folders/namespaces in AVEVA Connect, create a separate folder for each environment. For example, Production, Development, Staging, and so on.
  
-**Note:** Connect initiates the namespace creation. A namespace is created in AVEVA Data Hub. 
+**Note:** AVEVA Connect initiates the namespace creation. A namespace is created in AVEVA Data Hub. 
 
 Identity resources (users, clients, etc.) are not namespace scoped; they are globally scoped across namespaces in AVEVA Data Hub. For example, it is not possible to have User1 in the Production folder but not in the Staging folder. In AVEVA Connect, users are global across an AVEVA Connect account.
 

@@ -4,7 +4,7 @@ uid: gsConnections
 
 # Get started with connections
 
-There are two types of connections you can use to transfer data from external sources into AVEVA&trade; Data Hub:
+There are two types of connections you can use to transfer data from external sources into AVEVA Data Hub:
 
 - The PI to Data Hub Agent sends PI point data from an on-premises PI Data Archive server to a namespace. See [Get started with PI to Data Hub connections](xref:gsPItoOCS).
 

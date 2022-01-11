@@ -4,7 +4,7 @@ uid: manage-permissions
 
 # Manage permissions
 
-You control what actions members of a built-in or custom role can take on tenant resources in the `Manage Permissions` window. Actions, also referred to as access control, include the ability to read, write, and delete data, as well as grant permissions to roles.
+You can grant or deny members of a role the ability to perform certain actions in the `Manage Permissions` window. Actions, also referred to as access control, include the ability to read, write or delete data, as well as change role permissions.
 
 Perform the following steps to manage role permissions in the AVEVA Data Hub portal.
 

@@ -1,3 +1,5 @@
+- name: Manage permissions
+  topicHref: manage-permissions.md
 - name: Folders and namespaces
   topicHref: namespaces/namespaces-concept.md
   href: namespaces/toc.yml

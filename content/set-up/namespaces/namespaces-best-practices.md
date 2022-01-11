@@ -12,4 +12,4 @@ Identity resources (users, clients, etc.) are not namespace scoped; they are glo
 
 Create folders/namespaces for tenants when all the data belongs to one organization. Keep in mind, if you need to use the data together, you should store it together in one namespace.
 
-Note that objects and collections do not automatically inherit security from their folder/namespace.
+**Note:** Objects and collections do not automatically inherit security from their folder/namespace.

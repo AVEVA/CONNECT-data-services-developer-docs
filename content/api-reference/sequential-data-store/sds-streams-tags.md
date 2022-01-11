@@ -3,7 +3,7 @@ uid: sds-streams-tags
 
 ---
 
-# Streams Tags
+# Streams tags
 Stream metadata is represented as a dictionary of string keys and associated string values. 
 It can be used to associate additional information with a stream. Stream tags are represented 
 as a list of strings. Tags can be used to categorize or denote special attributes of streams. 
@@ -25,9 +25,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -50,7 +50,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 ]
 ```
 
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+> 400 Response
 
 ```json
 {
@@ -81,9 +81,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -107,7 +107,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 ]
 ```
 
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+> 400 Response
 
 ```json
 {
@@ -138,9 +138,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Ta
 #### Parameters
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/><br/>
+<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
+<br/>Namespace identifier<br/><br/><br/>`string streamId`
+<br/>Stream identifier<br/><br/><br/>
 
 ### Response
 
@@ -155,7 +155,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Ta
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|Internal server error.|
 
 #### Example response body
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+> 400 Response
 
 ```json
 {

@@ -44,7 +44,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. In the `Add Secret` window, enter a description for the secret. Include a unique description if you plan to create multiple secrets.
 
-1.	Enter an expiration date.
+1. Enter an expiration date.
 
     Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
 

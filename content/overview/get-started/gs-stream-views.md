@@ -30,7 +30,8 @@ This procedure creates a stream view that maps the `MyData.PumpState` type to th
 
    - **TargetType** - From the list, select *MyData.PumpState.Temperature*.
 
-   - **Description** - Optionally, add a description for this stream view.
+   - **Description** - (Optional) Add a description for this stream view.
+
    
 1. Select **Next** to proceed to Step 2: `Property Mappings`.
 

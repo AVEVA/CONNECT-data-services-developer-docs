@@ -4,7 +4,7 @@ uid: manage-permissions
 
 # Change permissions for a role
 
-You can grant or deny members of a role the ability to perform certain actions in the `Manage Permissions` window. Actions, also referred to as access control, include the ability to read, write or delete data, as well as change role permissions.
+You can grant or deny members of a role the ability to perform certain actions in the `Manage Permissions` window. The actions include the ability to read, write or delete data, and change role permissions.
 
 To manage role permissions, follow these steps:
 

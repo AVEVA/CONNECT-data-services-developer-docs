@@ -24,4 +24,4 @@ To invite a user to a tenant, follow these steps:
 
    An invitation is sent to the email address specified in the `Contact Email` field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
 
-1. When the user receives the invitation, they should log in using the identity provider specified. Once they have logged in, the status of their user changes to *Active*.
+1. When the user receives the invitation, the user should log in using the identity provider specified. Once the user has logged in, the user status changes to *Active*.

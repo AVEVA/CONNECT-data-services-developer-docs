@@ -36,6 +36,7 @@
 		"resource": [
 			{
 				"files": [
+					"content/_images/icons/**",
 					"content/rom/images/**",
 					"content/api-reference/images/**",
 					"content/add-organize-data/images/**",
@@ -52,7 +53,8 @@
 					"content/overview/get-started/images/**",
 					"content/overview/get-started/clients/images/**",
 					"content/overview/get-started/connections/images/**",
-					"content/developer-guide/images/**"
+					"content/developer-guide/images/**",
+					"content/_icons/**"
 				]
 			}
 		],

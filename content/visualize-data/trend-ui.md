@@ -2,7 +2,7 @@
 uid: TrendUserInterface
 ---
 
-# Trend
+# Trend page
 
 Use the `Trend` page to show data from assets and streams in a graphical format that traces the data over a specified period of time. Use trace data in a trend to monitor assets, anticipate problems, and proactively perform preventative maintenance. Display traces in a trend to better understand the data and gather useful information from it.
 

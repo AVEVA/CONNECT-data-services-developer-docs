@@ -9,8 +9,11 @@ The _communities_ feature lets a tenant create a private group where business pa
 Sharing data streams allows you and your partners to find value in each other's operational data: 
 
 * Collectively operate more efficiently and reduce waste.
+
 * Detect hidden problems in your equipment and processes, helping to troubleshoot issues.
+
 * Predict future failures before they occur.
+
 * Share data across engineering and operational partners.  
 
 **Want to set up a community now?** See <xref:gsCommunities>. 
@@ -60,7 +63,9 @@ Each tenant in the community can [stop sharing their data streams](xref:ShareStr
 Because tenants can share their data natively within OCS, IT departments no longer have to:
 
 * Manage access for external users within a corporate firewall.
+
 * Create workarounds like VPNs or custom apps.
+
 * Allow customers onsite.
   
 ### Easy setup

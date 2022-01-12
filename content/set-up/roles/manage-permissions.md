@@ -10,9 +10,7 @@ To manage role permissions, follow these steps:
 
 1. Open the AVEVA Data Hub portal.
  
-1. Select the **Change Namespace** button in the upper right toolbar, then select the desired namespace.
- 
-   **Note:** Resource creators have complete access to the resource.   
+   **Note:** Resource creators have complete access to all resources.   
 
 1. Select the **Manage Permissions** ![](./images/manage-permissions.png) button in the upper-right toolbar.
 

@@ -4,9 +4,10 @@ uid: what-is-cnnxt
 
 # Overview of AVEVA™ Connect
 
-AVEVA Connect (https://connect.aveva.com/) is the common cloud platform on which AVEVA Data Hub sits. AVEVA Connect provides a central location for your organization's solutions. AVEVA Connect is used to perform the following tasks:
+[AVEVA Connect](https://connect.aveva.com/) is the common cloud platform on which AVEVA™ Data Hub sits. AVEVA Connect provides a central location for your organization's solutions. AVEVA Connect is used to perform the following tasks:
 
 * [Access the AVEVA Data Hub portal](xref:sign-in-cnnxt)
+
 * [Subscribe to AVEVA Data Hub and manage users and permissions](xref:subscribe-adh)
 
 It is important to understand how solutions, folders, and permissions work before you configure AVEVA Connect to work with AVEVA Data Hub.

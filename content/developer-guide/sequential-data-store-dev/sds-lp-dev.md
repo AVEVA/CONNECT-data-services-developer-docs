@@ -18,8 +18,8 @@ An assortment of methods with customizable behaviors are available to read data 
 ## Samples
 The best way to get started with SDS is to run one or more of the code samples. Code samples are 
 provided in a number of different programming languages to illustrate how to easily and effectively 
-interact with SDS. The code samples can be found in the [OSI-Samples](https://github.com/osisoft/OSI-Samples) repository on GitHub. Obtain SDS 
-REST API access keys from https://datahub.connect.aveva.com before running the sample code.
+interact with SDS. The code samples can be found in the [Sample library](https://github.com/osisoft/OSI-Samples) on GitHub. Obtain SDS 
+REST API access keys from the [AVEVA Data Hub portal](https://datahub.connect.aveva.com) before running the sample code.
 
 Each sample includes a README file which describes the steps required to run the sample and a brief description 
 that highlights some of the sample's functionality. Be sure to read the README file to understand 

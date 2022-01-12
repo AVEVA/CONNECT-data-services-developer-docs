@@ -8,7 +8,6 @@ AVEVA Data Hub is a cloud data platform for storing, retrieving, and analyzing s
 
 AVEVA Data Hub offers the following capabilities: 
 
-- [What is AVEVA Data Hub?](#what-is-aveva-data-hub)
   - [Easy data collection](#easy-data-collection)
     - [PI to Data Hub Agent](#pi-to-data-hub-agent)
     - [Open Message Format](#open-message-format)

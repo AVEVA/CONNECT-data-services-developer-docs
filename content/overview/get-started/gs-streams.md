@@ -28,7 +28,6 @@ After creating types, you can add streams and associate a type with the stream. 
 
    - **Type** - *MyData.PumpState*
 
-
 1. Select the **Tags** tab.
 
 1. In the **New Tag** field, type *AVEVA*, and click **+** to add the tag. 

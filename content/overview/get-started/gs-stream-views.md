@@ -24,7 +24,8 @@ This procedure creates a stream view that maps the `MyData.PumpState` type to th
 
    - **Id** ­­­- Enter *MyData.PumpTemperatureView*.
 
-   - **Name** - Optionally, give the stream view a different name. Leave this field blank to use the Id as the name.
+   - **Name** - (Optional) Give the stream view a different name. Leave this field blank to use the Id as the name.
+
 
    - **SourceType** - From the list, select *MyData.PumpState*.
 

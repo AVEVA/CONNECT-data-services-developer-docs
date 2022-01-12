@@ -27,7 +27,7 @@ This has been fixed. Customers must upgrade to the latest version of the PI to O
 
 **During installation, the agent description is not properly set in OCS.**
 
-Previously, the agent description specified during PI to OCS Agent installation wasn't properly replicated to OCS. This has been fixed.
+Previously, the agent description specified during PI to OCS Agent installation was not properly replicated to OCS. This has been fixed.
 
 **Indexing Status may not change from "InProgress" to "Succeeded" after indexing is complete.**
 

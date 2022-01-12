@@ -4,8 +4,6 @@
 - name: AVEVA™ Data Hub roles
   topicHref: roles/roles-concept.md
   href: roles/toc.yml
-- name: Manage permissions
-  topicHref: manage-permissions.md
 - name: AVEVA™ Data Hub users
   topicHref: users/users-concept.md
   href: users/toc.yml

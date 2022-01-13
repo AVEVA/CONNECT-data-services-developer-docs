@@ -20,7 +20,7 @@ To create a new metadata rule, follow these steps:
 
 1. In the left pane, click **Data Management** > **Metadata Rules**.
  
-   **Result:** The `Metadata Management` page opens.
+   **Result:** The `Metadata Rules` page opens.
  
 1. Click the **Change Namespace** button in the upper-right toolbar, then select the namespace in which the model stream resides and where the metadata rule is to be created.
 

@@ -6,7 +6,7 @@ uid: WhatADHdoes
 
 AVEVA Data Hub consists of several different areas of core functionality: tenant management, data collection, data organization, and data analysis. The following sections discuss each area in detail:
 
-* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize Data Hub based on organizational requirements. 
+* [Tenant management](#tenant-management) - Explains basic concepts in managing AVEVA Data Hub, including clients, users, roles, roles-based access control and discusses how administrators can customize Data Hub based on organizational requirements. 
 * [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace. 
 * [Data organization](#data-organization) - Provides a high-level description of how operational data is stored and retrieved.
 * [Data analysis](#data-analysis) - Provides users with analytical tools to sort and visualize data.
@@ -14,28 +14,28 @@ AVEVA Data Hub consists of several different areas of core functionality: tenant
 
 The following diagram shows how Data Hub fits in an organization:
 
-![AVEVA™ Data Hub](images/how-does-ocs-work/ocs_intro.png)
+![AVEVA Data Hub](images/how-does-ocs-work/ocs_intro.png)
 
 ## Tenant management
 
-Customize Data Hub to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. Authentication and authorization are also customizable. Configuring the access control list (ACL) for resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the Data Hub REST API or the Data Hub portal. 
-<!--Angela Flores 6/29/21 all of the sub headings are far too detailed for this level introduction.THis information should be in the concept topics for these items. Or if we need to go into this level of detail, this should be broken out into five separate topics based on the list above. The Data Hub portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.-->
+Customize AVEVA Data Hub to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage folders/namespaces for their tenant. Authentication and authorization are also customizable on AVEVA Data Hub. Configuring the access control list (ACL) for an AVEVA Data Hub resource, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the AVEVA Data Hub REST API or the AVEVA Data Hub portal. 
+<!--Angela Flores 6/29/21 all of the sub headings are far too detailed for this level introduction.THis information should be in the concept topics for these items. Or if we need to go into this level of detail, this should be broken out into five separate topics based on the list above. The OCS portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.-->
 
 ### Tenant 
 
-A tenant is the root-level resource in AVEVA™ Data Hub; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant with one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains folders/namespaces where data is managed.
+A tenant is the root-level resource in AVEVA Data Hub; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant with one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains folders/namespaces where data is managed.
 
 ### Namespace 
 
-A namespace is a logical unit of organization for data within a tenant. Before collecting data in AVEVA™ Data Hub, you must create a folder in AVEVA Connect and turn on the AVEVA™ Data Hub service. When you create a folder, you are creating a namespace within the tenant. Each tenant can contain more than one folder/namespace. Namespaces create separate instances of data and resources within a tenant. Resources within a folder/namespace do not affect other folders/namespaces within that tenant. In practice, namespaces may correspond to a specific set of infrastructure assets, but they commonly correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
+A namespace is a logical unit of organization for data within a tenant. Before collecting data in AVEVA Data Hub, you must create a folder in AVEVA Connect and turn on the AVEVA Data Hub service. When you create a folder, you are creating a namespace within the tenant. Each tenant can contain more than one folder/namespace. Namespaces create separate instances of data and resources within a tenant. Resources within a folder/namespace do not affect other folders/namespaces within that tenant. In practice, namespaces may correspond to a specific set of infrastructure assets, but they commonly correspond to virtual partitions within a single set of assets dedicated to a specific tenant.
 
 ### Region 
 
-Regions are geographical area designations associated with AVEVA™ Data Hub resources, for example, types, streams, and data views. WestUS and WestEurope are regions. AVEVA™ Data Hub provisions a folder/namespace within a single region. After you create a folder/namespace in AVEVA™ Connect, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
+Regions are geographical area designations associated with AVEVA Data Hub resources, for example, types, streams, and data views. WestUS and WestEurope are regions. AVEVA Data Hub provisions a folder/namespace within a single region. After you create a folder/namespace in AVEVA Connect, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
 
 ### Identity 
 
-Identity is the authentication factor used to verify a user or client that requests access to AVEVA™ Data Hub. AVEVA™ Data Hub identity services provide the following functions: 
+Identity is the authentication factor used to verify a user or client that requests access to AVEVA Data Hub. AVEVA Data Hub identity services provide the following functions: 
 
 - Authenticate users with a local account store or through an external identity provider 
 - Provide session management and single sign-on 
@@ -45,13 +45,13 @@ Identity is the authentication factor used to verify a user or client that reque
 
 ### User 
 
-A user is an individual identity that represents a person using AVEVA™ Data Hub. Users log in to AVEVA™ Data Hub via AVEVA™ Connect, they authenticate through an identity provider. The identity provider authenticates the user, and upon successful authentication, passes a token back to AVEVA™ Data Hub verifying the identity of the user. This identity is used by AVEVA™ Data Hub to grant access for a specific time period. 
+A user is an individual identity that represents a person using AVEVA Data Hub. Users log in to AVEVA Data Hub via AVEVA Connect, they authenticate through an identity provider. The identity provider authenticates the user, and upon successful authentication, passes a token back to AVEVA Data Hub verifying the identity of the user. This identity is used by AVEVA Data Hub to grant access for a specific time period. 
 
 ### Clients 
 
 Clients have programmatic access to resources through Data Hub APIs. There are two primary client types: 
 
-- **Client credential clients** – The most common type of AVEVA™ Data Hub client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to AVEVA™ Data Hub. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
+- **Client credential clients** – The most common type of AVEVA Data Hub client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to AVEVA Data Hub. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
 
 - **Authorization code clients** – Used by web-based, mobile, and desktop applications, this client type requires user interaction. Users authenticate with an identity provider. Authorization code clients support silent refresh, which allows the user to automatically receive a new access token, providing for uninterrupted access to the application. 
 
@@ -63,15 +63,15 @@ For both users and clients, roles authorize API requests for access, such as acc
 
 ### Identity provider 
 
-Identity providers manage databases of user records and authenticate users against the authentication factors in their databases. This allows users to be granted access to the service provider using the credentials the identity provider manages but without sharing actual login details with AVEVA™ Data Hub.  
+Identity providers manage databases of user records and authenticate users against the authentication factors in their databases. This allows users to be granted access to the service provider using the credentials the identity provider manages but without sharing actual login details with AVEVA Data Hub.  
 
 ### Authentication 
 
-Authentication is the process of verifying the identity of a user and confirming that the user is an approved entity for AVEVA™ Data Hub. This verification process is performed by the identity provider.  
+Authentication is the process of verifying the identity of a user and confirming that the user is an approved entity for AVEVA Data Hub. This verification process is performed by the identity provider.  
 
 ### Authorization 
 
-Authorization is the process of determining the appropriate access level for a user or client for each AVEVA™ Data Hub resource and service. Two factors determine the level of access: the role that the user or client is assigned at authentication and the corresponding access control list that grants a level of access to a role for each resource and service. 
+Authorization is the process of determining the appropriate access level for a user or client for each AVEVA Data Hub resource and service. Two factors determine the level of access: the role that the user or client is assigned at authentication and the corresponding access control list that grants a level of access to a role for each resource and service. 
 
 ### Access control list 
 
@@ -90,7 +90,7 @@ After defining tenants, setting permissions and access levels for users, and cre
 
 ### Collection methods 
 
-The type of data, the location of that data, and the way that a particular source sends data all affect how you can collect that data in AVEVA™ Data Hub. Choose the data collection technologies that best meet your specific needs. These technologies include: 
+The type of data, the location of that data, and the way that a particular source sends data all affect how you can collect that data in AVEVA Data Hub. Choose the data collection technologies that best meet your specific needs. These technologies include: 
 
 - [PI to Data Hub](#pi-to-ocs)
 - [Custom OMF applications](#custom-omf-applications)
@@ -111,13 +111,13 @@ Open Message Format (OMF) is a platform-independent format for passing JSON mess
 
 For programmatic access to data, use OMF to develop data acquisition applications on platforms and in languages for which there is no native support. This allows you to integrate data collection directly into a device or asset. 
 
-OMF topics aggregate OMF messages received from one or more clients and make them available for consumption. An OMF subscription consumes OMF messages from a topic and forwards them to a data store. Multiple subscriptions can retrieve OMF messages from a single topic. Together, these two components make up an OMF connection, which allows collection from a client into an AVEVA™ Data Hub namespace. 
+OMF topics aggregate OMF messages received from one or more clients and make them available for consumption. An OMF subscription consumes OMF messages from a topic and forwards them to a data store. Multiple subscriptions can retrieve OMF messages from a single topic. Together, these two components make up an OMF connection, which allows collection from a client into an AVEVA Data Hub namespace. 
 
 OMF itself does not define or depend on any binary message protocol, such as HTTP, AMQP, or Kafka. Instead, it is based on an abstract message type, where a message consists of a set of key/value pairs, which may include binary files, configuration files, and batch or Shell scripts. You can construct OMF messages using any message protocol that defines headers and bodies. <!--Angela Flores 6/29/21 First paragraph says it uses HTTP; this paragraph says it doesn't. Which is it? -->
 
 #### Edge Data Store
 
-The Edge Data Store (EDS) is a software component that collects sequential data from edge devices and stores it locally until it can be transferred to permanent storage in AVEVA™ Data Hub. You can access the data on the edge device for queries and for displaying data trends.
+The Edge Data Store (EDS) is a software component that collects sequential data from edge devices and stores it locally until it can be transferred to permanent storage in AVEVA Data Hub. You can access the data on the edge device for queries and for displaying data trends.
 
 Configure EDS to send data to Data Hub using the OMF. Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. <!--Angela Flores 6/29/21 Too much detail for an overview. -->
 
@@ -141,9 +141,9 @@ To organize and use the data in the SDS, you need to understand the basic featur
 
 ### Types 
 
-A type, also called an SDS type, defines the structure of data to be collected in AVEVA™ Data Hub. A type is analogous to a template that defines each instance in a stream of data. 
+A type, also called an SDS type, defines the structure of data to be collected in AVEVA Data Hub. A type is analogous to a template that defines each instance in a stream of data. 
 
-For example, if you want to collect three measurements streamed from a device (longitude, latitude, and speed) and you want to collect those measurements over a period of time, you can define a type to include properties for longitude, latitude, speed and a timestamp. Collectively, these properties define the structure of the data you are storing. While this is a simple example, AVEVA™ Data Hub lets you create much more complex types. 
+For example, if you want to collect three measurements streamed from a device (longitude, latitude, and speed) and you want to collect those measurements over a period of time, you can define a type to include properties for longitude, latitude, speed and a timestamp. Collectively, these properties define the structure of the data you are storing. While this is a simple example, AVEVA Data Hub lets you create much more complex types. 
 
 A type can consist of many properties, but one property must function as the primary index. Time is frequently used as the primary index, effectively time-stamping all corresponding properties in each data instance. However, the primary index is not limited to time stamps; it can be any type of sequential data such as depth. 
 
@@ -155,9 +155,9 @@ Data Hub provides a simple user interface for creating types. Alternatively, you
 
 A stream, also called an SDS stream, is a series of ordered events. Each event is an instance of a type. Collectively, the stream of data forms the structure that the type specifies. 
 
-Streams organize data brought from another system into AVEVA™ Data Hub. To define a stream, you must first define a type, which specifies the structure of the data you want to stream into a namespace. Every stream has a unique identifier. You can have many streams based on the same type, but each stream must have its own unique identifier. 
+Streams organize data brought from another system into AVEVA Data Hub. To define a stream, you must first define a type, which specifies the structure of the data you want to stream into a namespace. Every stream has a unique identifier. You can have many streams based on the same type, but each stream must have its own unique identifier. 
 
-There are multiple techniques for sending data to AVEVA™ Data Hub. See [Data Collection](#data-collection). 
+There are multiple techniques for sending data to AVEVA Data Hub. See [Data Collection](#data-collection). 
 
 Each stream is associated with a folder/namespace. You can associate one or more streams with the same namespace. However, to move data between namespaces, you must read data out from one namespace and write it into another namespace. 
 
@@ -165,7 +165,7 @@ You can categorize streams using metadata, which is a dictionary of key value pa
 
 You can also use tags to assign information to a stream. A tag is a string value. For example, a tag might identify a region. 
 
-REST APIs give you the ability to read and write stream data programmatically. In addition, if you are using the .NET framework, AVEVA™ Data Hub offers client libraries to help you create and use streams.
+REST APIs give you the ability to read and write stream data programmatically. In addition, if you are using the .NET framework, AVEVA Data Hub offers client libraries to help you create and use streams.
 
 ### Stream views 
 
@@ -183,7 +183,7 @@ Data Hub provides a graphical interface for setting up stream views or you can u
 
 After defining types, streams, and stream views, use the analytical tools in Data Hub to sort and visualize the data. 
 
-Two analytical tools are available in AVEVA™ Data Hub: 
+Two analytical tools are available in AVEVA Data Hub: 
 
 - [Trend](#trend) 
 - [Assets](#assets) 
@@ -195,12 +195,6 @@ The Trend feature converts stream data to a graphic view, which can reveal trend
 ### Assets
 
 Assets are a digital twin of physical entities in the real world. An asset can consist of data from one or more streams. 
-
-The assets in the example below represent trucks in a fleet, with multiple data streams associated with each. You can select an asset and display a trend of the data streams to identify and analyze problems.
-
-![AVEVA™ Data Hub](images/how-does-ocs-work/assets-example.png)
-
-For example, you can display the variation in the pressure of the suspension cylinders on each truck over time, identify those trucks whose cylinder pressure is outside the accepted range, and proactively deal with potential problems.
 
 Assets are a useful way to organize and contextualize data streams. With PI to Data Hub data transfers, for example, you can organize multiple PI tags under a single asset. You could create an asset with streams measuring data for thermostats, ventilation equipment, lighting systems, and security.
 

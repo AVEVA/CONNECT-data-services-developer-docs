@@ -30,13 +30,13 @@ Metadata rules allow you to add metadata to streams. For more information about 
 
 The first step is to identify and select a stream whose name will be the basis for creating the metadata rule.
 
-1. In the left pane, select **Data Management** > **Metadata Management**.
+1. In the left pane, select **Data Management** > **Metadata Rules**.
 
 1. Click the **Change Namespace** button in the upper-right toolbar, then select **MyData**.
 
 1. Click **Add Metadata Rule**.
 
-1. In the **Search** field, enter *MyData\**.
+1. In the **Search** field, enter \**MyData\**.
 
    The MyData.NorthAmerica.SLTC.PumpA stream is returned in the table.
 

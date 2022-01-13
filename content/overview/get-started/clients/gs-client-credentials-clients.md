@@ -40,13 +40,9 @@ To create a client-credentials client, follow these steps:
 
 1. In the **Expiration Date** field, enter a date and time that the secret expires.
 
-   Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
-
-1. Select **Add**.
-
-  The `Client Successfully Created` window opens and displays the **Client Id** and **Client Secret**.
+   A window opens with the `Client Id` and `Client Secret`.
     
-   **Important:** Select the **Copy** button to the right of each field to save the client secret and client Id. You need this information to connect your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+   **Important**: Click the **Copy** buttons to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
     
 1. Select **Close**.  
 

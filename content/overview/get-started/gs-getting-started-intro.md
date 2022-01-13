@@ -4,7 +4,7 @@ uid: gs-adh
 
 # Get started 
 
-The topics in this section contain exercises that introduce you to the AVEVA Data Hub portal. These topics should be completed in order. Before you begin, see [Introduction to the AVEVA Data Hub portal](xref:introPortalInterface) to get acquainted with the portal's main features.
+The topics in this section contain exercises that introduce you to the AVEVA Data Hub portal. These exercises should be completed in order. Before you begin, see [Introduction to the AVEVA Data Hub portal](xref:introPortalInterface) to get acquainted with the portal's main features.
 
 As an alternative, you can accomplish the same tasks in this section using the AVEVA Data Hub REST-based API.  
 

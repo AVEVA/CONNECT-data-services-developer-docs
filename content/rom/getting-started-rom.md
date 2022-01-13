@@ -51,7 +51,7 @@ To use the portal to monitor assets and identify problems, follow these steps:
 
 1. To see the details of these properties, select the **View full trend** icon ![View full trend icon](images/View_full_trend_icon.png) to see the `Trend` page.
 
-    The `Trend` page shows the properties for the same time range shown in the `Details` pane of the Asset Explorer.
+    The `Trend` page shows the properties for the same time range shown in the `Details` pane of the Asset Editor.
     <!--AF 11/19/21 From this point on, the topic repeats the Get started with trend data topic. I think it would be better to link to that topic for instructions, so we don't have to maintain the information twice. -->
 
 1. (Optional) Select the ![Trend views icon](images/trend-views-icon.png) icon to change the view.

@@ -8,35 +8,39 @@ To send Open Message Format (OMF) data to AVEVA&trade; Data Hub, you must first 
 
 Use this get started procedure to become familiar with OMF connections.
 
+To create an OMF connection, follow these steps:
+
 1. In the left pane, select **Security** > **Clients**.
 
-1. Verify that there is at least one client-credentials client to use in the OMF connection. If you need to create one, refer to the Clients section.
+1. Verify that there is at least one client-credentials client to use in the OMF connection. If you need to create one, see [Clients](xref:ccClients).
 
-1. Click on the menu and click **Connections** (under Data Management).
+1. In the left pane, select **Data Collection** > **OMF Connections**.
 
-1. From the `Namespace` field, select **MyData**.
+1. In the **Namespace** field, select `MyData`.
 
-1. From the **Type** drop-down list, select **OMF**.
+1. Select **Add Connection** to open the `Add OMF Connection` window.
 
-1. Click **Add Connection** to open the `Add PI System Connection` window.
+1. In the **Name** field, enter *MyData* and select **Next**.
 
-1. In the `Name` field, enter **MyData** and click **Next**.
+1. In the **Clients** tab, select a client in the `Available` list to add it to the `Selected` list. Select **Next**.
 
-1. In the **Clients** tab, click one of the clients in the **Available** list to add it to the **Selected** list. Click **Next**.
+    **Note:** For the purposes of this exercise, you may choose any client.
 
-1. Select **Next**.
+1. In the **Namespaces** tab, verify that the `MyData` namespace appears in the `Selected` list, and then select **Next**.
 
-1. In the **Namespaces** tab, verify that the MyData namespace appears in the **Selected** list, and then select **Next**.
+1. In the **Review** tab, verify that the `Clients` list shows the client-credentials client you chose, and the `Namespaces` list shows the `MyData` namespace. Select **Save**.
 
-1. In the **Review** tab, verify that the information is correct, and then select **Save**.
+    An application can now use the selected client-credentials client to write OMF data to the `MyData` namespace.
 
-An application can now use the selected client credentials client to write OMF data to the specified namespace.
+1. To learn more about OMF connections, do the following:
 
-Follow these tips to learn more about OMF connections.
+  - Select **Manage Permissions** to open the `Manage Permissions` window.
 
-    **Tip:** Click **Manage Permissions** to open the `Manage Permissions` window. In this window, you configure permissions only on the connection object itself. Click **Cancel** to continue.
+     In this window, you configure permissions only on the connection object itself. Select **Cancel** to continue.
 
-    **Tip:** Click **Edit Connection** to open the `Edit` window. Use this window to edit the name and description of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, click **Next** until you get to the **Review** tab, and then click **Save**.
+  - Select **Edit Connection** to open the `Edit` window.
+
+     Use this window to edit the name and description of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, select **Next** until you get to the **Review** tab, and then select **Save**.
 
 ## Next step
 

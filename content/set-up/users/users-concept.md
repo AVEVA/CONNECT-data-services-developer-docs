@@ -6,9 +6,9 @@ uid: ccUsers
 
 An AVEVA Data Hub user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. See [AVEVA Data Hub roles](xref:ccRoles) for more information. Users log in to the AVEVA Data Hub portal and are authenticated through AVEVA Connect.
 
-**Note:** Identity resources such as users and clients, are global across AVEVA Data Hub. These resources are not scoped to a particular namespace, but globally scoped across namespaces in Data Hub.
+**Note:** Identity resources such as users and clients, are global across AVEVA Data Hub. These resources are not scoped to a particular namespace, but globally scoped across namespaces in AVEVA Data Hub.
 
-Users log in to the AVEVA Data Hub portal through a user account in Connect, and users authenticate to custom web applications when using [Hybrid Clients](xref:ccClients#hybrid-client) and [Authorization Code Clients](xref:ccClients#authorization-code-client). Therefore, at least one user should already be added to a tenant when the portal is first accessed.
+Users log in to the AVEVA Data Hub portal through a user account in AVEVA Connect, and users authenticate to custom web applications when using [Hybrid Clients](xref:ccClients#hybrid-client) and [Authorization Code Clients](xref:ccClients#authorization-code-client). Therefore, at least one user should already be added to a tenant when the portal is first accessed.
 
 Some points to note about adding and managing users:
 

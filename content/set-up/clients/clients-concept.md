@@ -7,7 +7,9 @@ uid: ccClients
 Clients allow applications to authenticate against AVEVA&trade; Data Hub from outside the portal. The following types of clients are supported, and each support different types of applications:
 
 - [Client-credentials clients](#client-credentials-client)
+
 - [Authorization code clients](#authorization-code-client)
+
 - [Hybrid clients](#hybrid-client) <!-- Josh Kim Mar19021: Similar to the comment as before where we should ask if Hybrid Clients are still worth mentioning?. -->
 
 You must have the Tenant Administrator role to add and manage clients in a tenant.
@@ -50,7 +52,7 @@ We recommend the following best practices for an authorization code client:
 
 ## <a name="hybrid-client"></a>Hybrid clients
 
-Hybrid clients are used by native and server-side web applications. This client utilizes the user credentials to authenticate with the identity provider. Once the user is authenticated, then the server-side client steps in and server-to-server communication commences. Authentication can be performed using any supported browser. The server-side code retrieves an access token and a refresh token can also be provided.
+Use hybrid clients for native and server-side web applications. This client utilizes the user credentials to authenticate with the identity provider. Once the user is authenticated, then the server-side client steps in and server-to-server communication commences. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
 
 ### <a name="hybrid-client-pi-server"></a>Hybrid client PI Server counterpart
 

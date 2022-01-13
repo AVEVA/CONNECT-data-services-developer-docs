@@ -4,23 +4,19 @@ uid: gsTypes
 
 # Get started with types
 
-A type defines the shape and structure of events and how to associate events within a stream of data in SDS. A type is comprised of at least two properties, one of which serves as the primary index, most commonly a timestamp or DateTime. For more information about types, see [Types](xref:ccTypes), [PI Server counterpart](xref:ccTypes#types-pi-server), and [Types best practices](xref:bpTypes). In this getting started exercise, you will create an SDS type. 
+After creating the namespace, the next step is to add one or more types. A type defines the shape and structure of events and how to associate events within a stream of data. For more information about types, see the following topics:
+
+- [Types](xref:ccTypes)
+
+- [Types best practices](xref:bpTypes)
+
+To add a type, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Click the **Change Namespace** button in the upper-right toolbar, then select the namespace in which you want to create the stream. 
-
 1. From the **Streams** dropdown list, select **Types**.
 
-1. Click the ![More Options button](../images/more-options.png) icon, then click **Manage Default Permissions**.
- 
-   **Result:** The `Manage Default Permissions for New Types` window opens.
-
-   **Note:** By default, you must be assigned the Tenant Administrator role to change the default permissions. Any changes you make only affect new types. The permissions on existing types are not changed.
-
-1. After reviewing permissions, click **Cancel** to continue.
-
-1. Click **Add Type**.
+1. Select **Add Type**.
 
 1. In the `Add Type` window, enter the values for these fields:
 
@@ -28,65 +24,61 @@ A type defines the shape and structure of events and how to associate events wit
 
    - **Name** &ndash; *MyData.PumpState*
 
-   - **Description** &ndash; *SDS Type used by MyData*
+   - **Description** - *SDS Type used by MyData*
 
-    **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type from the **Base Type** list. When you add a base type, its properties populate the **Properties** list. You can then add other properties to the type. 
+    **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type in the **Base Type** field. When you add a base type, its properties populate the `Properties` list. You can then add other properties to the type.
 
-    **Note:** This procedure is part of an exercise in the Getting Started section.
+1. To add a property, select **Add Property** and complete the fields as follows:
 
-1. Click  **Add Property** to add a property.
-
-1. Complete the following fields for the first property:
-
-   - **Key** &ndash; Select the checkbox.
+   - **Key** - Select the checkbox.
 
      **Note:** The `Key` field identifies this property as the index. 
 
-   - **Id** &ndash; Enter *Timestamp*.
+   - **Id** - Enter *Timestamp*.
 
-   - **Type** &ndash; Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
+   - **Type** - Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
 
-   - **UOM** &ndash; Leave this blank.
+   - **UOM** - Leave this blank.
 
-1. Click **Add Property** to add a second property and complete the fields:
+1. To add a second property, select **Add Property** again and complete the fields as follows:
 
-   - **Id** &ndash; Enter *Temperature*.
+   - **Id** - Enter *Temperature*.
 
-   - **Type** &ndash; Select *Double*.
+   - **Type** - Select *Double*.
 
-   - **UOM** &dash; Select *degree Celsius*.
+   - **UOM** - Select *degree Celsius*.
+
+1. To add a third property, select **Add Property** again and complete the fields as follows:
+
+   - **Id** - Enter *Pressure*.
+
+   - **Type** - Select *Double*.
    
-1. Click **Add Property** to add a third property and complete the fields:
+   - **UOM** - Select *kilogram per cubic meter*.
 
-   - **Id** &ndash; Enter *Pressure*.
+1. To add a fourth property, select **Add Property** again and complete the fields as follows:
 
-   - **Type** &ndash; Select *Double*.
-   
-   - **UOM** &ndash; Select *kilogram per cubic meter*.
+      - **Id** - Enter *Status*.
 
-1. Click  **Add Property** to add a fourth property and complete the fields:
+      - **Type** - Select *String*.
 
-      - **Id** &ndash; Enter *Status*.
+      - **UOM** - Leave this blank.
 
-      - **Type** &ndash; Select *String*.
-
-      - **UOM** &ndash; Leave this blank.
-
-      **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, we will only use the Timestamp property as an index.
+      **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, use only the `Timestamp` property as an index.
 
 1. Click **Save**.
 
-The following steps explore information about the type you just created.
+To explore information about the type you just created, follow these steps:
 
-1. Click the checkbox to select the `MyData.PumpState` type in the list. Click the ![More Options button](../images/more-options.png) icon, then click **Manage Permissions**.
+1. Select the `MyData.PumpState` type, select the ![More Options button](images/more-options.png) icon, and then select **Manage Permissions**.
 
-    This opens the `Manage Permissions for MyData.PumpState` window where you can override the default permissions and set permissions for the specific type. You must be assigned the Tenant Administrator role to configure the type permissions.
+    The `Manage Permissions for MyData.PumpState` window opens where you can override the default permissions and set permissions for the specific type. You must be assigned the Tenant Administrator role to configure the type permissions.
 
-    Review the permissions for the MyData.PumpState type, and when you have finished exploring this window, click **Cancel** to continue. 
+    Review the permissions for the `MyData.PumpState` type, and when you have finished exploring this window, select **Cancel** to continue. 
 
-1. Click the ![More Options button](../images/more-options.png) icon, then click **Get Type Streams**.
+1. Select the `MyData.PumpState` type, select the ![More Options button](images/more-options.png) icon, and then select **Get Type Streams**.
 
-   This takes you to the **Streams** list and, by default, the typeId:MyData.PumpState query is used to filter any streams with the MyData.PumpState type. The list is currently empty, because streams have not yet been created with this type.
+   The **Streams** list opens and, by default, the `typeId:MyData.PumpState` query is used to filter any streams with the `MyData.PumpState` type. The list is currently empty, because you have not created streams for this type yet.
 
 ## Next step
 

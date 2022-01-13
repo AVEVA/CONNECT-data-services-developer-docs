@@ -18,4 +18,4 @@ For details on how to deploy a configuration, see the specific edge system produ
  
  - [PI Adapter for OPC UA](https://docs.osisoft.com/bundle/pi-adapter-opc-ua/page/configuration/configuration.html)
 
-After deploying the configuration, to have an accurate record of the configuration, import the configuration file, including any modifications made in the field, to the corresponding edge system twin in OCS.
+After deploying the configuration, to have an accurate record of the configuration, import the configuration file, including any modifications made in the field, to the corresponding edge system twin in AVEVA Data Hub.

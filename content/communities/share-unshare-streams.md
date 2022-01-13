@@ -20,7 +20,9 @@ To share streams with other communities, follow these steps:
 
 1. Select each stream that you want to share, and then select **Share Streams**.
 
-    **Tip:** Use the **Search for streams** field to search for specific streams. Use the wildcard operator (`*`) to return results that start or end with a particular phrase. For more information, see [Search in SDS](xref:sdsSearching).
+    **Tips:** 
+    * Use the **Search for streams** field to search for specific streams. Use the wildcard operator (`*`) to return results that start or end with a particular phrase. For more information, see [Search in SDS](xref:sdsSearching).
+    * When sharing a large numbers of streams, edit the **Items per page** dropdown to a value that accommodates the number of streams that you want to share.
 
 1. Select one or more community to share your streams with.
 
@@ -33,6 +35,10 @@ To share streams with other communities, follow these steps:
 1. To confirm that you want to share the streams with the chosen communities, select **Share**. From the **Share stream** window, select **Confirm**. Then select **Close**.
 
     **Result:** The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
+
+## View shared data
+
+After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.
 
 ## Unshare streams from Community Details
 

@@ -6,8 +6,6 @@ uid: gsStreamviews
 
 Stream views enable you to expose stream data as a different type, or with different units of measure and property names. A stream view serves as a mapping between the underlying type in the stream and the type in the stream view. This enables you to in effect remove, rename, or add properties on your stream data. Using a stream view on data retrieval affects only the data retrieved, and does not alter the original source data. For more information about stream views, see [Stream views](xref:ccStreamviews).
 
-For more information about stream views, see [Stream views](xref:ccStreamviews).
-
 ## Prerequisite
 
 Repeat the steps in [Get started with types](xref:gsTypes) and create a type with the Id, *MyData.Pump.State.Temperature*. Include only the `Timestamp` and `Temperature` properties. 
@@ -28,18 +26,15 @@ This procedure creates a stream view that maps the `MyData.PumpState` type to th
 
    - **Name** - (Optional) Give the stream view a different name. Leave this field blank to use the Id as the name.
 
-
    - **SourceType** - From the list, select *MyData.PumpState*.
 
    - **TargetType** - From the list, select *MyData.PumpState.Temperature*.
 
    - **Description** - (Optional) Add a description for this stream view.
 
-   
 1. Select **Next** to proceed to Step 2: `Property Mappings`.
 
 1. Select **Add Property Mapping** twice to create two empty property mappings.
-
 
 1. To create a property mapping, select **Add Property Mapping** and complete the following fields:
 

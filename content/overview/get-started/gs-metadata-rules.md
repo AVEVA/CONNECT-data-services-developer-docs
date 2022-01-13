@@ -104,7 +104,7 @@ In this step, you define mappings.
 
 In this final step, apply the metadata rule to the streams and review the results. 
 
-1.  On the `Preview and Run` page, complete the following fields:
+1. On the `Preview and Run` page, complete the following fields:
 
    - **Name** - Enter *MyData.MetadataRule*.
 

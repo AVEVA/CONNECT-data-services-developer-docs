@@ -260,8 +260,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/replica
 |Metadata|object|false|true|None|
 |Acl|[AccessControlList](#schemaaccesscontrollist)|false|true|None|
 |Owner|[Trustee](#schematrustee)|false|true|None|
-|StreamLastUpdated|date-time|false|false|None|
-|MetadataLastUpdated|date-time|false|false|None|
+|StreamTimestamp|date-time|false|false|None|
+|MetadataTimestamp|date-time|false|false|None|
 
 ```json
 {
@@ -340,8 +340,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/replica
     "ObjectId": "string",
     "TenantId": "string"
   },
-  "StreamLastUpdated": "2019-08-24T14:15:22Z",
-  "MetadataLastUpdated": "2019-08-24T14:15:22Z"
+  "StreamTimestamp": "2019-08-24T14:15:22Z",
+  "MetadataTimestamp": "2019-08-24T14:15:22Z"
 }
 
 ```

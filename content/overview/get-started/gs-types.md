@@ -35,11 +35,13 @@ To add a type, follow these steps:
 
      **Note:** The `Key` field identifies this property as the index. 
 
-   - **Id** - Enter *Timestamp*.
+   - **Id** – Enter *Timestamp*.
 
-   - **Type** - Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
+   - **Name** – Enter a descriptive property name. 
 
-   - **UOM** - Leave this blank.
+   - **Type** – Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
+
+   - **UOM** – Leave this blank.
 
 1. To add a second property, select **Add Property** again and complete the fields as follows:
 

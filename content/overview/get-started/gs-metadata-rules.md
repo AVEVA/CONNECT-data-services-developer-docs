@@ -100,9 +100,9 @@ In this step, you define mappings.
    
 1. In the **Map To** text box, enter **San Leandro**. 
 
-1. You can create additional mappings for streams which are not yet stored in AVEVA&trade; Data Hub but will be created later. Click **Add Mappings** to add another mapping.
+1. You can create additional mappings for streams which are not yet stored in AVEVA Data Hub but will be created later. Click **Add Mappings** to add another mapping.
 
-   AVEVA&trade; Data Hub searches and finds any existing streams that match the pattern (the **MyData.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, and in this example, it lists the part that corresponds to the **Site** key.
+   AVEVA Data Hub searches and finds any existing streams that match the pattern (the **MyData.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, and in this example, it lists the part that corresponds to the **Site** key.
    
 1. In the **Map From** text box, enter **PHL**. 
 

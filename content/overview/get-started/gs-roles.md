@@ -4,7 +4,7 @@ uid: gsRoles
 
 # Get started with roles
 
-Roles are used to manage access to assets, resources, and services in AVEVA&trade; Data Hub. Roles are assigned to identities, which includes users, groups, and client-credentials clients. See the following topics for more information about roles:
+Roles are used to manage access to assets, resources, and services in AVEVA Data Hub. Roles are assigned to identities, which includes users, groups, and client-credentials clients. See the following topics for more information about roles:
 
 - [Roles](xref:ccRoles)
 

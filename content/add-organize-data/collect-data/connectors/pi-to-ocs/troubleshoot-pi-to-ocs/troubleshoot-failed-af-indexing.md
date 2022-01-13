@@ -16,4 +16,4 @@ If the  **"AF Indexing Failed!"** message appears next to this field, follow the
  
 1. Reboot the host machine that the PI to Data Hub Agent runs on (recommended) or stop/restart the PI to Data Hub service.
 
-**Note:** It is possible for an agent to complete and indicate that indexing has completed, but still need to re-index.  Additionally, there may be times when an agent appears to be working, but you are unable to create a transfer. In both cases, AVEVA&trade; Data Hub advises to restart the PI to Data Hub Agent to initiate AF indexing.
+**Note:** It is possible for an agent to complete and indicate that indexing has completed, but still need to re-index.  Additionally, there may be times when an agent appears to be working, but you are unable to create a transfer. In both cases, AVEVA Data Hub advises to restart the PI to Data Hub Agent to initiate AF indexing.

@@ -18,7 +18,7 @@ A client secret is a unique key that is generated for each client credential cli
 
 **Caution:** As a security best practice, always create client secrets that expire. 
 
-AVEVA&trade; Data Hub generates the secret value using a cryptographically secure algorithm. The secret value is available only upon creation. AVEVA&trade; Data Hub does not maintain the actual value of the secret. If a secret value were ever lost, delete the secret and create a new one. 
+AVEVA Data Hub generates the secret value using a cryptographically secure algorithm. The secret value is available only upon creation. AVEVA Data Hub does not maintain the actual value of the secret. If a secret value were ever lost, delete the secret and create a new one. 
 
 ### Client secret security
 

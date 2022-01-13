@@ -28,7 +28,7 @@ Follow the procedure to invite a user to your tenant.
 
 1. Click **Add**.
  
-   The user is added to the list of Data Hub users and assigned to the selected roles.
+   The user is added to the list of AVEVA Data Hub users and assigned to the selected roles.
 
 ## Related links
 

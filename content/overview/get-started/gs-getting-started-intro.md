@@ -13,7 +13,9 @@ As an alternative, you can accomplish the same tasks in this section using the A
 Before you begin the "Get started" exercises, perform these tasks:
 
 * Request a tenant from your AVEVA account manager.
+
 * Have a designated folder and associated namespace in place.
+
 * Obtain Tenant Administrator privileges in AVEVA Data Hub.
 
 ## Log into the AVEVA Data Hub through AVEVA Connect
@@ -36,8 +38,6 @@ Once you have completed the prerequisites, log into AVEVA Connect to gain access
 
    The AVEVA Data Hub portal opens.
    
-   <!-- I'm guessing there are additional next steps that depend on the Identity Provider they are using? --> 
-
 ## Get started goals
 
 In these get started exercises, you will do the following:

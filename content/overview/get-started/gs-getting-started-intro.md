@@ -4,35 +4,37 @@ uid: gs-adh
 
 # Get started 
 
-This is an introduction to the main features of AVEVA Data Hub using the portal. Each section includes a tutorial with step-by-step procedures using the portal functionality with links to basic concepts and best practices. Before you start the exercises, see [Introduction to the AVEVA Data Hub portal](xref:introPortalInterface) to get an overview of the user interface. Alternatively, you can accomplish the same tasks through the AVEVA Data Hub REST-based API. 
+The topics in this section contain exercises that introduce you to the AVEVA Data Hub portal. These exercises should be completed in order. Before you begin, see [Introduction to the AVEVA Data Hub portal](xref:introPortalInterface) to get acquainted with the portal's main features.
 
-## Before you begin
+As an alternative, you can accomplish the same tasks in this section using the AVEVA Data Hub REST-based API.  
 
-Before you begin the get started exercises, obtain the following:
+## Prerequisites
+
+Before you begin the "Get started" exercises, perform these tasks:
 
 * Request a tenant from your AVEVA account manager.
 
-* Have a designated folder that is connected to a namespace created prior to beginning these exercises.
+* Have a designated folder and associated namespace in place.
 
-* You must have Tenant Administrator privileges in AVEVA Data Hub.
+* Obtain Tenant Administrator privileges in AVEVA Data Hub.
 
-## Log into the AVEVA Data Hub
+## Log into the AVEVA Data Hub through AVEVA Connect
 
-Once you have completed the prerequisites, log into AVEVA Connect.
+Once you have completed the prerequisites, log into AVEVA Connect to gain access to AVEVA Data Hub.
 
-1. In a web browser, enter the following URL to open AVEVA Connect: *http://datahub.connect.aveva.com*
-
-   **Notes:**
+**Notes:**
    
-   * These browsers are supported for the most recent three versions, unless otherwise stated: Microsoft Edge, Google Chrome, Mozilla Firefox, and Internet Explorer 11.
+   * The latest versions of Microsoft Edge, Google Chrome, and Mozilla Firefox are supported.
 
    * If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA Connect. You may be prompted to sign into your corporate Sign-In page.
 
+1. Point your web browser to *http://datahub.connect.aveva.com*.
+
 1. From the AVEVA Connect home page, click on the folder that represents your organization's services.
 
-   The applications available from this namespace account are displayed below the folder.
+   The applications available for this namespace account are displayed below the folder.
 
-1. Select the tile that represents AVEVA Data Hub.
+1. Select the AVEVA Data Hub tile.
 
    The AVEVA Data Hub portal opens.
    
@@ -54,7 +56,7 @@ In these get started exercises, you will do the following:
 
 1. Create a role that defines permissions for users.
 
-**Note:** Each exercise is built upon the previous one; therefore, complete the exercises in the order shown. At the end of each exercise, you will be directed to the next exercise.  
+**Note:** Each exercise is built upon the previous one. It is important to complete the exercises in the order shown. At the end of each exercise, you will be directed to the next exercise.  
 
 ## Next step
 

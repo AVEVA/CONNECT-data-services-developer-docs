@@ -11,7 +11,7 @@
     - topicUid: CreateAssetRules
     - topicUid: TokensGenerateAssets
     - topicUid: UsingMultipleRules
-- name: Add context with metadata rules
+- name: Metadata rules
   href: metadata-rules/toc.yml
   topicHref: metadata-rules/metadata-rules-concept.md
 - name: Create and configure a data view

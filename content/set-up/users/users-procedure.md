@@ -4,17 +4,9 @@ uid: gpUsers
 
 # Add a user in AVEVA Data Hub
 
-An AVEVA Data Hub user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. See the following topics for more information about users:
+A user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. 
 
-- [Users](xref:ccUsers)
-- [PI Server counterpart](xref:ccUsers#users-pi-server)
-- [Users best practices](xref:ccUsers#users-bp)
-
-## Procedure
-
-Follow the procedure to invite a user to your tenant.
-
-<!--12/2/21, VTT: Per SMEs (N. Parkah & A. Woodall) Removed this step because it only applies to OCS. Old step: 1. If multiple identity providers are enabled in the tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. You can switch to a different option later.--> 
+To invite a user to a tenant, follow these steps:
 
 1. In the left pane, select **Security** > **Users**.
 
@@ -26,10 +18,8 @@ Follow the procedure to invite a user to your tenant.
 
 1. (Optional) On the **Tenant Roles** tab, assign additional roles to the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is added.
 
-1. Click **Add**.
- 
-   The user is added to the list of Data Hub users and assigned to the selected roles.
+1. Select **Invite**. 
 
-## Related links
+   An invitation is sent to the email address specified in the `Contact Email` field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
 
-- [Tenants Users](xref:identity-tenants-users) API
+1. When the user receives the invitation, the user should log in using the identity provider specified. Once the user has logged in, the user status changes to *Active*.

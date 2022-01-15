@@ -4,55 +4,53 @@ uid: gsStreamviews
 
 # Get started with stream views
 
-Stream views enable you to expose stream data as a different type, or with different units of measure and property names. 
-A stream view serves as a mapping between the underlying type in the stream and the type in the stream view. This enables you to in effect remove, rename, or add properties on stream data. Using a stream view on data retrieval affects only the data retrieved, and does not alter the original source data.
- 
-For more information about stream views, see [Stream views](xref:ccStreamviews).
+Stream views enable you to expose stream data as a different type, or with different units of measure and property names. A stream view serves as a mapping between the underlying type in the stream and the type in the stream view. This enables you to in effect remove, rename, or add properties on your stream data. Using a stream view on data retrieval affects only the data retrieved, and does not alter the original source data. For more information about stream views, see [Stream views](xref:ccStreamviews).
 
 ## Prerequisite
 
 Repeat the steps in [Get started with types](xref:gsTypes) and create a type with the Id, *MyData.Pump.State.Temperature*. Include only the `Timestamp` and `Temperature` properties. 
 
-## Procedure
+## Add a stream view
 
 This procedure creates a stream view that maps the `MyData.PumpState` type to this new type, `MyData.Pump.State.Temperature`.
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. From the **Streams/Types/Stream Views Selector** selector, select **Stream Views**.
+1. From the **Streams/Types/Stream Views** selector, select **Stream Views**.
 
-1. In the toolbar, select **Add Stream View**.
-
+1. In the tool bar, select **Add Stream View** to open a pane on the right side.
 
 1. In the `Create Stream View` pane at Step 1: `Details`, complete the following fields:
 
    - **Id** - Enter *MyData.PumpTemperatureView*.
 
-   - **Name** - (Optional) Leave this field blank to use the Id as the name or enter a name for the stream view.
+   - **Name** - (Optional) Give the stream view a different name. Leave this field blank to use the Id as the name.
 
-   - **SourceType** - Select *MyData.PumpState*.
+   - **SourceType** - From the list, select *MyData.PumpState*.
 
-   - **TargetType** - Select *MyData.PumpState.Temperature*.
+   - **TargetType** - From the list, select *MyData.PumpState.Temperature*.
 
-   - **Description** - (Optional) Enter a description for this stream view.
-   
+   - **Description** - (Optional) Add a description for this stream view.
+
 1. Select **Next** to proceed to Step 2: `Property Mappings`.
+
+1. Select **Add Property Mapping** twice to create two empty property mappings.
 
 1. To create a property mapping, select **Add Property Mapping** and complete the following fields:
 
-   - **Source Id** - Select *Timestamp*.
+   - **Source Id** - From the list, select *Timestamp*.
 
-   - **Target Id** - Select *Timestamp*.
+   - **Target Id** - From the list, select *Timestamp*.
 
 1. To create a second property mapping, select **Add Property Mapping** and complete the following fields:
 
-   - **Source Id** - Select *Temperature*.
+   - **Source Id** - From the list, select *Temperature*.
 
-   - **Target Id** - Select *Temperature*.
+   - **Target Id** - From the list, select *Temperature*.
 
 1. Select **Save**. This adds the stream view to the list and you can now use it to view data from *MyData.PumpState* streams with only the **Timestamp** and **Temperature** fields showing.
 
-1. To test this stream view, in the left pane, select **Developer Tools** > **API Console**.
+1. To test this stream view, select **Developer Tools** > **API Console** in the left pane.
 
 1. In the **URI** field, enter */Namespaces/MyData/Streams/MyData.NorthAmerica.SLTC.PumpA/Data/Transform/Last?streamViewId=MyData.PumpTemperatureView*, then select **GET**. 
 

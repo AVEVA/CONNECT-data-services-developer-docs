@@ -14,13 +14,13 @@ To configure an OMF connection, follow these steps:
 
 2. In the toolbar, select **Add Connection**.
 
-  The `Add OMF Connection` window appears.
+   The `Add OMF Connection` window appears.
 
 1. In the `Add OMF Connection` window, complete the following fields, and then select **Next**:
 
- - **Name** - Enter a name for the OMF connection.
+   - **Name** - Enter a name for the OMF connection.
 
- - **Description** - (Optional) Enter a description for the connection.
+   - **Description** - (Optional) Enter a description for the connection.
 
 1. In the **Clients** tab, select each client that can be used in the connection from the **Available** list to add it to the **Selected** list. 
 

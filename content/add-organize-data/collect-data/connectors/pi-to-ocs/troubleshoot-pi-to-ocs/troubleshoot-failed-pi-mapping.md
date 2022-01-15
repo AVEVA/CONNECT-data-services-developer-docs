@@ -12,8 +12,12 @@ If you encounter an error message and the PI to Data Hub Configuration Utility c
 
     b) Add a different Data Archive that the service account has permission to access.
 
-1. Relaunch the PI to Data Hub Configuration Utility: Click the Windows start button, then **AVEVA** > **PI to Data Hub Configuration Utility**.
-1. Successfully connect and authenticate to AVEVA Data Hub.
-1. In the PI to Data Hub Configuration utility, click the pencil icon to the right of the **PI Mapping** field.
+1. Relaunch the PI to Data Hub Configuration Utility: Select the Windows Start button, then **AVEVA** > **PI to Data Hub Configuration Utility**.
+
+1. Succesfully connect and authenticate to AVEVA Data Hub.
+
+1. In the PI to Data Hub Configuration utility, select the pencil icon to the right of the **PI Mapping** field.
+
 1. Follow the steps in [Create a PI mapping section](#pi-to-ocs-utility) to add a PI mapping.
+
 1. After adding the PI mapping, save your changes. 

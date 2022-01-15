@@ -4,7 +4,7 @@ uid: gsRoles
 
 # Get started with roles
 
-Roles are used to manage access to assets, resources, and services in AVEVA Data Hub. Roles are assigned to identities, which includes users, groups, and client-credentials clients. See the following topics for more information about roles:
+Use roles to manage access to assets, resources, and services in AVEVA Data Hub. Assign roles to identities, which include users, groups, and client-credentials clients. See the following topics for more information about roles:
 
 - [Roles](xref:ccRoles)
 
@@ -20,10 +20,8 @@ To create a role, follow these steps:
 
    - **Name**  - Enter *MyData.Role*.
 
-
    - **Description** - (Optional) Add a description for this role.
 
-   
 1. To create the new role, select **Add**. 
 
     It is added to the table of Roles. Note that the Role Type for all custom roles is `Tenant Custom`. You can now specify permissions for this role when managing permissions on assets, resources, and services. 

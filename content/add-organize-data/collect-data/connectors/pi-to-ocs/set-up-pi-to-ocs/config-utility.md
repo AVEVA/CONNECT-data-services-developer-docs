@@ -71,11 +71,11 @@ To add an AF server, follow these steps:
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout** field.
 
-1. To keep the current AF server configuration settings and restart the agent, select **Save**.
-
 1. (Optional) To check that the connection to the AF server is working, select **Test Connection**.
 
 1. (Optional) To delete a server connection, select **Remove Server**, then select **Yes** to confirm. 
+
+1. To keep the current AF server configuration settings and restart the agent, select **Save**.
 
    **Note:** After you save the AF server configuration settings and restart and register the agent, you need to select a default Data Archive in PI System Explorer to resolve substitution references for AF element attributes.
 

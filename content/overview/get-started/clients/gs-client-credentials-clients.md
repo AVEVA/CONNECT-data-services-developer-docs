@@ -46,7 +46,7 @@ To create a client-credentials client, follow these steps:
 
   The `Client Successfully Created` window opens and displays the **Client Id** and **Client Secret**.
     
-   **Important:** Select the **Copy** button to the right of each field to save the client secret and client Id. You need this information to connect your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+   **Important**: Click the **Copy** buttons to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
     
 1. Select **Close**.  
 

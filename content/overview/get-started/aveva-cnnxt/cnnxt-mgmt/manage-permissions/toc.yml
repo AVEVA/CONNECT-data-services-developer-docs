@@ -6,7 +6,7 @@
   href: invite-users.md
 - name: Add and assign users to a group
   href: assign-users.md    
-- name: Map a group to an AVEVA™ Data Hub role
+- name: Map a group to an AVEVA Data Hub role
   href: map-group-adh.md
 - name: Map a user to an AVEVA Data Hub role
   href: map-user-adh.md

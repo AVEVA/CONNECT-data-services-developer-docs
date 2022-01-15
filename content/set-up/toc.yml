@@ -1,12 +1,12 @@
 - name: Folders and namespaces
   topicHref: namespaces/namespaces-concept.md
   href: namespaces/toc.yml
-- name: AVEVA™ Data Hub roles
+- name: AVEVA Data Hub roles
   topicHref: roles/roles-concept.md
   href: roles/toc.yml
-- name: AVEVA™ Data Hub users
+- name: AVEVA Data Hub users
   topicHref: users/users-concept.md
   href: users/toc.yml
-- name: AVEVA™ Data Hub clients
+- name: AVEVA Data Hub clients
   topicHref: clients/clients-concept.md
   href: clients/toc.yml

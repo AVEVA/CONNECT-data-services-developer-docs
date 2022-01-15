@@ -20,10 +20,8 @@ To create a role, follow these steps:
 
    - **Name**  - Enter *MyData.Role*.
 
-
    - **Description** - (Optional) Add a description for this role.
 
-   
 1. To create the new role, select **Add**. 
 
     It is added to the table of Roles. Note that the Role Type for all custom roles is `Tenant Custom`. You can now specify permissions for this role when managing permissions on assets, resources, and services. 

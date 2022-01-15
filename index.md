@@ -2,7 +2,7 @@
 uid: index
 ---
 
-# AVEVA<sup>TM</sup> Data Hub
+# AVEVA™ Data Hub
 
 ## [Overview](xref:WhatIsOCS)
 

@@ -211,7 +211,7 @@ The asset preview displays a list of the assets that will be created using the a
   
 1. To filter the data in a column, click ![filter](images/metadata-filter.png) in the column header, enter the text to find, and press Enter.
    
-1. Click the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
+1. On the `Details` tab of the `Preview Information` pane, review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
 
    In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Assets Processed** field. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern.
    

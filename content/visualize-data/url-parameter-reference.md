@@ -4,7 +4,7 @@ uid: URLparameters
 
 # Trend URL parameters
 
-When you use the Share function to copy the URL for a trend, the function constructs a URL using parameters to specify the data in the trend. This URL allows you to access the same trend again and to share it with colleagues. You can construct a parameterized URL manually by adding parameters to the base URL for your AVEVA&trade; Data Hub environment. This allows you to open an AVEVA&trade; Data Hub trend programmatically from other applications or to create a trend populated with specified data items. 
+When you use the Share function to copy the URL for a trend, the function constructs a URL using parameters to specify the data in the trend. This URL allows you to access the same trend again and to share it with colleagues. You can construct a parameterized URL manually by adding parameters to the base URL for your AVEVA Data Hub environment. This allows you to open an AVEVA Data Hub trend programmatically from other applications or to create a trend populated with specified data items. 
 
 You must have access to the data to access a trend using a parameterized URL. When you access a trend using a parameterized URL, the URL in the active browser is reset to the base URL. 
 

@@ -12,7 +12,7 @@ AVEVA Data Hub consists of several different areas of core functionality: tenant
 * [Data analysis](#data-analysis) - Provides users with analytical tools to sort and visualize data.
 * [Data science enablement](#data-science-enablement) - Highlights the capabilities of tools for data grouping and organization to enable the use of third-party data science applications.
 
-The following diagram shows how Data Hub fits in an organization:
+The following diagram shows how AVEVA Data Hub fits in an organization:
 
 ![AVEVA Data Hub](images/how-does-ocs-work/ocs_intro.png)
 
@@ -49,7 +49,7 @@ A user is an individual identity that represents a person using AVEVA Data Hub. 
 
 ### Clients 
 
-Clients have programmatic access to resources through Data Hub APIs. There are two primary client types: 
+Clients have programmatic access to resources through AVEVA Data Hub APIs. There are two primary client types: 
 
 - **Client credential clients** – The most common type of AVEVA Data Hub client, used for server-to-server communication without the presence or intervention of a user. Examples include PI Adapters or the Edge Data Store sending data to AVEVA Data Hub. This type of client is issued a client ID and secret. After authentication, the client is granted an access token with a defined lifetime. 
 
@@ -75,7 +75,7 @@ Authorization is the process of determining the appropriate access level for a u
 
 ### Access control list 
 
-Each Data Hub service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The Data Hub Administrator configures each ACL and specifies types of permissions for each role. When a user or client makes a request to a specific resource, Data Hub compares their role to the ACL for that resource to determine whether to authorize the request. Users and clients are allowed or denied access permissions to Data Hub objects based on their assigned roles and the corresponding ACLs.
+Each AVEVA Data Hub service and resource has an access control list (ACL) that defines how much access is granted to assigned roles. The AVEVA Data Hub Administrator configures each ACL and specifies types of permissions for each role. When a user or client makes a request to a specific resource, AVEVA Data Hub compares their role to the ACL for that resource to determine whether to authorize the request. Users and clients are allowed or denied access permissions to AVEVA Data Hub objects based on their assigned roles and the corresponding ACLs.
 
 The types of permissions granted to roles are as follows:
 - Read
@@ -86,7 +86,7 @@ The types of permissions granted to roles are as follows:
 
 ## Data Collection
 
-After defining tenants, setting permissions and access levels for users, and creating clients for programmatic access, you can configure Data Hub for data collection. Data collection allows you to bring data from multiple sources and systems across your organization into a namespace.
+After defining tenants, setting permissions and access levels for users, and creating clients for programmatic access, you can configure AVEVA Data Hub for data collection. Data collection allows you to bring data from multiple sources and systems across your organization into a namespace.
 
 ### Collection methods 
 
@@ -100,14 +100,14 @@ The type of data, the location of that data, and the way that a particular sourc
 
 #### PI to Data Hub 
 
-The PI to Data Hub collection method transfers PI time series data from a local PI Server to OCS. The PI to Data Hub Agent is installed and configured directly on a designated device. The PI to Data Hub Agent creates types and streams in Data Hub based on the PI tags mapped from PI Data Archive. 
+The PI to Data Hub collection method transfers PI time series data from a local PI Server to OCS. The PI to Data Hub Agent is installed and configured directly on a designated device. The PI to Data Hub Agent creates types and streams in AVEVA Data Hub based on the PI tags mapped from PI Data Archive. 
 
 **Note**: Install the PI to Data Hub Agent and PI Server on separate devices to avoid the two systems competing for resources.
 <!--Angela Flores 6/29/21 Too much detail for an overview.-->
 
 #### Custom OMF applications
 
-Open Message Format (OMF) is a platform-independent format for passing JSON messages to Data Hub over HTTP. 
+Open Message Format (OMF) is a platform-independent format for passing JSON messages to AVEVA Data Hub over HTTP. 
 
 For programmatic access to data, use OMF to develop data acquisition applications on platforms and in languages for which there is no native support. This allows you to integrate data collection directly into a device or asset. 
 
@@ -119,15 +119,15 @@ OMF itself does not define or depend on any binary message protocol, such as HTT
 
 The Edge Data Store (EDS) is a software component that collects sequential data from edge devices and stores it locally until it can be transferred to permanent storage in AVEVA Data Hub. You can access the data on the edge device for queries and for displaying data trends.
 
-Configure EDS to send data to Data Hub using the OMF. Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. <!--Angela Flores 6/29/21 Too much detail for an overview. -->
+Configure EDS to send data to AVEVA Data Hub using the OMF. Edge Data Store currently includes two built-in protocol adapter components, Modbus and OPC UA, and a storage component that also collects and sends OMF. Multiple data sources, referred to as adapter component instances, are supported in protocol components. <!--Angela Flores 6/29/21 Too much detail for an overview. -->
 
 #### PI Adapters 
 
-PI Adapters are software components that collect sequential data from data sources and send it to Data Hub or PI Server or both. Use PI Adapters for collecting data from standard systems and protocols. 
+PI Adapters are software components that collect sequential data from data sources and send it to AVEVA Data Hub or PI Server or both. Use PI Adapters for collecting data from standard systems and protocols. 
 
 #### Programmatic REST API 
 
-The Data Hub programmatic REST API reads and writes data. It supports JSON format and platform-independent data retrieval. 
+The AVEVA Data Hub programmatic REST API reads and writes data. It supports JSON format and platform-independent data retrieval. 
 
 ## Data organization 
 
@@ -149,7 +149,7 @@ A type can consist of many properties, but one property must function as the pri
 
 After you create a type, you cannot change it. If you want to change a type, you must delete the existing type and create a new one to ensure that no stored data is invalidated. However, you can only delete a type if no streams, views, or other types reference it. 
 
-Data Hub provides a simple user interface for creating types. Alternatively, you can create types using programming tools. For an automated programmatic approach, .NET client libraries available in NuGet packages are offered. For a manual approach, there are code samples in different programming languages, including Python, Java, and JavaScript. The JSON file format is used to specify the properties and related information in each type. 
+AVEVA Data Hub provides a simple user interface for creating types. Alternatively, you can create types using programming tools. For an automated programmatic approach, .NET client libraries available in NuGet packages are offered. For a manual approach, there are code samples in different programming languages, including Python, Java, and JavaScript. The JSON file format is used to specify the properties and related information in each type. 
 
 ### Streams 
 
@@ -169,7 +169,7 @@ REST APIs give you the ability to read and write stream data programmatically. I
 
 ### Stream views 
 
-Because types cannot be modified, Data Hub provides a flexible mechanism for viewing data in a stream view. A stream view is a logical overlay for stream data. 
+Because types cannot be modified, AVEVA Data Hub provides a flexible mechanism for viewing data in a stream view. A stream view is a logical overlay for stream data. 
 
 For example, a process engineer and a maintenance technician might want to see different data that exists in the same stream. You cannot change the structure of data in a stream, but a stream view allows you to see a subset of the data in a stream. Using stream views, you can change the appearance of the data stream to meet the needs of both users without changing the original data. 
 
@@ -177,11 +177,11 @@ Stream views can perform additional functions, such as convert units of measure 
 
 To create a stream view, designate a source type that contains the desired properties. Then, map properties in the source type to properties in the target type. Properties must have the same data type to be mapped. The source type and the target type must be in the same namespace, and they must exist before you define the stream view. 
 
-Data Hub provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, there are also client libraries to help you create and use stream views. 
+AVEVA Data Hub provides a graphical interface for setting up stream views or you can use REST APIs to define stream views programmatically. If you are using the .NET framework, there are also client libraries to help you create and use stream views. 
 
 ## Data analysis 
 
-After defining types, streams, and stream views, use the analytical tools in Data Hub to sort and visualize the data. 
+After defining types, streams, and stream views, use the analytical tools in AVEVA Data Hub to sort and visualize the data. 
 
 Two analytical tools are available in AVEVA Data Hub: 
 
@@ -204,7 +204,7 @@ Use API calls to define asset rules, which bulk create or update assets accordin
 
 ## Data science enablement
 
-You can group and organize operational PI, IoT, and Data Hub data. By arranging data into forms that can be consumed by third-party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. Data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
+You can group and organize operational PI, IoT, and AVEVA Data Hub data. By arranging data into forms that can be consumed by third-party data science applications, data scientists can conduct deep analysis to detect unrealized patterns and insights. Data science enablement efforts allow for better informed planning, predictive maintenance, and operational optimization. 
 
 Two dynamic methods are available to allow you to filter and order data after they are in place. These methods include the following: 
 
@@ -233,7 +233,7 @@ A metadata rule assigns the defined metadata to any matching streams in the sele
 
 Data views are subsets of data from one or more streams. Data scientists typically query large datasets and need to index, sort, and organize data into specific subsets. With data views, data items can be selected, ordered, and grouped by field. Time indices and time intervals are also configurable for display and analysis.
 
-Data views serve as a bridge between raw Data Hub data and data science applications. Use an API or the Data Hub portal to create data views to arrange data for consumption by a third-party data science applications.
+Data views serve as a bridge between raw AVEVA Data Hub data and data science applications. Use an API or the AVEVA Data Hub portal to create data views to arrange data for consumption by a third-party data science applications.
 
 The following diagram depicts multiple streams organized into a data view that a third-party data science application can consume: 
 

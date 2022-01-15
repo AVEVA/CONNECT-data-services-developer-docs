@@ -18,7 +18,7 @@ To create a hybrid client, follow these steps:
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client.
 
-1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in to AVEVA&trade; Data Hub.
+1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in to AVEVA Data Hub.
    
    **Note:** Avoid selecting this option if there is no need to refresh tokens. There is a long lifespan for requesting new access tokens. 
 
@@ -36,11 +36,21 @@ To create a hybrid client, follow these steps:
 
 1. Select **Add**.  
 
-1. In the `Add Secret` dialog box, enter a description and expiration date for the secret, then click **Add**.
- 
-   **Note:** Enter a unique description if you plan to create multiple secrets. 
-                
-   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. To copy the client Id, select the **Copy** icon. After you close this window, you can also retrieve the client Id from the list of clients.
+1. In the `Add Secret` window, enter a description for the secret. Include a unique description if you plan to create multiple secrets.
+
+1. Enter an expiration date.
+
+    Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
+
+1. Select **Add**.
+   
+    The **Client Successfully Created** window opens and displays the client Id and client secret Id.
+
+    **Important:** Select the **Copy** buttons to the right of the **Client Id** and **Client Secret** fields to save a copy of these Ids for your records. You will need to reference these Ids in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+
+1. Select **Close**.
+
+    **Note:** The client ID is visible on the client. If you did not save the client secret, select the client in the list and use the Details pane to remove the old secret and add a new secret. Client modifications may take up to an hour before being visibly updated.
 
 ## Next step
 

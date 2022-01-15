@@ -14,7 +14,7 @@ If you encounter an error message and the PI to Data Hub Configuration Utility c
 
 1. Relaunch the PI to Data Hub Configuration Utility: Select the Windows Start button, then **AVEVA** > **PI to Data Hub Configuration Utility**.
 
-1. Succesfully connect and authenticate to AVEVA&trade; Data Hub.
+1. Succesfully connect and authenticate to AVEVA Data Hub.
 
 1. In the PI to Data Hub Configuration utility, select the pencil icon to the right of the **PI Mapping** field.
 

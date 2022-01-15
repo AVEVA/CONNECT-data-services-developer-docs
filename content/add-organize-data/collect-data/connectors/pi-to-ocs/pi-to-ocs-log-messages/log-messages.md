@@ -20,7 +20,7 @@ Agent Registration Failed | 33 | The PI to Data Hub Agent registration was not s
 Agent Received Unregister Request | 60 | The PI to Data Hub Agent received an unregister request from the portal. As a result, the PI to Data Hub Agent will unregister and shutdown.
 Agent Unregistered | 62 | Confirmation message that the PI to Data Hub Agent is unregistered after receiving event ID 60.
 Processing Transfer Job Request | 65 | The PI to Data Hub Agent has received the new transfer request. The message will contain information about the contents of the transfer such as the transfer historical start time and the number of involved points.
-Done Transferring Data To AVEVA&trade; Data Hub For Transfer Job | 70 | The PI to Data Hub Agent has completed the given transfer job. At this moment, the only transfer jobs which will complete are the historical and backfilling transfer jobs. By the very nature of streaming data, streaming transfer job will never complete.
+Done Transferring Data To AVEVA Data Hub For Transfer Job | 70 | The PI to Data Hub Agent has completed the given transfer job. At this moment, the only transfer jobs which will complete are the historical and backfilling transfer jobs. By the very nature of streaming data, streaming transfer job will never complete.
 Error Reading From Data Archive | 90 | The PI to Data Hub Agent was unable to read data from PI Data Archive. The event will contain the exception message.
 Failed To Get Streaming Updates From Data Archive | 96 | The PI to Data Hub Agent was not unable to get streaming data from PI Data Archive. The message will contain the exception message.
 

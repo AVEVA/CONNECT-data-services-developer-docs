@@ -12,7 +12,7 @@ If you encounter an error message and the PI to Data Hub Configuration Utility c
 
     b) Add a different Data Archive that the service account has permission to access.
 
-1. Relaunch the PI to Data Hub Configuration Utility: Select the Windows Start button, then **AVEVA** > **PI to Data Hub Configuration Utility**.
+1. Relaunch the PI to Data Hub Configuration Utility: Select **Start** > **AVEVA** > **PI to Data Hub Configuration Utility**.
 
 1. Succesfully connect and authenticate to AVEVA Data Hub.
 

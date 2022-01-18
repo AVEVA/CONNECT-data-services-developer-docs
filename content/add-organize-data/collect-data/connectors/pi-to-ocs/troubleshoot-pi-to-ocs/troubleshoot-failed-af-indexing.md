@@ -10,7 +10,7 @@ Immediately after PI to Data Hub Agent registration, AF indexing is initiated an
 
 If the  **"AF Indexing Failed!"** message appears next to this field, follow these steps to reinitiate AF indexing:
 
-1. Navigate to the cache files on the local PC where the agent runs: `C:\ProgramData\AVEVA\PIToDataHub\Cache`.
+1. Navigate to the cache files on the local PC where the agent runs: `C:\ProgramData\OSIsoft\PIToOCS\Cache`.
 
 1. Delete the `Cache` folder. 
  

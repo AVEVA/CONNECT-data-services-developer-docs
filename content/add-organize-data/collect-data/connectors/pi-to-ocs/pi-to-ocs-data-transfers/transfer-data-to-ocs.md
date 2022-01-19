@@ -229,7 +229,7 @@ To save the data transfer definition, follow these steps:
 ## Overview of the Details pane
 <!--AF 11/15/21 - This section doesn't belong in this topic about how to define a transfer.-->
 <!-- VT, 11/29/21: I can move this into it's own topic; SMEs and myself wanted to explain what these fields represented.-->
-The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image show the sections in the `Details` pane, which you can expand and collapse using the arrows ( ![](../../images/chevrons.png) ):  
+The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image shows the sections in the `Details` pane, which you can expand and collapse using the arrows ( ![](../../images/chevrons.png) ):  
 
 ![](../../images/details-pane1.png)
 ![](../../images/details-pane2.png) 

@@ -6,7 +6,11 @@ uid: ccRoles
 
 Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, OCS checks the assigned roles against the permissions on the resource to determine their access level.
 
-There are five built-in roles which cannot be removed from a tenant:
+## Default roles
+
+The following roles are default system roles that cannot be removed from a tenant:
+
+- Super Admin – <!-- Help wanted -->
 
 - Tenant Administrator – Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
 
@@ -20,9 +24,19 @@ There are five built-in roles which cannot be removed from a tenant:
 
 - Tenant Member – This role, which OCS assigns to all users or clients, has read access by default.
 
+- Community Administrator – This role has administrative access within a [community](xref:communities). <!-- Help wanted -->
+
 You can add roles to further control access. By default, added roles do not have any specific permissions. You must have the Tenant Administrator role to add and manage roles in a tenant. 
 
 Assigning a role to a user or client does not determine access. For any resource, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
+
+### Default role access rights
+
+## Custom roles 
+
+Amet irure duis non officia labore quis consequat dolor ipsum deserunt. Ut exercitation esse sit aute cupidatat. Proident cupidatat nostrud pariatur pariatur do laboris quis nostrud commodo consequat commodo. Commodo cillum deserunt aute voluptate sit laborum exercitation esse ex tempor dolore aliqua. Nisi eu excepteur et sunt deserunt velit sit commodo aute tempor. Proident veniam minim adipisicing proident Lorem nisi aliqua pariatur. Commodo irure aute sunt minim non nisi ullamco.
+
+Ipsum excepteur quis sit voluptate sunt consectetur ex in. Ullamco velit eiusmod tempor ipsum id veniam ipsum eu commodo voluptate amet reprehenderit ad reprehenderit. Esse incididunt est ullamco est nulla id elit mollit eiusmod ut proident cupidatat nostrud excepteur. Elit amet velit qui magna. Do nulla eiusmod minim ea sunt proident id. Cupidatat incididunt dolor voluptate eu ipsum commodo ex culpa fugiat Lorem id id cupidatat officia. Id laboris quis non officia ex commodo est officia velit velit.
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 

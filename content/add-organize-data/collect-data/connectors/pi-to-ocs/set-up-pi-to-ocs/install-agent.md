@@ -4,7 +4,7 @@ uid: install-agent
 
 # Install the PI to Data Hub Agent
 
-When you install the PI to Data Hub Agent, make sure to follow these guidelines:<!--Angela Flores 11/12/21 - This topic appears in the TOC twice once as Set up PI to Data Hub and once as Install the PI to Data Hub agent.>
+When you install the PI to Data Hub Agent, make sure to follow these guidelines:
 
 * Install the agent on a host computer separate from your PI Server deployment.
 
@@ -34,9 +34,9 @@ You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on
 
 Complete the following procedures to install the PI to Data Hub Agent:
 
-* [Install the PI to Data Hub Agent](#install-the-pi-to-ocs-agent)
+* [Install the PI to Data Hub Agent](#install-the-pi-to-data-hub-agent)
 
-* [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-ocs-agent-is-running-and-registered)
+* [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-data-hub-agent-is-running-and-registered)
 
 ## Install the PI to Data Hub Agent
 
@@ -74,7 +74,7 @@ To install the PI to Data Hub Agent, follow these steps:
 
     * **Agent Description** - Enter an optional name for the agent.
 
-1. On the `Servive Account` page, select the service account type for the connection:
+1. On the `Service Account` page, select the service account type for the connection:
 
     * **NT Service** - Enter an NT account to connect to PI Data Archive.
 
@@ -92,11 +92,11 @@ To install the PI to Data Hub Agent, follow these steps:
 
 ## Verify the PI to Data Hub Agent is running and registered
 
-After installation, check that the PI to Data Hub Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in OCS. 
+After installation, check that the PI to Data Hub Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in AVEVA Data Hub. 
 
 To verify the installation, follow these steps:
 
-1. On the computer where the agent is installed, open the Microsoft Management Console (MMC) snap-in for Services. <!--Angela Flores 11/12/21 there is no mention of selecting a host machine for this installation before this point.>
+1. On the computer where the agent is installed, open the Microsoft Management Console (MMC) snap-in for Services. <!--Angela Flores 11/12/21 there is no mention of selecting a host machine for this installation before this point.-->
 
   **Tip:** Enter *services.msc* in Windows search to locate the application.
 

@@ -12,7 +12,7 @@ To manage role permissions, follow these steps:
  
    **Note:** Resource creators have complete access to all resources.   
 
-1. Select the **Manage Permissions** ![](./images/manage-permissions.png) button in the upper-right toolbar.
+1. Select the **Manage Permissions** ![](../images/manage-permissions.png) button in the upper-right toolbar.
 
    The `Manage Permissions` window opens.
 

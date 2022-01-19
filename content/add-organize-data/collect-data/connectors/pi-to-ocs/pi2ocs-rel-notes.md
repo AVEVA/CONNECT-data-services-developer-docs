@@ -89,7 +89,6 @@ Because the PI System often serves as a barrier protecting control system networ
 ### Vulnerability communication
 
 The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure Framework](https://ics-cert.us-cert.gov/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf)  developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://ics-cert.us-cert.gov/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, AVEVA is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
-For more information, refer to [AVEVA's Ethical Disclosure Policy](https://www.osisoft.com/ethical-disclosure-policy).
 
 To report a security vulnerability to AVEVA, contact productsecurity@aveva.com. Also see AVEVA's [Cyber Security Updates](https://www.aveva.com/en/support-and-success/cyber-security-updates/).
 

@@ -49,9 +49,9 @@ Transfer creation consists of the following tasks:
 
 1. (Optional) In the **Historical Start time** fields, enter a historical time context for the data retrieval.
 
-   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/collect-data/connectors/pi-to-ocs/pi-to-ocs-data-transfers/overview-data-transfers.html) to learn more about transferring historical data.
+   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](xref:transfer-data) to learn more about transferring historical data.
 
-1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
+2. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
    * **High** - Sends all intended metadata.
    * **Medium** - Default. Send metadata without logical addresses from the data source.
@@ -73,7 +73,7 @@ Transfer creation consists of the following tasks:
     | SourceTag | X | X |  |  |
     |Step | X | X |  |  |
 
-1. Select **Ok**.
+3. Select **Ok**.
 
    The transfer is created and the `Transfer` page opens.
 

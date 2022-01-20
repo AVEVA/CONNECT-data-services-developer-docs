@@ -8,7 +8,7 @@ Clients provide a way for users or applications to authenticate against AVEVA Da
 
 - Client-credentials clients – used for server-to-server communication where no user interaction is required.
 
-- Authorization code clients – used with customer web applications that use OCS as their backend.
+- Authorization code clients – used with customer web applications that use AVEVA Data Hub as their backend.
 
 - Hybrid clients – used by native and server-side web applications.
 

@@ -51,4 +51,4 @@ When the parts are combined, this metadata rule creates metadata for streams com
 
 ![Adding metadata to streams](images/metadata2.png)
  
-When you create a metadata rule, OCS applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule, but the modified rule may capture a different set of streams.
+When you create a metadata rule, AVEVA Data Hub applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule, but the modified rule may capture a different set of streams.

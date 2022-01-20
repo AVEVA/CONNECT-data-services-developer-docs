@@ -27,7 +27,7 @@ If a user is not authorized for a specific AVEVA Data Hub feature, the PI to Dat
 
 The PI to Data Hub Configuration Utility now displays more information while the tool is searching for referenced Data Archives. Previously, that area was blank until one or more Data Archives were found. 
 
-The 1.6.1204.0 and 1.7.0.0 versions of the PI To OCS Agent will fail to register and fail to appear in the OSIsoft Cloud Service portal on new installations. The PI to OCS Configuration Utility will also display an agent status of "Retrieving State".
+The 1.6.1204.0 and 1.7.0.0 versions of the PI To Data Hub Agent will fail to register and fail to appear in the AVEVA Data Hub portal on new installations. The PI to Data Hub Configuration Utility will also display an agent status of "Retrieving State".
 
 The PI to Data Hub Configuration Utility could crash if a user attempted to edit a PI mapping from within the tool. This has been fixed.
 
@@ -42,7 +42,7 @@ Enhancements
 
 PI to Data Hub is now able to transfer AF elements and attributes to AVEVA Data Hub and create them as assets and metadata. PI to Data Hub will transfer the following AF objects to AVEVA Data Hub:
 
-*PI to OCS Configuration Utility Improvements*
+*PI to Data Hub Configuration Utility Improvements*
 
 Please consult the PI to Data Hub online documentation for more details on how to configure a transfer with AF elements and attributes.
  

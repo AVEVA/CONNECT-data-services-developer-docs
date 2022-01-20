@@ -7,7 +7,7 @@ uid: transfer-data
 <!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to Data Hub landing pages).-->
 You initiate a data transfer from the `PI to Data Hub Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
-PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
+PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#explicit-versus-implicit-pi-points).
 
 **Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
 
@@ -49,9 +49,9 @@ Transfer creation consists of the following tasks:
 
 1. (Optional) In the **Historical Start time** fields, enter a historical time context for the data retrieval.
 
-   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/collect-data/connectors/pi-to-ocs/pi-to-ocs-data-transfers/overview-data-transfers.html) to learn more about transferring historical data.
+   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](xref:transfer-data) to learn more about transferring historical data.
 
-1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
+2. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
    * **High** - Sends all intended metadata.
    * **Medium** - Default. Send metadata without logical addresses from the data source.
@@ -73,7 +73,7 @@ Transfer creation consists of the following tasks:
     | SourceTag | X | X |  |  |
     |Step | X | X |  |  |
 
-1. Select **Ok**.
+3. Select **Ok**.
 
    The transfer is created and the `Transfer` page opens.
 
@@ -153,35 +153,35 @@ To view AF element details, follow these steps:
 
 ## Build a PI points transfer list
 
-You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Overview of explicit vs. implicit PI points](#overview-of-explicit-vs.-implicit-pi-points) for more information.
+You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Overview of explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
 
 To build a PI points transfer list, follow these steps:
 
 1. Select the **PI Point Search** tab.
 
-1. To open the `Search` pane, select **Add**.
+2. To open the `Search` pane, select **Add**.
 
-1. To filter the results, do the following:
+3. To filter the results, do the following:
 
    | Criteria To Filter By      | Action To Take                                               |
    | -------------------------- | ------------------------------------------------------------ |
-   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br /><br />**Note:** Enter * to retrieve all PI points. |
+   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br />**Note:** Enter * to retrieve all PI points. |
    | Point descriptions         | Enter criteria in the following fields:<br /><ul><li>**Descriptor** </li><li>**Extended Descriptor**</li></ul> |
    | Engineering units          | Enter criteria in the **Engineering Units** field.           |
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
    | Specific location code(s)  | Enter up to five location code values (1-9) in the **Location Codes** field. |
 
-1. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
+4. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
 
-1. To execute the query and retrieve matching results, select **Search**.
+5. To execute the query and retrieve matching results, select **Search**.
 
-1. In the **Search Results** area, select each PI point to add to the data transfer.
+6. In the **Search Results** area, select each PI point to add to the data transfer.
 
    A check mark appears next to each selected PI point.
 
    **Tip:** To select a range of PI points, select a PI point and then hold Shift and select a non-adjacent PI point. To advance through multiple-paged query results, select the back and forward arrows or enter a page number in the **Page** field.
 
-1. When you are done selecting PI points, select **Add PI Points to Transfer**.
+7. When you are done selecting PI points, select **Add PI Points to Transfer**.
 
    The points are added to the transfer and listed on the **PI Points** tab.
 

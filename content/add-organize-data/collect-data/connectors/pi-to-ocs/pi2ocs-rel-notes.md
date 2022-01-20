@@ -104,4 +104,4 @@ No security-related information is applicable to this release.
 
 See the [PI to Data Hub documentation](https://docs.osisoft.com/bundle/data-hub/page/add-organize-data/collect-data/connectors/pi-to-ocs/main-landing-page.html).
 
-©2021 OSIsoft, LLC
+© 2022 AVEVA Group plc and its subsidiaries.

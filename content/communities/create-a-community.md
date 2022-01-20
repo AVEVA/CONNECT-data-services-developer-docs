@@ -7,14 +7,16 @@ uid: add-community
 A community is a space where you and your external partners can share operational data with one another. When you create a community, you are prompted to define:
 
 * A community name and description.
+
 * The user roles that can perform administrative actions within the community.
+
 * The users within your tenant that have read access within the community.
 
 The community is private; users outside of your community can access it without an invitation.
 
-**Note:** Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can perform this procedure.
-
 To create a community, follow these steps:
+
+**Note:** Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can perform this procedure.
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -28,9 +30,9 @@ To create a community, follow these steps:
     
     1. Select **Next**.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned access to administrate the community.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned access to administer the community.
 
-    By default, the community assigns administrative access to users assigned the **Community Administrator** or **Tenant Administrator** role. Optionally, you can add additional roles to be assigned coummunity administration access.
+    By default, the community assigns administrative access to tenant users assigned the **Tenant Administrator** role. Optionally, you can add additional roles to be assigned community administrative access.
 
     [What access rights are assigned to the Community Administrator role?](#what-access-rights-are-assigned-to-the-community-administrators-role)
 

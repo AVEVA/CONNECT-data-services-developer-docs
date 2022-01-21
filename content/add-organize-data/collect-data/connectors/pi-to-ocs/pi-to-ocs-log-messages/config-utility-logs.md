@@ -8,7 +8,7 @@ To view information about account related activity for PI to Data Hub Configurat
 
 To view the PI to Data Hub Configuration Utility logs, follow these steps:
 
-1. Select Windows **Start**, then select **Windows Administrative Tools** > **Event Viewer**.
+1. Select the Windows **Start** button, then select **Windows Administrative Tools** > **Event Viewer**.
  
 1. In the `Event Viewer` window, select **Applications and Services Logs** > **PI to Data Hub Configuration Utility**.
 

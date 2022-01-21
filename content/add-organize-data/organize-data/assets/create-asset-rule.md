@@ -29,7 +29,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 1. Click the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
-1. Click **Add a Rule**.
+1. Click **Add Rule**.
 
 1. In the `Create New Asset Rule` window, enter the following:
 
@@ -75,7 +75,7 @@ The Asset Rule Builder walks you through the following steps to create and execu
 
 In this step, you specify the naming pattern used to find and match the appropriate streams. You isolate each part of the stream name and create a token for it. The rule contains intelligence to recognize special characters in the stream name as delimiters, such as periods, dashes, and underscores. By default, the rule uses any special characters in the name to isolate the stream parts and facilitates the rule-building process. In this step, you also create tokens for the stream metadata. 
 
-1. In the `Stream Name Pattern` pane, move the slider to highlight the first identifiable section of the stream name. 
+1. In the `Stream Name` pane, move the slider to highlight the first identifiable section of the stream name. 
 
 1. In the **Match** list, select the option that describes how to identify the value in the stream name. 
 
@@ -115,9 +115,9 @@ In this step, you specify the naming pattern used to find and match the appropri
 
    The metadata tokens are added to the `Tokens` pane.
 
-1. In the `Token Sources` pane on the left, click **Stream Name Pattern** and review the screen.
+1. In the `Token Sources` pane on the left, click **Stream Name** and review the screen.
 
-   The description of the stream pattern is displayed in the `Stream Name Pattern` pane. The `Tokens` pane shows the tokens that make up the stream name pattern.
+   The description of the stream pattern is displayed in the `Stream Name` pane. The `Tokens` pane shows the tokens that make up the stream name pattern.
 
 1. When you have completed identifying all the tokens in the stream name, click **Next**.
 
@@ -211,9 +211,9 @@ The asset preview displays a list of the assets that will be created using the a
   
 1. To filter the data in a column, click ![filter](images/metadata-filter.png) in the column header, enter the text to find, and press Enter.
    
-1. Click the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
+1. On the `Details` tab of the `Preview Information` pane, review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
 
-   In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Total Assets**. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern.
+   In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Assets Processed** field. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern.
    
    ![Asset statistics](images/stats.png)
   

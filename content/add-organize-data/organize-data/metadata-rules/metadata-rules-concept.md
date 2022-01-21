@@ -4,7 +4,7 @@ uid: ccMetadataRules
 
 # Add context with metadata rules
 
-As a recommendation, you should explicitly include metadata when you create streams; but, that is not always possible. In these instances, you can establish or leverage a consistent naming pattern for streams and embed metadata such as location, asset class, and asset ID in the stream names. Then use a metadata rule to describe the pattern of the stream names. The metadata rule identifies all streams that match the pattern. Then AVEVA&trade; Data Hub parses each stream and builds out the metadata following the defined rules. 
+As a recommendation, you should explicitly include metadata when you create streams; but, that is not always possible. In these instances, you can establish or leverage a consistent naming pattern for streams and embed metadata such as location, asset class, and asset ID in the stream names. Then use a metadata rule to describe the pattern of the stream names. The metadata rule identifies all streams that match the pattern. Then AVEVA Data Hub parses each stream and builds out the metadata following the defined rules. 
 <!-- Angela Flores 6/11/21 -Having read through the topic, I don't understand how you could use a metadata rule to "establish a consistent naming pattern". It seems like if the naming pattern is consistent, you can use metadata rules to decode the information stored in the name. Also, this topic talks about creating metadata rules and how they are applied to data streams, but then what? Where do I see this information? How does it help me? -->
 
 ## PI Server counterpart
@@ -33,7 +33,7 @@ The following diagram shows metadata for two turbines named `GEO1` and `GEO2`, e
 
 ![Metadata and streams](images/streams.jpg) 
 
-Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, AVEVA&trade; Data Hub shows a stream selected for metadata rule and identifies characters you could use to divide the stream name into parts using a + sign. 
+Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, AVEVA Data Hub shows a stream selected for metadata rule and identifies characters you could use to divide the stream name into parts using a + sign. 
 
 ![Adding metadata](images/metadata1.png)
 
@@ -52,4 +52,3 @@ When the parts are combined, this metadata rule creates metadata for streams com
 ![Adding metadata to streams](images/metadata2.png)
  
 When you create a metadata rule, OCS applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule, but the modified rule may capture a different set of streams.
-

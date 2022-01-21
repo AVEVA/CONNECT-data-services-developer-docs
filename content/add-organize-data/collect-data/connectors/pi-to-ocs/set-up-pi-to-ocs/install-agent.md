@@ -96,9 +96,9 @@ After installation, check that the PI to Data Hub Agent Windows service is runni
 
 To verify the installation, follow these steps:
 
-1. On the computer where the agent is installed, open the Microsoft Management Console (MMC) snap-in for Services. <!--Angela Flores 11/12/21 there is no mention of selecting a host machine for this installation before this point.>
+1. On the computer where the agent is installed, open the Microsoft Management Console (MMC) snap-in for Services. <!--Angela Flores 11/12/21 there is no mention of selecting a host machine for this installation before this point.-->
 
-  **Tip:** Enter *services.msc* in Windows search to locate the application.
+   **Tip:** Enter *services.msc* in Windows search to locate the application.
 
 1. In the `Services` window, find the PI to Data Hub Agent service and verify that the status is `Running`, then close the window.
 

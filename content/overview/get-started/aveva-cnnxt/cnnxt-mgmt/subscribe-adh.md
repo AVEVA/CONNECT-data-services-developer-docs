@@ -10,13 +10,13 @@ As an administrator, the first step to subscribe to AVEVA Data Hub is to talk to
 
 To subscribe to AVEVA Data Hub, follow these steps:
 
-1. From the Connect home page, select the menu icon, then select **Services Catalog**.
+1. From the AVEVA Connect home page, select the menu icon, then select **Services Catalog**.
 
    The Services Catalog page displays a list of AVEVA Cloud service offerings.
 
-1. Scroll to the Data Hub tile.
+1. Scroll to the AVEVA Data Hub tile.
  
-1. On the Data hub tile, select the carat to the right of **Subscribe**.
+1. On the AVEVA Data Hub tile, select the carat to the right of **Subscribe**.
 
    The `Subscribe` section expands as shown in the image below.
 
@@ -24,4 +24,4 @@ To subscribe to AVEVA Data Hub, follow these steps:
 
 1. Select **Subscribe**.
 
-    The Data Hub service subscription is enabled for your organization.
+   The AVEVA Data Hub service subscription is enabled for your organization.

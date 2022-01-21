@@ -6,7 +6,7 @@ uid: ccRoles
 
 Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, AVEVA Data Hub checks the assigned roles against the permissions on the resource to determine their access level.
 
-There are six built-in Data Hub roles that cannot be removed from a tenant:
+There are six built-in AVEVA Data Hub roles that cannot be removed from a tenant:
 
 - Tenant Administrator – Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
 
@@ -36,7 +36,7 @@ Consider the following best practices when you create and assign roles:
 
 - Consider whether the read access granted by the Tenant Member role is acceptable for all users and clients in your tenant. Specifically, if you plan to invite users from outside your organization, you may want to limit their read access. One way to do this is to create a custom role for external users so that their permissions can be explicitly managed.
  
-- When using PI to Data Hub, ensure write access to stream and asset collections. The PI to Data Hub Agent has write permission to the streams collection in Data Hub. By default, the Tenant Contributor role provides write permission to the automatically generated PIToOcs Agent Client User. Write permission to this collection is required to enable stream creation. <!-- MB 1-7-21: Should PIToOcs be updated? -->
+- When using PI to Data Hub, ensure write access to stream and asset collections. The PI to Data Hub Agent has write permission to the streams collection in AVEVA Data Hub. By default, the Tenant Contributor role provides write permission to the automatically generated PIToOcs Agent Client User. Write permission to this collection is required to enable stream creation. <!-- MB 1-7-21: Should PIToOcs be updated? -->
 
 - Use caution when granting the Tenant Administrator role. Make sure to assign a different role to users and clients who should not manage permissions. Avoid assigning the Tenant Administrator role to client-credentials clients.
 

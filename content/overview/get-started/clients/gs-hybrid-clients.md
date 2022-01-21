@@ -20,7 +20,7 @@ To create a hybrid client, follow these steps:
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client.
 
-1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in to AVEVA&trade; Data Hub.
+1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in to AVEVA Data Hub.
    
    **Note:** Do not select this option if there is no need to refresh tokens. There is a long lifespan for requesting new access tokens. 
 

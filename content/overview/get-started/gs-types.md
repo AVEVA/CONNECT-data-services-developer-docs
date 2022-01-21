@@ -26,7 +26,6 @@ To add a type, follow these steps:
 
    - **Description** - *SDS Type used by MyData*
 
-
     **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type in the **Base Type** field. When you add a base type, its properties populate the `Properties` list. You can then add other properties to the type.
 
 1. To add a property, select **Add Property** and complete the fields as follows:
@@ -35,11 +34,13 @@ To add a type, follow these steps:
 
      **Note:** The `Key` field identifies this property as the index. 
 
-   - **Id** - Enter *Timestamp*.
+   - **Id** – Enter *Timestamp*.
 
-   - **Type** - Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
+   - **Name** – Enter a descriptive property name. 
 
-   - **UOM** - Leave this blank.
+   - **Type** – Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
+
+   - **UOM** – Leave this blank.
 
 1. To add a second property, select **Add Property** again and complete the fields as follows:
 
@@ -67,7 +68,7 @@ To add a type, follow these steps:
 
       **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, use only the `Timestamp` property as an index.
 
-1. Select **Apply**.
+1. Click **Save**.
 
 To explore information about the type you just created, follow these steps:
 

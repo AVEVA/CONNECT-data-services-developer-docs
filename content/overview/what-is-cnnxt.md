@@ -20,11 +20,11 @@ AVEVA Data Hub solutions are reflected as folders and tiles in AVEVA Connect. Yo
 
 ## What are folders used for?
 
-Folders in AVEVA™ Connect are used to partition data. They work analogously to folders in a traditional tree explorer. Folders represent your assets, but they can refer to any partition of data.
+Folders in AVEVA Connect are used to partition data. They work analogously to folders in a traditional tree explorer. Folders represent your assets, but they can refer to any partition of data.
 
 ## How are permissions managed?
 
-AVEVA Connect automatically provides all users with basic access to the customer account and adds them to the account's default user group. On the AVEVA Data Hub side, the administrator controls permissions by assigning groups to built-in Data Hub roles.
+AVEVA Connect automatically provides all users with basic access to the customer account and adds them to the account's default user group. On the AVEVA Data Hub side, the administrator controls permissions by assigning groups to built-in AVEVA Data Hub roles.
 
-If you are an administrator, you can learn more about AVEVA Connect in this guide and at the [AVEVA™ Connect User Documentation](https://help.connect.aveva.com/) website.
+If you are an administrator, you can learn more about AVEVA Connect in this guide and at the [AVEVA Connect User Documentation](https://help.connect.aveva.com/) website.
  

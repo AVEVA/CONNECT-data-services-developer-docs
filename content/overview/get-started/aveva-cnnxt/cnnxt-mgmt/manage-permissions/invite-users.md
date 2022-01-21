@@ -4,9 +4,11 @@ uid: invite-users
 
 # Invite users and assign user permissions
 
-As an administrator, you set up new users in AVEVA Connect. When a new user is added and assigned to a role, an email is sent to the user with an invitation to access the Data Hub portal via AVEVA Connect.
+As an administrator, you set up new users in AVEVA Connect. When a new user is added and assigned to a role, an email is sent to the user with an invitation to access the AVEVA Data Hub portal via AVEVA Connect.
 
 To set up new users, follow these steps:
+
+1.	From the AVEVA Connect home page, click the menu icon, then select **User Management**.
 
 1. From the Connect home page, select the menu icon, then select **User Management**.
 
@@ -36,7 +38,7 @@ To set up new users, follow these steps:
 
 1. (Optional) If you selected the `Account role`, select a role from the **Role** dropdown list.
 
-   The user inherits the permissions of the assigned Connect role.    
+   The user inherits the permissions of the assigned AVEVA Connect role.    
 
 1. Select **Save**.
 

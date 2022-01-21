@@ -20,7 +20,7 @@ Assign an existing AVEVA Connect group to a Data Hub role to control what action
 
 To assign an existing AVEVA Connect group to a Data Hub role, follow these steps:
 
-1. Open the Data Hub portal.
+1. Open the AVEVA Data Hub portal.
 
 1. From the left pane, select **Security** > **Groups**.
  
@@ -30,4 +30,4 @@ To assign an existing AVEVA Connect group to a Data Hub role, follow these steps
 
   The group appears in the **Name** field.
  
-1. Assign a role, or multiple roles, to the group to control the actions members can take in the Data Hub portal, then select **Add**. 
+1. Assign a role, or multiple roles, to the group to control the actions members can take in the AVEVA Data Hub portal, then select **Add**. 

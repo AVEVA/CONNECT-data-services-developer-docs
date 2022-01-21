@@ -1,12 +1,12 @@
-- name: What is AVEVA™ Data Hub? 
+- name: What is AVEVA Data Hub? 
   href: what-is-adh.md
-- name: Who uses AVEVA™ Data Hub? 
+- name: Who uses AVEVA Data Hub? 
   href: who-uses-adh.md
-- name: What does AVEVA™ Data Hub do? 
+- name: What does AVEVA Data Hub do? 
   href: what-does-adh-do.md
 - name: Overview of AVEVA™ Connect
   href: get-started/aveva-cnnxt/toc.yml
   topicHref: what-is-cnnxt.md
-- name: Set up Data Hub in AVEVA™ Connect
+- name: Set up AVEVA Data Hub
   href: get-started/aveva-cnnxt/cnnxt-mgmt/toc.yml
   topicHref: get-started/aveva-cnnxt/initial-setup-cnnxt.md

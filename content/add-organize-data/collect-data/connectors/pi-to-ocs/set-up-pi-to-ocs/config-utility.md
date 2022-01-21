@@ -35,9 +35,9 @@ To open the PI to Data Hub Agent Configuration Utility, follow these steps:
 
 1. Select **Start** > **AVEVA** > **PI to Data Hub Agent Configuration Utility**, and then select **Yes** to confirm.
 
-   Upon successful authentication, the PI to Data Hub Agent Configuration Utility opens.
-
 1. Select **Connect to AVEVA Data Hub**.
+
+   After successful authentication, the PI to Data Hub Agent Configuration Utility opens.
    
 ## Add an AF server
 
@@ -57,7 +57,7 @@ To add an AF server, follow these steps:
 
    ![Agent status and state after refresh](../../images/af-details-refreshed.png)
 
-​   **Note:** Once an AF Server has been added, the utility searches for Data Archives that are referenced by the AF server. 
+    **Note:** Once an AF Server has been added, the utility searches for Data Archives that are referenced by the AF server. 
 
 1. (Optional) Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
 
@@ -73,7 +73,7 @@ To add an AF server, follow these steps:
 
 1. (Optional) To check that the connection to the AF server is working, select **Test Connection**.
 
-1. (Optional) To delete a server connection, select **Remove Server**, then select **Yes** to confirm. 
+1. (Optional) To delete a server connection, select **Remove Server**, then select **Remove AF Server** to confirm. 
 
 1. To keep the current AF server configuration settings and restart the agent, select **Save**.
 
@@ -107,7 +107,7 @@ To create an AF mapping, follow these steps:
 
 1. Select the pencil icon next to the **AF Mapping** field.
    
-1. In the `Configure AF Mapping` window, for each mapping you want to add, select an identity and select **Save**.
+1. In the `Configure AF Mapping` window, select an identity and select **Create**.
 
   The AF mapping is created for the selected identity.
                                              
@@ -129,11 +129,13 @@ To add a PI Data Archive, follow these steps:
 
 1. Open the PI to Data Hub Agent Configuration Utility.
    
-1. Select **Data Archive Server**, then enter the name of the Data Archive server, and then select **Add Server**.
+1. Select **Add Data Archive Server**, then enter the name of the Data Archive server, and then select **Add Server**.
    
    The PI Data Archive connection is added and details about the newly added PI Data Archive are displayed.
 
-1. Review the following details for the PI Data Archive:
+   **Note:** If you haven't selected an AF server, select **Data Archive Server** in step 2.
+
+1. Select the **Data Archive Server** tab, then review the following details for the PI Data Archive:
  
    * Server name, version, and server ID
 
@@ -145,7 +147,7 @@ To add a PI Data Archive, follow these steps:
 
 1. (Optional) To confirm that the connection to the Data Archive is working, select **Test Connection**.
 
-1. (Optional) To remove the configured PI Data Archive, select **Remove Server**.
+1. (Optional) To remove the configured PI Data Archive, select **Remove Server**, then select **Remove Data Archive** to confirm.
 
 1. To retain the current PI Data Archive configuration, select **Save**.
 
@@ -167,7 +169,7 @@ To create a PI mapping, follow these steps:
 
     ![Configure Mapping dialog box](../../images/configure-mapping-window.png)
 
-1. For each mapping you want to add, select an identities for the PI mapping, and then select **Create**.
+1. Select an identity for the PI mapping, then select **Create**.
 
    The PI mapping is created for the selected identity, group, or user.
 
@@ -188,7 +190,7 @@ To configure data privacy and add an agent description, follow these steps:
 
 1. To open the `PI to Data Hub Agent Settings` window, select the pencil icon to the right of **Agent Service Account**.
 
-1. To publish the hostname, select the **Opt-in to publishing PI to Data Hub Agent Hostname in AVEVA Data Hub?** option under `Data Privacy`.
+1. To publish the hostname, select the **Opt-in to publishing...** option under `Data Privacy`.
 
 1. (Optional) In the **PI to Data Hub Agent Description** field, enter a descriptive name for the agent.
 

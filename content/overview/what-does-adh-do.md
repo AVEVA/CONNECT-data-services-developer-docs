@@ -19,7 +19,7 @@ The following diagram shows how AVEVA Data Hub fits in an organization:
 ## Tenant management
 
 Customize AVEVA Data Hub to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage folders/namespaces for their tenant. Authentication and authorization are also customizable on AVEVA Data Hub. Configuring the access control list (ACL) for an AVEVA Data Hub resource, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the AVEVA Data Hub REST API or the AVEVA Data Hub portal. 
-<!--Angela Flores 6/29/21 all of the sub headings are far too detailed for this level introduction.THis information should be in the concept topics for these items. Or if we need to go into this level of detail, this should be broken out into five separate topics based on the list above. The OCS portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.-->
+<!--Angela Flores 6/29/21 all of the sub headings are far too detailed for this level introduction.THis information should be in the concept topics for these items. Or if we need to go into this level of detail, this should be broken out into five separate topics based on the list above. The AVEVA Data Hub portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.-->
 
 ### Tenant 
 

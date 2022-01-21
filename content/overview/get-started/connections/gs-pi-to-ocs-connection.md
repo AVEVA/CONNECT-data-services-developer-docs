@@ -16,7 +16,7 @@ To use PI to Data Hub to transfer data from your PI System to AVEVA Data Hub, yo
 
 **Prerequisite:** The exercise below assumes that your organization has a PI System with default PI points (for example, `sinusoid`) stored on Data Archive.
 
-To set up a PI to OCS transfer, follow these steps:
+To set up a PI to Data Hub transfer, follow these steps:
 
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 

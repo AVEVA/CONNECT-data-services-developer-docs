@@ -16,15 +16,15 @@ Invite business partners to join a community so they can share data.
 
 Two different users must perform the following procedure to invite and add a tenant to a community:
 
-- One user, the "inviter," invites another tenant. To be an inviter, you must be a [Community Administrator](xref:communityroles#community-administrator).
+- One user, the "inviter," invites another tenant. To be an inviter, you must be a [Community Administrator](xref:ccRoles#how-are-communities-administered).
 
-- Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a [Tenant Administrator](xref:communityroles#tenant-administrator) of a separate tenant that does not already belong to the community.
+- Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a Tenant Administrator of a separate tenant that does not already belong to the community.
 
 **Invite process**
 
 ![Invite process](images/invite-process.drawio.svg)
 
-## 1. Inviter sends invite
+## Step 1: Inviter sends invite
 
 To send an invite to a community, follow these steps:
 
@@ -38,13 +38,13 @@ To send an invite to a community, follow these steps:
 
   An email is sent to the invitee.
 
-## 2. Invitee accepts invite
+## Step 2. Invitee accepts invite
 
 To accept an invitation, follow these steps:
 
-1. Open the email from OSIsoft Cloud Services Operations and follow the instructions.
+1. Open the email from OSIsoft Cloud Services Operations, read the instructions, and select the VIEW COMMUNITY INVITE link.
 
-1. On the login window, enter the tenant ID or tenant alias of the tenant from which you want to share data and select **Continue**. You must be a Tenant Administrator to accept the invitation.
+1. If prompted, enter the tenant ID or tenant alias of the tenant from which you want to share data and select **Continue**. You must be a Tenant Administrator to accept the invitation.
 
 1. On the authentication window, verify your identity.
 
@@ -54,7 +54,13 @@ To accept an invitation, follow these steps:
 
   The inviter receives an email asking for confirmation of the pending invitation.
 
-## 3. Inviter confirms invite
+1. Assign community membership to tenant users.
+
+    In the list of users, select **Add User** ![Add User](images\add-button-white-background.png "Add User") beside each user who should be a community member. If necessary, you can filter the list of users by typing in the **Filter by name or e-mail** field.
+
+    **Note:** If you do not assign yourself the Community Administrator role, you cannot access details about the new community unless you use the [Users](xref:ccUsers) feature to assign yourself the `new_community_name` Community Member Role.
+
+## Step 3. Inviter confirms invite
 
 To confirm an invite, follow these steps:
 

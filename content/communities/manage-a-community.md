@@ -16,7 +16,7 @@ Invite business partners to join a community so they can share data.
 
 Two different users must perform the following procedure to invite and add a tenant to a community:
 
-- One user, the "inviter," invites another tenant. To be an inviter, you must be a [Community Administrator](xref:ccRoles#how-are-communities-administered).
+- One user, the "inviter," invites another tenant. To be an inviter, you must be a Community Administrator.
 
 - Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a Tenant Administrator of a separate tenant that does not already belong to the community.
 
@@ -86,7 +86,7 @@ Use this procedure to remove a tenant from a community. This action might be nec
 
 After removing a tenant, you can re-invite the tenant to the community but all data that was previously shared must be shared again with the returning tenant.
 
-**Note:** Only a user who has a [Community Administrator](xref:communityroles#community-administrator) role can remove a tenant from a community.  
+**Note:** You must be a Community Administrator to remove a tenant from a community.  
 
 To remove a tenant from a community, follow these steps:
 

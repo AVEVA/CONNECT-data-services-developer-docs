@@ -84,7 +84,7 @@ To install the PI to Data Hub Agent, follow these steps:
 
 ## Verify the PI to Data Hub Agent is running and registered
 
-After installation, check that the PI to Data Hub Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in OCS. 
+After installation, check that the PI to Data Hub Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in AVEVA Data Hub. 
 
 To verify the installation, follow these steps:
 

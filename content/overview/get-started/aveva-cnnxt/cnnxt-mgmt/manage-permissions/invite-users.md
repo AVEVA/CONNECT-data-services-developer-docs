@@ -6,38 +6,40 @@ uid: invite-users
 
 As an administrator, you set up new users in AVEVA Connect. When a new user is added and assigned to a role, an email is sent to the user with an invitation to access the AVEVA Data Hub portal via AVEVA Connect.
 
+To set up new users, follow these steps:
+
 1.	From the AVEVA Connect home page, click the menu icon, then select **User Management**.
 
-1.	(Optional) Click the **Users** tab.
+1. From the Connect home page, select the menu icon, then select **User Management**.
+
+1. (Optional) Select the **Users** tab.
     
-    **Result:** The existing users display.
+   The existing users display.
 
-1.	Click the **Add user** button. 
+1. Select **Add user**. 
 
-    **Result:** The **Add User** pane opens.
+   The `Add User` pane opens.
 
-1.	In the **Username** field, enter the user's email address. 
+1. In the **Username** field, enter the user's email address. 
     
-1. (Optional) Click the **Groups** field, then select an existing group.
+1. (Optional) Select the **Groups** field, then select one or more groups.
 
-    **Result:** The user is assigned to the group.
-
-1. (Optional) Repeat step 5 to assign the user to another group. 
+   The user is assigned to the selected groups.
 
 1. Under **Add individual role**, select one of the following role types:
    
-   * **Service role**:Select this role to control what AVEVA Connect service and folder the user can access, and then assign an additional role.   
+   * `Service role` - Select this role to control what Connect service and folder the user can access, and then assign an additional role.   
 
-   * **Account role**: Select this role to assign the user to an AVEVA Connect role.     
+   * `Account role` - Select this role to assign the user to a Connect role.     
 
-1. (Optional) If you selected the Service role, select the service, folder, and role from the dropdown lists.
+1. (Optional) If you selected the `Service role`, select the service, folder, and role from the dropdown lists.
  
-   **Result:** The user is granted access to the designated service and folder, and inherits the permissions of the assigned role.   
+   The user is granted access to the designated service and folder, and inherits the permissions of the assigned role.   
 
-1. (Optional) If you selected the Account role, select a role from the **Role** dropdown list.
+1. (Optional) If you selected the `Account role`, select a role from the **Role** dropdown list.
 
-   **Result:** The user inherits the permissions of the assigned AVEVA Connect role.    
+   The user inherits the permissions of the assigned AVEVA Connect role.    
 
-1.	Click **Save**.
+1. Select **Save**.
 
-    **Result:** The user is created and and an email invitation to AVEVA Connect is sent to the user's email address.
+   The user is created and and an email invitation to AVEVA Connect is sent to the user's email address.

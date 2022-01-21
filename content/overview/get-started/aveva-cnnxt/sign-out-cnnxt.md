@@ -6,7 +6,7 @@ uid: sign-out-cnnxt
 
 Some AVEVA Connect application environments are independent of each other. To switch between application environments you should sign out before attempting to sign in to another application.
 
-When you have completed your session within AVEVA Connect, you must sign out. To do this, click the profile icon (top-right) in AVEVA Connect, and then click **Sign Out**. 
+When you have completed your session within AVEVA Connect, you must sign out. To do this, select the profile icon on the top-right in AVEVA™ Connect, and then select **Sign Out**. 
 
 ![Sign out of AVEVA Connect](images/sign-out-cnnxt.png)
  

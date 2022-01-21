@@ -6,6 +6,8 @@ uid: gsHybridClients
 
 Hybrid clients are used by native and server-side web applications. Authentication can be performed using any supported browser. The server-side code retrieves an access token and a refresh token can also be provided. For more information about hybrid clients, see [Hybrid clients](xref:ccClients#hybrid-client).
 
+**Note:** Client modifications may take up to an hour before being visibly updated.
+
 To create a hybrid client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
@@ -20,15 +22,15 @@ To create a hybrid client, follow these steps:
 
 1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in to AVEVA Data Hub.
    
-   **Note:** Avoid selecting this option if there is no need to refresh tokens. There is a long lifespan for requesting new access tokens. 
+   **Note:** Do not select this option if there is no need to refresh tokens. There is a long lifespan for requesting new access tokens. 
 
-1. Enter the URLs in the **Allowed Redirect URL(s)** field, then click **+** to add it to the list.  
+1. In the **Allowed Redirect URL(s)** box, enter a URL and select **+** to add it to the list.  
    
    The application specifies one of the URLs in this list during authentication, and AVEVA Data Hub returns the results of the authentication to this URL.
 
 1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+** to add it to the list.  
    
-   The application specifies one of the URLs from this list when it logs a user out of AVEVA Data Hub, and the identity server sends the user to that URL after a successful log out.
+   The application specifies one of the URLs from this list when it logs a user out of AVEVA Data Hub, and AVEVA Data Hub sends the user to that URL after a successful log out.
 
 1. (Optional) In the **Token Lifetime** field, enter the length of time in seconds that the access token functions before it expires. 
 
@@ -36,21 +38,19 @@ To create a hybrid client, follow these steps:
 
 1. Select **Add**.  
 
-1. In the `Add Secret` window, enter a description for the secret. Include a unique description if you plan to create multiple secrets.
+  The `Add Secret` window opens.
 
-1. Enter an expiration date.
+1. (Optional) In the **Description** field, enter a description to identify the client secret.
 
-    Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
+1. In the **Expiration Date** field, enter a date and time that the secret expires.
 
-1. Select **Add**.
+  Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
+
+1. Select **Add**.  
+                
+   The `Client Successfully Created` window displays the client Id and client secret.
    
-    The **Client Successfully Created** window opens and displays the client Id and client secret Id.
-
-    **Important:** Select the **Copy** buttons to the right of the **Client Id** and **Client Secret** fields to save a copy of these Ids for your records. You will need to reference these Ids in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
-
-1. Select **Close**.
-
-    **Note:** The client ID is visible on the client. If you did not save the client secret, select the client in the list and use the Details pane to remove the old secret and add a new secret. Client modifications may take up to an hour before being visibly updated.
+   **Important:** Select the **Copy** button to the right of each field to save the client secret and client Id. You need this information to connect your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
 
 ## Next step
 

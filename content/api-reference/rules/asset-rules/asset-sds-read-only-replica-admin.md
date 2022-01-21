@@ -305,8 +305,22 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/replica
     ]
   },
   "Metadata": {
-    "property1": "string",
-    "property2": "string"
+    "property1": {
+      "Value": "string",
+      "ChangeData": {
+        "Timestamp": "2019-08-24T14:15:22Z",
+        "CreatorId": "string",
+        "CreatorType": 0
+      }
+    },
+    "property2": {
+      "Value": "string",
+      "ChangeData": {
+        "Timestamp": "2019-08-24T14:15:22Z",
+        "CreatorId": "string",
+        "CreatorType": 0
+      }
+    }
   },
   "Acl": {
     "RoleTrusteeAccessControlEntries": [
@@ -669,6 +683,78 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/replica
 |None|1|
 |Forward|2|
 |Backward|3|
+
+---
+
+### MetadataModel
+
+<a id="schemametadatamodel"></a>
+<a id="schema_MetadataModel"></a>
+<a id="tocSmetadatamodel"></a>
+<a id="tocsmetadatamodel"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Value|string|false|true|None|
+|ChangeData|[ChangeData](#schemachangedata)|false|true|None|
+
+```json
+{
+  "Value": "string",
+  "ChangeData": {
+    "Timestamp": "2019-08-24T14:15:22Z",
+    "CreatorId": "string",
+    "CreatorType": 0
+  }
+}
+
+```
+
+---
+
+### ChangeData
+
+<a id="schemachangedata"></a>
+<a id="schema_ChangeData"></a>
+<a id="tocSchangedata"></a>
+<a id="tocschangedata"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Timestamp|date-time|false|false|None|
+|CreatorId|string|false|true|None|
+|CreatorType|[CreatorType](#schemacreatortype)|false|false|None|
+
+```json
+{
+  "Timestamp": "2019-08-24T14:15:22Z",
+  "CreatorId": "string",
+  "CreatorType": 0
+}
+
+```
+
+---
+
+### CreatorType
+
+<a id="schemacreatortype"></a>
+<a id="schema_CreatorType"></a>
+<a id="tocScreatortype"></a>
+<a id="tocscreatortype"></a>
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|Unknown|0|
+|User|1|
+|Client|2|
+|Rule|3|
 
 ---
 

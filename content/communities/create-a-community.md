@@ -16,7 +16,7 @@ The community is private; users outside of your community can access it without 
 
 To create a community, follow these steps:
 
-**Note:** Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can perform this procedure.
+**Note:** You must be a Tenant Administrator to perform this procedure.
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -30,11 +30,11 @@ To create a community, follow these steps:
     
     1. Select **Next**.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned access to administer the community.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned permissions to administer the community.
 
     By default, the community assigns administrative access to tenant users assigned the **Tenant Administrator** role. Optionally, you can add additional roles to be assigned community administrative access.
 
-    [What access rights are assigned to the Community Administrator role?](#what-access-rights-are-assigned-to-the-community-administrators-role)
+    [What access rights are assigned to the Community Administrator?](xref:ccRoles)
 
     1. (Optional) Add or remove roles to be assigned community administrator access.
 
@@ -55,19 +55,3 @@ To create a community, follow these steps:
     1. Select **Create**.
 
 The community is created and added to the `Communities` page. For information about inviting or deleting tenants from an existing community, see [Manage tenants in a community](xref:managecommunity).
-
-## What access rights are assigned to the Community Administrators role?
-
-Any user assigned a role that you added to the `Community Administor` page is assigned the following access rights within the community:
-
-* Modify the community name and description.
-
-* Add users and clients to the community.
-
-* Remove users and clients from the community.
-
-* Assign roles that can administer the community.
-
-* Pause the sharing of data from your tenant into the community.
-
-* Delete the community.

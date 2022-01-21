@@ -30,7 +30,7 @@ Both **Tenant A** and **Tenant B** have two streams stored in each of their tena
 
 Both tenants are sharing only one of their data streams within the community: **Tenant A** is sharing their silver stream, and **Tenant B** is sharing their light blue stream (callout **4**). A data steward with sharing privileges must explicitly share a data stream.
 
-All data streams shared within the community can be viewed by any [community member](xref:communityroles#community-member) (callout **5**). Within a community, administrators or moderators can invite and manage which users within their tenant can participate in the community and view shared data.
+All data streams shared within the community can be viewed by any community member (callout **5**). Within a community, administrators can invite and manage which users within their tenant can participate in the community and view shared data.
 
 ## Community features and benefits
 
@@ -38,7 +38,7 @@ Communities allow you to easily and securely share operational data with busines
 
 ### Connect with business partners
 
-Establish a community by [creating it](xref:add-community) and then [inviting other tenants](xref:managecommunity) owned by business partners. Each invitation is a three-way handshake. A [tenant administrator](xref:communityroles#tenant-administrator) from the establishing tenant, also known as the [community owner](xref:communityroles#community-owner), sends an email invitation to one or more OCS tenant administrators from another tenant. The business partner then accepts the invitation. The original tenant administrator who issued the invitation confirms it, allowing the partner to join the community. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
+Establish a community by [creating it](xref:add-community) and then [inviting other tenants](xref:managecommunity) owned by business partners. Each invitation is a three-way handshake. A tenant administrator from the establishing tenant, also known as the community owner, sends an email invitation to one or more tenant administrators from another tenant. The business partner then accepts the invitation. The original tenant administrator who issued the invitation confirms it, allowing the partner to join the community. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
 ### Scalable
 
@@ -48,9 +48,9 @@ Communities allow you to share your data streams with multiple business partners
 
 Communities support multi-tenant management of users and permissions. 
 
-Within each tenant, [community administrators](xref:communityroles#community-administrator) can independently [invite or remove users](xref:managecommunityusers), keeping user and permissions separate from other tenants in the community. Each tenant within the community has individual control over which of its users can access the community or share data within it. Community administrators cannot control users or permission in other tenants.
+Within each tenant, community administrators can independently [invite or remove users](xref:managecommunityusers), keeping user and permissions separate from other tenants in the community. Each tenant within the community has individual control over which of its users can access the community or share data within it. Community administrators cannot control users or permission in other tenants.
 
-Additionally, OCS provides [community roles](xref:communityroles) that allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
+Additionally, OCS provides community roles that allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
 
 ### Secure data sharing
 

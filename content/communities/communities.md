@@ -24,7 +24,7 @@ The following diagram visually displays an established community.
 
 ![Community diagram](images/community-diagram.svg)
 
-Within this diagram, a [tenant administrator](xref:communityroles#tenant-administrator) (callout **1**) from  **Tenant A** has invited **Tenant B** to form a community. 
+Within this diagram, a tenant administrator (callout **1**) from  **Tenant A** has invited **Tenant B** to form a community. 
 
 Both **Tenant A** and **Tenant B** have two streams stored in each of their tenants, as depicted by callout **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (callout **3**). 
 

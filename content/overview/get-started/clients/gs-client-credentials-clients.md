@@ -6,13 +6,15 @@ uid: gsClientCredentialsClients
 
 Client-credentials clients are used for server-to-server communication where no user interaction is required. For more information about client-credentials clients, see [Client-credentials clients](xref:ccClients#client-credentials-client).
 
+**Note:** Client modifications may take up to an hour before being visibly updated.
+
 To create a client-credentials client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. From the **Client Type** field, select **Client-Credentials**. This is the option that is displayed by default.
+1. From the **Client Type** field, select **Client-Credentials**. This option is the default.
 
-1. In the toolbar, click **Add Client**.
+1. In the toolbar, select **Add Client**.
 
   The `Add Client` window opens.
 
@@ -24,19 +26,15 @@ To create a client-credentials client, follow these steps:
 
    **Note:** The **MyData.Role** role is a custom role in this exercise. 
 
-1. (Optional) Set the **Token Lifetime**.  
+1. (Optional) In the **Token Lifetime** field, enter the length of time in second that the access token functions before it expires.
    
-   Token Lifetime represents the length of time in seconds that the access token for this Client is valid from the time issued until it expires.
-   
-   The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
+   The default, 3600 seconds (one hour), is the maximum value. The minimum value is 60 seconds.
 
 1. Select **Continue**.
 
-1. In the `Add Secret` window, enter a description for the client secret. Enter a unique description if you plan to create multiple secrets.
-
   The `Add Secret` window opens.
 
-   Choose an expiration date that is appropriate for your use case. By default, the secret is set to expire one year after creation. You may specify that the secret does not expire by selecting the **Never Expires** checkbox. Secrets can be deleted later, including secrets that are set to never expire.
+1. (Optional) In the **Description** field, enter a description for the client secret.
 
 1. In the **Expiration Date** field, enter a date and time that the secret expires.
 
@@ -50,7 +48,7 @@ To create a client-credentials client, follow these steps:
     
 1. Select **Close**.  
 
-   **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret. Client modifications may take up to an hour before being visibly updated.
+   **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret. 
 
 ## Next step
 

@@ -22,7 +22,9 @@ To create a community, follow these steps:
 
 1. To assign a Community Administrator from your tenant, select **Add User**.
 
-1. In the list of users, select **Add User** ![Add User](images\add-button-white-background.png "Add User") beside each user who should be a Community Administrator. If necessary, you can filter the list of users by typing in the **Filter by name or e-mail** field.
+1. Assign community membership to tenant users.
+
+    In the list of users, select **Add User** ![Add User](images\add-button-white-background.png "Add User") beside each user who should be a community member. If necessary, you can filter the list of users by typing in the **Filter by name or e-mail** field.
 
     **Note:** If you do not assign yourself the Community Administrator role, you cannot access details about the new community unless you use the [Users](xref:ccUsers) feature to assign yourself the `new_community_name` Community Member Role.
 

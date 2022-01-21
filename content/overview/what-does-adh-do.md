@@ -100,7 +100,7 @@ The type of data, the location of that data, and the way that a particular sourc
 
 #### PI to Data Hub 
 
-The PI to Data Hub collection method transfers PI time series data from a local PI Server to OCS. The PI to Data Hub Agent is installed and configured directly on a designated device. The PI to Data Hub Agent creates types and streams in AVEVA Data Hub based on the PI tags mapped from PI Data Archive. 
+The PI to Data Hub collection method transfers PI time series data from a local PI Server to AVEVA Data Hub. The PI to Data Hub Agent is installed and configured directly on a designated device. The PI to Data Hub Agent creates types and streams in AVEVA Data Hub based on the PI tags mapped from PI Data Archive. 
 
 **Note**: Install the PI to Data Hub Agent and PI Server on separate devices to avoid the two systems competing for resources.
 <!--Angela Flores 6/29/21 Too much detail for an overview.-->

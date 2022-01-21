@@ -20,11 +20,11 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. In the **Allowed Redirect URL(s)** box, enter a URL and select **+** to add it to the list.
 
-   The application specifies one of the URLs in this list when it authenticates against OCS, and the AVEVA Data Hub identity server returns the results of the authentication to this URL.
+   The application specifies one of the URLs in this list during authentication, and the AVEVA Data Hub identity server returns the results of the authentication to this URL.
 
 1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+** to add it to the list. 
 
-   The application specifies a URL from this list when it logs out of OCS, and the AVEVA Data Hub identity server sends the user to this URL after a successful log out.
+   The application specifies a URL from this list when it logs out, and the AVEVA Data Hub identity server sends the user to this URL after a successful log out.
 
 1. (Optional) In the **Token Lifetime** field, enter the length of time in seconds that the access token functions before it expires.  
 

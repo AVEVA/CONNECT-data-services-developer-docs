@@ -6,23 +6,51 @@ uid: ccRoles
 
 Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, OCS checks the assigned roles against the permissions on the resource to determine their access level.
 
-There are five built-in roles which cannot be removed from a tenant:
-
-- Tenant Administrator – Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
-
-  **Note:** Do not assign the Tenant Administrator role to clients.
-
-- Tenant Contributor – This role has read and write permissions by default.
-
-- Tenant Data Steward – This role has no specific permissions by default.
-
-- Tenant Viewer – This role has no specific permissions by default.
-
-- Tenant Member – This role, which OCS assigns to all users or clients, has read access by default.
-
-You can add roles to further control access. By default, added roles do not have any specific permissions. You must have the Tenant Administrator role to add and manage roles in a tenant. 
-
 Assigning a role to a user or client does not determine access. For any resource, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
+
+## Role types
+
+OSIsoft Cloud Services includes three different types of roles, which determine the scope of the access rights assigned to a user:
+
+- [Tenant roles](#tenant-roles)
+
+- [Tenant custom roles](#tenant-custom-roles)
+
+- [Community roles](#community-roles-preview)
+
+### Tenant roles
+
+Tenant roles are default roles that assign access rights to users within the scope of your tenant. These default roles cannot be removed from the tenant. Tenant roles assign a default permissions for each access right in the system. 
+
+There are five default tenant roles. The following table lists the default permission for each tenant role. 
+
+| Role | Read | Write | Delete | Manage Permissions | Notes |
+|--|--|--|--|--|--|--|
+| Tenant Administrator | &#10004; | &#10004; | &#10004; | &#10004; | This is the highest privilege role, with the ability to create new and remove existing users, clients, and secrets. Do not assign this role to clients. |
+| Tenant Contributor | &#10004; | &#10004; |  |  |
+| Tenant Member | &#10004; |  |  |  | This role is automatically assigned to all users or clients. |
+| Tenant Viewer |  |  |  |  | This role has no specific permissions by default. |
+| Tenant Data Steward |  |  |  |  | This role has no specific permissions by default. |
+
+### Tenant Custom roles 
+
+You can create custom tenant roles when the default tenant roles do not meet your organizational use cases. You can assign these custom roles a custom set of access rights and permissions. By default, added roles do not have any specific permissions. 
+
+You must have the Tenant Administrator role to add and manage roles in a tenant.
+
+### Community roles (Preview)
+
+Community roles define the access that user has within the scope of a [community](xref:communities), regardless of whether that community is owned by your tenant or a partner tenant.
+
+There is a single community role: Community Member. The following table lists its default access rights within a community.
+
+| Role | Read | Write | Delete | Manage Permissions|
+|--|--|--|--|--|--|
+| Community Member | &#10004; |  |  |  |  |
+
+#### How are communities administered?
+
+When a tenant administrator creates or joins a new community, they are prompted to assign new community administration access rights to one or more existing tenant roles. You can assign these permissions to either a default tenant role or a custom tenant role. All users assigned the updated role will have administrative access rights within the community for their tenant.  
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 

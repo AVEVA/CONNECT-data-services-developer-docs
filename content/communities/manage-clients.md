@@ -6,11 +6,11 @@ uid: managecommunityclients
 
 Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources. The `Community Details` page lets you add and delete clients. You can only add [client-credentials clients](xref:ccClients) to a community.
 
-To perform the following procedures, you must be a [Community Administrator](xref:communityroles#community-administrator) or [Community Moderator](xref:communityroles#community-moderator).
+To perform the following procedures, you must be a Community Administrator.
 
 ## Add clients to a community
 
-To add a client to a community, the client must already exist in OCS. Only a [Tenant Administrator](xref:communityroles#tenant-administrator) can create a client. For more information about creating clients, see [Add a client credentials client](xref:gpClientCredentialsClient).
+To add a client to a community, the client must already exist in OCS. For more information about creating clients, see [Add a client credentials client](xref:gpClientCredentialsClient).
 
 To add a client to a community, follow these steps:
 

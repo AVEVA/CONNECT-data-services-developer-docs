@@ -11,8 +11,6 @@ Complete the following procedures to create a community, invite other tenants, a
 1. [Create a community](xref:add-community).
 
 1. [Invite another OCS tenant](xref:managecommunity#invite-a-tenant-to-a-community) to join the community.
-
-1. [Share streams](xref:ShareStreams) with the community.
    
 ## Community administration
 
@@ -22,4 +20,4 @@ Complete the following procedures to create a community, invite other tenants, a
 
 ## Community member tasks
 
-1. Placehoder
+1. [Share streams](xref:ShareStreams) with the community.

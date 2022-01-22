@@ -1,7 +1,9 @@
 - topicUid: community-setup
   items:
   - topicUid: add-community
-  - topicUid: managecommunity
+  - topicUid: community-invite
+    items:
+    - topicUid: community-accept-invite
 - topicUid: community-administration
   items:
   - topicUid: managecommunity

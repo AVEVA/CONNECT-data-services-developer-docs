@@ -8,7 +8,7 @@
   items:
   - topicUid: managecommunity
   - topicUid: manage-users
-  - topicUid: manage-clients
+  - topicUid: managecommunityclients
   - topicUid: delete-community
 - topicUid: community-member-tasks
   items:

@@ -20,7 +20,7 @@ OSIsoft Cloud Services includes three different types of roles, which determine 
 
 ### Tenant roles
 
-Tenant roles are default roles that assign access rights to users within the scope of your tenant. These default roles cannot be removed from the tenant. Tenant roles assign a default permissions for each access right in the system. 
+Tenant roles are default system roles that assign permissions to users within the scope of your tenant. These default roles cannot be removed from the tenant. Tenant roles assign a default permission for each access right in the system. 
 
 The following table lists the default permissions for each tenant role. 
 
@@ -34,7 +34,7 @@ The following table lists the default permissions for each tenant role.
 
 ### Tenant Custom roles 
 
-You can create custom tenant roles when the default tenant roles do not meet your organizational use cases. You can assign these custom roles a custom set of access rights and permissions. By default, added roles do not have any specific permissions. 
+You can create custom tenant roles when the default tenant roles do not meet your organizational use cases. You can assign these custom roles a custom set of permissions. By default, added roles do not have any specific permissions. 
 
 You must have the Tenant Administrator role to add and manage roles in a tenant.
 

@@ -2,7 +2,7 @@
 uid: community-setup
 ---
 
-# Community Setup
+# Community setup
 
 Deserunt mollit consectetur commodo cupidatat laborum nostrud consectetur ad. Minim incididunt et labore veniam sit voluptate commodo ipsum fugiat enim ex duis amet. Exercitation ullamco veniam ea ex enim ea sit fugiat. Voluptate adipisicing cillum cupidatat cupidatat. Sit duis sint aliqua do.
 

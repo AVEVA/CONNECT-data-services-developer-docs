@@ -12,11 +12,13 @@ A community is a space where you and your external partners can share operationa
 
 * The users within your tenant that have read access within the community.
 
-The community is private; users outside of your community can access it without an invitation.
+## Prerequisites for community creation
+
+You must be a Tenant Administrator to create a community.
+
+## To create a community
 
 To create a community, follow these steps:
-
-**Note:** You must be a Tenant Administrator to perform this procedure.
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -30,13 +32,11 @@ To create a community, follow these steps:
     
     1. Select **Next**.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned permissions to administer the community.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration](TODO) permissions.
 
-    By default, the community assigns administrative access to tenant users assigned the **Tenant Administrator** role. Optionally, you can add additional roles to be assigned community administrative access.
+    By default, community administration permissions are assigned to the **Tenant Administrator** role. Optionally, you can add community administration permissions to other roles.
 
-    [What access rights are assigned to the Community Administrator?](xref:ccRoles)
-
-    1. (Optional) Add or remove roles to be assigned community administrator access.
+    1. (Optional) Add or remove roles to be assigned community administrator permissions.
 
         * To add additional roles as community administrator, select **Add Roles** and then select any role that you want to function as community administrator.
 
@@ -44,7 +44,9 @@ To create a community, follow these steps:
 
     1. Select **Next**.
 
-1. On the `Community Members` page, add community members, which are users within your tenant that have read access to the community and its data. By default, community administrators do not have community member access rights, so adding community administrators as community members is recommended.
+1. On the `Community Members` page, add community members, which are users within your tenant that have read access to the community and its data. 
+
+    **Note:** By default, community administrators do not have community member access rights, so adding community administrators as community members is recommended.
 
     1. Add or remove users as community members.
 

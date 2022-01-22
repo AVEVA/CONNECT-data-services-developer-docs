@@ -20,6 +20,6 @@ Complete the following procedures to create a community, invite other tenants, a
 
 1. [Add clients](xref:managecommunityclients#add-clients-to-a-community) for programmatic access to the community.
 
-## Commumity member tasks
+## Community member tasks
 
 1. Placehoder

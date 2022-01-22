@@ -16,7 +16,7 @@ Administrators from both the tenant that owns the community and the tenant being
 
 ![Invite process](images/invite-process.drawio.svg)
 
-## Community invitation prerequisites
+## Prerequisites for sending community invitations
 
 To send a community invitation, you must meet the follow prerequisites:
 

@@ -22,7 +22,7 @@ OSIsoft Cloud Services includes three different types of roles, which determine 
 
 Tenant roles are default roles that assign access rights to users within the scope of your tenant. These default roles cannot be removed from the tenant. Tenant roles assign a default permissions for each access right in the system. 
 
-There are five default tenant roles. The following table lists the default permissions for each tenant role. 
+The following table lists the default permissions for each tenant role. 
 
 | Role | Read | Write | Delete | Manage Permissions | Notes |
 |--|--|--|--|--|--|--|
@@ -48,7 +48,7 @@ There is a single community role: Community Member. The following table lists it
 |--|--|--|--|--|--|
 | Community Member | &#10004; |  |  |  |  |
 
-#### How are communities administered?
+#### How are communities administered? (Preview)
 
 When a tenant administrator creates or joins a new community, they are prompted to assign new community administration access rights to one or more existing tenant roles. You can assign these permissions to either a default tenant role or a custom tenant role. All users assigned the updated role will have administrative access rights within the community for their tenant, including the following actions:
 

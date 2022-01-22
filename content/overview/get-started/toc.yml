@@ -2,6 +2,7 @@
   topicHref: introduction-portal-interface.md
 - name: Get started with namespaces
   topicHref: gs-namespaces.md
+- topicUid: gsCommunities
 - name: Get started with connections
   href: connections/toc.yml
   topicHref: gs-connections.md
@@ -24,4 +25,3 @@
   topicHref: gs-metadata-rules.md
 - name: Get started with stream views
   topicHref: gs-stream-views.md
-- topicUid: gsCommunities

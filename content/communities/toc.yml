@@ -1,4 +1,4 @@
-- topicUid: gsCommunities
+- topicUid: communities
 - topicUid: community-setup
   items:
   - topicUid: add-community
@@ -9,8 +9,7 @@
   - topicUid: manage-users
   - topicUid: manage-clients
   - topicUid: delete-community
-- topicsUid: community-member-tasks
+- topicUid: community-member-tasks
   items:
-  - topicUid: ShareStreams   
+  - topicUid: ShareStreams
   - topicUid: view-community-data
-

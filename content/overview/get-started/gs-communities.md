@@ -2,7 +2,7 @@
 uid: gsCommunities
 ---
 
-# Get started with communities
+# Get started with communities (Preview)
 
 Complete the following procedures to create a community, invite other tenants, add users and clients, and share data streams.
 

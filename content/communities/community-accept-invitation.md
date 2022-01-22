@@ -4,7 +4,7 @@ uid: community-accept-invite
 
 # Accept community invitation
 
-If another tenant invites you to a community, you will receive an email from the inviting tenant. Follow the instructions in the email to accept the invitation to the community.
+If another tenant invites you to a community, you will receive an email from the inviting tenant. To accept the invitation, follow instructions in the email.
 
 ## Prerequisites for accepting community invitations
 

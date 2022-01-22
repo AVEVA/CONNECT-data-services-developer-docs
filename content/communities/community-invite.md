@@ -12,7 +12,7 @@ To allow another tenant to participate in your community, you must complete a th
 
 - The community owner who issued the invitation confirms it, allowing the partner to join the community. 
 
-These instructions are written from the perspective of the community owner that is inviting another tenant to the community. For instructions from the perpective of the tenant administator receiving the invitation, see <xref:community-accept-invite>.
+**Note:** These instructions are written for the community owner who is *sending* an invition. For instructions for the tenant administator *receiving* the invitation, see <xref:community-accept-invite>.
 
 ## Prerequisites for sending community invitations
 

@@ -4,6 +4,12 @@ uid: community-setup
 
 # Community setup
 
-Deserunt mollit consectetur commodo cupidatat laborum nostrud consectetur ad. Minim incididunt et labore veniam sit voluptate commodo ipsum fugiat enim ex duis amet. Exercitation ullamco veniam ea ex enim ea sit fugiat. Voluptate adipisicing cillum cupidatat cupidatat. Sit duis sint aliqua do.
+Establishing a new community requires collaboration between administrators for multiple tenants.
 
-In veniam minim aliquip labore Lorem nostrud ad cupidatat. Consequat labore irure veniam ad eiusmod fugiat incididunt mollit adipisicing mollit. Aute in nostrud exercitation aliqua consequat eu non. Velit id esse ipsum dolore. Et aute quis reprehenderit incididunt reprehenderit. Fugiat exercitation elit sint Lorem nulla est enim id qui.
+1. A tenant administrator creates a new community. During this process, the tenant adminstrator names the community and chooses which tenant users can participate in the community. This founding administrator is also known as *community owner*.
+
+	For instructions on how to create a new community, see <xref:add-community>.
+
+1. The community owner invites other tenants to participate in the community. The community owner sends email invitations to partnering tenant administrators, who then accepts the invitation and chooses which tenant users can participate in the community. Following acceptance, the community owner confirms the invitation, and the invitation process is complete.
+
+	For instructions on how to complete the invitation process, see <xref:community-invite>.

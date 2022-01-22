@@ -48,9 +48,9 @@ There is a single community role: Community Member. The following table lists it
 |--|--|--|--|--|--|
 | Community Member | &#10004; |  |  |  |  |
 
-#### How are communities administered? (Preview)
+#### Community administrators (Preview)
 
-When a tenant administrator creates or joins a new community, they are prompted to assign new community administration access rights to one or more existing tenant roles. You can assign these permissions to either a default tenant role or a custom tenant role. All users assigned the updated role will have administrative access rights within the community for their tenant, including the following actions:
+When a tenant administrator creates or joins a new community, they are prompted to assign new community administration access rights to one or more existing tenant roles.  Community administration access rights are not explicitly assigned to a user. Instead, assign these permissions to either a default tenant role or a custom tenant role. All users assigned the updated role inherit administrative access rights within the community for their tenant, including the following actions:
 
 - Add users from their tenant to the community.
 

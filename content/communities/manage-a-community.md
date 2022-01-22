@@ -32,13 +32,13 @@ To send an invite to a community, follow these steps:
 
 1. Find the community you want to share and select **Details**.
 
-1. On the `Community Details` page, on the **Tenants** tab, select **Invite Tenant**.
+1. On the **Tenants** tab, select **Invite Tenant**.
 
 1. Enter the email address of the administrator of the tenant you would like to invite and select **Send**.
 
   An email is sent to the invitee.
 
-## Step 2. Invitee accepts invite
+## Step 2: Invitee accepts invite
 
 To accept an invitation, follow these steps:
 
@@ -48,7 +48,7 @@ To accept an invitation, follow these steps:
 
 1. On the authentication window, verify your identity.
 
-  A page opens and displays that your tenant will join the community that issued the the invitation. Membership in the community does not begin until the inviter confirms the invitation in the next step.
+  A page opens and displays that your tenant will join the community that issued the invitation. Membership in the community does not begin until the inviter confirms the invitation in the next step.
 
 1. Select **Join**.
 
@@ -60,7 +60,7 @@ To accept an invitation, follow these steps:
 
     **Note:** If you do not assign yourself the Community Administrator role, you cannot access details about the new community unless you use the [Users](xref:ccUsers) feature to assign yourself the `new_community_name` Community Member Role.
 
-## Step 3. Inviter confirms invite
+## Step 3: Inviter confirms invite
 
 To confirm an invite, follow these steps:
 

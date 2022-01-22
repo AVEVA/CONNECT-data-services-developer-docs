@@ -4,19 +4,27 @@ uid: community-invite
 
 # Invite a tenant to a community
 
-Invite business partners to join a community so they can share data. 
+Invite other OCS tenants to join a community so they can share data. 
 
-**Note:** The business partner must already belong to a tenant in OSIsoft Cloud Services (OCS).
+Administrators from both the tenant that owns the community and the tenant being invited must collaborate to complete this process:
 
-Two different users must perform the following procedure to invite and add a tenant to a community:
+- A community administrator from the tenant that owns the community (called the "inviter") invites another tenant by sending an email invitation to its tenant administrator.
 
-- One user, the "inviter," invites another tenant. To be an inviter, you must be a Community Administrator.
-
-- Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a Tenant Administrator of a separate tenant that does not already belong to the community.
+- The tenant administrator from the invited tenant (called the "invitee") accepts the invitation on behalf of their tenant. 
 
 **Invite process**
 
 ![Invite process](images/invite-process.drawio.svg)
+
+## Community invitation prerequisites
+
+To send a community invitation, you must meet the follow prerequisites:
+
+* Your user account must be assigned community administration permissions.
+
+* Your business partner must already have a tenant in OSIsoft Cloud Services (OCS).
+
+* You must have the email address for the invited tenant's tenant administrator. 
 
 ## Step 1: Inviter sends invite
 
@@ -24,11 +32,11 @@ To send an invite to a community, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community you want to share and select **Details**.
+1. Find the community you want to invite another tenant to and select **Details**.
 
 1. On the **Tenants** tab, select **Invite Tenant**.
 
-1. Enter the email address of the administrator of the tenant you would like to invite and select **Send**.
+1. Enter the email address of the tenant administrator for the tenant you would like to invite. Then select **Send**.
 
   An email is sent to the invitee.
 
@@ -36,7 +44,7 @@ To send an invite to a community, follow these steps:
 
 After you send an invitation to another tenant, wait for the tenant administrator to accept the email invitation.
 
-**Tip:** Share <xref:community-accept-invite> with the invited tenant administrator for additional instruction.
+**Tip:** Share <xref:community-accept-invite> with the invited tenant administrator for instruction.
 
 ## Step 3: Inviter confirms invite
 

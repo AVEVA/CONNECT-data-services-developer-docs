@@ -1,15 +1,16 @@
-- name: Get started with communities
-  topicUid: gsCommunities
-- name: Create a community
-  href: create-a-community.md
-- name: Manage tenants in a community
-  href: manage-a-community.md
-- name: Manage users in a community
-  href: manage-users.md
-- name: Add and remove community clients
-  href: manage-clients.md
-- name: Share and unshare streams
-  href: share-unshare-streams.md
-- topicUid: view-community-data
-- name: Delete a community
-  href: delete-a-community.md
+- topicUid: gsCommunities
+- topicUid: community-setup
+  items:
+  - topicUid: add-community
+  - topicUid: managecommunity
+- topicUid: community-administration
+  items:
+  - topicUid: managecommunity
+  - topicUid: manage-users
+  - topicUid: manage-clients
+  - topicUid: delete-community
+- topicsUid: community-member-tasks
+  items:
+  - topicUid: ShareStreams   
+  - topicUid: view-community-data
+

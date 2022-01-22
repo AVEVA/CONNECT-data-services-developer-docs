@@ -42,7 +42,7 @@ To send an invite to a community, follow these steps:
 
 To accept an invitation, follow these steps:
 
-1. Open the email from OSIsoft Cloud Services Operations, read the instructions, and select the VIEW COMMUNITY INVITE link.
+1. Open the email from OSIsoft Cloud Services, read the instructions, and select the VIEW COMMUNITY INVITE link.
 
 1. If prompted, enter the tenant ID or tenant alias of the tenant from which you want to share data and select **Continue**. You must be a Tenant Administrator to accept the invitation.
 
@@ -86,7 +86,7 @@ Use this procedure to remove a tenant from a community. This action might be nec
 
 After removing a tenant, you can re-invite the tenant to the community but all data that was previously shared must be shared again with the returning tenant.
 
-**Note:** You must be a Community Administrator to remove a tenant from a community.  
+**Note:** Only a user who has a [Community Administrator](xref:communityroles#community-administrator) role can remove a tenant from a community.  
 
 To remove a tenant from a community, follow these steps:
 
@@ -104,7 +104,7 @@ To remove a tenant from a community, follow these steps:
 
 Use this procedure to remove your own tenant from a community. After removing your tenant, you can be re-invited to the community but all data that was previously shared with your tenant must be shared again. If your tenant created a community, you cannot remove your own tenant from the community.
 
-**Note:** You must be a Community Administrator your own tenant from a community.
+**Note:** Only users who have the [Community Moderator](xref:communityroles#community-moderator) role can remove their own tenant from a community.
 
 To remove your own tenant from a community, follow these steps:
 

@@ -2,7 +2,7 @@
 uid: communities
 ---
 
-# Communities
+# Communities (Preview)
 
 The _communities_ feature lets a tenant create a private group where business partners can share and view operational data across tenants. Using communities, industrial companies can share their data streams with external business partners, service providers, and analytics providers. 
 

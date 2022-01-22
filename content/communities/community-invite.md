@@ -24,9 +24,9 @@ To send a community invitation, you must meet the follow prerequisites:
 
 - You must have the email address for the tenant administrator from the tenant you are inviting. 
 
-## Step 1: Inviter sends invite
+## Step 1: Invite a tenant to the community
 
-To send an invite to a community, follow these steps:
+To invite another tenant to the community, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -38,19 +38,15 @@ To send an invite to a community, follow these steps:
 
   An email is sent to the invitee.
 
-## Step 2: Invitee accepts invite
+## Step 2: Wait for invited tenants to accept invitation
 
-After you send an invitation to another tenant, wait for the tenant administrator to accept the email invitation.
+After you send an invitation to another tenant, wait for its tenant administrator to accept the email invitation.
 
 **Tip:** Share <xref:community-accept-invite> with the invited tenant administrator for instruction.
 
-## Step 3: Inviter confirms invite
+## Step 3: Confirm the invitation
 
-To confirm an invite, follow these steps:
-
-1. Follow the instructions in the email.
-
-1. Log into the tenant that owns the community you are sharing.
+To confirm an invitation, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

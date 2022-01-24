@@ -24,11 +24,11 @@ Open the [AVEVA Connect page](https://connect.aveva.com/).
 
    **Note:** If single sign-on is enabled, you only need to provide your email address when signing in to AVEVA Connect. You may be prompted to sign into your corporate Sign-In page.
 
-1. From the AVEVA Connect home page, click on the folder that represents your organization's services.
+1. From the AVEVA Connect home page, select the folder that represents your organization's services.
    
    **Result:** The applications available from this namespace account are displayed below the folder. 
      
-1. Click on the tile that represents AVEVA Data Hub.
+1. Select the tile that represents AVEVA Data Hub.
 
    **Result:** The AVEVA Data Hub portal opens.
 

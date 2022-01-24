@@ -4,7 +4,7 @@ uid: gsPItoOCS
 
 # Get started with PI to Data Hub connections
 
-Before you set up your PI to Data Hub connection, see [PI System best practices](xref:bpPISystemConnection) for recommendations on the PI Data Hub Agent.
+Before you set up your PI to Data Hub connection, see [PI System connections best practices](xref:bpPISystemConnection) for recommendations on the PI Data Hub Agent.
 
 To use PI to Data Hub to transfer data from your PI System to AVEVA Data Hub, you must complete the following tasks:
 

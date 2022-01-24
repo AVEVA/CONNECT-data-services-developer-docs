@@ -14,7 +14,7 @@ A folder is used to partition data into logical units that represent your organi
 
 Perform the following steps to create a folder in AVEVA Connect:
 
-1. From the AVEVA Connect home page, click the menu icon, then select **Folder Management** and click the **Add Folder** button.
+1. From the AVEVA Connect home page, select the menu icon, then select **Folder Management** and select the **Add Folder** button.
 
    The `Add Folder` window opens.
 
@@ -22,7 +22,7 @@ Perform the following steps to create a folder in AVEVA Connect:
 
 1. (Optional) To select a different region, select **Change**.
  
-   **Note:** The region cannot be changed after folder creation. Before the folder is saved, click **Change** to select a different region. Region labels in AVEVA Connect and AVEVA Data Hub differ: 
+   **Note:** The region cannot be changed after folder creation. Before the folder is saved, select **Change** to select a different region. Region labels in AVEVA Connect and AVEVA Data Hub differ: 
 
     | AVEVA Connect region label  | Corresponding AVEVA Data Hub region label |
     | ------------- | ----------------- |
@@ -33,9 +33,9 @@ Perform the following steps to create a folder in AVEVA Connect:
 
 1. To select an image to represent the folder, perform one of the following actions:
  
-   * To use your own image, click **Upload image** and then click **Select image to upload**. Navigate to and select the image and click **Open**.
+   * To use your own image, select **Upload image** and then select **Select image to upload**. Navigate to and select the image and select **Open**.
 
-   * To use an existing image, click **Select stock image** and select the image.
+   * To use an existing image, select **Select stock image** and select the image.
 
 1. Select **Save**.
     

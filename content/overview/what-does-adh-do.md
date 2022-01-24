@@ -92,7 +92,7 @@ After defining tenants, setting permissions and access levels for users, and cre
 
 The type of data, the location of that data, and the way that a particular source sends data all affect how you can collect that data in AVEVA Data Hub. Choose the data collection technologies that best meet your specific needs. These technologies include: 
 
-- [PI to Data Hub](#pi-to-ocs)
+- [PI to Data Hub](#pi-to-data-hub)
 - [Custom OMF applications](#custom-omf-applications)
 - [Edge Data Store](#edge-data-store)
 - [PI Adapters](#pi-adapters)

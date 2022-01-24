@@ -102,6 +102,6 @@ No security-related information is applicable to this release.
 
 ### Documentation overview
 
-See the [PI to Data Hub documentation](https://docs.osisoft.com/bundle/data-hub/page/add-organize-data/collect-data/connectors/pi-to-ocs/main-lp.html).
+See the [PI to Data Hub documentation](xref:main-lp) .
 
 © 2022 AVEVA Group plc and its subsidiaries.

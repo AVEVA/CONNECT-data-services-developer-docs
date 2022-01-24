@@ -36,9 +36,9 @@ You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on
 
 Complete the following procedures to install the PI to Data Hub Agent:
 
-* [Install the PI to Data Hub Agent](#install-the-pi-to-ocs-agent)
+* [Install the PI to Data Hub Agent](#install-the-pi-to-data-hub-agent)
 
-* [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-ocs-agent-is-running-and-registered)
+* [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-data-hub-agent-is-running-and-registered)
 
 ## Install the PI to Data Hub Agent
 
@@ -66,7 +66,7 @@ To install the PI to Data Hub Agent, follow these steps:
 
     * **Agent Description** - Enter an optional name for the agent.
 
-1. On the `Servive Account` page, select the service account type for the connection:
+1. On the `Service Account` page, select the service account type for the connection:
 
     * **NT Service** - Enter an NT account to connect to PI Data Archive.
 

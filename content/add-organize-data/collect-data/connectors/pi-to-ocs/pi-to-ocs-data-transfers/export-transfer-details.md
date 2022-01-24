@@ -18,12 +18,12 @@ To export transfer details, follow these steps:
 
 1. In the `Export Transfer` window, select the transfer details to include in the .csv file, then click **Export**. Options to export are:
 
-  - `All`
+   - `All`
 
-  - `AF elements`
+   - `AF elements`
 
-  - `PI points (Implicit)`
+   - `PI points (Implicit)`
 
-  - `PI points (Explicit)`
+   - `PI points (Explicit)`
    
 1. In the `Save As` window, navigate to the location where you want to save the file, enter a name for the .csv file, and then select **Save**.

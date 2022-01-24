@@ -27,7 +27,7 @@ If a user is not authorized for a specific AVEVA Data Hub feature, the PI to Dat
 
 The PI to Data Hub Configuration Utility now displays more information while the tool is searching for referenced Data Archives. Previously, that area was blank until one or more Data Archives were found. 
 
-The 1.6.1204.0 and 1.7.0.0 versions of the PI To OCS Agent will fail to register and fail to appear in the OSIsoft Cloud Service portal on new installations. The PI to OCS Configuration Utility will also display an agent status of "Retrieving State".
+The 1.6.1204.0 and 1.7.0.0 versions of the PI To Data Hub Agent will fail to register and fail to appear in the AVEVA Data Hub portal on new installations. The PI to Data Hub Configuration Utility will also display an agent status of "Retrieving State".
 
 The PI to Data Hub Configuration Utility could crash if a user attempted to edit a PI mapping from within the tool. This has been fixed.
 
@@ -42,7 +42,7 @@ Enhancements
 
 PI to Data Hub is now able to transfer AF elements and attributes to AVEVA Data Hub and create them as assets and metadata. PI to Data Hub will transfer the following AF objects to AVEVA Data Hub:
 
-*PI to OCS Configuration Utility Improvements*
+*PI to Data Hub Configuration Utility Improvements*
 
 Please consult the PI to Data Hub online documentation for more details on how to configure a transfer with AF elements and attributes.
  
@@ -89,7 +89,6 @@ Because the PI System often serves as a barrier protecting control system networ
 ### Vulnerability communication
 
 The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure Framework](https://ics-cert.us-cert.gov/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf)  developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://ics-cert.us-cert.gov/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, AVEVA is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
-For more information, refer to [AVEVA's Ethical Disclosure Policy](https://www.osisoft.com/ethical-disclosure-policy).
 
 To report a security vulnerability to AVEVA, contact productsecurity@aveva.com. Also see AVEVA's [Cyber Security Updates](https://www.aveva.com/en/support-and-success/cyber-security-updates/).
 
@@ -105,4 +104,4 @@ No security-related information is applicable to this release.
 
 See the [PI to Data Hub documentation](xref:main-lp) .
 
-©2021 OSIsoft, LLC
+© 2022 AVEVA Group plc and its subsidiaries.

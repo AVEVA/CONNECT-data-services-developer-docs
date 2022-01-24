@@ -105,7 +105,7 @@ To build an AF element
    
       * In the first field, enter an attribute name.
 
-      * In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `=<`, `=>`, `In`).
+      * In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `<=`, `>=`, `In`).
 
       * In the last field, enter an attribute value.
 
@@ -129,8 +129,6 @@ To build an AF element
 
 1. To add additional elements from other AF databases, repeat these steps. 
 
-1. To add the selected AF elements to the transfer, select **Save**.
-
 **Note:** AF indexing needs to complete before you can view implicit PI points and start the transfer process.
 
 ## View AF element details
@@ -149,7 +147,7 @@ To view AF element details, follow these steps:
 
 1. To view details for another AF element, deselect the currently selected element, and then select a different element in the transfer list.
 
-1. To close the `AF Element Information` pane, select **View Details**.
+1. To close the `AF Element Information` pane, select **X** in the upper-right corner of the pane.
 
 ## Build a PI points transfer list
 
@@ -159,13 +157,12 @@ To build a PI points transfer list, follow these steps:
 
 1. Select the **PI Point Search** tab.
 
-2. To open the `Search` pane, select **Add**.
 
-3. To filter the results, do the following:
+1. To filter the results, do the following:
 
    | Criteria To Filter By      | Action To Take                                               |
    | -------------------------- | ------------------------------------------------------------ |
-   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br />**Note:** Enter * to retrieve all PI points. |
+   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br/>**Note:** To retrieve all PI points, do not enter values or select **"All"** from the Point Type dropdown list. To execute a partial match, enter the value followed by an asterisk, for example, 54*. |
    | Point descriptions         | Enter criteria in the following fields:<br /><ul><li>**Descriptor** </li><li>**Extended Descriptor**</li></ul> |
    | Engineering units          | Enter criteria in the **Engineering Units** field.           |
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
@@ -233,7 +230,7 @@ To save the data transfer definition, follow these steps:
 ## Overview of the Details pane
 <!--AF 11/15/21 - This section doesn't belong in this topic about how to define a transfer.-->
 <!-- VT, 11/29/21: I can move this into it's own topic; SMEs and myself wanted to explain what these fields represented.-->
-The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image show the sections in the `Details` pane, which you can expand and collaps using the arrows ( ![](../../images/chevrons.png) ):  
+The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image shows the sections in the `Details` pane, which you can expand and collapse using the arrows ( ![](../../images/chevrons.png) ):  
 
 ![](../../images/details-pane1.png)
 ![](../../images/details-pane2.png) 
@@ -245,7 +242,7 @@ Each section of the `Details` pane is described in the following table.
 | **1**            | `Agent Overview` - Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
 | **2**            | `Transfer Overview` - Displays transfer details and progress. Also contains buttons to view, remove, or stop a transfer. |
 | **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to AVEVA Data Hub. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as "real-time" events. Streaming events represent the number of current, real-time events transferred into AVEVA Data Hub. |
-|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created: <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to AVEVA Data Hub.</li><li>**Total Assets Created**: The number of assets created in AVEVA Data Hub.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
+|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created: <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to AVEVA Data Hub.</li><li>**Total Assets Created Per Second**: The number of assets per second created during the transfer.</li><li>**Total Assets Created**: The number of assets created in AVEVA Data Hub.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
 
 ## Transfer data to AVEVA Data Hub
 

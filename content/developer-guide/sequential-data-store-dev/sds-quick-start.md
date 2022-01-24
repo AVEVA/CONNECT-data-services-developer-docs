@@ -36,11 +36,13 @@ You use the tenant identity, client identity, and client secret to acquire an ac
 from Azure Active Directory. Select one of the clients from the list to see configuration information 
 and code samples in various languages which are shown on tabs in the right panel.
 
-## Step 1: Acquire namespace
+## Step 1: Select the namespace
 
-Log into the portal. In the left pane, select **Data Management** > **Namespaces**.
+Use the currently selected namespace or select a different one.
 
-You can use an existing namespace or create a new one.
+1. Log into the portal.
+
+2. Click the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
 ## Step 2: Create data types
 

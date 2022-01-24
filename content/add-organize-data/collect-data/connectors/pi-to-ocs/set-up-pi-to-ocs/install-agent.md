@@ -14,6 +14,8 @@ When you install the PI to Data Hub Agent, make sure to follow these guidelines:
 
 * Enable read access to the AF server elements and attributes to be transferred.
 
+* Use an account that is assigned to the `Tenant Administrator` role for the PI to Data Hub Agent installation.
+
 You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on the portal and then transfer it to the computer that will host the agent.
 
 **Note:** The PI to Data Hub Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to Data Hub Agent installation if Internet Explorer Enhanced Security Configuration is enabled. For more information, see [Disable Internet Explorer Enhanced Security Configuration](xref:disable-ie-security). 
@@ -48,29 +50,19 @@ To install the PI to Data Hub Agent, follow these steps:
 
 1. On the `Agent Installer Download` window, select **Download**. When the download completes, close the window.
 
-1. Navigate to the downloaded PI to Data Hub agent installation file.
+1. Open the downloaded PI to Data Hub agent installation file, then select **Yes** to confirm running the installation file.
+   
+   The `Welcome` page of the PI to Data Hub Agent window opens.
 
-1. Right-click the PI to Data Hub Agent installation file, then select **Run as administrator**.
+1. On the `Welcome` page, select **Next**.
 
-1. To confirm running the installation file, select **Yes**.
-
-1. On the `Welcome` page of the `PI to Data Hub Agent` window, select **Next**.
-
-   The `Company Information` page opens.
-
-   ![](../../images/agent-co-info.png) <!--Angela Flores 11/12/21 - I don't think this screenshot is necessary. There is only one field on the screen. -->
-
-1. In the **Tenant Id or Company Alias** field, enter your tenant ID or company alias and select **Next**.
-
-   **Note:** You are logged on to your tenant account. The account used to log on must be assigned to the `Tenant Administrator` role to complete the PI to Data Hub Agent installation.
-
-   A message opens in your web browser regarding the status of the user authentication process. 
+   You are logged on to your tenant account. A message opens in your web browser regarding the status of the user authentication process. 
 
 1. Close the browser window, and then select **Next** on the `Browser Login` page.
 
 1. On the `Namespace` page, complete the following fields, then select **Next**:
 
-    * **Namespace** - Select the location where the transferred data will be stored. The region indicates where the namespace resides. Streaming data sent by the PI to Data Hub Agent only goes to the selected namespace's region.
+    * **Namespace** - Select the namespace and location where the transferred data will be stored. The location is a region that appears in parenthesis after the namespace indicates where the namespace resides. Streaming data sent by the PI to Data Hub Agent only goes to the selected namespace's region.
 
     * **Agent Description** - Enter an optional name for the agent.
 
@@ -98,7 +90,7 @@ To verify the installation, follow these steps:
 
 1. On the computer where the agent is installed, open the Microsoft Management Console (MMC) snap-in for Services. <!--Angela Flores 11/12/21 there is no mention of selecting a host machine for this installation before this point.-->
 
-  **Tip:** Enter *services.msc* in Windows search to locate the application.
+   **Tip:** Enter *services.msc* in Windows search to locate the application.
 
 1. In the `Services` window, find the PI to Data Hub Agent service and verify that the status is `Running`, then close the window.
 

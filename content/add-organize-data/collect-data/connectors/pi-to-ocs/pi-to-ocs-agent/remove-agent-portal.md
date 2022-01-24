@@ -24,7 +24,7 @@ To remove the PI to Data Hub agent from the host machine, follow these steps:
 
 1. In the `PI to Data Hub Agent (Administrator)` window, select the **Uninstall** option, then select **Next**.
 
-1. Select the **Unregister agent from OCS** option, then select **Next**.
+1. Select the **Unregister agent from Data Hub** option, then select **Next**.
 
    The agent's associated client and connection information is also removed from AVEVA Data Hub during the uninstall process.
 

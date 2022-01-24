@@ -6,7 +6,7 @@ uid: WhatADHdoes
 
 AVEVA Data Hub consists of several different areas of core functionality: tenant management, data collection, data organization, and data analysis. The following sections discuss each area in detail:
 
-* [Tenant management](#tenant-management) - Explains basic concepts in managing OCS, including clients, users, roles, roles-based access control and discusses how administrators can customize AVEVA Data Hub based on organizational requirements. 
+* [Tenant management](#tenant-management) - Explains basic concepts in managing AVEVA Data Hub, including clients, users, roles, roles-based access control and discusses how administrators can customize Data Hub based on organizational requirements. 
 * [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace. 
 * [Data organization](#data-organization) - Provides a high-level description of how operational data is stored and retrieved.
 * [Data analysis](#data-analysis) - Provides users with analytical tools to sort and visualize data.
@@ -18,7 +18,7 @@ The following diagram shows how AVEVA Data Hub fits in an organization:
 
 ## Tenant management
 
-Customize AVEVA Data Hub to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage namespaces for their tenant. Authentication and authorization are also customizable. Configuring the access control list (ACL) for resources, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the AVEVA Data Hub REST API or the AVEVA Data Hub portal. 
+Customize AVEVA Data Hub to meet your organization's requirements and needs. Administrators can create users and clients, define and assign roles, and manage folders/namespaces for their tenant. Authentication and authorization are also customizable on AVEVA Data Hub. Configuring the access control list (ACL) for an AVEVA Data Hub resource, administrators can define the permissions to a resource. Generally, only administrators should have access to tenant management features. Administrators can perform tenant management using the AVEVA Data Hub REST API or the AVEVA Data Hub portal. 
 <!--Angela Flores 6/29/21 all of the sub headings are far too detailed for this level introduction.THis information should be in the concept topics for these items. Or if we need to go into this level of detail, this should be broken out into five separate topics based on the list above. The AVEVA Data Hub portal is a web-based user-interface for managing and monitoring your tenant as well as for namespace resources, streams and assets.-->
 
 ### Tenant 
@@ -195,12 +195,6 @@ The Trend feature converts stream data to a graphic view, which can reveal trend
 ### Assets
 
 Assets are a digital twin of physical entities in the real world. An asset can consist of data from one or more streams. 
-
-The assets in the example below represent trucks in a fleet, with multiple data streams associated with each. You can select an asset and display a trend of the data streams to identify and analyze problems.
-
-![AVEVA Data Hub](images/how-does-ocs-work/assets-example.png)
-
-For example, you can display the variation in the pressure of the suspension cylinders on each truck over time, identify those trucks whose cylinder pressure is outside the accepted range, and proactively deal with potential problems.
 
 Assets are a useful way to organize and contextualize data streams. With PI to Data Hub data transfers, for example, you can organize multiple PI tags under a single asset. You could create an asset with streams measuring data for thermostats, ventilation equipment, lighting systems, and security.
 

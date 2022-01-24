@@ -8,27 +8,27 @@ To be assigned access to AVEVA Data Hub, users must belong to one or more groups
 
 **Note:** All users created in your account belong to the default 'User' group in AVEVA Connect.
 
-Perform the following steps to create a group and add users to the group:
+To create a group and add users to the group, follow these steps:
 
-1.	From the AVEVA Connect home page, click the menu icon, then select **User Management**.
+1. From the AVEVA Connect home page, select the menu icon, then select **User Management**.
 
-2.	Click the **Groups** tab. 
+1. Select the **Groups** tab. 
 
-    **Result:** The existing groups display.
+    The existing groups display.
 
-3.	Click **Add group**. 
+1. Select **Add group**. 
  
-    **Result:** The **Add group** pane displays.
+    The `Add group` pane displays.
 
-4.	Enter the required group name in the **Group name** field.
+1. Enter the required group name in the **Group name** field.
 
-5.	Enter a description for the group in the **Group description** field.
+1. Enter a description for the group in the **Group description** field.
 
-6.	(Optional) Assign users to the group. 
+1. (Optional) Assign users to the group. 
 
-7. Click **Save**.
+1. Select **Save**.
  
-   **Result:** The group is created and any users you have selected are assigned to the group.
+   The group is created and any users you selected are assigned to the group.
 
-   **Note:** The new group does not have permissions to perform tasks in AVEVA Data Hub until you assign a role to the group. You can modify exisiting groups from the Groups tab. After you select an exisiting group from the list, you can add or remove exisiting users from that group and assign or revoke roles to the existing users in that group.
+   **Note:** The new group does not have permissions to perform tasks in AVEVA Data Hub until you assign a role to the group. You can modify existing groups from the Groups tab. After you select an existing group from the list, you can add or remove existing users from that group and assign or revoke roles to the existing users in that group.
    

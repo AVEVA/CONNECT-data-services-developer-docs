@@ -1,4 +1,4 @@
 - name: Add a role
   topicHref: roles-procedure.md
-- name: Change permissions for a role
+- name: Manage role permissions
   topicHref: manage-permissions.md      

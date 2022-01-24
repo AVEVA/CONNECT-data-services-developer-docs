@@ -4,11 +4,13 @@ uid: map-user-adh
 
 # Map a user to an AVEVA Data Hub role
 
-You can assign an AVEVA Connect user to an AVEVA Data Hub role. Role assignment determines the actions a user can take in AVEVA Data Hub. There are five built-in roles:
+You can assign an AVEVA Connect user to an AVEVA Data Hub role. Role assignment determines the actions a user can take in AVEVA Data Hub. There are six built-in roles:
 
 * Tenant Administrator - Administrator with full permissions and has the ability to add and remove users, clients, and secrets.
 
   **Note:** Do not assign the Tenant Administrator role to general users.
+
+* Community Administrator - A role with full administrative rights. These rights include all the privileges of a Community Moderator plus the ability to delete a community, invite and confirm tenant invitations, and remove tenants from the community. See Community roles for more information.
 
 * Tenant Contributor - Has read and write permissions by default.
 

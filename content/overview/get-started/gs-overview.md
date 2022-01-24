@@ -4,7 +4,7 @@ uid: gs-overview
 
 # Get started with AVEVA Data Hub
 
-This section introduces the main features of AVEVA Data Hub. Each section includes a tutorial with step-by-step procedures with links to basic concepts and best practices.
+This section introduces the main features of AVEVA Data Hub. Each section includes a tutorial with step-by-step procedures and links to basic concepts and best practices.
 
 ## Before you begin
 

@@ -18,6 +18,6 @@ If you encounter an error message and the PI to Data Hub Configuration Utility c
 
 1. In the PI to Data Hub Configuration utility, select the pencil icon to the right of the **PI Mapping** field.
 
-1. Follow the steps in [Create a PI mapping section](#pi-to-ocs-utility) to add a PI mapping.
+1. Follow the steps in [Create a PI mapping section](xref:pi-to-ocs-utility) to add a PI mapping.
 
 1. After adding the PI mapping, save your changes. 

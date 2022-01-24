@@ -32,28 +32,32 @@ To create a community, follow these steps:
     
     1. Select **Next**.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration](TODO) permissions.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration](xref:ccRoles#community-roles-preview) permissions.
 
     By default, community administration permissions are assigned to the **Tenant Administrator** role. Optionally, you can add community administration permissions to other roles.
 
     1. (Optional) Add or remove roles to be assigned community administrator permissions.
 
-        * To add additional roles as community administrator, select **Add Roles** and then select any role that you want to function as community administrator.
+        * To add additional roles as community administrator, select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick.svg) for any role that you want to function as community administrator.
 
         * To remove roles that function as community administrator, select **Remove Role** ![remove role](../_icons/remove-object.svg).
 
     1. Select **Next**.
 
-1. On the `Community Members` page, add community members, which are users within your tenant that have read access to the community and its data. 
+1. On the `Community Members` page, add [community members](xref:ccRoles#tenant-roles), which are users within your tenant that have read access to the community and its data. 
 
     **Note:** By default, community administrators do not have community member access rights, so adding community administrators as community members is recommended.
 
     1. Add or remove users as community members.
 
-        * To add new community members, select **Add Users** and then select new community members.
+        * To add new community members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick.svg) for each user that you want to add.
 
         * To remove community members, select **Remove User** ![remove user](../_icons/remove-object.svg).
 
     1. Select **Create**.
 
-The community is created and added to the `Communities` page. For information about inviting or deleting tenants from an existing community, see [Manage tenants in a community](xref:managecommunity).
+The community is created and added to the `Communities` page.
+
+## What's next?
+
+Invite tenants to your community. See <xref:community-invite>.

@@ -6,19 +6,19 @@ uid: community-invite
 
 To allow another tenant to participate in your community, you must complete a three-way handshake that includes the following steps:
 
-- A tenant administrator from the establishing tenant, also known as the community owner, sends an email invitation to a tenant administrator from another tenant. 
+- A [tenant administrator](xref:ccRoles#tenant-roles) from the establishing tenant, also known as the community owner, sends an email invitation to a tenant administrator from another tenant. 
 
 - The tenant administrator from the invited tenant accepts the invitation.
 
 - The community owner who issued the invitation confirms it, allowing the partner to begin participating in the community. The community is private; users outside of your community cannot access it without an invitation.
 
-**Note:** These instructions are written for the community owner who is *sending* an invition. For instructions for the tenant administator *receiving* the invitation, see <xref:community-accept-invite>.
+**Note:** These instructions are written for the community owner who is *sending* the invition. For instructions for the tenant administator *receiving* the invitation, see <xref:community-accept-invite>.
 
 ## Prerequisites for sending community invitations
 
 To send a community invitation, you must meet the follow prerequisites:
 
-- Your user account must be assigned community administration permissions.
+- Your user account must be assigned [community administration](xref:ccRoles#community-administrators-preview) permissions.
 
 - Your business partner must already have a tenant in OSIsoft Cloud Services (OCS).
 
@@ -34,7 +34,7 @@ To invite another tenant to the community, follow these steps:
 
 1. On the **Tenants** tab, select **Invite Tenant**.
 
-1. Enter the email address of the tenant administrator for the tenant you would like to invite. Then select **Send**.
+1. Enter the email address of the tenant administrator for the tenant you would like to invite. Then select **Invite**.
 
   An email is sent to the invitee.
 
@@ -50,7 +50,7 @@ To confirm an invitation, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. On the `Communities` overview page, find the community to which you have invited another tenant and select **Details**.
+1. On the `Communities` overview page, find the community that you have invited another tenant to and select **Details**.
 
 1. On the `Community Details` page, select the **Invitations** tab.
 

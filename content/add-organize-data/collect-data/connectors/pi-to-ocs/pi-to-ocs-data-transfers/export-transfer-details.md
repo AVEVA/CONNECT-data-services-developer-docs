@@ -16,7 +16,7 @@ To export transfer details, follow these steps:
 
 1. Select **Export** in the upper-right corner.
 
-1. In the `Export Transfer` window, select the transfer details to include in the .csv file, then click **Export**. Options to export are:
+1. In the `Export Transfer` window, select the transfer details to include in the .csv file, then select **Export**. Options to export are:
 
    - `All`
 

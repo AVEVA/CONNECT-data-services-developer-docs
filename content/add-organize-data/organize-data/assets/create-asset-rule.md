@@ -203,11 +203,11 @@ The asset preview displays a list of the assets that will be created using the a
 
 1. To show or hide information in the preview, select the `Settings` tab in the `Preview Information` pane, and select the following options:
 
-  - **Show Asset Type**
+   - **Show Asset Type**
 
-  - **Show Metadata**
+   - **Show Metadata**
 
-  - **Show Stream References**
+   - **Show Stream References**
   
 1. To filter the data in a column, click ![filter](images/metadata-filter.png) in the column header, enter the text to find, and press Enter.
    

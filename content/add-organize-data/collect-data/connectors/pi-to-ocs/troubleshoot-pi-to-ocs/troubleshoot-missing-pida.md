@@ -10,20 +10,20 @@ If a PI to Data Hub agent's status appears as `No PI Data Archive Configured` in
 
 1. Open the [PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) and connect to the portal.
 
-1. After successful authentication, click the Data Archive tab, then click the pencil icon under **PI Mapping**.  
+1. After successful authentication, select the Data Archive tab, then select the pencil icon under **PI Mapping**.  
 
-    **Result:** The **Configure Mapping** dialog box opens.
+    **Result:** The `Configure Mapping` dialog box opens.
 
 1. Under the **Identity** list, select the identity, group or user for the PI mapping.
 
-1. Click **Create**.
+1. Select **Create**.
 
     **Result:** The PI mapping is created for the selected identity, group or user.
 
-1. Click **Close** to exit out of the **Configure Mapping** dialog box. 
+1. Select **Close** to exit out of the `Configure Mapping` dialog box. 
 
-1. Click **Remove Server**, then click **Yes** to remove the server and return to the first screen of the PI to Data Hub Configuration Utility.
+1. Select **Remove Server**, then select **Yes** to remove the server and return to the first screen of the PI to Data Hub Configuration Utility.
 
 1. Add the Data Archive server back to the configuration. See [Run the PI to Data Hub Configuration Utility](xref:pi-to-ocs-utility) for more information.  
 
-1. After the Data Archive has been successfully added, click **Save** to save the newly added server configuration.
+1. After the Data Archive has been successfully added, select **Save** to save the newly added server configuration.

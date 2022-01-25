@@ -21,19 +21,19 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId-OCS<br/><br/>`string aadTenantId`
-<br/>##tenantId-aad<br/><br/>
+<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)|AzureActiveDirectory specified|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -71,19 +71,19 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId-OCS<br/><br/>`string aadTenantId`
-<br/>##tenantId-aad<br/><br/>
+<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified Azure Active Directory tenant|
-|400|None|##400|
-|401|None|##401|
-|403|None|##403|
+|400|None|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|OCS tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -109,21 +109,21 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId-OCS<br/><br/>`string aadTenantId`
-<br/>##tenantId-aad<br/><br/>
+<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)|AzureActiveDirectoryTenant object created|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Azure Active Directory tenant identifier is already in use on the specified Tenant.|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -161,8 +161,8 @@ DELETE /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId-OCS<br/><br/>`string aadTenantId`
-<br/>##tenantId-aad<br/><br/>
+<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -195,20 +195,20 @@ GET /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId-OCS<br/><br/>
+<br/>OCS tenant identifier.<br/><br/>
 `[optional] string query`
-<br/>##query-searchstring<br/><br/>`[optional] integer skip`
-<br/>##skip<br/><br/>`[optional] integer count`
-<br/>##count<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AzureActiveDirectoryTenant](#schemaazureactivedirectorytenant)[]|List of AzureActiveDirectoryTenants found|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|or|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -248,18 +248,18 @@ HEAD /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for AzureActiveDirectoryTenants found|
-|400|None|##400|
-|401|None|##401|
-|403|None|##403|
+|400|None|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|OCS tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -285,8 +285,8 @@ POST /api/v1/Tenants/{tenantId}/AzureActiveDirectoryTenants/{aadTenantId}/SendCo
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId-OCS<br/><br/>`string aadTenantId`
-<br/>##tenantId-aad<br/><br/>
+<br/>OCS tenant identifier.<br/><br/>`string aadTenantId`
+<br/>Azure Active Directory tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -307,11 +307,11 @@ ConsentInformation object<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|OCS tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -364,8 +364,8 @@ Azure Active Directory tenant consent state
 
 |Property|Value|Description|
 |---|---|---|
-|NotConsented|0|Azure Active Directory tenant consent has not been completed.|
-|Consented|1|Azure Active Directory tenant consent has been completed.|
+|NotConsented|0|Azure Active Directory tenant consent state|
+|Consented|1|Azure Active Directory tenant consent state|
 
 ---
 

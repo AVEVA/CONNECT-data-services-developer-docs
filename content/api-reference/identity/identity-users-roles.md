@@ -22,23 +22,23 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string userId`
-<br/>##userId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 `[optional] string query`
-<br/>##query-searchstring<br/><br/>`[optional] integer skip`
-<br/>##skip<br/><br/>`[optional] integer count`
-<br/>##count<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of roles found|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or user not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -83,18 +83,18 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string userId`
-<br/>##userId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for roles found|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant or user not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -121,38 +121,24 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Roles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string userId`
-<br/>##userId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
 Updates roles list<br/>
-
-```json
-[
-  {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "RoleScope": 0,
-    "TenantId": "string",
-    "CommunityId": "string",
-    "RoleTypeId": "string"
-  }
-]
-```
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Role](#schemarole)[]|List of updated user roles|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 

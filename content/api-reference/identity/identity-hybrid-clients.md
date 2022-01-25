@@ -4,7 +4,7 @@ uid: identityHybridClient
 ---
 
 # Hybrid Clients
-Hybrid clients are used in typical, thick MVC clients with the presence of a user. These clients are issued an unique identifier and secret upon creation, which are later used for authentication against OCS. More than one secret can be created for a client. Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically have a longer lifetime than access tokens, and are used to request a new access token on behalf of the user without them having to log in. It is highly suggested that both the client secret and the refresh token be stored in a secure location.
+Hybrid clients are used in typical, thick MVC clients with the presence of a user. These clients are issued an unique identifier and secret upon creation, which are later used for authentication against Data Hub. More than one secret can be created for a client. Hybrid clients can be issued refresh tokens, if requested, alongside access tokens. Refresh tokens typically have a longer lifetime than access tokens, and are used to request a new access token on behalf of the user without them having to log in. It is highly suggested that both the client secret and the refresh token be stored in a secure location.
 
 ## `List All Hybrid Clients (v1 path)`
 
@@ -22,23 +22,23 @@ GET /api/v1/Tenants/{tenantId}/HybridClients
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] array id`
-<br/>##id<br/><br/>`[optional] array tag`
-<br/>##tag<br/><br/>`[optional] string query`
-<br/>##query-searchstring<br/><br/>`[optional] integer skip`
-<br/>##skip<br/><br/>`[optional] integer count`
-<br/>##count<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>`[optional] array tag`
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient](#schemahybridclient)[]|List of all hybrid clients found|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -94,20 +94,20 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] array id`
-<br/>##id<br/><br/>`[optional] array tag`
-<br/>##tag<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>`[optional] array tag`
+<br/>Only return clients that have these tags.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Hybrid client secrets found|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Client or tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -134,7 +134,7 @@ POST /api/v1/Tenants/{tenantId}/HybridClients
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -170,12 +170,12 @@ HybridClientCreate object<br/>
 |---|---|---|
 |201|[HybridClientCreateResponse](#schemahybridclientcreateresponse)|Information about created hybrid client|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs, or client limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Client identifier already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -233,18 +233,18 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient](#schemahybridclient)|Information about specified hybrid client|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -297,18 +297,18 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified hybrid client|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Client or tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -335,8 +335,8 @@ PUT /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -369,12 +369,12 @@ HybridClient object. Properties that are not set or are null will not be changed
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient](#schemahybridclient)|Information about updated hybrid client|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -426,19 +426,19 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -465,22 +465,22 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] array tag`
-<br/>##tag<br/><br/>`[optional] string query`
-<br/>##query-searchstring<br/><br/>`[optional] integer skip`
-<br/>##skip<br/><br/>`[optional] integer count`
-<br/>##count<br/><br/>
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient2](#schemahybridclient2)[]|List of hybrid clients found|
-|401|[ErrorResponse2](#schemaerrorresponse2)|##401|
-|403|[ErrorResponse2](#schemaerrorresponse2)|##403|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|##500|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -534,7 +534,7 @@ POST /api/v1-preview/Tenants/{tenantId}/HybridClients
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -570,12 +570,12 @@ New HybridClientCreate object<br/>
 |---|---|---|
 |201|[HybridClientResponse](#schemahybridclientresponse)|Hybrid Client created|
 |400|[ErrorResponse2](#schemaerrorresponse2)|Client limit exceeded|
-|401|[ErrorResponse2](#schemaerrorresponse2)|##401|
-|403|[ErrorResponse2](#schemaerrorresponse2)|##403|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
-|408|[ErrorResponse2](#schemaerrorresponse2)|##408|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
 |409|[ErrorResponse2](#schemaerrorresponse2)|Client identifier already exists|
-|500|[ErrorResponse2](#schemaerrorresponse2)|##500|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -631,18 +631,18 @@ GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient2](#schemahybridclient2)|Hybrid client specified|
-|401|[ErrorResponse2](#schemaerrorresponse2)|##401|
-|403|[ErrorResponse2](#schemaerrorresponse2)|##403|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Client or tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|##500|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -694,8 +694,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -728,12 +728,12 @@ Updated Hybrid Client values<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[HybridClient2](#schemahybridclient2)|Updated hybrid client|
-|400|[ErrorResponse2](#schemaerrorresponse2)|##400|
-|401|[ErrorResponse2](#schemaerrorresponse2)|##401|
-|403|[ErrorResponse2](#schemaerrorresponse2)|##403|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
 |404|[ErrorResponse2](#schemaerrorresponse2)|Client or tenant not found|
-|408|[ErrorResponse2](#schemaerrorresponse2)|##408|
-|500|[ErrorResponse2](#schemaerrorresponse2)|##500|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
 
 <h4>Example response body</h4>
 

@@ -4,7 +4,7 @@ uid: identity-identity-providers
 ---
 
 # Identity Providers
-An identity provider provides authentication services and maintains credentials for users that have been provisioned in OCS. Each tenant can have one or more identity providers. Each user is either assigned one of the available identity providers in the tenant or chooses one in the Home Realm Discovery page when accepting the invitation. A user can only log in with the same identity provider with which they signed up.
+An identity provider provides authentication services and maintains credentials for users that have been provisioned in Data Hub. Each tenant can have one or more identity providers. Each user is associated with one of the available identity providers in the tenant. A user can only log in with the same identity provider with which they signed up. Note: Identity Provider options differ by platform. OSIsoft Cloud Services supports multiple Identity Providers. AVEVA Data Hub supports only a single Identity Provider: AVEVA Connect.
 
 ## `Get Identity Provider`
 
@@ -21,17 +21,17 @@ GET /api/v1/IdentityProviders/{identityProviderId}
 <h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Identity provider identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProvider](#schemaidentityprovider)|Identity provider specified|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -83,17 +83,17 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}
 <h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Identity provider identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Identity provider found|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider or tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -119,17 +119,17 @@ GET /api/v1/IdentityProviders/schemes/{scheme}
 <h4>Parameters</h4>
 
 `string scheme`
-<br/>##scheme<br/><br/>
+<br/>Scheme name (for example, AAD or Google).<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProvider](#schemaidentityprovider)|Identity provider specified|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -181,17 +181,17 @@ HEAD /api/v1/IdentityProviders/schemes/{scheme}
 <h4>Parameters</h4>
 
 `string scheme`
-<br/>##scheme<br/><br/>
+<br/>Scheme name (for example, AAD or Google).<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Identity provider found|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -218,19 +218,19 @@ GET /api/v1/IdentityProviders
 <h4>Parameters</h4>
 
 `[optional] string query`
-<br/>##query-searchstring<br/><br/>`[optional] integer skip`
-<br/>##skip<br/><br/>`[optional] integer count`
-<br/>##count<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProvider](#schemaidentityprovider)[]|Identity providers found|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -286,10 +286,10 @@ HEAD /api/v1/IdentityProviders
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for identity providers found|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -316,21 +316,21 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] string query`
-<br/>##query-searchstring<br/><br/>`[optional] integer skip`
-<br/>##skip<br/><br/>`[optional] integer count`
-<br/>##count<br/><br/>
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProvider](#schemaidentityprovider)[]|Identity providers found|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -384,17 +384,17 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Identity provider headers for tenant|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -420,7 +420,7 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -444,13 +444,13 @@ IdentityProviderAdd object<br/>
 |---|---|---|
 |201|[IdentityProvider](#schemaidentityprovider)|Identity provider created|
 |302|None|Found|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Identity provider already exists in tenant|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -502,18 +502,18 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProvider](#schemaidentityprovider)|Identity provider specified|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -565,18 +565,18 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider|
-|401|None|##401|
-|403|None|##403|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
 |404|None|Identity provider or tenant not found|
-|500|None|##500|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -602,19 +602,19 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -629,7 +629,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get an Identity Provider Consent from a Tenant"></a>
 
-Returns the consent information for an identity provider for a tenant. The ConsentState property, if returned, determines whether an identity provider consents to sharing access to its directory with the OCS tenant. For example, the expected ConsentState's for AAD include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
+Returns the consent information for an identity provider for a tenant. The ConsentState property, if returned, determines whether an identity provider consents to sharing access to its directory with the Data Hub tenant. For example, the expected ConsentState's for AAD include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
 
 <h3>Request</h3>
 
@@ -640,18 +640,18 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderConsent](#schemaidentityproviderconsent)|Identity provider consent|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -689,7 +689,7 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
 <br/>Identity provider unique identifier to check for consent<br/><br/>
 
 <h3>Response</h3>
@@ -697,10 +697,10 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Ok if the identity provider consent exists|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -715,7 +715,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Update Identity Provider Consent of a Tenant"></a>
 
-Updates the identity provider consent of a tenant. Currently only supports Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.All permissions to the OCS tenant.
+Updates the identity provider consent of a tenant. Currently only supports Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.All permissions to the Data Hub tenant.
 
 <h3>Request</h3>
 
@@ -726,8 +726,8 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Consent
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -746,12 +746,12 @@ Identity provider consent<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderConsent](#schemaidentityproviderconsent)|Identity provider consent|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -778,7 +778,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of All Users on an Identity Provider"></a>
 
-Returns a list of users that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.
+Returns a list of users that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the Data Hub tenant.
 
 <h3>Request</h3>
 
@@ -790,8 +790,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/users
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>`string query`
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>`string query`
 <br/>Start of user name or email with which to search<br/><br/>
 `[optional] integer count`
 <br/>Maximum number of users to returns<br/><br/>`[optional] string skipToken`
@@ -802,12 +802,12 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/users
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderResultsOfIdentityProviderUser](#schemaidentityproviderresultsofidentityprovideruser)|List of users found|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -841,7 +841,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of all Groups on an Identity Provider"></a>
 
-Returns a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the OCS tenant.
+Returns a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the Data Hub tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the Data Hub tenant.
 
 <h3>Request</h3>
 
@@ -853,8 +853,8 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>`string query`
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>`string query`
 <br/>Start of user name or email to search for<br/><br/>
 `[optional] integer count`
 <br/>Maximum number of groups to return<br/><br/>`[optional] string skipToken`
@@ -865,12 +865,12 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|List of groups found|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -903,7 +903,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of All Groups that a User Belongs to on an Identity Provider"></a>
 
-Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the OCS tenant.
+Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the Data Hub tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the Data Hub tenant.
 
 <h3>Request</h3>
 
@@ -915,9 +915,9 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{use
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>`string userId`
-<br/>##userId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 `[optional] integer skip`
 <br/>Indexes into a result set<br/><br/>`[optional] integer count`
 <br/>Maximum number of groups to return<br/><br/>`[optional] string skipToken`
@@ -928,12 +928,12 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Users/{use
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|List of groups that user is a member|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -966,7 +966,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get Identity Provider Groups"></a>
 
-Returns the groups based on the identifiers. Only Deeper Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
+Returns the groups based on the identifiers. Only Advanced Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
 
 <h3>Request</h3>
 
@@ -977,18 +977,12 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Groups
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string identityProviderId`
-<br/>##identityProviderId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string identityProviderId`
+<br/>Identity provider identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-##groupId<br/>
-
-```json
-[
-  "string"
-]
-```
+Group identifier.<br/>
 
 <h3>Response</h3>
 
@@ -996,12 +990,12 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Groups
 |---|---|---|
 |200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|List of groups|
 |207|[IdentityProviderGroupsMultiStatusResponse](#schemaidentityprovidergroupsmultistatusresponse)|List of groups|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 

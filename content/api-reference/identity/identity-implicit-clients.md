@@ -463,22 +463,22 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] array tag`
-<br/>##tag<br/><br/>`[optional] string query`
-<br/>##query-searchstring<br/><br/>`[optional] integer skip`
-<br/>##skip<br/><br/>`[optional] integer count`
-<br/>##count<br/><br/>
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ImplicitClient2](#schemaimplicitclient2)[]|Implicit clients found.|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -533,7 +533,7 @@ POST /api/v1-preview/Tenants/{tenantId}/ImplicitClients
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -568,12 +568,12 @@ New ImplicitClient object<br/>
 |---|---|---|
 |201|[ImplicitClient2](#schemaimplicitclient2)|Implicit Client created.|
 |400|[ErrorResponse](#schemaerrorresponse)|Client limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Client Id already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -626,18 +626,18 @@ GET /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ImplicitClient2](#schemaimplicitclient2)|Implicit client specified.|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -690,8 +690,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/ImplicitClients/{clientId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>##tenantId<br/><br/>`string clientId`
-<br/>##clientId<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -725,12 +725,12 @@ Updated Implicit Client values<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ImplicitClient2](#schemaimplicitclient2)|Updated implicit client|
-|400|[ErrorResponse](#schemaerrorresponse)|##400|
-|401|[ErrorResponse](#schemaerrorresponse)|##401|
-|403|[ErrorResponse](#schemaerrorresponse)|##403|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|##408|
-|500|[ErrorResponse](#schemaerrorresponse)|##500|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 

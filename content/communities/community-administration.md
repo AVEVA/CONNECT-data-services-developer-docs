@@ -4,6 +4,22 @@ uid: community-administration
 
 # Community administration
 
-After a community is established, the community administrator from each tenant can perform administrative actions as needed. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
+After a community is established, the community administrator from each tenant can perform administrative actions to integrate new tenants and users in the community. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
 
-Administrative actions include managing tenant members, managing client applications that can access the OSIsoft Cloud Services API programmatically, withdrawing from the community, or deleting the community itself.
+Community administrative actions include:
+
+- <xref:managecommunityusers>
+
+	Add or remove community members within your tenant.
+
+- <xref:managecommunityclients>
+
+	Allow an application to programatically access your community using the REST API.
+
+- <xref:managecommunity>
+
+	Remove tenants from your community.
+
+- <xref:delete-community>
+
+	Delete the community. This action can only be completed by the community owner.

@@ -10,9 +10,9 @@ To invite a user to your tenant, follow these steps:
 
 1. In the left pane, select **Security** > **Users**.
 
-1. In the toolbar, click **Add User**.
+1. In the toolbar, select **Add User**.
 
-<!--VTT, 12/14/21: There is only one identity provider now - AVEVA Connect. Per N. Parakh, delete all references to identity providers.  This step is no longer valid in UI. "3. If multiple identity providers are enabled in your tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. After you select an option, you can later switch to a different option."-->
+    <!--VTT, 12/14/21: There is only one identity provider now - AVEVA Connect. Per N. Parakh, delete all references to identity providers.  This step is no longer valid in UI. "3. If multiple identity providers are enabled in your tenant, you are prompted to select an identity provider. Choose the appropriate identity provider for the user you are adding. After you select an option, you can later switch to a different option."-->
 
 1. In the **Contact First Name** and **Contact Last Name** fields, enter a first and last name for the user.  
 

@@ -5,9 +5,9 @@
   - topicUid: community-accept-invite
 - topicUid: community-administration
   items:
-  - topicUid: managecommunity
-  - topicUid: manage-users
+  - topicUid: managecommunityusers
   - topicUid: managecommunityclients
+  - topicUid: managecommunity
   - topicUid: delete-community
 - topicUid: community-sharing
   items:

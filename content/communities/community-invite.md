@@ -6,11 +6,11 @@ uid: community-invite
 
 To allow another tenant to participate in your community, you must complete a three-way handshake that includes the following steps:
 
-- A [tenant administrator](xref:ccRoles#tenant-roles) from the establishing tenant, also known as the community owner, sends an email invitation to a tenant administrator from another tenant. 
+1. A [tenant administrator](xref:ccRoles#tenant-roles) from the establishing tenant, also known as the community owner, sends an email invitation to a tenant administrator from another tenant. 
 
-- The tenant administrator from the invited tenant accepts the invitation.
+1. The tenant administrator from the invited tenant accepts the invitation.
 
-- The community owner who issued the invitation confirms it, allowing the partner to begin participating in the community. The community is private; users outside of your community cannot access it without an invitation.
+1. The community owner who issued the invitation confirms it, allowing the partner to begin participating in the community. The community is private; users outside of your community cannot access it without an invitation.
 
 **Note:** These instructions are written for the community owner who is *sending* the invition. For instructions for the tenant administator *receiving* the invitation, see <xref:community-accept-invite>.
 

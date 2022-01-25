@@ -2,7 +2,6 @@
 uid: lp-transfer
 ---
 
-# Transfer PI System data to OCS
+# Transfer PI System data to AVEVA Data Hub
 
 PI system data is ready for transfer after data source configuration and selection. You can view information about completed transfers in AVEVA Data Hub, and also export a list of transferred PI points to a file.
-  

@@ -83,7 +83,7 @@ The asset or asset type's `StreamReferences` field has an `Id` property. To assi
     }], 
     "StreamReferences": [{ 
       "Id": "AssetStreamReferenceId1", 
-      "StreamId": "pi2ocs_stream1_inputpower", 
+      "StreamId": "pi2dh_stream1_inputpower", 
     }] 
 } 
 ```

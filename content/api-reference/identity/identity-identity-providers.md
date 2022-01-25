@@ -4,7 +4,9 @@ uid: identity-identity-providers
 ---
 
 # Identity Providers
-An identity provider provides authentication services and maintains credentials for users that have been provisioned in AVEVA Data Hub. Each tenant can have one or more identity providers. Each user is either assigned one of the available identity providers in the tenant or chooses one in the Home Realm Discovery page when accepting the invitation. A user can only log in with the same identity provider with which they signed up.
+An identity provider provides authentication services and maintains credentials for users that have been provisioned in AVEVA Data Hub. Each tenant can have one or more identity providers. Each user is associated with one of the available identity providers in the tenant. A user can only log in with the same identity provider with which they signed up. 
+
+**Note:** Identity provider options differ by platform. OSIsoft Cloud Services supports multiple Identity Providers. AVEVA Data Hub supports only a single identity provider: AVEVA Connect.
 
 ## `Get Identity Provider`
 
@@ -966,7 +968,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get Identity Provider Groups"></a>
 
-Returns the groups based on the identifiers. Only Deeper Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
+Returns the groups based on the identifiers. Only Advanced Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
 
 <h3>Request</h3>
 
@@ -983,12 +985,6 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Groups
 <h4>Request Body</h4>
 
 Group identifier.<br/>
-
-```json
-[
-  "string"
-]
-```
 
 <h3>Response</h3>
 

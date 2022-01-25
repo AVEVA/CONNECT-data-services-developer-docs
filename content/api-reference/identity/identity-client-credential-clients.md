@@ -406,6 +406,284 @@ Allowed for these roles:
 
 ---
 
+## `List All Client Credential Clients`
+
+<a id="opIdClientCredentialClients_List All Client Credential Clients"></a>
+
+Returns all client credential clients.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
+?tag={tag}&query={query}&skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+`[optional] array tag`
+<br/>Only return clients that have these tags.<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientCredentialClient2](#schemaclientcredentialclient2)[]|List of client credential clients that are found|
+|207|[ClientCredentialClientMultiStatusResponse2](#schemaclientcredentialclientmultistatusresponse2)|List of client credential clients that are found|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2)[])
+
+```json
+[
+  {
+    "ClientId": "string",
+    "Id": "string",
+    "Name": "string",
+    "Enabled": true,
+    "Tags": [
+      "string"
+    ],
+    "RoleIds": [
+      "string"
+    ]
+  }
+]
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
+## `Create Client Credential Client (v1-preview path)`
+
+<a id="opIdClientCredentialClients_Create Client Credential Client (v1-preview path)"></a>
+
+Creates a client credential flow client.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+ClientCredentialClientCreate object<br/>
+
+```json
+{
+  "RoleIds": [
+    "string"
+  ],
+  "ClientId": "string",
+  "Id": "string",
+  "Name": "string",
+  "Enabled": true,
+  "Tags": [
+    "string"
+  ],
+  "SecretDescription": "string",
+  "SecretExpirationDate": "2019-08-24T14:15:22Z"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|201|[ClientCredentialClientResponse](#schemaclientcredentialclientresponse)|Hybrid client created|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid input, or client limit exceeded|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
+|409|[ErrorResponse2](#schemaerrorresponse2)|Client identifier already exists.|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 201 Response ([ClientCredentialClientResponse](#schemaclientcredentialclientresponse))
+
+```json
+{
+  "SecretDescription": "string",
+  "SecretExpirationDate": "2019-08-24T14:15:22Z",
+  "RoleIds": [
+    "string"
+  ],
+  "ClientId": "string",
+  "Id": "string",
+  "Name": "string",
+  "Enabled": true,
+  "Tags": [
+    "string"
+  ],
+  "ClientSecret": "string",
+  "SecretId": "string"
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Get Client Credential Client (v1-preview path)`
+
+<a id="opIdClientCredentialClients_Get Client Credential Client (v1-preview path)"></a>
+
+Returns a client credential client.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientCredentialClient2](#schemaclientcredentialclient2)|Client credential client specified|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Client or tenant not found|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2))
+
+```json
+{
+  "ClientId": "string",
+  "Id": "string",
+  "Name": "string",
+  "Enabled": true,
+  "Tags": [
+    "string"
+  ],
+  "RoleIds": [
+    "string"
+  ]
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
+## `Update Client Credential Client (v1-preview path)`
+
+<a id="opIdClientCredentialClients_Update Client Credential Client (v1-preview path)"></a>
+
+Updates a client credential client.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Updated client credential client values<br/>
+
+```json
+{
+  "ClientId": "string",
+  "Id": "string",
+  "Name": "string",
+  "Enabled": true,
+  "Tags": [
+    "string"
+  ],
+  "RoleIds": [
+    "string"
+  ]
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientCredentialClient2](#schemaclientcredentialclient2)|Updated client credential client|
+|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.|
+|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
+|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
+|404|[ErrorResponse2](#schemaerrorresponse2)|Client or tenant not found|
+|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
+|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientCredentialClient2](#schemaclientcredentialclient2))
+
+```json
+{
+  "ClientId": "string",
+  "Id": "string",
+  "Name": "string",
+  "Enabled": true,
+  "Tags": [
+    "string"
+  ],
+  "RoleIds": [
+    "string"
+  ]
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
 ## Definitions
 
 ### ClientCredentialClientCreateResponse

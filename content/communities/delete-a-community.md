@@ -6,7 +6,7 @@ uid: delete-community
 
 From the `Community Details` page, you can delete a community. Deleting a community removes all access to all data in the community from all tenants. Deleting a community also removes all users from the community. After you delete a community, no users can access it again.
 
-**Note:** Only a Community Administrator can perform this procedure.
+A community can only be deleted by the [community owner](xref:ccRoles#community-administrators-preview).
 
 To delete a community, follow these steps:
 

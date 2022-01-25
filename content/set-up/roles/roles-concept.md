@@ -60,11 +60,13 @@ When a tenant administrator creates or joins a new community, they are prompted 
 
 - Invite tenants to the community and confirm those invitations.
 
-- Remove tenants from the community.
+#### Community owner
+
+The tenant administrator that creates a community becomes the community owner. This user becomes the only user that can:
+
+- Remove other tenants from the community.
 
 - Delete the community.
-
-	**Note:** Only the owning tenant can delete the community.
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 

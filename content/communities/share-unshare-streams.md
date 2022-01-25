@@ -4,70 +4,82 @@ uid: ShareStreams
 
 # Share and unshare streams
 
-Use these procedures to share or stop sharing streams of data with other communities.
+Use these procedures to share or stop sharing streams of data with other communities. To share streams, they must already be defined.
 
 **Note:** To share or unshare a stream, your role must have the Manage Permission privilege for that stream. By default any user who creates a stream has the Manage Permission privilege. To manage permissions for a role, use the **Sequential Data Store** > **Streams** feature.
 
 ## Share streams
 
-To perform this procedure you must have already defined streams.
+You can share streams with other tenants from the **Sequential Data Store** page. Choose the streams that you want to share and the communities that you want to share them with. 
+
+To share streams with other communities, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-2. Optional: Click the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
+1. If it is not already selected, select **Streams** at the upper left.
 
-3. If it is not already selected, select **Streams** at the top left.
+1. Select each stream that you want to share, and then select **Share Streams**.
 
-4. Select one or more streams to share.
+    **Tips:** 
+    * Use the **Search for streams** field to search for specific streams. Use the wildcard operator (`*`) to return results that start or end with a particular phrase. For more information, see [Search in SDS](xref:sdsSearching).
+    * When sharing a large numbers of streams, edit the **Items per page** dropdown to a value that accommodates the number of streams that you want to share.
 
-    To search for a particular stream, enter a search term in the **Search for streams** text box. If necessary, use a wildcard operator "*" to return results that start or end with a particular phrase. For more information, see [Search in SDS](xref:sdsSearching).
+1. Select one or more community to share your streams with.
 
-5. Click the **More Options** ![More Options](images\more-options.png "More Options") icon, then select **Share Stream** from the dropdown list.
+1. Select **Select Communities**.
 
-    If you selected multiple streams in the previous step, a pane appears for managing streams. You can select **Share Streams** on that pane.
+1. From the list of communities, select the communities with which you want to share streams and select **Continue**. 
 
-6. Click **Select Communities**.
+    **Tip:** Use the **Filter Communities** field to find a specific community.
+    
+1. To confirm that you want to share the streams with the chosen communities, select **Share**. From the **Share stream** window, select **Confirm**. Then select **Close**.
 
-    A list of communities appears.
+**Result:** The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
 
-7. Select the communities with which you want to share streams and click **Continue**. If necessary, you can filter the list of communities by typing in the **Filter Communities** box.
+## View shared data
 
-8. Click **Continue**. and then click **Share**. When prompted for confirmation, click **Confirm**.
+After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.
 
-    All members of the selected communities are able to read data from the shared streams.
+## Unshare streams from Community Details
 
-## Unshare streams from `Community Details`
+To stop sharing streams, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community where you are sharing streams and click **Details**.
+1. Find the community where you are sharing streams and select **Details**.
 
-1. On the `Community Details` page, click the **Tenants** tab.
+1. On the `Community Details` page, select the **Tenants** tab.
 
 1. Select your own tenant.
 
-    If you have shared streams, a **Streams** tab appears at right.
+   **Result:** A pane opens on the right.
 
-4. On the **Streams** tab, select the streams you want to unshare, then click **Unshare Streams**. When prompted for confirmation, click **Unshare**.
+1. On the **Streams** tab, select the streams you want to stop sharing, then select **Unshare Streams**. When prompted for confirmation, select **Unshare**.
 
-## Unshare streams from the `Sequential Data Store`
+**Result:** The streams are unshared from the community. Other tenants in the community can no longer view them.
+
+## Unshare streams from the Sequential Data Store
+
+In addition to unsharing streams, the Sequential Data Store provides many capabilities for managing streams. For more information, see [Manage streams](xref:manage-streams).
+
+To stop sharing streams, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-2. Optional: Click the **Change Namespace** button in the upper-right toolbar, then select the namespace that contains the stream you want to share.
-
-3. Use the toggle switches to filter streams by namespace or community.
+1. Use the toggle switches to filter streams by namespace or community.
 
    ![Toggle switches](images\namespace-communities-switches.png)
 
-4. From the list, select a namespace or a community.
+1. From the list, select a namespace or a community.
 
-    To search for a particular stream, enter a search term in the **Search for streams** text box. If necessary, use a wildcard operator "*" to return results that start or end with a particular phrase. For more information, see [Search in SDS](xref:sdsSearching).
+1. Filter the page to display only the streams that are shared within a community.
 
-5. From the list of streams, select one or more to unshare.
+1. Ensure that the **Filter Tenants** icon is enabled, which displays the **Filter Communities** pane. From the **Filter Communities** pane, select one or more community from which to unshare streams.
 
-6. Click the **More Options** ![More Options](images\more-options.png "More Options") icon, then select **Unshare Stream** from the dropdown list.
+1. From the list of streams, select one or more to streams unshare. 
 
-    If you selected multiple streams in the previous step, a pane appears for managing streams. You can select **Unshare Streams** on that pane.
+1. Select **More Options** ![More Options](images/more-options.png "More Options") > **Unshare Stream**. 
 
-7. When prompted for confirmation, click **Unshare**.
+1. When prompted for confirmation, select **Unshare**.
+
+    **Tip:** You can also unshare streams using the **Unshare Streams** buttons available in the right pane.

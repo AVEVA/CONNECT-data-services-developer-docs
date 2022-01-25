@@ -1,7 +1,17 @@
-- name: Organize streams with assets
-  href: assets/toc.yml
-  topicHref: assets/about-assets.md
-- name: Add context with metadata rules
+- topicUid: ccAssets
+  items:
+   - topicUid: CreateConfigureAsset
+   - topicUid: CreateAssetFromAssetType
+- topicUid: AssetTypes
+  items:
+    - topicUid: CreateAssetTypeWithEditor
+    - topicUid: ConvertAssetToAssetType
+- topicUid: AssetRulesCC
+  items:
+    - topicUid: CreateAssetRules
+    - topicUid: TokensGenerateAssets
+    - topicUid: UsingMultipleRules
+- name: Metadata rules
   href: metadata-rules/toc.yml
   topicHref: metadata-rules/metadata-rules-concept.md
 - name: Create and configure a data view

@@ -1,11 +1,10 @@
-- name: Get started with trend data 
-  topicHref: getting-started-trend.md
+- topicUid: GettingStartedWithTrendData
 - name: Trend page
   topicHref: trend-ui.md
   items:
+    - topicUid: LegendTableReference
     - topicUid: URLparameters
-- name: Context switch in visual trending
-  topicHref: context-switch.md
+- topicUid: ContextSwitch
 - topicUid: PowerBI
   items:
   - topicUid: PowerBIReleaseNotes

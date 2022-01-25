@@ -60,11 +60,11 @@ The following table provides a list and descriptions of these toolbar commands.
 
 | Numbered Item | Function |
 |---------------|----------|
-| 1 - Change Namespace dropdown menu | Select to pick a different namespace. |
-| 2 - View Notifications icon | Select to view AVEVA Data Hub-generated notifications. | 
-| 3 - Question mark icon | Select to access the online documentation. |
-| 4 - User profile icon  | Select to view a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
-| 5 - Customize link | Select to customize the layout of the portal dashboard. |
+| 1 - Manage Permissions button | Select to change role-based access to portal resources. |
+| 2 - Change Namespace dropdown menu | Select to pick a different namespace. |
+| 3 - View Notifications icon | Select to view AVEVA Data Hub-generated notifications. | 
+| 4 - Question mark icon | Select to access the online documentation. |
+| 5 - User profile icon  | Select to view a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
 
 ### Change user preferences
 

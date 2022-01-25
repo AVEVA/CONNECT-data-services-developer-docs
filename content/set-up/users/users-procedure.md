@@ -14,11 +14,11 @@ To invite a user to a tenant, follow these steps:
 
 1. In the **Contact First Name** and **Contact Last Name** fields, enter a first and last name for the user.  
 
-1. Enter the user's contact email. Ensure that it is correct so the email invitation the user receives is not sent to an unintended recipient.
+1. In the **User Email** field, enter the first few characters of the user's contact email and then select the correct email address from the dropdown list. Ensure that it is correct so the email invitation the user receives is not sent to an unintended recipient.
 
 1. (Optional) On the **Tenant Roles** tab, assign additional roles to the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is added.
 
-1. Select **Invite**. 
+1. Select **Add**. 
 
    An invitation is sent to the email address specified in the `Contact Email` field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
 

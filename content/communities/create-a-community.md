@@ -38,7 +38,7 @@ To create a community, follow these steps:
 
     1. (Optional) Add or remove roles to be assigned community administrator permissions.
 
-        * To add additional roles as community administrator, select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick.svg) for any role that you want to function as community administrator.
+        * To add additional roles as community administrator, select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator.
 
         * To remove roles that function as community administrator, select **Remove Role** ![remove role](../_icons/remove-object.svg).
 
@@ -50,7 +50,7 @@ To create a community, follow these steps:
 
     1. Add or remove users as community members.
 
-        * To add new community members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick.svg) for each user that you want to add.
+        * To add new community members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
         * To remove community members, select **Remove User** ![remove user](../_icons/remove-object.svg).
 

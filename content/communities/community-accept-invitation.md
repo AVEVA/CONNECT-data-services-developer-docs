@@ -30,6 +30,6 @@ To accept an invitation, follow these steps:
 
 1. Assign [community membership](xref:ccRoles#community-roles-preview) to tenant users. These users will be able to choose data streams to share with the community.
 
-    In the list of users, select **Add User** ![Add User](../_icons/plus-thick.svg "Add User") beside each user who should be a community member. If necessary, you can filter the list of users by typing in the **Filter by name or e-mail** field.
+    In the list of users, select **Add User** ![Add User](../_icons/plus-thick-alt.svg "Add User") beside each user who should be a community member. If necessary, you can filter the list of users by typing in the **Filter by name or e-mail** field.
 
     **Note:** By default, community administrators do not have community member access rights, so adding community administrators as community members is recommended.

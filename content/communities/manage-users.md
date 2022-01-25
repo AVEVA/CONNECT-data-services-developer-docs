@@ -2,15 +2,19 @@
 uid: managecommunityusers
 ---
 
-# Manage users in a community
+# Manage members in a community
 
-The `Community Details` page lets you add and delete community users. The users must belong to your own tenant. The `Community Details` page also lets you assign roles to users in your tenant.
+The `Community Details` page lets you add and delete user who hold membership in a community. You can only add users to the community from your own tenant. Each tenant manages its own community membership.
+
+When you add a user to the community, they are assigned the [Community Member role](xref:ccRoles#community-roles-preview) within the scope of the community. This role lets the user view the community, view the data shared within it, and share data.
+
+## Prerequisites to manage members of a community
+
+To manage community membership, you must be a [community administrator](xref:ccRoles#community-administrators-preview).
 
 ## Add users to a community
 
 To add users from your own tenant to a community, follow these steps:
-
-**Note:** To perform this procedure, you must be a Community Administrator.
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -18,9 +22,11 @@ To add users from your own tenant to a community, follow these steps:
 
 1. On the **My Members** tab, select **Add User**.
 
-1. Select tenant users. If necessary, you can filter the list of users by typing in the **Filter users** field. You can also filter by role. Selecting any role shown at the top of the user list displays only users assigned that role.
+1. Select tenant users for membership. All If necessary, you can filter the list of users by typing in the **Filter users** field.
 
 1. Select **Save**.
+
+Each user is added to the community and assigned the [Community Member](xref:ccRoles#community-roles-preview) role.
 
 ## Remove users from a community
 
@@ -30,9 +36,9 @@ To remove users from your own tenant from a community, follow these steps:
 
 1. Find the community where you want to remove users and select **Details**.
 
-1. On the **My Memebers** tab, select one or more users. A details pane appears. If necessary, filter the list of users by typing in the **Filter users** box. To filter by role, select a role shown at the top of the user list to display only users assigned that role.
+1. On the **My Members** tab, select one or more users. A details pane appears. If necessary, filter the list of users by typing in the **Filter users** box.
 
-1. On the detail pane, select **Remove User**. When prompted for confirmation, select **Remove**.
+1. On the detail pane, select **Remove User(s)**. When prompted for confirmation, select **Remove**.
 
 ## Remove yourself from a community
 

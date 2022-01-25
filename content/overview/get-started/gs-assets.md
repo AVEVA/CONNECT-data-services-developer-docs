@@ -36,7 +36,7 @@ To create an asset, follow these steps:
 
 1. Select the **Properties** tab, and select **Add Stream References**.
 
-1. In the `Select Streams` window, enter *MyData*_*_ in the search field and press Enter.
+1. In the `Select Streams` window, enter *MyData*_*_ in the search field and press **Enter**.
 
 1. Select **MyData.NorthAmerica.SLTC.PumpA** from the list and select **Add**.
 
@@ -54,7 +54,7 @@ To create an asset, follow these steps:
 
    If there are no values in the stream, there will be no eligible values to choose from. If there are eligible values that can be mapped to different statuses, 
    
-1. For each value listed, select the associated status, Good, Warning, or Bad. 
+1. For each value listed, select the associated status, **Good**, **Warning**, or **Bad**. 
 
 1. To save the asset, select **Save**. 
 

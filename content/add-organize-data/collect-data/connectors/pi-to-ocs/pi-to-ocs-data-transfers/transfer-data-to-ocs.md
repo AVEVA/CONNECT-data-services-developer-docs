@@ -35,7 +35,7 @@ Transfer creation consists of the following tasks:
 
 ## Name the transfer and set data privacy settings 
 
-1. In the left pane, select **Data Collection** > **PI to Data Hub Agent**.
+1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
 1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
 
@@ -151,7 +151,7 @@ To view AF element details, follow these steps:
 
 ## Build a PI points transfer list
 
-You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Overview of explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
+You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
 
 To build a PI points transfer list, follow these steps:
 

@@ -4,6 +4,7 @@ uid: community-administration
 
 # Community administration
 
-Velit consectetur nisi ad nostrud pariatur proident. Ad aliquip voluptate pariatur ad enim exercitation et et Lorem laborum consectetur id voluptate. Cupidatat non ad id nostrud sit quis pariatur. Excepteur dolor est irure consequat eiusmod aliqua consectetur do laborum officia ad cillum velit. Veniam id nisi excepteur consequat do reprehenderit voluptate aute anim incididunt. Ex ut voluptate ut ullamco est laboris cupidatat. Tempor pariatur quis quis excepteur sit.
+After a community is established, the community administrator from each tenant can perform administrative actions as needed. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
 
-Dolore cillum aliqua do nisi eiusmod sint exercitation. Pariatur deserunt labore proident ex exercitation ullamco dolore aliqua minim magna anim eiusmod ipsum ullamco. Qui nisi enim sit veniam tempor consequat in.
+Administrative actions include managing tenant members, managing client applications that can access the OSIsoft Cloud Services API programmitically, withdrawing from the community, or deleting the community itself.
+

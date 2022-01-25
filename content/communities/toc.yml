@@ -2,15 +2,14 @@
   items:
   - topicUid: add-community
   - topicUid: community-invite
-    items:
-    - topicUid: community-accept-invite
+  - topicUid: community-accept-invite
 - topicUid: community-administration
   items:
   - topicUid: managecommunity
   - topicUid: manage-users
   - topicUid: managecommunityclients
   - topicUid: delete-community
-- topicUid: community-member-tasks
+- topicUid: community-sharing
   items:
   - topicUid: ShareStreams
   - topicUid: view-community-data

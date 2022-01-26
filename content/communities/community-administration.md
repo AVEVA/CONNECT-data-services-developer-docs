@@ -14,7 +14,7 @@ Community administrative actions include:
 
 - <xref:managecommunityclients>
 
-	Allow an application to programatically access your community using the REST API.
+	Allow an application to programatically access shared community data and resources using REST API.
 
 - <xref:managecommunity>
 

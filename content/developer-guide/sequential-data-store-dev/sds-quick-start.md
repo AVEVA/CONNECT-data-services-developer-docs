@@ -65,7 +65,7 @@ HTTP/1.1
 Authorization: Bearer <bearer-token>
 Content-Length: 1562
 Content-Type: application/json
-Host: dat-b.aveva.com
+Host: uswe.datahub.connect.aveva.com
 {
     "Id": "Simple",
     "Name": "Simple",
@@ -236,7 +236,7 @@ HTTP/1.1
 Authorization: Bearer <bearer-token>
 Content-Length: 139
 Content-Type: application/json
-Host: dat-b.aveva.com
+Host: uswe.datahub.connect.aveva.com
 {  
     "Id": "Simple",
     "Name": "Simple",
@@ -276,7 +276,7 @@ HTTP/1.1
 Authorization: Bearer <bearer-token>
 Content-Length: 57
 Content-Type: application/json
-Host: dat-b.aveva.com
+Host: uswe.datahub.connect.aveva.com
 [
     {  
        "Time":"2017-08-17T17:21:36.3494129Z",

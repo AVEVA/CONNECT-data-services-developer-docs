@@ -60,7 +60,7 @@ When a tenant administrator creates or joins a new community, they are prompted 
 
 - Invite tenants to the community and confirm those invitations.
 
-#### Community owner
+#### Community owner (Preview)
 
 The tenant administrator that creates a community becomes the community owner. This user becomes the only user that can:
 

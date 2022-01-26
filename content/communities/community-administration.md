@@ -10,7 +10,7 @@ Community administrative actions include:
 
 - <xref:managecommunityusers>
 
-	Add or remove community members within your tenant.
+	Add or remove users within your tenant as community members.
 
 - <xref:managecommunityclients>
 

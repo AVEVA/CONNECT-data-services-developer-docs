@@ -1,5 +1,7 @@
 - name: Introduction to the OCS portal
   topicHref: introduction-portal-interface.md
+- name: View and edit your user profile
+  topicHref: view-profile.md
 - name: Get started with namespaces
   topicHref: gs-namespaces.md
 - name: Get started with connections

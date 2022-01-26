@@ -26,7 +26,7 @@ The first step is to identify and select a stream whose name will be the basis f
 
 1. Select **Add Metadata Rule**.
 
-1. On the `Select Stream` page in the **Search** field, enter *MyData\**.
+1. On the `Select Stream` page in the **Search** field, enter \**MyData*\*.
 
    The `MyData.NorthAmerica.SLTC.PumpA` stream is returned in the table.
 
@@ -104,7 +104,7 @@ In this step, you define mappings.
 
 In this final step, apply the metadata rule to the streams and review the results. 
 
-1.  On the `Preview and Run` page, complete the following fields:
+1. On the `Preview and Run` page, complete the following fields:
 
    - **Name** - Enter *MyData.MetadataRule*.
 

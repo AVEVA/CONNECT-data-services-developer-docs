@@ -6,7 +6,9 @@ uid: ShareStreams
 
 Use these procedures to share or stop sharing streams of data with other communities. To share streams, they must already be defined.
 
-**Note:** To share or unshare a stream, your role must have the Manage Permission privilege for that stream. By default any user who creates a stream has the Manage Permission privilege. To manage permissions for a role, use the **Sequential Data Store** > **Streams** feature.
+## Prerequisites to share and unshare streams
+
+You must have the [Community Member](xref:ccRoles#community-roles-preview) role for the community that you want to share the stream with.
 
 ## Share streams
 
@@ -18,10 +20,12 @@ To share streams with other communities, follow these steps:
 
 1. If it is not already selected, select **Streams** at the upper left.
 
-1. Select each stream that you want to share, and then select **Share Streams**.
+1. Select each stream that you want to share, and then select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Share Stream**.
 
     **Tips:** 
+
     * Use the **Search for streams** field to search for specific streams. Use the wildcard operator (`*`) to return results that start or end with a particular phrase. For more information, see [Search in SDS](xref:sdsSearching).
+
     * When sharing a large numbers of streams, edit the **Items per page** dropdown to a value that accommodates the number of streams that you want to share.
 
 1. Select one or more community to share your streams with.
@@ -35,10 +39,6 @@ To share streams with other communities, follow these steps:
 1. To confirm that you want to share the streams with the chosen communities, select **Share**. From the **Share stream** window, select **Confirm**. Then select **Close**.
 
 **Result:** The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
-
-## View shared data
-
-After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.
 
 ## Unshare streams from Community Details
 

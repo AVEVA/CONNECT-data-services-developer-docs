@@ -4,6 +4,12 @@ uid: community-sharing
 
 # Community sharing
 
-Lorem sunt occaecat deserunt mollit minim quis dolor est consequat sunt dolore aute. Exercitation dolor ullamco cupidatat ut ea mollit aliqua ullamco in. Magna nisi veniam nulla aliqua laborum sit veniam magna esse est cupidatat laborum eu anim. Adipisicing velit ex laboris cupidatat quis et. Esse culpa aliqua nisi aliqua commodo Lorem et mollit proident reprehenderit ut tempor in. Dolore nisi laboris excepteur pariatur amet dolor ea est culpa minim.
+After a community administrator adds you as a member of the community, you can share data streams from your tenant with the rest of the community or view data that other tenants and community members have shared.
 
-Deserunt sunt sunt voluptate culpa aliqua elit ipsum ad nisi consequat. Ea exercitation esse culpa incididunt amet elit. Ad quis officia id Lorem velit cupidatat duis qui amet magna.
+- <xref:ShareStreams>
+
+	Share a data stream with the community or unshare one.
+
+- <xref:view-community-data>
+
+	View which streams are shared within a community, or view the stream data that another tenant has shared.

@@ -6,6 +6,10 @@ uid: view-community-data
 
 After a community has been established, any member within that community can view which data streams are shared within the community. You can view which data streams are shared one of two ways: from the **Community details** page or from the **Sequential Data Store** page.
 
+## Prerequisites to view shared streams
+
+You must have the [Community Member](xref:ccRoles#community-roles-preview) role for the community that you want to view stream data.
+
 ## To view shared streams from Community details
 
 You can view data streams shared within a community by browsing to its **Community Details** page, choosing a community, and viewing its **Streams** tab.
@@ -45,3 +49,7 @@ When viewing the **Sequential Data Store** page, each stream lists whether it is
 1. Select a stream.
 
 **Result:** Additional details about the stream display in each tab of the right panel, including **Details**, **Metadata and Tags**, and **Sharing**. If the selected stream is not shared within any community, the **Sharing** tab is unavailable.
+
+## View shared data
+
+After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.

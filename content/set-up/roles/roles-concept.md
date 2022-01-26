@@ -32,7 +32,7 @@ The following table lists the default permissions for each tenant role.
 | Tenant Viewer |  |  |  |  | This role has no specific permissions by default. |
 | Tenant Data Steward |  |  |  |  | This role has no specific permissions by default. |
 
-### Tenant Custom roles 
+### Tenant custom roles 
 
 You can create custom tenant roles when the default tenant roles do not meet your organizational use cases. You can assign these custom roles a custom set of permissions. By default, added roles do not have any specific permissions. 
 

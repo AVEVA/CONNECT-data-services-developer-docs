@@ -4,7 +4,7 @@ uid: identity-tenants-users
 ---
 
 # Tenants Users
-Users consume resources in a tenant. They are invited by the administrator of the tenant and should already have a tenant in one of the configured identity providers for this tenant. A user is fully provisioned in AVEVA Data Hub only after they have accepted the invitation and successfully logged in with an identity provider. AVEVA Data Hub does not maintain user credentials, but it delegates authentication to the identity provider the user logged in with at first. Once logged in, the user cannot change the identity provider with which it signed up. A tenant can only have one user with a given email to an identity provider. If a user has multiple aliases in the same identity provider, they will not be able to create multiple corresponding AVEVA Data Hub. Users have roles associated with them. These roles determine what a user is authorized to do in the tenant. Roles are assigned to a user upon creation and can be modified by an administrator. We allow the change of some user fields and the complete deletion of a user.
+Users consume resources in a tenant. They are invited by the administrator of the tenant and should already have a tenant in one of the configured identity providers for this tenant. A user is fully provisioned in AVEVA Data Hub only after they have accepted the invitation and successfully logged in with an identity provider. AVEVA Data Hub does not maintain user credentials, but it delegates authentication to the identity provider the user logged in with at first. Once logged in, the user cannot change the identity provider with which it signed up. A tenant can only have one user with a given email to an identity provider. If a user has multiple aliases in the same identity provider, they will not be able to create multiple corresponding AVEVA Data Hub users. Users have roles associated with them. These roles determine what a user is authorized to do in the tenant. Roles are assigned to a user upon creation and can be modified by an administrator. We allow the change of some user fields and the complete deletion of a user.
 
 ## `List Users from a Tenant`
 
@@ -117,7 +117,7 @@ Allowed for these roles:
 
 <a id="opIdUsers_Create User (v1 path)"></a>
 
-Creates a user in the tenant. This method does not create an invitation for the user. You will need to create an invitation with the respective method for this user, otherwise they will not be able to finish the sign-up process. Users have identifiers in a tenant. Currently there is a limit of 50000 users per tenant. For Windows Active Directory users, the external user identifier must be specified.
+Creates a user in the tenant. This method does not create an invitation for the user. You will need to create an invitation with the respective method for this user, otherwise they will not be able to finish the sign-up process. Users have identifiers in a tenant. Currently there is a limit of 50000 users per tenant.
 
 <h3>Request</h3>
 
@@ -609,7 +609,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 |200|None|Header for specified user's preferences|
 |401|None|Unauthorized.|
 |403|None|Forbidden.|
-|404|None|User or tenant not found|
+|404|None|User or tenant or user's preferences not found.|
 |500|None|Internal server error.|
 
 <h3>Authorization</h3>
@@ -656,6 +656,300 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 Allowed for these roles: 
 <ul>
 <li>Self</li>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `List Users By Ids`
+
+<a id="opIdUsers_List Users By Ids"></a>
+
+Returns an ordered list of user objects based on the user Id for a given tenant or a MultiStatusResponse with a list of user objects and a list of errors.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
+?userId={userId}&query={query}&skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+`[optional] array userId`
+<br/>Unordered list of identifiers of all users to return<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[User](#schemauser)[]|List of users found|
+|207|[UserMultiStatusResponse](#schemausermultistatusresponse)|List of users found|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([User](#schemauser)[])
+
+```json
+[
+  {
+    "Id": "string",
+    "GivenName": "string",
+    "Surname": "string",
+    "Name": "string",
+    "Email": "string",
+    "ContactEmail": "string",
+    "ContactGivenName": "string",
+    "ContactSurname": "string",
+    "ExternalUserId": "string",
+    "IdentityProviderId": "string",
+    "RoleIds": [
+      "string"
+    ]
+  }
+]
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `List Users' Status by Ids`
+
+<a id="opIdUsers_List Users' Status by Ids"></a>
+
+Returns an ordered list of UserStatus objects for a given tenant or a MultiStatusResponse with a list of UserStatus objects and a list of errors.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
+?userId={userId}&query={query}&skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+`[optional] array userId`
+<br/>Unordered list of identifiers for all users<br/><br/>`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[UserStatus](#schemauserstatus)[]|List of user statuses found|
+|207|[UserStatusMultiStatusResponse](#schemauserstatusmultistatusresponse)|List of user statuses found|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([UserStatus](#schemauserstatus)[])
+
+```json
+[
+  {
+    "InvitationStatus": 0,
+    "User": {
+      "Id": "string",
+      "GivenName": "string",
+      "Surname": "string",
+      "Name": "string",
+      "Email": "string",
+      "ContactEmail": "string",
+      "ContactGivenName": "string",
+      "ContactSurname": "string",
+      "ExternalUserId": "string",
+      "IdentityProviderId": "string",
+      "RoleIds": [
+        "string"
+      ]
+    }
+  }
+]
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Create User (v1-preview path)`
+
+<a id="opIdUsers_Create User (v1-preview path)"></a>
+
+Creates a user.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Users
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+User values to use during creating<br/>
+
+```json
+{
+  "UserId": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ContactEmail": "user@example.com",
+  "RoleIds": [
+    "string"
+  ],
+  "IdentityProviderId": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|201|[User](#schemauser)|User created|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid input, or user limit exceeded|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 201 Response ([User](#schemauser))
+
+```json
+{
+  "Id": "string",
+  "GivenName": "string",
+  "Surname": "string",
+  "Name": "string",
+  "Email": "string",
+  "ContactEmail": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ExternalUserId": "string",
+  "IdentityProviderId": "string",
+  "RoleIds": [
+    "string"
+  ]
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Update User`
+
+<a id="opIdUsers_Update User"></a>
+
+Creates or updates a user.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1-preview/Tenants/{tenantId}/Users/{userId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+A UserStatus object<br/>
+
+```json
+{
+  "UserId": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ContactEmail": "user@example.com",
+  "RoleIds": [
+    "string"
+  ],
+  "IdentityProviderId": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[User](#schemauser)|Updated user|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([User](#schemauser))
+
+```json
+{
+  "Id": "string",
+  "GivenName": "string",
+  "Surname": "string",
+  "Name": "string",
+  "Email": "string",
+  "ContactEmail": "string",
+  "ContactGivenName": "string",
+  "ContactSurname": "string",
+  "ExternalUserId": "string",
+  "IdentityProviderId": "string",
+  "RoleIds": [
+    "string"
+  ]
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
 <li>Tenant Administrator</li>
 </ul>
 

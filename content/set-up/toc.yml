@@ -9,6 +9,6 @@
   href: users/toc.yml
 - name: Groups
   topicHref: groups.md
-- name: Clients
+- name: AVEVA Data Hub clients
   topicHref: clients/clients-concept.md
   href: clients/toc.yml

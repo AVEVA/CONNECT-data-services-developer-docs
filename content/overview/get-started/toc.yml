@@ -1,5 +1,7 @@
 - name: Take a tour of the AVEVA Data Hub portal
   topicHref: introduction-portal-interface.md
+- name: View and edit your user profile
+  topicHref: view-profile.md
 - name: Get started with connections
   href: connections/toc.yml
   topicHref: gs-connections.md

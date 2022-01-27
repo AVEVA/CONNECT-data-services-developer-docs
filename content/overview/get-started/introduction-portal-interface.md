@@ -66,12 +66,3 @@ The following table provides a list and descriptions of these toolbar commands.
 | 4 - Question mark icon | Select to access the online documentation. |
 | 5 - User profile icon  | Select to view a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
 
-### Change user preferences
-
-The **Show user friendly property names** option controls how property names appear throughout the portal. This setting is specific to your login.
-
-To change your user preferences, perform the following steps:
-
-1. To open your user profile, select the **User profile** icon and select your name.
-
-1. To use friendly property names, turn on the the toggle under **Show user friendly property names**. The setting is saved automatically.

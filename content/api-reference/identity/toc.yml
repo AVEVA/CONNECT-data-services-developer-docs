@@ -16,8 +16,6 @@
   href: identity-hybrid-clients.md
 - name: Identity providers
   href: identity-identity-providers.md
-- name: Implicit clients
-  href: identity-implicit-clients.md
 - name: Invitations
   href: identity-invitations.md
 - name: Role-based access control

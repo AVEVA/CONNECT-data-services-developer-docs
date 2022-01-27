@@ -4,7 +4,7 @@ uid: pi2ocs-rel-summary
 
 # PI to Data Hub release summary
 
-## Release 1.8.0: December 10, 2021
+## Release 1.8.2: January x, 2022
 
 
 ## Overview
@@ -17,68 +17,65 @@ This is a Lighthouse Release. Prior to this, select customers had access to the 
 
 ### Fixes
 
-*PI to Data Hub Configuration Utility Improvements*
+*PI to Data Hub Agent redirects user to a broken documentation page*
 
-**Respect AVEVA Data Hub feature flags**
+During installation, the user gets redirected to a broken documentation web page. In addition, the user is redirected to a broken web page when the help icon is clicked in the PI to Data Hub Configuration Utility. This issue has been fixed. 
 
-If a user is not authorized for a specific AVEVA Data Hub feature, the PI to Data Hub configuration utility will respect that setting. Previously, it didn't check if a user was authorized to configure an AF server for PI to Data Hub.
- 
-**Improve experience when searching for referenced Data Archives**
+*PI to Data Hub Agent installation pointed to development cloud servers.*
 
-The PI to Data Hub Configuration Utility now displays more information while the tool is searching for referenced Data Archives. Previously, that area was blank until one or more Data Archives were found. 
-
-The 1.6.1204.0 and 1.7.0.0 versions of the PI To Data Hub Agent will fail to register and fail to appear in the AVEVA Data Hub portal on new installations. The PI to Data Hub Configuration Utility will also display an agent status of "Retrieving State".
-
-The PI to Data Hub Configuration Utility could crash if a user attempted to edit a PI mapping from within the tool. This has been fixed.
-
-*PI to Data Hub Transfer Improvements*
-
-**PI to Data Hub transfer stops streaming data if a delete event is processed**
-
-If an event was deleted from Sequential Data Store to which a stream PI to Data Hub wrote, the transfer would stop streaming data. This has been fixed.
-Enhancements
-
-**AF support added to PI to Data Hub**
-
-PI to Data Hub is now able to transfer AF elements and attributes to AVEVA Data Hub and create them as assets and metadata. PI to Data Hub will transfer the following AF objects to AVEVA Data Hub:
-
-*PI to Data Hub Configuration Utility Improvements*
-
-Please consult the PI to Data Hub online documentation for more details on how to configure a transfer with AF elements and attributes.
- 
-**PI to Data Hub supports Data Privacy Settings**
-
-When configuring a transfer, you may now select the data privacy level for stream metadata replication. Please consult the PI to Data Hub online documentation for more details on how to configure data privacy settings.
+The PI to Data Hub Agent installation would not automatically deploy to the public AVEVA Data Hub cloud servers. Instead, the PI to Data Hub Agent installation pointed to an internal development cloud server by default. This issue has been fixed. 
 
 **Known issues**
 
 * Query search results that contain a very large number of PI points (> 1 million) will generate an exception error and not be processed. 
+
 * The AF Server must have a default Data Archive server specified for PI to Data Hub to operate properly.
+
+* The PI to Data Hub Configuration Utility can become unresponsive on some systems. There are two workaround options:
+
+  1. Download and install a newer version of .NET Desktop Runtime (3.1.21 or later) from [here](https://dotnet.microsoft.com/download/dotnet/3.1).
+   
+  2. Change the compatibility settings:
+    
+     a. Navigate to `C:\Program Files\AVEVA\PIToDataHub`.
+     
+     b. Right-click the `PIToDataHubConfigurationUtility.exe` file, then select **Properties**.
+     
+     c. In the **Properties** dialog box, select the **Compatibility** tab.
+     
+     d. Select the **Change high DPI settings** button, then select the **Use this setting to fix scaling problems for this program instead of the one in Settings** checkbox.
+     
+     e. Select **OK**, select **Apply**, then close the dialog box.
 
 ## System requirements
 
-This release supports Windows 10, Windows Server 2016 and Windows Server 2019.
+This release supports Windows 10, Windows Server 2016, and Windows Server 2019.
 
 Minimum requirements:
 
 * 4GB of RAM
-* Internet connectivity at least 10Mbit/sec
+
+* Internet connectivity of at least 10Mbit/sec
+
 * Prior editions of Windows are not supported.
 
 ## Distribution Kit Files
 
 | Product  | Software Version |
 |------------- | ------------ |
-| PI to Data Hub Agent Installation | 1.7.0 |
+| PI to Data Hub Agent Installation | 1.8.2 |
 
 ## Installation and upgrade
 
-Run the PIToDataHubAgent.exe setup kit. Instructions are provided on-screen.
+Run the `PIToDataHubAgent.exe` setup kit. Instructions are provided on-screen.
 
 ## Uninstallation
 
-In Windows go to **Settings** > **Apps**.
-Uninstall the package "PI To Data Hub Agent".
+1. Select the Windows **Start** button, then select **Settings**.
+
+1. In the `Settings` window, select **Apps**.
+
+1. Under the **Apps & features** list, navigate to and select **PI to Data Hub**, then select **Uninstall** twice.
 
 ## Security information and guidance
 

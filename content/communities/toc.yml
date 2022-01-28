@@ -3,6 +3,7 @@
   - topicUid: add-community
   - topicUid: community-invite
   - topicUid: community-accept-invite
+  - topicUid: community-manage-sds-permissions
 - topicUid: community-administration
   items:
   - topicUid: managecommunityusers

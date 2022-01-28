@@ -1,5 +1,5 @@
 ---
-uid: manage-permissions-sds
+uid: community-manage-sds-permissions
 ---
 
 # Enable stream sharing permissions

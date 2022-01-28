@@ -42,7 +42,11 @@ To invite another tenant to the community, follow these steps:
 
 After you send an invitation to another tenant, wait for its tenant administrator to accept the email invitation.
 
-**Tip:** Share <xref:community-accept-invite> with the invited tenant administrator for instruction.
+**Tips:** 
+
+- Share <xref:community-accept-invite> with the invited tenant administrator for instruction.
+
+- If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see [Resend email invitation](#resend-email-invitation). 
 
 ## Step 3: Confirm the invitation
 
@@ -59,3 +63,15 @@ To confirm an invitation, follow these steps:
 1. On the `Invitation Details` pane, select **Confirm Tenant**. When prompted for confirmation, select **Confirm Tenant** again.
 
   The invitee's tenant is now part of the community.
+
+## Resend email invitation
+
+If you invite another tenant to the community but its tenant administrator does not receive the invitation email, you can resend it. To resend an invitation, follow these steps:
+
+1. In the left pane, select **Data Management** > **Communities**.
+
+1. On the `Communities` overview page, find the community that you have invited another tenant to and select **Details**.
+
+1. On the `Community Details` page, select the **Invitations** tab.
+
+1. Find the **Invitation Recipient** who has not received the email invitation with a **Status** of `Invitation Pending`. Select the recipient, and then select **Resend Invitation**.

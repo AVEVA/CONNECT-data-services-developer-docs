@@ -1,5 +1,5 @@
 ---
-uid: managecommunity
+uid: community-remove-tenants
 ---
 
 # Remove tenants from a community

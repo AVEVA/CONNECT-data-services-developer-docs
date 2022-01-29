@@ -9,7 +9,7 @@
   items:
   - topicUid: managecommunityusers
   - topicUid: managecommunityclients
-  - topicUid: managecommunity
+  - topicUid: community-remove-tenants
   - topicUid: delete-community
 - topicUid: community-sharing
   items:

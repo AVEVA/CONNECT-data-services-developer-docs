@@ -31,3 +31,7 @@ If another tenant invites you to a community, you will receive an email from the
     **Note:** By default, community administrators do not have community member access rights.
 
 The tenant that invited you to the community is updated that you accepted their invitation. Wait for them to confirm the invitation. When the inviting tenant confirms, you will receive an email that your tenant now has access to the community.
+
+## What's next?
+
+After you gain access to the community, allow users in your tenant to share streams. For more information, see <xref:community-manage-sds-permissions>.

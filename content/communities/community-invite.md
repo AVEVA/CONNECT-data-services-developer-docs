@@ -48,6 +48,10 @@ To confirm an invitation, follow these steps:
 
   The invitee's tenant is now part of the community.
 
+## What's next?
+
+After you gain access to the community, allow users in your tenant to share streams. For more information, see <xref:community-manage-sds-permissions>.
+
 ## Resend email invitation
 
 If you invite another tenant to the community but its Tenant Administrator does not receive the invitation email, you can resend it. To resend an invitation, follow these steps:

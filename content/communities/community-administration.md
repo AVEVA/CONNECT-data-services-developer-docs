@@ -16,7 +16,7 @@ Community administrative actions include:
 
 	Allow an application to programatically access shared community data and resources using REST API.
 
-- <xref:managecommunity>
+- <xref:community-remove-tenants>
 
 	Remove tenants from your community.
 

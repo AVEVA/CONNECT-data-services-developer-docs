@@ -4,25 +4,9 @@ uid: community-invite
 
 # Invite a tenant to a community
 
-To allow another tenant to join your community, you must complete a three-way handshake that includes the following steps:
+Before another tenant can join a community that you have creates, you must send them an invitation, they must accept it, and then you must confirm it. In other words, this process is a three-step handshake that requires collaboration between tenants.
 
-1. A [community administrator](xref:ccRoles#community-administration) from the establishing tenant, also known as the community owner, sends an email invitation to a tenant administrator from another tenant. 
-
-1. The tenant administrator from the invited tenant accepts the invitation.
-
-1. The community administrator who issued the invitation confirms it, allowing the partner to begin participating in the community. The community is private; users outside of your community cannot access it without an invitation.
-
-**Note:** These instructions are written for the community owner who is *sending* the invition. For instructions for the tenant administator *receiving* the invitation, see <xref:community-accept-invite>.
-
-## Prerequisites for sending community invitations
-
-To send a community invitation, you must meet the follow prerequisites:
-
-- Your user account must be assigned [community administration](xref:ccRoles#community-administrators-preview) permissions.
-
-- Your business partner must already have a tenant in OSIsoft Cloud Services (OCS).
-
-- You must have the email address for the Tenant Administrator from the tenant you are inviting. 
+This document provided step-by-step instruction for the user that is inviting another tenant to a community. If you are looking for instructions on how to accept a community invitation, see <xref:community-accept-invite>.
 
 ## Step 1: Invite a tenant to the community
 

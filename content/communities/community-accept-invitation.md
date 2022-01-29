@@ -4,17 +4,7 @@ uid: community-accept-invite
 
 # Accept community invitation
 
-If another tenant invites you to a community, you will receive an email from the inviting tenant. To accept the invitation, follow instructions in the email.
-
-## Prerequisites for accepting community invitations
-
-- Your user account must be assigned the [tenant administrator](xref:ccRoles#tenant-roles) role.
-
-- You must have an email invitation. If you have not received one, contact the inviting community administrator and request a new invitation.
-
-## To accept a community invitation
-
-To accept an invitation, follow these steps:
+If another tenant invites you to a community, you will receive an email from the inviting tenant. To accept an invitation, follow these steps:
 
 1. Open the email from OSIsoft Cloud Services, read the instructions, and select the VIEW COMMUNITY INVITE link.
 
@@ -26,10 +16,18 @@ To accept an invitation, follow these steps:
 
 1. Select **Join**.
 
-  The inviter receives an email asking for confirmation of the pending invitation.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned community administration permissions.
 
-1. Assign [community membership](xref:ccRoles#community-roles-preview) to tenant users. These users will be able to choose data streams to share with the community.
+    By default, [community administration permissions](xref:ccRoles#community-roles-preview) are assigned to the [Tenant Administrator and Community Administrator](xref:ccRoles#tenant-roles) roles. 
+    
+    Optionally, you can add community administration permissions to other roles. Select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator. 
 
-    In the list of users, select **Add User** ![Add User](../_icons/plus-thick-alt.svg "Add User") beside each user who should be a community member. If necessary, you can filter the list of users by typing in the **Filter by name or e-mail** field.
+    After you finish, select **Next**.
 
-    **Note:** By default, community administrators do not have community member access rights, so adding community administrators as community members is recommended.
+1. On the `Community Members` page, add [community members](xref:ccRoles#tenant-roles), which are users within your tenant that have read access to the community and its data.
+
+    To add new community members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
+
+    **Note:** By default, community administrators do not have community member access rights.
+
+The tenant that invited you to the community is updated that you accepted their invitation. Wait for them to confirm the invitation. When the inviting tenant confirms, you will receive an email that your tenant now has access to the community.

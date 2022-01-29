@@ -8,10 +8,6 @@ The `Community Details` page lets you add and delete user who hold membership in
 
 When you add a user to the community, they are assigned the [Community Member role](xref:ccRoles#community-roles-preview) within the scope of the community. This role lets the user view the community, view the data shared within it, and share data.
 
-## Prerequisites to manage members of a community
-
-To manage community membership, you must be a [community administrator](xref:ccRoles#community-administrators-preview).
-
 ## Add users to a community
 
 To add users from your own tenant to a community, follow these steps:

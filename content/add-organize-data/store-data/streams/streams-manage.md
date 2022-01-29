@@ -33,7 +33,7 @@ Tags and metadata allow you to associate additional information with a stream. F
 
 1. Select a stream.
 
-1. Click the **More options** ![More options icon](../../../_icons/dots-vertical.svg), and then select **Edit Stream**.
+1. Click the **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Edit Stream**.
 
    A tab opens to allow you to modify the metadata and tags for the stream.
 
@@ -57,7 +57,7 @@ When you remove a stream, you are deleting it.
 
 1. Select one or more streams.
 
-1. Click **More options** ![More options icon](../../../_icons/dots-vertical.svg), and then select **Remove Stream**.
+1. Click **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Remove Stream**.
 
 1. In the confirmation window, click **Remove** to confirm the deletion.
 
@@ -93,7 +93,7 @@ To share streams with other communities, follow these steps:
 
 ## Unshare streams
 
-To stop sharing streams, follow these steps:
+To stop sharing streams with a community, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 

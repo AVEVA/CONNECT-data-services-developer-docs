@@ -39,7 +39,6 @@ To create a new asset rule, follow the steps in the these procedures.
 For more information about asset rules, see [Asset rules](xref:ccAssetRules).
 
 
-- [Asset rules](xref:ccAssetRules)
 - [PI Server counterpart](xref:ccAssetRules#assetrules-pi-server)
 - [Stream views best practices](xref:ccAssetRules#assetrules-bestpractices)
 

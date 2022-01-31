@@ -2,7 +2,7 @@
 uid: Groups
 ---
 
-# Groups
+# AVEVA Data Hub Groups
 
 Groups allow you to assign and manage roles for groups of users.
 	

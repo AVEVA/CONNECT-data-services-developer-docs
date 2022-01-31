@@ -6,6 +6,16 @@ uid: community-setup
 
 Establishing a new community requires collaboration between administrators for multiple tenants. Complete the following procedures to establish a new community and invite other tenants to join it.
 
+## Prerequisites for community setup
+
+To create a new community, you must:
+
+- Be a [Tenant Administrator](xref:ccRoles#tenant-roles).
+
+- Have the email address for Tenant Administrator of the tenant you invite to the community.
+
+## Community setup outline
+
 1. <xref:add-community>
 
 	This procedure provides instruction on how to create a new community on any tenant. During this process, you name the community, choose which roles can administer it, and choose which users from your tenant can participate.
@@ -19,3 +29,5 @@ Establishing a new community requires collaboration between administrators for m
 1. <xref:community-manage-sds-permissions>
 
 	Regardless of whether you are creating or joining a community, you must manage permissions for data streams to allow user roles to share streams with the community.
+
+	**Note:** You can be a [Community Administrator](xref:ccRoles#community-administrators-preview) rather than a Tenant Administrator to complete this procedure.

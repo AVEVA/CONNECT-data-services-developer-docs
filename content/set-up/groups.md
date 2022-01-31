@@ -16,7 +16,7 @@ To add a group, take the following steps:
 
 1. In the toolbar, select **Add Group**.
 
-1. Begin entering text in the Name field to search for an existing group and select the group you wish to add for access to assets, resources and services.
+1. Begin entering text in the Name field to search for an existing group and then select the group you wish to add for access to assets, resources and services.
 
 1. Specify the roles to assign to this new group.
 
@@ -28,7 +28,7 @@ To manage the roles for a group, take the following steps:
 
 1. Select the group from the list.
 
-1. Select **Manage Roles** in the Roles tab.
+1. Select **Manage Roles** in the **Roles** tab.
 
 1. Select the roles you want to assign to the group.
 

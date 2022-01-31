@@ -1,4 +1,4 @@
-- name: Sign in to AVEVA Connect and navigate to Data Hub
+- name: Sign in to AVEVA Connect and navigate to AVEVA Data Hub
   href: sign-in-cnnxt.md
 - name: AVEVA Cloud Services Catalog
   href: aveva-cloud-svcs-cat.md  

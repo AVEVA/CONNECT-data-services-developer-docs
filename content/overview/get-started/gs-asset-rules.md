@@ -30,7 +30,8 @@ To create a new asset rule, follow the steps in the these procedures.
 
 5. [Preview assets](#preview-assets-#5): Display a preview of the assets that will be created by this rule. 
 
-For more information about asset rules, see the following topics:
+For more information about asset rules, see [Asset rules](xref:ccAssetRules).
+
 
 - [Asset rules](xref:ccAssetRules)
 - [PI Server counterpart](xref:ccAssetRules#assetrules-pi-server)

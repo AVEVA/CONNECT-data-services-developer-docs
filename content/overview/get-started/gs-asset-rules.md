@@ -38,10 +38,6 @@ To create a new asset rule, follow the steps in the these procedures.
 
 For more information about asset rules, see [Asset rules](xref:ccAssetRules).
 
-
-- [PI Server counterpart](xref:ccAssetRules#assetrules-pi-server)
-- [Stream views best practices](xref:ccAssetRules#assetrules-bestpractices)
-
 ## <a name="gsAssetRules-create-new-rule"></a> Create a new asset rule 
 
 Create a new asset rule.
@@ -55,7 +51,9 @@ Create a new asset rule.
 1. In the **Create New Asset Rule** window, enter the following information.
 
    - `Name` &ndash; **MyData.AssetRule**
+   
    - `Description` &ndash; Optionally, add a description for this asset rule.
+   
    - `Asset Type` &ndash; Select the **MyData.PumpType** asset type from the dropdown list.
 
 1. Select **Continue** to proceed to the **Select Stream** window.
@@ -71,26 +69,38 @@ Create a new asset rule.
 Assemble token values so that you can select the information you want to extract from your streams. 
 
 1. Initially, **MyData** should be highlighted. Use the slider to select the `.` character, so that **MyData.** is highlighted.
+
 1. For the **1. Match:** option, select **the string literal "MyData."**. The asset rule will find only streams begin with this string. 
 
    **Note**:  In this case, the token value is not named and is not used in the asset configuration. 
+   
 1. Select **Capture** to move to the next character group. The first matching rule is listed and the next group, **NorthAmerica**, is highlighted. 
+
 1. For the **2. Match:** option, select **letters preceding the delimiter "."**. This allows you to use this as a token in the asset configuration. 
+
 1. In the **and name it:** field, enter **Region**, and select **Capture**. This adds two rules, one for the Region and another for the "." delimiter. 
+
 1. Next, **SLTC** is selected. In this case, we know our naming pattern enforces a 4-letter abbreviation for the site, so in **3. Match:** select **the next 4 letters**. This helps ensure we do not match any streams that we do not expect. 
+
 1. Name this token **Site** and select **Capture**.
+
 1. Now, **PumpA** is selected. Because we want to distinguish pump streams from other streams, use the slider to select only **Pump**, and select **the next 4 characters of any type**. 
+
 1. Name this token **Equipment** and select **Capture**.
+
 1. Finally, just **A** is selected. Use the option **letters until the end of stream name**, and name this token **Id**. 
+
 1. Select **Capture**.
 
 **Note**: Alternatively, you can bring in tokens by using the **Stream Metadata** button. 
 
-
 1. In the left panel, select **Stream Metadata**. You see the two metadata tokens added to the stream by the metadata rule you just created, **Region** and **Site**. This can be a useful way to bring in more tokens for some streams. 
-2. Leave the **Region** and **Site** tokens unchecked.
-3. Select **Back to Stream Name Pattern**.
-4. Select **Next**.
+
+1. Leave the **Region** and **Site** tokens unchecked.
+
+1. Select **Back to Stream Name Pattern**.
+
+1. Select **Next**.
 
 ## <a name="gsAssetRules-map-tokens"></a> Map tokens to values 
 
@@ -127,9 +137,13 @@ Assign tokens values to asset fields.
 **Note**: You can enter  the `{` character to show a list of available tokens. 
 
 1. In the **Configure Asset** panel, enter the following information.
+
    - Id &ndash; **{Id}**
+
    - Name &ndash; **{Equipment}{Id}**
+
    - Description &ndash; **{Region} {Site} Pump State**
+ 
 1. Select  **Next**.
 
 ## <a name="gsAssetRules-preview-assets"></a> Preview assets
@@ -137,6 +151,7 @@ Assign tokens values to asset fields.
 Display a preview of the assets that will be created by this rule. 
 
 1. Use the view selection at upper right to toggle between list and table view of the assets. The **Asset Preview** panel at left shows the rule details and statistics. 
+
 1. If you are satisfied with the preview, select **Save and Execute**. In the **Asset Rule Builder** view you should see an entry for the **MyData.AssetRule** that you created.
 
    **Note**: If any errors occurred during execution of your asset rule, they are shown in the **Error Count** column. To see details about the errors, select the **MyData.AssetRule** rule in the list, and any specific errors are shown in the right panel under the **Errors** header.

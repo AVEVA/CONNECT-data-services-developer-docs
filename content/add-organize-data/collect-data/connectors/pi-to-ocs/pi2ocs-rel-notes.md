@@ -13,8 +13,6 @@ This release covers the PI To Data Hub Agent, a component that is installed on-p
 
 ## Fixes and enhancements
 
-This is a Lighthouse Release. Prior to this, select customers had access to the preview Lighthouse, early adopter access to this product.
-
 ### Fixes
 
 *PI to Data Hub Agent redirects user to a broken documentation page*

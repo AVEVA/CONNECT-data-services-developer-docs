@@ -71,7 +71,7 @@ To share streams with other communities, follow these steps:
 
 1. If it is not already selected, select **Streams** at the upper left.
 
-1. Select each stream that you want to share, and then select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Share Stream**.
+1. Select each stream that you want to share, and then select **More Options** ![More Options](../../../_icons/dots-vertical.svg) > **Share Stream**.
 
     **Tips:** 
 
@@ -99,7 +99,7 @@ To stop sharing streams with a community, follow these steps:
 
 1. Use the toggle switches to filter streams by namespace or community.
 
-   ![Toggle switches](images\namespace-communities-switches.png)
+   ![Toggle switches](../../../communities/images/namespace-communities-switches.png)
 
 1. From the list, select a namespace or a community.
 
@@ -109,7 +109,7 @@ To stop sharing streams with a community, follow these steps:
 
 1. From the list of streams, select one or more to streams unshare. 
 
-1. Select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Unshare Stream**. 
+1. Select **More Options** ![More Options](../../../_icons/dots-vertical.svg) > **Unshare Stream**. 
 
 1. When prompted for confirmation, select **Unshare**.
 

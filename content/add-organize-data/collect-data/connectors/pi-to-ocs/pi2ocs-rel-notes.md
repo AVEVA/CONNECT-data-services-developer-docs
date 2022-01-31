@@ -4,7 +4,7 @@ uid: pi2ocs-rel-summary
 
 # PI to Data Hub release summary
 
-## Release 1.8.2: January 31, 2022
+## Release 1.8.2: January 28, 2022
 
 
 ## Overview
@@ -23,7 +23,7 @@ During installation, the user gets redirected to a broken documentation web page
 
 *PI to Data Hub Agent installation pointed to development cloud servers.*
 
-The PI to Data Hub Agent installation would not automatically deploy to the public AVEVA Data Hub cloud servers. Instead, the PI to Data Hub Agent installation pointed to an internal development cloud server by default. This issue has been fixed. 
+During installation of the PI to Data Hub Agent, the agent attempts to establish connectivity with internal development cloud servers by default instead of the public AVEVA Data Hub cloud servers. This issue has been resolved. 
 
 **Known issues**
 

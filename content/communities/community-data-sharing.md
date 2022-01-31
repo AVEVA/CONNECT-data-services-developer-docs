@@ -1,8 +1,8 @@
 ---
-uid: community-sharing
+uid: data-sharing
 ---
 
-# Community sharing
+# Data sharing
 
 After a community administrator adds you as a member of the community, you can share data streams from your tenant with the rest of the community or view data that other tenants and community members have shared.
 

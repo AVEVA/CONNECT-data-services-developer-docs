@@ -6,13 +6,15 @@ uid: community-setup
 
 Establishing a new community requires collaboration between administrators for multiple tenants. Complete the following procedures to establish a new community and invite other tenants to join it.
 
+**Tip:** Looking for instructions on how to join a community? See <xref:community-accept-invite>.
+
 ## Prerequisites for community setup
 
 To create a new community, you must:
 
 - Be a [Tenant Administrator](xref:ccRoles#tenant-roles).
 
-- Have the email address for Tenant Administrator of the tenant you invite to the community.
+- Have the email address for Tenant Administrator of the tenant that you invite to the community.
 
 ## Community setup outline
 

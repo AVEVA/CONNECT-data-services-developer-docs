@@ -24,7 +24,7 @@ Complete the following steps to use the API Console:
 
     -	Select **Communities** and then select from a dropdown list of communities followed by an endpoint (or route).
 
-    -	Select **OmfValidation** to validate an OSIsoft Message Format (OMF) JSON message.
+    -	Select **OmfValidation** to validate an Open Message Format (OMF) JSON message.
 
     If you selected a root-scoped path in the second step, a different dropdown list gives you other categories of data. You can select one and then select an appropriate endpoint (or route).
 

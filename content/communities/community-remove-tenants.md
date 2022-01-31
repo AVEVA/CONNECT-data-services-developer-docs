@@ -6,12 +6,6 @@ uid: community-remove-tenants
 
 When a tenant wants to withdraw from a community, it can be removed by either its community administrator or the community owner. The community owner is the only user that can remove other tenants from the community.
 
-## Prerequisites to remove tenants from a community
-
-* To remove your own tenant from the community, you must be a [community administrator](xref:ccRoles#community-administrators-preview).
-
-* To remove another tenant from the community, you must be the [community owner](xref:ccRoles#community-owner).
-
 ## Remove your own tenant from a community
 
 Use this procedure to remove your own tenant from a community. After removing your tenant, you can be re-invited to the community but all data that was previously shared with your tenant must be shared again. 

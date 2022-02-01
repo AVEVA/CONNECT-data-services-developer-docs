@@ -22,13 +22,15 @@ To remove your tenant from a community, follow these steps:
 
 1. Select your own tenant.
 
-1. Select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Remove Tenant**.
+1. Select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Remove *<Tenant>***.
 
 1. In the confirmation window, enter the name of your own tenant and select **Remove**.
 
 ## Remove a tenant from a community
 
-Use this procedure to remove a tenant from a community. This action might be necessary if a business relationship changes or if the tenant's organization experiences a security breach.  
+Use this procedure to remove a tenant from a community. This action might be necessary if a business relationship changes or if the tenant's organization experiences a security breach.
+
+**Note:** You must be a [community owner](xref:ccRoles#community-owner-preview) to perform this procedure.
 
 To remove a tenant from a community, follow these steps:
 

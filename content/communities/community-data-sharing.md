@@ -4,8 +4,8 @@ uid: data-sharing
 
 # Data sharing
 
-After a community administrator adds you as a member of the community, you can share data streams from your tenant with the rest of the community or view data that other tenants and community members have shared.
-
+After you are added as a Community Member, you can use the Sequential Data Store to view data streams that other tenants have shared with the community. Additionally, if you are assigned a tenant role with the **Share** permissions for data streams, you can share streams from your tenant with the community. Users who can share streams within a community are also called *data stewards*.
+ 
 ## Prerequisites for data sharing
 
 To share data with a community, your user role must be assigned the **Share** permissions for data streams. For more information, see <xref:manage-streams>.

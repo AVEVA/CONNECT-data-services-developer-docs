@@ -4,13 +4,11 @@ uid: ccRoles
 
 # Roles
 
-Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, OCS checks the assigned roles against the permissions on the resource to determine their access level.
-
-Assigning a role to a user or client does not determine access. For any resource, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
+Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, OSIsoft Cloud Services (OCS) checks the assigned roles against the permissions on the resource to determine their access level.
 
 ## Role types
 
-OSIsoft Cloud Services includes three different types of roles, which determine the scope of the access rights assigned to a user:
+OCS includes three types of roles:
 
 - [Tenant roles](#tenant-roles)
 
@@ -20,49 +18,65 @@ OSIsoft Cloud Services includes three different types of roles, which determine 
 
 ### Tenant roles
 
-Tenant roles are default system roles that assign permissions to users within the scope of your tenant. These default roles cannot be removed from the tenant. Tenant roles assign a default permission for each access right in the system. 
+Tenant roles are the default permission sets that control access to each asset, resource, and service within OCS. These default roles cannot be removed from the tenant. 
 
-The following table lists the default permissions for each tenant role. 
+The default tenant roles are:
 
-| Role | Read | Write | Delete | Manage Permissions | Notes |
-|--|--|--|--|--|--|--|
-| Tenant Administrator | &#10004; | &#10004; | &#10004; | &#10004; | This is the highest privilege role, with the ability to create new and remove existing users, clients, and secrets. Do not assign this role to clients. |
-| Tenant Contributor | &#10004; | &#10004; |  |  |
-| Tenant Member | &#10004; |  |  |  | This role is automatically assigned to all users or clients. |
-| Tenant Viewer |  |  |  |  | This role has no specific permissions by default. |
-| Tenant Data Steward |  |  |  |  | This role has no specific permissions by default. |
+- Tenant Administrator – Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, groups, clients, and secrets.
+
+  **Note:** Do not assign the Tenant Administrator role to clients.
+
+- Tenant Contributor – This role has read and write permissions by default.
+
+- Tenant Data Steward – This role has no specific permissions by default.
+
+- Tenant Viewer – This role has no specific permissions by default.
+
+- Tenant Member – This role, which OCS assigns to all users or clients, has read access by default.
+
+- Community Administrator – This role has no specific permissions by default.
+
+  **Note:** Although this role has no permissions by default, it is intended for use with community administration permissions. See [Community administrators](#community-administrators-preview) for more information.
+
+Some tenant roles are assigned permissions by default (Tenant Administrator, Tenant Contributor, Tenant Member). However, others are not (Tenant Contributor, Tenant Data Steward, Tenant Viewer, and Community Administrator). These roles without default permissions are intended to be customized; you must assign these roles permissions for individual system resources to best suit your organization.
+
+For any resource, you can set access to it for specific roles rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions. When managing permissions for the Sequential Data Store, an additional access type is available: Share. This permission allows users to share data streams from their tenant with a [community](xref:communities).
 
 ### Tenant custom roles 
 
-You can create custom tenant roles when the default tenant roles do not meet your organizational use cases. You can assign these custom roles a custom set of permissions. By default, added roles do not have any specific permissions. 
+In addition to the default tenant roles, you can create tenant custom roles for further access control. By default, tenant custom roles do not have any specific permissions assigned following their creation. You must add or remove permissions for each resource.
 
-You must have the Tenant Administrator role to add and manage roles in a tenant.
+You must have the Tenant Administrator role to add and manage tenant custom roles.
 
-### Community roles (Preview)
+### Community Member role (Preview)
 
-Community roles define the access that user has within the scope of a [community](xref:communities), regardless of whether that community is owned by your tenant or a partner tenant.
+The Community Member role is a role that can be shared among multiple tenants. It allows users from different tenants to access a [community](communities).
 
-There is a single community role: Community Member. The following table lists its default access rights within a community.
+When a new community is created, the founding tenant automatically adds a new Community Member role to the system, which is named using the following convention:**_<Community Name>_ Community Member**. For example, if you create a new community named **TEST COMMUNITY**, a new community role is added to the tenant named **TEST COMMUNITY Community Member**.
 
-| Role | Read | Write | Delete | Manage Permissions|
-|--|--|--|--|--|--|
-| Community Member | &#10004; |  |  |  |  |
+This new role is also shared with other tenants that join the community. For example, a tenant that joins **TEST COMMUNITY** will have the **TEST COMMUNITY Community Member** role added to their tenant as well. 
+
+Users assigned the Community Member role have read permissions within the community by default. However, to allow community members to share data streams within a community, you must assign the Share permission for streams to their assigned tenant roles.
 
 #### Community administrators (Preview)
 
-When a tenant administrator creates or joins a new community, they are prompted to assign new community administration access rights to one or more existing tenant roles.  Community administration access rights are not explicitly assigned to a user. Instead, assign these permissions to either a default tenant role or a custom tenant role. All users assigned the updated role inherit administrative access rights within the community for their tenant, including the following actions:
+When a user creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community, including the following actions:
 
-- Add users from their tenant to the community.
+- Modify the community name and description.
 
-- Remove their tenant's users from the community.
+- Add and remove users and clients to/from the community.
 
-- Remove their tenant from the community.
+- Assign roles that can administer the community.
 
-- Invite tenants to the community and confirm those invitations.
+- Pause the sharing of data from your tenant into the community.
+
+- Withdraw from the community.
+
+OCS includes a tenant role named Community Administrator that is assigned no permissions by default. Assigning community administrator permissions to this role is recommended.
 
 #### Community owner (Preview)
 
-The tenant administrator that creates a community becomes the community owner. This user becomes the only user that can:
+The user that creates a community becomes its community owner. The community owner has full administrative access to the community and some additional permissions:
 
 - Remove other tenants from the community.
 

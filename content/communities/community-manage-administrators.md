@@ -4,7 +4,7 @@ uid: community-manage-administrators
 
 # Manage community administrators
 
-Although you initially configure which tenant roles can administer a community during community creation, you can edit which roles can administer the community at any time.
+Although you initially configure which tenant roles can administer a community during community creation, you can edit which roles can administer the community at any time. For more information see [Community administrators](xref:ccRoles#community-administrators-preview).
 
 ## Add community administrators
 

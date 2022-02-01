@@ -51,7 +51,7 @@ To confirm an invitation, follow these steps:
 
 ## What's next?
 
-After you gain access to the community, allow users in your tenant to share streams. For more information, see <xref:community-manage-sds-permissions>.
+Edit permissions for data streams to allow tenant data stewards to share them with the community. For more information, see <xref:community-manage-sds-permissions>.
 
 ## Resend email invitation
 

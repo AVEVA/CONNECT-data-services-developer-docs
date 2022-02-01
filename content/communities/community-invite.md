@@ -8,6 +8,7 @@ Before another tenant can join a community that you have creates, you must send 
 
 **Note:** This document provides step-by-step instruction for the user that is inviting another tenant to a community. If you are looking for instructions on how to accept a community invitation, see <xref:community-accept-invite>.
 
+**Reminder:** You must have the email address for the Tenant Administrator that you are inviting to the community as stated in the [prerequisites](xref:community-setup#prerequisites-for-community-setup).
 ## Step 1: Invite a tenant to the community
 
 To invite another tenant to the community, follow these steps:

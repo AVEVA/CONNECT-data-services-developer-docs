@@ -16,11 +16,11 @@ To create a community, follow these steps:
 
 1. On the `Details` page, enter a **Name** and **Description**. Then select **Next**.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned community administration permissions.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration](xref:ccRoles#community-roles-preview) permissions.
 
-    By default, [community administration](xref:ccRoles#community-roles-preview) permissions are assigned to the [Tenant Administrator and Community Administrator](xref:ccRoles#tenant-roles) roles. 
+    By default, these permissions are assigned to the [Tenant Administrator and Community Administrator](xref:ccRoles#tenant-roles) roles. 
     
-    Optionally, you can add community administration permissions to other roles. Select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator. 
+    Optionally, you can add these permissions to other roles. Select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator. 
 
     After you finish, select **Next**.
 

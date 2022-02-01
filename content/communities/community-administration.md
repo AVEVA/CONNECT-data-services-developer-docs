@@ -29,7 +29,7 @@ Community administrative actions include:
 - <xref:community-edit>
 
 	Edit the community description. 
-	
+
 	**Note:** You must be a [Community Owner](xref:ccRoles#community-owner-preview) to edit a community.
 
 - <xref:managecommunityadministrators>

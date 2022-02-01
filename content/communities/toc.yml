@@ -9,8 +9,9 @@
   - topicUid: managecommunityusers
   - topicUid: managecommunityclients
   - topicUid: community-remove-tenants
-  - topicUid: delete-community
   - topicUid: community-edit
+  - topicUid: community-manage-administrators
+  - topicUid: delete-community
 - topicUid: data-sharing
   items:
   - topicUid: ShareStreams

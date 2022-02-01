@@ -6,7 +6,7 @@ uid: managecommunityusers
 
 The `Community Details` page lets you add and delete user who hold membership in a community. You can only add users to the community from your own tenant. Each tenant manages its own community membership.
 
-When you add a user to the community, they are assigned the [Community Member role](xref:ccRoles#community-roles-preview) within the scope of the community. This role lets the user view the community, view the data shared within it, and share data.
+When you add a user to the community, they are assigned the [Community Member](xref:ccRoles#community-roles-preview) role within the scope of the community. This role lets the user view the community, view the data shared within it, and share data.
 
 ## Add users to a community
 
@@ -40,7 +40,7 @@ To remove users from your own tenant from a community, follow these steps:
 
 Use this procedure to remove yourself from a community. When you leave a community, you will no longer be able to access the community or its data.
 
-**Note:** Community Administrators cannot remove themselves from the community.
+**Note:** Community Owners cannot remove themselves from the community.
 
 To remove yourself from a community, follow these steps:
 
@@ -48,6 +48,6 @@ To remove yourself from a community, follow these steps:
 
 1. Find the community where you want to remove users and select **Details**.
 
-1. Select the **More Options** icon ![More Options](../_icons/dots-vertical.svg), and then select **Leave Community**.
+1. Select the **More Options** ![More Options](../_icons/dots-vertical.svg) > **Leave Community**.
 
 1. On the confirmation window, select **Leave**.

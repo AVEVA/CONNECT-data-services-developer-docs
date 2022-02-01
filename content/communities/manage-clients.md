@@ -8,6 +8,8 @@ Clients are applications that act on behalf of users and allow programmatic acce
 
 ## Add clients to a community
 
+**Prerequisite:** You must add a client-crediential client to the tenant. For more information, see <xref:gpClientCredentialsClient>.
+
 To add a client to a community, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.

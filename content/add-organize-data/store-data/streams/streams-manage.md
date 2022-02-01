@@ -49,18 +49,6 @@ Tags and metadata allow you to associate additional information with a stream. F
    
    - To remove a tag, select the **X** beside the tag name.
 
-## Remove streams
-
-When you remove a stream, you are deleting it.
-
-1. From the left pane, select **Data Management** > **Sequential Data Store**.
-
-1. Select one or more streams.
-
-1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Remove Stream**.
-
-1. In the confirmation window, select **Remove** to confirm the deletion.
-
 ## Share streams
 
 You can share streams with other tenants from the **Sequential Data Store** page. Choose the streams that you want to share and the communities that you want to share them with. 
@@ -97,20 +85,26 @@ To stop sharing streams with a community, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Use the toggle switches to filter streams by namespace or community.
+1. Ensure that the **Filter Communities** pane is displayed. Enable it by selecting the **Filter Tenants** ![Filter Tenants](../../../_icons/filter.svg) icon. 
 
-   ![Toggle switches](../../../communities/images/namespace-communities-switches.png)
-
-1. From the list, select a namespace or a community.
-
-1. Filter the page to display only the streams that are shared within a community.
-
-1. Ensure that the **Filter Tenants** icon is enabled, which displays the **Filter Communities** pane. From the **Filter Communities** pane, select one or more community from which to unshare streams.
+1. From the **Filter Communities** pane, select one or more community from which to unshare streams.
 
 1. From the list of streams, select one or more to streams unshare. 
 
 1. Select **More Options** ![More Options](../../../_icons/dots-vertical.svg) > **Unshare Stream**. 
 
+    **Tip:** You can also unshare streams using the **Unshare Streams** buttons available in the right pane.
+
 1. When prompted for confirmation, select **Unshare**.
 
-    **Tip:** You can also unshare streams using the **Unshare Streams** buttons available in the right pane.
+## Remove streams
+
+When you remove a stream, you are deleting it.
+
+1. From the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. Select one or more streams.
+
+1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Remove Stream**.
+
+1. In the confirmation window, select **Remove** to confirm the deletion.

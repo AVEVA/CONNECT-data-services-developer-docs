@@ -18,17 +18,17 @@ To create a community, follow these steps:
 
 1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned community administration permissions.
 
-    By default, [community administration permissions](xref:ccRoles#community-roles-preview) are assigned to the [Tenant Administrator and Community Administrator](xref:ccRoles#tenant-roles) roles. 
+    By default, [community administration](xref:ccRoles#community-roles-preview) permissions are assigned to the [Tenant Administrator and Community Administrator](xref:ccRoles#tenant-roles) roles. 
     
     Optionally, you can add community administration permissions to other roles. Select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator. 
 
     After you finish, select **Next**.
 
-1. On the `Community Members` page, add [community members](xref:ccRoles#tenant-roles), which are users within your tenant that have read access to the community and its data.
+1. On the `Community Members` page, add [Community Members](xref:ccRoles#tenant-roles), which are users within your tenant that have read access to the community and its data.
 
-    To add new community members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
+    To add new Community Members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
-    **Note:** By default, community administrators do not have community member access rights.
+    **Note:** By default, users assigned [community administration](xref:ccRoles#community-administreators-preview) permissions are not Community Members.
 
     After you finish, select **Create**.
 

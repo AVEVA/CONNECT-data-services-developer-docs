@@ -35,4 +35,3 @@ Complete the following procedures to start a new community and invite other tena
 1. <xref:community-manage-sds-permissions>
 
 	Regardless of whether you are creating or joining a community, you must manage permissions for data streams to allow user roles to share streams with the community.
-

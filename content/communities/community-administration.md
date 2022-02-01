@@ -32,7 +32,7 @@ Community administrative actions include:
 	
 	**Note:** You must be a [Community Owner](xref:ccRoles#community-owner-preview) to delete a community.
 
-- <xref:edit-community>
+- <xref:community-edit>
 
 	Edit the community description. 
 	

@@ -6,7 +6,7 @@ uid: community-invite
 
 Before another tenant can join a community that you have creates, you must send them an invitation, they must accept it, and then you must confirm it. In other words, this process is a three-step handshake that requires collaboration between tenants.
 
-This document provided step-by-step instruction for the user that is inviting another tenant to a community. If you are looking for instructions on how to accept a community invitation, see <xref:community-accept-invite>.
+**Note:** This document provides step-by-step instruction for the user that is inviting another tenant to a community. If you are looking for instructions on how to accept a community invitation, see <xref:community-accept-invite>.
 
 ## Step 1: Invite a tenant to the community
 

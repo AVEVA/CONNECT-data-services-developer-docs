@@ -22,13 +22,19 @@ Community administrative actions include:
 
 	Allow an application to programatically access shared community data and resources using REST API.
 
-- <xref:managecommunityadministrators>
-
-	Add or remove roles that have community administration permissions within your tenant.
-
 - <xref:community-remove-tenants>
 
 	Remove tenants from a community. 
+
+- <xref:community-edit>
+
+	Edit the community description. 
+	
+	**Note:** You must be a [Community Owner](xref:ccRoles#community-owner-preview) to edit a community.
+
+- <xref:managecommunityadministrators>
+
+	Add or remove roles that have community administration permissions within your tenant.
 
 - <xref:delete-community>
 
@@ -36,8 +42,3 @@ Community administrative actions include:
 	
 	**Note:** You must be a [Community Owner](xref:ccRoles#community-owner-preview) to delete a community.
 
-- <xref:community-edit>
-
-	Edit the community description. 
-	
-	**Note:** You must be a [Community Owner](xref:ccRoles#community-owner-preview) to edit a community.

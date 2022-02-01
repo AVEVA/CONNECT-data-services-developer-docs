@@ -4,7 +4,9 @@ uid: edit-transfer
 
 # Edit a transfer
 
-Once a transfer is saved, you can edit it by adding or removing AF elements and/or PI points.
+Saved transfers can be edited by adding adding or removing AF elements and/or PI points.
+
+**Note:** Your transfer settings affect if streams and data get replicated or deleted from cloud storage after you have removed elements or explicit PI points from your transfer.
 
 <!-- VTT: Add note about how the Opt-in setting (Transfer Settings window) affects streams/assets being deleted from cloud storage or replicated, depnding on the client's preference/option selection.-->
 

@@ -8,7 +8,7 @@ After a community administrator adds you as a member of the community, you can s
 
 ## Prerequisites for data sharing
 
-To share data with a community, your user role must be assigned [community administration](xref:ccRoles#community-administrators-preview) permissions.
+To share data with a community, your user role must be assigned the **Share** permissions for data streams. For more information, see <xref:manage-streams>.
 
 ## Data sharing tasks
 

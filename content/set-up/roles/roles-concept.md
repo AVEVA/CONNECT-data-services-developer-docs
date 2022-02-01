@@ -50,7 +50,7 @@ You must have the Tenant Administrator role to add and manage tenant custom role
 
 ### Community Member role (Preview)
 
-The Community Member role is a role that can be shared among multiple tenants. It allows users from different tenants to access a [community](communities).
+The Community Member role is a role that can be shared among multiple tenants. It allows users from different tenants to access a [community](xref:communities).
 
 When a new community is created, the founding tenant automatically adds a new Community Member role to the system, which is named using the following convention:**_<Community Name>_ Community Member**. For example, if you create a new community named **TEST COMMUNITY**, a new community role is added to the tenant named **TEST COMMUNITY Community Member**.
 

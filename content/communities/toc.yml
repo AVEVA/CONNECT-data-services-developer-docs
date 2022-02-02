@@ -1,9 +1,14 @@
 - topicUid: community-setup
   items:
-  - topicUid: add-community
-  - topicUid: community-invite
-  - topicUid: community-accept-invite
-  - topicUid: community-manage-sds-permissions
+  - topicUid: community-workflow-create
+    items:
+    - topicUid: add-community
+    - topicUid: community-invite
+    - topicUid: community-manage-sds-permissions-create 
+  - topicUid: community-workflow-join
+    items: 
+    - topicUid: community-accept-invite
+    - topicUid: community-manage-sds-permissions-join
 - topicUid: community-administration
   items:
   - topicUid: managecommunityusers

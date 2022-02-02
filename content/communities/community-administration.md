@@ -32,7 +32,7 @@ Community administrative actions include:
 
 	**Note:** You must be a [Community Owner](xref:ccRoles#community-owner-preview) to edit a community.
 
-- <xref:managecommunityadministrators>
+- <xref:community-manage-administrators>
 
 	Add or remove roles that have community administration permissions within your tenant.
 

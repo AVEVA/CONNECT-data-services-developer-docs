@@ -14,7 +14,7 @@ OCS includes three types of roles:
 
 - [Tenant custom roles](#tenant-custom-roles)
 
-- [Community roles](#community-roles-preview)
+- [Community Member role](#community-member-role-preview)
 
 ### Tenant roles
 

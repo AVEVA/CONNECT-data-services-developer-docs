@@ -12,7 +12,7 @@ Begin by establishing a community on your tenants and then invite other tenants 
 
 1. [Create a community](xref:add-community).
 
-1. [Invite another OCS tenant](xref:managecommunity#invite-a-tenant-to-a-community) to join the community.
+1. [Invite another OCS tenant](xref:community-invite) to join the community.
    
 ## Community administration
 

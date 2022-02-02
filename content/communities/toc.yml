@@ -15,4 +15,5 @@
 - topicUid: data-sharing
   items:
   - topicUid: ShareStreams
-  - topicUid: view-community-data
+  - topicUid: community-view-shared-streams
+  - topicUid: community-view-shared-data

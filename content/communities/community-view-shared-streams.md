@@ -1,5 +1,5 @@
 ---
-uid: view-community-data
+uid: community-view-shared-streams
 ---
 
 # View shared streams 
@@ -50,6 +50,3 @@ When viewing the **Sequential Data Store** page, each stream lists whether it is
 
 **Result:** Additional details about the stream display in each tab of the right panel, including **Details**, **Metadata and Tags**, and **Sharing**. If the selected stream is not shared within any community, the **Sharing** tab is unavailable.
 
-## View shared data
-
-After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.

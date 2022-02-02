@@ -44,6 +44,4 @@ To remove a tenant from a community, follow these steps:
 
 ## What happens to shared data when you leave a community? 
 
-Enim ullamco non sint adipisicing minim dolor anim proident. Aute nostrud fugiat occaecat irure tempor reprehenderit commodo in do minim ex incididunt consectetur ex. Do adipisicing sint voluptate occaecat consequat est non laboris quis Lorem dolor ullamco. Ea in labore ad aute ea in qui mollit. Sit labore consequat enim ex proident laborum officia eu do consectetur tempor reprehenderit. Aute laboris veniam amet nisi sunt proident aute consectetur officia dolore magna mollit ut ullamco. Voluptate culpa proident exercitation elit.
-
-Consectetur nostrud sint ipsum mollit dolor aliquip nisi commodo deserunt. Ut est sint laboris adipisicing cillum duis dolor dolore. Cillum tempor voluptate officia dolor excepteur.
+When your tenant is removed from a community, it stops sharing all data streams that were previouslsy shared immediately. All tenants that remain in the community can no longer access your data, and you can no longer access theirs.

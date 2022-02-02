@@ -30,9 +30,9 @@ Perform these steps to edit an existing transfer:
 
 1. (Optional) To remove AF elements from a transfer, select the **AF Elements** tab, select the AF elements you want removed, select **Remove Elements**, then select **Remove**.
 
-The removed AF elements are marked as **Removed** in the **AF Elements** list. 
+   The removed AF elements are marked as **Removed** in the **AF Elements** list. 
 
-**Note:** Any implicitly referenced PI points that are not referenced by another AF element will also be removed from the transfer.
+   **Note:** Any implicitly referenced PI points that are not referenced by another AF element will also be removed from the transfer.
 
 1. (Optional) Click **Undo Last Element Removal** to add the removed PI points back to the transfer.
 

@@ -18,7 +18,7 @@ If another tenant invites you to a community, you will receive an email from the
 
   Your tenant does not officially join the until the inviting tenant confirms the invitation.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration](xref:ccRoles#community-roles-preview) permissions.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration](xref:ccRoles#community-administrators-preview) permissions.
 
   By default, these permissions are assigned to the [Tenant Administrator and Community Administrator](xref:ccRoles#tenant-roles) roles. 
     

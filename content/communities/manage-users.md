@@ -6,7 +6,7 @@ uid: managecommunityusers
 
 The `Community Details` page lets you add and delete user who hold membership in a community. You can only add users to the community from your own tenant. Each tenant manages its own community membership.
 
-When you add a user to the community, they are assigned the [Community Member](xref:ccRoles#community-roles-preview) role within the scope of the community. This role lets the user view the community, view the data shared within it, and share data.
+When you add a user to the community, they are assigned the [Community Member](xref:ccRoles#community-member-role-preview) role within the scope of the community. This role lets the user view the community.
 
 ## Add users to a community
 
@@ -22,7 +22,7 @@ To add users from your own tenant to a community, follow these steps:
 
 1. Select **Save**.
 
-Each user is added to the community and assigned the [Community Member](xref:ccRoles#community-roles-preview) role.
+Each user is added to the community and assigned the [Community Member](xref:ccRoles#community-member-role-preview) role.
 
 ## Remove users from a community
 

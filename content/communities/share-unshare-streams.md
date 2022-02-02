@@ -4,11 +4,19 @@ uid: ShareStreams
 
 # Share and unshare streams
 
-Use these procedures to share or stop sharing streams of data with other communities. To share streams, they must already be defined.
+Use these procedures to share or stop sharing streams of data with other communities. 
+
+## Prerequisites to share streams
+
+To share data streams with a community:
+
+- There must already be data streams created within your tenant.
+
+- Your user role must be assigned the **Share** permissions for data streams. For more information, see <xref:manage-streams>.
 
 ## Share streams
 
-Users with the permissions to share streams within a community can share then using the Sequential Data Store. For instructions, see [Share stream](xref:manage-streams).
+Users with the permissions to share streams within a community can share them using the Sequential Data Store. For instructions, see [Share stream](xref:manage-streams).
 
 ## Unshare streams from Community Details
 

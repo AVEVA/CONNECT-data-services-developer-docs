@@ -26,11 +26,11 @@ If another tenant invites you to a community, you will receive an email from the
 
   After you finish, select **Next**.
 
-1. On the `Community Members` page, add [community members](xref:ccRoles#tenant-roles), which are users within your tenant that have read access to the community and its data.
+1. On the `Community Members` page, add [Community Members](xref:ccRoles#community-member-role-preview), which are users within your tenant that have read access to the community and its data.
 
   To add new Community Members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
-  **Note:** By default, users assigned [community administration](xref:ccRoles#community-administrators-preview) permissions are not Community Members.
+  **Note:** By default, users assigned community administration permissions are not Community Members.
 
 The tenant that invited you to the community is updated that you accepted their invitation. Wait for them to confirm the invitation. When the inviting tenant confirms, you receive an email that your tenant now has access to the community.
 

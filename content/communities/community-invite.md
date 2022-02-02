@@ -26,11 +26,7 @@ To invite another tenant to the community, follow these steps:
 
 After you send an invitation to another tenant, wait for its tenant administrator to accept the email invitation.
 
-**Tips:** 
-
-- Share <xref:community-accept-invite> with the invited tenant administrator for instruction.
-
-- If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see [Resend email invitation](#resend-email-invitation). 
+If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see [Resend email invitation](#resend-email-invitation). 
 
 ## Confirm the invitation
 

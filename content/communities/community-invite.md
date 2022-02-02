@@ -2,14 +2,15 @@
 uid: community-invite
 ---
 
-# Invite a tenant to a community
+# Step 2: Invite a tenant to a community
 
 Before another tenant can join a community that you have creates, you must send them an invitation, they must accept it, and then you must confirm it. In other words, this process is a three-step handshake that requires collaboration between tenants.
 
 **Note:** This document provides step-by-step instruction for the user that is inviting another tenant to a community. If you are looking for instructions on how to accept a community invitation, see <xref:community-accept-invite>.
 
 **Reminder:** You must have the email address for the Tenant Administrator that you are inviting to the community as stated in the [prerequisites](xref:community-setup#prerequisites-for-community-setup).
-## Step 1: Invite a tenant to the community
+
+## Invite a tenant to the community
 
 To invite another tenant to the community, follow these steps:
 
@@ -23,7 +24,7 @@ To invite another tenant to the community, follow these steps:
 
   An email is sent to the invited Tenant Administrator.
 
-## Step 2: Wait for invited tenants to accept invitation
+## Wait for invited tenants to accept invitation
 
 After you send an invitation to another tenant, wait for its tenant administrator to accept the email invitation.
 
@@ -33,7 +34,7 @@ After you send an invitation to another tenant, wait for its tenant administrato
 
 - If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see [Resend email invitation](#resend-email-invitation). 
 
-## Step 3: Confirm the invitation
+## Confirm the invitation
 
 To confirm an invitation, follow these steps:
 
@@ -51,7 +52,7 @@ To confirm an invitation, follow these steps:
 
 ## What's next?
 
-Edit permissions for data streams to allow tenant data stewards to share them with the community. For more information, see <xref:community-manage-sds-permissions>.
+Edit permissions for data streams to allow tenant data stewards to share them with the community. For more information, see <xref:community-manage-sds-permissions-create>.
 
 ## Resend email invitation
 

@@ -4,6 +4,16 @@ uid: community-workflow-join
 
 # Workflow to join community
 
-Enim enim sint labore non cillum cupidatat eu reprehenderit. Ex exercitation do ullamco deserunt id ipsum excepteur culpa. Aliqua enim aute proident pariatur tempor laboris quis eiusmod magna. Veniam velit adipisicing sint tempor dolore officia reprehenderit ad et anim cupidatat. Fugiat fugiat labore adipisicing sit cillum veniam nulla eiusmod laborum nulla amet dolore dolore. Proident laboris ullamco fugiat incididunt.
+When you Establishing a new community requires collaboration between administrators for multiple tenants. Complete the following procedures to establish a new community and invite other tenants to join it.
 
-Nulla deserunt adipisicing voluptate cillum nulla. Mollit duis proident ipsum aute. Exercitation aute quis anim mollit. Sunt dolor Lorem Lorem magna velit ex ea. Laboris exercitation sit non ad pariatur esse ut tempor aliquip excepteur.
+## Community joining outline
+
+Complete the following procedures join a community after receiving an invitation.
+
+<xref:community-accept-invite>
+
+This procedure provides instruction on accept an invitation to join a community. After you accept the invitation, assign community administration permission to existing tenant roles and add tenant users as Community Members.
+
+<xref:community-manage-sds-permissions-join>
+
+Manage permissions for data streams to allow Community Members from your tenant to share streams with the community.

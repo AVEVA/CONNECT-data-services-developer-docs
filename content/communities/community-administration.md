@@ -28,7 +28,7 @@ Community administrative actions include:
 
 	Remove tenants from a community. 
 
-- <xref:community-edit> <sup>1</sup>
+- <xref:community-edit><sup>1</sup>
 
 	Edit the community description. 
 
@@ -36,6 +36,6 @@ Community administrative actions include:
 
 	Add or remove roles that have community administration permissions within your tenant.
 
-- <xref:delete-community> <sup>1</sup>
+- <xref:delete-community><sup>1</sup>
 
 	Delete the community. 

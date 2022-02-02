@@ -30,7 +30,7 @@ Complete the following procedures to start a new community and invite other tena
 
 	After the invited tenant joins accepts the invitation, it must choose its own administration roles and users, much like the tenant owner. For more information on how to join a community following an invitation, see <xref:community-accept-invite>.
 
-	**Note:** You can be a [Community Administrator](xref:ccRoles#community-administrators-preview) rather than a Tenant Administrator to complete this procedure.
+	**Note:** You can be user assigned a role with [community administration](xref:ccRoles#community-administrators-preview) permissions rather than a Tenant Administrator to complete this procedure.
 
 1. <xref:community-manage-sds-permissions>
 

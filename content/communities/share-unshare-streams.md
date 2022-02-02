@@ -10,9 +10,9 @@ Use these procedures to share or stop sharing streams of data with other communi
 
 To share data streams with a community:
 
-- There must already be data streams created within your tenant.
+- There must already be data streams created within your tenant. For instructions, see <xref:gpStreams>.
 
-- Your user role must be assigned the **Share** permissions for data streams. For more information, see <xref:manage-streams>.
+- Your user role must be assigned the **Share** permissions for data streams. If you do not have these permissions, request them from a Tenant Administrator.
 
 ## Share streams
 

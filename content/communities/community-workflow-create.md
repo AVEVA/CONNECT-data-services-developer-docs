@@ -6,7 +6,7 @@ uid: community-workflow-create
 
 Complete the following procedures to create a new community and invite other tenants to join it.
 
-**Tip:** Looking for instructions on how to join a community? See <xref:community-accept-invite>.
+**Tip:** Looking for instructions on how to join a community? See <xref:community-workflow-join>.
 
 ## Prerequisites to create a community
 

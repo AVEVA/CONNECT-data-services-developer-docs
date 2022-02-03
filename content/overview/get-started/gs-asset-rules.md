@@ -7,17 +7,17 @@ uid: gsAssetRules
 Use asset rules to automatically create assets based on streams you find by specifying a stream naming pattern. Asset rules work best if your stream names adhere to a consistent naming convention. For example, the following streams are similarly named, and each contains a timestamped series of measurements for similar pumps:
 
 - **MyData.NorthAmerica.SLTC.PumpA.Temperature**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpA.Pressure**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpA.CurrentStatus**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpB.Temperature**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpB.Pressure**
-- 
+ 
 - **...**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpT.CurrentStatus**
 
 An asset rule enables you to use these stream names to automatically create pump assets with properties such as temperature, pressure, and current status, along with metadata about their location.

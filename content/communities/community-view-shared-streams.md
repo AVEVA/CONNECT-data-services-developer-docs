@@ -45,4 +45,3 @@ When viewing the **Sequential Data Store** page, each stream lists whether it is
     ![Filter communities](images/filter-pane.png)
 
 Additional details about the stream display in each tab of the right panel, including **Details**, **Metadata and Tags**, and **Sharing**. The **Sharing** tab lists each community the stream is shared with.
-

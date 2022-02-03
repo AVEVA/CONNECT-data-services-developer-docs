@@ -11,13 +11,13 @@
     - topicUid: community-manage-sds-permissions-join
 - topicUid: community-administration
   items:
+  - topicUid: community-remove-tenants
+  - topicUid: community-resend-invitation
   - topicUid: managecommunityusers
   - topicUid: managecommunityclients
-  - topicUid: community-remove-tenants
   - topicUid: community-edit
   - topicUid: community-manage-administrators
   - topicUid: delete-community
-  - topicUid: community-resend-invitation
 - topicUid: data-sharing
   items:
   - topicUid: ShareStreams

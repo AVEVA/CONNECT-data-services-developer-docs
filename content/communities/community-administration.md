@@ -16,6 +16,14 @@ To perform most tasks related to community administration, you must have [commun
 
 Community administrative actions include:
 
+- <xref:community-remove-tenants>
+
+	Remove tenants from a community. 
+
+- <xref:community-resend-invitation>
+
+	If you invite a tenant to the community but they do not receive it, you can resend the invitation.
+
 - <xref:managecommunityusers>
 
 	Add or remove users within your tenant as community members.
@@ -23,10 +31,6 @@ Community administrative actions include:
 - <xref:managecommunityclients>
 
 	Allow an application to programatically access shared community data and resources using REST API.
-
-- <xref:community-remove-tenants>
-
-	Remove tenants from a community. 
 
 - <xref:community-edit>*
 
@@ -38,8 +42,4 @@ Community administrative actions include:
 
 - <xref:delete-community>*
 
-	Delete the community. 
-
-- <xref:community-resend-invitation>
-
-	If you invite a tenant to the community but they do not receive it, you can resend the invitation.
+	Delete the community.

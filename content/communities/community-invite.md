@@ -8,6 +8,8 @@ Before another tenant can join a community that you have creates, you must send 
 
 **Reminder:** You must have the email address for the Tenant Administrator that you are inviting to the community as stated in the [prerequisites](xref:community-setup#prerequisites-for-community-setup).
 
+Complete the following procedures in order.
+
 ## Invite a tenant to the community
 
 To invite another tenant to the community, follow these steps:
@@ -26,7 +28,7 @@ To invite another tenant to the community, follow these steps:
 
 After you send an invitation to another tenant, wait for its tenant administrator to accept the email invitation.
 
-If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see [Resend email invitation](#resend-email-invitation). 
+If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see [Resend email invitation](xref:community-resend-invitation). 
 
 ## Confirm the invitation
 
@@ -47,15 +49,3 @@ To confirm an invitation, follow these steps:
 ## What's next?
 
 Edit permissions for data streams to allow tenant data stewards to share them with the community. For more information, see <xref:community-manage-sds-permissions-create>.
-
-## Resend email invitation
-
-If you invite another tenant to the community but its Tenant Administrator does not receive the invitation email, you can resend it. To resend an invitation, follow these steps:
-
-1. In the left pane, select **Data Management** > **Communities**.
-
-1. On the `Communities` overview page, find the community that you have invited another tenant to and select **Details**.
-
-1. On the `Community Details` page, select the **Invitations** tab.
-
-1. Find the **Invitation Recipient** who has not received the email invitation with a **Status** of `Invitation Pending`. Select the recipient, and then select **Resend Invitation**.

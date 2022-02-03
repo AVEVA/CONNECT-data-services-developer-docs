@@ -17,6 +17,7 @@
   - topicUid: community-edit
   - topicUid: community-manage-administrators
   - topicUid: delete-community
+  - topicUid: community-resend-invitation
 - topicUid: data-sharing
   items:
   - topicUid: ShareStreams

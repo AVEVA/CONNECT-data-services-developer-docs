@@ -92,7 +92,7 @@ Assemble token values so that you can select the information you want to extract
 
 1. Select **Capture**.
 
-**Note**: Alternatively, you can bring in tokens by using the **Stream Metadata** button. 
+   **Note**: Alternatively, you can bring in tokens by using the **Stream Metadata** button. 
 
 1. In the left panel, select **Stream Metadata**. You see the two metadata tokens added to the stream by the metadata rule you just created, **Region** and **Site**. This can be a useful way to bring in more tokens for some streams. 
 

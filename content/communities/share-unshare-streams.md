@@ -30,11 +30,11 @@ To stop sharing streams, follow these steps:
 
 1. Select your own tenant.
 
-   **Result:** A pane opens on the right.
+   A pane opens on the right.
 
 1. On the **Streams** tab, select the streams you want to stop sharing, then select **Unshare Streams**. When prompted for confirmation, select **Unshare**.
 
-**Result:** The streams are unshared from the community. Other tenants in the community can no longer view them.
+The streams are unshared from the community. Other tenants in the community can no longer view them.
 
 ## Unshare streams from the Sequential Data Store
 

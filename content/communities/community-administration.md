@@ -43,4 +43,3 @@ Community administrative actions include:
 - <xref:community-resend-invitation>
 
 	If you invite a tenant to the community but they do not receive it, you can resend the invitation.
-

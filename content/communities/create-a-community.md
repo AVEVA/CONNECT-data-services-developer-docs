@@ -36,4 +36,4 @@ The community is created and added to the `Communities` page.
 
 ## What's next?
 
-Invite tenants to your community. See <xref:community-invite>.
+Invite tenants to your community. Continue to <xref:community-invite>.

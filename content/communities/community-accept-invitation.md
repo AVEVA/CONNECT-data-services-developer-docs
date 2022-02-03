@@ -36,4 +36,4 @@ The tenant that invited you to the community is updated that you accepted their 
 
 ## What's next?
 
-Edit permissions for data streams to allow tenant data stewards to share them with the community. For more information, see <xref:community-manage-sds-permissions-join>.
+Edit permissions for data streams to allow tenant data stewards to share them with the community. Continue to <xref:community-manage-sds-permissions-join>.

@@ -26,15 +26,15 @@ Because the following procedure uses the stream **MyData.NorthAmerica.SLTC.PumpA
 
 To create a new asset rule, follow the steps in the these procedures.
 
-1. [Create a new asset rule](#create-new-rule-#1): Create a new asset rule.
+1. [Create a new asset rule](#-create-a-new-asset-rule): Create a new asset rule.
 
-2. [Extract tokens](#extract-tokens-#2): Assemble token values so you can select the information you want from your streams. 
+2. [Extract tokens](#-extract-tokens): Assemble token values so you can select the information you want from your streams. 
 
-3. [Map tokens](#map-tokens-#3): Map the tokens to values.
+3. [Map tokens](#-map-tokens-to-values): Map the tokens to values.
 
-4. [Configure assets](#configure assets-#4): Assign tokens values to asset fields.
+4. [Configure assets](#-configure-assets): Assign tokens values to asset fields.
 
-5. [Preview assets](#preview-assets-#5): Display a preview of the assets that will be created by this rule. 
+5. [Preview assets](#-preview-assets): Display a preview of the assets that will be created by this rule. 
 
 For more information about asset rules, see [Asset rules](xref:ccAssetRules).
 

@@ -39,3 +39,8 @@ Community administrative actions include:
 - <xref:delete-community>*
 
 	Delete the community. 
+
+- <xref:community-resend-invitation>
+
+	If you invite a tenant to the community but they do not receive it, you can resend the invitation.
+

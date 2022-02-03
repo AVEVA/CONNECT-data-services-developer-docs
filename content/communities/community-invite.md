@@ -6,7 +6,7 @@ uid: community-invite
 
 Before another tenant can join a community that you have creates, you must send them an invitation, they must accept it, and then you must confirm it. In other words, this process is a three-step handshake that requires collaboration between tenants.
 
-**Reminder:** You must have the email address for the Tenant Administrator that you are inviting to the community as stated in the [prerequisites](xref:community-setup#prerequisites-for-community-setup).
+**Reminder:** You must have the email address for the Tenant Administrator that you are inviting to the community.
 
 Complete the following procedures in order.
 

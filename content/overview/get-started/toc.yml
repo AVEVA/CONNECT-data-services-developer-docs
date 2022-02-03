@@ -26,3 +26,5 @@
   topicHref: gs-metadata-rules.md
 - name: Get started with stream views
   topicHref: gs-stream-views.md
+- name: Get started with asset rules
+  topicHref: gs-asset-rules.md

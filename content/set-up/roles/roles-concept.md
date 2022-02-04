@@ -28,19 +28,31 @@ The default tenant roles are:
 
 - Tenant Contributor – This role has read and write permissions by default.
 
-- Tenant Data Steward – This role has no specific permissions by default.
+- Tenant Data Steward – Role intended for sharing data streams within a community.*
 
-- Tenant Viewer – This role has no specific permissions by default.
+- Tenant Viewer – Role intended for tenant guests.*
 
 - Tenant Member – This role, which OCS assigns to all users or clients, has read access by default.
 
-- Community Administrator – This role has no specific permissions by default.
+- Community Administrator – Role intended for community administration.*
 
-  **Note:** Although this role has no permissions by default, it is intended for use with community administration permissions. See [Community administrators](#community-administrators-preview) for more information.
-
-Some tenant roles are assigned permissions by default (Tenant Administrator, Tenant Contributor, Tenant Member). However, others are not (Tenant Contributor, Tenant Data Steward, Tenant Viewer, and Community Administrator). These roles without default permissions are intended to be customized; you must assign these roles permissions for individual system resources to best suit your organization.
+__*:__ These roles are assigned no user permissions by default. They are intended to be customized for specialized user profiles within your organization. For more information, see [Tenant role profiles](#tenant-role-profiles).
 
 For any resource, you can set access to it for specific roles rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions. When managing permissions for the Sequential Data Store, an additional access type is available: Share. This permission allows users to share data streams from their tenant with a [community](xref:communities).
+
+#### Tenant role profiles
+
+Some default tenant roles—Tenant Data Steward, Tenant Viewer, and Community Administrator—are assigned no permissions by default. Instead, these roles are intended to be customized for specialized user roles in within OSIsoft Cloud Services; you must assign these roles permissions for individual system resources to best suit your organization. 
+
+Recommended use of these roles includes:
+
+- Tenant Data Steward – Assign to data stewards, which are users that share data streams from the tenant's Sequential Data Store within a community.
+
+- Tenant Viewer – Assign to system guests that should have limited access.
+
+- Community Administrator – Assign to community administrators, which are users that moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
+
+Although using these roles as intended is recommended, you can customize these roles for any use you want. You must have the Tenant Administrator role to manage these roles.
 
 ### Tenant custom roles 
 

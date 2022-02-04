@@ -4,13 +4,13 @@ uid: data-sharing
 
 # Data sharing and viewing
 
-After a community is established, users can share data streams with a community and tenants. Additionally, Community Members can view which data streams their tenant has shared or view which streams another tenant has shared.  
+After a community is established, Community Members can view which data streams their tenant has shared or view which streams another tenant has shared.  Additionally, Community Members with additional sharing permissions can share data streams with a community 
 
 ## Prerequisites to share and view data
 
 - You must be a Community Member in the community where you want to share or view data. 
 
-- To share data streams, you must be assigned the Share permission for the Sequential Data Store.
+- To share data streams, you must be assigned the **Share** permission for the Sequential Data Store.
 
 ## Data sharing and viewing tasks
 

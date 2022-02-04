@@ -10,7 +10,7 @@ Before another tenant can join a community that you have creates, you must send 
 
 Complete the following procedures in order.
 
-## Invite a tenant to the community
+## 1. Invite a tenant to the community
 
 To invite another tenant to the community, follow these steps:
 
@@ -24,13 +24,13 @@ To invite another tenant to the community, follow these steps:
 
   An email is sent to the invited Tenant Administrator.
 
-## Wait for invited tenants to accept invitation
+## 2. Wait for invited tenants to accept invitation
 
 After you send an invitation to another tenant, wait for its Tenant Administrator to accept the email invitation.
 
 If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see <xref:community-resend-invitation>. 
 
-## Confirm the invitation
+## 3. Confirm the invitation
 
 To confirm an invitation, follow these steps:
 

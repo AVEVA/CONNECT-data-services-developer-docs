@@ -28,7 +28,10 @@
       - topicUid: community-add-clients
       - topicUid: community-remove-clients
   - topicUid: community-edit
-  - topicUid: community-manage-administrators
+  - name: Manage community administrators
+    items:
+    - topicUid: community-add-administrators
+    - topicUid: community-remove-administrators
   - topicUid: delete-community
 - topicUid: data-sharing
   items:

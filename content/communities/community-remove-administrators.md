@@ -1,0 +1,5 @@
+---
+uid: community-remove-administrators
+---
+
+#

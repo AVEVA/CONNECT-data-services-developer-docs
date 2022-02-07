@@ -10,7 +10,13 @@ When a tenant wants to withdraw from a community, it can be removed by either it
 
 Use this procedure to remove your own tenant from a community. After removing your tenant, you can be re-invited to the community, but all data that was previously shared with your tenant must be shared again. 
 
+## Prerequisites
+
+To remove your own tenant from a community, you must have community administration permission.
+
 **Note:** The tenant owner cannot remove itself from the community.
+
+## To remove your own tenant from a community
 
 To remove your tenant from a community, follow these steps:
 
@@ -28,7 +34,11 @@ To remove your tenant from a community, follow these steps:
 
 Use this procedure to remove a tenant from a community. This action might be necessary if a business relationship changes or if the tenant's organization experiences a security breach.
 
-**Note:** You must be a [community owner](xref:ccRoles#community-owner-preview) to perform this procedure.
+## Prerequisites
+
+To remove another tenant from the community, you must be a [community owner](xref:ccRoles#community-owner-preview).
+
+## To remove a tenant from a community
 
 To remove a tenant from a community, follow these steps:
 

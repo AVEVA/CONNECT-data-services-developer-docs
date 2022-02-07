@@ -2,7 +2,7 @@
 uid: community-manage-sds-permissions-join
 ---
 
-# Step 2: Enable stream sharing permissions
+# Part 2: Enable stream sharing permissions
 
 After you join a community, you must explicitly allow your tenant users to share data streams within the community. You can complete this action by browsing to the Sequential Data Store, selecting streams for permission updates, and then applying permission updates to existing tenant roles. You can enable stream sharing permissions on a per-stream basis. Users assigned the updated roles for each stream will then have permission to share specific streams within a community. For instructions on how to allow stream sharing, see [Manage permissions](xref:manage-streams#manage-permissions).
 

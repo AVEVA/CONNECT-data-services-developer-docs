@@ -6,7 +6,7 @@ uid: community-administration
 
 After a community is established, the community administrator from each tenant can perform administrative actions to integrate new tenants and users in the community. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
 
-## Prerequisites for community administration
+## Prerequisites
 
 To perform most tasks related to community administration, you must have [community administration](xref:ccRoles#community-administrators-preview) permissions assigned to your user role.
 

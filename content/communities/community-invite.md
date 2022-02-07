@@ -2,15 +2,17 @@
 uid: community-invite
 ---
 
-# Step 2: Invite a tenant to a community
+# Part 2: Invite a tenant to a community
 
 Before another tenant can join a community that you have creates, you must send them an invitation, they must accept it, and then you must confirm it. In other words, this process is a three-step handshake that requires collaboration between tenants.
 
-**Reminder:** You must have the email address for the Tenant Administrator that you are inviting to the community.
-
 Complete the following procedures in order.
 
-## 1. Invite a tenant to the community
+## Prerequisites
+
+You must have the email address for the Tenant Administrator that you are inviting to the community.
+
+## Step 1: Invite a tenant to the community
 
 To invite another tenant to the community, follow these steps:
 
@@ -24,13 +26,13 @@ To invite another tenant to the community, follow these steps:
 
   An email is sent to the invited Tenant Administrator.
 
-## 2. Wait for invited tenants to accept invitation
+## Step 2: Wait for invited tenants to accept invitation
 
 After you send an invitation to another tenant, wait for its Tenant Administrator to accept the email invitation.
 
 If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see <xref:community-resend-invitation>. 
 
-## 3. Confirm the invitation
+## Step 3: Confirm the invitation
 
 To confirm an invitation, follow these steps:
 

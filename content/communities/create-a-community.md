@@ -2,9 +2,15 @@
 uid: add-community
 ---
 
-# Step 1: Create a community
+# Part 1: Create a community
 
 A community is a space where you and your external partners can share operational data with one another. When you create a community, you are prompted to define a community name and description, the user roles that can perform administrative actions within the community, and the users considered community members within your tenant.
+
+## Prerequisites
+
+To create a new community, you must be a [Tenant Administrator](xref:ccRoles#tenant-roles).
+
+## To create a community
 
 To create a community, follow these steps:
 

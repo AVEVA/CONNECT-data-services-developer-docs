@@ -1,5 +1,5 @@
 ---
-uid: community-share-streams1
+uid: community-share-streams
 ---
 
 # Share streams

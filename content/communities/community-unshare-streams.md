@@ -1,5 +1,5 @@
 ---
-uid: community-unshare-stream
+uid: community-unshare-streams
 ---
 
 # Unshare streams

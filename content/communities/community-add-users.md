@@ -1,5 +1,5 @@
 ---
-uid: community-add-user
+uid: community-add-users
 ---
 
 # Add members to a community

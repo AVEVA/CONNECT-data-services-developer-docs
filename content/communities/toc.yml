@@ -14,8 +14,8 @@
   - topicUid: community-remove-tenants
   - topicUid: community-remove-your-tenant
   - topicUid: community-resend-invitation
-  - topicUid: community-add-user
-  - topicUid: community-remove-user
+  - topicUid: community-add-users
+  - topicUid: community-remove-users
   - topicUid: community-remove-yourself
   - topicUid: managecommunityclients
   - topicUid: community-edit

@@ -1,5 +1,5 @@
 ---
-uid: community-remove-user
+uid: community-remove-users
 ---
 
 # Remove users from a community

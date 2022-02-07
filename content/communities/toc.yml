@@ -22,6 +22,11 @@
     - topicUid: community-remove-users
     - topicUid: community-remove-yourself
   - topicUid: managecommunityclients
+    items: 
+    - name: Manage clients
+      items:
+      - topicUid: community-add-clients
+      - topicUid: community-remove-clients
   - topicUid: community-edit
   - topicUid: community-manage-administrators
   - topicUid: delete-community

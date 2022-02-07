@@ -33,6 +33,9 @@
   - topicUid: delete-community
 - topicUid: data-sharing
   items:
-  - topicUid: ShareStreams
-  - topicUid: community-view-shared-streams
+  - name: Manage shared streams
+    items:
+    - topicUid: community-share-streams
+    - topicUid: community-view-shared-streams
+    - topicUid: community-unshare-streams
   - topicUid: community-view-shared-data

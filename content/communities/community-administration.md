@@ -28,9 +28,17 @@ Community administrative actions include:
 
 	If you invite a tenant to the community but they do not receive it, you can resend the invitation.
 
-- <xref:managecommunityusers>
+- <xref:community-add-users>
 
-	Add or remove users within your tenant as community members.
+	Add users within your tenant as community members.
+
+- <xref:community-remove-users>
+
+	Remove users within your tenant as community members.
+
+- <xref:community-remove-yourself>
+
+	Remove yourself as a community member.
 
 - <xref:managecommunityclients>
 

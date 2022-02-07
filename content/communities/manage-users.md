@@ -2,7 +2,7 @@
 uid: managecommunityusers
 ---
 
-# Manage members in a community
+# Add members in a community
 
 The `Community Details` page lets you add and delete user who hold membership in a community. You can only add users to the community from your own tenant. Each tenant manages its own community membership.
 

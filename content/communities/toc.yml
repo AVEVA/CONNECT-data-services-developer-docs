@@ -11,9 +11,13 @@
     - topicUid: community-manage-sds-permissions-join
 - topicUid: community-administration
   items:
-  - topicUid: community-remove-tenants
-  - topicUid: community-remove-your-tenant
+  - name: Remove tenants
+    items:
+    - topicUid: community-remove-tenants
+    - topicUid: community-remove-your-tenant
   - topicUid: community-resend-invitation
+  - name: Manage users
+    items:
   - topicUid: community-add-users
   - topicUid: community-remove-users
   - topicUid: community-remove-yourself

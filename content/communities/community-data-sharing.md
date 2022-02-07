@@ -4,7 +4,7 @@ uid: data-sharing
 
 # Data sharing and viewing
 
-After a community is established, Community Members can view which data streams their tenant has shared or view which streams another tenant has shared.  Additionally, Community Members with additional sharing permissions can share data streams with a community 
+After a community is established, Community Members can view which data streams their tenant has shared or view which streams another tenant has shared.  Additionally, Community Members with additional sharing permissions can share data streams with a community. 
 
 ## Prerequisites to share and view data
 

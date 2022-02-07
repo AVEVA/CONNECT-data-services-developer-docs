@@ -88,7 +88,7 @@ OCS includes a tenant role named Community Administrator that is assigned no per
 
 #### Community owner (Preview)
 
-The user that creates a community becomes its community owner. The community owner has full administrative access to the community and some additional permissions:
+The user that creates a community becomes its Community Owner. The Community Owner has full administrative access to the community and some additional permissions:
 
 - Remove other tenants from the community.
 

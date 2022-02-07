@@ -12,6 +12,7 @@
 - topicUid: community-administration
   items:
   - topicUid: community-remove-tenants
+  - topicUid: community-remove-your-tenant
   - topicUid: community-resend-invitation
   - topicUid: managecommunityusers
   - topicUid: managecommunityclients

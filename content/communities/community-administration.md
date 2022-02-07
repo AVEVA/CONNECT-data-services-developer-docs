@@ -18,7 +18,11 @@ Community administrative actions include:
 
 - <xref:community-remove-tenants>
 
-	Remove tenants from a community. 
+	Remove tenants from a community.
+
+- <xref:community-remove-your-tenant>
+
+	Remove your own tenant from the community.  
 
 - <xref:community-resend-invitation>
 

@@ -26,7 +26,7 @@ Community data sharing actions include:
 
 - <xref:community-unshare-streams>
 
-	Unshare a data stream with the community.
+	Unshare a data stream from the community.
 
 - <xref:community-view-shared-data>
 

@@ -8,7 +8,7 @@ Although you initially configure which tenant roles can administer a community d
 
 ## Prerequisites 
 
-To add community administrators, you must be a [community administrator](xref:ccRoles#community-administrators-preview) yourself.
+To add community administrators, your user account must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
 
 ## Add community administrators
 

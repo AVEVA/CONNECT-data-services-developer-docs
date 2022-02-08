@@ -7,7 +7,7 @@ You can remove roles as that can administer the community at any time.
 
 ## Prerequisites 
 
-To remove community administrators, you must be a [community administrator](xref:ccRoles#community-administrators-preview) yourself.
+To remove a role from community administration, your user account must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
 
 ## To remove community administrators
 

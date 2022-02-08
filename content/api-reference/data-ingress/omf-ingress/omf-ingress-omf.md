@@ -9,7 +9,7 @@ uid: omf-ingress-omf
 
 <a id="opIdOmf_Post Omf Message"></a>
 
-[Full OMF Specification](https://omf-docs.osisoft.com)
+[Full OMF Specification](https://docs.osisoft.com/bundle/omf/)
 
 ### Request
 ```text 

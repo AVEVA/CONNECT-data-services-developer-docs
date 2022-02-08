@@ -25,11 +25,11 @@
     items:
     - topicUid: community-add-clients
     - topicUid: community-remove-clients
-  - topicUid: community-edit
   - name: Manage community administrators
     items:
     - topicUid: community-add-administrators
     - topicUid: community-remove-administrators
+  - topicUid: community-edit
   - topicUid: delete-community
 - topicUid: data-sharing
   items:

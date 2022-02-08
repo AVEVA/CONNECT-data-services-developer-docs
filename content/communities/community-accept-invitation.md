@@ -34,6 +34,6 @@ If another tenant invites you to a community, you will receive an email from the
 
 The tenant that invited you to the community is updated that you accepted their invitation. Wait for them to confirm the invitation. When the inviting tenant confirms, you receive an email that your tenant now has access to the community.
 
-## What's next?
+## Next steps
 
 Edit permissions for data streams to allow tenant data stewards to share them with the community. Continue to <xref:community-manage-sds-permissions-join>.

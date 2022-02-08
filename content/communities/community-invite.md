@@ -10,7 +10,9 @@ Complete the following procedures in order.
 
 ## Prerequisites
 
-You must have the email address for the Tenant Administrator that you are inviting to the community.
+- You must be a [Community Owner](xref:ccRoles#community-owner-preview) or have [community administrator permissions](xref:ccRoles#community-administrators-preview),
+
+- You must have the email address for the [Tenant Administrator](xref:ccRoles#tenant-roles) that you are inviting to the community.
 
 ## Step 1: Invite a tenant to the community
 
@@ -28,9 +30,9 @@ To invite another tenant to the community, follow these steps:
 
 ## Step 2: Wait for invited tenants to accept invitation
 
-After you send an invitation to another tenant, wait for its Tenant Administrator to accept the email invitation.
+After you send an invitation to another tenant, wait for its Tenant Administrator to accept the email invitation. To monitor whether the invited tenant has accepted, select the **Invitations** tab and monitor the invitation recipient for a status of **Invitation Accepted**.
 
-If the invited tenant administrator does not receive the initial email invitation, you can resend it to them. For instructions, see <xref:community-resend-invitation>. 
+If the invited Tenant Administrator does not receive the initial email invitation, you can resend it to them. For instructions, see <xref:community-resend-invitation>. 
 
 ## Step 3: Confirm the invitation
 
@@ -48,6 +50,6 @@ To confirm an invitation, follow these steps:
 
   The invitee's tenant is now part of the community.
 
-## What's next?
+## Next steps
 
 Edit permissions for data streams to allow tenant data stewards to share them with the community. Continue to <xref:community-manage-sds-permissions-create>.

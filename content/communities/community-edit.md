@@ -6,6 +6,12 @@ uid: community-edit
 
 After you create a community, you can edit its description at any time.
 
+## Prerequisites
+
+To edit a community description, you must be the [Community Owner](xref:ccRoles#community-owner-preview).
+
+## To edit a community
+
 To edit a community, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.

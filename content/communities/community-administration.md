@@ -8,9 +8,8 @@ After a community is established, the community administrator from each tenant c
 
 ## Prerequisites
 
-To perform most tasks related to community administration, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview) assigned to your user role.
+To perform most tasks related to community administration, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview) assigned to your user role. Some tasks have additional prerequisites noted in the task itself.
 
-**Note:** Some community administration tasks require you to be a [Community Owner](xref:ccRoles#community-owner-preview). These tasks are denoted below with an asterisk (*).
 
 ## Community administration tasks
 
@@ -56,10 +55,10 @@ Community administrative actions include:
 
 	Remove roles that have community administration permissions within your tenant.
 
-- <xref:community-edit>*
+- <xref:community-edit>
 
 	Edit the community description. 
 
-- <xref:delete-community>*
+- <xref:delete-community>
 
 	Delete the community.

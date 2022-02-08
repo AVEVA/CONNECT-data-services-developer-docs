@@ -28,8 +28,6 @@ Complete the following procedures to start a new community and invite other tena
 
 	This procedure provides instruction on how to invite other tenants to join your community. After sending an invitation, wait for the invited tenant to accept it. Once the invited tenant accepts, you can confirm the tenant's participation.
 
-	**Note:** You can be a user assigned a role with [community administration](xref:ccRoles#community-administrators-preview) permissions rather than a Tenant Administrator to complete this procedure.
-
 - <xref:community-manage-sds-permissions-create>
 
 	Manage permissions for data streams to allow Community Members from your tenant to share streams with the community.

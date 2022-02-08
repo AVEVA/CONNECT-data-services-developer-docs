@@ -11,31 +11,21 @@
     - topicUid: community-manage-sds-permissions-join
 - topicUid: community-administration
   items:
-  - name: Remove tenants
-    items:
-    - topicUid: community-remove-tenants
-    - topicUid: community-remove-your-tenant
+  - topicUid: community-remove-tenants
+  - topicUid: community-remove-your-tenant
   - topicUid: community-resend-invitation
-  - name: Manage members
-    items:
-    - topicUid: community-add-users
-    - topicUid: community-remove-users
-    - topicUid: community-remove-yourself
-  - name: Manage community clients
-    items:
-    - topicUid: community-add-clients
-    - topicUid: community-remove-clients
-  - name: Manage community administrators
-    items:
-    - topicUid: community-add-administrators
-    - topicUid: community-remove-administrators
+  - topicUid: community-add-users
+  - topicUid: community-remove-users
+  - topicUid: community-remove-yourself
+  - topicUid: community-add-clients
+  - topicUid: community-remove-clients
+  - topicUid: community-add-administrators
+  - topicUid: community-remove-administrators
   - topicUid: community-edit
   - topicUid: delete-community
 - topicUid: data-sharing
   items:
-  - name: Manage shared streams
-    items:
-    - topicUid: community-share-streams
-    - topicUid: community-view-shared-streams
-    - topicUid: community-unshare-streams
+  - topicUid: community-share-streams
+  - topicUid: community-view-shared-streams
+  - topicUid: community-unshare-streams
   - topicUid: community-view-shared-data

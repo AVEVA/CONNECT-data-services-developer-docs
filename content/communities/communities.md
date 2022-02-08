@@ -16,7 +16,7 @@ Sharing data streams allows you and your partners to find value in each other's 
 
 * Share data across engineering and operational partners.  
 
-**Want to set up a community now?** See <xref:gsCommunities>. 
+**Want to set up a community now?** See <xref:community-workflow-create>. 
 
 ## Community diagram
 

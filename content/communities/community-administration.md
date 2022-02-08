@@ -10,7 +10,6 @@ After a community is established, the community administrator from each tenant c
 
 To perform most tasks related to community administration, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview) assigned to your user role. Some tasks have additional prerequisites noted in the task itself.
 
-
 ## Community administration tasks
 
 Community administrative actions include:

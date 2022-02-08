@@ -4,7 +4,7 @@ uid: community-remove-clients
 
 # Remove clients from a community
 
-Remove a client to remove an application's access to the REST API.
+Remove a client from a community to remove an application's access to the REST API.
 
 ## Prerequisites
 

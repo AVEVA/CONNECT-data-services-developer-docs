@@ -8,7 +8,7 @@ When you remove users from a community, they can no longer view the community, v
 
 ## Prerequisites
 
-To remove users from a community, you must be a community administrator.
+To remove users from the community, you must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
 
 ## To remove users from a community
 

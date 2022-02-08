@@ -6,24 +6,20 @@ uid: gsCommunities
 
 The communities feature has different workflows based on your user role within the system. Refer to the following workflows to get started with tasks related to your system role.
 
+## About communities
+
+To learn more about communities, see <xref:communities>.
+
 ## Community setup 
 
-Begin by establishing a community on your tenants and then invite other tenants to your community.
+Tenant Administrators provision new communities and invite other tenants to participate. During this process, they assign community administration permissions to another user role and invite tenant users to the community. For more information, see <xref:community-workflow-create>.
 
-1. [Create a community](xref:add-community).
-
-1. [Invite another OCS tenant](xref:community-invite) to join the community.
+Invited tenants must accept the invitation before they can begin particapting in the community. The Tenant Administrator for the invited community can complete this process. For more information, see <xref:community-workflow-join>.
    
 ## Community administration
 
-After the community is established, each tenant administrator can add users and clients from their tenant as community members.
+After the community is established, users assigned [community administrator permissions](xref:ccRoles#community-administrators-preview) can manage the community within the tenant. Users with these permissions can add new tenants to the community, add new users, and so on. For more information on the tasks that community administrators can perform, see <xref:community-administration>.
 
-1. [Add users](xref:managecommunityusers#add-users-to-a-community) from your own tenant to the community.
+## Data sharing and viewing
 
-1. [Add clients](xref:managecommunityclients#add-clients-to-a-community) for programmatic access to the community.
-
-## Community member tasks
-
-Within established communities, community members can share streams from their tenant with the rest of the community.
-
-1. [Share streams](xref:ShareStreams) with the community.
+Within established communities, Community Members perform tasks related to sharing and viewing data within the community. For more information, see <xref:data-sharing>.

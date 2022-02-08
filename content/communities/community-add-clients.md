@@ -5,7 +5,7 @@ uid: community-add-clients
 
 # Add clients to a community
 
-Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources. The `Community Details` page lets you add and delete clients. You can only add [client-credentials clients](xref:ccClients) to a community.
+Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources. The `Community Details` page lets you add clients. You can only add [client-credentials clients](xref:ccClients) to a community.
 
 ## Prerequisites
 

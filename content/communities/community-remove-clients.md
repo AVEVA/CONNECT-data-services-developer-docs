@@ -2,7 +2,15 @@
 uid: community-remove-clients
 ---
 
-# Remove a client from a community
+# Remove clients from a community
+
+Remove a client to remove an application's access to the REST API.
+
+## Prerequisites
+
+To remove clients from a community, your user account must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
+
+## To remove clients from a community
 
 To remove a client from a community, follow these steps:
 

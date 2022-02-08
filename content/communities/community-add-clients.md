@@ -3,13 +3,15 @@ uid: community-add-clients
 ---
 
 
-# Add community clients
+# Add clients to a community
 
 Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources. The `Community Details` page lets you add and delete clients. You can only add [client-credentials clients](xref:ccClients) to a community.
 
-## Prerequisites 
+## Prerequisites
 
-- You must be a community administrator.
+To add clients to a community:
+
+- Your user account must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
 
 - There must be at least one client-crediential client added to the tenant. For more information, see <xref:gpClientCredentialsClient>.
 

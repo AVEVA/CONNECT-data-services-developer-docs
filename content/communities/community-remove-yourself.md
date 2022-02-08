@@ -6,7 +6,11 @@ uid: community-remove-yourself
 
 Use this procedure to remove yourself from a community. When you leave a community, you will no longer be able to access the community or its data.
 
-**Note:** Community Owners cannot remove themselves from the community.
+**Notes:** 
+
+- Community administrator permissions are not required to complete this task.
+
+- Community Owners cannot remove themselves from the community.
 
 To remove yourself from a community, follow these steps:
 

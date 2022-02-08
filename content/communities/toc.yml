@@ -16,7 +16,7 @@
     - topicUid: community-remove-tenants
     - topicUid: community-remove-your-tenant
   - topicUid: community-resend-invitation
-  - name: Manage users
+  - name: Manage members
     items:
     - topicUid: community-add-users
     - topicUid: community-remove-users

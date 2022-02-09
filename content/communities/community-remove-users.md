@@ -12,7 +12,7 @@ To remove users from the community, you must be assigned [community administrato
 
 ## To remove users from a community
 
-To remove users from your own tenant from a community, follow these steps:
+To remove tenant users from a community, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

@@ -16,7 +16,7 @@ To resend an invitation, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. On the `Communities` overview page, find the community that you have invited another tenant to and select **Details**.
+1. On the `Communities` overview page, find the applicable community and select **Details**.
 
 1. On the `Community Details` page, select the **Invitations** tab.
 

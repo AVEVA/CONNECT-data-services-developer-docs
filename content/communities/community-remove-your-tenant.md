@@ -4,7 +4,7 @@ uid: community-remove-your-tenant
 
 # Remove your own tenant from a community
 
-Use this procedure to remove your own tenant from a community. After removing your tenant, you can be re-invited to the community, but all data that was previously shared with your tenant must be shared again. 
+Use this procedure to remove your own tenant from a community. After removing your tenant, you can be re-invited to the community, but all data that your tenant previously shared must be shared again. 
 
 ## Prerequisites
 

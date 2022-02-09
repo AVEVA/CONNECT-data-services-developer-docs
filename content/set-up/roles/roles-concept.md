@@ -92,6 +92,8 @@ The user that creates a community becomes its Community Owner. The Community Own
 
 - Remove other tenants from the community.
 
+- Edit the community description.
+
 - Delete the community.
 
 ## <a name="roles-pi-server"></a>PI Server counterpart

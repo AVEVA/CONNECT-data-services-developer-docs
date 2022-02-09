@@ -4,7 +4,7 @@ uid: community-workflow-create
 
 # Workflow to create community
 
-Complete the following procedures to create a new community and invite other tenants to join it.
+To begin the process of sharing data, create a new community and invite other tenants to join.
 
 **Tip:** Looking for instructions on how to join a community? See <xref:community-workflow-join>.
 
@@ -14,7 +14,7 @@ To create a new community, you must:
 
 - Be a [Tenant Administrator](xref:ccRoles#tenant-roles).
 
-- Have the email address for Tenant Administrator of the tenant that you invite to the community.
+- Have the email address for the Tenant Administrator of the tenant that you are inviting to the community.
 
 ## Community creation outline
 
@@ -22,7 +22,7 @@ Complete the following procedures to start a new community and invite other tena
 
 - <xref:add-community>
 
-	This procedure provides instruction on how to create a new community on any tenant. During this process, you name the community, choose which roles can administer it, and choose which users from your tenant can participate.
+	This procedure provides instruction on how to create a new community. During this process, name the community, choose which roles can administer it, and choose which users from your tenant become Community Members.
 
 - <xref:community-invite>
 

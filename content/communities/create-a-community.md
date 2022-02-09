@@ -4,7 +4,7 @@ uid: add-community
 
 # Part 1: Create a community
 
-A community is a space where you and a business partner with an OCS tenant can share operational data with one another. When you create a community, you are prompted to define a community name and description, the user roles that can perform administrative actions within the community, and the users considered Community Members within your tenant.
+The first part of establishing a community is to create it. When you create a community, you are prompted to define a community name and description, the user roles that have administrative permissions within the community, and the users considered Community Members within your tenant.
 
 ## Prerequisites
 

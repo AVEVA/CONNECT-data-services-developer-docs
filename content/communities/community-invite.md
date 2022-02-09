@@ -4,13 +4,13 @@ uid: community-invite
 
 # Part 2: Invite a tenant to a community
 
-Before another tenant can join a community that you have creates, you must send them an invitation, they must accept it, and then you must confirm it. In other words, this process is a three-step handshake that requires collaboration between tenants.
+Before another tenant can join your community, you must send them an invitation, they must accept it, and then you must confirm it. In other words, you must complete a three-step handshake that requires collaboration with another tenant.
 
 Complete the following procedures in order.
 
 ## Prerequisites
 
-- You must be a [Community Owner](xref:ccRoles#community-owner-preview) or have [community administrator permissions](xref:ccRoles#community-administrators-preview),
+- You must be a [Community Owner](xref:ccRoles#community-owner-preview) or have [community administrator permissions](xref:ccRoles#community-administrators-preview).
 
 - You must have the email address for the [Tenant Administrator](xref:ccRoles#tenant-roles) that you are inviting to the community.
 
@@ -24,15 +24,17 @@ To invite another tenant to the community, follow these steps:
 
 1. On the **Tenants** tab, select **Invite Tenant**.
 
-1. Enter the email address of the Tenant Administrator for the tenant you would like to invite. Then select **Invite**.
+1. Enter the email address of the Tenant Administrator. Then select **Invite**.
 
-  An email is sent to the invited Tenant Administrator.
+  An email is sent to the Tenant Administrator.
 
-## Step 2: Wait for invited tenants to accept invitation
+## Step 2: Wait for invited tenant to accept invitation
 
-After you send an invitation to another tenant, wait for its Tenant Administrator to accept the email invitation. To monitor whether the invited tenant has accepted, select the **Invitations** tab and monitor the invitation recipient for a status of **Invitation Accepted**.
+After you invite another tenant, wait for its Tenant Administrator to accept the email invitation. To monitor whether the invitation is accepted, select the **Invitations** tab and view the invitation recipient for a status of **Invitation Accepted**. You may need to refresh the page to see an updated status.
 
-If the invited Tenant Administrator does not receive the initial email invitation, you can resend it to them. For instructions, see <xref:community-resend-invitation>. 
+<!-- Would a screencap be helpful here? -->
+
+**Note:** If the invited tenant does not receive the initial email invitation, you can resend it to them. For instructions, see <xref:community-resend-invitation>. 
 
 ## Step 3: Confirm the invitation
 

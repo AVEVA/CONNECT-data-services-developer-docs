@@ -4,7 +4,9 @@ uid: community-accept-invite
 
 # Part 1: Accept community invitation
 
-If another tenant invites you to a community, you will receive an email from the inviting tenant. To accept an invitation, follow these steps:
+When another tenant invites you to a community, you receive an email invitation that you can use to join. To accept an invitation, follow these steps:
+
+<!-- We should add more information here about what it means to accept an invitation. If I'm an admin, I'm immediately wondering what this exposes from a security perspective -->
 
 1. Open the email from OSIsoft Cloud Services, read the instructions, and select the **VIEW COMMUNITY INVITE** link.
 
@@ -18,13 +20,13 @@ If another tenant invites you to a community, you will receive an email from the
 
   Your tenant does not officially join the until the inviting tenant confirms the invitation.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration](xref:ccRoles#community-administrators-preview) permissions.
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:ccRoles#community-administrators-preview).
 
   By default, these permissions are assigned to the [Tenant Administrator and Community Administrator](xref:ccRoles#tenant-roles) roles. 
     
   Optionally, you can add these permissions to other roles. Select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator. 
 
-  After you finish, select **Next**.
+1. After you finish, select **Next**.
 
 1. On the `Community Members` page, add [Community Members](xref:ccRoles#community-member-role-preview), which are users within your tenant that have read access to the community and its data.
 

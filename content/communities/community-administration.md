@@ -4,7 +4,7 @@ uid: community-administration
 
 # Community administration
 
-After a community is established, the community administrator from each tenant can perform administrative actions to integrate new tenants and users in the community. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
+After a community is established, users assigned community administrator permissions from each tenant can manage their community. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
 
 ## Prerequisites
 
@@ -24,19 +24,19 @@ Community administrative actions include:
 
 - <xref:community-resend-invitation>
 
-	If you invite a tenant to the community but they do not receive it, you can resend the invitation.
+	If you invite a tenant to the community but they do not receive an invitation email, you can resend it.
 
 - <xref:community-add-users>
 
-	Add users within your tenant as community members.
+	Add users within your tenant as Community Members.
 
 - <xref:community-remove-users>
 
-	Remove users within your tenant as community members.
+	Remove users within your tenant as Community Members.
 
 - <xref:community-remove-yourself>
 
-	Remove yourself as a community member.
+	Remove yourself as a Community Member.
 
 - <xref:community-add-clients>
 

@@ -4,7 +4,7 @@ uid: community-share-streams
 
 # Share streams
 
-Use these procedures to share streams of data with other communities. 
+You can share data streams from your tenant within a community using the Sequential Data Store. 
 
 ## Prerequisites to share streams
 

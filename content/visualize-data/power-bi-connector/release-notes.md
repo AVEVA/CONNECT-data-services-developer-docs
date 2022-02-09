@@ -53,7 +53,7 @@ The installer is released as a self-extracting executable file that contains:
 
 ##### Installation
 
-The AVEVA Data Hub Power BI Connector installer will extract and install the connector for Power BI. See the accompanying [Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "Power BI Connector User Guide") for detailed Desktop installation instructions.
+The AVEVA Data Hub Power BI Connector installer will extract and install the connector for Power BI. See the accompanying [Power BI Connector User Guide](xref:PowerBI) for detailed Desktop installation instructions.
 
 #### On-premises Data Gateway installation
 
@@ -64,7 +64,7 @@ The AVEVA Data Hub Power BI Connector installer will extract and install the con
 
 ##### Installation
 
-See the accompanying [Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "Power BI Connector User Guide") for detailed Desktop installation instructions.
+See the accompanying [Power BI Connector User Guide](xref:PowerBI) for detailed Desktop installation instructions.
 
 ### Uninstalling Power BI Connector
 
@@ -80,9 +80,9 @@ Because the PI System often serves as a barrier protecting control system networ
 
 The practice of publicly disclosing internally discovered vulnerabilities is consistent with the Common Industrial Control System Vulnerability Disclosure Framework developed by the Industrial Control Systems Joint Working Group (ICSJWG). Despite the increased risk posed by greater transparency, AVEVA is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
 
-For more information, refer to [Ethical Disclosure Policy (https://www.osisoft.com/ethical-disclosure-policy)](https://www.osisoft.com/ethical-disclosure-policy).
+For more information, refer to [Ethical Disclosure Policy (https://www.osisoft.com/terms-and-conditions/ethical-disclosure)](https://www.osisoft.com/terms-and-conditions/ethical-disclosure).
 
-To report a security vulnerability, refer to [Report a Security Vulnerability (https://www.osisoft.com/report-a-security-vulnerability)](https://www.osisoft.com/report-a-security-vulnerability).
+To report a security vulnerability, refer to [Report a Security Vulnerability (https://www.osisoft.com/terms-and-conditions/report-security)](https://www.osisoft.com/terms-and-conditions/report-security).
 
 ### Vulnerability scoring
 
@@ -96,4 +96,4 @@ No security-related information is applicable to this release.
 
 ## Documentation overview
 
-[Power BI Connector User Guide](https://docs.osisoft.com/bundle/ocs/page/visualize-data/power-bi-connector.html "Power BI Connector User Guide"): An introduction to Power BI Connector for the end user. This user guide provides the installation procedure and a usage tutorial on the product features.
+[Power BI Connector User Guide](xref:PowerBI): An introduction to Power BI Connector for the end user. This user guide provides the installation procedure and a usage tutorial on the product features.

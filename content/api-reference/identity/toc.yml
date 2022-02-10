@@ -10,6 +10,8 @@
   href: identity-client-credential-clients.md
 - name: Client credential clients roles
   href: identity-client-credential-clients-roles.md
+- name: Community identity provider
+  href: community-identity-provider.md
 - name: Device code clients
   href: identity-device-code-clients.md
 - name: Hybrid clients
@@ -21,7 +23,6 @@
 - name: Invitations
   href: identity-invitations.md
 - name: Role-based access control
-  topicUid: accessControl 
 - name: Secrets
   href: identity-secrets.md
 - name: Tenants roles

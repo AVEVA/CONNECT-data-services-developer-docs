@@ -41,7 +41,7 @@ If an object's API route does not contain `/Namespaces`, follow these guidelines
 
 This table lists all the actions you can take on AVEVA Data Hub objects in the US-West region.
 
-| OCS Object |	GET |	POST |	PUT | PATCH |	DELETE |
+| AVEVA Data Hub Object |	GET |	POST |	PUT | PATCH |	DELETE |
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | Automation Identities |	 | ✔ | ✔ |	✔ |	✔ |
 |Blogs|	✔|	✔|	✔|	✔|	✔|

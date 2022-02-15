@@ -14,7 +14,7 @@ To create a new community, you must:
 
 - Be a [Tenant Administrator](xref:ccRoles#tenant-roles).
 
-- Have the email address for the Tenant Administrator of the tenant that you are inviting to the community.
+- Have the email address for a Tenant Administrator from the tenant that you are inviting to the community.
 
 ## Community creation outline
 

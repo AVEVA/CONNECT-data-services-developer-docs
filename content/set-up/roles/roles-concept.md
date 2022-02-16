@@ -76,13 +76,15 @@ When a user creates or joins a new community, they are prompted to assign new co
 
 - Modify the community name and description.
 
-- Add and remove users and clients to/from the community.
+- Add users and clients from your tenant to the community.
+
+- Remove users and clients from your tenant from the community.
 
 - Assign roles that can administer the community.
 
 - Pause the sharing of data from your tenant into the community.
 
-- Withdraw from the community.
+- Remove tenants from the community.
 
 OCS includes a tenant role named Community Administrator that is assigned no permissions by default. Assigning community administrator permissions to this role is recommended.
 

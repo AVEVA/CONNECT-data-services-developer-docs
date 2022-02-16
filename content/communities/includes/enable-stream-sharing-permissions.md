@@ -10,7 +10,7 @@ You must be assigned the [Tenant Administrator](xref:ccRoles#tenant-roles) role 
 
 1. Select one or more streams that you want to allow sharing on.
 
-1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Manage Permissions**.
+1. Select **More options** ![More options icon](../../_icons/dots-vertical.svg) > **Manage Permissions**.
 
 1. From **Select Role**, choose the role whose permissions you want to modify. Using the **Tenant Data Steward** role is recommended, but you can use any role.
 

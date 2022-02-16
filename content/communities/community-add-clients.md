@@ -5,7 +5,7 @@ uid: community-add-clients
 
 # Add clients to a community
 
-Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources. The `Community Details` page lets you add clients. You can only add [client-credentials clients](xref:ccClients) to a community.
+Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources. The `Community Details` page lets you add existing clients to a community. You can only add [client-credentials clients](xref:ccClients) from your own tenant.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ To add clients to a community:
 
 - Your user account must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
 
-- There must be at least one client-crediential client added to the tenant. For more information, see <xref:gpClientCredentialsClient>.
+- There must be at least one existing client-crediential client added to the tenant (which is typically done by a Tenant Administrator). For more information, see <xref:gpClientCredentialsClient>.
 
 ## To add clients to a community
 

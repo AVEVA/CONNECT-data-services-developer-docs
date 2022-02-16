@@ -38,6 +38,8 @@ Either a user assigned community administrator permissions or a Community Owner 
 
 	Remove yourself as a Community Member.
 
+	**Note:** Community Owners cannot remove themselves from a community.
+
 - <xref:community-add-clients>
 
 	Allow an application to programatically access shared community data and resources using REST API.

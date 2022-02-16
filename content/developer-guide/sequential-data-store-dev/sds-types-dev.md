@@ -313,7 +313,7 @@ the SDS before using `SdsTypeBuilder`. Base types are maintained within the SdsT
 ## SdsTypes outside of .NET framework
 You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you'll see how types are built and defined in
 [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. 
-For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-OCS/blob/main/docs/SDS_WAVEFORM.md).
+For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
 
 ### SdsTypeCode, SdsTypeProperty and SdsType
 

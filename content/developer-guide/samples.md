@@ -5,7 +5,7 @@ uid: samples
 Samples
 =======
 
-The [AVEVA Data Hub-Samples](https://github.com/osisoft/OSI-Samples-OCS) illustrate several ways for applications to interact with the AVEVA Data Hub REST API.
+The [AVEVA Data Hub-Samples](https://github.com/osisoft/OSI-Samples-ADH) illustrate several ways for applications to interact with the AVEVA Data Hub REST API.
 
 The examples cover the basics of interacting with AVEVA Data Hub, such as:
 

@@ -32,9 +32,7 @@ To invite another tenant to the community, follow these steps:
 
 After you invite another tenant, wait for its Tenant Administrator to accept the email invitation. To monitor whether the invitation is accepted, select the **Invitations** tab and view the invitation recipient for a status of **Invitation Accepted**. You may need to refresh the page to see an updated status.
 
-<!-- Would a screencap be helpful here? -->
-
-**Note:** If the invited tenant does not receive the initial email invitation, you can resend it to them. For instructions, see <xref:community-resend-invitation>. 
+Invitations are valid for 14 days before they expire. If the invitation is not accepted within that time, you will have to [resend the invitation](xref:community-resend-invitation). You will also have to resend the invitation if invited tenant does not receive the initial email.
 
 ## Step 3: Confirm the invitation
 
@@ -48,7 +46,7 @@ To confirm an invitation, follow these steps:
 
 1. Select an invitation with a status of **Invitation Accepted**.
 
-1. On the `Invitation Details` pane, select **Confirm Tenant**. When prompted for confirmation, select **Confirm Tenant** again.
+1. On the `Invitation Details` pane, select **Confirm Tenant**. When prompted for confirmation, review that the expected tenant is joining before you select **Confirm Tenant**.
 
   The invitee's tenant is now part of the community.
 

@@ -4,13 +4,21 @@ uid: community-accept-invite
 
 # Part 1: Accept community invitation
 
-When another tenant invites you to a community, you receive an email invitation that you can use to join. To accept an invitation, follow these steps:
+When another tenant invites you to a community, you receive an email invitation that you can use to join. 
+
+**Note:** Invitations are valid for 14 days before they expire. If you do not accept the invitation within that time, or you do not receive an invitation email, you must request a new invitation from the owning tenant.
+
+To accept an invitation, follow these steps:
 
 <!-- We should add more information here about what it means to accept an invitation. If I'm an admin, I'm immediately wondering what this exposes from a security perspective -->
 
-1. Open the email from OSIsoft Cloud Services, read the instructions, and select the **VIEW COMMUNITY INVITE** link.
+1. Open and review the email invitation from OSIsoft Cloud Services.
+
+1. Select the **VIEW COMMUNITY INVITE** link.
 
 1. If prompted, enter the tenant ID or tenant alias for your tenant and select **Continue**.
+
+  **Important!** If you have multiple tenants, verify that you are logging into the correct tenant.
 
 1. If prompted, log in to OSIsoft Cloud Services.
 

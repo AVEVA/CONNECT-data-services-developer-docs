@@ -7,17 +7,17 @@ uid: gsAssetRules
 Use asset rules to automatically create assets based on streams you find by specifying a stream naming pattern. Asset rules work best if your stream names adhere to a consistent naming convention. For example, the following streams are similarly named, and each contains a timestamped series of measurements for similar pumps:
 
 - **MyData.NorthAmerica.SLTC.PumpA.Temperature**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpA.Pressure**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpA.CurrentStatus**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpB.Temperature**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpB.Pressure**
-- 
+ 
 - **...**
-- 
+ 
 - **MyData.NorthAmerica.SLTC.PumpT.CurrentStatus**
 
 An asset rule enables you to use these stream names to automatically create pump assets with properties such as temperature, pressure, and current status, along with metadata about their location.
@@ -26,23 +26,23 @@ Because the following procedure uses the stream **MyData.NorthAmerica.SLTC.PumpA
 
 To create a new asset rule, follow the steps in the these procedures.
 
-1. [Create a new asset rule](#create-new-rule-#1): Create a new asset rule.
+1. [Create a new asset rule](#create-a-new-asset-rule): Create a new asset rule.
 
-2. [Extract tokens](#extract-tokens-#2): Assemble token values so you can select the information you want from your streams. 
+2. [Extract tokens](#extract-tokens): Assemble token values so you can select the information you want from your streams. 
 
-3. [Map tokens](#map-tokens-#3): Map the tokens to values.
+3. [Map tokens](#map-tokens-to-values): Map the tokens to values.
 
-4. [Configure assets](#configure assets-#4): Assign tokens values to asset fields.
+4. [Configure assets](#configure-assets): Assign tokens values to asset fields.
 
-5. [Preview assets](#preview-assets-#5): Display a preview of the assets that will be created by this rule. 
+5. [Preview assets](#preview-assets): Display a preview of the assets that will be created by this rule. 
 
 For more information about asset rules, see [Asset rules](xref:ccAssetRules).
 
-## <a name="gsAssetRules-create-new-rule"></a> Create a new asset rule 
+## Create a new asset rule 
 
 Create a new asset rule.
 
-1. In the left pane, select  **Data Management>Asset Rules**.
+1. In the left pane, select  **Data Management** > **Asset Rules**.
 
 1. From the **Namespace** dropdown list, ensure the correct namespace is selected.
 
@@ -64,7 +64,7 @@ Create a new asset rule.
 
 1. Select the **MyData.NorthAmerica.SLTC.PumpA** stream and select **Add**.
 
-## <a name="gsAssetRules-extract-tokens"></a> Extract tokens
+## Extract tokens
 
 Assemble token values so that you can select the information you want to extract from your streams. 
 
@@ -92,7 +92,7 @@ Assemble token values so that you can select the information you want to extract
 
 1. Select **Capture**.
 
-**Note**: Alternatively, you can bring in tokens by using the **Stream Metadata** button. 
+   **Note**: Alternatively, you can bring in tokens by using the **Stream Metadata** button. 
 
 1. In the left panel, select **Stream Metadata**. You see the two metadata tokens added to the stream by the metadata rule you just created, **Region** and **Site**. This can be a useful way to bring in more tokens for some streams. 
 
@@ -102,7 +102,7 @@ Assemble token values so that you can select the information you want to extract
 
 1. Select **Next**.
 
-## <a name="gsAssetRules-map-tokens"></a> Map tokens to values 
+## Map tokens to values 
 
 Map tokens to specific values. 
 
@@ -130,7 +130,7 @@ Map tokens to specific values.
 
 1. Select **Next**.
 
-## <a name="gsAssetRules-configure-assets"></a> Configure assets
+## Configure assets
 
 Assign tokens values to asset fields. 
 
@@ -146,7 +146,7 @@ Assign tokens values to asset fields.
  
 1. Select  **Next**.
 
-## <a name="gsAssetRules-preview-assets"></a> Preview assets
+## Preview assets
 
 Display a preview of the assets that will be created by this rule. 
 

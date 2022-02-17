@@ -42,15 +42,15 @@ For any resource, you can set access to it for specific roles rather than for sp
 
 #### Tenant role profiles
 
-Some default tenant roles—Tenant Data Steward, Tenant Viewer, and Community Administrator—are assigned no permissions by default. Instead, these roles are intended to be customized for specialized user roles in within OSIsoft Cloud Services; you must assign these roles permissions for individual system resources to best suit your organization. 
+Some default tenant roles—Tenant Data Steward, Tenant Viewer, and Community Administrator—are assigned no permissions by default. Instead, these roles are intended to be customized for specialized user roles in within OCS; you must assign these roles permissions for individual system resources to best suit your organization. 
 
 Recommended use of these roles includes:
 
-- Tenant Data Steward – Assign to data stewards, which are users that share data streams from the tenant's Sequential Data Store within a community.
+- Tenant Data Steward – Assign to data stewards, who share data streams from the tenant's Sequential Data Store within a community.
 
 - Tenant Viewer – Assign to system guests that should have limited access.
 
-- Community Administrator – Assign to community administrators, which are users that moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
+- Community Administrator – Assign to community administrators, who moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
 
 Although using these roles as intended is recommended, you can customize these roles for any use you want. You must have the Tenant Administrator role to manage these roles.
 
@@ -72,7 +72,7 @@ Users assigned the Community Member role have read permissions within the commun
 
 #### Community administrators (Preview)
 
-When a user creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community, including the following actions:
+When a tenant creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community, including the following actions:
 
 - Modify the community name and description.
 

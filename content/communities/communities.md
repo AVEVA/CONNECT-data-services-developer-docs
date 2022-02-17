@@ -60,7 +60,7 @@ Additionally, community roles allow each tenant to manage users and roles specif
 
 Communities allow tenants to securely share operational data with their trusted business partners. 
 
-Any tenant invited to a community must accept the community invitation and be confirmed by the inviting tenant before they can share data with other tenants or view shared data from other tenants. After joining a community, each tenant must explicitly share any data stream that they want to share with the community. Each tenant shares individual data streams with the community—not their entire operational data set. 
+Any tenant invited to a community must accept the community invitation and be confirmed by the inviting tenant before they can share data with other tenants or view shared data from other tenants. After joining a community, each tenant must explicitly share any data stream that they want the community to view. Each tenant shares individual data streams with the community—not their entire operational data set. 
 
 Each tenant in the community can stop sharing their data streams at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history. When you share data streams, you provide the community with _access_ to your streams rather than copying data across tenants.
 

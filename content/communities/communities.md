@@ -54,7 +54,7 @@ Within each tenant, community administrators can independently invite or remove 
 
 <!-- TODO: Update paragraph below based on design document -->
 
-Additionally, OCS provides community roles that allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
+Additionally, community roles allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
 
 ### Secure data sharing
 

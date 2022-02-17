@@ -11,7 +11,7 @@ The table below lists the current AVEVA Data Hub region labels and corresponding
 | AVEVA Connect & AVEVA Data Hub region labels  | Corresponding AVEVA Data Hub regional endpoint|
 | ------------- | ----------------- |
 | US-West (westus) | https://uswe.datahub.connect.aveva.com/ |
-| EU-West (northeurope) | https://euno.datahub.connect.aveva.com/ | 
+| EU-North (northeurope) | https://euno.datahub.connect.aveva.com/ | 
 
 **Note:** The region is selected at initial setup when an AVEVA Connect folder is created. The region cannot be changed after folder creation.
 
@@ -23,11 +23,13 @@ In general, any AVEVA Data Hub object whose API route contains `/Namespaces` can
 
 * GET
 
-* PUT
+* DELETE
+
+* PATCH
 
 * POST
 
-* PATCH
+* PUT
 
 If an object's API route does not contain `/Namespaces`, follow these guidelines:
 

@@ -50,7 +50,7 @@ Recommended use of these roles includes:
 
 - Tenant Viewer – Assign to system guests that should have limited access.
 
-- Community Administrator – Assign to community administrators, which are users that moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
+- Community Administrator – Assign to community administrators, who moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
 
 Although using these roles as intended is recommended, you can customize these roles for any use you want. You must have the Tenant Administrator role to manage these roles.
 

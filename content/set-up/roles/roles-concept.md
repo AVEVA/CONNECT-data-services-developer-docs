@@ -72,7 +72,7 @@ Users assigned the Community Member role have read permissions within the commun
 
 #### Community administrators (Preview)
 
-When a user creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community, including the following actions:
+When a tenant creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community, including the following actions:
 
 - Modify the community name and description.
 

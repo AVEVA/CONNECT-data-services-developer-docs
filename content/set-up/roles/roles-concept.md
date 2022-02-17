@@ -46,7 +46,7 @@ Some default tenant roles—Tenant Data Steward, Tenant Viewer, and Community Ad
 
 Recommended use of these roles includes:
 
-- Tenant Data Steward – Assign to data stewards, which are users that share data streams from the tenant's Sequential Data Store within a community.
+- Tenant Data Steward – Assign to data stewards, who share data streams from the tenant's Sequential Data Store within a community.
 
 - Tenant Viewer – Assign to system guests that should have limited access.
 

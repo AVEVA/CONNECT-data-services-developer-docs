@@ -40,7 +40,7 @@ Communities allow you to easily and securely share operational data with trusted
 
 ### Connect with trusted business partners
 
-Establish a community by creating it and then inviting your trusted business partners to join from their tenant. Each invitation is a three-way handshake. The Tenant Administrator that established the community, also known as the Community Owner, sends an email invitation to a Tenant Administrator from another tenant. The trusted business partner then accepts the invitation. The original Tenant Administrator who issued the invitation confirms it, allowing the trusted partner to join the community. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
+Establish a community by creating it and then inviting your trusted business partners to join from their tenant. Each invitation is a three-way handshake. The Tenant Administrator that established the community, known as the Community Owner, sends an email invitation to a Tenant Administrator for the business partner's tenant. The trusted business partner then accepts the invitation. The Community Owner confirms the invitation, allowing the trusted partner to join the community. After confirmation, users from the business partner's tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
 ### Scalable
 

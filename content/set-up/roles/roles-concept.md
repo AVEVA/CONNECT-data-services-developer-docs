@@ -42,7 +42,7 @@ For any resource, you can set access to it for specific roles rather than for sp
 
 #### Tenant role profiles
 
-Some default tenant roles—Tenant Data Steward, Tenant Viewer, and Community Administrator—are assigned no permissions by default. Instead, these roles are intended to be customized for specialized user roles in within OSIsoft Cloud Services; you must assign these roles permissions for individual system resources to best suit your organization. 
+Some default tenant roles—Tenant Data Steward, Tenant Viewer, and Community Administrator—are assigned no permissions by default. Instead, these roles are intended to be customized for specialized user roles in within OCS; you must assign these roles permissions for individual system resources to best suit your organization. 
 
 Recommended use of these roles includes:
 

@@ -20,7 +20,7 @@ Sharing data streams allows you and your partners to find value in each other's 
 
 ## Community diagram
 
-The following diagram visually displays an established community. 
+The following diagram shows an established community. 
 
 ![Community diagram](images/community-diagram.svg)
 

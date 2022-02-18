@@ -4,20 +4,20 @@ uid: regional-endpoints
 
 # Regional endpoints
 
-A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored, and is usually selected based on your company's geographic location. 
+A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored. 
 
-The table below lists the current AVEVA Data Hub region labels and corresponding endpoints.
+The table lists the current AVEVA Data Hub region labels and corresponding endpoints.
 
-| AVEVA Connect & AVEVA Data Hub region labels  | Corresponding AVEVA Data Hub regional endpoint|
+| AVEVA Data Hub regional endpoints |  AVEVA Connect & AVEVA Data Hub region labels |
 | ------------- | ----------------- |
-| US-West (westus) | https://uswe.datahub.connect.aveva.com/ |
-| EU-North (northeurope) | https://euno.datahub.connect.aveva.com/ | 
+| https://uswe.datahub.connect.aveva.com/  | US-West (westus) |
+| https://euno.datahub.connect.aveva.com/ | EU-North (northeurope)  | 
 
-**Note:** The region is selected at initial setup when an AVEVA Connect folder is created. The region cannot be changed after folder creation.
+**Note:** US-West is the primary region and only certain actions may be taken in this region. The region is selected at initial setup when an AVEVA Connect folder is created, and cannot be changed after folder creation.
 
 ## Endpoint usage guidelines
 
-Reference the regional endpoint in read, write and delete requests. To retrieve a region's host URL for an object that belongs to a namespace, for example a stream, use the `Self` property within the context of the namespace.
+Reference the regional endpoint in READ, WRITE and DELETE requests. To retrieve a region's host URL for an object that belongs to a namespace, such as a stream, use the `Self` property within the context of the namespace.
 
 In general, any AVEVA Data Hub object whose API route contains `/Namespaces` can use these actions:
 

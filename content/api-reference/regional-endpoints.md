@@ -4,9 +4,7 @@ uid: regional-endpoints
 
 # Regional endpoints
 
-A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored. 
-
-The table lists the current AVEVA Data Hub region labels and corresponding endpoints.
+A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored. The table lists the current AVEVA Data Hub region labels and corresponding endpoints.
 
 | AVEVA Data Hub regional endpoints |  AVEVA Connect & AVEVA Data Hub region labels |
 | ------------- | ----------------- |

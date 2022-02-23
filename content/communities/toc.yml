@@ -23,6 +23,7 @@
   - topicUid: community-remove-administrators
   - topicUid: community-edit
   - topicUid: delete-community
+  - topicUid: communities-manage-default-admins
 - topicUid: data-sharing
   items:
   - topicUid: community-share-streams

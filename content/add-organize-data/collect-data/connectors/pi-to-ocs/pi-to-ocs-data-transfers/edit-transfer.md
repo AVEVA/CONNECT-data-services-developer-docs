@@ -4,7 +4,7 @@ uid: edit-transfer
 
 # Edit a transfer
 
-Saved transfers can be edited by adding adding or removing AF elements and/or PI points.
+Saved transfers can be edited by adding or removing AF elements and/or PI points.
 
 **Note:** Your transfer settings affect if streams and data get replicated or deleted from cloud storage after you have removed elements or explicit PI points from your transfer. See [Name the transfer and set data privacy settings](xref:transfer-data) for details.
 
@@ -40,4 +40,4 @@ Perform these steps to edit an existing transfer:
 
 1. After transfer edits are done, click **Save** to retain these changes and return to the `PI to OCS Agents` window.
 
-   **Note:** If a transfer was started and in progress when edits were made, these changes will be be processed after the transfer is saved.
+   **Note:** If a transfer was started and in progress when edits were made, these changes will be processed after the transfer is saved.

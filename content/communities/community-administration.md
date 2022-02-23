@@ -56,6 +56,10 @@ Either a user assigned community administrator permissions or a Community Owner 
 
 	Remove roles that have community administration permissions within your tenant.
 
+- <xref:communities-manage-default-admins>
+
+	Configure the default system role set as the community administrator for a community.
+
 ## Community owner tasks
 
 Only a Community Owner can perform the following tasks:

@@ -6,7 +6,7 @@ uid: AddBaseConfiguration
 
 You can create and edit base configurations for edge systems in AVEVA Data Hub. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
-**Note:** You can create configuration templates for the following edge system types:
+You can create configuration templates for the following edge system types:
 
  - Edge Data Store
 
@@ -17,6 +17,8 @@ You can create and edit base configurations for edge systems in AVEVA Data Hub. 
  - PI Adapter for Modbus TCP
  
  - PI Adapter for OPC UA
+
+The data and health endpoint URLs used in the configuration default to the URL of the namespace where the base configuration is created.  
 
 ## Add a new base configuration
 

@@ -20,6 +20,6 @@ To add community administrator permissions to a user role, follow these steps:
 
 1. Select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Manage Community Administrators**.
 
-    Select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator. 
+1. Select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator. 
 
 1. Select **Save**.

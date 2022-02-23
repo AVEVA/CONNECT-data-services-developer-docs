@@ -41,3 +41,5 @@ Possible solutions for this scenario include:
 - Add a custom configuration token that EMM will handle, similar to a secret.
 
 This token could look like `{{hostname}}` and when EMM sees this token, it could run something like IP address and find the network that is for azure-iot-edge (in a current module I see the network called `eth0` with IP address `172.18.0.5`, I could possibly assume that the host would be `172.18.0.1`). A problem with this solution is that the end configuration will not match the configuration stored in ADH, because the end configuration will have an IP address instead of the mustache token.
+
+<!-- AMF 2/23/22 Here is a link to the source: https://dev.azure.com/osieng/engineering/_wiki/wikis/edge-management-modules.wiki/35693/WI291580-Accessing-Data-Sources-on-the-Same-Device -->

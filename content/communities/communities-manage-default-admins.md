@@ -4,7 +4,9 @@ uid: communities-manage-default-admins
 
 # Manage default community administrators
 
-When [creating](xref:community-workflow-create) or [joining a community](xref:community-workflow-join), your tenant is prompted to assign community administration permissions to one or more role within your tenant. By default, community administration permissions are assigned to three roles: Community Administrator, Super Admin, and Tenant Administrator. However, you can manage which roles in your tenant are assigned these permissions by default to expedite creating or joining a community later.
+When you create or join a community, you are prompted to assign community administration permissions to one or more role within your tenant. By default, these permissions are assigned to three default system roles: Community Administrator, Super Admin, and Tenant Administrator. 
+
+However, you can update these default roles to any system role. For example, you can configure a custom system role named **Community Manager** as the default community administrator.
 
 ## To manage default community administrators
 
@@ -22,4 +24,4 @@ To manage default community administrators, follow these steps:
 
 1. Select **Save**.
 
-The default community administrator roles are updated. The next time that you create a community, the default community administrator roles will be updated according to your settings.
+The default community administrator roles are updated. The next time that you create or join a community, the community administrator defaults to your settings.

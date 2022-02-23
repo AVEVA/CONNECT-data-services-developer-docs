@@ -8,7 +8,7 @@
   href: transfer-data-to-ocs.md
 - name: Edit a transfer
   href: edit-transfer.md
-  - name: Data transfer statuses
+- name: Data transfer statuses
   href: data-transfer-statuses.md
 - name: Export transfer details
   href: export-transfer-details.md

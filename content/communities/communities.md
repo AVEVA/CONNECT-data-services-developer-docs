@@ -30,7 +30,7 @@ Both Tenant A and Tenant B have multiple streams stored in each of their tenants
 
 Both tenants are sharing only one of their data streams within the community (callouts **A** and **B**). A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
 
-All data streams shared within the community can be viewed by any community member (callout **4**). Within a community, users with community administration privileges can invite and manage which users within their tenant can participate in the community and view shared data.
+All data streams shared within the community can be viewed by any community member (callout **4**). Within a community, community administrators privileges can invite and manage which users within their tenant can participate in the community and view shared data.
 
 ## Community features and benefits
 
@@ -38,7 +38,7 @@ Communities allow you to easily and securely share operational data with trusted
 
 ### Connect with trusted business partners
 
-Establish a community by creating it and then inviting your trusted business partners to join from their tenant. Each invitation is a three-way handshake. The Tenant Administrator that established the community, known as the Community Owner, sends an email invitation to a Tenant Administrator for the business partner's tenant. The trusted business partner then accepts the invitation. The Community Owner confirms the invitation, allowing the trusted partner to join the community. After confirmation, users from the business partner's tenant can view data from other community tenants or share data streams from their own tenant with the community.
+Establish a community by creating it and then inviting your trusted business partners to join from their tenant. Each invitation is a three-way handshake. The Tenant that establishes the community, known as the Administrative Tenant, sends an email invitation to an administrator from business partner's tenant. The trusted business partner then accepts the invitation. The Administrative Tenant confirms the invitation, allowing the trusted partner to join the community. After confirmation, users from the business partner's tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
 ### Scalable
 
@@ -50,9 +50,7 @@ Communities support multi-tenant management of users and permissions.
 
 Within each tenant, community administrators can independently invite or remove users, separating users and permissions from other tenants in the community. Each tenant within the community has individual control over which of its users can access the community or share data within it. Community administrators cannot control users or permissions in other tenants.
 
-<!-- TODO: Update paragraph below based on design document -->
-
-Additionally, community roles allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
+Additionally, community roles allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data or share data streams within the community.
 
 ### Secure data sharing
 

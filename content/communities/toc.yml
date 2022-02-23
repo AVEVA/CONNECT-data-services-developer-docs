@@ -21,9 +21,9 @@
   - topicUid: community-remove-clients
   - topicUid: community-add-administrators
   - topicUid: community-remove-administrators
+  - topicUid: communities-manage-default-admins
   - topicUid: community-edit
   - topicUid: delete-community
-  - topicUid: communities-manage-default-admins
 - topicUid: data-sharing
   items:
   - topicUid: community-share-streams

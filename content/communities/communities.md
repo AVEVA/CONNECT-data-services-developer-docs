@@ -30,7 +30,7 @@ Both Tenant A and Tenant B have multiple streams stored in each of their tenants
 
 Both tenants are sharing only one of their data streams within the community (callouts **A** and **B**). A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
 
-All data streams shared within the community can be viewed by any community member (callout **4**). Within a community, community administrators privileges can invite and manage which users within their tenant can participate in the community and view shared data.
+All data streams shared within the community can be viewed by any community member (callout **4**). Within a community, community administrators can invite and manage which users within their tenant can participate in the community and view shared data.
 
 ## Community features and benefits
 

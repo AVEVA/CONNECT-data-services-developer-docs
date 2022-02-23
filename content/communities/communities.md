@@ -24,11 +24,11 @@ The following diagram shows an established community.
 
 ![Community diagram](images/community-diagram.svg)
 
-Within this diagram, a Tenant Administrator (callout **1**) from **Tenant A** has invited **Tenant B** to form a community. 
+Within this diagram, a Tenant Administrator (callout **1**) from **Tenant A** has invited **Tenant B** to form a community.
 
-Both **Tenant A** and **Tenant B** have mul streams stored in each of their tenants, as depicted by callout **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (callout **3**). 
+Both Tenant A and Tenant B have multiple streams stored in each of their tenants, as depicted by callout **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (callout **3**).
 
-Both tenants are sharing only one of their data streams (callouts **A** and **B**) within the community. A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
+Both tenants are sharing only one of their data streams within the community (callouts **A** and **B**). A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
 
 All data streams shared within the community can be viewed by any community member (callout **4**). Within a community, users with community administration privileges can invite and manage which users within their tenant can participate in the community and view shared data.
 

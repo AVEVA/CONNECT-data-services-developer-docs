@@ -1067,6 +1067,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groupmappi
       "Name": "string",
       "Email": "user@example.com",
       "IsClusterManagementAllowed": true,
+      "IdentityProviderClaimId": "string",
       "RoleIds": [
         "string"
       ]
@@ -1560,6 +1561,7 @@ Result object for Identity Provider access users/groups
       "Name": "string",
       "Email": "user@example.com",
       "IsClusterManagementAllowed": true,
+      "IdentityProviderClaimId": "string",
       "RoleIds": [
         "string"
       ]
@@ -1589,6 +1591,7 @@ Class for identity provider group mappings.
 |Name|string|false|true|Group name of the IdentityProviderGroupMappings|
 |Email|email|false|true|Email address of the IdentityProviderGroupMappings|
 |IsClusterManagementAllowed|boolean|false|true|Whether group can manage cluster roles.|
+|IdentityProviderClaimId|guid|false|false|Identity Provider ClaimId of the IdentityProviderGroupMappings|
 |RoleIds|string[]|false|true|List of roles assigned to this group.|
 
 ```json
@@ -1597,6 +1600,7 @@ Class for identity provider group mappings.
   "Name": "string",
   "Email": "user@example.com",
   "IsClusterManagementAllowed": true,
+  "IdentityProviderClaimId": "string",
   "RoleIds": [
     "string"
   ]
@@ -1652,6 +1656,7 @@ MultiStatusResponse objects returned in a 207 response.
       "Name": "string",
       "Email": "user@example.com",
       "IsClusterManagementAllowed": true,
+      "IdentityProviderClaimId": "string",
       "RoleIds": [
         "string"
       ]

@@ -14,9 +14,13 @@ Quis anim ut cupidatat mollit nisi Lorem dolore id deserunt anim consequat eu co
 
 ## Community tenant administration tasks
 
-- [Invite a tenant to a community](xref:community-invite)
+- <xref:community-invite-tenant>
 
 	Invite other tenants to join the community.
+
+- <xref:community-resend-invitation>
+
+	If you invite a tenant to the community but they do not receive an invitation email, you can resend it.
 
 - <xref:community-remove-tenants>
 

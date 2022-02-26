@@ -18,10 +18,6 @@ Either a user assigned community administrator permissions or a Community Owner 
 
 	Remove your own tenant from the community.  
 
-- <xref:community-resend-invitation>
-
-	If you invite a tenant to the community but they do not receive an invitation email, you can resend it.
-
 - <xref:community-add-users>
 
 	Add users within your tenant as Community Members.

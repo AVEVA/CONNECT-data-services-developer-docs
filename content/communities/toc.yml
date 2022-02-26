@@ -14,7 +14,6 @@
   - topicUid: community-remove-your-tenant
   - topicUid: community-add-users
   - topicUid: community-remove-users
-  - topicUid: community-remove-yourself
   - topicUid: community-add-clients
   - topicUid: community-remove-clients
   - topicUid: community-add-administrators
@@ -33,3 +32,4 @@
   - topicUid: community-view-shared-streams
   - topicUid: community-unshare-streams
   - topicUid: community-view-shared-data
+  - topicUid: community-remove-yourself

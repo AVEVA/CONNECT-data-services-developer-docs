@@ -26,7 +26,7 @@
   - topicUid: community-invite-tenant
   - topicUid: community-resend-invitation
   - topicUid: community-remove-tenants
-  - topicUid: delete-community
+  - topicUid: community-delete
 - topicUid: data-sharing
   items:
   - topicUid: community-share-streams

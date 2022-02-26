@@ -1,5 +1,5 @@
 ---
-uid: delete-community
+uid: community-delete
 ---
 
 # Delete a community

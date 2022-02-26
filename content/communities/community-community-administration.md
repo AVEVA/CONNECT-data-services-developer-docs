@@ -26,6 +26,6 @@ Quis anim ut cupidatat mollit nisi Lorem dolore id deserunt anim consequat eu co
 
 	Remove tenants from a community.
 
-- <xref:delete-community>
+- <xref:community-delete>
 
 	Delete the community.

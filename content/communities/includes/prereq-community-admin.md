@@ -1,0 +1,1 @@
+You must be a user assigned a community administrator role.

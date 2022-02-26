@@ -4,15 +4,15 @@ uid: community-tenant-administration
 
 # Community tenant administration
 
-After a community is established, users assigned community administrator permissions from each tenant can manage their community. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
+After a community is established, users assigned a community administrator role can manage their community, performing. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
 
 ## Prerequisites
 
-To perform most tasks related to community administration, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview) assigned to your user role or be a [Community Owner](xref:ccRoles#community-owner-preview).
+[!include[prereq-community-admin](includes/prereq-community-admin.md)]
 
 ## Community administration tasks
 
-Either a user assigned community administrator permissions or a Community Owner can perform the following tasks:
+Users assigned a community administrator role can perform the following tasks:
 
 - <xref:community-remove-your-tenant>
 

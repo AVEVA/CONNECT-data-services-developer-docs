@@ -12,9 +12,9 @@ To begin the process of sharing data, create a new community and invite other te
 
 To create a new community, you must:
 
-- Be a [Tenant Administrator](xref:ccRoles#tenant-roles).
+- Be an administrative user, which is any user assigned a role with permissions to create a community. For example, a user assigned the [Tenant Administrator](xref:ccRoles#tenant-roles) role.
 
-- Have the email address for a Tenant Administrator from the tenant that you are inviting to the community.
+- Have the email address for an administrive user from the tenant that you are inviting to the community.
 
 ## Community creation outline
 

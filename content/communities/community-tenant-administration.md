@@ -30,8 +30,6 @@ Users assigned a community administrator role can perform the following tasks:
 
 	Remove yourself as a Community Member.
 
-	**Note:** Community Owners cannot remove themselves from a community.
-
 - <xref:community-add-clients>
 
 	Allow an application to programatically access shared community data and resources using REST API.

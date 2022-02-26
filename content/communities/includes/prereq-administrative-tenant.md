@@ -1,0 +1,1 @@
+You must be a community administrator from the administrative tenant.

@@ -18,7 +18,7 @@ Invited tenants must accept the invitation before they can begin particapting in
    
 ## Community administration
 
-After the community is established, users assigned [community administrator permissions](xref:ccRoles#community-administrators-preview) can manage the community within the tenant. Users with these permissions can add new tenants to the community, add new users, and so on. For more information on the tasks that community administrators can perform, see <xref:community-administration>.
+After the community is established, users assigned [community administrator permissions](xref:ccRoles#community-administrators-preview) can manage the community within the tenant. Users with these permissions can add new tenants to the community, add new users, and so on. For more information on the tasks that community administrators can perform, see <xref:community-community-administration>.
 
 ## Data sharing and viewing
 

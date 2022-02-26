@@ -9,9 +9,12 @@
     items: 
     - topicUid: community-accept-invite
     - topicUid: community-manage-sds-permissions-join
-- topicUid: community-administration
+- topicUid: community-tenant-administration
   items:
   - topicUid: community-remove-tenants
+  - topicUid: delete-community
+- topicUid: community-community-administration
+  items:
   - topicUid: community-remove-your-tenant
   - topicUid: community-resend-invitation
   - topicUid: community-add-users
@@ -23,7 +26,6 @@
   - topicUid: community-remove-administrators
   - topicUid: communities-manage-default-admins
   - topicUid: community-edit
-  - topicUid: delete-community
 - topicUid: data-sharing
   items:
   - topicUid: community-share-streams

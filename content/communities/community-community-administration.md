@@ -1,5 +1,5 @@
 ---
-uid: community-administration
+uid: community-community-administration
 ---
 
 # Community administration
@@ -13,10 +13,6 @@ To perform most tasks related to community administration, you must have [commun
 ## Community administration tasks
 
 Either a user assigned community administrator permissions or a Community Owner can perform the following tasks:
-
-- <xref:community-remove-tenants>
-
-	Remove tenants from a community.
 
 - <xref:community-remove-your-tenant>
 
@@ -60,14 +56,8 @@ Either a user assigned community administrator permissions or a Community Owner 
 
 	Configure the default system role set as the community administrator for a community.
 
-## Community owner tasks
-
-Only a Community Owner can perform the following tasks:
-
 - <xref:community-edit>
 
 	Edit the community description. 
 
-- <xref:delete-community>
 
-	Delete the community.

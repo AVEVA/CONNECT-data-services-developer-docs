@@ -34,7 +34,6 @@ To create a community, follow these steps:
     
     To add new Community Members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
-
 1. After you finish, select **Create**.
 
 The community is created and added to the `Communities` page.

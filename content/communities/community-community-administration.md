@@ -4,13 +4,11 @@ uid: community-community-administration
 
 # Community administration
 
-Tempor do deserunt aute nulla labore duis pariatur sunt culpa Lorem. Dolor eu aute culpa commodo ipsum. Exercitation anim in ea amet duis veniam sunt deserunt officia. Eiusmod sit cupidatat cupidatat fugiat mollit magna esse occaecat laboris velit. Elit magna tempor dolore irure occaecat dolor.
-
-Do ex esse ad excepteur. Sit ex non pariatur occaecat fugiat aliquip est aliquip laboris occaecat cupidatat exercitation eiusmod proident. Incididunt proident sint ad in sunt ea qui enim ad eu excepteur ea sunt. Consequat excepteur officia excepteur veniam. Mollit voluptate in nisi anim dolor ipsum nulla sit deserunt adipisicing nulla Lorem velit consequat.
+Although each tenant manages its own users and streams within a community, there are some administration tasks that can only be performed by the administrative tenant, which is the tenant that established the community. These community administrative tasks affect the entire tenant rather than a single tenant.
 
 ## Prerequisites
 
-Quis anim ut cupidatat mollit nisi Lorem dolore id deserunt anim consequat eu commodo qui. Proident commodo deserunt sunt consectetur occaecat officia quis sunt consequat excepteur irure. Duis nostrud quis aute velit dolore adipisicing duis labore. Cillum enim ea adipisicing ex aute nisi do.
+[!include[prereq-administrative-tenant](includes/prereq-administrative-tenant.md)]
 
 ## Community tenant administration tasks
 

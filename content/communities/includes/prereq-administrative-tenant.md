@@ -1,1 +1,1 @@
-You must be a community administrator from the administrative tenant.
+You must be a user assigned a community administrator role within the administrative tenant.

@@ -10,7 +10,7 @@ After a community is established, users assigned a community administrator role 
 
 [!include[prereq-community-admin](includes/prereq-community-admin.md)]
 
-## Community administration tasks
+## Community tenant administration tasks
 
 Users assigned a community administrator role can perform the following tasks:
 

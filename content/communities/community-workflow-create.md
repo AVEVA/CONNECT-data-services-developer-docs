@@ -20,7 +20,7 @@ To create a new community, you must:
 
 Complete the following procedures to start a new community and invite other tenants.
 
-- <xref:create-community>
+- <xref:community-create-community>
 
 	[!include[create-community-intro](includes/create-community-intro.md)]
 

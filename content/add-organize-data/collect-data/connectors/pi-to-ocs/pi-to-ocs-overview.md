@@ -24,6 +24,6 @@ The deployment of a PI to OCS Agent establishes a one-to-one connection from an 
 
 The following diagram shows a deployment of PI to OCS Agents that transfer data to OCS.
 
-![PI to OCS](../../images/ocs-diagram.png)
+![PI to OCS](../images/ocs-diagram.png) 
 
 If you are interested in participating in the PI to OCS Lighthouse program, send an email to lighthouse@osisoft.com.

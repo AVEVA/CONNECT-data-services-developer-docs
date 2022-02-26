@@ -20,11 +20,11 @@ Sharing data streams allows you and your partners to find value in each other's 
 
 ## Community data flow
 
-The following diagram shows an established community. 
+The following diagram shows data flow an established community. 
 
 ![Community diagram](images/community-diagram.svg)
 
-Within this diagram, a Tenant Administrator (callout **1**) from **Tenant A** has invited **Tenant B** to form a community.
+Within this diagram, an administrative user (callout **1**) from **Tenant A** has invited **Tenant B** to form a community.
 
 Both Tenant A and Tenant B have multiple streams stored in each of their tenants, as depicted by callout **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (callout **3**).
 
@@ -38,7 +38,7 @@ Communities allow you to easily and securely share operational data with trusted
 
 ### Connect with trusted business partners
 
-Establish a community by creating it and then inviting your trusted business partners to join from their tenant. Each invitation is a three-way handshake. The tenant that establishes the community, known as the Administrative Tenant, sends an email invitation to an administrator from business partner's tenant. The trusted business partner then accepts the invitation. The Administrative Tenant confirms the invitation, allowing the trusted partner to join the community. After confirmation, users from the business partner's tenant can view data from other community tenants or share data streams from their own tenant with the community.
+Establish a community by creating it and then inviting your trusted business partners to join from their tenant. Each invitation is a three-way handshake. The tenant that establishes the community, known as the Administrative Tenant, sends an email invitation to an administrator from business partner's tenant. The trusted business partner then accepts the invitation. The Administrative Tenant then confirms the invitation, allowing the trusted partner to join the community. After confirmation, users from the business partner's tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
 ### Scalable
 

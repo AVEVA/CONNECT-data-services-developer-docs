@@ -1,5 +1,7 @@
 - name: Introduction to the OCS portal
   topicHref: introduction-portal-interface.md
+- name: View and edit your user profile
+  topicHref: view-profile.md
 - name: Get started with namespaces
   topicHref: gs-namespaces.md
 - topicUid: gsCommunities
@@ -25,3 +27,5 @@
   topicHref: gs-metadata-rules.md
 - name: Get started with stream views
   topicHref: gs-stream-views.md
+- name: Get started with asset rules
+  topicHref: gs-asset-rules.md

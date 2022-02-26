@@ -1,5 +1,5 @@
 ---
-uid: community-community-administration
+uid: community-tenant-administration
 ---
 
 # Community tenant administration
@@ -55,5 +55,3 @@ Either a user assigned community administrator permissions or a Community Owner 
 - <xref:community-edit>
 
 	Edit the community description. 
-
-

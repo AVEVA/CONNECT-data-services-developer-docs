@@ -4,7 +4,7 @@ uid: community-community-administration
 
 # Community administration
 
-Although each tenant manages its own users and streams within a community, there are some administration tasks that can only be performed by community administrators on the administrative tenant, which is the tenant that established the community. These community administrative tasks affect the entire tenant rather than a single tenant.
+Although each tenant manages its own users and streams within a community, there are some administration tasks that can only be performed by community administrators on the administrative tenant, which is the tenant that established the community. These community administrative tasks affect the entire community rather than a single tenant.
 
 ## Prerequisites
 
@@ -27,6 +27,10 @@ The following tasks can only be performed by community administrators on the adm
 - <xref:community-remove-tenants>
 
 	Remove tenants from a community.
+
+- <xref:community-edit>
+
+	Edit the community description.
 
 - <xref:community-delete>
 

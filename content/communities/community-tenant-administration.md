@@ -46,6 +46,3 @@ Users assigned a community administrator role can perform the following tasks:
 
 	Configure the default system role set as the community administrator for a community.
 
-- <xref:community-edit>
-
-	Edit the community description. 

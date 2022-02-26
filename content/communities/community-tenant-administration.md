@@ -1,5 +1,5 @@
 ---
-uid: community-community-administration
+uid: community-tenant-administration
 ---
 
 # Community tenant administration

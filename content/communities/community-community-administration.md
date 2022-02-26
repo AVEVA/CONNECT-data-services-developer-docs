@@ -4,60 +4,24 @@ uid: community-community-administration
 
 # Community administration
 
-After a community is established, users assigned community administrator permissions from each tenant can manage their community. Each community administrator can only perform administrative actions within their own tenant. They cannot manage other tenants within the community.
+Tempor do deserunt aute nulla labore duis pariatur sunt culpa Lorem. Dolor eu aute culpa commodo ipsum. Exercitation anim in ea amet duis veniam sunt deserunt officia. Eiusmod sit cupidatat cupidatat fugiat mollit magna esse occaecat laboris velit. Elit magna tempor dolore irure occaecat dolor.
+
+Do ex esse ad excepteur. Sit ex non pariatur occaecat fugiat aliquip est aliquip laboris occaecat cupidatat exercitation eiusmod proident. Incididunt proident sint ad in sunt ea qui enim ad eu excepteur ea sunt. Consequat excepteur officia excepteur veniam. Mollit voluptate in nisi anim dolor ipsum nulla sit deserunt adipisicing nulla Lorem velit consequat.
 
 ## Prerequisites
 
-To perform most tasks related to community administration, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview) assigned to your user role or be a [Community Owner](xref:ccRoles#community-owner-preview). Some tasks require you to be a Community Owner, as denoted in [Community owner tasks](#community-owner-tasks).
+Quis anim ut cupidatat mollit nisi Lorem dolore id deserunt anim consequat eu commodo qui. Proident commodo deserunt sunt consectetur occaecat officia quis sunt consequat excepteur irure. Duis nostrud quis aute velit dolore adipisicing duis labore. Cillum enim ea adipisicing ex aute nisi do.
 
-## Community administration tasks
+## Community tenant administration tasks
 
-Either a user assigned community administrator permissions or a Community Owner can perform the following tasks:
+- [Invite a tenant to a community](xref:community-invite)
 
-- <xref:community-remove-your-tenant>
+	Invite other tenants to join the community.
 
-	Remove your own tenant from the community.  
+- <xref:community-remove-tenants>
 
-- <xref:community-resend-invitation>
+	Remove tenants from a community.
 
-	If you invite a tenant to the community but they do not receive an invitation email, you can resend it.
+- <xref:delete-community>
 
-- <xref:community-add-users>
-
-	Add users within your tenant as Community Members.
-
-- <xref:community-remove-users>
-
-	Remove users within your tenant as Community Members.
-
-- <xref:community-remove-yourself>
-
-	Remove yourself as a Community Member.
-
-	**Note:** Community Owners cannot remove themselves from a community.
-
-- <xref:community-add-clients>
-
-	Allow an application to programatically access shared community data and resources using REST API.
-
-- <xref:community-remove-clients>
-
-	Remove clients to remove access for an application.
-
-- <xref:community-add-administrators>
-
-	Add roles that have community administration permissions within your tenant.
-
-- <xref:community-remove-administrators>
-
-	Remove roles that have community administration permissions within your tenant.
-
-- <xref:communities-manage-default-admins>
-
-	Configure the default system role set as the community administrator for a community.
-
-- <xref:community-edit>
-
-	Edit the community description. 
-
-
+	Delete the community.

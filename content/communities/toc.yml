@@ -9,7 +9,7 @@
     items: 
     - topicUid: community-accept-invite
     - topicUid: community-manage-sds-permissions-join
-- topicUid: community-community-administration
+- topicUid: community-tenant-administration
   items:
   - topicUid: community-remove-your-tenant
   - topicUid: community-resend-invitation
@@ -22,7 +22,7 @@
   - topicUid: community-remove-administrators
   - topicUid: communities-manage-default-admins
   - topicUid: community-edit
-- topicUid: community-tenant-administration
+- topicUid: community-community-administration
   items:
   - topicUid: community-remove-tenants
   - topicUid: delete-community

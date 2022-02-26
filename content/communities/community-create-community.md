@@ -1,5 +1,5 @@
 ---
-uid: add-community
+uid: community-create-community
 ---
 
 # Part 1: Create a community

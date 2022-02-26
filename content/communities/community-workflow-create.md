@@ -20,9 +20,9 @@ To create a new community, you must:
 
 Complete the following procedures to start a new community and invite other tenants.
 
-- <xref:add-community>
+- <xref:create-community>
 
-	This procedure provides instruction on how to create a new community. During this process, name the community, choose which roles can administer it, and choose which users from your tenant become Community Members.
+	[!include[create-community-intro](includes/create-community-intro.md)]
 
 - <xref:community-invite>
 

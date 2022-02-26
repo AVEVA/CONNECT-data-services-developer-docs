@@ -2,7 +2,7 @@
   items:
   - topicUid: community-workflow-create
     items:
-    - topicUid: add-community
+    - topicUid: community-create-community
     - topicUid: community-invite
     - topicUid: community-manage-sds-permissions-create 
   - topicUid: community-workflow-join

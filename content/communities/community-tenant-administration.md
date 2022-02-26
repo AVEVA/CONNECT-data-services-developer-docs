@@ -8,7 +8,7 @@ After a community is established, users assigned community administrator permiss
 
 ## Prerequisites
 
-To perform most tasks related to community administration, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview) assigned to your user role or be a [Community Owner](xref:ccRoles#community-owner-preview). Some tasks require you to be a Community Owner, as denoted in [Community owner tasks](#community-owner-tasks).
+To perform most tasks related to community administration, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview) assigned to your user role or be a [Community Owner](xref:ccRoles#community-owner-preview).
 
 ## Community administration tasks
 

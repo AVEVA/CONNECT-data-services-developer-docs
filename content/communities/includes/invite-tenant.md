@@ -1,8 +1,8 @@
 ## Prerequisites
 
-- You must be a [Community Owner](xref:ccRoles#community-owner-preview) or have [community administrator permissions](xref:ccRoles#community-administrators-preview).
+- [!include[prereq-community-admin](prereq-community-admin.md)]
 
-- You must have the email address for the [Tenant Administrator](xref:ccRoles#tenant-roles) that you are inviting to the community.
+- You must have the email address for an administrative user (such as a [Tenant Administrator](xref:ccRoles#tenant-roles)) from the tenant that you are inviting to the community.
 
 ## Step 1: Invite a tenant to the community
 

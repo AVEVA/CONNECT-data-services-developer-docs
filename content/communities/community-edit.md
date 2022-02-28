@@ -8,7 +8,7 @@ After you create a community, you can edit its description at any time.
 
 ## Prerequisites
 
-To edit a community description, you must be the [Community Owner](xref:ccRoles#community-owner-preview).
+[!include[prereq-administrative-tenant](includes/prereq-administrative-tenant.md)]
 
 ## To edit a community
 

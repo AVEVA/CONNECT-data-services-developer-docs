@@ -4,11 +4,11 @@ uid: community-resend-invitation
 
 # Resend email invitation
 
-If you invite another tenant to the community but its Tenant Administrator does not receive the invitation email, you can resend it. 
+If you invite another tenant to the community but it does not receive the invitation email, you can resend it. 
 
 ## Prerequisites
 
-To resend a community invitation, you must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
+[!include[prereq-administrative-tenant](includes/prereq-administrative-tenant.md)]
 
 ## To resend an invitation
 

@@ -8,9 +8,7 @@ Use this procedure to remove your own tenant from a community. After removing yo
 
 ## Prerequisites
 
-To remove your own tenant from a community, you must have [community administrator permissions](xref:ccRoles#community-administrators-preview).
-
-**Note:** The tenant owner cannot remove itself from the community.
+[!include[prereq-community-admin](includes/prereq-community-admin.md)]
 
 ## To remove your own tenant from a community
 

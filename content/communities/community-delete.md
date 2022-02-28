@@ -8,7 +8,7 @@ Deleting a community removes all access to all data in the community from all te
 
 ## Prerequisites
 
-To delete a community, you must be the [Community Owner](xref:ccRoles#community-owner-preview).
+[!include[prereq-administrative-tenant](includes/prereq-administrative-tenant.md)]
 
 ## To delete a community
 

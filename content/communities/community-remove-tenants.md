@@ -8,7 +8,7 @@ Use this procedure to remove a tenant from a community. This action might be nec
 
 ## Prerequisites
 
-To remove another tenant from the community, you must be a [community owner](xref:ccRoles#community-owner-preview).
+[!include[prereq-administrative-tenant](includes/prereq-administrative-tenant.md)]
 
 ## To remove a tenant from a community
 

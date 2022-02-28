@@ -13,7 +13,6 @@
   items:
   - topicUid: community-remove-your-tenant
   - topicUid: community-manage-users
-  - topicUid: community-remove-users
   - topicUid: community-add-clients
   - topicUid: community-remove-clients
   - topicUid: community-add-administrators

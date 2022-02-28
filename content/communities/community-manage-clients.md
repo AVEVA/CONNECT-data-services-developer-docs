@@ -2,13 +2,13 @@
 uid: community-manage-clients
 ---
 
-# Manage clients for a community
+# Manage clients in a community
 
 Clients are applications that act on behalf of users and allow programmatic access from APIs to shared data and resources. The `Community Details` page lets you add existing clients to a community. You can only add [client-credentials clients](xref:ccClients) from your own tenant.
 
 ## Prerequisites
 
-To manage clients for a community:
+To manage clients in a community:
 
 - [!include[prereq-community-admin](includes/prereq-community-admin.md)]
 

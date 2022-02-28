@@ -18,9 +18,9 @@ Users assigned a community administrator role can perform the following tasks:
 
 	Remove your own tenant from the community.  
 
-- <xref:community-add-users>
+- <xref:community-manage-users>
 
-	Add users within your tenant as Community Members.
+	Add or remove users within your tenant as Community Members.
 
 - <xref:community-remove-users>
 

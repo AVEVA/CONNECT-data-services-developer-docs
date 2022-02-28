@@ -1,5 +1,5 @@
 ---
-uid: s
+uid: community-remove-yourself
 ---
 
 ## Remove yourself from a community

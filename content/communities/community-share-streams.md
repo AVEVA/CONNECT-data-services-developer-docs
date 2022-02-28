@@ -10,9 +10,7 @@ You can share data streams from your tenant within a community using the Sequent
 
 To share data streams with a community:
 
-- There must already be data streams created within your tenant. For instructions, see <xref:gpStreams>.
-
-- You must be a [Community Member](xref:ccRoles#community-member-role-preview). 
+- There must already be data streams created within your tenant. For instructions, see <xref:gpStreams>. 
 
 - Your user role must be assigned the **Share** permissions for data streams. If you do not have these permissions, request them from a [Tenant Administrator](xref:ccRoles#tenant-roles).
 

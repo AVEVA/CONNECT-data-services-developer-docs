@@ -11,7 +11,7 @@ To remove a role from community administration, your user account must be assign
 
 ## To remove community administrators
 
-To remove community administrator permissions from a user role, follow these steps:
+You can remove roles as that can administer the community at any time. To remove community administrator permissions from a user role, follow these steps:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

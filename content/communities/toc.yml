@@ -14,8 +14,7 @@
   - topicUid: community-remove-your-tenant
   - topicUid: community-manage-users
   - topicUid: community-manage-clients
-  - topicUid: community-add-administrators
-  - topicUid: community-remove-administrators
+  - topicUid: community-manage-administrators
   - topicUid: communities-manage-default-admins
 - topicUid: community-community-administration
   items:

@@ -30,7 +30,7 @@
   items:
   - topicUid: community-enable-stream-sharing-permissions
   - topicUid: community-share-streams
-  - topicUid: community-view-shared-streams
   - topicUid: community-unshare-streams
+  - topicUid: community-view-shared-streams
   - topicUid: community-view-shared-data
   - topicUid: community-remove-yourself

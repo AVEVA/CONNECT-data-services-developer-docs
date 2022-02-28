@@ -8,11 +8,7 @@ Use these procedures to stop sharing streams of data with a community.
 
 ## Prerequisites to share streams
 
-To unshare data streams with a community:
-
-- You must be a [Community Member](xref:ccRoles#community-member-role-preview). 
-
-- Your user role must be assigned the **Share** permissions for data streams. If you do not have these permissions, request them from a [Tenant Administrator](xref:ccRoles#tenant-roles).
+[!include[prereq-share-streams](includes/prereq-share-streams.md)]
 
 ## Unshare streams from Community Details
 

@@ -36,6 +36,8 @@ To confirm an invitation, follow these steps:
 
 1. Select an invitation with a status of **Invitation Accepted**.
 
-1. On the `Invitation Details` pane, select **Confirm Tenant**. When prompted for confirmation, review that the expected tenant is joining before you select **Confirm Tenant**.
+1. On the `Invitation Details` pane, select **Confirm Tenant**. 
 
-  The invitee's tenant is now part of the community.
+  **Important!** When prompted for confirmation, review that the expected tenant is joining before you select **Confirm Tenant**.
+
+The invitee's tenant is now part of the community.

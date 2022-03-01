@@ -10,12 +10,14 @@ To share data into a community and provide access to this data for external tena
 
 1. Select one or more streams that you want to allow sharing on.
 
-1. Select **More options** ![More options icon](../../_icons/dots-vertical.svg) > **Manage Permissions**.
+1. Select **Manage Permissions**.
 
-1. From **Select Role**, choose the role whose permissions you want to modify. Using the **Tenant Data Steward** role is recommended, but you can use any role.
+	**Note:** If you only have one stream selected, select **More options** ![More options icon](../../_icons/dots-vertical.svg) > **Manage Permissions** instead.
+
+1. From **Select Role**, choose a role that you want to modify permissions for. Using the **Tenant Data Steward** role is recommended, but you can use any role.
 
 1. Select the **Allow** checkbox for the **Share** access type.
 
 1. Select **Save**.
 
-If you want to configure different roles to allow different data stewards to share different sets of data, you can accomplish this by not using the default Tenant Data Steward role and instead create as many roles as you need to manage this within your organization. Then repeat the steps above to grant the share permission for those roles on the specific sets of streams/data that each role will manage. For instructions on how to allow stream sharing, see [Manage permissions](xref:manage-streams#manage-permissions).
+To configure different roles to allow different data stewards to share different sets of data, do not use the default Tenant Data Steward role and instead create the number of roles needed to manage this within your organization. Then repeat the steps above to grant the share permission for those roles on the specific sets of streams/data that each role will manage. For instructions on how to allow stream sharing, see [Manage permissions](xref:manage-streams#manage-permissions).

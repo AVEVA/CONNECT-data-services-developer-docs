@@ -10,6 +10,10 @@ After a community is established, Community Members can view data streams their 
 
 Community data sharing actions include:
 
+- <xref:community-enable-stream-sharing-permissions>
+
+	Edit permissions on data streams to allow sharing them with a community.
+
 - <xref:community-share-streams>
 
 	Share a data stream with the community.

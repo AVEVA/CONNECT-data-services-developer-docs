@@ -8,7 +8,7 @@ When another tenant invites you to a community, you receive an email invitation 
 
 **Note:** Invitations are valid for 14 days before they expire. If you do not accept the invitation within that time, or you do not receive an invitation email, you must request a new invitation from the owning tenant.
 
-To accept an invitation, follow these steps:d
+To accept an invitation, follow these steps:
 
 1. Open and review the email invitation from OSIsoft Cloud Services.
 

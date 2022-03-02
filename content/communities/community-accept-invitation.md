@@ -26,7 +26,7 @@ To accept an invitation, follow these steps:d
 
   Your tenant does not officially join the until the inviting tenant confirms the invitation.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:ccRoles#community-administrators-preview). Users assigned these roles can perform administration tasks for both their own tenant and the entire community. You can either accept the default roles or add new ones. 
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:ccRoles#community-administrators-preview). Users assigned these roles can perform administration tasks their own tenant. You can either accept the default roles or add new ones. 
    
   - To add new community administrator roles, select **Add Roles** and then select **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator.
     

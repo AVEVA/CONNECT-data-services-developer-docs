@@ -4,7 +4,9 @@ uid: regional-endpoints
 
 # Regional endpoints
 
-A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored. The table lists the current AVEVA Data Hub region labels and corresponding endpoints.
+A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored. 
+
+The table lists the current AVEVA Data Hub region labels and corresponding endpoints.
 
 | AVEVA Data Hub regional endpoints |  AVEVA Connect & AVEVA Data Hub region labels |
 | ------------- | ----------------- |
@@ -33,7 +35,7 @@ If an object's API route does not contain `/Namespaces`, follow these guidelines
 
 * Use the GET action for either region
 
-* Use PUT, POST, PATCH, and DELETE actions for the US-West region only.  See the table below for a full list of objects and actions you can use in the US-West region.
+* Use PUT, POST, PATCH, and DELETE actions for the US-West region only.  The table below provides a list of these objects and actions.
 
 ## List of objects and actions (US-West region only)
 
@@ -42,7 +44,7 @@ This table lists all the actions you can take on AVEVA Data Hub objects in the U
 | AVEVA Data Hub Object |	GET |	POST |	PUT | PATCH |	DELETE |
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | Automation Identities |	 | ✔ | ✔ |	✔ |	✔ |
-|Blogs|	✔|	✔|	✔|	✔|	✔|
+|Blogs|	✔|	**N/A**|	**N/A**|	**N/A**|	**N/A**|
 |Clients (all types)	|	|✔|	✔|	✔|	✔|
 |Entitlements |  | ✔ |	✔ |	✔ |	✔ |
 |Identity Providers |	|✔	|✔	|✔	|✔|

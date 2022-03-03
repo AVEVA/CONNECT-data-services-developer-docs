@@ -8,6 +8,7 @@ When it comes to collecting data programatically, developers have the option of 
 **OMF pros:**
 - [Future support](#future-support)
 - [Cross-platform](#cross-platform)
+- [Ease of use](#ease-of-use)
 
 **SDS data write pros:**
 - [Flexibility](#flexibility)
@@ -23,6 +24,11 @@ The APIs used in SDS could potentially be updated in the future, requiring upkee
 
 ## Cross-platform
 While SDS data writes can only be used for ADH and EDS, OMF can be also be used to write to a PI Core Server through the PI Web API. This makes OMF cross-platform, which is one of the main reasons that it is used in AVEVA’s Adapter technology. In addition, other platforms could potentially adopt the OMF standard to ingress data, widening the interoperability of your applications.  
+
+**Winner:** OMF
+
+## Ease of use
+One of the main pros of OMF is that it is significantly simpler, having only three types of messages: Type, Container, and Data messages. Additionally, each type has only three types of actions that can be specified: Create, Update, and Delete. This contrasts with SDS flexibility, which will be discussed in the next section, that comes at the cost of more complexity.  
 
 **Winner:** OMF
 

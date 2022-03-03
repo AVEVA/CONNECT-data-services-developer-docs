@@ -83,9 +83,9 @@ Refer to the following table for a list of Community Administrator permissions. 
 Permission | Description
 --|--
 Read | View community metadata and details.
-Write | Edit the community profile or description.<br/><br/>**Note:** This permission is only available for administrative tenants.
-Delete | Withdraw your tenant from the community.<br/><br/>**Additional administrative tenant permissions:**<br/><br/>Disolve the community. 
-Manage Permissions | Add or remove users, clients, and administrative roles.`<br/><br/>**Additional administrative tenant permissions:**<br/><br/>Add or remove tenants from the community.
+Write | Edit the community profile or description.<br/>**Note:** This permission is only available for administrative tenants.
+Delete | Withdraw your tenant from the community.<br/>**Additional administrative tenant permissions:** Disolve the community. 
+Manage Permissions | Add or remove users, clients, and administrative roles.<br/>**Additional administrative tenant permissions:** Add or remove tenants from the community.
 
 **Tip:** For a full list of tasks that Community Administrators can perform, see <xref:community-tenant-administration> and <xref:community-community-administration> (which lists tasks reserved for the administrative tenant).
 

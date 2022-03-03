@@ -50,7 +50,7 @@ Recommended use of these roles includes:
 
 - Tenant Viewer – Assign to system guests that should have limited access.
 
-- Community Administrator – Assign to community administrators, who moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
+- Tenant Community Administrator – Assign to community administrators, who moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
 
 Although using these roles as intended is recommended, you can customize these roles for any use you want. You must have the Tenant Administrator role to manage these roles.
 
@@ -70,33 +70,28 @@ This new role is also shared with other tenants that join the community. For exa
 
 Users assigned the Community Member role have read permissions within the community by default. However, to allow community members to share data streams within a community, you must assign the Share permission for streams to their assigned tenant roles.
 
-#### Community administrators (Preview)
+### Community Administrators (Preview)
 
-When a tenant creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community, including the following actions:
+When a tenant creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community.
 
-- Modify the community name and description.
+Community Administrator permissions are required to perform administrative actions for the community within the scope of the tenant, such as community membership management.
 
-- Add users and clients from your tenant to the community.
+However, users assigned a Community Administrator role on the [administrative tenant](#administrative-tenant-preview) have additional permissions for managing the community itself that affect all tenants in the community. For example, a user assigned a role with Community Administration permissions on the administrative tenant can perform actions like inviting new tenants to the community.
 
-- Remove users and clients from your tenant from the community.
+Refer to the following table for a list of Community Administrator permissions. This table also lists the additional privileges for Community Administrators on the administrative tenant.
 
-- Assign roles that can administer the community.
+Permission | Description
+--|--
+Read | View community metadata and details.
+Write | Edit the community profile or description.<br/><br/>**Note:** This permission is only available for administrative tenants.
+Delete | Withdraw your tenant from the community.<br/><br/>**Additional administrative tenant permissions:**<br/><br/>Disolve the community. 
+Manage Permissions | Add or remove users, clients, and administrative roles.`<br/><br/>**Additional administrative tenant permissions:**<br/><br/>Add or remove tenants from the community.
 
-- Pause the sharing of data from your tenant into the community.
+**Tip:** For a full list of tasks that Community Administrators can perform, see <xref:community-tenant-administration> and <xref:community-community-administration> (which lists tasks reserved for the administrative tenant).
 
-- Remove tenants from the community.
+#### Administrative Tenant (Preview)
 
-OCS includes a tenant role named Community Administrator that is assigned no permissions by default. Assigning community administrator permissions to this role is recommended.
-
-#### Community owner (Preview)
-
-The user that creates a community becomes its Community Owner. The Community Owner has full administrative access to the community and some additional permissions:
-
-- Remove other tenants from the community.
-
-- Edit the community description.
-
-- Delete the community.
+Each community has an administrative tenant, which is the tenant administrates the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Additionally, the user that created the community becomes the community owner, which is a user that has permissions to perform all tasks related to community administration. This user cannot be removed from the community.
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 

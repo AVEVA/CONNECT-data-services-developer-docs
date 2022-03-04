@@ -64,7 +64,8 @@ GET /api/v1/Tenants/{tenantId}/AuthorizationCodeClients
     ],
     "AllowedCorsOrigins": [
       "string"
-    ]
+    ],
+    "AllowOfflineAccess": true
   }
 ]
 ```
@@ -160,7 +161,8 @@ New AuthorizationCodeClient object<br/>
   ],
   "AllowedCorsOrigins": [
     "string"
-  ]
+  ],
+  "AllowOfflineAccess": true
 }
 ```
 
@@ -200,7 +202,8 @@ New AuthorizationCodeClient object<br/>
   ],
   "AllowedCorsOrigins": [
     "string"
-  ]
+  ],
+  "AllowOfflineAccess": true
 }
 ```
 
@@ -264,7 +267,8 @@ GET /api/v1/Tenants/{tenantId}/AuthorizationCodeClients/{clientId}
   ],
   "AllowedCorsOrigins": [
     "string"
-  ]
+  ],
+  "AllowOfflineAccess": true
 }
 ```
 
@@ -357,7 +361,8 @@ Updated authorization code client values. Properties that are not set or are nul
   ],
   "AllowedCorsOrigins": [
     "string"
-  ]
+  ],
+  "AllowOfflineAccess": true
 }
 ```
 
@@ -396,7 +401,8 @@ Updated authorization code client values. Properties that are not set or are nul
   ],
   "AllowedCorsOrigins": [
     "string"
-  ]
+  ],
+  "AllowOfflineAccess": true
 }
 ```
 
@@ -471,6 +477,7 @@ Object used during AuthorizationCodeClient creation
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
 |Tags|string[]|false|true|Tags for AVEVA internal use only|
 |AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients|
+|AllowOfflineAccess|boolean|false|true|Whether this client can request refresh tokens, by providing the *offline_access* scope.|
 
 ```json
 {
@@ -491,7 +498,8 @@ Object used during AuthorizationCodeClient creation
   ],
   "AllowedCorsOrigins": [
     "string"
-  ]
+  ],
+  "AllowOfflineAccess": true
 }
 
 ```

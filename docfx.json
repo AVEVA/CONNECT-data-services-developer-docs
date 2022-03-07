@@ -30,8 +30,6 @@
 				"exclude": [
 					"content/api-reference/identity/identity-implicit-clients.md",
 					"content/external-references/**.yaml",
-					"content/visualize-data/power-bi-connector.md",
-					"content/visualize-data/power-bi-connector/**.md"  
 				]
 			}
 		],

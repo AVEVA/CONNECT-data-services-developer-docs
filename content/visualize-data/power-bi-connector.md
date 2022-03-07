@@ -24,23 +24,27 @@ The following are required before you install and use AVEVA Data Hub Power BI Co
 
 To install the AVEVA Data Hub Power BI Connector, follow these steps:
 
-1. Download the `OCSPowerBIConnector.exe` file from the [OSIsoft Customer portal](https://customers.osisoft.com/s/products).
+1. In the left pane, select **Analytics** > **Data Views**.
 
-1. Install AVEVA Data Hub Power BI Connector by either the setup wizard or silent installation.
+1. Select **Download Power BI Connector**.
 
-    - Setup wizard
+1. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
 
-        - Double-click the `OCSPowerBIConnector.exe` file and select **Next**.
+1. Open the downloaded Power BI Connector installation file, then select **Yes** to confirm running the installation file.
 
-        - (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
+1. Accept or change the temporary setup extraction folder and select **OK**.
 
-    - Silent installation
+   The AVEVA Data Hub Power BI Connector Setup Wizard opens.
 
-        - Open a command prompt window and type following command:
+1. Select **Next**.
 
-        `.\OCSDataConnectorInstaller.exe -Y INSTALLDIR="<install path>" /quiet`
+1. (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
 
-             **Note:** AVEVA Data Hub Power BI Connector supports silent installation for on-premises data gateway installations.
+1. Select **Next**.
+
+1. Select **Install**.
+
+1. Select **Finish** to exit the Setup Wizard.
 
 ## Retrieve Data Views with Power BI Connector
 
@@ -48,21 +52,21 @@ Use AVEVA Data Hub Power BI Connector to retrieve AVEVA Data Hub data views for 
 
 To retrieve data views, follow these steps:
 
-1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The AVEVA Data Hub Data Views connector file displays in the `All` pane.
+1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `AVEVA`.<br>The AVEVA Data Hub Data Views connector file displays in the `All` pane.
 
    ![Get Data](./images/get-data.png)
 
-1. Select the `OSIsoft Cloud Services Data Views` connector file, and then select **Connect**.
+1. Select the `AVEVA Data Hub Data Views` connector file, and then select **Connect**.
 
 1. Select **Continue** in the `Connecting to a third-party service` warning.
 
-1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the data views you want to access, and then select **OK**.
+1. In the `AVEVA Data Hub Data Views` window, enter the namespace for the data views you want to access, and then select **OK**.
 
    The AVEVA Data Hub sign-in window displays if you have not already signed in.
 
-    - If you have not already signed in, select **Sign in as different user** and complete the user authentication process.
+   - Select **Sign in** and complete the user authentication process.
 
-1. In the `OSIsoft Cloud Services Data Views` sign-in window, select **Connect**.
+   - In the `AVEVA Data Hub Data Views` sign-in window, select **Connect**.
 
 1. In the `Navigator` pane, do one of the following: 
 
@@ -84,9 +88,9 @@ To retrieve data views, follow these steps:
 
 Use Microsoft Power BI to edit the query generated from the connector to modify the Start Index and End Index to fixed dates or relative dates, as well as edit the Interpolation Interval (if applicable). You can also use Microsoft Power BI to enable an incremental refresh of data.
 
-1. In Microsoft Power BI, select **Transform data** to view the query with Power Query Editor.
+1. In Microsoft Power BI, select **Transform Data** to view the query with Power Query Editor.
 
-1. Select **View**, and then select **Formula Bar** to view the query function from the connector.
+1. Select the **View** tab, and then select **Formula Bar** to view the query function from the connector.
 
     ![Transform data](./images/mspowerbi-function.png)
     
@@ -96,7 +100,7 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
 
     - Modify for fixed dates:
     
-       a. Navigate to `APPLIED STEPS` in the `Query Settings` pane, right-click on the parameter labeled, `Invoked Function <nameofdataview>`, and then select `Edit Settings` in the dropdown menu.
+       a. Navigate to `APPLIED STEPS` in the `Query Settings` pane, right-click on the parameter labeled, `Invoked Function <nameofdataview>`, and then select `Edit Settings` in the menu.
         
        b. Edit the parameter values for Start Index and End Index. If applicable, edit the Interpolation Interval.
         
@@ -104,7 +108,7 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
 
     - Modify for relative dates:
     
-       a. Edit the query function with Power Query M Formula Language code. For information about Power Query M Formula Language code, see the Microsoft [Power Query M formula language](https://docs.microsoft.com/en-us/powerquery-m/) and [Power Query M function reference](https://docs.microsoft.com/en-us/powerquery-m/power-query-m-function-reference) page on functions you can use in your query. Below are common relative time configurations you can use in your query function.
+       a. Edit the query function with Power Query M Formula Language code. For information about Power Query M Formula Language code, see the Microsoft [Power Query M formula language](https://docs.microsoft.com/en-us/powerquery-m/) and [Power Query M function reference](https://docs.microsoft.com/en-us/powerquery-m/power-query-m-function-reference) pages on functions you can use in your query. Below are common relative time configurations you can use in your query function.
 
        | Query function description                                                      | Code                          |
        |-------------------------------------------------------------------------------------------------|-------------------------------|
@@ -112,20 +116,20 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
        | Rolling 1 day period<br>Start Index: 1 day ago<br>End Index: Now | `Date.AddDays(DateTimeZone.LocalNow(), -1), DateTimeZone.LocalNow()` |
        | Start of last month through now<br>Start Index: First day of last month at midnight<br>End Index: Now | `Date.StartOfMonth(Date.AddMonths(DateTimeZone.LocalNow(), -1)), DateTimeZone.LocalNow()` |
 
-1. Select **Close & Apply**, and then select `Close & Apply` in Power Query Editor to save your query.
+1. Select **OK** and then select **Close & Apply** to save your query.
 
 1. (Optional) Use Microsoft Power BI Desktop to enable an incremental refresh of data.
 
      a. In Microsoft Power BI, select **Transform data** to open Power Query Editor.
      
-     b. Select **Manage Parameters**, and then select `Manage Parameters` in the menu.
+     b. Select **Manage Parameters**, and then select **Manage Parameters** in the menu.
      
      c. Add the following parameters in the `Manage Parameters` window, and then select **OK**.
      
       | Parameter              | Code                          |
-        |---------------------|-------------------------------|
-        | `RangeStart` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<Start date of the date range>` |
-        | `RangeEnd` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<End date of the date range>` |
+      |------------------------|-------------------------------|
+      | `RangeStart` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<Start date of the date range>` |
+      | `RangeEnd` | Description: `<optional>`<br> Required: `selected`<br> Type: `Date/Time`<br> Suggested Values: `<Any value>, <List of values>, <Query>`<br> Current Value: `<End date of the date range>` |
      
       **Note:** `RangeStart` and `RangeEnd` must be named and mixed-cased as is for incremental refresh to work. Type must always be `Date/Time`.
 
@@ -133,9 +137,9 @@ Use Microsoft Power BI to edit the query generated from the connector to modify 
      
      `DateTimeZone.From(RangeStart), DateTimeZone.From(RangeEnd), #duration(0, 1, 0, 0)`
      
-     e. Select **Close & Apply**, and then select `Close & Apply` in Power Query Editor.
+     e. Select **OK** and then select **Close & Apply** in Power Query Editor.
      
-     f. Select **Home**, and in the `Fields` pane, right-click the data view type, and then choose `Incremental Refresh` in the dropdown menu.
+     f. Select **Home**, and in the `Fields` pane, right-click the data view type, and then choose **Incremental Refresh** in the menu.
      
      g. Turn on `Incremental Refresh`, edit the values in the `Store rows in the last` fields, and select **Apply all** to save.
 

@@ -31,15 +31,9 @@ In general, most AVEVA Data Hub API routes allow these actions:
 
 * PUT
 
-If an object's API route does not contain `/Namespaces`, follow these guidelines:
-
-* Use the GET action for either region
-
-* Use PUT, POST, PATCH, and DELETE actions for the US-West region only.  The table below provides a list of these objects and actions.
-
 ## List of objects and actions (US-West region only)
 
-This table lists all the actions you can take on AVEVA Data Hub objects in the US-West region. The actions in the table are only allowed in the US-West (primary) region.
+This table lists all the actions you can take on AVEVA Data Hub objects in the US-West (primary) region. 
 
 | AVEVA Data Hub Object |	GET |	POST |	PUT | PATCH |	DELETE |
 | ------ | ------ | ------ | ------ | ------ | ------ |

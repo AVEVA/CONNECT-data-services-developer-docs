@@ -25,7 +25,7 @@ The following image and table provides descriptions of the fields in the utility
 | 11 | Type of AF mapping configured for the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
 | 12 | Amount of time before connection times out. Select the pencil icon to enter a new time in seconds. |
 
-   **Note:** After a PI Data Archive server is added, similar information in the table above is displayed in the utility.
+   **Note:** After a Data Archive server is added, similar information in the table above is displayed in the utility.
 
 ## Open the PI to OCS Agent Configuration Utility
 
@@ -59,7 +59,7 @@ To add an AF server, follow these steps:
 
    ![Agent status and state after refresh](../../images/af-details-refreshed.png)
 
-​   **Note:** Once an AF Server has been added, the utility searches for PI Data Archives that are referenced by the AF server. 
+​   **Note:** Once an AF Server has been added, the utility searches for Data Archives that are referenced by the AF server. 
 
 1. (Optional) Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
 
@@ -85,7 +85,7 @@ To add an AF server, follow these steps:
 
 ## Select the default Data Archive in PI System Explorer
 
-You need to specify the default Data Archive, also referred to as the default data server, for the PI system and PI AF database after setting an AF server. By default, PI AF databases inherit the PI AF Server's local default data server. See [Find the default PI Data Archive server](https://docs.osisoft.com/bundle/pi-server/page/find-the-default-pi-data-archive-server.html) for more information.
+You need to specify the default Data Archive, also referred to as the default data server, for the PI system and PI AF database after setting an AF server. By default, PI AF databases inherit the PI AF Server's local default data server. See [Find the default Data Archive server](https://docs.osisoft.com/bundle/pi-server/page/find-the-default-pi-data-archive-server.html) for more information.
 
 To select the default Data Archive, follow these steps:
 
@@ -119,15 +119,15 @@ To create an AF mapping, follow these steps:
   
 1. Select **Close** to return to the utility.
 
-## Add a PI Data Archive
+## Add a Data Archive
 
-After adding an AF server, select the source PI Data Archive that contains the PI points you want to transfer. 
+After adding an AF server, select the source Data Archive that contains the PI points you want to transfer. 
 
 **Note:** There is a one-to-one (1:1) Data Archive to PI to OCS Agent constraint for PI to OCS transfers. If your AF server references multiple Data Archives, only one Data Archive can be selected and configured for the transfer.  
 
-The list of available PI Data Archive servers is based on the servers referenced by AF elements on the AF server you selected. If you are upgrading an agent, the PI to OCS Agent Configuration Utility maintains the previously selected PI Data Archive configuration.  
+The list of available Data Archive servers is based on the servers referenced by AF elements on the AF server you selected. If you are upgrading an agent, the PI to OCS Agent Configuration Utility maintains the previously selected Data Archive configuration.  
 
-**Note:** If you are not adding an AF server, select the PI Data Archive icon on the first screen of the PI to OCS Agent Configuration Utility.
+**Note:** If you are not adding an AF server, select the Data Archive icon on the first screen of the PI to OCS Agent Configuration Utility.
 
 To add a Data Archive, follow these steps:
 
@@ -137,7 +137,7 @@ To add a Data Archive, follow these steps:
    
    The Data Archive connection is added and details about the newly added Data Archive are displayed.
 
-1. Review the following details for the PI Data Archive:
+1. Review the following details for the Data Archive:
  
    * Server name, version, and server ID
 
@@ -157,7 +157,7 @@ To add a Data Archive, follow these steps:
 
 ## Create a PI mapping 
 
-PI mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to OCS. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit mappings with the utility.
+PI mappings enable access to data stored on a Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to OCS. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit mappings with the utility.
 
 **Note:** The user account used to launch the utility must have permissions to create mappings.
 
@@ -165,7 +165,7 @@ To create a PI mapping, follow these steps:
 
 1. Open the PI to OCS Agent Configuration Utility.
 
-1. Navigate to the `PI Data Archive details` page.
+1. Navigate to the `Data Archive details` page.
 
 1. Select the pencil icon next to the **PI Mapping** field.
  
@@ -183,7 +183,7 @@ To create a PI mapping, follow these steps:
 
 ## Set data privacy and add an agent description
 
-Use the PI to OCS Agent Settings to add a descriptive name for the agent and to configure data privacy. This description appears where the agent is referenced and allows you to search by agent description. Data privacy settings control whether a host name of a PI Data Archive is published and displayed in OCS. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` window as shown below: 
+Use the PI to OCS Agent Settings to add a descriptive name for the agent and to configure data privacy. This description appears where the agent is referenced and allows you to search by agent description. Data privacy settings control whether a host name of a Data Archive is published and displayed in OCS. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` window as shown below: 
 
 ![Agent description and hostname displayed in PI to OCS Agents window](../../images/pi-to-ocs-agents-hostname.png)
 <!--AF 11/12/21 I would change the callouts in the image to be minimal, like "Agent description" and "host name". Then add any additional explanation here in text. It will be easier to read and easier to maintain. -->
@@ -206,9 +206,9 @@ It may take a few minutes for a PI System to register with OCS. The table below 
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |
-| Data Source Connection Issue | Indicates the PI To OCS Agent cannot connect to the PI Data Archive. Some reasons for this status include the PI Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
-| Data Source Security Issue   | Indicates the PI Data Archive connection is unsecured and security settings need to be addressed. |
-| Missing Configuration         | The PI Data Archive server has not been configured in the PI to OCS Agent. |
+| Data Source Connection Issue | Indicates the PI To OCS Agent cannot connect to the Data Archive. Some reasons for this status include the Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
+| Data Source Security Issue   | Indicates the Data Archive connection is unsecured and security settings need to be addressed. |
+| Missing Configuration         | The Data Archive server has not been configured in the PI to OCS Agent. |
 | Registration Failed           | Contact OSIsoft Customer support for assistance.             |
 | Registering                   | The PI to OCS Cloud portion is creating the necessary resources for the PI to OCS Agent. |
 | Shutdown                      | The last communication that the PI to OCS Cloud had with the agent was a shutdown message. |

@@ -9,6 +9,7 @@
     items: 
     - topicUid: community-accept-invite
     - topicUid: community-manage-sds-permissions-join
+- topicUid: community-roles
 - topicUid: community-tenant-administration
   items:
   - topicUid: community-remove-your-tenant

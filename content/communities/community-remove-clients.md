@@ -8,7 +8,7 @@ Remove a client from a community to remove an application's access to the REST A
 
 ## Prerequisites
 
-To remove clients from a community, your user account must be assigned [community administrator permissions](xref:ccRoles#community-administrators-preview).
+To remove clients from a community, your user account must be assigned [community administrator permissions](xref:community-community-roles#community-administrators).
 
 ## To remove clients from a community
 

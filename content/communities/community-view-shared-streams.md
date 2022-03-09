@@ -8,7 +8,7 @@ After a community has been established, any member within that community can vie
 
 ## Prerequisites to view shared streams
 
-You must have the [Community Member](xref:ccRoles#community-member-role-preview) role for the community that you want to view stream data.
+You must have the [Community Member](xref:community-community-roles#community-member) role for the community that you want to view stream data.
 
 ## To view shared streams from Community details
 

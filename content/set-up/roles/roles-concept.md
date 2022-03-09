@@ -93,10 +93,6 @@ Manage Permissions | Add or remove users, clients, and administrative roles.<br/
 
 Each community has an administrative tenant, which is the tenant administrates the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Additionally, the user that created the community becomes the community owner, which is a user that has permissions to perform all tasks related to community administration. This user cannot be removed from the community.
 
-## <a name="roles-pi-server"></a>PI Server counterpart
-
-Roles are comparable to PI identities in PI Data Archive or identities in PI AF server. An administrator grants permissions to roles instead of directly to individual users or clients. This is similar to how PI Server uses identities to assign permissions for a set of users or clients.
-
 ## <a name="roles-bp"></a>Roles best practices
 
 Consider the following best practices when you create and assign roles:

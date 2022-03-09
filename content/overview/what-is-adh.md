@@ -54,12 +54,10 @@ Developer-friendly REST APIs provide programmatic access to read and write seque
 
 AVEVA Data Hub allows you to integrate data with many different partner applications, data pipelines and workflows, collaboration tools, and business intelligence (BI), data analytics, visualization, and custom software/applications. 
 
-<!--Jason Ames 12/6/21 Commenting out this content until the Power BI connector is added to ADH.
-
 A few examples include these tools: 
 
 - Power BI 
-- Grafana -->
+- Grafana
 
 You can integrate and view AVEVA Data Hub data in the following ways: 
 

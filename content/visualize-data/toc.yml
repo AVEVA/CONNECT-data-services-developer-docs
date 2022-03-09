@@ -5,6 +5,7 @@
     - topicUid: LegendTableReference
     - topicUid: URLparameters
     - topicUid: ContextSwitch
-#- topicUid: PowerBI
-#  items:
-#  - topicUid: PowerBIReleaseNotes
+- topicUid: PowerBI
+  topicHref: power-bi-connector.md
+  items:
+  - topicUid: PowerBIReleaseNotes

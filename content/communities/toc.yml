@@ -10,10 +10,9 @@
     - topicUid: community-accept-invite
     - topicUid: community-manage-sds-permissions-join
 - topicUid: community-community-roles
-  items:
-  - topicUid: community-enable-stream-sharing-permissions
 - topicUid: community-tenant-administration
   items:
+  - topicUid: community-enable-stream-sharing-permissions
   - topicUid: community-remove-your-tenant
   - topicUid: community-manage-users
   - topicUid: community-manage-clients

@@ -37,12 +37,13 @@ Manage Permissions | Add or remove users, clients, and administrative roles.<br/
 
 **Tip:** For a full list of tasks that Community Administrators can perform, see <xref:community-tenant-administration> and <xref:community-community-administration> (which lists tasks reserved for the administrative tenant).
 
-#### Administrative Tenant
-
-Each community has an administrative tenant, which is the tenant administrates the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Additionally, the user that created the community becomes the community owner, which is a user that has permissions to perform all tasks related to community administration. This user cannot be removed from the community.
 ## Related roles and identities
 
 In addition to the roles you can assign in Communities, be aware of the following related roles and identities.
+
+### Administrative Tenant
+
+Each community has an administrative tenant, which is the tenant administrates the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Additionally, the user that created the community becomes the community owner, which is a user that has permissions to perform all tasks related to community administration. This user cannot be removed from the community.
 
 ### Tenant Administrator
 

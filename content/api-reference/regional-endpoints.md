@@ -23,13 +23,13 @@ In general, most AVEVA Data Hub API routes allow these actions:
  
 * GET
 
-* DELETE
-
 * PATCH
 
 * POST
 
 * PUT
+
+* DELETE
 
 ## List of objects and actions (US-West region only)
 

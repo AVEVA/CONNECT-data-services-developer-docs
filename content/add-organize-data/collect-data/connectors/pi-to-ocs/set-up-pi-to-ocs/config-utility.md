@@ -6,7 +6,7 @@ uid: pi-to-ocs-utility
 
 Use the PI to OCS Agent Configuration Utility to set up and configure AF server and Data Archive data sources before creating a data transfer. After installing or upgrading a PI to OCS Agent, use the utility to select a source AF server or Data Archive, view connection details, create AF and PI mappings, set data privacy settings, and register the agent. 
 
-The following image shows the important elements of the utility and table below provides descriptions of the elements.<!--AF 11/12/21 why are there two comments on the image in addition to the numbered callouts? shouldn't they all be numbered callouts?-->  
+The following image and table provides descriptions of the fields in the utility.<!--AF 11/12/21 why are there two comments on the image in addition to the numbered callouts? shouldn't they all be numbered callouts?-->  
 
    ![AF server details](../../images/utility-callouts.png)
 
@@ -15,13 +15,15 @@ The following image shows the important elements of the utility and table below 
 | 1  | Name of the host computer where the agent is installed.       |
 | 2  | An optional name for an agent.                                |
 | 3  | Displays the PI to OCS Agent's status.                        |
-| 4  | Provides details about the agent's registration state.        |
-| 5  | Currently running PI to OCS Agent version.                    |
+| 4  | Displays the agent's registration state.        |
+| 5  | The installed PI to OCS Agent version.                    |
 | 6  | Type of agent service account.                               |
 | 7  | Set data privacy options and assign an agent description.    |
 | 8  | View information about the server connection and its configuration. |
 | 9  | Source AF server name.                                        |
-| 10 | Type of AF mapping configured for the service account. Select the pencil icon next to this field to assign an AF mapping to an AF identity. |
+| 10 | Optional, alternate name of AF server. Select the pencil icon to the right of this field to assign an alternate name for data privacy purposes. | 
+| 11 | Type of AF mapping configured for the service account. Select the pencil icon next to this field to assign an AF mapping to an AF identity. |
+| 12 | Amount of time before connection times out. Select the pencil icon next to enter a new time in seconds. |
 
    **Note:** After a PI Data Archive server is added, similar information in the table above is displayed in the utility.
 

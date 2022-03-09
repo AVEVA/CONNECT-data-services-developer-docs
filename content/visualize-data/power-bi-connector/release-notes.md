@@ -60,7 +60,7 @@ The installer is released as a self-extracting executable file that contains:
 
 The AVEVA Data Hub Power BI Connector installer will extract and install the connector for Power BI.
 
-Please see the accompanying [AVEVA Data Hub Power BI Connector User Guide](xref:PowerBI) for detailed Desktop installation instructions.
+See the accompanying [AVEVA Data Hub Power BI Connector User Guide](xref:PowerBI) for detailed Desktop installation instructions.
 
 #### On-premises Data Gateway installation
 

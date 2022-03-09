@@ -1,5 +1,5 @@
 ---
-uid: community-roles
+uid: community-community-roles
 ---
 
 # Community roles

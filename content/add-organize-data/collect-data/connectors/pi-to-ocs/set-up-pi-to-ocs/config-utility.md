@@ -21,9 +21,9 @@ The following image and table provides descriptions of the fields in the utility
 | 7  | Set data privacy options and assign an agent description.    |
 | 8  | View information about the server connection and its configuration. |
 | 9  | Source AF server name.                                        |
-| 10 | Optional, alternate name of AF server. Select the pencil icon to the right of this field to assign an alternate name for data privacy purposes. | 
-| 11 | Type of AF mapping configured for the service account. Select the pencil icon next to this field to assign an AF mapping to an AF identity. |
-| 12 | Amount of time before connection times out. Select the pencil icon next to enter a new time in seconds. |
+| 10 | Optional, alternate name for your AF server. Select the pencil icon to the right to assign an alternate name for data privacy purposes. | 
+| 11 | Type of AF mapping configured for the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
+| 12 | Amount of time before connection times out. Select the pencil icon to enter a new time in seconds. |
 
    **Note:** After a PI Data Archive server is added, similar information in the table above is displayed in the utility.
 
@@ -31,7 +31,7 @@ The following image and table provides descriptions of the fields in the utility
 
 The PI to OCS Agent Configuration Utility opens after you install or upgrade a PI to OCS Agent. You can open the PI to OCS Agent Configuration Utility at any time to change server connections and other settings after initial setup. 
 
-**Note:** If you are not the user who installed the agent, authentication with your user account is required before access is granted to the utility. 
+**Note:** If you use a different user account than the one that was used originally to install the agent, authentication is required before you can access the utility. 
 
 To open the PI to OCS Agent Configuration Utility, follow these steps:
 
@@ -70,6 +70,8 @@ To add an AF server, follow these steps:
    * IP address
 
    * Connection status and timeout
+
+1. (Optional) To add an alternate name that will be shown in the portal in place of the actual AF server name, select the pencil icon, then type a new name. 
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout** field.
 
@@ -127,13 +129,13 @@ The list of available PI Data Archive servers is based on the servers referenced
 
 **Note:** If you are not adding an AF server, select the PI Data Archive icon on the first screen of the PI to OCS Agent Configuration Utility.
 
-To add a PI Data Archive, follow these steps:
+To add a Data Archive, follow these steps:
 
 1. Open the PI to OCS Agent Configuration Utility.
    
 1. Select **Data Archive Server**, then enter the name of the Data Archive server, and then select **Add Server**.
    
-   The PI Data Archive connection is added and details about the newly added PI Data Archive are displayed.
+   The Data Archive connection is added and details about the newly added Data Archive are displayed.
 
 1. Review the following details for the PI Data Archive:
  
@@ -143,13 +145,15 @@ To add a PI Data Archive, follow these steps:
 
    * Connection status and timeout
    
+1. (Optional) To add an alternate name that will be shown in the portal in place of the actual Data Archive name, select the pencil icon, then type a new name. 
+
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout (sec)** field.
 
 1. (Optional) To confirm that the connection to the Data Archive is working, select **Test Connection**.
 
-1. (Optional) To remove the configured PI Data Archive, select **Remove Server**.
+1. (Optional) To remove the configured Data Archive, select **Remove Server**.
 
-1. To retain the current PI Data Archive configuration, select **Save**.
+1. To retain the current Data Archive configuration, select **Save**.
 
 ## Create a PI mapping 
 

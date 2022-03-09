@@ -6,92 +6,27 @@ uid: ccRoles
 
 Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, OSIsoft Cloud Services (OCS) checks the assigned roles against the permissions on the resource to determine their access level.
 
-## Role types
+There are five built-in roles which cannot be removed from a tenant:
 
-OCS includes three types of roles:
-
-- [Tenant roles](#tenant-roles)
-
-- [Tenant custom roles](#tenant-custom-roles)
-
-- [Community Member role](#community-member-role-preview)
-
-### Tenant roles
-
-Tenant roles are the default permission sets that control access to each asset, resource, and service within OCS. These default roles cannot be removed from the tenant. 
-
-The default tenant roles are:
-
-- Tenant Administrator – Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, groups, clients, and secrets.
+- Tenant Administrator – Administrator with full permissions by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets.
 
   **Note:** Do not assign the Tenant Administrator role to clients.
 
 - Tenant Contributor – This role has read and write permissions by default.
 
-- Tenant Data Steward – Role intended for sharing data streams within a community.*
+- Tenant Data Steward – This role has no specific permissions by default.
 
-- Tenant Viewer – Role intended for tenant guests.*
+- Tenant Viewer – This role has no specific permissions by default.
 
 - Tenant Member – This role, which OCS assigns to all users or clients, has read access by default.
 
-- Community Administrator – Role intended for community administration.*
+You can add roles to further control access. By default, added roles do not have any specific permissions. You must have the Tenant Administrator role to add and manage roles in a tenant. 
 
-__*:__ These roles are assigned no user permissions by default. They are intended to be customized for specialized user profiles within your organization. For more information, see [Tenant role profiles](#tenant-role-profiles).
+Assigning a role to a user or client does not determine access. For any resource, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
 
-For any resource, you can set access to it for specific roles rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions. When managing permissions for the Sequential Data Store, an additional access type is available: Share. This permission allows users to share data streams from their tenant with a [community](xref:communities).
+## <a name="roles-pi-server"></a>PI Server counterpart
 
-#### Tenant role profiles
-
-Some default tenant roles—Tenant Data Steward, Tenant Viewer, and Community Administrator—are assigned no permissions by default. Instead, these roles are intended to be customized for specialized user roles in within OCS; you must assign these roles permissions for individual system resources to best suit your organization. 
-
-Recommended use of these roles includes:
-
-- Tenant Data Steward – Assign to data stewards, who share data streams from the tenant's Sequential Data Store within a community.
-
-- Tenant Viewer – Assign to system guests that should have limited access.
-
-- Tenant Community Administrator – Assign to community administrators, who moderate a community within the tenant. For more information, see [Community administrators](#community-administrators-preview).
-
-Although using these roles as intended is recommended, you can customize these roles for any use you want. You must have the Tenant Administrator role to manage these roles.
-
-### Tenant custom roles 
-
-In addition to the default tenant roles, you can create tenant custom roles for further access control. By default, tenant custom roles do not have any specific permissions assigned following their creation. You must add or remove permissions for each resource.
-
-You must have the Tenant Administrator role to add and manage tenant custom roles.
-
-### Community Member role (Preview)
-
-The Community Member role is a role that can be shared among multiple tenants. It allows users from different tenants to access a [community](xref:communities).
-
-When a new community is created, the founding tenant automatically adds a new Community Member role to the system, which is named using the following convention: **_\<Community Name\>_ Community Member**. For example, if you create a new community named **TEST COMMUNITY**, a new community role is added to the tenant named **TEST COMMUNITY Community Member**.
-
-This new role is also shared with other tenants that join the community. For example, a tenant that joins **TEST COMMUNITY** will have the **TEST COMMUNITY Community Member** role added to their tenant as well. 
-
-Users assigned the Community Member role have read permissions within the community by default. However, to allow community members to share data streams within a community, you must assign the Share permission for streams to their assigned tenant roles.
-
-### Community Administrators (Preview)
-
-When a tenant creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community.
-
-Community Administrator permissions are required to perform administrative actions for the community within the scope of the tenant, such as community membership management.
-
-However, users assigned a Community Administrator role on the [administrative tenant](#administrative-tenant-preview) have additional permissions for managing the community itself that affect all tenants in the community. For example, a user assigned a role with Community Administration permissions on the administrative tenant can perform actions like inviting new tenants to the community.
-
-Refer to the following table for a list of Community Administrator permissions. This table also lists the additional privileges for Community Administrators on the administrative tenant.
-
-Permission | Description
---|--
-Read | View community metadata and details.
-Write | Edit the community profile or description.<br/>**Note:** This permission is only available for administrative tenants.
-Delete | Withdraw your tenant from the community.<br/>**Additional administrative tenant permissions:** Disolve the community. 
-Manage Permissions | Add or remove users, clients, and administrative roles.<br/>**Additional administrative tenant permissions:** Add or remove tenants from the community.
-
-**Tip:** For a full list of tasks that Community Administrators can perform, see <xref:community-tenant-administration> and <xref:community-community-administration> (which lists tasks reserved for the administrative tenant).
-
-#### Administrative Tenant (Preview)
-
-Each community has an administrative tenant, which is the tenant administrates the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Additionally, the user that created the community becomes the community owner, which is a user that has permissions to perform all tasks related to community administration. This user cannot be removed from the community.
+Roles are comparable to PI identities in PI Data Archive or identities in PI AF server. An administrator grants permissions to roles instead of directly to individual users or clients. This is similar to how PI Server uses identities to assign permissions for a set of users or clients.
 
 ## <a name="roles-bp"></a>Roles best practices
 

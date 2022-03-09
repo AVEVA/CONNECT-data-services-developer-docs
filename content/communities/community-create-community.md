@@ -32,7 +32,7 @@ To create a community, follow these steps:
 
 1. After you finish, select **Next**.
 
-1. On the `Community Members` page, add [Community Members](xrefcommunity-community-roles#community-member), which are users within your tenant that have read access to the community and its data.
+1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are users within your tenant that have read access to the community and its data.
     
     To add new Community Members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 

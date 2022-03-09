@@ -34,7 +34,7 @@ AVEVA Data Hub provides data residency via namespaces in the following regions:
 | Supported Regions | Geographic Area | Location |
 | --- | --- | ---  |
 | WestUS | Americas | California |
-| WestEurope | Europe | Netherlands |
+| NorthEurope | Europe | Netherlands |
 
 Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See the [Tenant](xref:tenant-tenants) documentation for information on how to access this data.
 

@@ -17,7 +17,7 @@ The table lists the current AVEVA Data Hub region labels and corresponding endpo
 
 ## Endpoint usage guidelines
 
-Reference the regional endpoint in READ, WRITE and DELETE requests. To retrieve a region's host URL for an object that belongs to a namespace, such as a stream, use the `Self` property within the context of the namespace.
+Reference the regional endpoint in GET,  POST,  PUT, PATCH, and DELETE requests. To retrieve a region's host URL for an object that belongs to a namespace, such as a stream, use the `Self` property within the context of the namespace.
 
 In general, most AVEVA Data Hub API routes allow these actions:
  

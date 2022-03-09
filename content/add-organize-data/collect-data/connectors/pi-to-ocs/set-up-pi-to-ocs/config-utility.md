@@ -57,9 +57,7 @@ To add an AF server, follow these steps:
  
    The utility displays the server details.
 
-   ![Agent status and state after refresh](../../images/af-details-refreshed.png)
-
-​   **Note:** Once an AF Server has been added, the utility searches for Data Archives that are referenced by the AF server. 
+   **Note:** Once an AF Server has been added, the utility searches for Data Archives that are referenced by the AF server. 
 
 1. (Optional) Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
 

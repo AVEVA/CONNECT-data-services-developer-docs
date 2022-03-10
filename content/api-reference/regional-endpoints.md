@@ -43,7 +43,6 @@ This table lists all the actions you can take on AVEVA Data Hub objects in the U
 |Invitations | | ✔ | ✔ | ✔ | ✔ |
 |Namespace ACL	|	|✔	|✔|	✔|	✔|
 |Namespace Owner |  | ✔ | ✔ | ✔ | ✔ |
-|Namespaces	| | ✔ |	✔|	✔|	✔|
 |Persisted Grants| | **N/A** | **N/A** | **N/A** | ✔ |
 |Roles	| | ✔ | ✔ | ✔ | ✔ |
 |Root Access Control |	| **N/A** |	✔ |	✔ |	**N/A** |

@@ -34,7 +34,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 To edit an edge system configuration and export it for use, follow these steps:
 
-1. In the left pane, select **Data Management** > **Edge Systems**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 

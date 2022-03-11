@@ -2,7 +2,7 @@
 uid: download-tenant-log
 ---
 
-# Tenant and namespace log messages
+# Tenant and namespace logs
 
 The OCS logs contain troubleshooting information, including messages about tenant-related activity, errors, and system messages. By default, logs report on activities that occurred within the past month. 
 

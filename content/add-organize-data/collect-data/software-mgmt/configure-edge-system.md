@@ -24,7 +24,7 @@ Configuration is available for the following edge system types:
 
 To import an edge system configuration from the field to the corresponding edge system digital twin, follow these steps:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 

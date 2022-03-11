@@ -49,7 +49,7 @@
         - topicUid: gpTypes
       - topicUid: ccStreamviews
     - topicUid: communities
-      -items:
+      items:
       - topicUid: gsCommunities
       - topicUid: communityroles
       - topicUid: add-community

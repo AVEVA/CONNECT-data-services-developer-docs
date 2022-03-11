@@ -4,7 +4,7 @@ uid: PowerBIReleaseNotes
 
 # Release notes
 
-AVEVA Data Hub Power BI Connector 2.0.0.45
+AVEVA Data Hub Power BI Connector 2.0.0.54
 
 ## Overview
 

@@ -2,7 +2,7 @@
 uid: lpdatacollection
 ---
 
-# Collect data
+# Data collection
 
 Collect data from external sources and send it directly to OCS using the following methods:
 

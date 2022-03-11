@@ -2,7 +2,7 @@
 uid: lpvisualizedata
 ---
 
-# Visualize data
+# Visualization
 
 Use the `Trend` page to monitor assets, anticipate problems, and proactively perform preventative maintenance.
 

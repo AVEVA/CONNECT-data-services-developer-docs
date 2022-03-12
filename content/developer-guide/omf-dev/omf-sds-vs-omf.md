@@ -25,7 +25,7 @@ Use OMF when the following factors are important to your use case.
 
 ### Future support
 
-The APIs used in SDS are continually updated, requiring future upkeep of your applications. OMF on the other hand, does not require this upkeep, as it is up to the platform to interpret the messages and store the contained data appropriately.  
+The APIs used in SDS are continually updated, requiring future upkeep of your applications. OMF does not require this upkeep, as it is up to the platform to interpret the messages and store the contained data appropriately.  
 
 ### Cross-platform
 

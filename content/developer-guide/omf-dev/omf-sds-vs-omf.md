@@ -6,11 +6,11 @@ uid: omfVsSds
 
 When collecting data programatically, you have the option of using either the Open Message Format ([OMF](https://docs.osisoft.com/bundle/omf/page/index.html)) or Sequential Data Store ([SDS](xref:sdsWritingData)) data writes. Each option has its pros and cons, and the purpose of this document is to highlight the key differences. Which option you should choose is situation dependent, but OMF is typically the best option for simple and efficient data collection.
 
-## Comparison chart
+## Data collection option comparison
 
-The following table lists the factors you should consider when choosing between OMF and SDS. It also lists which option is the better for factors important to your use case. Some factors (Security and Performance) require more consideration. For more information on these factors, see [Situation dependent factors](#situation-dependent-factors).
+The following table lists the factors that you should consider when choosing between OMF and SDS, as well as which option is the better for each factor. Some factors (Security and Performance) have no inherently superior option and require additional consideration. For more information on these factors, see [Situation dependent factors](#situation-dependent-factors).
 
-| Pro | OMF | SDS |
+| Factor | OMF | SDS |
 |--|--|--|
 | Future support | ✔ |  |
 | Cross-platform | ✔ |
@@ -29,7 +29,7 @@ The APIs used in SDS are continually updated, requiring future upkeep of your ap
 
 ### Cross-platform
 
-While SDS data writes can only be used for OSIsoft Cloud Services (OCS) and Edge Data Store (EDS), OMF can be also be used to write to a PI Core Server through the PI Web API. This makes OMF cross-platform, which is one of the main reasons that it is used in OSIsoft adapter technology. In addition, other platforms could potentially adopt the OMF standard to ingress data, widening the interoperability of your applications.  
+While SDS data writes can only be used for OSIsoft Cloud Services (OCS) and Edge Data Store (EDS), OMF can also write to a PI Core Server through the PI Web API. This additional capability makes OMF cross-platform, which is one of the main reasons that it is used in OSIsoft adapter technology. In addition, other platforms may adopt the OMF standard to ingress data, widening the interoperability of your applications.  
 
 ### Ease of use
 

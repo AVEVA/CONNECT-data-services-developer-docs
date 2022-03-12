@@ -4,7 +4,7 @@ uid: omfVsSds
 
 # Data collection: OMF vs. SDS data writes
 
-When collecting data programatically, you have the option of using either the Open Message Format ([OMF](https://docs.osisoft.com/bundle/omf/page/index.html)) or Sequential Data Store ([SDS](xref:sdsWritingData)) data writes. Each option has its pros and cons, and the purpose of this document is to highlight the key differences. Which option you should choose is situation dependent, but OMF is typically the best option for simple and efficient data collection.
+When collecting data programatically, you have the option of using either the Open Message Format ([OMF](https://docs.osisoft.com/bundle/omf/page/index.html)) or Sequential Data Store ([SDS](xref:sdsWritingData)) data writes. OMF is typically the best option for simple and efficient data collection. However, each option has its pros and cons, and this document highlights the key differences. 
 
 ## Data collection option comparison
 

@@ -55,7 +55,7 @@ For some factors, neither SDS nor OMF are inherently superior.
 
 Both SDS and OMF use the same authentication mechanism when connecting to OCS, so neither is inherently more secure. Always follow best practices for security as outlined in the [Identity and access management](xref:id-access-mgmt).  
 
-When connecting the PI Web API, OMF connections can only use basic authentication, while other options such as Kerberos are available for all other parts of the PI Web API.S
+When connecting the PI Web API, OMF connections can only use basic authentication, while other options such as Kerberos are available for all other parts of the PI Web API.
 
 ### Performance
 

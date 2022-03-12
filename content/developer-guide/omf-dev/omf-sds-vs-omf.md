@@ -12,12 +12,12 @@ The following table lists the factors that you should consider when choosing bet
 
 | Factor | OMF | SDS |
 |--|--|--|
-| Future support | ✔ |  |
-| Cross-platform | ✔ |
-| Ease-of-use | ✔ |
-| Flexibility |  | ✔ |
-| Security | - | - |
-| Performance | - | - |
+| [Future support](#future-support) | ✔ |  |
+| [Cross-platform](#cross-platform) | ✔ |  |
+| [Ease-of-use](#ease-of-use) | ✔ |  |
+| [Flexibility](#flexibility) |  | ✔ |
+| [Security](#security) | - | - |
+| [Performance](#performance) | - | - |
 
 ## OMF pros
 

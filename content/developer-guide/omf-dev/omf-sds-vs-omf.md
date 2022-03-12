@@ -13,8 +13,13 @@ The following table lists the factors that you should consider when choosing bet
 | Factor | OMF | SDS |
 |--|--|--|
 | [Future support](#future-support) | ✔ |  |
+<<<<<<< HEAD
 | [Cross-platform](#cross-platform) | ✔ |  |
 | [Ease-of-use](#ease-of-use) | ✔ |  |
+=======
+| [Cross-platform](#cross-platform) | ✔ |
+| [Ease-of-use](#ease-of-use) | ✔ |
+>>>>>>> 4558181fcafd306c0b3a9c5a99353e7d814ca031
 | [Flexibility](#flexibility) |  | ✔ |
 | [Security](#security) | - | - |
 | [Performance](#performance) | - | - |

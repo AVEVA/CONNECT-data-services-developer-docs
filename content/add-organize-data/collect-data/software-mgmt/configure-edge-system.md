@@ -18,7 +18,7 @@ Configuration is available for the following edge system types:
  
  - PI Adapter for OPC UA
 
-The data and health endpoint URLs in the configuration default to the URL of the namespace where the edge system configuration is located.  
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`. <!--AFlores 3-14-22 How is this affected by the use of folders in DataHub? Do the URLs still use the "namespace". -->
 
 An edge system appears on the `Software Management Edge Systems` page once it is writing health data to AVEVA Data Hub. For information on configuring health endpoints, see the specific edge system product documentation.
 

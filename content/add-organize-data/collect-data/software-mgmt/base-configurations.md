@@ -18,7 +18,7 @@ You can create configuration templates for the following edge system types:
  
  - PI Adapter for OPC UA
 
-The data and health endpoint URLs used in the configuration default to the URL of the namespace where the base configuration is created.  
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`. <!--AFlores 3-14-22 How is this affected by the use of folders in DataHub? Do the URLs still use the "namespace". -->
 
 ## Add a new base configuration
 

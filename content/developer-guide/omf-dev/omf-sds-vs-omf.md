@@ -29,7 +29,7 @@ The APIs used in SDS are continually updated, requiring future upkeep of your ap
 
 ### Cross-platform
 
-While SDS data writes can only be used for OSIsoft Cloud Services (OCS) and Edge Data Store (EDS), OMF can also write to a PI Core Server through the PI Web API. This additional capability makes OMF cross-platform, which is one of the main reasons that it is used in OSIsoft adapter technology. In addition, other platforms may adopt the OMF standard to ingress data, widening the interoperability of your applications.  
+While SDS data writes can only be used for OSIsoft Cloud Services (OCS) and Edge Data Store (EDS), OMF can also write to a PI Core Server through the PI Web API. This additional capability makes OMF cross-platform, which is one of the main reasons that it is used in PI Adapters. In addition, other platforms may adopt the OMF standard to ingress data, widening the interoperability of your applications.  
 
 ### Ease of use
 

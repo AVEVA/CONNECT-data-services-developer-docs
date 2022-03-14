@@ -2,56 +2,63 @@
 uid: omfVsSds
 ---
 
-# Data collection - OMF vs. SDS data writes
-When it comes to collecting data programatically, developers have the option of using either the Open Message Format ([OMF](https://docs.osisoft.com/bundle/omf/page/index.html)) or Sequential Data Store ([SDS](https://osisoft-prod.zoominsoftware.io/bundle/ocs/page/developer-guide/sequential-data-store-dev/sds-write-data.html)) data writes. Each option has its pros and cons, and the purpose of this guide is to highlight the key differences. Which option you should choose is situation dependent, but omf is typically the best option for simple and efficient data collection.    
+# Data collection: OMF vs. SDS data writes
 
-**OMF pros:**
-- [Future support](#future-support)
-- [Cross-platform](#cross-platform)
-- [Ease of use](#ease-of-use)
+When collecting data programatically, you have the option of using either the Open Message Format ([OMF](https://docs.osisoft.com/bundle/omf/page/index.html)) or Sequential Data Store ([SDS](xref:sdsWritingData)) data writes. OMF is typically the best option for simple and efficient data collection. However, each option has its pros and cons, and this document highlights the key differences. 
 
-**SDS data write pros:**
-- [Flexibility](#flexibility)
+## Data collection option comparison
 
-**Situation dependent factors:**
-- [Security](#security)
-- [Performance](#performance)
+The following table lists the factors that you should consider when choosing between OMF and SDS, as well as which option is the better for each factor. Some factors (**Security** and **Performance**) have no inherently superior option and require additional consideration. For more information on these factors, see [Situation dependent factors](#situation-dependent-factors).
 
-## Future support
-The APIs used in SDS could potentially be updated in the future, requiring upkeep of your applications. OMF on the other hand, can continue to be used as it is up to the platform to interpret the messages and store the contained data appropriately.  
+| Factor | OMF | SDS |
+|--|--|--|
+| [Future support](#future-support) | ✔ |  |
+| [Cross-platform](#cross-platform) | ✔ |  |
+| [Ease-of-use](#ease-of-use) | ✔ |  |
+| [Flexibility](#flexibility) |  | ✔ |
+| [Security](#security) | - | - |
+| [Performance](#performance) | - | - |
 
-**Winner:** OMF 
+## OMF pros
 
-## Cross-platform
-While SDS data writes can only be used for ADH and EDS, OMF can be also be used to write to a PI Core Server through the PI Web API. This makes OMF cross-platform, which is one of the main reasons that it is used in AVEVA’s Adapter technology. In addition, other platforms could potentially adopt the OMF standard to ingress data, widening the interoperability of your applications.  
+Use OMF when the following factors are important to your use case.
 
-**Winner:** OMF
+### Future support
 
-## Ease of use
-One of the main pros of OMF is that it is significantly simpler, having only three types of messages: Type, Container, and Data messages. Additionally, each type has only three types of actions that can be specified: Create, Update, and Delete. This contrasts with SDS flexibility, which will be discussed in the next section, that comes at the cost of more complexity.  
+The APIs used in SDS are continually updated, requiring future upkeep of your applications. OMF does not require this upkeep, as it is up to the platform to interpret the messages and store the contained data appropriately.  
 
-**Winner:** OMF
+### Cross-platform
 
-## Flexibility
-SDS data writes afford greater flexibility than OMF, which may make it the clear winner for certain use cases.  
-If a requirement of your application is both reading and writing from ADH, then SDS data writes are preferable to avoid the need for interacting with two separate APIs. Using the SDS API allows for reuse of objects such as types and streams in your application.  
+While SDS data writes can only be used for OSIsoft Cloud Services (OCS) and Edge Data Store (EDS), OMF can also write to a PI Core Server through the PI Web API. This additional capability makes OMF cross-platform, which is one of the main reasons that it is used in PI Adapters. In addition, other platforms may adopt the OMF standard to ingress data, widening the interoperability of your applications.  
 
-In some situations, the functionality that you need may not be currently supported in the OMF specification. Certain property overrides and nested types are two instances where this would be true. Platform specific features like dataviews or assets are also not accessible through OMF. Direct calls to the ADH REST API would be preferred for these situations.  
+### Ease of use
 
-Additionally, not all OMF end points will respond with the same error codes due to asynchronous message processing, which could result in a successful http status code being returned when a SDS data write would result in a client error status code. This could happen if a message adheres to the OMF specification, but is not writing to a valid container.  
+OMF is simpler than SDS, having only three types of messages: Type, Container, and Data messages. Additionally, each type has only three types of actions that can be specified: Create, Update, and Delete. This simplicity contrasts with SDS, which is flexible but more complex. For more information on this contrast, see [Flexibility](#flexibility).
 
-**Winner:** SDS data writes
+## SDS data write pros
 
-## Security
-Both SDS and OMF utilize the same authentication mechanism when connecting to ADH, so neither is inherently more secure. It is always important to follow best practices for security as outlined in the [Identity and access management](https://docs.osisoft.com/bundle/data-hub/page/developer-guide/identity-dev/dev-guide-identity-access-management.html) section of the Developer guide.  
+Use SDS data write when the following factor is more important to your use case.
 
-When connecting the PI Web API, OMF connections can only use basic authentication, while other options such as Kerberos are available for all other parts of the PI Web API.  
+### Flexibility
 
-**Winner:** Situation dependent
+SDS data writes afford greater flexibility than OMF, which may make it the clear winner for certain use cases. If a requirement of your application is both reading and writing from OCS, then SDS data writes are preferable to avoid the need for interacting with two separate APIs. Using the SDS API allows for reuse of objects such as types and streams in your application.  
 
-## Performance
-Since there is overhead associated with parsing the OMF json payloads, direct SDS calls may be more performant in theory. That said, with OMF you can send data for multiple containers (equivalent to an ADH stream or PI System tag) in a single payload. This reduces the number of requests needed and makes batching data easier. With SDS data writes, parallel tasks are needed to realize the full potential of ADH.  
+In some situations, the functionality that you need may not be currently supported in the OMF specification. Certain property overrides and nested types are two instances where this would be true. Platform specific features like dataviews or assets are also not accessible through OMF. Direct calls to the OCS REST API would be preferred for these situations.  
 
-Another consideration for performance is compression of message payloads, which both options support through gzip when specified headers are provided.  
+Additionally, not all OMF endpoints respond with the same error codes due to asynchronous message processing, which could result in a successful HTTP status code being returned when a SDS data write would result in a client error status code. This could happen if a message adheres to the OMF specification, but is not writing to a valid container.  
 
-**Winner:** Situation dependent
+## Situation dependent factors
+
+For some factors, neither SDS nor OMF are inherently superior. 
+
+### Security
+
+Both SDS and OMF use the same authentication mechanism when connecting to OCS, so neither is inherently more secure. Always follow best practices for security as outlined in [Identity and access management](xref:id-access-mgmt).  
+
+When connecting the PI Web API, OMF connections can only use basic authentication, while other options such as Kerberos are available for all other parts of the PI Web API.
+
+### Performance
+
+Because there is overhead associated with parsing the OMF JSON payloads, direct SDS calls may be more performant. However, with OMF you can send data for multiple containers in a single payload (equivalent to an OCS stream or PI System tag). This practice reduces the number of requests needed and makes batching data easier. With SDS data writes, parallel tasks are needed to realize the full potential of OCS.  
+
+Another consideration for performance is compression of message payloads, which both options support through gzip when specified headers are provided.

@@ -6,6 +6,10 @@
 - topicUid: gsGetStartedOCS
   items:
   - topicUid: introPortalInterface
+    items:
+    - topicUid: viewProfile
+    - topicUid: TenantDetails
+    - topicUid: ResourceUsage
   - topicUid: gsNamespaces
   - topicUid: gsConnections
     items:
@@ -25,11 +29,6 @@
   - topicUid: gsMetadataRules
   - topicUid: gsStreamviews
   - topicUid: gsAssetRules
-- name: Toolbar
-  items:
-  - topicUid: viewProfile
-  - topicUid: TenantDetails
-  - topicUid: ResourceUsage
 - name: Data management
   items:
     - topicUid: ccNamespaces

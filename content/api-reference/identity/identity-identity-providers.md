@@ -984,6 +984,12 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Groups
 
 Group identifier.<br/>
 
+```json
+[
+  "string"
+]
+```
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

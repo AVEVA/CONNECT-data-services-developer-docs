@@ -116,7 +116,7 @@ Allowed for these roles:
 
 <a id="opIdDeviceCodeClients_Create a Device Code Client"></a>
 
-Create an device code flow client. No secret will be generated for this client.
+Create a device code flow client. No secret will be generated for this client.
 
 <h3>Request</h3>
 

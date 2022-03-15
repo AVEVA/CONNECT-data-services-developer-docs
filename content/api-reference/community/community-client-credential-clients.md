@@ -131,6 +131,12 @@ PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 
 Community role identifiers to be assigned to the client<br/>
 
+```json
+[
+  "string"
+]
+```
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

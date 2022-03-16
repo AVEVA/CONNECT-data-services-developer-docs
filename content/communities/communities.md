@@ -22,7 +22,7 @@ Sharing data streams allows you and your partners to find value in each other's 
 
 The following diagram shows data flow an established community. 
 
-![Community diagram](images/community-diagram.svg)
+![Community diagram](images/community-diagram.drawio.svg)
 
 Within this diagram, an administrative user (callout **1**) from **Tenant A** has invited **Tenant B** to form a community.
 

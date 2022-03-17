@@ -26,22 +26,19 @@ To add a type, follow these steps:
 
    - **Description** - *SDS Type used by MyData*
 
-
-    **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type in the **Base Type** field. When you add a base type, its properties populate the `Properties` list. You can then add other properties to the type.
+   **Note:** You can use an existing SDS type as the starting point for the new type by selecting an existing SDS type in the **Base Type** field. When you add a base type, its properties populate the `Properties` list. You can then add other properties to the type.
 
 1. To add a property, select **Add Property** and complete the fields as follows:
 
    - **Key** - Select the checkbox.
 
-
-     **Note:** The `Key` field identifies this property as the index. 
+      **Note:** The `Key` field identifies this property as the index. 
 
    - **Id** &ndash; Enter *Timestamp*.
 
    - **Type** &ndash; Select *DateTime*. <!-- Do we need to mention that you can filter by System or Tenant types? --> 
 
    - **UOM** - Leave this blank.
-
 
 1. To add a second property, select **Add Property** again and complete the fields as follows:
 
@@ -51,7 +48,6 @@ To add a type, follow these steps:
 
    - **UOM** - Select *degree Celsius*.
 
-   
 1. To add a third property, select **Add Property** again and complete the fields as follows:
 
    - **Id** - Enter *Pressure*.
@@ -60,17 +56,15 @@ To add a type, follow these steps:
    
    - **UOM** - Select *kilogram per cubic meter*.
 
-
 1. To add a fourth property, select **Add Property** again and complete the fields as follows:
 
-      - **Id** - Enter *Status*.
+   - **Id** - Enter *Status*.
 
-      - **Type** - Select *String*.
+   - **Type** - Select *String*.
 
-      - **UOM** - Leave this blank.
+   - **UOM** - Leave this blank.
 
-
-      **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, use only the `Timestamp` property as an index.
+   **Note:** You can select up to three properties as indexes. Drag and drop the properties in the list to order the index keys. For this exercise, use only the `Timestamp` property as an index.
 
 1. Select **Apply**.
 

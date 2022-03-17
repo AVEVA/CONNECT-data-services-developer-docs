@@ -26,25 +26,25 @@ To install the AVEVA Data Hub Power BI Connector, follow these steps:
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
-1. Select **Download Power BI Connector**.
+2. Select **More options** ![More options icon](images/more-options-wite-background.png) and then select **Download ADH Power BI Connector**.
 
-1. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
+3. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
 
-1. Open the downloaded Power BI Connector installation file, then select **Yes** to confirm running the installation file.
+4. Open the downloaded Power BI Connector installation file, then select **Yes** to confirm running the installation file.
 
-1. Accept or change the temporary setup extraction folder and select **OK**.
+5. Accept or change the temporary setup extraction folder and select **OK**.
 
    The AVEVA Data Hub Power BI Connector Setup Wizard opens.
 
-1. Select **Next**.
+6. Select **Next**.
 
-1. (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
+7. (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
 
-1. Select **Next**.
+8. Select **Next**.
 
-1. Select **Install**.
+9. Select **Install**.
 
-1. Select **Finish** to exit the Setup Wizard.
+10. Select **Finish** to exit the Setup Wizard.
 
 ## Retrieve Data Views with Power BI Connector
 

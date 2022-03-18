@@ -24,7 +24,7 @@ To add groups from your own tenant to a community, follow these steps:
 
 1. Select **Save**.
 
-Each user is added to the community and assigned the Community Member role.
+Each group is added to the community and assigned the Community Member role.
 
 ## Remove groups from a community
 

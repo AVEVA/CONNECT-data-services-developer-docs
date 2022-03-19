@@ -99,7 +99,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Resolve
   "Status": {
     "StreamId": "SdsStream_id_1",
     "SourcePropertyId": "Count"
-  }
+  },
+  "Tags": [
+    "Tag1",
+    "Tag2"
+  ]
 }
 ```
 
@@ -345,7 +349,11 @@ The resolved asset describes the consumption-oriented aspects of a resource rath
   "Status": {
     "StreamId": "SdsStream_id_1",
     "SourcePropertyId": "Count"
-  }
+  },
+  "Tags": [
+    "Tag1",
+    "Tag2"
+  ]
 }
 
 ```
@@ -933,7 +941,11 @@ A multi status result is returned to indicate a partial success.
       "Status": {
         "StreamId": "SdsStream_id_1",
         "SourcePropertyId": "Count"
-      }
+      },
+      "Tags": [
+        "Tag1",
+        "Tag2"
+      ]
     }
   ],
   "ChildErrors": [

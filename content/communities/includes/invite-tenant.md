@@ -2,7 +2,7 @@
 
 - [!include[prereq-community-admin](prereq-community-admin.md)]
 
-- You must have the email address for an administrative user (such as a [Tenant Administrator](xref:ccRoles)) from the tenant that you are inviting to the community.
+- You must have the email address for a community administrator from the tenant that you are inviting to the community.
 
 ## Step 1: Invite a tenant to the community
 
@@ -14,13 +14,13 @@ To invite another tenant to the community, follow these steps:
 
 1. On the **Tenants** tab, select **Invite Tenant**.
 
-1. Enter the email address for an administrative user from the invited tenant. Then select **Invite**.
+1. Enter the email address for a community administrator from the invited tenant. Then select **Invite**.
 
-  An email is sent to the administrative user.
+  An email is sent to the community administrator.
 
 ## Step 2: Wait for invited tenant to accept invitation
 
-After you invite another tenant, wait for its administrative user to accept the email invitation. To monitor whether the invitation is accepted, select the **Invitations** tab and view the invitation recipient for a status of **Invitation Accepted**. You may need to refresh the page to see an updated status.
+After you invite another tenant, wait for its community administrator to accept the email invitation. To monitor whether the invitation is accepted, select the **Invitations** tab and view the invitation recipient for a status of **Invitation Accepted**. You may need to refresh the page to see an updated status.
 
 Invitations are valid for 14 days before they expire. If the invitation is not accepted within that time, you must [resend the invitation](xref:community-resend-invitation). You must also resend the invitation if the invited tenant does not receive the initial email.
 

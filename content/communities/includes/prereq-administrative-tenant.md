@@ -1,1 +1,1 @@
-You must be a user assigned a community administrator role on the administrative tenant.
+You must be assigned a user role with [community administration permissions](xref:community-community-roles#community-administrators) on the [administrative tenant](xref:community-community-roles#administrative-tenant).

@@ -29,7 +29,3 @@ Community data sharing actions include:
 - <xref:community-view-shared-data>
 
 	View the data from a stream that another tenant has shared in a community.
-
-- <xref:community-remove-yourself>
-  
-	Remove yourself as a Community Member.

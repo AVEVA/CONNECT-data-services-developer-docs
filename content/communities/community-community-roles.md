@@ -20,21 +20,13 @@ Users assigned the Community Member role have read permissions within the commun
 
 ## Community Administrators
 
-Community Administrator permissions are required to perform administrative actions for the community within the scope of the tenant, such as community membership management.
+Community administrator permissions are required to perform administrative actions for the community within the scope of the tenant, such as community membership management.
 
-When a tenant creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community.
-
-However, users assigned a Community Administrator role on the [administrative tenant](#administrative-tenant) have additional permissions for managing the community itself that affect all tenants in the community. For example, a user assigned a role with Community Administration permissions on the administrative tenant can perform actions like inviting new tenants to the community.
-
-Refer to the following table for a list of Community Administrator permissions. This table also lists the additional privileges for Community Administrators on the administrative tenant.
-
-For a full list of tasks that Community Administrators can perform, see <xref:community-tenant-administration>.
+When a tenant creates or joins a new community, they are prompted to assign new community administration permissions to one or more existing roles. All users from your tenant that are assigned these roles inherit administrative permissions within the community. For a full list of tasks that Community Administrators can perform, see <xref:community-tenant-administration>.
 
 ### Administrative Tenant
 
-Each community has an administrative tenant, which is the tenant that administers the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Additionally, the user that created the community becomes the community owner, which is a user that has permissions to perform all tasks related to community administration. This user cannot be removed from the community.
-
-In addition to the tasks listed in <xref:community-tenant-administration>, Administrative Tenants can also perform the tasks listed in  <xref:community-community-administration>.
+Each community has an administrative tenant, which is the tenant that administers the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Users assigned community administrator permissions on the [administrative tenant](#administrative-tenant) have additional permissions for managing the community itself that affect all tenants within it. In addition to the tasks listed in <xref:community-tenant-administration>, Community Administrators for the Administrative Tenant can also perform the tasks listed in  <xref:community-community-administration>.
 
 ## Related roles and identities
 

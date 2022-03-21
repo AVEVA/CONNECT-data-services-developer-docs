@@ -27,15 +27,3 @@ When a tenant creates or joins a new community, they are prompted to assign new 
 ### Administrative Tenant
 
 Each community has an administrative tenant, which is the tenant that administers the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Users assigned community administrator permissions on the [administrative tenant](#administrative-tenant) have additional permissions for managing the community itself that affect all tenants within it. In addition to the tasks listed in <xref:community-tenant-administration>, Community Administrators for the Administrative Tenant can also perform the tasks listed in  <xref:community-community-administration>.
-
-## Related roles and identities
-
-In addition to the roles you can assign in Communities, be aware of the following related roles and identities.
-
-### Tenant Administrator
-
-A tenant-level role that allows users to administer their own tenant. The Tenant Administrator roles applies to all of OCS rather than just Communities. For more information about roles, see [Roles](xref:ccRoles). In Communities, Tenant Administrators can create a community and accept invitations to join their tenant with other communities.
-
-### Community owner
-
-The community owner refers to the tenant that created a community. A community owner is not a role and is not granted any privileges. By default, Tenant Administrators have the privilege needed to create communities.

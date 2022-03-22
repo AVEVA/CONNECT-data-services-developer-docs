@@ -1,8 +1,11 @@
-## Prerequisites
 
-- [!include[prereq-community-admin](prereq-community-admin.md)]
-
-- You must have the email address for a user assigned community administration permissions from the tenant that you are inviting to the community.
+<details>
+  <summary>Prerequisites</summary>
+  <ul>
+    <li>[!include[prereq-community-admin](prereq-community-admin.md)]</li>
+    <li>You must have the email address for a user assigned community administration permissions from the tenant that you are inviting to the community.</li>
+  </ul>
+</details>
 
 ## Step 1: Invite a tenant to the community
 

@@ -16,7 +16,7 @@ To invite another tenant to the community, follow these steps:
 
 1. Enter the email address for a community administrator from the invited tenant. Then select **Invite**.
 
-  An email is sent to the community administrator.
+An email is sent to the community administrator.
 
 ## Step 2: Wait for invited tenant to accept invitation
 

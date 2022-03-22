@@ -4,7 +4,7 @@ uid: community-edit
 
 # Edit community
 
-After you create a community, you can edit its description at any time.
+After you create a community, you can edit its name and description at any time.
 
 ## Prerequisites
 

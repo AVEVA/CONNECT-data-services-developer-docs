@@ -1,6 +1,6 @@
 
 <details>
-  <summary><h2>Prerequisites</h2></summary>
+  <h2><summary>Prerequisites</summary></h2>
   <ul>
     <li>[!include[prereq-community-admin](prereq-community-admin.md)]</li>
     <li>You must have the email address for a user assigned community administration permissions from the tenant that you are inviting to the community.</li>

@@ -33,8 +33,6 @@ To accept an invitation, follow these steps:
    - To remove community administrator permissions from a user role, select **Remove Role** ![remove role](../_icons/remove-object.svg) for the role that you want to remove. 
     
   **Tip:** You can edit the default roles that are listed. For more information, see <xref:communities-manage-default-admins>.
-  
-  **Tip:** You can edit the default roles that are listed. For more information, see <xref:communities-manage-default-admins>.
 
 1. After you finish, select **Next**.
 

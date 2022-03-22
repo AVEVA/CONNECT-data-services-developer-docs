@@ -12,9 +12,9 @@ To begin the process of sharing data, create a new community and invite other te
 
 To create a new community, you must:
 
-- Be assigned a user role configured as a default community administrator (**Community Administrator** and **Tenant Administrator** roles by default).
+- Be assigned [community administration permissions](xref:community-community-roles#community-administrators).
 
-- Have the email address for a community administrator from the tenant that you are inviting to the community.
+- Have the email address for a user assigned community administration permissions from the tenant that you are inviting to the community.
 
 ## Community creation outline
 

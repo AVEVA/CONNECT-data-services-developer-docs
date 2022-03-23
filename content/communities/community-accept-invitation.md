@@ -24,9 +24,11 @@ To accept an invitation, follow these steps:
 
 1. Select **Join**.
 
+1. Wait for a Community Administrator from the inviting tenant to confirm your tenant.
+  
   Your tenant does not officially join the until the inviting tenant confirms the invitation.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks their own tenant. You can either accept the default roles or add new ones. 
+1. <!-- TODO: Verify that this is how joining tenants get prompted to join-->On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks their own tenant. You can either accept the default roles or add new ones. 
     
    - To add community administrator permissions to a user role, select **Add Roles** > **Add Role** ![add role](../_icons/plus-thick-alt.svg) for any role that you want to function as community administrator.
     

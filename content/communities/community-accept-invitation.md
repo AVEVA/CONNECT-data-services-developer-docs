@@ -40,6 +40,8 @@ To accept an invitation, follow these steps:
     
   To add new Community Members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
+  **Note:** Community Administrators are not automatically added as Community Members. You must manually add Community Administrators as Community Members to access shared resources.
+
 The tenant that invited you to the community is updated that you accepted their invitation. Wait for them to confirm the invitation. When the inviting tenant confirms, you receive an email that your tenant now has access to the community.
 
 ## Next steps

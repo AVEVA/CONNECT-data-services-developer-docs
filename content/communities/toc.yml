@@ -10,6 +10,7 @@
     - topicUid: community-accept-invite
     - topicUid: community-manage-sds-permissions-join
 - topicUid: community-community-roles
+- name: Communities page
   items:
   - topicUid: communities-manage-default-admins
 - topicUid: community-tenant-administration
@@ -27,8 +28,12 @@
   - topicUid: community-delete
 - topicUid: data-sharing
   items:
-  - topicUid: community-enable-stream-sharing-permissions
-  - topicUid: community-share-streams
-  - topicUid: community-unshare-streams
-  - topicUid: community-view-shared-streams
-  - topicUid: community-view-shared-data
+    - name: Sequential Data Store page
+      items: 
+      - topicUid: community-enable-stream-sharing-permissions
+      - topicUid: community-share-streams
+      - topicUid: community-unshare-streams
+    - name: Communities page
+      items:
+      - topicUid: community-view-shared-streams
+      - topicUid: community-view-shared-data

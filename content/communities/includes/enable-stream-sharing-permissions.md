@@ -4,7 +4,7 @@ To share data into a community and provide access to this data for external tena
 
 [!include[prereq-share-streams](prereq-share-streams.md)]
 
-## Enable stream sharing permissions
+## To enable stream sharing permissions
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 

@@ -14,7 +14,6 @@
   - topicUid: communities-manage-default-admins
 - topicUid: community-tenant-administration
   items:
-  - topicUid: community-enable-stream-sharing-permissions
   - topicUid: community-remove-your-tenant
   - topicUid: community-manage-users
   - topicUid: community-manage-clients
@@ -28,6 +27,7 @@
   - topicUid: community-delete
 - topicUid: data-sharing
   items:
+  - topicUid: community-enable-stream-sharing-permissions
   - topicUid: community-share-streams
   - topicUid: community-unshare-streams
   - topicUid: community-view-shared-streams

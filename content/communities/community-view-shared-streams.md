@@ -18,7 +18,7 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 
 1. Browse to the applicable community and select **Details**.
     
-1. From the **Tenants** tab, select a tenant to view which streams that it is sharing with the community.
+1. From the **Tenants** tab, select a tenant to view which streams that it shares with the community.
 
     Details for the community open in the right pane.
 
@@ -26,27 +26,27 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
     
     ![Tenant shared streams](images/communities-shared-streams.png)
 
-    The **Streams** tab lists each data stream that the tenant is sharing with the community. 
+    The **Streams** tab lists each data stream that the tenant shares with the community. 
 
-    **Tip:** Want to view the data for one of the shared streams? Select the **Launch** icon ![Launch icon](launch) to open it within `Sequential Data Store` explorer.
+    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](launch) to open it within `Sequential Data Store` explorer.
 
 ## [Sequential Data Store](#tab/sds)
 
-When working from SDS explorer, you can view which data streams are shared within either by stream or by community.
+When working from SDS explorer, you can view which data streams are shared within communities, sorting by either stream or community.
 
-### View shared streams in a community
+### View shared streams by community
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 
 1. If necessary, enable the **Filter Communities** panel by selecting the **Filter** icon ![filter icon](../_icons/filter.svg).
 
-1. Select one or more community to filter for.
+1. Select a community to filter for.
 
     ![Filter communities](images/filter-pane.png)
 
     The page is filtered to list only data streams shared in the selected communities.
 
-### View the communities for a shared stream
+### View communities for a shared stream
 
 While viewing individual data streams in SDS explorer, you can view each community that the stream is shared with.
 

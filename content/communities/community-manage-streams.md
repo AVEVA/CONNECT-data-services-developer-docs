@@ -4,9 +4,7 @@ uid: community-manage-shared-streams
 
 # Manage shared streams 
 
-Enim ea qui exercitation ex id cillum est commodo ea aliquip aute dolore. Elit fugiat sit reprehenderit adipisicing laboris. Elit eiusmod ullamco nulla proident. Voluptate aliquip dolore voluptate ad.
-
-Irure laborum officia aliqua incididunt nostrud in aliquip officia sit magna irure aliqua. Ut aliqua excepteur qui mollit adipisicing incididunt. Id eu velit ea mollit ea elit qui consequat officia cupidatat amet ipsum dolore occaecat. Anim cillum ipsum officia exercitation fugiat non. Commodo incididunt quis dolor sit do. Aliquip ipsum esse exercitation ullamco deserunt fugiat consectetur ut officia voluptate ex anim aliqua reprehenderit. Enim exercitation adipisicing adipisicing consectetur velit aute qui cillum ea qui ipsum esse.
+Users assigned share permissions for data streams in SDS explorer—also known as _data stewards_—can share those streams into communities where they are a member. These same users can unshare data streams from communities as well.
 
 ## Prerequisites
 

@@ -13,12 +13,6 @@
 - name: Communities page
   items:
   - topicUid: communities-manage-default-admins
-- topicUid: community-tenant-administration
-  items:
-  - topicUid: community-remove-your-tenant
-  - topicUid: community-manage-users
-  - topicUid: community-manage-clients
-  - topicUid: community-manage-administrators
 - topicUid: community-community-administration
   items:
   - topicUid: community-invite-tenant
@@ -26,6 +20,12 @@
   - topicUid: community-remove-tenants
   - topicUid: community-edit
   - topicUid: community-delete
+- topicUid: community-tenant-administration
+  items:
+  - topicUid: community-remove-your-tenant
+  - topicUid: community-manage-users
+  - topicUid: community-manage-clients
+  - topicUid: community-manage-administrators
 - topicUid: data-sharing
   items:
   - topicUid: community-manage-shared-streams

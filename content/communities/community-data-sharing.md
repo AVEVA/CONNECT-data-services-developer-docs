@@ -10,17 +10,13 @@ After a community is established, Community Members can view data streams their 
 
 Community data sharing actions include:
 
-- <xref:community-share-streams>
+- <xref:community-manage-streams>
 
-	Share a data stream with the community.
+	Share or unshare a data stream with the community.
 
 - <xref:community-view-shared-streams>
 
 	View which streams you or another tenant has shared within a community.
-
-- <xref:community-unshare-streams>
-
-	Unshare a data stream from the community.
 
 - <xref:community-view-shared-data>
 

@@ -49,4 +49,4 @@ The **Cursor** ![cursor](../_icons/map-marker.svg) view lists property values fo
 
 ![Cursor view](images/cursor-view.png)
 
-**Tip:** For more information on placing cursors, see <xref:GettingStartedWithTrendData>.
+**Tip:** For more information on placing cursors, see <xref:CreateTrendSession>.

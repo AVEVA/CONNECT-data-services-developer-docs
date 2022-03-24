@@ -29,7 +29,7 @@
   - topicUid: gsMetadataRules
   - topicUid: gsStreamviews
   - topicUid: gsAssetRules
-- name: Data management
+- topicUid: DataManagement
   items:
     - topicUid: ccNamespaces
       items:
@@ -49,7 +49,6 @@
       - topicUid: ccStreamviews
     - topicUid: communities
       items:
-      - topicUid: gsCommunities
       - topicUid: communityroles
       - topicUid: add-community
       - topicUid: managecommunity
@@ -123,13 +122,13 @@
     - topicUid: gpOMFConnection
 - topicUid: lpvisualizedata
   items:
-  - topicUid: GettingStartedWithTrendData
+  - topicUid: CreateTrendSession
   - topicUid: TrendUserInterface
     items:
     - topicUid: LegendTableReference
     - topicUid: URLparameters
-  - topicUid: ContextSwitch
-  - name: Asset explorer
+    - topicUid: ContextSwitch
+  - topicUid: AssetExplorer
     items:
     - topicUid: ccAssets
       items: 
@@ -144,13 +143,13 @@
       - topicUid: GetStartedROM
       - topicUid: FilterAssets
       - topicUid: ShareAViewOfYourFleet
-- name: Analytics
+- topicUid: Analytics
   items:
     - topicUid: Dataviews1
     - topicUid: PowerBI
       items:
       - topicUid: PowerBIReleaseNotes
-- name: Security
+- topicUid: Security
   items:
     - topicUid: identityProviders
     - topicUid: Groups
@@ -165,11 +164,12 @@
       - topicUid: gpClientCredentialsClient
       - topicUid: gpHybridClient
       - topicUid: gpAuthorizationCodeClient
-- name: Developer tools
+- topicUid: DeveloperTools
   items:
+    - topicUid: samples
     - topicUid: apiConsole
     - topicUid: omfEditor
-- name: Support
+- topicUid: lpSupport
   items:
     - topicUid: download-tenant-log
     - topicUid: ServiceBlog
@@ -179,5 +179,4 @@
 - name: API reference
   href: api-reference/toc.yml
   topicHref: api-reference/ocs-api-reference.md
-- name: Technical support and other resources
-  topicHref: support.md
+- topicUid: support

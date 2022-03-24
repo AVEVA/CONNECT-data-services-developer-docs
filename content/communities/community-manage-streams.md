@@ -26,6 +26,8 @@ Adipisicing non id culpa proident est. Id laboris consectetur quis do exercitati
 
 Do eiusmod consequat irure minim qui id aliqua anim excepteur nisi. Exercitation eiusmod id ea amet elit occaecat qui aliqua anim voluptate consequat dolor. Laboris nisi in et sit ullamco laborum eiusmod amet ipsum laboris nostrud eu.
 
+***
+
 ## Unshare streams
 
 <!-- TODO: Update streams-manage.md "Unhare streams" to point to this heading -->
@@ -39,3 +41,5 @@ Adipisicing non id culpa proident est. Id laboris consectetur quis do exercitati
 ### [Sequential Data Store](#tab/sds)
 
 Do eiusmod consequat irure minim qui id aliqua anim excepteur nisi. Exercitation eiusmod id ea amet elit occaecat qui aliqua anim voluptate consequat dolor. Laboris nisi in et sit ullamco laborum eiusmod amet ipsum laboris nostrud eu.
+
+***

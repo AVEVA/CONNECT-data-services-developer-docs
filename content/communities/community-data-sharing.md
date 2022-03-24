@@ -10,7 +10,7 @@ After a community is established, Community Members can view data streams their 
 
 Community data sharing actions include:
 
-- <xref:community-manage-streams>
+- <xref:community-manage-shared-streams>
 
 	Share or unshare a data stream with the community.
 

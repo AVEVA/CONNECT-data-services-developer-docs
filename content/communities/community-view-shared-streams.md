@@ -64,11 +64,11 @@ While viewing individual data streams in SDS explorer, you can view each communi
 
 The communities that the stream is shared to are listed. 
 
-![Sharing tab](images/communities-sharing-tab-sds.png)
-
 <details>
     <summary><strong>Tips:</strong></summary>
     [!include[tip-view-streams](includes/tip-view-streams.md)]
 </details>
+
+![Sharing tab](images/communities-sharing-tab-sds.png)
 
 ***

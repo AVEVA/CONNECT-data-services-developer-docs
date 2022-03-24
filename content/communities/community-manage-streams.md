@@ -14,23 +14,37 @@ Sit non labore proident esse aliquip duis velit ex consequat irure. Nostrud ex e
 
 ## Share streams
 
-<!-- TODO: Update streams-manage.md "Share streams" to point to this heading -->
+User with permissions to share a data stream within a community can do so from the Sequential Data Store page. To share streams with other communities, follow these steps:
 
-<!-- TODO: draft task-->
+1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-### [Communities](#tab/communities)
+1. If it is not already selected, select **Streams** at the upper left.
 
-Adipisicing non id culpa proident est. Id laboris consectetur quis do exercitation anim voluptate. Ad cupidatat officia occaecat adipisicing.
+1. Select each stream that you want to share, and then select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Share Stream**.
 
-### [Sequential Data Store](#tab/sds)
+    **Tips:** 
 
-Do eiusmod consequat irure minim qui id aliqua anim excepteur nisi. Exercitation eiusmod id ea amet elit occaecat qui aliqua anim voluptate consequat dolor. Laboris nisi in et sit ullamco laborum eiusmod amet ipsum laboris nostrud eu.
+    * Use the **Search for streams** field to search for specific streams. Use the wildcard operator (`*`) to return results that start or end with a particular phrase. For more information, see [Search in SDS](xref:sdsSearching).
+
+    * When sharing a large numbers of streams, edit the **Items per page** dropdown to a value that accommodates the number of streams that you want to share.
+
+1. Select one or more community to share your streams with.
+
+1. Select **Select Communities**.
+
+1. From the list of communities, select the communities with which you want to share streams and select **Continue**. 
+
+    **Tip:** Use the **Filter Communities** field to find a specific community.
+    
+1. To confirm that you want to share the streams with the chosen communities, select **Share**. From the **Share stream** window, select **Confirm**. Then select **Close**.
+
+The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
 
 ***
 
 ## Unshare streams
 
-<!-- TODO: Update streams-manage.md "Unhare streams" to point to this heading -->
+When you want to stop sharing streams with a community, you can do so from either the `Communities` page or `Sequential Data Store` explorer.
 
 <!-- TODO: draft task-->
 
@@ -40,6 +54,24 @@ Adipisicing non id culpa proident est. Id laboris consectetur quis do exercitati
 
 ### [Sequential Data Store](#tab/sds)
 
-Do eiusmod consequat irure minim qui id aliqua anim excepteur nisi. Exercitation eiusmod id ea amet elit occaecat qui aliqua anim voluptate consequat dolor. Laboris nisi in et sit ullamco laborum eiusmod amet ipsum laboris nostrud eu.
+To stop sharing streams with a community from SDS explorer, follow these steps:
+
+1. In the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. If it is not already selected, select **Streams** at the upper left.
+
+1. Ensure that the **Filter Communities** pane is displayed. Enable it by selecting the **Filter Tenants** ![Filter Tenants](../_icons/filter.svg) icon. 
+
+1. From the **Filter Communities** pane, select one or more community from which to unshare streams.
+
+    **Note:** This pane only lists communities where you are a Community Member.
+
+1. From the list of streams, select one or more to streams unshare. 
+
+1. Select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Unshare Stream**. 
+
+    **Tip:** You can also unshare streams using the **Unshare Streams** buttons available in the right pane.
+
+1. When prompted for confirmation, select **Unshare**.
 
 ***

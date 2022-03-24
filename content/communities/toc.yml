@@ -28,12 +28,7 @@
   - topicUid: community-delete
 - topicUid: data-sharing
   items:
-    - name: Sequential Data Store page
-      items: 
-      - topicUid: community-enable-stream-sharing-permissions
-      - topicUid: community-share-streams
-      - topicUid: community-unshare-streams
-    - name: Communities page
-      items:
-      - topicUid: community-view-shared-streams
-      - topicUid: community-view-shared-data
+  - topicUid: community-manage-streams
+  - topicUid: community-view-shared-streams
+  - topicUid: community-view-shared-data
+  - topicUid: community-enable-stream-sharing-permissions

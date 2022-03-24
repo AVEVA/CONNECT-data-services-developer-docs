@@ -6,6 +6,10 @@ uid: community-view-shared-streams
 
 After a community has been established, you can view which data streams in your tenant have been shared into a community. You can view which data streams are shared in one of two ways: from the `Communities` page or from SDS explorer. Your access to view information depends upon your assigned user roles and permissions.
 
+## To view shared streams
+
+You can view shared streams from both the `Communities` page and SDS explorer. Select one of the tabs for more information on how to view which data streams are shared.
+
 ## [Communities](#tab/communities)
 
 You can view data streams shared within a community by browsing to its **Community Details** page, choosing a community, and viewing its **Streams** tab.
@@ -24,11 +28,15 @@ You can view data streams shared within a community by browsing to its **Communi
 
     ![Tenant shared streams](images/communities-shared-streams.png)
 
-The **Streams** tab lists each data stream that the tenant is sharing with the community. To view shared streams and their details in the **Sequential Data Store** explorer, select a stream and then select the **Launch** icon ![launch icon](../_icons/launch.svg). 
+    **Tip:** To view shared streams and their details in the **Sequential Data Store** explorer,  select the **Launch** icon ![launch icon](../_icons/launch.svg). 
+
+The **Streams** tab lists each data stream that the tenant is sharing with the community. 
 
 ## [Sequential Data Store](#tab/sds)
 
-When viewing the **Sequential Data Store**, each stream lists whether it is shared within a community. Additionally, you can use the **Filter Communities** panel to filter for streams shared within one or more community.
+When working from SDS explorer, you can view which data streams your tenant is sharing either by stream or by community. Additionally, you can also view which streams are shared into the community by other tenants.
+
+### View your shared streams by community
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 
@@ -39,5 +47,9 @@ When viewing the **Sequential Data Store**, each stream lists whether it is shar
     ![Filter communities](images/filter-pane.png)
 
 Additional details about the stream display in each tab of the right panel, including **Details**, **Metadata and Tags**, and **Sharing**. The **Sharing** tab lists each community the stream is shared with.
+
+### View the communities that a stream is shared to
+
+### View stream shared by other tenants
 
 ***

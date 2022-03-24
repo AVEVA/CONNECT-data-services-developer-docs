@@ -23,19 +23,21 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
     Details for the community open in the right pane.
 
 1. From the right pane, select the **Streams** tab.
-
-    <details>
-        <summary><strong>Tips:</strong></summary>
-        [!include[tip-view-streams](includes/tip-view-streams.md)]
-    </details>
     
     ![Tenant shared streams](images/communities-shared-streams.png)
 
 The **Streams** tab lists each data stream that the tenant is sharing with the community. 
 
+**Tips:**
+
+- To view shared streams and their details in the `Sequential Data Store` explorer,  select the **Launch** icon ![Launch icon](_icons/launch.svg).
+
+- If you are viewing your own tenant and you have sharing permissions for the stream, you can unshare them in this context by selecting a stream and choosing **Unshare Stream**.
+
 ## [Sequential Data Store](#tab/sds)
 
 When working from SDS explorer, you can view which data streams are shared within either by stream or by community.
+
 ### View shared streams in a community
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
@@ -48,7 +50,7 @@ When working from SDS explorer, you can view which data streams are shared withi
 
 The page is filtered to list only data streams shared in the selected communities.
 
-### View the communities that a stream is shared to
+### View the communities for a shared stream
 
 While viewing individual data streams in SDS explorer, you can view each community that the stream is shared with.
 
@@ -56,19 +58,18 @@ While viewing individual data streams in SDS explorer, you can view each communi
 
 1. (Optional) Select one or more community to filter for.
 
-    ![Filter communities](images/filter-pane.png)
-
 1. Select a single data stream. Details for the community open in the right pane.
 
 1. From the right pane, select the **Sharing** tab.
 
+    ![Sharing tab](images/communities-sharing-tab-sds.png)
+
 The communities that the stream is shared to are listed. 
 
-<details>
-    <summary><strong>Tips:</strong></summary>
-    [!include[tip-view-streams](includes/tip-view-streams.md)]
-</details>
+**Tips:**
 
-![Sharing tab](images/communities-sharing-tab-sds.png)
+- Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](_icons/launch.svg) for the community.
+
+- If you are viewing your own tenant and you have sharing permissions for the stream, you can unshare it by selecting **Unshare Stream**.
 
 ***

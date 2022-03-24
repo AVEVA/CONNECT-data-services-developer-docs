@@ -1,8 +1,8 @@
 ---
-uid: community-manage-streams
+uid: community-manage-shared-streams
 ---
 
-# Manage streams 
+# Manage shared streams 
 
 Enim ea qui exercitation ex id cillum est commodo ea aliquip aute dolore. Elit fugiat sit reprehenderit adipisicing laboris. Elit eiusmod ullamco nulla proident. Voluptate aliquip dolore voluptate ad.
 
@@ -18,11 +18,11 @@ Sit non labore proident esse aliquip duis velit ex consequat irure. Nostrud ex e
 
 <!-- TODO: draft task-->
 
-### [Communities page](#tab/communities)
+### [Communities](#tab/communities)
 
 Adipisicing non id culpa proident est. Id laboris consectetur quis do exercitation anim voluptate. Ad cupidatat officia occaecat adipisicing.
 
-### [Sequential Data Store page](#tab/sds)
+### [Sequential Data Store](#tab/sds)
 
 Do eiusmod consequat irure minim qui id aliqua anim excepteur nisi. Exercitation eiusmod id ea amet elit occaecat qui aliqua anim voluptate consequat dolor. Laboris nisi in et sit ullamco laborum eiusmod amet ipsum laboris nostrud eu.
 
@@ -32,10 +32,10 @@ Do eiusmod consequat irure minim qui id aliqua anim excepteur nisi. Exercitation
 
 <!-- TODO: draft task-->
 
-### [Communities page](#tab/communities)
+### [Communities](#tab/communities)
 
 Adipisicing non id culpa proident est. Id laboris consectetur quis do exercitation anim voluptate. Ad cupidatat officia occaecat adipisicing.
 
-### [Sequential Data Store page](#tab/sds)
+### [Sequential Data Store](#tab/sds)
 
 Do eiusmod consequat irure minim qui id aliqua anim excepteur nisi. Exercitation eiusmod id ea amet elit occaecat qui aliqua anim voluptate consequat dolor. Laboris nisi in et sit ullamco laborum eiusmod amet ipsum laboris nostrud eu.

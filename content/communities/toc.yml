@@ -28,7 +28,7 @@
   - topicUid: community-delete
 - topicUid: data-sharing
   items:
-  - topicUid: community-manage-streams
+  - topicUid: community-manage-shared-streams
   - topicUid: community-view-shared-streams
   - topicUid: community-view-shared-data
   - topicUid: community-enable-stream-sharing-permissions

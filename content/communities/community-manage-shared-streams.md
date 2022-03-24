@@ -40,7 +40,7 @@ The chosen streams are shared with the chosen communities. All members of the se
 
 ## Unshare streams
 
-When you want to stop sharing streams with a community, you can do so from either the `Communities` page or `Sequential Data Store` explorer.
+When you want to stop sharing streams with a community, you can unshare them from either the `Communities` page or `Sequential Data Store` explorer.
 
 ### [Communities](#tab/communities)
 

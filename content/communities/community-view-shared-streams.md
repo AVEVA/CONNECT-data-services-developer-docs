@@ -26,9 +26,9 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
     
     ![Tenant shared streams](images/communities-shared-streams.png)
 
-The **Streams** tab lists each data stream that the tenant is sharing with the community. 
+    The **Streams** tab lists each data stream that the tenant is sharing with the community. 
 
-**Tip:** Want to view the data for one of the shared streams? Select the **Launch** icon ![Launch icon](launch) to open it within `Sequential Data Store` explorer.
+    **Tip:** Want to view the data for one of the shared streams? Select the **Launch** icon ![Launch icon](launch) to open it within `Sequential Data Store` explorer.
 
 ## [Sequential Data Store](#tab/sds)
 
@@ -44,7 +44,7 @@ When working from SDS explorer, you can view which data streams are shared withi
 
     ![Filter communities](images/filter-pane.png)
 
-The page is filtered to list only data streams shared in the selected communities.
+    The page is filtered to list only data streams shared in the selected communities.
 
 ### View the communities for a shared stream
 
@@ -60,8 +60,8 @@ While viewing individual data streams in SDS explorer, you can view each communi
 
     ![Sharing tab](images/communities-sharing-tab-sds.png)
 
-The communities that the stream is shared to are listed. 
+    The communities that the stream is shared to are listed. 
 
-**Tips:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) for the community.
+    **Tips:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) for the community.
 
 ***

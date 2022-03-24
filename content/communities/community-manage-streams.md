@@ -10,7 +10,7 @@ Irure laborum officia aliqua incididunt nostrud in aliquip officia sit magna iru
 
 ## Prerequisites
 
-Sit non labore proident esse aliquip duis velit ex consequat irure. Nostrud ex eu id anim enim. Reprehenderit aliquip officia elit aliquip id nulla in eiusmod. Et ex ut magna veniam consequat laboris proident adipisicing nisi. Deserunt laborum enim nulla laboris nostrud Lorem culpa. Ad eiusmod commodo esse deserunt sunt veniam. Velit deserunt sit dolor id aute sint sint esse duis id sint et veniam ullamco.
+[!include[prereq-share-streams](includes/prereq-share-streams.md)]
 
 ## Share streams
 
@@ -40,17 +40,27 @@ User with permissions to share a data stream within a community can do so from t
 
 The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
 
-***
-
 ## Unshare streams
 
 When you want to stop sharing streams with a community, you can do so from either the `Communities` page or `Sequential Data Store` explorer.
 
-<!-- TODO: draft task-->
-
 ### [Communities](#tab/communities)
 
-Adipisicing non id culpa proident est. Id laboris consectetur quis do exercitation anim voluptate. Ad cupidatat officia occaecat adipisicing.
+To stop sharing streams with a community from the `Communities` page, follow these steps:
+
+1. In the left pane, select **Data Management** > **Communities**.
+
+1. Find the community where you are sharing streams and select **Details**.
+
+1. On the `Community Details` page, select the **Tenants** tab.
+
+1. Select your own tenant.
+
+   A pane opens on the right.
+
+1. On the **Streams** tab, select the streams you want to stop sharing, then select **Unshare Streams**. When prompted for confirmation, select **Unshare**.
+
+The streams are unshared from the community. Other tenants in the community can no longer view them.
 
 ### [Sequential Data Store](#tab/sds)
 
@@ -73,5 +83,7 @@ To stop sharing streams with a community from SDS explorer, follow these steps:
     **Tip:** You can also unshare streams using the **Unshare Streams** buttons available in the right pane.
 
 1. When prompted for confirmation, select **Unshare**.
+
+The streams are unshared from the community. Other tenants in the community can no longer view them.
 
 ***

@@ -4,7 +4,7 @@ uid: community-view-shared-streams
 
 # View shared streams 
 
-After a community has been established, you can view which data streams in your tenant have been shared into a community. You can view which data streams are shared in one of two ways: from the `Communities` page or from SDS explorer. Your access to view information depends upon your assigned user roles and permissions.
+After a community has been established, you can view which data streams in your tenant have been shared into a community. You can view which data streams are shared in one of two ways: from the `Communities` page or `Sequential Data Store` explorer. Your access to view information depends upon your assigned user roles and permissions.
 
 ## To view shared streams
 
@@ -28,7 +28,7 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 
     The **Streams** tab lists each data stream that the tenant shares with the community. 
 
-    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](launch) to open it within `Sequential Data Store` explorer.
+    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) to open it within `Sequential Data Store` explorer.
 
 ## [Sequential Data Store](#tab/sds)
 

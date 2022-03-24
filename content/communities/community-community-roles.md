@@ -4,6 +4,8 @@ uid: community-community-roles
 
 # Community roles
 
+<!-- TODO: draft content describing that communities require special roles to tenants to share data with each other securely and safely. These roles allow you to share specific data streams with other tenants while keeping your unshared streams private. -->
+
 When using Communities, you must assign users to roles that grant permissions for certain types of actions.
 
 Communities includes the following roles, ordered from least privileged to most privileged.

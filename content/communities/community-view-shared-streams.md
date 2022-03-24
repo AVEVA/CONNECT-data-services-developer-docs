@@ -4,13 +4,9 @@ uid: community-view-shared-streams
 
 # View shared streams 
 
-After a community has been established, any member within that community can view which data streams are shared within the community. You can view which data streams are shared one of two ways: from the **Community details** page or from the **Sequential Data Store** page.
+After a community has been established, you can view which data streams in your tenant have been shared into a community. You can view which data streams are shared in one of two ways: from the `Communities` page or from SDS explorer. Your access to view information depends upon your assigned user roles and permissions.
 
-## Prerequisites to view shared streams
-
-You must have the [Community Member](xref:community-community-roles#community-member) role for the community that you want to view stream data.
-
-## To view shared streams from Community details
+## [Communities](#tab/communities)
 
 You can view data streams shared within a community by browsing to its **Community Details** page, choosing a community, and viewing its **Streams** tab.
 
@@ -30,7 +26,7 @@ You can view data streams shared within a community by browsing to its **Communi
 
 The **Streams** tab lists each data stream that the tenant is sharing with the community. To view shared streams and their details in the **Sequential Data Store** explorer, select a stream and then select the **Launch** icon ![launch icon](../_icons/launch.svg). 
 
-## To view shared streams from Sequential Data Store
+## [Sequential Data Store](#tab/sds)
 
 When viewing the **Sequential Data Store**, each stream lists whether it is shared within a community. Additionally, you can use the **Filter Communities** panel to filter for streams shared within one or more community.
 
@@ -43,3 +39,5 @@ When viewing the **Sequential Data Store**, each stream lists whether it is shar
     ![Filter communities](images/filter-pane.png)
 
 Additional details about the stream display in each tab of the right panel, including **Details**, **Metadata and Tags**, and **Sharing**. The **Sharing** tab lists each community the stream is shared with.
+
+***

@@ -52,9 +52,7 @@ To stop sharing streams with a community from the `Communities` page, follow the
 
 1. On the `Community Details` page, select the **Tenants** tab.
 
-1. Select your own tenant.
-
-   A pane opens on the right.
+1. Select your own tenant. A pane opens on the right.
 
 1. On the **Streams** tab, select the streams you want to stop sharing, then select **Unshare Streams**. When prompted for confirmation, select **Unshare**.
 

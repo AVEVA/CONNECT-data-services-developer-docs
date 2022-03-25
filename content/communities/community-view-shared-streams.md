@@ -4,7 +4,7 @@ uid: community-view-shared-streams
 
 # View shared streams 
 
-After a community has been established, you can view which data streams in your tenant have been shared into a community. You can view which data streams are shared in one of two ways: from the `Communities` page or `Sequential Data Store`. Your access to view information depends upon your assigned user roles and permissions.
+After a community is established, you can view which data streams have been shared into it. You can view both the streams that your tenant shares, as well as the streams that other tenants share. View shared data streams in one of two ways: from the `Communities` page or `Sequential Data Store`. Your access to view shared data stream information depends upon your assigned user roles and permissions.
 
 ## To view shared streams
 

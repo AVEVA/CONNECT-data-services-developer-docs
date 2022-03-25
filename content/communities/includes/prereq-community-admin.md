@@ -1,1 +1,1 @@
-You must be a user assigned a community administrator role.
+You must be assigned a user role with [community administration permissions](xref:community-community-roles#community-administrators).

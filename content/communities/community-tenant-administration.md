@@ -33,7 +33,3 @@ Users assigned a community administrator role can perform the following tasks:
 - <xref:community-manage-administrators>
 
 	Add or remove roles that have community administration permissions within your tenant.
-
-- <xref:communities-manage-default-admins>
-
-	Configure the default system role set as the community administrator for a community.

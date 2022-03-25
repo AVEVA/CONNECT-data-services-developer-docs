@@ -4,42 +4,64 @@ uid: community-view-shared-streams
 
 # View shared streams 
 
-After a community has been established, any member within that community can view which data streams are shared within the community. You can view which data streams are shared one of two ways: from the **Community details** page or from the **Sequential Data Store** page.
+After a community has been established, you can view which data streams in your tenant have been shared into a community. You can view which data streams are shared in one of two ways: from the `Communities` page or `Sequential Data Store`. Your access to view information depends upon your assigned user roles and permissions.
 
-## Prerequisites to view shared streams
+## To view shared streams
 
-You must have the [Community Member](xref:community-community-roles#community-member) role for the community that you want to view stream data.
+You can view shared streams from both the `Communities` page and `Sequential Data Store`. Select one of the tabs for more information on how to view which data streams are shared.
 
-## To view shared streams from Community details
+## [Communities](#tab/communities)
 
-You can view data streams shared within a community by browsing to its **Community Details** page, choosing a community, and viewing its **Streams** tab.
+From the `Communities` page **Tenants** tab, you can view which data streams each tenant has shared with the community.
 
 1. From the left panel, select **Data Management** > **Communities**.
 
 1. Browse to the applicable community and select **Details**.
-
-    The **Community details** page opens for the community. 
     
-1. From the **Tenants** tab, select the community tenant that you want shared streams.
+1. From the **Tenants** tab, select a tenant to view which streams that it shares with the community.
 
     Details for the community open in the right pane.
 
 1. From the right pane, select the **Streams** tab.
-
+    
     ![Tenant shared streams](images/communities-shared-streams.png)
 
-The **Streams** tab lists each data stream that the tenant is sharing with the community. To view shared streams and their details in the **Sequential Data Store** explorer, select a stream and then select the **Launch** icon ![launch icon](../_icons/launch.svg). 
+    The **Streams** tab lists each data stream that the tenant shares with the community. 
 
-## To view shared streams from Sequential Data Store
+    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) to open it within `Sequential Data Store`.
 
-When viewing the **Sequential Data Store**, each stream lists whether it is shared within a community. Additionally, you can use the **Filter Communities** panel to filter for streams shared within one or more community.
+## [Sequential Data Store](#tab/sds)
+
+When working from `Sequential Data Store`, you can view which data streams are shared within communities, sorting by either stream or community.
+
+### View shared streams by community
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 
-1. (Optional) Toggle the **Filter Communities** panel by clicking the **Filter** icon ![filter icon](../_icons/filter.svg) and select a community to filter for.
+1. If necessary, enable the **Filter Communities** panel by selecting the **Filter** icon ![filter icon](../_icons/filter.svg).
 
-    Filtering the page by communities displays only streams that are shared within the selected communities.
-    
+1. Select a community to filter for.
+
     ![Filter communities](images/filter-pane.png)
 
-Additional details about the stream display in each tab of the right panel, including **Details**, **Metadata and Tags**, and **Sharing**. The **Sharing** tab lists each community the stream is shared with.
+    The page is filtered to list only data streams shared in the selected communities.
+
+### View communities for a shared stream
+
+While viewing individual data streams in `Sequential Data Store`, you can view each community that the stream is shared with.
+
+1. From the left panel, select **Data Management** > **Sequential Data Store**.
+
+1. (Optional) Select one or more community to filter for.
+
+1. Select a single data stream. Details for the community open in the right pane.
+
+1. From the right pane, select the **Sharing** tab.
+
+    ![Sharing tab](images/communities-sharing-tab-sds.png)
+
+    The communities that the stream is shared to are listed. 
+
+    **Tips:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) for the community.
+
+***

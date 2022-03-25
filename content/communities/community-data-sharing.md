@@ -1,5 +1,5 @@
 ---
-uid: data-sharing
+uid: community-data-sharing
 ---
 
 # Data sharing and viewing

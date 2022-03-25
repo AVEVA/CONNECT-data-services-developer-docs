@@ -26,7 +26,7 @@
   - topicUid: community-manage-users
   - topicUid: community-manage-clients
   - topicUid: community-manage-administrators
-- topicUid: data-sharing
+- topicUid: community-data-sharing
   items:
   - topicUid: community-manage-shared-streams
   - topicUid: community-view-shared-streams

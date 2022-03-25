@@ -6,7 +6,7 @@ uid: regional-endpoints
 
 A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored. 
 
-The table lists the current AVEVA Data Hub region labels and corresponding endpoints.
+The following table lists the current AVEVA Data Hub region labels and corresponding endpoints.
 
 | AVEVA Connect & AVEVA Data Hub region labels | AVEVA Data Hub regional endpoints |
 | ------------- | ----------------- |
@@ -17,7 +17,7 @@ The table lists the current AVEVA Data Hub region labels and corresponding endpo
 
 ## Endpoint usage guidelines
 
-Reference the regional endpoint in GET,  POST,  PUT, PATCH, and DELETE requests. To retrieve a region's host URL for an object that belongs to a namespace, such as a stream, use the `Self` property within the context of the namespace.
+Reference the regional endpoint in GET, POST, PUT, PATCH, and DELETE requests. To retrieve a region's host URL for an object that belongs to a namespace, such as a stream, use the `Self` property within the context of the namespace.
 
 In general, most AVEVA Data Hub API routes allow these actions:
  
@@ -33,7 +33,7 @@ In general, most AVEVA Data Hub API routes allow these actions:
 
 ## List of objects and actions (US-West region only)
 
-This table lists all the actions you can take on AVEVA Data Hub objects in the US-West (primary) region. 
+The following table lists all the actions you can use on AVEVA Data Hub objects in the US-West (primary) region. 
 
 | AVEVA Data Hub Object |	GET |	POST |	PUT | PATCH |	DELETE |
 | ------ | ------ | ------ | ------ | ------ | ------ |

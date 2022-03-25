@@ -21,7 +21,7 @@ The following image and table provides descriptions of the fields in the utility
 | 7  | Set data privacy options and assign an agent description.    |
 | 8  | View information about the server connection and its configuration. |
 | 9  | Source AF server name.                                        |
-| 10 | Optional, alternate name for the AF server. Select the pencil icon to the right to assign an alternate name for data privacy purposes. This name also replaces the default server name in the streams that the PI to OCS Agent sends data to. | 
+| 10 | Optional, alternate name for an AF server. Select the pencil icon to the right to assign an alternate, custom name for data privacy purposes. This name replaces the default AF server name in assets' metadata attributes.<br></br><br>**Note:** You can also assign a custom PI Data Archive server name, which enables you to replace the default server name with a custom name in PI to OCS streams.</br> | 
 | 11 | Type of AF mapping configured for the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
 | 12 | Amount of time before connection times out. Select the pencil icon to enter a new time in seconds. |
 

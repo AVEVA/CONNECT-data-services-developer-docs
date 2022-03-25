@@ -4,7 +4,7 @@ uid: community-manage-shared-streams
 
 # Manage shared streams 
 
-Users assigned share permissions for data streams in SDS explorer—also known as _data stewards_—can share those streams into communities where they are a member. These same users can unshare data streams from communities as well.
+Users assigned share permissions for data streams in `Sequential Data Store`—also known as _data stewards_—can share those streams into communities where they are a member. These same users can unshare data streams from communities as well.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ The chosen streams are shared with the chosen communities. All members of the se
 
 ## Unshare streams
 
-When you want to stop sharing streams with a community, you can unshare them from either the `Communities` page or `Sequential Data Store` explorer.
+When you want to stop sharing streams with a community, you can unshare them from either the `Communities` page or `Sequential Data Store`.
 
 ### [Communities](#tab/communities)
 
@@ -62,7 +62,7 @@ The streams are unshared from the community. Other tenants in the community can 
 
 ### [Sequential Data Store](#tab/sds)
 
-To stop sharing streams with a community from SDS explorer, follow these steps:
+To stop sharing streams with a community from `Sequential Data Store`, follow these steps:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 

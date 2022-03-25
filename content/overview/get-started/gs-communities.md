@@ -24,4 +24,4 @@ After the community is established, users assigned [community administrator perm
 
 ## Data sharing and viewing
 
-Within established communities, Community Members perform tasks related to sharing and viewing data within the community. For more information, see <xref:data-sharing>.
+Within established communities, Community Members perform tasks related to sharing and viewing data within the community. For more information, see <xref:community-data-sharing>.

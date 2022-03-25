@@ -16,6 +16,6 @@ Contact your tenant administrator if you want to make changes to your tenant det
 
 To view the `Tenant Details` page, perform the following steps:
 
-1. Select the **User profile** icon ![Card view](../overview/get-started/images/profile-icon.png).
+1. Select the **User profile** icon ![Card view](images/profile-icon.png).
 
-1. Select **Tenant Details**.
+2. Select **Tenant Details**.

@@ -10,6 +10,6 @@ The numbers presented in the graph for each month are the average of daily usage
 
 To view the `Resource Usage` page, perform the following steps:
 
-1. Select the **User profile** icon ![Card view](../overview/get-started/images/profile-icon.png).
+1. Select the **User profile** icon ![Card view](images/profile-icon.png).
 
-1. Select **Resource Usage**.
+2. Select **Resource Usage**.

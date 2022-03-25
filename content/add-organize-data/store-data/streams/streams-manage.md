@@ -51,15 +51,11 @@ Tags and metadata allow you to associate additional information with a stream. F
 
 ## Share streams
 
-Users with permissions to share a data stream within a community can do so from SDS explorer. For more information on completing this process, see the following topics:
-
-- <xref:community-manage-shared-streams#share-streams>
-
-- <xref:communities>
+Users with permissions to share a data stream within a [community](xref:communities) can do so from the Sequential Data Store. For more information on completing this process, see [Share streams](xref:community-manage-shared-streams#share-streams)
 
 ## Unshare streams
 
-Users with permissions to share a data stream within a community can also unshare it, removing the stream data from the community. For more information on completing this process, see <xref:community-manage-shared-streams#unshare-streams>.
+Users with permissions to share a data stream within a community can also unshare it, removing the stream data from the community. For more information on completing this process, see [Unshare streams](xref:community-manage-shared-streams#unshare-streams).
 
 ## Remove streams
 

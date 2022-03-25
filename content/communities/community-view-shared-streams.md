@@ -8,7 +8,7 @@ After a community has been established, you can view which data streams in your 
 
 ## To view shared streams
 
-You can view shared streams from both the `Communities` page and SDS explorer. Select one of the tabs for more information on how to view which data streams are shared.
+You can view shared streams from both the `Communities` page and `Sequential Data Store` explorer. Select one of the tabs for more information on how to view which data streams are shared.
 
 ## [Communities](#tab/communities)
 
@@ -32,7 +32,7 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 
 ## [Sequential Data Store](#tab/sds)
 
-When working from SDS explorer, you can view which data streams are shared within communities, sorting by either stream or community.
+When working from `Sequential Data Store` explorer, you can view which data streams are shared within communities, sorting by either stream or community.
 
 ### View shared streams by community
 
@@ -48,7 +48,7 @@ When working from SDS explorer, you can view which data streams are shared withi
 
 ### View communities for a shared stream
 
-While viewing individual data streams in SDS explorer, you can view each community that the stream is shared with.
+While viewing individual data streams in `Sequential Data Store` explorer, you can view each community that the stream is shared with.
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 

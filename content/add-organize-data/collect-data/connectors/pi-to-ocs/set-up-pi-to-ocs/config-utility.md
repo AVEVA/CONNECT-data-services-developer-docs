@@ -21,7 +21,7 @@ The following image and table provides descriptions of the fields in the utility
 | 7  | Set data privacy options and assign an agent description.    |
 | 8  | View information about the server connection and its configuration. |
 | 9  | Source AF server name.                                        |
-| 10 | Optional, alternate name for your AF server. Select the pencil icon to the right to assign an alternate name for data privacy purposes. | 
+| 10 | Optional, alternate name for the AF server. Select the pencil icon to the right to assign an alternate name for data privacy purposes. This name also replaces the default server name in the streams that the PI to OCS Agent sends data to. | 
 | 11 | Type of AF mapping configured for the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
 | 12 | Amount of time before connection times out. Select the pencil icon to enter a new time in seconds. |
 
@@ -69,7 +69,7 @@ To add an AF server, follow these steps:
 
    * Connection status and timeout
 
-1. (Optional) To add an alternate name that will be shown in the portal in place of the actual AF server name, select the pencil icon, then type a new name. 
+1. (Optional) To add an alternate name that will be shown in place of the actual AF server name in the portal and in the metadata attribute path for assets, select the pencil icon, then type a new name. 
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout** field.
 
@@ -143,7 +143,7 @@ To add a Data Archive, follow these steps:
 
    * Connection status and timeout
    
-1. (Optional) To add an alternate name that will be shown in the portal in place of the actual Data Archive name, select the pencil icon, then type a new name. 
+1. (Optional) To add an alternate name that will be shown in the portal and in your PI to OCS streams in place of the actual Data Archive name, select the pencil icon, then type a new name. 
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout (sec)** field.
 

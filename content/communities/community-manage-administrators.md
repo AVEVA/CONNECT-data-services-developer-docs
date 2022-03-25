@@ -24,7 +24,7 @@ To add community administrator permissions to a user role, follow these steps:
 
 1. Select **Save**.
 
-## To remove community administrators
+## Remove community administrators
 
 You can remove roles as that can administer the community at any time. To remove community administrator permissions from a user role, follow these steps:
 

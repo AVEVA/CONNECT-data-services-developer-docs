@@ -42,4 +42,4 @@ If you are a [Community Administrator](xref:community-community-roles#community-
 
 ## Manage Default Community Administrators
 
-If you are a Community Administrator, you can configure which roles are automatically added as the default Community Administrators while you are creating or joining a groups. To set default Community Administrators, select **More options** ![More options](../_icons/dots-vertical.svg) > **Manage Default Community Administrators**. For more information, see <xref:communities-manage-default-admins>.
+If you are a Community Administrator, you can configure which roles are automatically added as the default Community Administrators while you are creating or joining a community. To set default Community Administrators, select **More options** ![More options](../_icons/dots-vertical.svg) > **Manage Default Community Administrators**. For more information, see <xref:communities-manage-default-admins>.

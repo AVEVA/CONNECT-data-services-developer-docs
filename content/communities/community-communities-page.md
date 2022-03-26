@@ -4,7 +4,11 @@ uid: community-communities-page
 
 # Communities page
 
-The `Communities` page, accessible at **Data Management** > **Communities**, is the entry point for creating and participating in communities. This page list all communities that tenant participates in along with their high-level details. 
+The `Communities` page, accessible at **Data Management** > **Communities**, is the entry point for creating and participating in communities. Depending on your user roles and permissions, this page displays a different inventory of communities:
+
+- If you are a [Community Administrator](xref:community-community-roles#community-administrators), this page lists *all* communities that your tenant participates in, along with their high-level details. 
+
+- If you are a [Community Member](xref:community-community-roles#community-member), this page lists only the communities that you hold membership in. 
 
 ![Communities page](images/communities-page.png)
 
@@ -20,7 +24,7 @@ The following table describes each field in a community tile:
 |--------|-------------|
 | **Tenants** | The number of tenants participating in the community. |
 | **Date Created** | The date that the community was created. |
-| **Sharing Status** | Indicates whether on or more tenant in the community is sharing a data stream. Statuses include: <ul><li><strong>Sharing Active</strong>: The community is currently allowing its members to share and view data streams.</li><!--<li> TODO: Add another status for pausing?</li>--></ul>|
+| **Sharing Status** | Indicates whether on or more tenant in the community is sharing a data stream. Statuses include: <ul><li><strong>Sharing Active</strong>: The community currently allows its members to view shared data streams in `Sequential Data Store`.</li><!--<li> TODO: Add another status for pausing?</li>--></ul>|
 | **Member Status** | Indicates whether you are [Community Member](xref:community-community-roles#community-member) and can view data shared to the community within `Sequential Data Store`. If the field displays a status of `Cannot view shared data`, then you are not a Community Member. If you are a Community Member, this field is omitted.|
 
 Select **Details** to administrate the community. For more information on administrative actions, see the following topics:

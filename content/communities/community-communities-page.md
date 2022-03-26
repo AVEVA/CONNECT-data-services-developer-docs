@@ -8,7 +8,7 @@ The `Communities` page, accessible at **Data Management** > **Communities**, is 
 
 - If you are a [Community Administrator](xref:community-community-roles#community-administrators), this page lists *all* communities that your tenant participates in, along with their high-level details. 
 
-- If you are a [Community Member](xref:community-community-roles#community-member), this page lists only the communities that you hold membership in. 
+- If you are a [Community Member](xref:community-community-roles#community-member), this page lists only the communities that you hold membership in, along with their high-level details.  
 
 ![Communities page](images/communities-page.png)
 

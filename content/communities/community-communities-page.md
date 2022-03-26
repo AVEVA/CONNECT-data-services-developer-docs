@@ -4,8 +4,6 @@ uid: community-communities-page
 
 # Communities page
 
-<!-- TODO: draft content -->
-
 The `Communities` page, accessible at **Data Management** > **Communities**, is the entry point for creating and participating in communities. This page list all communities that tenant participates in along with their high-level details. 
 
 ![Communities page](images/communities-page.png)
@@ -16,7 +14,16 @@ The image above displays the `Communities` page. Review the headers below for mo
 
 For each community that your tenant participates in OCS, a tile is listed on the `Communities` page. From this tile, you can review high level details for the community and view if you have access to view data streams from the community.
 
-Select **Details** to open administrate the community. For more information on administrative actions, see the following topics:
+The following table describes each field in a community tile:
+
+| Field | Description |
+|--------|-------------|
+| **Tenants** | The number of tenants participating in the community. |
+| **Date Created** | The date that the community was created. |
+| **Sharing Status** | Indicates whether on or more tenant in the community is sharing a data stream. Statuses include: <ul><li><strong>Sharing Active</strong>: The community is currently allowing its members to share and view data streams.</li><!--<li> TODO: Add another status for pausing?</li>--></ul>|
+| **Member Status** | Indicates whether you are [Community Member](xref:community-community-roles#community-member) and can view data shared to the community within `Sequential Data Store`. If the field displays a status of `Cannot view shared data`, then you are not a Community Member. If you are a Community Member, this field is omitted.|
+
+Select **Details** to administrate the community. For more information on administrative actions, see the following topics:
 
 - <xref:community-community-administration>
 - <xref:community-tenant-administration>

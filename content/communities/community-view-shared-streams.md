@@ -21,18 +21,6 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 1. From the **Tenants** tab, select a tenant to view which streams that it shares with the community.
 
     Details for the community open in the right pane.
-    
-    <details>
-        <summary><strong>Stream column notes</strong></summary>
-        <div>
-            <img src="images/streams-column.png"></img>
-            <p>The <strong>Streams</strong> column usually displays the number of streams shared into the community, but you may encounter the following states:</p>
-            <ul>
-                <li>If the <strong>Info</strong><img src="../_icons/info.svg"/> icon displays, you cannot view the number of streams displayed because you are not a Community Member.</li>
-                <li>If the <strong>Warning</strong><img src="../_icons/warning.svg"/> icon displays, you are a Community Member, but there is an issue with stream permissions.</li>
-            </ul>
-        </div>
-    </details>
 
 1. From the right pane, select the **Streams** tab.
     

@@ -23,7 +23,7 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
     Details for the community open in the right pane.
 
     <details>
-        <summary><strong>Stream column notes</strong></summary>
+        <summary><strong>Stream column notes:</strong></summary>
         <div>
             <img src="images/streams-column.png"></img>
             The <strong>Streams</strong> column usually displays the number of streams shared into the community, but you may encounter the following states:

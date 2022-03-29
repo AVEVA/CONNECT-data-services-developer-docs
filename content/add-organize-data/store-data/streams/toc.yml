@@ -1,6 +1,4 @@
-- name: Streams best practices
-  topicHref: streams-best-practices.md
-- name: Add a stream
-  topicHref: streams-procedure.md
-- name: Manage streams
-  topicHref: streams-manage.md  
+- topicUid: streams-manage-streams
+- topicUid: streams-add-tags-or-metadata
+- topicUid: streams-share-streams
+- topicUid: streams-manage-stream-permissions

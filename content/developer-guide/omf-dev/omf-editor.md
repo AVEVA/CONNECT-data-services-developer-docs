@@ -16,7 +16,7 @@ To build a message using the OMF Editor:
 
 1. Select the OMF version from the **OMF Version** selector.
 
-2. Edit your message and use the following options:
+1. Edit your message and use the following options:
 
    - Select **Copy OMF** to copy the message content to the clipboard. 
 

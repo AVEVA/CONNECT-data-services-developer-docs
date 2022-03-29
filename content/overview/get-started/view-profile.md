@@ -8,7 +8,7 @@ The `My Profile` window displays your user information and assigned roles.
 
 ## Update contact information
 
-To update your contact information, perform the following steps:
+To update your contact information, follow these steps:
 
 1. To open your user profile, select the **User profile** icon ![Card view](images/profile-icon.png) and select your name.
 
@@ -22,7 +22,7 @@ To update your contact information, perform the following steps:
 
 The **Show user friendly property names** option controls how property names appear throughout the portal. This setting is specific to your login.
 
-To change your user preferences, perform the following steps:
+To change your user preferences, follow these steps:
 
 1. To open your user profile, select the **User profile** icon ![Card view](images/profile-icon.png) and select your name.
 

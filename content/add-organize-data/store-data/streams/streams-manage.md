@@ -5,7 +5,7 @@ uid: manage-streams
 
 The Sequential Data Store gives you capabilities to manage stored streams. The capabilities function the same if you are working in the context of a namespace or a community.
 
-## Manage permissions
+## Manage stream permissions
 
 For a role to perform any actions on a stream, you must grant that role permissions for the stream. For any stream, you can assign the following permissions to a role:
 
@@ -14,6 +14,10 @@ For a role to perform any actions on a stream, you must grant that role permissi
 - Delete
 - Manage Permissions
 - Share
+
+### [Single stream](#tab/single-stream)
+
+Tab content-2-1.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -24,6 +28,16 @@ For a role to perform any actions on a stream, you must grant that role permissi
 1. In the `Manage Permissions` window, from **Select Role**, choose the role whose permissions you want to modify.
 
 1. Select the permissions to grant to the selected role, and then select **Save**.
+
+### [Multiple streams (patch)](#tab/multiple-streams-patch)
+
+Tab content-1-1.
+
+### [Multiple streams (replace)](#tab/multiple-streams-replace)
+
+Tab content-1-1.
+
+***
 
 ## Add tags or metadata
 

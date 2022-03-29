@@ -26,15 +26,15 @@ To add a new identity provider, follow these steps:
 
    If you are adding an identity provider that supports advanced integration, such as Azure Active Directory, you must obtain consent from that account's Administrator. An `Add Identity Provider` window appears.
 
-2. Enter the Azure Active Directory's Tenant ID or Domain Name of that identity provider.
+1. Enter the Azure Active Directory's Tenant ID or Domain Name of that identity provider.
 
-3. Select the **Enable Advanced Integration** checkbox.
+1. Select the **Enable Advanced Integration** checkbox.
 
-4. Enter the Azure Account Administrator's email address.
+1. Enter the Azure Account Administrator's email address.
 
-5. Enter the Azure Account Administrator's name.
+1. Enter the Azure Account Administrator's name.
 
-6. Select **Request Consent**.
+1. Select **Request Consent**.
 
 ## Edit identity provider consent
 

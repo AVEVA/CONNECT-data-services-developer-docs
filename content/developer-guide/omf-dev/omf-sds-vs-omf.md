@@ -52,6 +52,6 @@ Both SDS and OMF use the same authentication mechanism when connecting to OCS, s
 
 ### Performance
 
-Because there is overhead associated with parsing the OMF JSON payloads, direct SDS calls may be more performant for single stream writes. However, with OMF you can send data for multiple containers in a single payload (equivalent to an OCS stream or PI Point). This practice reduces the number of requests needed and makes batching data easier. In addition, the OMF ingress service can buffer and combine writes into SDS for more efficient processing. Note that Adapters contain a mechanism for buffering OMF messages on the client to handle network disruptions. With SDS data writes, parallel tasks are needed to realize the full potential of OCS.  
+Because there is overhead associated with parsing the OMF JSON payloads, direct SDS calls may be more performant for single stream writes. However, with OMF you can send data for multiple containers in a single payload (equivalent to an OCS stream or PI Point). This practice reduces the number of requests needed and makes batching data easier. In addition, the OMF ingress service can buffer and combine writes into SDS for more efficient processing. PI Adapters contain a mechanism for buffering OMF messages on the client to handle network disruptions. With SDS data writes, parallel tasks are needed to realize the full potential of OCS.  
 
 Another consideration for performance is compression of message payloads, which both options support through gzip when specified headers are provided.

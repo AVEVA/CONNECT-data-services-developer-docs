@@ -16,7 +16,7 @@ To build a message using the OMF Editor:
 
 1. Select the OMF version from the **OMF Version** selector.
 
-2. Edit your message and use the following options:
+1. Edit your message and use the following options:
 
    - Select **Copy OMF** to copy the message content to the clipboard. 
 
@@ -26,4 +26,4 @@ To build a message using the OMF Editor:
 
    - Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Reset Template** to delete any changes you have made to the message content. 
 
-   As you edit your message, the editor indicates whether your message is valid in the upper right and displays any errors in the `Errors` pane.
+   As you edit a message, the editor indicates whether it is valid in the upper right and displays any errors in the `Errors` pane.

@@ -17,11 +17,11 @@ For a role to perform any actions on a stream, you must grant that role permissi
 
 ### [Single stream](#tab/single-stream)
 
-Tab content-2-1.
+To manage permissions for a single data stream, complete the following steps:
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Select one or more streams.
+1. Select a stream.
 
 1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Manage Permissions**.
 
@@ -29,13 +29,17 @@ Tab content-2-1.
 
 1. Select the permissions to grant to the selected role, and then select **Save**.
 
-### [Multiple streams (patch)](#tab/multiple-streams-patch)
+### [Multiple streams](#tab/multiple-streams)
 
-Tab content-1-1.
+Enim pariatur eu ex fugiat. Tempor nisi consequat qui amet esse do culpa est mollit ea ut deserunt irure. Aute Lorem reprehenderit cupidatat amet velit ex ut nisi amet. Ut aliqua est amet nisi.
 
-### [Multiple streams (replace)](#tab/multiple-streams-replace)
+### Patch operation
 
-Tab content-1-1.
+Enim pariatur eu ex fugiat. Tempor nisi consequat qui amet esse do culpa est mollit ea ut deserunt irure. Aute Lorem reprehenderit cupidatat amet velit ex ut nisi amet. Ut aliqua est amet nisi.
+
+### Replace operation
+
+Enim pariatur eu ex fugiat. Tempor nisi consequat qui amet esse do culpa est mollit ea ut deserunt irure. Aute Lorem reprehenderit cupidatat amet velit ex ut nisi amet. Ut aliqua est amet nisi.
 
 ***
 

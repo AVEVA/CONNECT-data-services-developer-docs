@@ -8,7 +8,7 @@ After creating types, you can add streams and associate a type with the stream. 
 
 - [Streams](xref:ccStreams)
 
-- [Streams best practices](xref:bpStreams)
+- [Streams best practices](xref:ccStreams#streams-best-practices)
 
 ## Procedure
 

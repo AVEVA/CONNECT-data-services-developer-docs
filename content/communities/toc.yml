@@ -1,5 +1,9 @@
+- topicUid: community-communities-page
+  items:
+  - topicUid: communities-manage-default-admins
 - topicUid: community-setup
   items:
+  - topicUid: community-community-roles
   - topicUid: community-workflow-create
     items:
     - topicUid: community-create-community
@@ -9,10 +13,6 @@
     items: 
     - topicUid: community-accept-invite
     - topicUid: community-manage-sds-permissions-join
-- topicUid: community-community-roles
-- topicUid: community-communities-page
-  items:
-  - topicUid: communities-manage-default-admins
 - topicUid: community-community-administration
   items:
   - topicUid: community-invite-tenant

@@ -22,6 +22,10 @@ Users assigned a community administrator role can perform the following tasks:
 
 	Add or remove users within your tenant as Community Members.
 
+- <xref:community-manage-groups>
+
+	Add or remove groups within your tenant as Community Members.
+
 - <xref:community-manage-clients>
 
 	Add or remove programmatic access for an application to shared community data and resources using REST API.

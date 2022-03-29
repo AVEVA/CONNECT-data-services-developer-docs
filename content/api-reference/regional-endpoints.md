@@ -12,7 +12,7 @@ The following table lists the current AVEVA Data Hub region labels and correspon
 | ------------- | ----------------- |
 | US-West (westus) | https://uswe.datahub.connect.aveva.com |
 | EU-North (northeurope) | https://euno.datahub.connect.aveva.com | 
-| AU-East (eastaustralia) | https://auea.datahub.connect.aveva.com |
+| AU-East (australiaeast) | https://auea.datahub.connect.aveva.com |
 
 **Note:** US-West is the primary region. The region is selected at initial setup when an AVEVA Connect folder is created, and cannot be changed after folder creation. If a region other than the primary region has been selected, calls may still be made to the US-West region.
 

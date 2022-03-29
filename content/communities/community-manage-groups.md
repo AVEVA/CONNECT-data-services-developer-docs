@@ -36,6 +36,6 @@ To remove tenant groups from a community, follow these steps:
 
 1. On the **My Groups** tab, select one or more groups. A details pane appears. If necessary, filter the list of groups by typing in the **Filter groups** box.
 
-1. On the detail pane, select **Remove Group(s)**. When prompted for confirmation, select **Remove**.
+1. On the detail pane, select **Remove Groups**. When prompted for confirmation, select **Remove**.
 
 The groups that you remove from the community can no longer view it nor which data streams are shared within it.

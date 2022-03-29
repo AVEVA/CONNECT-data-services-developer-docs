@@ -24,6 +24,7 @@
   items:
   - topicUid: community-remove-your-tenant
   - topicUid: community-manage-users
+  - topicUid: community-manage-groups
   - topicUid: community-manage-clients
   - topicUid: community-manage-administrators
 - topicUid: community-data-sharing

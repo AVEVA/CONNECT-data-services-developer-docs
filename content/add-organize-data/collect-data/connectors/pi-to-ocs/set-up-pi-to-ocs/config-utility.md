@@ -21,9 +21,9 @@ The following image and table provides descriptions of the fields in the utility
 | 7  | Set data privacy options and assign an agent description.    |
 | 8  | View information about the server connection and its configuration. |
 | 9  | Source AF server name.                                        |
-| 10 | Optional, alternate name for an AF server. Select the pencil icon to the right to assign an alternate, custom name for data privacy purposes. This name replaces the default AF server name in assets' metadata attributes.<br></br><br>**Note:** You can also assign a custom PI Data Archive server name, which enables you to replace the default server name with a custom name in PI to OCS streams.</br> | 
-| 11 | Type of AF mapping configured for the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
-| 12 | Amount of time before connection times out. Select the pencil icon to enter a new time in seconds. |
+| 10 | An optional, alternate name for an AF server. Select the pencil icon to assign a custom name that appears in the portal. This name replaces the AF server name in the asset's metadata '__Path' attributes and is visible in Asset Explorer.<br></br><br>**Note:** You can also assign an alternate Data Archive server name that appears in PI to OCS streams.</br> | 
+| 11 | The type of AF mapping configured on the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
+| 12 | The time before the agent connection times out. Select the pencil icon to enter a new time in seconds. |
 
    **Note:** After a Data Archive server is added, similar information in the table above is displayed in the utility.
 
@@ -69,7 +69,7 @@ To add an AF server, follow these steps:
 
    * Connection status and timeout
 
-1. (Optional) To add an alternate name that will be shown in place of the actual AF server name in the portal and in the metadata attribute path for assets, select the pencil icon, then type a new name. 
+1. (Optional) To add an alternate name that appears in place of the actual AF server name in the portal and in the assets' metadata '__Path' attributes, select the pencil icon, then type a new name. 
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout** field.
 
@@ -143,7 +143,7 @@ To add a Data Archive, follow these steps:
 
    * Connection status and timeout
    
-1. (Optional) To add an alternate name that will be shown in the portal and in your PI to OCS streams in place of the actual Data Archive name, select the pencil icon, then type a new name. 
+1. (Optional) To add an alternate name that appears in place of the actual Data Archive server name in the portal and in PI to OCS streams, select the pencil icon, then type a new name. 
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout (sec)** field.
 

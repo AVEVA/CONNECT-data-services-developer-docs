@@ -8,11 +8,11 @@ If you are assigned the **Manage Permissions** access right, then you can config
 
 ## Prerequisites
 
-To manage data stream permissions, your user role must be assigned the **Manage Permissions** access right. 
+To manage data stream permissions, your user role must be assigned the **Manage Permissions** access right.
 
 ## Manage default permissions for new streams
 
-Each time that a user adds a new stream to the `Sequential Data Store`, that stream is automatically assigned a profile of default permissions for each user role in your tenant. You can edit these default permissions from the `Sequential Data Store`.
+Enim esse et reprehenderit eiusmod veniam commodo ea ipsum ut cupidatat. Ad quis eiusmod duis labore elit occaecat minim id tempor sint pariatur laborum pariatur. Aliquip commodo est non nulla est dolor amet ex nulla id. Consequat fugiat non consectetur magna esse deserunt consectetur aliquip. Tempor dolor qui minim officia mollit non quis nulla eu eu esse nisi ullamco.
 
 ## Manage permissions for a single stream
 
@@ -39,8 +39,6 @@ Enim pariatur eu ex fugiat. Tempor nisi consequat qui amet esse do culpa est mol
 ### [Replace](#tab/replace)
 
 Aliqua nostrud in aute excepteur consectetur cupidatat aute minim ea mollit veniam dolore deserunt. Pariatur ex laboris excepteur minim dolore quis aute excepteur Lorem laboris veniam culpa. Duis ullamco ut tempor enim nisi nulla deserunt anim. Laboris in sunt labore eu sint et esse proident.
-
-***
 
 ## Manage permissions for all streams
 

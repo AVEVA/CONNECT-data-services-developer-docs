@@ -10,20 +10,6 @@ If you are assigned the **Manage Permissions** access right, then you can config
 
 To manage data stream permissions, your user role must be assigned the **Manage Permissions** access right. 
 
-## Stream permissions
-
-When editing permissions for data streams, you can explicitly allow or deny data stream permissions based on user role. Each user assigned a role listed in the **Manage Permissions** dialog inherits the permissions that you configure. The following table describes each permission that you can assign to a user role:
-
-<!-- TODO: Test individual stream permissions -->
-
-| Permission | Description |
-|--|--|
-| **Read** | Allows users to view data streams details in `Sequential Data Store`. |
-| **Write** | Allows user to edit data stream details, metadata, and tags. |
-| **Delete** | Allows users to delete existing data stream details, metadata, and tags. |
-| **Manage Permissions** | Allows users to assign permissions to one or more selected data streams. |
-| **Share** | Allows user to share a data stream into a community. |
-
 ## Manage default permissions for new streams
 
 Each time that a user adds a new stream to the `Sequential Data Store`, that stream is automatically assigned a profile of default permissions for each user role in your tenant. You can edit these default permissions from the `Sequential Data Store`.
@@ -59,3 +45,17 @@ Aliqua nostrud in aute excepteur consectetur cupidatat aute minim ea mollit veni
 ## Manage permissions for all streams
 
 Deserunt elit ea culpa esse voluptate pariatur nostrud nulla aliqua consectetur cupidatat qui. Quis est reprehenderit duis aliquip esse quis reprehenderit irure esse et et. Eiusmod occaecat id labore veniam culpa nulla tempor reprehenderit cillum veniam ipsum consequat magna. Occaecat nulla quis aliqua consectetur. Ex consectetur ut nisi commodo. Anim velit eiusmod commodo nostrud magna quis.
+
+## Stream permissions
+
+When editing permissions for data streams, you can explicitly allow or deny data stream permissions based on user role. Each user assigned a role listed in the **Manage Permissions** dialog inherits the permissions that you configure. The following table describes each permission that you can assign to a user role:
+
+<!-- TODO: Test individual stream permissions -->
+
+| Permission | Description |
+|--|--|
+| **Read** | Allows users to view data streams details in `Sequential Data Store`. |
+| **Write** | Allows user to edit data stream details, metadata, and tags. |
+| **Delete** | Allows users to delete existing data stream details, metadata, and tags. |
+| **Manage Permissions** | Allows users to assign permissions to one or more selected data streams. |
+| **Share** | Allows user to share a data stream into a community. |

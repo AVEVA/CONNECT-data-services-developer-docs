@@ -1,7 +1,8 @@
 - name: Stream administration
   items:
   - topicUid: streams-manage-stream-permissions
-- name: Stream data stewardship
-- topicUid: streams-manage-streams
-- topicUid: streams-add-tags-or-metadata
-- topicUid: streams-share-streams
+- name: Stream management
+  items:
+  - topicUid: streams-manage-streams
+  - topicUid: streams-add-tags-or-metadata
+  - topicUid: streams-share-streams

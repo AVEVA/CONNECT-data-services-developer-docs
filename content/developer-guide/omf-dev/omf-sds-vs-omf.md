@@ -8,14 +8,13 @@ When collecting data programatically, you have the option of using either the Op
 
 ## Data collection option comparison
 
-The following table lists the factors that you should consider when choosing between OMF and SDS, as well as which option is the better for each factor. Some factors (**Security**, **Situation-dependent factors**, and **Performance**) have no inherently superior option and require additional consideration. For more information on these factors, see [Situation dependent factors](#situation-dependent-factors).
+The following table lists the factors that you should consider when choosing between OMF and SDS, as well as which option is the better for each factor. Some factors (**Security** and **Performance**) have no inherently superior option and require additional consideration. For more information on these factors, see [Situation dependent factors](#situation-dependent-factors).
 
 | Factor | OMF | SDS |
 |--|--|--|
 | [Cross-platform](#cross-platform) | ✔ |  |
 | [Ease-of-use](#ease-of-use) | ✔ |  |
 | [Flexibility](#flexibility) |  | ✔ |
-| [Situation-dependent factors](#situation-dependent-factors) | - | - |
 | [Security](#security) | - | - |
 | [Performance](#performance) | - | - |
 
@@ -43,7 +42,7 @@ Use SDS data write when the following factor is more important to your use case.
 
 	Additionally, not all OMF endpoints respond with the same error codes due to asynchronous message processing, which could result in a successful HTTP status code being returned when a SDS data write would result in a client error status code. This could happen if a message adheres to the OMF specification, but is not writing to a valid container.  
 
-- <a id="situation-dependent-factors"></a>**Situation-dependent factors**
+## Situation-dependent factors
 
 	For some factors, neither SDS nor OMF are inherently superior. 
 

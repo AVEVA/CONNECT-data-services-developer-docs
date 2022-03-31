@@ -8,7 +8,7 @@ When collecting data programatically, you have the option of using either the Op
 
 ## Data collection option comparison
 
-The following table lists the factors that you should consider when choosing between OMF and SDS, as well as which option is the better for each factor. Some factors (**Security** and **Performance**) have no inherently superior option and require additional consideration. For more information on these factors, see [Situation dependent factors](#situation-dependent-factors).
+The following table lists the factors that you should consider when choosing between OMF and SDS, as well as which option is the better for each factor. Some factors (**Security**, **Situation-dependent factors**, and **Performance**) have no inherently superior option and require additional consideration. For more information on these factors, see [Situation dependent factors](#situation-dependent-factors).
 
 | Factor | OMF | SDS |
 |--|--|--|

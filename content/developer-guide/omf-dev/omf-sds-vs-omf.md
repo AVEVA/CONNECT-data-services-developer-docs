@@ -36,7 +36,7 @@ Use SDS data write when the following factor is more important to your use case.
 
 ### Flexibility
 
-SDS data writes afford greater flexibility than OMF, which may make it the clear winner for certain use cases. If a requirement of your application is both reading and writing from OCS, then SDS data writes are preferable to avoid the need for interacting with two separate APIs. Using the SDS API allows for reuse of objects such as types and streams in your application.  
+SDS data writes afford greater flexibility than OMF, which may make it the clear choice for certain use cases. If a requirement of your application is both reading and writing from OCS, then SDS data writes are preferable to avoid the need for interacting with two separate APIs. Using the SDS API allows for reuse of objects such as types and streams in your application.  
 
 In some situations, the functionality that you need may not be currently supported in the OMF specification. Certain property overrides and nested types are two instances where this would be true. Platform specific features like dataviews or assets are also not accessible through OMF. Direct calls to the OCS REST API would be preferred for these situations.  
 

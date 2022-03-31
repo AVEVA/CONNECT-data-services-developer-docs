@@ -44,7 +44,7 @@ Use SDS data write when the following factor is more important to your use case.
 
 ## Situation-dependent factors
 
-	For some factors, neither SDS nor OMF are inherently superior. 
+For some factors, neither SDS nor OMF are inherently superior. 
 
 - <a id="security"></a>**Security**
 

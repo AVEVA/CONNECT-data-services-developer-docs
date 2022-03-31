@@ -28,7 +28,7 @@ While SDS data writes can only be used for OSIsoft Cloud Services (OCS) and Edge
 
 ### Ease of use
 
-OMF is simpler than SDS, having only a single API and format, which can publish Types, Containers, Assets, and Data using the actions of Create, Update, and Delete. This simplicity contrasts with SDS, which has separate API's for publishing different data types and different actions. For more information on this contrast, see [Flexibility](#flexibility).
+OMF is simpler than SDS, having only a single API and format, which can publish Types, Containers, Assets, and Data using the actions of Create, Update, and Delete. This simplicity contrasts with SDS, which has separate APIs for publishing different data types and different actions. For more information on this contrast, see [Flexibility](#flexibility).
 
 ## SDS data write pros
 

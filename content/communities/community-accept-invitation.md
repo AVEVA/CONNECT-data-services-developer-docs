@@ -10,7 +10,7 @@ When another tenant invites you to a community, you receive an email invitation 
 
 To accept an invitation, follow these steps:
 
-1. Open and review the email invitation from OSIsoft Cloud Services.
+1. Open and review the email invitation from OSIsoft Cloud Services (OCS).
 
 1. Select the **VIEW COMMUNITY INVITE** link.
 
@@ -18,7 +18,7 @@ To accept an invitation, follow these steps:
 
   **Important!** If you have multiple tenants, verify that you are logging into the correct tenant.
 
-1. If prompted, log in to OSIsoft Cloud Services.
+1. If prompted, log in to OCS.
 
   A page opens and displays that your tenant will join the community that issued the invitation.
 
@@ -32,6 +32,8 @@ To accept an invitation, follow these steps:
  
 1. After your tenant is confirmed for the community, select **Details** to setup Community Administrators and Community Members for your tenant. A dialog opens.
 
+  ![Select Details](images/await-confirmation.png)
+
 1. From the **Welcome** page, select **Next**.
 
 1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks for both their own tenant, but not the entire community. You can either accept the default roles or add new ones. 
@@ -44,11 +46,13 @@ To accept an invitation, follow these steps:
 
 1. After you finish, select **Next**.
 
-1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are users within your tenant that have read access to the community and its data.
+1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are Members within your tenant that have read access to the community and its data.
     
-    To add new Community Members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
+    To add new Community Members, select **Add Members** > **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
     **Note:** Community Administrators are not automatically added as Community Members. You must manually add Community Administrators as Community Members to access shared resources.
+
+1. After you finish, select **Save & Close**.
 
 ## Next steps
 

@@ -4,7 +4,7 @@ uid: view-metrics
 
 # View transfer metrics
 
-The `Transfer Metrics` pane displays details about transfer progress for a server connection from start to finish. Metrics for streaming and historical events as well as stream and asset creation are provided. 
+The `Transfer Metrics` pane displays details about transfer progress from start to finish by server connectino. Metrics for streaming and historical events as well as stream and asset creation is shown. 
 
 The following table provides a description of the fields in the `Transfer Metrics` pane.
 
@@ -20,8 +20,8 @@ The following table provides a description of the fields in the `Transfer Metric
 | Total Points Updated | Total number of PI points updated during the transfer process. |
 | Stream Creation Status | The progress of streams creation during transfer progression.  |
 | Total Streams Created | Total number of streams created.  |
-| Total Streams Updated | Total number of streams updated with new configuration and metadata.  |
-| Total Streams Deleted | Total number of streams deleted. |
+| Total Streams Updated | Total number of streams updated with new configuration and metadata. |
+| Total Streams Deleted | Total number of deleted streams. |
 | Stream Creation Errors  | Total number of errors generated while creation streams. |
 | Stream Update Errors | Number of errors generated while updating streams. See the `Transfer Overview` section on the `Manage Agent` pane for error details. |
 | Stream Deletion Errors | Number of errors generated during stream deletion. See the `Transfer Overview` section on the `Manage Agent` pane for error details. |
@@ -30,6 +30,6 @@ The following table provides a description of the fields in the `Transfer Metric
 | Assets Created Per Second | The number of assets created per second during the transfer. |
 | Total Assets Created | The total number of assets created. |
 | Assets Updated | The number of assets updated during the data transfer. |
-| Total Assets Deleted | The total number of assets deleted. |
+| Total Assets Deleted | The total number of deleted assets. |
 | Asset Create/Update Errors | The number of errors generated during asset creation or updating. |
 | Asset Deletion Errors | The number of errors generated during asset deletion. See the `Transfer Overview` section on the `Manage Agent` pane for error details.

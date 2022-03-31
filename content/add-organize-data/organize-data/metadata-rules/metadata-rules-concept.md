@@ -4,8 +4,9 @@ uid: ccMetadataRules
 
 # Add context with metadata rules
 
-As a recommendation, you should explicitly include metadata when you create streams; but, that is not always possible. In these instances, you can establish or leverage a consistent naming pattern for streams and embed metadata such as location, asset class, and asset ID in the stream names. Then use a metadata rule to describe the pattern of the stream names. The metadata rule identifies all streams that match the pattern. Then OCS parses each stream and builds out the metadata following the defined rules. 
-<!-- Angela Flores 6/11/21 -Having read through the topic, I don't understand how you could use a metadata rule to "establish a consistent naming pattern". It seems like if the naming pattern is consistent, you can use metadata rules to decode the information stored in the name. Also, this topic talks about creating metadata rules and how they are applied to data streams, but then what? Where do I see this information? How does it help me? -->
+The value of metadata lies in its capacity to enrich sequential data, and to facilitate logical segregation and contextualization of data. Other services and applications, such as data views, leverage stream metadata to simplify finding data and to provide context about stream data. When possible, you should explicitly include metadata when you create streams. When that is not possible, you can use metadata rules to leverage a consistent naming pattern for streams to embed metadata.
+
+You create metadata rules by selecting parsable metadata from a stream name structure, such as location, facility, asset class, or asset Id, and applying the rule to identify streams whose names match the defined pattern. The metadata rule identifies all streams that match the pattern, then OCS parses each stream and builds out the metadata following the defined rules.
 
 ## PI Server counterpart
 

@@ -24,15 +24,19 @@ To accept an invitation, follow these steps:
 
 1. Select **Join**.
 
-  The tenant that invited you to the community is updated that you accepted their invitation. Wait for them to confirm the invitation. 
+  The tenant that invited you to the community is updated that you accepted their invitation.
 
-1. Wait for a Community Administrator from the inviting tenant to confirm your tenant. When the inviting tenant confirms, you receive an email that your tenant now has access to the community.
-  
-  Your tenant does not officially join the until the inviting tenant confirms the invitation.
+1. Wait for a Community Administrator from the inviting tenant to confirm your tenant. Your tenant does not officially join the community until the inviting tenant confirms the invitation.
+
+  ![await confirmation](images/await-confirmation.png)
+
+  When the administrative tenant confirms your tenant, you receive a notification email.
  
-1. After your tenant is confirmed for the community, select **Details** to setup Community Administrators and Community Members for your tenant. A dialog opens.
+1. After your tenant is confirmed for the community, select **Details** to setup Community Administrators and Community Members for your tenant.
 
-  ![Select Details](images/await-confirmation.png)
+  ![community details](images/community-details.png)
+
+  A setup wizard opens.
 
 1. From the **Welcome** page, select **Next**.
 
@@ -50,7 +54,7 @@ To accept an invitation, follow these steps:
     
     To add new Community Members, select **Add Members** > **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
-    **Note:** Community Administrators are not automatically added as Community Members. You must manually add Community Administrators as Community Members to access shared resources.
+    **Note:** Community Administrators are not automatically added as Community Members. If you want your Community Administrators to also be Community Members with access to shared resources, you must manually add them.
 
 1. After you finish, select **Save & Close**.
 

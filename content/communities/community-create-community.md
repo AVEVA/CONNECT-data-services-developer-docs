@@ -36,7 +36,7 @@ To create a community, follow these steps:
     
     To add new Community Members, select **Add Users** and then select **Add User** ![add user](../_icons/plus-thick-alt.svg) for each user that you want to add.
 
-    **Note:** Community Administrators are not automatically added as Community Members. You must manually add Community Administrators as Community Members to access shared resources.
+    **Note:** Community Administrators are not automatically added as Community Members. If you want your Community Administrators to also be Community Members with access to shared resources, you must manually add them.
 
 1. After you finish, select **Create**.
 

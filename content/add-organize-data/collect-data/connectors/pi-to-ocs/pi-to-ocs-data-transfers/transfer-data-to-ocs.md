@@ -265,17 +265,19 @@ To start a data transfer, follow these steps:
 
 1. (Optional) In the `PI to OCS Agents` window, select the PI to OCS Agent associated with the data transfer. 
 
-1. (Optional) In the `Details` pane, expand the `Transfer Overview` section.
+1. (Optional) In the `Manage Agent` tab, expand the `Transfer Overview` section.
 
 1. Select **Start Transfer**, then select **Start**.
 
-   The transfer of data begins and the transfer status is shown in the `Transfer Overview` section.
+   The transfer of data begins and the transfer status is shown in the `Transfer Overview` section on the `Manage Agent` tab.
 
 1. In the `Details` pane, expand the `Data Source` section to view the status of a transfer as data is sent.
 
-   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select the **Logs** button above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
+   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select the **Logs** button above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
 
-1. (Optional) If the fields in the `Details` pane indicate there are issues with the transfer or agent, select **Logs** to open the `Logs` window and view more information.
+1. (Optional) If the fields on the `Manage Agents` pane indicate there are issues with the transfer or agent, select **Logs** to view transfer errors or  **Agent Health Events** to open the `Health Events` window and view more information.
+
+1. Click the `Transfer Metrics` tab to view transfer progress and details on stream and/or asset creation. 
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 

@@ -6,6 +6,8 @@
   href: af-data-transferred.md  
 - name: Transfer PI System data to OCS
   href: transfer-data-to-ocs.md
+- name: View transfer metrics
+  href: view-metrics.md  
 - name: Data transfer statuses
   href: data-transfer-statuses.md
 - name: Export transfer details

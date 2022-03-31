@@ -24,6 +24,8 @@ To accept an invitation, follow these steps:
 
 1. Select **Join**.
 
+  ![join](images/join-community.png)
+
   The tenant that invited you to the community is updated that you accepted their invitation.
 
 1. Wait for a Community Administrator from the inviting tenant to confirm your tenant. Your tenant does not officially join the community until the inviting tenant confirms the invitation.

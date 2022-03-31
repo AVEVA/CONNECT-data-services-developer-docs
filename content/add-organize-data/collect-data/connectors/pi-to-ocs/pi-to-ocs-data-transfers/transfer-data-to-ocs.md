@@ -111,7 +111,7 @@ To build an AF element
 
    **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their asset’s UOM property set.<br></br>
    
-   If a PI point reference's AF attribute contains a supported UOM, UOM data for the first AF attribute is transferred. The UOM can be viewed on the `Metadata` and `Properties` tabs in Asset Explorer. If there are multiple attributes that reference the same PI point and these attributes have different UOMs, UOM data will not be transferred. Attribute details are recorded as errors in the PI to OCS log.
+   IIf a PI point reference's AF attribute contains a supported UOM, UOM data for the first AF attribute is transferred. The UOM can be viewed on the `Metadata` and `Properties` tabs in Asset Explorer. If there are multiple attributes that reference the same PI point and these attributes have different UOMs, UOM data will not be transferred. UOMs that cannot be transferred are recorded as errors in the PI to OCS logs. 
 
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 

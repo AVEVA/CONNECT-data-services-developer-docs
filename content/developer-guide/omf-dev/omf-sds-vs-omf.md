@@ -48,7 +48,7 @@ For some factors, neither SDS nor OMF are inherently superior.
 
 ### Security
 
-Both SDS and OMF use the same authentication mechanism when connecting to OCS, so neither is inherently more secure. Always follow best practices for security as outlined in [Identity and access management](xref:id-access-mgmt). SDS APIs give callers the flexibility to specify an Access Control List (ACL), whereas Types and Streams created through OMF messages use the default ACL of the collection.
+Both SDS and OMF use the same authentication mechanism when connecting to OCS, so neither is inherently more secure. Always follow best practices for security as outlined in [Identity and access management](xref:id-access-mgmt). SDS APIs give callers the flexibility to specify an Access Control List (ACL), whereas types and streams created through OMF messages use the default ACL of the collection.
 
 ### Performance
 

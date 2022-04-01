@@ -10,6 +10,7 @@ The following table provides a description of the fields in the `Transfer Metric
 
 | Field name | Description   |
 | ------------- | ---------- |
+| PI Data Archive Server Version | The version of PI Data Archive that is installed on the source server configured to send PI point data via the agent. |
 | Last Streaming Read | The date of the latest stream read.|
 | Streaming Events Per Second | The average number of streaming events transferred to the PI to OCS Agent per second over the last minute. This value is updated every 10 seconds during data transfer.  |
 | Historical Events Per Second | The average number of historical events transferred to the PI to OCS Agent per second over the last minute. This value is updated every 10 seconds during data transfer. |
@@ -25,6 +26,7 @@ The following table provides a description of the fields in the `Transfer Metric
 | Stream Creation Errors  | Total number of errors generated while creation streams. |
 | Stream Update Errors | Number of errors generated while updating streams. See the `Transfer Overview` section on the `Manage Agent` pane for error details. |
 | Stream Deletion Errors | Number of errors generated during stream deletion. See the `Transfer Overview` section on the `Manage Agent` pane for error details. |
+| AF Server Version            | The version of Asset Framework (AF) that is installed on the source server configured to send AF element data via the agent.  |
 | Total Elements in Transfer | The number of AF elements configured in the transfer. |
 | Total Elements Transferred | The number of AF elements transferred to the PI to OCS Agent.  |
 | Assets Created Per Second | The number of assets created per second during the transfer. |

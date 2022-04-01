@@ -75,6 +75,8 @@ To name the data transfer, follow these steps:
     | SourceTag | X | X |  |  |
     |Step | X | X |  |  |
 
+1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically remove Streams and Assets** option. 
+
 1. Select **Ok**.
 
    The transfer is created and the `Transfer` page opens.
@@ -236,16 +238,14 @@ To save the data transfer definition, follow these steps:
 The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image show the sections in the `Details` pane, which you can expand and collaps using the arrows ( ![](../../images/chevrons.png) ):  
 
 ![](../../images/details-pane1.png)
-![](../../images/details-pane2.png) 
 
-Each section of the `Details` pane is described in the following table.
+The following table provides descriptions of the fields in the `Manage Agent` pane.
 
 | Numbered section | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
 | **1**            | `Agent Overview` - Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
 | **2**            | `Transfer Overview` - Displays transfer details and progress. Also contains buttons to view, remove, or stop a transfer. |
-| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to OCS. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as “real-time” events. Streaming events represent the number of current, real-time events transferred into OCS. |
-|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created: <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to OCS.</li><li>**Total Assets Created**: The number of assets created in OCS.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
+|
 
 ## Transfer data to OCS
 
@@ -269,9 +269,9 @@ To start a data transfer, follow these steps:
 
 1. Select **Start Transfer**, then select **Start**.
 
-   The transfer of data begins and the transfer status is shown in the `Transfer Overview` section on the `Manage Agent` tab.
+   The data transfer begins and transfer status is updated in the `Transfer Overview` section on the `Manage Agent` tab.
 
-1. In the `Details` pane, expand the `Data Source` section to view the status of a transfer as data is sent.
+1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 
    **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select the **Logs** button above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
 
@@ -279,7 +279,7 @@ To start a data transfer, follow these steps:
 
    **Note:** See [Overview of the Health Events window](xref:health-evts-window) for more information.  
  
-1. (Optional) To see more information about a transfer's status in the `Logs` window, select the **Logs** button. See [Tenant log messages](xref:download-tenant-log) for more information. 
+1. (Optional) To see more information about log messages for the transfer, select the **Logs** button. See [Tenant log messages](xref:download-tenant-log) for more information. 
 
 1. (Optional) Click the `Transfer Metrics` tab to view transfer progress and metrics for stream and/or asset creation. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
     

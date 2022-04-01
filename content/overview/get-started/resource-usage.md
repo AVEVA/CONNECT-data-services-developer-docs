@@ -8,7 +8,7 @@ The `Resource Usage` page provides visibility into the number of streams created
 
 The numbers presented in the graph for each month are the average of daily usage numbers for the month. Click on the bar for any month in the graph to display daily stream usage data for each day recorded for that month.
 
-To view the `Resource Usage` page, perform the following steps:
+To view the `Resource Usage` page, follow these steps:
 
 1. Select the **User profile** icon ![Card view](images/profile-icon.png).
 

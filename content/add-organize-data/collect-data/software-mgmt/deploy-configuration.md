@@ -19,3 +19,13 @@ For details on how to deploy a configuration, see the specific edge system produ
  - [PI Adapter for OPC UA](https://docs.osisoft.com/bundle/pi-adapter-opc-ua/page/configuration/configuration.html)
 
 After deploying the configuration, to have an accurate record of the configuration, import the configuration file, including any modifications made in the field, to the corresponding edge system twin in AVEVA Data Hub.
+
+# Data source scenarios
+
+If you need to access multiple data sources on the same device, you need to differentiate the data sources. You can use the following options to identify the data sources:
+
+ - Static IP address
+ 
+ - Fully qualified device name
+
+We recommend you review your specific scenario with your network administrator to determine the appropriate configuration for your use case.

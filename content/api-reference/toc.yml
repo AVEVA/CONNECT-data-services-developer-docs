@@ -1,3 +1,5 @@
+- name: Regional endpoints
+  topicHref: regional-endpoints.md
 - name: Asset store
   href: assets/toc.yml
   topicHref: Assets/assets.md
@@ -27,4 +29,3 @@
   topicHref: tenant/management-overview.md
 - name: HTTP status codes
   topicHref: http-status-codes.md
-

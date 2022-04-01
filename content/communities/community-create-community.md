@@ -37,6 +37,8 @@ To create a community, follow these steps:
 
 The community is created and added to the `Communities` page.
 
+![Tile for new community](images/confirmed.png)
+
 ## Next steps
 
 Invite tenants to your community. Continue to <xref:community-invite>.

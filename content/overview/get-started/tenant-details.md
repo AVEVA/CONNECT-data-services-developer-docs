@@ -12,7 +12,7 @@ A tenant grants access for your users, groups, and clients to assets, resources 
 
 - Date Created – The date the tenant was created.
 
-Contact your tenant administrator if you want to make changes to your tenant details.
+Only the tenant administrator can make changes to the tenant details.
 
 To view the `Tenant Details` page, follow these steps:
 

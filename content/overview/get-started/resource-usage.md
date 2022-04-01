@@ -12,4 +12,6 @@ To view the `Resource Usage` page, follow these steps:
 
 1. Select the **User profile** icon ![Card view](images/profile-icon.png).
 
-2. Select **Resource Usage**.
+1. Select **Resource Usage**.
+
+1.  Click on the bar for any month in the graph to display daily stream usage data for each day recorded for that month.

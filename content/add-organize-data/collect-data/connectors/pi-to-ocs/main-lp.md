@@ -2,7 +2,7 @@
 uid: main-lp
 ---
 
-# PI to OCS Agents (Preview)
+# PI to OCS (Preview)
 
 The fully released version of PI to OCS enables you to transfer your on-prem PI data to OCS.  
 

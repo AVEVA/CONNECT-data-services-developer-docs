@@ -232,21 +232,6 @@ To save the data transfer definition, follow these steps:
 
 1. In the `Transfer` pane, select **Save**.
 
-## Overview of the Details pane
-<!--AF 11/15/21 - This section doesn't belong in this topic about how to define a transfer.-->
-<!-- VT, 11/29/21: I can move this into it's own topic; SMEs and myself wanted to explain what these fields represented.-->
-The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image show the sections in the `Details` pane, which you can expand and collaps using the arrows ( ![](../../images/chevrons.png) ):  
-
-![](../../images/details-pane1.png)
-
-The following table provides descriptions of the fields in the `Manage Agent` pane.
-
-| Numbered section | Description                                                  |
-| ---------------- | ------------------------------------------------------------ |
-| **1**            | `Agent Overview` - Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
-| **2**            | `Transfer Overview` - Displays transfer details and progress. Also contains buttons to view, remove, or stop a transfer. |
-|
-
 ## Transfer data to OCS
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. 
@@ -271,6 +256,8 @@ To start a data transfer, follow these steps:
 
    The data transfer begins and transfer status is updated in the `Transfer Overview` section on the `Manage Agent` tab.
 
+   **Note:** The `Manage Agent` pane provides information about the agent associated with the transfer and the transfer progress.
+
 1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 
    **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select the **Logs** button above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
@@ -286,5 +273,4 @@ To start a data transfer, follow these steps:
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 
 1. (Optional) To remove a transfer, select **Remove Transfer**, then select **Remove**.
-
  

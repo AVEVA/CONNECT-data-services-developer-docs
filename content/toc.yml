@@ -92,6 +92,9 @@
       - topicUid: slow-moving-data
       - topicUid: af-data-transferred
       - topicUid: transfer-data
+      - topicUid: overview-metrics
+      - toipcUid: health-evts-window
+      - toipcUid: edit-transfer 
       - topicUid: data-transfer-statuses
       - topicUid: export-transfer-details
       - topicUid: export-missing-points

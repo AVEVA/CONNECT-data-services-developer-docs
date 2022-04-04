@@ -4,7 +4,7 @@ uid: community-view-shared-streams
 
 # View shared streams 
 
-After a community is established, you can view which data streams are shared into it. You can view both the streams that your tenant is sharing, as well as the streams that other tenants are sharing. View shared data streams in one of two ways: from the `Communities` page or `Sequential Data Store`. Your access to view shared data stream information depends upon your assigned user roles and permissions.
+After a community is established, you can view which data streams are shared into it. You can view both the streams that your tenant is sharing, as well as the streams that other tenants are sharing. You can view shared data streams in one of two ways: from the `Communities` page or `Sequential Data Store`. Your access to view shared data stream information depends upon your assigned user roles and permissions.
 
 ## To view shared streams
 
@@ -60,7 +60,7 @@ When working from `Sequential Data Store`, you can view which data streams are s
 
 ### View communities for a shared stream
 
-While viewing individual data streams in `Sequential Data Store`, you can view each community that the stream is shared with.
+While viewing individual data streams in `Sequential Data Store`, you can view each community that the stream is shared with that you have read access to.
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 
@@ -70,9 +70,11 @@ While viewing individual data streams in `Sequential Data Store`, you can view e
 
 1. From the right pane, select the **Sharing** tab.
 
-    ![Sharing tab](images/communities-sharing-tab-sds.png)
+    The tab lists each community that the stream is shared to for which you have read access.  
 
-    The communities that the stream is shared to are listed. 
+    **Note:**  This tab does not list all communities that the stream is shared with—only those that you have read access to.
+    
+    ![Sharing tab](images/communities-sharing-tab-sds.png)
 
     **Tips:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) for the community.
 

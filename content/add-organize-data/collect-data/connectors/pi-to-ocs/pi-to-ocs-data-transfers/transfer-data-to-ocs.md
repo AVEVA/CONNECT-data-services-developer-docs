@@ -29,7 +29,7 @@ Transfer creation consists of the following tasks:
 
 1. Initiate the data transfer and monitor its progress. 
 
-**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the `Details` pane in the `PI to OCS Agents` page. The following image shows AF indexing in progress:
+**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the `Manage Agent` pane in the `PI to OCS Agents` window. The following image shows AF indexing in progress:
 
 ![](../../images/af-indexing.png)
 

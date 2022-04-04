@@ -38,7 +38,7 @@ To share streams with other communities, follow these steps:
 
 ## View shared data
 
-After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.
+After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:CreateTrendSession>.
 
 ## Unshare streams from Community Details
 

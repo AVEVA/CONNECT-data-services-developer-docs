@@ -30,7 +30,7 @@ To use the asset explorer to create an asset type, follow these steps:
    
 1. Select the **Metadata** tab, and then select **Add Metadata**.
 
-1.Complete the following fields:
+1. Complete the following fields:
 
    - **Metadata** - Enter *Maximum Flow Rate*.
 

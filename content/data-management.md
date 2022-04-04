@@ -4,9 +4,9 @@ uid: DataManagement
 
 # Data management
 
-The Data Management menu provides a number of tools for managing your data within OCS:
+The Data Management menu provides a number of tools for managing your data within OSIsoft Cloud Services (OCS):
 
-* Use the `Namespaces` page to add, edit or remove namespaces from the tenant.
+* Use the `Namespaces` page to add, edit, or remove namespaces from the tenant.
 
 * Use the `Sequential Data Store` (SDS) to store, retrieve, and organize any type of streaming data.
 

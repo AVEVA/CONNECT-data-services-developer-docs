@@ -4,7 +4,7 @@ uid: Security
 
 # Security
 
-The Security menu provides tools to manage access to OCS:
+The Security menu provides tools to manage access to OSIsoft Cloud Services (OCS):
 
 * Use `Identity Providers` to add third-party services that store and authenticate users.
 

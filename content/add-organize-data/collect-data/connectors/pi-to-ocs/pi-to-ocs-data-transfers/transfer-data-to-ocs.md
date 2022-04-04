@@ -111,7 +111,7 @@ To build an AF element
 
    **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.<br></br>
    
-   If a PI point reference's AF attribute contains a supported UOM, UOM data is transferred to the stream. The UOM of the attribute will be either the [SourceUOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_SourceUOM.htm) if specified or the [DefaultUOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_DefaultUOM.htm). Asset properties including UOMs can be viewed in Asset Explorer. If there are multiple attributes that reference the same PI point and these attributes have different UOMs, UOM conflicts can occur and the stream will not have its UOM set. UOMs that cannot be transferred are recorded as errors in the PI to OCS logs.  
+   If a PI point reference's AF attribute contains a supported UOM, UOM data is transferred to the stream. The UOM of the attribute will be either the [source UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_SourceUOM.htm) if specified or the [default UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_DefaultUOM.htm). Asset properties including UOMs can be viewed in Asset Explorer. If there are multiple attributes that reference the same PI point and these attributes have different UOMs, UOM conflicts may occur and the stream will not have its UOM set. UOMs that cannot be transferred are recorded as errors in the PI to OCS logs.
 
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 

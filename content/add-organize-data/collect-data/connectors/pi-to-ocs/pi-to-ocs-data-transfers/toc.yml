@@ -10,6 +10,8 @@
   href: overview-metrics.md
 - name: Overview of the Health Events window
   href: health-events-window.md    
+- name: Edit a transfer
+  href: edit-transfer.md
 - name: Data transfer statuses
   href: data-transfer-statuses.md
 - name: Export transfer details

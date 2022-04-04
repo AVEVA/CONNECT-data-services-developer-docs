@@ -93,8 +93,8 @@
       - topicUid: af-data-transferred
       - topicUid: transfer-data
       - topicUid: overview-metrics
-      - toipcUid: health-evts-window
-      - toipcUid: edit-transfer 
+      - topicUid: health-evts-window
+      - topicUid: edit-transfer 
       - topicUid: data-transfer-statuses
       - topicUid: export-transfer-details
       - topicUid: export-missing-points

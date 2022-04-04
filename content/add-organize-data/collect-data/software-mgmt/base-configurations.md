@@ -22,7 +22,7 @@ You can create and edit base configurations for edge systems in OCS. Once the co
 
 To create a edge system base configuration and export it for use, follow these steps:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Base Configurations**.
 
@@ -60,7 +60,7 @@ To create a edge system base configuration and export it for use, follow these s
 
 To modify a base configuration and export it for use, follow these steps:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Base Configurations**.
 

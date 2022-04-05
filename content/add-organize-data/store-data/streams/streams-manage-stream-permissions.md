@@ -20,7 +20,7 @@ To manage permissions for a single data stream, complete the following steps:
 
 1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Manage Permissions**.
 
-1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace.](#patch-vs-replace).
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace](#patch-vs-replace).
 
 1. Select **Save**.
 
@@ -36,7 +36,7 @@ You can manage permissions for multiple streams by selecting them and choosing *
 
 1. Select **Manage Permissions**.
 
-1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace.](#patch-vs-replace).
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace](#patch-vs-replace).
 
 1. Select **Save**.
 
@@ -48,7 +48,23 @@ You can manage permissions for multiple streams by selecting them and choosing *
 
 1. Select **Manage Permissions**.
 
-1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace.](#patch-vs-replace).
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace](#patch-vs-replace).
+
+1. Select **Save**.
+
+## Manage default permissions for new streams
+
+You can edit the default user roles and permissions added to stream when it is created. Editing these default roles and permissions speeds up creation of new data streams by minimizing permission edits.
+
+1. From the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Manage Default Permissions**.
+
+1. Use the `Manage Default Permissions` window to edit default edit stream permissions.
+
+1. (Optional) To update all existing data streams within the namespace with your selected default settings, select **Apply to all existing streams in the Namespace**.
+
+	**Warning:** Use of this option applies your updated permission settings to *all* streams in the namespace using a patch operation. Use this option with care, as it will overwrite existing permission settings. For more information on patching operations, see [Patch vs. replace](#patch-vs-replace).
 
 1. Select **Save**.
 

@@ -10,50 +10,70 @@ If you are assigned the **Manage Permissions** access right, then you can config
 
 To manage data stream permissions, your user role must be assigned the **Manage Permissions** access right.
 
-## Manage default permissions for new streams
-
-Enim esse et reprehenderit eiusmod veniam commodo ea ipsum ut cupidatat. Ad quis eiusmod duis labore elit occaecat minim id tempor sint pariatur laborum pariatur. Aliquip commodo est non nulla est dolor amet ex nulla id. Consequat fugiat non consectetur magna esse deserunt consectetur aliquip. Tempor dolor qui minim officia mollit non quis nulla eu eu esse nisi ullamco.
-
 ## Manage permissions for a single stream
 
 To manage permissions for a single data stream, complete the following steps:
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Select a single stream.
+1. Select a stream that you want to manage permissions for.
 
 1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Manage Permissions**.
 
-1. In the `Manage Permissions` window, from **Select Role**, choose the role whose permissions you want to modify.
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace.](#patch-vs-replace).
 
-1. Select the permissions to grant to the selected role, and then select **Save**.
+1. Select **Save**.
 
 ## Manage permissions for multiple streams
 
-Fugiat voluptate nisi dolore elit aute pariatur. Magna est aute cupidatat enim occaecat amet dolor qui id consequat enim. Aliquip commodo deserunt duis consequat pariatur proident dolor reprehenderit ipsum nostrud ex enim.
+You can manage permissions for multiple streams by selecting them and choosing **Manage Permissions**. When managing multiple streams, you can choose between two methods of updating stream permissions: patch or replace. For more information on the difference between these operations, see [Patch vs. replace](#patch-vs-replace).
 
 ### [Patch](#tab/patch)
 
-Enim pariatur eu ex fugiat. Tempor nisi consequat qui amet esse do culpa est mollit ea ut deserunt irure. Aute Lorem reprehenderit cupidatat amet velit ex ut nisi amet. Ut aliqua est amet nisi.
+1. From the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. Select the streams that you want to manage permissions for.
+
+1. Select **Manage Permissions**.
+
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace.](#patch-vs-replace).
+
+1. Select **Save**.
 
 ### [Replace](#tab/replace)
 
-Aliqua nostrud in aute excepteur consectetur cupidatat aute minim ea mollit veniam dolore deserunt. Pariatur ex laboris excepteur minim dolore quis aute excepteur Lorem laboris veniam culpa. Duis ullamco ut tempor enim nisi nulla deserunt anim. Laboris in sunt labore eu sint et esse proident.
+1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-## Manage permissions for all streams
+1. Select the streams that you want to manage permissions for.
 
-Deserunt elit ea culpa esse voluptate pariatur nostrud nulla aliqua consectetur cupidatat qui. Quis est reprehenderit duis aliquip esse quis reprehenderit irure esse et et. Eiusmod occaecat id labore veniam culpa nulla tempor reprehenderit cillum veniam ipsum consequat magna. Occaecat nulla quis aliqua consectetur. Ex consectetur ut nisi commodo. Anim velit eiusmod commodo nostrud magna quis.
+1. Select **Manage Permissions**.
 
-## Stream permissions
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace.](#patch-vs-replace).
 
-When editing permissions for data streams, you can explicitly allow or deny data stream permissions based on user role. Each user assigned a role listed in the **Manage Permissions** dialog inherits the permissions that you configure. The following table describes each permission that you can assign to a user role:
+1. Select **Save**.
 
-<!-- TODO: Test individual stream permissions -->
+## Manage Permissions for Streams dialog
 
-| Permission | Description |
-|--|--|
-| **Read** | Allows users to view data streams details in `Sequential Data Store`. |
-| **Write** | Allows user to edit data stream details, metadata, and tags. |
-| **Delete** | Allows users to delete existing data stream details, metadata, and tags. |
-| **Manage Permissions** | Allows users to assign permissions to one or more selected data streams. |
-| **Share** | Allows user to share a data stream into a community. |
+Regardless of what context you are editing stream permissions, all edits are performed using the **Manage Permissions for Streams** dialog. This dialog lists a matrix of roles that have permissions for the selected streams, along with the setting for each individual each permission. Use this matrix to add new roles that have permissions for the streams or update individual permissions.
+
+![Manage permissions](../../../communities/images/manage-permissions-for-streams.png)
+
+### Roles column
+
+The matrix lists each user role that has permissions for the selected streams.
+
+- To add a user role that has permissions for the selected stream, select **Add Role** > **Add Role** ![Add Role](../../../_icons/plus.svg).
+
+- To remove all permissions for a user role, clear the row by selecting the **Clear** icon. Then select the **Delete** icon.
+
+### Stream permissions columns
+
+When managing permissions for data streams, you can explicitly allow or deny individual permissions for each user role. Select **Allow** or **Deny** for each permission that you want to explicitly define for each role. Undefined permissions (-) default to a setting of **Deny**.
+
+For a description of each permission, mouse over its **Information** ![Information](../../../_icons/information.svg) icon.
+
+Roles that are highlighted indicate a "dirty" state—one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
+
+## Patch vs. replace
+
+Ea esse enim eu ex magna.

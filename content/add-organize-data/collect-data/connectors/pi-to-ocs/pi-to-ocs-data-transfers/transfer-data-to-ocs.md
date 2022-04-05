@@ -252,7 +252,7 @@ To start a data transfer, follow these steps:
 
 1. (Optional) In the `PI to OCS Agents` window, select the PI to OCS Agent associated with the data transfer. 
 
-1. (Optional) In the `Manage Agent` tab, expand the `Transfer Overview` section.
+1. (Optional) In the **Manage Agent** tab, expand the `Transfer Overview` section.
 
 1. Select **Start Transfer**, then select **Start**.
 

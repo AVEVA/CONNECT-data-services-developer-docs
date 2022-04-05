@@ -14,7 +14,7 @@ To edit an existing transfer, follow these steps:
 
 1. In the `PI to OCS Agents` window, select the agent that contains the transfer you want to edit.
 
-1. Click the **View/Edit Transfer** button.
+1. Select **View/Edit Transfer**.
 
 1. In the transfer pane, select the **Edit Mode** toggle button.
 

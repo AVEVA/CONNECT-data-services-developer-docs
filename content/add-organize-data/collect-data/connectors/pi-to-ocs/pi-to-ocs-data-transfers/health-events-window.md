@@ -8,7 +8,7 @@ The `Health Events` window provides information about an agent's activity and cu
 
 ![](../../images/health-evts-window.png)
 
-The following table provides descriptions to the numbered elements in the Health Events window.
+The following table provides descriptions to the numbered elements in the `Health Events` window.
 
 | Number  | Description                                                  |
 | :-----: | ------------------------------------------------------------ |

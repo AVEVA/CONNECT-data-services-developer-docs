@@ -28,7 +28,7 @@ To edit an existing transfer, follow these steps:
  
    **Note:** You can only remove explicit PI points from a transfer. To remove implicit PI points from a transfer, you will need to remove the associated AF element. 
 
-1. (Optional) Click **Undo Last Point Removal** to add the removed PI points back to the transfer.
+1. (Optional)  To add the removed PI points back to the transfer, select **Undo Last Point Removal**.
 
 1. (Optional) To remove AF elements from a transfer, select the **AF Elements** tab, select the AF elements you want removed, select **Remove Elements**, then select **Remove**.
 

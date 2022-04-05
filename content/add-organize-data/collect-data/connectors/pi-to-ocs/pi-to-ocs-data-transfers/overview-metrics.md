@@ -34,4 +34,4 @@ The following table provides a description of the fields in the **Transfer Metri
 | Assets Updated | The number of assets updated during the data transfer. |
 | Total Assets Deleted | The total number of deleted assets. |
 | Asset Create/Update Errors | The number of errors generated during asset creation or updating. |
-| Asset Deletion Errors | The number of errors generated during asset deletion. See the `Transfer Overview` section on the `Manage Agent` pane for error details.
+| Asset Deletion Errors | The number of errors generated during asset deletion. See the `Transfer Overview` section on the **Manage Agent** tab for error details.

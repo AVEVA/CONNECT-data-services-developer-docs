@@ -38,6 +38,6 @@ To edit an existing transfer, follow these steps:
 
 1. (Optional) To add the removed PI points back to the transfer, select **Undo Last Element Removal** .
 
-1. After transfer edits are done, click **Save** to retain these changes and return to the `PI to OCS Agents` window.
+1. After transfer edits are done, select **Save** to retain these changes and return to the `PI to OCS Agents` window.
 
    **Note:** If a transfer was started and in progress when edits were made, these changes will be processed after the transfer is saved.

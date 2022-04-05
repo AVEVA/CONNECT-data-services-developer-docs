@@ -2,7 +2,7 @@
 uid: gpHybridClient
 ---
 
-# Hybrid clients
+# Add a hybrid client
 
 Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
 
@@ -10,7 +10,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 You must have the role of Tenant Administrator to add and manage clients.
 
-## Add a hybrid client
+## Procedure
 
 To add a hybrid client, follow these steps:
 
@@ -59,49 +59,6 @@ To add a hybrid client, follow these steps:
 1. Select **Close**.  
 
    **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.
-
-## Edit a client
-
-To edit an existing client:
-
-1. Select an existing client.
-
-1. Select **Edit Client**.
-
-1. Make any desired changes to the Allow Refresh Token checkbox, Allowed Redirect URL(s), and Allowed Logout Redirect URL(s).
-
-1. Select **Save**.
-
-## Create a new secret
-
-To create a new secret for an existing client:
-
-1. Select **Add Secret** in the `Details` pane.
-
-1. (Optional) In the **Description** field, enter a description for the client secret.
-
-1. In the **Expiration Date** field, enter a date and time that the secret expires. 
-
-   Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
-
-1. Select **Add**.  
-
-## Edit secret details
-
-To edit secret details for a client:
-
-1. Select an existing secret and select **Edit Secret** in the `Details` pane.
-
-1. Make any changes and select **Save**.
-
-## Remove a secret
-
-To remove a secret from a client:
-
-1. Select an existing secret and select **Remove Secret** in the `Details` pane.
-
-1. Select **Remove** to confirm.
-
 
 ## Related links
 

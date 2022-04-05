@@ -10,7 +10,7 @@ You can edit saved transfers by adding or removing AF elements and/or PI points.
 
 <!-- VTT: Add note about how the Opt-in setting (Transfer Settings window) affects streams/assets being deleted from cloud storage or replicated, depnding on the client's preference/option selection.-->
 
-Perform these steps to edit an existing transfer:
+To edit an existing transfer, follow these steps:
 
 1. In the `PI to OCS Agents` window, select the agent that contains the transfer you want to edit.
 

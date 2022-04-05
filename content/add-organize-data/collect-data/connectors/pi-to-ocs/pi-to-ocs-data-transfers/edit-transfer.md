@@ -16,7 +16,7 @@ To edit an existing transfer, follow these steps:
 
 1. Select **View/Edit Transfer**.
 
-1. In the transfer pane, select the **Edit Mode** toggle button.
+1. In the transfer pane, select the **Edit Mode** toggle.
 
    Edit mode is enabled and the **Search** pane opens. 
 

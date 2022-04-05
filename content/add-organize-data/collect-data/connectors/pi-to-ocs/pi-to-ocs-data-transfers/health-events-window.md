@@ -4,7 +4,7 @@ uid: health-evts-window
 
 # Overview of the Health Events window
 
-The Health Events window provides information about an agent's activity and current status. Health events are based on log messages. You can sort messages by severity, source, time and message content.
+The `Health Events` window provides information about an agent's activity and current status. Health events are based on log messages. You can sort messages by severity, source, time and message content.
 
 ![](../../images/health-evts-window.png)
 

@@ -262,7 +262,7 @@ To start a data transfer, follow these steps:
 
 1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 
-   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select the **Logs** button above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
+   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
 
 1. (Optional) To view more information about an agent's status, select **Agent Health Events**.
 

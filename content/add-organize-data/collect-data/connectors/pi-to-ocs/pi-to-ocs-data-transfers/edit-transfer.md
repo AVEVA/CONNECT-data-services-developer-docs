@@ -22,7 +22,7 @@ To edit an existing transfer, follow these steps:
 
 1. (Optional) To add PI points to a transfer, enter search criteria on the **PI Point Search** tab, select **Search**, select desired PI points, then select **Add PI Points to Transfer**. 
 
-1. (Optional) To add AF elements to a transfer, enter search criteria on the **AF Elements Search** tab, click **Search**, select desired PI points, then click **Add AF Elements to Transfer**.
+1. (Optional) To add AF elements to a transfer, enter search criteria on the **AF Elements Search** tab, select **Search**, select desired PI points, and then select **Add AF Elements to Transfer**.
 
 1. (Optional) To remove PI points from a transfer, select the **PI Points** tab, select the PI points you want removed, select **Remove Points**, then select **Remove** to confirm.
  

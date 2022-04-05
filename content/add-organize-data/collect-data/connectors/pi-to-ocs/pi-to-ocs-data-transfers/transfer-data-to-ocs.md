@@ -258,7 +258,7 @@ To start a data transfer, follow these steps:
 
    The data transfer begins and transfer status is updated in the `Transfer Overview` section on the **Manage Agent** tab.
 
-   **Note:** The `Manage Agent` pane provides information about the agent associated with the transfer and the transfer progress.
+   **Note:** The **Manage Agent** tab provides information about the agent associated with the transfer and the transfer progress.
 
 1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 

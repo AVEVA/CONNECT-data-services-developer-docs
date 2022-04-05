@@ -6,7 +6,7 @@ uid: overview-metrics
 
 The **Transfer Metrics** tab displays details about a transfer's progress by server connection. Metrics for streaming and historical events and the progress of stream and asset creation are shown. 
 
-The following table provides a description of the fields in the `Transfer Metrics` pane.
+The following table provides a description of the fields in the **Transfer Metrics** tab.
 
 | Field name | Description   |
 | ------------- | ---------- |

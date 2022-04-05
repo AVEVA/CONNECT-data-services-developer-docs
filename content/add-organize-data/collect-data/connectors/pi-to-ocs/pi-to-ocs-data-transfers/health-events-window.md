@@ -17,5 +17,5 @@ The following table provides descriptions to the numbered elements in the Health
 | 3  | The date of the event. To filter log messages by a particular date and/or time, select the filter icon, then enter the date and/or time in `Month 00, 000 00:00:00 PM` format.  |
 | 4  | The actual log message. To filter by a word or phrase, select the filter icon, then enter the word or phrase.      |
 | 5  | Select **Clear All Events** to remove all search filters. |
-| 6  | Select the **Export** button to save a copy of the health event messages to a .csv file.                               |
+| 6  | Select **Export** to save a copy of the health event messages to a .csv file.                               |
 

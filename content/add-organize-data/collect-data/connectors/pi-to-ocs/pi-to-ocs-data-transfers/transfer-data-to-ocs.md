@@ -270,7 +270,7 @@ To start a data transfer, follow these steps:
  
 1. (Optional) To see more information about log messages for the transfer, select **Logs**. See [Tenant log messages](xref:download-tenant-log) for more information. 
 
-1. (Optional) Click the `Transfer Metrics` tab to view transfer progress and metrics for stream and/or asset creation. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
+1. (Optional) To view transfer progress and metrics for stream and/or asset creation, select the `Transfer Metrics` tab. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 

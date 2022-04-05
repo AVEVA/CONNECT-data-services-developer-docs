@@ -41,7 +41,7 @@ To name the data transfer, follow these steps:
 
 1. In the `PI to OCS Agents` window, select the agent for the data transfer.
 
-1. In the `Details` pane, select **Create Transfer**.
+1. In the `Manage Agent` tab, select **Create Transfer**.
 
    The `Transfer Setting` window opens.
 

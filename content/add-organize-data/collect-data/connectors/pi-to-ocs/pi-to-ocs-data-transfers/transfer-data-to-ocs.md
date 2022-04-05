@@ -268,7 +268,7 @@ To start a data transfer, follow these steps:
 
    **Note:** See [Overview of the Health Events window](xref:health-evts-window) for more information.  
  
-1. (Optional) To see more information about log messages for the transfer, select the **Logs** button. See [Tenant log messages](xref:download-tenant-log) for more information. 
+1. (Optional) To see more information about log messages for the transfer, select **Logs**. See [Tenant log messages](xref:download-tenant-log) for more information. 
 
 1. (Optional) Click the `Transfer Metrics` tab to view transfer progress and metrics for stream and/or asset creation. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
     

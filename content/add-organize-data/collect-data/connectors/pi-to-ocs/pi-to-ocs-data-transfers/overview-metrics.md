@@ -24,7 +24,7 @@ The following table provides a description of the fields in the **Transfer Metri
 | Total Streams Updated | Total number of streams updated with new configuration and metadata. |
 | Total Streams Deleted | Total number of deleted streams. |
 | Stream Creation Errors  | Total number of errors generated while creation streams. |
-| Stream Update Errors | Number of errors generated while updating streams. See the `Transfer Overview` section on the `Manage Agent` pane for error details. |
+| Stream Update Errors | Number of errors generated while updating streams. See the `Transfer Overview` section on the **Manage Agent** tab for error details. |
 | Stream Deletion Errors | Number of errors generated during stream deletion. See the `Transfer Overview` section on the `Manage Agent` pane for error details. |
 | AF Server Version            | The version of Asset Framework (AF) that is installed on the source server configured to send AF element data via the agent.  |
 | Total Elements in Transfer | The number of AF elements configured in the transfer. |

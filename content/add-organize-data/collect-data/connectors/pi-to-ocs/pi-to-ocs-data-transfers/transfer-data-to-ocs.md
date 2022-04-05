@@ -256,7 +256,7 @@ To start a data transfer, follow these steps:
 
 1. Select **Start Transfer**, then select **Start**.
 
-   The data transfer begins and transfer status is updated in the `Transfer Overview` section on the `Manage Agent` tab.
+   The data transfer begins and transfer status is updated in the `Transfer Overview` section on the **Manage Agent** tab.
 
    **Note:** The `Manage Agent` pane provides information about the agent associated with the transfer and the transfer progress.
 

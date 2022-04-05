@@ -150,6 +150,8 @@ To view AF element details, follow these steps:
    The `AF Element Information` pane opens and displays details about AF element attributes. 
    
 1. To view the paths of referenced AF elements, select the **Reference AF Elements** tab.
+ 
+1. (Optional) To view health messages for the selected AF element, select the **Health Events** tab. 
 
 1. To view details for another AF element, deselect the currently selected element, and then select a different element in the transfer list.
 
@@ -211,7 +213,9 @@ To view PI point details, follow these steps:
 
    The `PI Point Information` pane opens.
 
-1. To view the path of any AF elements that reference the PI point, select the **Source AF Elements** tab. 
+1. To view the path of any AF elements that reference the PI point, select the **Source AF Elements** tab.
+ 
+1. (Optional) To view health messages for the selected PI point, select the **Health Events** tab.  
 
 1. (Optional) To hide implicit PI points on the PI points list, turn off the **Show Implicit PI Points** toggle.
 
@@ -228,11 +232,13 @@ To view PI point details, follow these steps:
 Before you can transfer data to OCS, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
 <!--VT, 11/29/21: Ok.-->
 
-To save the data transfer definition, follow these steps:
+To save the transfer, follow these steps:
 
-1. To ensure that the data transfer definition is correct, review the definition.
+1. To ensure your data transfer definition is correct and contains all the data you want transferred, review it for accuracy.
+ 
+1. (Optional) Add or remove PI points and/or AF elements as needed. 
 
-1. In the `Transfer` pane, select **Save**.
+1. To save the transfer and return to the PI to OCS Agents window, select **Save** in the lower right-hand corner.
 
 ## Transfer data to OCS
 

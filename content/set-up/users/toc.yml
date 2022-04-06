@@ -1,2 +1,2 @@
-- name: Add a user
-  topicHref: users-procedure.md
+- topicUid: gpUsers
+- topicUid: UserMaintenance

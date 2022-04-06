@@ -12,11 +12,11 @@ Use metadata rules to identify groups of similar streams for analytical purposes
 
 1. On the `Sequential Data Store` page, select **Streams**.
  
-1. Select the stream to use as the basis for the metadata rule and from the `Details` tab, copy its name.
+1. Select the stream to use as the basis for the metadata rule and from the **Details** tab, copy its name.
 
 To create a new metadata rule, follow these steps:
 
-1. In the left pane, select **Data Management** > **Metadata Rules**.
+1. In the left pane, select **Data Management** > **Stream Metadata Rules**.
 
 1. Select **Add Metadata Rule**.
  

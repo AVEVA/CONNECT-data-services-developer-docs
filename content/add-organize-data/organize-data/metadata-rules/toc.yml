@@ -1,2 +1,2 @@
-- name: Create a metadata rule
-  topicHref: metadata-rules-procedure.md
+- topicUid: gpMetadataRules
+- topicUid: MetadataMaintenance

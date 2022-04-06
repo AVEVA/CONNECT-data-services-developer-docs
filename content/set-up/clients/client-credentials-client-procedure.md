@@ -4,7 +4,15 @@ uid: gpClientCredentialsClient
 
 # Add a client-credentials client
 
-Client-credentials clients are used for server-to-server communication where no user interaction is required. Follow this procedure to add a client-credentials client.
+Client-credentials clients are used for server-to-server communication where no user interaction is required.
+
+## Prerequisite
+
+You must have the role of Tenant Administrator to add and manage clients.
+
+## Procedure
+
+To add a client-credentials client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
 
@@ -16,7 +24,7 @@ Client-credentials clients are used for server-to-server communication where no 
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client. 
 
-1. On the `Roles` tab, select the roles you wish to assign to the client.  
+1. On the **Roles** tab, select the roles you wish to assign to the client.  
 
    By default, the client has the `Tenant Member` role which cannot be removed. Roles can be modified after the client is created.
 

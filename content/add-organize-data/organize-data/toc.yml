@@ -14,7 +14,9 @@
 - name: Metadata rules
   href: metadata-rules/toc.yml
   topicHref: metadata-rules/metadata-rules-concept.md
-- name: Create and configure a data view
-  topicHref: data-views/data-views.md
+- topicUid: DataViews
+  items:
+  - topicUid: CreateDataView
+  - topicUid: DataViewMaintenance
 - name: Stream views
   topicHref: stream-views/stream-views-concept.md

@@ -1,10 +1,10 @@
 ---
-uid: Dataviews1
+uid: CreateDataView
 ---
 
 # Create and configure a data view
 
-Data views are subsets of data from one or more streams. You create and configure a data view by defining the target namespace, and then specifying the source stream or asset, data fields, time period, and interpolation interval.
+You create and configure a data view by defining the target namespace, and then specifying the source stream or asset, data fields, time period, and interpolation interval.
 
 To create a data view, follow these steps:
 

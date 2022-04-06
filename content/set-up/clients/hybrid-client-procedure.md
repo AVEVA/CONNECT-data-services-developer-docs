@@ -4,7 +4,15 @@ uid: gpHybridClient
 
 # Add a hybrid client
 
-Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided. Follow this procedure to add a hybrid client.
+Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
+
+## Prerequisite
+
+You must have the role of Tenant Administrator to add and manage clients.
+
+## Procedure
+
+To add a hybrid client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
 
@@ -12,7 +20,7 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 1. In the toolbar, click **Add Client**.
 
-  The `Add Client` window appears.
+   The `Add Client` window appears.
 
 1. In the **Name** field, enter a name to identify the application that will use this client.
 

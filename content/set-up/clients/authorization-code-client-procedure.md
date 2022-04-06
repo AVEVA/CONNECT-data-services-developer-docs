@@ -1,9 +1,18 @@
 ---
 uid: gpAuthorizationCodeClient
 ---
+
 # Add an authorization code client
 
-Authorization code clients provide a secure means of authenticating users to customer web applications that use AVEVA Data Hub as their backend. To add an authorization code client, follow these steps:
+Authorization code clients provide a secure means of authenticating users to customer web applications that use AVEVA Data Hub as their backend.
+
+## Prerequisite
+
+You must have the role of Tenant Administrator to add and manage clients.
+
+## Procedure
+
+To add an authorization code client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
 
@@ -11,7 +20,7 @@ Authorization code clients provide a secure means of authenticating users to cus
 
 1. In the toolbar, select **Add Client**.
 
-  The `Add Client` window appears.
+   The `Add Client` window appears.
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client. 
 

@@ -66,7 +66,7 @@ You can edit the default user roles and permissions added to stream when it is c
 
 1. (Optional) To update all existing data streams within the namespace with your selected default settings, select **Apply to all existing streams in the Namespace**.
 
-	**Warning:** Use of this option applies your updated permission settings to *all* streams in the namespace using a patch operation. Use this option with care, as it will overwrite existing permission settings. For more information on patching operations, see [Patch vs. replace](#patch-vs-replace).
+	**Warning!** Use of this option applies your updated permission settings to *all* streams in the namespace using a patch operation. Use this option with care, as it will overwrite existing permission settings. For more information on patching operations, see [Patch vs. replace](#patch-vs-replace).
 
 1. Select **Save**.
 

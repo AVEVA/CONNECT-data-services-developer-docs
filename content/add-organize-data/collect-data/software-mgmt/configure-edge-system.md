@@ -40,9 +40,9 @@ To edit an edge system configuration and export it for use, follow these steps:
 
 1. Find and select the edge device to configure.
 
-1. In the right pane, select **Edit Edge System** or ![Edit](images/pencil-icon.png).
+1. In the right pane, select **Edit Edge System** or ![Edit](../../../_icons/default/pencil.svg).
 
-1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](images/edge-system-add-tag.png) and then do the following:
+1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
 
  - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 

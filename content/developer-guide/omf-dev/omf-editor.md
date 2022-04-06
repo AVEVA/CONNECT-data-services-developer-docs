@@ -14,9 +14,9 @@ You can edit your message and utilize the following options for each message for
 
 - Select **Copy OMF** to copy the message content to the clipboard. 
 
-- Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Format OMF** to reset template content alignment after making changes. 
+- Select **More Options** ![More Options](../../_icons/default/dots-vertical.svg "More Options") > **Format OMF** to reset template content alignment after making changes. 
 
-- Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Download OMF** to download the message content to your local drive. 
+- Select **More Options** ![More Options](../../_icons/default/dots-vertical.svg "More Options") > **Download OMF** to download the message content to your local drive. 
 
-- Select **More Options** ![More Options](..\images\more-options.png "More Options") > **Reset Template** to delete any changes you have made to the message content. 
+- Select **More Options** ![More Options](../../_icons/default/dots-vertical.svg "More Options") > **Reset Template** to delete any changes you have made to the message content. 
 

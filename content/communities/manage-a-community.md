@@ -110,6 +110,6 @@ To remove your own tenant from a community, follow these steps:
 
 1. Select your own tenant.
 
-1. Select **More Options** ![More Options](images\more-options.png "More Options") and select **Remove \<*your tenant*\>**.
+1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg "More Options") and select **Remove \<*your tenant*\>**.
 
 1. In the confirmation window, enter the name of your own tenant and select **Remove**.

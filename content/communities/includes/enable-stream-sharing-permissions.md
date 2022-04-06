@@ -18,6 +18,8 @@ Before data can be shared into a community and accessed by external tenants, a u
 
 1. For user roles that you want to have the ability to share data, update each **Share** permission dropdown list to **Allow**.
 
+	![Share permissions: Allow](../images/stream-permissions-share.png)
+
 	**Tips:**
 
 	- Using the **Tenant Data Steward** role is recommended, but you can use any role.

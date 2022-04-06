@@ -82,11 +82,11 @@ The matrix lists each user role that has permissions for the selected streams.
 
 - To add a user role that has permissions for the selected stream, select **Add Role** > **Add Role** ![Add Role](../../../_icons/plus.svg).
 
-- To remove all permissions for a user role, clear the row by selecting the **Clear** icon. Then select the **Delete** icon.
+- To remove all permissions for a user role, clear the row by selecting the **Clear** ![Clear](../../../_icons/refresh.svg) icon. Then select the **Delete** ![Delete](../../../_icons/trash-can.svg) icon.
 
 ### Stream permissions columns
 
-When managing permissions for data streams, you can explicitly allow or deny individual permissions for each user role. Select **Allow** or **Deny** for each permission that you want to explicitly define for each role. Undefined permissions (-) default to a setting of **Deny**.
+When managing permissions for data streams, you can explicitly allow or deny individual permissions for each user role. Select ![Allow](../../../_icons/check-circle.svg) **Allow** or ![Deny](../../../_icons/cancel.svg) **Deny** for each permission that you want to explicitly define for each role. Undefined permissions (-) default to a setting of ![Deny](../../../_icons/cancel.svg) **Deny**.
 
 For a description of each permission, mouse over its **Information** ![Information](../../../_icons/information.svg) icon.
 

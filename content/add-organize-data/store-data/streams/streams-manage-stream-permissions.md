@@ -52,6 +52,8 @@ You can manage permissions for multiple streams by selecting them and choosing *
 
 1. Select **Save**.
 
+***
+
 ## Manage default permissions for new streams
 
 You can edit the default user roles and permissions added to stream when it is created. Editing these default roles and permissions speeds up creation of new data streams by minimizing permission edits.

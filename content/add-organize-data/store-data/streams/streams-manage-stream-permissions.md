@@ -90,7 +90,7 @@ When managing permissions for data streams, you can explicitly allow or deny ind
 
 For a description of each permission, mouse over its **Information** ![Information](../../../_icons/information.svg) icon.
 
-Roles that are highlighted indicate a "dirty" state—one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
+Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
 
 ## Patch vs. replace
 

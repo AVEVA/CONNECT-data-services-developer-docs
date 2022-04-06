@@ -4,7 +4,7 @@ uid: LegendTableReference
 
 # Legend table reference
 
-On the `Trend` page, a legend table below the `Trend` pane lists information about the traces plotted within the trend session. You can toggle this legend table between two views: a **Trend** ![trend](../_icons/chart-line.svg) view and a **Cursor** ![cursor](../_icons/map-marker.svg).
+On the `Trend` page, a legend table below the `Trend` pane lists information about the traces plotted within the trend session. You can toggle this legend table between two views: a **Trend** ![trend](../_icons/default/chart-line.svg) view and a **Cursor** ![cursor](../_icons/default/map-marker.svg).
 
 ![Trend page legend table](images/trend-page.png)
 

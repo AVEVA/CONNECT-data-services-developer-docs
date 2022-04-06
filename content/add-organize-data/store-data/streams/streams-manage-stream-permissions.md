@@ -70,7 +70,7 @@ You can edit the default user roles and permissions added to stream when it is c
 
 1. Select **Save**.
 
-## Manage Permissions for Streams dialog
+## Manage Permissions for Streams window
 
 Regardless of what context you are editing stream permissions, all edits are performed using the **Manage Permissions for Streams** dialog. This dialog lists a matrix of roles that have permissions for the selected streams, along with the setting for each individual each permission. Use this matrix to add new roles that have permissions for the streams or update individual permissions.
 
@@ -95,3 +95,4 @@ Roles that are highlighted indicate a "dirty" state—one of more of its permiss
 ## Patch vs. replace
 
 Ea esse enim eu ex magna.
+

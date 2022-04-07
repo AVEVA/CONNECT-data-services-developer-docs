@@ -68,7 +68,7 @@ To create an asset type based on an existing asset, follow these steps:
 
    **Note:** In the upper-right corner of the right pane, **Asset Type** is set to *<None>* indicating that this asset is not based on an asset type. 
 
-1. Select the **More Options** icon ![More Options](images/more-options.png), then select **Save as Asset Type**.
+1. Select the **More Options** icon ![More Options](../_icons/default/dots-vertical.svg), then select **Save as Asset Type**.
 
 1. In the `Create an Asset Type for MyData.Asset` window, complete the following fields:
    

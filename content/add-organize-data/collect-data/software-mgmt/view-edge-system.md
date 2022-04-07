@@ -28,7 +28,7 @@ To view an edge system, follow these steps:
 
 1. To review the configuration details, select the `Configuration` tab.
 
-1. To open a trend showing diagnostic data in a new window, select the **View Trend** ![View Trend](chart-../../../_icons/default/chart-line-variant.svg) icon.
+1. To open a trend showing diagnostic data in a new window, select the **View Trend** ![View Trend](../../../_icons/default/chart-line-variant.svg) icon.
 
   The level where you select the icon determines what data is included:
 

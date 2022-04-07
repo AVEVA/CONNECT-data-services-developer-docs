@@ -20,10 +20,6 @@ Two different users must perform the following procedure to invite and add a ten
 
 - Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a [Tenant Administrator](xref:communityroles#tenant-administrator) of a separate tenant that does not already belong to the community.
 
-**Invite process**
-
-![Invite process](images/invite-process.drawio.svg)
-
 ## 1. Inviter sends invite
 
 To send an invite to a community, follow these steps:

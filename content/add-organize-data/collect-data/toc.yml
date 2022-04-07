@@ -1,4 +1,4 @@
-- name: PI to Data Hub (Preview)
+- name: PI to Data Hub
   href: connectors/pi-to-ocs/toc.yml
   topicHref: connectors/pi-to-ocs/main-lp.md
 - name: OMF

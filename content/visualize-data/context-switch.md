@@ -20,7 +20,7 @@ To switch assets in a trend, follow these steps:
 
    ![Asset in trend](images/asset-trend.png)
 
-1. Select the **Swap Asset** icon ![Swap asset icon](images/swap-asset-icon.png) next to the asset name in the legend table to open the `Swap Asset` window, which displays a list of assets of the same asset type. 
+1. Select the **Swap Asset** icon ![Swap Asset](../_icons/branded/swap-horizontal.svg) next to the asset name in the legend table to open the `Swap Asset` window, which displays a list of assets of the same asset type. 
 
 1. Select the asset to view and select **Continue**.
 
@@ -44,9 +44,9 @@ To switch assets while performance testing, follow these steps:
 
    ![](images/testing-one.png)
 
-1. Select the **Swap Asset** icon ![Swap asset icon](images/swap-asset-icon.png) for the asset you are comparing with the standard.
+1. Select the **Swap Asset** icon ![Swap Asset](../_icons/branded/swap-horizontal.svg) for the asset you are comparing with the standard.
 
-   In this example, select the ![Swap asset icon](images/swap-asset-icon.png) icon for the `Scottsdale Weather Station`.
+   In this example, select the ![Swap Asset](../_icons/branded/swap-horizontal.svg) icon for the `Scottsdale Weather Station`.
 
 1. In the `Swap Asset` window, select another asset and click **Continue**. 
 

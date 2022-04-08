@@ -20,10 +20,6 @@ Two different users must perform the following procedure to invite and add a ten
 
 - Another user, the "invitee," accepts the invitation on behalf of their tenant. To be an invitee, you must be a [Tenant Administrator](xref:communityroles#tenant-administrator) of a separate tenant that does not already belong to the community.
 
-**Invite process**
-
-![Invite process](images/invite-process.drawio.svg)
-
 ## 1. Inviter sends invite
 
 To send an invite to a community, follow these steps:
@@ -110,6 +106,6 @@ To remove your own tenant from a community, follow these steps:
 
 1. Select your own tenant.
 
-1. Select **More Options** ![More Options](images\more-options.png "More Options") and select **Remove \<*your tenant*\>**.
+1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg "More Options") and select **Remove \<*your tenant*\>**.
 
 1. In the confirmation window, enter the name of your own tenant and select **Remove**.

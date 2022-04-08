@@ -66,7 +66,7 @@ To modify a base configuration and export it for use, follow these steps:
 
 1. Find and select the template to modify.
 
-1. In the right pane, select the edit icon ![Edit](images/pencil-icon.png).
+1. In the right pane, select the edit icon ![Edit](../../../_icons/branded/pencil.svg).
 
 1. Modify the template name, **Type**, and **Version** as needed.
 

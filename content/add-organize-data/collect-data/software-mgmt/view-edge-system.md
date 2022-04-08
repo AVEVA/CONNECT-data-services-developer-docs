@@ -44,7 +44,7 @@ You can remove edge systems from the list of edge systems in OCS, but the edge s
 
 To remove an edge system, follow these steps:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 

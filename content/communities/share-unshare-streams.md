@@ -78,7 +78,7 @@ To stop sharing streams, follow these steps:
 
 1. From the list of streams, select one or more to streams unshare. 
 
-1. Select **More Options** ![More Options](images/more-options.png "More Options") > **Unshare Stream**. 
+1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg "More Options") > **Unshare Stream**. 
 
 1. When prompted for confirmation, select **Unshare**.
 

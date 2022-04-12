@@ -77,7 +77,7 @@
         - topicUid: community-manage-users
         - topicUid: community-manage-groups
         - topicUid: community-manage-clients
-        - topicUid: community-manage-administratorsW
+        - topicUid: community-manage-administrators
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules

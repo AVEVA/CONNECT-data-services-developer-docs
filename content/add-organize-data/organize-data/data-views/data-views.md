@@ -32,7 +32,7 @@ To create a data view, follow these steps:
 
    **Note**: Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.
 
-1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (*), and then select **Search** to search for available streams or assets.
+1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (_*_), and then select **Search** to search for available streams or assets.
 
 1. Select any stream or asset in the query results to display and view the individual data fields to the pane on the right.
 

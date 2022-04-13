@@ -143,6 +143,31 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetru
 
 The RuleModel object to preview.<br/>
 
+```json
+[
+  {
+    "Field": "string",
+    "Specifications": [
+      {
+        "Type": 0,
+        "Value": "string",
+        "Name": "string",
+        "CharacterType": 0,
+        "CharacterLength": 0,
+        "StrictValueMappings": true,
+        "RequiredDelimiters": [
+          "string"
+        ],
+        "ValueMappings": {
+          "property1": "string",
+          "property2": "string"
+        }
+      }
+    ]
+  }
+]
+```
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

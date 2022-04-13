@@ -635,6 +635,31 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 
 List of asset types you want to create.<br/>
 
+```json
+[
+  {
+    "Id": "SampleAssetType01",
+    "Description": "This is a sample asset type.",
+    "Metadata": [
+      {
+        "Id": "Id-fbd82b97-d29e-4022-968e",
+        "Name": "ModelNumber",
+        "Description": "This is a static attribute on the asset type which represents the model number.",
+        "SdsTypeCode": "Double",
+        "Value": 0.01
+      }
+    ],
+    "TypeReferences": [
+      {
+        "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+        "StreamReferenceName": "ReferenceName",
+        "TypeId": "PI-Float32"
+      }
+    ]
+  }
+]
+```
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

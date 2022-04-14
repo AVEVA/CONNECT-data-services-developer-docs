@@ -62,7 +62,7 @@ Transfer creation consists of the following tasks:
 
     |   | High | Medium | Low | None |
     | ------------- | ----------------- | ----------------- |----------------- | ----------------- |
-    | Name | X | X  | X || X |
+    | Name | X | X  | X | X |
     | Descriptor | X | X |  
     | EngUnits | X | X |  |  |  |
     | ExDesc | X |  |  |  |

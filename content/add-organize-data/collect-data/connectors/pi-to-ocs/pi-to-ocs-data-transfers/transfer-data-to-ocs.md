@@ -113,8 +113,6 @@ To build an AF element
 
    **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.<br></br>
    
-   If a PI point reference's AF attribute contains a supported UOM, UOM data is transferred to the stream. The UOM of the attribute will be either the [source UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_SourceUOM.htm) if specified or the [default UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_DefaultUOM.htm). Asset properties including UOMs can be viewed in Asset Explorer. If there are multiple attributes that reference the same PI point and these attributes have different UOMs, UOM conflicts may occur and the stream will not have its UOM set. UOMs that cannot be transferred are recorded as errors in the PI to OCS logs.
-
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 
 1. (Optional) To narrow the search by a specific AF category, in the **Category** field, select a category from the dropdown list.
@@ -175,7 +173,7 @@ To build a PI points transfer list, follow these steps:
    | Point descriptions         | Enter criteria in the following fields:<br /><ul><li>**Descriptor** </li><li>**Extended Descriptor**</li></ul> |
    | Engineering units          | Enter criteria in the **Engineering Units** field.           |
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
-   | Specific location code(s)  | Enter up to five location code values (1-9) in the **Location Codes** field. |
+   | Specific location code(s)  | Enter up to five location code values in the **Location Codes** field. |
 
 1. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
 

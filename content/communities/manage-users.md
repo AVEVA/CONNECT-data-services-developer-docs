@@ -52,7 +52,7 @@ To remove yourself from a community, follow these steps:
 
 1. Find the community where you want to remove users and select **Details**.
 
-1. Select the **More Options** icon ![More Options](images\more-options.png), and then select **Leave Community**.
+1. Select the **More Options** icon ![More Options](../_icons/default/dots-vertical.svg), and then select **Leave Community**.
 
 1. On the confirmation window, select **Leave**.
 

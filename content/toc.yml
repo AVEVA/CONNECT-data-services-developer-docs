@@ -21,7 +21,12 @@
   topicHref: communities/communities.md
 - name: Developer guide
   href: developer-guide/toc.yml
-  topicHref: developer-guide/dev-guide-introduction.md
+  topicHref:  developer-guide/dev-guide-introduction.md
 - name: API reference
   href: api-reference/toc.yml
+<<<<<<< HEAD
   topicHref: api-reference/ocs-api-reference.md
+=======
+  topicHref: api-reference/ocs-api-reference.md
+- topicUid: support
+>>>>>>> deeada2ccf110f83b8f17a602a5acc5fb6e5b214

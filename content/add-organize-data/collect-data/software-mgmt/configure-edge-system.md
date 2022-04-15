@@ -8,15 +8,15 @@ You can import an edge system configuration from the field to its corresponding 
 
 Configuration is available for the following edge system types:
 
- - Edge Data Store
+- Edge Data Store
 
- - PI Adapter for BACnet
- 
- - PI Adapter for DNP3
- 
- - PI Adapter for Modbus TCP
- 
- - PI Adapter for OPC UA
+- PI Adapter for BACnet
+
+- PI Adapter for DNP3
+
+- PI Adapter for Modbus TCP
+
+- PI Adapter for OPC UA
 
 **Note:** An edge system appears on the `Software Management Edge Systems` page once it is writing health data to AVEVA Data Hub. For information on configuring health endpoints, see the specific edge system product documentation.
 
@@ -24,7 +24,7 @@ Configuration is available for the following edge system types:
 
 To import an edge system configuration from the field to the corresponding edge system digital twin, follow these steps:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
@@ -34,15 +34,15 @@ To import an edge system configuration from the field to the corresponding edge 
 
 To edit an edge system configuration and export it for use, follow these steps:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to configure.
 
-1. In the right pane, select **Edit Edge System** or ![Edit](images/pencil-icon.png).
+1. In the right pane, select **Edit Edge System** or ![Edit](../../../_icons/default/pencil.svg).
 
-1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](images/edge-system-add-tag.png) and then do the following:
+1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
 
  - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 

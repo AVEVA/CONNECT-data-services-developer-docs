@@ -20,6 +20,11 @@ The information in the sections that follow document the APIs and usage for each
 
 You must acquire an account before interacting with the AVEVA Data Hub. To request an account, contact us at the [AVEVA Knowledge and Support Center](https://softwaresupport.aveva.com/).
 
+## API console
+
+For information on the graphical interface for using the REST API within OCS, see [API console](xref:apiConsole).
+
+
 ## Architecture
 
 A tenant represents the set of services, applications, data, and configuration states available to a customer in AVEVA Data Hub. Users are associated with a tenant via at least one configured identity provider, a database of user records that allows for authentication, and access to resources can be managed for those users via the assignment of roles. 

@@ -33,9 +33,3 @@ After you create an SDS stream, its underlying SdsType cannot change. As a resul
 - Change the PI point type to match the SDS stream type and then restart the transfer.
 
 To see what types of point coercions are supported in PI Data Archive, refer to the ["Allowable point type coercions"](https://docs.osisoft.com/bundle/pi-server/page/allowable-point-type-coercions.html) topic.<!--Angela Flores 6/28/21 should that be "coercions" or "conversions"? --> <!--VTT, 11/29/21: Coercion is the preferred term per the referenced topic.-->
-
-### Example of how PI point coercion is handled in SDS
-
-A PI point that has historical data on Data Archive and is also assigned to the Float64 type will have its historical Float64 data converted to fit the PI point's Float32 type in SDS. This conversion results in lost decimals/precision prior to getting sent to SDS. The coercion would not affect points with identical values for both types if the full range of values is not required; the same value will transfer over to SDS from Data Archive.
-
-See [Point type changes and archives](https://docs.osisoft.com/bundle/pi-server/page/point-type-changes-and-archives.html) for more information.

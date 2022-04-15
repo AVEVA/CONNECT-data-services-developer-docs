@@ -57,9 +57,10 @@ To add an AF server, follow these steps:
 
    ![Agent status and state after refresh](../../images/af-details-refreshed.png)
 
-​   **Note:** Once an AF Server has been added, the utility searches for PI Data Archives that are referenced by the AF server. 
+​   **Note:** Once an AF Server has been added, the utility scans the configured AF server for referenced Data Archives. As the utility finds Data Archives, they are shown in the **Detected Data Archives** list. You can select and add the desired Data Archive. You don't have to wait for the scan to complete. You can also manually type the name of the Data Archive if you don't want to wait for the scan to complete.
 
-1. (Optional) Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
+
+1. Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
 
 1. Review the AF source server details to ensure they are correct:
 

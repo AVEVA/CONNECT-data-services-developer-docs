@@ -30,7 +30,7 @@ The following tasks can only be performed by community administrators on the adm
 
 - <xref:community-edit>
 
-	Edit the community description.
+	Edit the community name and description.
 
 - <xref:community-delete>
 

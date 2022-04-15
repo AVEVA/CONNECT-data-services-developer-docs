@@ -4,9 +4,9 @@ uid: edit-transfer
 
 # Edit a transfer
 
-You can edit saved transfers by adding or removing AF elements and/or PI points.
+You can edit saved transfer settings and add or remove AF elements and/or PI points with Edit Mode.
 
-**Note:** Your transfer settings affect if streams and data get replicated or deleted from cloud storage after you have removed elements or explicit PI points from your transfer. See [Name the transfer and set data privacy settings](xref:transfer-data) for details.
+**Note:** Your transfer settings affect whether streams and data get replicated or deleted from cloud storage after you have removed elements or explicit PI points from your transfer. See [Name the transfer and set data privacy settings](xref:transfer-data) for details.
 
 <!-- VTT: Add note about how the Opt-in setting (Transfer Settings window) affects streams/assets being deleted from cloud storage or replicated, depnding on the client's preference/option selection.-->
 
@@ -37,6 +37,16 @@ To edit an existing transfer, follow these steps:
    **Note:** Any implicitly referenced PI points that are not referenced by another AF element will also be removed from the transfer.
 
 1. (Optional) To add the removed PI points back to the transfer, select **Undo Last Element Removal** .
+ 
+1. (Optional) To edit transfer settings, select the **Settings** button and then take the following actions:
+
+    * To change the transfer name and description, enter a new name and description in the **Name** and **Description** fields.
+    
+    * To change the transfer's historical start time, enter or select a new time in the **Historical Start Time** field.
+    
+    * To change the transfer's data privacy settings, select one of the **Stream Metadata Replication Policy** options.  
+
+    * To change whether streams or assets or removed automatically, select or deselect the **Automatically remove Streams and Assets** option.
 
 1. After transfer edits are done, select **Save** to retain these changes and return to the `PI to OCS Agents` window.
 

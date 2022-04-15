@@ -5,6 +5,8 @@ uid: transfer-data
 # Transfer data to OCS
 <!-- AF 11/15/21 This topic appears in the TOC twice. It could also use to be broken into Define a data transfer and Start a data transfer. -->
 <!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to OCS landing pages).-->
+**Note:** The ability to transfer Asset Framework data is only available in AVEVA™ Data Hub. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.
+
 You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).

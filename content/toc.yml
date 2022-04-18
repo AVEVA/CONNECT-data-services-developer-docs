@@ -12,9 +12,9 @@
    - topicUid: cnnxt-setup
      items:
      - topicUid: subscribe-adh
-     - topicUid: create-folders
      - topicUid: ccNamespaces
        items: 
+       - topicUid: create-folders
        - topicUid: bpNamespaces
      - topicUid: manage-permissions-connect
        items:

@@ -51,10 +51,6 @@
   - topicUid: gsAssetRules
 - topicUid: DataManagement
   items:
-    - topicUid: ccNamespaces
-      items:
-      - topicUid: bpNamespaces
-      - topicUid: gpNamespaces
     - topicUid: lpstoredata
       items:
       - topicUid: ccStreams
@@ -80,6 +76,7 @@
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules
+      - topicUid: MetadataMaintenance
     - topicUid: AssetRulesCC
       items:
         - topicUid: CreateAssetRules
@@ -175,6 +172,7 @@
     - topicUid: ccUsers
       items:
       - topicUid: gpUsers
+      - topicUid: UserMaintenance
     - topicUid: ccRoles
       items:
       - topicUid: gpRoles
@@ -183,6 +181,7 @@
       - topicUid: gpClientCredentialsClient
       - topicUid: gpHybridClient
       - topicUid: gpAuthorizationCodeClient
+      - topicUid: ClientMaintenance
 - topicUid: DeveloperTools
   items:
     - topicUid: samples
@@ -194,7 +193,7 @@
     - topicUid: ServiceBlog
 - name: Developer guide
   href: developer-guide/toc.yml
-  topicHref:  developer-guide/dev-guide-introduction.md
+  topicHref: developer-guide/dev-guide-introduction.md
 - name: API reference
   href: api-reference/toc.yml
   topicHref: api-reference/ocs-api-reference.md

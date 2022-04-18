@@ -18,7 +18,7 @@ To filter assets in the Asset Explorer, follow these steps:
 
 1. Verify that the **Assets/Asset Type** selector is set to **Assets**.
 
-1. Select the **Metadata Filters** icon ![Metdata filter icon](images/metadata-filter-icon.png) to open the `Metadata Filters` pane.
+1. Select the **Metadata Filters** icon ![Filter icon](../_icons/branded/filter.svg) to open the `Metadata Filters` pane.
 
    - Status and Asset Type always appear at the top of the filter facets list. 
 

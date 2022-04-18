@@ -2,7 +2,7 @@
 uid: samples
 ---
 
-Samples
+Code samples
 =======
 
 The [AVEVA Data Hub-Samples](https://github.com/osisoft/OSI-Samples-ADH) illustrate several ways for applications to interact with the AVEVA Data Hub REST API.
@@ -17,10 +17,10 @@ The examples cover the basics of interacting with AVEVA Data Hub, such as:
 
 Currently, the samples are available in these languages:
 
-* [.NET](https://github.com/osisoft/sample-ocs-waveform_libraries-dotnet) 
-* [Java](https://github.com/osisoft/sample-ocs-waveform-java)
-* [Python](https://github.com/osisoft/sample-ocs-waveform-python)
-* [NodeJs](https://github.com/osisoft/sample-ocs-waveform-nodejs)
-* [Angular](https://github.com/osisoft/sample-ocs-waveform-angular)
+* [.NET](https://github.com/osisoft/sample-adh-waveform_libraries-dotnet) 
+* [Java](https://github.com/osisoft/sample-adh-waveform-java)
+* [Python](https://github.com/osisoft/sample-adh-waveform-python)
+* [NodeJs](https://github.com/osisoft/sample-adh-waveform-nodejs)
+* [Angular](https://github.com/osisoft/sample-adh-waveform-angular)
 
-Because the examples are intended for demonstration purposes, they represent some example practices. The patterns may change as AVEVA Data Hub continues to develop. Be sure to follow the [samples](https://github.com/osisoft/OSI-Samples) repository on GitHub for updates.
+Because the examples are intended for demonstration purposes, they represent some example practices. The patterns may change as AVEVA Data Hub continues to develop. Be sure to follow the [OSI-Samples-ADH](https://github.com/osisoft/OSI-Samples-ADH) repository on GitHub for updates.

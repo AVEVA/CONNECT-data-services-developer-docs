@@ -38,7 +38,7 @@ To share streams with other communities, follow these steps:
 
 ## View shared data
 
-After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:GettingStartedWithTrendData>.
+After you or another community member shares a stream within a community, you can visualize it within a chart from the `Trend` page. For more information on how to visualize data from a community within a trending sessions, see <xref:CreateTrendSession>.
 
 ## Unshare streams from Community Details
 
@@ -78,7 +78,7 @@ To stop sharing streams, follow these steps:
 
 1. From the list of streams, select one or more to streams unshare. 
 
-1. Select **More Options** ![More Options](images/more-options.png "More Options") > **Unshare Stream**. 
+1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg "More Options") > **Unshare Stream**. 
 
 1. When prompted for confirmation, select **Unshare**.
 

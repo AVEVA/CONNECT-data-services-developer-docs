@@ -18,7 +18,7 @@ To use the API Console, follow these steps:
 
 1. Type a slash (/) in the text box to display a dropdown list.
 
-1.  If you selected a tenant-scoped path in the second step, you can take any of the following actions:
+1. If you selected a tenant-scoped path in the second step, you can take any of the following actions:
 
   - Select **Namespaces** and then select a namespace followed by an endpoint or route.
 

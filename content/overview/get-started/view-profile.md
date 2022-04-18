@@ -16,6 +16,8 @@ To update your contact information, follow these steps:
 
 1. Enter any updates to your first name, last name, or contact email.
 
+1. Enter any updates to your contact information.
+
 1. Select **Save**.
 
 ## Show user-friendly property names

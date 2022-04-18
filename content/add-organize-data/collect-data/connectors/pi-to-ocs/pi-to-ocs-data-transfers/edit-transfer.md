@@ -38,7 +38,7 @@ To edit an existing transfer, follow these steps:
 
 1. (Optional) To add the removed PI points back to the transfer, select **Undo Last Element Removal** .
  
-1. (Optional) To edit transfer settings, select the **Settings** button and then take the following actions:
+1. (Optional) To open the `Transfer Settings` dialog box and edit transfer settings, select **Settings** and then perform the desired action(s):
 
     * To change the transfer name and description, enter a new name and description in the **Name** and **Description** fields.
     

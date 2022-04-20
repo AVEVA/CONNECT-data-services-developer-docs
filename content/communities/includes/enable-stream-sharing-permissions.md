@@ -12,7 +12,7 @@ Before data can be shared into a community and accessed by external tenants, a u
 
 1. From the right pane, select **Manage Permissions**.
 
-	**Note:** If you only have one stream selected, select **More options** ![More options icon](../../_icons/dots-vertical.svg) > **Manage Permissions** instead.
+	**Note:** If you only have one stream selected, select **More options** ![More options icon](../../_icons/default/dots-vertical.svg) > **Manage Permissions** instead.
 
 	The the `Manage Permissions for Streams` window opens.
 

@@ -39,6 +39,7 @@
       items:
       - topicUid: ccStreams
         items:
+        - topicUid: streams-manage-stream-permissions
         - topicUid: bpStreams
         - topicUid: gpStreams
         - topicUid: manage-streams

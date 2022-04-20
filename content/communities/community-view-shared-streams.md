@@ -28,19 +28,20 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
             <img src="images/streams-column.png"></img>
             <p>The <strong>Streams</strong> column usually displays the number of streams shared into the community, but you may encounter the following states:</p>
             <ul>
-                <li><p>If the <strong>Info</strong> <img src="../_icons/info.svg"/> icon displays, you cannot view the number of streams displayed because you are not a Community Member. For information on adding a user a Community Member, see <xref:community-manage-users>.</p></li>
-                <li><p>If the <strong>Warning</strong> <img src="../_icons/warning.svg"/> icon displays, you are a Community Member, but there is an issue with stream permissions. For more information on setting stream permissions, see <xref:community-enable-stream-sharing-permissions>.</p></li>
+                <li><p>If the <strong>Info</strong> <img src="../_icons/branded/information.svg"/> icon displays, you cannot view the number of streams displayed because you are not a Community Member. For information on adding a user a Community Member, see <xref:community-manage-users>.</p></li>
+                <li><p>If the <strong>Alert</strong> <img src="../_icons/custom/alert.svg"/> icon displays, you are a Community Member, but there is an issue with stream permissions. For more information on setting stream permissions, see <xref:community-enable-stream-sharing-permissions>.</p></li>
             </ul>
         </div>
     </details>
 
 1. From the right pane, select the **Streams** tab.
     
+214
     ![Tenant shared streams](images/communities-shared-streams.png)
 
     The **Streams** tab lists each data stream that the tenant shares with the community. 
 
-    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) to open it within `Sequential Data Store`.
+    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](../_icons/branded/launch.svg) to open it within `Sequential Data Store`.
 
 ## [Sequential Data Store](#tab/sds)
 
@@ -50,7 +51,7 @@ When working from `Sequential Data Store`, you can view which data streams are s
 
 1. From the left panel, select **Data Management** > **Sequential Data Store**.
 
-1. If necessary, enable the **Filter Communities** panel by selecting the **Filter** icon ![filter icon](../_icons/filter.svg).
+1. If necessary, enable the **Filter Communities** panel by selecting the **Filter** icon ![Filter icon](../_icons/branded/filter.svg).
 
 1. Select a community to filter for.
 
@@ -76,6 +77,6 @@ While viewing individual data streams in `Sequential Data Store`, you can view e
     
     ![Sharing tab](images/communities-sharing-tab-sds.png)
 
-    **Tips:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/launch.svg) for the community.
+    **Tips:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/branded/launch.svg) for the community.
 
 ***

@@ -28,7 +28,7 @@ To view an edge system, follow these steps:
 
 1. To review the configuration details, select the `Configuration` tab.
 
-1. To open a trend showing diagnostic data in a new window, select the **View Trend** ![View Trend](images/view-trend-icon.png) icon.
+1. To open a trend showing diagnostic data in a new window, select the **View Trend** ![View Trend](../../../_icons/default/chart-line-variant.svg) icon.
 
   The level where you select the icon determines what data is included:
 
@@ -44,7 +44,7 @@ You can remove edge systems from the list of edge systems in OCS, but the edge s
 
 To remove an edge system, follow these steps:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 

@@ -20,7 +20,7 @@ To manage permissions for a single data stream, complete the following steps:
 
 1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Manage Permissions**.
 
-1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace](#patch-vs-replace).
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. Select **Save**.
 
@@ -36,7 +36,7 @@ You can manage permissions for multiple streams by selecting them and choosing *
 
 1. Select **Manage Permissions**.
 
-1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace](#patch-vs-replace).
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. Select **Save**.
 
@@ -48,7 +48,7 @@ You can manage permissions for multiple streams by selecting them and choosing *
 
 1. Select **Manage Permissions**.
 
-1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Patch vs. replace](#patch-vs-replace).
+1. Use the `Manage Permissions` to edit stream permissions. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. Select **Save**.
 

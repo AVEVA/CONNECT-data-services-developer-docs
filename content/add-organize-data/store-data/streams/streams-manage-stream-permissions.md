@@ -56,9 +56,11 @@ Regardless of what context you are editing stream permissions, all edits are per
 	<summary><strong>To edit permissions for a role</strong></summary>
     <p>Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over the <strong>Information</strong> <img src="../../../_icons/branded/information.svg"/> icon for more information about each permission. Permission that have a default value of `-` are equivalent to a setting of <img src="../../../_icons/custom/cancel.svg"/> <strong>Deny</strong>.</p>
     <ul>
-        <li><p>To allow a permission, select <img src="../../../_icons/custom/check-circle.svg"/> <strong>Allow</strong></p>.</li>
-        <li><p>To explicitly deny a permission, select <img src="../../../_icons/custom/cancel.svg"/> <strong>Deny</strong></p>.</li>
-    </ul>    
+        <li><p>To allow a permission, select <img src="../../../_icons/custom/check-circle.svg"/> <strong>Allow</strong>.</p></li>
+        <li><p>To explicitly deny a permission, select <img src="../../../_icons/custom/cancel.svg"/> <strong>Deny</strong>.</p></li>
+    </ul>
+    <p>Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting <strong>Cancel</strong>.
+</p>
 </details>
 <details>
 	<summary><strong>To clear settings for a role</strong></summary>
@@ -68,19 +70,3 @@ Regardless of what context you are editing stream permissions, all edits are per
 	<summary><strong>To remove roles</strong></summary>
     <p>Remove roles that have permissions for the selected streams by first clearing the permissions settings for the role and then selecting the <strong>Delete</strong> <img src="../../../_icons/branded/trash-can.svg"> icon to completely remove the role from the streams.</p>
 </details>
-
-### Roles column
-
-The matrix lists each user role that has permissions for the selected streams.
-
-- To add a user role that has permissions for the selected stream, select **Add Role** > **Add Role** ![Add Role](../../../_icons/default/plus.svg).
-
-- To remove all permissions for a user role, clear the row by selecting the **Clear** ![Clear](../../../_icons/branded/refresh.svg) icon. Then select the **Delete** ![Delete](../../../_icons/branded/trash-can.svg) icon.
-
-### Stream permissions columns
-
-When managing permissions for data streams, you can explicitly allow or deny individual permissions for each user role. Select ![Allow](../../../_icons/custom/check-circle.svg) **Allow** or ![Deny](../../../_icons/custom/cancel.svg) **Deny** for each permission that you want to explicitly define for each role. Undefined permissions (-) default to a setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
-
-For a description of each permission, mouse over its **Information** ![Information](../../../_icons/branded/information.svg) icon.
-
-Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.

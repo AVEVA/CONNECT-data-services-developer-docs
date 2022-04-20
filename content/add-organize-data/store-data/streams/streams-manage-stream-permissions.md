@@ -52,20 +52,36 @@ Regardless of what context you are editing stream permissions, all edits are per
 
 Add roles that have permissions for the selected streams by selecting **Add Role** > **Plus** <img src="../../../_icons/branded/plus.svg"/>.
 
+![Add roles](../images/manage-stream-permissions-add-roles.gif)
+
+### To remove roles
+
+Remove newly added roles by selecting the **Delete** ![Delete](../../../_icons/branded/trash-can.svg).
 ### To edit permissions
 
 Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over the **Information** ![Information](../../../_icons/default/information.svg) icon for more information about each permission. Permission that have a default value of `-` are equivalent to a setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 
+    ![Allow permissions](../images/manage-stream-permissions-allow-permissions.gif)
+
 - To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
+
+    ![Deny permissions](../images/manage-stream-permissions-deny-permissions.gif)
 
 Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting Cancel.
 
+**Dirty roles**
+![Dirty roles](../images/highlighted-roles.png)
+
 ### To clear settings for a role
     
-Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../../../_icons/branded/backspace.svg).
+Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../../../_icons/branded/backspace.svg). 
 
-### To remove roles
+**Notes:**
 
-Remove roles that have permissions for the selected streams by first clearing the permissions settings for the role and then selecting the **Delete** ![Delete](../../../_icons/branded/trash-can.svg) icon to completely remove the role from the streams.
+- Allow Manage Permissions access is required on at least one role.
+
+- Roles that have no permissions assigned will not be listed the next time that you manage stream permissions.
+
+![Clear permissions](../images/manage-stream-permissions-clear-permissions.gif)

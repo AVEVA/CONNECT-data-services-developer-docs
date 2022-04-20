@@ -50,11 +50,11 @@ Regardless of what context you are editing stream permissions, all edits are per
 
 ### To add roles
 
-Add roles that have permissions for the selected streams by selecting **Add Role** > Plus <img src="../../../_icons/branded/plus.svg"/>.
+Add roles that have permissions for the selected streams by selecting **Add Role** > **Plus** <img src="../../../_icons/branded/plus.svg"/>.
 
 ### To edit permissions
 
-Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over the **Information** ![Information](../../../_icons/branded/information.svg) icon for more information about each permission. Permission that have a default value of `-` are equivalent to a setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
+Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over the **Information** ![Information](../../../_icons/default/information.svg) icon for more information about each permission. Permission that have a default value of `-` are equivalent to a setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 

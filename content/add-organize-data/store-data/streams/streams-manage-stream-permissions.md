@@ -69,7 +69,7 @@ Read, write, delete, manage permissions, and share permissions can be edited for
 
     ![Allow permissions](../images/manage-stream-permissions-allow-permissions.gif)
 
-- To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
+- To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent to ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
     ![Deny permissions](../images/manage-stream-permissions-deny-permissions.gif)
 

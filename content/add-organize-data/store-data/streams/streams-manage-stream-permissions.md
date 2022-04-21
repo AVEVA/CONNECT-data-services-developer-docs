@@ -52,19 +52,13 @@ Regardless of what context you are editing stream permissions, all edits are per
 
 Add roles that have permissions for the selected streams by selecting **Add Role** > **Plus** ![Plus](../../../_icons/branded/plus.svg).
 
-<details>
-	<summary><strong>Add roles</strong></summary>
-	<img src="../images/manage-stream-permissions-add-roles.gif"/>
-</details>
+![Add roles](../images/manage-stream-permissions-add-roles.gif)
 
 ### To remove roles
 
 Remove newly added roles by selecting the **Delete** ![Delete](../../../_icons/branded/trash-can.svg).
 
-<details>
-	<summary><strong>Remove roles</strong></summary>
-	<img src="../images/manage-stream-permissions-remove-role.gif"/>
-</details>
+![Remove roles](../images/manage-stream-permissions-remove-role.gif)
 
 ### To edit permissions
 
@@ -72,19 +66,13 @@ Read, write, delete, manage permissions, and share permissions can be edited for
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 
-    <details>
-		<summary><strong>Allow permissions</strong></summary>
-		<img src="../images/manage-stream-permissions-allow-permissions.gif"/>
-	</details>
+    ![Allow permissions](../images/manage-stream-permissions-allow-permissions.gif)
 
 - To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
-    <details>
-		<summary><strong>Deny permissions</strong></summary>
-		<img src="../images/manage-stream-permissions-deny-permissions.gif"/>
-	</details>
+    ![Deny permissions](../images/manage-stream-permissions-deny-permissions.gif)
 
-Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting Cancel.
+Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
 
 **Dirty roles**
 ![Dirty roles](../images/highlighted-roles.png)
@@ -93,10 +81,7 @@ Roles that are highlighted indicate a *dirty* state—one of more of its permiss
     
 Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../../../_icons/branded/backspace.svg). 
 
-<details>
-	<summary><strong>Clear permissions</strong></summary>
-	<img src="../images/manage-stream-permissions-clear-permissions.gif"/>
-</details>
+![Clear permissions](../images/manage-stream-permissions-clear-permissions.gif)
 
 **Notes:**
 

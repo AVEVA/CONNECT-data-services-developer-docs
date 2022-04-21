@@ -22,15 +22,11 @@ When editing permissions for a single stream, each user role that has permission
 
 1. Select a single stream that you want to manage permissions for.
 
-1. Select **Manage Permissions**.
-
-1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions** from the toolbar (not the side panel). 
-
-    ![Manage Default Permissions](../images/manage-default-permissions.png) 
+1. From the toolbar, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
 
 1. Use the `Manage Permissions` window to:
 
-    - Add user roles that have permissions on the stream.
+    - (Optional) Add user roles that have permissions on the stream.
     - Edit stream permissions for each user role.
 
     For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
@@ -94,7 +90,7 @@ Remove newly added roles by selecting **Remove** ![Remove](../../../_icons/brand
 
 ### To edit permissions
 
-Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over the **Information** ![Information](../../../_icons/default/information.svg) icon for more information about each permission.
+Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over each **Information** ![Information](../../../_icons/default/information.svg) icon for more information about each permission.
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 

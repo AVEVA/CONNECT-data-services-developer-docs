@@ -57,15 +57,18 @@ Add roles that have permissions for the selected streams by selecting **Add Role
 ### To remove roles
 
 Remove newly added roles by selecting the **Delete** ![Delete](../../../_icons/branded/trash-can.svg).
+
+![Remove roles](../images/manage-stream-permissions-remove-role.gif)
+
 ### To edit permissions
 
-Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over the **Information** ![Information](../../../_icons/default/information.svg) icon for more information about each permission. Permission that have a default value of `-` are equivalent to a setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
+Read, write, delete, manage permissions, and share permissions can be edited for each user role that has permissions on the stream. Mouse over the **Information** ![Information](../../../_icons/default/information.svg) icon for more information about each permission.
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 
     ![Allow permissions](../images/manage-stream-permissions-allow-permissions.gif)
 
-- To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
+- To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
     ![Deny permissions](../images/manage-stream-permissions-deny-permissions.gif)
 
@@ -78,10 +81,11 @@ Roles that are highlighted indicate a *dirty* state—one of more of its permiss
     
 Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../../../_icons/branded/backspace.svg). 
 
+![Clear permissions](../images/manage-stream-permissions-clear-permissions.gif)
+
 **Notes:**
 
 - Allow Manage Permissions access is required on at least one role.
 
 - Roles that have no permissions assigned will not be listed the next time that you manage stream permissions.
 
-![Clear permissions](../images/manage-stream-permissions-clear-permissions.gif)

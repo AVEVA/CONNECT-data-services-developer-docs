@@ -50,7 +50,7 @@ Regardless of what context you are editing stream permissions, all edits are per
 
 ### To add roles
 
-Add roles that have permissions for the selected streams by selecting **Add Role** > **Plus** <img src="../../../_icons/branded/plus.svg"/>.
+Add roles that have permissions for the selected streams by selecting **Add Role** > **Plus** ![Plus](../../../_icons/branded/plus.svg).
 
 ![Add roles](../images/manage-stream-permissions-add-roles.gif)
 

@@ -23,7 +23,7 @@ To manage permissions for a single data stream, complete the following steps:
     **Tip:** If you are managing permissions for a single stream, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions** from the toolbar (not the side panel). 
 	![Manage Default Permissions](../images/manage-default-permissions.png)
 
-1. Use the `Manage Permissions` to edit stream permissions for each user role. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
+1. Use the `Manage Permissions` window to edit stream permissions for each user role. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. When you are finished editing permissions, select **Save**.
 
@@ -35,7 +35,7 @@ You can edit the default user roles and permissions added to stream when it is c
 
 1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions**.
 
-1. Use the `Manage Default Permissions` window to edit default edit stream permissions.
+1. Use the `Manage Default Permissions` window to edit default edit stream permissions. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. (Optional) To update all existing data streams within the namespace with your selected default settings, select **Apply to all existing streams in the Namespace**.
 

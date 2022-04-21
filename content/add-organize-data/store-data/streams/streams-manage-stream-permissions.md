@@ -51,13 +51,13 @@ Regardless of what context you are editing stream permissions, all edits are per
 
 ### To add roles
 
-Add roles that have permissions for the selected streams by selecting **Add Role** > **Plus** ![Plus](../../../_icons/branded/plus.svg).
+Add roles that have permissions for the selected streams by selecting **Add Role** > **Add** ![Add](../../../_icons/branded/plus.svg).
 
 ![Add roles](../images/manage-stream-permissions-add-roles.gif)
 
 ### To remove roles
 
-Remove newly added roles by selecting the **Delete** ![Delete](../../../_icons/branded/trash-can.svg).
+Remove newly added roles by selecting **Remove** ![Remove](../../../_icons/branded/trash-can.svg).
 
 ![Remove roles](../images/manage-stream-permissions-remove-role.gif)
 

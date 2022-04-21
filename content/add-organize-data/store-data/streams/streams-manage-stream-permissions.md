@@ -52,13 +52,19 @@ Regardless of what context you are editing stream permissions, all edits are per
 
 Add roles that have permissions for the selected streams by selecting **Add Role** > **Plus** ![Plus](../../../_icons/branded/plus.svg).
 
-![Add roles](../images/manage-stream-permissions-add-roles.gif)
+<details>
+	<summary><strong>Add roles</strong></summary>
+	<img src="../images/manage-stream-permissions-add-roles.gif"/>
+</details>
 
 ### To remove roles
 
 Remove newly added roles by selecting the **Delete** ![Delete](../../../_icons/branded/trash-can.svg).
 
-![Remove roles](../images/manage-stream-permissions-remove-role.gif)
+<details>
+	<summary><strong>Remove roles</strong></summary>
+	<img src="../images/manage-stream-permissions-remove-role.gif"/>
+</details>
 
 ### To edit permissions
 
@@ -66,26 +72,34 @@ Read, write, delete, manage permissions, and share permissions can be edited for
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 
-    ![Allow permissions](../images/manage-stream-permissions-allow-permissions.gif)
+    <details>
+		<summary><strong>Allow permissions</strong></summary>
+		<img src="../images/manage-stream-permissions-allow-permissions.gif"/>
+	</details>
 
 - To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
-    ![Deny permissions](../images/manage-stream-permissions-deny-permissions.gif)
+    <details>
+		<summary><strong>Deny permissions</strong></summary>
+		<img src="../images/manage-stream-permissions-deny-permissions.gif"/>
+	</details>
 
 Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting Cancel.
 
 **Dirty roles**
 ![Dirty roles](../images/highlighted-roles.png)
 
-### To clear settings for a role
+### To clear permissions for a role
     
 Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../../../_icons/branded/backspace.svg). 
 
-![Clear permissions](../images/manage-stream-permissions-clear-permissions.gif)
+<details>
+	<summary><strong>Clear permissions</strong></summary>
+	<img src="../images/manage-stream-permissions-clear-permissions.gif"/>
+</details>
 
 **Notes:**
 
 - Allow Manage Permissions access is required on at least one role.
 
 - Roles that have no permissions assigned will not be listed the next time that you manage stream permissions.
-

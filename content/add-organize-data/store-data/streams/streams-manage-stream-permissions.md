@@ -12,7 +12,34 @@ To manage data stream permissions, your user role must be assigned the **Manage 
 
 ## Manage permissions for streams
 
-To manage permissions for a single data stream, complete the following steps:
+When managing permissions for streams, you can either edit them one at a time or in bulk.
+
+### [Single stream](#tab/tabid-1)
+
+When editing permissions for a single stream, each user role that has permissions for the stream is displayed.
+
+1. From the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. Select a single stream that you want to manage permissions for.
+
+1. Select **Manage Permissions**.
+
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions** from the toolbar (not the side panel). 
+
+    ![Manage Default Permissions](../images/manage-default-permissions.png) 
+
+1. Use the `Manage Permissions` window to:
+
+    - Add user roles that have permissions on the stream.
+    - Edit stream permissions for each user role.
+
+    For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
+
+1. When you are finished editing permissions, select **Save**.
+
+### [Multiple streams](#tab/tabid-2)
+
+When editing permissions for multiple streams, you must add each user role that you want to have permissions on the stream before editing each permission setting.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -20,12 +47,16 @@ To manage permissions for a single data stream, complete the following steps:
 
 1. Select **Manage Permissions**.
 
-    **Tip:** If you are managing permissions for a single stream, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions** from the toolbar (not the side panel). 
-	![Manage Default Permissions](../images/manage-default-permissions.png)
+1. Use the `Manage Permissions` window to:
 
-1. Use the `Manage Permissions` window to edit stream permissions for each user role. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
+    - Add user roles that have permissions on the stream.
+    - Edit stream permissions for each user role.
+
+    For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. When you are finished editing permissions, select **Save**.
+
+***
 
 ## Manage default permissions for new streams
 
@@ -67,16 +98,12 @@ Read, write, delete, manage permissions, and share permissions can be edited for
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 
-    ![Allow permissions](../images/manage-stream-permissions-allow-permissions.gif)
-
 - To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent to ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
-    ![Deny permissions](../images/manage-stream-permissions-deny-permissions.gif)
+Roles that are highlighted indicate that one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
 
-Roles that are highlighted indicate a *dirty* state—one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
-
-**Dirty roles**
-![Dirty roles](../images/highlighted-roles.png)
+**Modified roles**
+![Modified roles](../images/highlighted-roles.png)
 
 ### To clear permissions for a role
     

@@ -22,7 +22,11 @@ When editing permissions for a single stream, each user role that has permission
 
 1. Select a single stream that you want to manage permissions for.
 
-1. From the toolbar, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
+
+    The `Manage Permissions for Stream` window opens. Because you are editing permissions for a single stream, all user roles that have permissions on the stream are displayed along with their settings.
+
+    ![Manage Permissions for Stream](../images/manage-stream-permissions-single-stream.png)
 
 1. Use the `Manage Permissions` window to:
 
@@ -43,6 +47,10 @@ When editing permissions for multiple streams, you must add each user role that 
 
 1. Select **Manage Permissions**.
 
+    The `Manage Permissions for Selected Streams` window opens. Because you are editing permissions for multiple streams, no user roles or settings are listed, as the permission settings for each stream are different.
+
+    ![Manage Permissions for Selected Streams](../images/manage-stream-permissions-bulk.png)
+
 1. Use the `Manage Permissions` window to:
 
     - Add user roles that have permissions on the stream.
@@ -51,6 +59,8 @@ When editing permissions for multiple streams, you must add each user role that 
     For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. When you are finished editing permissions, select **Save**.
+
+    **Note:** This action overwrites any previous permission settings applied to the affected user roles.
 
 ***
 
@@ -66,13 +76,13 @@ You can edit the default user roles and permissions added to stream when it is c
 
 1. (Optional) To update all existing data streams within the namespace with your selected default settings, select **Apply to all existing streams in the Namespace**.
 
-	**Warning!** Use of this option applies your updated permission settings to *all* streams in the namespace. Use this option with care, as it overwrites existing permission settings.
+	**Warning!** Use of this option applies updated permission settings to *all* streams in the namespace. Use this option with care, as it overwrites existing permission settings.
 
 1. When you are finished editing permissions, select **Save**.
 
 ## Manage Permissions for Streams window
 
-Regardless of what context you are editing stream permissions, all edits are performed using the **Manage Permissions for Streams** dialog. This dialog lists a matrix of roles that have permissions for the selected streams, along with the setting for each individual each permission. Use this matrix to add new roles that have permissions for the streams or update individual permissions.
+Regardless of what context you are editing stream permissions, all edits are performed using the **Manage Permissions for Streams** window. This window lists a matrix of roles that have permissions for the selected streams, along with the setting for each individual each permission. Use this matrix to add new roles that have permissions for the streams or update individual permissions.
 
 ![Manage permissions](../../../communities/images/manage-permissions-for-streams.png)
 
@@ -96,11 +106,6 @@ Read, write, delete, manage permissions, and share permissions can be edited for
 
 - To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent to ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
 
-Roles that are highlighted indicate that one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
-
-**Modified roles**
-![Modified roles](../images/highlighted-roles.png)
-
 ### To clear permissions for a role
     
 Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../../../_icons/branded/backspace.svg). 
@@ -112,3 +117,9 @@ Clear the permissions applied to a role by selecting **Backspace** ![Backspace](
 - Allow Manage Permissions access is required on at least one role.
 
 - Roles that have no permissions assigned will not be listed the next time that you manage stream permissions.
+
+### Modified roles
+
+Roles that are highlighted indicate that one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
+
+![Modified roles](../images/highlighted-roles.png)

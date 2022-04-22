@@ -11,7 +11,7 @@ Within OSIsoft Cloud Services, permissions are applied to user roles per resourc
 - Asset Types
 - Assets
 - Data Views
-- Streams
+- [Streams](xref:streams-manage-stream-permissions)
 - Types
 
 ## Manage Permissions window

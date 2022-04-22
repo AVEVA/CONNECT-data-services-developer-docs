@@ -159,6 +159,7 @@
     - topicUid: ccRoles
       items:
       - topicUid: gpRoles
+      - topicUid: RolesMaintenance
     - topicUid: ccClients
       items:
       - topicUid: gpClientCredentialsClient

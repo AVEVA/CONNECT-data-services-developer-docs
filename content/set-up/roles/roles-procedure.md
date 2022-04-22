@@ -14,7 +14,7 @@ Roles are used to manage access to assets, resources, and services. By default, 
 
 1. Select **Add** to create the new role. 
 
-    **Note:** The Role Type is Tenant Custom for all custom (or non-default) roles. 
+   **Note:** The Role Type is Tenant Custom for all custom (or non-default) roles. 
 
 You can now specify permissions for this role when managing permissions on assets, resources, and services.
 

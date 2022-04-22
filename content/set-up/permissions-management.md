@@ -18,29 +18,29 @@ Within OSIsoft Cloud Services, permissions are applied to user roles per resourc
 
 Use the `Manage Permissions` window to apply permissions to each user role for a system resource. This window lists a matrix of roles that have permissions for the resource that you are managing, along with the setting for each individual each permission. Use this matrix to add new roles that have permissions on the resource or update individual permissions.
 
-![Manage permissions](images/manage-permissions-for-namespace.png)
+![Manage permissions](./images/manage-permissions-window.png)
 
 ### To add roles
 
-Add roles that have permissions for the resource by selecting **Add Role** > **Add** ![Add](../../_icons/branded/plus.svg).
+Add roles that have permissions for the resource by selecting **Add Role** > **Add** ![Add](../_icons/branded/plus.svg).
 
 ### To remove roles
 
-Remove newly added roles by selecting **Remove** ![Remove](../../_icons/branded/trash-can.svg). Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).
+Remove newly added roles by selecting **Remove** ![Remove](../_icons/branded/trash-can.svg). Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).
 
 ### To edit permissions
 
-**Read**, **Write**, **Delete**, **Manage Permissions** permissions can be edited for each user role that has permissions in the namespace. Stream resources include an additional **Share** permission. Mouse over each **Information** ![Information](../../_icons/default/information.svg) icon for more information about each permission.
+**Read**, **Write**, **Delete**, **Manage Permissions** permissions can be edited for each user role that has permissions in the namespace. Stream resources include an additional **Share** permission. Mouse over each **Information** ![Information](../_icons/default/information.svg) icon for more information about each permission.
 
-- To allow a permission, select ![Allow](../../_icons/custom/check-circle.svg) **Allow**.
+- To allow a permission, select ![Allow](../_icons/custom/check-circle.svg) **Allow**.
 
-- To explicitly deny a permission, select ![Deny](../../_icons/custom/cancel.svg) **Deny**. 
+- To explicitly deny a permission, select ![Deny](../_icons/custom/cancel.svg) **Deny**. 
 
-    **Note:** When a user is assigned multiple user roles with conflicting permissions, a setting of ![Deny](../../_icons/custom/cancel.svg) **Deny** supersedes a setting of ![Allow](../../_icons/custom/check-circle.svg) **Allow** or undefined (`-`) .
+    **Note:** When a user is assigned multiple user roles with conflicting permissions, a setting of ![Deny](../_icons/custom/cancel.svg) **Deny** supersedes a setting of ![Allow](../_icons/custom/check-circle.svg) **Allow** or undefined (`-`) .
 
 ### To clear permissions for a role
     
-Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../../_icons/branded/backspace.svg). 
+Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../_icons/branded/backspace.svg). 
 
 **Notes:**
 

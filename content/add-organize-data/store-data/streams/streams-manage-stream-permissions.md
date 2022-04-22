@@ -26,6 +26,7 @@ When editing permissions for a single stream, each user role that has permission
 
     The `Manage Permissions for Stream` window opens. Because you are editing permissions for a single stream, all user roles that have permissions on the stream are displayed along with their settings.
 
+    **Stream with pre-populated user roles and permissions**
     ![Manage Permissions for Stream](../images/manage-stream-permissions-single-stream.png)
 
 1. Use the `Manage Permissions` window to:
@@ -48,7 +49,8 @@ When editing permissions for multiple streams, no user roles or permission setti
 1. Select **Manage Permissions**.
 
     The `Manage Permissions for Selected Streams` window opens. Because you are editing permissions for multiple streams, no user roles or settings are listed, as the permission settings for each stream are different.
-
+    
+    **Streams without pre-populated user roles and permissions**
     ![Manage Permissions for Selected Streams](../images/manage-stream-permissions-bulk.png)
 
 1. Use the `Manage Permissions` window to:
@@ -72,7 +74,7 @@ You can edit the default user roles and permissions added to stream when it is c
 
 1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions**.
 
-1. Use the `Manage Default Permissions` window to edit default edit stream permissions. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
+1. Use the `Manage Default Permissions` window to edit default user roles and stream permissions. For more information, see [Manage Permissions for Streams window](#manage-permissions-for-streams-window).
 
 1. (Optional) To update all existing data streams within the namespace with your selected default settings, select **Apply to all existing streams in the Namespace**.
 
@@ -124,4 +126,5 @@ Clear the permissions applied to a role by selecting **Backspace** ![Backspace](
 
 Roles that are highlighted indicate that one of more of its permissions settings have been modified. Newly added roles are highlighted as well. You can restore the original settings by selecting **Cancel**.
 
+**Modfied roles**
 ![Modified roles](../images/highlighted-roles.png)

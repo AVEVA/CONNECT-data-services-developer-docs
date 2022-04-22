@@ -186,6 +186,7 @@
       - topicUid: gpClientCredentialsClient
       - topicUid: gpHybridClient
       - topicUid: gpAuthorizationCodeClient
+    - topicUid: permissions-management
 - topicUid: DeveloperTools
   items:
     - topicUid: samples

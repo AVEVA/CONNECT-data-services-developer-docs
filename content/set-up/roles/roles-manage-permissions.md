@@ -10,7 +10,7 @@ You can edit the permissions applied to a user role from any page in OSIsoft Clo
 
 1. Select the **Manage Permissions** ![Manage Permissions](../../_icons/default/account-lock.svg) icon.
 
-    ![Manage Permissions](images/manage-permissions.png)
+    ![Manage Permissions](../images/manage-permissions-icon.png)
 
     The `Manage Permissions for Namespace` window opens.
 
@@ -19,7 +19,7 @@ You can edit the permissions applied to a user role from any page in OSIsoft Clo
     - Add user roles that have permissions in the namespace.
     - Edit permissions for each user role.
 
-    For more information, see [Manage Permissions for Namespace window](#manage-permissions-for-namespace-window) <!-- TODO: Update xref -->.
+    For more information, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 
 1. When you are finished editing permissions, select **Save**.
 

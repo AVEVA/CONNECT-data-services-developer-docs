@@ -16,7 +16,7 @@ When managing permissions for streams, you can either edit them one at a time or
 
 ### [Single stream](#tab/tabid-1)
 
-When editing permissions for a single stream, each user role that has permissions for the stream is displayed.
+When editing permissions for a single stream, each user role that has permissions assigned are pre-poplated in the window that opens.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -39,7 +39,7 @@ When editing permissions for a single stream, each user role that has permission
 
 ### [Multiple streams](#tab/tabid-2)
 
-When editing permissions for multiple streams, you must add each user role that you want to have permissions on the stream before editing each permission setting.
+When editing permissions for multiple streams, no user roles or permission settings are pre-populated in the window because the permissions for each stream are unique. Therefore you must add each user role that you want to have permissions on the stream before editing each permission setting.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -94,7 +94,7 @@ Add roles that have permissions for the selected streams by selecting **Add Role
 
 ### To remove roles
 
-Remove newly added roles by selecting **Remove** ![Remove](../../../_icons/branded/trash-can.svg).
+Remove newly added roles by selecting **Remove** ![Remove](../../../_icons/branded/trash-can.svg). Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).`
 
 ![Remove roles](../images/manage-stream-permissions-remove-role.gif)
 
@@ -104,7 +104,9 @@ Read, write, delete, manage permissions, and share permissions can be edited for
 
 - To allow a permission, select ![Allow](../../../_icons/custom/check-circle.svg) **Allow**.
 
-- To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent to ![Deny](../../../_icons/custom/cancel.svg) **Deny**.
+- To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. Permissions that have a value of `-` are equivalent to ![Deny](../../../_icons/custom/cancel.svg) **Deny**. 
+
+    **Note:** A setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny** supercedes ![Allow](../../../_icons/custom/check-circle.svg) **Allow** when a user is assigned multiple user roles.
 
 ### To clear permissions for a role
     
@@ -115,11 +117,11 @@ Clear the permissions applied to a role by selecting **Backspace** ![Backspace](
 **Notes:**
 
 - Allow Manage Permissions access is required on at least one role.
-
-- Roles that have no permissions assigned will not be listed the next time that you manage stream permissions.
+                          
+- Roles that have no permissions assigned are not listed the next time that you manage stream permissions.
 
 ### Modified roles
 
-Roles that are highlighted indicate that one of more of its permissions settings have been modified. You can restore the original settings by selecting **Cancel**.
+Roles that are highlighted indicate that one of more of its permissions settings have been modified. Newly added roles are highlighted as well. You can restore the original settings by selecting **Cancel**.
 
 ![Modified roles](../images/highlighted-roles.png)

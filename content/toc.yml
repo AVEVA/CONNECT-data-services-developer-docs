@@ -39,14 +39,15 @@
       items:
       - topicUid: ccStreams
         items:
-        - topicUid: streams-manage-stream-permissions
         - topicUid: bpStreams
         - topicUid: gpStreams
         - topicUid: manage-streams
+        - topicUid: streams-manage-stream-permissions
       - topicUid: ccTypes
         items:
         - topicUid: bpTypes
         - topicUid: gpTypes
+        - topicUid: types-manage-permissions
       - topicUid: ccStreamviews
     - topicUid: communities
       items:
@@ -86,6 +87,7 @@
         - topicUid: CreateAssetRules
         - topicUid: TokensGenerateAssets
         - topicUid: UsingMultipleRules
+        - topicUid: manage-asset-rules-permissions
 - topicUid: lpdatacollection
   items:
   - topicUid: SoftwareMgmt
@@ -124,6 +126,7 @@
       - topicUid: repair-agent 
       - topicUid: search-agent
       - topicUid: remove-agent-portal
+      - topicUid: manage-agent-permissions
     - topicUid: lp-logs
       items:
       - topicUid: view-logs
@@ -155,10 +158,12 @@
       items: 
       - topicUid: CreateConfigureAsset
       - topicUid: CreateAssetFromAssetType
+      - topicUid: manage-asset-permissions
     - topicUid: AssetTypes
       items:
       - topicUid: CreateAssetTypeWithEditor
       - topicUid: ConvertAssetToAssetType
+      - topicUid: manage-asset-type-permissions
     - topicUid: lprom
       items:
       - topicUid: GetStartedROM
@@ -167,6 +172,7 @@
 - topicUid: Analytics
   items:
     - topicUid: Dataviews1
+    - topicUid: manage-data-views-permissions
     - topicUid: PowerBI
       items:
       - topicUid: PowerBIReleaseNotes

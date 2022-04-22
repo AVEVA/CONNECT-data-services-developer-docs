@@ -180,6 +180,7 @@
     - topicUid: ccRoles
       items:
       - topicUid: gpRoles
+      - topicUid: roles-manage-permissions
     - topicUid: ccClients
       items:
       - topicUid: gpClientCredentialsClient

@@ -11,6 +11,7 @@ Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRo
 - [Asset Types](xref:manage-asset-type-permissions)
 - [Assets](xref:manage-asset-permissions)
 - [Data Views](xref:manage-data-views-permissions)
+- [Namespaces](xref:namespaces-manage-permissions)
 - [Streams](xref:streams-manage-stream-permissions)
 - [Types](xref:types-manage-permissions)
 
@@ -34,7 +35,7 @@ Remove newly added roles by selecting **Remove** ![Remove](../_icons/branded/tra
 
 ### To edit permissions
 
-**Read**, **Write**, **Delete**, **Manage Permissions** permissions can be edited for each user role that has permissions in the namespace. Stream resources include an additional **Share** permission. Mouse over each **Information** ![Information](../_icons/default/information.svg) icon for more information about each permission.
+**Read**, **Write**, **Delete**, **Manage Permissions** permissions can be edited for each user role that has permissions in the namespace. Stream resources include an additional **Share** permission. Mouse over each **Information** ![Information](../_icons/branded/information.svg) icon for more information about each permission.
 
 - To allow a permission, select ![Allow](../_icons/custom/check-circle.svg) **Allow**.
 

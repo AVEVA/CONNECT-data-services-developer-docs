@@ -6,13 +6,13 @@ uid: permissions-management
 
 Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRoles) per resource. These roles are then applied to users, which determine whether they can access the resource. You can edit permissions that each user role has to the following system resources: 
 
-- Agents
-- Asset Rules
-- Asset Types
-- Assets
-- Data Views
+- [Agents](xref:manage-agent-permissions)
+- [Asset Rules](xref:manage-asset-rules-permissions)
+- [Asset Types](xref:manage-asset-type-permissions)
+- [Assets](xref:manage-asset-permissions)
+- [Data Views](xref:manage-data-views-permissions)
 - [Streams](xref:streams-manage-stream-permissions)
-- Types
+- [Types](xref:types-manage-permissions)
 
 ## Manage Permissions window
 
@@ -59,4 +59,4 @@ Clear the permissions applied to a role by selecting **Backspace** ![Backspace](
 Roles that are highlighted indicate that one of more of its permissions settings have been modified. Newly added roles are highlighted as well. You can restore the original settings by selecting **Cancel**.
 
 **Modifed roles**
-![Modified roles](./images/highlighted-roles.png) 
+![Modified roles](./images/highlighted-roles.png)

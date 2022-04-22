@@ -51,8 +51,6 @@
     - topicUid: communities
       items:
       - topicUid: community-communities-page
-        items:
-        - topicUid: communities-manage-default-admins
       - topicUid: community-setup
         items:
         - topicUid: community-community-roles
@@ -79,6 +77,7 @@
         - topicUid: community-manage-groups
         - topicUid: community-manage-clients
         - topicUid: community-manage-administrators
+        - topicUid: communities-manage-default-admins
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules

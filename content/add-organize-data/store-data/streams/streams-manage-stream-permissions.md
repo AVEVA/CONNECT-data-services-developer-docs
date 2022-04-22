@@ -96,7 +96,7 @@ Add roles that have permissions for the selected streams by selecting **Add Role
 
 ### To remove roles
 
-Remove newly added roles by selecting **Remove** ![Remove](../../../_icons/branded/trash-can.svg). Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).`
+Remove newly added roles by selecting **Remove** ![Remove](../../../_icons/branded/trash-can.svg). Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).
 
 ![Remove roles](../images/manage-stream-permissions-remove-role.gif)
 

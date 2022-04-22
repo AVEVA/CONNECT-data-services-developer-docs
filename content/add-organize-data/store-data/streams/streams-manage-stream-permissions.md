@@ -108,7 +108,7 @@ Read, write, delete, manage permissions, and share permissions can be edited for
 
 - To explicitly deny a permission, select ![Deny](../../../_icons/custom/cancel.svg) **Deny**. 
 
-    **Note:** A setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny** supersedes a setting of ![Allow](../../../_icons/custom/check-circle.svg) **Allow** or undefined (`-`) when a user is assigned multiple user roles with conflicting permissions.
+    **Note:** When a user is assigned multiple user roles with conflicting permissions, a setting of ![Deny](../../../_icons/custom/cancel.svg) **Deny** supersedes a setting of ![Allow](../../../_icons/custom/check-circle.svg) **Allow** or undefined (`-`) .
 
 ### To clear permissions for a role
     

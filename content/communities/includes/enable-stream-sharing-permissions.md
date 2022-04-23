@@ -24,7 +24,7 @@ Before data can be shared into a community and accessed by external tenants, a u
 
 	- Using the **Tenant Data Steward** role is recommended, but you can use any role.
 
-	- For more information on this window, see [Manage Permissions for Streams window](xref:streams-manage-stream-permissions#manage-permissions-for-streams-window).
+	- For more information on this window, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 
 1. Select **Save**.
 

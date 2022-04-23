@@ -4,7 +4,7 @@ uid: permissions-management
 
 # Permissions management
 
-Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRoles) per resource. These roles are then applied to users, which determine whether they can access the resource. You can edit permissions that each user role has to the following system resources: 
+Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRoles) per resource. The user roles assigned to each user determine whether they can access the resource. You can granularly edit permissions for the following system resources: 
 
 - [Agents](xref:manage-agent-permissions)
 - [Asset Rules](xref:manage-asset-rules-permissions)
@@ -17,7 +17,11 @@ Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRo
 
 ## Manage Permissions window
 
-Use the `Manage Permissions` window to apply permissions to each user role for a system resource. This window lists a matrix of roles that have permissions for the resource that you are managing, along with the setting for each individual each permission. Use this matrix to add new roles that have permissions on the resource or update individual permissions.
+Use the `Manage Permissions` window to apply permissions to each user role for a system resource. This window displays a matrix of roles, permissions, and permission settings for the resource you are managing. Use the matrix to:
+
+- Add new roles that have permissions on the resource.
+
+- Update individual permission settings.
 
 ![Manage permissions](./images/manage-permissions-window.png)
 

@@ -2,15 +2,15 @@
 uid: streams-manage-stream-permissions
 ---
 
-# Manage stream permissions
+# Manage permissions for streams
 
-If you are assigned the **Manage Permissions** access right, then you can configure stream permissions for other user roles in your tenant. You can granularly assign individual stream permissions to each user role in your tenant.
+If you are assigned the **Manage Permissions** access right, then you can configure stream permissions for other user roles in your tenant. You can granularly assign individual stream permissions to each user role.
 
 ## Prerequisites
 
-To manage data stream permissions, your user role must be assigned the **Manage Permissions** access right.
+To manage data stream permissions, you must be assigned the **Manage Permissions** access right.
 
-## Manage permissions for streams
+## To manage permissions for streams
 
 When managing permissions for streams, you can either edit them one at a time or in bulk.
 
@@ -29,7 +29,7 @@ When editing permissions for a single stream, each user role that has permission
     **Stream with pre-populated user roles and permissions**
     ![Manage Permissions for Stream](../images/manage-stream-permissions-single-stream.png)
 
-1. Use the `Manage Permissions` window to:
+1. Use the `Manage Permissions for Stream` window to:
 
     - (Optional) Add user roles that have permissions on the stream.
     - Edit stream permissions for each user role.
@@ -68,7 +68,7 @@ When editing permissions for multiple streams, no user roles or permission setti
 
 ## Manage default permissions for new streams
 
-You can edit the default user roles and permissions added to stream when it is created. Editing these default roles and permissions speeds up creation of new data streams by minimizing permission edits.
+You can edit the default user roles and permissions added to a stream when it is created.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 

@@ -14,7 +14,7 @@ To manage asset types permissions, you must be assigned the **Manage Permissions
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Asset/Asset Types** selection, select **Asset Types**.
+1. From the **Assets/Asset Types** selection, select **Asset Types**.
 
 1. From the side panel, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
 
@@ -33,9 +33,11 @@ To manage asset types permissions, you must be assigned the **Manage Permissions
 
 You can edit the default user roles and permissions added to an asset type when it is created.
 
-1. From the left pane, select **Data Management** > **Sequential Data Store**.
+1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the toolbat, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions for New Asset Types**.
+1. From the **Assets/Asset Types** selection, select **Asset Types**.
+
+1. From the toolbar, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions for New Asset Types**.
 
 1. Use the `Manage Default Permissions for New Asset Types` window to edit default user roles and asset type permissions. For more information, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 

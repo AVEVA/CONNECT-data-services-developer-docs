@@ -4,7 +4,7 @@ uid: manage-asset-rules-permissions
 
 # Manage permissions for asset rules
 
-If you are assigned the **Manage Permissions** access right, then you can configure stream permissions for other user roles in your tenant. You can granularly assign individual stream permissions to each user role.
+If you are assigned the **Manage Permissions** access right, then you can configure asset rule permissions for other user roles in your tenant. You can granularly assign individual asset rule permissions to each user role.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ To manage asset rules permissions, you must be assigned the **Manage Permissions
 
 ## Manage default permissions for new asset rules
 
-You can edit the default user roles and permissions added to a asset rules when it is created.
+You can edit the default user roles and permissions added to a asset rule when it is created.
 
 1. From the left pane, select **Data Management** > **Asset Rules**.
 

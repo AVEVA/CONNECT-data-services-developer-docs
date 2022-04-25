@@ -35,6 +35,7 @@
       items:
       - topicUid: bpNamespaces
       - topicUid: gpNamespaces
+      - topicUid: namespaces-manage-permissions
     - topicUid: lpstoredata
       items:
       - topicUid: ccStreams

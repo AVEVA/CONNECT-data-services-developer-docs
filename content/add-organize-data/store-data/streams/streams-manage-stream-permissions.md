@@ -66,7 +66,7 @@ When editing permissions for multiple streams, no user roles or permission setti
 
 ***
 
-## Manage default permissions for new streams
+## To manage default permissions for new streams
 
 You can edit the default user roles and permissions added to a stream when it is created.
 

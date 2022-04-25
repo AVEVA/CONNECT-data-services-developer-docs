@@ -29,7 +29,7 @@ To manage data view permissions, you must be assigned the **Manage Permissions**
 
 1. When you are finished editing permissions, select **Save**.
 
-## Manage default permissions for new data views
+## To manage default permissions for new data views
 
 You can edit the default user roles and permissions added to a data view when it is created.
 

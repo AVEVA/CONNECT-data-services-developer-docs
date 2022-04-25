@@ -31,7 +31,7 @@ To manage type permissions, you must be assigned the **Manage Permissions** acce
 
 1. When you are finished editing permissions, select **Save**.
 
-## Manage default permissions for new types
+## To manage default permissions for new types
 
 You can edit the default user roles and permissions added to a type when it is created.
 

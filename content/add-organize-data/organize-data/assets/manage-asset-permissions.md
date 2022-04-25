@@ -29,7 +29,7 @@ To manage asset permissions, you must be assigned the **Manage Permissions** acc
 
 1. When you are finished editing permissions, select **Save**.
 
-## Manage default permissions for new assets
+## To msanage default permissions for new assets
 
 You can edit the default user roles and permissions added to a assets when it is created.
 

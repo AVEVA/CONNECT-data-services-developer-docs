@@ -1057,6 +1057,8 @@ List of assets you want to create.<br/>
 
 <a id="opIdRequestManager_Bulk Delete Assets"></a>
 
+Deletes all assets with the specified identifiers. This API can delete up to a maximum of 1000 assets in one API call.
+
 <h3>Request</h3>
 
 ```text 
@@ -1067,18 +1069,18 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] array id`
-<br/><br/>
+<br/>Ampersand separated asset identifiers in the form of id={assetId_1}&amp;id={assetId_2}<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|None|
-|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|None|
-|400|[ErrorTemplate](#schemaerrortemplate)|None|
+|204|None|Assets with the specified ids has been deleted.|
+|207|[MultiStatusResultOfStringAndChildErrorTemplate](#schemamultistatusresultofstringandchilderrortemplate)|Partial success. Not all assets were deleted. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 
 <h4>Example response body</h4>
 

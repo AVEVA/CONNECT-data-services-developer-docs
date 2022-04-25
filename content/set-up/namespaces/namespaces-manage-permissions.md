@@ -12,15 +12,17 @@ To manage namespace permissions, you must be assigned the **Manage Permissions**
 
 ## To manage permissions for namespaces
 
-1. From the left pane, select **** > ****.
+When editing permissions for a namespace, you can either use the **Namespaces** page or the **Namespaces** dropdown.
 
-1. ????
+### [Namespaces page](#tab/tabid-1)
 
-1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
+1. From the left pane, select **Data Management** > **Namespaces**.
 
-    The `Manage Permissions for namespace` window opens.
+1. Select a namespace and choose **Manage Permissions**.
 
-1. Use the `Manage Permissions for namespace` window to:
+    The `Manage Permissions for Namespace` window opens.
+
+1. Use the `Manage Permissions for Namespace` window to:
 
     - (Optional) Add user roles that have permissions on the namespace.
     - Edit namespace permissions for each user role.
@@ -29,15 +31,21 @@ To manage namespace permissions, you must be assigned the **Manage Permissions**
 
 1. When you are finished editing permissions, select **Save**.
 
-## Manage default permissions for new namespaces
+### [Any page](#tab/tabid-2)
 
-You can edit the default user roles and permissions added to a namespace when it is created.
+1. From the namespace dropdown, select the namespace that you want to edit permissions for.
 
-1. From the left pane, select **** > ****.
+1. Select the **Manage Permissions** ![Manage Permissions](../../_icons/default/account-lock.svg) icon.
 
-1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions**.
+    The `Manage Permissions for Namespace` window opens.
 
-1. Use the `Manage Default Permissions` window to edit default user roles and namespace permissions. For more information, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
+1. Use the `Manage Permissions for Namespace` window to:
+
+    - (Optional) Add user roles that have permissions on the namespace.
+    - Edit namespace permissions for each user role.
+
+    For more information, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 
 1. When you are finished editing permissions, select **Save**.
 
+***

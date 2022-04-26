@@ -42,7 +42,9 @@
         items:
         - topicUid: bpStreams
         - topicUid: gpStreams
-        - topicUid: manage-streams
+        - topicUid: streams-manage-streams
+        - topicUid: streams-add-tags-or-metadata
+        - topicUid: streams-share-streams
         - topicUid: streams-manage-stream-permissions
       - topicUid: ccTypes
         items:

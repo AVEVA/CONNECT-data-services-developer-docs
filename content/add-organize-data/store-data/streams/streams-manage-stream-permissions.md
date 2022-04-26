@@ -16,7 +16,7 @@ When managing permissions for streams, you can either edit them one at a time or
 
 ### [Single stream](#tab/tabid-1)
 
-When editing permissions for a single stream, each user role that has permissions assigned are pre-poplated in the window that opens.
+When editing permissions for a single stream, each user role that has permissions assigned are pre-populated in the window that opens.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -44,7 +44,7 @@ When editing permissions for multiple streams, no user roles or permission setti
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Select one or more stream that you want to manage permissions for.
+1. Select one or more streams that you want to manage permissions for.
 
 1. Select **Manage Permissions**.
 

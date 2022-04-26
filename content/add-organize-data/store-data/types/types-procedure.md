@@ -4,9 +4,9 @@ uid: gpTypes
 
 # Add a type
 
-Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. Once created, you cannot modify a type. 
+Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. Once created, you cannot modify a type. You can add one of two types: Base Types or Enum Types
 
-To add a type, follow these steps:
+# [Base type](#tab/tabid-1)
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -14,7 +14,11 @@ To add a type, follow these steps:
 
 1. Select **Add Type**.
 
-1. In the `Add Type` pane, complete the following fields:
+    The `Add Type` pane opens.
+
+1. Select **Type**.
+
+1. Complete the following fields:
 
  - **Id** - Enter the Id for the type.
 
@@ -32,12 +36,42 @@ To add a type, follow these steps:
    
  - **Name** - Enter the name of the property. If you do not enter a name, the **Id** is used as the name. 
    
- - **Type** - Select the SDS type of the property from the dropdown.
+ - **Base Type** - Select the SDS type of the property from the dropdown.
    
      **Note:** To find the type in the list, filter the property types by entering text in the **Filter Types** box and use the **System** or **Tenant** controls to include or exclude these types. **Tenant** includes any types that were previously created in the selected namespace for a particular tenant. **System** includes SDS types that are provided and defined such as `string`, `integer`, `double`, `datetime`, and `Boolean`.
-
-     **Adding an enum Type?** If you add any of the following enumeration types for a property, you must also configure the enumeration mappings. For more information on adding an enum type, see <xref:types-add-enum>.
    
  - **UOM** - (Optional) Select a unit of measure for the property from the list. 
    
 1. To save the type, select **Save**.
+
+# [Enum type](#tab/tabid-2)
+
+1. In the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. From the **Streams** dropdown, select **Types**.
+
+1. Select **Add Type**.
+
+    The `Add Type` pane opens.
+
+1. Select **Enum Type**.
+
+1. In the `Add Type` pane, complete the following fields:
+
+ - **Id** - Enter the Id for the type.
+
+ - **Name** - (Optional) Enter a user-friendly name. If you do not enter a name, the **Id** is used as the name.
+
+ - **Description** - (Optional) Enter a user-friendly description of the type.
+
+ - **Enum Type** - (Optional) To base the new type on an existing type, select the existing type from the dropdown. The new type inherits the properties of the base type. Inherited properties are read only and cannot be modified.
+
+1. For each property to add to the emnum type, select **Add Property** and complete the following fields:
+ 
+ - **Id** - Enter the identifier for referencing the property.
+   
+ - **Value** - Enter the value of the property.
+   
+1. To save the type, select **Save**.
+
+***

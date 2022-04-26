@@ -46,8 +46,6 @@
         items:
         - topicUid: bpTypes
         - topicUid: gpTypes
-          items:
-          - topicUid: types-add-enum
       - topicUid: ccStreamviews
     - topicUid: communities
       items:

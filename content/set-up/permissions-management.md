@@ -4,7 +4,7 @@ uid: permissions-management
 
 # Permissions management
 
-Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRoles) per resource. The user roles assigned to each user determine whether they can access the resource. You can granularly edit permissions for the following system resources: 
+Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRoles) per resource. The user roles assigned to each user determine whether they can access the resource. You can granularly edit permissions for the following system resources. Open the following pages for instructions on how to edit permissions for each system resource. 
 
 - [Agents](xref:manage-agent-permissions)
 - [Asset Rules](xref:manage-asset-rules-permissions)
@@ -17,7 +17,7 @@ Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRo
 
 ## Manage Permissions window
 
-Use the `Manage Permissions` window to apply permissions to each user role for a system resource. This window displays a matrix of roles, permissions, and permission settings for the resource you are managing. Use the matrix to:
+All system resources are managed using the `Manage Permissions` window. Use this window to apply permissions to each user role for a system resource. This window displays a matrix of roles, permissions, and permission settings for the resource you are managing. Use the matrix to:
 
 - Add new roles that have permissions on the resource.
 
@@ -33,13 +33,13 @@ Add roles that have permissions for the resource by selecting **Add Role** > **A
 
 ### To remove roles
 
-Remove newly added roles by selecting **Remove** ![Remove](../_icons/branded/trash-can.svg). Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).
+Remove newly added roles by selecting the **Remove** ![Remove](../_icons/branded/trash-can.svg) icon. Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).
 
 ![Remove roles](./images/manage-stream-permissions-remove-role.gif)
 
 ### To edit permissions
 
-**Read**, **Write**, **Delete**, **Manage Permissions** permissions can be edited for each user role that has permissions in the namespace. Stream resources include an additional **Share** permission. Mouse over each **Information** ![Information](../_icons/branded/information.svg) icon for more information about each permission.
+**Read**, **Write**, **Delete**, and **Manage Permissions** permissions can be edited for each user role that has permissions on the resource. Data stream resources include an additional **Share** permission to support <xref:communities>. Mouse over each **Information** ![Information](../_icons/branded/information.svg) icon for more information about each permission.
 
 - To allow a permission, select ![Allow](../_icons/custom/check-circle.svg) **Allow**.
 
@@ -57,7 +57,7 @@ Clear the permissions applied to a role by selecting **Backspace** ![Backspace](
 
 - Allow Manage Permissions access is required on at least one role.
                           
-- Roles that have no permissions assigned are not listed the next time that you manage permissions.
+- If you clear all permissions from a role for a resource, the role is not listed the next time that you manage permissions for the resource.
 
 ### Modified roles
 

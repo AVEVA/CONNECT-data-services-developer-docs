@@ -18,9 +18,9 @@ To manage data view permissions, you must be assigned the **Manage Permissions**
 
 1. From the side panel, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
 
-    The `Manage Permissions for data views` window opens.
+    The `Manage Permissions for Data View` window opens.
 
-1. Use the `Manage Permissions for data views` window to:
+1. Use the `Manage Permissions for Data View` window to:
 
     - (Optional) Add user roles that have permissions on the data views.
     - Edit data view permissions for each user role.

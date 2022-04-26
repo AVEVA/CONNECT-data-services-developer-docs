@@ -12,7 +12,7 @@ To manage namespace permissions, you must be assigned the **Manage Permissions**
 
 ## To manage permissions for namespaces
 
-When editing permissions for a namespace, you can either use the **Namespaces** page or the **Namespaces** dropdown that is available on all pages.
+When editing permissions for a namespace, you can either use the **Namespaces** page or the **Namespaces** dropdown list that is available on all pages.
 
 ### [Namespaces page](#tab/tabid-1)
 
@@ -31,9 +31,9 @@ When editing permissions for a namespace, you can either use the **Namespaces** 
 
 1. When you are finished editing permissions, select **Save**.
 
-### [Namespaces dropdown](#tab/tabid-2)
+### [Namespaces dropdown list](#tab/tabid-2)
 
-1. From the **Namespaces** dropdown, select the namespace that you want to edit permissions for.
+1. From the **Namespaces** dropdown list, select the namespace that you want to edit permissions for.
 
 1. Select the **Manage Permissions** ![Manage Permissions](../../_icons/default/account-lock.svg) icon.
 

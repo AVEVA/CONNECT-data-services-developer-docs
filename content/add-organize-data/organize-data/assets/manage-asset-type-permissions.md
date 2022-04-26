@@ -8,19 +8,19 @@ If you are assigned the **Manage Permissions** access right, then you can config
 
 ## Prerequisites
 
-To manage asset types permissions, you must be assigned the **Manage Permissions** access right.
+To manage asset type permissions, you must be assigned the **Manage Permissions** access right.
 
 ## To manage permissions for asset types
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Assets/Asset Types** selection, select **Asset Types**.
+1. From the **Assets/Asset Types** dropdown list, select **Asset Types**.
 
 1. From the side panel, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
 
-    The `Manage Permissions for asset type` window opens.
+    The `Manage Permissions for Asset Type` window opens.
 
-1. Use the `Manage Permissions for asset type` window to:
+1. Use the `Manage Permissions for Asset Type` window to:
 
     - (Optional) Add user roles that have permissions on the asset types.
     - Edit asset types permissions for each user role.
@@ -35,7 +35,7 @@ You can edit the default user roles and permissions added to an asset type when 
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Assets/Asset Types** selection, select **Asset Types**.
+1. From the **Assets/Asset Types** dropdown list, select **Asset Types**.
 
 1. From the toolbar, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions for New Asset Types**.
 

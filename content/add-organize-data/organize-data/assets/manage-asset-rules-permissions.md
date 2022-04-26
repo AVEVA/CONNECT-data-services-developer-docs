@@ -16,9 +16,9 @@ To manage asset rules permissions, you must be assigned the **Manage Permissions
 
 1. Select an asset rule and choose **Manage Permissions**.  
 
-    The `Manage Permissions for asset rules` window opens.
+    The `Manage Permissions for Asset Rule` window opens.
 
-1. Use the `Manage Permissions for asset rules` window to:
+1. Use the `Manage Permissions for Asset Rule` window to:
 
     - (Optional) Add user roles that have permissions on the asset rules.
     - Edit asset rules permissions for each user role.

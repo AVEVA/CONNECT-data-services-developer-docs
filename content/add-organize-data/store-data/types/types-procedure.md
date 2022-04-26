@@ -4,9 +4,11 @@ uid: gpTypes
 
 # Add a type
 
-Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. Once created, you cannot modify a type. You can add one of two types: Base Types or Enum Types
+Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. Once created, you cannot modify a type. You can add one of two types: **Base Types** or **Enum Types**.
 
 # [Base type](#tab/tabid-1)
+
+To add a base type, follow these steps: 
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -46,6 +48,8 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
 
 # [Enum type](#tab/tabid-2)
 
+To add a enum type, follow these steps:
+
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
 1. From the **Streams** dropdown, select **Types**.
@@ -70,7 +74,7 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
  
  - **Id** - Enter the identifier for referencing the property.
    
- - **Value** - Enter the value of the property.
+ - **Value** - Enter the numeric value of the property. Only numeric values are accepted.
    
 1. To save the type, select **Save**.
 

@@ -4,9 +4,11 @@ uid: gpTypes
 
 # Add a type
 
-Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. Once created, you cannot modify a type. You can add one of two types: **Base Types** or **Enum Types**.
+Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. Once created, you cannot modify a type. You can add one of two types: **Standard Types** or **Enum Types**.
 
-# [Base type](#tab/tabid-1)
+**Tip:** For a list of the supported property types, see [Supported types](xref:sdsTypes#sdstypecode). 
+
+# [Standard type](#tab/tabid-1)
 
 To add a base type, follow these steps: 
 
@@ -18,7 +20,7 @@ To add a base type, follow these steps:
 
     The `Add Type` pane opens.
 
-1. Select **Type**.
+1. Ensure **Standard Type** is selected.
 
 1. Complete the following fields:
 
@@ -28,7 +30,7 @@ To add a base type, follow these steps:
 
  - **Description** - (Optional) Enter a user-friendly description of the type.
 
- - **Base Type** - (Optional) To base the new type on an existing type, select the existing type from the dropdown. The new type inherits the properties of the base type. Inherited properties are read only and cannot be modified.
+ - **Base Type** - (Optional) To base the new type on an existing standard type, select the existing type from the dropdown. The new type inherits the properties of the base type. Inherited properties are read only and cannot be modified.
 
 1. For each property to add to the type, select **Add Property** and complete the following fields:
  
@@ -47,6 +49,8 @@ To add a base type, follow these steps:
 1. To save the type, select **Save**.
 
 # [Enum type](#tab/tabid-2)
+
+You can also create enumeration types that you can include as a property in standard types.
 
 To add a enum type, follow these steps:
 
@@ -68,13 +72,13 @@ To add a enum type, follow these steps:
 
  - **Description** - (Optional) Enter a user-friendly description of the type.
 
- - **Enum Type** - (Optional) To base the new type on an existing type, select the existing type from the dropdown. The new type inherits the properties of the base type. Inherited properties are read only and cannot be modified.
+ - **Enum Type** - (Optional) To base the new type on an existing enum type, select the existing type from the dropdown. The new type inherits the properties of the base type. Inherited properties are read only and cannot be modified.
 
-1. For each property to add to the emnum type, select **Add Property** and complete the following fields:
+1. For each property to add to the enum type, select **Add Property** and complete the following fields:
  
  - **Id** - Enter the identifier for referencing the property.
    
- - **Value** - Enter the numeric value of the property. Only numeric values are accepted.
+ - **Value** - Enter the numeric value of the property. Only numeric or null values are accepted. 
    
 1. To save the type, select **Save**.
 

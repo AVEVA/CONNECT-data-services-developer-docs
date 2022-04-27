@@ -22,7 +22,7 @@ To add a client-credentials client, follow these steps:
 
    The `Add Client` window appears.
 
-1. In the **Name** field, enter a name to identify the device or application that will use this client. 
+1. In the **Name** field, enter a name to identify the device or application that will use this client.
 
 1. In the **Roles** tab, select the roles that are appropriate for the client.  
 
@@ -32,13 +32,13 @@ To add a client-credentials client, follow these steps:
 
    The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
-1. Select **Continue**. 
+1. Select **Continue**.
 
    The `Add Secret` window opens.
 
 1. (Optional) In the **Description** field, enter a description for the client secret.
 
-1. In the **Expiration Date** field, enter a date and time that the secret expires. 
+1. In the **Expiration Date** field, enter a date and time that the secret expires.
 
    Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
 
@@ -47,7 +47,7 @@ To add a client-credentials client, follow these steps:
    The `Client Successfully Created` window opens and displays the **Client Id** and **Client Secret**.
 
    **Important:** Select the **Copy** button to the right of each field to save the client secret and client Id. You need this information to connect your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
-   
+
 1. Select **Close**.  
 
    **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.

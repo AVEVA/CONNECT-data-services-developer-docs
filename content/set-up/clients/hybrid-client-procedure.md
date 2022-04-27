@@ -16,9 +16,9 @@ To add a hybrid client, follow these steps:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select **Hybrid**. 
+1. In the **Client Type** field, select **Hybrid**.
 
-1. In the toolbar, click **Add Client**.
+1. In the toolbar, select **Add Client**.
 
    The `Add Client` window appears.
 
@@ -44,7 +44,7 @@ To add a hybrid client, follow these steps:
 
 1. (Optional) In the **Description** field, enter a description for the client secret.
 
-1. In the **Expiration Date** field, enter a date and time that the secret expires. 
+1. In the **Expiration Date** field, enter a date and time that the secret expires.
 
    Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
 
@@ -54,7 +54,7 @@ To add a hybrid client, follow these steps:
 
    **Important:** Select the **Copy** button to the right of each field to save the client secret and client Id. You need this information to connect your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
 
-   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. Copy the client Id by clicking the **Copy** icon. Alternatively, after you close this window, you can also retrieve the client Id from the list of clients.
+   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. Copy the client Id by selecting the **Copy** icon. Alternatively, after you close this window, you can also retrieve the client Id from the list of clients.
 
 1. Select **Close**.  
 

@@ -2,7 +2,7 @@
 uid: DataViewMaintenance
 ---
 
-# Data view maintenance
+# Maintain a data view
 
 ## Edit a data view
 
@@ -16,7 +16,7 @@ To edit an existing data view:
 
 1. Make changes to the Name, Description, Data View Shape, Index Field, Grouping Fields, Queries, etc.
 
-1. Select **Save** to save the updates and continue editing, or select **Save and Close** to save the updates and exit. 
+1. Select **Save** to save the updates and continue editing, or select **Save and Close** to save the updates and exit.
 
 ## Remove a data view
 
@@ -32,7 +32,7 @@ To remove an existing data view:
 
 ## Set default permissions for data views
 
-To set default permissions for new data views, follow these steps:
+To set default permissions for new data views:
 
 1. In the left pane, select **Analytics** > **Data Views**.
 

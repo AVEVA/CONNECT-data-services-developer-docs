@@ -2,7 +2,7 @@
 uid: OMFMaintenance
 ---
 
-# OMF connection maintenance
+# Maintain an OMF connection
 
 ## Edit a connection
 
@@ -16,14 +16,14 @@ To edit an existing connection:
 
 1. In the `Edit` window, make any needed changes to the **Name** and **Description** fields and select **Next**.
 
-1. In the **Clients** tab, select each client that can be used in the connection from the **Available** list to add it to the **Selected** list, or select a client in the **Selected** list to remove it. 
+1. In the **Clients** tab, select each client that can be used in the connection from the **Available** list to add it to the **Selected** list, or select a client in the **Selected** list to remove it.
 
 1. Select **Next**.
 
 1. In the **Namespaces** tab, select each namespace where you want write data in the **Available** list to add it to the **Selected** list, or select a namespace from the **Selected** list to remove it.
 
 1. Select **Next**.
-   
+
 1. In the **Review** tab, verify that the information is correct, and then select **Save**.  
 
 ## Remove a connection
@@ -40,7 +40,7 @@ To remove an existing connection:
 
 ## Set permissions for a connection
 
-To set permissions for a connection, follow these steps:
+To set permissions for a connection:
 
 1. In the left pane, select **Data Collection** > **OMF Connections**.
 

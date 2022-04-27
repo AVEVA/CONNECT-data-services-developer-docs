@@ -2,7 +2,7 @@
 uid: UserMaintenance
 ---
 
-# User maintenance
+# Maintain a user
 
 ## Prerequisite
 
@@ -19,10 +19,10 @@ To edit an existing user:
 1. Select **Edit User**.
 
 1. Make changes to the user information fields or roles.
-   
+
    - For advanced integration identity providers, you will only be able to edit the roles assigned to the user.
 
-   - For other identity providers, you can edit the Contact First Name, Contact Last Name, Contact Email, and assigned roles.
+   - For other identity providers, you can edit the **Contact First Name**, **Contact Last Name**, **Contact Email**, and assigned roles.
 
 1. Select **Save**.
 
@@ -47,4 +47,3 @@ To remove an existing user:
 1. Select **Remove User**.
 
 1. Select **Remove** to confirm.
-

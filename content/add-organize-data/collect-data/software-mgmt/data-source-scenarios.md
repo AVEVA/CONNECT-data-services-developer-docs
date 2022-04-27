@@ -2,7 +2,7 @@
 uid: DataScenarios
 ---
 
-# Data source scenarios
+# Data source scenarios DO NOT INCLUDE 4/2022
 
 Accessing multIPle data sources on the same device requires planning. The following scenarios describe possible configurations and the corresponding considerations. 
 

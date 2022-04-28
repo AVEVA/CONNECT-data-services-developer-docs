@@ -6,7 +6,7 @@ uid: MetadataMaintenance
 
 ## Edit a metadata rule
 
-To edit an existing metadata rule, follow these steps:
+To edit an existing metadata rule:
 
 1. In the left pane, select **Data Management** > **Stream Metadata Rules**.
 
@@ -38,7 +38,7 @@ To edit an existing metadata rule, follow these steps:
 
 ## Remove a metadata rule
 
-To remove an existing metadata rule, follow these steps:
+To remove an existing metadata rule:
 
 1. In the left pane, select **Data Management** > **Stream Metadata Rules**.
 
@@ -54,7 +54,7 @@ To remove an existing metadata rule, follow these steps:
 
 Once a metadata rule has been created, you can set permissions to manage access to it.
 
-To set permissions for a metadata rule, follow these steps:
+To set permissions for a metadata rule:
 
 1. In the left pane, select **Data Management** > **Stream Metadata Rules**.
 

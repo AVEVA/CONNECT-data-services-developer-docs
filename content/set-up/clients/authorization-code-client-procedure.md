@@ -12,7 +12,7 @@ You must have the role of Tenant Administrator to add and manage clients.
 
 ## Procedure
 
-To add an authorization code client, follow these steps:
+To add an authorization code client:
 
 1. In the left pane, select **Security** > **Clients**.
 

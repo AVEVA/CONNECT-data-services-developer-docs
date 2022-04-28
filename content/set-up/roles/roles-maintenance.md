@@ -2,7 +2,7 @@
 uid: RolesMaintenance
 ---
 
-# Role maintenance
+# Maintain a role
 
 ## Prerequisite
 

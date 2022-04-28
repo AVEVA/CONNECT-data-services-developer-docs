@@ -2,7 +2,7 @@
 uid: ClientMaintenance
 ---
 
-# Client maintenance
+# Maintain a client
 
 ## Prerequisite
 
@@ -52,7 +52,7 @@ To create a new secret for an existing Client-Credentials or Hybrid client:
 
 1. (Optional) In the **Description** field, enter a description for the client secret.
 
-1. In the **Expiration Date** field, enter a date and time that the secret expires. 
+1. In the **Expiration Date** field, enter a date and time that the secret expires.
 
    Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
 

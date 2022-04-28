@@ -22,20 +22,20 @@ To add an authorization code client, follow these steps:
 
    The `Add Client` window appears.
 
-1. In the **Name** field, enter a name to identify the device or application that will use this client. 
+1. In the **Name** field, enter a name to identify the device or application that will use this client.
 
 1. In the **Allowed Redirect URL(s)** box, enter a URL and select **+** to add it to the list.
 
    The application specifies one of the URLs in this list when it authenticates against OCS, and the OCS identity server returns the results of the authentication to this URL.
 
-1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+** to add it to the list. 
+1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+** to add it to the list.
 
    The application specifies a URL from this list when it logs out of OCS, and the OCS identity server sends the user to this URL after a successful log out.
 
 1. (Optional) In the **Allowed CORS Origin(s)** box, enter a URL and select **+** to add it to the list.  
 
    Designate other URLs from which the application is allowed to make requests against OCS. For example, this may be necessary if the user authenticates from an application running at one URL but the result of the authentication is sent to an application running at a different URL.
-   
+
 1. (Optional) In the **Token Lifetime** field, enter the length of time in seconds that the access token functions before it expires.  
 
    The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.

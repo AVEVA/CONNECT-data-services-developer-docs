@@ -12,7 +12,7 @@ You must have the role of Tenant Administrator to add and manage users.
 
 ## Procedure
 
-To add a user to a tenant, follow these steps:
+To add a user to a tenant:
 
 1. In the left pane, select **Security** > **Users**.
 

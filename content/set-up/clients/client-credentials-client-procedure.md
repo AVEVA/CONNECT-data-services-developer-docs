@@ -12,7 +12,7 @@ You must have the role of Tenant Administrator to add and manage clients.
 
 ## Procedure
 
-To add a client-credentials client, follow these steps:
+To add a client-credentials client:
 
 1. In the left pane, select **Security** > **Clients**.
 

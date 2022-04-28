@@ -2,7 +2,7 @@
 uid: MetadataMaintenance
 ---
 
-# Stream metadata rules maintenance
+# Maintain a metadata rule
 
 ## Edit a metadata rule
 
@@ -19,22 +19,22 @@ To edit an existing metadata rule:
 1. To update the mappings, on the `Update Mappings` page do one of the following for each metadata key:
 
      - To display the raw stream data for the specified metadata key, select **Copy Values** under **Mapping Type**.
-     
+
      - To assign a label to data values:
 
-       - Select **Map Values** and select **Generate Mappings**. 
-       
+       - Select **Map Values** and select **Generate Mappings**.
+
        - In the **Map To** field, enter the label to display for each defined metadata key.
-    
+
        - (Optional) Select **Add Mapping** to define a mapping for any other stream name part.
-      
+
     When you have defined mappings for a metadata key, a green check mark appears next to the key.
 
 1. Select **Next**. All matching streams for the rule are displayed.
 
 1. On the `Preview and Run` page, edit the **Name** and **Description**, if needed.
 
-1. Select **Save & Execute**. 
+1. Select **Save & Execute**.
 
 ## Remove a metadata rule
 
@@ -52,9 +52,9 @@ To remove an existing metadata rule:
 
 ## Set permissions for a metadata rule
 
-Once a metadata rule has been created, you can set permissions to manage access to it. 
+Once a metadata rule has been created, you can set permissions to manage access to it.
 
-To set permissions for a metadata rule, follow these steps:
+To set permissions for a metadata rule:
 
 1. In the left pane, select **Data Management** > **Stream Metadata Rules**.
 

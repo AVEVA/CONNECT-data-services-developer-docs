@@ -12,7 +12,7 @@ An OMF connection requires a client-credentials client.
 
 ## Procedure
 
-To configure an OMF connection, follow these steps:
+To configure an OMF connection:
 
 1. In the left pane, select **Data Collection** > **OMF Connections**.
 

@@ -85,13 +85,13 @@ To add a enum type, follow these steps:
         | Enum Type | Int<sup>1</sup> | -Int<sup>2</sup> | Nullable<sup>3</sup> |
         |--|--|--|--|
         | ByteEnum | ✔ | ✖ | ✖ |
-        | Int**X**Enum | ✔ | ✔ | ✖ |
+        | Int_X_Enum | ✔ | ✔ | ✖ |
         | NullableByteEnum | ✔ | ✖ | ✔ |
-        | NullableInt**X**Enum | ✔ | ✔ | ✔ |
+        | NullableInt_X_Enum | ✔ | ✔ | ✔ |
         | NullableSByteEnum | ✔ | ✔ | ✔ |
-        | NullableUInt**X**Enum | ✔ | ✖ | ✔ |
+        | NullableUInt_X_Enum | ✔ | ✖ | ✔ |
         | SByteEnum | ✔ | ✔ | ✖ |
-        | UInt**X**Enum | ✔ | ✖ | ✖ |
+        | UInt_X_Enum | ✔ | ✖ | ✖ |
 
         <sup>1</sup>: Integer<br>
         <sup>2</sup>: Negative Integer<br> 

@@ -82,19 +82,20 @@ To add a enum type, follow these steps:
 
         **Note:** Accepted numeric values change based on the selected **Enum Type**. Refer to the following table for accepted values for each type.
 
-        | Enum Type | Int<sup>1</sup> | -Int<sup>2</sup> | Nullable |
+        | Enum Type | Int<sup>1</sup> | -Int<sup>2</sup> | Nullable<sup>3</sup> |
         |--|--|--|--|
         | ByteEnum | ✔ | ✖ | ✖ |
         | IntXEnum | ✔ | ✔ | ✖ |
         | NullableByteEnum | ✔ | ✖ | ✔ |
-        | NullableSByteEnum | ✔ | ✔ | ✔ |
         | NullableIntXEnum | ✔ | ✔ | ✔ |
+        | NullableSByteEnum | ✔ | ✔ | ✔ |
         | NullableUIntXEnum | ✔ | ✖ | ✔ |
-        | SByteEnum | ✔ | ✔ | ✔ |
-        | UIntXEnum | ✔ | ✖ | ✔ |
+        | SByteEnum | ✔ | ✔ | ✖ |
+        | UIntXEnum | ✔ | ✖ | ✖ |
 
         <sup>1</sup>: Integer
         <sup>2</sup>: Negative Integer 
+        <sup>3</sup>: Nullable fields can be left empty
     
 1. To save the type, select **Save**.
 

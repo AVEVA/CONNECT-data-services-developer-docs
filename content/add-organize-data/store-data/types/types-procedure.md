@@ -93,8 +93,8 @@ To add a enum type, follow these steps:
         | SByteEnum | ✔ | ✔ | ✖ |
         | UInt**X**Enum | ✔ | ✖ | ✖ |
 
-        <sup>1</sup>: Integer
-        <sup>2</sup>: Negative Integer 
+        <sup>1</sup>: Integer<br>
+        <sup>2</sup>: Negative Integer<br> 
         <sup>3</sup>: Nullable fields can be left empty
     
 1. To save the type, select **Save**.

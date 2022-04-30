@@ -963,36 +963,6 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets
 
 List of assets you want to create.<br/>
 
-```json
-[
-  {
-    "Id": "SampleAsset",
-    "Description": "This is a sample asset.",
-    "Metadata": [
-      {
-        "Id": "Id-abcde",
-        "Name": "ModelNumber",
-        "Description": "This is a static attribute on the asset which represents the model number.",
-        "SdsTypeCode": "Double",
-        "Value": 0.01
-      }
-    ],
-    "StreamReferences": [
-      {
-        "Id": "5345e98d-dc43-4f9d-a666-158a3baaf244",
-        "Name": "Data",
-        "Description": "This is the description for this stream reference.",
-        "StreamId": "SdsStream_1"
-      }
-    ],
-    "Tags": [
-      "Tag1",
-      "Tag2"
-    ]
-  }
-]
-```
-
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

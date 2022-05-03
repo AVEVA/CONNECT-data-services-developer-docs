@@ -4,8 +4,7 @@ uid: pi2ocs-rel-summary
 
 # PI to Data Hub release summary
 
-## Release 2.0: April 27, 2022
-
+## Release 2.0: May 4, 2022
 
 ## Overview
 
@@ -17,31 +16,31 @@ This release covers the PI To Data Hub Agent, a component that is installed on-p
 
 *AF element replication*
 
-PI to Data Hub now supports replication of AF elements to AVEVA Data Hub. AF elements are created as assets in AVEVA Data Hub. For a complete list of supported AF objects, see ["What AF data is transferred to AVEVA Data Hub?"](https://docs.osisoft.com/bundle/data-hub/page/add-organize-data/collect-data/connectors/pi-to-ocs/pi-to-ocs-data-transfers/af-data-transferred.html).
+PI to Data Hub now supports replication of AF elements to AVEVA Data Hub. AF elements are created as assets in AVEVA Data Hub. For a complete list of supported AF objects, see ["What AF data is transferred to AVEVA Data Hub?"](xref:af-data-transferred).
 
 *Edit a transfer*
 
-PI to Data Hub now supports the ability to edit an existing transfer.  Once a transfer is created, you may add items to or remove items from your transfer such as AF elements (including implicit PI point references) and explicit PI point references. Additionally, you may edit the time range, data replication policy settings, and other general transfer settings.
+PI to Data Hub now allows you to edit a transfer’s settings and adding or removing AF elements and PI point references.
 
 *Health events*
 
-PI to Data Hub makes it easier to understand if there are errors with a PI to Data Hub agent or transfer by raising health events. Health events are accessed from the PI to Data Hub Agents window in AVEVA Data Hub.
+Easy access to both PI to Data Hub Agent and transfer health events is available.
 
 *Alternate display name*
 
-Some customers require PI Server Name obfuscation in the cloud. This is now supported and configured in the Post-Installation Configuration Utility. There is a new field called, Alternate Display Name. If specified, this text will be used instead of any on-prem PI Data Archive names in the Stream Ids created in Data Hub.
+The ability to use an alternative server name is now supported in the PI to Data Hub Configuration Utility. Users can enter an alternate name in the Alternate Display Name field. This text will replace an on-premises Data Archive server names in stream IDs, as well as AF server names that appears in the PI to Data Hub Agents window.
  
-You may also configure an alternate display name for your AF server. Although the AF server name is not used in Stream Ids, it is visible on the PI to Data Hub Agents and Transfer Details page.
+**NOTE:** Stream IDs are immutable. If a transfer is in progress, new streams are created based on the current transfer’s configuration settings.
 
-**NOTE:** STREAM IDS ARE IMMUTABLE. IF YOU REQUIRE USE OF AN ALTERNATE DISPLAY NAME, PLEASE BE AWARE NEW STREAMS WILL BE CREATED, EVEN IF YOU HAVE ALREADY STARTED A TRANSFER. YOU MAY WISH TO DELETE ANY STREAMS PREVIOUSLY CREATED BY PI TO DATA HUB.
+### Known issues
 
-### Fixes
-
-**Known issues**
-
-* Query search results that contain a very large number of PI points (> 1 million) will generate an exception error and not be processed. 
+* Query search results that contain a very large number of PI points (> 1 million) will generate an exception error and not be processed.
 
 * The AF Server must have a default Data Archive server specified for PI to Data Hub to operate properly.
+
+* Streams with AF elements and referenced PI points are not deleted even when the `Automatically remove Streams and Assets` option has been selected; this exception includes instances of assets not created for AF elements due to errors (for example, attribute errors).
+
+* Configuring two transfers in the same namespace, where the transfers references the same AF element(s), results in the asset properties of one transfer being overridden/replaced by the second transfer.
 
 ## System requirements
 
@@ -53,7 +52,7 @@ Minimum requirements:
 
 * Internet connectivity of at least 10Mbit/sec
 
-* Prior editions of Windows are not supported.
+Prior editions of Windows are not supported.
 
 ## Distribution Kit Files
 

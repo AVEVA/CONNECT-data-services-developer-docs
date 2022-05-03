@@ -60,6 +60,7 @@
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules
+      - topicUid: MetadataMaintenance
     - topicUid: AssetRulesCC
       items:
         - topicUid: CreateAssetRules
@@ -123,6 +124,7 @@
     items:
     - topicUid: bpOMFConnection
     - topicUid: gpOMFConnection
+    - topicUid: OMFMaintenance
 - topicUid: lpvisualizedata
   items:
   - topicUid: CreateTrendSession
@@ -148,7 +150,10 @@
       - topicUid: ShareAViewOfYourFleet
 - topicUid: Analytics
   items:
-    - topicUid: Dataviews1
+    - topicUid: DataViews
+      items:
+      - topicUid: CreateDataView
+      - topicUid: DataViewMaintenance
     - topicUid: PowerBI
       items:
       - topicUid: PowerBIReleaseNotes
@@ -159,14 +164,17 @@
     - topicUid: ccUsers
       items:
       - topicUid: gpUsers
+      - topicUid: UserMaintenance
     - topicUid: ccRoles
       items:
       - topicUid: gpRoles
+      - topicUid: RolesMaintenance
     - topicUid: ccClients
       items:
       - topicUid: gpClientCredentialsClient
       - topicUid: gpHybridClient
       - topicUid: gpAuthorizationCodeClient
+      - topicUid: ClientMaintenance
 - topicUid: DeveloperTools
   items:
     - topicUid: samples

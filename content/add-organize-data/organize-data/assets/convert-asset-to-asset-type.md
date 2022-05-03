@@ -14,7 +14,7 @@ To convert an asset to an asset type, follow these steps:
 
 1. Select the asset to convert to an asset type. To search for an asset, use the **Search for Assets** field.
 
-1. In the right pane, select the ![Edit Asset icon](images/edit-asset-icon.png) icon.
+1. In the right pane, select the ![Edit Asset icon](../../../_icons/default/pencil.svg) icon.
 
 1. Select **Save as Asset Type**.
 

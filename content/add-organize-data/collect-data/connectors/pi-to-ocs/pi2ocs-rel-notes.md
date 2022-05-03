@@ -30,7 +30,7 @@ Easy access to both PI to Data Hub Agent and transfer health events is available
 
 The ability to use an alternative server name is now supported in the PI to Data Hub Configuration Utility. Users can enter an alternate name in the Alternate Display Name field. This text will replace an on-premises Data Archive server names in stream IDs, as well as AF server names that appears in the PI to Data Hub Agents window.
  
-**NOTE:** Stream IDs are immutable. If a transfer is in progress, new streams are created based on the current transfer’s configuration settings.
+**Note:** Stream IDs are immutable. If a transfer is in progress, new streams are created based on the current transfer’s configuration settings.
 
 ### Known issues
 
@@ -94,6 +94,6 @@ No security-related information is applicable to this release.
 
 ### Documentation overview
 
-See the [PI to Data Hub documentation](xref:main-lp) .
+See the [PI to Data Hub documentation](xref:main-lp).
 
 © 2022 AVEVA Group plc and its subsidiaries.

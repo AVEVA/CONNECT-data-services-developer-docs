@@ -133,6 +133,8 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -359,6 +361,8 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -514,6 +518,8 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -609,6 +615,8 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -749,6 +757,8 @@ A declarative way to select, label and shape data
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -935,12 +945,16 @@ A query for data items of a specified resource type.
 |---|---|---|---|---|
 |Id|string|false|true|The unique identifier of this query|
 |Kind|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource being queried|
+|SourceKind|[QuerySourceKind](#schemaquerysourcekind)|false|false|The kind of source to query from|
+|SourceId|string|false|true|The community or namespace that will be queried from|
 |Value|string|false|true|The text of this query|
 
 ```json
 {
   "Id": "string",
   "Kind": 1,
+  "SourceKind": 0,
+  "SourceId": "string",
   "Value": "string"
 }
 
@@ -963,6 +977,25 @@ The type of resource that a data item represents
 |---|---|
 |Stream|1|
 |Asset|2|
+
+---
+
+### QuerySourceKind
+
+<a id="schemaquerysourcekind"></a>
+<a id="schema_QuerySourceKind"></a>
+<a id="tocSquerysourcekind"></a>
+<a id="tocsquerysourcekind"></a>
+
+Different source kinds that Queries can execute against
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|Default|0|
+|Namespace|1|
+|Community|2|
 
 ---
 

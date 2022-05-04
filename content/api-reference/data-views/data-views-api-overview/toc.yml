@@ -1,12 +1,26 @@
-- name: Data view API
-  href: data-views-data-views.md
-- name: Resolved data view API
-  href: data-views-data-views-resolved.md
-- name: Resolved data view preview API
-  href: data-views-preview-data-views-resolved.md
+- name: Data api
+  href: data-api.md
 - name: Data API
   href: data-views-data-views-data.md
-- name: Preview data API
-  href: data-views-preview-data-views-data.md
+- name: Data view acl api
+  href: data-view-acl-api.md
 - name: Data view ACL API
   href: data-views-access-control.md
+- name: Data view api
+  href: data-view-api.md
+- name: Data view API
+  href: data-views-data-views.md
+- name: Data views api overview
+  href: data-views-api-overview.md
+- name: Preview data api
+  href: preview-data-api.md
+- name: Preview data API
+  href: data-views-preview-data-views-data.md
+- name: Resolved data view api
+  href: resolved-data-view-api.md
+- name: Resolved data view API
+  href: data-views-data-views-resolved.md
+- name: Resolved data view preview api
+  href: resolved-data-view-preview-api.md
+- name: Resolved data view preview API
+  href: data-views-preview-data-views-resolved.md

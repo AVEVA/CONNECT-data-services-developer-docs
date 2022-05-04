@@ -800,6 +800,9 @@ Holds a collection of items that were resolved at a specific time.
       "Description": "string",
       "TypeId": "string",
       "ResourceType": 1,
+      "TenantId": "string",
+      "NamespaceId": "string",
+      "CommunityId": "string",
       "Tags": [
         "string"
       ],
@@ -860,6 +863,9 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |Description|string|false|true|The data item's description|
 |TypeId|string|false|true|The identifier of the data item's type|
 |ResourceType|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource this data item comes from|
+|TenantId|string|false|true|The tenant identifier this data item originates from|
+|NamespaceId|string|false|true|The namespace identifier this data item originates from|
+|CommunityId|string|false|true|The community identifier this data item originates from|
 |Tags|string[]|false|true|The collection of tags specified on this data item|
 |Metadata|[[MetadataValueOfObject](#schemametadatavalueofobject)]|false|true|The list of metadata value objects specified on this data item|
 |DataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of data fields this data item exposes|
@@ -872,6 +878,9 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
   "Description": "string",
   "TypeId": "string",
   "ResourceType": 1,
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "CommunityId": "string",
   "Tags": [
     "string"
   ],
@@ -1175,6 +1184,9 @@ Holds a collection of items that were resolved at a specific time.
             "Description": "string",
             "TypeId": "string",
             "ResourceType": 1,
+            "TenantId": "string",
+            "NamespaceId": "string",
+            "CommunityId": "string",
             "Tags": [
               "string"
             ],
@@ -1218,6 +1230,9 @@ Holds a collection of items that were resolved at a specific time.
             "Description": "string",
             "TypeId": "string",
             "ResourceType": 1,
+            "TenantId": "string",
+            "NamespaceId": "string",
+            "CommunityId": "string",
             "Tags": [
               "string"
             ],
@@ -1296,6 +1311,9 @@ A group resolved by a data view
         "Description": "string",
         "TypeId": "string",
         "ResourceType": 1,
+        "TenantId": "string",
+        "NamespaceId": "string",
+        "CommunityId": "string",
         "Tags": [
           "string"
         ],
@@ -1339,6 +1357,9 @@ A group resolved by a data view
         "Description": "string",
         "TypeId": "string",
         "ResourceType": 1,
+        "TenantId": "string",
+        "NamespaceId": "string",
+        "CommunityId": "string",
         "Tags": [
           "string"
         ],
@@ -1428,6 +1449,9 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |Description|string|false|true|The data item's description|
 |TypeId|string|false|true|The identifier of the data item's type|
 |ResourceType|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource this data item comes from|
+|TenantId|string|false|true|The tenant identifier this data item originates from|
+|NamespaceId|string|false|true|The namespace identifier this data item originates from|
+|CommunityId|string|false|true|The community identifier this data item originates from|
 |Tags|string[]|false|true|The collection of tags specified on this data item|
 |Metadata|[[MetadataValueOfObject](#schemametadatavalueofobject)]|false|true|The list of metadata value objects specified on this data item|
 |DataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of data fields this data item exposes|
@@ -1440,6 +1464,9 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
   "Description": "string",
   "TypeId": "string",
   "ResourceType": 1,
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "CommunityId": "string",
   "Tags": [
     "string"
   ],
@@ -1511,6 +1538,9 @@ Holds a collection of items that were resolved at a specific time.
       "DataMappings": [
         {
           "TargetId": "string",
+          "TargetTenantId": "string",
+          "TargetNamespaceId": "string",
+          "TargetCommunityId": "string",
           "TargetStreamReferenceName": "string",
           "TargetFieldKey": "string",
           "TypeCode": 0,
@@ -1563,6 +1593,9 @@ A resolved field of the data view, identifying its data source for each group.
   "DataMappings": [
     {
       "TargetId": "string",
+      "TargetTenantId": "string",
+      "TargetNamespaceId": "string",
+      "TargetCommunityId": "string",
       "TargetStreamReferenceName": "string",
       "TargetFieldKey": "string",
       "TypeCode": 0,
@@ -1660,6 +1693,9 @@ Information about the data source resolved for an individual Field for a specifi
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |TargetId|string|false|true|The identifier of the target data source|
+|TargetTenantId|string|false|true|The identifier of the target’s tenant|
+|TargetNamespaceId|string|false|true|The identifier of the target’s namespace|
+|TargetCommunityId|string|false|true|The identifier of the target’s community|
 |TargetStreamReferenceName|string|false|true|The name of the target stream reference|
 |TargetFieldKey|string|false|true|The subpath within the target data source Null in case of non-"keyed" mapping (e.g. stream id, as opposed to a specific Stream property)|
 |TypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The field's data type|
@@ -1672,6 +1708,9 @@ Information about the data source resolved for an individual Field for a specifi
 ```json
 {
   "TargetId": "string",
+  "TargetTenantId": "string",
+  "TargetNamespaceId": "string",
+  "TargetCommunityId": "string",
   "TargetStreamReferenceName": "string",
   "TargetFieldKey": "string",
   "TypeCode": 0,

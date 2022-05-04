@@ -68,9 +68,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 > 200 Response
 
 ```json
-{
-  "ERROR": "Parameter \"data-interpolated-get-multiple-formats\" could not be found in external reference file"
-}
+null
 ```
 
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
@@ -156,9 +154,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 > 200 Response
 
 ```json
-{
-  "ERROR": "Parameter \"data-stored-get-multiple-formats\" could not be found in external reference file"
-}
+null
 ```
 
 > 400 Response ([ErrorResponse](#schemaerrorresponse))

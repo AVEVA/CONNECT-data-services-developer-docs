@@ -18,7 +18,7 @@ This new role is also shared with other tenants that join the community. For exa
 
 Users assigned the Community Member role have read permissions within the community by default. However, to allow community members to share data streams within a community, you must assign the Share permission for streams to their assigned tenant roles.
 
-- For more information on assigning the Community Member role to users (or un-assigning it), see <xref:community-manage-users>.
+- For more information on assigning the Community Member role to users (or unassigning it), see <xref:community-manage-users>.
 
 - For more information on the actions Community Members can perform, see <xref:community-data-sharing>.
 

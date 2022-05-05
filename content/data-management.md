@@ -4,7 +4,7 @@ uid: DataManagement
 
 # Data management
 
-The Data Management menu provides a number of tools for managing your data within OSIsoft Cloud Services (OCS):
+The Data Management menu provides a number of tools for managing your data within AVEVA Data Hub:
 
 * Use the `Namespaces` page to add, edit, or remove namespaces from the tenant.
 

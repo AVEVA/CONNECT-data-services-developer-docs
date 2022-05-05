@@ -2,7 +2,7 @@
 uid: community-create-community
 ---
 
-# Part 1: Create a community
+# Step 1: Create a community
 
 [!include[create-community-intro](includes/create-community-intro.md)]
 

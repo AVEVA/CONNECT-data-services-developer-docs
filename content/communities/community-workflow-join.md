@@ -2,7 +2,7 @@
 uid: community-workflow-join
 ---
 
-# Workflow to join community
+# Workflow to join a community
 
 Complete the following procedures to join a community after receiving an invitation.
 

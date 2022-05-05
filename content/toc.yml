@@ -78,6 +78,12 @@
         - topicUid: community-manage-groups
         - topicUid: community-manage-clients
         - topicUid: community-manage-administrators
+      - topicUid: community-data-sharing
+        items: 
+        - topicUid: community-manage-shared-streams
+        - topicUid: community-view-shared-streams
+        - topicUid: community-view-shared-data
+        - topicUid: community-enable-stream-sharing-permissions
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules

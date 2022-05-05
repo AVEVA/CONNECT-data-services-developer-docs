@@ -4,9 +4,19 @@ uid: gpOMFConnection
 
 # Configure an OMF connection
 
+<<<<<<< HEAD
 To send Open Message Format (OMF) data to AVEVA Data Hub, you must first configure an OMF connection. 
+=======
+You must configure an OMF connection to send OSIsoft Message Format (OMF) data to OCS.
+>>>>>>> f43d87cfff3148c9782de399123c3b2727c7b7ca
 
-**Note:** An OMF connection requires a client credentials client.
+## Prerequisite
+
+An OMF connection requires a client-credentials client.
+
+## Procedure
+
+To configure an OMF connection:
 
 To configure an OMF connection, follow these steps:
 
@@ -22,12 +32,12 @@ To configure an OMF connection, follow these steps:
 
    - **Description** - (Optional) Enter a description for the connection.
 
-1. In the **Clients** tab, select each client that can be used in the connection from the **Available** list to add it to the **Selected** list. 
+1. In the **Clients** tab, select each client that can be used in the connection from the **Available** list to add it to the **Selected** list.
 
 1. Select **Next**.
 
 1. In the **Namespaces** tab, verify that the namespace where you want write data appears in the **Selected** list, and then select **Next**.
-   
+
 1. In the **Review** tab, verify that the information is correct, and then select **Save**.  
 
-An application can now use the selected client credentials client to write OMF data to the specified namespace.
+An application can now use the selected client-credentials client to write OMF data to the specified namespace.

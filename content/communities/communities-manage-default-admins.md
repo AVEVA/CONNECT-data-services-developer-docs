@@ -8,7 +8,7 @@ When you create or join a community, you are prompted to assign community admini
 
 ## To manage default community administrators
 
-To manage default community administrators, follow these steps:
+To manage default community administrators:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

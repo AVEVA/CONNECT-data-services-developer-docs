@@ -14,7 +14,7 @@ Add groups to make its users Community Members, which are users that can view th
 
 ## Add groups to a community
 
-To add groups from your own tenant to a community, follow these steps:
+To add groups from your own tenant to a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -30,7 +30,7 @@ Each group is added to the community and its users are assigned the Community Me
 
 ## Remove groups from a community
 
-To remove tenant groups from a community, follow these steps:
+To remove tenant groups from a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

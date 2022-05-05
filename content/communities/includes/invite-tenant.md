@@ -6,7 +6,7 @@
 
 ## Step 1: Invite a tenant to the community
 
-To invite another tenant to the community, follow these steps:
+To invite another tenant to the community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -26,7 +26,7 @@ Invitations are valid for 14 days before they expire. If the invitation is not a
 
 ## Step 3: Confirm the invitation
 
-To confirm an invitation, follow these steps:
+To confirm an invitation:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

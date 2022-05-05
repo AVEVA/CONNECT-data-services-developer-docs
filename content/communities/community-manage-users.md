@@ -12,7 +12,7 @@ Add users to make them Community Members, which are users that can view the comm
 
 ## Add users to a community
 
-To add users from your own tenant to a community, follow these steps:
+To add users from your own tenant to a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -30,7 +30,7 @@ Each user is added to the community and assigned the Community Member role.
 
 ## Remove users from a community
 
-To remove tenant users from a community, follow these steps:
+To remove tenant users from a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

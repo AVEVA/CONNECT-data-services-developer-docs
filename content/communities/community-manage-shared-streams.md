@@ -12,7 +12,7 @@ Users assigned share permissions for data streams in `Sequential Data Store`—a
 
 ## Share streams
 
-User with permissions to share a data stream within a community can do so from the Sequential Data Store page. To share streams with other communities, follow these steps:
+User with permissions to share a data stream within a community can do so from the Sequential Data Store page. To share streams with other communities:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -44,7 +44,7 @@ When you want to stop sharing streams with a community, you can unshare them fro
 
 ### [Communities](#tab/communities)
 
-To stop sharing streams with a community from the `Communities` page, follow these steps:
+To stop sharing streams with a community from the `Communities` page:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -60,7 +60,7 @@ The streams are unshared from the community. Other tenants in the community can 
 
 ### [Sequential Data Store](#tab/sds)
 
-To stop sharing streams with a community from `Sequential Data Store`, follow these steps:
+To stop sharing streams with a community from `Sequential Data Store`:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 

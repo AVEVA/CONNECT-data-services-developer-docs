@@ -12,7 +12,7 @@ uid: community-create-community
 
 ## To create a community
 
-To create a community, follow these steps:
+To create a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

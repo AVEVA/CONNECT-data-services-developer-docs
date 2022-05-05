@@ -38,7 +38,7 @@ To remove tenant users from a community:
 
 1. On the **My Members** tab, select one or more users.
 
-	**Tip:** If necessary, filter the list of users by typing in the **Filter members** box.
+	**Tip:** If necessary, filter the list of users by typing in the **Filter members** field.
 
 1. On the detail pane, select **Remove Member(s)**. When prompted for confirmation, select **Remove**.
 

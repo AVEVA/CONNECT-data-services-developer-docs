@@ -34,7 +34,7 @@ To accept an invitation:
 
   When the administrative tenant confirms your tenant, you receive a notification email.
  
-1. After your tenant is confirmed for the community, select **Details** to setup Community Administrators and Community Members for your tenant.
+1. After your tenant is confirmed for the community, select **Details** to set up Community Administrators and Community Members for your tenant.
 
   ![community details](images/community-details.png)
 
@@ -54,7 +54,7 @@ To accept an invitation:
 
 1. After you finish, select **Next**.
 
-1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are Members within your tenant that have read access to the community and its data.
+1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are members within your tenant that have read access to the community and its data.
       
   To add new Community Members, select **Add Members** > ![Add](../_icons/branded/plus.svg) for each user or group that you want to add.
 

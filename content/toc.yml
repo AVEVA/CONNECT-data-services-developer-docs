@@ -137,6 +137,7 @@
     items:
     - topicUid: bpOMFConnection
     - topicUid: gpOMFConnection
+    - topicUid: OMFMaintenance
 - topicUid: lpvisualizedata
   items:
   - topicUid: CreateTrendSession
@@ -162,7 +163,10 @@
       - topicUid: ShareAViewOfYourFleet
 - topicUid: Analytics
   items:
-    - topicUid: Dataviews1
+    - topicUid: DataViews
+      items:
+      - topicUid: CreateDataView
+      - topicUid: DataViewMaintenance
     - topicUid: PowerBI
       items:
       - topicUid: PowerBIReleaseNotes
@@ -176,6 +180,7 @@
     - topicUid: ccRoles
       items:
       - topicUid: gpRoles
+      - topicUid: RolesMaintenance
     - topicUid: ccClients
       items:
       - topicUid: gpClientCredentialsClient

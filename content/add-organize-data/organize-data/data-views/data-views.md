@@ -1,10 +1,10 @@
 ---
-uid: Dataviews1
+uid: CreateDataView
 ---
 
 # Create and configure a data view
 
-Data views are subsets of data from one or more streams. You create and configure a data view by defining the target namespace, and then specifying the source stream or asset, data fields, time period, and interpolation interval.
+You create and configure a data view by defining the target namespace, and then specifying the source stream or asset, data fields, time period, and interpolation interval.
 
 To create a data view, follow these steps:
 
@@ -15,12 +15,12 @@ To create a data view, follow these steps:
 1. Complete the following fields:
 
    - **Name** - Enter a name to identify the data view.
-   
+
    - **Description** - (Optional) Enter a description for the data view.
 
-1. Select the **Data View Shape** from the following options to specify the general shape of the data display: 
+1. Select the **Data View Shape** from the following options to specify the general shape of the data display:
 
-   - **Standard** - a typical wide table. 
+   - **Standard** - a typical wide table.
 
    - **Narrow** - pivot the data into a Field, Value pair format.
 

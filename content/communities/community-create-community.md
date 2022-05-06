@@ -19,6 +19,7 @@ To create a community:
 1. Select **Add Community**.
 
     The **Create Community** wizard opens to the `Details` page.
+    
     ![Create Community](images/create-community.png)
 
 1. On the `Details` page, enter a **Name** and **Description**. Then select **Next**.

@@ -8,7 +8,7 @@ APIs for getting, adding, or removing client credential clients from communities
 
 ## `List Client Credential Clients for a Community`
 
-<a id="opIdClientCredentialClients_List Client Credential Clients for a Community"></a>
+<a id="opIdCommunityClientCredentialClients_List Client Credential Clients for a Community"></a>
 
 Gets clients associated with a specific tenant and community
 
@@ -72,7 +72,7 @@ Allowed for these roles:
 
 ## `Get Count of Clients for a Community`
 
-<a id="opIdClientCredentialClients_Get Count of Clients for a Community"></a>
+<a id="opIdCommunityClientCredentialClients_Get Count of Clients for a Community"></a>
 
 Gets a count of client credential clients for a community
 
@@ -110,7 +110,7 @@ Allowed for these roles:
 
 ## `Add Client Credential Client to a Community`
 
-<a id="opIdClientCredentialClients_Add Client Credential Client to a Community"></a>
+<a id="opIdCommunityClientCredentialClients_Add Client Credential Client to a Community"></a>
 
 Adds a client credential client to a community, providing a list of community roles to be assigned to the client
 
@@ -180,7 +180,7 @@ Allowed for these roles:
 
 ## `Remove Client Credential Client from a Community`
 
-<a id="opIdClientCredentialClients_Remove Client Credential Client from a Community"></a>
+<a id="opIdCommunityClientCredentialClients_Remove Client Credential Client from a Community"></a>
 
 Removes a client credential client from a community
 

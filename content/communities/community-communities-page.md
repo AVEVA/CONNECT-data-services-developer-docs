@@ -16,7 +16,7 @@ The image above displays the `Communities` page. Review the headings below for m
 
 ## Community tile
 
-For each community that your tenant participates in OCS, a tile is listed on the `Communities` page. From this tile, you can review high level details for the community and view if you have access to view data streams from the community.
+For each community that your tenant participates in AVEVA Data Hub, a tile is listed on the `Communities` page. From this tile, you can review high level details for the community and view if you have access to view data streams from the community.
 
 The following table describes each field in a community tile:
 

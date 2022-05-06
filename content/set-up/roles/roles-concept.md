@@ -12,7 +12,7 @@ There are six built-in AVEVA Data Hub roles that cannot be removed from a tenant
 
   **Note:** It is strongly recommended you do not assign the Tenant Administrator role to client-credential clients. This role can be assigned via the Tenant Management API.
 
-- Community Administrator - A role with full administrative rights. These rights include all the privileges of a Community Moderator plus the ability to delete a community, invite and confirm tenant invitations, and remove tenants from the community. See [Community roles](xref:communityroles) for more information.
+- Community Administrator - A role with full administrative rights. These rights include all the privileges of a Community Moderator plus the ability to delete a community, invite and confirm tenant invitations, and remove tenants from the community. See [Community roles](xref:community-community-roles) for more information.
 
 - Tenant Contributor – This role has read and write permissions by default.
 

@@ -10,7 +10,7 @@ When another tenant invites you to a community, you receive an email invitation 
 
 To accept an invitation:
 
-1. Open and review the email invitation from OSIsoft Cloud Services (OCS).
+1. Open and review the email invitation from AVEVA Data Hub.
 
 1. Select the **VIEW COMMUNITY INVITE** link.
 
@@ -18,7 +18,7 @@ To accept an invitation:
 
   **Important!** If you have multiple tenants, verify that you are logging into the correct tenant.
 
-1. If prompted, log in to OCS.
+1. If prompted, log in to AVEVA Data Hub.
 
   A page opens and displays that your tenant will join the community that issued the invitation.
 

@@ -72,4 +72,4 @@ Because tenants can share their data natively within AVEVA Data Hub, IT departme
 
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
-Communities can accommodate trusted business partners who are not sharing data or do not have a PI system of their own. With communities, business partners can sign up for their own OCS tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.
+Communities can accommodate trusted business partners who are not sharing data or do not have a PI system of their own. With communities, business partners can sign up for their own tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.

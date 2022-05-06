@@ -109,7 +109,7 @@ To build an AF element
 
       * In the last field, enter an attribute value.
 
-   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset’s UOM property set.
+   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
 
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 
@@ -233,7 +233,7 @@ To save the data transfer definition, follow these steps:
 ## Overview of the Details pane
 <!--AF 11/15/21 - This section doesn't belong in this topic about how to define a transfer.-->
 <!-- VT, 11/29/21: I can move this into it's own topic; SMEs and myself wanted to explain what these fields represented.-->
-The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image show the sections in the `Details` pane, which you can expand and collaps using the arrows ( ![](../../images/chevrons.png) ):  
+The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image show the sections in the `Details` pane, which you can expand and collapse using the arrows ( ![Down](../../../../../_icons/default/chevron-down.svg) ![Up](../../../../../_icons/default/chevron-up.svg) ):  
 
 ![](../../images/details-pane1.png)
 ![](../../images/details-pane2.png) 
@@ -244,8 +244,8 @@ Each section of the `Details` pane is described in the following table.
 | ---------------- | ------------------------------------------------------------ |
 | **1**            | `Agent Overview` - Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
 | **2**            | `Transfer Overview` - Displays transfer details and progress. Also contains buttons to view, remove, or stop a transfer. |
-| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to OCS. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as “real-time” events. Streaming events represent the number of current, real-time events transferred into OCS. |
-|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created: <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to OCS.</li><li>**Total Assets Created**: The number of assets created in OCS.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
+| **3a**            | Under the registered Data Archive ( ![](../../../../../_icons/branded/osisoft.svg), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to OCS. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as "real-time" events. Streaming events represent the number of current, real-time events transferred into OCS. |
+|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../../../../_icons/branded/cube-outline.svg) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created: <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to OCS.</li><li>**Total Assets Created**: The number of assets created in OCS.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
 
 ## Transfer data to OCS
 

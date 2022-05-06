@@ -4,7 +4,7 @@ uid: ccRoles
 
 # Roles
 
-Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, OCS checks the assigned roles against the permissions on the resource to determine their access level.
+Administrators use roles to manage access to assets, resources, and services. They can then assign these roles to identities, which include users, groups, and client-credentials clients. When an identity tries to access a resource, OSIsoft Cloud Services (OCS) checks the assigned roles against the permissions on the resource to determine their access level.
 
 There are five built-in roles which cannot be removed from a tenant:
 

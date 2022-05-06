@@ -50,8 +50,6 @@
     - topicUid: communities
       items:
       - topicUid: community-communities-page
-        items:
-        - topicUid: communities-manage-default-admins
       - topicUid: community-setup
         items:
         - topicUid: community-community-roles
@@ -71,6 +69,7 @@
         - topicUid: community-remove-tenants
         - topicUid: community-edit
         - topicUid: community-delete
+        - topicUid: communities-manage-default-admins
       - topicUid: community-tenant-administration
         items:
         - topicUid: community-remove-your-tenant

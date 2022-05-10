@@ -11,7 +11,7 @@ To create a data view, follow these steps:
 1. In the left pane, select **Analytics** > **Data Views**.
 
 1. In the `Data Views` pane, select **Add Data View**.
-
+`
 1. Complete the following fields:
 
    - **Name** - Enter a name to identify the data view.
@@ -30,15 +30,21 @@ To create a data view, follow these steps:
 
 1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../../_icons/default/database.svg) or community ![community](../../../_icons/default/share-variant.svg) to query.
 
+   **Note:** When you finish configuring your data view, you can view the source for each query from the `Data Views` page in the following locations:
+
+   - The **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
+   
+   - The side panel, when a data view is selected. The query source is displayed next to each query.
+
 1. For **Query Type**, select **Streams** or **Assets** to indicate which objects to search for this query.
 
-   **Note**: Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.
+   **Note:** Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.
 
 1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (_*_), and then select **Search** to search for available streams or assets.
 
 1. Select any stream or asset in the query results to display and view the individual data fields to the pane on the right.
 
-   **Note**: If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream or asset name in the **Search** field to display a more specific set of streams or assets.
+   **Note:** If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream or asset name in the **Search** field to display a more specific set of streams or assets.
 
 1. (Optional) To add additional queries, select **Add Query**, enter the appropriate query value in the **Query Value** search field, and then select **Apply**.
 

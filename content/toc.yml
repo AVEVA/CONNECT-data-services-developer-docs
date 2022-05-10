@@ -1,29 +1,31 @@
 - topicUid: ADH-content-portal-overview
   items:
-   - topicUid: WhatIsADH
-   - topicUid: WhoUsesADH
-   - topicUid: WhatADHdoes
-   - topicUid: what-is-cnnxt
-     items:
-     - topicUid: sign-in-cnnxt
-     - topicUid: aveva-svcs
-     - topicUid: add-display-name
-     - topicUid: sign-out-cnnxt
-   - topicUid: cnnxt-setup
-     items:
-     - topicUid: subscribe-adh
-     - topicUid: ccNamespaces
-       items: 
-       - topicUid: create-folders
-       - topicUid: bpNamespaces
-     - topicUid: manage-permissions-connect
-       items:
-       - topicUid: create-group
-       - topicUid: assign-roles-groups
-       - topicUid: invite-users
-       - topicUid: assign-users
-       - topicUid: map-group-adh
-       - topicUid: map-user-adh
+  - topicUid: WhatIsADH
+    items:
+    - topicUid: DifferencesFromOCS
+  - topicUid: WhoUsesADH
+  - topicUid: WhatADHdoes
+  - topicUid: what-is-cnnxt
+    items:
+    - topicUid: sign-in-cnnxt
+    - topicUid: aveva-svcs
+    - topicUid: add-display-name
+    - topicUid: sign-out-cnnxt
+  - topicUid: cnnxt-setup
+    items:
+    - topicUid: subscribe-adh
+    - topicUid: ccNamespaces
+      items: 
+      - topicUid: create-folders
+      - topicUid: bpNamespaces
+    - topicUid: manage-permissions-connect
+      items:
+      - topicUid: create-group
+      - topicUid: assign-roles-groups
+      - topicUid: invite-users
+      - topicUid: assign-users
+      - topicUid: map-group-adh
+      - topicUid: map-user-adh
 - topicUid: gs-overview
   items:
   - topicUid: introPortalInterface

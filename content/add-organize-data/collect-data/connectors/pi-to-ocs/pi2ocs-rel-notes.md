@@ -4,11 +4,13 @@ uid: pi2ocs-rel-summary
 
 # PI to OCS release summary
 
-## Release 2.0: May 4, 2022
+## Release 2.0: May 12, 2022
 
 ## Overview
 
 This release covers the PI To OCS Agent, a component that is installed on-premises to replicate data and assets from the PI System to OSIsoft Cloud Services.
+
+## Fixes and enhancements
 
 ### Enhancements
 
@@ -31,6 +33,10 @@ Easy access to both PI to OCS Agent and transfer health events is available.
 The ability to use an alternative server name is now supported in the PI to OCS Configuration Utility. Users can enter an alternate name in the Alternate Display Name field. This text will replace an on-premises Data Archive server names in stream IDs, as well as AF server names that appears in the PI to OCS Agents window.
  
 **Note:** Stream IDs are immutable. If a transfer is in progress, new streams are created based on the current transfer’s configuration settings.
+
+### Fixes
+
+None
 
 ### Known issues
 

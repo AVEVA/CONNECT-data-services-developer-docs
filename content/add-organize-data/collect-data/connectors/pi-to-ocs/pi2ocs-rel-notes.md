@@ -16,7 +16,7 @@ This release covers the PI To OCS Agent, a component that is installed on-premis
 
 *Edit a transfer*
 
-PI to OCS now allows you to edit a transfer’s settings and adding or removing AF elements and PI point references.
+PI to OCS now allows you to edit a transfer’s settings and add or remove AF elements and PI point references.
 
 *Health events*
 

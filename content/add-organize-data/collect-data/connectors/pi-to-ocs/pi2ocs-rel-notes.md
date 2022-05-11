@@ -14,12 +14,6 @@ This release covers the PI To OCS Agent, a component that is installed on-premis
 
 ### Enhancements
 
-*AF element replication*
-
-PI to OCS now supports replication of AF elements to OCS. AF elements are created as assets in OCS. For a complete list of supported AF objects, see ["What AF data is transferred to OCS?"](xref:af-data-transferred).
-
-**Note:** The ability to transfer Asset Framework data is only available in AVEVA™ Data Hub. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.   
-
 *Edit a transfer*
 
 PI to OCS now allows you to edit a transfer’s settings and adding or removing AF elements and PI point references.
@@ -33,6 +27,10 @@ Easy access to both PI to OCS Agent and transfer health events is available.
 The ability to use an alternative server name is now supported in the PI to OCS Configuration Utility. Users can enter an alternate name in the Alternate Display Name field. This text will replace an on-premises Data Archive server names in stream IDs, as well as AF server names that appears in the PI to OCS Agents window.
  
 **Note:** Stream IDs are immutable. If a transfer is in progress, new streams are created based on the current transfer’s configuration settings.
+
+*AF element replication*
+
+PI to Data Hub now supports replication of AF elements to AVEVA™ Data Hub, the rebranded version of OCS on the AVEVA™ Connect cloud platform. AF elements are created as assets in AVEVA Data Hub. Existing PI to OCS users will need to migrate to PI to Data Hub to take advantage of this new feature. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.
 
 ### Fixes
 

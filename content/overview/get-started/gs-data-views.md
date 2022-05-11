@@ -20,7 +20,7 @@ To create a data view, follow these steps:
 
 1. Select the **Standard** for the **Data View Shape** for the general shape of the data display.
 
-1. Specify the source for the data view in the center pane and accept the default of *Query1*.
+1. In the center pane, select the default of *Query1* for the **Query Id** field.
 
 1. For **Query Type**, select **Streams**.
 

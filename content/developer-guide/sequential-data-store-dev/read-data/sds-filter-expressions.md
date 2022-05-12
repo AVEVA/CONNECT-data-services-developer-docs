@@ -29,9 +29,9 @@ The table below lists supported and unsupported types within a filter expression
 | ``UInt64``  |                                       |
 
 > [!NOTE]
-> While Nullable Types are not supported some supported types can have null values. 
-> Null values encountered when evaluating a filter expression will always return false/no match, 
-> for example, both ``"Value" eq null`` and ``"Value" ne null`` will return false.
+> While Nullable Types are not supported, some supported types can have null values. 
+> When evaluating a filter expression, null values always return false/no match. 
+> For example, both ``"Value" eq null`` and ``"Value" ne null`` return false.
 
 ## Logical operators
 The following logical operators are supported for use within a filter

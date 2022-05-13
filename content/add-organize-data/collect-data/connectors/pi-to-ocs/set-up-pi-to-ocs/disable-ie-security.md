@@ -12,7 +12,7 @@ To turn off Internet Explorer Enhanced Security Configuration, follow these step
 
 1. Select **Local Server**.
 
-1. In the **Properties** section, locate the **Internet Explorer Enhanced Security Configuration**`** setting, then select the current setting to open the property page.
+1. In the **Properties** section, locate the **Internet Explorer Enhanced Security Configuration** setting, then select the current setting to open the property page.
  
    The `Internet Explorer Enhanced Security Configuration` dialog box opens. 
 

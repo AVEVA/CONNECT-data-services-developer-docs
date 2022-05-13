@@ -2,10 +2,16 @@
   href: overview-data-transfers.md
 - name: Support for slow moving data
   href: slow-moving-data.md
-- name: What AF data is transferred to Data Hub?
+- name: What AF data is transferred to OCS?
   href: af-data-transferred.md  
-- name: Transfer data to AVEVA Data Hub
+- name: Transfer PI System data to OCS
   href: transfer-data-to-ocs.md
+- name: Overview of transfer metrics
+  href: overview-metrics.md
+- name: Overview of the Health Events window
+  href: health-events-window.md    
+- name: Edit a transfer
+  href: edit-transfer.md
 - name: Data transfer statuses
   href: data-transfer-statuses.md
 - name: Export transfer details

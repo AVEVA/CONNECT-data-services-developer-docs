@@ -171,7 +171,7 @@ To build a PI points transfer list, follow these steps:
 
    | Criteria To Filter By      | Action To Take                                               |
    | -------------------------- | ------------------------------------------------------------ |
-   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br /><br />**Note:** Enter * to retrieve all PI points. |
+   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br />**Note:** Enter * to retrieve all PI points. |
    | Point descriptions         | Enter criteria in the following fields:<br /><ul><li>**Descriptor** </li><li>**Extended Descriptor**</li></ul> |
    | Engineering units          | Enter criteria in the **Engineering Units** field.           |
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
@@ -276,7 +276,7 @@ To start a data transfer, follow these steps:
  
 1. (Optional) To see more information about log messages for the transfer, select **Logs**. See [Tenant log messages](xref:download-tenant-log) for more information. 
 
-1. (Optional) To view transfer progress and metrics for stream and/or asset creation, select the `Transfer Metrics` tab. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
+1. (Optional) To view transfer progress and metrics for stream and/or asset creation, select the **Transfer Metrics** tab. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 

@@ -106,7 +106,7 @@ To verify the installation, follow these steps:
 
    ![](../../images/services-window.png)
 
-1. In the AVEVA Data Hub portal, in the left pane, select **Data Collection** > **PI to OCS Agents**.
+1. In the OCS portal, in the left pane, select **Data Collection** > **PI to OCS Agents**.
 
 1. On the `PI to OCS Agents` page, select the connection you created.
 

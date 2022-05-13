@@ -12,7 +12,7 @@ You can edit saved transfer settings and add or remove AF elements and/or PI poi
 
 To edit an existing transfer, follow these steps:
 
-1. In the `PI to OCS Agents` window, select the agent that contains the transfer you want to edit.
+1. In the `PI to Data Hub Agents` window, select the agent that contains the transfer you want to edit.
 
 1. Select **View/Edit Transfer**.
 
@@ -48,6 +48,6 @@ To edit an existing transfer, follow these steps:
 
     * To change whether streams or assets or removed automatically, select or deselect the **Automatically remove Streams and Assets** option.
 
-1. After transfer edits are done, select **Save** to retain these changes and return to the `PI to OCS Agents` window.
+1. After transfer edits are done, select **Save** to retain these changes and return to the `PI to Data Hub Agents` window.
 
    **Note:** If a transfer was started and in progress when edits were made, these changes will be processed after the transfer is saved.

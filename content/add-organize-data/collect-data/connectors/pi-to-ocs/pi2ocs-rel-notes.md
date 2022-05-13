@@ -4,7 +4,7 @@ uid: pi2ocs-rel-summary
 
 # PI to Data Hub release summary
 
-## Release 2.0: May 12, 2022
+## Release 2.0: May 13, 2022
 
 ## Overview
 

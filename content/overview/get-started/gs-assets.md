@@ -14,7 +14,7 @@ To create an asset, follow these steps:
 
 1. In the toolbar, select **Add Asset**. 
 
-1. In the `Select Type for New Asset` window, select **<None>** and select **Continue**.
+1. In the `Select Type for New Asset` window, select **None** and select **Continue**.
 
 1. In the right pane, complete the following fields:
 

@@ -18,4 +18,4 @@ To view the `Tenant Details` page, follow these steps:
 
 1. Select the **User profile** icon ![Card view](images/profile-icon.png).
 
-2. Select **Tenant Details**.
+1. Select **Tenant Details**.

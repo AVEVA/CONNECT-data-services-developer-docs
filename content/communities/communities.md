@@ -2,9 +2,9 @@
 uid: communities
 ---
 
-# Communities
+# Communities (Preview)
 
-The _communities_ feature lets a tenant create a private group where business partners can share and view operational data across tenants. Using communities, industrial companies can share their data streams with external business partners, service providers, and analytics providers. 
+Communities allow a tenant to create a private group where operational data can be shared and viewed across other tenants. Using communities, industrial companies can share their data streams externally with trusted business partners, service providers, and analytics providers. 
 
 Sharing data streams allows you and your partners to find value in each other's operational data: 
 
@@ -16,47 +16,49 @@ Sharing data streams allows you and your partners to find value in each other's 
 
 * Share data across engineering and operational partners.  
 
-## Community diagram
+**Want to set up a community now?** See <xref:community-workflow-create>. 
 
-The following diagram visually displays an established community. 
+## Community data flow
 
-![Community diagram](images/community-diagram.svg)
+The following diagram shows the data flow of an established community. 
 
-Within this diagram, a [tenant administrator](xref:communityroles#tenant-administrator) (callout **1**) from  **Tenant A** has invited **Tenant B** to form a community. 
+![Community diagram](images/community-diagram.drawio.svg)
 
-Both **Tenant A** and **Tenant B** have two streams stored in each of their tenants, as depicted by callout **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (callout **3**). 
+Within this diagram, an administrative user (**1**) from **Tenant A** has invited **Tenant B** to form a community.
 
-Both tenants are sharing only one of their data streams within the community: **Tenant A** is sharing their silver stream, and **Tenant B** is sharing their light purple stream (callout **4**). A data steward with sharing privileges must explicitly share a data stream.
+Both **Tenant A** and **Tenant B** have multiple streams stored in each of their tenants, as depicted by **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (**3**).
 
-All data streams shared within the community can be viewed by any [community member](xref:communityroles#community-member) (callout **5**). Within a community, administrators or moderators can invite and manage which users within their tenant can participate in the community and view shared data.
+Both tenants are sharing only one of their data streams within the community (**A** and **B**). A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
+
+All data streams shared within the community can be viewed by any community member (**4**). Within a community, community administrators can invite and manage which users within their tenant can participate in the community and view shared data.
 
 ## Community features and benefits
 
-Communities allow you to easily and securely share operational data with business partners. 
+Communities allow you to easily and securely share operational data with trusted business partners. 
 
-### Connect with business partners
+### Connect with trusted business partners
 
-Establish a community by [creating it](xref:add-community) and then [inviting other tenants](xref:managecommunity) owned by business partners. Each invitation is a three-way handshake. A [tenant administrator](xref:communityroles#tenant-administrator) from the establishing tenant, also known as the [community owner](xref:communityroles#community-owner), sends an email invitation to one or more AVEVA Data Hub tenant administrators from another tenant. The business partner then accepts the invitation. The original tenant administrator who issued the invitation confirms it, allowing the partner to join the community. After confirmation, users from the newly confirmed tenant can view data from other community tenants or share data streams from their own tenant with the community.
+Establish a community by creating it and then inviting your trusted business partners to join from their tenant. Each invitation is a three-way handshake. The tenant that establishes the community, known as the Administrative Tenant, sends an email invitation to an administrator from the business partner's tenant. The trusted business partner then accepts the invitation. The Administrative Tenant then confirms the invitation, allowing the trusted partner to join the community. After confirmation, users from the business partner's tenant can view data from other community tenants or share data streams from their own tenant with the community.
 
 ### Scalable
 
-Communities allow you to share your data streams with multiple business partners in a standardized way. Each community supports membership for an unlimited number of tenants, and each tenant can join an unlimited number of communities.
+Communities allow you to share your data streams with multiple trusted business partners in a standardized way. Each community supports membership for an unlimited number of tenants, and each tenant can join an unlimited number of communities.
 
 ### Multi-tenant users and permissions
 
 Communities support multi-tenant management of users and permissions. 
 
-Within each tenant, [community administrators](xref:communityroles#community-administrator) can independently [invite or remove users](xref:managecommunityusers), keeping user and permissions separate from other tenants in the community. Each tenant within the community has individual control over which of its users can access the community or share data within it. Community administrators cannot control users or permission in other tenants.
+Within each tenant, community administrators can independently invite or remove users, separating users and permissions from other tenants in the community. Each tenant within the community has individual control over which of its users can access the community or share data within it. Community administrators cannot control users or permissions in other tenants.
 
-Additionally, AVEVA Data Hub provides [community roles](xref:communityroles) that allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data, share data streams within the community, or invite other tenants to the community.
+Additionally, community roles allow each tenant to manage users and roles specifically for communities. Users can be assigned granular permissions to view community data or share data streams within the community.
 
 ### Secure data sharing
 
-Communities allow tenants to [securely share operational data](xref:ShareStreams#share-streams) with their business partners. 
+Communities allow tenants to securely share operational data with their trusted business partners. 
 
-Any tenant invited to a community must accept the community invitation before they can share data with other tenants. After joining a community, each tenant must explicitly share any data stream that they want to share with the community. Each tenant shares individual data streams with the community&mdash;not their entire operational data set. 
+Any tenant invited to a community must accept the community invitation and be confirmed by the inviting tenant before they can share data with other tenants or view shared data from other tenants. After joining a community, each tenant must explicitly share any data stream that they want the community to view. Each tenant shares individual data streams with the community—not their entire operational data set. 
 
-Each tenant in the community can [stop sharing their data streams](xref:ShareStreams#unshare-streams-from-community-details) at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history; when you share data streams, you provide the community with _access_ to your streams rather than copying data across tenants.
+Each tenant in the community can stop sharing their data streams at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history. When you share data streams, you provide the community with _access_ to your streams rather than copying data across tenants.
 
 Because tenants can share their data natively within AVEVA Data Hub, IT departments no longer have to:
 
@@ -64,10 +66,10 @@ Because tenants can share their data natively within AVEVA Data Hub, IT departme
 
 * Create workarounds like VPNs or custom apps.
 
-* Allow customers onsite.
+* Allow business partners onsite to access local operational systems.
   
 ### Easy setup
 
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
-Communities can accommodate business partners who are not sharing data or do not have a PI system of their own. They can provision their own AVEVA Data Hub tenant without sharing data, allowing them to participate in a partnership without purchasing the full PI System or other software.
+Communities can accommodate trusted business partners who are not sharing data or do not have a PI system of their own. With communities, business partners can sign up for their own tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.

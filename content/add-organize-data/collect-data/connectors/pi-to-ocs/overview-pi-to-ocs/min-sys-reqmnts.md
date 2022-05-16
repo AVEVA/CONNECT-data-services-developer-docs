@@ -6,10 +6,10 @@ uid: min-sys-reqmnts
 
 These are the requirements to transfer data from an on-prem PI Server to AVEVA Data Hub:
 
-* [System requirements](#system-requirements)
-* [Administrator privileges](#administrator-privileges)
-* [Ensure write access to stream and asset collections](#ensure-write-access-to-stream-and-asset-collections)
-* [Configure access to PI Data Archive Security tables and PI point data](#configure-access-to-pi-data-archive-security-tables-and-pi-point-data)
+  - [System requirements](#system-requirements)
+  - [Administrator privileges](#administrator-privileges)
+  - [Ensure write access to stream and asset collections](#ensure-write-access-to-stream-and-asset-collections)
+  - [Configure access to PI Data Archive Security tables and PI point data](#configure-access-to-pi-data-archive-security-tables-and-pi-point-data)
 
 ## System requirements
 
@@ -32,11 +32,13 @@ The PI to Data Hub Agent must be installed on a local machine by a user account 
 
 ## Ensure write access to stream and asset collections 
 
-The PI to Data Hub Agent has write permission to the streams collection in AVEVA Data Hub. Write permission is provided by default through the Tenant Contributor role on the automatically generated PIToDataHub Agent Client User. Write permission to this collection is required to enable stream creation.
+The PI to Data Hub Agent has write permission to the streams collection in AVEVA Data Hub. Write permission is provided by default through the Tenant Contributor role on the automatically-generated PIToDataHub Agent Client User. Write permission to the streams collection is required to enable stream creation.
 
 **Note:** If write access is removed, stream creation will fail.
 
 Write permission on the assets collection is also required for creation.
+
+To remove items from a transfer and also the corresponding streams and/or assets from the portal via Edit transfer mode, the user account used to edit the transfer must be the owner with write permission on the items. 
 
 ## Configure access to PI Data Archive Security tables and PI point data
 

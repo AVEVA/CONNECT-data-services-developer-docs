@@ -6,7 +6,7 @@ uid: gsDataViews
 
 Data views are user-selected subsets of data from one or more streams stored in OSIsoft Cloud Services (OCS), mapped into custom tables. For more information about data views, see the [Data Views](xref:DataViews).
 
-To create a data view, follow these steps:
+To create a data view:
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
@@ -52,4 +52,4 @@ To create a data view, follow these steps:
 
 ## Next step
 
-Continue with [Get started with ?](xref:?).
+Continue with [Get started with metadata rules](xref:gsMetadataRules).

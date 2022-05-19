@@ -58,7 +58,14 @@ GET /api/v1-preview/search/communities/{communityId}/streams
   "TenantId": "string",
   "TenantName": "string",
   "NamespaceId": "string",
-  "CommunityId": "string"
+  "CommunityId": "string",
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ]
 }
 ```
 
@@ -118,7 +125,14 @@ GET /api/v1-preview/tenants/{tenantId}/search/namespaces/{namespaceId}/streams
     "Id": "string",
     "Name": "string",
     "TypeId": "string",
-    "Description": "string"
+    "Description": "string",
+    "PropertyOverrides": [
+      {
+        "SdsTypePropertyId": "string",
+        "Uom": "string",
+        "InterpolationMode": 0
+      }
+    ]
   }
 ]
 ```
@@ -191,7 +205,14 @@ Input used to search namespace.<br/>
     "Id": "string",
     "Name": "string",
     "TypeId": "string",
-    "Description": "string"
+    "Description": "string",
+    "PropertyOverrides": [
+      {
+        "SdsTypePropertyId": "string",
+        "Uom": "string",
+        "InterpolationMode": 0
+      }
+    ]
   }
 ]
 ```
@@ -229,6 +250,7 @@ The StreamSearchResult object. This is the model representation exposed to calle
 |TenantName|string|false|true|The Tenant name of stream|
 |NamespaceId|string|false|true|The Namespace ID of stream|
 |CommunityId|string|false|true|The Community Id|
+|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|The Stream PropertyOverrides.|
 
 ```json
 {
@@ -240,10 +262,64 @@ The StreamSearchResult object. This is the model representation exposed to calle
   "TenantId": "string",
   "TenantName": "string",
   "NamespaceId": "string",
-  "CommunityId": "string"
+  "CommunityId": "string",
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ]
 }
 
 ```
+
+---
+
+### SdsStreamPropertyOverride
+
+<a id="schemasdsstreampropertyoverride"></a>
+<a id="schema_SdsStreamPropertyOverride"></a>
+<a id="tocSsdsstreampropertyoverride"></a>
+<a id="tocssdsstreampropertyoverride"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|SdsTypePropertyId|string|false|true|None|
+|Uom|string|false|true|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+
+```json
+{
+  "SdsTypePropertyId": "string",
+  "Uom": "string",
+  "InterpolationMode": 0
+}
+
+```
+
+---
+
+### SdsInterpolationMode
+
+<a id="schemasdsinterpolationmode"></a>
+<a id="schema_SdsInterpolationMode"></a>
+<a id="tocSsdsinterpolationmode"></a>
+<a id="tocssdsinterpolationmode"></a>
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|Default|0|
+|Continuous|0|
+|StepwiseContinuousLeading|1|
+|StepwiseContinuousTrailing|2|
+|Discrete|3|
+|ContinuousNullableLeading|4|
+|ContinuousNullableTrailing|5|
 
 ---
 
@@ -292,13 +368,21 @@ The StreamFromSearchByNamespace object. This is the model representation exposed
 |Name|string|false|true|The Stream Name.|
 |TypeId|string|false|true|The Stream TypeId.|
 |Description|string|false|true|The Stream Description.|
+|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|The Stream PropertyOverrides.|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
   "TypeId": "string",
-  "Description": "string"
+  "Description": "string",
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ]
 }
 
 ```

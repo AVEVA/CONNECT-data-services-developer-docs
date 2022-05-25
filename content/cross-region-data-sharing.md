@@ -49,4 +49,4 @@ Ex sunt elit sit qui sint proident culpa et aute commodo do sint culpa.
 
 1. Select **Edit**. 
 
-1. Enable **Opt-out for Namespace** and select **Save**. 
+1. Enable **Opt-out for Namespace** and select **Save**.

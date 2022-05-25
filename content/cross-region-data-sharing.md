@@ -41,7 +41,9 @@ Ex sunt elit sit qui sint proident culpa et aute commodo do sint culpa.
 
 ## To opt out of cross-region data sharing
 
-1. From the **Namespace** drop-down, select a namespace or community for which you want to opt out of data sharing. Then select **Cog** ![Cog](./_icons/default/cog.svg).
+1. From the **Namespace** drop-down, select a namespace or community for which you want to opt out of data sharing. 
+
+1. From the **Namespace** drop-down, select the **Cog** ![Cog](./_icons/default/cog.svg).
 
 1. Select the **Data Sharing** tab.
 

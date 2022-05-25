@@ -21,7 +21,7 @@ The following image and table provides descriptions of the fields in the utility
 | 7  | Set data privacy options and assign an agent description.    |
 | 8  | View information about the server connection and its configuration. |
 | 9  | Source AF server name.                                        |
-| 10 | An optional, alternate name for an AF server. Select the pencil icon to assign a custom name that appears in the PI to OCS Agents window if you opted to display it. This name replaces the AF server name referenced in the path of the asset’s metadata, which is visible in Asset Explorer (‘__Path’).<br></br><br>**Note:** You can also assign an alternate Data Archive server name that appears in PI to OCS stream IDs.</br> | 
+| 10 | An optional, alternate name for an AF server. Select the pencil icon to assign a custom name that appears in the PI to OCS Agents window if you opted to display it. This name replaces the AF server name referenced in the path of the asset's metadata, which is visible in Asset Explorer ('__Path').</br>**Note:** Setting an alternate display name must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.</br>**Note:** You can also assign an alternate Data Archive server name that appears in PI to OCS stream IDs. | 
 | 11 | The type of AF mapping configured on the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
 | 12 | The time before the agent connection times out. Select the pencil icon to enter a new time in seconds. |
 

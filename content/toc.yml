@@ -201,6 +201,7 @@
       - topicUid: gpHybridClient
       - topicUid: gpAuthorizationCodeClient
       - topicUid: ClientMaintenance
+    - topicUid: cross-region-data-sharing
 - topicUid: DeveloperTools
   items:
     - topicUid: samples

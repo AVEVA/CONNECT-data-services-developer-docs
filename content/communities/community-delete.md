@@ -18,6 +18,6 @@ To delete a community:
 
 1. On the `Communities` page, find the community you want to delete and select **Details**.
 
-1. On the `Community Details` page at the top-right, select **More Options** ![More Options](../_icons/dots-vertical.svg "More Options")  > **Delete Community**.
+1. On the `Community Details` page at the top-right, select **More Options** ![More Options](../_icons/default/dots-vertical.svg "More Options")  > **Delete Community**.
 
 1. Confirm the deletion by entering the name of the community to delete and select **Delete**.

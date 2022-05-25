@@ -74,7 +74,7 @@ To install the PI to OCS Agent, follow these steps:
 
     * **Agent Description** - Enter an optional name for the agent.
 
-      **Result:** The **Service Account** page opens.
+      **Result:** The `Service Account` page opens.
 
 1. On the `Servive Account` page, select the service account type for the connection:
 
@@ -106,7 +106,7 @@ To verify the installation, follow these steps:
 
    ![](../../images/services-window.png)
 
-1. In the AVEVA Data Hub portal, in the left pane, select **Data Collection** > **PI to OCS Agents**.
+1. In the OCS portal, in the left pane, select **Data Collection** > **PI to OCS Agents**.
 
 1. On the `PI to OCS Agents` page, select the connection you created.
 

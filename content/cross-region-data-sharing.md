@@ -21,17 +21,19 @@ For data security and [General Data Protection Regulation](https://gdpr.eu/) (GD
 
 Disabling this setting may reduce performance and searchability.
 
+## To opt out of cross-region data sharing
+
 If you want to opt out of cross-region data sharing, complete the following tasks in order:
 
 - [Prerequisites](#prerequisites)
 - [Step 1: Opt out of cross-region data sharing for namespace](#step-1-opt-out-of-cross-region-data-sharing-for-namespace)
 - [Step 2: Configure the community preferred region for community](#step-2-configure-the-community-preferred-region-for-community)
 
-## Prerequisites
+### Prerequisites
 
 Aliquip non consequat incididunt anim pariatur pariatur quis tempor nulla nulla.
 
-## Step 1: Opt out of cross-region data sharing for namespace
+### Step 1: Opt out of cross-region data sharing for namespace
 
 When you disable cross-region data sharing, any queries for namespace data are routed to the appropriate region for complete results to be returned. Repeat these steps for each namespace that you want to disable cross-region data sharing.
 
@@ -45,7 +47,7 @@ When you disable cross-region data sharing, any queries for namespace data are r
 
 1. Enable **Opt-out for Namespace** and select **Save**.
 
-## Step 2: Configure the community preferred region for community
+### Step 2: Configure the community preferred region for community
 
 Use the **Community Preferred Region** setting to communicate the appropriate region to use for clients. Repeat these steps for each applicable community.
 

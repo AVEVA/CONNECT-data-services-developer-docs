@@ -4,10 +4,10 @@ uid: cross-region-data-sharing
 
 # Cross-region data sharing
 
-By default, OSIsoft Cloud Services (OCS) processes data in other regions for:
+By default, OSIsoft Cloud Services (OCS) processes your tenant's namespace and community data in other geographical regions for the following purposes:
 
-- Performance reasons. 
-- Enabling users to search and access data that may reside across regions. 
+- Performance reasons 
+- Enabling users to search and access data that may reside across regions
 
 For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below. For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
 
@@ -15,9 +15,11 @@ For example, if your default OCS region is `US-West`, OCS may process your data 
 
 ## Opt out of cross-region data sharing
 
-For data security and [General Data Protection Regulation (GDPR)](https://gdpr.eu/) compliance, you can opt out of cross-region data sharing. If you opt out of cross-region data sharing, your data is not processed outside of the region where it resides. Disabling this setting may reduce performance and searchability. However, it ensures that your namespace is GDPR compliant.
+For data security and [General Data Protection Regulation (GDPR)](https://gdpr.eu/) compliance purposes, you can opt out of cross-region data sharing. If you opt out of cross-region data sharing, your data is not processed outside of the region where it resides. 
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
+
+Disabling this setting may reduce performance and searchability.
 
 If you want to opt out of cross-region data sharing, complete the following tasks in order:
 
@@ -31,7 +33,7 @@ Aliquip non consequat incididunt anim pariatur pariatur quis tempor nulla nulla.
 
 ## Step 1: Opt out of cross-region data sharing for namespace
 
-Queries are routed to the appropriate region for complete results to be returned.
+When you disable cross-region data sharing, any queries for namespace data are routed to the appropriate region for complete results to be returned. Repeat these steps for each namespace that you want to disable cross-region data sharing.
 
 1. From the **Namespace** drop-down, select a namespace or community for which you want to opt out of data sharing. 
 

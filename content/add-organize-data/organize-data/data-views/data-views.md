@@ -30,12 +30,6 @@ To create a data view, follow these steps:
 
 1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../../_icons/default/database.svg) or community ![community](../../../_icons/default/share-variant.svg) to query.
 
-   **Note:** When you finish configuring your data view, you can view the source for each query from the `Data Views` page in the following locations:
-
-   - The **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
-   
-   - The side panel, when a data view is selected. The query source is displayed next to each query.
-
 1. For **Query Type**, select **Streams** or **Assets** to indicate which objects to search for this query.
 
    **Note:** Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.
@@ -77,5 +71,9 @@ To create a data view, follow these steps:
 1. To generate a preview of the data view with the selected settings, select **Generate preview**.
 
 1. Select **Save** to create the data view and to continue editing, or select **Save and Close** to create the data view and exit.
+
+Your data view is added to the `Data Views` page. You can view the sources for each query in your data view from the **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
+   
+![Data Views: Query sources column](_images%5Cquery-sources-column.png)
 
 To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).

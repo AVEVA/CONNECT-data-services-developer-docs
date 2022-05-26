@@ -13,9 +13,17 @@ For example, if your default OCS region is `US-West`, OCS may process your data 
 
 ![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
 
+## How data is transferred across regions
+
+Non do veniam esse elit velit minim nisi nulla ex nostrud.
+
+## When data is transferred across regions
+
+Ex consequat est deserunt officia fugiat nulla qui sunt est ea tempor sint elit.
+
 ## Opt out of cross-region data sharing
 
-For data security and [General Data Protection Regulation](https://gdpr.eu/) (GDPR) compliance purposes, you can opt out of cross-region data sharing. If you opt out of cross-region data sharing, your data is not processed outside of the region where it resides. 
+For data security and [General Data Protection Regulation](https://gdpr.eu/) (GDPR) compliance purposes, you can opt out of cross-region data sharing for a namespace. If you opt out of cross-region data sharing, the namespace data is not processed outside of the region where it resides. However, disabling this setting restricts namespace resource availability in other regions.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 
@@ -25,13 +33,8 @@ Disabling this setting may reduce performance and searchability.
 
 If you want to opt out of cross-region data sharing, complete the following tasks in order:
 
-- [Prerequisites](#prerequisites)
 - [Step 1: Opt out of cross-region data sharing for namespace](#step-1-opt-out-of-cross-region-data-sharing-for-namespace)
 - [Step 2: Configure the community preferred region for community](#step-2-configure-the-community-preferred-region-for-community)
-
-### Prerequisites
-
-Aliquip non consequat incididunt anim pariatur pariatur quis tempor nulla nulla.
 
 ### Step 1: Opt out of cross-region data sharing for namespace
 
@@ -49,10 +52,12 @@ When you disable cross-region data sharing, any queries for namespace data are r
 
 ### Step 2: Configure the community preferred region for community
 
-Use the **Community Preferred Region** setting to communicate the appropriate region to use for clients. Repeat these steps for each applicable community.
+If you are sharing data to one or more community, use the **Community Preferred Region** to control the region that clients view your shared data. Repeat these steps for each applicable community.
 
 **Note:** You can skip this step if you are not using <xref:communities>.
- 
+
+**Prerequisite:** You must have write access in each community affected by cross-region data sharing.
+
 1. Elit pariatur aute aliqua quis Lorem in excepteur commodo mollit ea.
 
 1. Ullamco nulla quis est excepteur.

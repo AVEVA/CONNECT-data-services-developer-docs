@@ -74,6 +74,6 @@ To create a data view, follow these steps:
 
 Your data view is added to the `Data Views` page. You can view the sources for each query in your data view from the **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
    
-![Data Views: Query sources column](_images%5Cquery-sources-column.png)
+![Data Views: Query sources column](_images/query-sources-column.png)
 
 To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).

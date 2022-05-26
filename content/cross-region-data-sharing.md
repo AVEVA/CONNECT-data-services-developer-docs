@@ -27,15 +27,13 @@ Aliqua in ut mollit sint aute mollit velit cupidatat cillum culpa exercitation a
 
 ## How is data shared
 
-<!-- Help wanted -->
+By default, OCS processes your data in regions other than your own for performance reasons and search enablement. For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below.
 
-Occaecat do voluptate exercitation adipisicing consectetur tempor irure laborum ut voluptate aute ipsum eu fugiat.
+**Tip:** For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
 
 ![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
 
-<!-- Help wanted -->
-
-Ex sunt elit sit qui sint proident culpa et aute commodo do sint culpa.
+If you disable cross-regional data sharing, data is only processed using your configured regional endpoint. Disabling this setting may reduce and searchability. However, it ensure that your namespace is GDPR compliant.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 

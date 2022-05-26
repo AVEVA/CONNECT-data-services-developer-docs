@@ -9,19 +9,13 @@ By default, OSIsoft Cloud Services (OCS) processes data in other regions for:
 - Performance reasons. 
 - Enabling users to search and access data that may reside across regions. 
 
-For data security and [General Data Protection Regulation (GDPR)](https://gdpr.eu/) compliance, you can opt out of this cross-region data sharing. 
-
-## How is data shared across regions?
-
-By default, OCS processes your data in regions other than your own for performance reasons and search enablement. For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below.
-
-**Tip:** For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
+For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below. For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
 
 ![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
 
 ## Opt out of cross-region data sharing
 
-If you opt our of cross-region data sharing, your data is not processed outside of the region where it resides. Disabling this setting may reduce performance and searchability. However, it ensures that your namespace is GDPR compliant.
+For data security and [General Data Protection Regulation (GDPR)](https://gdpr.eu/) compliance, you can opt out of cross-region data sharing. If you opt out of cross-region data sharing, your data is not processed outside of the region where it resides. Disabling this setting may reduce performance and searchability. However, it ensures that your namespace is GDPR compliant.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 

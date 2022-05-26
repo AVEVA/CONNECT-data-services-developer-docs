@@ -13,17 +13,11 @@ For data security and [General Data Protection Regulation (GDPR)](https://gdpr.e
 
 When opt-out is enabled, data is not processed outside of the region where it resides. Queries are routed to the appropriate region for complete results to be returned. The Community Preferred Region setting should be used when opting out so that clients are aware of the appropriate region to use.
 
-## Namespaces
+If you want to opt out of cross-region data sharing, complete the following tasks in order:
 
-<!-- Help wanted -->
+1. [To opt out of cross-region data sharing](#to-opt-out-of-cross-region-data-sharing)
 
-Sunt est voluptate deserunt dolor sit magna dolore nulla culpa aliqua consectetur est.
-
-## Communities
-
-<!-- Help wanted -->
-
-Aliqua in ut mollit sint aute mollit velit cupidatat cillum culpa exercitation amet sit ullamco.
+1. [To configure the community preferred region](#to-configure-the-community-preferred-region)
 
 ## How is data shared
 
@@ -37,7 +31,11 @@ If you disable cross-regional data sharing, data is only processed using your co
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 
-## To opt out of cross-region data sharing
+## Namespaces
+
+Irure proident officia mollit id voluptate.
+
+### To opt out of cross-region data sharing
 
 1. From the **Namespace** drop-down, select a namespace or community for which you want to opt out of data sharing. 
 
@@ -45,6 +43,20 @@ If you disable cross-regional data sharing, data is only processed using your co
 
 1. Select the **Data Sharing** tab.
 
-1. Select **Edit**. 
+1. Select **Edit**.
 
 1. Enable **Opt-out for Namespace** and select **Save**.
+
+## Communities
+
+Nisi ex quis cupidatat sit fugiat aliquip aute.
+
+### To configure the community preferred region
+
+The Community Preferred Region setting should be used after you have opting out of cross-region data sharing so that clients are aware of the appropriate region to use.
+
+1. Elit pariatur aute aliqua quis Lorem in excepteur commodo mollit ea.
+
+1. Ullamco nulla quis est excepteur.
+
+1. Aliqua cupidatat ea laborum enim Lorem culpa eiusmod sit deserunt ipsum tempor quis ex.

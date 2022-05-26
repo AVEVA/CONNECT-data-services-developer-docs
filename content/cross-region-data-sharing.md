@@ -45,7 +45,7 @@ When you disable cross-region data sharing, any queries for namespace data are r
 
 1. Enable **Opt-out for Namespace** and select **Save**.
 
-### Step 2: Configure the community preferred region for community
+## Step 2: Configure the community preferred region for community
 
 The Community Preferred Region setting should be used when opting out so that clients are aware of the appropriate region to use.
 

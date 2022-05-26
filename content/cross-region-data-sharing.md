@@ -15,7 +15,7 @@ For example, if your default OCS region is `US-West`, OCS may process your data 
 
 ## Opt out of cross-region data sharing
 
-For data security and [General Data Protection Regulation (GDPR)](https://gdpr.eu/) compliance purposes, you can opt out of cross-region data sharing. If you opt out of cross-region data sharing, your data is not processed outside of the region where it resides. 
+For data security and [General Data Protection Regulation](https://gdpr.eu/) (GDPR) compliance purposes, you can opt out of cross-region data sharing. If you opt out of cross-region data sharing, your data is not processed outside of the region where it resides. 
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 
@@ -47,8 +47,10 @@ When you disable cross-region data sharing, any queries for namespace data are r
 
 ## Step 2: Configure the community preferred region for community
 
-The Community Preferred Region setting should be used when opting out so that clients are aware of the appropriate region to use.
+Use the **Community Preferred Region** setting to communicate the appropriate region to use for clients. Repeat these steps for each applicable community.
 
+**Note:** You can skip this step if you are not using <xref:communities>.
+ 
 1. Elit pariatur aute aliqua quis Lorem in excepteur commodo mollit ea.
 
 1. Ullamco nulla quis est excepteur.

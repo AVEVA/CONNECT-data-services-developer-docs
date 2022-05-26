@@ -15,9 +15,13 @@ For example, if your default OCS region is `US-West`, OCS may process your data 
 
 ## How data is transferred across regions
 
+<!-- Help wanted -->
+
 Non do veniam esse elit velit minim nisi nulla ex nostrud.
 
 ## When data is transferred across regions
+
+<!-- Help wanted -->
 
 Ex consequat est deserunt officia fugiat nulla qui sunt est ea tempor sint elit.
 
@@ -57,6 +61,8 @@ If you are sharing data to one or more community, use the **Community Preferred 
 **Note:** You can skip this step if you are not using <xref:communities>.
 
 **Prerequisite:** You must have write access in each community affected by cross-region data sharing.
+
+<!-- TODO: complete task -->
 
 1. Elit pariatur aute aliqua quis Lorem in excepteur commodo mollit ea.
 

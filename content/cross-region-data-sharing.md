@@ -15,15 +15,11 @@ For example, if your default OCS region is `US-West`, OCS may process your data 
 
 ## How data is transferred across regions
 
-<!-- Help wanted -->
-
-Non do veniam esse elit velit minim nisi nulla ex nostrud.
+Help wanted
 
 ## When data is transferred across regions
 
-<!-- Help wanted -->
-
-Ex consequat est deserunt officia fugiat nulla qui sunt est ea tempor sint elit.
+Help wanted
 
 ## Opt out of cross-region data sharing
 

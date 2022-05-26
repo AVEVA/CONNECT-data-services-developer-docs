@@ -21,11 +21,15 @@ For data security and [General Data Protection Regulation (GDPR)](https://gdpr.e
 
 If you want to opt out of cross-region data sharing, complete the following tasks in order:
 
+- [Prerequisites](#prerequisites)
 - [Step 1: Opt out of cross-region data sharing for namespace](#step-1-opt-out-of-cross-region-data-sharing-for-namespace)
-
 - [Step 2: Configure the community preferred region for community](#step-2-configure-the-community-preferred-region-for-community)
 
-### Step 1: Opt out of cross-region data sharing for namespace
+## Prerequisites
+
+Aliquip non consequat incididunt anim pariatur pariatur quis tempor nulla nulla.
+
+## Step 1: Opt out of cross-region data sharing for namespace
 
 Queries are routed to the appropriate region for complete results to be returned.
 

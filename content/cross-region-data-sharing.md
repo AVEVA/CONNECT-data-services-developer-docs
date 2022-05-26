@@ -13,11 +13,11 @@ For example, if your default OCS region is `US-West`, OCS may process your data 
 
 ![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
 
-### How data is transferred across regions
+## How data is transferred across regions
 
 Non do veniam esse elit velit minim nisi nulla ex nostrud.
 
-### When data is transferred across regions
+## When data is transferred across regions
 
 Ex consequat est deserunt officia fugiat nulla qui sunt est ea tempor sint elit.
 
@@ -29,7 +29,7 @@ For data security and [General Data Protection Regulation](https://gdpr.eu/) (GD
 
 Disabling this setting may reduce performance and searchability.
 
-## To opt out of cross-region data sharing
+### To opt out of cross-region data sharing
 
 If you want to opt out of cross-region data sharing, complete the following tasks in order:
 

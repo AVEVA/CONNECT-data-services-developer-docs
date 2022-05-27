@@ -10,7 +10,7 @@ Tags and metadata allow you to associate additional information with a stream. F
 
 1. Select a stream.
 
-1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Edit Stream**.
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Edit Stream**.
 
    A tab opens to allow you to modify the metadata and tags for the stream.
 

@@ -196,23 +196,23 @@
 - topicUid: Security
   items:
   - topicUid: identityProviders
-    - topicUid: Groups
-    - topicUid: ccUsers
-      items:
-      - topicUid: gpUsers
-      - topicUid: UserMaintenance
-    - topicUid: ccRoles
-      items:
-      - topicUid: gpRoles
-      - topicUid: RolesMaintenance
-      - topicUid: roles-manage-permissions
-    - topicUid: ccClients
-      items:
-      - topicUid: gpClientCredentialsClient
-      - topicUid: gpHybridClient
-      - topicUid: gpAuthorizationCodeClient
-      - topicUid: ClientMaintenance
-    - topicUid: permissions-management
+  - topicUid: Groups
+  - topicUid: ccUsers
+    items:
+    - topicUid: gpUsers
+    - topicUid: UserMaintenance
+  - topicUid: ccRoles
+    items:
+    - topicUid: gpRoles
+    - topicUid: RolesMaintenance
+    - topicUid: roles-manage-permissions
+  - topicUid: ccClients
+    items:
+    - topicUid: gpClientCredentialsClient
+    - topicUid: gpHybridClient
+    - topicUid: gpAuthorizationCodeClient
+    - topicUid: ClientMaintenance
+  - topicUid: permissions-management
 - topicUid: DeveloperTools
   items:
     - topicUid: samples

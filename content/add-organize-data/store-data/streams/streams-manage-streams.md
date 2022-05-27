@@ -62,6 +62,6 @@ When you remove a stream, you are deleting it.
 
 1. Select one or more streams.
 
-1. Select **More options** ![More options icon](../../../_icons/dots-vertical.svg) > **Remove Stream**.
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Remove Stream**.
 
 1. In the confirmation window, select **Remove** to confirm the deletion.

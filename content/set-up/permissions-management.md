@@ -29,13 +29,9 @@ All system resources are managed using the `Manage Permissions` window. Use this
 
 Add roles that have permissions for the resource by selecting **Add Role** > **Add** ![Add](../_icons/branded/plus.svg).
 
-![Add roles](./images/manage-stream-permissions-add-roles.gif)
-
 ### To remove roles
 
 Remove newly added roles by selecting the **Remove** ![Remove](../_icons/branded/trash-can.svg) icon. Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).
-
-![Remove roles](./images/manage-stream-permissions-remove-role.gif)
 
 ### To edit permissions
 
@@ -51,8 +47,6 @@ Remove newly added roles by selecting the **Remove** ![Remove](../_icons/branded
     
 Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../_icons/branded/backspace.svg).
 
-![Clear permissions](./images/manage-stream-permissions-clear-permissions.gif) 
-
 **Notes:**
 
 - Allow Manage Permissions access is required on at least one role.
@@ -64,4 +58,5 @@ Clear the permissions applied to a role by selecting **Backspace** ![Backspace](
 Roles that are highlighted indicate that one of more of its permissions settings have been modified. Newly added roles are highlighted as well. You can restore the original settings by selecting **Cancel**.
 
 **Modifed roles**
+
 ![Modified roles](./images/highlighted-roles.png)

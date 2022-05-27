@@ -38,7 +38,11 @@ To create a data view, follow these steps:
 
 1. Select any stream or asset in the query results to display and view the individual data fields to the pane on the right.
 
-   **Note:** If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream or asset name in the **Search** field to display a more specific set of streams or assets.
+   **Notes:**
+   
+   - If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream or asset name in the **Search** field to display a more specific set of streams or assets.
+   
+   - View the **Tenant** column to identify the source of a listed streams or asset. If the **Tenant** value is a tenant other than yours, the stream or asset derives from a community.
 
 1. (Optional) To add more queries to the data view, select **Add Query**, enter the appropriate query value in the **Query Value** search field, and then select **Apply**.
 

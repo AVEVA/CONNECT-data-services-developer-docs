@@ -195,7 +195,7 @@
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:
-  - topicUid: identityProvidersd
+  - topicUid: identityProviders
     - topicUid: Groups
     - topicUid: ccUsers
       items:

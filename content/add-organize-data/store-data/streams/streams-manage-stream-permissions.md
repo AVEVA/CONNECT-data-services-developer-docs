@@ -27,6 +27,7 @@ When editing permissions for a single stream, each user role that has permission
     The `Manage Permissions for Stream` window opens. Because you are editing permissions for a single stream, all user roles that have permissions on the stream are displayed along with their settings.
 
     **Stream with pre-populated user roles and permissions**
+
     ![Manage Permissions for Stream](../images/manage-stream-permissions-single-stream.png)
 
 1. Use the `Manage Permissions for Stream` window to:
@@ -51,6 +52,7 @@ When editing permissions for multiple streams, no user roles or permission setti
     The `Manage Permissions for Selected Streams` window opens. Because you are editing permissions for multiple streams, no user roles or settings are listed, as the permission settings for each stream are different.
     
     **Streams without pre-populated user roles and permissions**
+    
     ![Manage Permissions for Selected Streams](../images/manage-stream-permissions-bulk.png)
 
 1. Use the `Manage Permissions` window to:

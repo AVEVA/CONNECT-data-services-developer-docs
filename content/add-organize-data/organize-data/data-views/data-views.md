@@ -44,6 +44,8 @@ To create a data view, follow these steps:
    
    - View the **Tenant** column to identify the source of a listed streams or asset. Additionally, if you select a stream or asset, more identification and source information displays in the side panel.
 
+   <!-- TODO: Add image -->
+
 1. (Optional) To add more queries to the data view, select **Add Query**, enter the appropriate query value in the **Query Value** search field, and then select **Apply**.
 
 1. Select **Save** to accept the query results as the basis of the data view.

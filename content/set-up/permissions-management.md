@@ -25,15 +25,22 @@ All system resources are managed using the `Manage Permissions` window. Use this
 
 ![Manage permissions](./images/manage-permissions-window.png)
 
-### To add roles
+Use this window to complete the following actions:
+
+- [Add roles](#add-roles)
+- [Remove roles](#remove-roles)
+- [Edit permissions](#edit-permissions)
+- [Clear permissions](#clear-permissions)
+
+### Add roles
 
 Add roles that have permissions for the resource by selecting **Add Role** > **Add** ![Add](../_icons/branded/plus.svg).
 
-### To remove roles
+### Remove roles
 
 Remove newly added roles by selecting the **Remove** ![Remove](../_icons/branded/trash-can.svg) icon. Roles that were added previously cannot be removed because they already have permissions assigned that must be cleared first. For more information, see [To clear permissions for a role](#to-clear-permissions-for-a-role).
 
-### To edit permissions
+### Edit permissions
 
 **Read**, **Write**, **Delete**, and **Manage Permissions** permissions can be edited for each user role that has permissions on the resource. Data stream resources include an additional **Share** permission to support <xref:communities>. Mouse over each **Information** ![Information](../_icons/branded/information.svg) icon for more information about each permission.
 
@@ -43,7 +50,7 @@ Remove newly added roles by selecting the **Remove** ![Remove](../_icons/branded
 
     **Note:** When a user is assigned multiple user roles with conflicting permissions, a setting of ![Deny](../_icons/custom/cancel.svg) **Deny** supersedes a setting of ![Allow](../_icons/custom/check-circle.svg) **Allow** or undefined (`-`) .
 
-### To clear permissions for a role
+### Clear permissions
     
 Clear the permissions applied to a role by selecting **Backspace** ![Backspace](../_icons/branded/backspace.svg).
 

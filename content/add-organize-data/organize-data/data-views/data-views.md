@@ -11,7 +11,7 @@ To create a data view, follow these steps:
 1. In the left pane, select **Analytics** > **Data Views**.
 
 1. In the `Data Views` pane, select **Add Data View**.
-
+`
 1. Complete the following fields:
 
    - **Name** - Enter a name to identify the data view.
@@ -28,17 +28,19 @@ To create a data view, follow these steps:
 
 1. In the center pane, update the **Query Id** field to a new value or accept the default of *Query1*.
 
+1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../../_icons/default/database.svg) or community ![community](../../../_icons/default/share-variant.svg) to query.
+
 1. For **Query Type**, select **Streams** or **Assets** to indicate which objects to search for this query.
 
-   **Note**: Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.
+   **Note:** Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.
 
-1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (_*_), and then select **Search** to search for available streams or assets.
+1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (`*`), and then select **Search** to search for available streams or assets.
 
 1. Select any stream or asset in the query results to display and view the individual data fields to the pane on the right.
 
-   **Note**: If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream or asset name in the **Search** field to display a more specific set of streams or assets.
+   **Note:** If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream or asset name in the **Search** field to display a more specific set of streams or assets.
 
-1. (Optional) To add additional queries, select **Add Query**, enter the appropriate query value in the **Query Value** search field, and then select **Apply**.
+1. (Optional) To add more queries to the data view, select **Add Query**, enter the appropriate query value in the **Query Value** search field, and then select **Apply**.
 
 1. Select **Save** to accept the query results as the basis of the data view.
 
@@ -69,5 +71,9 @@ To create a data view, follow these steps:
 1. To generate a preview of the data view with the selected settings, select **Generate preview**.
 
 1. Select **Save** to create the data view and to continue editing, or select **Save and Close** to create the data view and exit.
+
+Your data view is added to the `Data Views` page. You can view the sources for each query in your data view from the **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
+   
+![Data Views: Query sources column](_images/query-sources-column.png)
 
 To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).

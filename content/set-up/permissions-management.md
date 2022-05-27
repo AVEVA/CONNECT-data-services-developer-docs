@@ -46,6 +46,8 @@ Remove newly added roles by selecting the **Remove** ![Remove](../_icons/branded
 
 - To allow a permission, select ![Allow](../_icons/custom/check-circle.svg) **Allow**.
 
+    **Note:** If you set a **Write** permission to **Allow** while the **Read** permission is cleared, **Read** is automatically set to **Allow** because write permissions require read permissions.
+
 - To explicitly deny a permission, select ![Deny](../_icons/custom/cancel.svg) **Deny**. 
 
     **Note:** When a user is assigned multiple user roles with conflicting permissions, a setting of ![Deny](../_icons/custom/cancel.svg) **Deny** supersedes a setting of ![Allow](../_icons/custom/check-circle.svg) **Allow** or undefined (`-`) .

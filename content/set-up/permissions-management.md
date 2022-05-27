@@ -64,6 +64,4 @@ Clear the permissions applied to a role by selecting **Backspace** ![Backspace](
 
 Roles that are highlighted indicate that one of more of its permissions settings have been modified. Newly added roles are highlighted as well. You can restore the original settings by selecting **Cancel**.
 
-**Modifed roles**
-
 ![Modified roles](./images/highlighted-roles.png)

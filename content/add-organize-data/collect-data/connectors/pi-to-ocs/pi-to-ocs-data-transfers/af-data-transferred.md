@@ -18,7 +18,7 @@ This table lists what AF objects can and cannot be included in a PI to OCS data 
 | Elements                                                     | Yes                                    |
 | Attributes                                                   | Yes                                    |
 | PI point references                                          | Yes                                    |
-| Constant values/string*                                      | Yes                                    |
+| Constant values/string                                       | Yes*                                   |
 | Excluded attributes                                          | Yes                                    |
 | Hidden attributes                                            | No                                     |
 | Custom unit of measurements (UOMs)                           | No                                     |
@@ -29,7 +29,7 @@ This table lists what AF objects can and cannot be included in a PI to OCS data 
 | Implicit PI points with attributes that reference other attributes | No                               |
 | Attributes that reference a non-registered data source/PI Data Archive | No                 |
 
-\***Note**: AF Attributes that are of type Boolean will be ignored.
+\***Note**: Static AF Attributes configured as type 'Boolean' are not supported and will not be transferred.
 
 ## Performance metrics: AF data transfer
 

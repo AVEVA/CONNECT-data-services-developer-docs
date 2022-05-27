@@ -12,7 +12,7 @@ Although you initially configure which tenant roles can administer a community d
 
 ## Add community administrators
 
-To add community administrator permissions to a user role, follow these steps:
+To add community administrator permissions to a user role:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -20,13 +20,13 @@ To add community administrator permissions to a user role, follow these steps:
 
 1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Manage Community Administrators**.
 
-1. Select **Add Roles** and then select **Add Role** ![add role](../_icons/default/plus.svg) for any role that you want to function as community administrator. 
+1. Select **Add Roles** and then select **Add Role** ![add role](../_icons/branded/plus.svg) for any role that you want to function as community administrator. 
 
 1. Select **Save**.
 
 ## Remove community administrators
 
-You can remove roles as that can administer the community at any time. To remove community administrator permissions from a user role, follow these steps:
+You can remove roles as that can administer the community at any time. To remove community administrator permissions from a user role:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

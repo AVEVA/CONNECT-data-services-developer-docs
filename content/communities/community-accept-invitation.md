@@ -2,13 +2,13 @@
 uid: community-accept-invite
 ---
 
-# Part 1: Accept community invitation
+# Step 1: Accept community invitation
 
 When another tenant invites you to a community, you receive an email invitation that you can use to join. 
 
 **Note:** Invitations are valid for 14 days before they expire. If you do not accept the invitation within that time, or you do not receive an invitation email, you must request a new invitation from the administrative tenant.
 
-To accept an invitation, follow these steps:
+To accept an invitation:
 
 1. Open and review the email invitation from OSIsoft Cloud Services (OCS).
 
@@ -34,7 +34,7 @@ To accept an invitation, follow these steps:
 
   When the administrative tenant confirms your tenant, you receive a notification email.
  
-1. After your tenant is confirmed for the community, select **Details** to setup Community Administrators and Community Members for your tenant.
+1. After your tenant is confirmed for the community, select **Details** to set up Community Administrators and Community Members for your tenant.
 
   ![community details](images/community-details.png)
 
@@ -54,7 +54,7 @@ To accept an invitation, follow these steps:
 
 1. After you finish, select **Next**.
 
-1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are Members within your tenant that have read access to the community and its data.
+1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are members within your tenant that have read access to the community and its data.
       
   To add new Community Members, select **Add Members** > ![Add](../_icons/branded/plus.svg) for each user or group that you want to add.
 

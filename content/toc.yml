@@ -82,9 +82,16 @@
         - topicUid: community-manage-clients
         - topicUid: community-manage-administrators
         - topicUid: communities-manage-default-admins
+      - topicUid: community-data-sharing
+        items: 
+        - topicUid: community-manage-shared-streams
+        - topicUid: community-view-shared-streams
+        - topicUid: community-view-shared-data
+        - topicUid: community-enable-stream-sharing-permissions
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules
+      - topicUid: MetadataMaintenance
     - topicUid: AssetRulesCC
       items:
         - topicUid: CreateAssetRules
@@ -118,6 +125,9 @@
       - topicUid: slow-moving-data
       - topicUid: af-data-transferred
       - topicUid: transfer-data
+      - topicUid: overview-metrics
+      - topicUid: health-evts-window
+      - topicUid: edit-transfer 
       - topicUid: data-transfer-statuses
       - topicUid: export-transfer-details
       - topicUid: export-missing-points
@@ -147,6 +157,7 @@
     items:
     - topicUid: bpOMFConnection
     - topicUid: gpOMFConnection
+    - topicUid: OMFMaintenance
 - topicUid: lpvisualizedata
   items:
   - topicUid: CreateTrendSession
@@ -174,27 +185,33 @@
       - topicUid: ShareAViewOfYourFleet
 - topicUid: Analytics
   items:
-    - topicUid: Dataviews1
-    - topicUid: manage-data-views-permissions
+    - topicUid: DataViews
+      items:
+      - topicUid: CreateDataView
+      - topicUid: DataViewMaintenance
+      - topicUid: manage-data-views-permissions
     - topicUid: PowerBI
       items:
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:
-    - topicUid: identityProviders
+  - topicUid: identityProvidersd
     - topicUid: Groups
     - topicUid: ccUsers
       items:
       - topicUid: gpUsers
+      - topicUid: UserMaintenance
     - topicUid: ccRoles
       items:
       - topicUid: gpRoles
+      - topicUid: RolesMaintenance
       - topicUid: roles-manage-permissions
     - topicUid: ccClients
       items:
       - topicUid: gpClientCredentialsClient
       - topicUid: gpHybridClient
       - topicUid: gpAuthorizationCodeClient
+      - topicUid: ClientMaintenance
     - topicUid: permissions-management
 - topicUid: DeveloperTools
   items:

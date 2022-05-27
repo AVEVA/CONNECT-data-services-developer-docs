@@ -12,7 +12,7 @@ After you create a community, you can edit its name and description at any time.
 
 ## To edit a community
 
-To edit a community, follow these steps:
+To edit a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

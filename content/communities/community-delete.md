@@ -12,7 +12,7 @@ Deleting a community removes all access to all data in the community from all te
 
 ## To delete a community
 
-To delete a community, follow these steps:
+To delete a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 

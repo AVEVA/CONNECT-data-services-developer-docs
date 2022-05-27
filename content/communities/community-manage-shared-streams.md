@@ -18,7 +18,7 @@ User with permissions to share a data stream within a community can do so from t
 
 1. If it is not already selected, select **Streams** at the upper left.
 
-1. Select each stream that you want to share, and then select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Share Stream**.
+1. Select each stream that you want to share, and then select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Share Stream**.
 
     **Tips:** 
 
@@ -66,7 +66,7 @@ To stop sharing streams with a community from `Sequential Data Store`:
 
 1. If it is not already selected, select **Streams** at the upper left.
 
-1. Ensure that the **Filter Communities** pane is displayed. Enable it by selecting the **Filter Tenants** ![Filter Tenants](../_icons/filter.svg) icon. 
+1. Ensure that the **Filter Communities** pane is displayed. Enable it by selecting the **Filter Tenants** ![Filter Tenants](../_icons/branded/filter.svg) icon. 
 
 1. From the **Filter Communities** pane, select one or more community from which to unshare streams.
 
@@ -74,7 +74,7 @@ To stop sharing streams with a community from `Sequential Data Store`:
 
 1. From the list of streams, select one or more to streams unshare. 
 
-1. Select **More Options** ![More Options](../_icons/dots-vertical.svg) > **Unshare Stream**. 
+1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Unshare Stream**. 
 
     **Tip:** You can also unshare streams using the **Unshare Streams** buttons available in the right pane.
 

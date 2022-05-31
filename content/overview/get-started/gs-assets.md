@@ -6,7 +6,7 @@ uid: gsAssets
 
 An asset is a container that includes metadata and references to streams related to a logical asset. For more information about assets, see [Assets](xref:ccAssets).
 
-To create an asset, follow these steps:
+To create an asset:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 
@@ -60,9 +60,9 @@ To create an asset, follow these steps:
 
 1. In the `Assets` pane, use the icons in the upper-right to switch between the following views:
 
-   - ![Card view](images/card-view.png) - Card view displays the assets as a series of tiles.
+   - ![Card view](../../_icons/branded/view-grid.svg) - Card view displays the assets as a series of tiles.
     
-   - ![Table view](images/table-view.png) - Table view displays the assets in a table format. 
+   - ![Table view](../../_icons/branded/view-list.svg) - Table view displays the assets in a table format. 
 
 ## Next step
 

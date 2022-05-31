@@ -22,7 +22,7 @@ Configuration is available for the following edge system types:
 
 ## Import an edge system configuration
 
-To import an edge system configuration from the field to the corresponding edge system digital twin, follow these steps:
+To import an edge system configuration from the field to the corresponding edge system digital twin:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
@@ -32,7 +32,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 ## Edit an edge system configuration
 
-To edit an edge system configuration and export it for use, follow these steps:
+To edit an edge system configuration and export it for use:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 

@@ -10,7 +10,7 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
 
 # [Standard type](#tab/tabid-1)
 
-To add a base type, follow these steps: 
+To add a base type: 
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -52,7 +52,7 @@ To add a base type, follow these steps:
 
 You can also create enumeration types that you can include as a property in standard types.
 
-To add a enum type, follow these steps:
+To add a enum type:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 

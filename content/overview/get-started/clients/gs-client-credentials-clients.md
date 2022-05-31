@@ -6,7 +6,7 @@ uid: gsClientCredentialsClients
 
 Client-credentials clients are used for server-to-server communication where no user interaction is required. For more information about client-credentials clients, see [Client-credentials clients](xref:ccClients#client-credentials-client).
 
-To create a client-credentials client, follow these steps:
+To create a client-credentials client:
 
 1. In the left pane, select **Security** > **Clients**.
 

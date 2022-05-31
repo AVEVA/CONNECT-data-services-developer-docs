@@ -37,7 +37,7 @@ Transfer creation consists of the following tasks:
 
 ## Name the transfer and set data privacy settings 
 
-To name the data transfer, follow these steps: 
+To name the data transfer: 
 
 1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
@@ -141,7 +141,7 @@ To build an AF element
 
 You can view details about an individual AF element such as related attribute names, values, and data references.
 
-To view AF element details, follow these steps:
+To view AF element details:
 
 1. Select an AF element on the **AF Elements** tab.
 
@@ -161,7 +161,7 @@ To view AF element details, follow these steps:
 
 You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Overview of explicit vs. implicit PI points](#overview-of-explicit-vs.-implicit-pi-points) for more information.
 
-To build a PI points transfer list, follow these steps:
+To build a PI points transfer list:
 
 1. Select the **PI Point Search** tab.
 
@@ -205,7 +205,7 @@ The reference type indicates the PI point's source and how it was retrieved. The
 
 You can view attribute details for selected PI points in a transfer. Implicit PI points are PI points referenced by AF elements in a transfer. You can hide implicit PI points to temporarily remove them from view on the **PI Points** tab. Hidden implicit PI points are still included in a transfer unless the referencing AF elements are removed from the transfer list. 
 
-To view PI point details, follow these steps:
+To view PI point details:
 
 1. In the `Transfer` pane, select the **PI Points** tab.
 
@@ -232,7 +232,7 @@ To view PI point details, follow these steps:
 Before you can transfer data to OCS, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
 <!--VT, 11/29/21: Ok.-->
 
-To save the transfer, follow these steps:
+To save the transfer:
 
 1. To ensure your data transfer definition is correct and contains all the data you want transferred, review it for accuracy.
  
@@ -254,7 +254,7 @@ Data is ready for transfer after the desired PI points and/or AF elements have b
 
 ## Start a data transfer
 
-To start a data transfer, follow these steps:
+To start a data transfer:
 
 1. (Optional) In the `PI to OCS Agents` window, select the PI to OCS Agent associated with the data transfer. 
 

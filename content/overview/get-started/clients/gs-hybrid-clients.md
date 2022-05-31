@@ -6,7 +6,7 @@ uid: gsHybridClients
 
 Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided. For more information about hybrid clients, see [Hybrid clients](xref:ccClients#hybrid-client).
 
-To create a hybrid client, follow these steps:
+To create a hybrid client:
 
 1. In the left pane, select **Security** > **Clients**.
 

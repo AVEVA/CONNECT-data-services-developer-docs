@@ -125,11 +125,11 @@ In this step, you specify the naming pattern used to find and match the appropri
 
 In this step, you specify the token that identifies the stream measurement in the stream. Then you map values for each token.
 
-1. In the `Configure Stream Reference Name Token` pane, click the ![Select token icon](images/change-property-icon.png) icon to open the `Select Stream Reference Name Token` window.
+1. In the `Configure Stream Reference Name Token` pane, click the ![Select token icon](../../../_icons/branded/swap-horizontal.svg) icon to open the `Select Stream Reference Name Token` window.
 
 1. Select the token that identifies the stream measurement and click **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. --> <!--VTT, 9/23/21: Agreed. QA testing of procedures is recommended for the new UI rebranding effort.-->
 
- In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](images/measurement-icon.png) icon.
+ In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](../../../_icons/branded/ruler.svg) icon.
 
 1. Select a token in the `Token Mappings Status` list.
 
@@ -197,7 +197,7 @@ The asset preview displays a list of the assets that will be created using the a
 
    **Note:** 
 
-   - The ![Tag icon](images/tag-icon.png) icon identifies the metadata and the ![Rule icon](images/measurement-icon.png) icon identifies the stream references. 
+   - The ![Tag icon](../../../_icons/branded/tag.svg) icon identifies the metadata and the ![Rule icon](../../../_icons/branded/ruler.svg) icon identifies the stream references. 
 
    - The stream Id is identified for each stream. In the example above, the Id of the stream in the first row is `PHI-TNK01`.
 
@@ -209,7 +209,7 @@ The asset preview displays a list of the assets that will be created using the a
 
   - **Show Stream References**
   
-1. To filter the data in a column, click ![filter](images/metadata-filter.png) in the column header, enter the text to find, and press Enter.
+1. To filter the data in a column, click ![filter](../../../_icons/branded/filter.svg) in the column header, enter the text to find, and press Enter.
    
 1. Click the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
 

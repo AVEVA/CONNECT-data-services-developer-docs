@@ -12,7 +12,7 @@ You must have the role of Tenant Administrator to add and manage the identity pr
 
 ## Add an identity provider
 
-To add a new identity provider, follow these steps:
+To add a new identity provider:
 
 1. In the left pane, select **Security** > **Identity Providers**.
 

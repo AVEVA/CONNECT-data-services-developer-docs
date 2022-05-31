@@ -6,7 +6,7 @@ uid: gsAuthorizationCodeClients
 
 Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view assets. For more information about authorization code clients, see [Authorization code clients](xref:ccClients#authorization-code-client).
 
-To create an authorization code client, follow these steps:
+To create an authorization code client:
 
 1. In the left pane, select **Security > Clients**.
 

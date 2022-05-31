@@ -35,7 +35,3 @@ The following tasks can only be performed by community administrators on the adm
 - <xref:community-delete>
 
 	Delete the community.
-
-- <xref:communities-manage-default-admins>
-
-    Configure which roles are automatically added as the default Community Administrators while you are creating or joining a community.

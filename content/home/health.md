@@ -4,7 +4,7 @@ uid: home-health
 
 # Health
 
-The **Health** page displays the health status of each service, namespace, and community in your OSIsoft Cloud Services (OCS) tenant. You can access this page from the **Home** page by selecting **System Health**.
+The **Health** page displays the health status of each service and namespace in your OSIsoft Cloud Services (OCS) tenant. You can access this page from the **Home** page by selecting **System Health**.
 
 ## Service Health
 
@@ -12,7 +12,7 @@ The **Health** page displays the health status of each service, namespace, and c
 
 ## Community Health
 
-**Community Health** includes a health status for [communities](xref:communities). For more information about each icon, see [Statuses](#statuses).
+**Community Health** includes a health status of the [communities](xref:communities) service. A health status is listed for each available region. For more information about each icon, see [Statuses](#statuses).
 
 ## Statuses
 

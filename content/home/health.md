@@ -12,7 +12,13 @@ The **Health** page displays the health status of each service and namespace in 
 
 ## Community Health
 
-**Community Health** includes a health status of the [communities](xref:communities) service. A health status is listed for each available region. For more information about each icon, see [Statuses](#statuses).
+**Community Health** includes a health status of the [communities](xref:communities) service. A health status is listed for each available region. 
+
+- If a region is **Ok** ![Okay icon](../_icons/custom/check-circle.svg), then the streams shared from that region are accessible to the community as a whole. 
+
+- If a region is **Bad** ![Alarm icon](../_icons/custom/close-circle.svg), then the streams shared from that region are not available to the community as a whole. 
+
+For more information about each icon, see [Statuses](#statuses).
 
 ## Statuses
 

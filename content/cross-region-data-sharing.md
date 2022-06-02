@@ -13,21 +13,27 @@ For example, if your default OCS region is `US-West`, OCS may process your data 
 
 ![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
 
-## How data is transferred across regions
+## Cross region data sharing scenarios
 
-Help wanted
+When cross-region data sharing is enabled, OCS may share data across regions under the following circumstances.
 
-## When data is transferred across regions
+### Additional processing
 
-Help wanted
+OCS may process operational data stored in your default in a non-default region for performance optimization before it displays in your browser session. In these instances, data from your default region resides in the non-default region processing service memory up to several hours.
+
+### Data augmentation
+
+In use cases where your operational data is stored in both default and non-default regions, OCS may process operational data from the default region in the non-default region. OCS then adds and processes additional operational data from the non-default region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service's memory up to several hours.
+
+### Temporary storage
+
+In some instances where OCS sends operational data stored in your default region for processing or data augmentation in non-default regions, OCS may temporarily persist data from your default region in the non-default region before it is processed. This temporary storage is used for performance optimization. In these instances, data from your default region resides in the non-default region processing service storage and memory up to several hours.
 
 ## Opt out of cross-region data sharing
 
-For data security and [General Data Protection Regulation](https://gdpr.eu/) (GDPR) compliance purposes, you can opt out of cross-region data sharing for a namespace. If you opt out of cross-region data sharing, the namespace data is not processed outside of the region where it resides. However, disabling this setting restricts namespace resource availability in other regions.
+Optionally, you can opt out of cross-region data sharing for a namespace. If you opt out of cross-region data sharing, the namespace data is not processed outside of the region where it resides.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
-
-Disabling this setting may reduce performance and searchability.
 
 ### To opt out of cross-region data sharing
 

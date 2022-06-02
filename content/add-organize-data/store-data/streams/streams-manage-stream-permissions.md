@@ -39,9 +39,11 @@ When editing permissions for a single stream, each user role that has permission
 
 1. When you are finished editing permissions, select **Save**.
 
-### [Multiple streams](#tab/tabid-2)
+### [Bulk streams](#tab/tabid-2)
 
 When editing permissions for multiple streams, no user roles or permission settings are pre-populated in the window because the permissions for each stream are unique. Therefore you must add each user role that you want to have permissions on the stream before editing each permission setting.
+
+Updating streams in bulk uses a patch operation. Only the permissions for role entries that you edit are updated, and any perviously existing permissions assigned to each role remain in place.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -64,7 +66,7 @@ When editing permissions for multiple streams, no user roles or permission setti
 
 1. When you are finished editing permissions, select **Save**.
 
-    **Note:** This action overwrites any previous permission settings applied to the affected user roles.
+    The edited permissions and roles are updated. This action overwrites any previous permission settings applied to the affected user roles. For more information, see [Bulk stream permission management notifications](#bulk-stream-permission-management-notifications).
 
 ***
 
@@ -83,3 +85,7 @@ You can edit the default user roles and permissions added to a stream when it is
 	**Warning!** Use of this option applies updated permission settings to *all* streams in the namespace. Use this option with care, as it overwrites existing permission settings.
 
 1. When you are finished editing permissions, select **Save**.
+
+## Bulk stream permission management notifications
+
+When you update stream permissions in bulk or use the `Manage Default Permissions` window to update all namespace stream permissions, OSIsoft Cloud Services (OCS) runs a job to update applicable permissions. When this job completes, the completed operation is listed in your notifications. 

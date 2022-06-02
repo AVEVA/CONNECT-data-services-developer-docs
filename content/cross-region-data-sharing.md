@@ -33,7 +33,7 @@ In some instances where OCS sends operational data stored in your default region
 
 ## Opt out of cross-region data sharing
 
-Optionally, you can opt out of cross-region data sharing for a namespace. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the region of your default region.
+Optionally, you can opt out of sharing operational data from namespaces and communities across regions. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the region of your default region.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 

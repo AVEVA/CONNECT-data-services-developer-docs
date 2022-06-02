@@ -4,9 +4,9 @@ uid: cross-region-data-sharing
 
 # Cross-region data sharing
 
-By default, OSIsoft Cloud Services (OCS) processes your tenant's namespace and community data in other geographical regions for the following purposes:
+By default, OSIsoft Cloud Services (OCS) processes operational data from your tenant's namespaces and communities in other geographical regions. OCS shares this data for the following purposes:
 
-- Performance reasons 
+- Performance optimization 
 - Enabling users to search and access data that may reside across regions
 
 For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below.
@@ -17,7 +17,7 @@ For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
 
 ## Cross region data sharing scenarios
 
-When cross-region data sharing is enabled, OCS may share data across regions under the following circumstances.
+When cross-region data sharing is enabled, OCS may share data across regions under the following circumstances. Cross-region data sharing is enabled by default.
 
 ### Additional processing
 

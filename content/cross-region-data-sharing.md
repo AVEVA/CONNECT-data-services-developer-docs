@@ -9,9 +9,11 @@ By default, OSIsoft Cloud Services (OCS) processes your tenant's namespace and c
 - Performance reasons 
 - Enabling users to search and access data that may reside across regions
 
-For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below. For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
+For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below.
 
 ![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
+
+For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
 
 ## Cross region data sharing scenarios
 
@@ -19,7 +21,7 @@ When cross-region data sharing is enabled, OCS may share data across regions und
 
 ### Additional processing
 
-OCS may process operational data stored in your default in a non-default region for performance optimization before it displays in your browser session. In these instances, data from your default region resides in the non-default region processing service memory up to several hours.
+OCS may process operational data stored in your default region in a non-default region for performance optimization before it displays in your browser session. In these instances, data from your default region resides in the non-default region processing service memory up to several hours.
 
 ### Data augmentation
 
@@ -31,7 +33,7 @@ In some instances where OCS sends operational data stored in your default region
 
 ## Opt out of cross-region data sharing
 
-Optionally, you can opt out of cross-region data sharing for a namespace. If you opt out of cross-region data sharing, the namespace data is not processed outside of the region where it resides.
+Optionally, you can opt out of cross-region data sharing for a namespace. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the region of your default region.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 

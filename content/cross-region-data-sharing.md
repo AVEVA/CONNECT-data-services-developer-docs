@@ -9,11 +9,9 @@ By default, OSIsoft Cloud Services (OCS) processes operational data from your te
 - Performance optimization 
 - Enabling users to search and access data that may be stored across regions
 
-For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below.
+For example, if your default OCS region is `US-West`, OCS may process your data in the `EU-West` region, as depicted below. For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
 
 ![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
-
-For a list of available regional endpoints, see <xref:regional-endpoints-ocs>.
 
 ## Cross region data sharing scenarios
 

@@ -127,7 +127,7 @@ In this step, you specify the token that identifies the stream measurement in th
 
 1. In the `Configure Stream Reference Name Token` pane, select the ![Select token icon](../../../_icons/branded/swap-horizontal.svg) icon to open the `Select Stream Reference Name Token` window.
 
-1. Select the token that identifies the stream measurement and select **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. --> <!--VTT, 9/23/21: Agreed. QA testing of procedures is recommended for the new UI rebranding effort.-->
+1. Select the token that identifies the stream measurement and click **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. --> <!--VTT, 9/23/21: Agreed. QA testing of procedures is recommended for the new UI rebranding effort.-->
 
  In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](../../../_icons/branded/ruler.svg) icon.
 
@@ -147,7 +147,7 @@ In this step, you specify the token that identifies the stream measurement in th
 
 1. For each value on the left, enter or select the value to use in its place in the text field on the right.
    
-   If the asset rule is based on an asset type, select in the text field to display a list of measurements or properties that are defined in the asset type and select the value to map to the token value. If the asset rule is not based on a type, then you must manually enter the values for each of the mappings.
+   If the asset rule is based on an asset type, select the text field to display a list of measurements or properties that are defined in the asset type and select the value to map to the token value. If the asset rule is not based on a type, then you must manually enter the values for each of the mappings.
 
    In this example, `PHI` is mapped to `Philadelphia`, and `SL` is mapped to `San Leandro`.
 

@@ -189,7 +189,7 @@ Use the PI to OCS Agent Settings to add a descriptive name for the agent and to 
 ![Agent description and hostname displayed in PI to OCS Agents window](../../images/pi-to-ocs-agents-hostname.png)
 <!--AF 11/12/21 I would change the callouts in the image to be minimal, like "Agent description" and "host name". Then add any additional explanation here in text. It will be easier to read and easier to maintain. -->
 
-To configure data privacy and add an agent descriptions:
+To configure data privacy and add an agent description:
 
 1. Open the PI to OCS Agent Configuration Utility.
 

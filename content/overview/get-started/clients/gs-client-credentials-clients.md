@@ -8,11 +8,11 @@ Client-credentials clients are used for server-to-server communication where no 
 
 **Note:** Client modifications may take up to an hour before being visibly updated.
 
-To create a client-credentials client, follow these steps:
+To create a client-credentials client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. From the **Client Type** field, select **Client-Credentials**. This option is the default.
+1. In the **Client Type** dropdown list, select **Client-Credentials**. This option is the default.
 
 1. In the toolbar, select **Add Client**.
 

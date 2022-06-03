@@ -8,7 +8,7 @@ To be assigned access to AVEVA Data Hub, users must belong to one or more groups
 
 **Note:** All users created in your account belong to the default 'User' group in AVEVA Connect.
 
-To create a group and add users to the group, follow these steps:
+To create a group and add users to the group:
 
 1. From the AVEVA Connect home page, select the menu icon, then select **User Management**.
 

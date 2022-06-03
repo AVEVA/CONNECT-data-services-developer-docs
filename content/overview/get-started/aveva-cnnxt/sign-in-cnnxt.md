@@ -16,7 +16,7 @@ This topic explains how to navigate to AVEVA Data Hub via [AVEVA Connect](https:
 
 Some AVEVA Connect accounts use Active Directory Federation Services (AD FS), which enables authentication and authorization to AVEVA Connect applications using the corporate user identity. This enables you to use single sign-on with the user account from the corporate domain.
 
-To sign-in with single sign-on, follow these steps:
+To sign-in with single sign-on:
 
 1. Open the [AVEVA Connect page](https://connect.aveva.com/). 
 
@@ -32,7 +32,7 @@ To sign-in with single sign-on, follow these steps:
 
 ## Single user sign-in
 
-To sign in as a single user, follow these steps:
+To sign in as a single user:
 
 1. Open the [AVEVA Connect page](https://connect.aveva.com/). 
 
@@ -56,7 +56,7 @@ A connection code enables third-party users to access specific accounts associat
 
 **Note:** You must have a federated connection.
 
-To sign in as a third-party user using a connection code, follow these steps:
+To sign in as a third-party user using a connection code:
 
 1.	On the AVEVA Connect login page, enter your email address.
 

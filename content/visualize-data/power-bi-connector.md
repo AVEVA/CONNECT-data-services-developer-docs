@@ -22,7 +22,7 @@ The following are required before you install and use AVEVA Data Hub Power BI Co
 
 ## Install Power BI Connector
 
-To install the AVEVA Data Hub Power BI Connector, follow these steps:
+To install the AVEVA Data Hub Power BI Connector:
 
 1. In the left pane, select **Analytics** > **Data Views**.
 

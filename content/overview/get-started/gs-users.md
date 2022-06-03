@@ -16,15 +16,15 @@ To invite a user to your tenant:
 
 1. In the **Contact First Name** and **Contact Last Name** fields, enter a first and last name for the user.  
 
-1. In the **Contact Email** field, enter the contact email. The invitation is sent to the user at this email address. Ensure that the email address is correct so that the invitation is not sent to an unintended recipient.
+1. In the **User Email** field, enter the first few characters of the user's contact email and then select the correct email address from the dropdown list.
 
-1. (Optional) Enable additional roles for the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is invited.
+   **Note**: The user must exist in AVEVA Connect before being added within AVEVA Data Hub.
 
-1. Select **Invite**. 
+1. (Optional) On the **Tenant Roles** tab, assign additional roles to the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is added.
 
-   An invitation is sent to the email address specified in the `Contact Email` field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
+1. Select **Add**. 
 
-1. When the user receives the invitation, the user should log in using AVEVA Connect. Once the user has logged in, the user status changes to *Active*.
+   A welcome email is sent to the email address specified in the `Contact Email` field.
 
 ## Next step
 

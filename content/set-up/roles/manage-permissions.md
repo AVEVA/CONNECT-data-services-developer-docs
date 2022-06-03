@@ -6,7 +6,7 @@ uid: manage-permissions
 
 As an administrator, you manage user access to AVEVA Data Hub resources by specifying what actions members of a role can take. You can grant or deny a role access to read, write and/or delete data, as well as manage permissions.
 
-To manage role permissions, follow these steps:
+To manage role permissions:
 
 1. Open the AVEVA Data Hub portal.
  

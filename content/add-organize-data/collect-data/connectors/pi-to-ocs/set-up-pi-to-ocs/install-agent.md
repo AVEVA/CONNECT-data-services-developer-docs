@@ -42,7 +42,7 @@ Complete the following procedures to install the PI to Data Hub Agent:
 
 ## Install the PI to Data Hub Agent
 
-To install the PI to Data Hub Agent, follow these steps:
+To install the PI to Data Hub Agent:
 
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
@@ -104,4 +104,4 @@ To verify the installation:
 
    ![Agent status](../../images/details-pane.png)
 
-   **Note:** The agent status is also displayed in the PI to Data Hub Configuration Utility. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-status-states).
+   **Note:** The agent status is also displayed in the PI to Data Hub Configuration Utility. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-states).

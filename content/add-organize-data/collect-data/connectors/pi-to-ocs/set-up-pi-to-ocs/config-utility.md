@@ -31,7 +31,7 @@ The PI to Data Hub Agent Configuration Utility opens after you install or upgrad
 
 **Note:** If you use a different user account than the one that was used originally to install the agent, authentication is required before you can access the utility. 
 
-To open the PI to Data Hub Agent Configuration Utility, follow these steps:
+To open the PI to Data Hub Agent Configuration Utility:
 
 1. Select **Start** > **AVEVA** > **PI to Data Hub Agent Configuration Utility**, and then select **Yes** to confirm.
 
@@ -70,7 +70,7 @@ To add an AF server:
    * IP address
    * Connection status and timeout
 
-1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-ocs).
+1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout**.
 
@@ -82,7 +82,7 @@ To add an AF server:
 
    **Note:** After you save the AF server configuration settings and restart and register the agent, you need to select a default Data Archive in PI System Explorer to resolve substitution references for AF element attributes.
 
-## Usage of server names and alternate display names within OCS
+## Usage of server names and alternate display names within AVEVA Data Hub
 
 The AF server name, or its alternate display name, displays on the PI to OCS Agents page within OCS and is referenced in the path of an asset's metadata, which is visible in Asset Explorer (`__Path`).
 
@@ -156,7 +156,7 @@ To add a Data Archive:
    
 1. (Optional) To add an alternate name, select the **Alternate Display Name** pencil icon, type an alternate name, select **Set Display Name** and then select **Close**.
 
-   **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-ocs).
+   **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. See [Usage of server names and alternate display names within AVEVA Data Hub](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout (sec)**.
 

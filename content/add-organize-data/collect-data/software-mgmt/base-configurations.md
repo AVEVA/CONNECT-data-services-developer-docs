@@ -36,7 +36,7 @@ To create a edge system base configuration and export it for use:
 
 1. To import a configuration, select **Import Configuration**, then browse to the JSON file that contains the configuration, and select **Import**.
 
-1. **Optional:** In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
+1. (Optional) In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
@@ -70,7 +70,7 @@ To modify a base configuration and export it for use:
 
 1. Modify the template name, **Type**, and **Version** as needed.
 
-1. **Optional:** In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
+1. (Optional)  In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 

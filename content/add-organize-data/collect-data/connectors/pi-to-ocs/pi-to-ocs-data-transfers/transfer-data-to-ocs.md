@@ -38,7 +38,7 @@ To name the data transfer:
 
 1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
 
-1. In the `Manage Agent` tab, select **Create Transfer**.
+1. In the **Manage Agent** tab, select **Create Transfer**.
 
    The `Transfer Setting` window opens.
 

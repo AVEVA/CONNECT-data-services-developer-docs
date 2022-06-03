@@ -30,7 +30,7 @@ A namespace is similar to a full PI Server. Much like a PI Server, a namespace h
 
 ## Namespace IDs
 
-An AVEVA Data Hub namespace ID is defined by the solution ID in the AVEVA Connect folder. You can view a namespace's ID by clicking the Change Namespace down arrow in the AVEVA Data Hub portal. The namespace description is synchronized with the AVEVA Connect folder name.
+An AVEVA Data Hub namespace ID is defined by the solution ID in the AVEVA Connect folder. You can view a namespace's ID by selecting the Change Namespace dropdown list in the AVEVA Data Hub portal. The namespace description is synchronized with the AVEVA Connect folder name.
 
 ## Querying data across namespaces
 

@@ -12,6 +12,8 @@
   href: identity-client-credential-clients-roles.md
 - name: Community identity provider
   href: community-identity-provider.md
+- name: Community tenant collection acls
+  href: community-tenant-collection-acls.md
 - name: Device code clients
   href: identity-device-code-clients.md
 - name: Hybrid clients

@@ -55,7 +55,7 @@ To add an AF server:
 
    **Note**: If a Data Archive server was added first, select **Add Asset Framework Server** on the left side of the window instead.
 
-1. In the **AF Server Name** box, enter the name of the AF server, and then select **Add Server**.
+1. In the **AF Server Name** field, enter the name of the AF server, and then select **Add Server**.
 
    The utility displays the server details.
 
@@ -72,7 +72,7 @@ To add an AF server:
 
 1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-ocs).
 
-1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout** box.
+1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout**.
 
 1. To keep the current AF server configuration settings and restart the agent, select **Save**.
 

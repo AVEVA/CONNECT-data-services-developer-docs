@@ -30,7 +30,7 @@ To create an authorization code client:
    
    The application specifies a URL from this list when it logs out of AVEVA Data Hub, and the identity server sends the user to this URL after a successful log out.
    
-1. (Optional) Enter URLs in the **Allowed CORS Origin(s)** text field, then click **+** to add it to the list. <!--VTT, 12/13/21: New step added since it was missing. Requested by N. Parakh & A. Woodall.-->
+1. (Optional) Enter URLs in the **Allowed CORS Origin(s)** text field, then select **+** to add it to the list. <!--VTT, 12/13/21: New step added since it was missing. Requested by N. Parakh & A. Woodall.-->
    
    Designate other URLs from which the application is allowed to make requests against AVEVA Data Hub. For example, this may be necessary if the user authenticates from an application running at one URL but the result of the authentication is sent to an application running at a different URL.
 

@@ -8,7 +8,7 @@ When a role is assigned to a group, all the users in that group will see the AVE
 
 To assign a group to roles, perform the following steps:
 
-1.	From the AVEVA Connect home page, click the menu icon, then select **User Management**.
+1.	From the AVEVA Connect home page, select the menu icon, then select **User Management**.
 
 1. Select the **Groups** tab. 
 

@@ -219,6 +219,6 @@ It may take a few minutes for a PI System to register with AVEVA Data Hub. The t
 | Data Source Connection Issue  | Indicates the PI To Data Hub Agent cannot connect to the Data Archive. Some reasons for this status include the Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
 | Data Source Security Issue    | Indicates the Data Archive connection is unsecured and security settings need to be addressed. |
 | Missing Configuration         | The Data Archive server has not been configured in the PI to Data Hub Agent. |
-| Registration Failed           | Contact OSIsoft Customer support for assistance.             |
+| Registration Failed           | Contact [AVEVA Customer Support](https://softwaresupport.aveva.com) for assistance.             |
 | Registering                   | The PI to Data Hub Cloud portion is creating the necessary resources for the PI to Data Hub Agent. |
 | Shutdown                      | The last communication that the PI to Data Hub Cloud had with the agent was a shutdown message. |

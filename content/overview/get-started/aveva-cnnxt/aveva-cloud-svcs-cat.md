@@ -8,13 +8,13 @@ AVEVA Data Hub is one of the services available on AVEVA Connect. All AVEVA Conn
 
 ## AVEVA Connect services
 
-The AVEVA Connect home page lists all the services you have access to as a set of tiles. To be viewed as a tile on the home page, each service must be subscribed to in the AVEVA Cloud Services Catalog and turned on in a folder in AVEVA Connect. Click anywhere on the appropriate tile to launch the service you wish to use.
+The AVEVA Connect home page lists all the services you have access to as a set of tiles. To be viewed as a tile on the home page, each service must be subscribed to in the AVEVA Cloud Services Catalog and turned on in a folder in AVEVA Connect. Select the appropriate tile to launch the service you wish to use.
 
 ## Navigate to the Services Catalog
 
 The Services Catalog is accessed from the AVEVA Connect home page.
 
-1. From the AVEVA Connect home page, click the menu icon, then select **Services Catalog**.
+1. From the AVEVA Connect home page, Select the menu icon, then select **Services Catalog**.
  
    **Result:** The **Services Catalog** page opens.
 

@@ -16,7 +16,7 @@ If you encounter an error message and the PI to Data Hub Configuration Utility c
 
 1. Successfully connect and authenticate to AVEVA Data Hub.
 
-1. In the PI to Data Hub Configuration Utility, click the pencil icon to the right of **PI Mapping**.
+1. In the PI to Data Hub Configuration Utility, select the pencil icon to the right of **PI Mapping**.
 
 1. Follow the steps in [Create a PI mapping section](xref:pi-to-ocs-utility) to add a PI mapping.
 

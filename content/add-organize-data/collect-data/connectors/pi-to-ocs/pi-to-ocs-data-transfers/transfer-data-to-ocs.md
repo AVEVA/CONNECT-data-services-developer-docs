@@ -36,6 +36,8 @@ Transfer creation consists of the following tasks:
 
 To name the data transfer: 
 
+1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
+
 1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
 
 1. In the **Manage Agent** tab, select **Create Transfer**.
@@ -86,7 +88,7 @@ After naming the transfer, build an AF elements transfer list by setting query c
 
 To build an AF element:
 
-1. On the `Transfer` page, select the source AF database to search from the **AF Database** dropdown list.
+1. On the `Transfer` page, select the source AF database from the **AF Database** dropdown list.
 
    ![](../../images/transfer-win.png)
 

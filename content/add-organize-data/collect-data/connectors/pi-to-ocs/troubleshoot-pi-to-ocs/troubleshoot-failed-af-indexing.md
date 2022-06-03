@@ -4,7 +4,7 @@ uid: troubleshoot-failed-af-indexing
 
 # Troubleshoot failed AF indexing
 
-Immediately after PI to OCS Agent registration, AF indexing is initiated and must finish successfully before a new transfer can be defined. The progress of AF indexing is displayed next to **AF Server Index Progress** on the **Agent Overview** pane, as shown in the image below.
+Immediately after PI to Data Hub Agent registration, AF indexing is initiated and must finish successfully before a new transfer can be defined. The progress of AF indexing is displayed next to **AF Server Index Progress** on the **Agent Overview** pane, as shown in the image below.
 
 ![  ](../../images/failed-af-indexing.png)
 

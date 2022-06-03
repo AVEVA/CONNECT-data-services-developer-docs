@@ -16,7 +16,7 @@ To add a hybrid client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select **Hybrid**.
+1. In the **Client Type** dropdown list, select **Hybrid**.
 
 1. In the toolbar, select **Add Client**.
 
@@ -26,11 +26,11 @@ To add a hybrid client:
 
 1. (Optional) Select the **Allow Refresh Token** checkbox if the application uses refresh tokens to keep users logged in to the portal.
 
-1. In the **Allowed Redirect URL(s)** box, enter a URL and select **+** to add it to the list.
+1. In the **Allowed Redirect URL(s)** field, enter a URL and select **+** to add it to the list.
 
    The application specifies one of the URLs in this list during authentication, and the AVEVA Data Hub identity server returns the results of the authentication to this URL.
 
-1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+** to add it to the list. 
+1. (Optional) In the **Allowed Logout Redirect URL(s)** field, enter a URL and select **+** to add it to the list. 
 
    The application specifies a URL from this list when it logs out, and the AVEVA Data Hub identity server sends the user to this URL after a successful log out.
 

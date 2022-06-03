@@ -50,7 +50,7 @@ To install the AVEVA Data Hub Power BI Connector, follow these steps:
 
 Use AVEVA Data Hub Power BI Connector to retrieve AVEVA Data Hub data views for use in Microsoft Power BI.
 
-To retrieve data views, follow these steps:
+To retrieve data views:
 
 1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `AVEVA`.<br>The AVEVA Data Hub Data Views connector file displays in the `All` pane.
 

@@ -10,7 +10,7 @@ You can edit saved transfer settings and add or remove AF elements and/or PI poi
 
 <!-- VTT: Add note about how the Opt-in setting (Transfer Settings window) affects streams/assets being deleted from cloud storage or replicated, depnding on the client's preference/option selection.-->
 
-To edit an existing transfer, follow these steps:
+To edit an existing transfer:
 
 1. In the `PI to Data Hub Agents` window, select the agent that contains the transfer you want to edit.
 

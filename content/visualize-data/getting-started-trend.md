@@ -6,7 +6,7 @@ uid: CreateTrendSession
 
 Use trace data in a trend session to monitor assets, anticipate problems, and proactively perform preventative maintenance.
 
-To create a trending session, follow these steps:
+To create a trending session:
 
 1. In the left pane, select **Visualization** > **Trend**.
    

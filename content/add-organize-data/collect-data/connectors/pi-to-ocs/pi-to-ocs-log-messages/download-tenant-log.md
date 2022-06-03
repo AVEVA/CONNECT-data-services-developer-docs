@@ -6,7 +6,7 @@ uid: download-tenant-log
 
 The AVEVA Data Hub logs contain troubleshooting information, including messages about tenant-related activity, errors, and system messages. By default, logs report on activities that occurred within the past hour. <!--AF 11/16/21 This topic seems like it would be useful for other things in addition to PI to Data Hub. When we create a support section in the help, this should move there and a link should be added in this section.-->
 
-To download a tenant log in a .csv file, follow these steps:
+To download a tenant log in a .csv file:
 
 1. In the left pane, select **Support** > **Logs**.
    

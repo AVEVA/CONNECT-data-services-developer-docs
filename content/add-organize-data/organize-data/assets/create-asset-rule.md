@@ -79,7 +79,7 @@ In this step, you specify the naming pattern used to find and match the appropri
 
 1. In the **Match** list, select the option that describes how to identify the value in the stream name. 
 
-1. In the **and name it** text box, enter a name for the token.
+1. In the **and name it** text field, enter a name for the token.
 
 1. Select **Capture**.  
 
@@ -125,11 +125,11 @@ In this step, you specify the naming pattern used to find and match the appropri
 
 In this step, you specify the token that identifies the stream measurement in the stream. Then you map values for each token.
 
-1. In the `Configure Stream Reference Name Token` pane, select the **Select token** ![Select token icon](images/change-property-icon.png) icon to open the `Select Stream Reference Name Token` window.
+1. In the `Configure Stream Reference Name Token` pane, select the ![Select token icon](../../../_icons/branded/swap-horizontal.svg) icon to open the `Select Stream Reference Name Token` window.
 
 1. Select the token that identifies the stream measurement and select **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. --> <!--VTT, 9/23/21: Agreed. QA testing of procedures is recommended for the new UI rebranding effort.-->
 
- In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](images/measurement-icon.png) icon.
+ In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](../../../_icons/branded/ruler.svg) icon.
 
 1. Select a token in the `Token Mappings Status` list.
 
@@ -145,9 +145,9 @@ In this step, you specify the token that identifies the stream measurement in th
 
    In the `Tank Rule A` example, the `site` token is selected. **Rename Token Values** is selected, and **Generate Mappings** generates two values, `PHI` and `SL`. 
 
-1. For each value on the left, enter or select the value to use in its place in the text box on the right.
+1. For each value on the left, enter or select the value to use in its place in the text field on the right.
    
-   If the asset rule is based on an asset type, select in the text box to display a list of measurements or properties that are defined in the asset type and select the value to map to the token value. If the asset rule is not based on a type, then you must manually enter the values for each of the mappings.
+   If the asset rule is based on an asset type, select the text field to display a list of measurements or properties that are defined in the asset type and select the value to map to the token value. If the asset rule is not based on a type, then you must manually enter the values for each of the mappings.
 
    In this example, `PHI` is mapped to `Philadelphia`, and `SL` is mapped to `San Leandro`.
 
@@ -171,7 +171,7 @@ In this step, you specify how the rule builds assets by assigning the tokens to 
 
   - **Description** - Optional.
 
-   **Note:** The **Stream Reference Name** field shows the token that was configured in [Step 2](#step-2) as the measurement.
+   **Note:** The **Stream Reference Name** shows the token that was configured in [Step 2](#step-2) as the measurement.
 
 1. To map metadata values, do one of the following:
 
@@ -179,7 +179,7 @@ In this step, you specify how the rule builds assets by assigning the tokens to 
 
   - If the asset rule is not based on an asset type, complete the following steps for each metadata you want to add:
 
-    1. Click **Add Metadata**.
+    1. Select **Add Metadata**.
     
     1. In the **Name** field, enter the name for the metadata. 
     
@@ -197,7 +197,7 @@ The asset preview displays a list of the assets that will be created using the a
 
    **Note:** 
 
-   - The ![Tag icon](images/tag-icon.png) icon identifies the metadata and the ![Rule icon](images/measurement-icon.png) icon identifies the stream references. 
+   - The ![Tag icon](../../../_icons/branded/tag.svg) icon identifies the metadata and the ![Rule icon](../../../_icons/branded/ruler.svg) icon identifies the stream references. 
 
    - The stream Id is identified for each stream. In the example above, the Id of the stream in the first row is `PHI-TNK01`.
 
@@ -209,7 +209,7 @@ The asset preview displays a list of the assets that will be created using the a
 
    - **Show Stream References**
   
-1. To filter the data in a column, click ![filter](images/metadata-filter.png) in the column header, enter the text to find, and press Enter.
+1. To filter the data in a column, select ![filter](../../../_icons/branded/filter.svg) in the column header, enter the text to find, and press **Enter**.
    
 1. On the `Details` tab of the `Preview Information` pane, review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
 
@@ -217,7 +217,7 @@ The asset preview displays a list of the assets that will be created using the a
    
    ![Asset statistics](images/stats.png)
   
-1. To return to earlier steps and make any changes to the tokens, token mapping, or asset configuration, click **Back**.
+1. To return to earlier steps and make any changes to the tokens, token mapping, or asset configuration, select **Back**.
 
 1. To save the rule configuration without running it, select **Save as Draft**. Use this option to continue modifying the rule later.
 
@@ -225,7 +225,7 @@ The asset preview displays a list of the assets that will be created using the a
 
    The rule appears in the Asset Rule Builder list and a message confirms that the rule was successfully created. The rule is executed and applied to the streams, and the assets are created.
 
-   **Note:** Click on the rule in the Asset Rule Builder list to open a pane that displays any errors that occurred during the execution of the rule.
+   **Note:** Select the rule in the Asset Rule Builder list to open a pane that displays any errors that occurred during the execution of the rule.
 
 ## Review the assets
 

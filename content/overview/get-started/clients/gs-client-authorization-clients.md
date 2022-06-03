@@ -8,11 +8,11 @@ Authorization code clients are used with customer web applications that use AVEV
 
 **Note:** Client modifications may take up to an hour before being visibly updated.
 
-To create an authorization code client, follow these steps:
+To create an authorization code client:
 
 1. In the left pane, select **Security > Clients**.
 
-1. In the **Client Type** field, select **Authorization Code**.
+1. In the **Client Type** dropdown list, select **Authorization Code**.
 
 1. In the toolbar, select **Add Client**.
 

@@ -6,7 +6,7 @@ uid: ConvertAssetToAssetType
 
 Convert an asset to an asset type to use the asset definition as a template to create additional assets. The original asset is still available after the asset type is created.
 
-To convert an asset to an asset type, follow these steps:
+To convert an asset to an asset type:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 

@@ -8,7 +8,7 @@ To send Open Message Format (OMF) data to AVEVA Data Hub, you must first configu
 
 Use this get started procedure to become familiar with OMF connections.
 
-To create an OMF connection, follow these steps:
+To create an OMF connection:
 
 1. In the left pane, select **Security** > **Clients**.
 

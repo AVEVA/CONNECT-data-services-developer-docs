@@ -80,9 +80,9 @@ Allowed for these roles:
 
 ---
 
-## `List Streams By Namespace (GET Method)`
+## `List Streams By Namespace 1`
 
-<a id="opIdCommunitySearch_List Streams By Namespace (GET Method)"></a>
+<a id="opIdCommunitySearch_List Streams By Namespace 1"></a>
 
 Searches for shared streams within a namespace by query.
 
@@ -148,9 +148,9 @@ Allowed for these roles:
 
 ---
 
-## `Search Streams By Namespace (POST Method)`
+## `Search Streams By Namespace 2`
 
-<a id="opIdCommunitySearch_Search Streams By Namespace (POST Method)"></a>
+<a id="opIdCommunitySearch_Search Streams By Namespace 2"></a>
 
 Searches for shared streams within a namespace by query.
 

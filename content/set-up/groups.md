@@ -18,9 +18,9 @@ To add a group:
 
 1. In the toolbar, select **Add Group**.
 
-1. Select an Identity Provider from the dropdown that supports groups, such as Azure Active Directory.
+1. Select an Identity Provider from the dropdown list that supports groups, such as Azure Active Directory.
 
-1. Begin entering text in the Name field to search for an existing group and select the group you wish to add for access to assets, resources and services.
+1. Begin entering text in the `Name` field to search for an existing group and select the group you wish to add for access to assets, resources and services.
 
 1. Specify the roles to assign to this new group.
 
@@ -48,5 +48,5 @@ To remove a group:
 
 1. Select **Remove Group**.
 
-1. To confirm that you want to remove the group, select **Remove**  in the message window or select **Cancel** to cancel the request.
+1. To confirm that you want to remove the group, select **Remove** in the message window or select **Cancel** to cancel the request.
  

@@ -110,7 +110,7 @@ To verify the installation:
 
 1. On the `PI to OCS Agents` page, select the connection you created.
 
-1. On the `Details` pane, verify that Registered appears next to the **Agent Status** field.
+1. On the `Details` pane, verify that Registered appears next to **Agent Status**.
 
    ![Agent status](../../images/details-pane.png)
 

@@ -10,7 +10,7 @@ To create a client-credentials client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. From the **Client Type** field, select **Client-Credentials**. This is the option that is displayed by default.
+1. In the **Client Type** dropdown list, select **Client-Credentials**. This is the option that is displayed by default.
 
 1. In the toolbar, click **Add Client**.
 
@@ -27,7 +27,6 @@ To create a client-credentials client:
    The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
 1. Select **Continue**.
-
 
   The `Add Secret` window opens.
 

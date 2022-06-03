@@ -40,7 +40,7 @@ To create an asset:
 
 1. Select **MyData.NorthAmerica.SLTC.PumpA** from the list and select **Add**.
 
-1. In the text box below the **Stream References** label, enter *Output Pump State* as the user-friendly name for the stream reference.
+1. In the **Stream References** field, enter *Output Pump State* as the user-friendly name for the stream reference.
 
 1. Assign a unit of measure (UoM) to the stream properties, select **Configure UOMs**.  
 

@@ -16,7 +16,7 @@ To add a client-credentials client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select **Client-Credentials**. This option is displayed by default.
+1. In the **Client Type** dropdown list, select **Client-Credentials**. This option is displayed by default.
 
 1. In the toolbar, select **Add Client**.
 

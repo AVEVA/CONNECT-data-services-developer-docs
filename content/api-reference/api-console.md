@@ -16,7 +16,7 @@ To use the API Console:
 
 1. Select an action from the **GET/POST/PUT/DELETE/PATCH** dropdown list.
 
-1. Type a slash (/) in the text box to display a dropdown list.
+1. Type a slash (/) in the text field to display a dropdown list.
 
 1.  If you selected a tenant-scoped path in the second step, you can take any of the following actions:
 

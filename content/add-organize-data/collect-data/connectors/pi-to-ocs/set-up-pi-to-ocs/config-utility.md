@@ -74,7 +74,7 @@ To add an AF server:
 
 1. (Optional) To add an alternate name that appears in in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. 
 
-1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout** field.
+1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout**.
 
 1. To keep the current AF server configuration settings and restart the agent, select **Save**.
 
@@ -94,7 +94,7 @@ To select the default Data Archive:
 
 1. Select **File** > **Server Properties**.
 
-1. In the `PI AF Server Properties` window, select the **Default Data Server** down arrow, and then select the data server to be the default.<!--AF 11/12/21 what is Default Data Server down arrow???-->
+1. In the `PI AF Server Properties` window, select the data server from the **Default Data Server** dropdown list.
 
 1. Select **Apply**, then select **OK** to save the selection.
  
@@ -110,7 +110,7 @@ To create an AF mapping:
 
 1. Open the PI to OCS Agent Configuration Utility.
 
-1. Select the pencil icon next to the **AF Mapping** field.
+1. Select the pencil icon next to **AF Mapping**.
    
 1. In the `Configure AF Mapping` window, for each mapping you want to add, select an identity and select **Save**.
 
@@ -148,7 +148,7 @@ To add a Data Archive:
    
 1. (Optional) To add an alternate name that appears in the stream ID and in the portal if you opted to display it, select the **Alternate Display Name** pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. 
 
-1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout (sec)** field.
+1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout (sec)**.
 
 1. (Optional) To confirm that the connection to the Data Archive is working, select **Test Connection**.
 
@@ -168,7 +168,7 @@ To create a PI mapping:
 
 1. Navigate to the `Data Archive details` page.
 
-1. Select the pencil icon next to the **PI Mapping** field.
+1. Select the pencil icon next to **PI Mapping**.
  
    The `Configure Mapping` window opens.<!--AF 11/12/21 Why does PI Mapping have a screenshot, but AF mapping doesn't? Do we really need it?-->
 
@@ -203,7 +203,7 @@ To configure data privacy and add an agent descriptions:
 
 ## List of agent status states
 
-It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under the **Agent Status** field in the PI to OCS Configuration Utility.
+It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under **Agent State** in the PI to OCS Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |

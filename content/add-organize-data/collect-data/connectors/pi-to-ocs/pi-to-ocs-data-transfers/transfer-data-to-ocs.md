@@ -91,7 +91,7 @@ After naming the transfer, build an AF elements transfer list by setting query c
 
 To build an AF element
 
-1. On the `Transfer` page, select the **AF Database** down arrow, then select the source AF database to search.
+1. On the `Transfer` page, select the source AF database to search from the **AF Database** dropdown list.
 
    ![](../../images/transfer-win.png)
 

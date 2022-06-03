@@ -10,7 +10,7 @@ To add a stream:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
    
-1. From the **Streams** dropdown, select **Streams**.
+1. From the **Streams** dropdown list, select **Streams**.
  
 1. Select **Add Stream**.
 

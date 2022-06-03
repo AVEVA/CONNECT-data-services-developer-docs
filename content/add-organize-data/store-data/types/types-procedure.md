@@ -14,7 +14,7 @@ To add a base type:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. From the **Streams** dropdown, select **Types**.
+1. From the **Streams** dropdown list, select **Types**.
 
 1. Select **Add Type**.
 
@@ -42,7 +42,7 @@ To add a base type:
     
     - **Base Type** - Select the SDS type of the property from the dropdown.
     
-        **Note:** To find the type in the list, filter the property types by entering text in the **Filter Types** box and use the **System** or **Tenant** controls to include or exclude these types. **Tenant** includes any types that were previously created in the selected namespace for a particular tenant. **System** includes SDS types that are provided and defined such as `string`, `integer`, `double`, `datetime`, and `Boolean`.
+        **Note:** To find the type in the list, filter the property types by entering text in the **Filter Types** field and use the **System** or **Tenant** controls to include or exclude these types. **Tenant** includes any types that were previously created in the selected namespace for a particular tenant. **System** includes SDS types that are provided and defined such as `string`, `integer`, `double`, `datetime`, and `Boolean`.
     
     - **UOM** - (Optional) Select a unit of measure for the property from the list. 
    
@@ -56,7 +56,7 @@ To add a enum type:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. From the **Streams** dropdown, select **Types**.
+1. From the **Streams** dropdown list, select **Types**.
 
 1. Select **Add Type**.
 

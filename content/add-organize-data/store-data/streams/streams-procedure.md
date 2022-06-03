@@ -6,11 +6,11 @@ uid: gpStreams
 
 Sequential Data Store (SDS) stream data are values or events of the same SDS type. SDS stream data are stored in the Sequential Data Store and indexed by one or more properties defined by the stream's SDS type. 
 
-To add a stream, follow these steps:
+To add a stream:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
    
-1. From the **Streams** dropdown, select **Streams**.
+1. From the **Streams** dropdown list, select **Streams**.
  
 1. Select **Add Stream**.
 

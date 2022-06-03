@@ -14,7 +14,7 @@ To edit an existing client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select the appropriate client type.
+1. In the **Client Type** dropdown list, select the appropriate client type.
 
 1. Select an existing client.
 
@@ -30,7 +30,7 @@ To remove an existing client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select the appropriate client type.
+1. In the **Client Type** dropdown list, select the appropriate client type.
 
 1. Select an existing client.
 
@@ -44,7 +44,7 @@ To create a new secret for an existing Client-Credentials or Hybrid client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select the appropriate client type.
+1. In the **Client Type** dropdown list, select the appropriate client type.
 
 1. Select the client in the list.
 
@@ -64,7 +64,7 @@ To edit secret details for a client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select the appropriate client type.
+1. In the **Client Type** dropdown list, select the appropriate client type.
 
 1. Select the client in the list.
 
@@ -78,7 +78,7 @@ To remove a secret from a client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** field, select **Hybrid**.
+1. In the **Client Type** dropdown list, select **Hybrid**.
 
 1. Select the client in the list.
 

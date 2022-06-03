@@ -60,7 +60,7 @@ To add an AF server:
    The utility displays the server details.
 
    ![Agent status and state after refresh](../../images/af-details-refreshed.png)
-   **Note:** Once an AF Server has been added, the utility scans the configured AF server for referenced Data Archives. As the utility finds Data Archives, they are shown in the **Detected Data Archives** list. You can select and add the desired Data Archive. You do not have to wait for the scan to complete. You can also select *Add Data Archive Server** on the left and manually enter the name of the Data Archive if you do not want to wait for the scan.
+   **Note:** Once an AF Server has been added, the utility scans the configured AF server for referenced Data Archives. As the utility finds Data Archives, they are shown in the **Detected Data Archives** list. You can select and add the desired Data Archive. You do not have to wait for the scan to complete. You can also select **Add Data Archive Server** on the left and manually enter the name of the Data Archive if you do not want to wait for the scan.
 
 1. Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
 
@@ -144,7 +144,7 @@ To add a Data Archive:
 
    **Note**: If an AF server was added first, select **Add Data Archive Server** on the left side of the window instead.
    
-1. In the **Data Archive Server Name** box, enter the name of the Data Archive server, and then select **Add Server**.
+1. In the **Data Archive Server Name** field, enter the name of the Data Archive server, and then select **Add Server**.
    
    The Data Archive connection is added and details about the newly added Data Archive are displayed.
 
@@ -158,7 +158,7 @@ To add a Data Archive:
 
    **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-ocs).
 
-1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout (sec)** box.
+1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout (sec)**.
 
 1. (Optional) To confirm that the connection to the Data Archive is working, select **Test Connection**.
 
@@ -206,13 +206,13 @@ To configure data privacy and add an agent description:
 
 1. To publish the hostname, select the **Opt-in to publishing PI to OCS Agent Hostname in OCS?** option under `Data Privacy`.
 
-1. (Optional) In the **PI to OCS Agent Description** box, enter a descriptive name for the agent.
+1. (Optional) In the **PI to OCS Agent Description** field, enter a descriptive name for the agent.
 
 1. To save your selections, select **Ok**, and then select **Save** in the utility.
 
-## List of agent status states
+## List of agent states
 
-It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under **Agent Status** in the PI to OCS Configuration Utility.
+It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under **Agent State** in the PI to OCS Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |

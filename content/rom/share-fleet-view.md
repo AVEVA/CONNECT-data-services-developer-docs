@@ -6,7 +6,7 @@ uid: ShareAViewOfYourFleet
 
 You may have many hundreds or even thousands of assets in your fleet. Working with colleagues on different computers and in different locations, you need to look at the same set of assets. The asset explorer allows you to filter and view a subset of the assets and share this view with others. 
 
-To filter and view a subset of assets, follow these steps:
+To filter and view a subset of assets:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 

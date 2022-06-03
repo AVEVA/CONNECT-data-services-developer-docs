@@ -10,11 +10,11 @@ Sequential Data Store (SDS) types define the shape and structure of events and h
 
 # [Standard type](#tab/tabid-1)
 
-To add a base type, follow these steps: 
+To add a base type: 
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. From the **Streams** dropdown, select **Types**.
+1. From the **Streams** dropdown list, select **Types**.
 
 1. Select **Add Type**.
 
@@ -42,7 +42,7 @@ To add a base type, follow these steps:
     
     - **Base Type** - Select the SDS type of the property from the dropdown.
     
-        **Note:** To find the type in the list, filter the property types by entering text in the **Filter Types** box and use the **System** or **Tenant** controls to include or exclude these types. **Tenant** includes any types that were previously created in the selected namespace for a particular tenant. **System** includes SDS types that are provided and defined such as `string`, `integer`, `double`, `datetime`, and `Boolean`.
+        **Note:** To find the type in the list, filter the property types by entering text in the **Filter Types** field and use the **System** or **Tenant** controls to include or exclude these types. **Tenant** includes any types that were previously created in the selected namespace for a particular tenant. **System** includes SDS types that are provided and defined such as `string`, `integer`, `double`, `datetime`, and `Boolean`.
     
     - **UOM** - (Optional) Select a unit of measure for the property from the list. 
    
@@ -52,11 +52,11 @@ To add a base type, follow these steps:
 
 You can also create enumeration types that you can include as a property in standard types.
 
-To add a enum type, follow these steps:
+To add a enum type:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. From the **Streams** dropdown, select **Types**.
+1. From the **Streams** dropdown list, select **Types**.
 
 1. Select **Add Type**.
 

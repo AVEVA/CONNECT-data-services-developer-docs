@@ -36,7 +36,7 @@ To set default permissions for new data views:
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
-1. Select **More Options** ![More options icon](../../images/more-options-wite-background.png) and select **Manage Default Permissions for New Data Views**.
+1. Select **More Options** ![More options icon](../../../_icons/default/dots-vertical.svg) and select **Manage Default Permissions for New Data Views**.
 
 1. On the `Manage Permissions` page, select a role from the **Selected role** dropdown list.
 

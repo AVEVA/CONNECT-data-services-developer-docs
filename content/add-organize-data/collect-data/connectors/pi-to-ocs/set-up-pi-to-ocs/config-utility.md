@@ -33,7 +33,7 @@ The PI to OCS Agent Configuration Utility opens after you install or upgrade a P
 
 **Note:** If you use a different user account than the one that was used originally to install the agent, authentication is required before you can access the utility. 
 
-To open the PI to OCS Agent Configuration Utility, follow these steps:
+To open the PI to OCS Agent Configuration Utility:
 
 1. Select **Start** > **OSIsoft** > **PI to OCS Agent Configuration Utility**, and then select **Yes** to confirm.
 
@@ -49,7 +49,7 @@ Add an AF server to the utility to be able to use it in data transfers. The util
 
 * The version of PI Asset Framework (AF) installed on the AF server supports the features required for transfers.
 
-To add an AF server, follow these steps:
+To add an AF server:
 
 1. In the `PI to OCS Agent Configuration Utility` window, select the **AF** button.<!--Angela Flores 11/12/21 - I normally would not use button, but I can't tell from the screenshots what you actual need to select.-->
 
@@ -74,7 +74,7 @@ To add an AF server, follow these steps:
 
 1. (Optional) To add an alternate name that appears in in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. 
 
-1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout** field.
+1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout**.
 
 1. To keep the current AF server configuration settings and restart the agent, select **Save**.
 
@@ -88,13 +88,13 @@ To add an AF server, follow these steps:
 
 You need to specify the default Data Archive, also referred to as the default data server, for the PI system and PI AF database after setting an AF server. By default, PI AF databases inherit the PI AF Server's local default data server. See [Find the default Data Archive server](https://docs.osisoft.com/bundle/pi-server/page/find-the-default-pi-data-archive-server.html) for more information.
 
-To select the default Data Archive, follow these steps:
+To select the default Data Archive:
 
 1. Open PI System Explorer on the client machine.
 
 1. Select **File** > **Server Properties**.
 
-1. In the `PI AF Server Properties` window, select the **Default Data Server** down arrow, and then select the data server to be the default.<!--AF 11/12/21 what is Default Data Server down arrow???-->
+1. In the `PI AF Server Properties` window, select the data server from the **Default Data Server** dropdown list.
 
 1. Select **Apply**, then select **OK** to save the selection.
  
@@ -106,11 +106,11 @@ You can assign an AF mapping to an AF identity. AF mappings enable a specific se
 
 **Note:** The user account used to launch the utility must have permission to create mappings.
 
-To create an AF mapping, follow these steps:
+To create an AF mapping:
 
 1. Open the PI to OCS Agent Configuration Utility.
 
-1. Select the pencil icon next to the **AF Mapping** field.
+1. Select the pencil icon next to **AF Mapping**.
    
 1. In the `Configure AF Mapping` window, for each mapping you want to add, select an identity and select **Save**.
 
@@ -130,7 +130,7 @@ The list of available Data Archive servers is based on the servers referenced by
 
 **Note:** If you are not adding an AF server, select the Data Archive icon on the first screen of the PI to OCS Agent Configuration Utility.
 
-To add a Data Archive, follow these steps:
+To add a Data Archive:
 
 1. Open the PI to OCS Agent Configuration Utility.
    
@@ -148,7 +148,7 @@ To add a Data Archive, follow these steps:
    
 1. (Optional) To add an alternate name that appears in the stream ID and in the portal if you opted to display it, select the **Alternate Display Name** pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. 
 
-1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to the **Connection Timeout (sec)** field.
+1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout (sec)**.
 
 1. (Optional) To confirm that the connection to the Data Archive is working, select **Test Connection**.
 
@@ -162,13 +162,13 @@ PI mappings enable access to data stored on a Data Archive by service accounts a
 
 **Note:** The user account used to launch the utility must have permissions to create mappings.
 
-To create a PI mapping, follow these steps:
+To create a PI mapping:
 
 1. Open the PI to OCS Agent Configuration Utility.
 
 1. Navigate to the `Data Archive details` page.
 
-1. Select the pencil icon next to the **PI Mapping** field.
+1. Select the pencil icon next to **PI Mapping**.
  
    The `Configure Mapping` window opens.<!--AF 11/12/21 Why does PI Mapping have a screenshot, but AF mapping doesn't? Do we really need it?-->
 
@@ -189,7 +189,7 @@ Use the PI to OCS Agent Settings to add a descriptive name for the agent and to 
 ![Agent description and hostname displayed in PI to OCS Agents window](../../images/pi-to-ocs-agents-hostname.png)
 <!--AF 11/12/21 I would change the callouts in the image to be minimal, like "Agent description" and "host name". Then add any additional explanation here in text. It will be easier to read and easier to maintain. -->
 
-To configure data privacy and add an agent description, follow these steps:
+To configure data privacy and add an agent description:
 
 1. Open the PI to OCS Agent Configuration Utility.
 
@@ -203,7 +203,7 @@ To configure data privacy and add an agent description, follow these steps:
 
 ## List of agent status states
 
-It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under the **Agent Status** field in the PI to OCS Configuration Utility.
+It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under **Agent State** in the PI to OCS Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |

@@ -14,7 +14,7 @@ You can create an asset type in one of the following ways:
 
 ## Create an asset type with the asset explorer
 
-To use the asset explorer to create an asset type, follow these steps:
+To use the asset explorer to create an asset type:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 
@@ -52,13 +52,13 @@ To use the asset explorer to create an asset type, follow these steps:
 
 1. In the `Asset Type` pane, use the icons in the upper right of the toolbar to switch between the following:
 
-   - ![Card view](images/card-view.png) - Card view displays the asset types as a series of tiles.
+     -  ![Card view](../../_icons/branded/view-grid.svg) - Card view displays the asset types as a series of tiles.
 
-   - ![Table view](images/table-view.png) - Table view displays the asset types in a table format.
+     -  ![Table view](../../_icons/branded/view-list.svg) - Table view displays the asset types in a table format.
 
 ## Create an asset type from an asset
 
-To create an asset type based on an existing asset, follow these steps:
+To create an asset type based on an existing asset:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 

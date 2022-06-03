@@ -2,23 +2,25 @@
 uid: af-data-transferred
 ---
 
-# What AF data is transferred to OCS?
+# Transfer AF data
 
-You can transfer the following AF element data into OCS:
+PI to Data Hub supports replication of AF elements to AVEVA™ Data Hub, the rebranded version of OCS on the AVEVA™ Connect cloud platform. Existing PI to OCS users will need to migrate to PI to Data Hub to take advantage of this new feature. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.
+
+You can transfer the following AF element data into AVEVA Data Hub:
 
 * Simple PI point attributes
 * Static attribute values
 
 A simple PI point attribute consists of only a server and tag name. This data does not include any data retrieval qualifiers. The associated event data contains simple PI point attributes with the same historical and streaming transfer mechanism as points not associated with AF. 
 
-This table lists what AF objects can and cannot be included in a PI to OCS data transfer.
+This table lists what AF objects can and cannot be included in a PI to AVEVA Data Hub data transfer.
 
-| AF Object                                                    | Included in a PI to OCS transfer?      |
+| AF Object                                                    | Included in a PI to AVEVA Data Hub transfer?      |
 | ------------------------------------------------------------ | -------------------------------------- |
 | Elements                                                     | Yes                                    |
 | Attributes                                                   | Yes                                    |
 | PI point references                                          | Yes                                    |
-| Constant values/string                                       | Yes                                    |
+| Constant values/string                                       | Yes<sup>1</sup>                        |
 | Excluded attributes                                          | Yes                                    |
 | Hidden attributes                                            | No                                     |
 | Custom unit of measurements (UOMs)                           | No                                     |
@@ -28,6 +30,8 @@ This table lists what AF objects can and cannot be included in a PI to OCS data 
 | Implicit PI points with multiple attributes on an AF element | Only one attribute will be transferred |
 | Implicit PI points with attributes that reference other attributes | No                               |
 | Attributes that reference a non-registered data source/PI Data Archive | No                 |
+
+<sup>1</sup>Static AF Attributes configured as type 'Boolean' are not supported and will not be transferred.
 
 ## Performance metrics: AF data transfer
 

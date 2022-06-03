@@ -6,26 +6,24 @@ uid: pi-to-ocs-utility
 
 Use the PI to OCS Agent Configuration Utility to set up and configure AF server and Data Archive data sources before creating a data transfer. After installing or upgrading a PI to OCS Agent, use the utility to select a source AF server or Data Archive, view connection details, create AF and PI mappings, set data privacy settings, and register the agent. 
 
-The following image and table provides descriptions of the fields in the utility.<!--AF 11/12/21 why are there two comments on the image in addition to the numbered callouts? shouldn't they all be numbered callouts?-->  
+The following table provides descriptions of the fields shown in the configuration utility. The image shows the AF server selected, but the fields are similar when a Data Archive server is selected.
 
    ![AF server details](../../images/utility-callouts.png)
 
-| Number  | Description                                                  |
-| :-----: | ------------------------------------------------------------ |
-| 1  | Name of the host computer where the agent is installed.       |
-| 2  | An optional name for an agent.                                |
-| 3  | Displays the PI to OCS Agent's status.                        |
-| 4  | Displays the agent's registration state.        |
-| 5  | The installed PI to OCS Agent version.                    |
-| 6  | Type of agent service account.                               |
-| 7  | Set data privacy options and assign an agent description.    |
-| 8  | View information about the server connection and its configuration. |
-| 9  | Source AF server name.                                        |
-| 10 | An optional, alternate name for an AF server. Select the pencil icon to assign a custom name that appears in the PI to OCS Agents window if you opted to display it. This name replaces the AF server name referenced in the path of the asset’s metadata, which is visible in Asset Explorer (‘__Path’).<br></br><br>**Note:** You can also assign an alternate Data Archive server name that appears in PI to OCS stream IDs.</br> | 
-| 11 | The type of AF mapping configured on the service account. Select the pencil icon next to assign an AF mapping to an AF identity. |
-| 12 | The time before the agent connection times out. Select the pencil icon to enter a new time in seconds. |
-
-   **Note:** After a Data Archive server is added, similar information in the table above is displayed in the utility.
+| Number | Description                                                     |
+| :----: | --------------------------------------------------------------- |
+| 1  | Name of the host computer where the agent is installed.             |
+| 2  | An optional name for the agent.                                     |
+| 3  | Displays the agent's status.                                        |
+| 4  | Displays the agent's registration state.                            |
+| 5  | The installed PI to OCS Agent version.                              |
+| 6  | Type of agent service account.                                      |
+| 7  | Set data privacy options and assign an agent description.           |
+| 8  | Refresh the displayed agent and server information.                 |
+| 9  | Source AF or Data Archive server name.                              |
+| 10 | An optional, alternate name for an AF or Data Archive server.       | 
+| 11 | The type of AF/PI mapping configured on the service account.        |
+| 12 | The time before the agent connection times out.                     |
 
 ## Open the PI to OCS Agent Configuration Utility
 
@@ -51,28 +49,28 @@ Add an AF server to the utility to be able to use it in data transfers. The util
 
 To add an AF server:
 
+1. Open the PI to OCS Agent Configuration Utility.
+
 1. In the `PI to OCS Agent Configuration Utility` window, select the **AF** button.<!--Angela Flores 11/12/21 - I normally would not use button, but I can't tell from the screenshots what you actual need to select.-->
 
+   **Note**: If a Data Archive server was added first, select **Add Asset Framework Server** on the left side of the window instead.
+
 1. In the **AF Server Name** field, enter the name of the AF server, and then select **Add Server**.
- 
+
    The utility displays the server details.
 
    ![Agent status and state after refresh](../../images/af-details-refreshed.png)
-
-​   **Note:** Once an AF Server has been added, the utility scans the configured AF server for referenced Data Archives. As the utility finds Data Archives, they are shown in the **Detected Data Archives** list. You can select and add the desired Data Archive. You don't have to wait for the scan to complete. You can also manually type the name of the Data Archive if you don't want to wait for the scan to complete.
-
+   **Note:** Once an AF Server has been added, the utility scans the configured AF server for referenced Data Archives. As the utility finds Data Archives, they are shown in the **Detected Data Archives** list. You can select and add the desired Data Archive. You do not have to wait for the scan to complete. You can also select **Add Data Archive Server** on the left and manually enter the name of the Data Archive if you do not want to wait for the scan.
 
 1. Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
 
 1. Review the AF source server details to ensure they are correct:
 
    * AF server name, version, and ID
-
    * IP address
-
    * Connection status and timeout
 
-1. (Optional) To add an alternate name that appears in in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. 
+1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-ocs).
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout**.
 
@@ -83,6 +81,14 @@ To add an AF server:
 1. (Optional) To delete a server connection, select **Remove Server**, then select **Yes** to confirm. 
 
    **Note:** After you save the AF server configuration settings and restart and register the agent, you need to select a default Data Archive in PI System Explorer to resolve substitution references for AF element attributes.
+
+## Usage of server names and alternate display names within OCS
+
+The AF server name, or its alternate display name, displays on the PI to OCS Agents page within OCS and is referenced in the path of an asset's metadata, which is visible in Asset Explorer (`__Path`).
+
+The Data Archive name, or its alternate display name, appears in the PI to OCS Agents window within OCS, and is used in the StreamIds created by a transfer. StreamIds have the format `PI_[DataArchiveServerName]_[PIPointIDNumber]`.
+
+**Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.
 
 ## Select the default Data Archive in PI System Explorer
 
@@ -133,20 +139,24 @@ The list of available Data Archive servers is based on the servers referenced by
 To add a Data Archive:
 
 1. Open the PI to OCS Agent Configuration Utility.
+
+1. In the `PI to OCS Agent Configuration Utility` window, select the **Data Archive Server** button.
+
+   **Note**: If an AF server was added first, select **Add Data Archive Server** on the left side of the window instead.
    
-1. Select **Data Archive Server**, then enter the name of the Data Archive server, and then select **Add Server**.
+1. In the **Data Archive Server Name** field, enter the name of the Data Archive server, and then select **Add Server**.
    
    The Data Archive connection is added and details about the newly added Data Archive are displayed.
 
 1. Review the following details for the Data Archive:
  
    * Server name, version, and server ID
-
    * IP address
-
    * Connection status and timeout
    
-1. (Optional) To add an alternate name that appears in the stream ID and in the portal if you opted to display it, select the **Alternate Display Name** pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. 
+1. (Optional) To add an alternate name, select the **Alternate Display Name** pencil icon, type an alternate name, select **Set Display Name** and then select **Close**.
+
+   **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-ocs).
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout (sec)**.
 
@@ -166,7 +176,7 @@ To create a PI mapping:
 
 1. Open the PI to OCS Agent Configuration Utility.
 
-1. Navigate to the `Data Archive details` page.
+1. Select the Data Archive server on the left side of the page.
 
 1. Select the pencil icon next to **PI Mapping**.
  
@@ -180,35 +190,34 @@ To create a PI mapping:
 
    **Note:** If a PI mapping has already been created with another tool, a warning is displayed. 
 
-1. Select **Close** to return to the utility.
+1. Select **Close** to return to the utility, and then select **Save** in the utility.
 
 ## Set data privacy and add an agent description
 
-Use the PI to OCS Agent Settings to add a descriptive name for the agent and to configure data privacy. This description appears where the agent is referenced and allows you to search by agent description. Data privacy settings control whether a host name of a Data Archive is published and displayed in OCS. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` window as shown below: 
+Use the PI to OCS Agent Settings to add a descriptive name for the agent and to configure data privacy. This description appears where the agent is referenced and allows you to search by agent description. Data privacy settings control whether a host name of a Data Archive is published and displayed in OCS. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` page as shown below: 
 
-![Agent description and hostname displayed in PI to OCS Agents window](../../images/pi-to-ocs-agents-hostname.png)
-<!--AF 11/12/21 I would change the callouts in the image to be minimal, like "Agent description" and "host name". Then add any additional explanation here in text. It will be easier to read and easier to maintain. -->
+![Agent description and hostname displayed in PI to OCS Agents page](../../images/pi-to-ocs-agents-hostname.png)
 
 To configure data privacy and add an agent description:
 
 1. Open the PI to OCS Agent Configuration Utility.
 
-1. To open the `PI to OCS Agent Settings` window, select the pencil icon to the right of **Agent Service Account**.
+1. Select the pencil icon to the right of **Agent Service Account** to open the `PI to OCS Agent Settings` window.
 
 1. To publish the hostname, select the **Opt-in to publishing PI to OCS Agent Hostname in OCS?** option under `Data Privacy`.
 
 1. (Optional) In the **PI to OCS Agent Description** field, enter a descriptive name for the agent.
 
-1. To save your selections, select **Ok** , and then select **Save** in the utility.
+1. To save your selections, select **Ok**, and then select **Save** in the utility.
 
-## List of agent status states
+## List of agent states
 
 It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under **Agent State** in the PI to OCS Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |
-| Data Source Connection Issue | Indicates the PI To OCS Agent cannot connect to the Data Archive. Some reasons for this status include the Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
-| Data Source Security Issue   | Indicates the Data Archive connection is unsecured and security settings need to be addressed. |
+| Data Source Connection Issue  | Indicates the PI To OCS Agent cannot connect to the Data Archive. Some reasons for this status include the Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
+| Data Source Security Issue    | Indicates the Data Archive connection is unsecured and security settings need to be addressed. |
 | Missing Configuration         | The Data Archive server has not been configured in the PI to OCS Agent. |
 | Registration Failed           | Contact OSIsoft Customer support for assistance.             |
 | Registering                   | The PI to OCS Cloud portion is creating the necessary resources for the PI to OCS Agent. |

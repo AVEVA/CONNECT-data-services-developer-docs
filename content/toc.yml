@@ -26,6 +26,7 @@
     - topicUid: gsHybridClients
   - topicUid: gsAssets
   - topicUid: gsAssetTypes
+  - topicUid: gsDataViews
   - topicUid: gsMetadataRules
   - topicUid: gsStreamviews
   - topicUid: gsAssetRules

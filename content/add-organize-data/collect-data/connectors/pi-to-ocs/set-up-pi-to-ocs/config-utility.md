@@ -16,7 +16,7 @@ The following table provides descriptions of the fields shown in the configurati
 | 2  | An optional name for the agent.                                     |
 | 3  | Displays the agent's status.                                        |
 | 4  | Displays the agent's registration state.                            |
-| 5  | The installed PI to OCS Agent version.                              |
+| 5  | The installed PI to Data Hub Agent version.                         |
 | 6  | Type of agent service account.                                      |
 | 7  | Set data privacy options and assign an agent description.           |
 | 8  | Refresh the displayed agent and server information.                 |
@@ -49,7 +49,7 @@ Add an AF server to the utility to be able to use it in data transfers. The util
 
 To add an AF server:
 
-1. Open the PI to OCS Agent Configuration Utility.
+1. Open the PI to Data Hub Agent Configuration Utility.
 
 1. In the `PI to Data Hub Agent Configuration Utility` window, select the **AF** button.<!--Angela Flores 11/12/21 - I normally would not use button, but I can't tell from the screenshots what you actual need to select.-->
 
@@ -70,7 +70,7 @@ To add an AF server:
    * IP address
    * Connection status and timeout
 
-1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within OCS](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
+1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within Data Hub](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout**.
 
@@ -84,9 +84,9 @@ To add an AF server:
 
 ## Usage of server names and alternate display names within AVEVA Data Hub
 
-The AF server name, or its alternate display name, displays on the PI to OCS Agents page within OCS and is referenced in the path of an asset's metadata, which is visible in Asset Explorer (`__Path`).
+The AF server name, or its alternate display name, displays on the PI to Data Hub Agents page within AVEVA Data Hub and is referenced in the path of an asset's metadata, which is visible in Asset Explorer (`__Path`).
 
-The Data Archive name, or its alternate display name, appears in the PI to OCS Agents window within OCS, and is used in the StreamIds created by a transfer. StreamIds have the format `PI_[DataArchiveServerName]_[PIPointIDNumber]`.
+The Data Archive name, or its alternate display name, appears in the PI to Data Hub Agents window within AVEVA Data Hub, and is used in the StreamIds created by a transfer. StreamIds have the format `PI_[DataArchiveServerName]_[PIPointIDNumber]`.
 
 **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.
 
@@ -138,9 +138,9 @@ The list of available Data Archive servers is based on the servers referenced by
 
 To add a Data Archive:
 
-1. Open the PI to OCS Agent Configuration Utility.
+1. Open the PI to Data Hub Agent Configuration Utility.
 
-1. In the `PI to OCS Agent Configuration Utility` window, select the **Data Archive Server** button.
+1. In the `PI to Data Hub Agent Configuration Utility` window, select the **Data Archive Server** button.
 
    **Note**: If an AF server was added first, select **Add Data Archive Server** on the left side of the window instead.
    
@@ -194,9 +194,9 @@ To create a PI mapping:
 
 ## Set data privacy and add an agent description
 
-Use the PI to OCS Agent Settings to add a descriptive name for the agent and to configure data privacy. This description appears where the agent is referenced and allows you to search by agent description. Data privacy settings control whether a host name of a Data Archive is published and displayed in OCS. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to OCS Agents` page as shown below: 
+Use the PI to Data Hub Agent Settings to add a descriptive name for the agent and to configure data privacy. This description appears where the agent is referenced and allows you to search by agent description. Data privacy settings control whether a host name of a Data Archive is published and displayed in AVEVA Data Hub. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to Data Hub Agents` page as shown below: 
 
-![Agent description and hostname displayed in PI to OCS Agents page](../../images/pi-to-ocs-agents-hostname.png)
+![Agent description and hostname displayed in PI to Data Hub Agents page](../../images/pi-to-ocs-agents-hostname.png)
 
 To configure data privacy and add an agent description:
 
@@ -212,13 +212,13 @@ To configure data privacy and add an agent description:
 
 ## List of agent states
 
-It may take a few minutes for a PI System to register with OCS. The table below lists the various states that may appear under **Agent State** in the PI to OCS Configuration Utility.
+It may take a few minutes for a PI System to register with AVEVA Data Hub. The table below lists the various states that may appear under **Agent State** in the PI to Data Hub Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |
-| Data Source Connection Issue  | Indicates the PI To OCS Agent cannot connect to the Data Archive. Some reasons for this status include the Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
+| Data Source Connection Issue  | Indicates the PI To Data Hub Agent cannot connect to the Data Archive. Some reasons for this status include the Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
 | Data Source Security Issue    | Indicates the Data Archive connection is unsecured and security settings need to be addressed. |
-| Missing Configuration         | The Data Archive server has not been configured in the PI to OCS Agent. |
+| Missing Configuration         | The Data Archive server has not been configured in the PI to Data Hub Agent. |
 | Registration Failed           | Contact OSIsoft Customer support for assistance.             |
-| Registering                   | The PI to OCS Cloud portion is creating the necessary resources for the PI to OCS Agent. |
-| Shutdown                      | The last communication that the PI to OCS Cloud had with the agent was a shutdown message. |
+| Registering                   | The PI to Data Hub Cloud portion is creating the necessary resources for the PI to Data Hub Agent. |
+| Shutdown                      | The last communication that the PI to Data Hub Cloud had with the agent was a shutdown message. |

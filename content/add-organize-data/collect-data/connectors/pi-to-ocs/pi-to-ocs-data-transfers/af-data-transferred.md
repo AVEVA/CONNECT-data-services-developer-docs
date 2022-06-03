@@ -4,8 +4,6 @@ uid: af-data-transferred
 
 # Transfer AF data
 
-PI to Data Hub supports replication of AF elements to AVEVA™ Data Hub, the rebranded version of OCS on the AVEVA™ Connect cloud platform. Existing PI to OCS users will need to migrate to PI to Data Hub to take advantage of this new feature. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.
-
 You can transfer the following AF element data into AVEVA Data Hub:
 
 * Simple PI point attributes

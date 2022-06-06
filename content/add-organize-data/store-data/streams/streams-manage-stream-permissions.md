@@ -84,8 +84,12 @@ You can edit the default user roles and permissions added to a stream when it is
 
 	**Warning!** Use of this option applies updated permission settings to *all* streams in the namespace. Use this option with care, as it overwrites existing permission settings.
 
+    ![Apply to all existing streams](../images/apply-to-all-existing-streams.png)
+
 1. When you are finished editing permissions, select **Save**.
 
 ## Bulk stream permission management notifications
 
-When you update stream permissions in bulk or use the `Manage Default Permissions` window to update all namespace stream permissions, OSIsoft Cloud Services (OCS) runs a job to update applicable permissions. When this job completes, the completed operation is listed in your notifications. 
+When you update stream permissions in bulk or use the `Manage Default Permissions` window to update all namespace stream permissions, OSIsoft Cloud Services (OCS) runs a job to update applicable permissions. When this job completes, the completed operation is listed in your notifications.
+
+![Updated stream permission notifications](../images/manage-streams-bulk-notifications.png)

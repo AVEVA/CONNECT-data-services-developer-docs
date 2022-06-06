@@ -14,15 +14,15 @@ The AVEVA Connect home page lists all the services you have access to as a set o
 
 The Services Catalog is accessed from the AVEVA Connect home page.
 
-1. From the AVEVA Connect home page, Select the menu icon, then select **Services Catalog**.
+1. From the AVEVA Connect home page, select the menu icon, then select **Services Catalog**.
  
-   **Result:** The **Services Catalog** page opens.
+   The **Services Catalog** page opens.
 
     ![AVEVA Cloud Services Catalog](./images/cloud-svcs-cat.png)
 
     **Note:** **SUBSCRIBED** appears on service tiles that your organization has access to use. 
 
-1. Click **Learn more** on a tile to view information about that service.
+1. Select **Learn more** on a tile to view information about that service.
  
 ## View service status
 

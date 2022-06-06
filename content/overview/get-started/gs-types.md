@@ -10,7 +10,7 @@ After creating the namespace, the next step is to add one or more types. A type 
 
 - [Types best practices](xref:bpTypes)
 
-To add a type, follow these steps:
+To add a type:
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -33,7 +33,7 @@ To add a type, follow these steps:
 
 1. Click **Save**.
 
-To explore information about the type you just created, follow these steps:
+To explore information about the type you just created:
 
 1. Select the `MyData.PumpState` type, select **More Options** ![More Options](../../_icons/default/dots-vertical.svg) > **Manage Permissions**.
 

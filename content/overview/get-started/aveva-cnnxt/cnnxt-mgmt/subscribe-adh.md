@@ -8,7 +8,7 @@ As an administrator, the first step to subscribe to AVEVA Data Hub is to talk to
 
 **Note:**  If you have any questions or issues related to this procedure, contact [AVEVA customer support](https://softwaresupport.aveva.com).  
 
-To subscribe to AVEVA Data Hub, follow these steps:
+To subscribe to AVEVA Data Hub:
 
 1. From the AVEVA Connect home page, select the menu icon, then select **Services Catalog**.
 

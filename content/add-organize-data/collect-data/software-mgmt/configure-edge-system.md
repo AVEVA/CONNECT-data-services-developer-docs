@@ -22,7 +22,7 @@ Configuration is available for the following edge system types:
 
 ## Import an edge system configuration
 
-To import an edge system configuration from the field to the corresponding edge system digital twin, follow these steps:
+To import an edge system configuration from the field to the corresponding edge system digital twin:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
@@ -32,7 +32,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 ## Edit an edge system configuration
 
-To edit an edge system configuration and export it for use, follow these steps:
+To edit an edge system configuration and export it for use:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
@@ -44,9 +44,9 @@ To edit an edge system configuration and export it for use, follow these steps:
 
 1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
 
- - To add a tag, enter the tag text in the **New Tag** field and press Enter.
+   - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 
- - To delete a tag, select **X** in the tag bubble.
+   - To delete a tag, select **X** in the tag bubble.
 
 1. (Optional) In the **Section Select** field, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
@@ -54,15 +54,15 @@ To edit an edge system configuration and export it for use, follow these steps:
 
  **Important:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
 
- Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
+   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 
 1. To export the completed configuration, do one of the following:
 
- - To export just the selected section, select **Export Section** in the right pane.  
+   - To export just the selected section, select **Export Section** in the right pane.  
 
- - To export the entire configuration in one file, select **Export Configuration**.
+   - To export the entire configuration in one file, select **Export Configuration**.
 
- The JSON file is downloaded to your browser.
+   The JSON file is downloaded to your browser.
 
 1. When you have finished, select **Save & Close**.
 

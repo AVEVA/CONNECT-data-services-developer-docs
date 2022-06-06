@@ -8,11 +8,11 @@ Authorization code clients are used with customer web applications that use AVEV
 
 **Note:** Client modifications may take up to an hour before being visibly updated.
 
-To create an authorization code client, follow these steps:
+To create an authorization code client:
 
 1. In the left pane, select **Security > Clients**.
 
-1. In the **Client Type** field, select **Authorization Code**.
+1. In the **Client Type** dropdown list, select **Authorization Code**.
 
 1. In the toolbar, select **Add Client**.
 
@@ -22,15 +22,15 @@ To create an authorization code client, follow these steps:
 
    Use this name to identify the device or application that will use this client.
 
-1. In the **Allowed Redirect URL(s)** box, enter a URL and select  **+**  to add it to the list. 
+1. In the **Allowed Redirect URL(s)** field, enter a URL and select  **+**  to add it to the list. 
 
    The application specifies one of the URLs in this list when it authenticates, and AVEVA Data Hub returns the results of the authentication to this URL.
 
-1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+**  to add it to the list. 
+1. (Optional) In the **Allowed Logout Redirect URL(s)** field, enter a URL and select **+**  to add it to the list. 
    
    The application specifies a URL from this list when it logs out of AVEVA Data Hub, and the identity server sends the user to this URL after a successful log out.
    
-1. (Optional) Enter URLs in the **Allowed CORS Origin(s)** text box, then click **+** to add it to the list. <!--VTT, 12/13/21: New step added since it was missing. Requested by N. Parakh & A. Woodall.-->
+1. (Optional) Enter URLs in the **Allowed CORS Origin(s)** text field, then select **+** to add it to the list. <!--VTT, 12/13/21: New step added since it was missing. Requested by N. Parakh & A. Woodall.-->
    
    Designate other URLs from which the application is allowed to make requests against AVEVA Data Hub. For example, this may be necessary if the user authenticates from an application running at one URL but the result of the authentication is sent to an application running at a different URL.
 

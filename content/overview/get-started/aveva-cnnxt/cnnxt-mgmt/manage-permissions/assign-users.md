@@ -6,7 +6,7 @@ uid: assign-users
 
 Assign users to groups to control what actions they can take in Data Hub.
 
-To add users to a group, follow these steps:
+To add users to a group:
 
 1.	From the AVEVA Connect home page, select the menu icon, then select **User Management**.
 

@@ -6,8 +6,7 @@ uid: pi-point-change
 
 A PI point type change occurs when a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the AVEVA Data Hub Sequential Data Store (SDS) database. When the PI to Data Hub Agent detects this change, it takes the following actions:
 
-- Displays the `PI Point Type Change Detected` message next to the **Current Activity** field in the `Details` pane as shown in the screenshot below.
- 
+- Displays the `PI Point Type Change Detected` message next to **Current Activity** in the `Details` pane as shown in the screenshot below.
 - Prevents data being sent from the source PI point to the SDS stream until the type is changed to match the corresponding SDS Stream type and the transfer is restarted.
  
 - Logs details about the corresponding SDS stream in both the Windows Event Viewer and AVEVA Data Hub logs. 

@@ -43,16 +43,18 @@ When editing permissions for a single stream, each user role that has permission
 
 When editing permissions for multiple streams, no user roles or permission settings are pre-populated in the window because the permissions for each stream are unique. Therefore you must add each user role that you want to have permissions on the stream before editing each permission setting.
 
-Updating streams in bulk uses a patch operation. Only the permissions for role entries that you edit are updated, and any perviously existing permissions assigned to each role remain in place.
+Updating streams in bulk uses a patch operation, meaning only the permissions for role entries that you edit are updated, and any previously existing permissions assigned to each role remain in place.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Select one or more streams that you want to manage permissions for.
+1. Select the streams that you want to manage permissions for.
 
 1. Select **Manage Permissions**.
 
     The `Manage Permissions for Selected Streams` window opens. Because you are editing permissions for multiple streams, no user roles or settings are listed, as the permission settings for each stream are different.
     
+    **Note:** If your user account does not have permissions to manage permissions for a selected stream, **Manage Permissions** is unavailable. Contact an administrative user to request permissions to share the stream.  
+
     **Streams without pre-populated user roles and permissions**
     
     ![Manage Permissions for Selected Streams](../images/manage-stream-permissions-bulk.png)

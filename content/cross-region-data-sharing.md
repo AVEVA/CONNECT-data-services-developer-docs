@@ -19,15 +19,17 @@ Cross-region data sharing is enabled by default. When cross-region data sharing 
 
 ### Additional processing
 
-OCS may process operational data stored in your default region in a non-default region for performance optimization. _Processing_ operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your default region may reside in the cross-region processing service memory up to several hours. 
+OCS may process operational data for a namespace OCS may process operational data for a namespace in a different geographical region (hereafter referred to as "cross-region"). For example, if you create a namespace in the `US-West` region, OCS may process that data in the `EU-West` region.
+
+_Processing_ operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region (hereafter refferred to as "default region") may reside in the cross-region processing service memory up to several hours. 
 
 ### Data augmentation
 
-In use cases where your operational data is stored in both default and non-default regions, OCS may process operational data from the default region in cross-regions. OCS then adds and processes additional operational data from the cross-region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service memory up to several hours.
+In use cases where your operational data is stored in both default and cross-region, OCS may process operational data from the default region to cross-region. OCS then adds and processes additional operational data from the cross-region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service memory up to several hours.
 
 ### Temporary storage
 
-In some instances where OCS sends operational data stored in your default region for processing or data augmentation in non-default regions, OCS may temporarily persist data from your default region in the non-default region before it is processed. This temporary storage is used for performance optimization. In these instances, data from your default region persists in the cross-region processing service storage and memory up to several hours.
+In some instances where OCS sends operational data stored in your default region for processing or data augmentation cross-region, OCS may temporarily persist data from your default region cross-region before it is processed. This temporary storage is used for performance optimization. In these instances, data from your default region persists in the cross-region processing service storage and memory up to several hours.
 
 ## Opt out of cross-region data sharing
 

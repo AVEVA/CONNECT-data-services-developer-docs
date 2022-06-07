@@ -35,14 +35,14 @@ Optionally, you can opt out of sharing operational data from namespaces and comm
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 
-### To opt out of cross-region data sharing
+<!-- ### To opt out of cross-region data sharing
 
 If you want to opt out of cross-region data sharing, complete the following tasks in order:
 
 - [Step 1: Opt out of cross-region data sharing for namespace](#step-1-opt-out-of-cross-region-data-sharing-for-namespace)
-- [Step 2: Configure the community preferred region for community](#step-2-configure-the-community-preferred-region-for-community)
+- [Step 2: Configure the community preferred region for community](#step-2-configure-the-community-preferred-region-for-community) -->
 
-### Step 1: Opt out of cross-region data sharing for namespace
+### To opt out of cross-region data sharing for namespace
 
 When you disable cross-region data sharing, any queries for namespace data are routed to the appropriate region for complete results to be returned. Repeat these steps for each namespace that you want to disable cross-region data sharing.
 
@@ -56,7 +56,7 @@ When you disable cross-region data sharing, any queries for namespace data are r
 
 1. Enable **Opt-out for Namespace** and select **Save**.
 
-### Step 2: Configure the community preferred region for community
+<!-- ### Step 2: Configure the community preferred region for community
 
 If you are sharing data to one or more community, use the **Community Preferred Region** to control the region that clients view your shared data. Repeat these steps for each applicable community.
 
@@ -64,10 +64,8 @@ If you are sharing data to one or more community, use the **Community Preferred 
 
 **Prerequisite:** You must have write access in each community affected by cross-region data sharing.
 
-<!-- TODO: complete task -->
-
 1. Elit pariatur aute aliqua quis Lorem in excepteur commodo mollit ea.
 
 1. Ullamco nulla quis est excepteur.
 
-1. Aliqua cupidatat ea laborum enim Lorem culpa eiusmod sit deserunt ipsum tempor quis ex.
+1. Aliqua cupidatat ea laborum enim Lorem culpa eiusmod sit deserunt ipsum tempor quis ex. -->

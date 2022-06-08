@@ -15,25 +15,25 @@ For example, if you have a namespace in OCS that stores operational data in the 
 
 ## Cross region data sharing scenarios
 
-Cross-region data sharing is enabled by default. When cross-region data sharing is enabled, OCS may share data across regions under the following circumstances.
+Cross-region data sharing is enabled by default. When cross-region data sharing is enabled, OCS may share operational data for a namespace across regions under the following circumstances.
 
 ### Additional processing
 
-OCS may process operational data for a namespace in a region other than the one chosen when [adding a namespace](xref:gpNamespaces) (hereafter referred to as "cross-region"). For example, if you create a namespace in the `US-West` region, OCS may process that data cross-region in `EU-West`.
+Each namespace in OCS is bound to a geographical region. Operational data stored in each namespace is usually processed within that region, which is chosen while [adding the namespace](xref: gpNamespaces). However, OCS may process a namespace's operational data in a different region (in other words,  "cross-region"). For example, if you create a namespace in the `US-West` region, OCS may process its operational data cross-region in `EU-West`.
 
-_Processing_ operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region (hereafter refferred to as "default region") may reside in the cross-region processing service memory up to several hours. 
+Processing operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region may reside in the cross-region processing service memory up to several hours. 
 
 ### Data augmentation
 
-In use cases where your operational data is stored in both default and cross-region, OCS may process operational data from the default region to cross-region. OCS then adds and processes additional operational data from the cross-region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service memory up to several hours.
+In use cases where your operational data is stored within both the chosen region and cross-region, OCS may process operational data from namespace region in a different region. OCS then adds and processes additional operational data from the other region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service memory up to several hours.
 
 ### Temporary storage
 
-In some instances where OCS sends operational data stored in your default region for processing or data augmentation cross-region, OCS may temporarily persist data from your default region cross-region before it is processed. This temporary storage is used for performance optimization. In these instances, data from your default region persists in the cross-region processing service storage and memory up to several hours.
+In some instances where OCS sends operational data stored in your namespace's region for processing or data augmentation cross-region, OCS may temporarily persist data from your region across regions before it is processed. This temporary storage is used for performance optimization. In these instances, data from your region persists in the cross-region processing service storage and memory up to several hours.
 
 ## Opt out of cross-region data sharing
 
-Optionally, you can opt out of sharing operational data from namespaces and communities across regions. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the region of your default region.
+Optionally, you can opt out of sharing operational data from namespaces and communities across regions. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the namespace's assigned region.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 

@@ -179,8 +179,22 @@
   items:
     - topicUid: DataViews
       items:
-      - topicUid: CreateDataView
-      - topicUid: DataViewMaintenance
+      - topicUid: data-views-create-and-configure
+        items:
+        - topicUid: data-views-add-data-view
+        - topicUid: data-views-add-query
+        - topicUid: data-views-add-data-fields
+        - topicUid: data-views-optional-steps
+      - topicUid: data-views-use
+        items:
+        - topicUid: data-views-edit-a-data-view
+          items:
+          - topicUid: data-views-edit-name-and-description
+          - topicUid: data-views-edit-data-shape
+          - topicUid: data-views-manage-queries
+          - topicUid: data-views-query-quick-edits
+          - topicUid: data-views-group-data-fields
+          - topicUid: data-views-override-index-config
     - topicUid: PowerBI
       items:
       - topicUid: PowerBIReleaseNotes

@@ -1,5 +1,5 @@
 ---
-uid: data-views
+uid: data-views-group-data-fields 
 ---
 
 # Group data fields

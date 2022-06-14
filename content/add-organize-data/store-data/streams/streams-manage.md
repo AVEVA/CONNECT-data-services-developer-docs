@@ -39,13 +39,13 @@ Tags and metadata allow you to associate additional information with a stream. F
 
 1. Add metadata.
 
-   - Select the **Metadata** tab, and then select **Add Metadata**. In the `Metadata Key` box, enter the name of the key and in the `Metadata Value` box, enter a value for that key.
+   - Select the **Metadata** tab, and then select **Add Metadata**. In the `Metadata Key` field, enter the name of the key and in the `Metadata Value` field, enter a value for that key.
 
    - To remove a metadata, select the **X** beside the row to be deleted.
 
 1. Add tags.
 
-   - Select the **Tags** tab, if it is not already selected. In the `New Tag` box, enter the name of the tag, and then select the plus sign (**+**).
+   - Select the **Tags** tab, if it is not already selected. In the `New Tag` field, enter the name of the tag, and then select the plus sign (**+**).
    
    - To remove a tag, select the **X** beside the tag name.
 

@@ -12,7 +12,7 @@ Sometimes, PI points cannot be transferred because they have been removed on the
 
 - The name of the source PI Server
 
-To export a list of PI points missing from a transfer, follow these steps:
+To export a list of PI points missing from a transfer:
 
 1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 

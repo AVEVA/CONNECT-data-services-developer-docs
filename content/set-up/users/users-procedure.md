@@ -18,7 +18,7 @@ To add a user to a tenant:
 
 1. In the toolbar, select **Add User**.
 
-1. In the **Identity Provider** field, select the appropriate identity provider for the user you are adding. You can switch to a different option later. For tenants with a single identity provider enabled, the field is disabled.
+1. Select the appropriate identity provider for the user you are adding in the **Identity Provider** dropdown list. You can switch to a different option later. For tenants with a single identity provider enabled this option is disabled.
 
    For advanced integration identity providers, such as Azure Active Directory:
 

@@ -12,7 +12,7 @@ Monitor and manage assets by applying filters in the Asset Explorer. Filters all
 
 - Metadata &ndash; Filter for assets based on metadata, such as `Location`, `Manufacturer`, `Province` or `State`, `Region`, or `Model`.
  
-To filter assets in the Asset Explorer, follow these steps:
+To filter assets in the Asset Explorer:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**. 
 

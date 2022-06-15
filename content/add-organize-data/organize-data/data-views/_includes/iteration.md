@@ -1,1 +1,1 @@
-Designing and editing a data view is expected to be an iterative process. Your first iteration of the data view will likely not work as expected and will require additional iterations. Adjust the included data fields until it meets your requirements.
+Designing and editing a data view is expected to be an iterative process. Your first iteration of the data view will likely not work as expected and will require additional iterations. Adjust the included queries and data fields until it meets your requirements.

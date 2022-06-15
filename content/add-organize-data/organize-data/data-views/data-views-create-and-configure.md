@@ -14,7 +14,7 @@ Review the following information before creating a data view.
 
 [!include[recommended-skills](_includes/recommended-skills.md)]
 
-### Iteration
+### Iterative design
 
 [!include[iteration](_includes/iteration.md)]
 
@@ -23,6 +23,10 @@ Review the following information before creating a data view.
 - <xref:data-views-add-data-view>
 
 	[!include[add-data-view](_includes/add-data-view.md)]
+
+- <xref:data-view-choose-data-shape>
+
+	[!include[choose-data-shape](_includes/choose-data-shape.md)]
 
 - <xref:data-views-add-query>
 

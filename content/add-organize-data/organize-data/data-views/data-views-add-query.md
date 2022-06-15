@@ -2,7 +2,7 @@
 uid: data-views-add-query
 ---
 
-# Step 2: Add a query
+# Step 3: Add a query
 
 [!include[add-query](_includes/add-query.md)]
 

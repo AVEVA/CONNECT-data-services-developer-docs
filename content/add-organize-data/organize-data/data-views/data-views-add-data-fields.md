@@ -2,7 +2,7 @@
 uid: data-views-add-data-fields
 ---
 
-# Step 3: Add data fields
+# Step 4: Add data fields
 
 1. In the `Add Data Fields` window, select each data field or **Select All** data fields to use as an identifying field. **Show Included Fields** highlights identifying fields already included in the data field.
 

@@ -195,9 +195,11 @@
         - topicUid: data-views-query-quick-edits
         - topicUid: data-views-group-data-fields
         - topicUid: data-views-override-index-config
-    - topicUid: PowerBI
-      items:
-      - topicUid: PowerBIReleaseNotes
+      - topicUid: data-views-retieve
+        items:
+        - topicUid: PowerBI
+          items:
+          - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:
     - topicUid: identityProviders

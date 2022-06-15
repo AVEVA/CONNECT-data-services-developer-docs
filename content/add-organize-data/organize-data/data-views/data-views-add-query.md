@@ -4,6 +4,8 @@ uid: data-views-add-query
 
 # Step 2: Add a query
 
+[!include[add-query](_includes/add-query.md)]
+
 1. In the center pane, update the **Query Id** field to a new value or accept the default of *Query1*.
 
 1. For **Query Type**, select **Streams** or **Assets** to indicate which objects to search for this query.

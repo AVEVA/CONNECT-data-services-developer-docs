@@ -14,11 +14,13 @@ Review the following information before creating a data view.
 
 [!include[recommended-skills](_includes/recommended-skills.md)]
 
-### Iterative design
+### Design in iterations
 
 [!include[iteration](_includes/iteration.md)]
 
-## Data view creation outline
+## Data view creation workflow
+
+To create and define a data view, complete these tasks in order.
 
 - <xref:data-views-add-data-view>
 

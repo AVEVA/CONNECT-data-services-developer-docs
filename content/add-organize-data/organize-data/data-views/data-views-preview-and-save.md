@@ -2,7 +2,7 @@
 uid: data-views-preview-and-save
 ---
 
-# Step 6: Generate a preview and save your data view
+# Step 6: Preview and save the data view
 
 1. In the `Generate Preview` pane, turn the **Auto Refresh** toggle switch on to enable auto refresh. With auto refresh enabled, changes to any of the streams included in the data view are immediately reflected in the data view.
 

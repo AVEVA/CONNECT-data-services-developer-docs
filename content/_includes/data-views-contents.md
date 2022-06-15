@@ -1,0 +1,1 @@
+The OCS resources included in the data view are based on the result of one or more queries that you configure. Streams, assets, and other OCS resources that can be included in a data view are collectively known as _data items_. Properties from data items can be included in the data view as _fields_, as well as information about the data items (such as Id and Metadata).

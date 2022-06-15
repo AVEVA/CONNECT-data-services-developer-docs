@@ -186,16 +186,14 @@
         - topicUid: data-views-add-data-fields
         - topicUid: data-views-optional-steps
         - topicUid: data-views-preview-and-save
-      - topicUid: data-views-use
+      - topicUid: data-views-edit-a-data-view
         items:
-        - topicUid: data-views-edit-a-data-view
-          items:
-          - topicUid: data-views-edit-name-and-description
-          - topicUid: data-views-edit-data-shape
-          - topicUid: data-views-manage-queries
-          - topicUid: data-views-query-quick-edits
-          - topicUid: data-views-group-data-fields
-          - topicUid: data-views-override-index-config
+        - topicUid: data-views-edit-name-and-description
+        - topicUid: data-views-edit-data-shape
+        - topicUid: data-views-manage-queries
+        - topicUid: data-views-query-quick-edits
+        - topicUid: data-views-group-data-fields
+        - topicUid: data-views-override-index-config
     - topicUid: PowerBI
       items:
       - topicUid: PowerBIReleaseNotes

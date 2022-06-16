@@ -8,6 +8,8 @@ uid: data-views-retieve
 
 ## Data view retrieval workflow
 
-- Step 1: Install OSIsoft Cloud Services Power BI Connector
+- <xref:data-views-install-power-bi-connector>
 
-- Step 2: Retrieve a data view
+- <xref:data-views-retrieve-data-view>
+
+- <xref:data-view-retrieve-edit-query> 

@@ -196,9 +196,11 @@
         - topicUid: data-views-override-index-config
       - topicUid: data-views-retieve
         items:
-        - topicUid: PowerBI
+        - topicUid: data-views-install-power-bi-connector
           items:
           - topicUid: PowerBIReleaseNotes
+        - topicUid: data-views-retrieve-data-view
+        - topicUid: data-view-retrieve-edit-query
 - topicUid: Security
   items:
     - topicUid: identityProviders

@@ -1,4 +1,4 @@
-A data view is a declarative query and shape for OCS data. It includes the following components:
+A data view is a declarative query and shape for OCS data. It includes the following objects, which you will configure as you complete the data view creation workflow:
 
 - **Index field**: Determines the primary index type and label of the index. The index must be a timestamp and displays in the first column of the data view.
 

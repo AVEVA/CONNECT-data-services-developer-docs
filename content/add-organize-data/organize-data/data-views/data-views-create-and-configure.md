@@ -10,6 +10,10 @@ This is an introduction to the recommended workflow for creating and defining da
 
 Review the following information before creating a data view.
 
+### Data view objects
+
+[!include[data view objects](../../../_includes/data-views-components.md)]
+
 ### Recommended skills
 
 [!include[recommended-skills](_includes/recommended-skills.md)]

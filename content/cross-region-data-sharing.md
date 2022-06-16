@@ -25,7 +25,7 @@ Each namespace in OCS is bound to a geographical region. Operational data stored
 
 ![Namespace region](_images/add-namespace-region.png)
 
-However, OCS may process a namespace's operational data in a different region (in other words,  "cross-region"). For example, if you create a namespace in the `US-West` region, OCS may process its operational data cross-region in `EU-West`.
+However, OCS may process a namespace's operational data in a different region (in other words, _cross-region_). For example, if you create a namespace in the `US-West` region, OCS may process its operational data cross-region in `EU-West`.
 
 Processing operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region may reside in the cross-region processing service memory up to several hours. 
 

@@ -14,7 +14,7 @@ A folder is used to partition data into logical units that represent your organi
 
 Perform the following steps to create a folder in AVEVA Connect:
 
-1. From the AVEVA Connect home page, select the menu icon, then select **Folder Management** and select the **Add Folder** button.
+1. From the AVEVA Connect home page, select the menu icon, then select **Folder Management** and select **Add Folder**.
 
    The `Add Folder` window opens.
 
@@ -29,6 +29,8 @@ Perform the following steps to create a folder in AVEVA Connect:
     | US-West | (westus) |
     | EU-West | (northeurope) | 
     | Australia | (australiaeast) |
+
+   **Note:** Other regions (such as Japan, India, etc.) are available for selection when creating a folder in AVEVA Connect, but AVEVA Data Hub only supports the three regions listed above. Therefore, when you activate the AVEVA Data Hub service for the folder, if you have chosen a region not in the list above you are prompted to select an alternative region from the list for the service.
 
 1. (Optional) Set a budget for Flex Credits for the folder. For more information, see [About Flex Credits](https://help.connect.aveva.com/#/home/767994/10/11). 
 

@@ -1,0 +1,1 @@
+Generate a preview of your data view by editing the index configuration and retrieval method. Once you are satisfied with your overall data view configuration, save it.

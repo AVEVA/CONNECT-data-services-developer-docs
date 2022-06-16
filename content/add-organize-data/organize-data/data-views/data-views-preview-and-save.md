@@ -4,6 +4,8 @@ uid: data-views-preview-and-save
 
 # Step 5: Preview and save the data view
 
+[!include[preview-and-save](_includes/preview-and-save.md)]
+
 1. In the `Generate Preview` pane, turn the **Auto Refresh** toggle switch on to enable auto refresh. With auto refresh enabled, changes to any of the streams included in the data view are immediately reflected in the data view.
 
 1. Select the date and time display to set the **Start Index** and **End Index** to enter the time period of the data to include in the data view. For interpolated data views, enter a `Time Interval`.

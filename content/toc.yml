@@ -194,11 +194,9 @@
         - topicUid: data-views-query-quick-edits
         - topicUid: data-views-group-data-fields
         - topicUid: data-views-override-index-config
-      - topicUid: data-views-retieve
+      - topicUid: data-views-retrieve
         items:
         - topicUid: data-views-install-power-bi-connector
-          items:
-          - topicUid: PowerBIReleaseNotes
         - topicUid: data-views-retrieve-data-view
         - topicUid: data-view-retrieve-edit-query
 - topicUid: Security

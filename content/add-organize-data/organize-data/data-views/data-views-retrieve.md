@@ -1,5 +1,5 @@
 ---
-uid: data-views-retieve
+uid: data-views-retrieve
 ---
 
 # Retrieve a data view
@@ -12,4 +12,4 @@ uid: data-views-retieve
 
 - <xref:data-views-retrieve-data-view>
 
-- <xref:data-view-retrieve-edit-query> 
+- <xref:data-view-retrieve-edit-query>

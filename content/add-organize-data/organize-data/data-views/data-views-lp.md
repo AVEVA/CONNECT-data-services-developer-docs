@@ -22,4 +22,4 @@ For more information, see <xref:data-views-create-and-configure>.
 
 [!include[retrieval](../../../_includes/data-views-retrieve.md)]
 
-For more information, see <xref:data-views-retieve>.
+For more information, see <xref:data-views-retrieve>.

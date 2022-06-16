@@ -9,11 +9,12 @@ uid: DataViews
 Working with a data view involves two phases:
 
 1. [Data view creation and configuration](#data-view-creation-and-configuration)
+
 1. [Data view retrieval](#data-view-retrieval)
 
 ## Data view creation and configuration
 
-First, you must create and configure a data view. [!include[retrieval](../../../_includes/data)]
+First, you must create and configure a data view. [!include[retrieval](../../../_includes/data-views-retrieve.md)]
 
 For more information, see <xref:data-views-create-and-configure>.
 

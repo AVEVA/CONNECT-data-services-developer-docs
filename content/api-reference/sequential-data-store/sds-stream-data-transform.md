@@ -16,9 +16,9 @@ If stream data has UOM information associated, SDS supports reading data with un
 On each read data request, unit conversions are specified by a user defined collection of SdsStreamPropertyOverride objects in read requests. 
 All unit conversions of data are HTTP POST requests with a request body containing a collection of SdsStreamPropertyOverride objects. 
 
-## `Get First (GET Method)`
+## `Get First 1`
 
-<a id="opIdStreamDataTransform_Get First (GET Method)"></a>
+<a id="opIdStreamDataTransform_Get First 1"></a>
 
 Returns the first value in the stream. If no values exist in the stream, null is returned.
 
@@ -52,9 +52,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get First (POST Method)`
+## `Get First 2`
 
-<a id="opIdStreamDataTransform_Get First (POST Method)"></a>
+<a id="opIdStreamDataTransform_Get First 2"></a>
 
 Returns the first value in the stream. If no values exist in the stream, null is returned.
 
@@ -88,9 +88,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `Get Last (GET Method)`
+## `Get Last 1`
 
-<a id="opIdStreamDataTransform_Get Last (GET Method)"></a>
+<a id="opIdStreamDataTransform_Get Last 1"></a>
 
 Returns the last value in the stream. If no values exist in the stream, null is returned.
 
@@ -124,9 +124,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Last (POST Method)`
+## `Get Last 2`
 
-<a id="opIdStreamDataTransform_Get Last (POST Method)"></a>
+<a id="opIdStreamDataTransform_Get Last 2"></a>
 
 Returns the last value in the stream. If no values exist in the stream, null is returned.
 
@@ -160,9 +160,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data (GET Method)`
+## `List Data 1`
 
-<a id="opIdStreamDataTransform_List Data (GET Method)"></a>
+<a id="opIdStreamDataTransform_List Data 1"></a>
 
 Returns a collection of stored values at indexes based on request parameters.
   
@@ -223,9 +223,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data (POST Method)`
+## `Get Data 2`
 
-<a id="opIdStreamDataTransform_Get Data (POST Method)"></a>
+<a id="opIdStreamDataTransform_Get Data 2"></a>
 
 Returns a collection of stored values at indexes based on request parameters.
   
@@ -286,9 +286,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data Interpolated (GET Method)`
+## `List Data Interpolated 1`
 
-<a id="opIdStreamDataTransform_List Data Interpolated (GET Method)"></a>
+<a id="opIdStreamDataTransform_List Data Interpolated 1"></a>
 
 Returns a collection of values based on request parameters.
 The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
@@ -340,9 +340,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data Interpolated (POST Method)`
+## `Get Data Interpolated 2`
 
-<a id="opIdStreamDataTransform_Get Data Interpolated (POST Method)"></a>
+<a id="opIdStreamDataTransform_Get Data Interpolated 2"></a>
 
 Returns a collection of values based on request parameters.
 The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
@@ -394,9 +394,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data Summaries (GET Method)`
+## `List Data Summaries 1`
 
-<a id="opIdStreamDataTransform_List Data Summaries (GET Method)"></a>
+<a id="opIdStreamDataTransform_List Data Summaries 1"></a>
 
 Returns summary intervals between a specified start and end index. Index types that cannot be interpolated do not support summary requests. Strings are an example of indexes that cannot be interpolated. Summaries are not supported for streams with compound indexes. Interpolating between two indexes that consist of multiple properties is not defined and results in non-determinant behavior.
 
@@ -434,9 +434,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data Summaries (POST Method)`
+## `Get Data Summaries 2`
 
-<a id="opIdStreamDataTransform_Get Data Summaries (POST Method)"></a>
+<a id="opIdStreamDataTransform_Get Data Summaries 2"></a>
 
 Returns summary intervals between a specified start and end index. Index types that cannot be interpolated do not support summary requests. Strings are an example of indexes that cannot be interpolated. Summaries are not supported for streams with compound indexes. Interpolating between two indexes that consist of multiple properties is not defined and results in non-determinant behavior.
 
@@ -474,9 +474,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 ---
 
-## `List Data Samples (GET Method)`
+## `List Data Samples 1`
 
-<a id="opIdStreamDataTransform_List Data Samples (GET Method)"></a>
+<a id="opIdStreamDataTransform_List Data Samples 1"></a>
 
 Returns representative data sampled by intervals between a specified start and end index. Sampling is driven by a specified property or properties of the stream's Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated.
 
@@ -518,9 +518,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 ---
 
-## `Get Data Samples (POST Method)`
+## `Get Data Samples 2`
 
-<a id="opIdStreamDataTransform_Get Data Samples (POST Method)"></a>
+<a id="opIdStreamDataTransform_Get Data Samples 2"></a>
 
 Returns representative data sampled by intervals between a specified start and end index. Sampling is driven by a specified property or properties of the stream's Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated.
 

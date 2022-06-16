@@ -5,6 +5,486 @@ uid: sds-access-control-list
 
 # Access Control List
 
+## `Get Streams Access Control List`
+
+<a id="opIdNamespaceAccessControl_Get Streams Access Control List"></a>
+
+Gets the default ACL for the Streams collection. An ETag header is returned, which can be used to prevent modification of the ACL, during a later call to modify the ACL, if the object has already been modified.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the default `AccessControlList` for Streams|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Streams Access Control List`
+
+<a id="opIdNamespaceAccessControl_Update Streams Access Control List"></a>
+
+Updates the default ACL for the Streams collection.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Streams Access Control List`
+
+<a id="opIdNamespaceAccessControl_Patch Streams Access Control List"></a>
+
+Updates the default ACL for the Streams collection using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Streams
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Types Access Control List`
+
+<a id="opIdNamespaceAccessControl_Get Types Access Control List"></a>
+
+Gets the default ACL for the Types collection. An ETag header is returned, which can be used to prevent modification of the ACL, during a later call to modify the ACL, if the object has already been modified.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the default `AccessControlList` for Types|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Types Access Control List`
+
+<a id="opIdNamespaceAccessControl_Update Types Access Control List"></a>
+
+Updates the default ACL for the Types collection.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Types Access Control List`
+
+<a id="opIdNamespaceAccessControl_Patch Types Access Control List"></a>
+
+Updates the default ACL for the Types collection using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Types
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Stream Views Access Control List`
+
+<a id="opIdNamespaceAccessControl_Get Stream Views Access Control List"></a>
+
+Gets the default ACL for the Stream Views collection. An ETag header is returned, which can be used to prevent modification of the ACL, during a later call to modify the ACL, if the object has already been modified.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the default `AccessControlList` for Stream Views|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Stream Views Access Control List`
+
+<a id="opIdNamespaceAccessControl_Update Stream Views Access Control List"></a>
+
+Updates the default ACL for the Stream Views collection.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Stream Views Access Control List`
+
+<a id="opIdNamespaceAccessControl_Patch Stream Views Access Control List"></a>
+
+Updates the default ACL for the Stream Views collection using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/StreamViews
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Quantities Access Control List`
+
+<a id="opIdNamespaceAccessControl_Get Quantities Access Control List"></a>
+
+Gets the default ACL for the Quantities collection. An ETag header is returned, which can be used to prevent modification of the ACL, during a later call to modify the ACL, if the object has already been modified.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantities
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the default `AccessControlList` for Quantities|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Quantities Access Control List`
+
+<a id="opIdNamespaceAccessControl_Update Quantities Access Control List"></a>
+
+Updates the default ACL for the Quantities collection.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantities
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Quantities Access Control List`
+
+<a id="opIdNamespaceAccessControl_Patch Quantities Access Control List"></a>
+
+Updates the default ACL for the Quantities collection using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Quantities
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|You are not authorized for this operation|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+# Access Control List
+
 ## `Get Quantity Access Control List`
 
 <a id="opIdQuantityAccessControl_Get Quantity Access Control List"></a>

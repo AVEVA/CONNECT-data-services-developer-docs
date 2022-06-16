@@ -759,8 +759,8 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 |Property|Value|
 |---|---|
-|Continuous|0|
 |Default|0|
+|Continuous|0|
 |StepwiseContinuousLeading|1|
 |StepwiseContinuousTrailing|2|
 |Discrete|3|

@@ -6,9 +6,9 @@ uid: sds-stream-bulk-data
 # Stream Bulk Data
 The API in this section interacts with data from multiple streams.
 
-## `List Window Values (GET Method)`
+## `List Window Values 1`
 
-<a id="opIdStreamsData_List Window Values (GET Method)"></a>
+<a id="opIdStreamsData_List Window Values 1"></a>
 
 Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
 GET and POST join requests are supported.
@@ -55,9 +55,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 ---
 
-## `Get Window Values (POST Method)`
+## `Get Window Values 2`
 
-<a id="opIdStreamsData_Get Window Values (POST Method)"></a>
+<a id="opIdStreamsData_Get Window Values 2"></a>
 
 Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
 GET and POST join requests are supported.

@@ -19,7 +19,13 @@ Cross-region data sharing is enabled by default. When cross-region data sharing 
 
 ### Additional processing
 
-Each namespace in OCS is bound to a geographical region. Operational data stored in each namespace is usually processed within that region, which is chosen while [adding the namespace](xref: gpNamespaces). However, OCS may process a namespace's operational data in a different region (in other words,  "cross-region"). For example, if you create a namespace in the `US-West` region, OCS may process its operational data cross-region in `EU-West`.
+Each namespace in OCS is bound to a geographical region. Operational data stored in each namespace is usually processed within that region, which is chosen while [adding the namespace](xref:gpNamespaces).
+
+**Namespace geographical region**
+
+![Namespace region](_images/add-namespace-region.png)
+
+However, OCS may process a namespace's operational data in a different region (in other words,  "cross-region"). For example, if you create a namespace in the `US-West` region, OCS may process its operational data cross-region in `EU-West`.
 
 Processing operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region may reside in the cross-region processing service memory up to several hours. 
 

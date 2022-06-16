@@ -10,7 +10,7 @@ View and monitor the health status and configuration information for edge system
 
 ## View an edge system
 
-To view an edge system, follow these steps:
+To view an edge system:
 
 1. From the left pane, select **Data Collection** > **Software Management**.
 
@@ -26,11 +26,11 @@ To view an edge system, follow these steps:
 
 1. To open the right pane that displays information for a device, select the device. 
 
-1. To see the edge system installed on the device and the configured components, select the `Details` tab.
+1. To see the edge system installed on the device and the configured components, select the **Details** tab.
 
-1. To review the configuration details, select the `Configuration` tab.
+1. To review the configuration details, select the **Configuration** tab.
 
-1. To open a trend showing diagnostic data in a new window, select the **View Trend** ![View Trend](images/view-trend-icon.png) icon.
+1. To open a trend showing diagnostic data in a new window, select the **View Trend** ![View Trend](../../../_icons/default/chart-line-variant.svg) icon.
 
   The level where you select the icon determines what data is included:
 
@@ -44,9 +44,9 @@ To view an edge system, follow these steps:
 
 You can remove edge systems from the list of edge systems in AVEVA Data Hub, but the edge system remains on the device. After an edge system is removed from AVEVA Data Hub and it is no longer sending data to AVEVA Data Hub, you can no longer see or manage it from AVEVA Data Hub. If an edge system sends health data to AVEVA Data Hub after it has been removed from the list of edge systems, it will reappear in the list of edge systems.
 
-To remove an edge system, follow these steps:
+To remove an edge system:
 
-1. In the left pane, select **Data Management** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Software Management**.
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 

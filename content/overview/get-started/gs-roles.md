@@ -10,7 +10,7 @@ Use roles to manage access to assets, resources, and services in AVEVA Data Hub.
 
 - [Roles best practices](xref:ccRoles#roles-bp)
 
-To create a role, follow these steps:
+To create a role:
 
 1. In the left pane, select **Security** > **Roles**.
 
@@ -19,7 +19,7 @@ To create a role, follow these steps:
 1. In the `Add Role` window, complete the following fields:
 
    - **Name**  - Enter *MyData.Role*.
-
+   
    - **Description** - (Optional) Add a description for this role.
 
 1. To create the new role, select **Add**. 

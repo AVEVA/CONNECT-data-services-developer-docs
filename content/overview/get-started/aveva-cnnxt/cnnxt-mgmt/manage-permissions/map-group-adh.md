@@ -20,7 +20,7 @@ Assign an existing AVEVA Connect group to a Data Hub role to control what action
 
 * Tenant Member - Default role assigned to all users or clients. Tenant members are granted read access by default.
 
-To assign an existing AVEVA Connect group to a Data Hub role, follow these steps:
+To assign an existing AVEVA Connect group to a Data Hub role:
 
 1. Open the AVEVA Data Hub portal.
 

@@ -2,8 +2,8 @@
 uid: remove-agent-portal
 ---
 
-## Remove an agent
-<!-- AF 11/16/21 - This appears in the TOC twice. There should be a "PI to Data Hub Agent maintenance topic." Also the intro sentence and the following bullets are redundant. -->
+# Remove an agent
+
 You remove a PI to Data Hub Agent by first uninstalling it from the host machine and then the portal. There are two parts to removing an agent:
 
 * Step 1: Uninstall the agent from the host machine
@@ -14,7 +14,7 @@ You remove a PI to Data Hub Agent by first uninstalling it from the host machine
 
 To remove the PI to Data Hub Agent application from a host machine, uninstall it from the `Apps & features` window and then follow the prompts in the `PI to Data Hub Agent` window.
 
-To remove the PI to Data Hub agent from the host machine, follow these steps:
+To remove the PI to Data Hub agent from the host machine:
 
 1. Select Windows **Start**, then select **Settings** > **Apps** > **Apps & features**.
 
@@ -40,7 +40,7 @@ To remove the PI to Data Hub agent from the host machine, follow these steps:
 
 After uninstalling an agent from a host machine, you also need to remove it from the portal.
 
-To remove an agent from the portal, follow these steps:
+To remove an agent from the portal:
 
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 

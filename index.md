@@ -6,7 +6,7 @@ uid: index
 
 ## [Overview](xref:WhatIsADH)
 
-## [Quickstarts](xref:GettingStartedWithTrendData)
+## [Quickstarts](xref:CreateTrendSession)
 
 ## [How-To Guides](xref:CreateConfigureAsset)
 

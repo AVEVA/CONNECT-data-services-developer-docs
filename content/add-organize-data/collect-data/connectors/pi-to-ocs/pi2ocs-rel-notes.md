@@ -4,8 +4,7 @@ uid: pi2ocs-rel-summary
 
 # PI to Data Hub release summary
 
-## Release 1.8.2: January 28, 2022
-
+## Release 2.0: May 16, 2022
 
 ## Overview
 
@@ -13,41 +12,43 @@ This release covers the PI To Data Hub Agent, a component that is installed on-p
 
 ## Fixes and enhancements
 
+### Enhancements
+
+*AF element replication*
+
+PI to Data Hub now supports replication of AF elements to AVEVA Data Hub. AF elements are created as assets in AVEVA Data Hub. For a complete list of supported AF objects, see ["What AF data is transferred to AVEVA Data Hub?"](xref:af-data-transferred).
+
+*Edit a transfer*
+
+PI to Data Hub now allows you to edit a transfer’s settings and adding or removing AF elements and PI point references.
+
+*Health events*
+
+Easy access to both PI to Data Hub Agent and transfer health events is available.
+
+*Alternate display name*
+
+The ability to use an alternative server name is now supported in the PI to Data Hub Configuration Utility. Users can enter an alternate name in the Alternate Display Name field. This text will replace an on-premises Data Archive server names in stream IDs, as well as AF server names that appears in the PI to Data Hub Agents window.
+ 
+**Note:** Stream IDs are immutable. If a transfer is in progress, new streams are created based on the current transfer’s configuration settings.
+
 ### Fixes
 
-*PI to Data Hub Agent redirects user to a broken documentation page*
+None
 
-During installation, the user gets redirected to a broken documentation web page. In addition, the user is redirected to a broken web page when the help icon is clicked in the PI to Data Hub Configuration Utility. This issue has been fixed. 
+### Known issues
 
-*PI to Data Hub Agent installation pointed to development cloud servers.*
-
-During installation of the PI to Data Hub Agent, the agent attempts to establish connectivity with internal development cloud servers by default instead of the public AVEVA Data Hub cloud servers. This issue has been resolved. 
-
-**Known issues**
-
-* Query search results that contain a very large number of PI points (> 1 million) will generate an exception error and not be processed. 
+* Query search results that contain a very large number of PI points (> 1 million) will generate an exception error and not be processed.
 
 * The AF Server must have a default Data Archive server specified for PI to Data Hub to operate properly.
 
-* The PI to Data Hub Configuration Utility can become unresponsive on some systems. There are two workaround options:
+* Streams with AF elements and referenced PI points are not deleted even when the `Automatically remove Streams and Assets` option has been selected; this exception includes instances of assets not created for AF elements due to errors (for example, attribute errors).
 
-  1. Download and install a newer version of .NET Desktop Runtime (3.1.21 or later) from [here](https://dotnet.microsoft.com/download/dotnet/3.1).
-   
-  2. Change the compatibility settings:
-    
-     a. Navigate to `C:\Program Files\AVEVA\PIToDataHub`.
-     
-     b. Right-click the `PIToDataHubConfigurationUtility.exe` file, then select **Properties**.
-     
-     c. In the **Properties** dialog box, select the **Compatibility** tab.
-     
-     d. Select the **Change high DPI settings** button, then select the **Use this setting to fix scaling problems for this program instead of the one in Settings** checkbox.
-     
-     e. Select **OK**, select **Apply**, then close the dialog box.
+* Configuring two transfers in the same namespace, where the transfers references the same AF element(s), results in the asset properties of one transfer being overridden/replaced by the second transfer.
 
 ## System requirements
 
-This release supports Windows 10, Windows Server 2016, and Windows Server 2019.
+This release supports Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, and Windows Server 2022.
 
 Minimum requirements:
 
@@ -55,13 +56,13 @@ Minimum requirements:
 
 * Internet connectivity of at least 10Mbit/sec
 
-* Prior editions of Windows are not supported.
+Prior editions of Windows are not supported.
 
 ## Distribution Kit Files
 
 | Product  | Software Version |
 |------------- | ------------ |
-| PI to Data Hub Agent Installation | 1.8.2 |
+| PI to Data Hub Agent Installation | 2.0 |
 
 ## Installation and upgrade
 
@@ -97,6 +98,6 @@ No security-related information is applicable to this release.
 
 ### Documentation overview
 
-See the [PI to Data Hub documentation](xref:main-lp) .
+See the [PI to Data Hub documentation](xref:main-lp).
 
 © 2022 AVEVA Group plc and its subsidiaries.

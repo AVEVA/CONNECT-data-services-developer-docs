@@ -31,7 +31,7 @@ A namespace is a logical unit of organization for data within a tenant. Before c
 
 ### Region 
 
-Regions are geographical area designations associated with AVEVA Data Hub resources, for example, types, streams, and data views. WestUS and WestEurope are regions. AVEVA Data Hub provisions a folder/namespace within a single region. After you create a folder/namespace in AVEVA Connect, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
+Regions are geographical area designations associated with AVEVA Data Hub resources, for example, types, streams, and data views. WestUS and NorthEurope are regions. AVEVA Data Hub provisions a folder/namespace within a single region. After you create a folder/namespace in AVEVA Connect, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
 
 ### Identity 
 

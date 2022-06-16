@@ -30,7 +30,7 @@ After creating types, you can add streams and associate a type with the stream. 
 
 1. Select the **Tags** tab.
 
-1. In the **New Tag** field, type *AVEVA*, and click **+** to add the tag. 
+1. In the **New Tag** field, type *AVEVA*, and select **+** to add the tag. 
 
     **Note:** Select the **X** to delete the tag from the stream.
 

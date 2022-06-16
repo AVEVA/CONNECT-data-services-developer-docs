@@ -3,8 +3,7 @@ uid: transfer-data
 ---
 
 # Transfer data to AVEVA Data Hub
-<!-- AF 11/15/21 This topic appears in the TOC twice. It could also use to be broken into Define a data transfer and Start a data transfer. -->
-<!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to Data Hub landing pages).-->
+
 You initiate a data transfer from the `PI to Data Hub Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#explicit-versus-implicit-pi-points).
@@ -29,17 +28,19 @@ Transfer creation consists of the following tasks:
 
 1. Initiate the data transfer and monitor its progress. 
 
-**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the Details pane in the PI to Data Hub Agents page.
+**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to Data Hub Agents` window. The following image shows AF indexing in progress:
 
 ![](../../images/af-indexing.png)
 
 ## Name the transfer and set data privacy settings 
 
+To name the data transfer: 
+
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
 1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
 
-1. In the `Details` pane, select **Create Transfer**.
+1. In the **Manage Agent** tab, select **Create Transfer**.
 
    The `Transfer Setting` window opens.
 
@@ -51,7 +52,7 @@ Transfer creation consists of the following tasks:
 
    **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](xref:transfer-data) to learn more about transferring historical data.
 
-2. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
+1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
    * **High** - Sends all intended metadata.
    * **Medium** - Default. Send metadata without logical addresses from the data source.
@@ -62,7 +63,7 @@ Transfer creation consists of the following tasks:
 
     |   | High | Medium | Low | None |
     | ------------- | ----------------- | ----------------- |----------------- | ----------------- |
-    | Name | X | X  | X || X |
+    | Name | X | X  | X | X |
     | Descriptor | X | X |  
     | EngUnits | X | X |  |  |  |
     | ExDesc | X |  |  |  |
@@ -73,7 +74,9 @@ Transfer creation consists of the following tasks:
     | SourceTag | X | X |  |  |
     |Step | X | X |  |  |
 
-3. Select **Ok**.
+1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically remove Streams and Assets** option. 
+
+1. Select **Ok**.
 
    The transfer is created and the `Transfer` page opens.
 
@@ -81,11 +84,11 @@ Transfer creation consists of the following tasks:
 
 ## Build an AF elements transfer list
 
-After naming the transfer, build an AF elements transfer list by setting query criteria and then selecting AF elements. You can narrow your search by filtering by element name, asset group, attribute name/value, template, and category.
+After naming the transfer, build an AF elements transfer list by setting query criteria and then selecting AF elements. You can narrow your search by filtering by element name, asset group, attribute name/value, template, and category. A corresponding asset is created for every AF element in your transfer. Static AF element attributes become asset properties. 
 
-To build an AF element
+To build an AF element:
 
-1. On the `Transfer` page, select the **AF Database** down arrow, then select the source AF database to search.
+1. On the `Transfer` page, select the source AF database from the **AF Database** dropdown list.
 
    ![](../../images/transfer-win.png)
 
@@ -109,8 +112,8 @@ To build an AF element
 
       * In the last field, enter an attribute value.
 
-   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
-
+   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.
+   
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 
 1. (Optional) To narrow the search by a specific AF category, in the **Category** field, select a category from the dropdown list.
@@ -135,7 +138,7 @@ To build an AF element
 
 You can view details about an individual AF element such as related attribute names, values, and data references.
 
-To view AF element details, follow these steps:
+To view AF element details:
 
 1. Select an AF element on the **AF Elements** tab.
 
@@ -144,6 +147,8 @@ To view AF element details, follow these steps:
    The `AF Element Information` pane opens and displays details about AF element attributes. 
    
 1. To view the paths of referenced AF elements, select the **Reference AF Elements** tab.
+ 
+1. (Optional) To view health messages for the selected AF element, select the **Health Events** tab. 
 
 1. To view details for another AF element, deselect the currently selected element, and then select a different element in the transfer list.
 
@@ -153,7 +158,7 @@ To view AF element details, follow these steps:
 
 You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
 
-To build a PI points transfer list, follow these steps:
+To build a PI points transfer list:
 
 1. Select the **PI Point Search** tab.
 
@@ -162,11 +167,11 @@ To build a PI points transfer list, follow these steps:
 
    | Criteria To Filter By      | Action To Take                                               |
    | -------------------------- | ------------------------------------------------------------ |
-   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul><br/>**Note:** To retrieve all PI points, do not enter values or select **"All"** from the Point Type dropdown list. To execute a partial match, enter the value followed by an asterisk, for example, 54*. |
+   | Common PI point attributes | Enter criteria in any of the following fields:<br /><ul><li>**Name** (alias for tag attribute)</li><li>**Point Source**</li></ul>**Note:** Enter * to retrieve all PI points. |
    | Point descriptions         | Enter criteria in the following fields:<br /><ul><li>**Descriptor** </li><li>**Extended Descriptor**</li></ul> |
    | Engineering units          | Enter criteria in the **Engineering Units** field.           |
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
-   | Specific location code(s)  | Enter up to five location code values (1-9) in the **Location Codes** field. |
+   | Specific location code(s)  | Enter up to five location code values in the **Location Codes** field. |
 
 4. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
 
@@ -196,7 +201,7 @@ The reference type indicates the PI point's source and how it was retrieved. The
 
 You can view attribute details for selected PI points in a transfer. Implicit PI points are PI points referenced by AF elements in a transfer. You can hide implicit PI points to temporarily remove them from view on the **PI Points** tab. Hidden implicit PI points are still included in a transfer unless the referencing AF elements are removed from the transfer list. 
 
-To view PI point details, follow these steps:
+To view PI point details:
 
 1. In the `Transfer` pane, select the **PI Points** tab.
 
@@ -204,7 +209,9 @@ To view PI point details, follow these steps:
 
    The `PI Point Information` pane opens.
 
-1. To view the path of any AF elements that reference the PI point, select the **Source AF Elements** tab. 
+1. To view the path of any AF elements that reference the PI point, select the **Source AF Elements** tab.
+ 
+1. (Optional) To view health messages for the selected PI point, select the **Health Events** tab.  
 
 1. (Optional) To hide implicit PI points on the PI points list, turn off the **Show Implicit PI Points** toggle.
 
@@ -221,59 +228,53 @@ To view PI point details, follow these steps:
 Before you can transfer data to AVEVA Data Hub, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
 <!--VT, 11/29/21: Ok.-->
 
-To save the data transfer definition, follow these steps:
+To save the transfer:
 
-1. To ensure that the data transfer definition is correct, review the definition.
+1. To ensure your data transfer definition is correct and contains all the data you want transferred, review it for accuracy.
+ 
+1. (Optional) Add or remove PI points and/or AF elements as needed. 
 
-1. In the `Transfer` pane, select **Save**.
-
-## Overview of the Details pane
-<!--AF 11/15/21 - This section doesn't belong in this topic about how to define a transfer.-->
-<!-- VT, 11/29/21: I can move this into it's own topic; SMEs and myself wanted to explain what these fields represented.-->
-The `Details` pane provides information about the agent associated with the transfer, the transfer progress, the data sources, and details about the PI points and AF elements transferred. The following image shows the sections in the `Details` pane, which you can expand and collapse using the arrows ( ![](../../images/chevrons.png) ):  
-
-![](../../images/details-pane1.png)
-![](../../images/details-pane2.png) 
-
-Each section of the `Details` pane is described in the following table.
-
-| Numbered section | Description                                                  |
-| ---------------- | ------------------------------------------------------------ |
-| **1**            | `Agent Overview` - Lists the agent description (if any), namespace, status, version, and date and time of last connection. |
-| **2**            | `Transfer Overview` - Displays transfer details and progress. Also contains buttons to view, remove, or stop a transfer. |
-| **3a**            | Under the registered Data Archive ( ![](../../images/pda-source-icon.png) ), the Streaming and Historical Events Per Second fields list the number of events successfully transferred to AVEVA Data Hub. Historical events represent the number of incoming events per second that come from a backlog of events for the PI points associated with the transfer, which are not transferred as "real-time" events. Streaming events represent the number of current, real-time events transferred into AVEVA Data Hub. |
-|**3b**            |If an AF server has been added, details about the AF server and transferred elements are shown under the listed  AF server data source ( ![](../../images/af-data-icon.png) ). The AF status fields provide information about the number of AF elements and assets succesfully transferred and created: <ul><li>**Total Elements in Transfer**: The total number of AF elements in transfer. </li><li>**Total Elements Transferred**: The number of elements transferred to AVEVA Data Hub.</li><li>**Total Assets Created Per Second**: The number of assets per second created during the transfer.</li><li>**Total Assets Created**: The number of assets created in AVEVA Data Hub.</li><li>**Assets Updated**: The number of assets updated during the transfer process.</li><li>**Asset Create/Update Errors:** The number of errors generated while creating or updating assets.</li> |
+1. To save the transfer and return to the PI to Data Hub Agents window, select **Save** in the lower right-hand corner.
 
 ## Transfer data to AVEVA Data Hub
 
-Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. 
+Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
 
 **Note:** Modifications to an AF database or Data Archive digital state table during a PI to Data Hub transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
 
-  1. Stop the transfer.
+1. Stop the transfer.
 
-  2. Make modifications to the AF database and/or Data Archive digital state tables.
+1. Make modifications to the AF database and/or Data Archive digital state tables.
 
-  3. Restart the transfer to pick up these changes.
+1. Restart the transfer to pick up these changes.
 
 ## Start a data transfer
 
-To start a data transfer, follow these steps:
+To start a data transfer:
 
 1. (Optional) In the `PI to Data Hub Agents` window, select the PI to Data Hub Agent associated with the data transfer. 
 
-1. (Optional) In the `Details` pane, expand the `Transfer Overview` section.
+1. (Optional) In the **Manage Agent** tab, expand the `Transfer Overview` section.
 
 1. Select **Start Transfer**, then select **Start**.
 
-   The transfer of data begins and the transfer status is shown in the `Transfer Overview` section.
+   The data transfer begins and transfer status is updated in the `Transfer Overview` section on the **Manage Agent** tab.
 
-1. In the `Details` pane, expand the `Data Source` section to view the status of a transfer as data is sent.
+   **Note:** The **Manage Agent** tab provides information about the agent associated with the transfer and the transfer progress.
 
-   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select the **Logs** button above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
+1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 
-1. (Optional) If the fields in the `Details` pane indicate there are issues with the transfer or agent, select **Logs** to open the `Logs` window and view more information.
+   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
+
+1. (Optional) To view more information about an agent's status, select **Agent Health Events**.
+
+   **Note:** See [Overview of the Health Events window](xref:health-evts-window) for more information.  
+ 
+1. (Optional) To see more information about log messages for the transfer, select **Logs**. See [Tenant log messages](xref:download-tenant-log) for more information. 
+
+1. (Optional) To view transfer progress and metrics for stream and/or asset creation, select the **Transfer Metrics** tab. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 
 1. (Optional) To remove a transfer, select **Remove Transfer**, then select **Remove**.
+ 

@@ -13,12 +13,13 @@ For a role to perform any actions on a stream, you must grant that role permissi
 - Write
 - Delete
 - Manage Permissions
+- Share
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
 1. Select one or more streams.
 
-1. Select **More options** ![More options icon](../../images/more-options-wite-background.png), and then select **Manage Permissions**.
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.
 
 1. In the `Manage Permissions` window, from **Selected Role**, choose the role whose permissions you want to modify.
 
@@ -32,21 +33,25 @@ Tags and metadata allow you to associate additional information with a stream. F
 
 1. Select a stream.
 
-1. Click the **More options** ![More options icon](../../images/more-options-wite-background.png) icon, and then select **Edit Stream**.
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Edit Stream**.
 
    A tab opens to allow you to modify the metadata and tags for the stream.
 
 1. Add tags.
 
-   - Select the **Tags** tab, if it is not already selected. In the `New Tag` box, enter the name of the tag, and then select the plus sign (**+**).
+   - Select the **Metadata** tab, and then select **Add Metadata**. In the `Metadata Key` field, enter the name of the key and in the `Metadata Value` field, enter a value for that key.
+
+   - Select the **Tags** tab, if it is not already selected. In the `New Tag` field, enter the name of the tag, and then select the plus sign (**+**).
    
    - To remove a tag, select the **X** beside the tag name.
 
-1. Add metadata.
+## Share streams
 
-   - Select the **Metadata** tab, and then select **Add Metadata**. In the `Metadata Key` box, enter the name of the key and in the `Metadata Value` box, enter a value for that key.
+Users with permissions to share a data stream within a [community](xref:communities) can do so from the Sequential Data Store. For more information on completing this process, see [Share streams](xref:community-manage-shared-streams#share-streams).
 
-   - To remove a metadata, select the **X** beside the row to be deleted.
+## Unshare streams
+
+Users with permissions to share a data stream within a community can also unshare it, removing the stream data from the community. For more information on completing this process, see [Unshare streams](xref:community-manage-shared-streams#unshare-streams).
 
 ## Remove streams
 
@@ -56,6 +61,6 @@ When you remove a stream, you are deleting it.
 
 1. Select one or more streams.
 
-1. Select **More options** ![More options icon](../../images/more-options-wite-background.png), and then select **Remove Stream**.
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Remove Stream**.
 
 1. In the confirmation window, select **Remove** to confirm the deletion.

@@ -24,10 +24,11 @@ Perform the following steps to create a folder in AVEVA Connect:
  
    **Note:** The region cannot be changed after folder creation. Before the folder is saved, select **Change** to select a different region. Region labels in AVEVA Connect and AVEVA Data Hub differ: 
 
-    | AVEVA Connect region label  | Corresponding AVEVA Data Hub region label |
-    | ------------- | ----------------- |
-    | US-West | westus |
-    | EU-West | northeurope | 
+    | AVEVA Connect region label | AVEVA Data Hub region label | 
+    | ------------- | ------------- |
+    | US-West | (westus) |
+    | EU-West | (northeurope) | 
+    | Australia | (australiaeast) |
 
 1. (Optional) Set a budget for Flex Credits for the folder. For more information, see [About Flex Credits](https://help.connect.aveva.com/#/home/767994/10/11). 
 

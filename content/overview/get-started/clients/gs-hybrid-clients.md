@@ -8,11 +8,11 @@ Hybrid clients are used by native and server-side web applications. Authenticati
 
 **Note:** Client modifications may take up to an hour before being visibly updated.
 
-To create a hybrid client, follow these steps:
+To create a hybrid client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. From the **Client Type** field, select **Hybrid**.
+1. In the **Client Type** dropdown list, select **Hybrid**.
 
 1. In the toolbar, select **Add Client**.
 
@@ -24,11 +24,11 @@ To create a hybrid client, follow these steps:
    
    **Note:** Do not select this option if there is no need to refresh tokens. There is a long lifespan for requesting new access tokens. 
 
-1. In the **Allowed Redirect URL(s)** box, enter a URL and select **+** to add it to the list.  
+1. In the **Allowed Redirect URL(s)** field, enter a URL and select **+** to add it to the list.  
    
    The application specifies one of the URLs in this list during authentication, and AVEVA Data Hub returns the results of the authentication to this URL.
 
-1. (Optional) In the **Allowed Logout Redirect URL(s)** box, enter a URL and select **+** to add it to the list.  
+1. (Optional) In the **Allowed Logout Redirect URL(s)** field, enter a URL and select **+** to add it to the list.  
    
    The application specifies one of the URLs from this list when it logs a user out of AVEVA Data Hub, and AVEVA Data Hub sends the user to that URL after a successful log out.
 

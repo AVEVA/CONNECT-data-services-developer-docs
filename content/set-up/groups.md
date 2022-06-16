@@ -2,15 +2,17 @@
 uid: Groups
 ---
 
-# AVEVA Data Hub Groups
+# AVEVA Data Hub groups
 
 Groups allow you to assign and manage roles for groups of users.
 	
+## Prerequisite
+ 
 You must have the role of Tenant Administrator to add and manage groups.
 
 ## Add a group
 
-To add a group, take the following steps:
+To add a group:
 
 1. In the left pane, select **Security** > **Groups**.
 
@@ -24,7 +26,7 @@ To add a group, take the following steps:
 
 ## Manage group roles
 
-To manage the roles for a group, take the following steps:
+To manage the roles for a group:
 
 1. Select the group from the list.
 
@@ -36,12 +38,13 @@ To manage the roles for a group, take the following steps:
 
 ## Remove a group
 
-To remove a group, take the following steps:
+Removing a group does not remove it from the identity provider. Instead, the group no longer has any role mappings, cannot be given access to assets, resources and services, and will not be displayed in the list of groups on the `Groups` page.
+
+To remove a group:
 
 1. Select a group from the list.
 
 1. Select **Remove Group**.
 
-1. Confirm that you want to remove the group in the message window by selecting **Remove** or select **Cancel** to cancel the request.
-	
-Removing a group does not remove it from the identity provider. Instead, the group no longer has any role mappings, cannot be given access to assets, resources and services, and will not be displayed in the list of groups on the `Groups` page.
+1. To confirm that you want to remove the group, select **Remove** in the message window or select **Cancel** to cancel the request.
+ 

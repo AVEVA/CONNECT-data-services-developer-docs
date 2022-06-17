@@ -18,7 +18,7 @@
       items: 
       - topicUid: create-folders
       - topicUid: bpNamespaces
-    - topicUid: manage-permissions-connect
+    - topicUid: ManageUsersConnect
       items:
       - topicUid: create-group
       - topicUid: assign-roles-groups

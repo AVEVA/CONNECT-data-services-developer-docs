@@ -10,5 +10,5 @@ As an administrator, use AVEVA Connect to manage AVEVA Data Hub access for your 
 
 1. [Create a folder and turn on the AVEVA Data Hub service](xref:create-folders).
 
-1. Add users and groups and grant permissions.
+1. [Add users and groups and grant permissions](xref:ManageUsersConnect).
    

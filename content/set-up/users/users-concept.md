@@ -14,7 +14,7 @@ Some points to note about adding and managing users:
 
 1. Users are added and granted access to AVEVA Data Hub in AVEVA Connect.
 
-2. Make sure the user has been assigned to the correct role in AVEVA Connect before sending the invitation to access AVEVA Data Hub. See [Invite users and assign user permissions](xref:invite-users). In AVEVA Data Hub, you can map a user or group to an AVEVA Data Hub role to control what actions they can take.
+2. Make sure the user has been assigned the DataHub Viewer role in AVEVA Connect before sending the invitation to access AVEVA Data Hub. See [Invite users and assign user permissions](xref:invite-users). In AVEVA Data Hub, you can map a user or group to an AVEVA Data Hub role to control what actions they can take.
 
    **Note:** The AVEVA Data Hub Tenant Member role grants read access to everything in the tenant. If a user should not have read access to some resources, the Tenant Member role can be limited.
 

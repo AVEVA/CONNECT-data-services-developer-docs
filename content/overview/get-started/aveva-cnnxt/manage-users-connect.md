@@ -4,7 +4,7 @@ uid: ManageUsersConnect
 
 # Manage users and permissions
 
-User and permission management occurs in both AVEVA Connect and AVEVA Data Hub. You begin in AVEVA Connect by creating groups, assigning roles, and adding users. These tasks require Account Administrator privileges in AVEVA Connect. Once these tasks are completed, you can add and then map existing users or groups to AVEVA Data Hub roles.
+User and permission management occurs in both AVEVA Connect and AVEVA Data Hub. You begin in AVEVA Connect by creating groups, assigning roles, and adding users. These tasks require Account Administrator privileges in AVEVA Connect. Once these tasks are complete, you can add and then map existing users or groups to AVEVA Data Hub roles.
 
 An overview of the process is outlined below.
 
@@ -28,6 +28,6 @@ An overview of the process is outlined below.
 
 1. [Add the users](xref:gpUsers) to AVEVA Data Hub.
 
-   - The AVEVA Data Hub roles assigned to a user's group to the user apply automatically.
+   - The AVEVA Data Hub roles assigned to a user's group apply to the user automatically.
    - Other roles can be added individually.
    - By default the Account Administrator in AVEVA Connect will have the Tenant Administrator role in AVEVA Data Hub.

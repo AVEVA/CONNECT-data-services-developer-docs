@@ -54,6 +54,8 @@ To create a data view:
 
 1. (Optional) To edit data field label, select **Next** and enter `{` to display tokens to use as a data field label.
 
+      [!include[field label tokens](../../../_includes/data-view-field-label-tokens.md)]
+
 1. Select **Apply** to accept the selected data fields.
 
    The `Filter Fields` and `Generate Preview` panes display.

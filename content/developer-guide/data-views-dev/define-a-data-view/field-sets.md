@@ -211,16 +211,9 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 | Timestamp.0 | Value.1 | Value.2 |
 |--|--|--|
 
-There are seven special parameters available for use in field labels:
-- `{IdentifyingValue}` - the value of the identifying field
-- `{Key}` - the value of the first of the `"Keys"` specified on the field
-- `{StreamReferenceName}` - the value of the first of the `"StreamReferenceNames"` specified on the field
-- `{Uom}` - the value of the unit of measure of the field (if UOM is present in the source)
-- `{SummaryType}` - the value of the summary type of the field (if defined)
-- `{SummaryDirection}` - the value of the summary direction of the field (if summary type is defined)
-- `{QueryId}` - the id of the query that produced the field
+#### Available data field labels
 
-If a special parameter fails to resolve, it becomes an empty string, `""`.
+[!include[data field label tokens](../../../_includes/data-view-field-label-tokens.md)]
 
 ### Source
 A field's [`.Source`](xref:DataViewsQuickStartDefine#fieldsource-enumeration) indicates where the field's values will come from, if applicable. A field of source type `FieldSource.NotApplicable` cannot be used as a data field.

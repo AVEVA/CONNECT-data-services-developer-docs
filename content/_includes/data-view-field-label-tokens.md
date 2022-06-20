@@ -5,7 +5,10 @@ There are a variety of special tokens available for use in field labels. These t
 	<tr>
 		<th>Token</th>
 		<th>Description</th>
-	</tr>	</thead>	<tbody>	<tr>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
 		<td><code>{CommunityId}</code></td>
 		<td>The value of the community identifier.</td>
 	</tr>

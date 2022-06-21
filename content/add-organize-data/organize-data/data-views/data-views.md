@@ -38,7 +38,7 @@ To create a data view:
 
    **Tips:**
 
-   - Mouse over the **Query Value** field to display a cheat sheet of wildcards, filters, and operators you can use in your query. 
+   - Select the **Query Value** field to display a cheat sheet of wildcards, filters, and operators you can use in your query. 
    
    - For more information on entering queries for streams, see [Search for streams](xref:sdsSearching#search-for-streams).
 

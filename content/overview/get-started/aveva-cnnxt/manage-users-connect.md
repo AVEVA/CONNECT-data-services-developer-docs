@@ -16,7 +16,7 @@ An overview of the process is outlined below.
 
 1. [Assign roles to groups](xref:assign-roles-groups) in AVEVA Connect.
 
-   - The DataHub Viewer role allows the user to see the namespace tile in AVEVA Connect and access AVEVA Data Hub for that namespace. By itself, this role does not grant any access to resources within AVEVA Data Hub
+   - The DataHub Viewer role allows the user to see the namespace tile in AVEVA Connect and access AVEVA Data Hub for that namespace. By itself, this role does not grant any access to resources within AVEVA Data Hub.
 
    - Only the DataHub Viewer role is applicable to AVEVA Data Hub. For information on other roles in AVEVA Connect see [View Role Assignments](https://help.connect.aveva.com/#/home/885637/10/11).
 

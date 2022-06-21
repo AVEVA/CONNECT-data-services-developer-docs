@@ -15,3 +15,7 @@ uid: data-views-add-data-fields
 ## Select data fields
 
 ## Edit data fields (optional)
+
+## Next steps
+
+Continue to <xref:data-views-preview-and-save>.

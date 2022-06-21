@@ -19,3 +19,11 @@ uid: data-views-preview-and-save
 1. To generate a preview of the data view with the selected settings, select **Generate preview**.
 
 1. Select **Save** to create the data view and to continue editing, or select **Save and Close** to create the data view and exit.
+
+**Finished!**
+
+## Next steps
+
+- For more information on retrieving your data view using a data-driven application, see <xref:data-views-retrieve>. 
+
+- For more information on editing your data view following initial configuration, see <xref:data-views-edit-a-data-view>.

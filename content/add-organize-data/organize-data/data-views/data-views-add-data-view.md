@@ -18,4 +18,4 @@ uid: data-views-add-data-view
 
 ## Next steps
 
-Continue to <xref:data-views-choose-data-shape>.
+Continue to <xref:data-view-choose-data-shape>.

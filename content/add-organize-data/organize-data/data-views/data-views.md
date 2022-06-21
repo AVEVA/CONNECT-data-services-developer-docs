@@ -36,6 +36,14 @@ To create a data view:
 
 1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (`*`), and then select **Search** to search for available streams or assets.
 
+   **Tips:**
+
+   - Mouse over the **Query Value** field to display a cheat sheet of wildcards, filters, and operators you can use in your query. 
+   
+   - For more information on entering queries for streams, see [Search for streams](xref:sdsSearching#search-for-streams).
+
+   - For more information on entering queries for assets, see <xref:asset-search-dev-guide>.
+
 1. Select any stream or asset in the query results to display and view the individual data fields to the pane on the right.
 
    **Notes:**

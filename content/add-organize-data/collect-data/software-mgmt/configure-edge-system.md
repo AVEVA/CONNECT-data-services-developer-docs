@@ -44,7 +44,7 @@ To edit an edge system configuration and export it for use:
 
 1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
 
-   - To add a tag, enter the tag text in the **New Tag** field and press **Enter**.
+   - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 
    - To delete a tag, select **X** in the tag bubble.
 

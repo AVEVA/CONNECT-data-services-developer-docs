@@ -36,7 +36,7 @@ To create an asset:
 
 1. Select the **Properties** tab, and select **Add Stream References**.
 
-1. In the `Select Streams` window, enter *MyData*_*_ in the search field and press **Enter**.
+1. In the `Select Streams` window, enter *MyData*_*_ in the search field and press Enter.
 
 1. Select **MyData.NorthAmerica.SLTC.PumpA** from the list and select **Add**.
 

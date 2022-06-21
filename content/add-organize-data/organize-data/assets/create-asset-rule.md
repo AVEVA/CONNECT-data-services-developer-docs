@@ -209,7 +209,7 @@ The asset preview displays a list of the assets that will be created using the a
 
   - **Show Stream References**
   
-1. To filter the data in a column, select ![filter](../../../_icons/branded/filter.svg) in the column header, enter the text to find, and press **Enter**.
+1. To filter the data in a column, select ![filter](../../../_icons/branded/filter.svg) in the column header, enter the text to find, and press Enter.
    
 1. Select the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
 

@@ -22,8 +22,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
@@ -45,53 +45,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-[
-{
-    "Id":"Angular Velocity",
-    "Name":"Angular Velocity",
-    "BaseUom":{
-        "Id":"radian per second",
-        "Abbreviation":"rad/s",
-        "Name":"radian per second",
-        "DisplayName":"radian per second",
-        "QuantityId":"Angular Velocity",
-        "ConversionFactor":1
-    },
-    "Dimensions":[
-        0,
-        0,
-        -1,
-        0,
-        0,
-        0,
-        0
-    ]
-},
-{
-    "Id":"Area",
-    "Name":"Area",
-    "BaseUom":{
-        "Id":"square meter",
-        "Abbreviation":"m2",
-        "Name":"square meter",
-        "DisplayName":"square meter",
-        "QuantityId":"Area",
-        "ConversionFactor":1
-    },
-    "Dimensions":[
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-    ]
-}
-]
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -124,8 +80,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string quantityId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string quantityId`
 <br/>The quantity identifier<br/><br/>
 
 <h3>Response</h3>
@@ -145,30 +101,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-"Id":"Length",
-"Name":"Length",
-"BaseUom":{
-    "Id":"meter",
-    "Abbreviation":"m",
-    "Name":"meter",
-    "DisplayName":"meter",
-    "QuantityId":"Length",
-    "ConversionFactor":1
-},
-"Dimensions":[
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-]
-}
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -201,8 +136,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string quantityId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string quantityId`
 <br/>The quantity identifier<br/><br/>`string uomId`
 <br/>The unit of measure identifier<br/><br/>
 
@@ -223,17 +158,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "Id": "mile",
-    "Abbreviation": "mi",
-    "Name": "mile",
-    "DisplayName": "mile",
-    "QuantityId": "Length",
-    "ConversionFactor": 1609.344
-}
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -266,8 +193,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string quantityId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string quantityId`
 <br/>The quantity identifier<br/><br/>
 
 <h3>Response</h3>
@@ -287,27 +214,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-[
-{
-    "Id":"milliampere",
-    "Abbreviation":"mA",
-    "Name":"milliampere",
-    "DisplayName":"milliampere",
-    "QuantityId":"Electric Current",
-    "ConversionFactor":0.001
-},
-{
-    "Id":"ampere",
-    "Abbreviation":"A",
-    "Name":"ampere",
-    "DisplayName":"ampere",
-    "QuantityId":"Electric Current",
-    "ConversionFactor":1
-}
-]
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json

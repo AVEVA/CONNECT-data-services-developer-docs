@@ -22,14 +22,13 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
 `[optional] string query`
-<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
-<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
-<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#query<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] string orderby`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#orderby<br/><br/>
 
 <h3>Response</h3>
 
@@ -48,37 +47,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-[
-{
-    "Id":"StreamView",
-    "Name":"StreamView",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3"
-},
-{
-    "Id":"StreamViewWithProperties",
-    "Name":"StreamViewWithProperties",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
-        {
-            "SourceId":"State",
-            "TargetId":"State"
-        },
-        {
-            "SourceId":"Measurement",
-            "TargetId":"Value"
-        }
-    ]
-}
-]
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -111,9 +82,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamViewId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -132,29 +103,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "Id":"StreamView",
-    "Name":"StreamView",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
-    {
-        "SourceId":"State",
-        "TargetId":"State"
-    },
-    {
-        "SourceId":"Measurement",
-        "TargetId":"Value"
-    }
-    ]
-}
+null
 ```
+
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -187,9 +138,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamViewId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -243,9 +194,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamViewId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -298,9 +249,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVi
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamViewId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -331,9 +282,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamViewId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -352,32 +303,10 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 > 200 Response
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "SourceTypeId": "Simple",
-    "TargetTypeId": "Simple3",
-    "Properties": [
-        {
-            "SourceId": "Time",
-            "TargetId": "Time"
-        },
-        {
-            "SourceId": "Measurement",
-            "TargetId": "Value",
-            "Mode": 20
-        },
-        {
-            "SourceId": "State",
-            "Mode": 2
-        },
-        {
-            "TargetId": "State",
-            "Mode": 1
-        }
-    ]
-}
-```> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+null
+```
+
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

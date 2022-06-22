@@ -328,6 +328,7 @@ Gets a community and related information by Id.
 
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
+?resolveCompanyName={resolveCompanyName}
 ```
 
 <h4>Parameters</h4>
@@ -335,6 +336,8 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 `string tenantId`
 <br/>Tenant unique identifier.<br/><br/>`string communityId`
 <br/>Community unique identifier.<br/><br/>
+`[optional] boolean resolveCompanyName`
+<br/>Parameter to resolve company name for community tenants. Default is to include.<br/><br/>
 
 <h3>Response</h3>
 
@@ -471,6 +474,7 @@ Gets a community and related information by Id.
 
 ```text 
 GET /api/v1-preview/Communities/{communityId}
+?resolveCompanyName={resolveCompanyName}
 ```
 
 <h4>Parameters</h4>
@@ -478,6 +482,8 @@ GET /api/v1-preview/Communities/{communityId}
 `string communityId`
 <br/>Community unique identifier.<br/><br/>`string tenantId`
 <br/>Tenant unique identifier.<br/><br/>
+`[optional] boolean resolveCompanyName`
+<br/>Parameter to resolve company name for community tenants. Default is to include.<br/><br/>
 
 <h3>Response</h3>
 

@@ -24,7 +24,7 @@ Some points to note about adding and managing users:
 
    a. Search for the user in AVEVA Data Hub and then add the user and assign roles. 
 
-   b. Add an AVEVA Connect group to the AVEVA Data Hub tenant, then add that group to AVEVA Data Hub and assign the desired AVEVA Data Hub roles. Any user that belongs to the AVEVA Connect group is automatically granted access to the AVEVA Data Hub tenant with the associated set of AVEVA Data Hub roles.
+   b. Add an AVEVA Connect group to the AVEVA Data Hub tenant, then add that group to AVEVA Data Hub and assign the necessary AVEVA Data Hub roles. Any user that belongs to the AVEVA Connect group is automatically granted access to the AVEVA Data Hub tenant with the associated set of AVEVA Data Hub roles.
 
 **Note:** You must belong to the Tenant Administrator role to add and manage users in a tenant.
 

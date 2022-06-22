@@ -18,7 +18,9 @@ To add a group:
 
 1. In the toolbar, select **Add Group**.
 
-1. Begin entering text in the Name field to search for an existing group and then select the group you wish to add for access to assets, resources and services.
+1. Begin entering text in the **Name** field to search for an existing group and then select the group you want to add for access to assets, resources and services.
+
+   **Note**: The group must exist in AVEVA Connect before adding it within AVEVA Data Hub.
 
 1. Specify the roles to assign to this new group.
 

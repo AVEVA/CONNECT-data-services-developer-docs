@@ -22,23 +22,23 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaim](#schemaidentityproviderclaim)[]|List of identity provider claims found|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -82,18 +82,18 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Identity provider claim header information|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Tenant or identity provider not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -119,8 +119,8 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -143,13 +143,13 @@ Identity provider claim to create<br/>
 |---|---|---|
 |201|[IdentityProviderClaim](#schemaidentityproviderclaim)|Identity provider claim created|
 |302|None|Found|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant, identity provider, or roles not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
 |409|[ErrorResponse](#schemaerrorresponse)|Identity provider claim configuration already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -191,19 +191,19 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaim](#schemaidentityproviderclaim)|Identity provider claim specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant, identity provider, or identity provider claim not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -245,19 +245,19 @@ HEAD /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{i
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Identity provider claim specified header|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Tenant, identity provider, or identity provider claim not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -283,9 +283,9 @@ PUT /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/{id
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -305,13 +305,13 @@ Updated identity provider claim values<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaim](#schemaidentityproviderclaim)|Updated identity provider claim|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant, identity provider, identity provider claim, or roles not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
 |409|[ErrorResponse](#schemaerrorresponse)|Identity provider claim configuration already exists|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -353,20 +353,20 @@ DELETE /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Claims/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant, identity provider, or identity provider claim not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 

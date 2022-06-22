@@ -22,21 +22,21 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 <h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaimTypeName](#schemaidentityproviderclaimtypename)[]|List of identity provider type names found|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -76,17 +76,17 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames
 <h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type names|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Identity provider not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -112,18 +112,18 @@ GET /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProvi
 <h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
-<br/>Identity provider claim type name identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimTypeNameId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderTypeNameClaimId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[IdentityProviderClaim](#schemaidentityproviderclaim)|Identity provider claim type name specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Identity provider or identity provider claim type name not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -165,18 +165,18 @@ HEAD /api/v1/IdentityProviders/{identityProviderId}/ClaimTypeNames/{identityProv
 <h4>Parameters</h4>
 
 `string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimTypeNameId`
-<br/>Identity provider claim type name identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimTypeNameId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderTypeNameClaimId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for identity provider claim type name specified|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Identity provider or identity provider claim type name not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 

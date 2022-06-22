@@ -22,22 +22,22 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientSecret](#schemaclientsecret)[]|List of secret information corresponding to the specified client credential client|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -58,6 +58,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -78,23 +79,24 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Client credential client secret header information|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Client or tenant not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -115,8 +117,8 @@ POST /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -135,12 +137,12 @@ ClientSecretCreateOrUpdate object.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[ClientSecretResponse](#schemaclientsecretresponse)|Information about the created secret|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -160,6 +162,7 @@ ClientSecretCreateOrUpdate object.<br/>
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -180,19 +183,19 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientSecret](#schemaclientsecret)|Information about the specified secret|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -211,6 +214,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -231,24 +235,25 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secr
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified client secret|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Secret, client, or tenant not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -269,9 +274,9 @@ PUT /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -290,12 +295,12 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientSecret](#schemaclientsecret)|Information about the updated secret|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -334,25 +339,26 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{se
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -374,22 +380,22 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientSecret](#schemaclientsecret)[]|List of hybrid client secret information corresponding to the specified client credential client|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -430,18 +436,18 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Headers for hybrid client secret|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Client or tenant not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -467,8 +473,8 @@ POST /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -487,11 +493,11 @@ ClientSecretCreateOrUpdate object<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[ClientSecretResponse](#schemaclientsecretresponse)|Information about created hybrid client secret|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -531,19 +537,19 @@ GET /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientSecret](#schemaclientsecret)|Information about specified hybrid client secret|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -582,19 +588,19 @@ HEAD /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for hybrid client secret|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|Secret, client, or tenant not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -620,9 +626,9 @@ PUT /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -641,12 +647,12 @@ ClientSecretCreateOrUpdate object. Properties that are not set or are null will 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ClientSecret](#schemaclientsecret)|Information about updated hybrid client secret|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -685,20 +691,20 @@ DELETE /api/v1/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string clientId`
-<br/>Client identifier.<br/><br/>`integer secretId`
-<br/>Secret identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string clientId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#clientId<br/><br/>`integer secretId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#secretId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 

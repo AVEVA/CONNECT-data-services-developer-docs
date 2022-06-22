@@ -22,12 +22,12 @@ GET /api/v1/Tenants/{tenantId}/Users
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>
 `[optional] array id`
 <br/>Unordered list of identifiers of all users to return<br/><br/>`[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
@@ -35,11 +35,11 @@ GET /api/v1/Tenants/{tenantId}/Users
 |---|---|---|
 |200|[User](#schemauser)[]|List of users found|
 |207|[UserMultiStatusResponse](#schemausermultistatusresponse)|List of users found|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -90,7 +90,7 @@ HEAD /api/v1/Tenants/{tenantId}/Users
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>
 `[optional] array id`
 <br/>Unordered list of user identifiers<br/><br/>
 
@@ -99,10 +99,10 @@ HEAD /api/v1/Tenants/{tenantId}/Users
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|User header found|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|User not found|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -128,7 +128,7 @@ POST /api/v1/Tenants/{tenantId}/Users
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -155,11 +155,11 @@ UserCreateOrUpdate object<br/>
 |---|---|---|
 |201|[User](#schemauser)|User created|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs, or the user limit exceeded for tenant.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -208,12 +208,12 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>
 `[optional] array id`
 <br/>Unordered list of identifiers of all users to return<br/><br/>`[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] array status`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>`[optional] array status`
 <br/>Only return statuses that match these values. Possible user statuses are: InvitationAccepted, NoInvitation, InvitationNotSent, InvitationSent, InvitationExpired.<br/><br/>
 
 <h3>Response</h3>
@@ -221,11 +221,11 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[UserStatus](#schemauserstatus)[]|List of user statuses found|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -278,18 +278,18 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[User](#schemauser)|User specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -338,18 +338,18 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for user|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|User does not exist|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -376,8 +376,8 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -403,12 +403,12 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[User](#schemauser)|Updated user|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -457,8 +457,8 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 `[optional] boolean force`
 <br/>Forcibly delete a user that can remain due to claim role mappings.<br/><br/>
 
@@ -468,11 +468,11 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}
 |---|---|---|
 |200|string|No content|
 |204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -498,18 +498,18 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[UserStatus](#schemauserstatus)|User status for user specified|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -561,16 +561,16 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|User preferences for specified user|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
 |422|[ErrorResponse](#schemaerrorresponse)|Unprocessable entity|
 
@@ -599,18 +599,18 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Header for specified user's preferences|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
+|401|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|None|User or tenant or user's preferences not found.|
-|500|None|Internal server error.|
+|500|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h3>Authorization</h3>
 
@@ -637,19 +637,19 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Preferences
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string userId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#userId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Updated user preferences|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
 
 <h3>Authorization</h3>
 

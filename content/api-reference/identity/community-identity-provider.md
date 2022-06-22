@@ -21,10 +21,10 @@ PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/IdentityProvide
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string communityId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#communityId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h3>Response</h3>
 
@@ -70,10 +70,10 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/IdentityProv
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string communityId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#communityId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h3>Response</h3>
 
@@ -103,10 +103,10 @@ PUT /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/IdentityProvide
 <h4>Parameters</h4>
 
 `string communityId`
-<br/>Community identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#communityId<br/><br/>`string tenantId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h3>Response</h3>
 
@@ -152,10 +152,10 @@ DELETE /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/IdentityProv
 <h4>Parameters</h4>
 
 `string communityId`
-<br/>Community identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string identityProviderClaimId`
-<br/>Identity provider claim identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#communityId<br/><br/>`string tenantId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>`string identityProviderClaimId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderClaimId<br/><br/>
 
 <h3>Response</h3>
 
@@ -186,25 +186,25 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/IdentityProvide
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string communityId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#communityId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|Success.|
+|200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#200|
 |207|[IdentityProviderGroupsMultiStatusResponse](#schemaidentityprovidergroupsmultistatusresponse)|None|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -243,7 +243,7 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/IdentityProvid
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string communityId`
 <br/>Community identifier<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 
 <h3>Response</h3>
 
@@ -274,25 +274,25 @@ GET /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/IdentityProvide
 <h4>Parameters</h4>
 
 `string communityId`
-<br/>Community identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#communityId<br/><br/>`string tenantId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string identityProviderId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 `[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#query-searchstring<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|Success.|
+|200|[IdentityProviderResultsOfIdentityProviderGroup](#schemaidentityproviderresultsofidentityprovidergroup)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#200|
 |207|[IdentityProviderGroupsMultiStatusResponse](#schemaidentityprovidergroupsmultistatusresponse)|None|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant or identity provider not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -331,7 +331,7 @@ HEAD /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/IdentityProvid
 `string communityId`
 <br/>Community identifier<br/><br/>`string tenantId`
 <br/>Tenant identifier<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#identityProviderId<br/><br/>
 
 <h3>Response</h3>
 

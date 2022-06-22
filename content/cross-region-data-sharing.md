@@ -19,9 +19,9 @@ Cross-region data sharing is enabled by default. When cross-region data sharing 
 
 ### Additional processing
 
-Each namespace in OCS is bound to a geographical region. Operational data stored in each namespace is usually processed within that region, which is chosen while [adding the namespace](xref:gpNamespaces), as depicted below.
+Each namespace in OCS is assigned a primary geographical region. Operational data stored in each namespace is usually processed within that primary region, which is chosen while [adding the namespace](xref:gpNamespaces), as depicted below.
 
-**Geographical region chosen during namespace creation**
+**Primary geographical region chosen during namespace creation**
 
 ![Namespace region](_images/add-namespace-region.png)
 
@@ -31,15 +31,15 @@ Processing operational data usually involves reshaping it. In these instances wh
 
 ### Data augmentation
 
-In use cases where your operational data is stored within both the chosen region and cross-region, OCS may process data from the chosen region in a different region. OCS then adds and processes additional operational data from the cross-region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service memory up to several hours.
+In use cases where your operational data is stored within both the primary region and cross-region, OCS may process data from the primary region in a different region. OCS then adds and processes additional operational data from the cross-region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service memory up to several hours.
 
 ### Temporary storage
 
-In some instances where OCS sends operational data stored in your namespace's region for processing or data augmentation cross-region, OCS may temporarily persist data from your region across regions before it is processed. This temporary storage is used for performance optimization. In these instances, data from your region persists in the cross-region processing service storage and memory up to several hours.
+In some instances where OCS sends operational data stored in your namespace's primary region for processing or data augmentation cross-region, OCS may temporarily persist data from your primary region across regions before it is processed. This temporary storage is used for performance optimization. In these instances, data from your primary region persists in the cross-region processing service storage and memory up to several hours.
 
 ## Opt out of cross-region data sharing
 
-Optionally, you can opt out of sharing operational data from namespaces and communities across regions. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the namespace's assigned region.
+Optionally, you can opt out of sharing operational data from namespaces and communities across regions. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the namespace primary region.
 
 ![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 

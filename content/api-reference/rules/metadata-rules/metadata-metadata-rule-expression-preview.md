@@ -21,8 +21,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules/ex
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string token`
 <br/>A `Guid` which corresponds to a preview that has been created using the `StartExpressionPreview` method.<br/><br/>
 `[optional] integer skip`
 <br/>An `Int32` to determine the number of preview results to skip.<br/><br/>`[optional] integer count`
@@ -33,10 +33,10 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules/ex
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ExpressionPreviewResult](#schemaexpressionpreviewresult)|A `ExpressionPreviewResult` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|400|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -136,8 +136,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules/e
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -148,9 +148,9 @@ The RuleModel object to preview.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |202|[ExpressionPreviewResponse](#schemaexpressionpreviewresponse)|A `ExpressionPreviewResponse` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|400|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -226,8 +226,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string token`
 <br/>A `Guid` which corresponds to a preview that has been created using the `StartExpressionPreview` method.<br/><br/>
 
 <h3>Response</h3>
@@ -235,10 +235,10 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|400|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 ---
 ## Definitions
@@ -532,8 +532,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 
 |Property|Value|
 |---|---|
-|Default|0|
 |Continuous|0|
+|Default|0|
 |StepwiseContinuousLeading|1|
 |StepwiseContinuousTrailing|2|
 |Discrete|3|

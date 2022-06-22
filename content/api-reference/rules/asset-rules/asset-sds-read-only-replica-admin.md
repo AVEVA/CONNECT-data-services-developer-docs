@@ -29,9 +29,9 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/replic
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|None|Ok if the stream was refreshed.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|400|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 ---
 
@@ -52,16 +52,16 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/replica
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#streamId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[CompleteSdsInfoEntry](#schemacompletesdsinfoentry)|The `CompleteSdsInfoEntry` for the stream.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|404|[ResponseBody](#schemaresponsebody)|Client or tenant not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|404|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#404|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 

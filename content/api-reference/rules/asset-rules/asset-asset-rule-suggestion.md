@@ -21,8 +21,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asset
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string token`
 <br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
@@ -30,10 +30,10 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asset
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[SuggestionResult](#schemasuggestionresult)|A `SuggestionResult` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|400|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ResponseBody](#schemaresponsebody)|The specified suggestion was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -132,8 +132,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/asse
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -180,9 +180,9 @@ The RuleModel object to create a suggestion for.<br/>
 |---|---|---|
 |202|[SuggestionResponse](#schemasuggestionresponse)|A `SuggestionResponse` object.|
 |204|[ResponseBody](#schemaresponsebody)|A `SuggestionResponse` object.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|400|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 |503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
 
 <h4>Example response body</h4>
@@ -289,8 +289,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string token`
 <br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
@@ -298,10 +298,10 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/as
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|No content.|
-|400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|400|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|403|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+|500|[ResponseBody](#schemaresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 ---
 ## Definitions

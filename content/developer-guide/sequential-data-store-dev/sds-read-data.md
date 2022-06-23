@@ -47,7 +47,22 @@ If multiple calls return ``408 - Operation timed out error`` even after increasi
 - Reduce the range in the request calls of this type 
 - Retry with an exponential back-off policy
 
- 
+### Maximum data read response
+
+Responses are limited to 2<sup>31</sup> bytes, so the data bytes and the formatting bytes cannot exceed this value.
+An error message is returned when the response limit is reached.
+
+```text
+400 bad request error
+
+{
+		"Error": "Failed to serialize response."
+		
+		"Reason": "The response size might be too large."
+		
+		"Resolution": "Try again with a smaller read request."
+}
+```
 
 ### Compression 
 

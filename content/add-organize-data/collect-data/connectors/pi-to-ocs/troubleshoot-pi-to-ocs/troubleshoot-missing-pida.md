@@ -20,7 +20,7 @@ To add a missing PI Data Archive mapping:
 
 1. Select **Create**.
 
-    **Result:** The PI mapping is created for the selected identity, group or user.
+   The PI mapping is created for the selected identity, group, or user.
 
 1. Select **Close** to exit out of the `Configure Mapping` dialog box. 
 

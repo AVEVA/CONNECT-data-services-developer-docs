@@ -14,6 +14,10 @@ Review the following information before creating a data view.
 
 [!include[data view objects](../../../_includes/data-views-components.md)]
 
+### Prerequisites
+
+To create a fully functioning data view, your instance of OSIsoft Cloud Services (OCS) must include [streams](xref:ccStreams) or [assets](xref:ccAssets) to include in the data view.
+
 ### Recommended skills
 
 [!include[recommended-skills](_includes/recommended-skills.md)]

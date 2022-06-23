@@ -235,15 +235,17 @@ The new access control list.<br/>
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
+Response error for controller methods.
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|AdditionalParameters|object|false|true|None|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Reason|string|false|true|Error reason string|
+|Resolution|string|false|true|Resolution string|
+|AdditionalParameters|object|false|true|Additional parameters to add to the response.|
 
 ```json
 {

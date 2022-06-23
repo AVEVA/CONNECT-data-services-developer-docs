@@ -10,6 +10,8 @@ API for Client Failover application information.
 
 <a id="opIdClientFailover_Get Information"></a>
 
+Gets the Client Failover application information.
+
 <h3>Request</h3>
 
 ```text 
@@ -26,9 +28,9 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EndpointInfo](#schemaendpointinfo)|None|
-|400|[ErrorResponse](#schemaerrorresponse)|None|
-|403|[ErrorResponse](#schemaerrorresponse)|None|
+|200|[EndpointInfo](#schemaendpointinfo)|The application information.|
+|400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
+|403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 
 <h4>Example response body</h4>
 
@@ -54,7 +56,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Version|string|false|true|None|
+|Version|string|false|true|Endpoint version|
 
 ```json
 {
@@ -72,15 +74,17 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
+Response error for controller methods.
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|AdditionalParameters|object|false|true|None|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Reason|string|false|true|Error reason string|
+|Resolution|string|false|true|Resolution string|
+|AdditionalParameters|object|false|true|Additional parameters to add to the response.|
 
 ```json
 {

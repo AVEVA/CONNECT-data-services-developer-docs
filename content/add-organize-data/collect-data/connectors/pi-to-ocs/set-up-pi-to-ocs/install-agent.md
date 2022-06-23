@@ -66,6 +66,8 @@ To install the PI to Data Hub Agent:
 
     * **Agent Description** - Enter an optional name for the agent.
 
+    The `Service Account` page opens.
+
 1. On the `Service Account` page, select the service account type for the connection:
 
     * **NT Service** - Enter an NT account to connect to PI Data Archive.

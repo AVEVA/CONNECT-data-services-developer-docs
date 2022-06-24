@@ -1,7 +1,0 @@
-- name: Subscribe to AVEVA Data Hub
-  href: subscribe-adh.md
-- name: Create a folder and turn on AVEVA Data Hub
-  href: create-folder.md
-- name: Manage permissions in AVEVA Connect
-  href: manage-permissions/toc.yml
-  topicHref: manage-permissions-adh.md

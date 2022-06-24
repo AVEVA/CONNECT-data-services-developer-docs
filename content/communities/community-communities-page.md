@@ -12,7 +12,7 @@ The `Communities` page, accessible at **Data Management** > **Communities**, is 
 
 ![Communities page](images/communities-page.png)
 
-The image above displays the `Communities` page. Review the headings below for more information on each callout depicted in the image.
+The image above displays the `Communities` page. Review the headings below for more information on the page components.
 
 ## Community tile
 

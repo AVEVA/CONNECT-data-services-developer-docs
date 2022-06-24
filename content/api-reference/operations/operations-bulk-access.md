@@ -4,13 +4,13 @@ uid: operations-bulk-access
 ---
 
 # Bulk Access
-Defines the public API endpoints for bulk updating ACLs.
+Defines the public API endpoints for bulk access jobs.
 
 ## `List Bulk Access Job Summaries`
 
 <a id="opIdBulkAccess_List Bulk Access Job Summaries"></a>
 
-Retrieves the status of all bulk access update jobs for a given Namespace.
+Retrieves all bulk access job summaries for a namespace.
 
 <h3>Request</h3>
 
@@ -21,18 +21,18 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/accesscontr
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant unique identifier.<br/><br/>`string namespaceId`
-<br/>Namespace tenant unique identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[BulkAccessJobSummary](#schemabulkaccessjobsummary)[]|OK. The jobs were successfully retrieved.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+|200|[BulkAccessJobSummary](#schemabulkaccessjobsummary)[]|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#200|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -74,7 +74,7 @@ Allowed for these roles:
 
 <a id="opIdBulkAccess_Create Bulk Access Job"></a>
 
-Creates a new bulk access job.
+Creates a bulk access job for updating multiple access control lists.
 
 <h3>Request</h3>
 
@@ -85,12 +85,12 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/accesscont
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant unique identifier.<br/><br/>`string namespaceId`
-<br/>Namespace unique identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 
 <h4>Request Body</h4>
 
-Input containing information for ACL update operation.<br/>
+Input containing information for the access control list update operation.<br/>
 
 ```json
 {
@@ -124,12 +124,12 @@ Input containing information for ACL update operation.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[BulkAccessJobSummary](#schemabulkaccessjobsummary)|OK. The service bus message was successfully sent.|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden. The client does not have the required permissions to make the request.|
-|408|[ErrorResponseBody](#schemaerrorresponsebody)|Request Timeout. The request has timed out.|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+|200|[BulkAccessJobSummary](#schemabulkaccessjobsummary)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#200|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#400|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|408|[ErrorResponseBody](#schemaerrorresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -169,7 +169,7 @@ Allowed for these roles:
 
 <a id="opIdBulkAccess_Get Bulk Access Job Summary"></a>
 
-Retrieves the summary of an existing bulk access job.
+Retrieves the summary of a bulk access job.
 
 <h3>Request</h3>
 
@@ -180,19 +180,19 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/accesscontr
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant unique identifier.<br/><br/>`string namespaceId`
-<br/>Namespace unique identifier.<br/><br/>`string jobId`
-<br/>Job unique identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string jobId`
+<br/>Job identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[BulkAccessJobSummary](#schemabulkaccessjobsummary)|OK. The Job was successfully retrieved.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+|200|[BulkAccessJobSummary](#schemabulkaccessjobsummary)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#200|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -232,7 +232,7 @@ Allowed for these roles:
 
 <a id="opIdBulkAccess_List Bulk Access Job Steps"></a>
 
-Retrieves the job steps of an existing bulk access job.
+Retrieves the job steps of a completed bulk access job. No steps are returned if the job has not completed.
 
 <h3>Request</h3>
 
@@ -244,23 +244,23 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/bulk/accesscontr
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant unique identifier.<br/><br/>`string namespaceId`
-<br/>Namespace unique identifier.<br/><br/>`string jobId`
-<br/>Job unique identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string jobId`
+<br/>Job identifier.<br/><br/>
 `[optional] any filterBy`
-<br/>Filter to determine if successful, failed, or all job steps are returned.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Maximum number of job steps to be returned.<br/><br/>
+<br/>Filter to specify if successful, failed, or all job steps are returned.<br/><br/>`[optional] integer skip`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[BulkAccessJobStep](#schemabulkaccessjobstep)[]|OK. The Job was successfully retrieved.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+|200|[BulkAccessJobStep](#schemabulkaccessjobstep)[]|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#200|
+|401|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#401|
+|403|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|408|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#408|
+|500|[ErrorResponse](#schemaerrorresponse)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#500|
 
 <h4>Example response body</h4>
 
@@ -305,24 +305,24 @@ Allowed for these roles:
 <a id="tocSbulkaccessjobsummary"></a>
 <a id="tocsbulkaccessjobsummary"></a>
 
-Summary object of a Job.
+Provides summary information for the job.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Identifier of the Job.|
-|Name|string|false|true|Name of the Job.|
-|Description|string|false|true|Description of the Job.|
-|OperationId|string|false|true|Operation ID of the Job.|
-|StartTime|date-time|false|true|Start time of the Job.|
-|EndTime|date-time|false|true|End time of the Job.|
-|Status|[Status](#schemastatus)|false|false|Status of the Job.|
-|Requester|[Trustee](#schematrustee)|false|true|Requester of the Job.|
-|StepsSucceeded|int32|false|false|Number of succeeded steps of the Job.|
-|StepsFailed|int32|false|false|Number of failed steps of the Job.|
-|StepsProcessed|int32|false|false|Number of steps of the Job that have finished, regardless of status.|
-|TotalSteps|int32|false|false|Total count of steps of the Job.|
+|Id|string|false|true|Identifier of the job.|
+|Name|string|false|true|Name of the job.|
+|Description|string|false|true|Description of the job.|
+|OperationId|string|false|true|Operation identifier of the job.|
+|StartTime|date-time|false|true|Start time of the job.|
+|EndTime|date-time|false|true|End time of the job.|
+|Status|[Status](#schemastatus)|false|false|Status of the job.|
+|Requester|[Trustee](#schematrustee)|false|true|Requester of the job.|
+|StepsSucceeded|int32|false|false|Number of succeeded steps of the job.|
+|StepsFailed|int32|false|false|Number of failed steps of the job.|
+|StepsProcessed|int32|false|false|Number of steps of the job that have finished, regardless of status.|
+|TotalSteps|int32|false|false|Total count of steps of the job.|
 
 ```json
 {
@@ -433,19 +433,19 @@ Summary object of a Job.
 <a id="tocSbulkaccessupdateinput"></a>
 <a id="tocsbulkaccessupdateinput"></a>
 
-Input to endpoint for bulk resource Access Control List updating.
+Specifies the behavior of a bulk access job.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|AccessControlList|[AccessControlList](#schemaaccesscontrollist)|false|true|If RoleIds are absent, this Access Control List will be assigned to each resource. If RoleIds are present, it will replace only the Access Control Entries whose trustees match those specified in RoleIds.|
-|Operation|[Operation](#schemaoperation)|false|false|Operation type of the request.|
-|Scope|[Scope](#schemascope)|false|false|Scope of the request.|
-|ResourceIds|string[]|false|true|Identifiers of resources whose AccessControlList is being updated.|
-|RoleIds|string[]|false|true|Role identifiers of trustee whose ACEs are being updated. Required for the UpdateRoleAccess operation.|
-|ResourceType|[ResourceType](#schemaresourcetype)|false|false|Type of resource being updated.|
-|Description|string|false|true|Description for the bulk access update operation. This will be used to populate the description for the corresponding BulkAccessJobSummary object.|
+|AccessControlList|[AccessControlList](#schemaaccesscontrollist)|false|true|The access control list to be applied to the specified resources. If Operation is UpdateAll, this access control list will replace the entire access control list of each resource. If Operation is UpdateRoleAccess, it will replace only the access control entries within the access control list whose trustees match those provided in RoleIds.|
+|Operation|[Operation](#schemaoperation)|false|false|Operation type of the bulk access job.|
+|Scope|[Scope](#schemascope)|false|false|Scope of the bulk access job.|
+|ResourceIds|string[]|false|true|Identifiers of resources to update. Only required when Scope is Resource.|
+|RoleIds|string[]|false|true|Role identifiers of trustee whose access control entries are being updated. Only required when Operation is UpdateRoleAccess.|
+|ResourceType|[ResourceType](#schemaresourcetype)|false|false|Type of resource to update.|
+|Description|string|false|true|Optional description of the bulk access job.|
 
 ```json
 {
@@ -563,14 +563,14 @@ Input to endpoint for bulk resource Access Control List updating.
 <a id="tocSoperation"></a>
 <a id="tocsoperation"></a>
 
-Operation being performed during a bulk access update request.
+Operation being performed during a bulk access job.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|Description|
 |---|---|---|
-|UpdateRoleAccess|0|Operation being performed during a bulk access update request.|
-|UpdateAll|1|Operation being performed during a bulk access update request.|
+|UpdateRoleAccess|0|Operation being performed during a bulk access job.|
+|UpdateAll|1|Operation being performed during a bulk access job.|
 
 ---
 
@@ -581,14 +581,14 @@ Operation being performed during a bulk access update request.
 <a id="tocSscope"></a>
 <a id="tocsscope"></a>
 
-Scope of a bulk access update operation.
+Scope of a bulk access job.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|Description|
 |---|---|---|
-|Namespace|0|Scope of a bulk access update operation.|
-|Resource|1|Scope of a bulk access update operation.|
+|Namespace|0|Scope of a bulk access job.|
+|Resource|1|Scope of a bulk access job.|
 
 ---
 
@@ -651,7 +651,7 @@ Type of resource whose access is being bulk updated.
 <a id="tocSbulkaccessjobstep"></a>
 <a id="tocsbulkaccessjobstep"></a>
 
-Job Step for the bulk access operation.
+Job step of a bulk access job. Each job step corresponds to a resource being updated during the job.
 
 <h4>Properties</h4>
 
@@ -664,7 +664,7 @@ Job Step for the bulk access operation.
 |EndTime|date-time|false|true|None|
 |Status|[Status](#schemastatus)|false|false|None|
 |Errors|[[ErrorResponse2](#schemaerrorresponse2)]|false|true|None|
-|ResourceId|string|false|true|ID of resource being updated.|
+|ResourceId|string|false|true|Identifier of resource being updated.|
 
 ```json
 {

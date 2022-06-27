@@ -49,7 +49,7 @@ If multiple calls return ``408 - Operation timed out error`` even after increasi
 
 ### Maximum data read response
 
-Responses are limited to 2<sup>31</sup> bytes, so the data bytes and the formatting bytes cannot exceed this value.
+Responses are limited to 2<sup>31</sup> bytes, so the data bytes and the formatting bytes that form the response cannot exceed this value.
 An error message is returned when the response limit is reached.
 
 ```text

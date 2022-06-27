@@ -1,5 +1,5 @@
 ---
-uid: ""
+uid: client-sessions
 
 ---
 

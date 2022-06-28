@@ -52,17 +52,15 @@ If multiple calls return ``408 - Operation timed out error`` even after increasi
 Responses are limited to 2<sup>31</sup> bytes, so the number of bytes written during response serialization cannot exceed that value.
 An error message suggesting a smaller read request is returned when the response limit is reached.
 
-```text
-400 bad request error
 
+**400 bad request error**
+
+```text
 {
-		"Error": "Failed to serialize response."
-		
-		"Reason": "The response size might be too large."
-		
-		"Resolution": "Try again with a smaller read request."
+	"Error": "Failed to serialize response.",
+	"Reason": "The response size might be too large.",
+	"Resolution": "Try again with a smaller read request."
 }
-```
 
 ### Compression 
 

@@ -211,7 +211,7 @@ In cases where the identifiers are unique, the identifier is suffixed with an or
 | Timestamp.0 | Value.1 | Value.2 |
 |--|--|--|
 
-#### Available data field labels
+#### Available data field label tokens
 
 [!include[data field label tokens](../../../_includes/data-view-field-label-tokens.md)]
 

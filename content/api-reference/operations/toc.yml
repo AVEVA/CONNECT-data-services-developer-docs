@@ -1,6 +1,4 @@
 - name: Bulk access
-  href: bulk-access.md
-- name: Bulk access
   href: operations-bulk-access.md
 - name: Health
   href: operations-health.md

@@ -8,6 +8,8 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Asset store](xref:Assets)—Use the information in this section to create or find assets of different types, along with their data and status.
 
+* [Client failover](xref:FailoverOverview)—The Client Failover Service provides failover capability for adapters to minimize data loss.
+
 * [Communities (Preview)](xref:communityOverview)—AVEVA Data Hub Communities helps industrial companies share their operational data with external business partners, service providers, and analytics providers. 
 
 * [Data collection](xref:dataIngress)—You use Open Message Format (OMF) to achieve high-throughput asynchronous data ingress into the AVEVA Data Hub Sequential Data Store.

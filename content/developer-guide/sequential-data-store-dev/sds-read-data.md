@@ -49,8 +49,8 @@ If multiple calls return ``408 - Operation timed out error`` even after increasi
 
 ### Maximum data read response
 
-Responses are limited to 2<sup>31</sup> bytes, so the data bytes and the formatting bytes that form the response cannot exceed this value.
-An error message is returned when the response limit is reached.
+Responses are limited to 2<sup>31</sup> bytes, so the number of bytes written during response serialization cannot exceed that value.
+An error message suggesting a smaller read request is returned when the response limit is reached.
 
 ```text
 400 bad request error

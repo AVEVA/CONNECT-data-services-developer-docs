@@ -55,7 +55,7 @@ An error message suggesting a smaller read request is returned when the response
 
 **400 bad request error**
 
-```text
+```json
 {
 	"Error": "Failed to serialize response.",
 	"Reason": "The response size might be too large.",

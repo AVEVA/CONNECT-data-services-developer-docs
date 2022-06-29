@@ -22,8 +22,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
 `[optional] string query`
 <br/>Parameter representing a string search.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
@@ -88,9 +88,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 
 <h3>Response</h3>
 
@@ -148,9 +148,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 
 <h3>Response</h3>
 
@@ -210,9 +210,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 
 <h3>Response</h3>
 
@@ -272,9 +272,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 
 <h3>Response</h3>
 
@@ -305,9 +305,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 
 <h3>Response</h3>
 
@@ -374,11 +374,11 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
 `[optional] string streamViewId`
-<br/>Stream view identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
 
 <h3>Response</h3>
 
@@ -839,8 +839,8 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 |Property|Value|Description|
 |---|---|---|
-|Default|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
 |Continuous|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
+|Default|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
 |StepwiseContinuousLeading|1|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
 |StepwiseContinuousTrailing|2|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
 |Discrete|3|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
@@ -1616,13 +1616,13 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 |Property|Value|
 |---|---|
-|Default|Continuous|
 |Continuous|Continuous|
-|StepwiseContinuousLeading|StepwiseContinuousLeading|
-|StepwiseContinuousTrailing|StepwiseContinuousTrailing|
-|Discrete|Discrete|
-|ContinuousNullableLeading|ContinuousNullableLeading|
-|ContinuousNullableTrailing|ContinuousNullableTrailing|
+|Default|Continuous|
+|StepwiseContinuousLeading|Default, StepwiseContinuousLeading|
+|StepwiseContinuousTrailing|Default, StepwiseContinuousTrailing|
+|Discrete|Default, Discrete|
+|ContinuousNullableLeading|Default, ContinuousNullableLeading|
+|ContinuousNullableTrailing|Default, ContinuousNullableTrailing|
 
 ---
 

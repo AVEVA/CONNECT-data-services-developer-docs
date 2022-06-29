@@ -5,7 +5,7 @@
 - name: Asset store
   href: assets/toc.yml
   topicHref: Assets/assets.md
-- name: Client Failover
+- name: Client failover (Preview)
   href: client-failover/toc.yml
   topicHref: client-failover/client-failover-overview.md
 - name: Communities (Preview)

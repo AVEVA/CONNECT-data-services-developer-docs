@@ -24,8 +24,8 @@ Edit the **Community preferred region** or **My preferred region** from a commun
 
    - **Community Preferred Region**
 
-   This setting is used to optimize access to community shared data. It ensures that queries are sent to the appropriate region if a tenant in the community opts-out of cross-region data sharing, which allows processing of data outside of the primary region where it resides. If no value is set, then **Community Preferred Region** setting defaults to the `West-US` region. Select the region where you expect most of the data in this community to reside. 
+   	This setting is used to optimize access to community shared data. It ensures that queries are sent to the appropriate region if a tenant in the community opts-out of cross-region data sharing, which allows processing of data outside of the primary region where it resides. If no value is set, then **Community Preferred Region** setting defaults to the `West-US` region. Select the region where you expect most of the data in this community to reside. 
 
    - **My Preferred Region**
 
-   This setting overrides the **Community Preferred Region** for your tenant and allows you to control which region your tenant's queries to this community are sent to.
+   	This setting overrides the **Community Preferred Region** for your tenant and allows you to control which region your tenant's queries to this community are sent to.

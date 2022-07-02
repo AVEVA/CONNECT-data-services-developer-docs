@@ -20,8 +20,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -79,8 +79,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>`string startIndex`
 <br/>Start index.<br/><br/>`string endIndex`
 <br/>End index.<br/><br/>`integer intervals`
@@ -171,8 +171,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 
 <h4>Request Body</h4>
 

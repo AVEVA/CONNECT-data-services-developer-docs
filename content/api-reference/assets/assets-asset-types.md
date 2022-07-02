@@ -22,11 +22,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 `[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#skip<br/><br/>`[optional] integer count`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#count<br/><br/>
 
 <h3>Response</h3>
 
@@ -121,8 +121,8 @@ HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 `[optional] boolean includeTotalCount`
 <br/>Optional Parameter. Default value is false. If set to true, Total-count header will be included in the returned headers. Total-Count refers to the number of asset types that the user has permission to access corresponding to an optional query.<br/><br/>
 
@@ -157,8 +157,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -258,8 +258,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -333,8 +333,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -463,8 +463,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -594,8 +594,8 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetType
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 `[optional] boolean deleteAssets`
 <br/>Call should also delete all assets of this asset type. Default is false.<br/><br/>
@@ -606,7 +606,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetType
 |---|---|---|
 |204|None|Asset type with specified identifier has been deleted.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden.|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not Found.|
 |409|[ErrorTemplate](#schemaerrortemplate)|Conflict. See response body for additional details.|
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed. See response body for additional details.|
@@ -628,8 +628,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/AssetTypes
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -705,8 +705,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -715,7 +715,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 |---|---|---|
 |200|[Trustee](#schematrustee)|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden.|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
@@ -760,8 +760,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -782,7 +782,7 @@ Updated owner.<br/>
 |---|---|---|
 |204|None|Asset type owner updated.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden.|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 ---
@@ -802,8 +802,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -812,7 +812,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Access control list of the asset type with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden.|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>
@@ -869,8 +869,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -903,7 +903,7 @@ Updated ACL.<br/>
 |---|---|---|
 |204|None|Update success.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden.|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 ---
@@ -923,8 +923,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetTypeId`
 <br/>Asset type identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -933,7 +933,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
 |---|---|---|
 |200|Inline|Access control list of the asset type with given identifier.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|None|Forbidden.|
+|403|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
 |404|[ErrorTemplate](#schemaerrortemplate)|Not found.|
 
 <h4>Example response body</h4>

@@ -22,8 +22,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/La
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of stream reference names in the format of `stream={streamReferenceName}`. Multiple stream references can be requested by joining with &amp;. By default, all data calls return data for all stream references.<br/><br/>
@@ -86,8 +86,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sa
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>`string startIndex`
 <br/>The start index for the intervals.<br/><br/>`string endIndex`
 <br/>The end index for the intervals.<br/><br/>`integer intervals`
@@ -166,8 +166,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Su
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>`string startIndex`
 <br/>The start index for the intervals.<br/><br/>`string endIndex`
 <br/>The end index for the intervals.<br/><br/>
@@ -295,8 +295,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/In
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>`string startIndex`
 <br/>The index defining the beginning of the window.<br/><br/>`string endIndex`
 <br/>The index defining the end of the window.<br/><br/>`integer count`
@@ -372,8 +372,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
+<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>`string startIndex`
 <br/>Index bounding the beginning of the series of events to return.<br/><br/>`string endIndex`
 <br/>Index bounding the end of the series of events to return.<br/><br/>

@@ -1,1 +1,1 @@
-After you create and configure a data view, you can programatically retrieve it using the OCS REST API. Using a data-driven application like Microsoft Power BI, you can use the data view for data science enablement.
+After you create and configure a data view, you can programatically retrieve it using the OCS REST API. Using a data-driven application (like Microsoft Power BI), you can use the data view for data science enablement.

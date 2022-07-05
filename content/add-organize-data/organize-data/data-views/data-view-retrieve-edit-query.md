@@ -2,7 +2,7 @@
 uid: data-view-retrieve-edit-query
 ---
 
-# Step 3: Edit the data view query
+# Step 1: Edit the data view query
 
 Use Microsoft Power BI to edit the query generated from the connector to modify the Start Index and End Index to fixed dates or relative dates, as well as edit the Interpolation Interval (if applicable). You can also use Microsoft Power BI to enable an incremental refresh of data.
 

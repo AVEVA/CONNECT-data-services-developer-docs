@@ -12,7 +12,7 @@ Review the following information before creating a data view.
 
 ### Data view objects
 
-[!include[data view objects](../../../_includes/data-views-components.md)]
+[!include[data view objects](../../_includes/data-views-components.md)]
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ To create and define a data view, complete these tasks in order.
 
 - <xref:data-views-add-data-fields>
 
-	[!include[add-query](../../../_includes/data-views-add-data-fields.md)]
+	[!include[add-query](../../_includes/data-views-add-data-fields.md)]
 
 - <xref:data-views-preview-and-save>
 

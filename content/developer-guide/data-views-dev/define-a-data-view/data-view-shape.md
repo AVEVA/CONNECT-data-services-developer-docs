@@ -4,15 +4,15 @@ uid: DataViewShape
 
 # Data view shape
 
-[!include[choose-data-shape](../../../add-organize-data/organize-data/data-views/_includes/choose-data-shape.md)]
+[!include[choose-data-shape](../../../analytics/data-views/_includes/choose-data-shape.md)]
 
-[!include[data-shape-intro](../../../add-organize-data/organize-data/data-views/_includes/data-shape-intro.md)]
+[!include[data-shape-intro](../../../analytics/data-views/_includes/data-shape-intro.md)]
 
 ## Specify the shape
 
 Set the [`DataViewShape`](xref:DataViewsQuickStartDefine#data-view-properties) property to a value of the [`DataViewShape` enumeration](xref:DataViewsQuickStartDefine#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
-[!include[standard-shape](../../../add-organize-data/organize-data/data-views/_includes/standard-shape.md)]
+[!include[standard-shape](../../..//analytics/data-views/_includes/standard-shape.md)]
 
 ### Example: Get data response body for standard shape with no grouping field
 
@@ -48,7 +48,7 @@ Timestamp,Site,Id,SolarRadiation,Temperature,Tags
 2018-11-13T18:22:00.0000000Z,Winterthur,WS_WINT,184,,"Gen2, High Resolution, Weather"
 ```
 
-![include[narrow-shape](../../../add-organize-data/organize-data/data-views/narrow-shape.md)]
+![include[narrow-shape](../../../analytics/data-views/_includes/narrow-shape.md)]
 
 ### Example: Get data response body for narrow shape with grouping field (site)
 

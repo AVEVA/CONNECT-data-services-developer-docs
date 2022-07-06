@@ -4,7 +4,7 @@ uid: data-views-retrieve
 
 # Retrieve a data view
 
-[!include[data-views-retrieve](../../../_includes/data-views-retrieve.md)]
+[!include[data-views-retrieve](../../_includes/data-views-retrieve.md)]
 
 ## Before you start
 
@@ -38,11 +38,11 @@ While working with a data view, you can access and test it using the <xref:apiCo
 
 1. Select a data view.
 
-1. From the side panel, select **![open-in-new](../../../_icons/default/open-in-new.svg) View in API Console**.
+1. From the side panel, select **![open-in-new](../../_icons/default/open-in-new.svg) View in API Console**.
 
 ### Developer documentation
 
-For more information on interacting with a data view using the API console, see the [Developer Guide](DataViewsOverview).
+For more information on interacting with a data view using the API console, see the [Developer Guide](xref:DataViewsOverview).
 
 ## Data view retrieval workflow
 

@@ -14,7 +14,7 @@ To create a data view:
 
 1. (Optional) To edit data field label, select **Next** and enter `{` to display tokens to use as a data field label.
 
-      [!include[field label tokens](../../../_includes/data-view-field-label-tokens.md)]
+      [!include[field label tokens](../../_includes/data-view-field-label-tokens.md)]
 
 1. Select **Apply** to accept the selected data fields.
 
@@ -39,7 +39,7 @@ To create a data view:
 1. Select **Save** to create the data view and to continue editing, or select **Save and Close** to create the data view and exit.
 
 Your data view is added to the `Data Views` page. You can view the sources for each query in your data view from the **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
-   
+
 ![Data Views: Query sources column](_images/query-sources-column.png)
 
 To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).

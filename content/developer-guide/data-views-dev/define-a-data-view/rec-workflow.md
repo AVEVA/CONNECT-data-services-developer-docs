@@ -6,9 +6,9 @@ uid: DefineaDataViewRecommendedWorkflow
 
 This is an introduction to the recommended workflow for creating and defining data views. The following sections show these concepts in action.
 
-[!include[iteration](../../../add-organize-data/organize-data/data-views/_includes/iteration.md)]
+[!include[iteration](../../../analytics/data-views/_includes/iteration.md)]
 
-[!include[recommended-skills](../../../add-organize-data/organize-data/data-views/_includes/recommended-skills.md)]
+[!include[recommended-skills](../../../analytics/data-views/_includes/recommended-skills.md)]
 
 There are three main steps required to define a data view: 
 

@@ -8,6 +8,8 @@ uid: DataViewShape
 
 [!include[data-shape-intro](../../../analytics/data-views/_includes/data-shape-intro.md)]
 
+The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsQuickStartGetData#format) (form = csvh).
+
 ## Specify the shape
 
 Set the [`DataViewShape`](xref:DataViewsQuickStartDefine#data-view-properties) property to a value of the [`DataViewShape` enumeration](xref:DataViewsQuickStartDefine#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.

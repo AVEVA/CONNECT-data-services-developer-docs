@@ -32,7 +32,7 @@ uid: data-views-add-query
 
 1. Once you are satisfied with your queries and query results, select **Save**.
 
-[!include[ineligible-date-items](_includes/ineligible-date-items.md)]
+[!include[ineligible-data-items](_includes/ineligible-data-items.md)]
 
 ## Next steps
 

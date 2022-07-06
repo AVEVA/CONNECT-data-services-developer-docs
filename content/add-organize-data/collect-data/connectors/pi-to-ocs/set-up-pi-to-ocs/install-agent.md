@@ -74,7 +74,7 @@ To install the PI to OCS Agent:
 
     * **Agent Description** - Enter an optional name for the agent.
 
-      **Result:** The `Service Account` page opens.
+    The `Service Account` page opens.
 
 1. On the `Servive Account` page, select the service account type for the connection:
 
@@ -114,4 +114,4 @@ To verify the installation:
 
    ![Agent status](../../images/details-pane.png)
 
-   **Note:** The agent status is also displayed in the PI to OCS Configuration Utility. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-status-states).
+   **Note:** The agent status is also displayed in the PI to OCS Configuration Utility. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-states).

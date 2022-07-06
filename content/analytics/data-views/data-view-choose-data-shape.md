@@ -16,6 +16,10 @@ To choose a data shape, choose between the **Standard** and **Narrow** options a
 
 [!include[standard-shape](_includes/standard-shape.md)]
 
+**Example: Standard Data Shape**
+
+![Example: Standard Data Shape]()
+
 [!include[narrow-shape](_includes/narrow-shape.md)]
 
 ## Next steps

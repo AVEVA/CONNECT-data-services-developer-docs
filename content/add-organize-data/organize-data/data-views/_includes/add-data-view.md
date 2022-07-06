@@ -1,1 +1,1 @@
-Begin by creating a data view, giving it a name and description.
+Begin creation of a data view by creating a data view object, which includes a name and description for the data view. The data view will not include any queries or data fields yet—you will add those later. 

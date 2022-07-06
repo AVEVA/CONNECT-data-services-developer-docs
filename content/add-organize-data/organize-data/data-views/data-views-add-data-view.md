@@ -12,9 +12,10 @@ uid: data-views-add-data-view
 
 1. Complete the following fields:
 
-   - **Name** - Enter a name to identify the data view.
-
-   - **Description** - (Optional) Enter a description for the data view.
+   | Field | Description |
+   |--|--|
+   | Name | Enter a name to identify the data view. |
+   | Description (Optional) | Enter a description for the data view. |
 
 ## Next steps
 

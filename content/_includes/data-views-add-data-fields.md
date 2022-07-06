@@ -1,0 +1,1 @@
+A data view includes data field sets, which are collections of fields originating from the same query. One field serves as the index (for example, `Timestamp`) and others contain information related to the data items.

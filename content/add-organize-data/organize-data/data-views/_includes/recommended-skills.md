@@ -1,0 +1,1 @@
+Although you need not be an expert of your OCS configuration, such as available streams and assets, this knowledge is helpful.

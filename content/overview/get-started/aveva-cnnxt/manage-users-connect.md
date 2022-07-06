@@ -10,7 +10,7 @@ An overview of the process is outlined below with links to the specific procedur
 
 1. <xref:create-group> in AVEVA Connect.
 
-   - The User group is built-in and applies to all users by default.
+   - The User group is built-in.
 
    - Add additional groups if you want to control individual access to folders (namespaces in AVEVA Data Hub), or for use within AVEVA Data Hub to control permissions.
 
@@ -28,7 +28,7 @@ An overview of the process is outlined below with links to the specific procedur
 
    - You can assign groups to users when they are created, or assign them later.
 
-1. <xref:AddGroup> assign roles to it.
+1. <xref:AddGroup> and assign roles to it.
 
    - For information about the roles in AVEVA Data Hub, see <xref:ccRoles>.
 

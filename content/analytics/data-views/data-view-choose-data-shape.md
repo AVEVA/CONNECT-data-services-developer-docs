@@ -16,11 +16,15 @@ To choose a data shape, choose between the **Standard** and **Narrow** options a
 
 [!include[standard-shape](_includes/standard-shape.md)]
 
-**Example: Standard Data Shape**
+**Example: Standard data shape**
 
-![Example: Standard Data Shape]()
+![Example: Standard Data Shape](_images/data-view-shape-standard.png)
 
 [!include[narrow-shape](_includes/narrow-shape.md)]
+
+**Example: Narrow data shape**
+
+![Example: Narrow Data Shape](_images/data-view-shape-narrow.png)
 
 ## Next steps
 

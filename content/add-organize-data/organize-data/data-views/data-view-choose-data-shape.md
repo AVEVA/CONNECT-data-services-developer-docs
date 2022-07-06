@@ -8,7 +8,15 @@ uid: data-view-choose-data-shape
 
 [!include[data-shape-intro](_includes/data-shape-intro.md)]
 
-[!include[data-shape](_includes/data-shape.md)]
+To choose a data shape, choose between the **Standard** and **Narrow** options at the top of the page.
+
+**Data view shape options**
+
+![data-view-shape-options](_images/data-view-shape-options.png)
+
+[!include[standard-shape](_includes/standard-shape.md)]
+
+[!include[narrow-shape](_includes/narrow-shape.md)]
 
 ## Next steps
 

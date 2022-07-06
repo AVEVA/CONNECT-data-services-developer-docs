@@ -26,6 +26,10 @@ To choose a data shape, choose between the **Standard** and **Narrow** options a
 
 ![Narrow Data Shape](_images/data-view-shape-narrow.png)
 
+## Developer documentation
+
+For developer documentation on choosing a data shape using the REST API, see <xref:DataViewShape>.
+
 ## Next steps
 
 Continue to <xref:data-views-add-query>.

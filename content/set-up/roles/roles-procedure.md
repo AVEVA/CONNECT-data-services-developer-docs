@@ -4,7 +4,15 @@ uid: gpRoles
 
 # Add a role
 
-Roles are used to manage access to assets, resources, and services. By default, the new role does not have any access granted or denied. Follow this procedure to create a role.
+Roles are used to manage access to assets, resources, and services. By default, a new role does not have any access granted or denied.
+
+## Prerequisite
+
+You must have the role of Tenant Administrator to add and manage roles.
+
+## Procedure
+
+To create a role:
 
 1. In the left pane, select **Security** > **Roles**.
 

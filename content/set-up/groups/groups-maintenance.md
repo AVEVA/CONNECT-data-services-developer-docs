@@ -1,30 +1,12 @@
 ---
-uid: Groups
+uid: GroupMaintenance
 ---
 
-# AVEVA Data Hub groups
+# Maintain a group
 
-Groups allow you to assign and manage roles for groups of users.
-	
 ## Prerequisite
- 
+
 You must have the role of Tenant Administrator to add and manage groups.
-
-## Add a group
-
-To add a group:
-
-1. In the left pane, select **Security** > **Groups**.
-
-1. In the toolbar, select **Add Group**.
-
-1. Begin entering text in the **Name** field to search for an existing group and then select the group you want to add for access to assets, resources and services.
-
-   **Note**: The group must exist in AVEVA Connect before adding it within AVEVA Data Hub.
-
-1. Specify the roles to assign to this new group.
-
-1. Select **Add**.
 
 ## Manage group roles
 
@@ -49,4 +31,3 @@ To remove a group:
 1. Select **Remove Group**.
 
 1. To confirm that you want to remove the group, select **Remove** in the message window or select **Cancel** to cancel the request.
- 

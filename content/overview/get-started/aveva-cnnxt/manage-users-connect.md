@@ -1,5 +1,5 @@
 ---
-uid: ManageUsersConnect 
+uid: ManageUsersConnect
 ---
 
 # Manage users and permissions

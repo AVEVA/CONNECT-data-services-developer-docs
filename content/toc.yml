@@ -199,6 +199,8 @@
         - topicUid: data-views-retrieve-data-view
         - topicUid: data-view-retrieve-edit-query
       - topicUid: data-views-install-power-bi-connector
+        items:
+        - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:
     - topicUid: identityProviders

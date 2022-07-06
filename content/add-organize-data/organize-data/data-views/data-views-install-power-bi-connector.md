@@ -20,10 +20,6 @@ The following are required before you install and use OSIsoft Cloud Services Pow
 
 - A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
 
-## Release notes
-
-See <xref:PowerBIReleaseNotes>.
-
 ## Install OSIsoft Cloud Services Power BI Connector
 
 To install the OSIsoft Cloud Services Power BI Connector:

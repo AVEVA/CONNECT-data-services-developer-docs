@@ -10,9 +10,7 @@ A `DataItem` is an OCS resource, such as a stream or asset, included in the data
 
 The collection of data items in the data view represents all OCS resources that match the [`.Queries`](xref:DataViewsQueries) field of the data view, excluding data items that are ineligible (see [ineligible data items](#ineligible-data-items)). To add data items to a data view, either refine an existing query, or add a new query (refer to the [Define Queries](xref:DataViewsQueries) topic for which option to choose from). Similarly, to remove data items from a data view, either refine an existing query, or remove a query. If you remove a query, this will remove all data items from the query.
 
-**Note:** Each query is executed independently to generate the list of data items. It is possible to have duplicate data items resulting from different queries. This can be desirable or undesirable depending on the use case.
-
-There is a maximum of 100,000 data items that can be included in a data view. Note that each stream included will generate a data item, and as such a single asset may contribute multiple data items if it contains multiple stream references. Data items are ordered alphabetically by data item id within the data items collection.
+[!include[query-notes](../../../analytics/data-views/_includes/query-notes.md)]
 
 ### Adding fields
 

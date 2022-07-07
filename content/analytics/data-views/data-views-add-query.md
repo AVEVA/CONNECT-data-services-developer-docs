@@ -26,7 +26,9 @@ uid: data-views-add-query
 
    If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of an object name in the **Search** field to display a more specific set of streams or assets.
 
-   When the query populates with objects, you can view more about each object by selecting it from the table. The object details display in the pane on the right. 
+   When the query populates with objects, you can view more about each object by selecting it from the table. The object details display in the pane on the right.
+
+   [!include[query-notes](_includes/query-notes.md)]
 
 1. (Optional) To add additional queries to the data view, select **Add Query** and repeat the steps listed above.
 

@@ -8,7 +8,7 @@ As an administrator, you set up new users in AVEVA Connect. When a new user is a
 
 To set up new users:
 
-1.	From the AVEVA Connect home page, select the menu icon, then select **User Management**.
+1. From the AVEVA Connect home page, select the menu icon, then select **User Management**.
 
 1. (Optional) Select the **Users** tab.
     

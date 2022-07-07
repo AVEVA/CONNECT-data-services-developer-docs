@@ -34,7 +34,6 @@ You must acquire an account before interacting with the AVEVA Data Hub. To reque
 
 For information on the graphical interface for using the REST API within AVEVA Data Hub, see [API console](xref:apiConsole).
 
-
 ## Architecture
 
 A tenant represents the set of services, applications, data, and configuration states available to a customer in AVEVA Data Hub. Users are associated with a tenant via at least one configured identity provider, a database of user records that allows for authentication, and access to resources can be managed for those users via the assignment of roles. 
@@ -46,14 +45,13 @@ Namespaces are provisioned within a region. The Namespace's services and data st
 
 AVEVA Data Hub provides data residency via namespaces in the following regions:
 
-| Supported Regions | Geographic Area | Location |
-| --- | --- | ---  |
-| WestUS | Americas | California |
-| NorthEurope | Europe | Netherlands |
-| WestAustralia | Australia | ? |
+| AVEVA Connect region label | AVEVA Data Hub region label | 
+| ------------- | ------------- |
+| US-West | (westus) |
+| EU-West | (northeurope) | 
+| Australia | (australiaeast) |
 
 Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See the [Tenant](xref:tenant-tenants) documentation for information on how to access this data.
-
 
 ## AVEVA Data Hub API versioning
 

@@ -14,6 +14,8 @@ The shape concepts presented in this section apply to building all data view out
 
 Set the [`DataViewShape`](xref:DataViewsQuickStartDefine#data-view-properties) property to a value of the [`DataViewShape` enumeration](xref:DataViewsQuickStartDefine#dataviewshape-enumeration), either `DataViewShape.Standard` (default) or `DataViewShape.Narrow`.
 
+## Standard shape
+
 [!include[standard-shape](../../..//analytics/data-views/_includes/standard-shape.md)]
 
 ### Example: Get data response body for standard shape with no grouping field
@@ -49,6 +51,8 @@ Timestamp,Site,Id,SolarRadiation,Temperature,Tags
 2018-11-13T18:21:00.0000000Z,Winterthur,WS_WINT,184,,"Gen2, High Resolution, Weather"
 2018-11-13T18:22:00.0000000Z,Winterthur,WS_WINT,184,,"Gen2, High Resolution, Weather"
 ```
+
+## Narrow shape
 
 ![include[narrow-shape](../../../analytics/data-views/_includes/narrow-shape.md)]
 

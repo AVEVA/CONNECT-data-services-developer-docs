@@ -1,5 +1,3 @@
-## Narrow shape
-
 The narrow table pivots the standard table. Each data field becomes a row comprised of the following columns: 
 
 - Index column 

@@ -14,11 +14,15 @@ To choose a data shape, choose between the **Standard** and **Narrow** options a
 
 ![data-view-shape-options](_images/data-view-shape-options.png)
 
+## Standard
+
 [!include[standard-shape](_includes/standard-shape.md)]
 
 **Standard data shape**
 
 ![Standard Data Shape](_images/data-view-shape-standard.png)
+
+## Narrow
 
 [!include[narrow-shape](_includes/narrow-shape.md)]
 

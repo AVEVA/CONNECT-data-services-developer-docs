@@ -80,6 +80,7 @@
         - topicUid: community-manage-groups
         - topicUid: community-manage-clients
         - topicUid: community-manage-administrators
+        - topicUid: community-manage-preferred-region
         - topicUid: communities-manage-default-admins
       - topicUid: community-data-sharing
         items: 

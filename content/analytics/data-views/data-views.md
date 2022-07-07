@@ -28,7 +28,7 @@ To create a data view:
 
 1. In the center pane, update the **Query Id** field to a new value or accept the default of *Query1*.
 
-1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../../_icons/default/database.svg) or community ![community](../../../_icons/default/share-variant.svg) to query.
+1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../_icons/default/database.svg) or community ![community](../../_icons/default/share-variant.svg) to query.
 
 1. For **Query Type**, select **Streams** or **Assets** to indicate which objects to search for this query.
 

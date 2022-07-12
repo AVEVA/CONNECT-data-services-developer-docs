@@ -73,6 +73,7 @@
         - topicUid: community-remove-tenants
         - topicUid: community-edit
         - topicUid: community-delete
+        - topicUid: community-manage-preferred-region
       - topicUid: community-tenant-administration
         items:
         - topicUid: community-remove-your-tenant

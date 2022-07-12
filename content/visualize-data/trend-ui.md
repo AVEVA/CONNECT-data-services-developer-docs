@@ -20,7 +20,7 @@ The following image shows the important elements of the `Trend` page, and the ta
 | 2B | Reset &ndash; Clears the workspace. |
 | 2C | Share ![Share](../_icons/default/share.svg) &ndash; Copies the workspace URL. Use this to share your workspace with others. |
 | 3 | Add Traces pane &ndash; Lists the assets and streams available to add as traces to the `Trend` pane. |
-| 3A | Information ![Information](../_icons/branded/information.svg) &ndash; Mouse over to display a tooltip of information related to the asset or stream. |
+| 3A | Information ![Information](../_icons/branded/information.svg) &ndash; Mouse over to display a tooltip of stream information, including name and identifier. For streams shared from a community, tenant name and namespace identifier are listed as well. |
 | 3B | Plus ![Plus](../_icons/branded/plus.svg) &ndash; Select to add a trace to the `Trend` pane. |
 | 4 | Legend table &ndash; Displays information about the traces in the `Trend` pane. Toggle between the Trend and Cursor views. |
 | 4A | Trend view &ndash; Select the **Trend** ![Trend](../_icons/default/chart-line.svg) icon to display statistics about each trace in the Legend table. The screen capture shows the trend view. |

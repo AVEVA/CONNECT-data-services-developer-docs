@@ -43,6 +43,7 @@
         - topicUid: bpStreams
         - topicUid: gpStreams
         - topicUid: manage-streams
+        - topicUid: streams-view-in-trend
       - topicUid: ccTypes
         items:
         - topicUid: bpTypes

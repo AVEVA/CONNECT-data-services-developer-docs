@@ -532,8 +532,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 
 |Property|Value|
 |---|---|
-|Default|0|
 |Continuous|0|
+|Default|0|
 |StepwiseContinuousLeading|1|
 |StepwiseContinuousTrailing|2|
 |Discrete|3|

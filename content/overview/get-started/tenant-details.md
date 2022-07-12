@@ -14,8 +14,8 @@ A tenant grants access for your users, groups, and clients to assets, resources 
 
 Only the tenant administrator can make changes to the tenant details.
 
-To view the `Tenant Details` page, follow these steps:
+To view the `Tenant Details` page:
 
-1. Select the **User profile** icon ![Card view](images/profile-icon.png).
+1. Select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg).
 
-2. Select **Tenant Details**.
+1. Select **Tenant Details**.

@@ -10,7 +10,7 @@ For example, a fleet manager of a mining truck dealer sells trucks to companies 
 
 The following procedure describes how to use the portal to monitor assets and quickly identify problems. The screen captures are taken from the scenario described in the example above.
 
-To use the portal to monitor assets and identify problems, follow these steps:
+To use the portal to monitor assets and identify problems:
 
 1. From the left pane, select **Visualization** > **Asset Explorer**. 
    

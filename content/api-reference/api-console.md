@@ -6,7 +6,7 @@ uid: apiConsole
 
 The API Console provides a graphical interface for using the REST API. When using the API Console, you select a GET, POST, PUT, DELETE, or PATCH action, select the objects for the action, and execute.
 
-To use the API Console, follow these steps:
+To use the API Console:
 
 1. In the left pane, select **Developer Tools** > **API Console**.
 
@@ -16,7 +16,7 @@ To use the API Console, follow these steps:
 
 1. Select an action from the **GET/POST/PUT/DELETE/PATCH** dropdown list.
 
-1. Type a slash (/) in the text box to display a dropdown list.
+1. Type a slash (/) in the text field to display a dropdown list.
 
 1.  If you selected a tenant-scoped path in the second step, you can take any of the following actions:
 

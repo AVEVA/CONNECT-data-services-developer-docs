@@ -6,7 +6,7 @@ uid: download-tenant-log
 
 OSIsoft Cloud Services (OCS) includes logs for tenants and namespaces. These logs contain troubleshooting information, including messages about tenant-related activity, errors, and system messages. By default, logs report on activities that occurred within the past month. 
 
-To download a tenant log in a .csv file, follow these steps:
+To download a tenant log in a .csv file:
 
 1. In the left pane, select **Support** > **Logs**.
    

@@ -16,7 +16,7 @@ Each trace is listed within the **Trend** ![trend](../_icons/default/chart-line.
 
 ![trace origin chips](images/trace-origin-chips.png)
 
-The following table describes each icon.
+The following table describes each chip.
 
 Icon | Description
 --|--
@@ -24,7 +24,7 @@ Icon | Description
 ![share](../_icons/default/share-variant.svg) | Indicates that the trace originates from a [community](xref:communities). Mouse over the icon to view the community identifier.
 ![tenant](../_icons/default/office-building.svg) | Indicates the tenant that is sharing the trace within the community. This icon displays only when the trace is shared within a community.
 
-Under each trace, the legend table lists each property added, along with additional data for the property. The following table describes the columns in the legend tabl
+Under each trace, the legend table lists each property added, along with additional data for the property. The following table describes the columns in the legend table.
 
 Column | Description
 --|--

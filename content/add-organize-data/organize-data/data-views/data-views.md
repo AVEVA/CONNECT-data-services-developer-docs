@@ -30,8 +30,6 @@ To create a data view:
 
 1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../../_icons/default/database.svg) or community ![community](../../../_icons/default/share-variant.svg) to query.
 
-   **Getting `Query Not Accessible`?** This message indicates that either the community has either been deleted or you have insufficient permissions to access the community. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
-
 1. For **Query Type**, select **Streams** or **Assets** to indicate which objects to search for this query.
 
    **Note:** Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.

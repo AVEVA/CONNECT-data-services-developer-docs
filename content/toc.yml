@@ -205,6 +205,9 @@
 - topicUid: Security
   items:
     - topicUid: Groups
+      items:
+      - topicUid: AddGroup
+      - topicUid: GroupMaintenance
     - topicUid: ccUsers
       items:
       - topicUid: gpUsers

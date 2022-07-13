@@ -22,6 +22,6 @@ To export a list of PI points missing from a transfer:
 
 1. In the `Transfer` window, select **Export Missing PI Point Ids**.
 
-   **Result:** The **Save As** dialog box opens.
+   The `Save As` window opens.
 
 1. In the `Save As` window, navigate to the location where you want to save the file, enter a name for the .csv file, and then select **Save**.

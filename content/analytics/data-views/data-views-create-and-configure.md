@@ -28,6 +28,10 @@ Review the following information before creating a data view.
 
 [!include[iteration](_includes/iteration.md)]
 
+### API console
+
+[!include[api-console](_includes/api-console.md)]
+
 ## Data view creation workflow
 
 To create and define a data view, complete these tasks in order.

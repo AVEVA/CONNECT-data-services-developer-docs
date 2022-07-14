@@ -28,6 +28,8 @@ Data retrieval options include:
 
 To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate using a valid Client Id and Client secret. You can obtain an Id and secret by creating a set of client-credentials. For more information, see <xref:gpClientCredentialsClient>.
 
+### API Console
+
 [!include[api-console](_includes/api-console.md)]
 
 ### Developer documentation

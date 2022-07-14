@@ -2,7 +2,7 @@
 uid: data-views-add-data-fields
 ---
 
-# Step 4: Add data fields
+# Step 3: Add data fields
 
 [!include[add-data-fields](../../_includes/data-views-add-data-fields.md)]
 
@@ -50,4 +50,4 @@ This preview lists each data field and property included within the affected dat
 
 ## Next steps
 
-Continue to <xref:data-views-preview-and-save>.
+Continue to <xref:data-view-choose-data-shape>.

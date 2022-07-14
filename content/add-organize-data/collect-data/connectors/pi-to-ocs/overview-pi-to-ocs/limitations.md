@@ -16,4 +16,3 @@ The following table lists the known limitations for PI to OCS.
 | Custom UOM data | <ul><li>Custom unit of measurements (UOMs) that are not one of the predefined UOM classes in OCS are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset’s UOM property set.</li></ul> |
 | Service account used for PI to OCS Agent | <ul><li>Once installed, the service account cannot be changed to another account.</li><li>To change a service account, reinstall the PI to OCS Agent.</li></ul> |
 | PI Analysis Service | <ul><li>If you use PI to OCS with the PI Analysis Service, be sure to save analysis outputs to PI points.</li></ul> |
-| Deleted values do not propagate | <ul><li>Deleting values in a source PI Data Archive does not delete the corresponding values in the SDS.</li></ul> |

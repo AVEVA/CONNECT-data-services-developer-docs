@@ -2,7 +2,7 @@
 uid: data-views-preview-and-save
 ---
 
-# Step 5: Preview and save the data view
+# Step 6: Preview and save the data view
 
 [!include[preview-and-save](_includes/preview-and-save.md)]
 

@@ -35,9 +35,9 @@ These AF objects are not included in a PI to Data Hub data transfer:
 * Table lookup attributes
 * AF enumeration sets
 * AF models/layers/connections/ports
-* Extended properties and annotations on assets not supporting AF Versioning
+* Extended properties and annotations on assets not supporting AF versioning
 * AF categories
-* Weakly referenced and composition elements and element templates
+* Weakly referenced elements, composition elements, and element templates
 * AF tables
 
 ## Performance metrics: AF data transfer

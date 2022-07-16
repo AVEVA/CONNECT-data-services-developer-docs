@@ -6,21 +6,39 @@ uid: data-views-preview-and-save
 
 [!include[preview-and-save](_includes/preview-and-save.md)]
 
-1. In the `Generate Preview` pane, turn the **Auto Refresh** toggle switch on to enable auto refresh. With auto refresh enabled, changes to any of the streams included in the data view are immediately reflected in the data view.
+## Index configuration
 
-1. Select the date and time display to set the **Start Index** and **End Index** to enter the time period of the data to include in the data view. For interpolated data views, enter a `Time Interval`.
+Before retrieving your data view with third-party software for the purposes of data science, you can preview what it will look like by configuring a start and end index that limits the data included in the data view.
 
-1. Select **Apply** to accept the index configuration changes.
+All data in a data view is associated with an index value, usually a timestamp. If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
 
-1. Select the **Interpolated/Stored** dropdown list and select **Interpolated** or **Stored** for the data view.
+**Note:** The index configuration settings available on the `Data View` page are primarily for preview purposes. When working with the data view in third-party software, you can modify the index configuration programmatically—the data view preview index configurations can be edited freely.
 
-## Generate a preview and save the data view
+## To configure the index and preview the data view
 
-1. To generate a preview of the data view with the selected settings, select **Generate preview**.
+To configure the index, select an index start and end value. Then generate the preview.
 
-1. Select **Save** to create the data view and to continue editing, or select **Save and Close** to create the data view and exit.
+1. From the **Configure Data View Retrieval Type** dropdown, select a retrieval type:
 
-**Finished!**
+	| Retrieval Type | Description |
+	|--|--|
+	| **Interpolated** | Returns data between specified intervals. Streams in SDS may be configured to have non-default interpolation and extrapolation behavior. These behaviors are observed when stream data is included in data views. Data view data is always treated as dense, even if SDS returns sparse data. |
+	| **Stored** | Returns stored or window data. The resulting data view data will include only index values that exist in the underlying data from the data items. |
+
+1. Select the **Configure Data View Index Configuration** dropdown and define the following settings:
+
+	| Setting | Description | 
+	|--|--|
+	| **Start Index** | The timestamp for the starting data point of the index. |
+	| **End Index** | The timestamp for the ending data point of the index.<br><br>**Tip:** Select **Now** to set the current date and time. |
+	| **Time Interval**<sup>1</sup> | The interval between data points. |
+	| **Save Defaults with Data View** | If checked, the index configuration parameters are saved as defaults and used when these parameters are not explicitly included in an API request. |
+
+	<sup>1</sup>: This setting is only available for the **Interpolated** retrieval type. 
+
+1. Select **Apply**.
+
+	The data view preview is updated according to your index configuration. When you are done editing your data view, select **Save and Close** to finish initial configuration of your data view.
 
 ## Next steps
 

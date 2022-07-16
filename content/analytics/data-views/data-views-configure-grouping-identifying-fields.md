@@ -64,9 +64,9 @@ You can change the order that fields display within your data view by dragging a
 
 ![reorder fields](_images/reorder-fields.gif)
 
-## Consolidate fields
+## Link fields
 
-For fields that contain the same type of information under a different name, you can consolidate them by dragging and dropping one field onto the other.
+For fields that contain the same type of information under a different name, you can link them by dragging and dropping one field onto the other.
 
 ![consolidate fields](_images/consolidate-fields.gif)
 

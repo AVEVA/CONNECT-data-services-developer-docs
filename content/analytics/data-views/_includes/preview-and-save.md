@@ -1,1 +1,1 @@
-Generate a preview of your data view by editing the index configuration and retrieval method. Once you are satisfied with your overall data view configuration, save it.
+As you work with your data view, you can generate a preview of how the data will be shaped and organized. After you are satisfied with how the data is organized in the preview, you can view its URI in the API console to begin working with the data in a third-party application.

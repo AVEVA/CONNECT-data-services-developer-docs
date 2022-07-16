@@ -1,1 +1,1 @@
-Although you need not be an expert of your OCS configuration, such as available streams and assets, this knowledge is helpful.
+Although you need not be an expert, a general knowledge of data science is helpful when creating a data view. Additionally, knowledge of your OCS data items, such as available streams and assets, is also helpful.

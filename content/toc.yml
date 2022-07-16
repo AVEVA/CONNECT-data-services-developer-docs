@@ -184,6 +184,7 @@
         - topicUid: data-views-add-data-view
         - topicUid: data-views-add-query
         - topicUid: data-views-add-data-fields
+        - topicUid: data-views-configure-data-field-sets
         - topicUid: data-view-choose-data-shape
         - topicUid: data-views-preview-and-save
       - topicUid: data-views-edit-a-data-view

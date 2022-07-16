@@ -50,4 +50,4 @@ This preview lists each data field and property included within the affected dat
 
 ## Next steps
 
-Continue to <xref:data-views-configure-index-grouping-identifying-fields>.
+Continue to <xref:data-views-configure-data-field-sets>.

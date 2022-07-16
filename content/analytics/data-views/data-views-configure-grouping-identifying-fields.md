@@ -16,10 +16,14 @@ Without grouping, all of the data items returned by a query appear side-by-side.
 
 Only certain fields are eligible to be used as grouping fields. Fields are only eligible if they include one or more of the following source types:
 
-- Id
-- Name
-- Metadata
-- Tags
+Fields are only eligible if they include one of the following source types listed in the table below. All source types require a field label. Some source types also require having a key defined. The following table lists eligible data sources along with additional requirements for field labels and keys.
+
+| Eligible source type | Field label required? | Key required? |
+|----------------------|-----------------------|---------------|
+| Id                   | ✔                    | &#10006;      |
+| Name                 | ✔                    | &#10006;      |
+| Metadata             | ✔                    | ✔             |
+| Tags                 | ✔                    | ✔             |
 
 Grouping field labels is required. Keys are required for the grouping fields with source type Metadata and Tags. Keys are not applicable for grouping fields with source type of Id or Name.
 
@@ -41,14 +45,14 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 
 If the field set resolves to multiple data items in any group (or if grouping is not used), then you should designate an **Identifying field** for the field set. The identifying field of a data field set specifies the primary field to identify multiple items in a group. This identification methods allows the identifying field value to be used automatically in field labels of the group. If a lone criterion is not a sufficient or useful way of disambiguating the fields, then grouping by additional criteria may be necessary. 
 
-Fields are only eligible if they include one or more of the following source types:
+Fields are only eligible if they include one or more of the following source types listed in the table below. Some source types include the an requirement of having a key defined. following table lists eligible data sources along with additional requirements for keys.
 
-- Id
-- Name
-- Metadata
-- Tags
-
-Keys are required for identifying fields with the source type of Metadata and Tags. Keys are not applicable for identifying fields with the source type of Id and Name.
+| Eligible source type | Key required? |
+|----------------------|---------------|
+| Id                   | &#10006;      |
+| Name                 | &#10006;      |
+| Metadata             | ✔            |
+| Tags                 | ✔            |
 
 To add an identifying field to a field set, select **Identifying Field** and choose an eligible field. You can only choose a single field.
 
@@ -58,9 +62,15 @@ To add an identifying field to a field set, select **Identifying Field** and cho
 
 ## Configure field order
 
-You can change the order that fields in each of your field sets display within your data view by dragging and dropping fields in the preferred order.
+You can change the order that fields display within your data view by dragging and dropping fields in the preferred order.
+
+![reorder fields](_images/reorder-fields.gif)
 
 ## Consolidate fields
+
+For fields that contain the same type of information under a different name, you can consolidate them by dragging and dropping one field onto the other.
+
+![consolidate fields](_images/consolidate-fields.gif)
 
 ## Next steps
 

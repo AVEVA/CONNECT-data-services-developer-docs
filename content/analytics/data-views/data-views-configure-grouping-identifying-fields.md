@@ -25,8 +25,6 @@ Fields are only eligible if they include one of the following source types liste
 | Metadata             | ✔                    | ✔             |
 | Tags                 | ✔                    | ✔             |
 
-Grouping field labels is required. Keys are required for the grouping fields with source type Metadata and Tags. Keys are not applicable for grouping fields with source type of Id or Name.
-
 To add a grouping field, select **Add a Grouping Field** and choose an eligible field. You can add as many eligible fields as you prefer.
 
 **Add a grouping field**

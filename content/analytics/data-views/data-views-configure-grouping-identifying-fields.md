@@ -2,7 +2,7 @@
 uid: data-views-configure-grouping-identifying-fields
 ---
 
-# Step 4: Configure the data field sets
+# Step 4: Configure data field sets
 
 [!include[configure-grouping-identifying-fields](_includes/configure-grouping-identifying-fields.md)]
 

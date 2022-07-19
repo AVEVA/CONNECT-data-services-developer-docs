@@ -154,9 +154,8 @@
     - topicUid: OMFMaintenance
 - topicUid: lpvisualizedata
   items:
-  - topicUid: CreateTrendSessio-*+9/n
-  - topicUid: TrendUserInterface8605
-  37
+  - topicUid: CreateTrendSession
+  - topicUid: TrendUserInterface
     items:
     - topicUid: LegendTableReference
     - topicUid: URLparameters

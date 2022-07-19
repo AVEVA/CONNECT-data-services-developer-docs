@@ -25,20 +25,35 @@ The table below lists the AF objects that can be included in a PI to Data Hub da
 These AF objects are not included in a PI to Data Hub data transfer:
 
 * Analysis data reference attributes
+
 * Attributes that reference a non-registered data source/PI Data Archive
+
 * AF categories
+
 * AF enumeration sets
+
 * AF models/layers/connections/ports
+
 * AF tables
+
 * Custom units of measure (UOMs)
+
 * Event frames 
+
 * Extended properties and annotations on assets not supporting AF versioning
+
 * Formula data reference attributes 
+
 * Hidden attributes
+
 * Implicit PI points with attributes that reference other attributes
+
 * Implicit PI points with multiple attributes on an AF element (only one attribute will be transferred)
+
 * PI point arrays
+
 * Table lookup attributes
+
 * Weakly referenced elements, composition elements, and element templates
 
 ## Performance metrics: AF data transfer

@@ -4,7 +4,7 @@ uid: data-views-edit-name-and-description
 
 # Edit name and description
 
-[edit-name-description](_includes/edit-name-description.md)]
+[!include[edit-name-description](_includes/edit-name-description.md)]
 
 1. In the left pane, select **Analytics** > **Data Views**.
 

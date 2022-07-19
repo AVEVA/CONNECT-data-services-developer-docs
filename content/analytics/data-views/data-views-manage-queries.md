@@ -52,7 +52,6 @@ Following initial addition of a data view, you can add queries or remove them fr
 
 1. Once you are satisfied with your queries and query results, select **Save**.
 
-
 ## To remove queries from a data view
 
 1. Select the query that you want to remove.

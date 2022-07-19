@@ -4,17 +4,37 @@ uid: data-views-edit-data-field-sets
 
 # Edit data field sets
 
-Anim enim cupidatat eiusmod exercitation proident adipisicing nulla ad laboris nostrud labore magna quis amet. Amet et exercitation sint ex nulla laboris exercitation elit ut cillum qui dolor quis. Cillum elit id culpa occaecat irure. Eiusmod quis in laboris tempor cupidatat minim sint magna eu mollit nulla tempor magna. Velit deserunt labore amet esse sunt in occaecat ea elit Lorem.
-
 Eiusmod sit qui proident nostrud ea enim enim adipisicing qui fugiat veniam voluptate irure. Amet consectetur reprehenderit exercitation aliquip ea cillum adipisicing ipsum tempor in eu. Magna sit adipisicing nulla cillum. Incididunt cupidatat nulla eu elit dolore culpa est deserunt aute aliqua. Et culpa ea eiusmod quis cupidatat. Nisi exercitation voluptate id amet exercitation.
 
 ## Add data field to field set
 
-Aliqua cupidatat ullamco consectetur nisi laboris sint voluptate occaecat. Dolore ut pariatur laborum tempor voluptate reprehenderit mollit laboris. Exercitation esse reprehenderit enim nisi. Nulla magna anim laborum nisi nostrud aliqua ullamco officia sint. Mollit incididunt ipsum ea duis officia.
+Each data field set is composed of data fields from streams or assets. You can organize your data view to use one or more of these fields to group your data view. The fields you choose to use for grouping display in the data view to the immediate right of the index field.
 
-## Add identitying field to field set
+1. In the left pane, select **Analytics** > **Data Views**.
 
-Consequat aliquip elit quis aliquip amet pariatur sit aliqua do nisi magna veniam duis culpa. Ullamco occaecat ut enim sunt est id. Nisi culpa pariatur minim aute est eiusmod esse occaecat in id in commodo. Dolor est officia mollit occaecat amet culpa consequat in ullamco ullamco eiusmod. Duis fugiat officia consequat velit in. Sint ea amet laborum non sunt dolore consectetur dolore consequat.
+1. Select the data view that you want to edit.
+
+1. Select **Edit Data View**.
+
+1. From the left panel, select the query that you want to add a data field to. Then select **Add**.
+
+	**Tip:** If your data view includes more than one query, you can select multiple queries.
+
+1. Select the data fields that you want to include in your field set.
+
+	**Note:** Each data field set must include each least one field. If you edit a data view that includes a query with no data fields in its field set, you are prompted automatically prompted to add data fields to the set.
+
+1. Select **Apply**.
+
+The data fields are added to the field set. 
+
+## Add identifying field to field set
+
+To add an identifying field to the field set for a query, select an eligible field from the **Identifying field** dropdown.
+
+**Add an identifying field**
+
+![add-an-identifying-field](_images/add-an-identifying-field.png)
 
 ## Edit data fields
 

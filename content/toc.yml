@@ -191,17 +191,17 @@
       - topicUid: data-views-edit-a-data-view
         items: 
         - topicUid: data-views-edit-name-and-description
-        - topicUid: data-views-edit-data-shape
         - topicUid: data-views-manage-queries
+        - topicUid: data-views-edit-data-field-sets
         - topicUid: data-views-group-data-fields
-        - topicUid: data-views-configure-index
+        - topicUid: data-views-preview-data-view
       - topicUid: data-views-retrieve
         items:
         - topicUid: data-views-retrieve-data-view
         - topicUid: data-view-retrieve-edit-query
-      - topicUid: data-views-install-power-bi-connector
-        items:
-        - topicUid: PowerBIReleaseNotes
+    - topicUid: data-views-install-power-bi-connector
+      items:
+      - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:
     - topicUid: identityProviders

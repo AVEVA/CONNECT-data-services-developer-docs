@@ -21,6 +21,10 @@ Following initial addition of a data view, you can add queries or remove them fr
 
 ## To add queries to a data view
 
-1. Select **Add**
+1. Select **Add**.
 
 ## To remove queries from a data view
+
+1. Select the query that you want to remove.
+
+1. 

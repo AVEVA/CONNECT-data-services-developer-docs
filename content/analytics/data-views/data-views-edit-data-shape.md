@@ -20,8 +20,8 @@ uid: data-views-edit-data-shape
 
 	| Option | Description |
 	|--|--|
-	| **Standard** | [!include[standard-shape](_includes/standard-shape.md)]<br><details><summary>Standard Data Shape</summary><img src="_images/data-view-shape-standard.png">Standard Data Shape</img></details> |
-	| **Narrow** | [!include[narrow-shape](_includes/narrow-shape.md)]<br><details><summary>Narrow Data Shape</summary><img src="_images/data-view-shape-narrow.png"/>Narrow Data Shape</img></details>|
+	| **Standard** | [!include[standard-shape](_includes/standard-shape.md)]<br><details><summary><strong>Standard Data Shape</strong></summary><img src="_images/data-view-shape-standard.png">Standard Data Shape</img></details> |
+	| **Narrow** | [!include[narrow-shape](_includes/narrow-shape.md)]<br><details><strong><summary>Narrow Data Shape</strong></summary><img src="_images/data-view-shape-narrow.png"/>Narrow Data Shape</img></details>|
 
 ## Developer documentation
 

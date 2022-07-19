@@ -10,4 +10,10 @@ Following initial configuration of a data view, it will likely need further refi
 
 	[!include[edit-name-description](_includes/edit-name-description.md)]
 
-- <xref:data-views-edit-data-shape>
+- <xref:data-views-manage-queries>
+
+- <xref:data-views-edit-data-field-sets>
+
+- <xref:data-views-group-data-fields>
+
+- <xref:data-views-preview-data-view>

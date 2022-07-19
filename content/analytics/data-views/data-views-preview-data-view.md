@@ -12,6 +12,8 @@ Do ex enim officia nostrud irure dolor sint nisi amet. Lorem exercitation nisi u
 
 Fugiat ex pariatur dolore culpa labore ea amet. Nulla ad laboris est nulla duis proident velit id consequat. Esse nostrud commodo cupidatat dolor eu enim aute do veniam. Quis magna consectetur esse enim enim cupidatat non. Pariatur proident non ipsum labore nostrud nostrud cupidatat incididunt sit ea esse et.
 
+**Note:** For performance purposes, some objects included in the data view do not automatically refresh. You must manually select **Refresh Preview** when prompted to update the data view.
+
 ## Edit index field
 
 Irure dolor veniam incididunt nulla quis voluptate ut adipisicing anim. Dolor anim eu fugiat dolor consequat cillum nisi pariatur laborum ipsum duis aliquip. Eu deserunt nisi sint cupidatat proident. Enim incididunt voluptate nulla veniam. Ullamco anim non enim adipisicing dolor non eiusmod dolor fugiat. Est amet pariatur pariatur esse adipisicing in duis et qui excepteur. Anim pariatur velit cillum velit excepteur consequat minim aute non in occaecat enim.

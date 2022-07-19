@@ -19,7 +19,7 @@ The table below lists the AF objects that can be included in a PI to Data Hub da
 | --------------------------------------------------------- | --------------------- |
 | Elements                                                  | Assets |
 | PI point data reference attributes                        | Asset stream reference properties |
-| Static (aka "None") data reference attributes<sup>1</sup> | Asset metadata properties |
+| Static ("None") data reference attributes<sup>1</sup> | Asset metadata properties |
 | Excluded attributes                                       | Dependent on attribute type |
 
 <sup>1</sup>Static AF attributes configured as type 'Boolean' are not supported and will not be transferred.

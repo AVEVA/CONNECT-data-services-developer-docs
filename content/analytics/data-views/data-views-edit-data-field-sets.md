@@ -16,17 +16,29 @@ Each data field set is composed of data fields from streams or assets. You can o
 
 1. Select **Edit Data View**.
 
-1. From the left panel, select the query that you want to add a data field to. Then select **Add**.
+1. From the left panel, select **Add**.
 
-	**Tip:** If your data view includes more than one query, you can select multiple queries.
+	The **Add Data Fields** window opens, listing the field set for each query. 
 
-1. Select the data fields that you want to include in your field set.
+1. Add the data fields that you want to include in your field sets.
 
 	**Note:** Each data field set must include each least one field. If you edit a data view that includes a query with no data fields in its field set, you are prompted automatically prompted to add data fields to the set.
 
 1. Select **Apply**.
 
-The data fields are added to the field set. 
+The data fields are added to the field set.
+
+## Remove data field from a field set
+
+1. From the left panel, select the data fields that you want to remove from each query. 
+
+	**Tip:** You can select all fields for a field set by selecting the checkbox for the query.
+
+1. Select **Remove**.
+
+	**Note:** Removing all fields from a field set does not remove the query from the field set—only the fields. For more information on removing a query from a data view, see [To remove queries from a data view](xref:data-views-manage-queries#to-remove-queries-from-a-data-view).
+
+	The selected fields are removed from the applicable field sets.
 
 ## Add identifying field to field set
 

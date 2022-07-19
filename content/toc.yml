@@ -154,8 +154,9 @@
     - topicUid: OMFMaintenance
 - topicUid: lpvisualizedata
   items:
-  - topicUid: CreateTrendSession
-  - topicUid: TrendUserInterface
+  - topicUid: CreateTrendSessio-*+9/n
+  - topicUid: TrendUserInterface8605
+  37
     items:
     - topicUid: LegendTableReference
     - topicUid: URLparameters
@@ -192,9 +193,8 @@
         - topicUid: data-views-edit-name-and-description
         - topicUid: data-views-edit-data-shape
         - topicUid: data-views-manage-queries
-        - topicUid: data-views-query-quick-edits
         - topicUid: data-views-group-data-fields
-        - topicUid: data-views-override-index-config
+        - topicUid: data-views-configure-index
       - topicUid: data-views-retrieve
         items:
         - topicUid: data-views-retrieve-data-view

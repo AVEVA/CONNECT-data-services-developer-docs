@@ -24,7 +24,7 @@ User with permissions to share a data stream within a community can do so from t
 
 	**Tips:**
 
-    - If you only have one stream selected, select **More options** ![More options icon](../../_icons/default/dots-vertical.svg) > **Manage Permissions** instead.
+    - If you only have one stream selected, select **More options** ![More options icon](../_icons/default/dots-vertical.svg) > **Manage Permissions** instead.
 
     - If **Manage Permissions** is unavailable, you do not have permissions to share a selected stream. You must request permissions from a user that can manage stream permissions. For more information, see <xref:community-enable-stream-sharing-permissions>.
 

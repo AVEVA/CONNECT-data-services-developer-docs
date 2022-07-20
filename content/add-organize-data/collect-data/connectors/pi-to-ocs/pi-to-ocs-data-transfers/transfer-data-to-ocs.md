@@ -121,7 +121,7 @@ To build an AF element
 
 1. To execute the query and retrieve results, select **Search**.
 
-   When dealing with large data sets, a search query can take some time. Select **Cancel** to stop the query if necessary.
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
 
 1. In the `Search Results` list, select each AF element you want added to the transfer.
 
@@ -183,7 +183,7 @@ To build a PI points transfer list:
 
 1. To execute the query and retrieve matching results, select **Search**.
 
-   When dealing with large data sets, a search query can take some time. Select **Cancel** to stop the query if necessary.
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
 
 1. In the **Search Results** area, select each PI point to add to the data transfer.
 

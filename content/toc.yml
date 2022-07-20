@@ -10,6 +10,7 @@
     - topicUid: viewProfile
     - topicUid: TenantDetails
     - topicUid: ResourceUsage
+    - topicUid: home-health
   - topicUid: gsNamespaces
   - topicUid: gsConnections
     items:
@@ -72,6 +73,7 @@
         - topicUid: community-remove-tenants
         - topicUid: community-edit
         - topicUid: community-delete
+        - topicUid: community-manage-preferred-region
       - topicUid: community-tenant-administration
         items:
         - topicUid: community-remove-your-tenant
@@ -211,6 +213,7 @@
     - topicUid: gpAuthorizationCodeClient
     - topicUid: ClientMaintenance
   - topicUid: permissions-management
+  - topicUid: cross-region-data-sharing
 - topicUid: DeveloperTools
   items:
     - topicUid: samples

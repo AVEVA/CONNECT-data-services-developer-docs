@@ -6,7 +6,7 @@ uid: CreateDataView
 
 You create and configure a data view by defining the target namespace, and then specifying the source stream or asset, data fields, time period, and interpolation interval.
 
-To create a data view, follow these steps:
+To create a data view:
 
 1. In the left pane, select **Analytics** > **Data Views**.
 

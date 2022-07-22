@@ -6,7 +6,7 @@ uid: disable-ie-security
 
 If Internet Explorer Enhanced Security Configuration (IE ESC) is turned on, you will receive an error message to disable this setting before you can log on and register the PI to OCS Agent. To avoid this issue, you can switch to another web browser during agent installation.
 
-To turn off Internet Explorer Enhanced Security Configuration, follow these steps:
+To turn off Internet Explorer Enhanced Security Configuration:
 
 1. On the computer where the agent is installed (Windows Server operating system), enter **Server Manager** in Windows search to start Server manager application.
 

@@ -12,10 +12,22 @@
   href: identity-client-credential-clients.md
 - name: Client credential clients roles
   href: identity-client-credential-clients-roles.md
+- name: Communities
+  href: communities.md
+- name: Community client credential clients
+  href: community-client-credential-clients.md
 - name: Community identity provider
   href: community-identity-provider.md
+- name: Community invitations
+  href: community-invitations.md
+- name: Community roles
+  href: community-roles.md
 - name: Community tenant collection acls
   href: community-tenant-collection-acls.md
+- name: Community tenants
+  href: community-tenants.md
+- name: Community users
+  href: community-users.md
 - name: Device code clients
   href: identity-device-code-clients.md
 - name: Hybrid clients
@@ -24,8 +36,12 @@
   href: identity-identity-providers.md
 - name: Implicit clients
   href: identity-implicit-clients.md
+- name: Invitation
+  href: invitation.md
 - name: Invitations
   href: identity-invitations.md
+- name: Invitations
+  href: invitations.md
 - name: Role-based access control
 - name: Secrets
   href: identity-secrets.md

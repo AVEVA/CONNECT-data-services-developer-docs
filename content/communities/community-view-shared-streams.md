@@ -32,7 +32,6 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 
 1. From the right pane, select the **Streams** tab.
     
-214
     ![Tenant shared streams](images/communities-shared-streams.png)
 
     The **Streams** tab lists each data stream that the tenant shares with the community. 

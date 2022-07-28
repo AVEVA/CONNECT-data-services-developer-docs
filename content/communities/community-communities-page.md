@@ -42,8 +42,8 @@ Use the controls available in the toolbar find, create, or manage a community.
 | Control | Description |
 |--------|-------------|
 | **Filter Communities** | Type criteria to find a specific community. |
-| **View invitations**<sup>1</sup> | View any invitations that your tenant has pending to join a community. For more information on pending invitations, see <xref:community-view-invitations>.
 | **Add community**<sup>1</sup> | Creates a new community. For more information on this process, see <xref:community-workflow-create>. |
+| **View invitations**<sup>1</sup> | View any invitations that your tenant has pending to join a community. For more information on pending invitations, see <xref:community-view-invitations>.
 | **More options** ![More options](../_icons/default/dots-vertical.svg) > **Manage Default Community Administrators**<sup>1</sup> | Configures which roles are automatically added as the default Community Administrators while you are creating or joining a community. For more information, see <xref:communities-manage-default-admins>. |
 
 <sup>1</sup>Requires [Community Administrator](xref:community-community-roles#community-administrators) permissions.

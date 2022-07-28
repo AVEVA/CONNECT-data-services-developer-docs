@@ -30,10 +30,10 @@ Select **Details** to administrate the community. For more information on admini
 
 You can also toggle the `Communities` page between two views using the view toggle.
 
-| View                                                    | Description                                                     |
-|---------------------------------------------------------|-----------------------------------------------------------------|
-| Card view ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards.      |
-| List view ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
+| View | Icon | Description |
+|--|--|--|
+| Card view | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
+| List view | ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
 
 ## Filter communities
 

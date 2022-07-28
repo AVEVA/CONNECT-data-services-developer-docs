@@ -33,7 +33,8 @@ UpdateCommunityTenantInput object that contains the attributes to use for the up
 {
   "Status": "None",
   "PreferredRegionId": "string",
-  "ContactEmail": "user@example.com"
+  "ContactEmail": "user@example.com",
+  "CommunityAlias": "string"
 }
 ```
 
@@ -110,7 +111,8 @@ UpdateCommunityTenantInput object that contains the attributes to use for the up
 {
   "Status": "None",
   "PreferredRegionId": "string",
-  "ContactEmail": "user@example.com"
+  "ContactEmail": "user@example.com",
+  "CommunityAlias": "string"
 }
 ```
 
@@ -401,12 +403,14 @@ The UpdateCommunityTenantInput object
 |Status|[CommunityTenantStatus](#schemacommunitytenantstatus)|false|true|New status of CommunityTenant in community|
 |PreferredRegionId|string|false|true|Change the preferred Region Id to override the community Preferred Region Id|
 |ContactEmail|email|false|true|Contact email of a community tenant. It serves as a point of contact for community tenants.|
+|CommunityAlias|string|false|true|Change the community alias for community tenant.|
 
 ```json
 {
   "Status": "None",
   "PreferredRegionId": "string",
-  "ContactEmail": "user@example.com"
+  "ContactEmail": "user@example.com",
+  "CommunityAlias": "string"
 }
 
 ```

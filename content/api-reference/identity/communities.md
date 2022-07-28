@@ -49,7 +49,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
     "Id": "string",
     "MemberRoleId": "string",
     "Name": "string",
-    "Alias": "string",
+    "DisplayName": "string",
     "Description": "string",
     "Tenants": [
       {
@@ -60,7 +60,8 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
         "UserCount": 0,
         "ClientCount": 0,
         "PreferredRegionId": "string",
-        "ContactEmail": "string"
+        "ContactEmail": "string",
+        "CommunityAlias": "string"
       }
     ],
     "DateCreated": "2019-08-24T14:15:22Z",
@@ -133,7 +134,7 @@ Community information to create<br/>
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -144,7 +145,8 @@ Community information to create<br/>
       "UserCount": 0,
       "ClientCount": 0,
       "PreferredRegionId": "string",
-      "ContactEmail": "string"
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
@@ -208,7 +210,7 @@ GET /api/v1-preview/Communities
     "Id": "string",
     "MemberRoleId": "string",
     "Name": "string",
-    "Alias": "string",
+    "DisplayName": "string",
     "Description": "string",
     "Tenants": [
       {
@@ -219,7 +221,8 @@ GET /api/v1-preview/Communities
         "UserCount": 0,
         "ClientCount": 0,
         "PreferredRegionId": "string",
-        "ContactEmail": "string"
+        "ContactEmail": "string",
+        "CommunityAlias": "string"
       }
     ],
     "DateCreated": "2019-08-24T14:15:22Z",
@@ -292,7 +295,7 @@ Community information to create<br/>
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -303,7 +306,8 @@ Community information to create<br/>
       "UserCount": 0,
       "ClientCount": 0,
       "PreferredRegionId": "string",
-      "ContactEmail": "string"
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
@@ -365,7 +369,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -376,7 +380,8 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
       "UserCount": 0,
       "ClientCount": 0,
       "PreferredRegionId": "string",
-      "ContactEmail": "string"
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
@@ -512,7 +517,7 @@ GET /api/v1-preview/Communities/{communityId}
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -523,7 +528,8 @@ GET /api/v1-preview/Communities/{communityId}
       "UserCount": 0,
       "ClientCount": 0,
       "PreferredRegionId": "string",
-      "ContactEmail": "string"
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
@@ -635,7 +641,7 @@ The Community object
 |Id|guid|false|false|Community identifier.|
 |MemberRoleId|guid|false|false|Community member role identifier.|
 |Name|string|false|true|Community name.|
-|Alias|string|false|true|Requesting tenant's alias for the community.|
+|DisplayName|string|false|true|Requesting tenant's display name for the community. Either community alias for requesting tenant or community name if community alias is null.|
 |Description|string|false|true|Community description.|
 |Tenants|[[CommunityTenant](#schemacommunitytenant)]|false|true|List of CommunityTenant that are in the community|
 |DateCreated|date-time|false|true|Date community was created.|
@@ -647,7 +653,7 @@ The Community object
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -658,7 +664,8 @@ The Community object
       "UserCount": 0,
       "ClientCount": 0,
       "PreferredRegionId": "string",
-      "ContactEmail": "string"
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
@@ -701,6 +708,7 @@ The CommunityTenant object
 |ClientCount|integer|false|false|Summary count of the clients authorized to access the community within the tenant|
 |PreferredRegionId|string|false|true|Preferred Region Id of a community tenant. This overrides the default community region.|
 |ContactEmail|string|false|true|Contact email of a community tenant. It serves as a point of contact for community tenants.|
+|CommunityAlias|string|false|true|Community alias given by tenant for the community.|
 
 ```json
 {
@@ -711,7 +719,8 @@ The CommunityTenant object
   "UserCount": 0,
   "ClientCount": 0,
   "PreferredRegionId": "string",
-  "ContactEmail": "string"
+  "ContactEmail": "string",
+  "CommunityAlias": "string"
 }
 
 ```

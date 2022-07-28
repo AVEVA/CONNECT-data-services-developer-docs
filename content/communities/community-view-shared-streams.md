@@ -65,9 +65,7 @@ While viewing individual data streams in `Sequential Data Store`, you can view e
     The tab lists each community that the stream is shared to for which you have read access.  
 
     **Note:**  This tab does not list all communities that the stream is shared with—only those that you have read access to.
-    
-    ![Sharing tab](images/communities-sharing-tab-sds.png)
 
-    **Tips:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/branded/launch.svg) for the community.
+    **Tip:** Want to view a community that the selected stream is shared to? Select the **Launch** icon ![Launch icon](../_icons/branded/launch.svg) for the community.
 
 ***

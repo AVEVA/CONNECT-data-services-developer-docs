@@ -45,7 +45,7 @@ To name the data transfer:
 
 1. In the `Manage Agent` tab, select **Create Transfer**.
 
-   The `Transfer Setting` window opens.
+   The `Transfer Settings` window opens.
 
    ![](../../images/transfer-settings.png)
    
@@ -77,25 +77,25 @@ To name the data transfer:
     | SourceTag | X | X |  |  |
     | Step | X | X |  |  |
 
-1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically remove Streams and Assets** option. 
+1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically delete Streams and Assets from the cloud** option. 
 
 1. Select **Ok**.
 
    The transfer is created and the `Transfer` page opens.
 
-**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Setting` window and modify the name, description, historical start and end times, and data privacy settings as needed.
+**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Settings` window and modify the name, description, historical start and end times, and data privacy settings as needed.
 
 ## Build an AF elements transfer list
 
 After naming the transfer, build an AF elements transfer list by setting query criteria and then selecting AF elements. You can narrow your search by filtering by element name, asset group, attribute name/value, template, and category. A corresponding asset is created for every AF element in your transfer. Static AF element attributes become asset properties. 
 
-To build an AF element
+To build an AF element:
 
 1. On the `Transfer` page, select the source AF database to search from the **AF Database** dropdown list.
 
    ![Transfer page](../../images/transfer-win.png)
 
-1. (Optional) Select **Root Asset**.
+1. (Optional) Select **Root Element**.
 
 1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then choose **Select**. <!-- AF 11/15/21 UGH! I hate "select **Select**". Makes me want to use click. -->
 
@@ -284,5 +284,5 @@ To start a data transfer:
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 
-1. (Optional) To remove a transfer, select **Remove Transfer**, then select **Remove**.
+1. (Optional) To remove a transfer, select **Remove Transfer**, select the **Delete Streams and Assets from the cloud** option if applicable, then select **Remove**.
  

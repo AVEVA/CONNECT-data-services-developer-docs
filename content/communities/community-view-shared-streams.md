@@ -28,7 +28,7 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
             
     - If the **Info** ![Info](../_icons/branded/information.svg) icon displays, you cannot view the number of streams displayed because you are not a Community Member. For information on adding a user a Community Member, see <xref:community-manage-users>.
     
-    - If the **Warning** ![Warning](../_icons/custom/alert.svg) icon displays, you are a Community Member, but there is an issue with stream permissions. For more information on setting stream permissions, see <xref:community-enable-stream-sharing-permissions>.2
+    - If the **Warning** ![Warning](../_icons/custom/alert.svg) icon displays, you are a Community Member, but there is an issue with stream permissions. For more information on setting stream permissions, see <xref:community-enable-stream-sharing-permissions>.
 
 1. From the right pane, select the **Streams** tab.
     

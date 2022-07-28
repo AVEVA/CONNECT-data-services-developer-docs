@@ -75,7 +75,7 @@ To name the data transfer:
     | Pointsource | X | X | X |  |
     | PointType | X | X |  |  |
     | SourceTag | X | X |  |  |
-    |Step | X | X |  |  |
+    | Step | X | X |  |  |
 
 1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically remove Streams and Assets** option. 
 
@@ -93,7 +93,7 @@ To build an AF element
 
 1. On the `Transfer` page, select the source AF database to search from the **AF Database** dropdown list.
 
-   ![](../../images/transfer-win.png)
+   ![Transfer page](../../images/transfer-win.png)
 
 1. (Optional) Select **Root Asset**.
 
@@ -113,13 +113,15 @@ To build an AF element
 
       * In the last field, enter an attribute value.
 
-   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.<br></br>
+   **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.<br></br>
    
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 
 1. (Optional) To narrow the search by a specific AF category, in the **Category** field, select a category from the dropdown list.
 
 1. To execute the query and retrieve results, select **Search**.
+
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
 
 1. In the `Search Results` list, select each AF element you want added to the transfer.
 
@@ -180,6 +182,8 @@ To build a PI points transfer list:
 1. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
 
 1. To execute the query and retrieve matching results, select **Search**.
+
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
 
 1. In the **Search Results** area, select each PI point to add to the data transfer.
 
@@ -246,11 +250,11 @@ Data is ready for transfer after the desired PI points and/or AF elements have b
 
 **Note:** Modifications to an AF database or Data Archive digital state table during a PI to OCS transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
 
-  1. Stop the transfer.
+1. Stop the transfer.
 
-  2. Make modifications to the AF database and/or Data Archive digital state tables.
+1. Make modifications to the AF database and/or Data Archive digital state tables.
 
-  3. Restart the transfer to pick up these changes.
+1. Restart the transfer to pick up these changes.
 
 ## Start a data transfer
 

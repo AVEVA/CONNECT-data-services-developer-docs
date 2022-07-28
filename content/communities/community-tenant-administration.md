@@ -14,7 +14,7 @@ After a community is established, users assigned a community administrator role 
 
 Users assigned a community administrator role can perform the following tasks:
 
-- <xref:community-view-invitation>
+- <xref:community-view-invitations>
 
 	You can view the status of all pending community invitations that your tenant has accepted, but have not yet been confirmed by the issuing tenant.
 

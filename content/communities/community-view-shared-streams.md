@@ -48,8 +48,6 @@ When working from `Sequential Data Store`, you can view which data streams are s
 
 1. Select a community to filter for.
 
-    ![Filter communities](images/filter-pane.png)
-
     The page is filtered to list only data streams shared in the selected communities.
 
 ### View communities for a shared stream

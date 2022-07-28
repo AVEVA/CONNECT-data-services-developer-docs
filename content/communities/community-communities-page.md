@@ -37,7 +37,7 @@ You can also toggle the `Communities` page between two views using the view togg
 
 ## Community Toolbar
 
-Use the controls available in toolbar find, create, or manage a community.
+Use the controls available in the toolbar find, create, or manage a community.
 
 | Control | Description |
 |--------|-------------|

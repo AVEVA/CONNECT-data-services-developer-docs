@@ -31,8 +31,6 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
     - If the **Warning** ![Warning](../_icons/custom/alert.svg) icon displays, you are a Community Member, but there is an issue with stream permissions. For more information on setting stream permissions, see <xref:community-enable-stream-sharing-permissions>.
 
 1. From the right pane, select the **Streams** tab.
-    
-    ![Tenant shared streams](images/communities-shared-streams.png)
 
     The **Streams** tab lists each data stream that the tenant shares with the community. 
 

@@ -18,13 +18,11 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 
 1. Browse to the applicable community and select **Details**.
     
-1. From the **Tenants** tab, select a tenant to view which streams that it shares with the community.
+1. From the **Tenants** tab, select one or more tenant to view which streams that it shares with the community.
 
     Details for the community open in the right pane. 
     
     **Note:** The **Streams** column usually displays the number of streams shared into the community, but you may encounter the following states:
-
-    ![Streams Column](images/streams-column.png)
             
     - If the **Info** ![Info](../_icons/branded/information.svg) icon displays, you cannot view the number of streams displayed because you are not a Community Member. For information on adding a user a Community Member, see <xref:community-manage-users>.
     
@@ -34,7 +32,7 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 
     The **Streams** tab lists each data stream that the tenant shares with the community. 
 
-    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](../_icons/branded/launch.svg) to open it within `Sequential Data Store`.
+    **Tip:** Want to view more details about one of the shared streams? Select the **Launch** icon ![Launch icon](../_icons/branded/launch.svg) to open it within `Sequential Data Store` in a new tab.
 
 ## [Sequential Data Store](#tab/sds)
 

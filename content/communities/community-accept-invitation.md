@@ -33,6 +33,8 @@ To accept an invitation:
   ![await confirmation](images/await-confirmation.png)
 
   When the administrative tenant confirms your tenant, you receive a notification email.
+
+  **Tip:** You can view or cancel your invitations that are pending confirmation from the `Communities` page. For more information, see <xref:community-view-invitations>.
  
 1. After your tenant is confirmed for the community, select **Details** to set up Community Administrators and Community Members for your tenant.
 

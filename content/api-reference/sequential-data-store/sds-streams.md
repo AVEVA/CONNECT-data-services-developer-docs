@@ -22,8 +22,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string query`
 <br/>Parameter representing a string search.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
@@ -88,9 +88,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -148,9 +148,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -210,9 +210,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -272,9 +272,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -305,9 +305,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -374,11 +374,11 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string streamId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#stream<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 `[optional] string streamViewId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#view<br/><br/>
+<br/>Stream view identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -497,7 +497,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Resol
         "SdsType": "<SdsResolvedType>",
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": "Continuous",
+        "InterpolationMode": "Default",
         "IsQuality": true
       }
     ],
@@ -559,7 +559,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Resol
         "ExtrapolationMode": 0
       }
     ],
-    "InterpolationMode": "Continuous",
+    "InterpolationMode": "Default",
     "ExtrapolationMode": "All"
   }
 }
@@ -667,7 +667,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Bulk/Streams/Re
             "SdsType": "<SdsResolvedType>",
             "Value": null,
             "Uom": "string",
-            "InterpolationMode": "Continuous",
+            "InterpolationMode": "Default",
             "IsQuality": true
           }
         ],
@@ -729,7 +729,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Bulk/Streams/Re
             "ExtrapolationMode": 0
           }
         ],
-        "InterpolationMode": "Continuous",
+        "InterpolationMode": "Default",
         "ExtrapolationMode": "All"
       }
     }
@@ -833,19 +833,19 @@ Indexes speed up and order the results of stream data filtering. SdsStreamIndex 
 <a id="tocSsdsinterpolationmode"></a>
 <a id="tocssdsinterpolationmode"></a>
 
-Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects
+Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|Description|
 |---|---|---|
-|Continuous|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
-|Default|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
-|StepwiseContinuousLeading|1|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
-|StepwiseContinuousTrailing|2|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
-|Discrete|3|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
-|ContinuousNullableLeading|4|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
-|ContinuousNullableTrailing|5|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
+|Continuous|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
+|Default|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
+|StepwiseContinuousLeading|1|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
+|StepwiseContinuousTrailing|2|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
+|Discrete|3|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
+|ContinuousNullableLeading|4|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
+|ContinuousNullableTrailing|5|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
 
 ---
 
@@ -1245,7 +1245,7 @@ A contract defining resolution of SdsStream
         "SdsType": "<SdsResolvedType>",
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": "Continuous",
+        "InterpolationMode": "Default",
         "IsQuality": true
       }
     ],
@@ -1307,7 +1307,7 @@ A contract defining resolution of SdsStream
         "ExtrapolationMode": 0
       }
     ],
-    "InterpolationMode": "Continuous",
+    "InterpolationMode": "Default",
     "ExtrapolationMode": "All"
   }
 }
@@ -1339,7 +1339,7 @@ A contract defining the type of data to read or write in a SdsResolvedStream
 |Properties|[[SdsResolvedTypeProperty](#schemasdsresolvedtypeproperty)]|false|true|[A contract defining the type of data to read or write in a SdsResolvedType]|
 |BaseType|[SdsType](#schemasdstype)|false|true|Defines the base type of the SdsType Commonly used by SdsTypeBuilder to generate SdsType from contracts not explicitly defined and maintained by the user.|
 |DerivedTypes|[[SdsType](#schemasdstype)]|false|true|List of SdsTypes that should be recognized by SdsFormatter during serialization/de-serialization. This property behaves similar to KnownTypeAttribute attribute for DataContractSerializer and only valid for serialization if SdsFormatter is used.|
-|InterpolationMode|[SdsInterpolationMode2](#schemasdsinterpolationmode2)|false|false|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
+|InterpolationMode|[SdsInterpolationMode2](#schemasdsinterpolationmode2)|false|false|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
 |ExtrapolationMode|[SdsExtrapolationMode2](#schemasdsextrapolationmode2)|false|false|Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.|
 
 ```json
@@ -1391,7 +1391,7 @@ A contract defining the type of data to read or write in a SdsResolvedStream
       "SdsType": "<SdsResolvedType>",
       "Value": null,
       "Uom": "string",
-      "InterpolationMode": "Continuous",
+      "InterpolationMode": "Default",
       "IsQuality": true
     }
   ],
@@ -1453,7 +1453,7 @@ A contract defining the type of data to read or write in a SdsResolvedStream
       "ExtrapolationMode": 0
     }
   ],
-  "InterpolationMode": "Continuous",
+  "InterpolationMode": "Default",
   "ExtrapolationMode": "All"
 }
 
@@ -1483,7 +1483,7 @@ A contract defining the type of data to read or write in a SdsResolvedType
 |SdsType|[SdsResolvedType](#schemasdsresolvedtype)|false|true|A contract defining the type of data to read or write in a SdsResolvedStream|
 |Value|any|false|true|An enum value of the current SdsTypeProperty.|
 |Uom|string|false|true|Indicates the Unit of Measure of the current SdsTypeProperty|
-|InterpolationMode|[SdsInterpolationMode2](#schemasdsinterpolationmode2)|false|true|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects|
+|InterpolationMode|[SdsInterpolationMode2](#schemasdsinterpolationmode2)|false|true|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
 |IsQuality|boolean|false|false|Indicates whether this property marks data quality|
 
 ```json
@@ -1590,12 +1590,12 @@ A contract defining the type of data to read or write in a SdsResolvedType
         "ExtrapolationMode": 0
       }
     ],
-    "InterpolationMode": "Continuous",
+    "InterpolationMode": "Default",
     "ExtrapolationMode": "All"
   },
   "Value": null,
   "Uom": "string",
-  "InterpolationMode": "Continuous",
+  "InterpolationMode": "Default",
   "IsQuality": true
 }
 
@@ -1610,19 +1610,19 @@ A contract defining the type of data to read or write in a SdsResolvedType
 <a id="tocSsdsinterpolationmode2"></a>
 <a id="tocssdsinterpolationmode2"></a>
 
-Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects
+Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
-|Continuous|Continuous|
-|Default|Continuous|
-|StepwiseContinuousLeading|Default, StepwiseContinuousLeading|
-|StepwiseContinuousTrailing|Default, StepwiseContinuousTrailing|
-|Discrete|Default, Discrete|
-|ContinuousNullableLeading|Default, ContinuousNullableLeading|
-|ContinuousNullableTrailing|Default, ContinuousNullableTrailing|
+|Continuous|Default|
+|Default|Default|
+|StepwiseContinuousLeading|StepwiseContinuousLeading|
+|StepwiseContinuousTrailing|StepwiseContinuousTrailing|
+|Discrete|Discrete|
+|ContinuousNullableLeading|ContinuousNullableLeading|
+|ContinuousNullableTrailing|ContinuousNullableTrailing|
 
 ---
 
@@ -1836,7 +1836,7 @@ A contract defining bulk response of SdsResolvedStream
             "SdsType": "<SdsResolvedType>",
             "Value": null,
             "Uom": "string",
-            "InterpolationMode": "Continuous",
+            "InterpolationMode": "Default",
             "IsQuality": true
           }
         ],
@@ -1898,7 +1898,7 @@ A contract defining bulk response of SdsResolvedStream
             "ExtrapolationMode": 0
           }
         ],
-        "InterpolationMode": "Continuous",
+        "InterpolationMode": "Default",
         "ExtrapolationMode": "All"
       }
     }

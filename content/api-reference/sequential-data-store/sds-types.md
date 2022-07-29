@@ -22,13 +22,14 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 `[optional] string query`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#query<br/><br/>`[optional] integer skip`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#skip<br/><br/>`[optional] integer count`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#count<br/><br/>`[optional] string orderby`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#orderby<br/><br/>
+<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
+<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
+<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
 
 <h3>Response</h3>
 
@@ -46,9 +47,62 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
 > 200 Response
 
 ```json
-null
-```
+HTTP/1.1 200
+Content-Type: application/json
 
+[    
+    {
+    "Id": "Simple",
+    "Name": "Simple",
+    "SdsTypeCode": 1,
+    "Properties": [
+        {
+            "Id": "Time",
+            "Name": "Time",
+            "IsKey": true,
+            "SdsType": {
+                "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+                "Name": "DateTime",
+                "SdsTypeCode": 16
+            }
+        },
+        {
+            "Id": "State",
+            "Name": "State",
+            "SdsType": {
+                "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+                "Name": "State",
+                "SdsTypeCode": 609,
+                "Properties": [
+                    {
+                        "Id": "Ok",
+                        "Value": 0
+                    },
+                    {
+                        "Id": "Warning",
+                        "Value": 1
+                    },
+                    {
+                        "Id": "Alarm",
+                        "Value": 2
+                    }
+                ]
+            }
+        },
+        {
+            "Id": "Measurement",
+            "Name": "Measurement",
+            "SdsType": {
+                "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+                "Name": "Double",
+                "SdsTypeCode": 14
+            }
+        }
+    ]
+    },
+   
+]
+```
 > 401 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -81,9 +135,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string typeId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#type<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -102,9 +156,59 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 > 200 Response
 
 ```json
-null
-```
+HTTP/1.1 200
+Content-Type: application/json
 
+{
+"Id":"Simple",
+"Name":"Simple",
+"SdsTypeCode":1,
+"Properties":[
+    {
+        "Id":"Time",
+        "Name":"Time",
+        "IsKey":true,
+        "SdsType":{
+            "Id":"19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+            "Name":"DateTime",
+            "SdsTypeCode":16
+        }
+    },
+    {
+        "Id":"State",
+        "Name":"State",
+        "SdsType":{
+            "Id":"e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+            "Name":"State",
+            "SdsTypeCode":609,
+            "Properties":[
+                {
+                    "Id":"Ok",
+                    "Value":0
+                },
+                {
+                    "Id":"Warning",
+                    "Value":1
+                },
+                {
+                    "Id":"Alarm",
+                    "Value":2
+                }
+            ]
+        }
+    },
+    {
+        "Id":"Measurement",
+        "Name":"Measurement",
+        "SdsType":{
+            "Id":"6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+            "Name":"Double",
+            "SdsTypeCode":14
+        }
+    }
+]
+}
+```
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -137,9 +241,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string typeId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#type<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -194,7 +298,136 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 > 201 Response
 
 ```json
-null
+HTTP/1.1 201
+Content-Type: application/json
+
+{
+"Id": "Simple",
+"Name": "Simple",
+"Description": null,
+"SdsTypeCode": 1,
+"IsGenericType": false,
+"IsReferenceType": false,
+"GenericArguments": null,
+"Properties": [
+    {
+        "Id": "Time",
+        "Name": "Time",
+        "Description": null,
+        "Order": 0,
+        "IsKey": true,
+        "FixedSize": 0,
+        "SdsType": {
+            "Id": "19a87a76-614a-385b-ba48-6f8b30ff6ab2",
+            "Name": "DateTime",
+            "Description": null,
+            "SdsTypeCode": 16,
+            "IsGenericType": false,
+            "IsReferenceType": false,
+            "GenericArguments": null,
+            "Properties": null,
+            "BaseType": null,
+            "DerivedTypes": null,
+            "InterpolationMode": 0,
+            "ExtrapolationMode": 0
+        },
+        "Value": null,
+        "Uom": null,
+        "InterpolationMode": null
+    },
+    {
+        "Id": "State",
+        "Name": "State",
+        "Description": null,
+        "Order": 0,
+        "IsKey": false,
+        "FixedSize": 0,
+        "SdsType": {
+            "Id": "e20bdd7e-590b-3372-ab39-ff61950fb4f3",
+            "Name": "State",
+            "Description": null,
+            "SdsTypeCode": 609,
+            "IsGenericType": false,
+            "IsReferenceType": false,
+            "GenericArguments": null,
+            "Properties": [
+                {
+                    "Id": "Ok",
+                    "Name": null,
+                    "Description": null,
+                    "Order": 0,
+                    "IsKey": false,
+                    "FixedSize": 0,
+                    "SdsType": null,
+                    "Value": 0,
+                    "Uom": null,
+                    "InterpolationMode": null
+                },
+                {
+                    "Id": "Warning",
+                    "Name": null,
+                    "Description": null,
+                    "Order": 0,
+                    "IsKey": false,
+                    "FixedSize": 0,
+                    "SdsType": null,
+                    "Value": 1,
+                    "Uom": null,
+                    "InterpolationMode": null
+                },
+                {
+                    "Id": "Alarm",
+                    "Name": null,
+                    "Description": null,
+                    "Order": 0,
+                    "IsKey": false,
+                    "FixedSize": 0,
+                    "SdsType": null,
+                    "Value": 2,
+                    "Uom": null,
+                    "InterpolationMode": null
+                }
+            ],
+            "BaseType": null,
+            "DerivedTypes": null,
+            "InterpolationMode": 0,
+            "ExtrapolationMode": 0
+        },
+        "Value": null,
+        "Uom": null,
+        "InterpolationMode": null
+    },
+    {
+        "Id": "Measurement",
+        "Name": "Measurement",
+        "Description": null,
+        "Order": 0,
+        "IsKey": false,
+        "FixedSize": 0,
+        "SdsType": {
+            "Id": "6fecef77-20b1-37ae-aa3b-e6bb838d5a86",
+            "Name": "Double",
+            "Description": null,
+            "SdsTypeCode": 14,
+            "IsGenericType": false,
+            "IsReferenceType": false,
+            "GenericArguments": null,
+            "Properties": null,
+            "BaseType": null,
+            "DerivedTypes": null,
+            "InterpolationMode": 0,
+            "ExtrapolationMode": 0
+        },
+        "Value": null,
+        "Uom": null,
+        "InterpolationMode": null
+    }
+    ],
+    "BaseType": null,
+    "DerivedTypes": null,
+    "InterpolationMode": 0,
+    "ExtrapolationMode": 0
+    }
 ```
 
 ---
@@ -214,9 +447,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string typeId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#type<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -248,9 +481,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Reference
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#tenant<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#namespace<br/><br/>`string typeId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/sds.yaml#type<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -269,9 +502,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Reference
 > 200 Response
 
 ```json
-null
+ {
+"SdsStream":3,
+"SdsStreamView":2,
+"SdsType":1
+}
 ```
-
 > 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
@@ -517,7 +753,7 @@ A contract defining a property of a SdsType
 <a id="tocSsdsinterpolationmode"></a>
 <a id="tocssdsinterpolationmode"></a>
 
-Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects
+Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.
 
 <h4>Enumerated Values</h4>
 

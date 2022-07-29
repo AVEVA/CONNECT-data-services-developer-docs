@@ -34,7 +34,7 @@ To configure the index, select an index start and end value. Then generate the p
 	| **Time Interval**<sup>1</sup> | The interval between data points. |
 	| **Save Defaults with Data View** | If checked, the index configuration parameters are saved as defaults and used when these parameters are not explicitly included in an API request. |
 
-	<sup>1</sup>: This setting is only available for the **Interpolated** retrieval type. 
+	<sup>1</sup>This setting is only available for the **Interpolated** retrieval type. 
 
 1. Select **Apply**.
 

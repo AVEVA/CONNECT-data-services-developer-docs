@@ -185,7 +185,8 @@
         - topicUid: data-views-add-query
         - topicUid: data-views-configure-data-field-sets
         - topicUid: data-view-choose-data-shape
-        - topicUid: data-views-preview-and-save
+        - name: "Step 5: Preview and save"
+          topicUid: data-views-preview-and-save
       - topicUid: data-views-edit-a-data-view
         items: 
         - topicUid: data-views-edit-name-and-description

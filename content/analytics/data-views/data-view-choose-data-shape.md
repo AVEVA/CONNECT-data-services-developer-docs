@@ -2,7 +2,7 @@
 uid: data-view-choose-data-shape
 ---
 
-# Step 4: Choose data shape
+# Step 4: Configure data shape
 
 [!include[choose-data-shape](_includes/choose-data-shape.md)]
 

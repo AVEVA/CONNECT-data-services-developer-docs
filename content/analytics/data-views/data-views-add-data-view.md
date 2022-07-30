@@ -10,12 +10,9 @@ uid: data-views-add-data-view
 
 1. In the `Data Views` pane, select **Add Data View**.
 
-1. Complete the following fields:
+1. Enter a **Name** for the data view.
 
-   | Field | Description |
-   |--|--|
-   | Name | Enter a name to identify the data view. |
-   | Description (Optional) | Enter a description for the data view. |
+1. (Optional) Enter a **Description** for the data view. 
 
 ## Next steps
 

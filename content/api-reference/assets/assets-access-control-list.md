@@ -21,8 +21,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{resource}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string resource`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string resource`
 <br/>Assets or AssetTypes.<br/><br/>
 
 <h3>Response</h3>
@@ -31,7 +31,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{resource}
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -88,8 +88,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/{resource}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string resource`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string resource`
 <br/>Assets or AssetTypes.<br/><br/>
 
 <h4>Request Body</h4>
@@ -123,7 +123,7 @@ Updated ACL.<br/>
 |---|---|---|
 |204|None|No Content.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
 ---
 
@@ -142,8 +142,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{resource}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#tenantId<br/><br/>`string namespaceId`
-<br/>#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#namespaceId<br/><br/>`string resource`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string resource`
 <br/>Assets or AssetTypes.<br/><br/>
 
 <h3>Response</h3>
@@ -152,7 +152,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/{resource}
 |---|---|---|
 |200|Inline|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
-|403|[ErrorTemplate](#schemaerrortemplate)|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#403|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 
 <h4>Example response body</h4>
 

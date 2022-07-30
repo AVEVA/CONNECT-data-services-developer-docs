@@ -10,7 +10,7 @@ uid: data-views-preview-and-save
 
 Before retrieving your data view with third-party software for the purposes of data science, you can preview what it will look like by configuring a start and end index that limits the data included in the data view.
 
-All data in a data view is associated with an index value, usually a timestamp. If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
+All data in a data view is associated with a index value derived from a timestamp. If there are multiple groups in the data view, the index and grouping field values together form a unique identifier for each data record.
 
 **Note:** The index configuration settings available on the `Data View` page are primarily for preview purposes. When working with the data view in third-party software, you can modify the index configuration programmatically—the data view preview index configurations can be edited freely.
 

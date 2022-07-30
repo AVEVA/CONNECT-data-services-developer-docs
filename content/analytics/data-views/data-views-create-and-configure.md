@@ -44,10 +44,6 @@ To create and define a data view, complete these tasks in order.
 
 	[!include[add-query](_includes/add-query.md)]
 
-- <xref:data-views-add-data-fields>
-
-	[!include[add-query](../../_includes/data-views-add-data-fields.md)]
-
 - <xref:data-views-configure-data-field-sets>
 
 	[!include[configure-data-field-sets](_includes/configure-data-field-sets.md)]

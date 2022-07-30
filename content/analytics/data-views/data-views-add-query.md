@@ -38,4 +38,4 @@ uid: data-views-add-query
 
 ## Next steps
 
-Continue to <xref:data-views-add-data-fields>.
+Continue to <xref:data-views-configure-data-field-sets>.

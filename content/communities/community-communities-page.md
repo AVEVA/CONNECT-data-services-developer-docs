@@ -35,7 +35,7 @@ You can also toggle the `Communities` page between two views using the view togg
 | **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
 | **List view** | ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
 
-## Community Toolbar
+## Community toolbar
 
 Use the controls available in the toolbar find, create, or manage a community.
 

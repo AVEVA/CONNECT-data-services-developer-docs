@@ -30,8 +30,6 @@ To accept an invitation:
 
 1. Wait for a Community Administrator from the inviting tenant to confirm your tenant. Your tenant does not officially join the community until the inviting tenant confirms the invitation.
 
-  ![await confirmation](images/await-confirmation.png)
-
   When the administrative tenant confirms your tenant, you receive a notification email.
 
   **Tip:** You can view or cancel your invitations that are pending confirmation from the `Communities` page. For more information, see <xref:community-view-invitations>.

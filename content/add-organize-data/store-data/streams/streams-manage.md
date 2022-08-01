@@ -33,6 +33,8 @@ Tags and metadata allow you to associate additional information with a stream. F
 
 1. Select a stream.
 
+   **Tip:** Use the **Search for Streams** field to quickly find the stream that you are looking for. For more information, see [Search for field](#search-for-field).
+
 1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Edit Stream**.
 
    A tab opens to allow you to modify the metadata and tags for the stream.
@@ -65,6 +67,18 @@ When you remove a stream, you are deleting it.
 
 1. Select one or more streams.
 
+   **Tip:** Use the **Search for Streams** field to quickly find the stream that you are looking for. For more information, see [Search for field](#search-for-field).
+
 1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Remove Stream**.
 
 1. In the confirmation window, select **Remove** to confirm the deletion.
+
+## Search for field
+
+While managing streams, types, or stream views, you can use the **Search for** field to find the objects that you are looking for. Select this field to display a cheat sheet of wildcards, filters, and operators you can use in your query.
+
+For more information on search for Sequential Data Store objects, see the following documentation:
+
+- [Search for streams](xref:sdsSearching#search-for-streams)
+- [Search for types](xref:sdsSearching#search-for-types)
+- [Search for stream views](xref:sdsSearching#search-for-stream-views)

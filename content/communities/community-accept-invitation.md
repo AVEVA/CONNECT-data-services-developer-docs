@@ -56,7 +56,7 @@ To accept an invitation:
 
 1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are members within your tenant that have read access to the community and its data.
       
-  To add new Community Members, select **Add Members** > ![Add](../_icons/branded/plus.svg) for each user or group that you want to add.
+  To add new Community Members, select **Add Members** > **Add User** ![Add](../_icons/branded/plus.svg) for each user or group that you want to add.
 
   **Note:** Community Administrators are not automatically added as Community Members. If you want your Community Administrators to also be Community Members with access to shared resources, you must manually add them.
 

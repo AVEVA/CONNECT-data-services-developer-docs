@@ -26,7 +26,7 @@ To add a stream:
 
 1. To add tags to the stream, select the **Tags** tab.
 
-1. For each tag you want to add, enter the name of the tag in the **New Tag** field, and then click **+**. 
+1. For each tag you want to add, enter the name of the tag in the **New Tag** field, and then select ![plus](../../../_icons/default/plus.svg). 
 
 1. Select the **Metadata** tab.
 

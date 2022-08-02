@@ -33,6 +33,8 @@ Tags and metadata allow you to associate additional information with a stream. F
 
 1. Select a stream.
 
+   **Tip:** Use the **Search for Streams** field to quickly find the stream that you are looking for. For more information, see [Search for field](#search-for-field).
+
 1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Edit Stream**.
 
    A tab opens to allow you to modify the metadata and tags for the stream.
@@ -41,13 +43,13 @@ Tags and metadata allow you to associate additional information with a stream. F
 
    - Select the **Metadata** tab, and then select **Add Metadata**. In the `Metadata Key` field, enter the name of the key and in the `Metadata Value` field, enter a value for that key.
 
-   - To remove a metadata, select the **X** beside the row to be deleted.
+   - To remove a metadata, select the ![close](../../../_icons/custom/close-box.svg) beside the row to be deleted.
 
 1. Add tags.
 
-   - Select the **Tags** tab, if it is not already selected. In the `New Tag` field, enter the name of the tag, and then select the plus sign (**+**).
+   - Select the **Tags** tab, if it is not already selected. In the `New Tag` field, enter the name of the tag, and then select ![plus](../../../_icons/default/plus.svg).
    
-   - To remove a tag, select the **X** beside the tag name.
+   - To remove a tag, select the ![alt](../../../_icons/default/close-circle.svg) beside the tag name.
 
 ## Share streams
 
@@ -65,6 +67,14 @@ When you remove a stream, you are deleting it.
 
 1. Select one or more streams.
 
+   **Tip:** Use the **Search for Streams** field to quickly find the stream that you are looking for. For more information, see [Search for field](#search-for-field).
+
 1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Remove Stream**.
 
 1. In the confirmation window, select **Remove** to confirm the deletion.
+
+## Search for field
+
+While managing streams, types, or stream views, you can use the **Search for** field to quickly find the objects that you are looking for. Select this field to display a cheat sheet of wildcards, filters, and operators that you can use in your query.
+
+For more information on searching for Sequential Data Store objects, see <xref:sdsSearching>.

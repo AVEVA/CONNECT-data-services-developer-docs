@@ -34,17 +34,17 @@ Sign-up for PI point updates and digital state updates occurs when the agent sta
 
 | Issue | Restrictions |
 | ----- | ------------ |
-| Toggling Compression | Toggling On to Off: It is possible that the PI point’s corresponding SDS stream may be missing an event near the time when the PI point’s compression setting was changed from On to Off. <br />Toggling Off to On: There is a small chance for an extra event (an event which was compressed out from the server) to be in SDS near the time when the PI point’s compression setting was changed from Off to On. |
+| Toggling compression | Toggling On to Off: It is possible that the PI point’s corresponding SDS stream may be missing an event near the time when the PI point’s compression setting was changed from On to Off. <br /><br />Toggling Off to On: There is a small chance for an extra event (an event which was compressed out from the server) to be in SDS near the time when the PI point’s compression setting was changed from Off to On. |
 | Analysis backfilling and rapid succession of data addition and deletion | There is a possibility for a data gap after an analysis backfill operation due to the nature of rapid data deletion and insertions being performed by the analysis service on the PI point. |
-| Updating Digital State | The SDS stream will store the updated state name and values at time of change. Previously stored state values are preserved.<br />Updated digital state values will not be backfilled or recalculated for existing data saved to the corresponding SDS stream. |
+| Updating digital state | The SDS stream will store the updated state name and values at time of change. Previously stored state values are preserved.<br />Updated digital state values will not be backfilled or recalculated for existing data saved to the corresponding SDS stream. |
 
 ## Asset Framework synchronization 
 
-For AF synchronization to be successful the agent needs to perform an indexing of the AF server. AF indexing occurs once agent registration is successful. During the initial indexing, the agent crawls through the AF server and caches all known elements and templates in addition to their attributes. Once the initial indexing is complete, the agent persists a cookie and the cache of the elements and templates on the server. The agent progresses the persisted cookie periodically to check for changes or updates since the last successful indexing.
+For AF synchronization to be successful, the agent needs to perform an indexing of the AF server. AF indexing occurs once agent registration is successful. During the initial indexing, the agent crawls through the AF server and caches all known elements and templates in addition to their attributes. Once the initial indexing is complete, the agent persists a cookie and the cache of the elements and templates on the server. The agent progresses the persisted cookie periodically to check for changes or updates since the last successful indexing.
 
 In the event of an agent restart, the agent performs a check for the persisted cookie in the cache directory. If no cookie is found, the agent performs an initial index and persists a new cookie for periodic indexing.
 
-Upon the start of a transfer, the agent utilizes the AFIndex to build out the implicit PI points referenced by the element Ids specified in the transfer specification to track, in addition to sending those references to the cloud.
+Upon the start of a transfer, the agent utilizes the index to build out the implicit PI points referenced by the element Ids specified in the transfer specification to track, in addition to sending those references to the cloud.
 
 Once the transfer is initialized in the agent, change processing of the cookie also propagates down to the transfer and is filtered down to only take actions on elements and element templates of interest.
 
@@ -56,7 +56,7 @@ Below are the supported AF change synchronization events and the result of each 
 
   - Database rename: The Path metadata of assets referencing the database is updated.
 
-  - Database deletion: Will propagate and synchronize all elements and templates that were also deleted because of the database being removed.<sup>1</sup>
+  - Database deletion: All elements and templates that were also deleted because of the database being removed will propagate and synchronize.<sup>1</sup>
 
 - Element
 
@@ -72,7 +72,7 @@ Below are the supported AF change synchronization events and the result of each 
 
   - Metadata updates (Name, Description, etc.): The asset property is updated to reflect the change.
 
-  - PI point reference updates: Changes the stream reference of the asset on the cloud to the updated stream. If the previously referenced point is no longer referenced implicitly or explicitly in the transfer, the SDS Stream will be removed.<sup>1</sup>
+  - PI point reference updates: The stream reference of the asset on the cloud changes to the updated stream. If the previously referenced point is no longer referenced implicitly or explicitly in the transfer, the SDS stream is removed.<sup>1</sup>
 
 - Static attributes
 

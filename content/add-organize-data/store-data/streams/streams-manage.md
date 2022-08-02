@@ -77,8 +77,4 @@ When you remove a stream, you are deleting it.
 
 While managing streams, types, or stream views, you can use the **Search for** field to quickly find the objects that you are looking for. Select this field to display a cheat sheet of wildcards, filters, and operators you can use in your query.
 
-For more information on searching for Sequential Data Store objects, see the following documentation:
-
-- [Search for streams](xref:sdsSearching#search-for-streams)
-- [Search for types](xref:sdsSearching#search-for-types)
-- [Search for stream views](xref:sdsSearching#search-for-stream-views)
+For more information on searching for Sequential Data Store objects, see <xref:sdsSearching>.

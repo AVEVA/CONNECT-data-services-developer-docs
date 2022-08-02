@@ -12,7 +12,7 @@ The PI To OCS Agent signs up for the following updates to stay in sync with the 
 
 - PI point updates
 
-  - Adding a PI point: If PointId was listed in the transfer specification, a stream is created and data streams to SDS.
+  - Adding a PI point: If PointId was listed in the transfer specification, a stream is created and the data streams to SDS.
 
   - Updating a PI point name: The SDS stream name is updated.
 
@@ -40,13 +40,9 @@ Sign-up for PI point updates and digital state updates occurs when the agent sta
 
 ## Asset Framework synchronization 
 
-For AF synchronization to be successful, the agent needs to perform an indexing of the AF server. AF indexing occurs once agent registration is successful. During the initial indexing, the agent crawls through the AF server and caches all known elements and templates in addition to their attributes. Once the initial indexing is complete, the agent persists a cookie and the cache of the elements and templates on the server. The agent progresses the persisted cookie periodically to check for changes or updates since the last successful indexing.
+The agent performs an indexing of the AF server after agent registration is successful. The indexing caches all known elements and templates along with their attributes. This index is updated periodically by the agent.
 
-In the event of an agent restart, the agent performs a check for the persisted cookie in the cache directory. If no cookie is found, the agent performs an initial index and persists a new cookie for periodic indexing.
-
-Upon the start of a transfer, the agent utilizes the index to build out the implicit PI points referenced by the element Ids specified in the transfer specification to track, in addition to sending those references to the cloud.
-
-Once the transfer is initialized in the agent, change processing of the cookie also propagates down to the transfer and is filtered down to only take actions on elements and element templates of interest.
+When a transfer is started, the agent builds out the implicit PI points referenced by the element Ids specified in the transfer specification to enable change synchronization.
 
 Below are the supported AF change synchronization events and the result of each change:
 

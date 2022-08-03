@@ -4,7 +4,7 @@ uid: community-edit
 
 # Edit community
 
-After you create a community, you can edit its name and description at any time. You can also add a contact email so that other tenants in the community can communicate with your tenant. 
+After you create a community, you can edit its name and description at any time. You can also edit your contact email. 
 
 ## Prerequisites
 

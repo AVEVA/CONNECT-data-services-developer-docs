@@ -36,7 +36,7 @@ Users assigned a community administrator role can perform the following tasks:
 
 - <xref:community-contact-email>
 
-	Each tenant in the community can provide a contact email so that other tenants can communicate with them.
+	After your tenant provides an initial contact email during the invitation process, you can later the contact email for the tenant if it changes.
 
 - <xref:community-manage-administrators>
 

@@ -6,12 +6,7 @@ uid: data-views-configure-data-field-sets
 
 [!include[configure-data-field-sets](_includes/configure-data-field-sets.md)]
 
-## Required steps
-
 - <xref:data-view-select-data-fields>
-
-## Optional steps
-
 - <xref:data-view-edit-data-fields> 
 - <xref:data-view-configure-grouping-fields>
 - <xref:data-views-configure-identifying-fields>

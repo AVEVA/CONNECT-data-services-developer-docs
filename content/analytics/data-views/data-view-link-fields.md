@@ -4,6 +4,24 @@ uid: data-view-link-fields
 
 # Step 3.5: Link fields
 
-For fields that contain the same type of information under a different name, you can link them by dragging and dropping one field onto the other.
+Data items included in a data view may have slight differences in property naming, despite those properties representing the same logical thing. For example, data from one equipment manufacturer reports `Temperature`, while another reports `Temp` instead.
 
-![consolidate fields](_images/consolidate-fields.gif)
+Data views can overcome property naming differences by linking these similar properties into a single data field. This applies to stream properties referenced by id or by name, and to stream metadata keys. Asset properties can also be consolidated.
+
+## To link fields
+
+To link data items, drag and drop one field onto another. Properties can only be linked to other properties of the same UOM. Metadata can only be linked to other metadata of the same UOM.
+
+![link fields](_images/link-fields.gif)
+
+## To unlink fields
+
+To unlink a linked field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > ![alt](link-../../_icons/default/link-variant-off.svg) **Unlink All**.
+
+## Developer documentation
+
+Within the Developer Guide, the term "linking" is synonymous with "consolidating". For more information, see <xref:ConsolidateDataFields>.
+
+## Next steps
+
+Proceed to <xref:data-view-configure-field-order>.

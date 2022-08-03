@@ -2,7 +2,7 @@
 uid: data-view-edit-data-fields
 ---
 
-# Step 3.2: Edit data fields (optional)
+# Step 3.2: Edit data fields
 
 For each data view query, you can include data fields that represent a particular source of information, such as the id for a data item or the values from one of its properties.
 

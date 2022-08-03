@@ -6,7 +6,7 @@ uid: data-views-configure-data-field-sets
 
 [!include[configure-data-field-sets](_includes/configure-data-field-sets.md)]
 
-## Required steps
+## Required step
 
 Each query requires in your data view a minimum of one data field to be added to each field set.
 
@@ -24,4 +24,4 @@ After adding data fields to your field sets, you have the options to organize an
 
 ## Next steps
 
-Continue to <xref:data-view-choose-data-shape>.
+After you complete the required step above, along with any of the chosen optional steps, continue to <xref:data-view-choose-data-shape>.

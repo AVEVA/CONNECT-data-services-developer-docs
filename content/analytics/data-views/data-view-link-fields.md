@@ -10,13 +10,13 @@ Data views can overcome property naming differences by linking these similar pro
 
 ## To link fields
 
-To link data items, drag and drop one field onto another. Properties can only be linked to other properties of the same UOM. Metadata can only be linked to other metadata of the same UOM.
+To link data items, drag and drop one field onto another. Properties can only be linked to other properties of the same data type. Metadata can only be linked to other metadata of the same data type.
 
 ![link fields](_images/link-fields.gif)
 
 ## To unlink fields
 
-To unlink a linked field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > ![alt](link-../../_icons/default/link-variant-off.svg) **Unlink All**.
+To unlink a linked field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > ![alt](../../_icons/default/link-variant-off.svg) **Unlink All**.
 
 ## Developer documentation
 

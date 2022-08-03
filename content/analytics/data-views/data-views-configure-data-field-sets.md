@@ -6,7 +6,7 @@ uid: data-views-configure-data-field-sets
 
 [!include[configure-data-field-sets](_includes/configure-data-field-sets.md)]
 
-## 1. Select data fields
+## Step 3.1: Select data fields
 
 In the `Add Data Fields` window, select the data fields that you want to include in the data field set for each query. You can filter the data fields listed for each query by [summary type](#filter-by-summary-type) or by [text](#filter-by-text).
 
@@ -26,9 +26,9 @@ You can filter the data fields listed for each query by summary type, which retu
 
 You can further filter the data fields listed for each query by text.  
 
-## 2. Edit data fields (optional)
+## Step 3.2: Edit data fields (optional)
 
-For each data view query, you can include data fields that represent a particular source of information, such as the `.Id` for a data item or the values from one of its properties.
+For each data view query, you can include data fields that represent a particular source of information, such as the id for a data item or the values from one of its properties.
 
 ### Data field labels
 
@@ -48,7 +48,7 @@ Summary Direction controls whether the start or end index of the summary is used
 
 This preview lists each data field and property included within the affected data view queries.
 
-## Configure grouping fields
+## Step 3.3: Configure grouping fields
 
 You can organize the data items within a data view by grouping them, which is one method of producing a meaningful, consumable shape of data. Configure grouping fields using the **Grouping Fields** accordion panel. Grouping is optional when defining the data view.
 
@@ -81,7 +81,7 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 
 - If **Grouping Fields** is not defined on the data view, the resolved data view shows a single group with all eligible data items.
   
-## Configure identifying fields
+## Step 3.4: Configure identifying fields
 
 If the field set resolves to multiple data items in any group (or if grouping is not used), then you should designate an **Identifying field** for the field set. The identifying field of a data field set specifies the primary field to identify multiple items in a group. This identification methods allows the identifying field value to be used automatically in field labels of the group. If a lone criterion is not a sufficient or useful way of disambiguating the fields, then grouping by additional criteria may be necessary. 
 
@@ -100,17 +100,17 @@ To add an identifying field to a field set, select **Identifying Field** and cho
 
 ![add-an-identifying-field](_images/add-an-identifying-field.png)
 
-## Configure field order
-
-You can change the order that fields display within your data view by dragging and dropping fields in the preferred order.
-
-![reorder fields](_images/reorder-fields.gif)
-
-## Link fields
+## Step 3.5: Link fields
 
 For fields that contain the same type of information under a different name, you can link them by dragging and dropping one field onto the other.
 
 ![consolidate fields](_images/consolidate-fields.gif)
+
+## Step 3.6: Configure field order
+
+You can change the order that fields display within your data view by dragging and dropping fields in the preferred order.
+
+![reorder fields](_images/reorder-fields.gif)
 
 ## Next steps
 

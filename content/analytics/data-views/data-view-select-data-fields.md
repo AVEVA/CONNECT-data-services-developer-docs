@@ -12,12 +12,13 @@ After you save the queries that you create in the previous step, OSIsoft Cloud S
 
 ## To select data fields
 
-1. From the `Add Data Fields` window, select the fields that you want to include in your data view. If you have more than one query, select fields for each query.
+From the `Add Data Fields` window, select the fields that you want to include in your data view. If you have more than one query, select fields for each query.
 
-	**Tips:** 
-	
-	- Use the data field filters to find a specific field. For more information, see [Data field filters](#data-field-filters).
-	- To display which fields are already included in the data view, select **Show Included Fields**.
+**Tips:** 
+
+- Use the data field filters to find a specific field. For more information, see [Data field filters](#data-field-filters).
+
+- To display which fields are already included in the data view, select **Show Included Fields**.
 
 ## Data field filters
 
@@ -30,8 +31,10 @@ You can filter the data fields listed for each query by [summary type](#filter-b
 You can filter the data fields listed for each query by summary type, which returns different calculations for a given data field. The `Value` summary type is selected by default.
 
 - To add a summary type chip, select the **Filter by Summary Type** field and select a value.
+
 - To remove a summary type chip, select ![alt](../../_icons/default/close-circle.svg) for the chip.
-- To remove all summary type chips, select ![alt](../../_icons/default/close.svg) for the **Filter by Summary Type** field.
+
+- To remove all summary type chips, select ![alt](../../_icons/branded/close.svg) for the **Filter by Summary Type** field.
 
 ### Filter by text
 
@@ -42,4 +45,5 @@ You can further filter the data fields listed for each query by text.
 After you choose data fields, perform one of the following actions:
 
 - Select **Next** to edit the selected data fields. Proceed to <xref:data-view-edit-data-fields>.
+
 - Select **Apply** to finish adding data fields to your data view. You can always edit the data fields later. Proceed to <xref:data-view-configure-grouping-fields>.

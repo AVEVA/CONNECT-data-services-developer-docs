@@ -83,6 +83,7 @@
         - topicUid: community-manage-users
         - topicUid: community-manage-groups
         - topicUid: community-manage-clients
+        - topicUid: community-contact-email
         - topicUid: community-manage-administrators
         - topicUid: communities-manage-default-admins
       - topicUid: community-data-sharing

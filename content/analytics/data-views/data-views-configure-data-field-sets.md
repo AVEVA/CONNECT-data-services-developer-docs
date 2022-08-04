@@ -21,7 +21,3 @@ After adding data fields to your field sets, you have the options to organize an
 - <xref:data-views-configure-identifying-fields>
 - <xref:data-view-link-fields>
 - <xref:data-view-configure-field-order>
-
-## Next steps
-
-After you complete the required step above, along with any of the chosen optional steps, continue to <xref:data-view-choose-data-shape>.

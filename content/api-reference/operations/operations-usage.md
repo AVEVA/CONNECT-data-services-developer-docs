@@ -4,39 +4,40 @@ uid: operations-usage
 ---
 
 # Usage
-APIs related to querying usage data
+APIs related to querying usage data.
 
-## `List Tenant Usage`
+## `List Tenant Usage 1`
 
-<a id="opIdQuery_List Tenant Usage"></a>
+<a id="opIdQuery_List Tenant Usage 1"></a>
 
-Returns tenant usage data, based on active/completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
+Returns tenant usage data, based on `groupBy` value, start and end dates. It computes the active/completed billing cycles based on whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided. Default results are grouped with `groupBy` value as "None".
 
 <h3>Request</h3>
 
 ```text 
 GET /api/v1/tenants/{tenantId}/usage
-?start={start}&end={end}&groupByNamespace={groupByNamespace}
+?start={start}&end={end}&groupBy={groupBy}&groupByNamespace={groupByNamespace}
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 `[optional] string start`
-<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
-<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] boolean groupByNamespace`
-<br/>Selection to order usage data by namespace<br/><br/>
+<br/>Start date of the range for daily usage data.<br/><br/>`[optional] string end`
+<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] any groupBy`
+<br/>Selector `UsageGroupBy` to group usage records on namespace, community, all(both namespace and community), or none.<br/><br/>`[optional] boolean groupByNamespace`
+<br/>Selection to order usage data by namespace. This parameter is deprecated, use `groupBy` to group the records.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|None|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -47,6 +48,9 @@ GET /api/v1/tenants/{tenantId}/usage
   {
     "Date": "2019-08-24T14:15:22Z",
     "TenantId": "string",
+    "CalleeTenantId": "string",
+    "CallerTenantId": "string",
+    "CommunityId": "string",
     "NamespaceId": "string",
     "ClusterRegion": "string",
     "IngressEvents": 0,
@@ -59,37 +63,39 @@ GET /api/v1/tenants/{tenantId}/usage
 
 ---
 
-## `List Namespace Usage`
+## `List Tenant Usage (communities path)`
 
-<a id="opIdQuery_List Namespace Usage"></a>
+<a id="opIdQuery_List Tenant Usage (communities path)"></a>
 
-Returns namespace usage data, based on active and completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
+Returns community usage data for a specified tenant. It computes the active/completed billing cycles based on whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided. Default results are grouped with `groupBy` value as "None".
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
-?start={start}&end={end}
+GET /api/v1/communities/{communityId}/tenants/{tenantId}/usage
+?start={start}&end={end}&groupBy={groupBy}&source={source}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>
 `[optional] string start`
-<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
-<br/>End date of the range for daily usage data<br/><br/>
+<br/>Start date of the range for daily usage data.<br/><br/>`[optional] string end`
+<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] any groupBy`
+<br/>Selector `UsageGroupBy` to group usage records on namespace, community, all(both namespace and community), or none.<br/><br/>`[optional] any source`
+<br/>Source of usage records.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested namespace|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|None|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -100,6 +106,9 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
   {
     "Date": "2019-08-24T14:15:22Z",
     "TenantId": "string",
+    "CalleeTenantId": "string",
+    "CallerTenantId": "string",
+    "CommunityId": "string",
     "NamespaceId": "string",
     "ClusterRegion": "string",
     "IngressEvents": 0,
@@ -127,17 +136,17 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ResourceUsage](#schemaresourceusage)|Current rather than entitled resource usage.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|None|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -170,17 +179,17 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/>
+<br/>Tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[BillingCycle](#schemabillingcycle)[]|List of elapsed billing cycles for an account subscription|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|None|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+|200|[BillingCycle](#schemabillingcycle)[]|List of elapsed billing cycles for an account subscription.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -212,7 +221,10 @@ Represents resource usage for a given namespace
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Date|date-time|true|false|The date property of a usage record|
-|TenantId|guid|true|false|The tenant identifier of a usage record|
+|TenantId|guid|false|true|Tenant identifier.|
+|CalleeTenantId|guid|true|false|The callee tenant identifier of a usage record|
+|CallerTenantId|guid|true|false|The caller tenant identifier of a usage record|
+|CommunityId|guid|false|true|The community identifier of a usage record|
 |NamespaceId|string|false|true|The namespace identifier of a usage record|
 |ClusterRegion|string|false|true|The cluster region for the record|
 |IngressEvents|int64|true|false|The count of events ingressed for a usage record|
@@ -224,6 +236,9 @@ Represents resource usage for a given namespace
 {
   "Date": "2019-08-24T14:15:22Z",
   "TenantId": "string",
+  "CalleeTenantId": "string",
+  "CallerTenantId": "string",
+  "CommunityId": "string",
   "NamespaceId": "string",
   "ClusterRegion": "string",
   "IngressEvents": 0,
@@ -263,6 +278,63 @@ Object used to represent error information.
 }
 
 ```
+
+---
+
+### UsageGroupBy
+
+<a id="schemausagegroupby"></a>
+<a id="schema_UsageGroupBy"></a>
+<a id="tocSusagegroupby"></a>
+<a id="tocsusagegroupby"></a>
+
+Specifies the grouping mechanism for tenant usage records.
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|Description|
+|---|---|---|
+|Namespace|0|Group by namespace identifier.|
+|Community|1|Group by community identifier.|
+|All|2|The union of records grouped by namespace and grouped by community.|
+|None|3|No grouping.|
+
+---
+
+### CommunityUsageGroupBy
+
+<a id="schemacommunityusagegroupby"></a>
+<a id="schema_CommunityUsageGroupBy"></a>
+<a id="tocScommunityusagegroupby"></a>
+<a id="tocscommunityusagegroupby"></a>
+
+Specifies the property to group Community-related Usage data on.
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|Description|
+|---|---|---|
+|None|0|No grouping.|
+|Tenant|1|Group usage data by caller or callee Tenant, depending on whether the usage source is External or Internal, respectively.|
+
+---
+
+### CommunityUsageSource
+
+<a id="schemacommunityusagesource"></a>
+<a id="schema_CommunityUsageSource"></a>
+<a id="tocScommunityusagesource"></a>
+<a id="tocscommunityusagesource"></a>
+
+Specifies the source of Community usage data.
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|Description|
+|---|---|---|
+|Invalid|0|Default enumeration value. Not supported.|
+|Internal|1|The caller's own tenant.|
+|External|2|Other tenants accessing the caller's own data.|
 
 ---
 

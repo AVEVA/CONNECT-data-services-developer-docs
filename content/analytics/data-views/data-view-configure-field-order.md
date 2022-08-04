@@ -4,7 +4,7 @@ uid: data-view-configure-field-order
 
 # Step 3.6: Edit field order
 
-You can edit the order that fields display within your data view. Highly prioritized fields display in your data view as the columns immediately following grouping/identifying column. Lower prioritized fields follow higher prioritized fields.
+By default, fields added to a field set are listed alphabetically. within your data view. However, you can manually edit the order that fields display.
 
 ## To edit field order
 

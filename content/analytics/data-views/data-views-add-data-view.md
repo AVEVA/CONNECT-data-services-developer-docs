@@ -6,6 +6,8 @@ uid: data-views-add-data-view
 
 [!include[add-data-view](_includes/add-data-view.md)]
 
+## To add a data view
+
 1. In the left pane, select **Analytics** > **Data Views**.
 
 1. In the `Data Views` pane, select **Add Data View**.

@@ -6,6 +6,8 @@ uid: data-views-add-query
 
 [!include[add-query](_includes/add-query.md)]
 
+## To add a query
+
 1. From **Query Id**, overwrite the default value of `Query1` with a unique identifier.
 
 1. From **Query Source**, select a namespace ![namespace](../../_icons/default/database.svg) or community ![community](../../_icons/default/share-variant.svg) to query operational data from. The source can either be a namespace from your own tenant or a community shared by another tenant.

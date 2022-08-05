@@ -194,13 +194,13 @@
         - topicUid: data-view-choose-data-shape
         - name: "Step 5: Preview and save"
           topicUid: data-views-preview-and-save
-      - topicUid: data-views-edit-a-data-view
-        items: 
-        - topicUid: data-views-edit-name-and-description
-        - topicUid: data-views-manage-queries
-        - topicUid: data-views-edit-data-field-sets
-        - topicUid: data-views-group-data-fields
-        - topicUid: data-views-preview-data-view
+      # - topicUid: data-views-edit-a-data-view
+      #   items: 
+      #   - topicUid: data-views-edit-name-and-description
+      #   - topicUid: data-views-manage-queries
+      #   - topicUid: data-views-edit-data-field-sets
+      #   - topicUid: data-views-group-data-fields
+      #   - topicUid: data-views-preview-data-view
       - topicUid: data-views-retrieve    
     - topicUid: data-views-install-power-bi-connector
       items:

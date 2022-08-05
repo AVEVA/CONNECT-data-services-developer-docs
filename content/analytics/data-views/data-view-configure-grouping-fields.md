@@ -33,4 +33,28 @@ Fields are only eligible if they include one of the following source types liste
 
 To add a grouping field, select **Add a Grouping Field** and choose an eligible field. You can add as many eligible fields as you prefer.
 
+1. From the **Grouping Fields** accordion, select **Add a Grouping Field**.
+
+1. Choose a grouping field.
+
+1. (Optional) Repeat the steps above to add additional grouping fields.
+
 ![add-a-grouping-field](_images/add-a-grouping-field.png)
+
+## To ungroup a field
+
+To ungroup a field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > **Ungroup Field** > **All Eligible Queries**.
+
+## To remove a grouping field
+
+Removing a field from grouping fields completely removes the field from the data view rather than merely ungrouping it.
+
+To remove a field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > **Remove**.
+
+## Other grouping tasks
+
+Similar to field sets, the following tasks can be performed on grouping fields:
+
+- <xref:data-view-edit-data-fields>
+- <xref:data-view-link-fields>
+- <xref:data-view-configure-field-order>

@@ -6,38 +6,32 @@ uid: data-views-retrieve
 
 [!include[data-views-retrieve](../../_includes/data-views-retrieve.md)]
 
-## Before you start
+## Data retrieval options
 
-Before starting the tasks outline in [Data view retrieval workflow](#data-view-retrieval-workflow), review the headings below.
+To retrieve a data view, you can either use the OSIsoft Microsoft Power BI Plugin, or you can develop your own plugin using an example GitHub project as a starting point.
 
-### Data retrieval options
+### Microsoft Power BI
 
-Ad sunt ullamco cupidatat nisi anim consectetur magna. Non non tempor occaecat officia in elit minim cupidatat reprehenderit mollit. Non consectetur velit officia irure minim ad. Aliquip do quis et enim anim culpa amet tempor officia mollit. Officia excepteur id eu ipsum. Mollit fugiat anim nulla non amet sint eiusmod dolor ex laboris eiusmod.
+You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. For more information installing the connector and retrieving a data view, see <xref:PowerBI>.
 
-Data retrieval options include:
+### Develop your own connector
 
-- Microsoft Power BI
+Alternatively, you can develop your own connector for third-party software. AVEVA offers sample projects on GitHub for the following technologies:
 
-	**Note:** Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. For more information, see <xref:PowerBI>.
+- [Jupyter](https://github.com/osisoft/sample-adh-data_views_jupyter-python)
+- [Python](https://github.com/osisoft/sample-adh-data_views-python)
+- [R](https://github.com/osisoft/sample-adh-data_views_r-r)
+- [.NET](https://github.com/osisoft/sample-adh-data_views-dotnet)
+- [Java](https://github.com/osisoft/sample-adh-data_views-java)
 
-- Grafana
-
-- ...
-
-### Client-Credentials
+## Client-Credentials
 
 To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate using a valid Client Id and Client secret. You can obtain an Id and secret by creating a set of client-credentials. For more information, see <xref:gpClientCredentialsClient>.
 
-### API Console
+## API Console
 
 [!include[api-console](_includes/api-console.md)]
 
-### Developer documentation
+## Developer documentation
 
 For more information on interacting with a data view using the API console, see the [Developer Guide](xref:DataViewsOverview).
-
-## Data view retrieval workflow
-
-- <xref:data-views-retrieve-data-view>
-
-- <xref:data-view-retrieve-edit-query>

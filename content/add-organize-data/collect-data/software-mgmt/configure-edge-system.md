@@ -34,7 +34,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 1. Find and select the edge device to configure.
 
-   **Tip:** Select the ![View grid](../_icons/branded/view-grid.svg) or ![View list](../_icons/branded/view-list.svg) icons in the toolbar to toggle between the card and table views of the assets.
+<!-- **Tip:** Select the ![View grid](../_icons/branded/view-grid.svg) or ![View list](../_icons/branded/view-list.svg) icons in the toolbar to toggle between the card and table views of the assets. -->
 
 1. Select **Edit Edge System**.
 
@@ -56,7 +56,7 @@ To edit an edge system configuration and export it for use:
 
 1. Find and select the edge device to configure.
 
-   **Tip:** Select the ![View grid](../_icons/branded/view-grid.svg) or ![View list](../_icons/branded/view-list.svg) icons in the toolbar to toggle between the card and table views of the assets.
+<!-- **Tip:** Select the ![View grid](../_icons/branded/view-grid.svg) or ![View list](../_icons/branded/view-list.svg) icons in the toolbar to toggle between the card and table views of the assets. -->
 
 1. In the right pane, select **Edit Edge System** or ![Edit](../../../_icons/default/pencil.svg).
 

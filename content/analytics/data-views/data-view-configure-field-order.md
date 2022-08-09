@@ -4,7 +4,7 @@ uid: data-view-configure-field-order
 
 # Step 3.6: Edit field set order
 
-By default, fields added to a field set are listed alphabetically. within your data view. However, you can manually edit the order that fields display.
+By default, fields added to a field set are listed alphabetically within your data view. However, you can manually edit the order that fields display. Fields will display in your data view in the configured order, immediately following grouping fields.
 
 ## To edit field order
 

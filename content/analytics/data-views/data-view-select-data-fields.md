@@ -4,7 +4,7 @@ uid: data-view-select-data-fields
 
 # Step 3.1: Select data fields
 
-After you save the queries that you create in the previous step, OSIsoft Cloud Services (OCS) prompts you to add data fields the field set for each query in the `Add Data Fields` window. Data fields are columns of stream or asset data that are included in your data view. 
+After you save the queries that you create in the previous step, OSIsoft Cloud Services (OCS) prompts you to add data fields the field set for each query in the `Add Data Fields` window. Data fields are metadata or properties from streams or assets that are included in your data view.
 
 **Add Data Fields window**
 
@@ -38,7 +38,7 @@ You can filter the data fields listed for each query by summary type, which retu
 
 ### Filter by text
 
-You can further filter the data fields listed for each query by text.
+You can further filter the data fields listed for each query by field name or field type—in other words, by metadata or property id.
 
 ## Next steps
 

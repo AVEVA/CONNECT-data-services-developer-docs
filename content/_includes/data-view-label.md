@@ -6,7 +6,7 @@ When the data view is resolved and data fields produce field mappings, labels ar
 | Timestamp | Power In Value | Power Out Value |
 ```
 
-In cases where the identifiers are unique, the identifier is suffixed with an ordinal number, its position. For example:
+In cases where the identifiers are not unique, the identifier is suffixed with an ordinal number, its position. For example:
 
 ```md
 | Timestamp.0 | Value.1 | Value.2 |

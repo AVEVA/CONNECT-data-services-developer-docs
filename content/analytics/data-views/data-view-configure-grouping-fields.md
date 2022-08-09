@@ -35,11 +35,12 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 
 1. From the **Grouping Fields** accordion, select **Add a Grouping Field**.
 
+	![add-a-grouping-field](_images/add-a-grouping-field.png)
+
 1. Choose a grouping field.
 
 1. (Optional) Repeat the steps above to add additional grouping fields.
 
-![add-a-grouping-field](_images/add-a-grouping-field.png)
 
 ## To ungroup a field
 

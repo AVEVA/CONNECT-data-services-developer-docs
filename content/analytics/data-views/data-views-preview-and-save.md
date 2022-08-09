@@ -42,6 +42,5 @@ To configure the index, select an index start and end value. Then generate the p
 
 ## Next steps
 
-- For more information on retrieving your data view using a data-driven application, see <xref:data-views-retrieve>. 
+For more information on retrieving your data view using a data-driven application, see <xref:data-views-retrieve>. 
 
-- For more information on editing your data view following initial configuration, see <xref:data-views-edit-a-data-view>.

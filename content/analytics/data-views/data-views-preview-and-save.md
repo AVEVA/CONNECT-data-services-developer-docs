@@ -30,7 +30,7 @@ To configure the index, select an index start and end value. Then generate the p
 	| Setting | Description | 
 	|--|--|
 	| **Start Index** | The timestamp for the starting data point of the index. |
-	| **End Index** | The timestamp for the ending data point of the index.<br><br>**Tip:** Select **Now** to set the current date and time. |
+	| **End Index** | The timestamp for the ending data point of the index.<br>**Tip:** Select **Now** to set the current date and time. |
 	| **Time Interval**<sup>1</sup> | The interval between data points. |
 	| **Save Defaults with Data View** | If checked, the index configuration parameters are saved as defaults and used when these parameters are not explicitly included in an API request. |
 

@@ -48,7 +48,7 @@ Below are the supported AF change synchronization events and the result of each 
 
 - Database
 
-  - Database addition
+  - Database addition: No effect on the existing transfer, but elements from the new database will be available to add if the transfer is edited.
 
   - Database rename: The Path metadata of assets referencing the database is updated.
 

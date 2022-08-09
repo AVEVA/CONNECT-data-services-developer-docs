@@ -58,9 +58,9 @@ To name the data transfer:
 1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
    * **High** - Sends all intended metadata.
-   * **Medium** - Default. Send metadata without logical addresses from the data source.
+   * **Medium** - Default. Sends metadata without logical addresses from the data source.
    * **Low** - Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
-   * **None** - Only the point ID and point name is sent; no metadata is included in the transfer.
+   * **None** - Sends only the point ID and point name; no metadata is included in the transfer.
 
    **What PI point attributes are transferred with each Stream Metadata Replication Policy (data privacy) setting?**
 

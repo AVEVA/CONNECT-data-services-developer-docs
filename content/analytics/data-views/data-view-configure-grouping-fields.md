@@ -59,3 +59,7 @@ Similar to field sets, the following tasks can be performed on grouping fields:
 - <xref:data-view-edit-data-fields>
 - <xref:data-view-link-fields>
 - <xref:data-view-configure-field-order>
+
+## Next steps
+
+Proceed to <xref:data-views-configure-identifying-fields>.

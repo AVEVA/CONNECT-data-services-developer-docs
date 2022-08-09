@@ -26,3 +26,7 @@ To add an identifying field to the field set for a query, select an eligible fie
 	![add-an-identifying-field](_images/add-an-identifying-field.png)
 
 1. Choose an identifying field.
+
+## Next steps
+
+Proceed to <xref:data-view-link-fields>.

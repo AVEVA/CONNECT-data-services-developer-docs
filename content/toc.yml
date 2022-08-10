@@ -216,7 +216,6 @@
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:
-  - topicUid: identityProviders
   - topicUid: Groups
     items:
     - topicUid: AddGroup

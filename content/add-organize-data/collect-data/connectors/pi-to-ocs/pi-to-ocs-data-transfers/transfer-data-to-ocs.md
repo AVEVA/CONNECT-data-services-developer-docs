@@ -104,7 +104,7 @@ To build an AF element:
 
 1. (Optional) In the **Attribute Value** fields, filter attribute values by specifying the following information:
 
-   **Note:** Custom unit of measurements (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
+   **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
    
       * In the first field, enter an attribute name.
 

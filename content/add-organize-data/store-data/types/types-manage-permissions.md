@@ -14,7 +14,7 @@ To manage type permissions, you must be assigned the **Manage Permissions** acce
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. From the **Streams/Types/Stream Views** dropdown, select **Types**.
+1. From the **Streams/Types/Stream Views** dropdown list, select **Types**.
 
 1. Select the types that you want to edit permissions for.
 

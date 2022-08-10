@@ -37,7 +37,7 @@ You can edit the default user roles and permissions added to a type when it is c
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. From the **Streams/Types/Stream Views** dropdown, select **Types**.
+1. From the **Streams/Types/Stream Views** dropdown list, select **Types**.
 
 1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions**.  
 

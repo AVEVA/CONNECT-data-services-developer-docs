@@ -90,7 +90,7 @@ Invitation to create.<br/>
 
 ```json
 {
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "user@example.com"
 }
 ```
 
@@ -213,7 +213,7 @@ Invitation to create.<br/>
 
 ```json
 {
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "user@example.com"
 }
 ```
 
@@ -691,11 +691,11 @@ The input object to create invitation
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|InvitationRecipient|string|false|true|The email address of the invitation recipient|
+|InvitationRecipient|email|false|true|The email address of the invitation recipient|
 
 ```json
 {
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "user@example.com"
 }
 
 ```

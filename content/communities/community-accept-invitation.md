@@ -40,9 +40,11 @@ To accept an invitation:
 
   A setup wizard opens.
 
-1. From the **Welcome** page, select **Next**.
+1. From the **Welcome** page, verify the **Contact Email** address and then select **Next**.
 
-   ![Setup Wizard: Welcome](images/setup-wizard.png)
+  The **Contact Email** is an email address that your business partners can use to contact you for any questions or issues related to this community. This field defaults to the email address for your user account, but you can override it by selecting ![close](../_icons/default/close.svg) and entering a new address. 
+
+  **Tip:** You can update your **Contact Email** later. For more information, see <xref:community-contact-email>.
 
 1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks within their own tenant, but not the entire community. You can either accept the default roles or add new ones. 
    

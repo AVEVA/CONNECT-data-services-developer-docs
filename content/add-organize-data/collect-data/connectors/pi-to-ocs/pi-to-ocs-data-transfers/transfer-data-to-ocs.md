@@ -244,6 +244,8 @@ To save the transfer:
 
 1. To save the transfer and return to the PI to OCS Agents window, select **Save** in the lower right-hand corner.
 
+   **Note:** In order to save the transfer, it must include explicit or implicit PI points.
+
 ## Transfer data to OCS
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.

@@ -573,7 +573,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Resol
 
 <a id="opIdStream_Get Resolved Streams"></a>
 
-Returns bulk resolved stream and type representations that is associated with provided streams.
+Returns bulk resolved stream and type representations that is associated with provided streams. The list of stream identifiers to be resolved should be supplied as a list of comma-separated stream IDs in the request body. HTTP 207 is returned regardless of partial or complete success of stream resolution. Any stream that cannot be resolved with be included in the ChildErrors property of the `SdsResolvedStreamsResponse`.
 
 <h3>Request</h3>
 

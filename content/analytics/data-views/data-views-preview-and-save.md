@@ -4,7 +4,7 @@ uid: data-views-preview-and-save
 
 # Step 5: Preview and save the data view
 
-[!include[preview-and-save](_includes/preview-and-save.md)]
+[!include[preview-and-save](_includes/preview-and-save.md)] You can also use the preview to select a default date and time for your index for when you launch the data view in the API console.
 
 ## Index configuration
 
@@ -42,5 +42,4 @@ To configure the index, select an index start and end value. Then generate the p
 
 ## Next steps
 
-For more information on retrieving your data view using a data-driven application, see <xref:data-views-retrieve>. 
-
+Launch you data view in the API console and retrieve it using a data-driven application. For more information, see <xref:data-views-retrieve>. 

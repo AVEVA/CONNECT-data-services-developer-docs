@@ -30,12 +30,12 @@ The following tasks can only be performed by community administrators on the adm
 
 - <xref:community-edit>
 
-	Edit the community name and description.
+	Edit the community name, description, and contact email. 
 
 - <xref:community-delete>
 
 	Delete the community.
 
-- <xref:communities-manage-default-admins>
+- <xref:community-manage-preferred-region>
 
-    Configure which roles are automatically added as the default Community Administrators while you are creating or joining a community.
+	Each community includes settings to manage the preferred region, which controls the geographical regions where operational data shared within a community is processed.

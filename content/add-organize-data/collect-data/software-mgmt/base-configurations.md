@@ -6,7 +6,7 @@ uid: AddBaseConfiguration
 
 You can create and edit base configurations for edge systems in AVEVA Data Hub. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
-**Note:** You can create configuration templates for the following edge system types:
+You can create configuration templates for the following edge system types:
 
  - Edge Data Store
 
@@ -17,6 +17,10 @@ You can create and edit base configurations for edge systems in AVEVA Data Hub. 
  - PI Adapter for Modbus TCP
  
  - PI Adapter for OPC UA
+
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
+
+Use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. <!-- When an edge system is deployed using AVEVA Edge Management, the mustache tokens are replaced with the actual secret values. --> The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update configuration on the device with the secret.
 
 ## Add a new base configuration
 

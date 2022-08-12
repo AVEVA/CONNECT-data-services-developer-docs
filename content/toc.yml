@@ -135,7 +135,7 @@
       - topicUid: data-transfer-statuses
       - topicUid: export-transfer-details
       - topicUid: export-missing-points
-      - topicUid: pi-point-change
+      - topicUid: PItoDHSync
       - topicUid: confirm-data-retrieval
     - topicUid: lp-agent-maint
       items:

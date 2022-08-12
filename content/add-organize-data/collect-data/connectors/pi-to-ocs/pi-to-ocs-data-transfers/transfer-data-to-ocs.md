@@ -244,7 +244,7 @@ To save the transfer:
 
 1. To save the transfer and return to the PI to OCS Agents window, select **Save** in the lower right-hand corner.
 
-   **Note:** In order to save the transfer, it must include explicit or implicit PI points.
+   **Note:** In order to save the transfer, it must include at least one valid PI point.
 
 ## Transfer data to OCS
 

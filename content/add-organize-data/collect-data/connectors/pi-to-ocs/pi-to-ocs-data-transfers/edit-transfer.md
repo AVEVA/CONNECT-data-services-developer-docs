@@ -46,7 +46,7 @@ To edit an existing transfer:
     
     * To change the transfer's data privacy settings, select one of the **Stream Metadata Replication Policy** options.  
 
-    * To change whether streams or assets or removed automatically, select or deselect the **Automatically remove Streams and Assets** option.
+    * To change whether streams or assets are removed automatically, select or deselect the **Automatically delete Streams and Assets from the cloud** option.
 
 1. After transfer edits are done, select **Save** to retain these changes and return to the `PI to OCS Agents` window.
 

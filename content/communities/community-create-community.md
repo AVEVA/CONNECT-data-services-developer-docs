@@ -19,10 +19,14 @@ To create a community:
 1. Select **Add Community**.
 
     The **Create Community** wizard opens to the `Details` page.
-    
-    ![Create Community](images/create-community.png)
 
-1. On the `Details` page, enter a **Name** and **Description**. Then select **Next**.
+1. On the `Details` page, enter the following information:
+
+    | Detail | Description |
+    |----|----|
+    | **Name** | The name of the community. |
+    | **Description** (optional) |  A description of the community. | 
+    | **Contact Email** | An email address that community members can use to contact your organization for any questions or issues related to this community. By default, this field is populated with the email address from your user account, but you can override it by selecting ![close](../_icons/default/close.svg) and entering a new address. |
 
 1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks for both their own tenant and the entire community. You can either accept the default roles or add new ones.
 

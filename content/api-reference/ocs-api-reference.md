@@ -43,8 +43,7 @@ OSIsoft Cloud Services provides data residency via namespaces in the following r
 | WestUS | Americas | California |
 | WestEurope | Europe | Netherlands |
 
-Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See the [Tenant](xref:AccountTenant) documentation for information on how to access this data.
-
+Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. For information on how to access this data, see <xref:tenant-tenants>.
 
 ## OCS API versioning
 

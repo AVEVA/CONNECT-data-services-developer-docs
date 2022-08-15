@@ -28,13 +28,21 @@ To create a data view:
 
 1. In the center pane, update the **Query Id** field to a new value or accept the default of *Query1*.
 
-1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../../_icons/default/database.svg) or community ![community](../../../_icons/default/share-variant.svg) to query.
+1. From the **Query Source** dropdown menu, select a namespace ![namespace](../../_icons/default/database.svg) or community ![community](../../_icons/default/share-variant.svg) to query.
 
 1. For **Query Type**, select **Streams** or **Assets** to indicate which objects to search for this query.
 
    **Note:** Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details.
 
 1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (`*`), and then select **Search** to search for available streams or assets.
+
+   **Tips:**
+
+   - Select the **Query Value** field to display a cheat sheet of wildcards, filters, and operators you can use in your query. 
+   
+   - For more information on entering queries for streams, see [Search for streams](xref:sdsSearching#search-for-streams).
+
+   - For more information on entering queries for assets, see <xref:asset-search-dev-guide>.
 
 1. Select any stream or asset in the query results to display and view the individual data fields to the pane on the right.
 
@@ -54,7 +62,7 @@ To create a data view:
 
 1. (Optional) To edit data field label, select **Next** and enter `{` to display tokens to use as a data field label.
 
-      [!include[field label tokens](../../../_includes/data-view-field-label-tokens.md)]
+      [!include[field label tokens](../../_includes/data-view-field-label-tokens.md)]
 
 1. Select **Apply** to accept the selected data fields.
 
@@ -79,7 +87,7 @@ To create a data view:
 1. Select **Save** to create the data view and to continue editing, or select **Save and Close** to create the data view and exit.
 
 Your data view is added to the `Data Views` page. You can view the sources for each query in your data view from the **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
-   
+
 ![Data Views: Query sources column](_images/query-sources-column.png)
 
 To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).

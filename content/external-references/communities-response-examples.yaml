@@ -1,6 +1,6 @@
 # Community responses
 # See other "collection-response-example.yaml" files in this dir for examples of how to title a yaml node.
-response-title:
+communities-get-search-streams-by-community:
   type: markdown
   value: |
     ```json

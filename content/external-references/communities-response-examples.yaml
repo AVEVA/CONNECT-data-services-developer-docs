@@ -1,0 +1,12 @@
+# Community responses
+# See other "collection-response-example.yaml" files in this dir for examples of how to title a yaml node.
+response-title:
+  type: markdown
+  value: |
+    ```json
+    form=default
+    HTTP 207 OK
+    Content-Type: application/json
+    <JSON>
+    ```
+# Drop the response JSON in the <JSON> placeholder above.

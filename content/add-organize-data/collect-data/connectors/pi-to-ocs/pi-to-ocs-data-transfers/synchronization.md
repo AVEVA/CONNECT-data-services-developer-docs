@@ -100,13 +100,6 @@ Below are the supported AF change synchronization events and the result of each 
 
 <sup>1</sup> If the AutoDeleteCloudObject flag is enabled in the transfer settings.
 
-### Asset Framework synchronization limitations 
-
-| Issue | Restrictions |
-| ----- | ------------ |
-| Programmatic template updates | Programmatic changes using AFSDK are not properly propagated to the cookie when adding an attribute template after creating the element template within the same transaction. |
-| Resetting to template | If an element has an override on its values that was previously inherited from its template, resetting the element to the template defaults will not be picked up by the change sync. | 
-
 ## PI point type change
 
 A PI point type change occurs when a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database. When the PI to OCS Agent detects this change, it takes the following actions:

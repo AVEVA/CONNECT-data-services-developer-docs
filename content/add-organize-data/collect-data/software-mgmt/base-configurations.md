@@ -22,7 +22,7 @@ You can create and edit base configurations for edge systems in OCS. Once the co
  
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
-Use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update configuration on the device with the secret.
+Use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
 
 ## Add a new base configuration
 

@@ -348,6 +348,47 @@ Input trustee.<br/>
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
 ---
+
+## `List Community Tenant Extended Access Rights`
+
+<a id="opIdCommunityTenants_List Community Tenant Extended Access Rights"></a>
+
+Get the extended effective access rights for a community tenant resource.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/communities/{communityId}/tenants/{tenantId}/extendedaccessrights
+```
+
+<h4>Parameters</h4>
+
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>The requested tenant identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[CommunityAccessRights](#schemacommunityaccessrights)[]|An enumerable of all allowed Access Rights for an administrative CommunityTenant resource.|
+|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
+|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([CommunityAccessRights](#schemacommunityaccessrights)[])
+
+```json
+[
+  0
+]
+```
+
+---
 ## Definitions
 
 ### ErrorResponse
@@ -556,6 +597,31 @@ Represents a status of a community tenant
 |---|---|
 |Allowed|0|
 |Denied|1|
+
+---
+
+### CommunityAccessRights
+
+<a id="schemacommunityaccessrights"></a>
+<a id="schema_CommunityAccessRights"></a>
+<a id="tocScommunityaccessrights"></a>
+<a id="tocscommunityaccessrights"></a>
+
+Access rights for operations against Communities.
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|None|0|
+|ViewCommunityDetails|1|
+|LeaveCommunity|2|
+|ManageUsers|4|
+|PauseData|8|
+|EditCommunityAlias|16|
+|EditCommunityProfile|32|
+|DeleteCommunity|64|
+|ManageTenants|128|
 
 ---
 

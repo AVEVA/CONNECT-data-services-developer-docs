@@ -28,4 +28,4 @@ To manage default community administrators:
 
 The default community administrator roles are updated. The next time that you create or join a community, the community administrator defaults to your settings.
 
-**Note:** Updating default community administrators does not affect permissions for existing communities. To update permissions for existing communities, edit their permissions that are already in place. For more information, see <xref:/community-manage-administrators>.
+**Note:** Updating default community administrators does not affect permissions for existing communities. To update permissions for existing communities, edit their permissions that are already in place. For more information, see <xref:community-manage-administrators>.

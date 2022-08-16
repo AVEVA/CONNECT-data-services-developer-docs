@@ -9,9 +9,7 @@ By default, OSIsoft Cloud Services (OCS) processes operational data from your te
 - Performance optimization 
 - Enabling users to search and access data that may be stored across regions
 
-For example, if you have a namespace in OCS that stores operational data in the `US-West` region, OCS may process that data in the `EU-West` region, as depicted below.
-
-![Cross-region data sharing enabled](./_images/cross-region-data-sharing.drawio.svg)
+For example, if you have a namespace in OCS that stores operational data in the `US-West` region, OCS may process that data in the `EU-West` region.
 
 ## Cross region data sharing scenarios
 
@@ -40,8 +38,6 @@ In some instances where OCS sends operational data stored in your namespace's re
 ## Opt out of cross-region data sharing
 
 Optionally, you can opt out of sharing operational data from namespaces and communities across regions. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the namespace's assigned region.
-
-![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
 
 ### To opt out of cross-region data sharing for namespace
 

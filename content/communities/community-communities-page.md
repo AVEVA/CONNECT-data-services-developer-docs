@@ -10,7 +10,7 @@ The `Communities` page, accessible at **Data Management** > **Communities**, is 
 
 - If you are a [Community Member](xref:community-community-roles#community-member), this page lists only the communities that you hold membership in, along with their high-level details.  
 
-## Community view
+## Community list
 
 For each community that your tenant participates in OCS, it is listed on the `Communities` page. From this page, you can review high level details for the community and view if you have access to view data streams from the community.
 
@@ -28,12 +28,12 @@ Select **Details** to administrate the community. For more information on admini
 - <xref:community-community-administration>
 - <xref:community-tenant-administration>
 
-You can also toggle the `Communities` page between two views using the view toggle.
+You can also toggle the `Communities` page between the default list view and a card view.
 
 | View | Icon | Description |
 |--|--|--|
-| **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
 | **List view** | ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
+| **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
 
 ## Community toolbar
 

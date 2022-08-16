@@ -28,7 +28,6 @@ However, OCS may process a namespace's operational data in a different region (i
 Processing operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region may reside in the cross-region processing service memory up to several hours. 
 
 ### Data augmentation
-
 In use cases where your operational data is stored within both the chosen region and cross-region, OCS may process data from the chosen region in a different region. OCS then adds and processes additional operational data from the cross-region before it displays in your browser session. In these instances, your data from both regions resides in the cross-region processing service memory up to several hours.
 
 ### Temporary storage

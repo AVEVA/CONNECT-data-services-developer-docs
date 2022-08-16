@@ -2,7 +2,7 @@
 uid: data-view-configure-grouping-fields
 ---
 
-# Step 3.3: Edit grouping fields
+# Option B: Edit grouping fields
 
 You can organize the data items within a data view by grouping them, which is one method of producing a meaningful, consumable shape of data. Configure grouping fields using the **Grouping Fields** accordion panel. Grouping is optional when defining the data view.
 

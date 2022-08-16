@@ -2,7 +2,7 @@
 uid: data-view-link-fields
 ---
 
-# Step 3.5: Link fields
+# Option D: Link fields
 
 Data items included in a data view may have slight differences in property naming, despite those properties representing the same logical thing. For example, data from one equipment manufacturer reports `Temperature`, while another reports `Temp` instead.
 

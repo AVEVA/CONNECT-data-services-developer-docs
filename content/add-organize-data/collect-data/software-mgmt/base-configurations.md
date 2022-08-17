@@ -8,15 +8,23 @@ You can create and edit base configurations for edge systems in AVEVA Data Hub. 
 
 **Note:** You can create configuration templates for the following edge system types:
 
+ - PI Adapter for Azure Event Hubs
+ 
+ - PI Adapter for BACnet 
+
+ - PI Adapter for DNP3
+
  - Edge Data Store
 
- - PI Adapter for BACnet
- 
- - PI Adapter for DNP3
- 
  - PI Adapter for Modbus TCP
  
+ - PI Adapter for MQTT
+
  - PI Adapter for OPC UA
+
+ - PI Adapter for RDBMS
+
+ - PI Adapter for Structured Data Files
 
 ## Add a new base configuration
 
@@ -40,7 +48,7 @@ To create a edge system base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
-   Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
+   **Important:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 
@@ -74,7 +82,7 @@ To modify a base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
-   Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
+   **Important:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

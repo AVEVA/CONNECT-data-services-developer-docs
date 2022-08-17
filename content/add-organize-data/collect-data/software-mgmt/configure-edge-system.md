@@ -8,15 +8,23 @@ You can import an edge system configuration from the field to its corresponding 
 
 Configuration is available for the following edge system types:
 
-- Edge Data Store
+ - PI Adapter for Azure Event Hubs
+ 
+ - PI Adapter for BACnet 
 
-- PI Adapter for BACnet
+ - PI Adapter for DNP3
 
-- PI Adapter for DNP3
+ - Edge Data Store
 
-- PI Adapter for Modbus TCP
+ - PI Adapter for Modbus TCP
+ 
+ - PI Adapter for MQTT
 
-- PI Adapter for OPC UA
+ - PI Adapter for OPC UA
+
+ - PI Adapter for RDBMS
+
+ - PI Adapter for Structured Data Files
 
 **Note:** An edge system appears on the `Software Management Edge Systems` page once it is writing health data to AVEVA Data Hub. For information on configuring health endpoints, see the specific edge system product documentation.
 
@@ -29,6 +37,20 @@ To import an edge system configuration from the field to the corresponding edge 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to configure.
+
+1. Select **Edit Edge System**.
+
+1. Select **Import Configuration**.
+
+1. In the `Import Configuration` window, click **Select file**, browse to the configuration file to import, and then select **Open**.
+
+1. Select **Import**.
+
+1. Review the imported file contents to ensure it is correct.
+
+1. When you have finished, select **Save & Close**.
+
+1. To confirm the changes, select **Save & Close**. 
 
 ## Edit an edge system configuration
 
@@ -52,7 +74,7 @@ To edit an edge system configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation. 
 
- **Important:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
+ **Important:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

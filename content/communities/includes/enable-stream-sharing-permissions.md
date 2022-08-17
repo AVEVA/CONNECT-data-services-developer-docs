@@ -6,7 +6,9 @@ Before data can be shared into a community and accessed by external tenants, a u
 
 ## To enable stream sharing permissions
 
-# [All streams in a namespace](#tab/tabid-1)
+When enabling stream sharing permisions, you can either enable them for an entire namespace or on an ad hoc, stream-by-stream basis.
+
+# [Namespace](#tab/tabid-1)
 
 To apply sharing permissions to all streams in a namespace:
 
@@ -34,7 +36,7 @@ To apply sharing permissions to all streams in a namespace:
 
 1. Select **Save**.
 
-# [Select streams](#tab/tabid-2)
+# [Ad hoc](#tab/tabid-2)
 
 To apply sharing permission to specific streams in a namespace:
 
@@ -58,10 +60,8 @@ To apply sharing permission to specific streams in a namespace:
 
 	- For more information on this window, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 
-
 1. Select **Save**.
-
-To configure different roles to allow different data stewards to share different sets of data, do not use the default Tenant Data Steward role and instead create the number of roles needed to manage this within your organization. Then repeat the steps above to grant the share permission for those roles on the specific sets of streams/data that each role will manage.
 
 ---
 
+To configure different roles to allow different data stewards to share different sets of data, do not use the default Tenant Data Steward role and instead create the number of roles needed to manage this within your organization. Then repeat the steps above to grant the share permission for those roles on the specific sets of streams/data that each role will manage.

@@ -88,10 +88,10 @@
         - topicUid: communities-manage-default-admins
       - topicUid: community-data-sharing
         items: 
+        - topicUid: community-enable-stream-sharing-permissions
         - topicUid: community-manage-shared-streams
         - topicUid: community-view-shared-streams
         - topicUid: community-view-shared-data
-        - topicUid: community-enable-stream-sharing-permissions
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules

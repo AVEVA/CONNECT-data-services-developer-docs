@@ -5,19 +5,19 @@ uid: viewProfile
 # View and edit your user profile
 
 The `My Profile` window displays your user information and assigned roles.
-Depending on the identity provider your organization uses, you may be able to update your contact information.
+Depending on the Identity Provider your organization uses, you may be able to update your contact information.
 
 ## Update contact information
 
 To update your contact information:
 
-1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. To open your user profile, click the **User Profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
 
 1. Select **Edit**.
 
-    **Note**: If the Identity Provider your organization uses does not allow you to update your contact information, the **Edit** button is disabled.
+    **Note:** The **Edit** button is disabled if your organization's Identity Provider does not allow you to update your contact information.
 
-1. Enter any updates to your contact information.
+1. Update your contact information.
 
 1. Select **Save**.
 
@@ -27,6 +27,6 @@ The **Show user friendly property names** option controls how property names app
 
 To change your user preferences:
 
-1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. Click the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name in the drop-down.
 
-1. To use friendly property names, turn on the the toggle under **Show user friendly property names**. The setting is saved automatically.
+1. Turn on the the **Show user friendly property names** toggle under **User Preferences**. The setting saves automatically.

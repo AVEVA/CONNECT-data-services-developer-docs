@@ -4,7 +4,7 @@ uid: DeployConfig
 
 # Deploy an edge system configuration
 
-After you export an edge system configuration, you have to manually deploy the configuration to the edge system in the field.
+After you export an edge system configuration, you have to manually deploy the configuration to the edge system in the field. For Edge Data Store, PI Adapter for OPC UA, and PI Adapter for MQTT, you can deploy the configuration using AVEVA Edge Management. For more information, see the [AVEVA Edge Management](https://dev-edgemanagement.capdev-connect.aveva.com/help/#/home/665916/10/11) documentation.
 
 For details on how to deploy a configuration, see the specific edge system product documentation: 
 

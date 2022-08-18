@@ -197,8 +197,10 @@
     - topicUid: PowerBI
       items:
       - topicUid: SetUpPowerBI
-      - topicUid: RetrieveDataViews
       - topicUid: EditQueryPowerBI
+      - topicUid: RetrieveDataViews
+      - name: Edit a Data View query in Microsoft Power BI
+        topicHref: edit-query-powerbi.md
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:

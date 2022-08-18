@@ -1,5 +1,5 @@
 ---
-uid: EditDataViewsPowerBI
+uid: EditQueryPowerBI
 ---
 
 # Edit a Data View query in Microsoft Power BI
@@ -63,6 +63,6 @@ Use Microsoft Power BI to edit a query generated from the connector to modify th
 
       This builds a cache of data in Microsoft Power BI so you will not need to re-query the original data view. The following example image shows that incremental refresh is turned on, will cache 30 days of data, and the last 5 days will be a rolling refresh of data.
         
-      ![Transform data](./images/mspowerbi-incremental-refresh.png)
+      ![Transform data](../images/mspowerbi-incremental-refresh.png)
 
     For more information about incremental refresh, see the Microsoft [Incremental refresh for datasets](https://docs.microsoft.com/en-us/power-bi/connect-data/incremental-refresh-overview) page.

@@ -24,7 +24,15 @@ The following are required before you install and use OSIsoft Cloud Services Pow
 
 To install the OSIsoft Cloud Services Power BI Connector:
 
-1. Download the `OCSPowerBIConnector.exe` file from the [OSIsoft Customer portal](https://customers.osisoft.com/s/products).
+1. In the left pane, select **Analytics** > **Data Views**.
+
+1. Select any data view.
+
+1. Select **Edit Data View**.
+
+1. Download the `OCSPowerBIConnector.exe` file by clicking on the OCS Power BI Connector banner.
+
+   **Note:** If you dismiss the banner, it returns upon your next log in.
 
 1. Install OSIsoft Cloud Services Power BI Connector by either the setup wizard or silent installation.
 
@@ -66,9 +74,9 @@ To retrieve data views:
 
 1. In the `Navigator` pane, do one of the following: 
 
-   - To get data using the stored retrieval mode, select **Interpolated Data Views**, and then select the data view to work with in Microsoft Power BI. 
+   - To get data using the stored retrieval mode, select **Stored Data Views**, and then select the data view to work with in Microsoft Power BI. 
    
-   - To get data using the interpolated retrieval mode, select **Stored Data Views**, and then select the data view to work with in Microsoft Power BI.
+   - To get data using the interpolated retrieval mode, select **Interpolated Data Views**, and then select the data view to work with in Microsoft Power BI.
 
    ![Select Data Views](../data-views/_images/click-data-view-box.png)
 

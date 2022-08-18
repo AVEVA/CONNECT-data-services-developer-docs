@@ -42,13 +42,7 @@ Most pages consist of two panes:
 
 - The left pane is where you perform the tasks associated with the resource. For example, the left pane is where you add and edit the resource or manage its permissions.
 
-- The right pane has one or more tabs:
-
-  - The **Details** tab contains additional information about the selected resource.
-
-  - The **Information** tab appears in some windows and provides documentation about the current feature and how to perform relevant tasks.
-
-  - Some resources have additional panes for other configuration tasks.
+- The right pane may contain a **Details** tab that contains additional information about the selected resource. Some resources also have additional panes for other configuration tasks.
 
 ## Portal toolbar
 

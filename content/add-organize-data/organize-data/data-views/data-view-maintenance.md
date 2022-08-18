@@ -16,6 +16,8 @@ To edit an existing data view:
 
 1. Make changes to the Name, Description, Data View Shape, Index Field, Grouping Fields, Queries, etc.
 
+   **Note:** When you open an existing data view, it may take up to 30 minutes for the queries to refresh.
+
 1. Select **Save** to save the updates and continue editing, or select **Save and Close** to save the updates and exit.
 
 ## Remove a data view

@@ -20,7 +20,7 @@ To configure the index, select an index start and end value. Then generate the p
 
 1. From the **Configure Data View Retrieval Type** dropdown, select a retrieval type:
 
-	| Retrieval Type | Description |
+	| Type | Description |
 	|--|--|
 	| **Interpolated** | Returns data between specified intervals. Streams in SDS may be configured to have non-default interpolation and extrapolation behavior. These behaviors are observed when stream data is included in data views. Data view data is always treated as dense, even if SDS returns sparse data. |
 	| **Stored** | Returns stored or window data. The resulting data view data will include only index values that exist in the underlying data from the data items. |

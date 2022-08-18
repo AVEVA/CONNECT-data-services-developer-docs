@@ -198,7 +198,7 @@
       items:
       - topicUid: SetUpPowerBI
       - topicUid: RetrieveDataViews
-      - topicUid: EditDataViews
+      - topicUid: EditDataViewsPowerBI
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:

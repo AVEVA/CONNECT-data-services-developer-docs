@@ -32,10 +32,10 @@ To retrieve data views:
 
    ![Select Data Views](../images/click-data-view-box.png)
 
-1. For stored Data Views, specify a Start Index and End Index in `YYYY-MM-DDTHH:mm:ss` format for the selected data view, and select **Apply** to save the values. For interpolated data views, also specify an Interpolation Interval in `dd.hh:mm:ss` format. Repeat for each additional data view as needed.
+1. For stored data views, specify a Start Index and End Index in `YYYY-MM-DDTHH:mm:ss` format for the selected data view, and select **Apply** to save the values. For interpolated data views, also specify an Interpolation Interval in `dd.hh:mm:ss` format. Repeat for each additional data view as needed.
 
    **Note**: If a data view has default values, enter new values and select **Apply** to accept the defaults.
 
    ![Specify Data View Values](../images/specify-values.png)
 
-1. Select **Load** at the bottom of the `Navigator` pane to load all selected Data Views to Microsoft Power BI.
+1. Select **Load** at the bottom of the `Navigator` pane to load all selected data views to Microsoft Power BI.

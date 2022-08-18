@@ -10,7 +10,7 @@ Use Microsoft Power BI to edit a query generated from the connector to modify th
 
 1. Select **View**, and then select **Formula Bar** to view the query function from the connector.
 
-   ![Transform data](./images/mspowerbi-function.png)
+   ![Transform data](../images/mspowerbi-function.png)
     
    As shown in the example, the function begins with the first set of code for the Start Index, `#datetimezone(2021, 8, 1, 0, 0, 0, -7, 0)`, followed by the second set for the End Index, `#datetimezone(2021, 8, 2, 0, 0, 0, -7, 0)`, and lastly the Interpolation Interval, `#duration(0, 2, 0, 0)`.
 
@@ -22,7 +22,7 @@ Use Microsoft Power BI to edit a query generated from the connector to modify th
         
      b. Edit the parameter values for Start Index and End Index. If applicable, edit the Interpolation Interval.
         
-     ![TEnter Parameters](./images/mspowerbi-enter-parameters.png)
+     ![TEnter Parameters](../images/mspowerbi-enter-parameters.png)
 
    - Modify for relative dates:
     

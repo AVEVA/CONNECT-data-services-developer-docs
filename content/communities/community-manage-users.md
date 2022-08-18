@@ -43,3 +43,7 @@ To remove tenant users from a community:
 1. On the detail pane, select **Remove Member(s)**. When prompted for confirmation, select **Remove**.
 
 The users that you remove from the community can no longer view it nor which data streams are shared within it.
+
+## User from groups
+
+The **Users** page lists implicit users that hold community membership through a group. These users are denoted as `Comes from a Group` in the `Type` column.  These implicit users cannot be edited indiviually. Instead, they must be managed through the group. For more information, see <xref:community-manage-groups>.

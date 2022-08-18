@@ -196,6 +196,9 @@
       - topicUid: manage-data-views-permissions
     - topicUid: PowerBI
       items:
+      - topicUid: SetUpPowerBI
+      - topicUid: RetrieveDataViews
+      - topicUid: EditDataViews
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:

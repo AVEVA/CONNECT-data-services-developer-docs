@@ -2,7 +2,7 @@
 uid: data-view-select-data-fields
 ---
 
-# Step 3.1: Select data fields
+# Step 3: Select data field sets
 
 After you save the queries that you create in the previous step, OSIsoft Cloud Services (OCS) prompts you to add data fields the field set for each query in the `Add Data Fields` window. Data fields are metadata or properties from streams or assets that are included in your data view.
 
@@ -46,6 +46,6 @@ You can further filter the data fields listed for each query by field name or fi
 
 After you choose data fields, perform one of the following actions:
 
-- Select **Next** to edit the selected data fields. Proceed to <xref:data-view-edit-data-fields>.
+- Apply options to your data field sets. Select **Next** to edit the selected data fields and apply other field set options. Proceed to <xref:data-views-field-set-options>.
 
-- Select **Apply** to finish adding data fields to your data view. You can always edit the data fields later. Proceed to <xref:data-view-configure-grouping-fields>.
+- If you are satisfied with your field sets, select **Save** and proceed to <xref:data-view-choose-data-shape>.

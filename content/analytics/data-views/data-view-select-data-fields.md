@@ -48,4 +48,4 @@ After you choose data fields, perform one of the following actions:
 
 - Apply options to your data field sets. Select **Next** to edit the selected data fields and apply other field set options. Proceed to <xref:data-views-field-set-options>.
 
-- If you are satisfied with your field sets, select **Save** and proceed to <xref:data-view-choose-data-shape>.
+- If you are satisfied with your field sets, select **Apply** and proceed to <xref:data-view-choose-data-shape>.

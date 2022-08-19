@@ -18,7 +18,7 @@ Use Microsoft Power BI to edit a query generated from the connector to modify th
 
    - Modify for fixed dates:
     
-     a. Navigate to `APPLIED STEPS` in the `Query Settings` pane, right-click on the parameter labeled, `Invoked Function <nameofdataview>`, and then select `Edit Settings` in the dropdown menu.
+     a. Navigate to `APPLIED STEPS` in the `Query Settings` pane, right-click on the parameter labeled `Invoked Function <nameofdataview>`, and then select **Edit Settings** in the dropdown menu.
         
      b. Edit the parameter values for Start Index and End Index. If applicable, edit the Interpolation Interval.
         
@@ -26,21 +26,21 @@ Use Microsoft Power BI to edit a query generated from the connector to modify th
 
    - Modify for relative dates:
     
-     a. Edit the query function with Power Query M Formula Language code. For information about Power Query M Formula Language code, see the Microsoft [Power Query M formula language](https://docs.microsoft.com/en-us/powerquery-m/) and [Power Query M function reference](https://docs.microsoft.com/en-us/powerquery-m/power-query-m-function-reference) page on functions you can use in your query. Below are common relative time configurations you can use in your query function.
+     a. Edit the query function with Power Query M Formula Language code. For information about Power Query M Formula Language code, see [Microsoft Power Query M formula language](https://docs.microsoft.com/en-us/powerquery-m/) and [Power Query M function reference](https://docs.microsoft.com/en-us/powerquery-m/power-query-m-function-reference) for functions you can use in your query. Below are common relative time configurations you can use in your query function.
 
      | Query function description                                                      | Code                          |
-     |-------------------------------------------------------------------------------------------------|-------------------------------|
+     |---------------------------------------------------------------------------------|-------------------------------|
      | Rolling 2 month period<br>Start Index: 2 months ago<br>End Index: Now | `Date.AddMonths(DateTimeZone.LocalNow(), -2), DateTimeZone.LocalNow()` |
      | Rolling 1 day period<br>Start Index: 1 day ago<br>End Index: Now | `Date.AddDays(DateTimeZone.LocalNow(), -1), DateTimeZone.LocalNow()` |
      | Start of last month through now<br>Start Index: First day of last month at midnight<br>End Index: Now | `Date.StartOfMonth(Date.AddMonths(DateTimeZone.LocalNow(), -1)), DateTimeZone.LocalNow()` |
 
-1. Select **Close & Apply**, and then select `Close & Apply` in Power Query Editor to save your query.
+1. Select **Close & Apply**, and then select **Close & Apply** in Power Query Editor to save your query.
 
 1. (Optional) Use Microsoft Power BI Desktop to enable an incremental refresh of data.
 
    a. In Microsoft Power BI, select **Transform data** to open Power Query Editor.
      
-   b. Select **Manage Parameters**, and then select `Manage Parameters` in the menu.
+   b. Select **Manage Parameters**, and then select **Manage Parameters** in the menu.
      
    c. Add the following parameters in the `Manage Parameters` window, and then select **OK**.
      
@@ -55,9 +55,9 @@ Use Microsoft Power BI to edit a query generated from the connector to modify th
      
       `DateTimeZone.From(RangeStart), DateTimeZone.From(RangeEnd), #duration(0, 1, 0, 0)`
      
-   e. Select **Close & Apply**, and then select `Close & Apply` in Power Query Editor.
+   e. Select **Close & Apply**, and then select **Close & Apply** in Power Query Editor.
      
-   f. Select **Home**, and in the `Fields` pane, right-click the data view type, and then choose `Incremental Refresh` in the dropdown menu.
+   f. Select **Home**, and in the `Fields` pane, right-click the data view type, and then choose **Incremental Refresh** in the dropdown menu.
      
    g. Turn on `Incremental Refresh`, edit the values in the `Store rows in the last` fields, and select **Apply all** to save.
 

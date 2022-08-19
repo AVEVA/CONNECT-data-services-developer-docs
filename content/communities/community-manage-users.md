@@ -46,4 +46,4 @@ The users that you remove from the community can no longer view it nor which dat
 
 ## User from groups
 
-The **Users** page lists implicit users that hold community membership through a group. These users are denoted by the **From a Group** icon ![group](../_icons/default/account-group.svg). These implicit users cannot be edited indiviually. Instead, they must be managed through the group. For more information, see <xref:community-manage-groups>.
+The **Users** page lists implicit users that hold community membership through a group. These users are denoted by the **From a Group** icon ![group](../_icons/default/account-group.svg). These implicit users cannot be edited individually. Instead, you must manage them through the group. For more information, see <xref:community-manage-groups>.

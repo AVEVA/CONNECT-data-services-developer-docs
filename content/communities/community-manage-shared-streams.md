@@ -33,6 +33,8 @@ User with permissions to share a data stream within a community can do so from t
     - When sharing a large numbers of streams, edit the **Items per page** dropdown to a value that accommodates the number of streams that you want to share.
 
 1. From the `Share Streams` window, confirm the streams you are about to share, and then select the communities that you want to them with, and then select **Share**. 
+
+   **Getting `Namespace does not allow data to be processed outside of the region where it resides`?** See [Namespace warning](#namespace-warning).
     
 The chosen streams are shared with the chosen communities. All members of the selected communities are able to read data from the shared streams.
 
@@ -51,3 +53,9 @@ When you want to stop sharing streams with a community, you can unshare them fro
 1. On the **Streams** tab, select the streams you want to stop sharing, then select **Unshare Streams**. Confirm the streams you are unsharing, and then select **Unshare**.
 
 The streams are unshared from the community. Other tenants in the community can no longer view them.
+
+## Namespace warning
+
+If you receive the following warning while sharing streams from a namespace into a community a namespace, you can resolve it by updating the Community Preferred Region setting to the appropriate region. For more information on how to change this setting, see <xref:community-manage-preferred-region>.
+
+![share stream warning](images/share-stream-warning.png)

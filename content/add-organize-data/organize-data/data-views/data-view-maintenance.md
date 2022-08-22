@@ -45,5 +45,3 @@ To set default permissions for new data views:
 1. Select **Allow** or **Deny** for each of the following permissions: **Read**, **Write**, **Delete**, and **Manage Permissions**.
 
 1. Select **Save**.
-
-[!include[Data view banner](../../../visualize-data/includes/banner.md)]

@@ -34,7 +34,7 @@ To install the OSIsoft Cloud Services Power BI Connector:
 
    **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. If you dismiss the banner, download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
 
-   **Note:** If you dismiss the banner, it returns upon your next log in.
+   **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. If you dismiss the banner, download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
 
 1. Install OSIsoft Cloud Services Power BI Connector by either the setup wizard or silent installation.
 

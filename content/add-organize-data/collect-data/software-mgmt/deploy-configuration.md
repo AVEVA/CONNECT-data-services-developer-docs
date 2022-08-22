@@ -26,7 +26,7 @@ For details on how to deploy a configuration, see the specific edge system produ
 
  - [PI Adapter for Structured Data Files](https://docs.osisoft.com/bundle/pi-adapter-structured-data-files/page/configuration/configuration.html)
 
-After deploying the configuration, manually update the configuration file on the device to replace any mustache tokens used as place holders for secrets with the actual secrets. Then, to have an accurate record of the configuration, import the configuration file, including any modifications made in the field except secrets, to the corresponding edge system twin in AVEVA Data Hub.
+After deploying the configuration, manually update the configuration file on the device to replace any mustache tokens used as place holders for secrets with the actual secrets. Then, to have an accurate record of the configuration, import the configuration file, including any modifications made in the field except secrets, to the corresponding edge system twin in OCS.
 
 ## Data source scenarios
 

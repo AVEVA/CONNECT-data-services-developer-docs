@@ -26,6 +26,11 @@ You can create and edit base configurations for edge systems in AVEVA Data Hub. 
 
  - PI Adapter for Structured Data Files
 
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
+
+Use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
+
+
 ## Add a new base configuration
 
 To create a edge system base configuration and export it for use:
@@ -48,7 +53,7 @@ To create a edge system base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
-   **Important:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+   **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 
@@ -82,9 +87,9 @@ To modify a base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
-   **Important:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+  **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
 
-   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
+  Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 
 1. To export the completed configuration, do one of the following:
 

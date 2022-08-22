@@ -18,7 +18,7 @@ To edit an existing data view:
 
    **Note:** When you open an existing data view, it may take up to 30 minutes for the queries to refresh.
 
-	**Getting `Unknown Community`/`Query Not Accessible`?** These messages indicates that the community has been deleted or you have insufficient permissions to access the community. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
+   **Getting `Unknown Community`/`Query Not Accessible`?** These messages indicates that the community has been deleted or you have insufficient permissions to access the community. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
 
 1. Select **Save** to save the updates and continue editing, or select **Save and Close** to save the updates and exit.
 

@@ -8,13 +8,13 @@ You can create and edit base configurations for edge systems in AVEVA Data Hub. 
 
 **Note:** You can create configuration templates for the following edge system types:
 
+ - Edge Data Store
+ 
  - PI Adapter for Azure Event Hubs
  
  - PI Adapter for BACnet 
 
  - PI Adapter for DNP3
-
- - Edge Data Store
 
  - PI Adapter for Modbus TCP
  
@@ -29,7 +29,6 @@ You can create and edit base configurations for edge systems in AVEVA Data Hub. 
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
 Use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
-
 
 ## Add a new base configuration
 
@@ -53,7 +52,11 @@ To create a edge system base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
+<<<<<<<<< Temporary merge branch 1
    **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+=========
+   **Important:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+>>>>>>>>> Temporary merge branch 2
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 
@@ -87,7 +90,11 @@ To modify a base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
+<<<<<<<<< Temporary merge branch 1
   **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+=========
+   **Important:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+>>>>>>>>> Temporary merge branch 2
 
   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

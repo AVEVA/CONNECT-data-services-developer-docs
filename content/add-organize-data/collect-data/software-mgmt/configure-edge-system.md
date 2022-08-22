@@ -8,17 +8,27 @@ You can import an edge system configuration from the field to its corresponding 
 
 Configuration is available for the following edge system types:
 
+ - PI Adapter for Azure Event Hubs
+ 
+ - PI Adapter for BACnet 
+
+ - PI Adapter for DNP3
+
  - Edge Data Store
 
- - PI Adapter for BACnet
- 
- - PI Adapter for DNP3
- 
  - PI Adapter for Modbus TCP
  
+ - PI Adapter for MQTT
+
  - PI Adapter for OPC UA
 
-**Note:** An edge system appears on the `Software Management Edge Systems` page once it is writing health data to OCS. For information on configuring health endpoints, see the specific edge system product documentation.
+ - PI Adapter for RDBMS
+
+ - PI Adapter for Structured Data Files
+
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
+
+An edge system appears on the `Software Management Edge Systems` page once it is writing health data to OCS. For information on configuring health endpoints, see the specific edge system product documentation at [docs.osisoft.com](https://docs.osisoft.com/).
 
 ## Import an edge system configuration
 
@@ -29,6 +39,20 @@ To import an edge system configuration from the field to the corresponding edge 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to configure.
+
+1. Select **Edit Edge System**.
+
+1. Select **Import Configuration**.
+
+1. In the `Import Configuration` window, click **Select file**, browse to the configuration file to import, and then select **Open**.
+
+1. Select **Import**.
+
+1. Review the imported file contents to ensure it is correct.
+
+1. When you have finished, select **Save & Close**.
+
+1. To confirm the changes, select **Save & Close**. 
 
 ## Edit an edge system configuration
 
@@ -54,11 +78,11 @@ To edit an edge system configuration and export it for use:
  
    - To select a JSON file that contains the configuration, select **Start With Default**. 
 
-1. **Optional:** In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
+1. (Optional) In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation. 
 
-   Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
+   **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

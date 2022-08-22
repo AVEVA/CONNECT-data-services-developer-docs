@@ -4,7 +4,7 @@ uid: PowerBI
 
 # OSIsoft Cloud Services Power BI Connector
 
-The OSIsoft Cloud Services Power BI Connector retrieves Data Views from OCS and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install OSIsoft Cloud Services Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section. <!--AF 11/18/21 I would prefer to have the procedures separated into at least separate topic. This topic is very long. Also, there is very little conceptual information. -->
+The OSIsoft Cloud Services Power BI Connector retrieves Data Views from AVEVA Data Hub and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install OSIsoft Cloud Services Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section. <!--AF 11/18/21 I would prefer to have the procedures separated into at least separate topic. This topic is very long. Also, there is very little conceptual information. -->
 
 ## System requirements
 
@@ -30,7 +30,7 @@ To install the OSIsoft Cloud Services Power BI Connector:
 
 1. Select **Edit Data View**.
 
-1. Download the `OCSPowerBIConnector.exe` file by selecting **More options** ![More options](../_icons/default/dots-vertical.svg) > ***Download Power BI Connector**. Then select **Download**.
+1. Download the `AVEVA_Data_Hub_Power_BI_Connector_X_X_X_XX.exe` file by selecting **More options** ![More options](../_icons/default/dots-vertical.svg) > ***Download Power BI Connector**. Then select **Download**.
 
    **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. If you dismiss the banner, download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
 
@@ -38,7 +38,7 @@ To install the OSIsoft Cloud Services Power BI Connector:
 
     - Setup wizard
 
-        - Double-click the `OCSPowerBIConnector.exe` file and select **Next**.
+        - Double-click the ` file and select **Next**.
 
         - (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
 
@@ -46,13 +46,13 @@ To install the OSIsoft Cloud Services Power BI Connector:
 
         - Open a command prompt window and type following command:
 
-        `.\OCSDataConnectorInstaller.exe -Y INSTALLDIR="<install path>" /quiet`
+        `.\AVEVA_Data_Hub_Power_BI_Connector_X_X_X_XX.exe -Y INSTALLDIR="<install path>" /quiet`
 
              **Note:** OSIsoft Cloud Services Power BI Connector supports silent installation for on-premises data gateway installations.
 
 ## Retrieve Data Views with OSIsoft Cloud Services Power BI Connector
 
-Use OSIsoft Cloud Services Power BI Connector to retrieve OCS data views for use in Microsoft Power BI.
+Use OSIsoft Cloud Services Power BI Connector to retrieve data views for use in Microsoft Power BI.
 
 To retrieve data views:
 

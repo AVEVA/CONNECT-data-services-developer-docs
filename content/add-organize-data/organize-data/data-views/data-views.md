@@ -84,4 +84,4 @@ Your data view is added to the `Data Views` page. You can view the sources for e
    
 ![Data Views: Query sources column](_images/query-sources-column.png)
 
-To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).
+To define a data view using the API, see [Define a data view](xref:DataViewsQuickStartDefine).

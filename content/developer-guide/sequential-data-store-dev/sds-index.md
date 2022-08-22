@@ -65,7 +65,7 @@ on the ``SdsTypeProperty`` object.
 
 You can specify a maximum of three properties to define a compound index.
 In read and write data operations, specify compound indexes in the URI by ordering each property that composes the index
- separated by the pipe character, ‘|’. 
+ separated by the pipe character, '|'. 
 To help those using compound indexes, .NET client libraries methods also allow the use of tuples for indexes.
 
 > [!NOTE]
@@ -376,7 +376,7 @@ Samples below are in Python and JavaScript.
 When the .NET `SdsTypeBuilder` is unavailable, indexes must be built manually.
 
 Below, SdsTypes defined in the [Python](https://github.com/osisoft/sample-ocs-waveform-python)
-and [Java Script](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples are shown. For samples in other languages, go to [OCS code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
+and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples are shown. For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
 
 To build an SdsType representation of sample classes in Python and Java Script, see [Sample](#sample) below:
 
@@ -578,8 +578,8 @@ Note that the `time.IsKey` field is set to true.
 
 To read data using the index, you define a start index and an end index. For `DateTime`, use 
 the ISO 8601 representation of dates and times. To query for a window of values between January 1, 
-2010 and February 1, 2010, you would define indexes as “2010-01-01T08:00:00.000Z” and 
-“2010-02-01T08:00:00.000Z”, respectively.
+2010 and February 1, 2010, you would define indexes as "2010-01-01T08:00:00.000Z" and 
+"2010-02-01T08:00:00.000Z", respectively.
 
 For additional information, see [Read data](xref:sdsReadingData).
 

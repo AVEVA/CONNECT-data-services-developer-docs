@@ -2,16 +2,13 @@
 uid: transfer-data
 ---
 
-# Transfer data to OCS
-<!-- AF 11/15/21 This topic appears in the TOC twice. It could also use to be broken into Define a data transfer and Start a data transfer. -->
-<!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to OCS landing pages).-->
-**Note:** The ability to transfer Asset Framework data is only available in AVEVA™ Data Hub. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.
+# Transfer data to AVEVA Data Hub
 
-You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
+You initiate a data transfer from the `PI to Data Hub Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
-PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
+PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#explicit-versus-implicit-pi-points).
 
-**Before you begin:** Download and install the PI to OCS Agent. Register your PI Data Archive and AF data sources using the PI to OCS Agent Configuration Utility. 
+**Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
 
 ## Create a transfer
 
@@ -31,7 +28,7 @@ Transfer creation consists of the following tasks:
 
 1. Initiate the data transfer and monitor its progress. 
 
-**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to OCS Agents` window. The following image shows AF indexing in progress:
+**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to Data Hub Agents` window. The following image shows AF indexing in progress:
 
 ![](../../images/af-indexing.png)
 
@@ -39,11 +36,11 @@ Transfer creation consists of the following tasks:
 
 To name the data transfer: 
 
-1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
+1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
-1. In the `PI to OCS Agents` window, select the agent for the data transfer.
+1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
 
-1. In the `Manage Agent` tab, select **Create Transfer**.
+1. In the **Manage Agent** tab, select **Create Transfer**.
 
    The `Transfer Setting` window opens.
 
@@ -53,7 +50,7 @@ To name the data transfer:
 
 1. (Optional) In the **Historical Start time** fields, enter a historical time context for the data retrieval.
 
-   **Note:** OCS supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/collect-data/connectors/pi-to-ocs/pi-to-ocs-data-transfers/overview-data-transfers.html) to learn more about transferring historical data.
+   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](xref:transfer-data) to learn more about transferring historical data.
 
 1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
@@ -66,7 +63,7 @@ To name the data transfer:
 
     |   | High | Medium | Low | None |
     | ------------- | ----------------- | ----------------- |----------------- | ----------------- |
-    | Name | X | X  | X | X | X |
+    | Name | X | X  | X | X |
     | Descriptor | X | X |  
     | EngUnits | X | X |  |  |  |
     | ExDesc | X |  |  |  |
@@ -89,9 +86,9 @@ To name the data transfer:
 
 After naming the transfer, build an AF elements transfer list by setting query criteria and then selecting AF elements. You can narrow your search by filtering by element name, asset group, attribute name/value, template, and category. A corresponding asset is created for every AF element in your transfer. Static AF element attributes become asset properties. 
 
-To build an AF element
+To build an AF element:
 
-1. On the `Transfer` page, select the source AF database to search from the **AF Database** dropdown list.
+1. On the `Transfer` page, select the source AF database from the **AF Database** dropdown list.
 
    ![](../../images/transfer-win.png)
 
@@ -107,13 +104,15 @@ To build an AF element
 
 1. (Optional) In the **Attribute Value** fields, filter attribute values by specifying the following information:
 
+   **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
+   
       * In the first field, enter an attribute name.
 
-      * In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `=<`, `=>`, `In`).
+      * In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `<=`, `>=`, `In`).
 
       * In the last field, enter an attribute value.
 
-   **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.<br></br>
+   **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.
    
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 
@@ -132,8 +131,6 @@ To build an AF element
    The elements are added to the transfer and listed on the **AF Elements** tab.
 
 1. To add additional elements from other AF databases, repeat these steps. 
-
-1. To add the selected AF elements to the transfer, select **Save**.
 
 **Note:** AF indexing needs to complete before you can view implicit PI points and start the transfer process.
 
@@ -155,17 +152,15 @@ To view AF element details:
 
 1. To view details for another AF element, deselect the currently selected element, and then select a different element in the transfer list.
 
-1. To close the `AF Element Information` pane, select **View Details**.
+1. To close the `AF Element Information` pane, select **X** in the upper-right corner of the pane.
 
 ## Build a PI points transfer list
 
-You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Overview of explicit vs. implicit PI points](#overview-of-explicit-vs.-implicit-pi-points) for more information.
+You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
 
 To build a PI points transfer list:
 
 1. Select the **PI Point Search** tab.
-
-1. To open the `Search` pane, select **Add**.
 
 1. To filter the results, do the following:
 
@@ -177,17 +172,17 @@ To build a PI points transfer list:
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
    | Specific location code(s)  | Enter up to five location code values in the **Location Codes** field. |
 
-1. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
+4. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
 
-1. To execute the query and retrieve matching results, select **Search**.
+5. To execute the query and retrieve matching results, select **Search**.
 
-1. In the **Search Results** area, select each PI point to add to the data transfer.
+6. In the **Search Results** area, select each PI point to add to the data transfer.
 
    A check mark appears next to each selected PI point.
 
    **Tip:** To select a range of PI points, select a PI point and then hold Shift and select a non-adjacent PI point. To advance through multiple-paged query results, select the back and forward arrows or enter a page number in the **Page** field.
 
-1. When you are done selecting PI points, select **Add PI Points to Transfer**.
+7. When you are done selecting PI points, select **Add PI Points to Transfer**.
 
    The points are added to the transfer and listed on the **PI Points** tab.
 
@@ -229,7 +224,7 @@ To view PI point details:
 
 ## Save a transfer
 
-Before you can transfer data to OCS, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
+Before you can transfer data to AVEVA Data Hub, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
 <!--VT, 11/29/21: Ok.-->
 
 To save the transfer:
@@ -238,25 +233,25 @@ To save the transfer:
  
 1. (Optional) Add or remove PI points and/or AF elements as needed. 
 
-1. To save the transfer and return to the PI to OCS Agents window, select **Save** in the lower right-hand corner.
+1. To save the transfer and return to the PI to Data Hub Agents window, select **Save** in the lower right-hand corner.
 
-## Transfer data to OCS
+## Transfer data to AVEVA Data Hub
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
 
-**Note:** Modifications to an AF database or Data Archive digital state table during a PI to OCS transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
+**Note:** Modifications to an AF database or Data Archive digital state table during a PI to Data Hub transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
 
-  1. Stop the transfer.
+1. Stop the transfer.
 
-  2. Make modifications to the AF database and/or Data Archive digital state tables.
+1. Make modifications to the AF database and/or Data Archive digital state tables.
 
-  3. Restart the transfer to pick up these changes.
+1. Restart the transfer to pick up these changes.
 
 ## Start a data transfer
 
 To start a data transfer:
 
-1. (Optional) In the `PI to OCS Agents` window, select the PI to OCS Agent associated with the data transfer. 
+1. (Optional) In the `PI to Data Hub Agents` window, select the PI to Data Hub Agent associated with the data transfer. 
 
 1. (Optional) In the **Manage Agent** tab, expand the `Transfer Overview` section.
 

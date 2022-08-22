@@ -10,7 +10,7 @@ Using a stream view on data retrieval affects only the data retrieved, and does 
 
 For example, a process engineer and a maintenance technician might want to see different data that exists in the same stream. By creating a stream view, you can change the appearance of the data to meet the needs of both users, without changing the original data. In addition, you can use stream views to convert units of measure and change property names so they are more appropriate for a particular audience.
 
-Use the OCS portal to set up stream views, or use REST APIs to define stream views programmatically. If you are using the .NET framework, client libraries are available to help create and use stream views.
+Use the AVEVA Data Hub portal to set up stream views, or use REST APIs to define stream views programmatically. If you are using the .NET framework, client libraries are available to help create and use stream views.
 
 For information about setting up a stream view, see [Get started with stream views](xref:gsStreamviews).
 
@@ -26,7 +26,7 @@ While there is no direct counterpart for stream views in PI Server, the closest 
 
 The following best practices are recommended when working with stream views:
 
-* Stream views can be useful when you are using PI to OCS. PI to OCS creates streams with many additional flags, for example `IsQuestionable`, `IsSubstituted`, and `IsAnnotated`. 
+* Stream views can be useful when you are using PI to Data Hub. PI to Data Hub creates streams with many additional flags, for example `IsQuestionable`, `IsSubstituted`, and `IsAnnotated`. 
 You can use stream views to limit these properties or to give them a more meaningful name.
 
 * When you use a stream view, use caution when not all properties in the target type exist in the source type. Properties that are not mapped return their default value in the target type. For example, if the target type contains a property of data type double that is not mapped, data transformation gives that property a value of `0`.

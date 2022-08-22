@@ -4,21 +4,23 @@ uid: AddBaseConfiguration
 
 # Add and edit base configurations
 
-You can create and edit base configurations for edge systems in OCS. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
+You can create and edit base configurations for edge systems in AVEVA Data Hub. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
 **Note:** You can create configuration templates for the following edge system types:
 
  - Edge Data Store
+ 
+ - PI Adapter for Azure Event Hubs
+ 
+ - PI Adapter for BACnet 
 
- - PI Adapter for BACnet
- 
  - PI Adapter for DNP3
- 
+
  - PI Adapter for Modbus TCP
  
- - PI Adapter for OPC UA
- 
  - PI Adapter for MQTT
+
+ - PI Adapter for OPC UA
  
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
@@ -76,7 +78,7 @@ To modify a base configuration and export it for use:
 
 1. Modify the template name, **Type**, and **Version** as needed.
 
-1. **Optional:** In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
+1. (Optional)  In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 

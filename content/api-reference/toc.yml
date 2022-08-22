@@ -1,3 +1,5 @@
+- name: API console
+  topicHref: api-console.md
 - name: Regional endpoints
   topicHref: regional-endpoints.md
 - name: Asset store

@@ -2,9 +2,9 @@
 uid: gpUsers
 ---
 
-# Add a user
+# Add a user in AVEVA Data Hub
 
-A user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources.
+A user is an identity that has access to a tenant. Roles assigned to a user determine what permissions the user has on resources. 
 
 ## Prerequisite
 
@@ -18,28 +18,14 @@ To add a user to a tenant:
 
 1. In the toolbar, select **Add User**.
 
-1. Select the appropriate identity provider for the user you are adding in the **Identity Provider** dropdown list. You can switch to a different option later. For tenants with a single identity provider enabled this option is disabled.
+1. In the **Contact First Name** and **Contact Last Name** fields, enter a first and last name for the user.  
 
-   For advanced integration identity providers, such as Azure Active Directory:
+1. In the **User Email** field, enter the first few characters of the user's contact email and then select the correct email address from the dropdown list.
 
-   1. Begin entering the user name or email in the `User Name` field.
+   **Note**: The user must exist in AVEVA Connect before being added within AVEVA Data Hub.
 
-   1. A list of matching users displays. Select the user from the list.
+1. (Optional) On the **Tenant Roles** tab, assign additional roles to the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is added.
 
-   1. (Optional) Enable additional roles for the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is invited.
+1. Select **Add**. 
 
-   1. Select **Add**. The user receives a notification that they were added to the tenant.
-
-   For other identity providers:
-
-   1. In the **Contact First Name** and **Contact Last Name** fields, enter a first and last name for the user.  
-
-   1. In the **Contact Email** field, enter the contact email. The invitation is sent to the user at this email address. Ensure that the email address is correct so that the invitation is not sent to an unintended recipient.
-
-   1. (Optional) Enable additional roles for the user. By default, the user is assigned the Tenant Member role which cannot be removed. Roles can be modified after the user is invited.
-
-   1. Select **Invite**.
-
-      An invitation is sent to the email address specified in the `Contact Email` field. The **Status** column lists the new user as *Pending* until the invitation is accepted. If the invitation expires, the status changes to *Expired*. Once expired, the invitation can be resent.
-
-   1. When the user receives the invitation, the user should log in using the identity provider specified. Once the user has logged in, the user status changes to *Active*.
+   A welcome email is sent to the email address specified in the `Contact Email` field.

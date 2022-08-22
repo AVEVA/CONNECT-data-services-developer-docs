@@ -4,7 +4,7 @@ uid: AccountNamespace_1
 
 # Namespaces
 
-A namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into OCS for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. Requirements for namespace Ids are the following:
+A namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into AVEVA Data Hub for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. Requirements for namespace Ids are the following:
 
 - Must contain 100 characters or fewer
 - Must only contain alphanumeric characters, underscores, dashes, spaces, and periods
@@ -176,7 +176,7 @@ A `Namespace` can only be created if the current principal has Write access.
 
 ## `Update Namespace`
 
-Updates `Namespace` information: Description and TierId. The [AccessControlList](xref:accessControl) and Owner's [Trustee](xref:accessControl#trustee) can
+Updates `Namespace` information: Description and TierId. The [AccessControlList](xref:accessControl) and Owner's [Trustee](xref:accessControl#notes) can
             only be updated through their own routes.
 
 ### Request
@@ -362,7 +362,7 @@ An [AccessControlList](xref:accessControl) can only be updated if the current pr
 
 ## `Get Namespace Owner`
 
-Returns the Owner's [Trustee](xref:accessControl#trustee) for a given `Namespace`.
+Returns the Owner's [Trustee](xref:accessControl#notes) for a given `Namespace`.
 
 ### Request
 
@@ -389,22 +389,22 @@ The identifier of the `Namespace` to access.
 
 ### Authorization
 
-An Owner's [Trustee](xref:accessControl#trustee) can only be retrieved if the current principal has Read access.
+An Owner's [Trustee](xref:accessControl#notes) can only be retrieved if the current principal has Read access.
 
 ### Response
 
 | Status Code | Return Type | Description |
 | --- | --- | ---  |
-| 200 | Trustee | Returns the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
-| 400 | Nothing is returned | Could not retrieve the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to get the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
+| 200 | Trustee | Returns the Owner's [Trustee](xref:accessControl#notes) of the specified `Namespace`. |
+| 400 | Nothing is returned | Could not retrieve the Owner's [Trustee](xref:accessControl#notes) of the specified `Namespace` due to missing or invalid input. |
+| 403 | Nothing is returned | Unauthorized to get the Owner's [Trustee](xref:accessControl#notes) of the specified `Namespace`. |
 
 
 ***
 
 ## `Set Namespace Owner`
 
-Changes the Owner's [Trustee](xref:accessControl#trustee) for a given `Namespace`.
+Changes the Owner's [Trustee](xref:accessControl#notes) for a given `Namespace`.
 
 ### Request
 
@@ -433,20 +433,20 @@ The identifier of the `Namespace` to access.
 Trustee newOwner
 ```
 
-The new Owner's [Trustee](xref:accessControl#trustee) of the `Namespace`.
+The new Owner's [Trustee](xref:accessControl#notes) of the `Namespace`.
 
 
 ### Authorization
 
-An Owner's [Trustee](xref:accessControl#trustee) can only be changed if the current principal has ManageAccessControl access.
+An Owner's [Trustee](xref:accessControl#notes) can only be changed if the current principal has ManageAccessControl access.
 
 ### Response
 
 | Status Code | Return Type | Description |
 | --- | --- | ---  |
-| 200 | Trustee | Returns the new Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
-| 400 | Nothing is returned | Could not change the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace` due to missing or invalid input. |
-| 403 | Nothing is returned | Unauthorized to change the Owner's [Trustee](xref:accessControl#trustee) of the specified `Namespace`. |
+| 200 | Trustee | Returns the new Owner's [Trustee](xref:accessControl#notes) of the specified `Namespace`. |
+| 400 | Nothing is returned | Could not change the Owner's [Trustee](xref:accessControl#notes) of the specified `Namespace` due to missing or invalid input. |
+| 403 | Nothing is returned | Unauthorized to change the Owner's [Trustee](xref:accessControl#notes) of the specified `Namespace`. |
 | 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
 
 

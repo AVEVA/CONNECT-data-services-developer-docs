@@ -4,7 +4,7 @@ uid: CredentialManagement
 
 # Credential management
 
-All connections to OCS are made using secure credentials, which are either user credentials or client secrets.
+All connections to AVEVA Data Hub are made using secure credentials, which are either user credentials or client secrets.
 
 ## User credentials and authentication
 
@@ -12,13 +12,13 @@ The management of user credentials and authentication is delegated to external i
 
 ## Client secrets and authentication
 
-Client applications can authenticate a connection to OCS using a client Id and client secret pair. The client Id is the public identifier of the application. Client Ids are valid GUIDs that are randomly generated or provided by the caller upon creation. The client Id does not need to be protected the same way as a client secret.<!-- Angela Flores 6/18/21 What does "provided by the caller upon create" mean? -->
+Client applications can authenticate a connection to AVEVA Data Hub using a client Id and client secret pair. The client Id is the public identifier of the application. Client Ids are valid GUIDs that are randomly generated or provided by the caller upon creation. The client Id does not need to be protected the same way as a client secret.<!-- Angela Flores 6/18/21 What does "provided by the caller upon create" mean? -->
 
-A client secret is a unique key that is generated for each client credential client to authenticate a connection to OCS for a limited period of time. Each client can have a maximum of 10 secrets at a time. Client secrets have a description, which contains information about their purpose and usage, and an expiration date. <!-- Angela Flores 6/18/21 This would be a good place to link to the task topic for creating client credential clients. Also, why isn't this entire topic in that section of the documentation? It really seems to be about how client credentials work. -->
+A client secret is a unique key that is generated for each client credential client to authenticate a connection to AVEVA Data Hub for a limited period of time. Each client can have a maximum of 10 secrets at a time. Client secrets have a description, which contains information about their purpose and usage, and an expiration date. <!-- Angela Flores 6/18/21 This would be a good place to link to the task topic for creating client credential clients. Also, why isn't this entire topic in that section of the documentation? It really seems to be about how client credentials work. -->
 
 **Caution:** As a security best practice, always create client secrets that expire. 
 
-OCS generates the secret value using a cryptographically secure, random number generator. The secret value is available only upon creation. OCS does not maintain the actual value of the secret. If a secret value were ever lost, delete the secret and create a new one. 
+AVEVA Data Hub generates the secret value using a cryptographically secure algorithm. The secret value is available only upon creation. AVEVA Data Hub does not maintain the actual value of the secret. If a secret value were ever lost, delete the secret and create a new one. 
 
 ### Client secret security
 

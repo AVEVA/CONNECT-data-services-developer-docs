@@ -4,7 +4,7 @@ uid: gsMetadataRules
 
 # Get started with metadata rules
 
-Metadata rules allow you to add metadata to streams. For more information about metadata rules and how to use them effectively, see [Metadata rules](xref:ccMetadataRules).
+Metadata rules allow you to add metadata to streams. For more information about metadata rules and how to use them effectively, see [Add context with metadata rules](xref:ccMetadataRules).
 
 The following are the main steps for creating a metadata rule and applying it to streams. Click on each step to go to the procedure for that step. 
 
@@ -91,7 +91,7 @@ In this step, you define mappings.
 1. In the **Map To** field, enter *San Leandro*. 
 
 1. To create additional mappings for streams that will be created later, select **Add Mappings**.
-   
+
 1. In the **Map From** field, enter *PHL*. 
 
 1. In the **Map To** field, enter *Philadelphia*.

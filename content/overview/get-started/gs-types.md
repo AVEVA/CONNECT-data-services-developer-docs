@@ -31,7 +31,7 @@ To add a type:
    
    <sup>2</sup> Cells with an entry of `-` indicate that you should leave the property value blank.
 
-1. Select **Apply**.
+1. Click **Save**.
 
 To explore information about the type you just created:
 

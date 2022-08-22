@@ -26,7 +26,7 @@ The following diagram shows the data flow of an established community.
 
 Within this diagram, an administrative user (**1**) from **Tenant A** has invited **Tenant B** to form a community.
 
-Both Tenant A and Tenant B have multiple streams stored in each of their tenants, as depicted by **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (**3**).
+Both **Tenant A** and **Tenant B** have multiple streams stored in each of their tenants, as depicted by **2**. The data from these streams are being collected from various sources: PI Servers, edge devices, and other industrial data sources (**3**).
 
 Both tenants are sharing only one of their data streams within the community (**A** and **B**). A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
 
@@ -60,7 +60,7 @@ Any tenant invited to a community must accept the community invitation and be co
 
 Each tenant in the community can stop sharing their data streams at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history. When you share data streams, you provide the community with _access_ to your streams rather than copying data across tenants.
 
-Because tenants can share their data natively within OCS, IT departments no longer have to:
+Because tenants can share their data natively within AVEVA Data Hub, IT departments no longer have to:
 
 * Manage access for external users within a corporate firewall.
 
@@ -72,4 +72,4 @@ Because tenants can share their data natively within OCS, IT departments no long
 
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
-Communities can accommodate trusted business partners who are not sharing data or do not have a PI system of their own. With communities, business partners can sign up for their own OCS tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.
+Communities can accommodate trusted business partners who are not sharing data or do not have a PI system of their own. With communities, business partners can sign up for their own tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.

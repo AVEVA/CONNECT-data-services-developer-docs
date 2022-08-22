@@ -4,7 +4,7 @@ uid: DeployConfig
 
 # Deploy an edge system configuration
 
-After you export an edge system configuration, you have to manually deploy the configuration to the edge system in the field.
+After you export an edge system configuration, you have to manually deploy the configuration to the edge system in the field. For Edge Data Store, PI Adapter for OPC UA, and PI Adapter for MQTT, you can deploy the configuration using AVEVA Edge Management. For more information, see the [AVEVA Edge Management](https://dev-edgemanagement.capdev-connect.aveva.com/help/#/home/665916/10/11) documentation.
 
 For details on how to deploy a configuration, see the specific edge system product documentation: 
 
@@ -26,7 +26,7 @@ For details on how to deploy a configuration, see the specific edge system produ
 
  - [PI Adapter for Structured Data Files](https://docs.osisoft.com/bundle/pi-adapter-structured-data-files/page/configuration/configuration.html)
 
-After deploying the configuration, manually update the configuration file on the device to replace any mustache tokens used as place holders for secrets with the actual secrets. Then, to have an accurate record of the configuration, import the configuration file, including any modifications made in the field except secrets, to the corresponding edge system twin in OCS.
+After deploying the configuration, manually update the configuration file on the device to replace any mustache tokens used as place holders for secrets with the actual secrets. Then, to have an accurate record of the configuration, import the configuration file, including any modifications made in the field except secrets, to the corresponding edge system twin in AVEVA Data Hub.
 
 ## Data source scenarios
 

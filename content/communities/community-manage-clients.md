@@ -12,7 +12,7 @@ To manage clients in a community:
 
 - [!include[prereq-community-admin](includes/prereq-community-admin.md)]
 
-- There must be at least one existing client-crediential client added to the tenant (which is typically done by a Tenant Administrator). For more information, see <xref:gpClientCredentialsClient>.
+- There must be at least one existing client-credentials client added to the tenant (which is typically done by a Tenant Administrator). For more information, see <xref:gpClientCredentialsClient>.
 
 ## Add clients to a community
 

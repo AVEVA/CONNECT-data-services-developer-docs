@@ -12,7 +12,7 @@ The `Communities` page, accessible at **Data Management** > **Communities**, is 
 
 ## Community view
 
-For each community that your tenant participates in OCS, it is listed on the `Communities` page. From this page, you can review high level details for the community and view if you have access to view data streams from the community.
+For each community that your tenant participates in AVEVA Data Hub, it is listed on the `Communities` page. From this page, you can review high level details for the community and view if you have access to view data streams from the community.
 
 The following table describes each field listed for a community:
 
@@ -37,7 +37,7 @@ You can also toggle the `Communities` page between two views using the view togg
 
 ## Community toolbar
 
-Use the controls available in the toolbar find, create, or manage a community.
+Use the controls available in the toolbar to find, create, or manage a community.
 
 | Control | Description |
 |--------|-------------|

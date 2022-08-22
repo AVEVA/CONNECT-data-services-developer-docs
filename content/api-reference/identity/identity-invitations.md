@@ -4,7 +4,10 @@ uid: identity-invitations
 ---
 
 # Invitations
-Invitations are issued after the creation of a user object in OCS, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
+
+**Note:** Invitations are for OSIsoft Cloud Services platform, not the AVEVA Data Hub platform. AVEVA Data Hub users do not require invitations. 
+
+Invitations are issued after the creation of a user object in AVEVA Data Hub, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
 
 ## `Get User's Invitation`
 
@@ -21,17 +24,17 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Invitation](#schemainvitation)|Invitation for the specified user|
+|200|[Invitation](#schemainvitation)|Invitation specified|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Invitation, user, or tenant not found|
+|404|[ErrorResponse](#schemaerrorresponse)|Invitation or tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -75,20 +78,17 @@ HEAD /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
-`[optional] boolean includeExpiredInvitations`
-<br/>Specify whether to include expired invitations.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|Header for invitation for the specified user|
-|400|None|Missing or invalid inputs.|
+|200|None|Header for invitation specified|
 |401|None|Unauthorized.|
 |403|None|Forbidden.|
-|404|None|Tenant not found|
+|404|None|Invitation or tenant not found|
 |500|None|Internal server error.|
 
 <h3>Authorization</h3>
@@ -115,16 +115,15 @@ POST /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-InvitationCreateOrUpdate object<br/>
+New InvitationCreateOrUpdate object. Properties that are not set or are null will not be changed.<br/>
 
 ```json
 {
-  "ExpiresDateTime": "2019-08-24T14:15:22Z",
   "State": 0,
   "SendInvitation": true,
   "IdentityProviderId": "string"
@@ -135,14 +134,12 @@ InvitationCreateOrUpdate object<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[Invitation](#schemainvitation)|Invitation created|
-|202|None|Invitation created|
+|200|[Invitation](#schemainvitation)|Updated invitation|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
+|404|[ErrorResponse](#schemaerrorresponse)|Invitation or tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -185,10 +182,35 @@ PUT /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
-<h4>Request Body</h4>
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|No content|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Invitation or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `List Invitations`
+
+<a id="opIdInvitations_List Invitations"></a>
+
+Returns all non-expired invitations from a tenant. Optionally, includes expired invitations.
 
 InvitationCreateOrUpdate object<br/>
 
@@ -201,18 +223,25 @@ InvitationCreateOrUpdate object<br/>
 }
 ```
 
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>
+`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeExpiredInvitations`
+<br/>Specify whether to return expired invitations.<br/><br/>
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Invitation](#schemainvitation)|Invitation created or updated|
-|201|[Invitation](#schemainvitation)|Invitation created or updated|
+|200|[Invitation](#schemainvitation)[]|Invitations found|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -255,19 +284,20 @@ DELETE /api/v1/Tenants/{tenantId}/Users/{userId}/Invitation
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>
+`[optional] boolean includeExpiredInvitations`
+<br/>Specify to return expired invitations.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|204|None|No content|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Invitation or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|200|None|Header for invitations found|
+|400|None|Missing or invalid inputs.|
+|401|None|Unauthorized.|
+|403|None|Forbidden.|
+|404|None|Tenant not found|
+|500|None|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -277,7 +307,10 @@ Allowed for these roles:
 </ul>
 
 # Invitations
-Invitations are issued after the creation of a user object in OCS, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
+
+**Note:** Invitations are for OSIsoft Cloud Services platform, not the AVEVA Data Hub platform. AVEVA Data Hub users do not require invitations.
+
+Invitations are issued after the creation of a user object in AVEVA Data Hub, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
 
 ## `Get Invitation`
 
@@ -294,18 +327,18 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Invitation](#schemainvitation)|Invitation specified|
-|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
-|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
-|404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
+|200|[Invitation](#schemainvitation)|Invitation for the specified user|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Invitation, user, or tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -347,17 +380,20 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
+`[optional] boolean includeExpiredInvitations`
+<br/>Specify whether to include expired invitations.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|Header for invitation specified|
+|200|None|Header for invitation for the specified user|
+|400|None|Missing or invalid inputs.|
 |401|None|Unauthorized.|
 |403|None|Forbidden.|
-|404|None|Invitation or tenant not found|
+|404|None|Tenant not found|
 |500|None|Internal server error.|
 
 <h3>Authorization</h3>
@@ -384,17 +420,12 @@ PUT /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 <h4>Request Body</h4>
-
-New InvitationCreateOrUpdate object. Properties that are not set or are null will not be changed.<br/>
-
-```json
 {
   "ExpiresDateTime": "2019-08-24T14:15:22Z",
-  "State": 0,
   "SendInvitation": true,
   "IdentityProviderId": "string"
 }
@@ -404,13 +435,15 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Invitation](#schemainvitation)|Updated invitation|
-|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.|
-|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
-|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
-|404|[ErrorResponse2](#schemaerrorresponse2)|Invitation or tenant not found|
-|408|[ErrorResponse2](#schemaerrorresponse2)|Operation timed out.|
-|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
+|201|[Invitation](#schemainvitation)|Invitation created|
+|202|None|Invitation created|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -452,8 +485,8 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string invitationId`
-<br/>Invitation identifier.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -503,12 +536,15 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Invitation](#schemainvitation)[]|Invitations found|
-|400|[ErrorResponse2](#schemaerrorresponse2)|Missing or invalid inputs.|
-|401|[ErrorResponse2](#schemaerrorresponse2)|Unauthorized.|
-|403|[ErrorResponse2](#schemaerrorresponse2)|Forbidden.|
-|404|[ErrorResponse2](#schemaerrorresponse2)|Tenant not found|
-|500|[ErrorResponse2](#schemaerrorresponse2)|Internal server error.|
+|200|[Invitation](#schemainvitation)|Invitation created or updated|
+|201|[Invitation](#schemainvitation)|Invitation created or updated|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|409|[ErrorResponse](#schemaerrorresponse)|Invitation already exists|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -553,20 +589,19 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
-`[optional] boolean includeExpiredInvitations`
-<br/>Specify to return expired invitations.<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string userId`
+<br/>User identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|Header for invitations found|
-|400|None|Missing or invalid inputs.|
-|401|None|Unauthorized.|
-|403|None|Forbidden.|
-|404|None|Tenant not found|
-|500|None|Internal server error.|
+|204|None|No content|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Invitation or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h3>Authorization</h3>
 
@@ -627,9 +662,9 @@ Invitation states.
 
 |Property|Value|Description|
 |---|---|---|
-|None|0|No Invitation state specified.|
-|InvitationEmailSent|1|Invitation email has been sent.|
-|InvitationAccepted|2|Invitation has been accepted.|
+|None|0|Invitation states.|
+|InvitationEmailSent|1|Invitation states.|
+|InvitationAccepted|2|Invitation states.|
 
 ---
 
@@ -681,7 +716,7 @@ Object used to create or update an invitation
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |ExpiresDateTime|date-time|false|true|Invitation expiration date. Must be in the future. Maximum allowed is two months in the future. Defaults to 21 days on creation. It should be in [ISO 8601 format](https://www.iso.org/iso-8601-date-and-time-format.html) and either include a *Z* at the end to represent UTC time zone or include the offset in hours. If neither is present, time will be treated in the local time zone of the server.|
-|State|[InvitationStates](#schemainvitationstates)|false|true|State of invitation. For OSIsoft internal use only.|
+|State|[InvitationStates](#schemainvitationstates)|false|true|State of invitation. For AVEVA internal use only.|
 |SendInvitation|boolean|false|true|Send an invitation email. Invitation will be sent to the contact email for the user this invitation is attached. Default is true.|
 |IdentityProviderId|guid|false|true|Identity provider to use for accepting this invitation. Required when creating an invitation.|
 

@@ -21,8 +21,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7920</WindowHeight>
-  <WindowWidth>21570</WindowWidth>
+  <WindowHeight>11970</WindowHeight>
+  <WindowWidth>28770</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <TabRatio>500</TabRatio>
@@ -218,13 +218,11 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">MAP</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">cloud</Data></Cell>
-    <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">cloud_adh</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">cloud</Data></Cell>
-    <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">cloud_adh</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">default</Data></Cell>
@@ -251,7 +249,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>3</ActiveRow>
+     <ActiveRow>2</ActiveRow>
      <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>

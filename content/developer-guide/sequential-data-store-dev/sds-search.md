@@ -66,7 +66,7 @@ Streams search is exposed through the REST API and the client libraries method `
 
 For more information on stream properties, see [Streams](xref:sdsStreams#streampropertiestable).
 
-**Searcheable Properties**
+**Searchable Properties**
 | Property          | Searchable  |
 |-------------------|-------------|
 | Id                | Yes		  |
@@ -78,7 +78,7 @@ For more information on stream properties, see [Streams](xref:sdsStreams#streamp
 | ExtrapolationMode | No		  |
 | PropertyOverrides | No		  |
 
-**Searcheable Child Resources**
+**Searchable Child Resources**
 | Property          | Searchable  |
 |-------------------|-------------|
 | [Metadata](xref:sds-streams-metadata)*		| Yes		  |
@@ -119,7 +119,7 @@ See [How search works with stream metadata](#Stream_Metadata_search_topic).
 Type search is exposed through the REST API and the client libraries method ``GetTypesAsync``. 
 For more information on type properties, see [Types](xref:sdsTypes#typepropertiestable).
 
-**Searcheable Properties**
+**Searchable Properties**
 | Property          | Searchable |
 |-------------------|------------|
 | Id                | Yes        |
@@ -159,7 +159,7 @@ Search for types using the REST API and specifying the optional `query` paramete
 Stream view search is exposed through the REST API and the client libraries method ``GetStreamViewsAsync``. 
 For more information on stream view properties, see [Stream Views](xref:sdsStreamViews#streamviewpropertiestable).
 
-**Searcheable Properties**
+**Searchable Properties**
 | Property     | Searchable |
 |--------------|------------|
 | Id           | Yes		|
@@ -263,7 +263,7 @@ Operator | Description
 ``name:stream* AND (description:pressure OR description:pump)`` | The name starts with "stream" and the description has either "pressure" or "pump", or both. | string
 
 
-### <a name="fieldScoped">Field-scoping (``:``) operator</a>
+### <a name="fieldScoped"></a>Field-scoping (``:``) operator
 You can qualify the search to a specific field using the ``:`` operator.  
 
 	fieldname:fieldvalue
@@ -328,7 +328,7 @@ Note that while wildcard (``*``) can be used either in or outside of quotes, it 
 	GetStreamsAsync(query:"\\"pump pressure\\"");	
 ```
 
-## <a name="Stream_Metadata_search_topic">How search works with stream metadata</a>
+## <a name="Stream_Metadata_search_topic"></a>How search works with stream metadata
 [Stream metadata](xref:sds-streams-metadata) behaves differently with search syntax rules described in the previous sections. 
 
 **A namespace with streams with respective metadata key-value pairs**

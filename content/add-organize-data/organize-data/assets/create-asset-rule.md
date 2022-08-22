@@ -29,7 +29,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 1. Select the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
-1. Click **Add a Rule**.
+1. Select **Add Rule**.
 
 1. In the `Create New Asset Rule` window, enter the following:
 
@@ -47,7 +47,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
    **Note:** If the rule is not based on an asset type, there are some differences in the procedure. These differences are noted in the steps.
 
-1. Click **Continue**.
+1. Select **Continue**.
 
 1. In the `Select Stream` window, select the stream to use as the basis of the naming pattern for the asset rule. 
 
@@ -55,7 +55,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
    
    The `Tank Rule A` examples uses the `PHI-Tank03Press` stream to create the stream pattern.
 
-1. Click **Add**. 
+1. Select **Add**. 
    
    The `Asset Rule Builder` page displays.
 
@@ -75,13 +75,13 @@ The Asset Rule Builder walks you through the following steps to create and execu
 
 In this step, you specify the naming pattern used to find and match the appropriate streams. You isolate each part of the stream name and create a token for it. The rule contains intelligence to recognize special characters in the stream name as delimiters, such as periods, dashes, and underscores. By default, the rule uses any special characters in the name to isolate the stream parts and facilitates the rule-building process. In this step, you also create tokens for the stream metadata. 
 
-1. In the `Stream Name Pattern` pane, move the slider to highlight the first identifiable section of the stream name. 
+1. In the `Stream Name` pane, move the slider to highlight the first identifiable section of the stream name. 
 
 1. In the **Match** list, select the option that describes how to identify the value in the stream name. 
 
 1. In the **and name it** text field, enter a name for the token.
 
-1. Click **Capture**.  
+1. Select **Capture**.  
 
    In the [Tank Rule A example](#tank), the first part of all stream names identifies the site location. This is represented by the characters *SL* or *PHI*. In the `PHI-Tank03Press` stream, the site location is represented by the characters *PHI*. This part of the stream name is selected in the screen capture below.
 
@@ -115,9 +115,9 @@ In this step, you specify the naming pattern used to find and match the appropri
 
    The metadata tokens are added to the `Tokens` pane.
 
-1. In the `Token Sources` pane on the left, select **Stream Name Pattern** and review the screen.
+1. In the `Token Sources` pane on the left, select **Stream Name** and review the screen.
 
-   The description of the stream pattern is displayed in the `Stream Name Pattern` pane. The `Tokens` pane shows the tokens that make up the stream name pattern.
+   The description of the stream pattern is displayed in the `Stream Name` pane. The `Tokens` pane shows the tokens that make up the stream name pattern.
 
 1. When you have completed identifying all the tokens in the stream name, select **Next**.
 
@@ -127,7 +127,7 @@ In this step, you specify the token that identifies the stream measurement in th
 
 1. In the `Configure Stream Reference Name Token` pane, select the ![Select token icon](../../../_icons/branded/swap-horizontal.svg) icon to open the `Select Stream Reference Name Token` window.
 
-1. Select the token that identifies the stream measurement and click **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. --> <!--VTT, 9/23/21: Agreed. QA testing of procedures is recommended for the new UI rebranding effort.-->
+1. Select the token that identifies the stream measurement and select **Select**. <!--WRITER'S NOTE: This step is still not very clear. Please review it again after the UI changes which may make it clearer. --> <!--VTT, 9/23/21: Agreed. QA testing of procedures is recommended for the new UI rebranding effort.-->
 
  In the `Tank Rule A` example, the token for the last part of the stream name identifies the measurement, either `Press` or `Temp`, and we gave this token the name `measurement`. The `Token Mappings Status` pane displays a list of all the tokens identified on the previous page. The token for the measurement is indicated with the ![Measurement icon](../../../_icons/branded/ruler.svg) icon.
 
@@ -201,19 +201,19 @@ The asset preview displays a list of the assets that will be created using the a
 
    - The stream Id is identified for each stream. In the example above, the Id of the stream in the first row is `PHI-TNK01`.
 
-1. To show or hide information in the preview, select the `Settings` tab in the `Preview Information` pane, and then select the following options:
+1. To show or hide information in the preview, select the **Settings** tab in the `Preview Information` pane, and select the following options:
 
-  - **Show Asset Type**
+   - **Show Asset Type**
 
-  - **Show Metadata**
+   - **Show Metadata**
 
-  - **Show Stream References**
+   - **Show Stream References**
   
 1. To filter the data in a column, select ![filter](../../../_icons/branded/filter.svg) in the column header, enter the text to find, and press Enter.
    
-1. Select the `Details` tab in the `Preview Information` pane, to review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
+1. On the **Details** tab of the `Preview Information` pane, review the asset rule statistics to validate that the rule produced the expected number of assets and the expected number of streams were processed.
 
-   In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Total Assets**. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern.
+   In the [Tank Rule A example](#tank), we expect to see three assets as indicated in the **Assets Processed** field. **Streams Processed** is the total number of streams in the namespace. The asset rule checks every stream name in the namespace to see if it matches the specified pattern. In this example, six of the nine streams matched the pattern.
    
    ![Asset statistics](images/stats.png)
   

@@ -1,0 +1,8 @@
+- name: PI System connections best practices
+  href: pi-to-ocs-best-practices.md
+- name: PI to Data Hub minimum system requirements
+  href: min-sys-reqmnts.md
+- name: Limitations of PI to Data Hub
+  href: limitations.md
+- name: PI to Data Hub architecture
+  href: pi-to-ocs-architecture.md

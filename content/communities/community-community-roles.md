@@ -4,7 +4,7 @@ uid: community-community-roles
 
 # Community roles
 
-To allow different tenants and users participating in a community to safely and securely share data streams with one another, OSIsoft Cloud Services (OCS) includes several user roles specifically for communities. These roles include granular permissions to allow different tenants and users to share specific data streams while keeping the remaining, unshared data streams private. When using Communities, you must assign the appropriate community roles to users that administrate or participate in the community.
+To allow different tenants and users participating in a community to safely and securely share data streams with one another, AVEVA Data Hub includes several user roles specifically for communities. These roles include granular permissions to allow different tenants and users to share specific data streams while keeping the remaining, unshared data streams private. When using Communities, you must assign the appropriate community roles to users that administrate or participate in the community.
 
 Communities include the following roles, ordered from least privileged to most privileged.
 

@@ -4,7 +4,7 @@ uid: gsDataViews
 
 # Get started with data views
 
-Data views are user-selected subsets of data from one or more streams stored in OSIsoft Cloud Services (OCS), mapped into custom tables. For more information about data views, see the [Data Views](xref:DataViews).
+Data views are user-selected subsets of data from one or more streams stored in AVEVA Data Hub, mapped into custom tables. For more information about data views, see the [Data Views](xref:DataViews).
 
 To create a data view:
 

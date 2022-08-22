@@ -4,7 +4,7 @@ uid: permissions-management
 
 # Permissions management
 
-Within OSIsoft Cloud Services, permissions are applied to [user roles](xref:ccRoles) per resource. The user roles assigned to each user determine whether they can access the resource. You can granularly edit permissions for the following system resources. Open the following pages for instructions on how to edit permissions for each system resource. 
+Within AVEVA Data Hub, permissions are applied to [user roles](xref:ccRoles) per resource. The user roles assigned to each user determine whether they can access the resource. You can granularly edit permissions for the following system resources. Open the following pages for instructions on how to edit permissions for each system resource. 
 
 - [Agents](xref:manage-agent-permissions)
 - [Asset Rules](xref:manage-asset-rules-permissions)

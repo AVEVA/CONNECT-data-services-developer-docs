@@ -18,7 +18,7 @@ User with permissions to share a data stream within a community can do so from t
 
 1. If it is not already selected, select **Streams** at the upper left.
 
-1. Select one or more stream to share with a community.
+1. Select one or more streams to share with a community.
 
 1. From the right pane, select **Share Permissions**.
 

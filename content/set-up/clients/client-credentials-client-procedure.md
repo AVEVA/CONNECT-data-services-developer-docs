@@ -20,7 +20,7 @@ To add a client-credentials client:
 
 1. In the toolbar, select **Add Client**.
 
-   The `Add Client` window appears.
+   The `Add Client` window opens.
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client.
 

@@ -1,3 +1,3 @@
-- name: OCS Content Portal
+- name: AVEVA Data Hub
   href: content/
-  homepage: content/ocs-content-portal-overview.md
+  homepage: content/adh-content-portal-overview.md

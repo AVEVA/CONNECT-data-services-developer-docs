@@ -806,7 +806,7 @@ Holds a collection of items that were resolved at a specific time.
 <a id="tocSdataitem"></a>
 <a id="tocsdataitem"></a>
 
-A data item resolved by the data view. Can represent various DataItemResourceTypes from OSIsoft Cloud Services
+A data item resolved by the data view. Can represent various DataItemResourceTypes from AVEVA Data Hub
 
 <h4>Properties</h4>
 
@@ -1374,7 +1374,7 @@ The value resolved by a grouping field defined in the data view
 <a id="tocSdataitemofobject"></a>
 <a id="tocsdataitemofobject"></a>
 
-A data item resolved by the data view. Can represent various DataItemResourceTypes from OSIsoft Cloud Services
+A data item resolved by the data view. Can represent various DataItemResourceTypes from AVEVA Data Hub
 
 <h4>Properties</h4>
 

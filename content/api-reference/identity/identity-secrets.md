@@ -4,7 +4,7 @@ uid: identity-secrets
 ---
 
 # Secrets
-Secrets are used to authenticate both client credential clients and hybrid clients. A secret has an expiration date or can be created to never expire. We advise to avoid creating secrets that do not expire. After a secret expires, it can no longer be used to authenticate the client. While a secret is still valid, any access token issued will be active until the token itself expires. The same applies to refresh tokens, which are issued to hybrid clients. Safe storage of secrets is your responsibility. OCS does not store secret values, so once lost, there is no way to retrieve the value of a secret.
+Secrets are used to authenticate both client credential clients and hybrid clients. A secret has an expiration date or can be created to never expire. We advise to avoid creating secrets that do not expire. After a secret expires, it can no longer be used to authenticate the client. While a secret is still valid, any access token issued will be active until the token itself expires. The same applies to refresh tokens, which are issued to hybrid clients. Safe storage of secrets is your responsibility. AVEVA Data Hub does not store secret values, so once lost, there is no way to retrieve the value of a secret.
 
 ## `List Client Credential Client Secrets (v1 path)`
 
@@ -348,6 +348,248 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{se
 |404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `List Client Credential Client Secrets (v1-preview path)`
+
+<a id="opIdSecrets_List Client Credential Client Secrets (v1-preview path)"></a>
+
+Returns all secrets for a client credential client.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
+?query={query}&skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
+`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientSecret2](#schemaclientsecret2)[]|Client credential client secrets found|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientSecret2](#schemaclientsecret2)[])
+
+```json
+[
+  {
+    "Expiration": "2019-08-24T14:15:22Z",
+    "Expires": true,
+    "Description": "string",
+    "SecretId": "string",
+    "Id": "string"
+  }
+]
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Add Client Credential Client Secret (v1-preview path)`
+
+<a id="opIdSecrets_Add Client Credential Client Secret (v1-preview path)"></a>
+
+Adds a new secret for a client credential client.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Client secret to create<br/>
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|201|[ClientSecretResponse2](#schemaclientsecretresponse2)|Client credential client secret created|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 201 Response ([ClientSecretResponse2](#schemaclientsecretresponse2))
+
+```json
+{
+  "SecretId": "string",
+  "Id": "string",
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string",
+  "ClientSecret": "string",
+  "Secret": "string"
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Get Client Credential Client Secret (v1-preview path)`
+
+<a id="opIdSecrets_Get Client Credential Client Secret (v1-preview path)"></a>
+
+Returns a specific client credential client secret.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>`integer secretId`
+<br/>Secret identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientSecret2](#schemaclientsecret2)|Client credential client secret specified|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientSecret2](#schemaclientsecret2))
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string",
+  "SecretId": "string",
+  "Id": "string"
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Update Client Credential Client Secret (v1-preview path)`
+
+<a id="opIdSecrets_Update Client Credential Client Secret (v1-preview path)"></a>
+
+Updates a client credential client secret. Only secret description and secret expiration date can be updated.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1-preview/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secretId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>`integer secretId`
+<br/>Secret identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Client secret details<br/>
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientSecret2](#schemaclientsecret2)|Updated client credential client secret|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientSecret2](#schemaclientsecret2))
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string",
+  "SecretId": "string",
+  "Id": "string"
+}
+```
 
 <h3>Authorization</h3>
 
@@ -709,6 +951,247 @@ Allowed for these roles:
 
 ---
 
+## `List Hybrid Client Secrets (v1-preview path)`
+
+<a id="opIdSecrets_List Hybrid Client Secrets (v1-preview path)"></a>
+
+Returns all secrets for a hybrid client.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
+?query={query}&skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
+`[optional] string query`
+<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientSecret2](#schemaclientsecret2)[]|Hybrid client secrets found|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientSecret2](#schemaclientsecret2)[])
+
+```json
+[
+  {
+    "Expiration": "2019-08-24T14:15:22Z",
+    "Expires": true,
+    "Description": "string",
+    "SecretId": "string",
+    "Id": "string"
+  }
+]
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Add Hybrid Client Secret (v1-preview path)`
+
+<a id="opIdSecrets_Add Hybrid Client Secret (v1-preview path)"></a>
+
+Adds a new secret for a hybrid client.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Client secret to create<br/>
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|201|[ClientSecretResponse2](#schemaclientsecretresponse2)|Hybrid client secret created|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 201 Response ([ClientSecretResponse2](#schemaclientsecretresponse2))
+
+```json
+{
+  "SecretId": "string",
+  "Id": "string",
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string",
+  "ClientSecret": "string",
+  "Secret": "string"
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Get Hybrid Client Secret (v1-preview path)`
+
+<a id="opIdSecrets_Get Hybrid Client Secret (v1-preview path)"></a>
+
+Returns a specific hybrid client secret.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>`integer secretId`
+<br/>Secret identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientSecret2](#schemaclientsecret2)|Hybrid client secret specified|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientSecret2](#schemaclientsecret2))
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string",
+  "SecretId": "string",
+  "Id": "string"
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
+
+## `Update Hybrid Client Secret (v1-preview path)`
+
+<a id="opIdSecrets_Update Hybrid Client Secret (v1-preview path)"></a>
+
+Updates a hybrid client secret. Only secret description and secret expiration date can be updated.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1-preview/Tenants/{tenantId}/HybridClients/{clientId}/Secrets/{secretId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string clientId`
+<br/>Client identifier.<br/><br/>`integer secretId`
+<br/>Secret identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Client secret details<br/>
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[ClientSecret2](#schemaclientsecret2)|Updated hybrid client secret|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Secret, client, or tenant not found|
+|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([ClientSecret2](#schemaclientsecret2))
+
+```json
+{
+  "Expiration": "2019-08-24T14:15:22Z",
+  "Expires": true,
+  "Description": "string",
+  "SecretId": "string",
+  "Id": "string"
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Administrator</li>
+</ul>
+
+---
 ## Definitions
 
 ### ClientSecret

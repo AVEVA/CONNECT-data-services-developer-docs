@@ -8,11 +8,11 @@ An asset type is a template for creating assets that share a common structure or
 
 You can create an asset type in one of the following ways:
 
-- [Create an asset type from the beginning](#create-an-asset-type-with-the-asset-explorer)
+- [Create an asset type in Asset Explorer](#create-an-asset-type-in-asset-explorer) 
 
 - [Convert an existing asset to an asset type](#create-an-asset-type-from-an-asset)
 
-## Create an asset type with the asset explorer
+## Create an asset type in Asset Explorer
 
 To use the asset explorer to create an asset type:
 

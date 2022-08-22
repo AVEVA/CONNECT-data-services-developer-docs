@@ -1,9 +1,32 @@
-- topicUid: ocs-content-portal-overview
+- topicUid: ADH-content-portal-overview
   items:
-   - topicUid: WhatIsOCS
-   - topicUid: WhoUsesOCS
-   - topicUid: WhatOCSdoes
-- topicUid: gsGetStartedOCS
+  - topicUid: WhatIsADH
+    items:
+    - topicUid: DifferencesFromOCS
+  - topicUid: WhoUsesADH
+  - topicUid: WhatADHdoes
+  - topicUid: what-is-cnnxt
+    items:
+    - topicUid: sign-in-cnnxt
+    - topicUid: aveva-svcs
+    - topicUid: add-display-name
+    - topicUid: sign-out-cnnxt
+  - topicUid: cnnxt-setup
+    items:
+    - topicUid: subscribe-adh
+    - topicUid: ccNamespaces
+      items: 
+      - topicUid: create-folders
+      - topicUid: bpNamespaces
+    - topicUid: ManageUsersConnect
+      items:
+      - topicUid: create-group
+      - topicUid: assign-roles-groups
+      - topicUid: invite-users
+      - topicUid: assign-users
+      - topicUid: map-group-adh
+      - topicUid: map-user-adh
+- topicUid: gs-overview
   items:
   - topicUid: introPortalInterface
     items:
@@ -11,7 +34,6 @@
     - topicUid: TenantDetails
     - topicUid: ResourceUsage
     - topicUid: home-health
-  - topicUid: gsNamespaces
   - topicUid: gsConnections
     items:
     - topicUid: gsPItoOCS
@@ -33,11 +55,6 @@
   - topicUid: gsAssetRules
 - topicUid: DataManagement
   items:
-    - topicUid: ccNamespaces
-      items:
-      - topicUid: bpNamespaces
-      - topicUid: gpNamespaces
-      - topicUid: namespaces-manage-permissions
     - topicUid: lpstoredata
       items:
       - topicUid: ccStreams
@@ -199,8 +216,10 @@
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:
-  - topicUid: identityProviders
   - topicUid: Groups
+    items:
+    - topicUid: AddGroup
+    - topicUid: GroupMaintenance
   - topicUid: ccUsers
     items:
     - topicUid: gpUsers
@@ -233,4 +252,4 @@
 - name: API reference
   href: api-reference/toc.yml
   topicHref: api-reference/ocs-api-reference.md
-- topicUid: support
+# - topicUid: support

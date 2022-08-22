@@ -4,7 +4,7 @@ uid: identity-authorization-code-clients
 ---
 
 # Authorization Code Clients
-Authorization code clients are used in JavaScript/Browser (SPA) based applications or native mobile applications with the presence of a user. These clients are issued a unique identifier. You can read more about these clients [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md#authorization-code-flow-with-pkce). Authorization code clients are not issued secrets or refresh tokens. For some guidelines on use of secrets, refer to the [Credential management](xref:CredentialManagement) topic. For some recommendations on least privilege for users and clients, refer to the [Least privilege](xref:LeastPrivilege) topic.
+Authorization code clients are used in JavaScript/Browser (SPA) based applications or native mobile applications with the presence of a user. These clients are issued a unique identifier. You can read more about these clients [here](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/AUTHENTICATION.md#authorization-code-flow-with-pkce). Authorization code clients are not issued secrets or refresh tokens. For some guidelines on use of secrets, refer to the [Credential management](xref:CredentialManagement) topic. For some recommendations on least privilege for users and clients, refer to the [Least privilege](xref:LeastPrivilege) topic.
 
 ## `List All Authorization Code Clients from Tenant`
 
@@ -488,7 +488,7 @@ Object used during AuthorizationCodeClient creation
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients|
 
 ```json
@@ -571,7 +571,7 @@ Object to return or update a ClientCredentialClient
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |RoleIds|string[]|false|true|List of roles to be assigned to this client. Member role is always required. For security reasons, we advise against assigning administrator role to a client.|
 
 ```json

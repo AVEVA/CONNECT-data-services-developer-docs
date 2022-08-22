@@ -34,6 +34,8 @@ To remove an existing data view:
 
 ## Set default permissions for data views
 
+[!include[Data view banner](../../../visualize-data/includes/banner.md)]
+
 To set default permissions for new data views:
 
 1. In the left pane, select **Analytics** > **Data Views**.

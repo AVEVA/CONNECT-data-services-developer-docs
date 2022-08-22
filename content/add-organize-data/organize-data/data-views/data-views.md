@@ -84,6 +84,6 @@ Your data view is added to the `Data Views` page. You can view the sources for e
 
 To define a data view using the API, see [Define a data view](xref:DataViewsQuickStartDefine).
 
-## Want to use the Power BI connector to view your data views in Microsoft Power BI?
+## Microsoft Power BI Banner
 
 [!include[data view banner](../../../visualize-data/includes/banner.md)]

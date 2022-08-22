@@ -26,6 +26,14 @@ To install the AVEVA Data Hub Power BI Connector:
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
+1. Select any data view.
+
+1. Select **Edit Data View**.
+
+1. Download the `OCSPowerBIConnector.exe` file by selecting **More options** ![More options](../_icons/default/dots-vertical.svg) > ***Download Power BI Connector**. Then select **Download**.
+
+   **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. If you dismiss the banner, download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
+
 1. Select **More options** ![More options icon](../_icons/default/dots-vertical.svg) and then select **Download ADH Power BI Connector**.
 
 1. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.

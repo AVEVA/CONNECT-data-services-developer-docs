@@ -34,13 +34,11 @@ To install the OSIsoft Cloud Services Power BI Connector:
 
    **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. If you dismiss the banner, download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
 
-   **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. If you dismiss the banner, download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
-
 1. Install OSIsoft Cloud Services Power BI Connector by either the setup wizard or silent installation.
 
     - Setup wizard
 
-        - Double-click the ` file and select **Next**.
+        - Double-click the `AVEVA_Data_Hub_Power_BI_Connector_X_X_X_XX.exe` file and select **Next**.
 
         - (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
 

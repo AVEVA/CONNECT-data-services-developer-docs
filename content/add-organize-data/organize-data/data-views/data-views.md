@@ -72,7 +72,6 @@ To create a data view:
 
 1. Select **Save** to create the data view and to continue editing, or select **Save and Close** to create the data view and exit.
 
-
 Your data view is added to the `Data Views` page. You can view the sources for each query in your data view from the **Query Sources** column. For data views with multiple query sources, press Shift+Mousewheel to scroll through the sources.
    
 ![Data Views: Query sources column](_images/query-sources-column.png)

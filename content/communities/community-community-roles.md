@@ -37,3 +37,7 @@ When a tenant creates or joins a new community, they are prompted to assign new 
 Each community has an administrative tenant, which is the tenant that administers the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Users assigned community administrator permissions on the administrative tenant have additional permissions for managing the community itself that affect all tenants within it. 
 
 In addition to the tasks listed in <xref:community-tenant-administration>, Community Administrators for the Administrative Tenant can also perform the tasks listed in  <xref:community-community-administration>.
+
+## Next steps
+
+Proceed to <xref:community-workflow-create>.

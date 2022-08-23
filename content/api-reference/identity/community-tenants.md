@@ -10,7 +10,7 @@ APIs for retrieving, updating and removing community tenant information
 
 <a id="opIdCommunityTenants_Update Community Tenant Info 1"></a>
 
-Updates the state of a community tenant. The state can be activated, paused, or removed. Also it updates preferred region id and contact email.
+Updates the state of a community tenant. The state can be activated or paused. Also it updates preferred region id and contact email.
 
 <h3>Request</h3>
 
@@ -88,7 +88,7 @@ DELETE /api/v1-preview/communities/{communityId}/tenants/{tenantId}
 
 <a id="opIdCommunityTenants_Update Community Tenant Info (caller Tenant Id path)"></a>
 
-Updates the state of a community tenant. The state can be activated, paused, or removed. Also it updates preferred region id and contact email.
+Updates the state of a community tenant. The state can be activated or paused. Also it updates preferred region id and contact email.
 
 <h3>Request</h3>
 

@@ -10,13 +10,13 @@ The `My Profile` window displays your user information and assigned roles.
 
 To update your contact information:
 
-1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. To open your user profile, select the **User Profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
 
 1. Select **Edit**.
 
-1. Enter any updates to your first name, last name, or contact email.
+**Note:** The **Edit** button is disabled if your organization's identity provider does not allow you to update your contact information.
 
-1. Enter any updates to your contact information.
+1. Update your contact information.
 
 1. Select **Save**.
 
@@ -26,6 +26,6 @@ The **Show user friendly property names** option controls how property names app
 
 To change your user preferences:
 
-1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name from the dropdown list.
 
-1. To use friendly property names, turn on the the toggle under **Show user friendly property names**. The setting is saved automatically.
+1. To use friendly property names, turn on the **Show user friendly property names** toggle under **User Preferences**. The setting saves automatically.

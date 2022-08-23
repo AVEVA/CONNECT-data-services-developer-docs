@@ -229,8 +229,7 @@ To view PI point details:
 
 ## Save a transfer
 
-Before you can transfer data to OCS, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
-<!--VT, 11/29/21: Ok.-->
+Before you can transfer data to OCS, you must save the transfer.
 
 To save the transfer:
 

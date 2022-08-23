@@ -6,7 +6,7 @@ Before data can be shared into a community and accessed by external tenants, a u
 
 ## To enable stream sharing permissions
 
-When enabling stream sharing permisions, you can either enable them for an entire namespace or on an ad hoc, stream-by-stream basis.
+When enabling stream sharing permissions, you can either enable them for an entire namespace or on an ad hoc, stream-by-stream basis. Use the tabs below to see instructions for each.
 
 # [Namespace](#tab/tabid-1)
 
@@ -42,7 +42,7 @@ To apply sharing permission to specific streams in a namespace:
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
-1. Select one or more streams that you want to allow sharing on.
+1. Use the checkboxes to select one or more streams that you want to allow sharing on.
 
 1. From the right pane, select **Manage Permissions**.
 

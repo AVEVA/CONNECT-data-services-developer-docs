@@ -12,7 +12,7 @@ The `Communities` page, accessible at **Data Management** > **Communities**, is 
 
 ## Community list
 
-For each community that your tenant participates in OCS, it is listed on the `Communities` page. From this page, you can review high level details for the community and view if you have access to view data streams from the community.
+Each OCS community that your tenant participates in is listed on the `Communities` page. From this page, you can review high level details for the community and view if you have access to view data streams from the community.
 
 The following table describes each field listed for a community:
 

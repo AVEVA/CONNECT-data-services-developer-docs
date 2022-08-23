@@ -38,7 +38,7 @@ You can change permissions for all streams in a namespace with a single action.
 
 1. Select **Save**.
 
-### [On demand](#tab/tabid-2)
+### [Specific streams](#tab/tabid-2)
 
 To apply sharing permission to specific streams in a namespace:
 
@@ -50,7 +50,7 @@ To apply sharing permission to specific streams in a namespace:
 
 	**Note:** If you only have one stream selected, select **More options** ![More options icon](../_icons/branded/dots-vertical.svg) > **Manage Permissions** instead.
 
-	The the `Manage Permissions for Streams` window opens.
+	The `Manage Permissions for Streams` window opens.
 
 1. For user roles that you want to have the ability to share data, update each **Share** permission dropdown list to **Allow**.
 
@@ -61,6 +61,8 @@ To apply sharing permission to specific streams in a namespace:
 1. Select **Save**.
 
 ***
+
+## Managing multiple streams with multiple roles
 
 To configure different roles to allow different data stewards to share different sets of data, do not use the default Tenant Data Steward role and instead create the number of roles needed to manage this within your organization. Then repeat the steps above to grant the share permission for those roles on the specific sets of streams/data that each role will manage.
 

@@ -40,11 +40,11 @@ Sign-up for PI point updates and digital state updates occurs when the agent sta
 
 ## Asset Framework synchronization 
 
-The agent performs an indexing of the AF server after agent registration is successful. The indexing caches all known elements and templates along with their attributes. This index is updated periodically by the agent.
+The agent performs an indexing of the AF server after agent registration is successful. The indexing caches all known elements and templates along with their attributes. The agent updates this index periodically.
 
 When a transfer is started, the agent builds out the implicit PI points referenced by the element Ids specified in the transfer specification to enable change synchronization.
 
-Below are the supported AF change synchronization events and the result of each change:
+The supported AF change synchronization events and the result of each change are listed below:
 
 - Database
 
@@ -98,36 +98,40 @@ Below are the supported AF change synchronization events and the result of each 
 
   - Asset type value updates: The asset type metadata is updated.
 
-<sup>1</sup> If the AutoDeleteCloudObject flag is enabled in the transfer settings.
+<sup>1</sup> This action occurs only if the AutoDeleteCloudObject flag is enabled in the transfer settings.
 
 ## PI point type change
 
 A PI point type change occurs when a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database. When the PI to OCS Agent detects this change, it takes the following actions:
 
-- Displays the `PI Point Type Change Detected` message next to **Current Activity** in the `Details` pane as shown in the screenshot below.
+When the PI to OCS Agent detects that a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database, it takes the following actions:
 
-- Prevents data being sent from the source PI point to the SDS stream until the type is changed to match the corresponding SDS Stream type and the transfer is restarted.
+- The `PI Point Type Change Detected` message displays next to **Current Activity** in the `Details` pane, as shown below.
 
-- Logs details about the corresponding SDS stream in both the Windows Event Viewer and OCS logs.
+  ![PI point type change](../../images/pi-point-type-change.png)
 
-![](../../images/pi-point-type-change.png)
+- The agent prevents data being sent from the source PI point to the SDS stream until the type is changed to match the corresponding SDS stream type and the transfer is restarted.
+
+- The agent logs details about the corresponding SDS stream in both the Windows Event Viewer and OCS logs.
+
+### Causes for PI point type changes
 
 A point change can occur for the following reasons:
 
-* The source PI point had an incorrect configuration of data and type. The data and point must be deleted and recreated.
+* The source PI point data and type is configured incorrectly. The data and point must be deleted and recreated.
 
 * The source PI point was misconfigured initially. For example, the point needed to be updated from `Float32` to `Float64`. The data is still relevant and should be kept.
 
 * Other reasons.
-<!--Angela Flores 6/28/21 This list is oddly specific. Also, what is PI to OCS Services? And PI to OCS service? This topic still needs work. --> 
-<!--VT, 11/29/21: PI to OCS Services/service is the PI to OCS Agent. I had a discussion w/one of the Bonsai developers, Zane Odeh & he confirmed this info. They have been removed from this topic. This topic was updated recently. What other work is needed?-->
+
+### Resume streaming data to an existing SDS stream after a type change
 
 After you create an SDS stream, its underlying SdsType cannot change. As a result, new data from the PI point in question cannot be stored in the same stream. You can resume streaming data from the PI point to the existing SDS stream by taking the following corrective actions:
 
-- View the [Windows Event Viewer logs](xref:view-logs) or [OCS logs](xref:download-tenant-log) to determine which PI point incurred a PI point type change.
+1. View the [Windows Event Viewer logs](xref:view-logs) or [OCS logs](xref:download-tenant-log) to determine which PI point incurred a PI point type change.
 
-    **Note:** The Windows Event Viewer logs are the preferred source of information for PI point type changes.
+   **Note:** The Windows Event Viewer logs are the preferred source of information for PI point type changes.
 
-- Change the PI point type to match the SDS stream type and then restart the transfer.
+1. Change the PI point type to match the SDS stream type and then restart the transfer.
 
-To see what types of point coercions are supported in PI Data Archive, refer to the [Allowable point type coercions](https://docs.osisoft.com/bundle/pi-server/page/allowable-point-type-coercions.html) topic.<!--Angela Flores 6/28/21 should that be "coercions" or "conversions"? --> <!--VTT, 11/29/21: Coercion is the preferred term per the referenced topic.-->
+To see what types of point coercions are supported in PI Data Archive, refer to the [Allowable point type coercions](https://docs.osisoft.com/bundle/pi-server/page/allowable-point-type-coercions.html) topic.

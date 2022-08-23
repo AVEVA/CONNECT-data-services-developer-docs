@@ -34,7 +34,7 @@ To accept an invitation:
 
   **Tip:** You can view or cancel your invitations that are pending confirmation from the `Communities` page. For more information, see <xref:community-view-invitations>.
  
-1. After your tenant is confirmed for the community, select **Details** to set up Community Administrators and Community Members for your tenant.
+1. After your tenant is confirmed for the community, select **Data Management** > **Communities** and select **Details** to set up Community Administrators and Community Members for your tenant.
 
   ![community details](images/community-details.png)
 

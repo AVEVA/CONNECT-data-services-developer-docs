@@ -42,7 +42,7 @@ Sign-up for PI point updates and digital state updates occurs when the agent sta
 
 The agent performs an indexing of the AF server after agent registration is successful. The indexing caches all known elements and templates along with their attributes. The agent updates this index periodically.
 
-When a transfer is started, the agent builds out the implicit PI points referenced by the element Ids specified in the transfer specification to enable change synchronization.
+When a transfer starts, the agent builds out the implicit PI points referenced by the element Ids specified in the transfer specification to enable change synchronization.
 
 The supported AF change synchronization events and the result of each change are listed below:
 
@@ -101,8 +101,6 @@ The supported AF change synchronization events and the result of each change are
 <sup>1</sup> This action occurs only if the AutoDeleteCloudObject flag is enabled in the transfer settings.
 
 ## PI point type change
-
-A PI point type change occurs when a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database. When the PI to OCS Agent detects this change, it takes the following actions:
 
 When the PI to OCS Agent detects that a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database, it takes the following actions:
 

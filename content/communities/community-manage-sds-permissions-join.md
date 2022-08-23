@@ -14,11 +14,11 @@ Before data can be shared into a community and accessed by external tenants, a u
 
 When enabling stream sharing permisions, you can either enable them for an entire namespace or on an ad hoc, stream-by-stream basis. Enabling streams for an entire namespace is more convenient; enabling streams ad hoc is more secure.
 
-# [Namespace](#tab/tabid-1)
+### [Namespace](#tab/tabid-1)
 
 You can change permissions for all streams in a namespace with a single action. 
 
-1. From the left pane, select **Data ManagemenAt** > **Sequential Data Store**.
+1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
 1. From the **Namespace** dropdown list, select the namespace that includes the streams that you want to share.
 
@@ -38,7 +38,7 @@ You can change permissions for all streams in a namespace with a single action.
 
 1. Select **Save**.
 
-# [Ad hoc](#tab/tabid-2)
+### [Ad hoc](#tab/tabid-2)
 
 To apply sharing permission to specific streams in a namespace:
 

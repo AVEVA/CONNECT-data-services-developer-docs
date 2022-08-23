@@ -114,13 +114,11 @@ When the PI to OCS Agent detects that a PI point's type is changed on the source
 
 ### Causes for PI point type changes
 
-A point change can occur for the following reasons:
+A point change can occur for multiple reasons, including:
 
 * The source PI point data and type is configured incorrectly. The data and point must be deleted and recreated.
 
-* The source PI point was misconfigured initially. For example, the point needed to be updated from `Float32` to `Float64`. The data is still relevant and should be kept.
-
-* Other reasons.
+* The source PI point was misconfigured initially. For example, the point needs to be updated from `Float32` to `Float64`. The data is still relevant and should be kept.
 
 ### Resume streaming data to an existing SDS stream after a type change
 

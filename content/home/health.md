@@ -4,7 +4,7 @@ uid: home-health
 
 # Health
 
-The **Health** page displays the health status of each service and namespace in your AVEVA Data Hub tenant. You can access this page from the **Home** page by selecting **System Health**.
+The **Health** page displays the health status of each service and namespace in your AVEVA Data Hub tenant. To view your system health status, select **System Health** from the **Home** page.
 
 ## Service Health
 

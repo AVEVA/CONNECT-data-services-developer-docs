@@ -38,7 +38,7 @@ You can change permissions for all streams in a namespace with a single action.
 
 1. Select **Save**.
 
-# [Ad hoc](#tab/tabid-2)
+### [Ad hoc](#tab/tabid-2)
 
 To apply sharing permission to specific streams in a namespace:
 

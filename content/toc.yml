@@ -58,6 +58,7 @@
       - topicUid: community-communities-page
       - topicUid: community-setup
         items:
+        - topicUid: communities-workflow-community-setup
         - topicUid: community-community-roles
         - topicUid: community-workflow-create
           items:

@@ -4,7 +4,7 @@ uid: communities-usage
 
 # View community usage
 
-The `Usage` tab the streams created and viewed within the selected community. 
+The `Usage` tab displays consumption information for the streams created and viewed within the selected community. You can view these streams by your usage of them within the community or by other tenant usage. 
 
 ## To view community usage
 
@@ -43,6 +43,7 @@ To view how other tenants in the community consume data, select the **Other Tena
 1. (Optional) Select **Export** to export the displayed data.
 
 ***
+
 ##  Time increment
 
 Time increment can display streams accessed by month or day. Choose between the following options:

@@ -24,20 +24,21 @@ Alternatively, you can develop your own connector for third-party software. AVEV
 - [.NET](https://github.com/osisoft/sample-adh-data_views-dotnet)
 - [Java](https://github.com/osisoft/sample-adh-data_views-java)
 
-## Step 1. Client-Credentials Client
+## Workflow: Data view retrieval
+
+To retrieve a data view in a third-party application, follow these steps:
+
+### Step 1. Create Client-Credentials Client
 
 To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate using a valid Client Id and Client secret. You can obtain an Id and secret by creating a set of client-credentials. While creating the client-credentials, accept the default expiry of 3600 seconds. When you are presented with the client secret, keep it secure, as there is no way to see the secret again. If you lose it, create a new set of client-credentials.
 
 For more information on creating client-credential clients, see <xref:gpClientCredentialsClient>.
 
-## Step 2. Develop your own connector 
+### Step 2. Develop your own connector 
 
-Use one of the starter projects listed in [Develop your own connector](#develop-your-own-connector) or develop your own.  
+Use one of the starter projects listed in [Develop your own connector](#develop-your-own-connector) or develop your own. Pass your client-credentials to the connector for authentication purposes. 
 
-## Step 3. Obtain a bearer token for your client 
-
-Provide the client-credentials obtained in step 1 to you client so that it can obtain a bearer token. 
-## Step 4. Use the API Console to request your data view 
+### Step 3. Use the API Console to request your data view 
 
 [!include[api-console](_includes/api-console.md)]
 

@@ -191,14 +191,13 @@
   items:
     - topicUid: DataViews
       items:
-<<<<<<< HEAD
       - topicUid: data-views-create-and-configure
         items:
         - topicUid: data-views-add-data-view
         - topicUid: data-views-add-query
-        - topicUid: data-views-configure-data-field-sets
+        - topicUid: data-view-select-data-fields
           items:
-          - topicUid: data-view-select-data-fields
+          - topicUid: data-views-field-set-options
           - topicUid: data-view-edit-data-fields
           - topicUid: data-view-configure-grouping-fields
           - topicUid: data-views-configure-identifying-fields
@@ -216,12 +215,6 @@
       #   - topicUid: data-views-preview-data-view
       - topicUid: data-views-retrieve    
     - topicUid: data-views-install-power-bi-connector
-=======
-      - topicUid: CreateDataView
-      - topicUid: DataViewMaintenance
-      - topicUid: manage-data-views-permissions
-    - topicUid: PowerBI
->>>>>>> eccc94cbfb662c25bb135f71843c0f00a77f1071
       items:
       - topicUid: PowerBIReleaseNotes
       - topicUid: data-views-retrieve-data-view

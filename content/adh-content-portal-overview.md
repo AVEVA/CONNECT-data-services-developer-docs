@@ -6,7 +6,7 @@ uid: ADH-content-portal-overview
 
 AVEVA™ Data Hub is a cloud-native platform for aggregating, storing, enriching, accessing and analyzing real-time operations data from historians, edge devices and more. 
 
-With AVEVA Data Hub, people in and out of your organization have flexible and secure access operations data. AVEVA Data Hub can collect operations data from within a primary control network to the edge of the industrial network. 
+With AVEVA Data Hub, people in and out of your organization have flexible and secure access to operations data. AVEVA Data Hub can collect operations data from within a primary control network to the edge of the industrial network. 
 
 Select one of the following topics to get started with AVEVA Data Hub:
 

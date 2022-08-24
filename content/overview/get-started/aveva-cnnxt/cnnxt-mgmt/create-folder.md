@@ -46,4 +46,6 @@ Perform the following steps to create a folder in AVEVA Connect:
 
 1. On the displayed folder details page, switch on the AVEVA Data Hub service, then select **Enable** to confirm the selection.
 
+   **Note:** The default maximum number of namespaces for a tenant is five. To increase this maximum, customers must communicate this request to AVEVA.
+
 1. Select the ellipse button on the bottom right of the Service tile and then select **Manage Roles** to ensure that the services turned on has the relevant permissions to be accessed by users.

@@ -2,7 +2,7 @@
 uid: data-views-retrieve-data-view
 ---
 
-# Step 1: Retrieve data view
+# Retrieve data view
 
 Use OSIsoft Cloud Services Power BI Connector to retrieve OCS data views for use in Microsoft Power BI.
 

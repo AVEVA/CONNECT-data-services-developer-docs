@@ -2,8 +2,66 @@
 uid: communities-usage
 ---
 
-# Usage tab
+# View community usage
 
-Irure in adipisicing consequat laborum. Id laboris incididunt elit ullamco aliqua veniam nulla minim qui elit incididunt excepteur. Ipsum laboris elit ut sunt deserunt aute proident do fugiat reprehenderit. Commodo et qui est do. Labore pariatur nulla aliqua incididunt laborum elit ipsum cupidatat aliquip culpa sit. Quis amet commodo occaecat in excepteur.
+The `Usage` tab the streams created and viewed within the selected community. 
 
-Qui reprehenderit culpa enim magna duis esse sunt labore sit ea cupidatat pariatur in. Anim et velit labore exercitation ad eu id occaecat. Reprehenderit sit in sint laboris adipisicing aute eu. Amet pariatur eiusmod pariatur cupidatat sunt non ut magna quis.
+## To view community usage
+
+When viewing streams usage, you can view stream consumption in one of two ways: how your tenant consumes data shared by other tenants, or how other tenants in the community consume shared data.
+
+### [My Usage](#tab/tabid-1)
+
+To view how your tenant consume data shared by other tenants, select the **My Usage** chart.
+
+1. In the left pane, select **Data Management** > **Communities**.
+
+1. For the community that you want to view usage for, select **Details**.
+
+1. Select the **Usage** tab.
+
+1. From **Select Chart**, select **My Usage**.
+
+1. Choose a time increment: **Monthly** or **Daily**. For more information, see [Time increment](#time-increment).
+
+1. (Optional) Select **Export** to export the displayed data.
+
+### [Other Tenant Usage](#tab/tabid-2)
+
+To view how other tenants in the community consume data, select the **Other Tenant Usage** chart.
+
+1. In the left pane, select **Data Management** > **Communities**.
+
+1. For the community that you want to view usage for, select **Details**.
+
+1. Select the **Usage** tab.
+
+1. From **Select Chart**, select **Other Tenant Usage**.
+
+1. Choose a time increment: **Monthly** or **Daily**. For more information, see [Time increment](#time-increment).
+
+1. (Optional) Select **Export** to export the displayed data.
+
+***
+##  Time increment
+
+Time increment can display streams accessed by month or day. Choose between the following options:
+
+- **Monthly**: Displays usage data for the chosen data source for the past seven months, broken down by month.
+
+	![streams accessed monthly](images/streams-accessed-monthly.png)
+
+- **Daily**: Displays usage data for the chosen data source for each day in a chosen month.
+
+	![streams accessed daily](images/streams-accessed-daily.png)
+
+## Legend
+
+Regardless of which parameters you choose, resource usage always display a legend that maps the colors of the graph to each community data source.
+**Legend**
+
+![legend](images/legend.png)
+
+## Tabular data
+
+Regardless of which parameters or chart you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can export this data in JSON format by selecting **Export**.

@@ -14,11 +14,11 @@ The `Resource Usage` page displays the streams created and viewed within your te
 
 1. Review [License usage](#license-usage).
 
-1. Choose a data source: **Namespace Streams** or **Community Shared Streams**. For more information, see [data sources](#data-sources).
+1. Choose a data source: **Namespace Streams** or **Community Shared Streams**. For more information, see [Data sources](#data-sources).
 
 1. Choose a time increment: **Monthly** or **Daily**. For more information, see [Time increment](#time-increment).
 
-1. **(Optional)** Select **Export** to export the displayed data.
+1. (Optional) Select **Export** to export the displayed data.
 
 ## License usage
 

@@ -50,8 +50,6 @@ To create a data view:
 
 ## Add data fields to display as identifying fields for the data view
 
-[!include[data view banner](../../../visualize-data/includes/banner.md)]
-
 1. In the `Add Data Fields` window, select each data field or **Select All** data fields to use as an identifying field. **Show Included Fields** highlights identifying fields already included in the data field.
 
 1. (Optional) To edit data field label, select **Next** and enter `{` to display tokens to use as a data field label.
@@ -84,4 +82,12 @@ Your data view is added to the `Data Views` page. You can view the sources for e
    
 ![Data Views: Query sources column](_images/query-sources-column.png)
 
-To define a data view using the OCS API, see [Define a data view](xref:DataViewsQuickStartDefine).
+To define a data view using the API, see [Define a data view](xref:DataViewsQuickStartDefine).
+
+## Microsoft Power BI Banner
+
+Want to import your data views in Microsoft Power BI? Download the AVEVA Power BI Connector using the page banner. For more information on installation and use of Power BI Connector, see <xref:PowerBI>.
+
+You can dismiss the banner by selecting ![close](../../../_icons/default/close.svg). However, you can still access the installer by selecting **More options** ![more options](../../../_icons/default/dots-vertical.svg) > **Download Power BI Connector**.
+
+![Power BI Banner](../images/banner.png)

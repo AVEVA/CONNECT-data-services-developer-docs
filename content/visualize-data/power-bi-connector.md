@@ -4,7 +4,8 @@ uid: PowerBI
 
 # Power BI Connector
 
-The AVEVA Data Hub Power BI Connector retrieves Data Views from AVEVA Data Hub and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install AVEVA Data Hub Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section. <!--AF 11/18/21 I would prefer to have the procedures separated into at least separate topic. This topic is very long. Also, there is very little conceptual information. -->
+
+The AVEVA Data Hub Power BI Connector retrieves Data Views from AVEVA Data Hub and makes them available in Microsoft Power BI for advanced data visualization and analysis. Install AVEVA Data Hub Power BI Connector to retrieve Data Views for use with Microsoft Power BI as described in this section.
 
 ## System requirements
 
@@ -30,29 +31,15 @@ To install the AVEVA Data Hub Power BI Connector:
 
 1. Select **Edit Data View**.
 
-1. Download the `OCSPowerBIConnector.exe` file by selecting **More options** ![More options](../_icons/default/dots-vertical.svg) > ***Download Power BI Connector**. Then select **Download**.
+1. Download the `AVEVA_Data_Hub_Power_BI_Connector_x_x_x_x.exe` file by selecting **More options** ![More options](../_icons/default/dots-vertical.svg) > **Download Power BI Connector**. Then select **Download**.
 
-   **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. If you dismiss the banner, download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
-
-1. Select **More options** ![More options icon](../_icons/default/dots-vertical.svg) and then select **Download ADH Power BI Connector**.
-
+   **Tip:** You can also download and install the Power BI Connector by selecting **Download Power BI Connector** from the banner. If you dismiss the banner, it does not return. However, you can download the connector using the **More options** ![More options](../_icons/default/dots-vertical.svg) menu instead.
+   
 1. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
-
-1. Open the downloaded Power BI Connector installation file, then select **Yes** to confirm running the installation file.
 
 1. Accept or change the temporary setup extraction folder and select **OK**.
 
    The AVEVA Data Hub Power BI Connector Setup Wizard opens.
-
-1. Select **Next**.
-
-1. (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
-
-1. Select **Next**.
-
-1. Select **Install**.
-
-1. Select **Finish** to exit the Setup Wizard.
 
 ## Retrieve Data Views with Power BI Connector
 

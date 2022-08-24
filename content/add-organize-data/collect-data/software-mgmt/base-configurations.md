@@ -95,5 +95,3 @@ To modify a base configuration and export it for use:
    The JSON file is downloaded to your browser.
 
 1. When you have finished, select **Save & Close**.
-
-1. To confirm the changes, select **Save & Close**. 

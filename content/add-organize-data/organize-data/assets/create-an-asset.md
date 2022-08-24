@@ -40,7 +40,7 @@ To create an asset:
 
 1. Select **Add Stream References**, select the stream in the `Select Streams` window, and then select **Add**.
    
-     **Tips:** To search for streams based on the stream name, description, or the type, enter the text to search for in the **Enter search query** field. Use the asterisk (*) as a wildcard character. To select multiple streams, hold the Ctrl key and select each stream or hold the Shift key and select the first and last stream in a group.
+     **Tips:** To search for streams based on the stream name, description, or the type, enter the text to search for in the **Enter search query** field. When you begin typing in the field, a quick guide to query syntax examples appears. Use the asterisk (*) as a wildcard character. To select multiple streams, hold the Ctrl key and select each stream or hold the Shift key and select the first and last stream in a group. For more details about using search, see <xref:asset-search-dev-guide#examples-of-asset-query-strings>.
 
    Selected streams and their properties are listed in the **Properties** tab.
 

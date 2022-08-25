@@ -22,7 +22,7 @@ Use Microsoft Power BI to edit a query generated from the connector to modify th
         
      b. Edit the parameter values for Start Index and End Index. If applicable, edit the Interpolation Interval.
         
-     ![TEnter Parameters](../images/mspowerbi-enter-parameters.png)
+     ![Enter Parameters](../images/mspowerbi-enter-parameters.png)
 
    - Modify for relative dates:
     

@@ -6,7 +6,7 @@ uid: WhatADHdoes
 
 AVEVA Data Hub consists of several different areas of core functionality: tenant management, data collection, data organization, and data analysis. The following sections discuss each area in detail:
 
-* [Tenant management](#tenant-management) - Explains basic concepts in managing AVEVA Data Hub, including clients, users, roles, roles-based access control and discusses how administrators can customize Data Hub based on organizational requirements. 
+* [Tenant management](#tenant-management) - Explains basic concepts in managing AVEVA Data Hub, including clients, users, roles, roles-based access control and discusses how administrators can customize AVEVA Data Hub based on organizational requirements. 
 * [Data collection](#data-collection) - Summarizes techniques to collect and feed data from multiple sources across your organization into a namespace. 
 * [Data organization](#data-organization) - Provides a high-level description of how operational data is stored and retrieved.
 * [Data analysis](#data-analysis) - Provides users with analytical tools to sort and visualize data.
@@ -23,7 +23,7 @@ Customize AVEVA Data Hub to meet your organization's requirements and needs. Adm
 
 ### Tenant 
 
-A tenant is the root-level resource in AVEVA Data Hub; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant with one or more identity providers. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains folders/namespaces where data is managed.
+A tenant is the root-level resource in AVEVA Data Hub; all other resources are scoped to a tenant. Tenant-level resources deal with identity and access control. You can add users to a tenant with AVEVA Connect. Roles are defined for a tenant and can be assigned to users or clients to manage access to resources. A tenant contains folders/namespaces where data is managed.
 
 ### Namespace 
 
@@ -31,13 +31,13 @@ A namespace is a logical unit of organization for data within a tenant. Before c
 
 ### Region 
 
-Regions are geographical area designations associated with AVEVA Data Hub resources, for example, types, streams, and data views. WestUS and NorthEurope are regions. AVEVA Data Hub provisions a folder/namespace within a single region. After you create a folder/namespace in AVEVA Connect, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
+Regions are geographical area designations associated with AVEVA Data Hub resources, for example, types, streams, and data views. WestUS, NorthEurope, and AustraliaEast are regions. AVEVA Data Hub provisions a folder/namespace within a single region. After you create a folder/namespace in AVEVA Connect, any resources you create in that namespace are bound to its region. Any data stored in the namespace is stored in that region.
 
 ### Identity 
 
 Identity is the authentication factor used to verify a user or client that requests access to AVEVA Data Hub. AVEVA Data Hub identity services provide the following functions: 
 
-- Authenticate users with a local account store or through an external identity provider 
+- Authenticate users through an external identity provider 
 - Provide session management and single sign-on 
 - Authenticate client applications 
 - Issue identity and access tokens to client applications and users 
@@ -45,7 +45,7 @@ Identity is the authentication factor used to verify a user or client that reque
 
 ### User 
 
-A user is an individual identity that represents a person using AVEVA Data Hub. Users log in to AVEVA Data Hub via AVEVA Connect, they authenticate through an identity provider. The identity provider authenticates the user, and upon successful authentication, passes a token back to AVEVA Data Hub verifying the identity of the user. This identity is used by AVEVA Data Hub to grant access for a specific time period. 
+A user is an individual identity that represents a person using AVEVA Data Hub. Users log in to AVEVA Data Hub via AVEVA Connect and they authenticate through an identity provider. The identity provider authenticates the user, and upon successful authentication, passes a token back to AVEVA Data Hub verifying the identity of the user. This identity is used by AVEVA Data Hub to grant access for a specific time period. 
 
 ### Clients 
 
@@ -100,10 +100,7 @@ The type of data, the location of that data, and the way that a particular sourc
 
 #### PI to Data Hub 
 
-The PI to Data Hub collection method transfers PI time series data from a local PI Server to AVEVA Data Hub. The PI to Data Hub Agent is installed and configured directly on a designated device. The PI to Data Hub Agent creates types and streams in AVEVA Data Hub based on the PI tags mapped from PI Data Archive. 
-
-**Note**: Install the PI to Data Hub Agent and PI Server on separate devices to avoid the two systems competing for resources.
-<!--Angela Flores 6/29/21 Too much detail for an overview.-->
+The PI to Data Hub collection method transfers PI time-series data from a local PI Server to AVEVA Data Hub. The PI to Data Hub Agent is installed and configured directly on a designated device. The PI to Data Hub Agent creates types and streams in AVEVA Data Hub based on the PI tags mapped from a PI Data Archive. 
 
 #### Custom OMF applications
 
@@ -211,9 +208,9 @@ Two dynamic methods are available to allow you to filter and order data after th
 - [Metadata rules](#metadata-rules) - Metadata rules assign metadata to streams matching defined stream name patterns.
 - [Data views](#data-views) - Data views order, index, and organize data from multiple streams. 
 
-### Metadata rules 
+### Stream metadata rules 
 
-Select a stream name to use as a name pattern and assign metadata to selected stream name parts, such as a plant location or device category. The resulting stream name pattern with assigned metadata parts defines a metadata rule. The metadata rule assigns the defined metadata to all streams in a given namespace that match the stream name pattern. 
+Select a stream name to use as a name pattern and assign metadata to selected stream name parts, such as a plant location or device category. The resulting stream name pattern with assigned metadata parts defines a stream metadata rule. The stream metadata rule assigns the defined metadata to all streams in a given namespace that match the stream name pattern. 
 
 The following diagram shows metadata in the context of several different but similar data streams: 
 
@@ -225,9 +222,9 @@ The diagram above shows three data streams for turbines named GEO1 and GEO2.
 
 1. The basic description of the stream data is encoded in the stream name, but it can be difficult to understand. Use metadata rules to decode this information. For example, the metadata rule delineates the stream name, GEO1_P.ACT_PV, as GEO1, *Turbine*, and ACT_PV, *Active Power*.
 
-1. A metadata rule based on this stream naming pattern can assign metadata for all turbines in each matching stream. 
+1. A stream metadata rule based on this stream naming pattern can assign metadata for all turbines in each matching stream. 
 
-A metadata rule assigns the defined metadata to any matching streams in the selected namespace, as well as matching streams that are subsequently added to the namespace.
+A stream metadata rule assigns the defined metadata to any matching streams in the selected namespace, as well as matching streams that are subsequently added to the namespace.
 
 ### Data views 
 

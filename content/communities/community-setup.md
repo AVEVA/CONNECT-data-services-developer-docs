@@ -14,7 +14,7 @@ Setup of a community involves coordination between two tenants and users with di
 
 **Workflow: Community setup**
 
-![alt](images/workflow-community-setup.svg)
+![alt](images/workflow-community-setup.drawio.svg)
 
 ## Community user roles
 
@@ -39,10 +39,12 @@ To allow different tenants and users participating in a community to safely and 
 - **Administrative Tenant**
 
 	Each community has an administrative tenant, which is the tenant that administers the community itself. When you create a new community, your tenant is automatically configured as the administrative tenant. Users assigned community administrator permissions on the administrative tenant have additional permissions for managing the community itself that affect all tenants within it.
- 
+
+
 ## Next steps
 
 Depending on whether you are creating or joining a community, proceed to one of the following topics:
 
 - To create a community, see <xref:community-workflow-create>.
 - To join a community, see <xref:community-workflow-join>.
+

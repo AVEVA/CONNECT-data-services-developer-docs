@@ -8,13 +8,17 @@ Establish a community by creating it and then inviting your trusted business par
 
 ## Workflow: Community setup
 
-Setup of a community involves coordination between two tenants and users with different permissions. Before you start setup of a community, review the figure below to better understand the entire community setup process. For more information about the user roles that perform each step of the setup process, see [Community user roles](#community-user-roles).
-
-**Note:** This figure offers a high-level view of the entire community setup process. For more information on low-level details on completing the setup process, see the topics that follow this one.
+Setup of a community involves coordination between two tenants and users with different user roles and permissions. Before you start setup of a community, review the figure below to better understand the entire community setup process.
 
 **Workflow: Community setup**
 
 ![alt](images/workflow-community-setup.drawio.svg)
+
+This diagram lists each task that must be completed to form an operational community, broken down by each user role that performs them. Each of these tasks are documented in the upcoming sections:
+
+- <xref:community-workflow-create>
+- <xref:community-workflow-join>
+- [Share streams](xref:community-manage-shared-streams#share-streams)
 
 ## Community user roles
 
@@ -47,4 +51,3 @@ Depending on whether you are creating or joining a community, proceed to one of 
 
 - To create a community, see <xref:community-workflow-create>.
 - To join a community, see <xref:community-workflow-join>.
-

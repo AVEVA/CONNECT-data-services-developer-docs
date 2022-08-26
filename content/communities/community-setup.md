@@ -12,7 +12,7 @@ Setup of a community involves coordination between two tenants and users with di
 
 **Workflow: Community setup**
 
-![alt](images/workflow-community-setup.drawio.svg)
+![Workflow: Community setup](images/workflow-community-setup.drawio.svg)
 
 This diagram lists each task that must be completed to form an operational community, broken down by each user role that performs them. Each of these tasks are documented in the upcoming sections:
 
@@ -30,9 +30,9 @@ To allow different tenants and users participating in a community to safely and 
 
 - **SDS administrative user**
 
-	Communities require a user with privileges to allow other users to share streams within SDS explorer, such as the Tenant Administrator. This user then grants different data stewards permissions to share streams into a community. 
+	Communities require a user with privileges to allow other users to share streams within SDS explorer, such as the Tenant Administrator. Although the SDS Administrative user is not technically a community role, they are important during community setup because they grant different data stewards permissions to share streams into a community. 
 
-- **Data Stewards**
+- **Community Data Stewards**
 
 	Users that have permissions to share a data stream into a community are known as _data stewards_. Share permissions are required to share a stream into a community. OSIsoft recommends that you assign share permissions to the **Data Steward** role, but you can use any role that you want. 
 

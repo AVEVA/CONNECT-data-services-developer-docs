@@ -10,7 +10,7 @@ When another tenant invites you to a community, you receive an email invitation 
 
 ## Prerequisites
 
-[!include[prereq-community-admin](prereq-community-admin.md)]
+[!include[prereq-community-admin](includes/prereq-community-admin.md)]
 
 ## To accept an invitation:
 

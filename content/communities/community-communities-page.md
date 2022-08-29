@@ -4,15 +4,11 @@ uid: community-communities-page
 
 # Communities page
 
-The `Communities` page, accessible at **Data Management** > **Communities**, is the entry point for creating and participating in communities. Depending on your user roles and permissions, this page displays a different inventory of communities:
+The `Communities` page, accessible at **Data Management** > **Communities**, is the entry point for creating and participating in communities. Depending on your user roles and permissions, this page displays a different inventory of communities and options.
 
-- If you are a [Community Administrator](xref:community-community-roles#community-administrators), this page lists *all* communities that your tenant participates in, along with their high-level details. 
+## Community list
 
-- If you are a [Community Member](xref:community-community-roles#community-member), this page lists only the communities that you hold membership in, along with their high-level details.  
-
-## Community view
-
-For each community that your tenant participates in OCS, it is listed on the `Communities` page. From this page, you can review high level details for the community and view if you have access to view data streams from the community.
+Each OCS community that your tenant participates in is listed on the `Communities` page. From this page, you can review high level details for the community and view if you have access to view data streams from the community.
 
 The following table describes each field listed for a community:
 
@@ -28,12 +24,12 @@ Select **Details** to administrate the community. For more information on admini
 - <xref:community-community-administration>
 - <xref:community-tenant-administration>
 
-You can also toggle the `Communities` page between two views using the view toggle.
+You can also toggle the `Communities` page between the default list view and a card view.
 
 | View | Icon | Description |
 |--|--|--|
-| **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
 | **List view** | ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
+| **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
 
 ## Community toolbar
 

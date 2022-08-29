@@ -98,4 +98,8 @@ When you update stream permissions in bulk or use the `Manage Default Permission
 
 ![Open jobs page](../images/notifications-jobs.png)
 
+- Select **Download Failed Jobs** to download the listed error messages in JSON format.
+
+- Select **Copy** ![alt](../../../_icons/branded/content-copy.svg) to copy the error message text to your clipboard.
+
 **Note:** Stream permissions jobs are only accessible from your notifications. If you clear the notification for a job, you must re-run the job to view its result again.

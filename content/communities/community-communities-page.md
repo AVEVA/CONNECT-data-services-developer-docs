@@ -4,11 +4,7 @@ uid: community-communities-page
 
 # Communities page
 
-The `Communities` page, accessible at **Data Management** > **Communities**, is the entry point for creating and participating in communities. Depending on your user roles and permissions, this page displays a different inventory of communities:
-
-- If you are a [Community Administrator](xref:community-community-roles#community-administrators), this page lists *all* communities that your tenant participates in, along with their high-level details. 
-
-- If you are a [Community Member](xref:community-community-roles#community-member), this page lists only the communities that you hold membership in, along with their high-level details.  
+The `Communities` page, accessible at **Data Management** > **Communities**, is the entry point for creating and participating in communities. Depending on your user roles and permissions, this page displays a different inventory of communities and options.
 
 ## Community list
 

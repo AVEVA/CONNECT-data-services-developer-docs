@@ -46,7 +46,7 @@ To view how other tenants in the community consume data, select the **Other Tena
 
 ##  View
 
-Time increment can display streams accessed by month or day. Choose between the following options:
+Use the view dropdown to display streams accessed by month or day. Choose between the following options:
 
 - **Monthly**: Displays usage data for the chosen data source for the past seven months, broken down by month.
 

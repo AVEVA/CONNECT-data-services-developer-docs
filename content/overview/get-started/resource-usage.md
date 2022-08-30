@@ -42,9 +42,9 @@ For data source, you can view streams from your native tenant namespaces or from
 
 - **Community Shared Streams**: Displays usage data about streams shared into communities that your tenant holds membership in.
 
-##  Time increment
+##  View
 
-Time increment can display streams accessed by month or day. Choose between the following options:
+Use the view dropdown to display streams accessed by month or day. Choose between the following options:
 
 - **Monthly**: Displays usage data for the chosen data source for the past seven months, broken down by month.
 

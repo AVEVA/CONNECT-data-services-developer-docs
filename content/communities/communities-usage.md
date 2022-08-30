@@ -20,11 +20,11 @@ To view how your tenant consume data shared by other tenants, select the **My Us
 
 1. Select the **Usage** tab.
 
-1. From **Select Chart**, select **My Usage**.
+1. From the left dropdown list, select **My Usage**.
 
-1. Choose a time increment: **Monthly** or **Daily**. For more information, see [Time increment](#time-increment).
+1. From the right dropdown list, choose **Monthly View** or a **Daily View** for a given day. For more information, see [View](#view).
 
-1. (Optional) Select **Export** to export the displayed data.
+1. (Optional) Select **Download** to export the displayed data.
 
 ### [Other Tenant Usage](#tab/tabid-2)
 
@@ -44,7 +44,7 @@ To view how other tenants in the community consume data, select the **Other Tena
 
 ***
 
-##  Time increment
+##  View
 
 Time increment can display streams accessed by month or day. Choose between the following options:
 
@@ -52,7 +52,7 @@ Time increment can display streams accessed by month or day. Choose between the 
 
 	![streams accessed monthly](images/streams-accessed-monthly.png)
 
-- **Daily**: Displays usage data for the chosen data source for each day in a chosen month.
+- **Daily**: Displays usage data for the chosen data source for each day in a chosen month. There is a daily view for each day of the month that shared stream access occurred. 
 
 	![streams accessed daily](images/streams-accessed-daily.png)
 
@@ -65,4 +65,4 @@ Regardless of which parameters you choose, resource usage always display a legen
 
 ## Tabular data
 
-Regardless of which parameters or chart you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can export this data in JSON format by selecting **Export**.
+Regardless of which parameters or chart you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can export this data in CSV format by selecting **Download Usage**.

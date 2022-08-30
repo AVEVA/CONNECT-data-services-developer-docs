@@ -2,7 +2,15 @@
 uid: community-workflow-join
 ---
 
-# Workflow to join a community
+# Workflow: Join community
+
+To join a community, accept the invitation sent by the owning tenant and set stream sharing permissions.
+
+## Prerequisites
+
+[!include[prereq-community-admin](includes/prereq-community-admin.md)]
+
+## Join community outline
 
 Complete the following procedures to join a community after receiving an invitation.
 

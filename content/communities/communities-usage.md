@@ -59,6 +59,7 @@ Time increment can display streams accessed by month or day. Choose between the 
 ## Legend
 
 Regardless of which parameters you choose, resource usage always display a legend that maps the colors of the graph to each community data source.
+
 **Legend**
 
 ![legend](images/legend.png)

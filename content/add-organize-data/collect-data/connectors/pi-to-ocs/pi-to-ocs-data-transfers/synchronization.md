@@ -4,7 +4,7 @@ uid: PItoDHSync
 
 # PI to OCS change synchronization
 
-The PI to OCS Agent supports synchronizing changes in the PI Data Archive and PI Asset Framework. Updates are automatically sent to OCS without any user interaction. This topic outlines how synchronization works and its limitations.
+The PI to OCS Agent supports synchronizing changes in the PI Data Archive and PI Asset Framework. Updates are automatically sent to OCS without any user interaction. 
 
 ## Data Archive synchronization 
 

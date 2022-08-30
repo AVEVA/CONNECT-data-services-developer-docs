@@ -26,7 +26,7 @@ The PI To OCS Agent signs up for the following updates to stay in sync with the 
 
 - Data updates
 
-  - Point compression updates.
+  - **Point compression updates**.
 
 Sign-up for PI point updates and digital state updates occurs when the agent starts, while data updates do not begin until the start of a transfer.
 
@@ -50,7 +50,7 @@ The supported AF change synchronization events and the result of each change are
 
   - **Database addition**: No effect on the existing transfer, but elements from the new database will be available to add if the transfer is edited.
 
-  - Database rename: The Path metadata of assets referencing the database is updated.
+  - **Database rename**: The path metadata of assets referencing the database is updated.
 
   - **Database deletion**: All elements and templates that were also deleted because of the database being removed will propagate and synchronize.<sup>1</sup>
 

@@ -3,8 +3,7 @@ uid: transfer-data
 ---
 
 # Transfer data to OCS
-<!-- AF 11/15/21 This topic appears in the TOC twice. It could also use to be broken into Define a data transfer and Start a data transfer. -->
-<!-- VT 11/29/21: This has been addressed by PR #764 (edits to PI to OCS landing pages).-->
+
 **Note:** The ability to transfer Asset Framework data is only available in AVEVA™ Data Hub. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.
 
 You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
@@ -57,10 +56,10 @@ To name the data transfer:
 
 1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
-   * **High** - Sends all intended metadata.
-   * **Medium** - Default. Sends metadata without logical addresses from the data source.
-   * **Low** - Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
-   * **None** - Sends only the point ID and point name; no metadata is included in the transfer.
+   * **High**: Sends all intended metadata.
+   * **Medium**: Default. Sends metadata without logical addresses from the data source.
+   * **Low**: Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
+   * **None**: Sends only the point ID and point name; no metadata is included in the transfer.
 
    **What PI point attributes are transferred with each Stream Metadata Replication Policy (data privacy) setting?**
 
@@ -113,7 +112,7 @@ To build an AF element:
 
       * In the last field, enter an attribute value.
 
-   **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.<br></br>
+   **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.
    
 1. (Optional) To narrow your search by template name, in the **Template** field, select a template from the dropdown list.
 
@@ -233,8 +232,7 @@ To view PI point details:
 
 ## Save a transfer
 
-Before you can transfer data to OCS, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
-<!--VT, 11/29/21: Ok.-->
+Before you can transfer data to OCS, you must save the transfer.
 
 To save the transfer:
 

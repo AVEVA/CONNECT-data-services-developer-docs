@@ -58,6 +58,8 @@ These AF objects are not included in a PI to Data Hub data transfer:
 
 * Weakly referenced elements, composition elements, and element templates
 
+When an AF element is transferred and a corresponding OCS asset is created, if any attributes are undefined in the element but have default attribute values defined in the applicable AF element template, the default values will be shown in the Asset Explorer. 
+
 ## Performance metrics: AF data transfer
 
 The average data transfer rate is approximately 120-150 assets per second, and 1,000 assets per minute. Streams are created first, followed by AF element and asset data. If you use the same stream for various elements, the transfer time may be shorter.

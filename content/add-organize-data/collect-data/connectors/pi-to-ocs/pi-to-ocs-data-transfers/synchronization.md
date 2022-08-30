@@ -12,17 +12,17 @@ The PI To OCS Agent signs up for the following updates to stay in sync with the 
 
 - PI point updates
 
-  - Adding a PI point: If PointId was listed in the transfer specification, a stream is created and the data streams to SDS.
+  - **Adding a PI point**: If PointId was listed in the transfer specification, a stream is created and the data streams to SDS.
 
-  - Updating a PI point name: The SDS stream name is updated.
+  - **Updating a PI point name**: The SDS stream name is updated.
 
-  - Updating metadata: The corresponding SDS stream metadata is updated.
+  - **Updating metadata**: The corresponding SDS stream metadata is updated.
 
-  - Deleting a PI point: The SDS stream is deleted, if the AutoDeleteCloudObject flag is enabled in the transfer settings.
+  - **Deleting a PI point**: The SDS stream is deleted if the AutoDeleteCloudObject flag is enabled in the transfer settings.
 
 - Digital state updates
 
-  - Update set name/values: The SDS stream values are changed to the updated digital state set/name; see limitations below.
+  - **Update set name/values**: The SDS stream values are changed to the updated digital state set/name. See the Data Archive synchronization limitations table below.
 
 - Data updates
 
@@ -48,55 +48,55 @@ The supported AF change synchronization events and the result of each change are
 
 - Database
 
-  - Database addition: No effect on the existing transfer, but elements from the new database will be available to add if the transfer is edited.
+  - **Database addition**: No effect on the existing transfer, but elements from the new database will be available to add if the transfer is edited.
 
   - Database rename: The Path metadata of assets referencing the database is updated.
 
-  - Database deletion: All elements and templates that were also deleted because of the database being removed will propagate and synchronize.<sup>1</sup>
+  - **Database deletion**: All elements and templates that were also deleted because of the database being removed will propagate and synchronize.<sup>1</sup>
 
 - Element
 
-  - Updates to Name, Description, Template: The corresponding asset property is updated.
+  - **Updates to Name, Description, Template**: The corresponding asset property is updated.
 
-  - Addition or updates to attributes: An SDS stream is created if newly referenced in transfer. The stream reference of the asset is added or updated.
+  - **Addition or updates to attributes**: An SDS stream is created if newly referenced in transfer. The stream reference of the asset is added or updated.
 
-  - Deletion of attributes: The stream reference is removed from the asset. The SDS stream is removed if a point is no longer referenced in the transfer.<sup>1</sup>
+  - **Deletion of attributes**: The stream reference is removed from the asset. The SDS stream is removed if a point is no longer referenced in the transfer.<sup>1</sup>
 
-  - Deletion of the element: The asset is deleted.<sup>1</sup>
+  - **Deletion of the element**: The asset is deleted.<sup>1</sup>
 
 - Point attributes
 
-  - Metadata updates (Name, Description, etc.): The asset property is updated to reflect the change.
+  - **Metadata updates (Name, Description, etc.)**: The asset property is updated to reflect the change.
 
-  - PI point reference updates: The stream reference of the asset on the cloud changes to the updated stream. If the previously referenced point is no longer referenced implicitly or explicitly in the transfer, the SDS stream is removed.<sup>1</sup>
+  - **PI point reference updates**: The stream reference of the asset on the cloud changes to the updated stream. If the previously referenced point is no longer referenced implicitly or explicitly in the transfer, the SDS stream is removed.<sup>1</sup>
 
 - Static attributes
 
-  - Metadata updates (Name, Description, etc.): The asset metadata associated with the attribute is updated.
+  - **Metadata updates (Name, Description, etc.)**: The asset metadata associated with the attribute is updated.
 
-  - Value updates: The value of the attribute is updated.
+  - **Value updates**: The value of the attribute is updated.
 
 - Template
 
-  - Updates to Name, Description, Template: The corresponding property is updated on the asset type.
+  - **Updates to Name, Description, Template**: The corresponding property is updated on the asset type.
 
-  - Addition or updates to attribute templates: The stream reference and metadata associated with the asset type is updated.
+  - **Addition or updates to attribute templates**: The stream reference and metadata associated with the asset type is updated.
 
-  - Deletion of attribute templates: The stream reference and metadata is removed from the asset type.
+  - **Deletion of attribute templates**: The stream reference and metadata is removed from the asset type.
 
-  - Deletion of the template: The asset type is removed.<sup>1</sup>
+  - **Deletion of the template**: The asset type is removed.<sup>1</sup>
 
 - Point attribute templates
 
-  - Metadata updates (Name, Description, etc.): The asset type property is updated to reflect the change.
+  - **Metadata updates (Name, Description, etc.)**: The asset type property is updated to reflect the change.
 
-  - PI point reference updates: The stream reference is updated on the asset type.
+  - **PI point reference updates**: The stream reference is updated on the asset type.
 
 - Static attribute templates
 
-  - Metadata updates (Name, Description, etc.): The asset type metadata associated with the attribute is updated.
+  - **Metadata updates (Name, Description, etc.)**: The asset type metadata associated with the attribute is updated.
 
-  - Asset type value updates: The asset type metadata is updated.
+  - **Asset type value updates**: The asset type metadata is updated.
 
 <sup>1</sup> This action occurs only if the AutoDeleteCloudObject flag is enabled in the transfer settings.
 
@@ -104,7 +104,7 @@ The supported AF change synchronization events and the result of each change are
 
 When the PI to OCS Agent detects that a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database, it takes the following actions:
 
-- The `PI Point Type Change Detected` message displays next to **Current Activity** in the `Details` pane, as shown below.
+- The `PI Point Type Change Detected` message displays next to **Current Activity** in the `Details` pane, as shown below:
 
   ![PI point type change](../../images/pi-point-type-change.png)
 

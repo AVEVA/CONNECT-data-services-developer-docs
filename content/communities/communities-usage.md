@@ -36,7 +36,7 @@ To view how other tenants in the community consume data, select the **Other Tena
 
 1. Select the **Usage** tab.
 
-1. From **Select Chart**, select **Other Tenant Usage**.
+1. From the left dropdown list, select **Other Tenant Usage**.
 
 1. From the right dropdown list, choose **Monthly View** or a **Daily View** for a given day. For more information, see [View](#view).
 

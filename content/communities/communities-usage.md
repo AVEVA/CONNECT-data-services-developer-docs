@@ -24,7 +24,7 @@ To view how your tenant consume data shared by other tenants, select the **My Us
 
 1. From the right dropdown list, choose **Monthly View** or a **Daily View** for a given day. For more information, see [View](#view).
 
-1. (Optional) Select **Download** to export the displayed data.
+1. (Optional) Select **Download Usage** to download the displayed data as a CSV file.
 
 ### [Other Tenant Usage](#tab/tabid-2)
 
@@ -38,9 +38,9 @@ To view how other tenants in the community consume data, select the **Other Tena
 
 1. From **Select Chart**, select **Other Tenant Usage**.
 
-1. Choose a time increment: **Monthly** or **Daily**. For more information, see [Time increment](#time-increment).
+1. From the right dropdown list, choose **Monthly View** or a **Daily View** for a given day. For more information, see [View](#view).
 
-1. (Optional) Select **Export** to export the displayed data.
+1. (Optional) Select **Download Usage** to download the displayed data as a CSV file.
 
 ***
 

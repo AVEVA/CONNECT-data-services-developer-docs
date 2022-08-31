@@ -4,7 +4,7 @@ uid: ResourceUsage
 
 # Resource usage
 
-The `Resource Usage` page displays the streams created and viewed within your tenant as a bar graph. The graph contains two parameters that you can edit: data source and time.  
+The `Resource Usage` page displays the streams created and viewed within your tenant or from a community as a bar graph. The graph contains two parameters that you can edit: data source and views.  
 
 ## To view resource usage
 
@@ -16,17 +16,13 @@ The `Resource Usage` page displays the streams created and viewed within your te
 
 1. Choose a data source: **Streams Accessed** or **Shared Streams Accessed**. For more information, see [data sources](#data-sources).
 
-1. Choose a time increment: **Monthly** or **Daily**. For more information, see [Time increment](#time-increment).
+1. Choose a time increment: **Monthly View** or **Daily View**. For more information, see [View](#view).
 
 1. (Optional) Select **Download Usage** to download  the displayed data.
 
 ## License usage
 
 Resource usage always displays your license information, regardless of what page parameters you select. This license information lists your total number of licenses available along with the number consumed.
-
-**License information**
-
-![license information](../../communities/images/license-information.png)
 
 Field | Desription
 --|--

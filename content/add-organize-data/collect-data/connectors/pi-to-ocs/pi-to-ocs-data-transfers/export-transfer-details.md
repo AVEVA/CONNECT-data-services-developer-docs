@@ -10,7 +10,7 @@ To export transfer details:
 
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
-1. In the `PI to Data Hub Agents` window, select the agent that contains the transfer.
+1. In the `PI to Data Hub Agents` page, select the agent that contains the transfer.
  
 1. On the `Details` pane, select **View Transfer**.
 

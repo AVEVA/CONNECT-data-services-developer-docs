@@ -17,18 +17,14 @@ The information in the sections that follow document the APIs and usage for each
 * [Data views](xref:DataViewsOverview)—Use the information in this section to create user-selected subsets of data stored in AVEVA Data Hub which are mapped into customizable table formats.
 
 * [Identity and access management](xref:identityandaccessmanagement)—Use the information in this section to create, manage and administer users and clients.
-
-* [Operations](xref:operationsOverview)—Use the information in this section to get metrics on AVEVA Data Hub operation. 
-
-* [Rules](xref:rules-lp)—The metadata rules feature in the AVEVA Data Hub Portal simplifies the process of assigning metadata to streams.
-
-* [Sequential Data Store (SDS)](xref:sds)—Use the information in this section to learn about the AVEVA Data Hub Sequential Data Store. The SDS is optimized for sequential data operations.
-
+* [Operations](xref:operationsOverview)—Use the information in this section to get metrics on OCS operation. 
+* [Rules](xref:rules-lp)—The metadata rules feature in the OCS Portal simplifies the process of assigning metadata to streams.
+* [Sequential Data Store (SDS)](xref:sds)—Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data Store. The SDS is optimized for sequential data operations.
 * [Tenant Management](xref:AccountManagementOverview)—Use the information in this section to create, manage, and administer your account by assigning users, roles, and namespaces to your tenant.
 
 ## Access to AVEVA Data Hub
 
-You must acquire an account before interacting with the AVEVA Data Hub. To request an account, contact us at the [AVEVA Knowledge and Support Center](https://softwaresupport.aveva.com/).
+You must acquire an account before interacting with AVEVA Data Hub. To request an account, contact us at the [AVEVA Knowledge and Support Center](https://softwaresupport.aveva.com/).
 
 ## API console
 

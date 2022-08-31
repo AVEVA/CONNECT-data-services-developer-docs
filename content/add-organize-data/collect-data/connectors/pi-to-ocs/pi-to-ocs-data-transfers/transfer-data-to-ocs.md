@@ -4,7 +4,7 @@ uid: transfer-data
 
 # Transfer data to AVEVA Data Hub
 
-You initiate a data transfer from the `PI to Data Hub Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
+You initiate a data transfer from the `PI to Data Hub Agents` page. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#explicit-versus-implicit-pi-points).
 
@@ -28,7 +28,7 @@ Transfer creation consists of the following tasks:
 
 1. Initiate the data transfer and monitor its progress. 
 
-**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to Data Hub Agents` window. The following image shows AF indexing in progress:
+**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to Data Hub Agents` page. The following image shows AF indexing in progress:
 
 ![](../../images/af-indexing.png)
 
@@ -38,11 +38,11 @@ To name the data transfer:
 
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
-1. In the `PI to Data Hub Agents` window, select the agent for the data transfer.
+1. In the `PI to Data Hub Agents` page, select the agent for the data transfer.
 
 1. In the **Manage Agent** tab, select **Create Transfer**.
 
-   The `Transfer Setting` window opens.
+   The `Transfer Settings` window opens.
 
    ![](../../images/transfer-settings.png)
    
@@ -80,7 +80,7 @@ To name the data transfer:
 
    The transfer is created and the `Transfer` page opens.
 
-**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Setting` window and modify the name, description, historical start and end times, and data privacy settings as needed.
+**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Settings` window and modify the name, description, historical start and end times, and data privacy settings as needed.
 
 ## Build an AF elements transfer list
 
@@ -224,8 +224,7 @@ To view PI point details:
 
 ## Save a transfer
 
-Before you can transfer data to AVEVA Data Hub, you must save the transfer. To make changes to a transfer, you have to remove the existing transfer and define a new transfer.<!--AF 11/15/21 - I don't like that there is just a single a step for saving the definition. -->
-<!--VT, 11/29/21: Ok.-->
+Before you can transfer data to AVEVA Data Hub, you must save the transfer.
 
 To save the transfer:
 
@@ -233,7 +232,7 @@ To save the transfer:
  
 1. (Optional) Add or remove PI points and/or AF elements as needed. 
 
-1. To save the transfer and return to the PI to Data Hub Agents window, select **Save** in the lower right-hand corner.
+1. To save the transfer and return to the `PI to Data Hub Agents` page, select **Save** in the lower right-hand corner.
 
 ## Transfer data to AVEVA Data Hub
 
@@ -251,7 +250,7 @@ Data is ready for transfer after the desired PI points and/or AF elements have b
 
 To start a data transfer:
 
-1. (Optional) In the `PI to Data Hub Agents` window, select the PI to Data Hub Agent associated with the data transfer. 
+1. (Optional) In the `PI to Data Hub Agents` page, select the PI to Data Hub Agent associated with the data transfer. 
 
 1. (Optional) In the **Manage Agent** tab, expand the `Transfer Overview` section.
 

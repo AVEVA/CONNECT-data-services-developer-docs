@@ -85,7 +85,7 @@ To add an AF server:
 
 The AF server name, or its alternate display name, displays on the PI to Data Hub Agents page within AVEVA Data Hub and is referenced in the path of an asset's metadata, which is visible in Asset Explorer (`__Path`).
 
-The Data Archive name, or its alternate display name, appears in the PI to Data Hub Agents window within AVEVA Data Hub, and is used in the StreamIds created by a transfer. StreamIds have the format `PI_[DataArchiveServerName]_[PIPointIDNumber]`.
+The Data Archive name, or its alternate display name, appears in the `PI to Data Hub Agents` page within AVEVA Data Hub, and is used in the StreamIds created by a transfer. StreamIds have the format `PI_[DataArchiveServerName]_[PIPointIDNumber]`.
 
 **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.
 
@@ -133,7 +133,7 @@ After adding an AF server, select the source Data Archive that contains the PI p
 
 The list of available Data Archive servers is based on the servers referenced by AF elements on the AF server you selected. If you are upgrading an agent, the PI to Data Hub Agent Configuration Utility maintains the previously selected Data Archive configuration.  
 
-**Note:** If you are not adding an AF server, select the Data Archive icon on the first screen of the PI to Data Hub Agent Configuration Utility.
+**Note:** If you are not adding an AF server, select the Data Archive icon on the first page of the PI to Data Hub Agent Configuration Utility.
 
 To add a Data Archive:
 
@@ -175,7 +175,7 @@ To create a PI mapping:
 
 1. Open the PI to Data Hub Agent Configuration Utility.
 
-1. Select the Data Archive server on the left side of the page.
+1. Select the Data Archive server on the left side of the window.
 
 1. Select the pencil icon next to **PI Mapping**.
  

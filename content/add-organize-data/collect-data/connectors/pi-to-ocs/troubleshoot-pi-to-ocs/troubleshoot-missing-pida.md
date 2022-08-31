@@ -24,7 +24,7 @@ To add a missing PI Data Archive mapping:
 
 1. Select **Close** to exit out of the `Configure Mapping` dialog box. 
 
-1. Select **Remove Server**, then select **Yes** to remove the server and return to the first screen of the PI to Data Hub Configuration Utility.
+1. To remove the server and return to the first screen of the PI to Data Hub Configuration Utility, select **Remove Server**, then select **Yes**.
 
 1. Add the Data Archive server back to the configuration. See [Run the PI to Data Hub Configuration Utility](xref:pi-to-ocs-utility) for more information.  
 

@@ -4,13 +4,13 @@ uid: introPortalInterface
 
 # Take a tour of the AVEVA Data Hub portal
 
-When you first access the AVEVA Data Hub portal, there is information about the system's health as well as quick links to popular documentation topics.
+Access and interact with AVEVA Data Hub through the web-based portal. When you first access the portal, there is information about the system's health as well as quick links to popular documentation topics.
 
 ![Portal window](../images/portal-interface.png "Portal interface")
 
 ## AVEVA Data Hub features
 
-Collapse or expand the left pane to view a menu of AVEVA Data Hub features. This pane is always available, and you can hover over the icons to make selections even while the menu is collapsed.
+Collapse or expand the left pane to view a menu of AVEVA Data Hub features. This pane is always available in the portal, and you can hover over the icons to make selections even while the menu is collapsed.
 
 | Pane expanded | Pane collapsed |
 |:--:|:--:|
@@ -18,11 +18,11 @@ Collapse or expand the left pane to view a menu of AVEVA Data Hub features. This
 
 AVEVA Data Hub includes the following features:
 
-- **Data Management**: Tools for setting up basic capabilities in AVEVA Data Hub, including tenants, the Sequential Data Store (SDS), and metadata rules for data streams.
+- **Data Management**: Tools for setting up basic capabilities, including tenants, the Sequential Data Store (SDS), and metadata rules for data streams.
 
-- **Data Collection**: Bring data from multiple sources and systems into an AVEVA Data Hub namespace.
+- **Data Collection**: Bring data from multiple sources and systems into a namespace.
 
-- **Visualization**: View data trends and use assets to set up digital twins of real-world physical entities. 
+- **Visualization**: View data trends and use assets to set up digital twins of real-world physical entities.
 
 - **Analytics**: Tools for shaping and querying large datasets.
 
@@ -40,7 +40,7 @@ Select a menu item to take you to that item's feature page.
 
 Most pages consist of two panes:
 
-- The left pane is where you perform the tasks associated with a resource. For example, the left pane is where you add and edit the resource or manage its permissions.
+- The left pane is where you perform the tasks associated with the resource. For example, the left pane is where you add and edit the resource or manage its permissions.
 
 - The right pane may contain a **Details** tab that contains additional information about the selected resource. Some resources also have additional panes for other configuration tasks.
 
@@ -55,8 +55,8 @@ The following table provides a list and descriptions of these toolbar commands.
 | Item          | Function |
 |---------------|----------|
 | ![Manage permissions icon](../../_icons/default/account-lock.svg) Manage permissions | Change role-based access to portal resources. |
-| Change namespace | Select to pick a different namespace. |
-| ![View notifications icon](../../_icons/custom/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. | 
+| Change namespace | Choose a different namespace. |
+| ![View notifications icon](../../_icons/custom/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. |
 | ![Documentation icon](../../_icons/custom/help-circle.svg) Help | Access the online documentation. |
 | ![User Profile icon](../../_icons/custom/account-circle.svg) User profile | View a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
 | ![Customize icon](../../_icons/branded/pencil.svg) Customize | Customize the layout of the portal dashboard. |

@@ -33,7 +33,7 @@ The **Show user friendly property names** option controls the appearance of prop
  
  - SL-Tank01|Temperature|SystemStateCode
 
-With this option turned on, you would see the following on the Trend and Asset Explorer pages:
+With this option turned on, you would see the following on the `Trend` and `Asset Explorer` pages:
 
  - SL-Tank01|Pressure
 

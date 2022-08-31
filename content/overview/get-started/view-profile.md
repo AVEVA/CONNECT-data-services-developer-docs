@@ -23,7 +23,7 @@ To update your contact information:
 
 ## Show user-friendly property names
 
-The **Show user friendly property names** option controls how property names for streams that originate through PI to OCS agents appear on the Trend and Asset Explorer pages. When this option is turned on, those stream property names mimic PI tag naming and certain stream properties are hidden. For example, say you have the following streams and properties:
+The **Show user friendly property names** option controls the appearance of property names for streams that originate through PI to OCS agents on the `Trend` and `Asset Explorer` pages. When this option is turned on, those stream property names mimic PI tag naming and certain stream properties are hidden. For example, say you have the following streams and properties:
 
  - SL-Tank01|Pressure|Value
 

@@ -91,6 +91,7 @@
         - topicUid: community-manage-shared-streams
         - topicUid: community-view-shared-streams
         - topicUid: community-view-shared-data
+        - topicUid: communities-usage
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules

@@ -1,10 +1,10 @@
----
+``---
 uid: communities-usage
 ---
 
 # View community usage
 
-The `Usage` tab displays consumption information for the streams created and viewed within the selected community. You can view these streams by your usage of them within the community or by other tenant usage. 
+The `Usage` tab displays consumption information for the streams created and viewed within the selected community. You can view these streams by your usage of them within the community or by Community Usage. 
 
 ## To view community usage
 
@@ -26,9 +26,9 @@ To view how your tenant consume data shared by other tenants, select the **My Us
 
 1. (Optional) Select **Download Usage** to download the displayed data as a CSV file.
 
-### [Other Tenant Usage](#tab/tabid-2)
+### [Community Usage](#tab/tabid-2)
 
-To view how other tenants in the community consume data, select the **Other Tenant Usage** chart.
+To view how other tenants in the community consume data, select the **Community Usage** chart.
 
 1. In the left pane, select **Data Management** > **Communities**.
 
@@ -36,7 +36,7 @@ To view how other tenants in the community consume data, select the **Other Tena
 
 1. Select the **Usage** tab.
 
-1. From the left dropdown list, select **Other Tenant Usage**.
+1. From the left dropdown list, select **Community Usage**.
 
 1. From the right dropdown list, choose **Monthly View** or a **Daily View** for a given day. For more information, see [View](#view).
 

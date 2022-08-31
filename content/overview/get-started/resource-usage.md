@@ -14,11 +14,11 @@ The `Resource Usage` page displays the streams created and viewed within your te
 
 1. Review [License usage](#license-usage).
 
-1. Choose a data source: **Namespace Streams** or **Community Shared Streams**. For more information, see [data sources](#data-sources).
+1. Choose a data source: **Streams Accessed** or **Shared Streams Accessed**. For more information, see [data sources](#data-sources).
 
 1. Choose a time increment: **Monthly** or **Daily**. For more information, see [Time increment](#time-increment).
 
-1. (Optional) Select **Export** to export the displayed data.
+1. (Optional) Select **Download Usage** to download  the displayed data.
 
 ## License usage
 
@@ -38,9 +38,9 @@ Field | Desription
 
 For data source, you can view streams from your native tenant namespaces or from communities you are a member of. Choose between the following options:
 
-- **Namespace Streams**: Displays usage data about streams native to your tenant namspaces.
+- **Streams Accessed**: Displays usage data about streams native to your tenant namspaces.
 
-- **Community Shared Streams**: Displays usage data about streams shared into communities that your tenant holds membership in.
+- **Shared Streams Accessed**: Displays usage data about streams shared into communities that your tenant holds membership in.
 
 ##  View
 
@@ -56,7 +56,7 @@ Use the view dropdown to display streams accessed by month or day. Choose betwee
 
 ## Legend
 
-Regardless of which parameters you choose, resource usage always display a legend that maps the colors of the graph to each data source. The legend also lists whether the data source is a native namespace or a shared community namepsace. 
+Regardless of which parameters you choose, resource usage always display a legend that maps the colors of the graph to each data source. The legend also lists whether the data source is a native namespace or a shared community namespace. 
 
 **Legend**
 
@@ -64,4 +64,4 @@ Regardless of which parameters you choose, resource usage always display a legen
 
 ## Tabular data
 
-Regardless of which parameters you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can export this data in JSON format by selecting **Export**.
+Regardless of which parameters you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can download this data in CSV format by selecting **Download Usage**.

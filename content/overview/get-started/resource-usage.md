@@ -8,7 +8,7 @@ The `Resource Usage` page displays the streams created and viewed within your te
 
 ## To view resource usage
 
-1. Select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg).
+1. Select the **User profile** icon ![User Profile icon](../../_icons/default/account-circle.svg).
 
 1. Select **Resource Usage**.
 

@@ -36,9 +36,15 @@ To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate
 
 For more information on creating client-credential clients, see <xref:gpClientCredentialsClient>.
 
-### Step 2. Develop your own connector 
+### Step 2. Use Microsoft Power BI Connector or develop your own connector 
 
-Use one of the starter projects listed in [Develop your own connector](#develop-your-own-connector) or develop your own. Pass your client-credentials to the connector for authentication purposes. 
+Either use Microsoft Power BI or develop your own connector so that you can consume data views.
+
+- To use Microsoft Power BI to consume your data views, install the Power BI connector. For more information installing the connector and retrieving a data view, see <xref:PowerBI>.
+
+- Alternatively, you can develop your own connector. Use one of the starter projects listed in [Develop your own connector](#develop-your-own-connector) or develop your own.
+
+Pass your client-credentials to the connector for authentication purposes. 
 
 ### Step 3. Use the API Console to request your data view 
 

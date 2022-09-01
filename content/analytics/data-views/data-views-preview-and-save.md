@@ -42,4 +42,4 @@ To configure the index, select an index start and end value. Then generate the p
 
 ## Next steps
 
-Launch you data view in the API console and retrieve it using a data-driven application. For more information, see <xref:data-views-retrieve>. 
+Launch you data view in the API console and retrieve it with a data-driven application. For more information, see <xref:data-views-retrieve>. 

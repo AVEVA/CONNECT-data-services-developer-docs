@@ -32,7 +32,7 @@ To retrieve a data view in a third-party application, follow these steps:
 
 ### Step 1. Create Client-Credentials Client
 
-To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate using a valid Client Id and Client secret. You can obtain an Id and secret by creating a set of client-credentials. While creating the client-credentials, accept the default expiry of 3600 seconds. When you are presented with the client secret, keep it secure, as there is no way to see the secret again. If you lose it, create a new set of client-credentials.
+To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate with a valid Client ID and Client secret. You can obtain an ID and secret by creating a set of client-credentials. When you create the client-credentials, accept the default expiry of 3600 seconds. When you receive the client secret, keep it secure, as there is no way to see the secret again. If you lose it, you need to create a new set of client-credentials.
 
 For more information on creating client-credential clients, see <xref:gpClientCredentialsClient>.
 

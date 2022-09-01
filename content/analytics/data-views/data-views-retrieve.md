@@ -14,7 +14,7 @@ To retrieve a data view, you can either use the OSIsoft Microsoft Power BI Plugi
 
 You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. The banner at the top of the [Data Views](xref:CreateDataView) page contains a link to the Connector.  If you dismiss the banner, it will return upon your next user session.
 
-For more information installing the connector and retrieving a data view, see <xref:PowerBI>.
+For more information about how to install the connector and retrieve a data view, see <xref:PowerBI>.
 
 ### Develop your own connector
 

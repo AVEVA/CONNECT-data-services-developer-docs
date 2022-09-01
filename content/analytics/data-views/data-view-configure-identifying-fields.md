@@ -2,7 +2,7 @@
 uid: data-views-configure-identifying-fields
 ---
 
-# Option C: Edit identifying fields
+# Edit identifying fields
 
 An identifying field can be used to uniquely identify data items within a group. For example, if a query contains a ambiguously named stream property such as `Value`, you might choose a metadata property that uniquely describes the stream as the identifying field. 
 

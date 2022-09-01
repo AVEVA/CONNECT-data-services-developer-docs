@@ -22,7 +22,7 @@ To add a missing PI Data Archive mapping:
 
 1. To close the `Configure Mapping` window, select **Close**. 
 
-1. To remove the server and return to the first screen of the PI to OCS Configuration Utility, select **Remove Server**, then select **Yes**.
+1. To remove the server and return to the first page of the PI to OCS Configuration Utility, select **Remove Server**, then select **Yes**.
 
 1. Add the Data Archive server back to the configuration. For more information, see [Run the PI to OCS Configuration Utility](xref:pi-to-ocs-utility).  
 

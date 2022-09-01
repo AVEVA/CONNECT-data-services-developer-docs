@@ -8,7 +8,7 @@ You can quickly view key performance indicator (KPI) metrics for installed PI to
 
 To view PI to OCS Agent metrics:
 
-1. To opent the portal home page, select **Home** on the portal menu. 
+1. To open the portal home page, select **Home** in the left pane. 
 
    ![](../../images/kpi-tile.png)
 

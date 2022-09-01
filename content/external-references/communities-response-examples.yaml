@@ -9,6 +9,8 @@ communities-get-search-streams-by-community:
     Content-Type: application/json
     {
         "OperationId": "string",
+        "Error": "The request partially failed.",
+        "ReasonPhrase": "At least one of the namespaces provided resulted in an error.",
         "ChildErrors": [
             {
                 "OperationId": "string",

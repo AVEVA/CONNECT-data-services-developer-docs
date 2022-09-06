@@ -8,15 +8,25 @@ You can use Microsoft Excel to import data from OCS. With Power Query (known as 
 
 The basic steps needed to use OCS with Excel are:
 
-1. Create a client with a client ID and a secret that can generate bearer tokens with a configurable lifetime.
+- Step 1 – Create a client
 
-1. Use PowerShell to retrieve a bearer token by presenting the client ID and the secret.
+   Create a client with a client ID and a secret that can generate bearer tokens with a configurable lifetime.
 
-1. Create an API request.
+- Step 2 – Retrieve the token
 
-1. Use Excel Power Query to get data from OCS, supplying the query along with the bearer token. 
+   Use PowerShell to retrieve a bearer token by presenting the client ID and the secret.
 
-1. Transform the data in Power Query and load it into an Excel table.
+- Step 3 – Create an API request
+
+   Create an API request.
+
+- Step 4 – Use Excel Power Query to get data from OCS
+
+   Use Excel Power Query to get data from OCS, supplying the query along with the bearer token. 
+
+- Step 5 – Transform the data
+
+   Transform the data in Power Query and load it into an Excel table.
 
 These are the basics to get new Excel and OCS users up and running quickly. More advanced Excel users can automate parts of this to retrieve and renew a bearer token if needed.
 

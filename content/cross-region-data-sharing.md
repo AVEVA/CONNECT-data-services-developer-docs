@@ -41,8 +41,6 @@ In some instances where AVEVA Data Hub sends operational data stored in your nam
 
 Optionally, you can opt out of sharing operational data from namespaces and communities across regions. If you opt out of cross-region data sharing, your operational data is not processed or stored outside of the namespace's assigned region.
 
-![Cross-region data sharing disabled](./_images/cross-region-data-sharing-disabled.drawio.svg)
-
 ### To opt out of cross-region data sharing for namespace
 
 When you disable cross-region data sharing, any queries for namespace data are routed to the appropriate region for complete results to be returned. Repeat these steps for each namespace that you want to disable cross-region data sharing.

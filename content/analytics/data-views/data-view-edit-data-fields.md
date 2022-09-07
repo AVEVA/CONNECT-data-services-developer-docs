@@ -23,7 +23,3 @@ To edit data field label, enter `{` to display tokens to use as a data field lab
 1. Review the **Data Field Preview**. This preview lists each data field and property included within the affected data view queries.
 
 1. Select **Apply**
-
-## Next steps
-
-Proceed to <xref:data-view-configure-grouping-fields>.

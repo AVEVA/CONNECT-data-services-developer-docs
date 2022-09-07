@@ -21,7 +21,3 @@ To unlink a linked field, select **More options** ![alt](../../_icons/branded/do
 ## Developer documentation
 
 Within the Developer Guide, the term "linking" is synonymous with "consolidating". For more information, see <xref:ConsolidateDataFields>.
-
-## Next steps
-
-Proceed to <xref:data-view-configure-field-order>.

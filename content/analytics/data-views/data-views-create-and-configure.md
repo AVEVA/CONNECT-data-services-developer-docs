@@ -10,10 +10,6 @@ This is an introduction to the recommended workflow for creating and defining da
 
 Review the following information before creating a data view.
 
-### Data view objects
-
-[!include[data view objects](../../_includes/data-views-components.md)]
-
 ### Prerequisites
 
 - To create a fully functioning data view, your instance of OCS must include [streams](xref:ccStreams) or [assets](xref:ccAssets) to include in the data view.
@@ -23,6 +19,10 @@ Review the following information before creating a data view.
 ### Recommended skills
 
 [!include[recommended-skills](_includes/recommended-skills.md)]
+
+### Data view objects
+
+[!include[data view objects](../../_includes/data-views-components.md)]
 
 ### Design in iterations
 
@@ -44,7 +44,7 @@ To create and define a data view, complete these tasks in order.
 
 	[!include[add-query](_includes/add-query.md)]
 
-- <xref:data-views-configure-data-field-sets>
+- <xref:data-view-select-data-fields>
 
 	[!include[configure-data-field-sets](_includes/configure-data-field-sets.md)]
 

@@ -19,7 +19,7 @@ The information in the sections that follow document the APIs and usage for each
 ## Access to OCS
 
 You must acquire an account before interacting with the OCS. 
-Go to the [OCS page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), click [Contact Us](https://www.osisoft.com/contact) and request an OCS account.
+Go to the [OCS page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), select [Contact Us](https://www.osisoft.com/contact) and request an OCS account.
 
 
 ## API console

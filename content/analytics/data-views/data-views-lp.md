@@ -8,9 +8,9 @@ uid: DataViews
 
 Working with a data view involves two phases:
 
-1. [Data view creation and configuration](#data-view-creation-and-configuration)
+1. Data view creation and configuration
 
-1. [Data view retrieval](#data-view-retrieval)
+1. Data view retrieval
 
 ## Data view creation and configuration
 

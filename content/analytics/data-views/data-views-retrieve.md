@@ -12,9 +12,9 @@ To retrieve a data view, you can either use the OSIsoft Microsoft Power BI Plugi
 
 ### Microsoft Power BI
 
-You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. You can download the Connector by clicking on the banner listed at the top of the **Data Views** page. If you dismiss the banner, it will return upon your next user session.
+You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. The banner at the top of the [Data Views](xref:CreateDataView) page contains a link to the Connector.  If you dismiss the banner, it will return upon your next user session.
 
-For more information installing the connector and retrieving a data view, see <xref:PowerBI>.
+For more information about how to install the connector and retrieve a data view, see <xref:PowerBI>.
 
 ### Develop your own connector
 
@@ -32,13 +32,19 @@ To retrieve a data view in a third-party application, follow these steps:
 
 ### Step 1. Create Client-Credentials Client
 
-To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate using a valid Client Id and Client secret. You can obtain an Id and secret by creating a set of client-credentials. While creating the client-credentials, accept the default expiry of 3600 seconds. When you are presented with the client secret, keep it secure, as there is no way to see the secret again. If you lose it, create a new set of client-credentials.
+To retrieve a data view from OSIsoft Cloud Services (OCS), you must authenticate with a valid Client ID and Client secret. You can obtain an ID and secret by creating a set of client-credentials. When you create the client-credentials, accept the default expiry of 3600 seconds. When you receive the client secret, keep it secure, as there is no way to see the secret again. If you lose it, you need to create a new set of client-credentials.
 
 For more information on creating client-credential clients, see <xref:gpClientCredentialsClient>.
 
-### Step 2. Develop your own connector 
+### Step 2. Use Microsoft Power BI Connector or develop your own connector 
 
-Use one of the starter projects listed in [Develop your own connector](#develop-your-own-connector) or develop your own. Pass your client-credentials to the connector for authentication purposes. 
+Either use Microsoft Power BI or develop your own connector so that you can consume data views.
+
+- To use Microsoft Power BI to consume your data views, install the Power BI connector. For more information installing the connector and retrieving a data view, see <xref:PowerBI>.
+
+- Alternatively, you can develop your own connector. Use one of the starter projects listed in [Develop your own connector](#develop-your-own-connector) or develop your own.
+
+Pass your client-credentials to the connector for authentication purposes. 
 
 ### Step 3. Use the API Console to request your data view 
 

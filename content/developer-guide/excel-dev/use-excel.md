@@ -18,7 +18,7 @@ The basic steps needed to use OCS with Excel are:
 
 - Step 3 – Create an API request
 
-   Create an API request.
+   Create an API request using the API console in OCS.
 
 - Step 4 – Use Excel Power Query to get data from OCS
 

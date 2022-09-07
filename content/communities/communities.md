@@ -76,7 +76,7 @@ Communities can accommodate trusted business partners who are not sharing data o
 
 ## Community data consumption methods
 
-You can consume data streams shared into a community the same ways that you consume your own native tenant data. Access community data using the following OCS features:
+You can consume data streams shared into a community the same ways that you consume your own native tenant data. Access community data using the following AVEVA Data Hub features:
 
 * **Trending:** View data streams shared into a community in a trend data session. For more information, see <xref:lpvisualizedata>.
  

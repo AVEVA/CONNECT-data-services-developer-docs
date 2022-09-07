@@ -18,23 +18,23 @@ The basic steps needed to use OCS with Excel are:
 
 1. Transform the data in Power Query and load it into an Excel table.
 
-These are the basics to get new Excel and OCS users up and running quickly. More advanced Excel users can automate parts of this to retrieve and renew a bearer token if needed.
+These are the basics to get new Excel and OCS users up and running quickly. More advanced Excel users can automate parts of this process to retrieve and renew a bearer token if needed.
 
 ## Step 1 – Create a client
 
-Clients allow applications to authenticate against OCS from outside the OCS portal. So the first thing we need to do is create a client to connect to OCS.
+Clients allow applications to authenticate against OCS from outside the OCS portal. The first thing that you must do is create a client to connect to OCS.
 
-See <xref:gpClientCredentialsClient> for the steps. Create a client with any name and accepting the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it, though you can create multiple secrets for the same client Id or delete a client if needed.
+Create a client with any name and accepting the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed. See <xref:gpClientCredentialsClient> for the steps. 
 
 An existing client can be used, and many connections can be made through one client. All you need are the client Id and secret.
 
 ## Step 2 – Retrieve the token
 
-Once you have created a client, you need a token. The token is the pass you use to connect to OCS, send requests, and get responses. It is passed with every request you send.
+The token is the pass you use to connect to OCS, send requests, and get responses. It is passed with every request you send.
 
-There are various ways to get a token. Under normal circumstances, this would be automated in code in Excel, but since this is a basic guide only, you can use PowerShell to write a small app to retrieve a token. You will need to substitute your client Id and secret for XXX and YYY in the first two lines:
+Use the following PowerShell example to write a small app to retrieve a token. Substitute your client Id and secret for `XXX` and `YYY` in the first two lines:
 
-```
+```PowerShell
 $clientId = 'XXX'
 $clientSecret = 'YYY'
 $body = @{
@@ -47,19 +47,21 @@ $token = (Invoke-WebRequest -UseBasicParsing –Uri "https://dat-b.osisoft.com/i
 write-host $token
 ```
 
-In this code, we are sending a request along with our client Id and secret to an endpoint and retrieving a bearer token in return. The last line writes the contents of $token to the screen as `@access_token=LotsOfCharacters`. Everything to the right of the = sign is your bearer token, which by default allows you to send and receive data for 3600 seconds. You need this entire token for the next step.
+This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The last line writes the contents of `$token` to the screen as `@access_token=<ACCESS_TOKEN>`. Everything to the right of the `=` sign is your bearer token, which by default allows you to send and receive data for 3600 seconds. You need this entire token for the next step.
 
 ## Step 3 – Create an API request
 
 Build an API request in the API console. See <xref:apiConsole>.
 
-The example below gets data from one stream over the period covered from startIndex to endIndex, in this case 10 minutes on 11-Mar-2020 from a stream called PI_PISRV01_185.
+The example below gets data from one stream over the period covered from **startIndex** to **endIndex**, in this case ten minutes on 11-Mar-2020 from a stream called `PI_PISRV01_185`.
 
 ![API console](../images/api_console.png)
 
 ## Step 4 – Use Excel Power Query to get data from OCS
 
-1. Launch Excel and select **Data** > **Get & Transform Data** > **From Web**.
+1. Launch Excel and create a new workbook.
+
+1. From the ribbon, select **Data** > **Get & Transform Data** > **From Web**.
 
 1. Select **Advanced**.
 

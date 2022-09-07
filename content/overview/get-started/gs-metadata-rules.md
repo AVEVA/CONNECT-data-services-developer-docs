@@ -2,15 +2,15 @@
 uid: gsMetadataRules
 ---
 
-# Get started with metadata rules
+# Get started with stream metadata rules
 
-Metadata rules allow you to add metadata to streams. For more information about metadata rules and how to use them effectively, see [Add context with metadata rules](xref:ccMetadataRules).
+Metadata rules allow you to add metadata to streams. For more information about stream metadata rules and how to use them effectively, see <xref:ccMetadataRules>.
 
-The following are the main steps for creating a metadata rule and applying it to streams. Click on each step to go to the procedure for that step. 
+The following are the main steps for creating a metadata rule and applying it to streams. Select each step to go to the procedure for that step. 
 
 1. [Select a stream](#step-1)
 
-2. [Create the pattern for the metadata rule](#step-2)
+2. [Create the pattern for the stream metadata rule](#step-2)
 
 3. [Define metadata mappings](#step-3)
 
@@ -22,7 +22,7 @@ The following are the main steps for creating a metadata rule and applying it to
 
 The first step is to identify and select a stream whose name will be the basis for creating the metadata rule.
 
-1. In the left pane, select **Data Management** > **Metadata Rules**.
+1. In the left pane, select **Data Management** > **Stream Metadata Rules**.
 
 1. Select **Add Metadata Rule**.
 
@@ -32,11 +32,11 @@ The first step is to identify and select a stream whose name will be the basis f
 
 1. Select **MyData.NorthAmerica.SLTC.PumpA** and select **Next**. 
 
-## <a name="step-2"></a>Step 2: Create the pattern for the metadata rule
+## <a name="step-2"></a>Step 2: Create the pattern for the stream metadata rule
 
 In this step, you identify delimiters in the stream name. Delimiters include periods (.), underscores (_), and hyphens (-). For each stream name part, you specify the type of data it is: metadata, string literal, or wildcard. These settings have implications for the search pattern.
 
-1. Click the plus sign (+) above each of the three delimiters.
+1. Select the plus sign (+) above each of the three delimiters.
 
    **Note:** Select the minus sign (-) to ignore a delimiter.
 

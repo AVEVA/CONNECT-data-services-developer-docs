@@ -16,11 +16,11 @@ Data scientists can easily integrate operational data from multiple sources for 
 
 AVEVA Data Hub improves business insight by: 
 
-- Allowing the operations department and data scientists to share data and collaborate more effectively 
+- Allowing the operations department and data scientists to share data and collaborate more effectively.
 
-- Providing an environment in which data analysis artifacts are saved, enabling the data scientist to modify their models and workflow more efficiently 
+- Providing an environment in which data analysis artifacts are saved, enabling the data scientist to modify their models and workflow more efficiently.
 
-- Ensuring that high-quality data is available for analysis 
+- Ensuring that high-quality data is available for analysis.
 
 ### How does AVEVA Data Hub enable data scientists?
 
@@ -42,7 +42,7 @@ AVEVA Data Hub provides the ability to integrate data infrastructure from edge t
 
 In the past, data was often left stranded at remote locations due to the lack of reliable network connectivity. For instance, farms need data to answer questions such as how much grain is in a silo or what is the predicted corn harvest this season. Mining companies require data from mining trucks to know when maintenance is necessary. This untapped data can provide valuable insights for an enterprise and its decision making. 
 
-Accessing and integrating these “dark” data locations is possible with edge systems and AVEVA Data Hub. With pervasive data collectors, PI Adapters, Edge Data Store, and custom OMF applications, operational assets that were previously inaccessible are now viable data sources. 
+Accessing and integrating these "dark" data locations is possible with edge systems and AVEVA Data Hub. With pervasive data collectors, PI Adapters, Edge Data Store, and custom OMF applications, operational assets that were previously inaccessible are now viable data sources. 
 
 The benefits of seamless integration of data infrastructure include: 
 

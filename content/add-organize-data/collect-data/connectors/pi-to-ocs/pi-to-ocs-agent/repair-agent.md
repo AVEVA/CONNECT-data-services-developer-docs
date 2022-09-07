@@ -14,6 +14,6 @@ To repair an agent:
  
 1. In the `PI to Data Hub Agent` window, select the **Repair** option, and then select **Next** twice.
 
-   The `Installation` page opens and the repair process begins.
+   The `Installation` window opens and the repair process begins.
 
 1. After the repair process has completed, select **Close** to exit.

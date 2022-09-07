@@ -4,7 +4,7 @@ uid: home-health
 
 # Health
 
-The **Health** page displays the health status of each service and namespace in your AVEVA Data Hub tenant. You can access this page from the **Home** page by selecting **System Health**.
+The `Health` page displays the health status of each service and namespace in your AVEVA Data Hub tenant. To view your system health status, select **System Health** from the `Home` page.
 
 ## Service Health
 
@@ -12,11 +12,11 @@ The **Health** page displays the health status of each service and namespace in 
 
 ## Community Health
 
-**Community Health** includes a health status of the [communities](xref:communities) service. A health status is listed for each available region. 
+**Community Health** includes a health status of the [communities](xref:communities) service. A health status is listed for each available region.
 
-- If a region is **Ok** ![Okay icon](../_icons/custom/check-circle.svg), then the streams shared from that region are accessible to the community as a whole. 
+- If a region is **Ok** ![Okay icon](../_icons/custom/check-circle.svg), then the streams shared from that region are accessible to the community as a whole.
 
-- If a region is **Bad** ![Alarm icon](../_icons/custom/close-circle.svg), then the streams shared from that region are not available to the community as a whole. 
+- If a region is **Bad** ![Alarm icon](../_icons/custom/close-circle.svg), then the streams shared from that region are not available to the community as a whole.
 
 For more information about each icon, see [Statuses](#statuses).
 

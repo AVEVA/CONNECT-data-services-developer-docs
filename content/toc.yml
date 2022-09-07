@@ -26,14 +26,14 @@
       - topicUid: assign-users
       - topicUid: map-group-adh
       - topicUid: map-user-adh
-- topicUid: gs-overview
+- topicUid: introPortalInterface
   items:
-  - topicUid: introPortalInterface
-    items:
     - topicUid: viewProfile
     - topicUid: TenantDetails
     - topicUid: ResourceUsage
     - topicUid: home-health
+- topicUid: gs-overview
+  items:
   - topicUid: gsConnections
     items:
     - topicUid: gsPItoOCS
@@ -213,6 +213,9 @@
       - topicUid: manage-data-views-permissions
     - topicUid: PowerBI
       items:
+      - topicUid: SetUpPowerBI
+      - topicUid: RetrieveDataViews
+      - topicUid: EditQueryPowerBI
       - topicUid: PowerBIReleaseNotes
 - topicUid: Security
   items:

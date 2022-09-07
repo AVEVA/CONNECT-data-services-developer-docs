@@ -16,11 +16,11 @@ To export a list of PI points missing from a transfer:
 
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
-1. In the `PI to Data Hub Agents` window, select the transfer that contains the unresolved PI points.
+1. In the `PI to Data Hub Agents` page, select the transfer that contains the unresolved PI points.
  
 1. In the `Details` pane, select **View Transfer**.
 
-1. In the `Transfer` window, select **Export Missing PI Point Ids**.
+1. In the `Transfer` page, select **Export Missing PI Point Ids**.
 
    The `Save As` window opens.
 

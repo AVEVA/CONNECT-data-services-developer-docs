@@ -28,7 +28,7 @@ The information in the sections that follow document the APIs and usage for each
 
 ## Access to AVEVA Data Hub
 
-You must acquire an account before interacting with the AVEVA Data Hub. To request an account, contact us at the [AVEVA Knowledge and Support Center](https://softwaresupport.aveva.com/).
+You must acquire an account before interacting with AVEVA Data Hub. To request an account, contact us at the [AVEVA Knowledge and Support Center](https://softwaresupport.aveva.com/).
 
 ## API console
 

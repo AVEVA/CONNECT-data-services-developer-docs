@@ -32,7 +32,7 @@ Searching for a value finds only exact, whole-word matches. As an example, searc
 | ``*log*`` | analog<br>alogger | lop |
 | ``l*g`` | log<br>logg | lake swimming (``*`` does not span across tokens) |
 
-### <a name="fieldScoped"></a>Field-scoping (``:``) operator
+## <a name="fieldScoped"></a>Field-scoping (``:``) operator
 
 The field-scoping operator limits the search to a specific field, such as ``id:``, ``name:``, ``description:``, and ``metadatakey:``.
 

@@ -22,6 +22,8 @@ To create a community:
     
     ![Create Community](images/create-community.png)
 
+    [!include[no-user-warning](includes/no-user-warning.md)]
+
 1. On the `Details` page, enter a **Name** and **Description**. Then select **Next**.
 
 1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks for both their own tenant and the entire community. You can either accept the default roles or add new ones.

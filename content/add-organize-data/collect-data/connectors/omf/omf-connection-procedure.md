@@ -10,7 +10,7 @@ You must configure an OMF connection to send OSIsoft Message Format (OMF) data t
 
 An OMF connection requires a client-credentials client.
 
-## Procedure
+## To configure an OMF connection
 
 To configure an OMF connection:
 

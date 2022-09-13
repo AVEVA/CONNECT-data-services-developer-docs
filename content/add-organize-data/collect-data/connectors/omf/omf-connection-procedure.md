@@ -18,15 +18,15 @@ To configure an OMF connection:
 
 1. In the toolbar, select **Add Connection**.
 
-   The `Add Connection` pane opens.
+   The `Add Connection` pane appears.
 
-1. In the `Add Connection` pane, complete the following fields, and then select **Next**:
+1. In the `Add Connection` pane, complete the following fields:
 
    - **Name** - Enter a name for the OMF connection.
 
    - **Description** - (Optional) Enter a description for the connection.
 
-1. From the **Clients** dropdown list, select the client for use during authentication.
+1. From the **Clients** dropdown, select the client that you want to use for authentication.
 
 1. Select **Save**.
 

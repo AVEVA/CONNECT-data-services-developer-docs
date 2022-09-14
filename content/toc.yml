@@ -202,7 +202,7 @@
         - topicUid: data-view-choose-data-shape
         - name: "Step 5: Preview and save"
           topicUid: data-views-preview-and-save
-      - topicUid: data-views-edit-data-view
+      - topicUid: data-view-edit-data-view
         items:
           - topicUid: data-view-edit-data-fields
           - topicUid: data-view-configure-grouping-fields

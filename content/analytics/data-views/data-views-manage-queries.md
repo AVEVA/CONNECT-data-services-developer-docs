@@ -30,6 +30,8 @@ Remove a query to remove its selected data streams from the data view.
 
 **Note:** You can only remove a query from a data view when it contains more than one query.
 
+1. Complete [To manage queries for a data view](#to-manage-queries-for-a-data-view).
+
 1. Select one or more query that you want to remove.
 
 1. Select **Remove Query**.

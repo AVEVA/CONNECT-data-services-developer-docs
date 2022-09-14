@@ -4,17 +4,31 @@ uid: data-views-manage-data-views
 
 # Manage data views
 
-From the **Data Views** page, you can create new data views or remove existing ones.
+After initial creation of a data view, you can later edit its name and description. You can also remove data views that are no longer useful.
 
-## Create a data view
+## Edit a data view name and description
 
-Create a data view so that you can retrieve a subset of OSIsoft Cloud Service data in a third-party application. For step-by-step instructions on this process, see <xref:data-views-create-and-configure>.
+Edit an existing data view to edit its name and description.
+
+1. In the left pane, select **Analytics** > **Data Views**.
+
+1. Select the data view that you want to edit.
+
+1. Select ![Edit Data View](../../_icons/default/pencil.svg) **Edit Data View**.
+
+1. Edit the **Name** and **Description**.
+
+1. Select **Save**. 
+
+**Tip:** Looking for documentation on how to edit queries, shape, or field sets? Refer to the following topics:
+
+- <xref:data-views-manage-queries>
+- <xref:data-views-edit-data-shape>
+- <xref:data-views-edit-data-field-sets>
 
 ## Remove a data view
 
 Remove a data view if you no longer use it.
-
-### To remove a data view 
 
 1. In the left pane, select **Analytics** > **Data Views**.
 

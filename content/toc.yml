@@ -212,8 +212,8 @@
           - topicUid: data-view-edit-data-fields
           - topicUid: data-view-configure-grouping-fields
           - topicUid: data-views-configure-identifying-fields
-          - topicUid: data-view-link-fields
           - topicUid: data-view-configure-field-order
+          - topicUid: data-view-link-fields
       - topicUid: manage-data-views-permissions
       - topicUid: data-views-retrieve    
     - topicUid: data-views-install-power-bi-connector

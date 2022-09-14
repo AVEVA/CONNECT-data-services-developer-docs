@@ -206,6 +206,7 @@
         items:
           - topicUid: data-view-create-data-view
           - topicUid: data-views-remove
+      - topicUid: data-views-manage-queries
       - topicUid: data-views-edit-data-field-sets
         items:
           - topicUid: data-view-edit-data-fields
@@ -213,6 +214,7 @@
           - topicUid: data-views-configure-identifying-fields
           - topicUid: data-view-link-fields
           - topicUid: data-view-configure-field-order
+      - topicUid: manage-data-views-permissions
       - topicUid: data-views-retrieve    
     - topicUid: data-views-install-power-bi-connector
       items:

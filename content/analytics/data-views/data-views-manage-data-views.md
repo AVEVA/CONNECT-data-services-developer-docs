@@ -36,4 +36,4 @@ Remove a data view if you no longer use it.
 
 1. Select **More options** ![more options](../../_icons/default/dots-vertical.svg) > **Remove Data View**.
 
-1. Confirm the deletion by selecting **Remove**.
+1. Confirm by selecting **Remove**.

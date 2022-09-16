@@ -399,6 +399,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
 
 <a id="opIdStream_Get Resolved Stream"></a>
 
+Returns the resolved stream and type representation that is associated with a given stream.
+
 <h3>Request</h3>
 
 ```text 
@@ -408,21 +410,21 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Resol
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>`string streamId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SdsResolvedStream](#schemasdsresolvedstream)|None|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|None|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|None|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|None|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|None|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|None|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|None|
+|200|[SdsResolvedStream](#schemasdsresolvedstream)|`SdsResolvedStream` was successfully retrieved|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 <h4>Example response body</h4>
 
@@ -571,6 +573,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Resol
 
 <a id="opIdStream_Get Resolved Streams"></a>
 
+Returns bulk resolved stream and type representations that are associated with provided streams. The list of stream identifiers to be resolved should be supplied as a list of stream IDs in the request body. HTTP 207 is returned regardless of partial or complete success of stream resolution. Any stream that cannot be resolved with be included in the ChildErrors property of the `SdsResolvedStreamsResponse`.
+
 <h3>Request</h3>
 
 ```text 
@@ -580,17 +584,17 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Bulk/Streams/Re
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/><br/>`string namespaceId`
-<br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|207|[SdsResolvedStreamsResponse](#schemasdsresolvedstreamsresponse)|None|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|None|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|None|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|None|
+|207|[SdsResolvedStreamsResponse](#schemasdsresolvedstreamsresponse)|`SdsResolvedStreamsResponse` was successfully retrieved|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
 <h4>Example response body</h4>
 

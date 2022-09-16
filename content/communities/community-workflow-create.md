@@ -14,6 +14,11 @@ To create a new community, you must:
 
 - Be assigned [community administration permissions](xref:community-community-roles#community-administrators).
 
+- Have at least one user or group added to AVEVA Data Hub. For more information on completing these tasks, see one of the following topics:
+
+  - <xref:gpUsers>
+  - <xref:create-group>
+
 - Have the email address for a user assigned community administration permissions from the tenant that you are inviting to the community.
 
 ## Community creation outline

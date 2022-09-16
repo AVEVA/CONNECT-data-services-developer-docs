@@ -44,6 +44,8 @@ To accept an invitation:
 
    ![Setup Wizard: Welcome](images/setup-wizard.png)
 
+   [!include[no-user-warning](includes/no-user-warning.md)]
+
 1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks within their own tenant, but not the entire community. You can either accept the default roles or add new ones. 
    
    - To add community administrator permissions to a user role, select **Add Roles** > **Add Role** ![Add Role](../_icons/branded/plus.svg) for any role that you want to function as community administrator.

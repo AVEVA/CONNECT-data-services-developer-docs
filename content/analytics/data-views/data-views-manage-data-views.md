@@ -38,7 +38,7 @@ You can create a new data view using an existing data view as a template.
 
 1. Select the data view that you want to duplicate.
 
-1. Select ![more options](../../_icons/default/dots-vertical.svg) **More options** > ![Duplicate](../../_icons/default/pencil.svg) **Duplicate**.
+1. Select ![more options](../../_icons/default/dots-vertical.svg) **More options** > ![Duplicate](../../_icons/default/content-copy.svg) **Duplicate**.
 
 1. Enter a **Name** and **Description**.
 

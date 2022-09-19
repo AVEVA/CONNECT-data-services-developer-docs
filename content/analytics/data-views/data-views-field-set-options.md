@@ -10,7 +10,7 @@ After adding your initial field sets in <xref:data-view-select-data-fields> When
 
 ## Optional steps
 
-After adding data fields to your field sets, you have the options to organize and group each field set.
+After adding data fields to your field sets, you have the option to organize and group each field set with procedures outside of the configuration workflow. If you want to use these options, complete the applicable tasks below and then return to this configuration workflow to complete intial setup of a data view.
 
 - <xref:data-view-edit-data-fields> 
 - <xref:data-view-configure-grouping-fields>

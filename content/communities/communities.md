@@ -2,7 +2,7 @@
 uid: communities
 ---
 
-# Communities (Preview)
+# Communities
 
 Communities allow a tenant to create a private group where operational data can be shared and viewed across other tenants. Using communities, industrial companies can share their data streams externally with trusted business partners, service providers, and analytics providers. 
 
@@ -31,6 +31,14 @@ Both Tenant A and Tenant B have multiple streams stored in each of their tenants
 Both tenants are sharing only one of their data streams within the community (**A** and **B**). A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
 
 All data streams shared within the community can be viewed by any community member (**4**). Within a community, community administrators can invite and manage which users within their tenant can participate in the community and view shared data. Sharing a stream provides access to that stream across tenants. It does not copy data from one tenant to another tenant.
+
+## Community data consumption methods
+
+You can consume data streams shared into a community the same ways that you consume your own native tenant data. Access community data using the following OCS features:
+
+* **Trending:** View data streams shared into a community in a trend data session, visualizing community data. For more information, see <xref:lpvisualizedata>.
+
+* **Data Views:** Include data streams shared into a community within a data view, allowing you to view data within a third-party tool for data science purposes. For more information, see <xref:CreateDataView>.
 
 ## Community features and benefits
 
@@ -74,9 +82,5 @@ Because communities are in the cloud, using them does not require installation o
 
 Communities can accommodate trusted business partners who are not sharing data or do not have a PI system or another historian system of their own. With communities, business partners can sign up for their own OCS tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.
 
-## Community data consumption methods
 
-You can consume data streams shared into a community the same ways that you consume your own native tenant data. Access community data using the following OCS features:
-
-* **Trending:** View data streams shared into a community in a trend data session. For more information, see <xref:lpvisualizedata>.
  

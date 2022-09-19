@@ -25,7 +25,3 @@ To reorder data fields within a data field set, you can also drag and drop a fie
 ![drag and drop fields](_images/order-fields.gif)
 
 ---
-
-## Next Steps 
-
-Proceed to <xref:data-view-choose-data-shape>.

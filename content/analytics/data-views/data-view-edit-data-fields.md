@@ -4,13 +4,13 @@ uid: data-view-edit-data-fields
 
 # Edit data field labels
 
-After choosing the initial data items that you want to include in your field sets and selecting **Next**, you are prompted to  each data view query, you can include data fields that represent a particular source of information, such as the id for a data item or the values from one of its properties.
+After choosing the initial data items that you want to include in your field sets and selecting **Next**, you are prompted to edit each data view query. You can include data fields that represent a particular source of information, such as the id for a data item or the values from one of its properties.
 
 ## Data field labels
 
 [!include[data-view-label](../../_includes/data-view-label.md)]
 
-To edit data field label, enter `{` to display tokens to use as a data field label. [!include[field-label-tokens](../../_includes/data-view-field-label-tokens.md)]
+To edit data field labels, enter `{` to display tokens to use as a data field label. [!include[field-label-tokens](../../_includes/data-view-field-label-tokens.md)]
 
 ## To edit data field labels
 
@@ -23,7 +23,3 @@ To edit data field label, enter `{` to display tokens to use as a data field lab
 1. Review the **Data Field Preview**. This preview lists each data field and property included within the affected data view queries.
 
 1. Select **Apply**
-
-## Next steps
-
-Proceed to <xref:data-view-configure-grouping-fields>.

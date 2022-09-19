@@ -12,7 +12,7 @@ Review the following information before creating a data view.
 
 ### Prerequisites
 
-- To create a fully functioning data view, your instance of OCS must include [streams](xref:ccStreams) or [assets](xref:ccAssets) to include in the data view.
+- To create a fully functioning data view, your instance of OSIsoft Cloud Services (OCS) must include [streams](xref:ccStreams) or [assets](xref:ccAssets) to include in the data view.
 
 - If you want to include streams from a community within your data view, you must be a member of that community. 
 

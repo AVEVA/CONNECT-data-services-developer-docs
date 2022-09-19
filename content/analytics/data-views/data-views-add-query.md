@@ -36,4 +36,4 @@ uid: data-views-add-query
 
 ## Next steps
 
-Continue to <xref:data-views-configure-data-field-sets>.
+Continue to <xref:data-view-select-data-fields>.

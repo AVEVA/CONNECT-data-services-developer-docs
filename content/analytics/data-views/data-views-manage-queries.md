@@ -8,7 +8,7 @@ Following initial configuration of a data view, you can go back to add new queri
 
 ## Manage queries for a data view
 
-Following initial addition of a data view, you can add queries or remove them from a data view after selecting the data view and selecting **Manage Queries**.
+Following initial addition of a data view, you can add queries or remove them from a data view by managing its queries.
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
@@ -32,7 +32,7 @@ Remove a query to remove its selected data streams from the data view.
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
-1. Select the data view that includes the queries that you want to manage.
+1. Select the data view that includes the query that you want to remove.
 
 1. Select **Edit Data View**.
 

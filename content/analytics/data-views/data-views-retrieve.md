@@ -20,6 +20,7 @@ For more information about how to install the connector and retrieve a data view
 
 Alternatively, you can develop your own connector for third-party software. AVEVA offers sample projects on GitHub for the following technologies:
 
+- [Grafana](https://github.com/osisoft/sample-adh-grafana-nodejs)
 - [Jupyter](https://github.com/osisoft/sample-adh-data_views_jupyter-python)
 - [Python](https://github.com/osisoft/sample-adh-data_views-python)
 - [R](https://github.com/osisoft/sample-adh-data_views_r-r)

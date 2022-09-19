@@ -4,15 +4,15 @@ uid: data-views-manage-queries
 
 # Manage queries
 
-Following initial configuration of a data view, you can go back to add new queries or remove existing ones.
+Following initial configuration of a data view, you can go back to add new queries to it or remove existing ones.
 
-## To manage queries for a data view
+## Manage queries for a data view
 
-Following initial addition of a data view, you can add queries or remove them from the data view.
+Following initial addition of a data view, you can add queries or remove them from a data view by managing its queries.
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
-1. Select the data view that you want to edit.
+1. Select the data view that includes the queries that you want to manage.
 
 1. Select **Edit Data View**.
 
@@ -20,40 +20,28 @@ Following initial addition of a data view, you can add queries or remove them fr
 
 1. Select **Manage Queries**.
 
-## To add queries to a data view
+## Add queries to a data view
 
-1. Select **Add**.
+You can add new queries to a data view the same way that you added one during initial data view creation and configuration. For more information on adding a new query to a data view, see <xref:data-views-add-query>.
 
-1. From **Query Id**, overwrite the default value of `Query1` with a unique identifier.
+## Remove queries from a data view
 
-1. From **Query Source**, select a namespace ![namespace](../../_icons/default/database.svg) or community ![community](../../_icons/default/share-variant.svg) to query operational data from. The source can either be a namespace from your own tenant or a community shared by another tenant.
+Remove a query to remove its selected data streams from the data view.
 
-   **Tip:** You can filter the namespaces and communities that are listed using the slide toggles and the filter field.
+**Note:** You can only remove a query from a data view when it contains more than one query.
 
-1. From **Query Type**, select the type of object that you want to search for in the query source: **Streams** or **Assets**. 
+1. In the left pane, select **Analytics** > **Data Views**.
 
-   **Note**: To query for assets, you must be licensed for them. If you are interested in using Assets, contact your account team for more details.
+1. Select the data view that includes the query that you want to remove.
 
-1. From **Query Value**, enter a query to find the objects that you want to include in the data view. Then select **Search**.
+1. Select **Edit Data View**.
 
-   When you select the **Query Value** search field, a cheat sheet displays, providing examples of how to use wildcards, filters, and operators in your query.
-   
-   - For more information on entering queries for **streams**, see [Search for streams](xref:sdsSearching#search-for-streams).
+	The data view opens.
 
-   - For more information on entering queries for **assets**, see <xref:asset-search-dev-guide>.
+1. Select **Manage Queries**.
 
-   If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of an object name in the **Search** field to display a more specific set of streams or assets.
+1. Select one or more query that you want to remove.
 
-   When the query populates with objects, you can view more about each object by selecting it from the table. The object details display in the pane on the right.
+1. Select **Remove Query**.
 
-   [!include[query-notes](_includes/query-notes.md)]
-
-1. (Optional) To add additional queries to the data view, select **Add Query** and repeat the steps listed above.
-
-1. Once you are satisfied with your queries and query results, select **Save**.
-
-## To remove queries from a data view
-
-1. Select the query that you want to remove.
-
-1. Select **Remove**.
+1. Select **Apply**.

@@ -41,7 +41,6 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 
 1. (Optional) Repeat the steps above to add additional grouping fields.
 
-
 ## To ungroup a field
 
 To ungroup a field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > **Ungroup Field** > **All Eligible Queries**.
@@ -59,7 +58,3 @@ Similar to field sets, the following tasks can be performed on grouping fields:
 - <xref:data-view-edit-data-fields>
 - <xref:data-view-link-fields>
 - <xref:data-view-configure-field-order>
-
-## Next steps
-
-Proceed to <xref:data-views-configure-identifying-fields>.

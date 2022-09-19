@@ -2,7 +2,7 @@
 uid: data-view-link-fields
 ---
 
-# Link fields
+# Link data fields
 
 Data items included in a data view may have slight differences in property naming, despite those properties representing the same logical thing. For example, data from one equipment manufacturer reports `Temperature`, while another reports `Temp` instead.
 
@@ -21,7 +21,3 @@ To unlink a linked field, select **More options** ![alt](../../_icons/branded/do
 ## Developer documentation
 
 Within the Developer Guide, the term "linking" is synonymous with "consolidating". For more information, see <xref:ConsolidateDataFields>.
-
-## Next steps
-
-Proceed to <xref:data-view-configure-field-order>.

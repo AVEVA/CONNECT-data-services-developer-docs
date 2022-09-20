@@ -203,9 +203,6 @@
             - name: "Step 5: Preview and save"
               topicUid: data-views-preview-and-save
         - topicUid: data-views-manage-data-views
-          items:
-            - topicUid: data-view-create-data-view
-            - topicUid: data-views-remove
         - topicUid: data-views-manage-queries
         - topicUid: data-views-edit-data-field-sets
           items:

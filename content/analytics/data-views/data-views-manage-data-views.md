@@ -20,6 +20,8 @@ Edit an existing data view to edit its name and description.
 
 1. Select ![Edit Data View](../../_icons/default/pencil.svg) **Edit Data View**.
 
+	**Getting `Unknown Community`?** This message indicates that the community has at least one query that you have insufficient permissions to edit and save. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
+
 1. Edit the **Name** and **Description**.
 
 1. Select **Save**. 

@@ -36,4 +36,4 @@ The access control rights of each data item, such as a [stream](xref:sdsStreams)
 
 When you inspect the _data items_ that resolve for a data view, you see only the data items that you have `Read` access to.
 
-Configuring access control for streams and assets is similar to configuring data views. See the [Role-based access control](xref:accessControl), [streams](xref:sdsStreams), and [assets](xref:AssetOrAssetTypeAccessControlAPI) sections for more information.
+Configuring access control for streams and assets is similar to configuring data views. See the [Role-based access control](xref:accessControl), [streams](xref:sdsStreams), and [asset](xref:asset-and-asset-types-dev-guide) sections for more information.

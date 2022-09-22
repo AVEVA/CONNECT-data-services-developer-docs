@@ -69,14 +69,6 @@ GET /api/v1-preview/search/communities/{communityId}/streams
 }
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-<li>Tenant Member</li>
-</ul>
-
 ---
 
 ## `List Streams By Namespace 1`
@@ -136,14 +128,6 @@ GET /api/v1-preview/tenants/{tenantId}/search/namespaces/{namespaceId}/streams
   }
 ]
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-<li>Tenant Member</li>
-</ul>
 
 ---
 
@@ -216,14 +200,6 @@ Input used to search namespace.<br/>
   }
 ]
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-<li>Tenant Member</li>
-</ul>
 
 ---
 ## Definitions

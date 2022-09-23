@@ -163,7 +163,7 @@ Content-Type: application/json
 <a id="tocSsdsuom"></a>
 <a id="tocssdsuom"></a>
 
-DataContract representing a unit of measure
+DataContract representing a unit of measure.
 
 <h4>Properties</h4>
 

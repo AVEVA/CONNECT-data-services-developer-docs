@@ -402,18 +402,18 @@ Content-Type: application/json
 <a id="tocSsdsstreamview"></a>
 <a id="tocssdsstreamview"></a>
 
-A contract defining the stream view
+A contract defining the stream view.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|A unique identifier for the SdsStreamView|
-|Name|string|false|true|An optional user-friendly name for the SdsStreamView|
-|Description|string|false|true|A brief description of the SdsStreamView|
-|SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream|
-|TargetTypeId|string|false|true|Identifier of the SdsType to convert events to|
-|Properties|[[SdsStreamViewProperty](#schemasdsstreamviewproperty)]|false|true|List of SdsStreamViewProperty|
+|Id|string|false|true|A unique identifier for the SdsStreamView.|
+|Name|string|false|true|An optional user-friendly name for the SdsStreamView.|
+|Description|string|false|true|A brief description of the SdsStreamView.|
+|SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream.|
+|TargetTypeId|string|false|true|Identifier of the SdsType to convert events to.|
+|Properties|[[SdsStreamViewProperty](#schemasdsstreamviewproperty)]|false|true|List of SdsStreamViewProperty.|
 
 ```json
 {
@@ -442,15 +442,15 @@ A contract defining the stream view
 <a id="tocSsdsstreamviewproperty"></a>
 <a id="tocssdsstreamviewproperty"></a>
 
-A contract defining the stream view property
+A contract defining the stream view property.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|SourceId|string|false|true|Identifier of the SdsTypeProperty from the source SdsType Properties list|
-|TargetId|string|false|true|Identifier of the SdsTypeProperty from the target SdsType Properties list|
-|SdsStreamView|[SdsStreamView](#schemasdsstreamview)|false|true|Additional mapping instructions for derived types|
+|SourceId|string|false|true|Identifier of the SdsTypeProperty from the source SdsType Properties list.|
+|TargetId|string|false|true|Identifier of the SdsTypeProperty from the target SdsType Properties list.|
+|SdsStreamView|[SdsStreamView](#schemasdsstreamview)|false|true|Additional mapping instructions for derived types.|
 
 ```json
 {
@@ -512,15 +512,15 @@ The error response contains standard details on the cause and resolution of the 
 <a id="tocSsdsstreamviewmap"></a>
 <a id="tocssdsstreamviewmap"></a>
 
-A contract defining the stream view map
+A contract defining the stream view map.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream|
-|TargetTypeId|string|false|true|Identifier of the SdsType to convert events to|
-|Properties|[[SdsStreamViewMapProperty](#schemasdsstreamviewmapproperty)]|false|true|Identifier of the SdsStreamViewMapProperty from the target SdsType Properties list|
+|SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream.|
+|TargetTypeId|string|false|true|Identifier of the SdsType to convert events to.|
+|Properties|[[SdsStreamViewMapProperty](#schemasdsstreamviewmapproperty)]|false|true|Identifier of the SdsStreamViewMapProperty from the target SdsType Properties list.|
 
 ```json
 {
@@ -547,16 +547,16 @@ A contract defining the stream view map
 <a id="tocSsdsstreamviewmapproperty"></a>
 <a id="tocssdsstreamviewmapproperty"></a>
 
-A contract defining stream view map property
+A contract defining stream view map property.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|SourceId|string|false|true|Identifier of the SdsType of the SdsStream|
-|TargetId|string|false|true|Identifier of the SdsType to convert events to|
-|Mode|[SdsStreamViewMode](#schemasdsstreamviewmode)|false|false|Aggregate of actions applied to the properties. SdsStreamViewMode are combined via binary arithmetic|
-|StreamViewMap|[SdsStreamViewMap](#schemasdsstreamviewmap)|false|true|Mapping for derived types|
+|SourceId|string|false|true|Identifier of the SdsType of the SdsStream.|
+|TargetId|string|false|true|Identifier of the SdsType to convert events to.|
+|Mode|[SdsStreamViewMode](#schemasdsstreamviewmode)|false|false|Aggregate of actions applied to the properties. SdsStreamViewMode are combined via binary arithmetic.|
+|StreamViewMap|[SdsStreamViewMap](#schemasdsstreamviewmap)|false|true|Mapping for derived types.|
 
 ```json
 {

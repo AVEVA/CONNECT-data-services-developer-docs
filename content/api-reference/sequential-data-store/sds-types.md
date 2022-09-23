@@ -533,21 +533,21 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Reference
 <a id="tocSsdstype"></a>
 <a id="tocssdstype"></a>
 
-A contract defining the type of data to read or write in a SdsStream
+A contract defining the type of data to read or write in a SdsStream.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|A unique identifier for the SdsType object|
-|Name|string|false|true|An optional user-friendly name for the SdsType object|
-|Description|string|false|true|A brief description of the SdsType object|
-|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The SdsTypeCode of the SdsType object|
-|IsGenericType|boolean|false|false|A boolean value indicating whether the current SdsType is a generic type This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer, https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index|
-|IsReferenceType|boolean|false|false|Enabling this property preserves objects as references during serialization/de-serialization of the SdsType data while using the SdsFormatter This property behaves similar to IsReference property for DataContractSerializer and is only valid for serialization if SdsFormatter is used.|
-|GenericArguments|[[SdsType](#schemasdstype)]|false|true|Contains the parameterized SdsTypes of the current generic SdsType This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer to https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index|
-|Properties|[[SdsTypeProperty](#schemasdstypeproperty)]|false|true|List of SdsTypePropertys of the SdsType|
-|BaseType|[SdsType](#schemasdstype)|false|true|Defines the base type of the SdsType Commonly used by SdsTypeBuilder to generate SdsType from contracts not explicitly defined and maintained by the user.|
+|Id|string|false|true|A unique identifier for the SdsType object.|
+|Name|string|false|true|An optional user-friendly name for the SdsType object.|
+|Description|string|false|true|A brief description of the SdsType object.|
+|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The SdsTypeCode of the SdsType object.|
+|IsGenericType|boolean|false|false|A boolean value indicating whether the current SdsType is a generic type. This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer, https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index.|
+|IsReferenceType|boolean|false|false|Enabling this property preserves objects as references during serialization/de-serialization of the SdsType data while using the SdsFormatter. This property behaves similar to IsReference property for DataContractSerializer and is only valid for serialization if SdsFormatter is used.|
+|GenericArguments|[[SdsType](#schemasdstype)]|false|true|Contains the parameterized SdsTypes of the current generic SdsType. This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer to https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index.|
+|Properties|[[SdsTypeProperty](#schemasdstypeproperty)]|false|true|List of SdsTypePropertys of the SdsType.|
+|BaseType|[SdsType](#schemasdstype)|false|true|Defines the base type of the SdsType. Commonly used by SdsTypeBuilder to generate SdsType from contracts not explicitly defined and maintained by the user.|
 |DerivedTypes|[[SdsType](#schemasdstype)]|false|true|List of SdsTypes that should be recognized by SdsFormatter during serialization/de-serialization. This property behaves similar to KnownTypeAttribute attribute for DataContractSerializer and only valid for serialization if SdsFormatter is used.|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|false|Defines the SdsInterpolationMode of the SdsType. This property is only valid for the root SdsType and invalid for SdsTypes of SdsTypePropertys.|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|false|Defines the SdsExtrapolationMode of the SdsType. This property is only valid for the root SdsType and invalid for SdsTypes of SdsTypePropertys.|
@@ -696,23 +696,23 @@ A contract defining the type of data to read or write in a SdsStream
 <a id="tocSsdstypeproperty"></a>
 <a id="tocssdstypeproperty"></a>
 
-A contract defining a property of a SdsType
+A contract defining a property of a SdsType.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|A unique identifier for the SdsTypeProperty object|
-|Name|string|false|true|An optional user-friendly name for the SdsTypeProperty object|
-|Description|string|false|true|A brief description of the SdsTypeProperty object|
-|Order|int32|false|false|The order used for comparison among SdsTypePropertys if a compound index is specified for SdsType|
-|IsKey|boolean|false|false|A boolean value indicating whether the current SdsTypeProperty must be used for indexing|
-|FixedSize|int32|false|false|An optional property specifying the length of string|
-|SdsType|[SdsType](#schemasdstype)|false|true|SdsType of the current SdsTypeProperty|
+|Id|string|false|true|A unique identifier for the SdsTypeProperty object.|
+|Name|string|false|true|An optional user-friendly name for the SdsTypeProperty object.|
+|Description|string|false|true|A brief description of the SdsTypeProperty object.|
+|Order|int32|false|false|The order used for comparison among SdsTypePropertys if a compound index is specified for SdsType.|
+|IsKey|boolean|false|false|A boolean value indicating whether the current SdsTypeProperty must be used for indexing.|
+|FixedSize|int32|false|false|An optional property specifying the length of string.|
+|SdsType|[SdsType](#schemasdstype)|false|true|SdsType of the current SdsTypeProperty.|
 |Value|any|false|true|An enum value of the current SdsTypeProperty.|
-|Uom|string|false|true|Indicates the Unit of Measure of the current SdsTypeProperty|
-|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|An InterpolationMode that overrides the root SdsType's InterpolationMode for this SdsTypeProperty|
-|IsQuality|boolean|false|false|Indicates whether this property marks data quality|
+|Uom|string|false|true|Indicates the Unit of Measure of the current SdsTypeProperty.|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|An InterpolationMode that overrides the root SdsType's InterpolationMode for this SdsTypeProperty.|
+|IsQuality|boolean|false|false|Indicates whether this property marks data quality.|
 
 ```json
 {

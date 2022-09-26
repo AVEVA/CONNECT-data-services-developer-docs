@@ -44,3 +44,18 @@ Use the controls available in the toolbar find, create, or manage a community.
 | **More options** ![More options](../_icons/default/dots-vertical.svg) > **Manage Default Community Administrators**<sup>1</sup> | Configures which roles are automatically added as the default Community Administrators while you are creating or joining a community. For more information, see <xref:communities-manage-default-admins>. |
 
 <sup>1</sup>Requires [Community Administrator](xref:community-community-roles#community-administrators) permissions.
+
+## Community details
+
+When you select a community, additional details about the community open in a side pane. The following table lists each field that displays in the side pane:
+
+| Field | Description |
+|-------|-------------|
+| Id | The identifier for the community. |
+| Name | The name of the community. |
+| Alias | The alias for the community, if set. |
+| Description | The description of the community. |
+| Date created | The date that the community was created. |
+| Streams | The number of streams shared into the community. |
+
+This pane also lists each tenant that holds membership in the community, along with its sharing status and contact email. 

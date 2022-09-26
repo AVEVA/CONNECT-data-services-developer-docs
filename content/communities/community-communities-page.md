@@ -58,4 +58,4 @@ When you select a community, additional details about the community open in a si
 | Date created | The date that the community was created. |
 | Streams | The number of streams shared into the community. |
 
-This pane also lists each tenant that holds membership in the community, along with its sharing status and contact email. 
+This pane also lists each tenant that holds membership in the community, along with its sharing status and contact email. The tenant denoted with the **Crown** ![crown](../_icons/default/crown.svg) icon is the **Administrative Tenant** for the community.

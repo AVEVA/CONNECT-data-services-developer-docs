@@ -37,6 +37,7 @@ GET /api/v1-preview/search/communities/{communityId}/streams
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[StreamSearchResult](#schemastreamsearchresult)|Returns the stream information that matches the search criteria. This is a set of objects of type `StreamSearchResult`.|
+|207|[PartialFailureResult](#schemapartialfailureresult)|Returns the stream information that matches the search criteria. This is a set of objects of type `StreamSearchResult`.|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request due to invalid syntax.|
 |401|None|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
@@ -296,6 +297,103 @@ The StreamSearchResult object. This is the model representation exposed to calle
 |Discrete|3|
 |ContinuousNullableLeading|4|
 |ContinuousNullableTrailing|5|
+
+---
+
+### PartialFailureResult
+
+<a id="schemapartialfailureresult"></a>
+<a id="schema_PartialFailureResult"></a>
+<a id="tocSpartialfailureresult"></a>
+<a id="tocspartialfailureresult"></a>
+
+PartialFailureResult object. Used for HTTP status code 207 responses. This is a model representation exposed to callers of the Search Streams By Community controller endpoint.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|The Id for the executed operation.|
+|Error|string|false|true|Error message for 207|
+|ReasonPhrase|string|false|true|Reason for the 207 response|
+|ChildErrors|[[ChildError](#schemachilderror)]|false|true|A list of encountered errors|
+|Data|[[StreamSearchResult](#schemastreamsearchresult)]|false|true|A list of successfully returned content|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "ReasonPhrase": "string",
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "TenantId": "string",
+      "NamespaceId": "string",
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string",
+      "StatusCode": 0
+    }
+  ],
+  "Data": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "TypeId": "string",
+      "Description": "string",
+      "Self": "string",
+      "TenantId": "string",
+      "TenantName": "string",
+      "NamespaceId": "string",
+      "CommunityId": "string",
+      "PropertyOverrides": [
+        {
+          "SdsTypePropertyId": "string",
+          "Uom": "string",
+          "InterpolationMode": 0
+        }
+      ]
+    }
+  ]
+}
+
+```
+
+---
+
+### ChildError
+
+<a id="schemachilderror"></a>
+<a id="schema_ChildError"></a>
+<a id="tocSchilderror"></a>
+<a id="tocschilderror"></a>
+
+The ChildError object. This is a model representation exposed to callers of the Search Streams By Community controller endpoint.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|The Id for the executed operation.|
+|TenantId|string|false|true|The Tenant Id of stream|
+|NamespaceId|string|false|true|The Namespace Id of stream|
+|Error|string|false|true|The error.|
+|Reason|string|false|true|Reason for the exception.|
+|Resolution|string|false|true|Suggested resolution.|
+|StatusCode|int32|false|false|HTTP Status Code|
+
+```json
+{
+  "OperationId": "string",
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "StatusCode": 0
+}
+
+```
 
 ---
 

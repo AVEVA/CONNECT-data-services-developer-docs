@@ -6,7 +6,7 @@ uid: transfer-data
 
 **Note:** The ability to transfer Asset Framework data is only available in AVEVA™ Data Hub. Please contact your account manager to learn how to switch from OCS to AVEVA Data Hub.
 
-You initiate a data transfer from the `PI to OCS Agents` window. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
+You initiate a data transfer from the `PI to OCS Agents` page. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
 
@@ -30,7 +30,7 @@ Transfer creation consists of the following tasks:
 
 1. Initiate the data transfer and monitor its progress. 
 
-**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to OCS Agents` window. The following image shows AF indexing in progress:
+**Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to OCS Agents` page. The following image shows AF indexing in progress:
 
 ![](../../images/af-indexing.png)
 
@@ -40,7 +40,7 @@ To name the data transfer:
 
 1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
-1. In the `PI to OCS Agents` window, select the agent for the data transfer.
+1. In the `PI to OCS Agents` page, select the agent for the data transfer.
 
 1. In the `Manage Agent` tab, select **Create Transfer**.
 
@@ -240,7 +240,7 @@ To save the transfer:
  
 1. (Optional) Add or remove PI points and/or AF elements as needed. 
 
-1. To save the transfer and return to the PI to OCS Agents window, select **Save** in the lower right-hand corner.
+1. To save the transfer and return to the PI to OCS Agents page, select **Save** in the lower right-hand corner.
 
    **Note:** In order to save the transfer, it must include at least one valid PI point.
 
@@ -260,7 +260,7 @@ Data is ready for transfer after the desired PI points and/or AF elements have b
 
 To start a data transfer:
 
-1. (Optional) In the `PI to OCS Agents` window, select the PI to OCS Agent associated with the data transfer. 
+1. (Optional) In the `PI to OCS Agents` page, select the PI to OCS Agent associated with the data transfer. 
 
 1. (Optional) In the **Manage Agent** tab, expand the `Transfer Overview` section.
 

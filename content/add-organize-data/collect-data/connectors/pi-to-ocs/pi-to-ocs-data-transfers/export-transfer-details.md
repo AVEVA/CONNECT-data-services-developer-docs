@@ -10,7 +10,7 @@ To export transfer details:
 
 1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
-1. In the `PI to OCS Agents` window, select the agent that contains the transfer.
+1. In the `PI to OCS Agents` page, select the agent that contains the transfer.
  
 1. On the `Details` pane, select **View Transfer**.
 

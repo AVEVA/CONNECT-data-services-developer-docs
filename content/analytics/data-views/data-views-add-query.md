@@ -18,9 +18,9 @@ uid: data-views-add-query
 
 1. From **Query Value**, enter a query to find the objects that you want to include in the data view. Then select **Search**.
 
-   When you select the **Query Value** search field, a cheat sheet displays, providing examples of how to use wildcards, filters, and operators in your query.
+   When you select the **Query Value** search field, a cheat sheet displays, providing examples of how to use wildcards, filters, and operators in your query. The field also offers autocomplete suggestions for token, facet, and status matches, as well as search history.
    
-   - For more information on entering queries for **streams**, see [Search for streams](xref:sdsSearching#search-for-streams).
+   - For more information on entering queries for **streams**, see <xref:sdsSearching>.
 
    - For more information on entering queries for **assets**, see <xref:asset-search-dev-guide>.
 

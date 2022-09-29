@@ -241,7 +241,7 @@ The heartbeat of the client session.<br/>
 
 ```json
 {
-  "FailoverStatus": 0,
+  "FailoverStatus": 100,
   "LastDataProcessedTime": "2019-08-24T14:15:22Z",
   "HeartbeatTime": "2019-08-24T14:15:22Z"
 }
@@ -536,7 +536,7 @@ Configuration for creating a new client session.
 
 ```json
 {
-  "FailoverStatus": 0,
+  "FailoverStatus": 100,
   "LastDataProcessedTime": "2019-08-24T14:15:22Z",
   "HeartbeatTime": "2019-08-24T14:15:22Z"
 }

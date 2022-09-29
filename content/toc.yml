@@ -166,6 +166,7 @@
       - topicUid: view-logs
       - topicUid: config-utility-logs
       - topicUid: log-messages
+      - topicUid: VerboseLogging
     - topicUid: lp-troubleshoot
       items: 
       - topicUid: troubleshoot-failed-af-indexing

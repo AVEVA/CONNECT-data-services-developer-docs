@@ -6,6 +6,8 @@ uid: VerboseLogging
 
 If there are problems with a transfer, you can enable verbose logging from the `Transfer Settings` window to capture more detailed logs for specified PI points and AF elements.
 
+To enable verbose logging:
+
 1. In the `PI to Data Hub Agents` page, select the agent that contains the transfer you want to edit.
 
 1. Select **View/Edit Transfer**.

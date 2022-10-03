@@ -33,7 +33,7 @@ Field | Desription
 
 For data source, you can view streams from your native tenant namespaces or from communities you are a member of. Choose between the following options:
 
-- **Streams Accessed**: Displays usage data about streams native to your tenant namsepaces.
+- **Streams Accessed**: Displays usage data about streams native to your tenant namespaces.
 
 - **Shared Streams Accessed**: Displays usage data about streams shared into communities that your tenant holds membership in.
 

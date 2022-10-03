@@ -18,7 +18,7 @@ The `Resource Usage` page displays the streams created and viewed within your te
 
 1. Choose a time increment: **Daily View** or **Monthly View**. For more information, see [View](#view).
 
-1. (Optional) Select **Download Usage** to download  the displayed data.
+1. (Optional) Select **Download Usage** to download the displayed data.
 
 ## License usage
 

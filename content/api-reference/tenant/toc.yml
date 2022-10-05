@@ -1,10 +1,10 @@
-- name: Access control
-  href: tenant-root-access-control.md
+- name: Features
+  href: tenant-features.md
 - name: Namespaces
   href: tenant-namespaces.md
-- name: Service blog
-  href: tenant-service-blog.md
+- name: Root access control
+  href: tenant-root-access-control.md
+- name: Tenant feature states
+  href: tenant-feature-state.md
 - name: Tenants
   href: tenant-tenants.md
-- name: Tenant features
-  href: tenant-features.md

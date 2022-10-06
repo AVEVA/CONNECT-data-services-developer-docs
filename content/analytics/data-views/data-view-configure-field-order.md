@@ -18,7 +18,7 @@ You can either edit the field order by using page controls or drag and drop.
 
 ### [Drag and drop](#tab/tabid-2)
 
-To reorder data fields within a data field set, you can also drag and drop a field to its desired position.
+To reorder data fields within a data field set, you can also drag and drop a field to its new position.
 
 **Drag and drop fields**
 

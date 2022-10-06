@@ -14,7 +14,7 @@ You can either edit the field order by using page controls or drag and drop.
 
 1. Within a field set, select the field that you want to reorder.
 
-1. Select **Arrow up** ![arrow up](../../_icons/default/arrow-up.svg) or **Arrow down** ![arrow down](../../_icons/default/arrow-down.svg) to move the field to the desired position within the field set.
+1. Select **Arrow up** ![arrow up](../../_icons/default/arrow-up.svg) or **Arrow down** ![arrow down](../../_icons/default/arrow-down.svg) to move the field to the new position within the field set.
 
 ### [Drag and drop](#tab/tabid-2)
 

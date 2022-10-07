@@ -85,6 +85,6 @@ See the following topics in for full details about search and the properties tha
 
 - <xref:asset-search-dev-guide>: Information on searchable properties while using the Asset Store.
 
-- <xref:sds-search>: Information on searchable properties while using the Sequential Data Store.
+- <xref:sdsSearching>: Information on searchable properties while using the Sequential Data Store.
 
 **Note:** You can use the search information above to search for data objects when editing data view queries as well.

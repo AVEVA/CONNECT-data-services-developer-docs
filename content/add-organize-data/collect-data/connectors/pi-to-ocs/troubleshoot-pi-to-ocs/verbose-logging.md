@@ -4,7 +4,11 @@ uid: VerboseLogging
 
 # Verbose logging
 
-If there are problems with a transfer, you can enable verbose logging from the `Transfer Settings` window to capture more detailed logs for specified PI points and AF elements.
+If there are problems with a transfer, you can enable verbose logging from the `Transfer Settings` window to capture more detailed logs for specific PI points and AF elements.
+
+Verbose logging records events for each step in the transfer process related to the tagged PI points and AF elements. These messages are classified as warnings. This information is found in the PI to Data Hub Agent logs, which are viewable in the Windows Event Viewer. See <xref:view-logs>.
+
+The number of events recorded can be very large, so there is a limit of 10 PI points and 10 AF elements that can be tagged. The duration of the verbose logging should also be for a limited time. The default duration is a day and the maximum is 30 days.
 
 To enable verbose logging:
 
@@ -28,14 +32,10 @@ To enable verbose logging:
 
    **Note:** Up to 10 AF elements can be added.
 
-1. In the **Log until** field, enter an ending time for the verbose logging. The default duration is one day, and the maximum time is 30 days.
+1. In the **Log until** field, enter an ending time for the verbose logging, up to a maximum of 30 days.
 
 1. Select **Save** to retain these changes and return to the `PI to Data Hub Agents` page.
 
 ## Removing PI points and AF elements
 
 If you edit a transfer and remove PI points or AF elements from the `Verbose Logging` pane, any corresponding information is removed from the log.
-
-## Viewing the log
-
-The verbose logging information is found in the PI to Data Hub Agent logs, which are viewable in the Windows Event Viewer. See <xref:view-logs>.

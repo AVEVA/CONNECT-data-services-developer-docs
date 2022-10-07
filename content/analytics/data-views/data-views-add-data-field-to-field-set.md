@@ -18,7 +18,7 @@ Each data field set is composed of data fields from streams or assets. You can o
 
 1. Add the data fields that you want to include in your field sets.
 
-	**Note:** Each data field set must include each least one field. If you edit a data view that includes a query with no data fields in its field set, you are prompted automatically prompted to add data fields to the set.
+	**Note:** Each data field set must include each least one field. If you edit a data view that includes a query with no data fields in its field set, you are prompted to add data fields to the set.
 
 1. Select **Apply**.
 

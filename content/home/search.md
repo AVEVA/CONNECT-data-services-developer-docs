@@ -57,7 +57,7 @@ Autocomplete suggests useful search tokens or phrases as you type in a search fi
 
 - Preventing typos and reducing the need for wildcards, which can result in more complex queries.
 
-Autocomplete includes two types: Token autocomplete and faceted autocomplete.
+Autocomplete includes suggestions for tokens, facets, and status matches, as well as search history.
 
 **Search autocomplete**
 

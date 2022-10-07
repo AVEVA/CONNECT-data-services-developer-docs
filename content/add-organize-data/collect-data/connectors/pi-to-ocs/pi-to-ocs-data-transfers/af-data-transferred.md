@@ -62,7 +62,7 @@ When an AF element is transferred and a corresponding AVEVA Data Hub asset is cr
 
 ## Units of Measure (UOM) transfer
 
-An AF attribute can have two different UOMs set, both the [Default UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_DefaultUOM.htm) and the [Source UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_SourceUOM.htm) (also called DataReference UOM). AVEVA Data Hub only allows for one UOM. PI to Data Hub considers an attribute's UOM to be its Source UOM if set, otherwise it uses the default UOM. If both are set and they are different UOM classes, PI to Data Hub logs a warning that they are mismatched, but still uses the Source UOM.
+An AF attribute can have two different UOMs set, both the [Default UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_DefaultUOM.htm) and the [Source UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_SourceUOM.htm) (also called DataReference UOM). AVEVA Data Hub only allows for one UOM. PI to Data Hub considers an attribute's UOM to be its Source UOM if set; otherwise, it uses the default UOM. If both are set and they are different UOM classes, PI to Data Hub logs a warning that they are mismatched, but still uses the Source UOM.
 
 Multiple PI point data reference attributes can reference the same PI Point. If multiple attributes reference the same PI Point but have different UOMs, a stream UOM is not transferred. If you update your AF attributes to resolve the conflict, the UOM will be transferred.
 

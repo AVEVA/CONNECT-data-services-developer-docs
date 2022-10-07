@@ -2,7 +2,7 @@
 uid: Search
 ---
 
-# Search in OCS
+# Search query options in OCS
 
 Many pages in OCS include a search capability, including:
 

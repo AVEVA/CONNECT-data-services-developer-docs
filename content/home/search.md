@@ -14,41 +14,6 @@ Some **Search** and **Query** bars include a tooltip that opens when you select 
 
 ![search tooltip](images/tooltip.png)
 
-### Terms
-
-When searching for terms, use the wildcard operator (`*`) as a stand-in for a character string. For example, searching for `mi*` returns both "Minnesota" and "Mitsubishi".
-
-Examples:
-
-| Search term | Results |
-|--|--|
-| `Term*` | Starts with `Term` |
-| `*Term` | Ends with `Term` |
-| `*Term*` | Contains `Term` |
-
-### Filters
-
-You can filter for specific data objects by prefacing your search with a metadata property key, followed by a specific value that you are searching for. You can filter using the following properties:
-
-| Property | Description |
-|--|--|
-| `id` | stream/asset Id |
-| `name` | stream/asset name |
-| `description` | stream/asset description |
-| `type` (streams only) | stream type Id |
-
-**Tip:** You can use the wildcard operator (`*`) in conjunction with filters. 
-
-### Operators
-
-Use operators to combine search terms. Available operators include:
-
-- AND
-- NOT
-- OR
-
-**Example:** name:Pump* AND id:Sensor01*
-
 ## Autocomplete
 
 Autocomplete suggests useful search tokens or phrases as you type in a search field. Autocomplete complements the search experience by:
@@ -73,7 +38,7 @@ Faceted autocomplete suggestions consist of a collection of matching phrases, ea
 
 ## Developer documentation
 
-See the following topics in for full details about search and the properties that you can search for:
+See the following topics in for full details about search and the objects and properties that you can search for:
 
 - <xref:asset-search-dev-guide>: Information on searchable properties while using the Asset Store.
 

@@ -68,9 +68,9 @@ The following are examples of using the escape character in query strings.
 | Description:floor1*          | assets, streams, stream types, stream views | Returns all items with a description that starts with **floor1**. |
 | Metadata/Name:\*building*    | assets, streams                             | Returns all items with at least one metadata name that contains the string **building**. |
 | Metadata/Value:123           | assets, streams                             | Returns all items with at least one metadata whose value equals **123**. |
-| Id:X* AND Metadata/Name:B*   | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metadata value with a name that starts with a **B**. |
+| Id:X* AND Metadata/Name:B*   | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metadata value with a name that starts with **B**. |
 | Tags:MarkedAsset             | assets, streams                             | Returns all items that have **MarkedAsset** as a tag. |
-| AssetTypeId:HeaterTypeId     | assets                                      | Returns all items with `AssetTypeId` matching `HeaterTypeId` |
-| AssetTypeName:HeaterTypeName | assets                                      | Returns all items whose `Name` field of the asset type matches **HeaterTypeName** |
+| AssetTypeId:HeaterTypeId     | assets                                      | Returns all items with AssetTypeId matching **HeaterTypeId**. |
+| AssetTypeName:HeaterTypeName | assets                                      | Returns all items whose asset type Name field matches **HeaterTypeName**. |
 | StreamPropertyId:Pressure    | assets                                      | Returns all items that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
 | StreamReferenceName:Name1    | assets                                      | Returns all items whose stream references contain a stream reference name that matches **Name1**. |

@@ -43,7 +43,7 @@ Searching for a value finds only exact, whole-word matches. As an example, searc
 
 The field-scoping operator limits the search to a specific field, such as ``id:``, ``name:``, ``description:``, and ``metadatakey:``.
 
-Stream metadata keys are only searchable in association with their values. Without the field-scoping operator, a search is limited to metadata values, along with other searchable fields in the stream.
+Stream metadata keys are only searchable in association with their values. Without the field-scoping operator, a search is limited to metadata values, along with other searchable fields in the stream. For example, searching streams for "sourcetag" only finds items if they include sourcetag as a value, but searching for "sourcetag:*" finds all streams that have a sourcetag metadata key.
 
 ## Special characters in search queries
 

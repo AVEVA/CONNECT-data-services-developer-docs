@@ -38,6 +38,7 @@
 				"files": [
 					"content/_images/**",
 					"content/rom/images/**",
+					"content/home/images/**",
 					"content/api-reference/images/**",
 					"content/add-organize-data/images/**",
 					"content/add-organize-data/collect-data/connectors/images/**",

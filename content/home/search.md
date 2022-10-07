@@ -65,19 +65,11 @@ Autocomplete includes suggestions for tokens, facets, and status matches, as wel
 
 ### Token Autocomplete
 
-Token autocomplete suggestions consist of a single token and an occurrence count. Tokens available for autocomplete include all tokens that appear in properties with a searchable attribute.
-
-Suggestions are ranked by each token's occurrence count, which is the number of times that the token occurs in completable properties across all objects. 
-
-For example, if "Minnesota" appears 200 times across objects in the index and "Mitsubishi" appears 100 times, a query `mi` would result in "Minnesota" being weighted higher and appearing first.
+Token autocomplete suggestions consist of a single token and an occurrence count. Tokens available for autocomplete include all tokens that appear in properties with a searchable attribute. Suggestions are ranked by each token's occurrence count, which is the number of times that the token occurs in completable properties across all objects. For example, if "Minnesota" appears 200 times across objects in the index and "Mitsubishi" appears 100 times, a query `mi` would result in "Minnesota" being weighted higher and appearing first.
 
 ### Faceted Autocomplete
 
-Faceted autocomplete suggestions consist of a collection of matching phrases, each with a list of categories and a object count for each category.
-
-The categories are the name of the property for properties comprising of simple types (Int32, DateTime, etc.) and collections of simple types (static facets). For collections of key-value pairs, the keys represent categories and the values represent phrases.
-
-Suggestions are ranked by the phrase's object count. In other words, the phrase that appears in the most number of objects ranks first in the results.
+Faceted autocomplete suggestions consist of a collection of matching phrases, each with a list of categories and a object count for each category. The categories are the name of the property for properties comprising of simple types (Int32, DateTime, etc.) and collections of simple types (static facets). For collections of key-value pairs, the keys represent categories and the values represent phrases. Suggestions are ranked by the phrase's object count. In other words, the phrase that appears in the most number of objects ranks first in the results.
 
 ## Developer documentation
 

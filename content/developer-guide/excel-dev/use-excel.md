@@ -34,7 +34,7 @@ These are the basics to get new Excel and OCS users up and running quickly. More
 
 Clients allow applications to authenticate against OCS from outside the OCS portal. The first thing that you must do is create a client to connect to OCS.
 
-Create a client with any name and accepting the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed. See <xref:gpClientCredentialsClient> for the steps. 
+Create a client with any name and accept the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed. See <xref:gpClientCredentialsClient> for the steps. 
 
 An existing client can be used, and many connections can be made through one client. All you need are the client Id and secret.
 

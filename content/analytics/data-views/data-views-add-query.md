@@ -14,7 +14,9 @@ uid: data-views-add-query
 
    You can filter the namespaces and communities that are listed using the slide toggles and the filter field.
 
-   **Getting a `This source has forbidden data sharing across regions...` warning ![warning](../../_icons/custom/alert.svg)?** This message indicates that the source tenant has opted out of sharing namespace data across regions for performance purposes, but you are in a different geographical region. Therefore, you cannot access the data. For additional information, see <xref:cross-region-data-sharing>.
+   **Getting a `This source has forbidden data sharing across regions...` warning ![warning](../../_icons/custom/alert.svg)?**
+
+   This message indicates that the source tenant has opted out of sharing namespace data across regions for performance purposes, but you are in a different geographical region. Therefore, you cannot access the data. For additional information, see <xref:cross-region-data-sharing>.
 
 1. From **Query Type**, select the type of object that you want to search for in the query source: **Streams** or **Assets**.
 

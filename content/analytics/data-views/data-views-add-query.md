@@ -12,9 +12,13 @@ uid: data-views-add-query
 
 1. From **Query Source**, select a namespace ![namespace](../../_icons/default/database.svg) or community ![community](../../_icons/default/share-variant.svg) to query operational data from. The source can either be a namespace from your own tenant or a community.
 
-   **Tip:** You can filter the namespaces and communities that are listed using the slide toggles and the filter field.
+   You can filter the namespaces and communities that are listed using the slide toggles and the filter field.
 
-1. From **Query Type**, select the type of object that you want to search for in the query source: **Streams** or **Assets**. 
+   **Getting a `This source has forbidden data sharing across regions...` warning ![warning](../../_icons/custom/alert.svg)?**
+
+   This message indicates that the source tenant has opted out of sharing namespace data across regions for performance purposes, but you are in a different geographical region. Therefore, you cannot access the data. For additional information, see <xref:cross-region-data-sharing>.
+
+1. From **Query Type**, select the type of object that you want to search for in the query source: **Streams** or **Assets**.
 
 1. From **Query Value**, enter a query to find the objects that you want to include in the data view. Then select **Search**.
 

@@ -10,7 +10,7 @@ Working with a data view involves two phases:
 
 1. Data view creation and configuration
 
-1. Data view retrieval
+1. Data set retrieval
 
 ## Data view creation and configuration
 
@@ -18,7 +18,7 @@ First, you must create and configure a data view. [!include[contents](../../_inc
 
 For more information, see <xref:data-views-create-and-configure>.
 
-## Data view retrieval
+## Data set retrieval
 
 [!include[retrieval](../../_includes/data-views-retrieve.md)]
 

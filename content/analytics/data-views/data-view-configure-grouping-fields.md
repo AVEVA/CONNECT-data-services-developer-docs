@@ -15,11 +15,11 @@ Only certain fields are eligible to be used as grouping fields.
 Fields are only eligible if they include one of the following source types listed in the table below. All source types require a field label. Some source types also require having a key defined. The following table lists eligible data sources along with additional requirements for field labels and keys.
 
 | Eligible source type | Field label required? | Key required? |
-|----------------------|-----------------------|---------------|
-| Id                   | ✔                    | &#10006;      |
-| Name                 | ✔                    | &#10006;      |
-| Metadata             | ✔                    | ✔             |
-| Tags                 | ✔                    | ✔             |
+|--|--|--|
+| Id | ![check](../../_icons/default/check.svg) | ![close](../../_icons/default/close.svg) |
+| Name | ![check](../../_icons/default/check.svg) | ![close](../../_icons/default/close.svg) |
+| Metadata | ![check](../../_icons/default/check.svg) | ![check](../../_icons/default/check.svg) |
+| Tags | ![check](../../_icons/default/check.svg) | ![check](../../_icons/default/check.svg) |
 
 - If you define **Grouping Fields**, the data view shows multiple groups, each with the list of data items for the group and its field values displaying. If a data item does not match any group, it is added to all groups.
 

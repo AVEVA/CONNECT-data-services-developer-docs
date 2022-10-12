@@ -4,7 +4,7 @@ uid: data-view-edit-data-fields
 
 # Edit data field labels
 
-After choosing the initial data items that you want to include in your field sets and selecting **Next**, you are prompted to edit each data view query. You can include data fields that represent a particular source of information, such as the id for a data item or the values from one of its properties.
+Edit data field labels to create a friendly for a field that displays in your data view.
 
 ## Data field labels
 

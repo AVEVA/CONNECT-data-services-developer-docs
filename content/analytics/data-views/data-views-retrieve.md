@@ -2,17 +2,17 @@
 uid: data-views-retrieve
 ---
 
-# Retrieve a data view
+# Retrieve data for a data view
 
 [!include[data-views-retrieve](../../_includes/data-views-retrieve.md)]
 
 ## Data retrieval options
 
-To retrieve a data view, you can either use the OSIsoft Microsoft Power BI Plugin, or you can develop your own plugin using an example GitHub project as a starting point.
+To retrieve a data view, you can either use the OCS Microsoft Power BI Connector, or you can develop your own plugin using an example GitHub project as a starting point.
 
 ### Microsoft Power BI
 
-You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. The banner at the top of the [Data Views](xref:CreateDataView) page contains a link to the Connector.  If you dismiss the banner, it will return upon your next user session.
+You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. The banner at the top of the [Data Views](xref:CreateDataView) page contains a link to the Connector. If you dismiss the banner, you can still download the connector by selecting **More options ** ![more options](../../_icons/default/dots-vertical.svg) > **Power BI Connector**.
 
 For more information about how to install the connector and retrieve a data view, see <xref:PowerBI>.
 

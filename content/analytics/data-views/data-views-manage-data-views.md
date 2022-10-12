@@ -60,4 +60,4 @@ Remove a data view if you no longer use it.
 
 ## Unknown Community message
 
-A message of `Unknown Community` indicates that the data view has at least one query that you have insufficient permissions to edit and save. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
+A message of `Unknown Community` indicates that the data view has at least one query that you have insufficient permissions to edit, save, or remove. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.

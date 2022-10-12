@@ -16,9 +16,9 @@ You can retrieve a data view using Microsoft Power BI. Retrieving a data view in
 
 For more information about how to install the connector and retrieve a data view, see <xref:PowerBI>.
 
-### Develop your own connector
+### Interact with the REST API
 
-Alternatively, you can develop your own connector for third-party software. AVEVA offers sample projects on GitHub for the following technologies:
+Alternative to using Microsoft Power BI, you can interact with the OCS REST API directly by using a sample project provided by AVEVA. Sample projects for the following technologies are available on GitHub:
 
 - [Grafana](https://github.com/osisoft/sample-adh-grafana-nodejs)
 - [Jupyter](https://github.com/osisoft/sample-adh-data_views_jupyter-python)

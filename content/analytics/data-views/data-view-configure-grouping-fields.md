@@ -10,7 +10,7 @@ Without grouping, all of the data items returned by a query appear side-by-side.
 
 Configuring identifying fields to identifying the items within each field set is one way to disambiguate the fields (more on this in the [next topic](xref:data-views-configure-identifying-fields)), but only one field may be an identifying field. What if multiple metadata fields are required to fully describe each data item? Grouping can organize the data items into shapes that are consumable, represent a physical asset, or both.
 
-Only certain fields are eligible to be used as grouping fields. Fields are only eligible if they include one or more of the following source types:
+Only certain fields are eligible to be used as grouping fields.
 
 Fields are only eligible if they include one of the following source types listed in the table below. All source types require a field label. Some source types also require having a key defined. The following table lists eligible data sources along with additional requirements for field labels and keys.
 
@@ -38,6 +38,8 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 	![add-a-grouping-field](_images/add-a-grouping-field.png)
 
 1. Choose a grouping field.
+
+    **Note:** The list of available fields only includes fields that you have added to the field set. If you want to choose a different field that is not listed, you must first add it to the field set. For more information on adding fields to an existing data view field set, see <xref:data-views-add-data-field-to-field-set>.
 
 1. (Optional) Repeat the steps above to add additional grouping fields.
 

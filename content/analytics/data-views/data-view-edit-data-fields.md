@@ -14,7 +14,7 @@ To edit data field labels, enter `{` to display tokens to use as a data field la
 
 ## To edit data field labels
 
-1. From the **Data Field Label** field, enter one or more tokens to use as a label. At the time of data view resolution, the labels resolve to values pulled from the data item. For more information on each available token, see [Data field labels](#data-field-labels).
+1. From the **Data Field Label** field, enter one or more tokens to use as a label. At the time of data view resolution, the labels resolve to values pulled from the data item (stream or asset). For more information on each available token, see [Data field labels](#data-field-labels).
 
 1. (Optional) Select the **Include UOM as a Column** checkbox. This option includes the unit of measure as a column in your data view.
 

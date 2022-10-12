@@ -8,7 +8,7 @@ uid: data-views-retrieve
 
 ## Data retrieval options
 
-To retrieve a data view, you can either use the OCS Microsoft Power BI Connector, or you can develop your own plugin using an example GitHub project as a starting point.
+To retrieve a data view, you can either use the OCS Microsoft Power BI Connector, or you can interact directly with the OCS REST API using an example GitHub project as a starting point.
 
 ### Microsoft Power BI
 

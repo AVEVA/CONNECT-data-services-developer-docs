@@ -20,7 +20,7 @@ Edit an existing data view to edit its name and description.
 
 1. Select ![Edit Data View](../../_icons/default/pencil.svg) **Edit Data View**.
 
-	**Getting `Unknown Community`?** This message indicates that the community has at least one query that you have insufficient permissions to edit and save. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
+	**Getting `Unknown Community`?** For more information, see [Unknown Community message](#unknown-community-message).
 
 1. Edit the **Name** and **Description**.
 
@@ -57,3 +57,7 @@ Remove a data view if you no longer use it.
 1. Select **More options** ![more options](../../_icons/default/dots-vertical.svg) > **Remove Data View**.
 
 1. Confirm by selecting **Remove**.
+
+## Unknown Community message
+
+A message of `Unknown Community` indicates that the data view has at least one query that you have insufficient permissions to edit and save. You must be a member of the community to access its data. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.

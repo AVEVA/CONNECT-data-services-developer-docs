@@ -34,6 +34,8 @@ To enable verbose logging:
 
 1. In the **Log until** field, enter an ending time for the verbose logging, up to a maximum of 30 days.
 
+   **Note:** When the verbose logging time expires, it deselects the **Enable Verbose Logging** option in `Transfer Settings`.
+
 1. Select **Save** to retain these changes and return to the `PI to Data Hub Agents` page.
 
 ## Removing PI points and AF elements

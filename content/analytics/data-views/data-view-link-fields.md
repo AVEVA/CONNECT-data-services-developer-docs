@@ -6,7 +6,7 @@ uid: data-view-link-fields
 
 Data items included in a data view may have slight differences in property naming, despite those properties representing the same logical thing. For example, data from one equipment manufacturer reports `Temperature`, while another reports `Temp` instead.
 
-Data views can overcome property naming differences by linking these similar properties into a single data field. This applies to stream properties referenced by id or by name, and to stream metadata keys. Asset properties can also be linked.
+Data views can overcome property naming differences by linking these similar properties into a single data field. This applies to stream properties referenced by Id or by name, and to stream metadata keys. Asset properties can also be linked.
 
 ## To link fields
 

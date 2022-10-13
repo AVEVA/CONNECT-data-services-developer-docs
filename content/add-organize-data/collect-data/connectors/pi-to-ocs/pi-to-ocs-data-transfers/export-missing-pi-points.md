@@ -16,12 +16,12 @@ To export a list of PI points missing from a transfer:
 
 1. In the left pane, select **Data Collection** > **PI to OCS Agents**.
 
-1. In the `PI to OCS Agents` window, select the transfer that contains the unresolved PI points.
+1. In the `PI to OCS Agents` page, select the transfer that contains the unresolved PI points.
  
 1. In the `Details` pane, select **View Transfer**.
 
-1. In the `Transfer` window, select **Export Missing PI Point Ids**.
+1. In the `Transfer` page, select **Export Missing PI Point Ids**.
 
-   **Result:** The **Save As** dialog box opens.
+   The `Save As` window opens.
 
 1. In the `Save As` window, navigate to the location where you want to save the file, enter a name for the .csv file, and then select **Save**.

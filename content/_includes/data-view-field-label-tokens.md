@@ -14,7 +14,7 @@ There are a variety of special tokens available for use in field labels. These t
 	</tr>
 	<tr>
 		<td><code>{CommunityName}</code></td>
-		<td>The name of the community associated with the data field set's query, or empty if a namespace was queried instead.</td>
+		<td>The name of the community associated with the data field set's query, or empty if a namespace was queried instead. If a community alias is in effect, the alias is used instead of the community name</td>
 	</tr>
 	<tr>
 		<td><code>{IdentifyingValue}</code></td>

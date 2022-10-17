@@ -66,7 +66,7 @@ Streams search is exposed through the REST API and the client libraries method `
 
 For more information on stream properties, see [Streams](xref:sdsStreams#streampropertiestable).
 
-**Searcheable Properties**
+**Searchable properties**
 | Property          | Searchable  |
 |-------------------|-------------|
 | Id                | Yes		  |
@@ -78,7 +78,7 @@ For more information on stream properties, see [Streams](xref:sdsStreams#streamp
 | ExtrapolationMode | No		  |
 | PropertyOverrides | No		  |
 
-**Searcheable Child Resources**
+**Searchable child resources**
 | Property          | Searchable  |
 |-------------------|-------------|
 | [Metadata](xref:sds-streams-metadata)*		| Yes		  |
@@ -119,7 +119,7 @@ See [How search works with stream metadata](#Stream_Metadata_search_topic).
 Type search is exposed through the REST API and the client libraries method ``GetTypesAsync``. 
 For more information on type properties, see [Types](xref:sdsTypes#typepropertiestable).
 
-**Searcheable Properties**
+**Searchable properties**
 | Property          | Searchable |
 |-------------------|------------|
 | Id                | Yes        |
@@ -159,7 +159,7 @@ Search for types using the REST API and specifying the optional `query` paramete
 Stream view search is exposed through the REST API and the client libraries method ``GetStreamViewsAsync``. 
 For more information on stream view properties, see [Stream Views](xref:sdsStreamViews#streamviewpropertiestable).
 
-**Searcheable Properties**
+**Searchable properties**
 | Property     | Searchable |
 |--------------|------------|
 | Id           | Yes		|

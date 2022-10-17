@@ -30,7 +30,7 @@ Both **Tenant A** and **Tenant B** have multiple streams stored in each of their
 
 Both tenants are sharing only one of their data streams within the community (**A** and **B**). A data steward with sharing privileges on the stream must explicitly share it into a community that they have read access to.
 
-All data streams shared within the community can be viewed by any community member (**4**). Within a community, community administrators can invite and manage which users within their tenant can participate in the community and view shared data.
+All data streams shared within the community can be viewed by any community member (**4**). Within a community, community administrators can invite and manage which users within their tenant can participate in the community and view shared data. Sharing a stream provides access to that stream across tenants. It does not copy data from one tenant to another tenant.
 
 ## Community features and benefits
 

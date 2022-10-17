@@ -54,10 +54,10 @@ To name the data transfer:
 
 1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
-   * **High** - Sends all intended metadata.
-   * **Medium** - Default. Send metadata without logical addresses from the data source.
-   * **Low** - Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
-   * **None** - Only the point ID and point name is sent; no metadata is included in the transfer.
+   * **High**: Sends all intended metadata.
+   * **Medium**: Default. Sends metadata without logical addresses from the data source.
+   * **Low**: Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
+   * **None**: Sends only the point ID and point name; no metadata is included in the transfer.
 
    **What PI point attributes are transferred with each Stream Metadata Replication Policy (data privacy) setting?**
 
@@ -72,9 +72,9 @@ To name the data transfer:
     | Pointsource | X | X | X |  |
     | PointType | X | X |  |  |
     | SourceTag | X | X |  |  |
-    |Step | X | X |  |  |
+    | Step | X | X |  |  |
 
-1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically remove Streams and Assets** option. 
+1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically delete Streams and Assets from the cloud** option. 
 
 1. Select **Ok**.
 
@@ -90,9 +90,9 @@ To build an AF element:
 
 1. On the `Transfer` page, select the source AF database from the **AF Database** dropdown list.
 
-   ![](../../images/transfer-win.png)
+   ![Transfer page](../../images/transfer-win.png)
 
-1. (Optional) Select **Root Asset**.
+1. (Optional) Select **Root Element**.
 
 1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then choose **Select**. <!-- AF 11/15/21 UGH! I hate "select **Select**". Makes me want to use click. -->
 
@@ -119,6 +119,8 @@ To build an AF element:
 1. (Optional) To narrow the search by a specific AF category, in the **Category** field, select a category from the dropdown list.
 
 1. To execute the query and retrieve results, select **Search**.
+
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
 
 1. In the `Search Results` list, select each AF element you want added to the transfer.
 
@@ -176,7 +178,9 @@ To build a PI points transfer list:
 
 5. To execute the query and retrieve matching results, select **Search**.
 
-6. In the **Search Results** area, select each PI point to add to the data transfer.
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
+
+1. In the **Search Results** area, select each PI point to add to the data transfer.
 
    A check mark appears next to each selected PI point.
 
@@ -234,6 +238,8 @@ To save the transfer:
 
 1. To save the transfer and return to the `PI to Data Hub Agents` page, select **Save** in the lower right-hand corner.
 
+   **Note:** In order to save the transfer, it must include at least one valid PI point.
+
 ## Transfer data to AVEVA Data Hub
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
@@ -274,5 +280,5 @@ To start a data transfer:
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 
-1. (Optional) To remove a transfer, select **Remove Transfer**, then select **Remove**.
+1. (Optional) To remove a transfer, select **Remove Transfer**, select the **Delete Streams and Assets from the cloud** option if applicable, then select **Remove**.
  

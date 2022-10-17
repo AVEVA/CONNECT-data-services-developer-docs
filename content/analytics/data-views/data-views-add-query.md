@@ -14,7 +14,7 @@ uid: data-views-add-query
 
    You can filter the namespaces and communities that are listed using the slide toggles and the filter field.
 
-   **Getting `This namespace does not allow data to be processed outside of the region where it resides` while adding a query?** See [Disabled cross region processing](#disabled-cross-region-processing).
+   **Getting `This namespace does not allow data to be processed outside of the region where it resides` while adding a query?** See [Cross region processing disabled](#cross-region-processing-disabled).
 
 1. From **Query Type**, select the type of object that you want to search for in the query source: **Streams** or **Assets**.
 
@@ -32,7 +32,7 @@ uid: data-views-add-query
 
 [!include[ineligible-data-items](_includes/ineligible-data-items.md)]
 
-## Disabled cross region processing
+## Cross region processing disabled
 
 When adding a query to a data view, you may encounter unavailable sources within the **Query Source** list that display the following tooltip when moused over: `This namespace does not allow data to be processed outside of the region where it resides`. This message indicates that the source tenant has opted out of sharing namespace data across regions for performance purposes, and therefore, the data view cannot be processed in your geographical region. For additional information, see <xref:cross-region-data-sharing>.
 

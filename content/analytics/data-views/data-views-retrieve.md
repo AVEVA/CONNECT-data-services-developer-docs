@@ -2,23 +2,23 @@
 uid: data-views-retrieve
 ---
 
-# Retrieve a data view
+# Retrieve data for a data view
 
 [!include[data-views-retrieve](../../_includes/data-views-retrieve.md)]
 
 ## Data retrieval options
 
-To retrieve a data view, you can either use the OSIsoft Microsoft Power BI Plugin, or you can develop your own plugin using an example GitHub project as a starting point.
+To retrieve a data view, you can either use the OCS Microsoft Power BI Connector, or you can interact directly with the OCS REST API using an example GitHub project as a starting point.
 
 ### Microsoft Power BI
 
-You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. The banner at the top of the [Data Views](xref:CreateDataView) page contains a link to the Connector.  If you dismiss the banner, it will return upon your next user session.
+You can retrieve a data view using Microsoft Power BI. Retrieving a data view in Microsoft Power BI requires installation of OCS Power BI Connector. The banner at the top of the [Data Views](xref:CreateDataView) page contains a link to the Connector. If you dismiss the banner, you can still download the connector by selecting **More options ** ![more options](../../_icons/default/dots-vertical.svg) > **Power BI Connector**.
 
 For more information about how to install the connector and retrieve a data view, see <xref:PowerBI>.
 
-### Develop your own connector
+### Interact with the REST API
 
-Alternatively, you can develop your own connector for third-party software. AVEVA offers sample projects on GitHub for the following technologies:
+Alternative to using Microsoft Power BI, you can interact with the OCS REST API directly by using a sample project provided by AVEVA. Sample projects for the following technologies are available on GitHub:
 
 - [Grafana](https://github.com/osisoft/sample-adh-grafana-nodejs)
 - [Jupyter](https://github.com/osisoft/sample-adh-data_views_jupyter-python)

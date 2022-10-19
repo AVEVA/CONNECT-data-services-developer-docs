@@ -6,11 +6,11 @@ uid: data-views-manage-data-views
 
 After initial creation of a data view, you can later edit its name and description. You can also remove data views that are no longer useful.
 
-## Create a data view
+## To create a data view
 
 For information on creating and configuring a data view, see <xref:data-views-create-and-configure>.
 
-## Edit a data view name and description
+## To edit a data view name and description
 
 Edit an existing data view to edit its name and description.
 
@@ -32,7 +32,7 @@ Edit an existing data view to edit its name and description.
 - <xref:data-views-edit-data-shape>
 - <xref:data-views-edit-data-field-sets>
 
-## Duplicate a data view
+## To duplicate a data view
 
 You can create a new data view using an existing data view as a template.
 
@@ -40,13 +40,13 @@ You can create a new data view using an existing data view as a template.
 
 1. Select the data view that you want to duplicate.
 
-1. Select ![more options](../../_icons/default/dots-vertical.svg) **More options** > ![Duplicate](../../_icons/default/content-copy.svg) **Duplicate**.
+1. Select **More options** ![more options](../../_icons/default/dots-vertical.svg) > **Duplicate**.
 
 1. Enter a **Name** and **Description**.
 
 1. Select **Save**. 
 
-## Remove a data view
+## To remove a data view
 
 Remove a data view if you no longer use it.
 

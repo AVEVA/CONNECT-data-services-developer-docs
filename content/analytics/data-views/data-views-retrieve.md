@@ -43,7 +43,7 @@ Either use Microsoft Power BI or develop your own connector so that you can cons
 
 - To use Microsoft Power BI to consume your data views, install the Power BI connector. For more information installing the connector and retrieving a data view, see <xref:PowerBI>.
 
-- Alternatively, you can develop your own connector. Use one of the starter projects listed in [Develop your own connector](#develop-your-own-connector) or develop your own.
+- Alternatively, you can develop your own connector. Use one of the starter projects listed in [Interacct with the REST API](#interact-with-the-rest-api) or develop your own.
 
 Pass your client-credentials to the connector for authentication purposes. 
 

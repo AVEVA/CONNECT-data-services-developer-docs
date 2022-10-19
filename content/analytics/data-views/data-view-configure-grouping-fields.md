@@ -25,7 +25,7 @@ Fields are only eligible if they include one of the following source types liste
 
 	Within the data view preview, groups are ordered alphabetically by the first grouping value for each group. Within each group, data items are ordered alphabetically by data item id.
 
-	If you are using multiple grouping fields, you can arrange their order by drag and drop. For more information, see [Configure field order](#configure-field-order).
+	If you are using multiple grouping fields, you can arrange their order by drag and drop. For more information, see <xref:data-view-configure-field-order>.
 
 - If **Grouping Fields** is not defined on the data view, the resolved data view shows a single group with all eligible data items.
 

@@ -16,7 +16,7 @@ Following initial addition of a data view, you can add queries or remove them fr
 
 1. Select **Edit Data View**.
 
-	**Getting `Unknown Community`?** This message indicates that the community has at least one query that you have insufficient permissions to edit and save. You must be a member of the community to edit and save the query or retrieve its data. However, you can still edit other queries in the data view that you have permissions for. To edit and save the inaccessible query, request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
+	**Getting `Unknown Community`?** For more information, see <xref:data-view-query-errors>.
 
 	The data view opens.
 
@@ -34,7 +34,7 @@ Remove a query to remove its selected data streams from the data view.
 
 - You can remove a query from a data view only when it contains more than one query.
 
-- You cannot remove queries with a message of `Unknown Community`. This message that you do not have permissions to remove the query because you are not a member of the community being queried. To remove the query, request that a community administrator add you to the community. For more information, see <xref:community-manage-users>.
+- You cannot remove queries with a message of `Unknown Community`. For more information, see <xref:data-view-query-errors>.
 
 1. In the left pane, select **Analytics** > **Data Views**.
 

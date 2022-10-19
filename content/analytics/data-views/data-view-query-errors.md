@@ -16,7 +16,7 @@ Query sources of `Unknown Community` indicate that you have insufficient permiss
 
 ## No included fields
 
-If the field set for a query includes no fields, an alert of `No Included Fields` displays. You can correct this error by adding one or more fields to the query. For more information, see <xref:>.
+If the field set for a query includes no fields, an alert of `No Included Fields` displays. You can correct this error by adding one or more fields to the query. For more information, see <xref:data-views-manage-data-fields#to-add-data-fields-to-field-set>.
 
 **No Included Fields**
 
@@ -30,4 +30,4 @@ If only of your queries includes fields that do not map to anything, an error of
 
 ![field set error](_images/field-set-error.png)
 
-You can correct this error by finding the individual fields that do not map to anything and removing them. Fields that do not map to anything are denoted by the alert ![alert](../../_icons/default/alert.svg) icon. For more information on removing a field from a field set, see   
+You can correct this error by finding the individual fields that do not map to anything and removing them. Fields that do not map to anything are denoted by the alert ![alert](../../_icons/default/alert.svg) icon. For more information on removing a field from a field set, see <xref:data-views-manage-data-fields#to-add-data-fields-to-field-set>.  

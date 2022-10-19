@@ -16,10 +16,6 @@ Review the following information before creating a data view.
 
 - If you want to include streams from a community within your data view, you must be a member of that community. 
 
-### Recommended skills
-
-[!include[recommended-skills](_includes/recommended-skills.md)]
-
 ### Data view objects
 
 [!include[data view objects](../../_includes/data-views-components.md)]

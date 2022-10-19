@@ -6,8 +6,6 @@ uid: data-view-select-data-fields
 
 After you save the queries that you create in the previous step, OSIsoft Cloud Services (OCS) prompts you to add data fields to the field set for each query in the `Add Data Fields` window. Data fields are metadata or properties from streams or assets that are included in your data view.
 
-**Want to know more about the Microsoft Power BI Connector banner?** See <xref:data-views-retrieve>.
-
 **Add Data Fields window**
 
 ![add data fields window](_images/add-data-fields.png)

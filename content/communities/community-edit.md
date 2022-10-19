@@ -26,6 +26,8 @@ To edit a community:
 
 	Use this field to provide an alias for the community. This alias replaces the community name in all places the name is referenced within OCS. The alias applies to your tenant only; other tenants in the community do not see it.
 
+	**Note:** If you use an alias, the only location that you can see both the community name and the alias is the `Community Detail` page.
+
 1. (Optional) Edit the community **Contact Email**.
 
 	Use this field to provide a contact email address that your business partners can use to communicate with your organization for any questions or issues related to the community.

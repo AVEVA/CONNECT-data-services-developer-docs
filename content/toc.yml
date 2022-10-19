@@ -207,7 +207,7 @@
         - topicUid: data-views-manage-queries
         - topicUid: data-views-edit-data-field-sets
           items:
-            - topicUid: data-views-add-data-field-to-field-set
+            - topicUid: data-views-manage-data-fields
             - topicUid: data-view-edit-data-fields
             - topicUid: data-view-configure-grouping-fields
             - topicUid: data-views-configure-identifying-fields

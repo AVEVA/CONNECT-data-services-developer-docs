@@ -8,7 +8,7 @@ Following initial creation and configuration of a data view and its data field s
 
 Data field set tasks include:
 
-- <xref:data-views-add-data-field-to-field-set>
+- <xref:data-views-manage-data-fields>
 - <xref:data-view-edit-data-fields> 
 - <xref:data-view-configure-grouping-fields>
 - <xref:data-views-configure-identifying-fields>

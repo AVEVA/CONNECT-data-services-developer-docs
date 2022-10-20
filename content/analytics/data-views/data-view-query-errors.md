@@ -8,11 +8,13 @@ While working with data views, you may encounter warnings or errors. This topics
 
 ## `Unknown community`
 
-Query sources of `Unknown Community` indicate that you have insufficient permissions to access the community or that has been deleted. You must be a member of the community to access its data. Additionally, you cannot edit the query for the community until you are member of the community. Request that a community administrator add you to the community. For more information, see <xref:community-manage-users>. 
+Query sources of `Unknown Community` indicate that you have insufficient permissions to access the community or that has been deleted. You must be a member of the community to access its data. Additionally, you cannot edit the query for the community until you are member of the community. Request that a community administrator add you to the community.
 
 **Unknown community chip**
 
 ![unknown](_images/unknown-community.png)
+
+**Note:** Community Administrators or Community Members with read access only do not see `Unknown Community`. Instead they see the community name. Community Administrators can then use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>.
 
 ## `No included fields`
 
@@ -30,4 +32,4 @@ If only of your queries includes fields that do not map to anything, an error of
 
 ![field set error](_images/field-set-error.png)
 
-You can correct this error by finding the individual fields that do not map to anything and removing them. Fields that do not map to anything are denoted by the alert ![alert](../../_icons/default/alert.svg) icon. For more information on removing a field from a field set, see <xref:data-views-manage-data-fields#to-add-data-fields-to-field-set>.  
+You can correct this error by finding the individual fields that do not map to anything and removing them. Fields that do not map to anything are denoted by the alert ![alert](../../_icons/default/alert.svg) icon. For more information on removing a field from a field set, see <xref:data-views-manage-data-fields#to-add-data-fields-to-field-set>.

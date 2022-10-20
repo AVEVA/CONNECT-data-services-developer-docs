@@ -52,9 +52,9 @@ When you select a community, additional details about the community open in a si
 |-------|-------------|
 | Id | The identifier for the community. |
 | Name | The name of the community. |
-| Alias | The alias for the community, if set. |
-| Description | The description of the community. |
 | Date created | The date that the community was created. |
-| Streams | The number of streams shared into the community. |
+| Sharing status | The sharing status for your tenant. Statuses include: <ul><li><img src="../_icons/custom/check-circle.svg" alt="Sharing Active"/> <strong>Sharing Active</strong>: Your tenant is sharing data streams into the community.</li><li><img src="../_icons/custom/pause-circle.svg" alt="Sharing Paused"/> <strong>Sharing Paused</strong>: Your tenant has paused sharing data streams into the community.</li></ul>
+| Description | The description of the community. |
+| Stream Count | The number of streams shared into the community. |
 
-This pane also lists each tenant that holds membership in the community, along with its sharing status and contact email. The tenant denoted with the **Crown** ![crown](../_icons/default/crown.svg) icon is the **Administrative Tenant** for the community.
+This pane also lists each tenant that holds membership in the community, along with its sharing status and contact email. Select a contact email to email the recipient. The tenant denoted with the **Crown** ![crown](../_icons/default/crown.svg) icon is the **Administrative Tenant** for the community.

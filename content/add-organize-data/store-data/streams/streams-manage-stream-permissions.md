@@ -94,8 +94,12 @@ You can edit the default user roles and permissions added to a stream when it is
 
 ## Bulk stream permission management notifications
 
-When you update stream permissions in bulk or use the `Manage Default Permissions` window to update all namespace stream permissions by selecting the **Apply to all existing streams in the namespace** option, OSIsoft Cloud Services (OCS) runs a job to update applicable permissions. When this job completes, the completed operation is listed in your notifications ![notifications](../../../_icons/default/bell.svg). If this job fails to update any streams, the job notification links to a page that lists resource identifiers and errors for the applicable streams. Click on the link to review job errors.
+When you update stream permissions in bulk or use the `Manage Default Permissions` window to update all namespace stream permissions by selecting the **Apply to all existing streams in the namespace** option, OSIsoft Cloud Services (OCS) runs a job to update applicable permissions. When this job completes, the completed operation is listed in your notifications ![notifications](../../../_icons/default/bell.svg). If this job fails to update any streams, the job notification links to a page that lists resource identifiers and errors for the applicable streams. Select the link to review job errors.
 
 ![Open jobs page](../images/notifications-jobs.png)
+
+- Select **Download Failed Jobs** to download the listed error messages in JSON format.
+
+- Select **Copy** ![alt](../../../_icons/branded/content-copy.svg) to copy the error message text to your clipboard.
 
 **Note:** Stream permissions jobs are only accessible from your notifications. If you clear the notification for a job, you must re-run the job to view its result again.

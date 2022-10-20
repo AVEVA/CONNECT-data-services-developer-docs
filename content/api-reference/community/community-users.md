@@ -6,9 +6,9 @@ uid: community-users
 # Users
 APIs for getting, updating, and deleting users from communities
 
-## `Add User to a Community 1`
+## `Add User to a Community`
 
-<a id="opIdCommunityUsers_Add User to a Community 1"></a>
+<a id="opIdCommunityUsers_Add User to a Community"></a>
 
 Adds a user to a community and provides a list of community role identifiers to be assigned to the user
 
@@ -69,11 +69,19 @@ List of community roles Ids to assign to the user<br/>
 }
 ```
 
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Community Administrator</li>
+<li>Community Moderator</li>
+</ul>
+
 ---
 
-## `Remove User from a Community 1`
+## `Remove User from a Community`
 
-<a id="opIdCommunityUsers_Remove User from a Community 1"></a>
+<a id="opIdCommunityUsers_Remove User from a Community"></a>
 
 Removes a user from a community
 
@@ -101,8 +109,9 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userI
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
----
+<h3>Authorization</h3>
 
+<<<<<<< HEAD
 ## `Add User to a Community 2`
 
 <a id="opIdCommunityUsers_Add User to a Community 2"></a>
@@ -165,44 +174,19 @@ List of community roles Ids to assign to the user<br/>
   ]
 }
 ```
+=======
+Allowed for these roles: 
+<ul>
+<li>Community Administrator</li>
+<li>Community Moderator</li>
+</ul>
+>>>>>>> parent of 04930ec1 (Updated from identity-services.infrastructure-20220603.1)
 
 ---
 
-## `Remove User from a Community 2`
+## `List Users of a Tenant in a Community`
 
-<a id="opIdCommunityUsers_Remove User from a Community 2"></a>
-
-Removes a user from a community
-
-<h3>Request</h3>
-
-```text 
-DELETE /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users/{userId}
-```
-
-<h4>Parameters</h4>
-
-`string communityId`
-<br/>Community identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier<br/><br/>`string userId`
-<br/>User identifier<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|Removed|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad request|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
----
-
-## `List Users of a Tenant in a Community 1`
-
-<a id="opIdCommunityUsers_List Users of a Tenant in a Community 1"></a>
+<a id="opIdCommunityUsers_List Users of a Tenant in a Community"></a>
 
 Gets users that are associated with a specific tenant and community
 
@@ -258,11 +242,18 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 ]
 ```
 
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Community Member</li>
+</ul>
+
 ---
 
-## `Get Count of Users of a Tenant in a Community 1`
+## `Get Count of Users of a Tenant in a Community`
 
-<a id="opIdCommunityUsers_Get Count of Users of a Tenant in a Community 1"></a>
+<a id="opIdCommunityUsers_Get Count of Users of a Tenant in a Community"></a>
 
 Gets the count of users of the tenant in a community. This method is identical to the `GetCommunityUsersByTenantAndCommunity` endpoint except it does not return a body.
 
@@ -289,8 +280,9 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 |404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
----
+<h3>Authorization</h3>
 
+<<<<<<< HEAD
 ## `List Users of a Tenant in a Community 2`
 
 <a id="opIdCommunityUsers_List Users of a Tenant in a Community 2"></a>
@@ -379,6 +371,12 @@ HEAD /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+=======
+Allowed for these roles: 
+<ul>
+<li>Community Member</li>
+</ul>
+>>>>>>> parent of 04930ec1 (Updated from identity-services.infrastructure-20220603.1)
 
 ---
 ## Definitions

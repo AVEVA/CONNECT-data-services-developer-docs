@@ -6,170 +6,9 @@ uid: ""
 # Communities
 A community is an organizational entity that facilitates data sharing across multiple tenants.
 
-## `List Communities a Tenant is Joined to (tenants path)`
+## `List Communities a Tenant is Joined to`
 
-<a id="opIdCommunities_List Communities a Tenant is Joined to (tenants path)"></a>
-
-Gets all communities a tenant is joined to.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/tenants/{tenantId}/Communities
-?query={query}&skip={skip}&count={count}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant unique identifier.<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[Community](#schemacommunity)[]|Returns the current communities for the tenant. This is a set of objects of type `Community`.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|None|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([Community](#schemacommunity)[])
-
-```json
-[
-  {
-    "Id": "string",
-    "MemberRoleId": "string",
-    "Name": "string",
-    "DisplayName": "string",
-    "Description": "string",
-    "Tenants": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Status": "None",
-        "IsOwner": true,
-        "UserCount": 0,
-        "ClientCount": 0,
-        "PreferredRegionId": "string",
-        "ContactEmail": "string",
-        "CommunityAlias": "string"
-      }
-    ],
-    "DateCreated": "2019-08-24T14:15:22Z",
-    "PreferredRegionId": "string",
-    "CommunityRoles": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "RoleScope": 0,
-        "TenantId": "string",
-        "CommunityId": "string",
-        "RoleTypeId": "string"
-      }
-    ]
-  }
-]
-```
-
----
-
-## `Create a New Community (tenants path)`
-
-<a id="opIdCommunities_Create a New Community (tenants path)"></a>
-
-Creates a new community within a specific tenant. The tenant sending this request will be assigned ownership of the community. The calling user or client will be granted community administrator and member roles for the community.
-
-<h3>Request</h3>
-
-```text 
-POST /api/v1-preview/tenants/{tenantId}/Communities
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>
-
-<h4>Request Body</h4>
-
-Community information to create<br/>
-
-```json
-{
-  "Name": "string",
-  "Description": "string",
-  "PreferredRegionId": "string",
-  "ContactEmail": "user@example.com"
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|201|[Community](#schemacommunity)|Returns the created community of type `Community`.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
-|409|[ErrorResponse](#schemaerrorresponse)|None|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
-<h4>Example response body</h4>
-
-> 201 Response ([Community](#schemacommunity))
-
-```json
-{
-  "Id": "string",
-  "MemberRoleId": "string",
-  "Name": "string",
-  "DisplayName": "string",
-  "Description": "string",
-  "Tenants": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Status": "None",
-      "IsOwner": true,
-      "UserCount": 0,
-      "ClientCount": 0,
-      "PreferredRegionId": "string",
-      "ContactEmail": "string",
-      "CommunityAlias": "string"
-    }
-  ],
-  "DateCreated": "2019-08-24T14:15:22Z",
-  "PreferredRegionId": "string",
-  "CommunityRoles": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "RoleScope": 0,
-      "TenantId": "string",
-      "CommunityId": "string",
-      "RoleTypeId": "string"
-    }
-  ]
-}
-```
-
----
-
-## `List Communities a Tenant is Joined to 1`
-
-<a id="opIdCommunities_List Communities a Tenant is Joined to 1"></a>
+<a id="opIdCommunities_List Communities a Tenant is Joined to"></a>
 
 Gets all communities a tenant is joined to.
 
@@ -182,8 +21,6 @@ GET /api/v1-preview/Communities
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant unique identifier.<br/><br/>
 `[optional] string query`
 <br/>(not supported) Search string identifier.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
@@ -244,9 +81,9 @@ GET /api/v1-preview/Communities
 
 ---
 
-## `Create a New Community 1`
+## `Create a New Community`
 
-<a id="opIdCommunities_Create a New Community 1"></a>
+<a id="opIdCommunities_Create a New Community"></a>
 
 Creates a new community within a specific tenant. The tenant sending this request will be assigned ownership of the community. The calling user or client will be granted community administrator and member roles for the community.
 
@@ -257,9 +94,6 @@ POST /api/v1-preview/Communities
 ```
 
 <h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -328,23 +162,22 @@ Community information to create<br/>
 
 ---
 
-## `Get a Community by Id (tenants path)`
+## `Get a Community by Id`
 
-<a id="opIdCommunities_Get a Community by Id (tenants path)"></a>
+<a id="opIdCommunities_Get a Community by Id"></a>
 
 Gets a community and related information by Id.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
+GET /api/v1-preview/Communities/{communityId}
 ?resolveCompanyName={resolveCompanyName}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant unique identifier.<br/><br/>`string communityId`
+`string communityId`
 <br/>Community unique identifier.<br/><br/>
 `[optional] boolean resolveCompanyName`
 <br/>Parameter to resolve company name for community tenants. Default is to include.<br/><br/>
@@ -402,22 +235,21 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 
 ---
 
-## `Update Community Info (tenants path)`
+## `Update Community Info`
 
-<a id="opIdCommunities_Update Community Info (tenants path)"></a>
+<a id="opIdCommunities_Update Community Info"></a>
 
 Updates attributes of a community such as name and description.
 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
+PUT /api/v1-preview/Communities/{communityId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
+`string communityId`
 <br/>Community identifier<br/><br/>
 
 <h4>Request Body</h4>
@@ -444,157 +276,9 @@ The community object that contains the attributes to use for the update.<br/>
 
 ---
 
-## `Delete a Community (tenants path)`
+## `Delete a Community`
 
-<a id="opIdCommunities_Delete a Community (tenants path)"></a>
-
-Deletes a community by Id.
-
-<h3>Request</h3>
-
-```text 
-DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>The id of the community to delete.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|No Content. The community was successfully deleted.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The community was not found.|
-|408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
-
----
-
-## `Get a Community by Id 1`
-
-<a id="opIdCommunities_Get a Community by Id 1"></a>
-
-Gets a community and related information by Id.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/Communities/{communityId}
-?resolveCompanyName={resolveCompanyName}
-```
-
-<h4>Parameters</h4>
-
-`string communityId`
-<br/>Community unique identifier.<br/><br/>`string tenantId`
-<br/>Tenant unique identifier.<br/><br/>
-`[optional] boolean resolveCompanyName`
-<br/>Parameter to resolve company name for community tenants. Default is to include.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[Community](#schemacommunity)|Returns a specified community for the tenant. This is an object of type `Community`.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|None|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([Community](#schemacommunity))
-
-```json
-{
-  "Id": "string",
-  "MemberRoleId": "string",
-  "Name": "string",
-  "DisplayName": "string",
-  "Description": "string",
-  "Tenants": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Status": "None",
-      "IsOwner": true,
-      "UserCount": 0,
-      "ClientCount": 0,
-      "PreferredRegionId": "string",
-      "ContactEmail": "string",
-      "CommunityAlias": "string"
-    }
-  ],
-  "DateCreated": "2019-08-24T14:15:22Z",
-  "PreferredRegionId": "string",
-  "CommunityRoles": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "RoleScope": 0,
-      "TenantId": "string",
-      "CommunityId": "string",
-      "RoleTypeId": "string"
-    }
-  ]
-}
-```
-
----
-
-## `Update Community Info 1`
-
-<a id="opIdCommunities_Update Community Info 1"></a>
-
-Updates attributes of a community such as name and description.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1-preview/Communities/{communityId}
-```
-
-<h4>Parameters</h4>
-
-`string communityId`
-<br/>Community identifier<br/><br/>`string tenantId`
-<br/>Owning tenant identifier<br/><br/>
-
-<h4>Request Body</h4>
-
-The community object that contains the attributes to use for the update.<br/>
-
-```json
-{
-  "Name": "string",
-  "Description": "string",
-  "PreferredRegionId": "string"
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|None|Success. The community tenant was updated.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
----
-
-## `Delete a Community 1`
-
-<a id="opIdCommunities_Delete a Community 1"></a>
+<a id="opIdCommunities_Delete a Community"></a>
 
 Deletes a community by Id.
 
@@ -607,8 +291,7 @@ DELETE /api/v1-preview/Communities/{communityId}
 <h4>Parameters</h4>
 
 `string communityId`
-<br/>The id of the community to delete.<br/><br/>`string tenantId`
-<br/>Owning tenant identifier<br/><br/>
+<br/>The id of the community to delete.<br/><br/>
 
 <h3>Response</h3>
 
@@ -734,7 +417,7 @@ The CommunityTenant object
 <a id="tocScommunitytenantstatus"></a>
 <a id="tocscommunitytenantstatus"></a>
 
-Represents a status of a community tenant
+Represents a status of a community tenant.
 
 <h4>Enumerated Values</h4>
 

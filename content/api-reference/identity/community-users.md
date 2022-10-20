@@ -6,106 +6,9 @@ uid: ""
 # Community Users
 APIs for getting, updating, and deleting users from communities
 
-## `Add User to a Community 1`
+## `Add User to a Community`
 
-<a id="opIdCommunityUsers_Add User to a Community 1"></a>
-
-Adds a user to a community and provides a list of community role identifiers to be assigned to the user
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string userId`
-<br/>User identifier<br/><br/>
-
-<h4>Request Body</h4>
-
-List of community roles Ids to assign to the user<br/>
-
-```json
-[
-  "string"
-]
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[User](#schemauser)|Ok|
-|201|[User](#schemauser)|Created|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad request|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
-<h4>Example response body</h4>
-
-> 200 Response ([User](#schemauser))
-
-```json
-{
-  "Id": "string",
-  "GivenName": "string",
-  "Surname": "string",
-  "Name": "string",
-  "Email": "user@example.com",
-  "ContactEmail": "user@example.com",
-  "ContactGivenName": "string",
-  "ContactSurname": "string",
-  "ExternalUserId": "string",
-  "IdentityProviderId": "string",
-  "RoleIds": [
-    "string"
-  ]
-}
-```
-
----
-
-## `Remove User from a Community 1`
-
-<a id="opIdCommunityUsers_Remove User from a Community 1"></a>
-
-Removes a user from a community
-
-<h3>Request</h3>
-
-```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string userId`
-<br/>User identifier<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|Removed|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad request|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
----
-
-## `Add User to a Community 2`
-
-<a id="opIdCommunityUsers_Add User to a Community 2"></a>
+<a id="opIdCommunityUsers_Add User to a Community"></a>
 
 Adds a user to a community and provides a list of community role identifiers to be assigned to the user
 
@@ -168,9 +71,9 @@ List of community roles Ids to assign to the user<br/>
 
 ---
 
-## `Remove User from a Community 2`
+## `Remove User from a Community`
 
-<a id="opIdCommunityUsers_Remove User from a Community 2"></a>
+<a id="opIdCommunityUsers_Remove User from a Community"></a>
 
 Removes a user from a community
 
@@ -200,100 +103,9 @@ DELETE /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users/{userI
 
 ---
 
-## `List Users of a Tenant in a Community 1`
+## `List Users of a Tenant in a Community`
 
-<a id="opIdCommunityUsers_List Users of a Tenant in a Community 1"></a>
-
-Gets users that are associated with a specific tenant and community
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
-?query={query}&skip={skip}&count={count}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
-`[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[User](#schemauser)[]|Set of users (type `User`) associated with the tenant ( `tenantId`) and community ( `communityId`)|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad request|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
-<h4>Example response body</h4>
-
-> 200 Response ([User](#schemauser)[])
-
-```json
-[
-  {
-    "Id": "string",
-    "GivenName": "string",
-    "Surname": "string",
-    "Name": "string",
-    "Email": "user@example.com",
-    "ContactEmail": "user@example.com",
-    "ContactGivenName": "string",
-    "ContactSurname": "string",
-    "ExternalUserId": "string",
-    "IdentityProviderId": "string",
-    "RoleIds": [
-      "string"
-    ]
-  }
-]
-```
-
----
-
-## `Get Count of Users of a Tenant in a Community 1`
-
-<a id="opIdCommunityUsers_Get Count of Users of a Tenant in a Community 1"></a>
-
-Gets the count of users of the tenant in a community. This method is identical to the `GetCommunityUsersByTenantAndCommunity` endpoint except it does not return a body.
-
-<h3>Request</h3>
-
-```text 
-HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|None|Success|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad request|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
----
-
-## `List Users of a Tenant in a Community 2`
-
-<a id="opIdCommunityUsers_List Users of a Tenant in a Community 2"></a>
+<a id="opIdCommunityUsers_List Users of a Tenant in a Community"></a>
 
 Gets users that are associated with a specific tenant and community
 
@@ -351,9 +163,9 @@ GET /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users
 
 ---
 
-## `Get Count of Users of a Tenant in a Community 2`
+## `Get Count of Users of a Tenant in a Community`
 
-<a id="opIdCommunityUsers_Get Count of Users of a Tenant in a Community 2"></a>
+<a id="opIdCommunityUsers_Get Count of Users of a Tenant in a Community"></a>
 
 Gets the count of users of the tenant in a community. This method is identical to the `GetCommunityUsersByTenantAndCommunity` endpoint except it does not return a body.
 

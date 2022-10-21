@@ -39,7 +39,7 @@ For more information on installing the OCS Power BI Connector, see <xref:SetUpPo
 
 #### Step 2. Use Microsoft Power BI to retrieve your data view
 
-Use Microsoft Power BI to retrieve your data views. For more information, see <xref:PowerBI>.
+Use Microsoft Power BI to retrieve your data views. For more information, see <xref:RetrieveDataViews>.
 
 ### [REST API](#tab/tabid-2)
 
@@ -55,10 +55,10 @@ Use one of the starter projects listed in [Interact with the REST API](#interact
 
 ***
 
-## Tip: Use the API Console to retrieve your data view
+### Tip: Use the API Console to retrieve your data view
 
 [!include[api-console](_includes/api-console.md)]
 
-## Developer documentation
+### Developer documentation
 
 For more information on interacting with a data view using the API console, see the [Developer Guide](xref:DataViewsOverview).

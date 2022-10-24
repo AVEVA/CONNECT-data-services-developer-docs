@@ -1,5 +1,5 @@
 ---
-uid: data-view-query-errors
+uid: data-view-troubleshooting
 ---
 
 # Data view troubleshooting

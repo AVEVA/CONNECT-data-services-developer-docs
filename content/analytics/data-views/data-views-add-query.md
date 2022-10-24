@@ -14,7 +14,7 @@ uid: data-views-add-query
 
    You can filter the namespaces and communities that are listed using the slide toggles and the filter field.
 
-   **Getting `This namespace does not allow data to be processed outside of the region where it resides` while adding a query?** See [Cross region processing disabled](#cross-region-processing-disabled).
+   **Getting `This namespace does not allow data to be processed outside of the region where it resides` while adding a query?** See [Cross region processing disabled](xref:data-view-troubleshooting#cross-region-processing-disabled).
 
 1. From **Query Type**, select the type of object that you want to search for in the query source: **Streams** or **Assets**.
 
@@ -31,7 +31,6 @@ uid: data-views-add-query
 1. Once you are satisfied with your queries and query results, select **Save**.
 
 [!include[ineligible-data-items](_includes/ineligible-data-items.md)]
-
 
 ## Next steps
 

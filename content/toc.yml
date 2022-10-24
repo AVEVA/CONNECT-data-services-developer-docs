@@ -215,7 +215,7 @@
             - topicUid: data-view-link-fields
         - topicUid: manage-data-views-permissions
         - topicUid: data-views-retrieve
-        - topicUid: data-view-query-errors
+        - topicUid: data-view-troubleshooting
     - topicUid: data-views-install-power-bi-connector
       items:
         - topicUid: SetUpPowerBI

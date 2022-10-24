@@ -46,13 +46,13 @@ While managing data view queries, you may encounter the following warnings.
 
 ### Cross region processing disabled
 
-If you encounter a message of `This namespace does not allow data to be processed outside of the region where it resides`, this message indicates that your tenant has opted out of sharing the namespace data across regions for performance purposes. Therefore, the data view cannot be processed in your geographical region. For additional information, see <xref:cross-region-data-sharing>.
+If you encounter a warning of `This namespace does not allow data to be processed outside of the region where it resides`, this message indicates that your tenant has opted out of sharing the namespace data across regions for performance purposes. Therefore, the data view cannot be processed in your geographical region. For additional information, see <xref:cross-region-data-sharing>.
 
 You can encounter this message in different contexts:
 
 - **While adding a query**
 
-    If you attempt to add a namespace that has opted out of cross region data sharing, the source is unavailable and cannot be added. A tooltip displays if you mouse over the source.
+    If you attempt to add a namespace that has opted out of cross region data sharing, the source is unavailable and cannot be added. A tooltip displays if you mouse over the source:
 
     ![opt-out tooltip](_images/opt-out-tooltip.png)
 

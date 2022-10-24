@@ -32,7 +32,7 @@ If the field set for a query includes no fields, an alert of `No Included Fields
 
 ### `There are included fields that don't map to anything`
 
-If only of your queries includes fields that do not map to anything, an error of `There are included fields that don't map to anything` displays at the bottom of the field sets.
+If one of your queries includes fields that do not map to anything, an error of `There are included fields that don't map to anything` displays at the bottom of the field sets.
 
 **Field set error**
 
@@ -42,13 +42,13 @@ You can correct this error by finding the individual fields that do not map to a
 
 ## Manage Queries
 
-While managing data view queries, you may encounter the following warnings.
+While managing data view queries, you may encounter the following warning.
 
 ### Cross region processing disabled
 
 If you encounter a warning of `This namespace does not allow data to be processed outside of the region where it resides`, this message indicates that your tenant has opted out of sharing the namespace data across regions for performance purposes. Therefore, the data view cannot be processed in your geographical region. For additional information, see <xref:cross-region-data-sharing>.
 
-You can encounter this message in different contexts:
+You can encounter the message above in different contexts:
 
 - **While adding a query**
 
@@ -62,6 +62,8 @@ You can encounter this message in different contexts:
 
     ![another opt-out tooltip](_images/opt-out-warning-tooltip.png)
 
-    When the query that includes a disabled source is selected, the following message displays notifying you:
+    When the query that includes a disabled source is selected, the following message displays:
 
-    ![warning message](_images/cross-region-data-sharing-disabled.png)
+    ```text
+    Cross Region Data Sharing Disabled: This namespace does not allow data to be processed outside of the region where it resides.
+    ```

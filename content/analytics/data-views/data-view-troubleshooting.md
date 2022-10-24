@@ -18,6 +18,8 @@ Query sources of `Unknown Community` indicate that you have insufficient permiss
 
 ![unknown](_images/unknown-community.png)
 
+**Note:** Community Administrators or Community Members with read access only do not see `Unknown Community`. Instead they see the community name. Community Administrators can then use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>.
+
 ## Data View page
 
 You may encounter the following warnings while editing a data view.

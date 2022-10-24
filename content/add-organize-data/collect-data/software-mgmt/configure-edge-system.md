@@ -16,11 +16,17 @@ Configuration is available for the following edge system types:
 
  - Edge Data Store
 
+ - Edge Data Store EMS Module
+
  - PI Adapter for Modbus TCP
  
  - PI Adapter for MQTT
 
+ - AVEVA Adapter for MQTT EMS Module
+
  - PI Adapter for OPC UA
+
+ - AVEVA Adapter for OPC UA EMS Module
 
  - PI Adapter for RDBMS
 

@@ -8,7 +8,7 @@ While working with data views, you may encounter warnings about your data view c
 
 ## Data Views page
 
-While browsing the list of data views, you may encounter the following warnings .
+While browsing the list of data views, you may encounter the following warnings.
 
 ### `Unknown community`
 

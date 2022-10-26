@@ -52,7 +52,7 @@ You can encounter the message above in different contexts:
 
 - **While adding a query**
 
-    If you attempt to add a namespace that has opted out of cross region data sharing and the namespace region is different than the current region, the source is unavailable and cannot be added. A tooltip displays if you mouse over the source:
+    If you attempt to add a namespace that has opted out of cross region data sharing, and you reside in different geographical region than that namespace, the source is unavailable and therefore cannot be added. A tooltip displays if you mouse over the source:
 
     ![opt-out tooltip](_images/opt-out-tooltip.png)
 

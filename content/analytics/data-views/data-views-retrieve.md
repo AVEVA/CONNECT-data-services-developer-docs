@@ -51,7 +51,7 @@ For more information on creating client-credential clients, see <xref:gpClientCr
 
 #### Step 2. Configure your sample project and retrieve your data view
 
-Use one of the starter projects listed in [Interact with the REST API](#interact-with-the-rest-api). Pass your project client-credentials to authenticate and provide it with the URI for your data view. For more information on this process, see the link above.
+Use one of the starter projects listed in [Option B: Interact with the REST API](#option-b-interact-with-the-rest-api). Pass your project client-credentials to authenticate and provide it with the URI for your data view. For more information on this process, see the link above.
 
 ***
 

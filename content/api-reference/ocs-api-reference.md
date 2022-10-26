@@ -7,13 +7,23 @@ uid: osisoftCloudServices
 The information in the sections that follow document the APIs and usage for each of the following:
 
 * [Asset store](xref:Assets)—Use the information in this section to create or find assets of different types, along with their data and status.
+
+* [Client failover](xref:FailoverOverview)—The Client Failover Service provides failover capability for adapters to minimize data loss.
+
 * [Communities (Preview)](xref:communityOverview)—OCS Communities helps industrial companies share their operational data with external business partners, service providers, and analytics providers. 
+
 * [Data collection](xref:dataIngress)—You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.
+
 * [Data views](xref:DataViewsOverview)—Use the information in this section to create user-selected subsets of data stored in OSIsoft Cloud Services which are mapped into customizable table formats.
+
 * [Identity and access management](xref:identityandaccessmanagement)—Use the information in this section to create, manage and administer users and clients.
+
 * [Operations](xref:operationsOverview)—Use the information in this section to get metrics on OCS operation. 
+
 * [Rules](xref:rules-lp)—The metadata rules feature in the OCS Portal simplifies the process of assigning metadata to streams.
+
 * [Sequential Data Store (SDS)](xref:sds)—Use the information in this section to learn about the OSIsoft Cloud Services Sequential Data Store. The SDS is optimized for sequential data operations.
+
 * [Tenant Management](xref:AccountManagementOverview)—Use the information in this section to create, manage, and administer your account by assigning users, roles, and namespaces to your tenant.
 
 ## Access to OCS
@@ -34,7 +44,7 @@ A tenant represents the set of services, applications, data, and configuration s
 Tenants are divided into one or more logical units called Namespaces. Each Namespace is distinct and separate from 
 other Namespaces with its own instances of the various OSIsoft Cloud Services and data stores. Namespaces provide isolation of resources. 
 
-Namespaces are provisioned within a region. The Namespace's services and data stores all exist in the Namespace's region. Resources allocated to a Namespace are isolated to the Namespace's region. For more information on regions see the [Namespace](xref:AccountNamespace_1) documentation.  Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. 
+Namespaces are provisioned within a region. The Namespace's services and data stores all exist in the Namespace's region. Resources allocated to a Namespace are isolated to the Namespace's region. For more information on regions see the [Namespaces](xref:tenant-namespaces) documentation.  Isolation provided by Tenants and Namespaces prevents accidental or malicious data access. 
 
 OSIsoft Cloud Services provides data residency via namespaces in the following regions:
 
@@ -43,7 +53,7 @@ OSIsoft Cloud Services provides data residency via namespaces in the following r
 | WestUS | Americas | California |
 | WestEurope | Europe | Netherlands |
 
-Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See the [Tenant](xref:AccountTenant) documentation for information on how to access this data.
+Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See the <xref:tenant-tenants#get-regions> documentation for information on how to access this data.
 
 
 ## OCS API versioning

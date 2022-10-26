@@ -1,63 +1,54 @@
 ---
-uid: tenant-root-access-control
+uid: ""
 
 ---
 
-# Root Access Control
-APIs to manage default access to entities governed by an AccessControlList.
+# Group Access Control
+API for Client Failover Group access control.
 
-## `Get Root Namespace Acl`
+## `Get Group Acl`
 
-<a id="opIdRootAccessControl_Get Root Namespace Acl"></a>
+<a id="opIdGroupAccessControl_Get Group Acl"></a>
 
-Retrieves the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
+Gets the access control list for the specified group.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{groupId}/accesscontrol
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>The identifier of the `Tenant`.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>`string groupId`
+<br/>The identifier of the failover group.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|The root `AccessControlList` for `Namespace`.|
-|400|None|Could not retrieve the `AccessControlList` due to missing or invalid input.|
-|403|None|Forbidden.|
+|200|[AccessControlList](#schemaaccesscontrollist)|The access control list for the group.|
+|400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
+|403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
+|404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
 
 ```json
 {
   "RoleTrusteeAccessControlEntries": [
     {
       "Trustee": {
-        "Type": 3,
-        "ObjectId": "a4e06a18-9a0e-4721-9772-524c937bdb5c"
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
       },
-      "AccessRights": 1
-    },
-    {
-      "Trustee": {
-        "Type": 3,
-        "ObjectId": "a9a3b01b-e0d3-49c9-b931-72433152c192"
-      },
-      "AccessRights": 3
-    },
-    {
-      "Trustee": {
-        "Type": 3,
-        "ObjectId": "e1aaf6ac-3416-4db2-bd5d-d62b13340f4d"
-      },
-      "AccessRights": 31
+      "AccessType": 0,
+      "AccessRights": 0
     }
   ]
 }
@@ -65,26 +56,28 @@ GET /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
 
 ---
 
-## `Set Root Namespace Acl`
+## `Set Group Acl`
 
-<a id="opIdRootAccessControl_Set Root Namespace Acl"></a>
+<a id="opIdGroupAccessControl_Set Group Acl"></a>
 
-Modifies the `AccessControlList` that is used to authorize access to a `Namespace` if none is specified during creation.
+Updates the access control list for the specified group.
 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/Tenants/{tenantId}/AccessControl/Namespaces
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{groupId}/accesscontrol
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>The identifier of the `Tenant`.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>`string groupId`
+<br/>The identifier of the failover group.<br/><br/>
 
 <h4>Request Body</h4>
 
-The new root AccessControlList for Namespaces.<br/>
+The new access control list.<br/>
 
 ```json
 {
@@ -106,42 +99,10 @@ The new root AccessControlList for Namespaces.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AccessControlList](#schemaaccesscontrollist)|The new `AccessControlList` for `Namespace`.|
-|400|None|Could not update the `AccessControlList` due to missing or invalid input.|
-|403|None|Forbidden.|
-|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-{
-  "RoleTrusteeAccessControlEntries": [
-    {
-      "Trustee": {
-        "Type": 3,
-        "ObjectId": "a4e06a18-9a0e-4721-9772-524c937bdb5c"
-      },
-      "AccessRights": 1
-    },
-    {
-      "Trustee": {
-        "Type": 3,
-        "ObjectId": "a9a3b01b-e0d3-49c9-b931-72433152c192"
-      },
-      "AccessRights": 3
-    },
-    {
-      "Trustee": {
-        "Type": 3,
-        "ObjectId": "e1aaf6ac-3416-4db2-bd5d-d62b13340f4d"
-      },
-      "AccessRights": 31
-    }
-  ]
-}
-```
+|204|None|The access control list was updated.|
+|400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
+|403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
+|404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
 
 ---
 ## Definitions
@@ -267,3 +228,39 @@ The new root AccessControlList for Namespaces.<br/>
 
 ---
 
+### ErrorResponse
+
+<a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a>
+
+Response error for controller methods.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Operation identifier|
+|Error|string|false|true|Error string|
+|Reason|string|false|true|Error reason string|
+|Resolution|string|false|true|Resolution string|
+|AdditionalParameters|object|false|true|Additional parameters to add to the response.|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "AdditionalParameters": {
+    "property1": null,
+    "property2": null
+  },
+  "property1": null,
+  "property2": null
+}
+
+```
+
+---

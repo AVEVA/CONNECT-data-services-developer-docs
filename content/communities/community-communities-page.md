@@ -34,7 +34,7 @@ You can also toggle the `Communities` page between the default list view and a c
 | View | Icon | Description |
 |--|--|--|
 | **List view** | ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
- **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. | 
+| **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. | 
 
 -->
 

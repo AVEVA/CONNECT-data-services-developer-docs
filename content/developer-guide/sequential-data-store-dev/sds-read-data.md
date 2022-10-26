@@ -132,7 +132,7 @@ The namespace identifier
 
 ### Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [AVEVA Data Hub API reference](osisoftCloudServices).
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [AVEVA Data Hub API reference](xref:osisoftCloudServices).
 
 ## Indexes and reading data
 

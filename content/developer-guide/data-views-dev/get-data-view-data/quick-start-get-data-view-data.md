@@ -115,7 +115,7 @@ The view data is available in several formats. A format can be specified using t
 
 #### Response format
 
-By default, the value of the header `Accept-Verbosity` is `verbose` for the response format. For more information on response formats, see [AVEVA Data Hub API reference](osisoftCloudServices).
+By default, the value of the header `Accept-Verbosity` is `verbose` for the response format. For more information on response formats, see [AVEVA Data Hub API reference](xref:osisoftCloudServices).
 
 ### Paging
 

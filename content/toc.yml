@@ -19,7 +19,7 @@
 - name: Remote operations monitoring
   href: rom/toc.yml
   topicHref: rom/rom-overview.md
-- name: Communities (Preview)
+- name: Communities
   href: communities/toc.yml
   topicHref: communities/communities.md
 - name: Developer guide

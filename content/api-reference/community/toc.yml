@@ -15,7 +15,6 @@
 - name: Summary 
   href: community-summary.md
 - name: Tenant collection acls
-- name: ../identity/community-tenant-collection-acls.md
-  href: ../identity/community-tenants.md
+  href: ../identity/community-tenant-collection-acls.md
 - name: Users
   href: ../identity/community-users.md

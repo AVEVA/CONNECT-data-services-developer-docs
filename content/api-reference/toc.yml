@@ -1,7 +1,7 @@
 - name: Asset store
   href: assets/toc.yml
   topicHref: Assets/assets.md
-- name: Communities (Preview)
+- name: Communities
   href: community/toc.yml
   topicHref: community/community-overview.md
 - name: Data collection

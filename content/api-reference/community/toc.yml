@@ -1,18 +1,21 @@
-- name: Client credential clients
-  href: community-client-credential-clients.md 
 - name: Communities
-  href: community-communities.md
+  href: content/api-reference/identity/communities.md
+- name: Client credential clients
+  href: content/api-reference/identity/community-client-credential-clients.md
+- name: Identity provider
+  href: content/api-reference/identity/community-identity-provider.md
 - name: Invitations
-  href: community-invitations.md
+  href: content/api-reference/identity/community-invitations.md
 - name: Roles
-  href: community-roles.md
+  href: content/api-reference/identity/community-roles.md
 - name: Search 
   href: community-search.md
 - name: Shared access requests
   href: community-shared-access.md
 - name: Summary 
   href: community-summary.md
-- name: Tenants
-  href: community-tenants.md
+- name: Tenant collection acls
+- name: content/api-reference/identity/community-tenant-collection-acls.md
+  href: content/api-reference/identity/community-tenants.md
 - name: Users
-  href: community-users.md
+  href: content/api-reference/identity/community-users.md

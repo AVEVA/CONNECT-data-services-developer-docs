@@ -14,7 +14,7 @@ The following table describes each field and button listed for a community:
 
 | Field/Button | Description |
 |--|--|
-| **Community Details** | Opens the `Community details` page for the community, displaying more information about the community. | 
+| **Community Details** | Opens the community dashboard, displaying more information about the community. | 
 | **Tenants** | The number of tenants participating in the community. |
 | **Date Created** | The date that the community was created. |
 | **Sharing Status** | Indicates whether one or more tenant in the community is sharing data streams. Statuses include: <ul><li><img src="../_icons/custom/check-circle.svg" alt="Sharing Active"/> <strong>Sharing Active</strong>: No tenants in the community have paused sharing.</li><li><img src="../_icons/default/pause-circle.svg" alt="Sharing Paused"/> <strong>Sharing Paused</strong>: One or more tenant in the community has paused sharing their data streams. The total number of tenants that have sharing paused are also listed.</li></ul> |

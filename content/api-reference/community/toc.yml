@@ -1,7 +1,7 @@
-- name: Communities
-  href: ../identity/communities.md
 - name: Client credential clients
   href: ../identity/community-client-credential-clients.md
+- name: Communities
+  href: ../identity/communities.md
 - name: Identity provider
   href: ../identity/community-identity-provider.md
 - name: Invitations
@@ -14,7 +14,7 @@
   href: community-shared-access.md
 - name: Summary 
   href: community-summary.md
-- name: Tenant collection acls
+- name: Tenant collection access control
   href: ../identity/community-tenant-collection-acls.md
 - name: Users
   href: ../identity/community-users.md

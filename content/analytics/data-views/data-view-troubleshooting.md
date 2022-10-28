@@ -20,7 +20,11 @@ Query sources that include a yellow chip indicate that you have a permissions is
 
     ![unknown](_images/unknown-community.png)
 
-- Yellow chips that display the community name indicate that you are a [Community Administrator](xref:community-community-roles#community-administrators) or [Community Member](xref:community-community-roles#community-member) with read access, but not a member of the community itself. Community Administrators can use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>. 
+- Yellow chips that display the community name indicate that you are a [Community Administrator](xref:community-community-roles#community-administrators) or [Community Member](xref:community-community-roles#community-member) with read access, but not a member of the community itself. Community Administrators can use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>.
+
+    **Read access chip with community name**
+
+    ![read access chip](_images/test-community-chip.png)
 
 ## Data View page
 

@@ -10,17 +10,17 @@ While working with data views, you may encounter warnings about your data view c
 
 While browsing the list of data views, you may encounter the following warnings.
 
-### Yellow chip
+### Alert chip
 
-Query sources that include a yellow chip indicate that you have a permissions issue affecting your view of the data view. There are two context for when a yellow chip displays:
+Query sources that include a yellow alert chip indicate that you have a permissions issue affecting your view of the data view. There are two context for when an alert chip displays:
 
-- Yellow chips that read `Unknown Community` indicate that you have insufficient permissions to access the community or that has been deleted. You must be a member of the community to access its data. Additionally, you cannot edit the query for the community until you are member of the community. Request that a community administrator add you to the community.
+- Alert chips that read `Unknown Community` indicate that you have insufficient permissions to access the community or that has been deleted. You must be a member of the community to access its data. Additionally, you cannot edit the query for the community until you are member of the community. Request that a community administrator add you to the community.
 
     **Unknown community chip**
 
     ![unknown](_images/unknown-community.png)
 
-- Yellow chips that display the community name indicate that you are a [Community Administrator](xref:community-community-roles#community-administrators) or [Community Member](xref:community-community-roles#community-member) with read access, but not a member of the community itself. Community Administrators can use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>.
+- Alert chips that display the community name indicate that you are a [Community Administrator](xref:community-community-roles#community-administrators) or [Community Member](xref:community-community-roles#community-member) with read access, but not a member of the community itself. Community Administrators can use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>.
 
     **Read access chip with community name**
 

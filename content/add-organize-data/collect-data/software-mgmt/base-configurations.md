@@ -4,25 +4,41 @@ uid: AddBaseConfiguration
 
 # Add and edit base configurations
 
-You can create and edit base configurations for edge systems in OCS. Once the configuration is complete, you can export the configuration file by each component or edge system to manually apply to the edge system in the field. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
+You can create and edit base configurations for edge systems in OCS. Once the configuration is complete, export the configuration file to manually apply to the edge system in the field or to deploy the edge module using AVEVA Edge Management. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
-**Note:** You can create configuration templates for the following edge system types:
+You can create configuration templates for the following edge system types:
+
+ - PI Adapter for Azure Event Hubs
+ 
+ - PI Adapter for BACnet 
+
+ - PI Adapter for DNP3
 
  - Edge Data Store
 
- - PI Adapter for BACnet
- 
- - PI Adapter for DNP3
- 
+ - Edge Data Store EMS Module
+
  - PI Adapter for Modbus TCP
  
- - PI Adapter for OPC UA
- 
  - PI Adapter for MQTT
- 
+
+ - AVEVA Adapter for MQTT EMS Module
+
+ - PI Adapter for OPC UA
+
+ - AVEVA Adapter for OPC UA EMS Module
+
+ - PI Adapter for RDBMS
+
+ - PI Adapter for Structured Data Files
+
+**Note:** You can only deploy edge modules using AVEVA Edge Management. 
+
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
-Use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
+For edge systems, use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
+
+For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. The variable is associated with a secret in AVEVA Edge Management.
 
 ## Add a new base configuration
 
@@ -46,7 +62,7 @@ To create a edge system base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
-   **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+   **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.  
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

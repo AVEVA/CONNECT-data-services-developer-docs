@@ -111,6 +111,7 @@
     - topicUid: ViewEdgeSystem
     - topicUid: AddBaseConfiguration
     - topicUid: DeployConfig
+    - topicUid: DeployModule
     - topicUid: ManageConfigurations
   - topicUid: main-lp
     items:

@@ -4,7 +4,7 @@ uid: DeployConfig
 
 # Deploy an edge system configuration
 
-After you export an edge system configuration, you have to manually deploy the configuration to the edge system in the field.
+After you export an edge system configuration, you have to manually deploy the configuration to the edge device in the field.
 
 For details on how to deploy a configuration, see the specific edge system product documentation: 
 

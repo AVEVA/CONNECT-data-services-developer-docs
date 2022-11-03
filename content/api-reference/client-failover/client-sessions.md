@@ -292,7 +292,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{
 
 <h4>Request Body</h4>
 
-<br/>
+The role override detail configuration for the client session RoleOverrideConfiguration. Role override value of Primary puts session as forced Primary and Off puts session's role back to be automatically calculated. Optional "expirationPeriod" of timespan in the format of "d.hh:mm:ss". "expirationPeriod" value is only applicable when role override value is Primary. When not specified, default is no expiration time.<br/>
 
 ```json
 {

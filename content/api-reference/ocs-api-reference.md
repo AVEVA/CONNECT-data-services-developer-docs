@@ -40,7 +40,7 @@ For information on the graphical interface for using the REST API within OCS, se
 
 Supported response formats include JSON, verbose JSON, and SDS.
 
-In the API Console for AVEVA Data Hub Portal, the default value of the header `Accept-Verbosity` is `verbose` for the response format. Verbose JSON responses include all values in the returned JSON payload, including defaults. To specify verbose JSON return, add the header `Accept-Verbosity` with a value of `verbose` to the request. 
+In the API Console for OCS Portal, the default value of the header `Accept-Verbosity` is `verbose` for the response format. Verbose JSON responses include all values in the returned JSON payload, including defaults. To specify verbose JSON return, add the header `Accept-Verbosity` with a value of `verbose` to the request. 
 
 Calls to the API from other sources do not include `Accept-Verbosity` as a standard. The `Accept-Verbosity` heading needs to be specified.  If you do not include the the `Accept-Verbosity` heading, all calls except for dataview calls will be `non-verbose` and dataview calls will be `verbose`.
 

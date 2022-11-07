@@ -374,13 +374,13 @@ GET /api/v1/Tenants/{tenantId}/Regions
   {
     "Id": "WestEurope",
     "Name": "West Europe",
-    "BaseAddress": "https://euno.datahub.connect.aveva.com/"
+    "BaseAddress": "https://dat-d.osisoft.com"
   },
   {
     "Id": "WestUS",
     "Name": "West US",
     "AdministrativeEndpointsWritable": true,
-    "BaseAddress": "https://uswe.datahub.connect.aveva.com"
+    "BaseAddress": "https://dat-b.osisoft.com"
   }
 ]
 ```

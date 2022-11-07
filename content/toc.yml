@@ -64,6 +64,7 @@
         - topicUid: streams-add-tags-or-metadata
         - topicUid: streams-share-streams
         - topicUid: streams-view-in-trend
+        - topicUid: streams-export-csv
         - topicUid: streams-manage-stream-permissions
       - topicUid: ccTypes
         items:
@@ -76,7 +77,6 @@
       - topicUid: community-communities-page
       - topicUid: community-setup
         items:
-        - topicUid: community-community-roles
         - topicUid: community-workflow-create
           items:
           - topicUid: community-create-community
@@ -98,6 +98,7 @@
         items:
         - topicUid: community-view-invitations
         - topicUid: community-remove-your-tenant
+        - topicUid: community-pause-sharing
         - topicUid: community-manage-users
         - topicUid: community-manage-groups
         - topicUid: community-manage-clients
@@ -106,10 +107,11 @@
         - topicUid: communities-manage-default-admins
       - topicUid: community-data-sharing
         items: 
+        - topicUid: community-enable-stream-sharing-permissions
         - topicUid: community-manage-shared-streams
         - topicUid: community-view-shared-streams
         - topicUid: community-view-shared-data
-        - topicUid: community-enable-stream-sharing-permissions
+        - topicUid: communities-usage
     - topicUid: ccMetadataRules
       items:
       - topicUid: gpMetadataRules

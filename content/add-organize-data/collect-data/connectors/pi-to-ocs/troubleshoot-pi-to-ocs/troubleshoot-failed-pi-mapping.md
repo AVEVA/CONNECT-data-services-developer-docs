@@ -7,10 +7,10 @@ uid: troubleshoot-failed-mapping
 If you encounter an error message and the PI to Data Hub Configuration Utility crashes after an attempt to create or edit a PI mapping, follow these steps to troubleshoot and correct the issue:
 
 1. Take one of the following steps:
- 
-    a) Reinstall the PI to Data Hub Agent with a service account that has access to the configured Data Archive.
 
-    b) Add a different Data Archive that the service account has permission to access.
+    1. Reinstall the PI to Data Hub Agent with a service account that has access to the configured Data Archive.
+
+    1. Add a different Data Archive that the service account has permission to access.
 
 1. Relaunch the PI to Data Hub Configuration Utility: Select **Start** > **AVEVA** > **PI to Data Hub Configuration Utility**.
 
@@ -18,6 +18,6 @@ If you encounter an error message and the PI to Data Hub Configuration Utility c
 
 1. In the PI to Data Hub Configuration Utility, select the pencil icon to the right of **PI Mapping**.
 
-1. Follow the steps in [Create a PI mapping section](xref:pi-to-ocs-utility) to add a PI mapping.
+1. Follow the steps in [Create a PI mapping](xref:pi-to-ocs-utility#create-a-pi-mapping) to add a PI mapping.
 
-1. After adding the PI mapping, save your changes. 
+1. After adding the PI mapping, save your changes.

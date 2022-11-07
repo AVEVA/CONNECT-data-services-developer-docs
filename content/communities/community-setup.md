@@ -22,7 +22,7 @@ This diagram lists each task that must be completed to form an operational commu
 
 ## Community user roles
 
-To allow different tenants and users participating in a community to safely and securely share data streams with one another, OSIsoft Cloud Services (OCS) includes several default user roles specifically for communities. These roles include granular permissions to allow different tenants and users to share specific data streams while keeping the remaining, unshared data streams private. When using Communities, you must assign the appropriate community roles to users that administrate or participate in the community. During community setup, you will need to assign different users with these roles.
+To allow different tenants and users participating in a community to safely and securely share data streams with one another, AVEVA Data Hub includes several default user roles specifically for communities. These roles include granular permissions to allow different tenants and users to share specific data streams while keeping the remaining, unshared data streams private. When using Communities, you must assign the appropriate community roles to users that administrate or participate in the community. During community setup, you will need to assign different users with these roles.
 
 - **Community Administrators**
 

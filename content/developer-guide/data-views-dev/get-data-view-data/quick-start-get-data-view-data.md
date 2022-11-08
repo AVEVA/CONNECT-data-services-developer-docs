@@ -115,9 +115,7 @@ The view data is available in several formats. A format can be specified using t
 
 #### Response format
 
-By default, the value of the header `Accept-Verbosity` is `verbose` for the response format. Verbose responses include all values in the returned JSON payload, including defaults. When set to `non-verbose`, properties with null values are omitted from the response to reduce bandwidth. This behavior is only applicable to the JSON format, as all other formats represent a table which cannot have omitted values.
-
-Note that the `Accept-Verbosity` header for SDS differs as its default is set to `non-verbose`.
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [AVEVA Data Hub API reference](xref:osisoftCloudServices).
 
 ### Paging
 

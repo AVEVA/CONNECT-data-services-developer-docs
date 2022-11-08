@@ -54,7 +54,7 @@ The following items were resolved:
 
 - The AF Server must have a default Data Archive server specified for PI to Data Hub to operate properly.
 
-- Streams with AF elements and referenced PI points are not deleted even when the **Automatically remove Streams and Assets** option has been selected; this exception includes instances of assets not created for AF elements due to errors (for example, attributes errors).
+- Streams with AF elements and referenced PI points are not deleted even when the **Automatically remove Streams and Assets** option has been selected; this exception includes instances of assets not created for AF elements due to errors (for example, attribute errors).
 
 - Configuring two transfers in the same namespace where the transfers references the same AF element(s) results in the asset properties of one transfer overridden/replaced by the second transfer.
 

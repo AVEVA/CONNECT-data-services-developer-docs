@@ -1,5 +1,6 @@
 ---
 uid: Search
+title: "Search", "search"
 ---
 
 # Search
@@ -30,7 +31,7 @@ You can use search operators to get more refined search results. Use the operato
 
 ## Wildcard (``*``) operator
 
-Searching for a value finds only exact, whole-word matches. As an example, searching for "temperature" will not match a field value of "temperatures". You can use the wildcard operator (``*``) to match a partial search term. The wildcard can be used in the front (``*``perature), middle (tem``*``rature), or at the end (temp``*``) of each search term. It can only be used once for each search term, except to enclose a term (``*``perat``*``). OCS does not support wildcard operators in the middle and at the front or end of a term (te``*``pera``*`` is invalid).
+-Searching for a value finds only exact, whole-word matches. As an example, searching for "temperature" will not match a field value of "temperatures". You can use the wildcard operator (``*``) to match a partial search term. The wildcard can be //*+used in the front (``*``perature), middle (tem``*``rature), or at the end (temp``*``) of each search term. It can only be used once for each search term, except to enclose a term (``*``perat``*``). OCS does not support wildcard operators in the middle and at the front or end of a term (te``*``pera``*`` is invalid).
 
 | **Query string** | **Matches field value** | **Does not match field value** |
 | ---------------- | ----------------------- | ------------------------------ |
@@ -68,9 +69,6 @@ The following are examples of using the escape character in query strings.
 | Description:floor1*          | assets, streams, stream types, stream views | Returns all items with a description that starts with **floor1**. |
 | Metadata/Name:\*building*    | assets, streams                             | Returns all items with at least one metadata name that contains the string **building**. |
 | Metadata/Value:123           | assets, streams                             | Returns all items with at least one metadata whose value equals **123**. |
-| Id:X* AND Metadata/Name:B*   | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metadata value with a name that starts with **B**. |
-| Tags:MarkedAsset             | assets, streams                             | Returns all items that have **MarkedAsset** as a tag. |
-| AssetTypeId:HeaterTypeId     | assets                                      | Returns all items with AssetTypeId matching **HeaterTypeId**. |
-| AssetTypeName:HeaterTypeName | assets                                      | Returns all items whose asset type Name field matches **HeaterTypeName**. |
-| StreamPropertyId:Pressure    | assets                                      | Returns all items that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
-| StreamReferenceName:Name1    | assets                                      | Returns all items whose stream references contain a stream reference name that matches **Name1**. |
+| Id:X* AND Metadata/Name:"B"*   | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metada0025196
+
+

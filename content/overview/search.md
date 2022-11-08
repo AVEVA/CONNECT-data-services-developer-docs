@@ -2,7 +2,7 @@
 uid: Search
 ---
 
-# Search query options in OCS
+# Search
 
 Many pages in OCS include a search capability, including:
 
@@ -24,11 +24,11 @@ You can use search operators to get more refined search results. Use the operato
 | ``AND``  | AND operator. The query ``cat AND dog`` searches for both "cat" and "dog". |
 | ``OR``   | OR operator. The query ``cat OR dog`` searches for either "cat" or "dog", or both. |
 | ``NOT``  | NOT operator. The query ``cat NOT dog`` searches for "cat" or those without "dog". |
-| ``*``    | Wildcard operator. Matches 0 or more characters. See [Wildcard operator](#wildcard). |
-| ``:``    | Field-scoped query. Specifies a field to search. See [Field-scoping operator](#fieldScoped). |
+| ``*``    | Wildcard operator. Matches 0 or more characters. See [Wildcard operator](#wildcard--operator). |
+| ``:``    | Field-scoped query. Specifies a field to search. See [Field-scoping operator](#field-scoping--operator). |
 | ``( )``  | Precedence operator. The query ``wind AND (speed OR deviation)`` searches for either "wind" and "speed", or "wind" and "deviation". |
 
-## <a name="wildcard"></a>Wildcard (``*``) operator
+## Wildcard (``*``) operator
 
 Searching for a value finds only exact, whole-word matches. As an example, searching for "temperature" will not match a field value of "temperatures". You can use the wildcard operator (``*``) to match a partial search term. The wildcard can be used in the front (``*``perature), middle (tem``*``rature), or at the end (temp``*``) of each search term. It can only be used once for each search term, except to enclose a term (``*``perat``*``). OCS does not support wildcard operators in the middle and at the front or end of a term (te``*``pera``*`` is invalid).
 
@@ -39,7 +39,7 @@ Searching for a value finds only exact, whole-word matches. As an example, searc
 | ``*log*``        | analog<br>alogger       | lop                            |
 | ``l*g``          | log<br>logg             | lake swimming (``*`` does not span across tokens) |
 
-## <a name="fieldScoped"></a>Field-scoping (``:``) operator
+## Field-scoping (``:``) operator
 
 The field-scoping operator limits the search to a specific field, such as ``id:``, ``name:``, ``description:``, and ``metadatakey:``.
 

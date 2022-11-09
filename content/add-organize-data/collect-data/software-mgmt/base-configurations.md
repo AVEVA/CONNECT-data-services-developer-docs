@@ -16,17 +16,17 @@ You can create configuration templates for the following edge system types:
 
  - Edge Data Store
 
- - Edge Data Store EMS Module
+ - Edge Data Store Module
 
  - PI Adapter for Modbus TCP
  
  - PI Adapter for MQTT
 
- - AVEVA Adapter for MQTT EMS Module
+ - AVEVA Adapter for MQTT Module
 
  - PI Adapter for OPC UA
 
- - AVEVA Adapter for OPC UA EMS Module
+ - AVEVA Adapter for OPC UA Module
 
  - PI Adapter for RDBMS
 

@@ -4,7 +4,7 @@ uid: Search
 
 # Search in OCS
 
-Many pages in OSIsoftOCS include a search capability, including:
+Many pages in OSIsoft (OCS) include a search capability, including:
 
 - Sequential Data Store (streams, types, stream views)
 - Asset Explorer (assets, asset types)

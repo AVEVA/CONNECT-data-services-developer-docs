@@ -23,3 +23,19 @@ The following image shows the important elements of the `Trend` page, and the ta
 | 4 | Legend table &ndash; Displays information about the traces in the `Trend` pane. Toggle between the Trend and Cursor views. |
 | 4A | Trend view &ndash; Select the **Trend** ![Trend](../_icons/default/chart-line.svg) icon to display statistics about each trace in the Legend table. The screen capture shows the trend view. |
 | 4B | Cursor view &ndash; Select the **Cursor** ![Cursor](../_icons/default/map-marker.svg) icon to display cursor statistics in the Legend table. The cursor must be locked to display the statistics (select **Plus** ![Plus](../_icons/default/plus.svg) above the cursor). With two or more locked cursors, summary statistics are displayed for contiguous cursors. |
+
+## Extrapolated values
+
+When viewing a trend session, extrapolated values are depicted as dashed lines and dashed heatmaps. Extrapolated values are values predicted based on historic interpolated values.
+
+- **Dashed lines**
+
+    For numeric data types, extrapolated values are depicted as dashed lines.
+
+    ![numeric data type extrapolated values](images/extrapolated-values-line.png)
+
+- **Dashed heatmaps**
+
+    For enumerations, extrapolated values are depicted as as dashed heatmaps.
+
+    ![enumeration extrapolated values](images/extrapolated-values-heatmap.png)

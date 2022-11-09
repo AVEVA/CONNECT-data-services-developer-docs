@@ -1,11 +1,10 @@
 ---
 uid: Search
-title: "Search", "search"
 ---
 
-# Search
+# Search in OCS
 
-Many pages in OCS include a search capability, including:
+Many pages in OSIsoftOCS include a search capability, including:
 
 - Sequential Data Store (streams, types, stream views)
 - Asset Explorer (assets, asset types)
@@ -31,7 +30,7 @@ You can use search operators to get more refined search results. Use the operato
 
 ## Wildcard (``*``) operator
 
--Searching for a value finds only exact, whole-word matches. As an example, searching for "temperature" will not match a field value of "temperatures". You can use the wildcard operator (``*``) to match a partial search term. The wildcard can be //*+used in the front (``*``perature), middle (tem``*``rature), or at the end (temp``*``) of each search term. It can only be used once for each search term, except to enclose a term (``*``perat``*``). OCS does not support wildcard operators in the middle and at the front or end of a term (te``*``pera``*`` is invalid).
+Searching for a value finds only exact, whole-word matches. As an example, searching for "temperature" will not match a field value of "temperatures". You can use the wildcard operator (``*``) to match a partial search term. The wildcard can be used in the front (``*``perature), middle (tem``*``rature), or at the end (temp``*``) of each search term. It can only be used once for each search term, except to enclose a term (``*``perat``*``). OCS does not support wildcard operators in the middle and at the front or end of a term (te``*``pera``*`` is invalid).
 
 | **Query string** | **Matches field value** | **Does not match field value** |
 | ---------------- | ----------------------- | ------------------------------ |
@@ -48,7 +47,7 @@ Stream metadata keys are only searchable in association with their values. Witho
 
 ## Special characters in search queries
 
-Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character: " | / * \ ( ) : 
+Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character: " | / * \ ( ) :
 
 The following are examples of using the escape character in query strings.
 
@@ -56,7 +55,7 @@ The following are examples of using the escape character in query strings.
 | -------------------------------------- | ------------------------------------------ |
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
-| http://www.aveva.com                   | http\\:\\/\\/www.aveva.com                 | 
+| http://www.aveva.com                   | http\\:\\/\\/www.aveva.com                 |
 
 ## Examples of query strings
 
@@ -69,6 +68,29 @@ The following are examples of using the escape character in query strings.
 | Description:floor1*          | assets, streams, stream types, stream views | Returns all items with a description that starts with **floor1**. |
 | Metadata/Name:\*building*    | assets, streams                             | Returns all items with at least one metadata name that contains the string **building**. |
 | Metadata/Value:123           | assets, streams                             | Returns all items with at least one metadata whose value equals **123**. |
-| Id:X* AND Metadata/Name:"B"*   | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metada0025196
+| Id:X* AND Metadata/Name:B*   | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metadata value that starts with **B** within a phrase. |
+| Id:X* AND Metadata/Name:"B"* | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metadata value with a name that starts with **B**. |
+| Tags:MarkedAsset             | assets, streams                             | Returns all items that have **MarkedAsset** as a tag. |
+| AssetTypeId:HeaterTypeId     | assets                                      | Returns all items with AssetTypeId matching **HeaterTypeId**. |
+| AssetTypeName:HeaterTypeName | assets                                      | Returns all items whose asset type Name field matches **HeaterTypeName**. |
+| StreamPropertyId:Pressure    | assets                                      | Returns all items that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
+| StreamReferenceName:Name1    | assets                                      | Returns all items whose stream references contain a stream reference name that matches **Name1**. |
 
+## Search result examples
 
+When searching for the following streams:
+
+**streamId** | **Name**  | **Description**
+------------ | --------- | ----------------
+stream1      | tempA     | Temperature from DeviceA
+stream2      | pressureA | Pressure from DeviceA
+stream3      | calcA     | Calculation from DeviceA values
+
+Entering the following queries returns the following streams:
+
+**Query string**     | **Returns**
+------------------  | ----------------------------------------
+``temperature``  | stream1
+``calc*``        | stream3
+``DeviceA*``     | stream1, stream2, stream3
+``humidity*``    | nothing

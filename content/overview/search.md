@@ -47,7 +47,7 @@ Stream metadata keys are only searchable in association with their values. Witho
 
 ## Special characters in search queries
 
-Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character: " | / * \ ( ) :
+Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character: " | / * \ ( ) : 
 
 The following are examples of using the escape character in query strings.
 
@@ -55,7 +55,7 @@ The following are examples of using the escape character in query strings.
 | -------------------------------------- | ------------------------------------------ |
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
-| http://www.aveva.com                   | http\\:\\/\\/www.aveva.com                 |
+| http://www.aveva.com                   | http\\:\\/\\/www.aveva.com                 | 
 
 ## Examples of query strings
 

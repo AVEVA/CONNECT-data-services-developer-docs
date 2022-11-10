@@ -174,9 +174,9 @@ To build a PI points transfer list:
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
    | Specific location code(s)  | Enter up to five location code values in the **Location Codes** field. |
 
-4. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
+1. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
 
-5. To execute the query and retrieve matching results, select **Search**.
+1. To execute the query and retrieve matching results, select **Search**.
 
    When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
 
@@ -186,7 +186,7 @@ To build a PI points transfer list:
 
    **Tip:** To select a range of PI points, select a PI point and then hold Shift and select a non-adjacent PI point. To advance through multiple-paged query results, select the back and forward arrows or enter a page number in the **Page** field.
 
-7. When you are done selecting PI points, select **Add PI Points to Transfer**.
+1. When you are done selecting PI points, select **Add PI Points to Transfer**.
 
    The points are added to the transfer and listed on the **PI Points** tab.
 

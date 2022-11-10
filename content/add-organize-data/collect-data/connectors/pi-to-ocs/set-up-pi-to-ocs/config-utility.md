@@ -89,6 +89,9 @@ The Data Archive name, or its alternate display name, appears in the `PI to Data
 
 **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.
 
+The maximum character length for an AF server alternate display name is 63 and the maximum character length for the Data Archive alternate display name is 86. The difference is due to added information. Both fields start with a maximum of 100 characters. The agent adds an underscore and a 36-character GUID to an AF server alternate display name, resulting in 63 characters remaining (100-37). The agent prepends the Data Archive alternate display name with `PI_` and appends `_[PIPointIDNumber]` (maximum of 10 characters), resulting in 86 characters remaining (100-14).
+
+
 ## Select the default Data Archive in PI System Explorer
 
 You need to specify the default Data Archive, also referred to as the default data server, for the PI system and PI AF database after setting an AF server. By default, PI AF databases inherit the PI AF Server's local default data server. See [Find the default Data Archive server](https://docs.osisoft.com/bundle/pi-server/page/find-the-default-pi-data-archive-server.html) for more information.

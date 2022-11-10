@@ -20,7 +20,7 @@ Chip | Description
 ![share](../_icons/default/share-variant.svg) | Indicates that the trace originates from a [community](xref:communities). Mouse over the chip to view the community identifier.
 ![tenant](../_icons/default/office-building.svg) | Indicates the tenant that is sharing the trace within the community. This chip displays only when the trace is shared within a community.
 
-Under each trace, the legend table lists each property added, along with additional data for the property. The following table describes the columns in the legend tabl
+Under each trace, the legend table lists each property added, along with additional data for the property. The following table describes the columns in the legend table.
 
 Column | Description
 --|--

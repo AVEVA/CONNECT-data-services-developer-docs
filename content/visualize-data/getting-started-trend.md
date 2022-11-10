@@ -52,7 +52,7 @@ To create a trending session:
 
     The selected trace is highlighted and two cursors automatically mark the minimum and maximum values for the displayed time range. These cursors, called *easy cursors,* remain as long as the trace is highlighted.
 
-    ![Maximum and minimum cursors](images/Max_min_cursors.png) <!-- TODO: Update image following feature promotion -->
+    ![Maximum and minimum cursors](images/Max_min_cursors.png) 
 
 1. Select the **Add** ![add](../_icons/default/plus.svg) icon above the trace to lock the cursors in place.
     

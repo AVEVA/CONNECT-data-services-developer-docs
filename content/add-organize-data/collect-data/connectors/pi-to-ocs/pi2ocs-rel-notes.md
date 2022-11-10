@@ -2,102 +2,72 @@
 uid: pi2ocs-rel-summary
 ---
 
-# PI to Data Hub release summary
-
-## Release 2.0: May 16, 2022
+# PI to Data Hub 2.1.0 Release Notes
 
 ## Overview
 
-This release covers the PI To Data Hub Agent, a component that is installed on-premises to replicate data and assets from the PI System to AVEVA Data Hub.
+This release covers the PI to Data Hub Agent, a component that is installed on-premises to replicate data and assets from the PI System to AVEVA Data Hub. Version 2.1, released 11/__/2022, is a feature release addressing change synchronization. 
 
-## Fixes and enhancements
+**Note:** PI to Data Hub Agent Version 2.1 is a required upgrade for existing PI to Data Hub users. Failure to upgrade will result in loss of ability to configure an AF Server for the PI to Data Hub Agent.
 
-### Enhancements
+For more information on product features and functions, including system requirements and installation/uninstallation instructions, refer to [PI to Data Hub documentation](xref:main-lp).
 
-*AF element replication*
+## Enhancements
 
-PI to Data Hub now supports replication of AF elements to AVEVA Data Hub. AF elements are created as assets in AVEVA Data Hub. For a complete list of supported AF objects, see ["What AF data is transferred to AVEVA Data Hub?"](xref:af-data-transferred).
+The following features were added:
 
-*Edit a transfer*
+### Change synchronization
 
-PI to Data Hub now allows you to edit a transfer’s settings and adding or removing AF elements and PI point references.
+PI to Data Hub now supports change synchronization. If you make a configuration change on your PI System to an item that is part of a transfer, PI to Data Hub will automatically detect and replicate this change to AVEVA Data Hub.
 
-*Health events*
+Examples include:
 
-Easy access to both PI to Data Hub Agent and transfer health events is available.
+- Changing a PI Point Name
 
-*Alternate display name*
+- Changing a PI Point Attribute 
 
-The ability to use an alternative server name is now supported in the PI to Data Hub Configuration Utility. Users can enter an alternate name in the Alternate Display Name field. This text will replace an on-premises Data Archive server names in stream IDs, as well as AF server names that appears in the PI to Data Hub Agents window.
- 
-**Note:** Stream IDs are immutable. If a transfer is in progress, new streams are created based on the current transfer’s configuration settings.
+- Changing an AF Element Name
 
-### Fixes
+- Changing an AF Element Attribute Name
 
-None
+- Changing a PI Point Reference in an AF Attribute
 
-### Known issues
+- Adding a PI Point Reference in an AF Element that is part of the transfer.
 
-* Query search results that contain a very large number of PI points (> 1 million) will generate an exception error and not be processed.
+PI to Data Hub will also replicate changes in data in your PI Server. If you edit archived events in the Data Archive, and that event is part of a PI to Data Hub Transfer, the agent will replicate that change to AVEVA Data Hub.
 
-* The AF Server must have a default Data Archive server specified for PI to Data Hub to operate properly.
+**Note:** The PI to Data Hub Agent and transfer must be running to detect and replicate changes.
 
-* Streams with AF elements and referenced PI points are not deleted even when the `Automatically remove Streams and Assets` option has been selected; this exception includes instances of assets not created for AF elements due to errors (for example, attribute errors).
+## Fixes
 
-* Configuring two transfers in the same namespace, where the transfers references the same AF element(s), results in the asset properties of one transfer being overridden/replaced by the second transfer.
+The following items were resolved:
 
-## System requirements
+- PI to Data Hub Agent 2.0 sometimes stopped allowing transfer edits. This has been fixed.
 
-This release supports Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, and Windows Server 2022.
+- PI to Data Hub Agent 2.0 sometimes did not allow the user to configure an AF Server. This has been fixed.
 
-Minimum requirements:
+- If a transfer is creating a large number of streams, and the user decided to remove the transfer, PI to Data Hub would continue creating the streams. This has been fixed.
 
-* 4GB of RAM
+## Known issues
 
-* Internet connectivity of at least 10Mbit/sec
+- Query search results that contain a very large number of PI points (> 1 million) will generate an exception error and may not be processed.
 
-Prior editions of Windows are not supported.
+- The AF Server must have a default Data Archive server specified for PI to Data Hub to operate properly.
 
-## Distribution Kit Files
+- Streams with AF elements and referenced PI points are not deleted even when the **Automatically remove Streams and Assets** option has been selected; this exception includes instances of assets not created for AF elements due to errors (for example, attribute errors).
 
-| Product  | Software Version |
-|------------- | ------------ |
-| PI to Data Hub Agent Installation | 2.0 |
-
-## Installation and upgrade
-
-Run the `PIToDataHubAgent.exe` setup kit. Instructions are provided on-screen.
-
-## Uninstallation
-
-1. Select the Windows **Start** button, then select **Settings**.
-
-1. In the `Settings` window, select **Apps**.
-
-1. Under the **Apps & features** list, navigate to and select **PI to Data Hub**, then select **Uninstall** twice.
+- Configuring two transfers in the same namespace where the transfers references the same AF element(s) results in the asset properties of one transfer overridden/replaced by the second transfer.
 
 ## Security information and guidance
 
-### AVEVA's commitment
+OSIsoft is [committed to releasing secure products](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html). This section is intended to provide relevant security-related information to guide your installation or upgrade decision.  
 
-Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, AVEVA is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of PI to Data Hub Agent is the highest quality and most secure version of the PI to Data Hub Agent released to date. AVEVA's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
+OSIsoft [proactively discloses](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-communication) aggregate information about the number and severity of security vulnerabilities addressed in each release. The tables below provide an overview of security issues addressed and their relative severity based on [standard scoring](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-scoring).
 
-### Vulnerability communication
+## Distribution Kits
 
-The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure Framework](https://www.cisa.gov/uscert/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf) developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://www.cisa.gov/uscert/ics/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, AVEVA is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
+| Product  | Software Version |
+|------------- | ------------ |
+| PI to Data Hub Agent Installation | 2.1 |
 
-To report a security vulnerability to AVEVA, contact productsecurity@aveva.com. Also see AVEVA's [Cyber Security Updates](https://www.aveva.com/en/support-and-success/cyber-security-updates/).
-
-### Vulnerability scoring
-AVEVA has selected the [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/v2/guide) to quantify the severity of security vulnerabilities for disclosure. To calculate the CVSS scores, AVEVA uses the [National Vulnerability Database (NVD)](https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?calculator&.0) calculator maintained by the National Institute of Standards and Technology (NIST). AVEVA uses High, Medium and Low categories to aggregate the CVSS Base scores. This removes some of the opinion related errors of CVSS scoring. As noted in the [CVSS specification](https://www.first.org/cvss/specification-document), base scores range from 0 for the lowest severity to 10 for the highest severity.
-
-### Overview of new vulnerabilities found or fixed
-This section is intended to provide relevant security-related information to guide your installation or upgrade decision. AVEVA is proactively disclosing aggregate information about the number and severity of the PI to Data Hub Agent security vulnerabilities that are fixed in this release.
-
-No security-related information is applicable to this release.
-
-### Documentation overview
-
-See the [PI to Data Hub documentation](xref:main-lp).
-
-© 2022 AVEVA Group plc and its subsidiaries.
+©2022 AVEVA Group plc and its subsidiaries. All rights reserved.

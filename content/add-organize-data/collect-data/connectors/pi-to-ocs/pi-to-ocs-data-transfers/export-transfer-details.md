@@ -16,14 +16,16 @@ To export transfer details:
 
 1. Select **Export** in the upper-right corner.
 
-1. In the `Export Transfer` window, select the transfer details to include in the .csv file, then select **Export**. Options to export are:
-
-   - `All`
+1. In the `Export Transfer` window, select the transfer details to include in the .csv file. Data sources to export are:
 
    - `AF elements`
 
    - `PI points (Implicit)`
 
    - `PI points (Explicit)`
-   
+
+   For each selected data source, you can choose to include **All Data**, **Filtered Data**, or **Selected Data**.
+
+1. Select **Export**.
+
 1. In the `Save As` window, navigate to the location where you want to save the file, enter a name for the .csv file, and then select **Save**.

@@ -26,7 +26,7 @@ The following image shows the important elements of the `Trend` page, and the ta
 
 ## Extrapolated values
 
-When viewing a trend session, extrapolated values are depicted as dashed lines and dashed heatmaps. Extrapolated values are values predicted based on historic interpolated values.
+When viewing a trend session, extrapolated values are depicted as dashed lines and dashed heatmaps. Extrapolated values are based on historic values.
 
 - **Dashed lines**
 

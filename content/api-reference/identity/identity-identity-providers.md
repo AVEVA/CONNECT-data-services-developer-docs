@@ -968,7 +968,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get Identity Provider Groups"></a>
 
-Returns the groups based on the identifiers. Only Advanced Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
+Returns the groups based on the identifiers. Only Deeper Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
 
 <h3>Request</h3>
 
@@ -985,6 +985,12 @@ POST /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/Groups
 <h4>Request Body</h4>
 
 Group identifier.<br/>
+
+```json
+[
+  "string"
+]
+```
 
 <h3>Response</h3>
 

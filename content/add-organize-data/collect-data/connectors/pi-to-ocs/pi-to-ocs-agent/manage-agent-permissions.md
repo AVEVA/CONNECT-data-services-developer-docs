@@ -18,9 +18,9 @@ To manage agent permissions, you must be assigned the **Manage Permissions** acc
 
 1. Use the `Manage Permissions` window to:
 
-    - (Optional) Add user roles that have permissions on the agent.
-    - Edit agent permissions for each user role.
+   - (Optional) Add user roles that have permissions on the agent.
+   - Edit agent permissions for each user role.
 
-    For more information, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
+   For more information, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 
 1. When you are finished editing permissions, select **Save**.

@@ -54,10 +54,10 @@ To name the data transfer:
 
 1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
-   * **High**: Sends all intended metadata.
-   * **Medium**: Default. Sends metadata without logical addresses from the data source.
-   * **Low**: Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
-   * **None**: Sends only the point ID and point name; no metadata is included in the transfer.
+   - **High**: Sends all intended metadata.
+   - **Medium**: Default. Sends metadata without logical addresses from the data source.
+   - **Low**: Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
+   - **None**: Sends only the point ID and point name; no metadata is included in the transfer.
 
    **What PI point attributes are transferred with each Stream Metadata Replication Policy (data privacy) setting?**
 
@@ -106,11 +106,11 @@ To build an AF element:
 
    **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
    
-      * In the first field, enter an attribute name.
+   - In the first field, enter an attribute name.
 
-      * In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `<=`, `>=`, `In`).
+   - In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `<=`, `>=`, `In`).
 
-      * In the last field, enter an attribute value.
+   - In the last field, enter an attribute value.
 
    **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.
    
@@ -194,9 +194,9 @@ To build a PI points transfer list:
 
 PI points added to a transfer are assigned one of the following reference types:
 
-  * Explicit - PI points directly retrieved from a PI Data Archive.
+- Explicit - PI points directly retrieved from a PI Data Archive.
 
-  * Implicit - PI points referenced by AF element attributes that have been retrieved by searching an AF server.
+- Implicit - PI points referenced by AF element attributes that have been retrieved by searching an AF server.
 
 The reference type indicates the PI point's source and how it was retrieved. The reference type for each PI point is listed in the `Reference Type` column on the **PI Points** tab. 
 

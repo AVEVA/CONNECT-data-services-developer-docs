@@ -8,7 +8,7 @@ Use the PI to Data Hub Agent Configuration Utility to set up and configure AF se
 
 The following table provides descriptions of the fields shown in the configuration utility. The image shows the AF server selected, but the fields are similar when a Data Archive server is selected.
 
-   ![AF server details](../../images/af-details-refreshed.png)
+![AF server details](../../images/af-details-refreshed.png)
 
 | Field | Description                                                     |
 | ----- | --------------------------------------------------------------- |
@@ -43,9 +43,9 @@ To open the PI to Data Hub Agent Configuration Utility:
 
 Add an AF server to the utility to be able to use it in data transfers. The utility validates an AF server connection to ensure the following criteria is met:
 
-* The AF server is not currently registered to any other agents under the same namespace as the current agent.
+- The AF server is not currently registered to any other agents under the same namespace as the current agent.
 
-* The version of PI Asset Framework (AF) installed on the AF server supports the features required for transfers.
+- The version of PI Asset Framework (AF) installed on the AF server supports the features required for transfers.
 
 To add an AF server:
 
@@ -65,9 +65,9 @@ To add an AF server:
 
 1. Review the AF source server details to ensure they are correct:
 
-   * AF server name, version, and ID
-   * IP address
-   * Connection status and timeout
+   - AF server name, version, and ID
+   - IP address
+   - Connection status and timeout
 
 1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within Data Hub](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
 
@@ -152,9 +152,9 @@ To add a Data Archive:
 
 1. Review the following details for the Data Archive:
  
-   * Server name, version, and server ID
-   * IP address
-   * Connection status and timeout
+   - Server name, version, and server ID
+   - IP address
+   - Connection status and timeout
    
 1. (Optional) To add an alternate name, select the **Alternate Display Name** pencil icon, type an alternate name, select **Set Display Name** and then select **Close**.
 
@@ -184,7 +184,7 @@ To create a PI mapping:
  
    The `Configure Mapping` window opens.<!--AF 11/12/21 Why does PI Mapping have a screenshot, but AF mapping doesn't? Do we really need it?-->
 
-    ![Configure Mapping dialog box](../../images/configure-mapping-window.png)
+   ![Configure Mapping dialog box](../../images/configure-mapping-window.png)
 
 1. Select an identity for the PI mapping, then select **Create**.
 

@@ -40,13 +40,13 @@ To edit an existing transfer:
  
 1. (Optional) To open the `Transfer Settings` dialog box and edit transfer settings, select **Settings** and then perform the desired action(s):
 
-    * To change the transfer name and description, enter a new name and description in the **Name** and **Description** fields.
+   - To change the transfer name and description, enter a new name and description in the **Name** and **Description** fields.
     
-    * To change the transfer's historical start time, enter or select a new time in the **Historical Start Time** field.
+   - To change the transfer's historical start time, enter or select a new time in the **Historical Start Time** field.
     
-    * To change the transfer's data privacy settings, select one of the **Stream Metadata Replication Policy** options.  
+   - To change the transfer's data privacy settings, select one of the **Stream Metadata Replication Policy** options.  
 
-    * To change whether streams or assets are removed automatically, select or deselect the **Automatically delete Streams and Assets from the cloud** option.
+   - To change whether streams or assets are removed automatically, select or deselect the **Automatically delete Streams and Assets from the cloud** option.
 
 1. After transfer edits are done, select **Save** to retain these changes and return to the `PI to Data Hub Agents` page.
 

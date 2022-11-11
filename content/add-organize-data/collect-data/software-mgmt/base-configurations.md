@@ -36,9 +36,19 @@ You can create configuration templates for the following edge system types:
 
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
-For edge systems, use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
+## Edge module configuration
 
-For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. The variable is associated with a secret in AVEVA Edge Management.
+For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. The variable is associated with a secret in AVEVA Edge Management to allow for the secure transfer of secret and password values to the device. Variables must be used within the configuration file in place of actual secret and password values. Use the following variables as required for your specific configuration:
+
+  - `{{EgressEndpointSecret}}` - Use this variable for the secret or password value to connect to the egress endpoint. When sending data to AVEVA Data Hub, use this variable in place of the client secret. When sending data to PI Web API, use this variable in place of the password.
+  
+  - `{{AdditionalEgressEndpointSecret}}` - Use this variable when egressing data to more than one endpoint, when the other endpoint requires a different secret or password. 
+  
+  - `{{DataSourceSecret}}` - Use this variable in place of a data source password when the data source you are connecting to requires a password in order to connect.
+  
+  - `{{AdditionalDataSourceSecret}}` - Use this variable when connecting to more than one data source, when the other data source requires a different password in order to connect.
+
+For more information, see [Deploy an edge module](xref:DeployModule).
 
 ## Add a new base configuration
 

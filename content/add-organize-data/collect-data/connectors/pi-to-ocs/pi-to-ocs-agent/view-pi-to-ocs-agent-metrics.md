@@ -14,13 +14,10 @@ To view PI to Data Hub Agent metrics:
 
 1. View the information in the `PI to Data Hub Agents` tile to see the current state of your agents. States are:
 
- - **Good**
-
- - **Warning**
-
- - **Bad**
- 
- - **Stopped**
+   - **Good**
+   - **Warning**
+   - **Bad**
+   - **Stopped**
 
 1. To see the agents on the `PI to Data Hub Agent` page filtered by state, select the state on the `PI to Data Hub Agents` tile.
   

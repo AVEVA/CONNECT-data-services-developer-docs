@@ -72,7 +72,7 @@ To create a edge system base configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
-   **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.  
+   **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. For edge modules, variables must be used within the configuration file in place of actual secret and password values. For more details, see the [Configure a Module](https://edgemanagement.connect.aveva.com/help/#/home/665922/10/11) topic in the AVEVA Edge Management documentation.
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 
@@ -88,7 +88,7 @@ To create a edge system base configuration and export it for use:
 
 1. Select **Save & Close** to confirm the changes. 
 
-## Edit an existing template
+## Edit an existing base configuration
 
 To modify a base configuration and export it for use:
 
@@ -96,17 +96,17 @@ To modify a base configuration and export it for use:
 
 1. Verify that the **Edge Systems/Base Configurations** selector is set to **Base Configurations**.
 
-1. Find and select the template to modify.
+1. Find and select the base configuration to modify.
 
 1. In the right pane, select the edit icon ![Edit](../../../_icons/default/pencil.svg).
 
-1. Modify the template name, **Type**, and **Version** as needed.
+1. Modify the base configuration name, **Type**, and **Version** as needed.
 
 1. **Optional:** In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
-  **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+  **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device. For edge modules, variables must be used within the configuration file in place of actual secret and password values. For more details, see the [Configure a Module](https://edgemanagement.connect.aveva.com/help/#/home/665922/10/11) topic in the AVEVA Edge Management documentation
 
   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

@@ -6,7 +6,7 @@ uid: pi2ocs-rel-summary
 
 ## Overview
 
-This release covers the PI to Data Hub Agent, a component that is installed on-premises to replicate data and assets from the PI System to AVEVA Data Hub. Version 2.1, released 11/__/2022, is a feature release addressing change synchronization. 
+This release covers the PI to Data Hub Agent, a component that is installed on-premises to replicate data and assets from the PI System to AVEVA Data Hub. Version 2.1, released 11/14/2022, is a feature release addressing change synchronization. 
 
 **Note:** PI to Data Hub Agent Version 2.1 is a required upgrade for existing PI to Data Hub users. Failure to upgrade will result in loss of ability to configure an AF Server for the PI to Data Hub Agent.
 

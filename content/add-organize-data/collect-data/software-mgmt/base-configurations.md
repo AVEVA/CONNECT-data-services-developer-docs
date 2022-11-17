@@ -38,7 +38,7 @@ The `namespaceId` in the data and health endpoint URLs defaults to the namespace
 
 ## Edge module configuration
 
-For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. Variables must be used within the configuration file in place of actual secret and password values. Use the following variables as required for your specific configuration:
+For edge modules, use variables to denote secrets in configuration files. Variables must be used within the configuration file in place of actual secret and password values. Use the following variables as required for your specific configuration:
 
   - `{{EgressEndpointSecret}}` - Use this variable for the secret or password value to connect to the egress endpoint. When sending data to AVEVA Data Hub, use this variable in place of the client secret. When sending data to PI Web API, use this variable in place of the password.
   

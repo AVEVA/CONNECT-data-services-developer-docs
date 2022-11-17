@@ -4,7 +4,7 @@ uid: AddBaseConfiguration
 
 # Add and edit base configurations
 
-You can create and edit base configurations for edge systems in OCS. Once the configuration is complete, export the configuration file to manually apply to the edge system in the field or to deploy the edge module using AVEVA Edge Management. You can also use an exported configuration file as a template for configuring other edge systems by importing it during configuration. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
+You can create and edit base configurations for edge systems in OCS. Once the configuration is complete, export the configuration in a text file to manually apply it to the edge system in the field or to deploy it to the edge module using AVEVA Edge Management. You can also use an exported configuration text file as a template for configuring other edge systems by importing it. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
 You can create configuration templates for the following edge system types:
 
@@ -38,7 +38,7 @@ The `namespaceId` in the data and health endpoint URLs defaults to the namespace
 
 ## Edge module configuration
 
-For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. The variable is associated with a secret in AVEVA Edge Management to allow for the secure transfer of secret and password values to the device. Variables must be used within the configuration file in place of actual secret and password values. Use the following variables as required for your specific configuration:
+For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. Variables must be used within the configuration file in place of actual secret and password values. Use the following variables as required for your specific configuration:
 
   - `{{EgressEndpointSecret}}` - Use this variable for the secret or password value to connect to the egress endpoint. When sending data to AVEVA Data Hub, use this variable in place of the client secret. When sending data to PI Web API, use this variable in place of the password.
   
@@ -48,7 +48,7 @@ For edge modules, use variables, in the format `{{VariableA}}`, to denote secret
   
   - `{{AdditionalDataSourceSecret}}` - Use this variable when connecting to more than one data source, when the other data source requires a different password in order to connect.
 
-For more information, see [Deploy an edge module](xref:DeployModule).
+When you deploy the configuration in AVEVA Edge Management, you define values for the variables and securely transfer those values to the device. For more information, see [Deploy an edge module](xref:DeployModule).
 
 ## Add a new base configuration
 

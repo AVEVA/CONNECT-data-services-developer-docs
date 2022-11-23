@@ -5,9 +5,9 @@ uid: omf-ingress-access-control
 
 # Access Control
 
-## `Get Omf Connection Access Control List`
+## `Get OMF Connection Access Control List`
 
-<a id="opIdOmfConnectionAccessControlList_Get Omf Connection Access Control List"></a>
+<a id="opIdOmfConnectionAccessControlList_Get OMF Connection Access Control List"></a>
 
 Gets the `AccessControlList` for the specified `OmfConnection`.
 
@@ -59,9 +59,9 @@ GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{
 
 ---
 
-## `Update Omf Connection Access Control List`
+## `Update OMF Connection Access Control List`
 
-<a id="opIdOmfConnectionAccessControlList_Update Omf Connection Access Control List"></a>
+<a id="opIdOmfConnectionAccessControlList_Update OMF Connection Access Control List"></a>
 
 Updates the `AccessControlList` for the specified `OmfConnection`.
 
@@ -134,9 +134,9 @@ The updated `AccessControlList`<br/>
 
 # Access Control
 
-## `List Omf Connection Access Rights`
+## `List OMF Connection Access Rights`
 
-<a id="opIdOmfConnectionAccessRights_List Omf Connection Access Rights"></a>
+<a id="opIdOmfConnectionAccessRights_List OMF Connection Access Rights"></a>
 
 Gets a list of the `CommonAccessRights` to the specified `OmfConnection` for the requesting `Identity`.
 
@@ -168,9 +168,9 @@ GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{
 
 # Access Control
 
-## `Get Omf Connection Owner`
+## `Get OMF Connection Owner`
 
-<a id="opIdOmfConnectionOwner_Get Omf Connection Owner"></a>
+<a id="opIdOmfConnectionOwner_Get OMF Connection Owner"></a>
 
 Gets the `Trustee` of the specified `OmfConnectionId`.
 
@@ -213,9 +213,9 @@ GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{
 
 ---
 
-## `Update Omf Connection Owner`
+## `Update OMF Connection Owner`
 
-<a id="opIdOmfConnectionOwner_Update Omf Connection Owner"></a>
+<a id="opIdOmfConnectionOwner_Update OMF Connection Owner"></a>
 
 Updates the `Trustee` of the specified `OmfConnection`.
 
@@ -273,9 +273,9 @@ The updated `Trustee`<br/>
 
 # Access Control
 
-## `Get Omf Connections Access Control List`
+## `Get OMF Connections Access Control List`
 
-<a id="opIdOmfConnectionsAccessControlList_Get Omf Connections Access Control List"></a>
+<a id="opIdOmfConnectionsAccessControlList_Get OMF Connections Access Control List"></a>
 
 Gets the `AccessControlList` for the `OmfConnection` collection.
 
@@ -326,9 +326,9 @@ GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/om
 
 ---
 
-## `Update Omf Connections Access Control List`
+## `Update OMF Connections Access Control List`
 
-<a id="opIdOmfConnectionsAccessControlList_Update Omf Connections Access Control List"></a>
+<a id="opIdOmfConnectionsAccessControlList_Update OMF Connections Access Control List"></a>
 
 Updates the `AccessControlList` for the `OmfConnection` collection.
 
@@ -401,9 +401,9 @@ The updated `AccessControlList`<br/>
 
 # Access Control
 
-## `List Omf Connections Access Rights`
+## `List OMF Connections Access Rights`
 
-<a id="opIdOmfConnectionsAccessRights_List Omf Connections Access Rights"></a>
+<a id="opIdOmfConnectionsAccessRights_List OMF Connections Access Rights"></a>
 
 Gets a list of the `CommonAccessRights` to the `OmfConnection` collection for the requesting `Identity`.
 

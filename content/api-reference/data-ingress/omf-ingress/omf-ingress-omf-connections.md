@@ -3,12 +3,12 @@ uid: omf-ingress-omf-connections
 
 ---
 
-# Omf Connections
+# OMF Connections
 APIs for managing OmfConnections.
 
-## `Get Omf Connections`
+## `Get OMF Connections`
 
-<a id="opIdOmfConnections_Get Omf Connections"></a>
+<a id="opIdOmfConnections_Get OMF Connections"></a>
 
 Gets a list of all `OmfConnection` objects in the given namespace.
 
@@ -85,9 +85,9 @@ GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections
 
 ---
 
-## `Create Omf Connection`
+## `Create OMF Connection`
 
-<a id="opIdOmfConnections_Create Omf Connection"></a>
+<a id="opIdOmfConnections_Create OMF Connection"></a>
 
 Creates a new `OmfConnection` mapped to the specified `ClientIds`. A given `ClientId` may only be mapped to one `OmfConnection` per namespace.
 
@@ -166,9 +166,9 @@ The `omfConnectionCreate` object to create<br/>
 
 ---
 
-## `Get Omf Connection`
+## `Get OMF Connection`
 
-<a id="opIdOmfConnections_Get Omf Connection"></a>
+<a id="opIdOmfConnections_Get OMF Connection"></a>
 
 Gets the specified `OmfConnection`.
 
@@ -232,9 +232,9 @@ GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{
 
 ---
 
-## `Update Omf Connection`
+## `Update OMF Connection`
 
-<a id="opIdOmfConnections_Update Omf Connection"></a>
+<a id="opIdOmfConnections_Update OMF Connection"></a>
 
 Updates the `Name`, `Description`, and/or `ClientIds` for the specified `OmfConnection`.
 
@@ -314,9 +314,9 @@ The `OmfConnectionUpdate` with the fields to update<br/>
 
 ---
 
-## `Delete Omf Connection`
+## `Delete OMF Connection`
 
-<a id="opIdOmfConnections_Delete Omf Connection"></a>
+<a id="opIdOmfConnections_Delete OMF Connection"></a>
 
 Deletes the specified `OmfConnection`.
 
@@ -441,7 +441,7 @@ Object returned from `OmfConnection` routes.
 |---|---|---|---|---|
 |Id|string|false|true|Server-generated unique identifier.|
 |Name|string|false|true|User-specified name. Limit 200 characters.|
-|State|string|false|true|Current `OmfConnection` state. Set by the server.|
+|State|string|false|true|Current `OmfConnection` state. Possible values are `Creating`, `Active`, `Deleting` and `Deleted`. Set by the server.|
 |Description|string|false|true|A description. Limit 1000 characters.|
 |CreatedDate|date-time|false|false|Server-generated creation timestamp (UTC).|
 |ClientIds|string[]|false|true|List of `Client` identifiers. Data sent by these clients will be sent to this `OmfConnection`. Limit 10000 `Client` identifiers.|

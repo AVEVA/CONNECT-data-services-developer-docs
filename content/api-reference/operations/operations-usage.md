@@ -168,7 +168,7 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 
 <a id="opIdQuery_List Tenant Billing Cycles"></a>
 
-Returns the billing cycles for an account inferred from the account subscription.
+Returns the billing cycles for an account. The billing cycles returned is from Tenant's creation date until now, or last 12 months, whichever is less.
 
 <h3>Request</h3>
 

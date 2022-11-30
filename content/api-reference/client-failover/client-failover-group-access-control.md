@@ -1,5 +1,5 @@
 ---
-uid: group-access-control
+uid: client-failover-group-access-control
 
 ---
 

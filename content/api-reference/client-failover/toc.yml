@@ -1,3 +1,5 @@
+- name: Application information
+  href: client-failover-application-information.md
 - name: Client failover
   href: client-failover.md
 - name: Client failover

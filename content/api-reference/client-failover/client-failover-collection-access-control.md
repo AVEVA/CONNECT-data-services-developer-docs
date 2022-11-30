@@ -1,5 +1,5 @@
 ---
-uid: collection-access-control
+uid: client-failover-collection-access-control
 
 ---
 

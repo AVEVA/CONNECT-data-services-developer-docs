@@ -1,5 +1,5 @@
 ---
-uid: client-sessions
+uid: client-failover-client-sessions
 
 ---
 

@@ -1,0 +1,12 @@
+- name: Application information
+  href: client-failover-application-information.md
+- name: Client failover
+  href: client-failover.md
+- name: Client sessions
+  href: client-failover-client-sessions.md
+- name: Collection access control
+  href: client-failover-collection-access-control.md
+- name: Group access control
+  href: client-failover-group-access-control.md
+- name: Groups
+  href: client-failover-groups.md

@@ -59,22 +59,21 @@ The following are examples of using the escape character in query strings.
 
 ## Examples of query strings
 
-| Query String                 | Applies to                                  | Description                                       |
-| ---------------------------- | ------------------------------------------- | ------------------------------------------------- |
-| Id:Id1                       | assets, streams, stream types, stream views | Returns the item whose Id is **Id1**. |
-| Id:Id*                       | assets, streams, stream types, stream views | Returns all items with Ids that begin with **Id**. |
-| Name:Name1                   | assets, streams, stream types, stream views | Returns all items with a name equal to **Name1**. |
-| Id:Id AND Name:Name1         | assets, streams, stream types, stream views | Returns the item with an Id equal to **Id** and a name equal to **Name1**. |
-| Description:floor1*          | assets, streams, stream types, stream views | Returns all items with a description that starts with **floor1**. |
-| Metadata/Name:\*building*    | assets, streams                             | Returns all items with at least one metadata name that contains the string **building**. |
-| Metadata/Value:123           | assets, streams                             | Returns all items with at least one metadata whose value equals **123**. |
-| Id:X* AND Metadata/Name:B*   | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metadata value that starts with **B** within a phrase. |
-| Id:X* AND Metadata/Name:"B"* | assets, streams                             | Returns all items with an Id starting with **X** and containing at least one metadata value with a name that starts with **B**. |
-| Tags:MarkedAsset             | assets, streams                             | Returns all items that have **MarkedAsset** as a tag. |
-| AssetTypeId:HeaterTypeId     | assets                                      | Returns all items with AssetTypeId matching **HeaterTypeId**. |
-| AssetTypeName:HeaterTypeName | assets                                      | Returns all items whose asset type Name field matches **HeaterTypeName**. |
-| StreamPropertyId:Pressure    | assets                                      | Returns all items that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
-| StreamReferenceName:Name1    | assets                                      | Returns all items whose stream references contain a stream reference name that matches **Name1**. |
+| Query String | Applies to | Description |
+|---|---|---|
+| Id:Id1 | assets, streams, stream types, stream views | Returns the item whose Id is **Id1**. |
+| Id:Id* | assets, streams, stream types, stream views | Returns all items with Ids that begin with **Id**. |
+| Name:Name1 | assets, streams, stream types, stream views | Returns all items with a name equal to **Name1**. |
+| Id:Id AND Name:Name1 | assets, streams, stream types, stream views | Returns the item with an Id equal to **Id** and a name equal to **Name1**. |
+| Description:floor1* | assets, streams, stream types, stream views | Returns all items with a description that starts with **floor1**. |
+| Metadata/Name:\*building* | assets, streams | Returns all items with at least one metadata name that contains the string **building**. |
+| Metadata/Value:123 | assets, streams | Returns all items with at least one metadata whose value equals **123**. |
+| Id:X* AND Metadata/Location:B* | assets, streams | Returns all items that contains: <ul><li>An Id starting with **X**.</li><li>A metadata with the name <code>Location</code> that has a value that starts with <code>B</code> (such as "Boston").</li></ul> |
+| Tags:MarkedAsset | assets, streams | Returns all items that have **MarkedAsset** as a tag. |
+| AssetTypeId:HeaterTypeId | assets | Returns all items with AssetTypeId matching **HeaterTypeId**. |
+| AssetTypeName:HeaterTypeName | assets | Returns all items whose asset type Name field matches **HeaterTypeName**. |
+| StreamPropertyId:Pressure | assets | Returns all items that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
+| StreamReferenceName:Name1 | assets | Returns all items whose stream references contain a stream reference name that matches **Name1**. |
 
 ## Search result examples
 

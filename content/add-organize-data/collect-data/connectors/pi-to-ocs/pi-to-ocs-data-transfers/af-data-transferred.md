@@ -46,7 +46,7 @@ These AF objects are not included in a PI to Data Hub data transfer:
 
 * Formula data reference attributes 
 
-* Hidden attributes
+* Excluded attributes
 
 * Implicit PI points with attributes that reference other attributes
 

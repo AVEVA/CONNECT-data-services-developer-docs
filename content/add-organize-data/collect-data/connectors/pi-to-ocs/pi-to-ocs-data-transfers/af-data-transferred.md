@@ -2,7 +2,7 @@
 uid: af-data-transferred
 ---
 
-# Transfer AF data
+# AF data transfer
 
 You can transfer the following AF element data into AVEVA Data Hub:
 
@@ -44,7 +44,7 @@ These AF objects are not included in a PI to Data Hub data transfer:
 
 * Formula data reference attributes 
 
-* Hidden attributes
+* Excluded attributes
 
 * Implicit PI points with attributes that reference other attributes
 

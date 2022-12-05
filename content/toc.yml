@@ -128,33 +128,27 @@
     - topicUid: AddBaseConfiguration
     - topicUid: DeployConfig
     - topicUid: ManageConfigurations
-  - topicUid: main-lp
+  - topicUid: PItoDH
     items:
-    - topicUid: lp-intro
-      items:
-      - topicUid: bpPISystemConnection
-      - topicUid: min-sys-reqmnts
-      - topicUid: pi-to-ocs-limitations
-      - topicUid: pi-to-ocs-architecture
     - topicUid: lp-setup
       items:
+      - topicUid: min-sys-reqmnts
       - topicUid: disable-ie-security
       - topicUid: install-agent
       - topicUid: pi-to-ocs-utility
     - topicUid: lp-transfer
       items:
-      - topicUid: overview-data-transfers
-      - topicUid: slow-moving-data
-      - topicUid: af-data-transferred
       - topicUid: transfer-data
+      - topicUid: edit-transfer 
+      - topicUid: confirm-data-retrieval
+      - topicUid: af-data-transferred
       - topicUid: overview-metrics
       - topicUid: health-evts-window
-      - topicUid: edit-transfer 
       - topicUid: data-transfer-statuses
+      - topicUid: PItoDHSync
+      - topicUid: slow-moving-data
       - topicUid: export-transfer-details
       - topicUid: export-missing-points
-      - topicUid: PItoDHSync
-      - topicUid: confirm-data-retrieval
     - topicUid: lp-agent-maint
       items:
       - topicUid: kpi-tile
@@ -174,6 +168,7 @@
       - topicUid: troubleshoot-failed-mapping
       - topicUid: troubleshoot-missing-pida
       - topicUid: troubleshoot-pi-pt-errors
+    - topicUid: pi-to-ocs-limitations
     - topicUid: known-issues
     - topicUid: pi2ocs-rel-summary
   - topicUid: lpomfoverview

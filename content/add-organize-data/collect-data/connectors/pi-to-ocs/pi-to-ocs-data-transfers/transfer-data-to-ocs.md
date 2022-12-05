@@ -10,7 +10,7 @@ PI points can be added to a transfer explicitly using a tag search or implicitly
 
 **Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
 
-## Create a transfer
+## Transfer overview
 
 Transfer creation consists of the following tasks:
 
@@ -59,7 +59,7 @@ To name the data transfer:
    - **Low**: Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
    - **None**: Sends only the point ID and point name; no metadata is included in the transfer.
 
-   **What PI point attributes are transferred with each Stream Metadata Replication Policy (data privacy) setting?**
+   **PI point attributes transferred with each Stream Metadata Replication Policy (data privacy) setting**
 
     |   | High | Medium | Low | None |
     | ------------- | ----------------- | ----------------- |----------------- | ----------------- |
@@ -240,19 +240,9 @@ To save the transfer:
 
    **Note:** In order to save the transfer, it must include at least one valid PI point.
 
-## Transfer data to AVEVA Data Hub
+## Start a data transfer
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
-
-**Note:** Modifications to an AF database or Data Archive digital state table during a PI to Data Hub transfer require that you manually stop and restart the transfer to capture all changes. Follow these steps to ensure all data is captured:
-
-1. Stop the transfer.
-
-1. Make modifications to the AF database and/or Data Archive digital state tables.
-
-1. Restart the transfer to pick up these changes.
-
-## Start a data transfer
 
 To start a data transfer:
 
@@ -281,4 +271,3 @@ To start a data transfer:
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 
 1. (Optional) To remove a transfer, select **Remove Transfer**, select the **Delete Streams and Assets from the cloud** option if applicable, then select **Remove**.
- 

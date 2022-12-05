@@ -2,7 +2,7 @@
 uid: health-evts-window
 ---
 
-# Overview of the Health Events window
+# Health Events window
 
 The `Health Events` window provides information about an agent's activity and current status. Health events are based on log messages. You can sort messages by severity, source, time and message content.
 
@@ -17,5 +17,5 @@ The following table provides descriptions for the elements of the `Health Events
 | Health Event | The health event that occurred. |
 | Timestamp | The date of the event. To filter log messages by a particular date and/or time, select the filter icon, then enter the date and/or time in `Month 00, 000 00:00:00 PM` format. |
 | Message | The actual log message. To filter by a word or phrase, select the filter icon, then enter the word or phrase. |
-| Clear All Events | Select **Clear All Events** to remove all search filters. |
+| Clear All Events | Select **Clear All Events** to remove all events from the view. |
 | Export | Select **Export** to save a copy of the health event messages to a .csv file. |

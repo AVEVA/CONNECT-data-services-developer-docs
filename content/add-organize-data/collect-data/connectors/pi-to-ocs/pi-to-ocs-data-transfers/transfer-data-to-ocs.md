@@ -32,7 +32,7 @@ Transfer creation consists of the following tasks:
 
 ![](../../images/af-indexing.png)
 
-## Name the transfer and set data privacy settings 
+## Name the transfer and set data privacy settings
 
 To name the data transfer: 
 
@@ -50,7 +50,7 @@ To name the data transfer:
 
 1. (Optional) In the **Historical Start time** fields, enter a historical time context for the data retrieval.
 
-   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See [Overview of data transfers](xref:transfer-data) to learn more about transferring historical data.
+   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See <xref:lp-transfer> to learn more about transferring historical data.
 
 1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
@@ -258,15 +258,15 @@ To start a data transfer:
 
 1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 
-   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See [Data transfer statuses](xref:data-transfer-statuses) for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
+   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See <xref:data-transfer-statuses> for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
 
 1. (Optional) To view more information about an agent's status, select **Agent Health Events**.
 
-   **Note:** See [Overview of the Health Events window](xref:health-evts-window) for more information.  
+   **Note:** See <xref:health-evts-window> for more information.  
  
-1. (Optional) To see more information about log messages for the transfer, select **Logs**. See [Tenant log messages](xref:download-tenant-log) for more information. 
+1. (Optional) To see more information about log messages for the transfer, select **Logs**. See <xref:download-tenant-log> for more information. 
 
-1. (Optional) To view transfer progress and metrics for stream and/or asset creation, select the **Transfer Metrics** tab. See [Overview of transfer metrics](xref:overview-metrics) for more information. 
+1. (Optional) To view transfer progress and metrics for stream and/or asset creation, select the **Transfer Metrics** tab. See <xref:overview-metrics> for more information. 
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 

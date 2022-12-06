@@ -139,12 +139,12 @@
     - topicUid: lp-transfer
       items:
       - topicUid: transfer-data
+      - topicUid: data-transfer-statuses
+      - topicUid: health-evts-window
+      - topicUid: overview-metrics
       - topicUid: edit-transfer 
       - topicUid: confirm-data-retrieval
       - topicUid: af-data-transferred
-      - topicUid: overview-metrics
-      - topicUid: health-evts-window
-      - topicUid: data-transfer-statuses
       - topicUid: PItoDHSync
       - topicUid: slow-moving-data
       - topicUid: export-transfer-details

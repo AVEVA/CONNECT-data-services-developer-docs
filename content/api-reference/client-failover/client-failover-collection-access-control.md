@@ -1,5 +1,5 @@
 ---
-uid: ""
+uid: client-failover-collection-access-control
 
 ---
 
@@ -260,3 +260,4 @@ Response error for controller methods.
 ```
 
 ---
+

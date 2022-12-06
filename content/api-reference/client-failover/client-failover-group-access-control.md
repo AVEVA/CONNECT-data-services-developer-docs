@@ -1,5 +1,5 @@
 ---
-uid: ""
+uid: client-failover-group-access-control
 
 ---
 
@@ -264,3 +264,4 @@ Response error for controller methods.
 ```
 
 ---
+

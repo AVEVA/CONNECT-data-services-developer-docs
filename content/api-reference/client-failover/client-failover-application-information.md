@@ -1,14 +1,14 @@
 ---
-uid: ""
+uid: client-failover-application-information
 
 ---
 
-# Client Failover
+# Application Information
 API for Client Failover application information.
 
 ## `Get Information`
 
-<a id="opIdClientFailover_Get Information"></a>
+<a id="opIdApplicationInformation_Get Information"></a>
 
 Gets the Client Failover application information.
 
@@ -103,3 +103,4 @@ Response error for controller methods.
 ```
 
 ---
+

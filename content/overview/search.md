@@ -66,8 +66,7 @@ The following are examples of using the escape character in query strings.
 | Name:Name1 | assets, streams, stream types, stream views | Returns all items with a name equal to **Name1**. |
 | Id:Id AND Name:Name1 | assets, streams, stream types, stream views | Returns the item with an Id equal to **Id** and a name equal to **Name1**. |
 | Description:floor1* | assets, streams, stream types, stream views | Returns all items with a description that starts with **floor1**. |
-| Metadata/Name:\*building* | assets, streams | Returns all items with at least one metadata name that contains the string **building**. |
-| Metadata/Value:123 | assets, streams | Returns all items with at least one metadata whose value equals **123**. |
+| Metadata/Serial Number:M0000* | assets, streams | Return all items that include metadata of the name "Serial Number" that start with **M0000** (such as M000099 and M000001). |
 | Id:X* AND Metadata/Location:B* | assets, streams | Returns all items that contains: <ul><li>An Id starting with **X**.</li><li>A metadata with the name <code>Location</code> that has a value that starts with <code>B</code> (such as "Boston").</li></ul> |
 | Tags:MarkedAsset | assets, streams | Returns all items that have **MarkedAsset** as a tag. |
 | AssetTypeId:HeaterTypeId | assets | Returns all items with AssetTypeId matching **HeaterTypeId**. |

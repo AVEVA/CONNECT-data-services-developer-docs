@@ -212,11 +212,11 @@
       - topicUid: troubleshoot-pi-pt-errors
     - topicUid: known-issues
     - topicUid: pi2ocs-rel-summary
-  - topicUid: lpomfoverview
-    items:
-    - topicUid: bpOMFConnection
-    - topicUid: gpOMFConnection
-    - topicUid: OMFMaintenance
+    - topicUid: lpomfoverview
+      items:
+      - topicUid: bpOMFConnection
+      - topicUid: gpOMFConnection
+      - topicUid: OMFMaintenance
 - topicUid: lpvisualizedata
   items:
     - topicUid: CreateTrendSession

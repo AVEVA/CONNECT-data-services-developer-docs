@@ -4,7 +4,9 @@ uid: identity-identity-providers
 ---
 
 # Identity Providers
-An identity provider provides authentication services and maintains credentials for users that have been provisioned in OCS. Each tenant can have one or more identity providers. Each user is either assigned one of the available identity providers in the tenant or chooses one in the Home Realm Discovery page when accepting the invitation. A user can only log in with the same identity provider with which they signed up.
+An identity provider provides authentication services and maintains credentials for users that have been provisioned in AVEVA Data Hub. Each tenant can have one or more identity providers. Each user is associated with one of the available identity providers in the tenant. A user can only log in with the same identity provider with which they signed up. 
+
+**Note:** Identity provider options differ by platform. OSIsoft Cloud Services supports multiple Identity Providers. AVEVA Data Hub supports only a single identity provider: AVEVA Connect.
 
 ## `Get Identity Provider`
 
@@ -629,7 +631,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get an Identity Provider Consent from a Tenant"></a>
 
-Returns the consent information for an identity provider for a tenant. The ConsentState property, if returned, determines whether an identity provider consents to sharing access to its directory with the OCS tenant. For example, the expected ConsentState's for AAD include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
+Returns the consent information for an identity provider for a tenant. The ConsentState property, if returned, determines whether an identity provider consents to sharing access to its directory with the tenant. For example, the expected ConsentState's for AAD include (Pending_)SignIn and (Pending_)ReadAllUsersGroups.
 
 <h3>Request</h3>
 
@@ -715,7 +717,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Update Identity Provider Consent of a Tenant"></a>
 
-Updates the identity provider consent of a tenant. Currently only supports Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.All permissions to the OCS tenant.
+Updates the identity provider consent of a tenant. Currently only supports Azure Active Directory. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
 
 <h3>Request</h3>
 
@@ -778,7 +780,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of All Users on an Identity Provider"></a>
 
-Returns a list of users that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.
+Returns a list of users that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the tenant.
 
 <h3>Request</h3>
 
@@ -841,7 +843,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of all Groups on an Identity Provider"></a>
 
-Returns a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the OCS tenant.
+Returns a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the AVEVA Data Hub tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
 
 <h3>Request</h3>
 
@@ -894,7 +896,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups
 
 Allowed for these roles: 
 <ul>
-<li>Tenant Administrator</li>
+<li>Tenant Member</li>
 </ul>
 
 ---
@@ -903,7 +905,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of All Groups that a User Belongs to on an Identity Provider"></a>
 
-Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the OCS tenant.
+Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the AVEVA Data Hub tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
 
 <h3>Request</h3>
 
@@ -966,7 +968,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get Identity Provider Groups"></a>
 
-Returns the groups based on the identifiers. Only Deeper Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
+Returns the groups based on the identifiers. Only Advanced Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
 
 <h3>Request</h3>
 
@@ -1025,67 +1027,58 @@ Group identifier.<br/>
 
 Allowed for these roles: 
 <ul>
-<li>Tenant Administrator</li>
+<li>Tenant Member</li>
 </ul>
 
 ---
 
-## `Get a List of All Users Belonging to Group on an Identity Provider`
+## `Get Identity Provider Group Mapping Roles`
 
-<a id="opIdIdentityProviders_Get a List of All Users Belonging to Group on an Identity Provider"></a>
+<a id="opIdIdentityProviders_Get Identity Provider Group Mapping Roles"></a>
 
-Returns a list of all users belonging to a specific group on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the OCS tenant.
+Returns the groups based on the identifiers that have tenant member access role Only Advanced Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups/{groupId}/members
-?count={count}&skipToken={skipToken}
+GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groupmappings
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string identityProviderId`
-<br/>Identity provider identifier.<br/><br/>`string groupId`
-<br/>Group identifier.<br/><br/>
-`[optional] integer count`
-<br/>Maximum number of users to return<br/><br/>`[optional] string skipToken`
-<br/>An encoded string that identifies the set of users that was not returned For example, if you request a count of the first 50 users matching your query, the skipToken identifies the 51st user.<br/><br/>
+<br/>Identity provider identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[IdentityProviderMembers](#schemaidentityprovidermembers)|List of members|
+|200|[IdentityProviderResultsOfIdentityProviderGroupMappings](#schemaidentityproviderresultsofidentityprovidergroupmappings)|List of groups|
+|207|[IdentityProviderGroupMappingsMultiStatusResponse](#schemaidentityprovidergroupmappingsmultistatusresponse)|List of groups|
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Identity provider or tenant not found|
+|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([IdentityProviderMembers](#schemaidentityprovidermembers))
+> 200 Response ([IdentityProviderResultsOfIdentityProviderGroupMappings](#schemaidentityproviderresultsofidentityprovidergroupmappings))
 
 ```json
 {
-  "Users": [
-    {
-      "Id": "string",
-      "GivenName": "string",
-      "Surname": "string",
-      "Name": "string",
-      "Email": "user@example.com"
-    }
-  ],
-  "Groups": [
+  "Results": [
     {
       "Id": "string",
       "Name": "string",
       "Email": "user@example.com",
-      "IsClusterManagementAllowed": true
+      "IsClusterManagementAllowed": true,
+      "IdentityProviderClaimId": "string",
+      "RoleIds": [
+        "string"
+      ]
     }
   ],
   "SkipToken": "string"
@@ -1096,7 +1089,7 @@ GET /api/v1/Tenants/{tenantId}/IdentityProviders/{identityProviderId}/groups/{gr
 
 Allowed for these roles: 
 <ul>
-<li>Tenant Administrator</li>
+<li>Tenant Member</li>
 </ul>
 
 ---
@@ -1476,11 +1469,11 @@ MultiStatusResponse objects returned in a 207 response
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|Identifier of the operation that resulted in this error|
-|Error|string|false|true|Message describing the error|
-|Reason|string|false|true|Reason that caused the error|
-|ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|List of child errors|
-|Data|[[IdentityProviderGroup](#schemaidentityprovidergroup)]|false|true|Data representing groups|
+|OperationId|string|false|true|Identifier of the operation that resulted in this error.|
+|Error|string|false|true|Message describing the error.|
+|Reason|string|false|true|Reason that caused the error.|
+|ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|List of child errors.|
+|Data|[[IdentityProviderGroup](#schemaidentityprovidergroup)]|false|true|Data representing groups.|
 
 ```json
 {
@@ -1493,10 +1486,7 @@ MultiStatusResponse objects returned in a 207 response
       "Error": "string",
       "Reason": "string",
       "Resolution": "string",
-      "DynamicProperties": {
-        "property1": null,
-        "property2": null
-      },
+      "EventId": "string",
       "StatusCode": 0,
       "ModelId": "string",
       "property1": null,
@@ -1530,11 +1520,11 @@ ChildError objects returned in a 207 response
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|true|false|Operation identifier of action that caused the error|
+|OperationId|string|true|false|OperationId of action that caused the error|
 |Error|string|true|false|Error description|
 |Reason|string|true|false|Reason for the error|
-|Resolution|string|true|false|Resolution to resolve the error|
-|DynamicProperties|object|false|true|Additional properties|
+|Resolution|string|true|false|Resolution for the error|
+|EventId|string|true|false|EventId for the error|
 |StatusCode|int32|false|false|Http status code|
 |ModelId|string|false|true|Model identifier|
 
@@ -1544,10 +1534,7 @@ ChildError objects returned in a 207 response
   "Error": "string",
   "Reason": "string",
   "Resolution": "string",
-  "DynamicProperties": {
-    "property1": null,
-    "property2": null
-  },
+  "EventId": "string",
   "StatusCode": 0,
   "ModelId": "string",
   "property1": null,
@@ -1558,43 +1545,128 @@ ChildError objects returned in a 207 response
 
 ---
 
-### IdentityProviderMembers
+### IdentityProviderResultsOfIdentityProviderGroupMappings
 
-<a id="schemaidentityprovidermembers"></a>
-<a id="schema_IdentityProviderMembers"></a>
-<a id="tocSidentityprovidermembers"></a>
-<a id="tocsidentityprovidermembers"></a>
+<a id="schemaidentityproviderresultsofidentityprovidergroupmappings"></a>
+<a id="schema_IdentityProviderResultsOfIdentityProviderGroupMappings"></a>
+<a id="tocSidentityproviderresultsofidentityprovidergroupmappings"></a>
+<a id="tocsidentityproviderresultsofidentityprovidergroupmappings"></a>
 
-Class to hold members in a group
+Result object for Identity Provider access users/groups
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Users|[[IdentityProviderUser](#schemaidentityprovideruser)]|false|false|List of users|
-|Groups|[[IdentityProviderGroup](#schemaidentityprovidergroup)]|false|false|List of groups|
+|Results|[[IdentityProviderGroupMappings](#schemaidentityprovidergroupmappings)]|false|false|List of users/groups|
 |SkipToken|string|false|true|Skip token for paging|
 
 ```json
 {
-  "Users": [
-    {
-      "Id": "string",
-      "GivenName": "string",
-      "Surname": "string",
-      "Name": "string",
-      "Email": "user@example.com"
-    }
-  ],
-  "Groups": [
+  "Results": [
     {
       "Id": "string",
       "Name": "string",
       "Email": "user@example.com",
-      "IsClusterManagementAllowed": true
+      "IsClusterManagementAllowed": true,
+      "IdentityProviderClaimId": "string",
+      "RoleIds": [
+        "string"
+      ]
     }
   ],
   "SkipToken": "string"
+}
+
+```
+
+---
+
+### IdentityProviderGroupMappings
+
+<a id="schemaidentityprovidergroupmappings"></a>
+<a id="schema_IdentityProviderGroupMappings"></a>
+<a id="tocSidentityprovidergroupmappings"></a>
+<a id="tocsidentityprovidergroupmappings"></a>
+
+Class for identity provider group mappings.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|Object identifier of the IdentityProviderGroupMappings|
+|Name|string|false|true|Group name of the IdentityProviderGroupMappings|
+|Email|email|false|true|Email address of the IdentityProviderGroupMappings|
+|IsClusterManagementAllowed|boolean|false|true|Whether group can manage cluster roles.|
+|IdentityProviderClaimId|guid|false|false|Identity Provider ClaimId of the IdentityProviderGroupMappings|
+|RoleIds|string[]|false|true|List of roles assigned to this group.|
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Email": "user@example.com",
+  "IsClusterManagementAllowed": true,
+  "IdentityProviderClaimId": "string",
+  "RoleIds": [
+    "string"
+  ]
+}
+
+```
+
+---
+
+### IdentityProviderGroupMappingsMultiStatusResponse
+
+<a id="schemaidentityprovidergroupmappingsmultistatusresponse"></a>
+<a id="schema_IdentityProviderGroupMappingsMultiStatusResponse"></a>
+<a id="tocSidentityprovidergroupmappingsmultistatusresponse"></a>
+<a id="tocsidentityprovidergroupmappingsmultistatusresponse"></a>
+
+MultiStatusResponse objects returned in a 207 response.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|Identifier of the operation that resulted in this error.|
+|Error|string|false|true|Message describing the error.|
+|Reason|string|false|true|Reason that caused the error.|
+|ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|List of child errors.|
+|Data|[[IdentityProviderGroupMappings](#schemaidentityprovidergroupmappings)]|false|true|Data representing groups.|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string",
+      "EventId": "string",
+      "StatusCode": 0,
+      "ModelId": "string",
+      "property1": null,
+      "property2": null
+    }
+  ],
+  "Data": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "Email": "user@example.com",
+      "IsClusterManagementAllowed": true,
+      "IdentityProviderClaimId": "string",
+      "RoleIds": [
+        "string"
+      ]
+    }
+  ]
 }
 
 ```

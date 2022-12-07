@@ -6,13 +6,15 @@ uid: gsClientCredentialsClients
 
 Client-credentials clients are used for server-to-server communication where no user interaction is required. For more information about client-credentials clients, see [Client-credentials clients](xref:ccClients#client-credentials-client).
 
+**Note:** Client modifications may take up to an hour before being visibly updated.
+
 To create a client-credentials client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** dropdown list, select **Client-Credentials**. This is the option that is displayed by default.
+1. In the **Client Type** dropdown list, select **Client-Credentials**. This option is the default.
 
-1. In the toolbar, click **Add Client**.
+1. In the toolbar, select **Add Client**.
 
   The `Add Client` window opens.
 
@@ -22,9 +24,11 @@ To create a client-credentials client:
    
    By default, the client is assigned the Tenant Member role which cannot be removed. Roles can be modified after the client is created.
 
+   **Note:** The **MyData.Role** role is a custom role in this exercise. 
+
 1. (Optional) In the **Token Lifetime** field, enter the length of time in second that the access token functions before it expires.
    
-   The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
+   The default, 3600 seconds (one hour), is the maximum value. The minimum value is 60 seconds.
 
 1. Select **Continue**.
 
@@ -33,18 +37,18 @@ To create a client-credentials client:
 1. (Optional) In the **Description** field, enter a description for the client secret.
 
 1. In the **Expiration Date** field, enter a date and time that the secret expires.
-
+  
    Ensure that the expiration date is valid for the secret. By default, the secret is set to expire one year after creation. Select the **Never Expires** checkbox to specify that the secret does not expire. Secrets can be deleted later, including secrets that are set to never expire.
 
 1. Select **Add**.
 
   The `Client Successfully Created` window opens and displays the **Client Id** and **Client Secret**.
     
-   **Important:** Select the **Copy** button to the right of each field to save the client secret and client Id. You need this information to connect your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
+   **Important**: Select the **Copy** buttons to the right of these fields and save the client secret and client Id. You will need to reference these in your applications. Once the window is closed, the client secret cannot be accessed or retrieved.
     
 1. Select **Close**.  
 
-   **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.
+   **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret. 
 
 ## Next step
 

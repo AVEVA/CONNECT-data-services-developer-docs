@@ -10,9 +10,9 @@ To repair an agent:
 
 1. Select Windows **Start**, then select **Settings** > **Apps** > **Apps & features**.
 
-1. In the `Settings` window, select **PI to OCS Agent** in the list of installed apps, select **Modify**, and then select **Yes**.
+1. In the `Settings` window, select **PI to Data Hub Agent** in the list of installed apps, select **Modify**, and then select **Yes**.
  
-1. In the `PI to OCS Agent` window, select the **Repair** option, and then select **Next** twice.
+1. In the `PI to Data Hub Agent` window, select the **Repair** option, and then select **Next** twice.
 
    The `Installation` window opens and the repair process begins.
 

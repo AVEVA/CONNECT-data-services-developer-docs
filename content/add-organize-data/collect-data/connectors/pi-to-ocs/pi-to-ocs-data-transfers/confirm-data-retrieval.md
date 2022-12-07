@@ -12,7 +12,7 @@ To review the data:
 
 1. To review the streams created, in the **Streams** dropdown list, select **Streams**.
    
-   **Note:** By default, the grid displays the SDS streams created by the PI to OCS data transfer. The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page.
+   **Note:** By default, the grid displays the SDS streams created by the PI to Data Hub data transfer. The grid lists the first 50 SDS streams in alphabetical order. You can change how many streams are displayed per page.
 
 1. (Optional) In the **Search** field, enter search criteria to locate specific streams, and then press Enter.
 

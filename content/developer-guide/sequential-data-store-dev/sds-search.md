@@ -263,7 +263,7 @@ Operator | Description
 ``name:stream* AND (description:pressure OR description:pump)`` | The name starts with "stream" and the description has either "pressure" or "pump", or both. | string
 
 
-### <a name="fieldScoped">Field-scoping (``:``) operator</a>
+### <a name="fieldScoped"></a>Field-scoping (``:``) operator
 You can qualify the search to a specific field using the ``:`` operator.  
 
 	fieldname:fieldvalue
@@ -328,7 +328,7 @@ Note that while wildcard (``*``) can be used either in or outside of quotes, it 
 	GetStreamsAsync(query:"\\"pump pressure\\"");	
 ```
 
-## <a name="Stream_Metadata_search_topic">How search works with stream metadata</a>
+## <a name="Stream_Metadata_search_topic"></a>How search works with stream metadata
 [Stream metadata](xref:sds-streams-metadata) behaves differently with search syntax rules described in the previous sections. 
 
 **A namespace with streams with respective metadata key-value pairs**

@@ -4,7 +4,7 @@ uid: AccountTenantFeatureState
 
 # Tenant feature states
 
-APIs for managing the feature states of an OCS `Tenant`.
+APIs for managing the feature states of a `Tenant`.
 
 ## Properties
 

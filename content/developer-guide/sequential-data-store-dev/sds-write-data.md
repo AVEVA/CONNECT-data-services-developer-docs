@@ -47,7 +47,7 @@ The stream identifier
 ### Request body format
 With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
 
-The events must be formatted as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the [OCS-Samples](https://github.com/osisoft/OCS-Samples) for the complete example.
+The events must be formatted as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the [AVEVA Data Hub-Samples](https://github.com/osisoft/OSI-Samples-ADH) for the complete example.
 
 ```json
 [

@@ -4,11 +4,11 @@ uid: home-health
 
 # Health
 
-The **Health** page displays the health status of each service and namespace in your OSIsoft Cloud Services (OCS) tenant. To view your system health status, select **System Health** from the **Home** page.
+The `Health` page displays the health status of each service and namespace in your AVEVA Data Hub tenant. To view your system health status, select **System Health** from the `Home` page.
 
 ## Service Health
 
-**Service Health** includes a health status for each service and namespace included in your OCS tenant. The namespace region is displayed as well. For more information about each icon, see [Statuses](#statuses).
+**Service Health** includes a health status for each service and namespace included in your AVEVA Data Hub tenant. The namespace region is displayed as well. For more information about each icon, see [Statuses](#statuses).
 
 ## Community Health
 

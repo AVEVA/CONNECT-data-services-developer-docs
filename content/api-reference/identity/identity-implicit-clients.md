@@ -790,7 +790,7 @@ Object used during implicit client creation
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
 |AccessTokenLifetime|int32|false|true|Lifetime of access token issued for this client after authentication. Minimum 60 seconds. Maximum 3600 seconds. Defaults to 3600 seconds.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients. Maximum is 10 per client.|
 
 ```json
@@ -877,7 +877,7 @@ Object used during implicit client creation
 |Id|string|false|true|Client identifier for this client. This identifier should be a GUID.|
 |Name|string|false|true|Name of client|
 |Enabled|boolean|false|true|Whether client is enabled. Client can be used for authentication if set to true. Client cannot be used for authentication if set to false.|
-|Tags|string[]|false|true|Tags for OSIsoft internal use only|
+|Tags|string[]|false|true|Tags for AVEVA internal use only|
 |AllowedCorsOrigins|string[]|false|true|Values used by the default CORS policy service implementations to build a CORS policy for JavaScript clients|
 
 ```json

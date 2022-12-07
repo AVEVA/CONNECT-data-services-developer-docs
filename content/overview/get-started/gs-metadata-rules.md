@@ -91,7 +91,7 @@ In this step, you define mappings.
 1. In the **Map To** field, enter *San Leandro*. 
 
 1. To create additional mappings for streams that will be created later, select **Add Mappings**.
-   
+
 1. In the **Map From** field, enter *PHL*. 
 
 1. In the **Map To** field, enter *Philadelphia*.

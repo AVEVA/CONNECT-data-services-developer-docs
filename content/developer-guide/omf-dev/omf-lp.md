@@ -2,9 +2,9 @@
 uid: OsiSoftMessageFormat
 ---
 
-# OSIsoft Message Format
+# Open Message Format
 
-You use OSIsoft Message Format ([OMF](http://omf-docs.osisoft.com/)) to achieve high-throughput asynchronous data collection
+You use Open Message Format ([OMF](https://docs.osisoft.com/bundle/omf/page/index.html) to achieve high-throughput asynchronous data collection
 into the Sequential Data Store. The following terms are useful for understanding the information
 in this and subsequent sections. 
 

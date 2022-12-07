@@ -4,11 +4,7 @@ uid: DefineaDataViewRecommendedWorkflow
 
 # Recommended workflow: Define a data view
 
-This is an introduction to the recommended workflow for creating and defining data views. The following sections show these concepts in action.
-
-[!include[iteration](../../../analytics/data-views/_includes/iteration.md)]
-
-[!include[recommended-skills](../../../analytics/data-views/_includes/recommended-skills.md)]
+Designing and tweaking a data view is expected to be an iterative process. You are not expected to "get it right the first time," nor to be an expert at your AVEVA Data Hub configuration such as available streams and assets. Data views provide an interactive way to select, identify, and arrange the data you and your applications need.
 
 There are three main steps required to define a data view: 
 

@@ -18,13 +18,13 @@ To use the API Console:
 
 1. Type a slash (/) in the text field to display a dropdown list.
 
-1.  If you selected a tenant-scoped path in the second step, you can take any of the following actions:
+1. If you selected a tenant-scoped path in the second step, you can take any of the following actions:
 
   - Select **Namespaces** and then select a namespace followed by an endpoint or route.
 
   - Select **Communities** and then select from a dropdown list of communities followed by an endpoint or route.
 
-  - Select **OmfValidation** to validate an OSIsoft Message Format (OMF) JSON message.
+  - Select **OmfValidation** to validate an Open Message Format (OMF) JSON message.
 
   If you selected a root-scoped path in the second step, a different dropdown list gives you other categories of data. You can select one and then select an appropriate endpoint or route.
 

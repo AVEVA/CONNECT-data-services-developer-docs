@@ -6,7 +6,7 @@ uid: ccMetadataRules
 
 The value of metadata lies in its capacity to enrich sequential data, and to facilitate logical segregation and contextualization of data. Other services and applications, such as data views, leverage stream metadata to simplify finding data and to provide context about stream data. When possible, you should explicitly include metadata when you create streams. When that is not possible, you can use metadata rules to leverage a consistent naming pattern for streams to embed metadata.
 
-You create metadata rules by selecting parsable metadata from a stream name structure, such as location, facility, asset class, or asset Id, and applying the rule to identify streams whose names match the defined pattern. The metadata rule identifies all streams that match the pattern, then OSIsoft Cloud Services (OCS) parses each stream and builds out the metadata following the defined rules.
+You create metadata rules by selecting parsable metadata from a stream name structure, such as location, facility, asset class, or asset Id, and applying the rule to identify streams whose names match the defined pattern. The metadata rule identifies all streams that match the pattern, then AVEVA Data Hub parses each stream and builds out the metadata following the defined rules.
 
 ## PI Server counterpart
 
@@ -14,7 +14,7 @@ Metadata rules do not have a similar counterpart in PI Server because PI points 
 
 ## Metadata best practices  
 
-We recommend these best practices to make it easier to add metadata to streams:
+Follow these best practices to make it easier to add metadata to streams:
 
 - The easiest way to explicitly add metadata is when streams are created. Whenever possible, add metadata during stream creation.
 
@@ -34,7 +34,7 @@ The following diagram shows metadata for two turbines named `GEO1` and `GEO2`, e
 
 ![Metadata and streams](images/streams.jpg)
 
-Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, OCS shows a stream selected for a metadata rule and identifies characters you could use to divide the stream name into parts using a + sign.
+Create metadata rules by selecting a stream as a template and then define the criteria to match with other streams. In the example below, AVEVA Data Hub shows a stream selected for metadata rule and identifies characters you could use to divide the stream name into parts using a + sign. 
 
 ![Adding metadata](images/metadata1.png)
 
@@ -51,5 +51,5 @@ In the following example, all data comes from wind turbines on a wind farm and t
 When the parts are combined, this metadata rule creates metadata for streams coming from turbines for `Active Power` in the Pine Valley Wind Farm.
 
 ![Adding metadata to streams](images/metadata2.png)
-
-When you create a metadata rule, OCS applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule, but the modified rule may capture a different set of streams.
+ 
+When you create a metadata rule, AVEVA Data Hub applies it to all existing streams and subsequently to any new streams added to the namespace. You can edit a metadata rule, but the modified rule may capture a different set of streams.

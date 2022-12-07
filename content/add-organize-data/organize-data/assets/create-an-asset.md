@@ -60,7 +60,7 @@ To create an asset:
 
     You can only specify one property to determine the asset status, and that property must have enumerated states or string values.
 
-    **Tip:** You can switch to a different property by clicking the ![Change property icon](../../../_icons/branded/swap-horizontal.svg) icon.
+    **Tip:** You can switch to a different property by selecting the ![Change property icon](../../../_icons/branded/swap-horizontal.svg) icon.
 
 1. For each value listed, select the status icon to map the value to a status. To add other values, select **Add Value Mapping**, enter the value, and select the corresponding status.
 

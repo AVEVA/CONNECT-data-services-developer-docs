@@ -4,11 +4,11 @@ uid: identity-secrets
 ---
 
 # Secrets
-Secrets are used to authenticate both client credential clients and hybrid clients. A secret has an expiration date or can be created to never expire. We advise to avoid creating secrets that do not expire. After a secret expires, it can no longer be used to authenticate the client. While a secret is still valid, any access token issued will be active until the token itself expires. The same applies to refresh tokens, which are issued to hybrid clients. Safe storage of secrets is your responsibility. OCS does not store secret values, so once lost, there is no way to retrieve the value of a secret.
+Secrets are used to authenticate both client credential clients and hybrid clients. A secret has an expiration date or can be created to never expire. We advise to avoid creating secrets that do not expire. After a secret expires, it can no longer be used to authenticate the client. While a secret is still valid, any access token issued will be active until the token itself expires. The same applies to refresh tokens, which are issued to hybrid clients. Safe storage of secrets is your responsibility. AVEVA Data Hub does not store secret values, so once lost, there is no way to retrieve the value of a secret.
 
-## `List Client Credential Client Secrets (v1 path)`
+## `List Client Credential Client Secrets`
 
-<a id="opIdSecrets_List Client Credential Client Secrets (v1 path)"></a>
+<a id="opIdSecrets_List Client Credential Client Secrets"></a>
 
 Returns all secrets for a client credential client. Total number of secrets in the client set in the Total-Count header.
 
@@ -58,6 +58,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -95,14 +96,15 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
 ---
 
-## `Add Client Credential Client Secret (v1 path)`
+## `Add Client Credential Client Secret`
 
-<a id="opIdSecrets_Add Client Credential Client Secret (v1 path)"></a>
+<a id="opIdSecrets_Add Client Credential Client Secret"></a>
 
 Adds a new secret to a client credential client. A client can have a maximum of 10 secrets. We advise against creating secrets that do not expire.
 
@@ -160,14 +162,15 @@ ClientSecretCreateOrUpdate object.<br/>
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
 ---
 
-## `Get Client Credential Client Secret (v1 path)`
+## `Get Client Credential Client Secret`
 
-<a id="opIdSecrets_Get Client Credential Client Secret (v1 path)"></a>
+<a id="opIdSecrets_Get Client Credential Client Secret"></a>
 
 Returns a client credential client secret.
 
@@ -211,6 +214,7 @@ GET /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secre
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
@@ -249,14 +253,15 @@ HEAD /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{secr
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
 ---
 
-## `Update Client Credential Client Secret (v1 path)`
+## `Update Client Credential Client Secret`
 
-<a id="opIdSecrets_Update Client Credential Client Secret (v1 path)"></a>
+<a id="opIdSecrets_Update Client Credential Client Secret"></a>
 
 Updates a client credential client secret. It can take up to one hour for the update to manifest in the authentication process.
 
@@ -353,14 +358,15 @@ DELETE /api/v1/Tenants/{tenantId}/ClientCredentialClients/{clientId}/Secrets/{se
 
 Allowed for these roles: 
 <ul>
+<li>Self</li>
 <li>Tenant Administrator</li>
 </ul>
 
 ---
 
-## `List Hybrid Client Secrets (v1 path)`
+## `List Hybrid Client Secrets`
 
-<a id="opIdSecrets_List Hybrid Client Secrets (v1 path)"></a>
+<a id="opIdSecrets_List Hybrid Client Secrets"></a>
 
 Returns all secrets for a hybrid client. Total number of secrets in the client set in the Total-Count header.
 
@@ -452,9 +458,9 @@ Allowed for these roles:
 
 ---
 
-## `Add Hybrid Client Secret (v1 path)`
+## `Add Hybrid Client Secret`
 
-<a id="opIdSecrets_Add Hybrid Client Secret (v1 path)"></a>
+<a id="opIdSecrets_Add Hybrid Client Secret"></a>
 
 Adds a new secret to a hybrid client. A client can have a maximum of 10 secrets. We advise against creating secrets that do not expire.
 
@@ -516,9 +522,9 @@ Allowed for these roles:
 
 ---
 
-## `Get Hybrid Client Secret (v1 path)`
+## `Get Hybrid Client Secret`
 
-<a id="opIdSecrets_Get Hybrid Client Secret (v1 path)"></a>
+<a id="opIdSecrets_Get Hybrid Client Secret"></a>
 
 Returns a hybrid client secret.
 
@@ -605,9 +611,9 @@ Allowed for these roles:
 
 ---
 
-## `Update Hybrid Client Secret (v1 path)`
+## `Update Hybrid Client Secret`
 
-<a id="opIdSecrets_Update Hybrid Client Secret (v1 path)"></a>
+<a id="opIdSecrets_Update Hybrid Client Secret"></a>
 
 Updates a hybrid client secret. It can take up to one hour for the update to manifest in the authentication process.
 
@@ -708,7 +714,6 @@ Allowed for these roles:
 </ul>
 
 ---
-
 ## Definitions
 
 ### ClientSecret
@@ -832,74 +837,6 @@ Object to write a client secret
   "Expiration": "2019-08-24T14:15:22Z",
   "Expires": true,
   "Description": "string"
-}
-
-```
-
----
-
-### ClientSecret2
-
-<a id="schemaclientsecret2"></a>
-<a id="schema_ClientSecret2"></a>
-<a id="tocSclientsecret2"></a>
-<a id="tocsclientsecret2"></a>
-
-Client secret object
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Expiration|date-time|false|true|Expiration date for the client secret. Will be null if the secret does not expire.|
-|Expires|boolean|false|true|Value indicating whether the secret expires. Defaults to true. If Expires is set to true (or null) and expiration is not null, expiration of this secret will be enforced. If Expires is set to true (or null) and expiration is null, a 400 error will be returned. If Expires is set to false and expiration is not null, a 400 error will be returned. If Expires is set to false and expiration is null, there will be no expiration of this secret.|
-|Description|string|false|true|Description for the client secret. We suggest being as descriptive as possible. This field will make identifying secrets easier.|
-|SecretId|string|false|true|Obsolete: Use identifier|
-|Id|string|false|true|Identifier for this secret|
-
-```json
-{
-  "Expiration": "2019-08-24T14:15:22Z",
-  "Expires": true,
-  "Description": "string",
-  "SecretId": "string",
-  "Id": "string"
-}
-
-```
-
----
-
-### ClientSecretResponse2
-
-<a id="schemaclientsecretresponse2"></a>
-<a id="schema_ClientSecretResponse2"></a>
-<a id="tocSclientsecretresponse2"></a>
-<a id="tocsclientsecretresponse2"></a>
-
-Object returned after a client secret is created
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|SecretId|string|false|true|Obsolete: Use identifier|
-|Id|string|false|true|Identifier for this secret|
-|Expiration|date-time|false|true|Expiration date for the client secret. Will be null if the secret does not expire.|
-|Expires|boolean|false|true|Value indicating whether the secret expires. Defaults to true. If Expires is set to true (or null) and expiration is not null, expiration of this secret will be enforced. If Expires is set to true (or null) and expiration is null, a 400 error will be returned. If Expires is set to false and expiration is not null, a 400 error will be returned. If Expires is set to false and expiration is null, there will be no expiration of this secret.|
-|Description|string|false|true|Description for the client secret. We suggest being as descriptive as possible. This field will make identifying secrets easier.|
-|ClientSecret|string|false|true|Obsolete: Use secret|
-|Secret|string|false|true|Client secret|
-
-```json
-{
-  "SecretId": "string",
-  "Id": "string",
-  "Expiration": "2019-08-24T14:15:22Z",
-  "Expires": true,
-  "Description": "string",
-  "ClientSecret": "string",
-  "Secret": "string"
 }
 
 ```

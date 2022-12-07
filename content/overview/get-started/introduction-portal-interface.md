@@ -2,21 +2,21 @@
 uid: introPortalInterface
 ---
 
-# Introduction to the OCS portal
+# Take a tour of the AVEVA Data Hub portal
 
-Access and interact with OCS through the web-based portal. When you first access the portal, there is information about the system's health as well as quick links to popular documentation topics.
+Access and interact with AVEVA Data Hub through the web-based portal. When you first access the portal, there is information about the system's health as well as quick links to popular documentation topics.
 
 ![Portal window](../images/portal-interface.png "Portal interface")
 
-## OCS features
+## AVEVA Data Hub features
 
-Collapse or expand the left pane to view a menu of OCS features. This pane is always available in the portal, and you can hover over the icons to make selections even while the menu is collapsed.
+Collapse or expand the left pane to view a menu of AVEVA Data Hub features. This pane is always available in the portal, and you can hover over the icons to make selections even while the menu is collapsed.
 
 | Pane expanded | Pane collapsed |
 |:--:|:--:|
 | ![pane expanded](../images/left-pane-expanded.png) | ![pane collapsed](../images/left-pane-collapsed.png) |
 
-The following features can be accessed from the menu:
+AVEVA Data Hub includes the following features:
 
 - **Data Management**: Tools for setting up basic capabilities, including tenants, the Sequential Data Store (SDS), and metadata rules for data streams.
 
@@ -26,11 +26,11 @@ The following features can be accessed from the menu:
 
 - **Analytics**: Tools for shaping and querying large datasets.
 
-- **Security**: Specify identity providers for authentication and add groups, users, roles, and clients to your tenant.
+- **Security**: Add groups, users, roles, and clients to your tenant.
 
-- **Developer Tools**: Code samples, an API console, and an editor for the OSIsoft Message Format (OMF).
+- **Developer Tools**: Code samples, an API console, and an editor for the Open Message Format (OMF).
 
-- **Support**: Documentation, logs, support links, the OCS blog, and other useful information.
+- **Support**: Documentation, logs, support links, the service blog, and other useful information.
 
 ## Feature pages
 
@@ -56,7 +56,7 @@ The following table provides a list and descriptions of these toolbar commands.
 |---------------|----------|
 | ![Manage permissions icon](../../_icons/default/account-lock.svg) Manage permissions | Change role-based access to portal resources. |
 | Change namespace | Choose a different namespace. |
-| ![View notifications icon](../../_icons/custom/bell.svg) View notifications | View OCS-generated notifications. |
+| ![View notifications icon](../../_icons/custom/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. |
 | ![Documentation icon](../../_icons/custom/help-circle.svg) Help | Access the online documentation. |
 | ![User Profile icon](../../_icons/custom/account-circle.svg) User profile | View a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
 | ![Customize icon](../../_icons/branded/pencil.svg) Customize | Customize the layout of the portal dashboard. |

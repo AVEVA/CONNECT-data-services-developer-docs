@@ -54,7 +54,7 @@ To create an asset:
 
    If there are no values in the stream, there will be no eligible values to choose from. If there are eligible values that can be mapped to different statuses, 
    
-1. For each value listed, select the associated status, **Good**, **Warning**, or **Bad**.  
+1. For each value listed, select the associated status, **Good**, **Warning**, or **Bad**. 
 
 1. To save the asset, select **Save**. 
 

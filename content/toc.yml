@@ -1,8 +1,31 @@
-- topicUid: ocs-content-portal-overview
+- topicUid: ADH-content-portal-overview
   items:
-    - topicUid: WhatIsOCS
-    - topicUid: WhoUsesOCS
-    - topicUid: WhatOCSdoes
+  - topicUid: WhatIsADH
+    items:
+    - topicUid: DifferencesFromOCS
+  - topicUid: WhoUsesADH
+  - topicUid: WhatADHdoes
+  - topicUid: what-is-cnnxt
+    items:
+    - topicUid: sign-in-cnnxt
+    - topicUid: aveva-svcs
+    - topicUid: add-display-name
+    - topicUid: sign-out-cnnxt
+  - topicUid: cnnxt-setup
+    items:
+    - topicUid: subscribe-adh
+    - topicUid: ccNamespaces
+      items: 
+      - topicUid: create-folders
+      - topicUid: bpNamespaces
+    - topicUid: ManageUsersConnect
+      items:
+      - topicUid: create-group
+      - topicUid: assign-roles-groups
+      - topicUid: invite-users
+      - topicUid: assign-users
+      - topicUid: map-group-adh
+      - topicUid: map-user-adh
 - topicUid: introPortalInterface
   items:
   - topicUid: viewProfile
@@ -12,48 +35,43 @@
   - topicUid: Search
 - topicUid: gsGetStartedOCS
   items:
-    - topicUid: gsNamespaces
-    - topicUid: gsConnections
-      items:
-        - topicUid: gsPItoOCS
-        - topicUid: gsOMF
-    - topicUid: gsTypes
-    - topicUid: gsStreams
-    - topicUid: gsRoles
-    - topicUid: gsUsers
-    - topicUid: gsClients
-      items:
-        - topicUid: gsClientCredentialsClients
-        - topicUid: gsAuthorizationCodeClients
-        - topicUid: gsHybridClients
-    - topicUid: gsAssets
-    - topicUid: gsAssetTypes
-    - topicUid: gsDataViews
-    - topicUid: gsMetadataRules
-    - topicUid: gsStreamviews
-    - topicUid: gsAssetRules
+  - topicUid: gsConnections
+    items:
+    - topicUid: gsPItoOCS
+    - topicUid: gsOMF
+  - topicUid: gsTypes
+  - topicUid: gsStreams
+  - topicUid: gsRoles
+  - topicUid: gsUsers
+  - topicUid: gsClients
+    items:
+    - topicUid: gsClientCredentialsClients
+    - topicUid: gsAuthorizationCodeClients
+    - topicUid: gsHybridClients
+  - topicUid: gsAssets
+  - topicUid: gsAssetTypes
+  - topicUid: gsDataViews
+  - topicUid: gsMetadataRules
+  - topicUid: gsStreamviews
+  - topicUid: gsAssetRules
 - topicUid: DataManagement
   items:
-    - topicUid: ccNamespaces
-      items:
-        - topicUid: bpNamespaces
-        - topicUid: gpNamespaces
-        - topicUid: namespaces-manage-permissions
     - topicUid: lpstoredata
       items:
-        - topicUid: ccStreams
-          items:
-            - topicUid: streams-manage-streams
-            - topicUid: streams-add-tags-or-metadata
-            - topicUid: streams-share-streams
-            - topicUid: streams-view-in-trend
-            - topicUid: streams-manage-stream-permissions
-        - topicUid: ccTypes
-          items:
-            - topicUid: bpTypes
-            - topicUid: gpTypes
-            - topicUid: types-manage-permissions
-        - topicUid: ccStreamviews
+      - topicUid: ccStreams
+        items:
+        - topicUid: streams-manage-streams
+        - topicUid: streams-add-tags-or-metadata
+        - topicUid: streams-share-streams
+        - topicUid: streams-view-in-trend
+        - topicUid: streams-export-csv
+        - topicUid: streams-manage-stream-permissions
+      - topicUid: ccTypes
+        items:
+        - topicUid: bpTypes
+        - topicUid: gpTypes
+        - topicUid: types-manage-permissions
+      - topicUid: ccStreamviews
     - topicUid: communities
       items:
         - topicUid: community-communities-page
@@ -226,25 +244,27 @@
         - topicUid: data-view-retrieve-edit-query
 - topicUid: Security
   items:
-    - topicUid: identityProviders
-    - topicUid: Groups
-    - topicUid: ccUsers
-      items:
-        - topicUid: gpUsers
-        - topicUid: UserMaintenance
-    - topicUid: ccRoles
-      items:
-        - topicUid: gpRoles
-        - topicUid: RolesMaintenance
-        - topicUid: roles-manage-permissions
-    - topicUid: ccClients
-      items:
-        - topicUid: gpClientCredentialsClient
-        - topicUid: gpHybridClient
-        - topicUid: gpAuthorizationCodeClient
-        - topicUid: ClientMaintenance
-    - topicUid: permissions-management
-    - topicUid: cross-region-data-sharing
+  - topicUid: Groups
+    items:
+    - topicUid: AddGroup
+    - topicUid: GroupMaintenance
+  - topicUid: ccUsers
+    items:
+    - topicUid: gpUsers
+    - topicUid: UserMaintenance
+  - topicUid: ccRoles
+    items:
+    - topicUid: gpRoles
+    - topicUid: RolesMaintenance
+    - topicUid: roles-manage-permissions
+  - topicUid: ccClients
+    items:
+    - topicUid: gpClientCredentialsClient
+    - topicUid: gpHybridClient
+    - topicUid: gpAuthorizationCodeClient
+    - topicUid: ClientMaintenance
+  - topicUid: permissions-management
+  - topicUid: cross-region-data-sharing
 - topicUid: DeveloperTools
   items:
     - topicUid: samples
@@ -260,4 +280,4 @@
 - name: API reference
   href: api-reference/toc.yml
   topicHref: api-reference/ocs-api-reference.md
-- topicUid: support
+# - topicUid: support

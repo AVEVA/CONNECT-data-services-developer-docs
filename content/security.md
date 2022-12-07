@@ -4,7 +4,7 @@ uid: Security
 
 # Security
 
-The Security menu provides tools to manage access to OSIsoft Cloud Services (OCS):
+The Security menu provides tools to manage access to AVEVA Data Hub:
 
 * Use `Identity Providers` to add third-party services that store and authenticate users.
 
@@ -14,4 +14,4 @@ The Security menu provides tools to manage access to OSIsoft Cloud Services (OCS
 
 * Use `Roles` to add roles, which manage access to assets, resources, and services, and assign these roles to identities, which include users, groups, and client-credentials clients. 
 
-* Use `Clients` to create and manage clients, which are used to authenticate against OCS from outside the portal.
+* Use `Clients` to create and manage clients, which are used to authenticate against AVEVA Data Hub from outside the portal.

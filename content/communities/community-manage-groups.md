@@ -10,7 +10,7 @@ Add groups to make its users Community Members, which are users that can view th
 
 - [!include[prereq-community-admin](includes/prereq-community-admin.md)]
 
-- Your tenant must be configured for one or more identity provider enabled. For more information, see <xref:identityProviders>.
+- Your tenant must be configured for one or more identity provider enabled.
 
 ## Add groups to a community
 

@@ -4,7 +4,7 @@ uid: troubleshoot-failed-af-indexing
 
 # Troubleshoot failed AF indexing
 
-Immediately after PI to OCS Agent registration, AF indexing is initiated and must finish successfully before a new transfer can be defined. The progress of AF indexing is displayed next to **AF Server Index Progress** on the **Agent Overview** pane, as shown in the image below.
+Immediately after PI to Data Hub Agent registration, AF indexing is initiated and must finish successfully before a new transfer can be defined. The progress of AF indexing is displayed next to **AF Server Index Progress** on the **Agent Overview** pane, as shown in the image below.
 
 ![  ](../../images/failed-af-indexing.png)
 
@@ -14,6 +14,6 @@ If the  **"AF Indexing Failed!"** message appears, follow these steps to reiniti
 
 1. Delete the `Cache` folder. 
  
-1. Reboot the host machine that the PI to OCS Agent runs on (recommended) or stop/restart the PI to OCS service.
+1. Reboot the host machine that the PI to Data Hub Agent runs on (recommended) or stop/restart the PI to Data Hub service.
 
-**Note:** It is possible for an agent to complete and indicate that indexing has completed, but still need to re-index.  Additionally, there may be times when an agent appears to be working, but you are unable to create a transfer. In both cases, OCS advises to restart the PI to OCS Agent to initiate AF indexing.
+**Note:** It is possible for an agent to complete and indicate that indexing has completed, but still need to re-index.  Additionally, there may be times when an agent appears to be working, but you are unable to create a transfer. In both cases, AVEVA Data Hub advises to restart the PI to Data Hub Agent to initiate AF indexing.

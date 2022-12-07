@@ -1,6 +1,5 @@
 - name: Tenant management
-  href: tenant-dev/toc.yml
-  topicHref: tenant-dev/dev-guide-tenant-management.md
+  href: tenant-dev/dev-guide-tenant-management.md
 - name: Identity and access management
   href: identity-dev/toc.yml
   topicHref: identity-dev/dev-guide-identity-access-management.md
@@ -13,10 +12,12 @@
 - name: Data collection
   items:
   - topicUid: omfVsSds
-  - name: OSIsoft Message Format
+  - name: Open Message Format
     href: omf-dev/toc.yml
     topicHref: omf-dev/omf-lp.md
 - name: Asset store
   href: asset-dev/toc.yml
   topicHref: asset-dev/asset-dev-guide.md
+- name: Samples
+  topicHref: samples.md
 - topicUid: UseExcel

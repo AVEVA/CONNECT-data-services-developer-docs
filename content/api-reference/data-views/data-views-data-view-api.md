@@ -708,7 +708,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 <a id="tocSdataview"></a>
 <a id="tocsdataview"></a>
 
-A declarative way to select, label and shape data from OSIsoft Cloud Services
+A declarative way to select, label and shape data from AVEVA Data Hub
 
 <h4>Properties</h4>
 

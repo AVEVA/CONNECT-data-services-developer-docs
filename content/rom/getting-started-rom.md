@@ -4,7 +4,7 @@ uid: GetStartedROM
 
 # Get started with remote operations monitoring
 
-OSIsoft Cloud Services (OCS) makes it possible to monitor remote assets in real time. The immediate access to data about the status of assets gives you the ability to anticipate problems and proactively perform preventative maintenance.
+AVEVA Data Hub makes it possible to monitor remote assets in real time. The immediate access to data about the status of assets gives you the ability to anticipate problems and proactively perform preventative maintenance.
 
 For example, a fleet manager of a mining truck dealer sells trucks to companies worldwide. The company provides monitoring and maintenance services to its customers. With remote monitoring, they review the status of the trucks each day, identify trucks with problems, use the data collected on different measurements to identify possible causes, review the history of these measurements over time, and share the information with colleagues in the field who can follow up on the problem.
 

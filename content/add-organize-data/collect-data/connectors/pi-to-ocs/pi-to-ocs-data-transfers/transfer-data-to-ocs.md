@@ -54,10 +54,10 @@ To name the data transfer:
 
 1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
 
-   * **High** - Sends all intended metadata.
-   * **Medium** - Default. Send metadata without logical addresses from the data source.
-   * **Low** - Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
-   * **None** - Only the point ID and point name is sent; no metadata is included in the transfer.
+   - **High**: Sends all intended metadata.
+   - **Medium**: Default. Sends metadata without logical addresses from the data source.
+   - **Low**: Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
+   - **None**: Sends only the point ID and point name; no metadata is included in the transfer.
 
    **What PI point attributes are transferred with each Stream Metadata Replication Policy (data privacy) setting?**
 
@@ -72,9 +72,9 @@ To name the data transfer:
     | Pointsource | X | X | X |  |
     | PointType | X | X |  |  |
     | SourceTag | X | X |  |  |
-    |Step | X | X |  |  |
+    | Step | X | X |  |  |
 
-1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically remove Streams and Assets** option. 
+1. (Optional) To have streams and assets automatically removed from the transfer when their corresponding PI points and AF elements are removed, select the **Automatically delete Streams and Assets from the cloud** option. 
 
 1. Select **Ok**.
 
@@ -90,9 +90,9 @@ To build an AF element:
 
 1. On the `Transfer` page, select the source AF database from the **AF Database** dropdown list.
 
-   ![](../../images/transfer-win.png)
+   ![Transfer page](../../images/transfer-win.png)
 
-1. (Optional) Select **Root Asset**.
+1. (Optional) Select **Root Element**.
 
 1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then choose **Select**. <!-- AF 11/15/21 UGH! I hate "select **Select**". Makes me want to use click. -->
 
@@ -106,11 +106,11 @@ To build an AF element:
 
    **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their corresponding asset's UOM property set.
    
-      * In the first field, enter an attribute name.
+   - In the first field, enter an attribute name.
 
-      * In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `<=`, `>=`, `In`).
+   - In the second field, use the dropdown list to select an operator (`=`, `<>`, `<`, `>`, `<=`, `>=`, `In`).
 
-      * In the last field, enter an attribute value.
+   - In the last field, enter an attribute value.
 
    **Note:** Custom units of measure (UOMs) are not supported. During the transfer of AF element data, AF elements with custom UOMs will not have their UOM property set.
    
@@ -119,6 +119,8 @@ To build an AF element:
 1. (Optional) To narrow the search by a specific AF category, in the **Category** field, select a category from the dropdown list.
 
 1. To execute the query and retrieve results, select **Search**.
+
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
 
 1. In the `Search Results` list, select each AF element you want added to the transfer.
 
@@ -136,7 +138,7 @@ To build an AF element:
 
 ## View AF element details
 
-You can view details about an individual AF element such as related attribute names, values, and data references.
+You can view details about an individual AF element such as related attribute names, values, and data references.
 
 To view AF element details:
 
@@ -172,17 +174,19 @@ To build a PI points transfer list:
    | PI point type            | Select one of the following point types from the **Point Type** dropdown list:<br /><ul><li>`Float32`</li><li>`Float64`</li><li>`Int16`</li><li>`Int32`</li><li>`Digital`</li><li>`Timestamp`</li><li>`String`</li></ul> |
    | Specific location code(s)  | Enter up to five location code values in the **Location Codes** field. |
 
-4. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
+1. (Optional) To collapse or expand the criteria section, select the **Search Criteria** bar.
 
-5. To execute the query and retrieve matching results, select **Search**.
+1. To execute the query and retrieve matching results, select **Search**.
 
-6. In the **Search Results** area, select each PI point to add to the data transfer.
+   When dealing with large data sets, a search query can take a significant amount of time. Select **Cancel** to stop the query if necessary.
+
+1. In the **Search Results** area, select each PI point to add to the data transfer.
 
    A check mark appears next to each selected PI point.
 
    **Tip:** To select a range of PI points, select a PI point and then hold Shift and select a non-adjacent PI point. To advance through multiple-paged query results, select the back and forward arrows or enter a page number in the **Page** field.
 
-7. When you are done selecting PI points, select **Add PI Points to Transfer**.
+1. When you are done selecting PI points, select **Add PI Points to Transfer**.
 
    The points are added to the transfer and listed on the **PI Points** tab.
 
@@ -190,9 +194,9 @@ To build a PI points transfer list:
 
 PI points added to a transfer are assigned one of the following reference types:
 
-  * Explicit - PI points directly retrieved from a PI Data Archive.
+- Explicit - PI points directly retrieved from a PI Data Archive.
 
-  * Implicit - PI points referenced by AF element attributes that have been retrieved by searching an AF server.
+- Implicit - PI points referenced by AF element attributes that have been retrieved by searching an AF server.
 
 The reference type indicates the PI point's source and how it was retrieved. The reference type for each PI point is listed in the `Reference Type` column on the **PI Points** tab. 
 
@@ -234,6 +238,8 @@ To save the transfer:
 
 1. To save the transfer and return to the `PI to Data Hub Agents` page, select **Save** in the lower right-hand corner.
 
+   **Note:** In order to save the transfer, it must include at least one valid PI point.
+
 ## Transfer data to AVEVA Data Hub
 
 Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
@@ -274,5 +280,5 @@ To start a data transfer:
     
 1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
 
-1. (Optional) To remove a transfer, select **Remove Transfer**, then select **Remove**.
+1. (Optional) To remove a transfer, select **Remove Transfer**, select the **Delete Streams and Assets from the cloud** option if applicable, then select **Remove**.
  

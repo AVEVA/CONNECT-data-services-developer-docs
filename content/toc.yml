@@ -28,12 +28,12 @@
       - topicUid: map-user-adh
 - topicUid: introPortalInterface
   items:
-  - topicUid: viewProfile
-  - topicUid: TenantDetails
-  - topicUid: ResourceUsage
-  - topicUid: home-health
-  - topicUid: Search
-- topicUid: gsGetStartedOCS
+    - topicUid: viewProfile
+    - topicUid: TenantDetails
+    - topicUid: ResourceUsage
+    - topicUid: home-health
+    - topicUid: Search
+- topicUid: gs-overview
   items:
   - topicUid: gsConnections
     items:
@@ -179,9 +179,44 @@
         - topicUid: pi2ocs-rel-summary
     - topicUid: lpomfoverview
       items:
-        - topicUid: bpOMFConnection
-        - topicUid: gpOMFConnection
-        - topicUid: OMFMaintenance
+      - topicUid: overview-data-transfers
+      - topicUid: slow-moving-data
+      - topicUid: af-data-transferred
+      - topicUid: transfer-data
+      - topicUid: overview-metrics
+      - topicUid: health-evts-window
+      - topicUid: edit-transfer 
+      - topicUid: data-transfer-statuses
+      - topicUid: export-transfer-details
+      - topicUid: export-missing-points
+      - topicUid: PItoDHSync
+      - topicUid: confirm-data-retrieval
+    - topicUid: lp-agent-maint
+      items:
+      - topicUid: kpi-tile
+      - topicUid: repair-agent 
+      - topicUid: search-agent
+      - topicUid: remove-agent-portal
+      - topicUid: manage-agent-permissions
+    - topicUid: lp-logs
+      items:
+      - topicUid: view-logs
+      - topicUid: config-utility-logs
+      - topicUid: log-messages
+      - topicUid: VerboseLogging
+    - topicUid: lp-troubleshoot
+      items: 
+      - topicUid: troubleshoot-failed-af-indexing
+      - topicUid: troubleshoot-failed-mapping
+      - topicUid: troubleshoot-missing-pida
+      - topicUid: troubleshoot-pi-pt-errors
+    - topicUid: known-issues
+    - topicUid: pi2ocs-rel-summary
+  - topicUid: lpomfoverview
+    items:
+    - topicUid: bpOMFConnection
+    - topicUid: gpOMFConnection
+    - topicUid: OMFMaintenance
 - topicUid: lpvisualizedata
   items:
     - topicUid: CreateTrendSession

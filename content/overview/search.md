@@ -24,7 +24,7 @@ You can use search operators to get more refined search results. Use the operato
 | ``AND``  | AND operator. The query ``cat AND dog`` searches for both "cat" and "dog". |
 | ``OR``   | OR operator. The query ``cat OR dog`` searches for either "cat" or "dog", or both. |
 | ``NOT``  | NOT operator. The query ``cat NOT dog`` searches for "cat" or those without "dog". |
-| ``*``    | Wildcard operator. Matches 0 or more characters. See [Wildcard operator](#wildcard). |
+| ``*``    | Wildcard operator. Matches 0 or more characters. See [Wildcard operator](#wildcard). |
 | ``:``    | Field-scoped query. Specifies a field to search. See [Field-scoping operator](#fieldScoped). |
 | ``( )``  | Precedence operator. The query ``wind AND (speed OR deviation)`` searches for either "wind" and "speed", or "wind" and "deviation". |
 

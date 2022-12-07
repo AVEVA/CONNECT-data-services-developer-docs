@@ -1,14 +1,14 @@
 ---
-uid: client-failover-groups
+uid: ""
 
 ---
 
-# Groups
+# Client Failover Groups
 API for Client Failover Groups.
 
 ## `List Group Configurations`
 
-<a id="opIdGroups_List Group Configurations"></a>
+<a id="opIdClientFailoverGroups_List Group Configurations"></a>
 
 Returns the list of failover groups.
 
@@ -65,7 +65,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups
 
 ## `Post Group`
 
-<a id="opIdGroups_Post Group"></a>
+<a id="opIdClientFailoverGroups_Post Group"></a>
 
 Creates a failover group.
 
@@ -129,7 +129,7 @@ The configuration of the failover group being created or updated.<br/>
 
 ## `Get Group Configuration`
 
-<a id="opIdGroups_Get Group Configuration"></a>
+<a id="opIdClientFailoverGroups_Get Group Configuration"></a>
 
 Gets a failover group by identifier.
 
@@ -176,7 +176,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 
 ## `Delete Group`
 
-<a id="opIdGroups_Delete Group"></a>
+<a id="opIdClientFailoverGroups_Delete Group"></a>
 
 Deletes a failover group by identifier.
 
@@ -207,7 +207,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups
 
 ## `Get Group Status`
 
-<a id="opIdGroups_Get Group Status"></a>
+<a id="opIdClientFailoverGroups_Get Group Status"></a>
 
 Gets the failover group status.
 
@@ -345,4 +345,3 @@ Group status.
 ```
 
 ---
-

@@ -39,7 +39,7 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 
 1. Choose a grouping field.
 
-    **Note:** The list of available fields only includes fields that you have added to the field set. If you want to choose a different field that is not listed, you must first add it to the field set. For more information on adding fields to an existing data view field set, see <xref:data-views-add-data-field-to-field-set>.
+    **Note:** The list of available fields only includes fields that you have added to the field set. If you want to choose a different field that is not listed, you must first add it to the field set. For more information on adding fields to an existing data view field set, see <xref:data-views-manage-data-fields>.
 
 1. (Optional) Repeat the steps above to add additional grouping fields.
 

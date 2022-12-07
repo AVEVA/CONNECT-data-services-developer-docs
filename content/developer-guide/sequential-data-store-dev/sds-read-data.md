@@ -16,7 +16,8 @@ While SDS is a robust data storage, it performs best if you follow certain guide
 
 ### Maximum limit for events in read data calls 
 
-Read data API is limited to retrieve less than 250,000 events per request.
+Read data API is limited to access fewer than 250,000 events per request.
+This limit includes events that are accessed but not returned, such as events that are being filtered out of the response.
 An error message is returned when the maximum limit is reached.  
 This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
  
@@ -132,15 +133,7 @@ The namespace identifier
 
 ### Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. 
-
-The default response format for SDS is JSON, which is used in all examples in this document. Default JSON responses do not include any values that are equal to the default value for their type.
-
-Verbose JSON responses include all values in the returned JSON payload, including defaults. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request. 
-
-Verbose has no impact on writes; writes return only error messages.
-
-To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [OCS API reference](xref:osisoftCloudServices).
 
 ## Indexes and reading data
 

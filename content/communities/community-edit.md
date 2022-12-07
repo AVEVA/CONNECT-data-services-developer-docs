@@ -24,7 +24,7 @@ To edit a community:
 
 1. (Optional) Edit the community **Alias**.
 
-	Use this field to provide an alias for the community. This alias replaces the community name in all places the name is referenced within OCS. The alias applies to your tenant only; other tenants in the community do not see it.
+	Use this field to provide an alias for the community. This alias replaces the community name in all places the name is referenced within AVEVA Data Hub. The alias applies to your tenant only; other tenants in the community do not see it.
 
 	**Note:** If you use an alias, the only location that you can see both the community name and the alias is the `Community Detail` page.
 

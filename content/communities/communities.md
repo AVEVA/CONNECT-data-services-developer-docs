@@ -72,11 +72,11 @@ Because tenants can share their data natively within AVEVA Data Hub, IT departme
 
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
-Communities can accommodate trusted business partners who are not sharing data or do not have a PI system or another historian system of their own. With communities, business partners can sign up for their own OCS tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.
+Communities can accommodate trusted business partners who are not sharing data or do not have a PI system or another historian system of their own. With communities, business partners can sign up for their own AVEVA Data Hub tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.
 
 ## Community data consumption methods
 
-You can consume data streams shared into a community the same ways that you consume your own native tenant data. Access community data using the following OCS features:
+You can consume data streams shared into a community the same ways that you consume your own native tenant data. Access community data using the following AVEVA Data Hub features:
 
 * **Trending:** View data streams shared into a community in a trend data session. For more information, see <xref:lpvisualizedata>.
 

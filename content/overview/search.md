@@ -2,9 +2,9 @@
 uid: Search
 ---
 
-# Search query options in OCS
+# Search query options in AVEVA Data Hub
 
-Many pages in OCS include a search capability, including:
+Many pages in AVEVA Data Hub include a search capability, including:
 
 - Sequential Data Store (streams, types, stream views)
 - Asset Explorer (assets, asset types)
@@ -30,7 +30,7 @@ You can use search operators to get more refined search results. Use the operato
 
 ## <a name="wildcard"></a>Wildcard (``*``) operator
 
-Searching for a value finds only exact, whole-word matches. As an example, searching for "temperature" will not match a field value of "temperatures". You can use the wildcard operator (``*``) to match a partial search term. The wildcard can be used in the front (``*``perature), middle (tem``*``rature), or at the end (temp``*``) of each search term. It can only be used once for each search term, except to enclose a term (``*``perat``*``). OCS does not support wildcard operators in the middle and at the front or end of a term (te``*``pera``*`` is invalid).
+Searching for a value finds only exact, whole-word matches. As an example, searching for "temperature" will not match a field value of "temperatures". You can use the wildcard operator (``*``) to match a partial search term. The wildcard can be used in the front (``*``perature), middle (tem``*``rature), or at the end (temp``*``) of each search term. It can only be used once for each search term, except to enclose a term (``*``perat``*``). AVEVA Data Hub does not support wildcard operators in the middle and at the front or end of a term (te``*``pera``*`` is invalid).
 
 | **Query string** | **Matches field value** | **Does not match field value** |
 | ---------------- | ----------------------- | ------------------------------ |

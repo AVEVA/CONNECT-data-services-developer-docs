@@ -6,10 +6,10 @@ uid: cross-region-data-sharing
 
 By default, AVEVA Data Hub processes operational data from your tenant's namespaces and communities in geographical regions other than the originally chosen geographical region. AVEVA Data Hub shares this data for the following purposes:
 
-- Performance optimization 
+- Performance optimization
 - Enabling users to search and access data that may be stored across regions
 
-For example, if you have a namespace in OCS that stores operational data in the `US-West` region, OCS may process that data in the `EU-West` region.
+For example, if you have a namespace in AVEVA Data Hub that stores operational data in the `US-West` region, AVEVA Data Hub may process that data in the `EU-West` region.
 
 ## Cross region data sharing scenarios
 
@@ -25,7 +25,7 @@ Each namespace in AVEVA Data Hub is bound to a geographical region. Operational 
 
 However, AVEVA Data Hub may process a namespace's operational data in a different region (in other words, _cross-region_). For example, if you create a namespace in the `US-West` region, AVEVA Data Hub may process its operational data cross-region in `EU-West`.
 
-Processing operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region may reside in the cross-region processing service memory up to several hours. 
+Processing operational data usually involves reshaping it. In these instances where operational data is processed cross-region, data from your region may reside in the cross-region processing service memory up to several hours.
 
 ### Data augmentation
 
@@ -43,7 +43,7 @@ Optionally, you can opt out of sharing operational data from namespaces and comm
 
 When you disable cross-region data sharing, any queries for namespace data are routed to the appropriate region for complete results to be returned. Repeat these steps for each namespace that you want to disable cross-region data sharing.
 
-1. From the **Namespace** drop-down, select a namespace for which you want to opt out of cross-region data sharing. 
+1. From the **Namespace** drop-down, select a namespace for which you want to opt out of cross-region data sharing.
 
 1. From the **Namespace** drop-down, select the **Cog** ![Cog](./_icons/default/cog.svg).
 

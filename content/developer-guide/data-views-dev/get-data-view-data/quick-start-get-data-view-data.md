@@ -115,7 +115,7 @@ The view data is available in several formats. A format can be specified using t
 
 #### Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [OCS API reference](xref:osisoftCloudServices).
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [AVEVA Data Hub API reference](xref:osisoftCloudServices).
 
 ### Paging
 

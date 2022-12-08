@@ -22,9 +22,9 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Owning tenant identifier<br/><br/>
+<br/>Tenant unique identifier.<br/><br/>
 `[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>(not supported) Search string identifier.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
@@ -189,19 +189,22 @@ Gets a community and related information by Id.
 
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
+?resolveCompanyName={resolveCompanyName}
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>Community id<br/><br/>
+<br/>Tenant unique identifier.<br/><br/>`string communityId`
+<br/>Community unique identifier.<br/><br/>
+`[optional] boolean resolveCompanyName`
+<br/>Parameter to resolve company name for community tenants. Default is to include.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Community](#schemacommunity)|Returns the current communities for the tenant. This is a set of objects of type `Community`.|
+|200|[Community](#schemacommunity)|Returns a specified community for the tenant. This is an object of type `Community`.|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
 |401|None|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|

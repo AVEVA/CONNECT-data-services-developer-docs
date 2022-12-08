@@ -52,8 +52,8 @@ GET /api/v1/Tenants/{tenantId}/Users
     "GivenName": "string",
     "Surname": "string",
     "Name": "string",
-    "Email": "string",
-    "ContactEmail": "string",
+    "Email": "user@example.com",
+    "ContactEmail": "user@example.com",
     "ContactGivenName": "string",
     "ContactSurname": "string",
     "ExternalUserId": "string",
@@ -113,9 +113,9 @@ Allowed for these roles:
 
 ---
 
-## `Create User (v1 path)`
+## `Create User`
 
-<a id="opIdUsers_Create User (v1 path)"></a>
+<a id="opIdUsers_Create User"></a>
 
 Creates a user in the tenant. This method does not create an invitation for the user. You will need to create an invitation with the respective method for this user, otherwise they will not be able to finish the sign-up process. Users have identifiers in a tenant. Currently there is a limit of 50000 users per tenant.
 
@@ -171,8 +171,8 @@ UserCreateOrUpdate object<br/>
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
+  "Email": "user@example.com",
+  "ContactEmail": "user@example.com",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",
@@ -240,8 +240,8 @@ GET /api/v1/Tenants/{tenantId}/Users/Status
       "GivenName": "string",
       "Surname": "string",
       "Name": "string",
-      "Email": "string",
-      "ContactEmail": "string",
+      "Email": "user@example.com",
+      "ContactEmail": "user@example.com",
       "ContactGivenName": "string",
       "ContactSurname": "string",
       "ExternalUserId": "string",
@@ -301,8 +301,8 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
+  "Email": "user@example.com",
+  "ContactEmail": "user@example.com",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",
@@ -420,8 +420,8 @@ UserCreateOrUpdate object. Properties that are not set or are null will not be c
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
+  "Email": "user@example.com",
+  "ContactEmail": "user@example.com",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",
@@ -523,8 +523,8 @@ GET /api/v1/Tenants/{tenantId}/Users/{userId}/Status
     "GivenName": "string",
     "Surname": "string",
     "Name": "string",
-    "Email": "string",
-    "ContactEmail": "string",
+    "Email": "user@example.com",
+    "ContactEmail": "user@example.com",
     "ContactGivenName": "string",
     "ContactSurname": "string",
     "ExternalUserId": "string",
@@ -660,300 +660,6 @@ Allowed for these roles:
 </ul>
 
 ---
-
-## `List Users By Ids`
-
-<a id="opIdUsers_List Users By Ids"></a>
-
-Returns an ordered list of user objects based on the user Id for a given tenant or a MultiStatusResponse with a list of user objects and a list of errors.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Users/Ids
-?userId={userId}&query={query}&skip={skip}&count={count}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>
-`[optional] array userId`
-<br/>Unordered list of identifiers of all users to return<br/><br/>`[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[User](#schemauser)[]|List of users found|
-|207|[UserMultiStatusResponse](#schemausermultistatusresponse)|List of users found|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([User](#schemauser)[])
-
-```json
-[
-  {
-    "Id": "string",
-    "GivenName": "string",
-    "Surname": "string",
-    "Name": "string",
-    "Email": "string",
-    "ContactEmail": "string",
-    "ContactGivenName": "string",
-    "ContactSurname": "string",
-    "ExternalUserId": "string",
-    "IdentityProviderId": "string",
-    "RoleIds": [
-      "string"
-    ]
-  }
-]
-```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Administrator</li>
-</ul>
-
----
-
-## `List Users' Status by Ids`
-
-<a id="opIdUsers_List Users' Status by Ids"></a>
-
-Returns an ordered list of UserStatus objects for a given tenant or a MultiStatusResponse with a list of UserStatus objects and a list of errors.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/Tenants/{tenantId}/Users/Status/Ids
-?userId={userId}&query={query}&skip={skip}&count={count}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>
-`[optional] array userId`
-<br/>Unordered list of identifiers for all users<br/><br/>`[optional] string query`
-<br/>(Not supported) Search string identifier.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[UserStatus](#schemauserstatus)[]|List of user statuses found|
-|207|[UserStatusMultiStatusResponse](#schemauserstatusmultistatusresponse)|List of user statuses found|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([UserStatus](#schemauserstatus)[])
-
-```json
-[
-  {
-    "InvitationStatus": 0,
-    "User": {
-      "Id": "string",
-      "GivenName": "string",
-      "Surname": "string",
-      "Name": "string",
-      "Email": "string",
-      "ContactEmail": "string",
-      "ContactGivenName": "string",
-      "ContactSurname": "string",
-      "ExternalUserId": "string",
-      "IdentityProviderId": "string",
-      "RoleIds": [
-        "string"
-      ]
-    }
-  }
-]
-```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Administrator</li>
-</ul>
-
----
-
-## `Create User (v1-preview path)`
-
-<a id="opIdUsers_Create User (v1-preview path)"></a>
-
-Creates a user.
-
-<h3>Request</h3>
-
-```text 
-POST /api/v1-preview/Tenants/{tenantId}/Users
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>
-
-<h4>Request Body</h4>
-
-User values to use during creating<br/>
-
-```json
-{
-  "UserId": "string",
-  "ContactGivenName": "string",
-  "ContactSurname": "string",
-  "ContactEmail": "user@example.com",
-  "RoleIds": [
-    "string"
-  ],
-  "IdentityProviderId": "string"
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|201|[User](#schemauser)|User created|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid input, or user limit exceeded|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 201 Response ([User](#schemauser))
-
-```json
-{
-  "Id": "string",
-  "GivenName": "string",
-  "Surname": "string",
-  "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
-  "ContactGivenName": "string",
-  "ContactSurname": "string",
-  "ExternalUserId": "string",
-  "IdentityProviderId": "string",
-  "RoleIds": [
-    "string"
-  ]
-}
-```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Administrator</li>
-</ul>
-
----
-
-## `Update User`
-
-<a id="opIdUsers_Update User"></a>
-
-Creates or updates a user.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Users/{userId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string userId`
-<br/>User identifier.<br/><br/>
-
-<h4>Request Body</h4>
-
-A UserStatus object<br/>
-
-```json
-{
-  "UserId": "string",
-  "ContactGivenName": "string",
-  "ContactSurname": "string",
-  "ContactEmail": "user@example.com",
-  "RoleIds": [
-    "string"
-  ],
-  "IdentityProviderId": "string"
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[User](#schemauser)|Updated user|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|User or tenant not found|
-|408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([User](#schemauser))
-
-```json
-{
-  "Id": "string",
-  "GivenName": "string",
-  "Surname": "string",
-  "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
-  "ContactGivenName": "string",
-  "ContactSurname": "string",
-  "ExternalUserId": "string",
-  "IdentityProviderId": "string",
-  "RoleIds": [
-    "string"
-  ]
-}
-```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Administrator</li>
-</ul>
-
----
 ## Definitions
 
 ### User
@@ -973,8 +679,8 @@ Object for retrieving a user
 |GivenName|string|false|true|Given name of the user|
 |Surname|string|false|true|Surname of the user|
 |Name|string|false|true|Name of the user|
-|Email|string|false|true|Email of the user|
-|ContactEmail|string|false|true|Contact email for the user. User will only be contacted through this email.|
+|Email|email|false|true|Email of the user|
+|ContactEmail|email|false|true|Contact email for the user. User will only be contacted through this email.|
 |ContactGivenName|string|false|true|Preferred given name for the user|
 |ContactSurname|string|false|true|Preferred contact surname for the user|
 |ExternalUserId|string|false|true|Provider identifier for the user. This is the identifier we get from the identity provider.|
@@ -987,8 +693,8 @@ Object for retrieving a user
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
+  "Email": "user@example.com",
+  "ContactEmail": "user@example.com",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",
@@ -1047,8 +753,8 @@ MultiStatusResponse objects returned in a 207 response
       "GivenName": "string",
       "Surname": "string",
       "Name": "string",
-      "Email": "string",
-      "ContactEmail": "string",
+      "Email": "user@example.com",
+      "ContactEmail": "user@example.com",
       "ContactGivenName": "string",
       "ContactSurname": "string",
       "ExternalUserId": "string",
@@ -1163,8 +869,8 @@ Object used when returning user status
     "GivenName": "string",
     "Surname": "string",
     "Name": "string",
-    "Email": "string",
-    "ContactEmail": "string",
+    "Email": "user@example.com",
+    "ContactEmail": "user@example.com",
     "ContactGivenName": "string",
     "ContactSurname": "string",
     "ExternalUserId": "string",
@@ -1234,107 +940,6 @@ Object when updating a user
   "RoleIds": [
     "string"
   ]
-}
-
-```
-
----
-
-### UserStatusMultiStatusResponse
-
-<a id="schemauserstatusmultistatusresponse"></a>
-<a id="schema_UserStatusMultiStatusResponse"></a>
-<a id="tocSuserstatusmultistatusresponse"></a>
-<a id="tocsuserstatusmultistatusresponse"></a>
-
-MultiStatusResponse objects returned in a 207 response
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|Identifier of the operation that resulted in this error|
-|Error|string|false|true|Message describing the error|
-|Reason|string|false|true|Reason that caused the error|
-|EventId|string|false|true|Even identifier of the error|
-|ChildErrors|[[MultiStatusResponseChildError](#schemamultistatusresponsechilderror)]|false|true|List of child errors|
-|Data|[[UserStatus](#schemauserstatus)]|false|true|Data representing user statuses|
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "EventId": "string",
-  "ChildErrors": [
-    {
-      "OperationId": "string",
-      "Error": "string",
-      "Reason": "string",
-      "Resolution": "string",
-      "EventId": "string",
-      "StatusCode": 0,
-      "ModelId": "string",
-      "property1": null,
-      "property2": null
-    }
-  ],
-  "Data": [
-    {
-      "InvitationStatus": 0,
-      "User": {
-        "Id": "string",
-        "GivenName": "string",
-        "Surname": "string",
-        "Name": "string",
-        "Email": "string",
-        "ContactEmail": "string",
-        "ContactGivenName": "string",
-        "ContactSurname": "string",
-        "ExternalUserId": "string",
-        "IdentityProviderId": "string",
-        "RoleIds": [
-          "string"
-        ]
-      }
-    }
-  ]
-}
-
-```
-
----
-
-### UserCreateOrUpdate2
-
-<a id="schemausercreateorupdate2"></a>
-<a id="schema_UserCreateOrUpdate2"></a>
-<a id="tocSusercreateorupdate2"></a>
-<a id="tocsusercreateorupdate2"></a>
-
-Object when updating an user
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|UserId|guid|false|true|User identifier for the user. When creating a user, if user identifier is not specified, one will be generated.|
-|ContactGivenName|string|false|true|Preferred name to be used when contacting user|
-|ContactSurname|string|false|true|Preferred surname to be used when contacting user|
-|ContactEmail|email|false|true|Preferred email to be used when contacting user|
-|RoleIds|string[]|false|true|List of role identifiers|
-|IdentityProviderId|guid|false|true|Identity Provider this user will be required to use to log in. This value cannot be null when creating a new user. When updating, this value must match what is currently assigned to user. This cannot be updated via update user.|
-
-```json
-{
-  "UserId": "string",
-  "ContactGivenName": "string",
-  "ContactSurname": "string",
-  "ContactEmail": "user@example.com",
-  "RoleIds": [
-    "string"
-  ],
-  "IdentityProviderId": "string"
 }
 
 ```

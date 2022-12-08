@@ -33,10 +33,9 @@
     - topicUid: ResourceUsage
     - topicUid: home-health
     - topicUid: Search
-- topicUid: gs-overview
-  name: Get started with AVEVA Data Hub
+- topicUid: gsConnections
   items:
-  - topicUid: gsConnections
+  - topicUid: gs-overview
     items:
     - topicUid: gsPItoOCS
     - topicUid: gsOMF

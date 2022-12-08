@@ -34,7 +34,7 @@ To allow different tenants and users participating in a community to safely and 
 
 - **Tenant Data Stewards**
 
-	Users that have permissions to share a data stream into a community are known as _Tenant Data Stewards_. Share permissions are required to share a stream into a community. Additionally, the user must be a **Community Member**. OSIsoft recommends that you assign share permissions to the **Tenant Data Steward** role, but you can use any role that you want. 
+	Users that have permissions to share a data stream into a community are known as _Tenant Data Stewards_. Share permissions are required to share a stream into a community. Additionally, the user must be a **Community Member**. AVEVA recommends that you assign share permissions to the **Tenant Data Steward** role, but you can use any role that you want. 
 
 - **Community Member**
 

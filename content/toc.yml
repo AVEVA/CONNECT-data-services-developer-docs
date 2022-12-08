@@ -34,6 +34,7 @@
     - topicUid: home-health
     - topicUid: Search
 - topicUid: gs-overview
+  name: Get started with AVEVA Data Hub
   items:
   - topicUid: gsConnections
     items:

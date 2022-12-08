@@ -33,9 +33,9 @@
     - topicUid: ResourceUsage
     - topicUid: home-health
     - topicUid: Search
-- topicUid: gsConnections
+- topicUid: gs-overview
   items:
-  - topicUid: gs-overview
+  - topicUid: gsConnections
     items:
     - topicUid: gsPItoOCS
     - topicUid: gsOMF

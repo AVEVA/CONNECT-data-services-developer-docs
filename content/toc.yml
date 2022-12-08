@@ -33,7 +33,7 @@
   - topicUid: ResourceUsage
   - topicUid: home-health
   - topicUid: Search
-- topicUid: gsGetStartedOCS
+- topicUid: gs-overview
   items:
   - topicUid: gsConnections
     items:

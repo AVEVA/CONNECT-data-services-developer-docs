@@ -6,15 +6,15 @@ uid: install-agent
 
 When you install the PI to Data Hub Agent, make sure to follow these guidelines:
 
-* Install the agent on a host computer separate from your PI Server deployment.
+- Install the agent on a host computer separate from your PI Server deployment.
 
-* Use a domain account that has been granted Administrator privileges on a computer registered to the same domain.
+- Use a domain account that has been granted Administrator privileges on a computer registered to the same domain.
 
-* Enable read access to Data Archive security tables and the PI points and data to be transferred.
+- Enable read access to Data Archive security tables and the PI points and data to be transferred.
 
-* Enable read access to the AF server elements and attributes to be transferred.
+- Enable read access to the AF server elements and attributes to be transferred.
 
-* Use an account that is assigned to the `Tenant Administrator` role for the PI to Data Hub Agent installation.
+- Use an account that is assigned to the `Tenant Administrator` role for the PI to Data Hub Agent installation.
 
 You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on the portal and then transfer it to the computer that will host the agent.
 
@@ -24,21 +24,21 @@ You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on
 
 **Important:** The PI to Data Hub Agent requires the Windows service account to `Run as user`. Enable read access to the following PI Server data:
 
-* Archive data (PIARCDATA Security table)
+- Archive data (PIARCDATA Security table)
 
-* The PI points configuration table (PIPOINT Security table)
+- The PI points configuration table (PIPOINT Security table)
 
-* The PI points and data to be transferred
+- The PI points and data to be transferred
 
-* The AF server elements and attributes to be transferred 
+- The AF server elements and attributes to be transferred 
 
 ## Installation process
 
 Complete the following procedures to install the PI to Data Hub Agent:
 
-* [Install the PI to Data Hub Agent](#install-the-pi-to-data-hub-agent)
+- [Install the PI to Data Hub Agent](#install-the-pi-to-data-hub-agent)
 
-* [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-data-hub-agent-is-running-and-registered)
+- [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-data-hub-agent-is-running-and-registered)
 
 ## Install the PI to Data Hub Agent
 
@@ -62,27 +62,27 @@ To install the PI to Data Hub Agent:
 
 1. On the `Namespace` page, complete the following fields, then select **Next**:
 
-    * **Namespace** - Select the namespace and location where the transferred data will be stored. The location is a region that appears in parenthesis after the namespace indicates where the namespace resides. Streaming data sent by the PI to Data Hub Agent only goes to the selected namespace's region.
+   - **Namespace** - Select the namespace and location where the transferred data will be stored. The location is a region that appears in parenthesis after the namespace indicates where the namespace resides. Streaming data sent by the PI to Data Hub Agent only goes to the selected namespace's region.
 
-    * **Agent Description** - Enter an optional name for the agent.
+   - **Agent Description** - Enter an optional name for the agent.
 
-    The `Service Account` page opens.
+   The `Service Account` page opens.
 
 1. On the `Service Account` page, select the service account type for the connection:
 
-    * **NT Service** - Enter an NT account to connect to PI Data Archive.
+   - **NT Service** - Enter an NT account to connect to PI Data Archive.
 
-    * **This account** - Specify a user name and password (domain\account) to connect to PI Data Archive.
+   - **This account** - Specify a user name and password (domain\account) to connect to PI Data Archive.
 
-    **Note:** The service account used to run the PI to Data Hub Service requires Administrator privileges. Read access to the PIARCDATA Security and PIPOINT Security tables, the PI points and data to be transferred, and the AF server, elements, and attribute data is required.
+   **Note:** The service account used to run the PI to Data Hub Service requires Administrator privileges. Read access to the PIARCDATA Security and PIPOINT Security tables, the PI points and data to be transferred, and the AF server, elements, and attribute data is required.
 
 1. Select **Install**.
 
 1. After the agent is installed, select **Close**.
 
-    The PI to Data Hub Configuration Utility opens. See [Run the PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
+   The PI to Data Hub Configuration Utility opens. See [Run the PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
 
-    **Note:** An agent cannot be registered until a PI Data Archive server has been added and configured in the PI to Data Hub Configuration Utility.
+   **Note:** An agent cannot be registered until a PI Data Archive server has been added and configured in the PI to Data Hub Configuration Utility.
 
 ## Verify the PI to Data Hub Agent is running and registered
 

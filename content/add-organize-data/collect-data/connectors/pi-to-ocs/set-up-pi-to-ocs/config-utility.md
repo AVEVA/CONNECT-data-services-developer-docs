@@ -8,7 +8,7 @@ Use the PI to Data Hub Agent Configuration Utility to set up and configure AF se
 
 The following table provides descriptions of the fields shown in the configuration utility. The image shows the AF server selected, but the fields are similar when a Data Archive server is selected.
 
-   ![AF server details](../../images/af-details-refreshed.png)
+![AF server details](../../images/af-details-refreshed.png)
 
 | Field | Description                                                     |
 | ----- | --------------------------------------------------------------- |
@@ -43,9 +43,9 @@ To open the PI to Data Hub Agent Configuration Utility:
 
 Add an AF server to the utility to be able to use it in data transfers. The utility validates an AF server connection to ensure the following criteria is met:
 
-* The AF server is not currently registered to any other agents under the same namespace as the current agent.
+- The AF server is not currently registered to any other agents under the same namespace as the current agent.
 
-* The version of PI Asset Framework (AF) installed on the AF server supports the features required for transfers.
+- The version of PI Asset Framework (AF) installed on the AF server supports the features required for transfers.
 
 To add an AF server:
 
@@ -65,9 +65,9 @@ To add an AF server:
 
 1. Review the AF source server details to ensure they are correct:
 
-   * AF server name, version, and ID
-   * IP address
-   * Connection status and timeout
+   - AF server name, version, and ID
+   - IP address
+   - Connection status and timeout
 
 1. (Optional) To add an alternate name that appears in the path of the asset's metadata and in the portal if you opted to display it, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. See [Usage of server names and alternate display names within Data Hub](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
 
@@ -88,6 +88,9 @@ The AF server name, or its alternate display name, displays on the PI to Data Hu
 The Data Archive name, or its alternate display name, appears in the `PI to Data Hub Agents` page within AVEVA Data Hub, and is used in the StreamIds created by a transfer. StreamIds have the format `PI_[DataArchiveServerName]_[PIPointIDNumber]`.
 
 **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.
+
+The maximum character length for an AF server alternate display name is 63 and the maximum character length for the Data Archive alternate display name is 86. The difference is due to added information. Both fields start with a maximum of 100 characters. The agent adds an underscore and a 36-character GUID to an AF server alternate display name, resulting in 63 characters remaining (100-37). The agent prepends the Data Archive alternate display name with `PI_` and appends `_[PIPointIDNumber]` (maximum of 10 characters), resulting in 86 characters remaining (100-14).
+
 
 ## Select the default Data Archive in PI System Explorer
 
@@ -149,9 +152,9 @@ To add a Data Archive:
 
 1. Review the following details for the Data Archive:
  
-   * Server name, version, and server ID
-   * IP address
-   * Connection status and timeout
+   - Server name, version, and server ID
+   - IP address
+   - Connection status and timeout
    
 1. (Optional) To add an alternate name, select the **Alternate Display Name** pencil icon, type an alternate name, select **Set Display Name** and then select **Close**.
 
@@ -181,7 +184,7 @@ To create a PI mapping:
  
    The `Configure Mapping` window opens.<!--AF 11/12/21 Why does PI Mapping have a screenshot, but AF mapping doesn't? Do we really need it?-->
 
-    ![Configure Mapping dialog box](../../images/configure-mapping-window.png)
+   ![Configure Mapping dialog box](../../images/configure-mapping-window.png)
 
 1. Select an identity for the PI mapping, then select **Create**.
 

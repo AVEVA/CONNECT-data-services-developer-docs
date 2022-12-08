@@ -32,7 +32,7 @@ These are the basics to get new Excel and AVEVA Data Hub users up and running qu
 
 ## Step 1 – Create a client
 
-Clients allow applications to authenticate against AVEVA Data Hub from outside the AVEVA Data Hub portal. The first thing that you must do is create a client to connect to AVEVA Data Hub.
+Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The first thing that you must do is create a client to connect to AVEVA Data Hub.
 
 Create a client with any name and accept the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed. See <xref:gpClientCredentialsClient> for the steps. 
 

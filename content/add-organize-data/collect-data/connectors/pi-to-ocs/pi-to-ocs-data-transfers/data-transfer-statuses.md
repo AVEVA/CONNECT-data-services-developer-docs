@@ -17,6 +17,6 @@ The status and progress of a data transfer is shown in the `Transfer Overview` s
 | Streaming Error Signup Dropped | Agent not receiving streaming data from PI Data Archive.|
 | Streaming Error Producer Removed | Agent not receiving streaming data from PI Data Archive.|
 | Streaming Error Unknown | An unknown error occurred during data streaming.|
-| PI Point Type Change Detected | PI point type change was detected during data transfer. See [Point type change](xref:pi-point-change) for more information.|
+| PI Point Type Change Detected | PI point type change was detected during data transfer. See [Point type change](xref:PItoDHSync#pi-point-type-change) for more information.|
 | Creating Streams | Streams are in the process of being created.|
 | Done | Data transfer is complete. Streams have been created.|

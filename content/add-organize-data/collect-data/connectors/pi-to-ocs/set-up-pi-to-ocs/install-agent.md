@@ -32,14 +32,6 @@ You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on
 
 - The AF server elements and attributes to be transferred 
 
-## Installation process
-
-Complete the following procedures to install the PI to Data Hub Agent:
-
-- [Install the PI to Data Hub Agent](#install-the-pi-to-data-hub-agent)
-
-- [Verify the PI to Data Hub Agent is running and registered](#verify-the-pi-to-data-hub-agent-is-running-and-registered)
-
 ## Install the PI to Data Hub Agent
 
 To install the PI to Data Hub Agent:

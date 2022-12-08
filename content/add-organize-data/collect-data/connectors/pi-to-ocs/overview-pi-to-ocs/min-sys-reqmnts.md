@@ -4,15 +4,6 @@ uid: min-sys-reqmnts
 
 # PI to Data Hub minimum system requirements
 
-These are the requirements to transfer data from an on-prem PI Server to AVEVA Data Hub:
-
-  - [System requirements](#system-requirements)
-  - [Administrator privileges](#administrator-privileges)
-  - [Ensure write access to stream and asset collections](#ensure-write-access-to-stream-and-asset-collections)
-  - [Configure access to PI Data Archive Security tables and PI point data](#configure-access-to-pi-data-archive-security-tables-and-pi-point-data)
-
-## System requirements
-
 The following table lists the system requirements of PI to Data Hub.
 
 | System component | Requirement |
@@ -42,7 +33,7 @@ To remove items from a transfer and also the corresponding streams and/or assets
 
 ## Configure access to PI Data Archive Security tables and PI point data
 
-The PI to Data Hub Agent requires the Windows service to "run as user". You must have read access to the following PI Data Archive data:
+The PI to Data Hub Agent requires the Windows service to "run as user." You must have read access to the following PI Data Archive data:
 
 * Archive data (the PIARCDATA Security table)
 * The PI points configuration table (PIPOINT Security table)

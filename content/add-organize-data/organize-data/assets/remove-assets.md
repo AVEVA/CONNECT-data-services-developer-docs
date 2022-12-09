@@ -2,6 +2,8 @@
 uid: RemoveAssets
 ---
 
+# Remove assets
+
 Follow this procedure to remove assets from OCS. 
 
 To remove a single asset:

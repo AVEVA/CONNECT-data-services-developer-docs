@@ -2,6 +2,8 @@
 uid: RemoveAssetTypes
 ---
 
+# Remove asset types
+
 Follow this procedure to remove asset types from OCS. 
 
 To remove a single asset type:

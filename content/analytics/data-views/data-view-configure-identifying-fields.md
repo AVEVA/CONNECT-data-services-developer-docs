@@ -29,6 +29,7 @@ Identifying fields are most useful for stream queries in a data view where the s
 
 ![Without identifying field](../data-views/_images/identifying-field-with-field.png)
 
+For asset queries, this canonical meaning is provided by the asset property name so an identifying field is usually not necessary.
 ## To add an identifying field
 
 To add an identifying field to the field set for a query, select an eligible field from the **Identifying field** dropdown.

@@ -18,7 +18,7 @@ To remove a single asset type:
 
 1. At the prompt, select **Remove**. 
 
-To remove a multiple asset types:
+To remove multiple asset types:
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 

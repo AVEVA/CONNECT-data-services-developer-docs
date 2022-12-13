@@ -29,7 +29,7 @@ Only certain fields are eligible to be used as grouping fields. Fields are only 
 
 ## Grouping field example
 
-Grouping fields can be used to group metadata and data fields in a Data View by Asset Name so that each row in the Data View contains only the data and metadata for a single asset.
+Use grouping fields to group metadata and data fields in a data view by asset name so that each row contains only the data and metadata for a single asset.
 
 **Without grouping**
 

@@ -10,11 +10,11 @@ To remove a single asset type:
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Assets/Asset** Types dropdown list, select **Asset Types**.
+1. From the **Assets/Asset Types** selector, select **Asset Types**.
 
 1. Select the checkbox for the Asset Type you want to remove.
 
-1. Select **More Options**, then select **Remove**.
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) in the `Asset Types Details` pane, then select **Remove**.
 
 1. At the prompt, select **Remove**. 
 
@@ -22,7 +22,7 @@ To remove multiple asset types:
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Assets/Asset** Types dropdown list, select **Asset Types**.
+1. From the **Assets/Asset Types** selector, select **Asset Types**.
 
 1. Select the checkboxes for the Asset Types you want to remove.
 

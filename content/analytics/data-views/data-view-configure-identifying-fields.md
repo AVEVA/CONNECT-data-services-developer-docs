@@ -17,6 +17,18 @@ Fields are only eligible if they include one of the following source types liste
 | Metadata | ![check](../../_icons/default/check.svg) | ![check](../../_icons/default/check.svg) |
 | Tags | ![check](../../_icons/default/check.svg) | ![check](../../_icons/default/check.svg) |
 
+## Identifying field example
+
+Identifying fields are most useful for stream queries in a data view where the stream property does not provide a useful name. For example, many streams created have a property called "value". You can use this property as an identifying field to provide canonical meaning to the field. In the example below, the data view includes streams for measurements on the inlet pumps for three production lines. Additional metadata is added to each stream using stream metadata rules to describe the measurement captured in each stream. The metadata is then used as an identifying field in the data view.
+
+**Without identifying field**
+
+![Without identifying field](../data-views/_images/identifying-field-no-field.png)
+
+**With identifying field**
+
+![Without identifying field](../data-views/_images/identifying-field-with-field.png)
+
 ## To add an identifying field
 
 To add an identifying field to the field set for a query, select an eligible field from the **Identifying field** dropdown.

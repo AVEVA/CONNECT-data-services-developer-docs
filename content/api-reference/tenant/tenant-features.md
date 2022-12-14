@@ -4,7 +4,7 @@ uid: tenant-features
 ---
 
 # Features
-APIs for managing the feature states of an OCS Tenant.
+APIs for managing the feature states of a Tenant.
 
 ## `List All`
 
@@ -21,28 +21,35 @@ GET /api/v1/Tenants/{tenantId}/Features
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>
+<br/>The identifier of the `Tenant`.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)[]|An array of all `Feature`s for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.|
 |403|None|Forbidden.|
+|404|None|Could not retrieve the specified `FeatureState`s due to missing or invalid data.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([FeatureState](#schemafeaturestate)[])
+> 200 Response
 
 ```json
 [
   {
     "Feature": {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "DefaultState": 0
+      "Id": "95c2b5fe-355d-4b33-a748-b738707e0648",
+      "Name": "Feature1",
+      "Description": "Feature Description"
+    },
+    "CurrentState": 1
+  },
+  {
+    "Feature": {
+      "Id": "95c2b5fe-355d-4b33-a748-b738707e0648",
+      "Name": "Feature2",
+      "Description": "Feature Description"
     },
     "CurrentState": 0
   }
@@ -73,30 +80,28 @@ GET /api/v1/Tenants/{tenantId}/Features/{id}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string id`
-<br/>Feature state identifier.<br/><br/>
+<br/>The identifier of the `Tenant`.<br/><br/>`string id`
+<br/>The identifier of the `FeatureState`.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)|The state of the `Feature` for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.|
-|403|None|Forbidden.|
+|404|None|Could not retrieve the specified `FeatureState` due to missing or invalid input.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([FeatureState](#schemafeaturestate))
+> 200 Response
 
 ```json
 {
   "Feature": {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "DefaultState": 0
+    "Id": "95c2b5fe-355d-4b33-a748-b738707e0648",
+    "Name": "Feature1",
+    "Description": "Feature Description"
   },
-  "CurrentState": 0
+  "CurrentState": 1
 }
 ```
 
@@ -123,8 +128,8 @@ Representation of a server-side database interpretation of a feature state.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Feature|[Feature](#schemafeature)|false|true|The feature to which the feature state corresponds.|
-|CurrentState|int32|false|false|Current state of the feature.|
+|Feature|[Feature](#schemafeature)|false|true|Gets or sets the feature.|
+|CurrentState|int32|false|false|Gets or sets the current state of the feature.|
 
 ```json
 {
@@ -154,10 +159,10 @@ Representation of a server-side database interpretation of a feature.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Identifier of this feature.|
-|Name|string|false|true|Name of the feature.|
-|Description|string|false|true|Description of the feature.|
-|DefaultState|int32|false|false|Default state of the feature.|
+|Id|string|false|true|Gets or sets the identifier.|
+|Name|string|false|true|Gets or sets the name.|
+|Description|string|false|true|Gets or sets the description.|
+|DefaultState|int32|false|false|Gets or sets the default state.|
 
 ```json
 {

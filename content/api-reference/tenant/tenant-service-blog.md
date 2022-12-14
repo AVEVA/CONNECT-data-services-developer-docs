@@ -12,28 +12,26 @@ APIs for reading entries posted on the service blog.
 
 Returns blog entries ordered by time posted.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/ServiceBlog/Entries
 ?skip={skip}&count={count}&includeDeleted={includeDeleted}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `[optional] integer skip`
 <br/>Number of blogs to skip for paging purposes.<br/><br/>`[optional] integer count`
 <br/>Number of blogs to count after skip for paging purposes.<br/><br/>`[optional] boolean includeDeleted`
 <br/>Whether deleted entries are included in return.<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ServiceBlogEntry](#schemaserviceblogentry)[]|An array of `ServiceBlogEntry` objects.|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response ([ServiceBlogEntry](#schemaserviceblogentry)[])
 
 ```json
@@ -57,25 +55,23 @@ GET /api/v1/ServiceBlog/Entries
 
 Returns a blog entry specified by identifier.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/ServiceBlog/Entries/{id}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string id`
-<br/>Service blog identifier.<br/><br/>
+<br/>Service blog identifier.<br/><br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[ServiceBlogEntry](#schemaserviceblogentry)|The `ServiceBlogEntry` with Id `id`.|
 
-<h4>Example response body</h4>
-
+#### Example response body
 > 200 Response ([ServiceBlogEntry](#schemaserviceblogentry))
 
 ```json
@@ -101,7 +97,7 @@ GET /api/v1/ServiceBlog/Entries/{id}
 
 Representation of a server-side database interpretation of a blog.
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

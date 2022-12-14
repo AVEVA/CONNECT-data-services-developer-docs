@@ -6,73 +6,19 @@ uid: operations-usage
 # Usage
 APIs related to querying usage data
 
-## `List Tenant Usage`
-
-<a id="opIdQuery_List Tenant Usage"></a>
-
-Returns tenant usage data, based on active/completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/tenants/{tenantId}/usage
-?start={start}&end={end}&groupByNamespace={groupByNamespace}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier<br/><br/>
-`[optional] string start`
-<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
-<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] boolean groupByNamespace`
-<br/>Selection to order usage data by namespace<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
-|401|None|Unauthorized|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
-<h4>Example response body</h4>
-
-> 200 Response ([UsageDataRecord](#schemausagedatarecord)[])
-
-```json
-[
-  {
-    "Date": "2019-08-24T14:15:22Z",
-    "TenantId": "string",
-    "NamespaceId": "string",
-    "ClusterRegion": "string",
-    "IngressEvents": 0,
-    "IngressStreamsAccessed": 0,
-    "EgressEvents": 0,
-    "EgressStreamsAccessed": 0
-  }
-]
-```
-
----
-
 ## `List Namespace Usage`
 
 <a id="opIdQuery_List Namespace Usage"></a>
 
 Returns namespace usage data, based on active and completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 ?start={start}&end={end}
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>`string namespaceId`
@@ -81,7 +27,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 <br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
 <br/>End date of the range for daily usage data<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -91,9 +37,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-<h4>Example response body</h4>
-
-> 200 Response ([UsageDataRecord](#schemausagedatarecord)[])
+#### Example response body
+> 200 Response
 
 ```json
 [
@@ -118,18 +63,17 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/usage
 
 Returns the current rather than the entitled resource usage.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/tenants/{tenantId}/resources/usage
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -139,9 +83,8 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-<h4>Example response body</h4>
-
-> 200 Response ([ResourceUsage](#schemaresourceusage))
+#### Example response body
+> 200 Response
 
 ```json
 {
@@ -161,18 +104,17 @@ GET /api/v1/tenants/{tenantId}/resources/usage
 
 Returns the billing cycles for an account inferred from the account subscription.
 
-<h3>Request</h3>
-
+### Request
 ```text 
 GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 ```
 
-<h4>Parameters</h4>
+#### Parameters
 
 `string tenantId`
 <br/>Tenant identifier<br/><br/>
 
-<h3>Response</h3>
+### Response
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -182,15 +124,65 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-<h4>Example response body</h4>
-
-> 200 Response ([BillingCycle](#schemabillingcycle)[])
+#### Example response body
+> 200 Response
 
 ```json
 [
   {
     "StartDate": "2019-08-24T14:15:22Z",
     "EndDate": "2019-08-24T14:15:22Z"
+  }
+]
+```
+
+---
+
+## `List Tenant Usage`
+
+<a id="opIdQuery_List Tenant Usage"></a>
+
+Returns tenant usage data, based on active/completed billing cycles, and whether start and end parameters are provided or omitted. When start is provided and end is omitted, a single day of usage data is returned. When both start and end are provided, daily usage data is returned for the range provided.
+
+### Request
+```text 
+GET /api/v1/tenants/{tenantId}/usage
+?start={start}&end={end}&groupByNamespace={groupByNamespace}
+```
+
+#### Parameters
+
+`string tenantId`
+<br/>Tenant identifier<br/><br/>
+`[optional] string start`
+<br/>Start date of the range for daily usage data<br/><br/>`[optional] string end`
+<br/>End date of the range for daily usage data; if no end date is provided, only one summary is returned.<br/><br/>`[optional] boolean groupByNamespace`
+<br/>Selection to order usage data by namespace<br/><br/>
+
+### Response
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[UsageDataRecord](#schemausagedatarecord)[]|Usage data for the requested tenant|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs|
+|401|None|Unauthorized|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
+
+#### Example response body
+> 200 Response
+
+```json
+[
+  {
+    "Date": "2019-08-24T14:15:22Z",
+    "TenantId": "string",
+    "NamespaceId": "string",
+    "ClusterRegion": "string",
+    "IngressEvents": 0,
+    "IngressStreamsAccessed": 0,
+    "EgressEvents": 0,
+    "EgressStreamsAccessed": 0
   }
 ]
 ```
@@ -205,9 +197,9 @@ GET /api/v1/tenants/{tenantId}/subscriptionterm/billingcycles
 <a id="tocSusagedatarecord"></a>
 <a id="tocsusagedatarecord"></a>
 
-Represents resource usage for a given namespace
+Usage within OCS
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -245,7 +237,7 @@ Represents resource usage for a given namespace
 
 Object used to represent error information.
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -275,7 +267,7 @@ Object used to represent error information.
 
 Resources currently allocated by an account and their entitled amounts
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
@@ -307,7 +299,7 @@ Resources currently allocated by an account and their entitled amounts
 
 Represents a completed billing cycle for an account.
 
-<h4>Properties</h4>
+#### Properties
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

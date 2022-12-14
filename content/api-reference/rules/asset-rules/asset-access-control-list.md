@@ -507,93 +507,6 @@ The new ACL for the rules collection.<br/>
 
 # Access Control List
 
-## `List Access Rights`
-
-<a id="opIdAssetRuleCollectionAccessRights_List Access Rights"></a>
-
-Returns a list of the `CommonAccessRights` the requesting `Identity` has on the assetrules collection.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/AssetRules
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|The `CommonAccessRights` the requesting `Identity` has on the assetrules collection.|
-|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-[
-  "Read",
-  "Write",
-  "Delete",
-  "ManageAccessControl"
-]
-```
-
-> 403 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 404 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-> 500 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
-# Access Control List
-
 ## `Get Owner`
 
 <a id="opIdAssetRuleOwner_Get Owner"></a>
@@ -747,6 +660,93 @@ The owner.<br/>
     "key2": "value2"
   }
 }
+```
+
+> 403 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+> 404 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+> 500 Response
+
+```json
+{
+  "OperationId": "00000000-0000-0000-0000-000000000000",
+  "Error": "Error message.",
+  "Reason": "Reason that caused the error.",
+  "Resolution": "Possible resolution for the error.",
+  "Parameters": {
+    "key1": "value1",
+    "key2": "value2"
+  }
+}
+```
+
+# Access Control List
+
+## `List Access Rights`
+
+<a id="opIdAssetRuleCollectionAccessRights_List Access Rights"></a>
+
+Returns a list of the `CommonAccessRights` the requesting `Identity` has on the assetrules collection.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/AssetRules
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|Inline|The `CommonAccessRights` the requesting `Identity` has on the assetrules collection.|
+|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
+|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+[
+  "Read",
+  "Write",
+  "Delete",
+  "ManageAccessControl"
+]
 ```
 
 > 403 Response

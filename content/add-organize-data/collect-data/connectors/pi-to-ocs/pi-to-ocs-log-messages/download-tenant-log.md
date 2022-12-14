@@ -4,7 +4,7 @@ uid: download-tenant-log
 
 # Logs
 
-OSIsoft Cloud Services (OCS) includes logs for tenants and namespaces. These logs contain troubleshooting information, including messages about tenant-related activity, errors, and system messages. By default, logs report on activities that occurred within the past month. 
+OSIsoft Cloud Services (OCS) includes logs for tenants and namespaces. These logs contain troubleshooting information, including messages about tenant-related activity, errors, and system messages. By default, logs report on activities that occurred within the past month. Keep in mind, logs are purged after 90 days.
 
 To download a tenant log in a .csv file:
 

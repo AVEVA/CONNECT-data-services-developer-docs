@@ -179,11 +179,13 @@
       - topicUid: CreateConfigureAsset
       - topicUid: CreateAssetFromAssetType
       - topicUid: manage-asset-permissions
+      - topicUid: RemoveAssets
     - topicUid: AssetTypes
       items:
       - topicUid: CreateAssetTypeWithEditor
       - topicUid: ConvertAssetToAssetType
       - topicUid: manage-asset-type-permissions
+      - topicUid: RemoveAssetTypes
     - topicUid: lprom
       items:
       - topicUid: GetStartedROM

@@ -4,9 +4,9 @@ uid: communities
 
 # Communities
 
-Communities allow a tenant to create a private group where operational data can be shared and viewed across other tenants. Using communities, industrial companies can share their data streams externally with trusted business partners, service providers, and analytics providers. 
+Communities allow a tenant to create a private group where operational data can be shared and viewed across other tenants. Using communities, industrial companies can share their data streams externally with trusted business partners, service providers, and analytics providers.
 
-Sharing data streams allows you and your partners to find value in each other's operational data: 
+Sharing data streams allows you and your partners to find value in each other's operational data:
 
 * Collectively operate more efficiently and reduce waste.
 
@@ -14,13 +14,13 @@ Sharing data streams allows you and your partners to find value in each other's 
 
 * Predict future failures before they occur.
 
-* Share data across engineering and operational partners.  
+* Share data across engineering and operational partners.
 
-**Want to set up a community now?** See <xref:community-workflow-create>. 
+**Want to set up a community now?** See <xref:community-workflow-create>.
 
 ## Community data flow
 
-The following diagram shows the data flow of an established community. 
+The following diagram shows the data flow of an established community.
 
 ![Community diagram](images/community-diagram.drawio.svg)
 
@@ -42,7 +42,7 @@ You can consume data streams shared into a community the same ways that you cons
 
 ## Community features and benefits
 
-Communities allow you to easily and securely share operational data with trusted business partners. 
+Communities allow you to easily and securely share operational data with trusted business partners.
 
 ### Connect with trusted business partners
 
@@ -54,7 +54,7 @@ Communities allow you to share your data streams with multiple trusted business 
 
 ### Multi-tenant users and permissions
 
-Communities support multi-tenant management of users and permissions. 
+Communities support multi-tenant management of users and permissions.
 
 Within each tenant, community administrators can independently invite or remove users, separating users and permissions from other tenants in the community. Each tenant within the community has individual control over which of its users can access the community or share data within it. Community administrators cannot control users or permissions in other tenants.
 
@@ -62,9 +62,9 @@ Additionally, community roles allow each tenant to manage users and roles specif
 
 ### Secure data sharing
 
-Communities allow tenants to securely share operational data with their trusted business partners. 
+Communities allow tenants to securely share operational data with their trusted business partners.
 
-Any tenant invited to a community must accept the community invitation and be confirmed by the inviting tenant before they can share data with other tenants or view shared data from other tenants. After joining a community, each tenant must explicitly share any data stream that they want the community to view. Each tenant shares individual data streams with the community—not their entire operational data set. 
+Any tenant invited to a community must accept the community invitation and be confirmed by the inviting tenant before they can share data with other tenants or view shared data from other tenants. After joining a community, each tenant must explicitly share any data stream that they want the community to view. Each tenant shares individual data streams with the community—not their entire operational data set.
 
 Each tenant in the community can stop sharing their data streams at any time. When you stop sharing a data stream, the other tenants within the community can no longer view it, nor its history. When you share data streams, you provide the community with _access_ to your streams rather than copying data across tenants.
 
@@ -75,12 +75,9 @@ Because tenants can share their data natively within OCS, IT departments no long
 * Create workarounds like VPNs or custom apps.
 
 * Allow business partners onsite to access local operational systems.
-  
+
 ### Easy setup
 
 Because communities are in the cloud, using them does not require installation of additional hardware or software.
 
 Communities can accommodate trusted business partners who are not sharing data or do not have a PI system or another historian system of their own. With communities, business partners can sign up for their own OCS tenant to read and gain access to data shared, without having to implement an on-premises PI System or other software.
-
-
- 

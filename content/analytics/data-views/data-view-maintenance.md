@@ -18,7 +18,7 @@ To edit an existing data view:
 
    **Note:** When you open an existing data view, it may take up to 30 minutes for the queries to refresh.
 
-   **Getting `Unknown Community`? For more information, see <xref:data-view-query-errors>.
+   **Getting `Unknown Community`? For more information, see <xref:data-view-troubleshooting>.
 
 1. Select **Save** to save the updates and continue editing, or select **Save and Close** to save the updates and exit.
 

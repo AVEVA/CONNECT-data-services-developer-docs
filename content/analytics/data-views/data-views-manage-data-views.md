@@ -20,7 +20,7 @@ Edit an existing data view to edit its name and description.
 
 1. Select ![Edit Data View](../../_icons/default/pencil.svg) **Edit Data View**.
 
-	**Getting `Unknown Community`?** For more information, see <xref:data-view-query-errors>.
+	**Getting `Unknown Community`?** For more information, see <xref:data-view-troubleshooting>.
 
 1. Edit the **Name** and **Description**.
 

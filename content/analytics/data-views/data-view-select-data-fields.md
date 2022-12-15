@@ -4,7 +4,7 @@ uid: data-view-select-data-fields
 
 # Step 3: Select data field sets
 
-After you save the queries that you create in the previous step, OSIsoft Cloud Services (OCS) prompts you to add data fields to the field set for each query in the `Add Data Fields` window. Data fields are metadata or properties from streams or assets that are included in your data view.
+After you save the queries that you create in the previous step, AVEVA Data Hub prompts you to add data fields to the field set for each query in the `Add Data Fields` window. Data fields are metadata or properties from streams or assets that are included in your data view.
 
 **Add Data Fields window**
 

@@ -1,4 +1,4 @@
-A data view is a declarative query and shape for OSIsoft Cloud Services (OCS) data. It includes the following objects, which you will configure as you complete the data view creation workflow:
+A data view is a declarative query and shape for AVEVA Data Hub data. It includes the following objects, which you will configure as you complete the data view creation workflow:
 
 - **Query**: Determines what data items are included in a data view. Queries can include streams or assets. A data view can have multiple queries.
 

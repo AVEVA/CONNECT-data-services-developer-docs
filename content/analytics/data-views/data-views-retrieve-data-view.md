@@ -4,25 +4,25 @@ uid: data-views-retrieve-data-view
 
 # Retrieve data view
 
-Use OSIsoft Cloud Services Power BI Connector to retrieve OCS data views for use in Microsoft Power BI.
+Use AVEVA Data Hub Power BI Connector to retrieve AVEVA Data Hub data views for use in Microsoft Power BI.
 
 To retrieve data views:
 
-1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The OSIsoft Cloud Services Data Views connector file displays in the `All` pane.
+1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The AVEVA Data Hub Data Views connector file displays in the `All` pane.
 
    ![Get Data](_images/get-data.png)
 
-1. Select the `OSIsoft Cloud Services Data Views` connector file, and then select **Connect**.
+1. Select the `AVEVA Data Hub Data Views` connector file, and then select **Connect**.
 
 1. Select **Continue** in the `Connecting to a third-party service` warning.
 
-1. In the `OSIsoft Cloud Services Data Views` window, enter the tenant and namespace for the data views you want to access, and then select **OK**.
+1. In the `AVEVA Data Hub Data Views` window, enter the tenant and namespace for the data views you want to access, and then select **OK**.
 
-   The OSIsoft Cloud Services sign-in window displays if you have not already signed in.
+   The AVEVA Data Hub sign-in window displays if you have not already signed in.
 
     - If you have not already signed in, select **Sign in as different user** and complete the user authentication process.
 
-1. In the `OSIsoft Cloud Services Data Views` sign-in window, select **Connect**.
+1. In the `AVEVA Data Hub Data Views` sign-in window, select **Connect**.
 
 1. In the `Navigator` pane, do one of the following: 
 

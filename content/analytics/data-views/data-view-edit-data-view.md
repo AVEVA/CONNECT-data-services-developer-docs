@@ -4,7 +4,7 @@ uid: data-view-edit-data-view
 
 # Edit a data view
 
-After you have completed initial configuration of a data view, you will likely continue to iterate of the data view until it precisely shapes and selects your OSIsoft Cloud Services (OCS) data. 
+After you have completed initial configuration of a data view, you will likely continue to iterate of the data view until it precisely shapes and selects your AVEVA Data Hub data. 
 
 ## Data view tasks
 

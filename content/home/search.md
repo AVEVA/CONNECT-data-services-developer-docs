@@ -4,7 +4,7 @@ uid: search
 
 # Search
 
-Many pages in OSIsoft Cloud Services (OCS) include a search or query bar to help find streams, assets, or other objects. This page offers tips and best practices for using search.
+Many pages in AVEVA Data Hub include a search or query bar to help find streams, assets, or other objects. This page offers tips and best practices for using search.
 
 ## Tooltip
 

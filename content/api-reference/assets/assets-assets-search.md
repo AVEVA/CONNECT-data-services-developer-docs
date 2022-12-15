@@ -35,6 +35,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 |---|---|---|
 |200|[SearchResultsOfSearchResult](#schemasearchresultsofsearchresult)|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
+|408|[ErrorTemplate](#schemaerrortemplate)|Request Timeout.|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -106,7 +109,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets
 |---|---|---|
 |200|[FacetResult](#schemafacetresult)[]|OK.|
 |204|None|No assets match your query.|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|408|[ErrorTemplate](#schemaerrortemplate)|Request Timeout.|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -172,7 +177,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Autocomple
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[SuggestionResults](#schemasuggestionresults)|Returns the suggestions|
-|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See response body for additional details.|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|408|[ErrorTemplate](#schemaerrortemplate)|Request Timeout.|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service unavailable.|
 
 <h4>Example response body</h4>
 

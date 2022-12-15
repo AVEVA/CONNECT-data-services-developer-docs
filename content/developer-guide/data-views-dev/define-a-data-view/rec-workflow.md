@@ -8,8 +8,6 @@ This is an introduction to the recommended workflow for creating and defining da
 
 [!include[iteration](../../../analytics/data-views/_includes/iteration.md)]
 
-[!include[recommended-skills](../../../analytics/data-views/_includes/recommended-skills.md)]
-
 There are three main steps required to define a data view: 
 
 1. Including data items (such as streams and assets)

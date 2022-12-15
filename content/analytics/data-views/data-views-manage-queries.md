@@ -16,7 +16,7 @@ Following initial addition of a data view, you can add queries or remove them fr
 
 1. Select **Edit Data View**.
 
-	**Getting `Unknown Community`?** For more information, see <xref:data-view-query-errors>.
+	**Getting `Unknown Community`?** For more information, see <xref:data-view-troubleshooting>.
 
 	The data view opens.
 
@@ -34,7 +34,7 @@ Remove a query to remove its selected data streams from the data view.
 
 - You can remove a query from a data view only when it contains more than one query.
 
-- You cannot remove queries with a message of `Unknown Community`. For more information, see <xref:data-view-query-errors>.
+- You cannot remove queries with a message of `Unknown Community`. For more information, see <xref:data-view-troubleshooting>.
 
 1. In the left pane, select **Analytics** > **Data Views**.
 

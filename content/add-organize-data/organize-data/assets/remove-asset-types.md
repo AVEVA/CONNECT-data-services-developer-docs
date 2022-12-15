@@ -4,7 +4,7 @@ uid: RemoveAssetTypes
 
 # Remove asset types
 
-Follow this procedure to remove asset types from OCS. 
+Follow this procedure to remove asset types from AVEVA Data Hub. 
 
 To remove a single asset type:
 

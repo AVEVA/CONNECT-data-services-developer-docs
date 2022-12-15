@@ -4,7 +4,7 @@ uid: RemoveAssets
 
 # Remove assets
 
-Follow this procedure to remove assets from OCS. 
+Follow this procedure to remove assets from AVEVA Data Hub. 
 
 To remove a single asset:
 

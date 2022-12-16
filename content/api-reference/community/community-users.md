@@ -57,8 +57,8 @@ List of community roles Ids to assign to the user<br/>
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "user@example.com",
-  "ContactEmail": "user@example.com",
+  "Email": "string",
+  "ContactEmail": "string",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",
@@ -164,8 +164,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
     "GivenName": "string",
     "Surname": "string",
     "Name": "string",
-    "Email": "user@example.com",
-    "ContactEmail": "user@example.com",
+    "Email": "string",
+    "ContactEmail": "string",
     "ContactGivenName": "string",
     "ContactSurname": "string",
     "ExternalUserId": "string",
@@ -242,8 +242,8 @@ Object for retrieving a user
 |GivenName|string|false|true|Given name of the user|
 |Surname|string|false|true|Surname of the user|
 |Name|string|false|true|Name of the user|
-|Email|email|false|true|Email of the user|
-|ContactEmail|email|false|true|Contact email for the user. User will only be contacted through this email.|
+|Email|string|false|true|Email of the user|
+|ContactEmail|string|false|true|Contact email for the user. User will only be contacted through this email.|
 |ContactGivenName|string|false|true|Preferred given name for the user|
 |ContactSurname|string|false|true|Preferred contact surname for the user|
 |ExternalUserId|string|false|true|Provider identifier for the user. This is the identifier we get from the identity provider.|
@@ -256,8 +256,8 @@ Object for retrieving a user
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "user@example.com",
-  "ContactEmail": "user@example.com",
+  "Email": "string",
+  "ContactEmail": "string",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",

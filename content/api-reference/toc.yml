@@ -4,7 +4,7 @@
   topicHref: regional-endpoints.md
 - name: Asset store
   href: assets/toc.yml
-  topicHref: Assets/assets.md
+  topicHref: assets/assets.md
 - name: Client failover
   href: client-failover/toc.yml
   topicHref: client-failover/client-failover-overview.md

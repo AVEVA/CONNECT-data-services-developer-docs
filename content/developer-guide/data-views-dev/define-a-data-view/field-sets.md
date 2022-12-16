@@ -200,16 +200,8 @@ The presence of context allows data views to align the data fields, without the 
 Each data field represents a particular source of information, such as a data item's `.Id` or the values from one of its properties.
 
 ### Label
-A data field's label is a friendly name that can by specified directly or via rules. Null, empty or whitespace is not allowed for a data field label.
 
-When the data view is resolved and data fields produce field mappings, labels are trimmed of whitespace and used as the field mappings' identifier. For example:
-| Timestamp | Power In Value | Power Out Value |
-|--|--|--|
-
-In cases where the identifiers are unique, the identifier is suffixed with an ordinal number, its position. For example:
-
-| Timestamp.0 | Value.1 | Value.2 |
-|--|--|--|
+[!include[data-view-label](../../../_includes/data-view-label.md)]
 
 #### Available data field label tokens
 

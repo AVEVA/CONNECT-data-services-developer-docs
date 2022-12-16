@@ -23,7 +23,7 @@ The following table shows whether endpoint collections have an endpoint for acce
 | Endpoint Collection | ACL Endpoint |
 |--|:--:|
 | [Asset store](xref:assets-access-control-list) | &#10004; |
-| [Communities: Communities](xref:community-communities)<sup>1</sup> | &#10004; |
+| [Communities: Communities](xref:community-communities#accesscontrollist)<sup>1</sup> | &#10004; |
 | [Communities: Tenants](xref:community-tenants)<sup>1</sup> | &#10004; |
 | [Data collection](xref:omf-ingress-access-control) | &#10004; |
 | [Data views](xref:DataViewsAccessControlAPI) | &#10004; |
@@ -44,6 +44,8 @@ The following table shows whether endpoint collections have an endpoint for acce
   - For example, an identity that has multiple roles, one of which is assigned AccessType.Denied will be forbidden the associated AccessRight, even if another one of their roles is assigned AccessType.Allowed for the same Access Right.
 - Roles are the only TrusteeType currently supported for AccessControlList ACEs.
 - At least one role must be given Manage Permission access.
+
+### Trustee
 
 The following table shows TrusteeTypes and the corresponding TypeIds.
 

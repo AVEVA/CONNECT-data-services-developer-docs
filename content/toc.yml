@@ -201,21 +201,9 @@
       - topicUid: RemoveAssetTypes
     - topicUid: lprom
       items:
-        - topicUid: ccAssets
-          items:
-            - topicUid: CreateConfigureAsset
-            - topicUid: CreateAssetFromAssetType
-            - topicUid: manage-asset-permissions
-        - topicUid: AssetTypes
-          items:
-            - topicUid: CreateAssetTypeWithEditor
-            - topicUid: ConvertAssetToAssetType
-            - topicUid: manage-asset-type-permissions
-        - topicUid: lprom
-          items:
-            - topicUid: GetStartedROM
-            - topicUid: FilterAssets
-            - topicUid: ShareAViewOfYourFleet
+        - topicUid: GetStartedROM
+        - topicUid: FilterAssets
+        - topicUid: ShareAViewOfYourFleet
 - topicUid: Analytics
   items:
     - topicUid: DataViews

@@ -10,7 +10,7 @@ Understanding how the data view resolves into content is important for both the 
 
 ## Defining and refining a data view
 
-There are several concepts and types used when defining data views. This is accomplished via the RESTful [data views API](xref:DataViewsAPIOverview). See the OCS documentation for greater detail on these concepts:
+There are several concepts and types used when defining data views. This is accomplished via the RESTful [data views API](xref:DataViewsAPIOverview). See the AVEVA Data Hub documentation for greater detail on these concepts:
 
 - [Define queries](xref:DataViewsQueries)
 - [Define data field sets](xref:DataViewsFieldSets)

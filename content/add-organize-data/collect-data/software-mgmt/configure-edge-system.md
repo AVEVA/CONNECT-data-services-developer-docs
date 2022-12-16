@@ -9,15 +9,15 @@ You can import an edge system configuration from the field to its corresponding 
 Configuration is available for the following edge system types:
 
  - PI Adapter for Azure Event Hubs
- 
- - PI Adapter for BACnet 
+
+ - PI Adapter for BACnet
 
  - PI Adapter for DNP3
 
  - Edge Data Store
 
  - PI Adapter for Modbus TCP
- 
+
  - PI Adapter for MQTT
 
  - PI Adapter for OPC UA
@@ -52,7 +52,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 1. When you have finished, select **Save & Close**.
 
-1. To confirm the changes, select **Save & Close**. 
+1. To confirm the changes, select **Save & Close**.
 
 ## Edit an edge system configuration
 
@@ -74,21 +74,21 @@ To edit an edge system configuration and export it for use:
 
 1. To create the configuration, do one of the following:
 
-   - To use the default configuration for the edge system type, select **Start With Default**. 
- 
-   - To select a JSON file that contains the configuration, select **Start With Default**. 
+   - To use the default configuration for the edge system type, select **Start With Default**.
+
+   - To select a JSON file that contains the configuration, select **Start With Default**.
 
 1. (Optional) In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
-1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation. 
+1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
 
    **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
 
-   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
+   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.
 
 1. To export the completed configuration, do one of the following:
 
-   - To export just the selected section, select **Export Section** in the right pane.  
+   - To export just the selected section, select **Export Section** in the right pane.
 
    - To export the entire configuration in one file, select **Export Configuration**.
 
@@ -96,4 +96,4 @@ To edit an edge system configuration and export it for use:
 
 1. When you have finished, select **Save & Close**.
 
-1. To confirm the changes, select **Save & Close**.  
+1. To confirm the changes, select **Save & Close**.

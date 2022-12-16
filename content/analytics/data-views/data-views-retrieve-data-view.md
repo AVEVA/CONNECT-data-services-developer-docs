@@ -8,7 +8,7 @@ Use AVEVA Data Hub Power BI Connector to retrieve AVEVA Data Hub data views for 
 
 To retrieve data views:
 
-1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `OSI`.<br>The AVEVA Data Hub Data Views connector file displays in the `All` pane.
+1. In Microsoft Power BI Desktop, in the entry field of the `Get Data` window, type `AVEVA`.<br>The AVEVA Data Hub Data Views connector file displays in the `All` pane.
 
    ![Get Data](_images/get-data.png)
 
@@ -18,7 +18,7 @@ To retrieve data views:
 
 1. In the `AVEVA Data Hub Data Views` window, enter the tenant and namespace for the data views you want to access, and then select **OK**.
 
-   The OSIsoft Cloud Services sign-in window displays if you have not already signed in.
+   The AVEVA Data Hub sign-in window displays if you have not already signed in.
 
     - If you have not already signed in, select **Sign in as different user** and complete the user authentication process.
 

@@ -89,7 +89,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omf
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Operation-Id|string|false|true|The `Operation-Id` associated with this request. If there are any issues with data flow, contact OSIsoft Technical Support with this value.|
+|Operation-Id|string|false|true|The `Operation-Id` associated with this request. If there are any issues with data flow, contact AVEVA Technical Support with this value.|
 
 ```json
 {

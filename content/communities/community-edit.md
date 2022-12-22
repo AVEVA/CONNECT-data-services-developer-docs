@@ -31,5 +31,3 @@ To edit a community:
 	Use this field to provide a contact email address that your business partners can use to communicate with your organization for any questions or issues related to the community.
 
 1. Select **Update**.
-
-Are you sure you want to remove your tenant <TENANT> from the community <COMMUNITY>? This action removes all data your tenant has shared to the community so that it is no longer accessible to other members. Enter the name of your tenant to confirm.

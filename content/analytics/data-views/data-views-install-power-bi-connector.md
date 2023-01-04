@@ -30,7 +30,7 @@ To install the AVEVA Data Hub Power BI Connector:
 
 1. Select **Edit Data View**.
 
-1. Download the `AVEVA Data HubPowerBIConnector.exe` file by clicking on the AVEVA Data Hub Power BI Connector banner.
+1. Download the `AVEVA Data HubPowerBIConnector.exe` file by selecting the AVEVA Data Hub Power BI Connector banner.
 
 1. Install AVEVA Data Hub Power BI Connector by either the setup wizard or silent installation.
 

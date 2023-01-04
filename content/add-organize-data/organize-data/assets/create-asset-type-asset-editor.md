@@ -62,8 +62,6 @@ To create an asset type:
 
     **Tip:** You can switch to a different property by selecting the ![Change property icon](../../../_icons/branded/swap-horizontal.svg) icon.
 
-## Save the asset type
-
 1. Select **Save**.
 
 ## Related links

@@ -18,7 +18,7 @@ To add a type:
 
 1. Add four properties to the type. 
 
-   Click **Add Property** to add a property to the type. Update each new property using the values from the table below.
+   Select **Add Property** to add a property to the type. Update each new property using the values from the table below.
 
    | Property | Key | Id | Name | Type | UOM | 
    |----------|-----|------|----|--|-----|

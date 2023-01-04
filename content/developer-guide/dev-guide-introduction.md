@@ -12,4 +12,4 @@ Use the information in this section to programmatically access OCS.
 
 ## Access to OCS
 
-You must have an account to use OCS. Go to the [OCS page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), click [Contact Us](https://www.osisoft.com/contact) and request an account.
+You must have an account to use OCS. Go to the [OCS page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), select [Contact Us](https://www.osisoft.com/contact) and request an account.

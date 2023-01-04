@@ -169,6 +169,7 @@
       - topicUid: troubleshoot-failed-mapping
       - topicUid: troubleshoot-missing-pida
       - topicUid: troubleshoot-pi-pt-errors
+      - topicUid: troubleshoot-rpc
     - topicUid: pi-to-ocs-limitations
     - topicUid: known-issues
     - topicUid: pi2ocs-rel-summary

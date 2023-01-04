@@ -157,6 +157,7 @@
             - topicUid: troubleshoot-failed-mapping
             - topicUid: troubleshoot-missing-pida
             - topicUid: troubleshoot-pi-pt-errors
+            - topicUid: troubleshoot-rpc
         - topicUid: known-issues
         - topicUid: pi2ocs-rel-summary
     - topicUid: lpomfoverview

@@ -26,6 +26,7 @@
       - topicUid: assign-users
       - topicUid: map-group-adh
       - topicUid: map-user-adh
+      - topicUid: namespaces-manage-permissions
 - topicUid: introPortalInterface
   items:
   - topicUid: viewProfile

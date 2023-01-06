@@ -40,6 +40,10 @@ An overview of the process is outlined below with links to the specific procedur
 
    - By default the Account Administrator in AVEVA Connect will have the Tenant Administrator role in AVEVA Data Hub.
 
+1. <xref:namespaces-manage-permissions>.
+
+    - You can assign permissions to roles on a per namespace basis.
+
 ## Example
 
 Linda is an Account Administrator for her organization in AVEVA Connect. She wants to add Karl to the EU Mining Operations namespace in AVEVA Data Hub with Tenant Member Access, and Luis to the same namespace with Tenant Contributor Access.

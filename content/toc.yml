@@ -26,6 +26,7 @@
       - topicUid: assign-users
       - topicUid: map-group-adh
       - topicUid: map-user-adh
+      - topicUid: namespaces-manage-permissions
 - topicUid: introPortalInterface
   items:
   - topicUid: viewProfile
@@ -262,8 +263,6 @@
     - topicUid: gpAuthorizationCodeClient
     - topicUid: ClientMaintenance
   - topicUid: permissions-management
-    items:
-    - topicUid: namespaces-manage-permissions
   - topicUid: cross-region-data-sharing
 - topicUid: DeveloperTools
   items:

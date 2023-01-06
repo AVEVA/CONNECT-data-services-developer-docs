@@ -12,7 +12,7 @@ To manage namespace permissions, you must be assigned the **Manage Permissions**
 
 ## To manage permissions for namespaces
 
-When editing permissions for a namespace, you can either use the **Namespaces** page or the **Namespaces** dropdown list that is available on all pages.
+Use the **Namespaces** dropdown list that is available on all pages to edit permissions for a namespace.
 
 1. From the **Namespaces** dropdown list, select the namespace that you want to edit permissions for.
 

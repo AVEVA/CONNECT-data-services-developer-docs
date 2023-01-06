@@ -16,7 +16,7 @@ When editing permissions for a namespace, you can either use the **Namespaces** 
 
 1. From the **Namespaces** dropdown list, select the namespace that you want to edit permissions for.
 
-1. Select the **Manage Permissions** ![Manage Permissions](../../_icons/default/account-lock.svg) icon.
+1. Select the **Manage Permissions** ![Manage Permissions](../../_icons/default/cog.svg) icon.
 
     The `Manage Permissions for Namespace` window opens.
 

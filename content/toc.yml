@@ -18,7 +18,7 @@
       items: 
       - topicUid: create-folders
       - topicUid: bpNamespaces
-    - topicUid: ManageUsersConnect
+      - topicUid: ManageUsersConnect
       items:
       - topicUid: create-group
       - topicUid: assign-roles-groups
@@ -262,6 +262,8 @@
     - topicUid: gpAuthorizationCodeClient
     - topicUid: ClientMaintenance
   - topicUid: permissions-management
+    items:
+    - topicUid: namespaces-manage-permissions
   - topicUid: cross-region-data-sharing
 - topicUid: DeveloperTools
   items:

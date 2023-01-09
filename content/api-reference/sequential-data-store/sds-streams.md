@@ -15,7 +15,7 @@ Returns a list of streams.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 ?query={query}&skip={skip}&count={count}&orderby={orderby}
 ```
 

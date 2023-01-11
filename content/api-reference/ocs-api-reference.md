@@ -12,7 +12,7 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Communities (Preview)](xref:communityOverview)—OCS Communities helps industrial companies share their operational data with external business partners, service providers, and analytics providers.
 
-* [Data collection](xref:dataIngress)—You use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.
+* [Data collection](xref:dataIngress)—You use Open Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.
 
 * [Data views](xref:DataViewsOverview)—Use the information in this section to create user-selected subsets of data stored in OSIsoft Cloud Services which are mapped into customizable table formats.
 

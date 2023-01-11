@@ -2,9 +2,9 @@
 uid: omfIngressSpecification
 ---
 
-# Use OSIsoft Message Format with OSIsoft Cloud Services
+# Use Open Message Format with OSIsoft Cloud Services
 
-[The OSIsoft Message Format (OMF) specification](http://omf-docs.osisoft.com) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by OSIsoft Cloud Services back-end system. 
+[The Open Message Format (OMF) specification](http://omf-docs.osisoft.com) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by OSIsoft Cloud Services back-end system. 
 
 ## Headers
 

@@ -75,3 +75,7 @@ You can encounter the message above in different contexts:
     ```text
     Cross Region Data Sharing Disabled: This namespace does not allow data to be processed outside of the region where it resides.
     ```
+
+#### Data view invalidation
+
+[!include[<title>](../../_includes/data-view-opt-out)]

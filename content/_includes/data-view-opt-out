@@ -5,6 +5,9 @@ No guarantee is made of the durability or lifespan of cached information. In the
 Cached information may be reset under any of the following circumstances:
 
 - The data view is modified
-- A community referenced by the data view is modified (for example. sharing is paused)
-- The cached information becomes stale (cached information expires after 24 hours)
+
+- A community referenced by the data view is modified (for example, sharing is paused)
+
+- The cached information becomes stale
+
 - System maintenance

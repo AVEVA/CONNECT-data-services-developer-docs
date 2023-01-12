@@ -1,0 +1,13 @@
+If the data view is modified, any cached information is reset. The data view will be re-resolved the next time that information is requested.
+
+No guarantee is made of the durability or lifespan of cached information. In the event that cached information is invalidated, the data view will be re-resolved the next time that information is requested.
+
+Cached information may be reset under any of the following circumstances:
+
+- The data view is modified
+
+- A community referenced by the data view is modified (for example, sharing is paused)
+
+- The cached information becomes stale
+
+- System maintenance

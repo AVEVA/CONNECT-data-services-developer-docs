@@ -78,4 +78,4 @@ You can encounter the message above in different contexts:
 
 #### Data view invalidation
 
-[!include[<title>](../../_includes/data-view-opt-out)]
+[!include[data-view-opt-out](../../_includes/data-view-opt-out.md)]

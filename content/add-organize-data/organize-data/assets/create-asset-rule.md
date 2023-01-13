@@ -29,7 +29,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 1. Select the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
-1. Click **Add a Rule**.
+1. Select **Add a Rule**.
 
 1. In the `Create New Asset Rule` window, enter the following:
 
@@ -47,7 +47,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
    **Note:** If the rule is not based on an asset type, there are some differences in the procedure. These differences are noted in the steps.
 
-1. Click **Continue**.
+1. Select **Continue**.
 
 1. In the `Select Stream` window, select the stream to use as the basis of the naming pattern for the asset rule. 
 
@@ -55,7 +55,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
    
    The `Tank Rule A` examples uses the `PHI-Tank03Press` stream to create the stream pattern.
 
-1. Click **Add**. 
+1. Select **Add**. 
    
    The `Asset Rule Builder` page displays.
 
@@ -81,7 +81,7 @@ In this step, you specify the naming pattern used to find and match the appropri
 
 1. In the **and name it** text field, enter a name for the token.
 
-1. Click **Capture**.  
+1. Select **Capture**.  
 
    In the [Tank Rule A example](#tank), the first part of all stream names identifies the site location. This is represented by the characters *SL* or *PHI*. In the `PHI-Tank03Press` stream, the site location is represented by the characters *PHI*. This part of the stream name is selected in the screen capture below.
 

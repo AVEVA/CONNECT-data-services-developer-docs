@@ -4,7 +4,7 @@ uid: gpOMFConnection
 
 # Configure an OMF connection
 
-You must configure an OMF connection to send OSIsoft Message Format (OMF) data to OCS.
+You must configure an OMF connection to send Open Message Format (OMF) data to OCS.
 
 ## Prerequisite
 

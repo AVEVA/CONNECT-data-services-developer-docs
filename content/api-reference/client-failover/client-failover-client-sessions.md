@@ -44,7 +44,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
     "Id": "string",
     "Name": "string",
     "Heartbeat": {
-      "FailoverStatus": 0,
+      "FailoverScore": 0,
       "LastDataProcessedTime": "2019-08-24T14:15:22Z",
       "HeartbeatTime": "2019-08-24T14:15:22Z"
     },
@@ -112,7 +112,7 @@ The client session being created.<br/>
   "Id": "string",
   "Name": "string",
   "Heartbeat": {
-    "FailoverStatus": 0,
+    "FailoverScore": 0,
     "LastDataProcessedTime": "2019-08-24T14:15:22Z",
     "HeartbeatTime": "2019-08-24T14:15:22Z"
   },
@@ -167,7 +167,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
   "Id": "string",
   "Name": "string",
   "Heartbeat": {
-    "FailoverStatus": 0,
+    "FailoverScore": 0,
     "LastDataProcessedTime": "2019-08-24T14:15:22Z",
     "HeartbeatTime": "2019-08-24T14:15:22Z"
   },
@@ -241,7 +241,7 @@ The heartbeat of the client session.<br/>
 
 ```json
 {
-  "FailoverStatus": 100,
+  "FailoverScore": 100,
   "LastDataProcessedTime": "2019-08-24T14:15:22Z",
   "HeartbeatTime": "2019-08-24T14:15:22Z"
 }
@@ -349,7 +349,7 @@ The role override detail configuration for the client session RoleOverrideConfig
   "Id": "string",
   "Name": "string",
   "Heartbeat": {
-    "FailoverStatus": 0,
+    "FailoverScore": 0,
     "LastDataProcessedTime": "2019-08-24T14:15:22Z",
     "HeartbeatTime": "2019-08-24T14:15:22Z"
   },
@@ -380,13 +380,13 @@ Failover heartbeat.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|FailoverStatus|float|false|false|The percentage of active streams managed by an adapter.|
+|FailoverScore|float|false|false|The percentage of active streams managed by an adapter.|
 |LastDataProcessedTime|date-time|false|true|Last time data was processed by client.|
 |HeartbeatTime|date-time|false|false|UTC time that the client generated the heartbeat message.|
 
 ```json
 {
-  "FailoverStatus": 0,
+  "FailoverScore": 0,
   "LastDataProcessedTime": "2019-08-24T14:15:22Z",
   "HeartbeatTime": "2019-08-24T14:15:22Z"
 }
@@ -530,13 +530,13 @@ Configuration for creating a new client session.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|FailoverStatus|float|false|false|The percentage of active streams managed by an adapter.|
+|FailoverScore|float|false|false|The percentage of active streams managed by an adapter.|
 |LastDataProcessedTime|date-time|false|true|Last time data was processed by client.|
 |HeartbeatTime|date-time|false|false|UTC time that the client generated the heartbeat message.|
 
 ```json
 {
-  "FailoverStatus": 100,
+  "FailoverScore": 100,
   "LastDataProcessedTime": "2019-08-24T14:15:22Z",
   "HeartbeatTime": "2019-08-24T14:15:22Z"
 }

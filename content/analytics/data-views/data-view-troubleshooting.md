@@ -30,7 +30,7 @@ Query sources that include a yellow or red alert chip indicate that you have an 
 
     ![opt out chip](_images/opt-out-chip.png)
 
-    Red alert chips indicate that the data view queries a namespace that has opted out of [Cross region data sharing](xref:cross-region-data-sharing), but the data view resides in a different region. Therefore, the query does not resolve. For more information, see [Cross region processing opt out](#cross-region-processing-opt-out).
+    Red alert chips indicate that the data view queries a namespace that has opted out of [Cross region data sharing](xref:cross-region-data-sharing), but the data view resides in a different region. For more information, see [Cross region processing opt out](#cross-region-processing-opt-out).
 
 ## Data View page
 

@@ -10,7 +10,7 @@ A namespace represents a logical unit of organization for data within a tenant. 
 
 Data processing resources are allocated to a namespace after you create a folder and turn on AVEVA Data Hub. For example, SDS and asset services, and the associated storage resources are allocated to support a namespace. Each namespace and its resources are distinct and separate from all other namespaces. For example, you can create an SdsType or an SdsStream object with the same name in two different namespaces.
 
-Data stored within a folder and its namespace is tied to the namespace and its region. You cannot directly transfer this data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA Data Hub, then [import it](xref:transfer-data) into the destination namespace.
+Data stored within a folder and its namespace is tied to the namespace and its region. You cannot directly transfer this data to any other namespace (or region). To move data between namespaces, you must export the data from the source namespace in AVEVA Data Hub, then [import it](xref:create-transfer) into the destination namespace.
 
 As the administrator or developer setting up folders and namespaces, consider the following important points:
  

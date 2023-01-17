@@ -47,9 +47,8 @@ See the [Resolved Data View API](xref:ResolvedDataViewAPI) and [Getting Data](xr
 The defaults are intended to strike a balance between predictability and freshness. When retrieving the various resolved information that is available, you will not cause regeneration (and possible changes) simply by viewing the resolved information. This is useful when diagnosing a data view that is not returning the data you expect.
 
 #### Invalidation
-If the data view is modified, any cached information is reset. The data view will be re-resolved the next time that information is requested.
 
-No guarantee is made of the durability or lifespan of cached information. It may be reset by the system for maintenance reasons.
+[!include[data-view-opt-out](../../../_includes/data-view-opt-out.md)]
 
 #### Paging through data
 When using the [Data API](xref:DataViewsDataAPI) to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on [Getting Data](xref:DataViewsQuickStartGetData) describes how the paging token helps guarantee consistency.

@@ -2,7 +2,7 @@
 uid: omfIngressSpecification
 ---
 
-# OMF ingress specification
+# Use Open Message Format with AVEVA Data Hub
 
 [The Open Message Format (OMF) specification](https://docs.osisoft.com/bundle/omf/) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by AVEVA Data Hub back-end system. 
 

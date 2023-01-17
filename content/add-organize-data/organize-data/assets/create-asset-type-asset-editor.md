@@ -56,8 +56,6 @@ To create an asset type:
 
 1. In the `Select Property` window, select the property that you want to display status for. Select **Continue**.
 
-    **Note:** You can only specify one property with enumerated states as the asset's status.
-
 1. Select **Add Value Mapping**, enter a value, then select the status icons to map the status (Good, Warning, Bad) for each value.
 
     **Tip:** You can switch to a different property by selecting the ![Change property icon](../../../_icons/branded/swap-horizontal.svg) icon.

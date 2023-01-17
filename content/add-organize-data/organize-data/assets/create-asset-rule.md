@@ -29,7 +29,7 @@ We will construct an asset rule, named `Tank Rule A`, that creates three assets,
 
 1. Select the **Change Namespace** button in the upper-right toolbar, then select the desired namespace.
 
-1. Select **Add Rule**.
+1. Select **Add a Rule**.
 
 1. In the `Create New Asset Rule` window, enter the following:
 

@@ -239,8 +239,6 @@
         - topicUid: RetrieveDataViews
         - topicUid: EditQueryPowerBI
         - topicUid: PowerBIReleaseNotes
-        - topicUid: data-views-retrieve-data-view
-        - topicUid: data-view-retrieve-edit-query
 - topicUid: Security
   items:
   - topicUid: Groups

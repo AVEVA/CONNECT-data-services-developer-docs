@@ -4,7 +4,7 @@ uid: community-edit
 
 # Edit community
 
-After you create a community, you can edit its name and description at any time. You can also edit your contact email. 
+After you create a community, you can edit its name and description at any time. You can also edit your contact email or add a community alias.
 
 ## Prerequisites
 
@@ -28,6 +28,12 @@ To edit a community:
 
 	**Note:** If you use an alias, the only location that you can see both the community name and the alias is the `Community Detail` page.
 
+1. (Optional) Edit the community **Alias**.
+
+	Use this field to provide an alias for the community. This alias appears instead of the community name for your tenant only.
+
 1. (Optional) Edit the community **Contact Email**.
+
+	Use this field to provide a contact email address that your business partners can use to communicate with your organization for any questions or issues related to the community.
 
 1. Select **Update**.

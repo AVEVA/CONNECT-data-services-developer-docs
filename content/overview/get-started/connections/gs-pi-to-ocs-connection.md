@@ -28,7 +28,7 @@ To set up a PI to Data Hub transfer:
 
 1. Select your PI to Data Hub Agent connection in the `PI to Data Hub Agents` window, then select **Create Transfer** in the right pane.
 
-1. Follow the procedures in [Transfer data to AVEVA Data Hub](xref:transfer-data) to define transfer settings and transfer data into AVEVA Data Hub.
+1. Follow the procedures in <xref:create-transfer> to define transfer settings and transfer data into AVEVA Data Hub.
 
 ## Next step
 

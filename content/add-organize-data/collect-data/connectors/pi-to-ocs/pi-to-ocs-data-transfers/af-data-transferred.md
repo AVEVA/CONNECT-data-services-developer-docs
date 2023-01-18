@@ -2,7 +2,7 @@
 uid: af-data-transferred
 ---
 
-# AF data transfer
+# AF data that can be transferred
 
 You can transfer the following AF element data into AVEVA Data Hub:
 

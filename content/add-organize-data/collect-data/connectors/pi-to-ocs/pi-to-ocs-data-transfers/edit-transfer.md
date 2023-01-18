@@ -6,7 +6,7 @@ uid: edit-transfer
 
 You can edit saved transfer settings and add or remove AF elements and/or PI points with Edit Mode. You must be the owner of a stream or asset to remove it from a transfer and cloud storage.
 
-**Note:** Your transfer settings affect whether streams and data get replicated or deleted from cloud storage after you have removed elements or explicit PI points from a transfer. See [Name the transfer and set data privacy settings](xref:transfer-data#name-the-transfer-and-set-data-privacy-settings) for details.
+**Note:** Your transfer settings affect whether streams and data get replicated or deleted from cloud storage after you have removed elements or explicit PI points from a transfer. See [Name the transfer and set data privacy settings](xref:create-transfer#name-the-transfer-and-set-data-privacy-settings) for details.
 
 <!-- VTT: Add note about how the Opt-in setting (Transfer Settings window) affects streams/assets being deleted from cloud storage or replicated, depnding on the client's preference/option selection.-->
 

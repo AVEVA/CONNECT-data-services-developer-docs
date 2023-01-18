@@ -138,19 +138,18 @@
       - topicUid: disable-ie-security
       - topicUid: install-agent
       - topicUid: pi-to-ocs-utility
+      - topicUid: slow-moving-data
     - topicUid: lp-transfer
       items:
-      - topicUid: transfer-data
+      - topicUid: create-transfer
+      - topicUid: start-transfer
       - topicUid: data-transfer-statuses
-      - topicUid: health-evts-window
-      - topicUid: overview-metrics
-      - topicUid: edit-transfer 
       - topicUid: confirm-data-retrieval
-      - topicUid: af-data-transferred
-      - topicUid: PItoDHSync
-      - topicUid: slow-moving-data
+      - topicUid: edit-transfer
       - topicUid: export-transfer-details
       - topicUid: export-missing-points
+      - topicUid: af-data-transferred
+      - topicUid: PItoDHSync
     - topicUid: lp-agent-maint
       items:
       - topicUid: kpi-tile

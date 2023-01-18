@@ -1,16 +1,14 @@
 ---
-uid: transfer-data
+uid: create-transfer
 ---
 
-# Transfer data to AVEVA Data Hub
+# Create a data transfer
 
-You initiate a data transfer from the `PI to Data Hub Agents` page. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
+You create a data transfer from the `PI to Data Hub Agents` page. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
 
-PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information, about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#overview-of-explicit-vs.-implicit-pi-points).
+PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#explicit-versus-implicit-pi-points).
 
 **Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
-
-## Transfer overview
 
 Transfer creation consists of the following tasks:
 
@@ -23,10 +21,6 @@ Transfer creation consists of the following tasks:
 1. View transfer details.
 
 1. Save the transfer.
-
-1. (Optional) Export a file(s) that contains transfer detail information.
-
-1. Initiate the data transfer and monitor its progress. 
 
 **Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to Data Hub Agents` page. The following image shows AF indexing in progress:
 
@@ -86,15 +80,13 @@ To name the data transfer:
 
 After naming the transfer, build an AF elements transfer list by setting query criteria and then selecting AF elements. You can narrow your search by filtering by element name, asset group, attribute name/value, template, and category. A corresponding asset is created for every AF element in your transfer. Static AF element attributes become asset properties. 
 
-To build an AF element:
-
 1. On the `Transfer` page, select the source AF database from the **AF Database** dropdown list.
 
    ![Transfer page](../../images/transfer-win.png)
 
 1. (Optional) Select **Root Element**.
 
-1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then choose **Select**. <!-- AF 11/15/21 UGH! I hate "select **Select**". Makes me want to use click. -->
+1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then choose **Select**.
 
 1. (Optional) In the **Element Name** field, enter search criteria to filter by part or all of an AF element name.
 
@@ -134,13 +126,11 @@ To build an AF element:
 
 1. To add additional elements from other AF databases, repeat these steps. 
 
-**Note:** AF indexing needs to complete before you can view implicit PI points and start the transfer process.
+**Note:** AF indexing must complete before you can view implicit PI points and start the transfer process.
 
 ## View AF element details
 
 You can view details about an individual AF element such as related attribute names, values, and data references.
-
-To view AF element details:
 
 1. Select an AF element on the **AF Elements** tab.
 
@@ -158,9 +148,7 @@ To view AF element details:
 
 ## Build a PI points transfer list
 
-You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Overview of explicit vs. implicit PI points](#overview-of-explicit-vs.-implicit-pi-points) for more information.
-
-To build a PI points transfer list:
+You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
 
 1. Select the **PI Point Search** tab.
 
@@ -204,8 +192,6 @@ The reference type indicates the PI point's source and how it was retrieved. The
 
 You can view attribute details for selected PI points in a transfer. Implicit PI points are PI points referenced by AF elements in a transfer. You can hide implicit PI points to temporarily remove them from view on the **PI Points** tab. Hidden implicit PI points are still included in a transfer unless the referencing AF elements are removed from the transfer list. 
 
-To view PI point details:
-
 1. In the `Transfer` pane, select the **PI Points** tab.
 
 1. Select a PI point and select **View Details**.
@@ -230,8 +216,6 @@ To view PI point details:
 
 Before you can transfer data to AVEVA Data Hub, you must save the transfer.
 
-To save the transfer:
-
 1. To ensure your data transfer definition is correct and contains all the data you want transferred, review it for accuracy.
  
 1. (Optional) Add or remove PI points and/or AF elements as needed. 
@@ -239,35 +223,3 @@ To save the transfer:
 1. To save the transfer and return to the `PI to Data Hub Agents` page, select **Save** in the lower right-hand corner.
 
    **Note:** In order to save the transfer, it must include at least one valid PI point.
-
-## Start a data transfer
-
-Data is ready for transfer after the desired PI points and/or AF elements have been added. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
-
-To start a data transfer:
-
-1. (Optional) In the `PI to Data Hub Agents` page, select the PI to Data Hub Agent associated with the data transfer. 
-
-1. (Optional) In the **Manage Agent** tab, expand the `Transfer Overview` section.
-
-1. Select **Start Transfer**, then select **Start**.
-
-   The data transfer begins and transfer status is updated in the `Transfer Overview` section on the **Manage Agent** tab.
-
-   **Note:** The **Manage Agent** tab provides information about the agent associated with the transfer and the transfer progress.
-
-1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
-
-   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See <xref:data-transfer-statuses> for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
-
-1. (Optional) To view more information about an agent's status, select **Agent Health Events**.
-
-   **Note:** See <xref:health-evts-window> for more information.  
- 
-1. (Optional) To see more information about log messages for the transfer, select **Logs**. See <xref:download-tenant-log> for more information. 
-
-1. (Optional) To view transfer progress and metrics for stream and/or asset creation, select the **Transfer Metrics** tab. See <xref:overview-metrics> for more information. 
-    
-1. (Optional) To stop a transfer, select **Stop Transfer**, then select **Stop**.
-
-1. (Optional) To remove a transfer, select **Remove Transfer**, select the **Delete Streams and Assets from the cloud** option if applicable, then select **Remove**.

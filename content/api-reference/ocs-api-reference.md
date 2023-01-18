@@ -10,7 +10,7 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Client failover](xref:FailoverOverview)—The Client Failover Service provides failover capability for adapters to minimize data loss.
 
-* [Communities (Preview)](xref:communityOverview)—AVEVA Data Hub Communities helps industrial companies share their operational data with external business partners, service providers, and analytics providers.
+* [Communities](xref:communityOverview)—Communities help industrial companies share their operational data with external business partners, service providers, and analytics providers.
 
 * [Data collection](xref:dataIngress)—You use Open Message Format (OMF) to achieve high-throughput asynchronous data ingress into the AVEVA Data Hub Sequential Data Store.
 
@@ -28,8 +28,11 @@ The information in the sections that follow document the APIs and usage for each
 
 ## Access to AVEVA Data Hub
 
+<<<<<<< HEAD
 You must acquire an account before interacting with AVEVA Data Hub. To request an account, contact us at the [AVEVA Knowledge and Support Center](https://softwaresupport.aveva.com/).
 
+=======
+>>>>>>> a4f5dc096448271f9c7edc55f653677b00dbe731
 ## API console
 
 For information on the graphical interface for using the REST API within AVEVA Data Hub, see [API console](xref:apiConsole).

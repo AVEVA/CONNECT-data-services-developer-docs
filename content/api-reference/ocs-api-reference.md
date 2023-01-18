@@ -10,7 +10,7 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Client failover](xref:FailoverOverview)—The Client Failover Service provides failover capability for adapters to minimize data loss.
 
-* [Communities (Preview)](xref:communityOverview)—OCS Communities helps industrial companies share their operational data with external business partners, service providers, and analytics providers.
+* [Communities](xref:communityOverview)—OCS Communities help industrial companies share their operational data with external business partners, service providers, and analytics providers.
 
 * [Data collection](xref:dataIngress)—You use Open Message Format (OMF) to achieve high-throughput asynchronous data ingress into the OCS Sequential Data Store.
 
@@ -30,7 +30,6 @@ The information in the sections that follow document the APIs and usage for each
 
 You must acquire an account before interacting with the OCS.
 Go to the [OCS page on OSIsoft website](https://www.osisoft.com/pi-system/pi-cloud/osisoft-cloud-services), select [Contact Us](https://www.osisoft.com/contact) and request an OCS account.
-
 
 ## API console
 

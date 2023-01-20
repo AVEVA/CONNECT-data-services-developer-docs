@@ -51,6 +51,49 @@ UpdateCommunityTenantInput object that contains the attributes to use for the up
 
 ---
 
+## `Patch Community Tenant Info`
+
+<a id="opIdCommunityTenants_Patch Community Tenant Info"></a>
+
+Updates the community tenant using an RFC 7396 compliant Patch operation.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1-preview/communities/{communityId}/tenants/{tenantId}
+```
+
+<h4>Parameters</h4>
+
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier of the `CommunityTenant` in the community to update.<br/><br/>
+
+<h4>Request Body</h4>
+
+A dictionary that contains attributes found in UpdateCommunityTenantInput for a community tenant update.<br/>
+
+```json
+{
+  "property1": "string",
+  "property2": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|None|Success. The community tenant was updated.|
+|204|None|No Content. No operation was performed.|
+|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request due to invalid syntax.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
+|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
+
+---
+
 ## `Remove a Community Tenant from a Community`
 
 <a id="opIdCommunityTenants_Remove a Community Tenant from a Community"></a>
@@ -392,10 +435,8 @@ Represents a status of a community tenant.
 |Property|Value|Description|
 |---|---|---|
 |None|None|undefined|
-|AwaitingConfirmation|AwaitingConfirmation|undefined|
 |Paused|Paused|undefined|
 |Active|Active|undefined|
-|Remove|Remove|undefined|
 
 ---
 
@@ -542,6 +583,9 @@ Access rights for operations against Communities.
 |EditCommunityProfile|32|
 |DeleteCommunity|64|
 |ManageTenants|128|
+|ManageCommunityAdministrators|256|
+|UpdateRegion|512|
+|UpdateContactEmail|1024|
 
 ---
 

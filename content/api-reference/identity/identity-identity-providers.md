@@ -451,6 +451,7 @@ IdentityProviderAdd object<br/>
 |408|[ErrorResponse](#schemaerrorresponse)|Operation timed out.|
 |409|[ErrorResponse](#schemaerrorresponse)|Identity provider already exists in tenant|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
+|503|[ErrorResponse](#schemaerrorresponse)|None|
 
 <h4>Example response body</h4>
 

@@ -424,10 +424,8 @@ Represents a status of a community tenant.
 |Property|Value|
 |---|---|
 |None|None|
-|AwaitingConfirmation|AwaitingConfirmation|
 |Paused|Paused|
 |Active|Active|
-|Remove|Remove|
 
 ---
 

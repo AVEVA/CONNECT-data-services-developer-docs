@@ -16,11 +16,17 @@ Configuration is available for the following edge system types:
 
  - Edge Data Store
 
+ - Edge Data Store Module
+
  - PI Adapter for Modbus TCP
  
  - PI Adapter for MQTT
 
+ - AVEVA Adapter for MQTT Module
+
  - PI Adapter for OPC UA
+
+ - AVEVA Adapter for OPC UA Module
 
  - PI Adapter for RDBMS
 
@@ -29,6 +35,10 @@ Configuration is available for the following edge system types:
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
 An edge system appears on the `Software Management Edge Systems` page once it is writing health data to OCS. For information on configuring health endpoints, see the specific edge system product documentation at [docs.osisoft.com](https://docs.osisoft.com/).
+
+For edge systems, use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
+
+For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. The variable is associated with a secret in AVEVA Edge Management.
 
 ## Import an edge system configuration
 
@@ -82,7 +92,7 @@ To edit an edge system configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation. 
 
-   **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device.
+   **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. 
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.  
 

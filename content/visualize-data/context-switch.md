@@ -48,7 +48,7 @@ To switch assets while performance testing:
 
    In this example, select the ![Swap Asset](../_icons/branded/swap-horizontal.svg) icon for the `Scottsdale Weather Station`.
 
-1. In the `Swap Asset` window, select another asset and click **Continue**. 
+1. In the `Swap Asset` window, select another asset and select **Continue**. 
 
    In this example, the solar radiation trace for the `Scottsdale Weather Station` is replaced with the solar radiation trace for the `Philadelphia Weather Station`. Now you can compare the trace for the `Philadelphia Weather Station` against the `Oakland Weather Station`.
 

@@ -28,7 +28,7 @@ In this situation, an asset type can be used to create multiple similar assets. 
 | Metadata      | Metadata List     | Yes         | Asset and asset type metadata                               | Yes  | Yes            |
 | StreamReferences   | Stream Reference List  | No| Asset stream references                                             | Yes  | No            |
 | Status        | Status            | No          | Asset and asset type status configuration | Yes | Yes            |
-| Tags| String[] | Yes        | Asset tag | Yes | No|
+| Tags| String list | Yes        | Asset tag | Yes | No|
 | TypeReferences | Type Reference List | No        | Asset type type references                                     | No | Yes            |
 
 ## Asset and asset type name and id

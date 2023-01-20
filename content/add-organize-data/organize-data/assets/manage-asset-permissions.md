@@ -14,7 +14,7 @@ To manage asset permissions, you must be assigned the **Manage Permissions** acc
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Assets/Asset Types** dropdown list, select **Assets**.
+1. From the **Assets/Asset Types** selector, select **Assets**.
 
 1. Select an asset. From the side panel, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
 
@@ -35,7 +35,7 @@ You can edit the default user roles and permissions added to a assets when it is
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Assets/Asset Types** dropdown list, select **Assets**.
+1. From the **Assets/Asset Types** selector, select **Assets**.
 
 1. From the toolbar, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Default Permissions for New Assets**.
 

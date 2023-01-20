@@ -10,4 +10,4 @@ Only a single PI to OCS Agent can connect to a single PI server or optional AF s
 
 - Keep the PI to OCS Agent software version up-to-date for the best performance. The portal indicates when an agent is out of date and needs to be updated.
  
-**Note:** Multiple PI to OCS Agents can connect to and transfer data from the same PI Server if the agents are installed on different machines and assigned to different namespaces within the same tenant.  
+**Note:** Multiple PI to OCS Agents can connect to and transfer data from the same PI Server if the agents are installed on different machines and assigned to different namespaces within the same tenant. Only one agent can be installed on each computer.

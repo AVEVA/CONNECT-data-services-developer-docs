@@ -18,7 +18,7 @@ To use the asset explorer to create an asset type:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Asset/Asset Types** selector, select **Asset Types**.
+1. From the **Assets/Asset Types** selector, select **Asset Types**.
 
 1. In the toolbar, select **Add Asset Type**.
 
@@ -62,7 +62,7 @@ To create an asset type based on an existing asset:
 
 1. In the left pane, select **Visualization** > **Asset Explorer**.
 
-1. From the **Asset/Asset Types** selector, select **Assets**.
+1. From the **Assets/Asset Types** selector, select **Assets**.
 
 1. Select the **MyData.Asset** asset.
 

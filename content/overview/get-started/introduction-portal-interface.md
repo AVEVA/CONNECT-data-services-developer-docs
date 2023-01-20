@@ -28,7 +28,7 @@ The following features can be accessed from the menu:
 
 - **Security**: Specify identity providers for authentication and add groups, users, roles, and clients to your tenant.
 
-- **Developer Tools**: Code samples, an API console, and an editor for the OSIsoft Message Format (OMF).
+- **Developer Tools**: Code samples, an API console, and an editor for the Open Message Format (OMF).
 
 - **Support**: Documentation, logs, support links, the OCS blog, and other useful information.
 

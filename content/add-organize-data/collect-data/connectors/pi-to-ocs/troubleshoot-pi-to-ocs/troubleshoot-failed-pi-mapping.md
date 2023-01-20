@@ -16,7 +16,7 @@ If you encounter an error message and the PI to OCS Configuration Utility crashe
 
 1. Successfully connect and authenticate to OCS.
 
-1. In the PI to OCS Configuration utility, click the pencil icon to the right of **PI Mapping**.
+1. In the PI to OCS Configuration utility, select the pencil icon to the right of **PI Mapping**.
 
 1. Follow the steps in [Create a PI mapping section](#pi-to-ocs-utility) to add a PI mapping.
 

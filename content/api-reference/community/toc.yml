@@ -1,21 +1,21 @@
 - name: Communities
   href: ../identity/communities.md
-- name: Community client credential clients
+- name: Client credential clients
   href: ../identity/community-client-credential-clients.md
-- name: Community identity provider
+- name: Identity provider
   href: ../identity/community-identity-provider.md
-- name: Community invitations
+- name: Invitations
   href: ../identity/community-invitations.md
-- name: Community roles
+- name: Roles
   href: ../identity/community-roles.md
-- name: Community search
+- name: Search
   href: community-search.md
-- name: Community summary
+- name: Summary
   href: community-summary.md
-- name: Community tenant collection acls
+- name: Tenant collection acls
   href: ../identity/community-tenant-collection-acls.md
-- name: Community tenants
+- name: Tenants
   href: ../identity/community-tenants.md
-- name: Community users
+- name: Users
   href: ../identity/community-users.md
     

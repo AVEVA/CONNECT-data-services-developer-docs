@@ -107,12 +107,12 @@
 - topicUid: lpdatacollection
   items:
     - topicUid: SoftwareMgmt
-    items:
-    - topicUid: ViewEdgeSystem
-    - topicUid: AddBaseConfiguration
-    - topicUid: DeployConfig
-    - topicUid: DeployModule
-    - topicUid: ManageConfigurations
+      items:
+        - topicUid: ViewEdgeSystem
+        - topicUid: AddBaseConfiguration
+        - topicUid: DeployConfig
+        - topicUid: DeployModule
+        - topicUid: ManageConfigurations
     - topicUid: main-lp
       items:
         - topicUid: lp-intro

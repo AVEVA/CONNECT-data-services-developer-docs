@@ -16,7 +16,7 @@ To add an event to a stream, complete the following steps.
 
     The **Add Event** panel opens.
 
-1. Select a timestamp for the event.
+1. Select a key property for this stream event (for example, a timestamp).
 
 1. Enter or select a value for each data type value.
 

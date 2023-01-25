@@ -2,9 +2,9 @@
 uid: SetUpPowerBI
 ---
 
-# Set up Power BI Connector
+# Power BI Connector setup
 
-You must install OSIsoft Cloud Services Power BI Connector to retrieve data views for use with Microsoft Power BI.
+You must download and install OSIsoft Cloud Services Power BI Connector to retrieve data views for use with Microsoft Power BI.
 
 ## System requirements
 
@@ -20,24 +20,44 @@ The following are required before you install and use OSIsoft Cloud Services Pow
 
 - A user account with Administrator privileges to install OSIsoft Cloud Services Power BI Connector on a local machine.
 
-## Install OSIsoft Cloud Services Power BI Connector
+## Download Power BI Connector
 
-To install the OSIsoft Cloud Services Power BI Connector:
+Download Power BI Connector using OCS.
 
-1. Download the `OCSPowerBIConnector.exe` file from the [OSIsoft Customer portal](https://customers.osisoft.com/s/products).
+1. In the left pane, select **Analytics** > **Data Views**.
 
-1. Install OSIsoft Cloud Services Power BI Connector by either the setup wizard or silent installation.
+1. Select **More options** icon and then select **Download Power BI Connector**.
 
-    - Setup wizard
+1. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
 
-        - Double-click the `OCSPowerBIConnector.exe` file and select **Next**.
+## Install Power BI Connector
 
-        - (Optional) To install the connector to an on-premises data gateway, select `On-premises data gateway installation` and enter the directory where you want to install the connector.
+You can install Power BI Connector by wizard or command line.
 
-    - Silent installation
+### Wizard installation
 
-        - Open a command prompt window and type following command:
+1. Open the Power BI Connector installation file then select **Yes** to confirm running the installation file.
 
-        `.\OCSDataConnectorInstaller.exe -Y INSTALLDIR="<install path>" /quiet`
+1. Accept or change the temporary setup extraction folder and select **OK**.
 
-             **Note:** OSIsoft Cloud Services Power BI Connector supports silent installation for on-premises data gateway installations.
+    The **Power BI Connector Setup Wizard** opens.
+
+1. Select **Next**.
+
+1. (Optional) To install the connector to an on-premises data gateway, select **On-premises data gateway installation** and enter the directory where you want to install the connector.
+
+1. Select **Next**.
+
+1. Select **Install**.
+
+1. Select **Finish** to exit the Setup Wizard.
+
+### Command line silent installation
+
+1. From the Power BI Connector installation file download directory, open a command prompt window and enter following command:
+
+    ```bash
+    .\OCSDataConnectorInstaller.exe -Y INSTALLDIR="<install path>" /quiet`
+    ```
+
+    **Note:** Power BI Connector supports silent installation for on-premises data gateway installations.

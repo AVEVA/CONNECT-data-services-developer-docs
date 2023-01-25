@@ -1,5 +1,5 @@
 ---
-uid: community-communities
+uid: ""
 
 ---
 
@@ -15,16 +15,14 @@ Gets all communities a tenant is joined to.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/Communities
+GET /api/v1-preview/Communities
 ?query={query}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>
 `[optional] string query`
-<br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
+<br/>(not supported) Search string identifier.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
@@ -49,7 +47,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
     "Id": "string",
     "MemberRoleId": "string",
     "Name": "string",
-    "Alias": "string",
+    "DisplayName": "string",
     "Description": "string",
     "Tenants": [
       {
@@ -59,13 +57,13 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
         "IsOwner": true,
         "UserCount": 0,
         "ClientCount": 0,
-        "AccessControlList": "string",
-        "ResourceOwner": "string"
+        "PreferredRegionId": "string",
+        "ContactEmail": "string",
+        "CommunityAlias": "string"
       }
     ],
     "DateCreated": "2019-08-24T14:15:22Z",
-    "AccessControlList": "string",
-    "ResourceOwner": "string",
+    "PreferredRegionId": "string",
     "CommunityRoles": [
       {
         "Id": "string",
@@ -81,13 +79,6 @@ GET /api/v1-preview/tenants/{tenantId}/Communities
 ]
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Member</li>
-</ul>
-
 ---
 
 ## `Create a New Community`
@@ -99,13 +90,10 @@ Creates a new community within a specific tenant. The tenant sending this reques
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/Communities
+POST /api/v1-preview/Communities
 ```
 
 <h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -114,7 +102,9 @@ Community information to create<br/>
 ```json
 {
   "Name": "string",
-  "Description": "string"
+  "Description": "string",
+  "PreferredRegionId": "string",
+  "ContactEmail": "user@example.com"
 }
 ```
 
@@ -139,7 +129,7 @@ Community information to create<br/>
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -149,13 +139,13 @@ Community information to create<br/>
       "IsOwner": true,
       "UserCount": 0,
       "ClientCount": 0,
-      "AccessControlList": "string",
-      "ResourceOwner": "string"
+      "PreferredRegionId": "string",
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
-  "AccessControlList": "string",
-  "ResourceOwner": "string",
+  "PreferredRegionId": "string",
   "CommunityRoles": [
     {
       "Id": "string",
@@ -170,13 +160,6 @@ Community information to create<br/>
 }
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Administrator</li>
-</ul>
-
 ---
 
 ## `Get a Community by Id`
@@ -188,20 +171,22 @@ Gets a community and related information by Id.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
+GET /api/v1-preview/Communities/{communityId}
+?resolveCompanyName={resolveCompanyName}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>Community id<br/><br/>
+`string communityId`
+<br/>Community unique identifier.<br/><br/>
+`[optional] boolean resolveCompanyName`
+<br/>Parameter to resolve company name for community tenants. Default is to include.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Community](#schemacommunity)|Returns the current communities for the tenant. This is a set of objects of type `Community`.|
+|200|[Community](#schemacommunity)|Returns a specified community for the tenant. This is an object of type `Community`.|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
 |401|None|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
@@ -217,7 +202,7 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -227,13 +212,13 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
       "IsOwner": true,
       "UserCount": 0,
       "ClientCount": 0,
-      "AccessControlList": "string",
-      "ResourceOwner": "string"
+      "PreferredRegionId": "string",
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
-  "AccessControlList": "string",
-  "ResourceOwner": "string",
+  "PreferredRegionId": "string",
   "CommunityRoles": [
     {
       "Id": "string",
@@ -248,13 +233,6 @@ GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 }
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-</ul>
-
 ---
 
 ## `Update Community Info`
@@ -266,13 +244,12 @@ Updates attributes of a community such as name and description.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
+PUT /api/v1-preview/Communities/{communityId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
+`string communityId`
 <br/>Community identifier<br/><br/>
 
 <h4>Request Body</h4>
@@ -282,7 +259,8 @@ The community object that contains the attributes to use for the update.<br/>
 ```json
 {
   "Name": "string",
-  "Description": "string"
+  "Description": "string",
+  "PreferredRegionId": "string"
 }
 ```
 
@@ -296,13 +274,6 @@ The community object that contains the attributes to use for the update.<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-</ul>
-
 ---
 
 ## `Delete a Community`
@@ -314,13 +285,12 @@ Deletes a community by Id.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
+DELETE /api/v1-preview/Communities/{communityId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
+`string communityId`
 <br/>The id of the community to delete.<br/><br/>
 
 <h3>Response</h3>
@@ -334,189 +304,6 @@ DELETE /api/v1-preview/tenants/{tenantId}/Communities/{communityId}
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The community was not found.|
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-</ul>
-
----
-
-## `Get Community Access Rights`
-
-<a id="opIdCommunities_Get Community Access Rights"></a>
-
-Get the effective access rights for a community resource.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}/accessrights
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|None|An enumerable of all allowed Access Rights for a Community resource.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
----
-
-## `Get Community Access Control List`
-
-<a id="opIdCommunities_Get Community Access Control List"></a>
-
-Get the access control list for a community resource.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}/accesscontrol
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning tenant identifier.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|None|The AccessControlList of a Community resource.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
----
-
-## `Update Community Access Control List`
-
-<a id="opIdCommunities_Update Community Access Control List"></a>
-
-Update the access control list for a community resource.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1-preview/tenants/{tenantId}/Communities/{communityId}/accesscontrol
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning tenant identifier.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>
-
-<h4>Request Body</h4>
-
-The new AccessControlList to update the current entry with<br/>
-
-```json
-{
-  "RoleTrusteeAccessControlEntries": [
-    {
-      "Trustee": {
-        "Type": 1,
-        "ObjectId": "string",
-        "TenantId": "string"
-      },
-      "AccessType": 0,
-      "AccessRights": 0
-    }
-  ]
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|Success.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
----
-
-## `Get Community Owner`
-
-<a id="opIdCommunities_Get Community Owner"></a>
-
-Get the resource owner for a community resource.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1-preview/tenants/{tenantId}/Communities/{communityId}/owner
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|None|The Resource Owner of a Community resource.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
----
-
-## `Update Community Owner`
-
-<a id="opIdCommunities_Update Community Owner"></a>
-
-Update the resource owner for a community resource.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1-preview/tenants/{tenantId}/Communities/{communityId}/owner
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Owning Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`any newTrustee`
-<br/>Input Trustee<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|Success. Community Resource Owner is updated.|
-|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
-|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
 ---
 ## Definitions
@@ -534,15 +321,14 @@ The Community object
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|guid|false|false|Community identifier|
-|MemberRoleId|guid|false|false|Community member role identifier|
-|Name|string|false|true|Community name|
-|Alias|string|false|true|Requesting tenant's alias for the community|
-|Description|string|false|true|Community description|
+|Id|guid|false|false|Community identifier.|
+|MemberRoleId|guid|false|false|Community member role identifier.|
+|Name|string|false|true|Community name.|
+|DisplayName|string|false|true|Requesting tenant's display name for the community. Either community alias for requesting tenant or community name if community alias is null.|
+|Description|string|false|true|Community description.|
 |Tenants|[[CommunityTenant](#schemacommunitytenant)]|false|true|List of CommunityTenant that are in the community|
-|DateCreated|date-time|false|true|Date community was created|
-|AccessControlList|string|false|true|Access Control List for a Community resource.|
-|ResourceOwner|string|false|true|The ResourceOwner for a Community resource.|
+|DateCreated|date-time|false|true|Date community was created.|
+|PreferredRegionId|string|false|true|Preferred Region Id. This is community wide default if not specified in the similar community tenant field. Community search returns cross region info, so the preferred region stores what region end point to start search.|
 |CommunityRoles|[[Role](#schemarole)]|false|true|The list of community roles for this community.|
 
 ```json
@@ -550,7 +336,7 @@ The Community object
   "Id": "string",
   "MemberRoleId": "string",
   "Name": "string",
-  "Alias": "string",
+  "DisplayName": "string",
   "Description": "string",
   "Tenants": [
     {
@@ -560,13 +346,13 @@ The Community object
       "IsOwner": true,
       "UserCount": 0,
       "ClientCount": 0,
-      "AccessControlList": "string",
-      "ResourceOwner": "string"
+      "PreferredRegionId": "string",
+      "ContactEmail": "string",
+      "CommunityAlias": "string"
     }
   ],
   "DateCreated": "2019-08-24T14:15:22Z",
-  "AccessControlList": "string",
-  "ResourceOwner": "string",
+  "PreferredRegionId": "string",
   "CommunityRoles": [
     {
       "Id": "string",
@@ -603,8 +389,9 @@ The CommunityTenant object
 |IsOwner|boolean|false|false|Boolean indicating whether the CommunityTenant is the owner of the community|
 |UserCount|integer|false|false|Summary count of the users authorized to access the community within the tenant|
 |ClientCount|integer|false|false|Summary count of the clients authorized to access the community within the tenant|
-|AccessControlList|string|false|true|Access Control List for a CommunityTenant resource.|
-|ResourceOwner|string|false|true|The ResourceOwner for a CommunityTenant resource.|
+|PreferredRegionId|string|false|true|Preferred Region Id of a community tenant. This overrides the default community region.|
+|ContactEmail|string|false|true|Contact email of a community tenant. It serves as a point of contact for community tenants.|
+|CommunityAlias|string|false|true|Community alias given by tenant for the community.|
 
 ```json
 {
@@ -614,8 +401,9 @@ The CommunityTenant object
   "IsOwner": true,
   "UserCount": 0,
   "ClientCount": 0,
-  "AccessControlList": "string",
-  "ResourceOwner": "string"
+  "PreferredRegionId": "string",
+  "ContactEmail": "string",
+  "CommunityAlias": "string"
 }
 
 ```
@@ -629,17 +417,15 @@ The CommunityTenant object
 <a id="tocScommunitytenantstatus"></a>
 <a id="tocscommunitytenantstatus"></a>
 
-Represents a status of a community tenant
+Represents a status of a community tenant.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
 |None|None|
-|AwaitingConfirmation|AwaitingConfirmation|
 |Paused|Paused|
 |Active|Active|
-|Remove|Remove|
 
 ---
 
@@ -749,13 +535,17 @@ The CreateCommunityInput object. This is the model input for creating a communit
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|Name of the community to be created|
-|Description|string|false|true|Description of the community|
+|Name|string|false|true|Name of the community to be created.|
+|Description|string|false|true|Description of the community.|
+|PreferredRegionId|string|false|true|Preferred Region Id.|
+|ContactEmail|email|false|true|Contact email of a community owning tenant. It serves as a point of contact for community tenants.|
 
 ```json
 {
   "Name": "string",
-  "Description": "string"
+  "Description": "string",
+  "PreferredRegionId": "string",
+  "ContactEmail": "user@example.com"
 }
 
 ```
@@ -775,137 +565,18 @@ The UpdateCommunityInput object
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|Community name|
-|Description|string|false|true|Community description|
+|Name|string|false|true|Community name.|
+|Description|string|false|true|Community description.|
+|PreferredRegionId|string|false|true|Preferred Region Id.|
 
 ```json
 {
   "Name": "string",
-  "Description": "string"
+  "Description": "string",
+  "PreferredRegionId": "string"
 }
 
 ```
-
----
-
-### AccessControlList
-
-<a id="schemaaccesscontrollist"></a>
-<a id="schema_AccessControlList"></a>
-<a id="tocSaccesscontrollist"></a>
-<a id="tocsaccesscontrollist"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|RoleTrusteeAccessControlEntries|[[AccessControlEntry](#schemaaccesscontrolentry)]|false|true|None|
-
-```json
-{
-  "RoleTrusteeAccessControlEntries": [
-    {
-      "Trustee": {
-        "Type": 1,
-        "ObjectId": "string",
-        "TenantId": "string"
-      },
-      "AccessType": 0,
-      "AccessRights": 0
-    }
-  ]
-}
-
-```
-
----
-
-### AccessControlEntry
-
-<a id="schemaaccesscontrolentry"></a>
-<a id="schema_AccessControlEntry"></a>
-<a id="tocSaccesscontrolentry"></a>
-<a id="tocsaccesscontrolentry"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Trustee|[Trustee](#schematrustee)|false|true|None|
-|AccessType|[AccessType](#schemaaccesstype)|false|false|None|
-|AccessRights|int64|false|false|None|
-
-```json
-{
-  "Trustee": {
-    "Type": 1,
-    "ObjectId": "string",
-    "TenantId": "string"
-  },
-  "AccessType": 0,
-  "AccessRights": 0
-}
-
-```
-
----
-
-### Trustee
-
-<a id="schematrustee"></a>
-<a id="schema_Trustee"></a>
-<a id="tocStrustee"></a>
-<a id="tocstrustee"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Type|[TrusteeType](#schematrusteetype)|false|false|None|
-|ObjectId|string|false|true|None|
-|TenantId|string|false|true|None|
-
-```json
-{
-  "Type": 1,
-  "ObjectId": "string",
-  "TenantId": "string"
-}
-
-```
-
----
-
-### TrusteeType
-
-<a id="schematrusteetype"></a>
-<a id="schema_TrusteeType"></a>
-<a id="tocStrusteetype"></a>
-<a id="tocstrusteetype"></a>
-
-<h4>Enumerated Values</h4>
-
-|Property|Value|
-|---|---|
-|User|1|
-|Client|2|
-|Role|3|
-
----
-
-### AccessType
-
-<a id="schemaaccesstype"></a>
-<a id="schema_AccessType"></a>
-<a id="tocSaccesstype"></a>
-<a id="tocsaccesstype"></a>
-
-<h4>Enumerated Values</h4>
-
-|Property|Value|
-|---|---|
-|Allowed|0|
-|Denied|1|
 
 ---
 

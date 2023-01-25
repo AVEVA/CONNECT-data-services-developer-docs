@@ -1,9 +1,9 @@
 ---
-uid: community-users
+uid: ""
 
 ---
 
-# Users
+# Community Users
 APIs for getting, updating, and deleting users from communities
 
 ## `Add User to a Community`
@@ -15,14 +15,14 @@ Adds a user to a community and provides a list of community role identifiers to 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
+PUT /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users/{userId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string userId`
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string userId`
 <br/>User identifier<br/><br/>
 
 <h4>Request Body</h4>
@@ -57,8 +57,8 @@ List of community roles Ids to assign to the user<br/>
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
+  "Email": "user@example.com",
+  "ContactEmail": "user@example.com",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",
@@ -68,14 +68,6 @@ List of community roles Ids to assign to the user<br/>
   ]
 }
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Community Moderator</li>
-</ul>
 
 ---
 
@@ -88,14 +80,14 @@ Removes a user from a community
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userId}
+DELETE /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users/{userId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string userId`
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string userId`
 <br/>User identifier<br/><br/>
 
 <h3>Response</h3>
@@ -109,14 +101,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users/{userI
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Community Moderator</li>
-</ul>
-
 ---
 
 ## `List Users of a Tenant in a Community`
@@ -128,15 +112,15 @@ Gets users that are associated with a specific tenant and community
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
+GET /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users
 ?query={query}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>
 `[optional] string query`
 <br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
@@ -164,8 +148,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
     "GivenName": "string",
     "Surname": "string",
     "Name": "string",
-    "Email": "string",
-    "ContactEmail": "string",
+    "Email": "user@example.com",
+    "ContactEmail": "user@example.com",
     "ContactGivenName": "string",
     "ContactSurname": "string",
     "ExternalUserId": "string",
@@ -176,13 +160,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
   }
 ]
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-</ul>
 
 ---
 
@@ -195,14 +172,14 @@ Gets the count of users of the tenant in a community. This method is identical t
 <h3>Request</h3>
 
 ```text 
-HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
+HEAD /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/Users
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -214,13 +191,6 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/Users
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |404|[ErrorResponse](#schemaerrorresponse)|Community roles not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-</ul>
 
 ---
 ## Definitions
@@ -242,8 +212,8 @@ Object for retrieving a user
 |GivenName|string|false|true|Given name of the user|
 |Surname|string|false|true|Surname of the user|
 |Name|string|false|true|Name of the user|
-|Email|string|false|true|Email of the user|
-|ContactEmail|string|false|true|Contact email for the user. User will only be contacted through this email.|
+|Email|email|false|true|Email of the user|
+|ContactEmail|email|false|true|Contact email for the user. User will only be contacted through this email.|
 |ContactGivenName|string|false|true|Preferred given name for the user|
 |ContactSurname|string|false|true|Preferred contact surname for the user|
 |ExternalUserId|string|false|true|Provider identifier for the user. This is the identifier we get from the identity provider.|
@@ -256,8 +226,8 @@ Object for retrieving a user
   "GivenName": "string",
   "Surname": "string",
   "Name": "string",
-  "Email": "string",
-  "ContactEmail": "string",
+  "Email": "user@example.com",
+  "ContactEmail": "user@example.com",
   "ContactGivenName": "string",
   "ContactSurname": "string",
   "ExternalUserId": "string",

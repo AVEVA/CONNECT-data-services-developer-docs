@@ -1,37 +1,39 @@
 ---
-uid: community-tenants
+uid: ""
 
 ---
 
-# Tenants
-APIs for updating and removing community tenant information
+# Community Tenants
+APIs for retrieving, updating and removing community tenant information
 
-## `Update a Community Tenant State (communitytenants path)`
+## `Update Community Tenant Info`
 
-<a id="opIdCommunityTenants_Update a Community Tenant State (communitytenants path)"></a>
+<a id="opIdCommunityTenants_Update Community Tenant Info"></a>
 
-Updates the state of a community tenant. The state can be activated, paused, or removed.
+Updates the state of a community tenant. The state can be activated or paused. Also it updates preferred region id and contact email.
 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{tenantIdtoUpdate}
+PUT /api/v1-preview/communities/{communityId}/tenants/{tenantId}
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
-<br/>`CommunityTenant` in the community to update<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier of the `CommunityTenant` in the community to update.<br/><br/>
 
 <h4>Request Body</h4>
 
-CommunityTenant object that contains the attributes to use for the update<br/>
+UpdateCommunityTenantInput object that contains the attributes to use for the update.<br/>
 
 ```json
 {
-  "Status": "None"
+  "Status": "None",
+  "PreferredRegionId": "string",
+  "ContactEmail": "user@example.com",
+  "CommunityAlias": "string"
 }
 ```
 
@@ -47,41 +49,34 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-</ul>
-
 ---
 
-## `Update a Community Tenant State (membertenants path)`
+## `Patch Community Tenant Info`
 
-<a id="opIdCommunityTenants_Update a Community Tenant State (membertenants path)"></a>
+<a id="opIdCommunityTenants_Patch Community Tenant Info"></a>
 
-Updates the state of a community tenant. The state can be activated, paused, or removed.
+Updates the community tenant using an RFC 7396 compliant Patch operation.
 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/membertenants/{tenantIdtoUpdate}
+PATCH /api/v1-preview/communities/{communityId}/tenants/{tenantId}
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string tenantIdtoUpdate`
-<br/>`CommunityTenant` in the community to update<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier of the `CommunityTenant` in the community to update.<br/><br/>
 
 <h4>Request Body</h4>
 
-CommunityTenant object that contains the attributes to use for the update<br/>
+A dictionary that contains attributes found in UpdateCommunityTenantInput for a community tenant update.<br/>
 
 ```json
 {
-  "Status": "None"
+  "property1": "string",
+  "property2": "string"
 }
 ```
 
@@ -96,13 +91,6 @@ CommunityTenant object that contains the attributes to use for the update<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-</ul>
 
 ---
 
@@ -115,15 +103,14 @@ Removes a community tenant from a community
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{tenantIdToRemove}
+DELETE /api/v1-preview/communities/{communityId}/tenants/{tenantId}
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string tenantIdToRemove`
-<br/>`CommunityTenant` in the community to remove<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier of the `CommunityTenant` in the community to remove.<br/><br/>
 
 <h3>Response</h3>
 
@@ -136,14 +123,6 @@ DELETE /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/commun
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Community Moderator</li>
-</ul>
-
 ---
 
 ## `Get Community Tenant Access Rights`
@@ -155,15 +134,14 @@ Get the effective access rights for a community tenant resource.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{calleeTenantId}/accessrights
+GET /api/v1-preview/communities/{communityId}/tenants/{tenantId}/accessrights
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>The tenant identifier of the calling client.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string calleeTenantId`
-<br/>The requested tenant identifer.<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>The requested tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -187,15 +165,14 @@ Get the access control list for a community tenant resource.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{calleeTenantId}/accesscontrol
+GET /api/v1-preview/communities/{communityId}/tenants/{tenantId}/accesscontrol
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>The tenant identifier of the calling client.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string calleeTenantId`
-<br/>The requested tenant identifer.<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>The requested tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -219,15 +196,14 @@ Update the access control list for a community tenant resource.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{calleeTenantId}/accesscontrol
+PUT /api/v1-preview/communities/{communityId}/tenants/{tenantId}/accesscontrol
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>The tenant identifier of the calling client.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string calleeTenantId`
-<br/>The requested tenant identifer.<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>The requested tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -271,21 +247,20 @@ Get the resource owner for a community tenant resource.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{calleeTenantId}/owner
+GET /api/v1-preview/communities/{communityId}/tenants/{tenantId}/owner
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>The tenant identifier of the calling client.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string calleeTenantId`
-<br/>The requested tenant identifer.<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>The requested tenant identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|None|The ResourceOwner of a Community resource.|
+|200|None|The ResourceOwner of a Community resource or empty 200 if no ResourceOwner found.|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
@@ -303,15 +278,14 @@ Update the resource owner for a community tenant resource.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{callerTenantId}/communities/{communityId}/communitytenants/{calleeTenantId}/owner
+PUT /api/v1-preview/communities/{communityId}/tenants/{tenantId}/owner
 ```
 
 <h4>Parameters</h4>
 
-`string callerTenantId`
-<br/>The tenant identifier of the calling client.<br/><br/>`string communityId`
-<br/>Community identifier.<br/><br/>`string calleeTenantId`
-<br/>The requested tenant identifer.<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>The requested tenant identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -335,6 +309,47 @@ Input trustee.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+
+---
+
+## `List Community Tenant Extended Access Rights`
+
+<a id="opIdCommunityTenants_List Community Tenant Extended Access Rights"></a>
+
+Get the extended effective access rights for a community tenant resource.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/communities/{communityId}/tenants/{tenantId}/extendedaccessrights
+```
+
+<h4>Parameters</h4>
+
+`string communityId`
+<br/>Community identifier.<br/><br/>`string tenantId`
+<br/>The requested tenant identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[CommunityAccessRights](#schemacommunityaccessrights)[]|An enumerable of all allowed Access Rights for an administrative CommunityTenant resource.|
+|400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
+|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
+|404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested community tenant was not found.|
+|500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([CommunityAccessRights](#schemacommunityaccessrights)[])
+
+```json
+[
+  0
+]
+```
 
 ---
 ## Definitions
@@ -389,11 +404,17 @@ The UpdateCommunityTenantInput object
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Status|[CommunityTenantStatus](#schemacommunitytenantstatus)|false|false|New status of CommunityTenant in community|
+|Status|[CommunityTenantStatus](#schemacommunitytenantstatus)|false|true|New status of CommunityTenant in community|
+|PreferredRegionId|string|false|true|Change the preferred Region Id to override the community Preferred Region Id|
+|ContactEmail|email|false|true|Contact email of a community tenant. It serves as a point of contact for community tenants.|
+|CommunityAlias|string|false|true|Change the community alias for community tenant.|
 
 ```json
 {
-  "Status": "None"
+  "Status": "None",
+  "PreferredRegionId": "string",
+  "ContactEmail": "user@example.com",
+  "CommunityAlias": "string"
 }
 
 ```
@@ -407,17 +428,15 @@ The UpdateCommunityTenantInput object
 <a id="tocScommunitytenantstatus"></a>
 <a id="tocscommunitytenantstatus"></a>
 
-Represents a status of a community tenant
+Represents a status of a community tenant.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|Description|
 |---|---|---|
-|None|None|Represents a status of a community tenant|
-|AwaitingConfirmation|AwaitingConfirmation|Represents a status of a community tenant|
-|Paused|Paused|Represents a status of a community tenant|
-|Active|Active|Represents a status of a community tenant|
-|Remove|Remove|Represents a status of a community tenant|
+|None|None|undefined|
+|Paused|Paused|undefined|
+|Active|Active|undefined|
 
 ---
 
@@ -539,6 +558,34 @@ Represents a status of a community tenant
 |---|---|
 |Allowed|0|
 |Denied|1|
+
+---
+
+### CommunityAccessRights
+
+<a id="schemacommunityaccessrights"></a>
+<a id="schema_CommunityAccessRights"></a>
+<a id="tocScommunityaccessrights"></a>
+<a id="tocscommunityaccessrights"></a>
+
+Access rights for operations against Communities.
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|None|0|
+|ViewCommunityDetails|1|
+|LeaveCommunity|2|
+|ManageUsers|4|
+|PauseData|8|
+|EditCommunityAlias|16|
+|EditCommunityProfile|32|
+|DeleteCommunity|64|
+|ManageTenants|128|
+|ManageCommunityAdministrators|256|
+|UpdateRegion|512|
+|UpdateContactEmail|1024|
 
 ---
 

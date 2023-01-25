@@ -1,9 +1,9 @@
 ---
-uid: community-client-credential-clients
+uid: ""
 
 ---
 
-# Client Credential Clients
+# Community Client Credential Clients
 APIs for getting, adding, or removing client credential clients from communities
 
 ## `List Client Credential Clients for a Community`
@@ -15,15 +15,15 @@ Gets clients associated with a specific tenant and community
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
+GET /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/ClientCredentialClients
 ?query={query}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>
 `[optional] string query`
 <br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
@@ -61,13 +61,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentia
 ]
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-</ul>
-
 ---
 
 ## `Get Count of Clients for a Community`
@@ -79,14 +72,14 @@ Gets a count of client credential clients for a community
 <h3>Request</h3>
 
 ```text 
-HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients
+HEAD /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/ClientCredentialClients
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>
 
 <h3>Response</h3>
 
@@ -99,13 +92,6 @@ HEAD /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredenti
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-</ul>
-
 ---
 
 ## `Add Client Credential Client to a Community`
@@ -117,14 +103,14 @@ Adds a client credential client to a community, providing a list of community ro
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients/{clientId}
+PUT /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string clientId`
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
 <h4>Request Body</h4>
@@ -168,14 +154,6 @@ Community role identifiers to be assigned to the client<br/>
 }
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Community Moderator</li>
-</ul>
-
 ---
 
 ## `Remove Client Credential Client from a Community`
@@ -187,14 +165,14 @@ Removes a client credential client from a community
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCredentialClients/{clientId}
+DELETE /api/v1-preview/Communities/{communityId}/Tenants/{tenantId}/ClientCredentialClients/{clientId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string clientId`
+`string communityId`
+<br/>Community identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier<br/><br/>`string clientId`
 <br/>Client credential client identifier<br/><br/>
 
 <h3>Response</h3>
@@ -207,14 +185,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Communities/{communityId}/ClientCreden
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden|
 |404|[ErrorResponse](#schemaerrorresponse)|Tenant not found|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal server error|
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Community Moderator</li>
-</ul>
 
 ---
 ## Definitions

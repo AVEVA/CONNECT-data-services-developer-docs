@@ -22,19 +22,13 @@ The following are required before you install and use OSIsoft Cloud Services Pow
 
 ## Download Power BI Connector
 
-Download Power BI Connector using OCS.
-
-1. In the left pane, select **Analytics** > **Data Views**.
-
-2. Select **More options** ![more-options](../../_icons/default/dots-vertical.svg) > **Download Power BI Connector**.
-
-3. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
+To download the connector, browse to the [OSIsoft customer portal](https://my.osisoft.com/) and download the latest version of the install kit for OSIsoft Cloud Services Power BI Connector (`OSIsoft-Cloud-Services-Power-BI-Connector_x.x.x.x.exe`).
 
 ## Install Power BI Connector
 
-<!-- You can install Power BI Connector by wizard or command line.
+You can install Power BI Connector by wizard or command line.
 
-### Wizard installation -->
+### Wizard installation
 
 1. Open the Power BI Connector installation file then select **Yes** to confirm running the installation file.
 
@@ -54,12 +48,16 @@ Download Power BI Connector using OCS.
 
 1. Select **Finish** to exit the Setup Wizard.
 
-<!-- ### Command line silent installation
+### Command line silent installation
 
-1. From the Power BI Connector installation file download directory, open a command prompt window and enter following command:
+To silently install Power BI Connector, open a command line session, change to the installation file download directory, and enter the following command:
 
-    ```bash
-    .\OCSDataConnectorInstaller.exe -Y INSTALLDIR="<install path>" /quiet`
-    ```
+```bash
+.\OSIsoft-Cloud-Services-Power-BI-Connector_x.x.x.x.exe -Y INSTALLDIR="<install path>" /quiet`
+```
 
-    **Note:** Power BI Connector supports silent installation for on-premises data gateway installations. -->
+**Notes:**
+
+- Replace `x.x.x.x` with the version number of the installer.
+
+- Power BI Connector supports silent installation for on-premises data gateway installations.

@@ -53,7 +53,7 @@ You can install Power BI Connector by wizard or command line.
 To silently install Power BI Connector, open a command line session, change to the installation file download directory, and enter the following command:
 
 ```bash
-.\OSIsoft-Cloud-Services-Power-BI-Connector_x.x.x.x.exe -Y INSTALLDIR="<install path>" /quiet`
+.\OSIsoft-Cloud-Services-Power-BI-Connector_x.x.x.x.exe -Y INSTALLDIR="<install path>" /quiet
 ```
 
 **Notes:**

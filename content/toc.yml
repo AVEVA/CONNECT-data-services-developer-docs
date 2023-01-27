@@ -233,7 +233,7 @@
         - topicUid: manage-data-views-permissions
         - topicUid: data-views-retrieve
         - topicUid: data-view-troubleshooting
-    - topicUid: data-views-install-power-bi-connector
+    - topicUid: PowerBI
       items:
         - topicUid: SetUpPowerBI
         - topicUid: RetrieveDataViews

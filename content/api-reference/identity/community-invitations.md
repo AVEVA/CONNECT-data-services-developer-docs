@@ -1,28 +1,27 @@
 ---
-uid: community-invitations
+uid: ""
 
 ---
 
-# Invitations
+# Community Invitations
 Defines the public API methods that are used to manage community invitations. Using this API you can, for example, create, retrieve, update and process invitations. You can also resend an invitation email.
 
-## `List a Community Invitation by Tenant and Community`
+## `List a Community Invitation by issuing Tenant and Community`
 
-<a id="opIdCommunityInvitations_List a Community Invitation by Tenant and Community"></a>
+<a id="opIdCommunityInvitations_List a Community Invitation by issuing Tenant and Community"></a>
 
-Get invitations associated with a specific issuing tenant and community
+Get invitations associated with a specific issuing tenant and community.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
+GET /api/v1-preview/communities/{communityId}/invitations
 ?query={query}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>The identifier of the tenant that issued invitations. The tenant must belong to the community.<br/><br/>`string communityId`
+`string communityId`
 <br/>The identifier of the community to which the recipient of the invitation is being invited.<br/><br/>
 `[optional] string query`
 <br/>(not supported) Search string identifier<br/><br/>`[optional] integer skip`
@@ -33,7 +32,7 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[CommunityInvitation](#schemacommunityinvitation)[]|Set of Invitations (type `CommunityInvitation`) associated with the issuing tenant ( `tenantId`) and community ( `communityId`)|
+|200|[CommunityInvitation](#schemacommunityinvitation)[]|Set of Invitations (type `CommunityInvitation`) associated with the issuing tenant and community ( `communityId`)|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request.|
 |401|[ErrorResponse](#schemaerrorresponse)|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
@@ -64,40 +63,32 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
 ]
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-</ul>
-
 ---
 
 ## `Create a Community Invitation`
 
 <a id="opIdCommunityInvitations_Create a Community Invitation"></a>
 
-Creates a community invitation for a specific community
+Creates a community invitation for a specific community.
 
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations
+POST /api/v1-preview/communities/{communityId}/invitations
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Owning tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-Invitation to create<br/>
+Invitation to create.<br/>
 
 ```json
 {
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "user@example.com"
 }
 ```
 
@@ -134,34 +125,25 @@ Invitation to create<br/>
 }
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Community Moderator</li>
-</ul>
-
 ---
 
 ## `Get a Community Invitation by Tenant, Community, and Id`
 
 <a id="opIdCommunityInvitations_Get a Community Invitation by Tenant, Community, and Id"></a>
 
-Gets a community invitation by Id
+Gets a community invitation by Id.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/{invitationId}
+GET /api/v1-preview/communities/{communityId}/invitations/{invitationId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
-<br/>Community identifier<br/><br/>`string invitationId`
-<br/>Invitation identifier<br/><br/>
+`string communityId`
+<br/>Community identifier.<br/><br/>`string invitationId`
+<br/>Invitation identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -196,31 +178,23 @@ GET /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/{in
 }
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-</ul>
-
 ---
 
 ## `Delete a Community Invitation`
 
 <a id="opIdCommunityInvitations_Delete a Community Invitation"></a>
 
-Deletes a community invitation by invitation identifier
+Deletes a community invitation by invitation identifier.
 
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/{invitationId}
+DELETE /api/v1-preview/communities/{communityId}/invitations/{invitationId}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Tenant identifier<br/><br/>`string communityId`
+`string communityId`
 <br/>Community identifier<br/><br/>`string invitationId`
 <br/>Invitation identifier<br/><br/>
 
@@ -236,21 +210,13 @@ DELETE /api/v1-preview/tenants/{tenantId}/communities/{communityId}/invitations/
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it does not know how to handle.|
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Tenant Administrator</li>
-</ul>
-
 ---
 
 ## `Get details of an Invitation`
 
 <a id="opIdCommunityInvitations_Get details of an Invitation"></a>
 
-Gets details for a community invitation
+Gets details for a community invitation.
 
 <h3>Request</h3>
 
@@ -283,16 +249,10 @@ GET /api/v1-preview/communityinvitations/{invitationId}/details
 {
   "CommunityName": "string",
   "CommunityId": "string",
-  "InvitationState": "None"
+  "InvitationState": "None",
+  "ContactEmail": "string"
 }
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Administrator</li>
-</ul>
 
 ---
 
@@ -300,7 +260,7 @@ Allowed for these roles:
 
 <a id="opIdCommunityInvitations_Process a Community Invitation Based on the Requested Action"></a>
 
-Processes an action against a particular community invitation. The available actions include accept, decline and resend.
+Processes an action against a particular community invitation. The available actions include accept, decline and resend. For the accept action, tenant's contact email should be provided as a point of contact for the community users.
 
 <h3>Request</h3>
 
@@ -319,7 +279,8 @@ Invitation action<br/>
 
 ```json
 {
-  "Action": "Accept"
+  "Action": "Accept",
+  "ContactEmail": "user@example.com"
 }
 ```
 
@@ -335,14 +296,6 @@ Invitation action<br/>
 |404|[ErrorResponse](#schemaerrorresponse)|Not Found. The requested item was not found.|
 |408|[ErrorResponse](#schemaerrorresponse)|Request Timeout. The request has timed out.|
 |500|[ErrorResponse](#schemaerrorresponse)|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Administrator</li>
-<li>Tenant Administrator</li>
-</ul>
 
 ---
 
@@ -402,13 +355,6 @@ GET /api/v1-preview/tenants/{tenantId}/communityinvitations
   }
 ]
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Administrator</li>
-</ul>
 
 ---
 ## Definitions
@@ -531,11 +477,11 @@ The input object to create invitation
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|InvitationRecipient|string|false|true|The email address of the invitation recipient|
+|InvitationRecipient|email|false|true|The email address of the invitation recipient|
 
 ```json
 {
-  "InvitationRecipient": "string"
+  "InvitationRecipient": "user@example.com"
 }
 
 ```
@@ -558,12 +504,14 @@ Summary of a community invitation
 |CommunityName|string|false|true|Community name|
 |CommunityId|guid|false|false|Community identifier|
 |InvitationState|[CommunityInvitationState](#schemacommunityinvitationstate)|false|false|Invitation state|
+|ContactEmail|string|false|true|An arbitrary email address provided as the community tenant's point of contact.|
 
 ```json
 {
   "CommunityName": "string",
   "CommunityId": "string",
-  "InvitationState": "None"
+  "InvitationState": "None",
+  "ContactEmail": "string"
 }
 
 ```
@@ -584,10 +532,12 @@ The input object to process invitation
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Action|[ProcessInvitationAction](#schemaprocessinvitationaction)|false|false|Action to take on invitation|
+|ContactEmail|email|false|true|An arbitrary email address provided as the community tenant's point of contact.|
 
 ```json
 {
-  "Action": "Accept"
+  "Action": "Accept",
+  "ContactEmail": "user@example.com"
 }
 
 ```

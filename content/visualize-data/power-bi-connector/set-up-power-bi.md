@@ -26,15 +26,15 @@ Download Power BI Connector using OCS.
 
 1. In the left pane, select **Analytics** > **Data Views**.
 
-1. Select **More options** icon and then select **Download Power BI Connector**.
+2. Select **More options** ![more-options](../../_icons/default/dots-vertical.svg) > **Download Power BI Connector**.
 
-1. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
+3. On the `Power BI Connector Installer Download` window, select **Download**. When the download completes, close the window.
 
 ## Install Power BI Connector
 
-You can install Power BI Connector by wizard or command line.
+<!-- You can install Power BI Connector by wizard or command line.
 
-### Wizard installation
+### Wizard installation -->
 
 1. Open the Power BI Connector installation file then select **Yes** to confirm running the installation file.
 
@@ -46,13 +46,15 @@ You can install Power BI Connector by wizard or command line.
 
 1. (Optional) To install the connector to an on-premises data gateway, select **On-premises data gateway installation** and enter the directory where you want to install the connector.
 
+    For more information about on-premises data gateway installations, see the Microsoft documentation [Use custom data connectors with the on-premises data gateway](https://learn.microsoft.com/en-us/power-bi/connect-data/service-gateway-custom-connectors).
+
 1. Select **Next**.
 
 1. Select **Install**.
 
 1. Select **Finish** to exit the Setup Wizard.
 
-### Command line silent installation
+<!-- ### Command line silent installation
 
 1. From the Power BI Connector installation file download directory, open a command prompt window and enter following command:
 
@@ -60,4 +62,4 @@ You can install Power BI Connector by wizard or command line.
     .\OCSDataConnectorInstaller.exe -Y INSTALLDIR="<install path>" /quiet`
     ```
 
-    **Note:** Power BI Connector supports silent installation for on-premises data gateway installations.
+    **Note:** Power BI Connector supports silent installation for on-premises data gateway installations. -->

@@ -57,10 +57,8 @@ You can install Power BI Connector by wizard or command line.
 To silently install Power BI Connector, open a command line session, change to the installation file download directory, and enter the following command:
 
 ```bash
-.\AVEVA_Data_Hub_Power_BI_Connector_x_x_x_x.exe -Y INSTALLDIR="<install path>" /quiet`
+.\AVEVA_Data_Hub_Power_BI_Connector_x_x_x_x.exe -Y INSTALLDIR="<install path>" /quiet
 ```
-
-**Notes:**
 
 - Replace `x_x_x_x` with the version number of the installer.
 

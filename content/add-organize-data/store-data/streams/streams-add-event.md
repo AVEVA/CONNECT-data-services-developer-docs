@@ -2,7 +2,7 @@
 uid: streams-add-event
 ---
 
-# Add events
+# Add event
 
 While viewing the data for a stream, you can add _events_, which are data points that the user manually adds to a stream. Any events that you add to a stream can then be visualized while viewing the stream's data or viewing the stream in a Trend session.
 
@@ -25,3 +25,39 @@ To add an event to a stream, complete the following steps.
 1. Select **Save**.
 
 The event is added to the stream. You can view the new event in your list of data points creating a ranged query that includes your new event.
+
+## Edit event
+
+You can edit the values for any existing event.
+
+1. In the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. Select the stream to edit an event for and choose **View Data**.
+
+1. Edit **Query Type** and its options to display the event that you want to edit.
+
+1. Choose the event that you want to edit and select the **Edit** (![edit](../../../_icons/default/pencil.svg)) icon.
+
+1. Enter or select a value for each data type value.
+
+    For enumerated data types, values map to the friendly name rather than an integer.
+
+1. Select **Save**.
+
+The stream event is edited.
+
+## Remove event
+
+You can remove any existing event.
+
+1. In the left pane, select **Data Management** > **Sequential Data Store**.
+
+1. Select the stream to remove an event for and choose **View Data**.
+
+1. Edit **Query Type** and its options to display the event that you want to remove.
+
+1. Choose the event that you want to remove and select **More options** (![more options](../../../_icons/default/dots-vertical.svg)) > **Remove Event**.
+
+1. To confirm the removal, choose **Remove**.
+
+The stream event is removed.

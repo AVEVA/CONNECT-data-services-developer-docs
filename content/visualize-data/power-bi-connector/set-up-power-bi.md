@@ -42,7 +42,7 @@ You can install Power BI Connector by wizard or command line.
 
 1. Select **Next**.
 
-1. (Optional) To install the connector to an on-premises data gateway, select **On-premises data gateway installation** and enter the directory where you want to install the connector.
+1. (Optional) To install the connector to an on-premises data gateway, select **On-premises data gateway installation** and specify the custom data connector directory for your on-premises data gateway.
 
     For more information about on-premises data gateway installations, see the Microsoft documentation [Use custom data connectors with the on-premises data gateway](https://learn.microsoft.com/en-us/power-bi/connect-data/service-gateway-custom-connectors).
 

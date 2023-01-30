@@ -36,7 +36,7 @@ You can edit the values for any existing event.
 
 1. Edit **Query Type** and its options to display the event that you want to edit.
 
-1. Choose the event that you want to edit and select the **Edit** (![edit](../../../_icons/default/pencil.svg)) icon.
+1. Choose the event that you want to edit and select the **Edit** ![edit](../../../_icons/default/pencil.svg) icon.
 
 1. Enter or select a value for each data type value.
 
@@ -56,7 +56,7 @@ You can remove any existing event.
 
 1. Edit **Query Type** and its options to display the event that you want to remove.
 
-1. Choose the event that you want to remove and select **More options** (![more options](../../../_icons/default/dots-vertical.svg)) > **Remove Event**.
+1. Choose the event that you want to remove and select **More options** ![more options](../../../_icons/default/dots-vertical.svg) > **Remove Event**.
 
 1. To confirm the removal, choose **Remove**.
 

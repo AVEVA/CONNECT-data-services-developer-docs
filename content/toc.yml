@@ -106,7 +106,7 @@
         - topicUid: manage-asset-rules-permissions
 - topicUid: lpdatacollection
   items:
-    - topicUid: SoftwareMgmt
+  - topicUid: SoftwareMgmt
     items:
     - topicUid: ViewEdgeSystem
     - topicUid: AddBaseConfiguration

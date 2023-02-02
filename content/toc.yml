@@ -48,7 +48,10 @@
             - topicUid: streams-share-streams
             - topicUid: streams-view-in-trend
             - topicUid: streams-view-data
-            - topicUid: streams-add-event
+              items:
+              - topicUid: streams-add-event
+              - topicUid: streams-edit-event
+              - topicUid: streams-remove-event
             - topicUid: streams-manage-stream-permissions
         - topicUid: ccTypes
           items:

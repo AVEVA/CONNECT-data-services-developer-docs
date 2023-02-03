@@ -40,4 +40,6 @@ When setting a ranged value query type, you most provide additional parameters t
 | Count | The number of data values included in the range. By default, this value is 100. |
 | Reversed | The order that data values are listed. By default, data values are not reversed. |
 
-Select **Apply** to apply your parameters. The data values included in the query are listed on screen, and they are plotted in a graph as well. You can view different data value included in the stream by editing the **X Axis** and **Y Axis** dropdowns.
+Select **Apply** to apply your parameters. The data values included in the query are listed on screen, and they are plotted in a graph as well. For streams with multiple properties, you can view different data values included in the stream by editing the **X Axis** and **Y Axis** dropdowns, as depicted in the image below.
+
+![view data](../images/view-data.png)

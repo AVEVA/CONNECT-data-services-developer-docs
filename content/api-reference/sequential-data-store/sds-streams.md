@@ -404,7 +404,7 @@ Returns the resolved stream and type representation that is associated with a gi
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Resolved
+GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Resolved
 ```
 
 <h4>Parameters</h4>
@@ -578,7 +578,7 @@ Returns bulk resolved stream and type representations that are associated with p
 <h3>Request</h3>
 
 ```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Bulk/Streams/Resolved
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Resolved
 ```
 
 <h4>Parameters</h4>
@@ -1172,11 +1172,11 @@ A contract defining resolution of SdsStream.
 |Id|string|false|true|A unique identifier for the SdsStream object.|
 |Name|string|false|true|An optional user-friendly name for the SdsStream object.|
 |Description|string|false|true|A brief description of the SdsStream object.|
-|TypeId|string|false|true|A unique identifier for the SdsType of the SdsStream object.|
+|TypeId|string|false|true|A unique identifier for the SdsType of the SdsStream object|
 |Indexes|[[SdsStreamIndex](#schemasdsstreamindex)]|false|true|List of SdsStreamIndexs to define secondary indexes for the SdsStream.|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|Defines the SdsInterpolationMode of the SdsStream. Default is null.|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|Defines the SdsExtrapolationMode of the SdsStream. Default is null.|
-|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|List of SdsStreamPropertyOverrides to define unit of measure and interpolation mode overrides for the SdsStream.|
+|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|List of SdsStreamPropertyOverrides to define unit of measure and interpolation mode overrides for the SdsStream|
 |Resolved|boolean|false|false|None|
 |Type|[SdsResolvedType](#schemasdsresolvedtype)|false|true|A contract defining the type of data to read or write in a SdsResolvedStream.|
 
@@ -1341,8 +1341,8 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
 |IsReferenceType|boolean|false|false|Enabling this property preserves objects as references during serialization/de-serialization of the SdsType data while using the SdsFormatter. This property behaves similar to IsReference property for DataContractSerializer and is only valid for serialization if SdsFormatter is used.|
 |GenericArguments|[[SdsType](#schemasdstype)]|false|true|Contains the parameterized SdsTypes of the current generic SdsType. This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer to https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index.|
 |Properties|[[SdsResolvedTypeProperty](#schemasdsresolvedtypeproperty)]|false|true|[A contract defining the type of data to read or write in a SdsResolvedType.]|
-|BaseType|[SdsType](#schemasdstype)|false|true|Defines the base type of the SdsType. Commonly used by SdsTypeBuilder to generate SdsType from contracts not explicitly defined and maintained by the user.|
-|DerivedTypes|[[SdsType](#schemasdstype)]|false|true|List of SdsTypes that should be recognized by SdsFormatter during serialization/de-serialization. This property behaves similar to KnownTypeAttribute attribute for DataContractSerializer and only valid for serialization if SdsFormatter is used.|
+|BaseType|[SdsType](#schemasdstype)|false|true|A contract defining the type of data to read or write in a SdsStream.|
+|DerivedTypes|[[SdsType](#schemasdstype)]|false|true|[A contract defining the type of data to read or write in a SdsStream.]|
 |InterpolationMode|[SdsInterpolationMode2](#schemasdsinterpolationmode2)|false|false|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
 |ExtrapolationMode|[SdsExtrapolationMode2](#schemasdsextrapolationmode2)|false|false|Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.|
 

@@ -16,7 +16,7 @@ You can remove any existing event from a stream.
 
     For more information on editing the query type, see [Edit query type](xref:streams-view-data#edit-query-type).
 
-1. Choose the event that you want to remove and select **More options** ![more options](../../../_icons/default/dots-vertical.svg) > **Remove Event**.
+1. Select the event that you want to remove. Then select **More options** ![more options](../../../_icons/default/dots-vertical.svg) > **Remove Event**.
 
 1. To confirm the removal, choose **Remove**.
 

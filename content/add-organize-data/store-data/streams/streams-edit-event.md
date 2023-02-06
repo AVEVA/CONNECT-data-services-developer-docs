@@ -10,6 +10,8 @@ You can edit the values for any existing event.
 
 1. Select the stream to edit an event for and choose **View Data**.
 
+    **Tip:** Use <xref:Search> to find your stream.
+
 1. Edit **Query Type** and its options to display the event that you want to edit.
 
 1. Choose the event that you want to edit and select the **Edit** ![edit](../../../_icons/default/pencil.svg) icon.

@@ -10,7 +10,7 @@ You can view each data value for a stream by choosing it from the Sequential Dat
 
 1. Select the stream that you want to view data for.
 
-    Use <xref:Search> or the **Communities**  filter to find your stream.
+    **Tip:** Use <xref:Search> to find your stream.
 
 1. Select **View Data**.
 

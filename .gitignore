@@ -8,5 +8,4 @@ obj/
 /content/.vs
 /**/.DS_Store
 /OCS-Docs
-/.vscode
-settings.json
+/.vscode/settings.json

@@ -29,7 +29,8 @@
 				],
 				"exclude": [
 					"content/api-reference/identity/identity-implicit-clients.md",
-					"content/external-references/**.yaml"
+					"content/external-references/**.yaml",
+					"content/api-reference/client-failover/**" // ADH only
 				]
 			}
 		],

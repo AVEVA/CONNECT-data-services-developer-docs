@@ -111,6 +111,11 @@ Content-Type: application/json
 | StreamReferenceName:Name1    | Returns all assets whose stream references contain a stream reference name that matches **Name1**. |
 | Tags:MarkedAsset             | Returns all assets which has "MarkedAsset" as a tag.         |
 
+
+### Search operators
+
+You can use search operators to get more refined search results for assets. For more information, see [Search operators](xref:Search#search-operators).
+
 ### Special characters in search queries
 
 Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character:   " |  /  *  \  ( )  : 

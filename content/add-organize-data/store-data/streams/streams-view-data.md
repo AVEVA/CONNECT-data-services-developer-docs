@@ -32,14 +32,14 @@ To edit the query type, ensure that the **First Value/Last Value/Range Query** b
 
 ## Range values
 
-When setting a ranged value query type, you most provide additional parameters to display data values:
+When setting a ranged value query type, you must provide additional parameters to display data values:
 
 | Parameter | Description |
 |--|--|
 | Start Index | The start index for the range. Choose a date and time. By default, this value is the current date and time.  |
-| Count | The number of data values included in the range. By default, this value is 100. |
-| Reversed | The order that data values are listed. By default, data values are not reversed. |
+| Count | The maximum number of data values returned by the query. By default, this value is 100. |
+| Reversed | The order that data is queried from the start index—forward or reversed. When set to **True**, the query returns data searching reversed through time (reverse chronologically). When set to **False**, the query returns data forward through from the provided start index (chronologically). |
 
-Select **Apply** to apply your parameters. The data values included in the query are listed on screen, and they are plotted in a graph as well. For streams with multiple properties, you can view different data values included in the stream by editing the **X Axis** and **Y Axis** dropdowns, as depicted in the image below.
+Select **Apply** to apply your parameters and execute the query. The data values included in the query are listed on screen, and they are plotted in a graph as well. For streams with multiple properties, you can view different data values included in the stream by editing the **X Axis** and **Y Axis** dropdowns, as depicted in the image below.
 
 ![view data](../images/view-data.png)

@@ -18,9 +18,15 @@ To add an event to a stream, complete the following steps.
 
     The **Add Event** panel opens.
 
-1. Select a key property. They key property for the event is usually the **Timestamp**, but sometimes it can be another property, like **Index**.
+1. (Required) Configure the key property for the event.
 
-1. Enter or select a value for each data type value.
+    The key property is the index value for the event. This property is usually **Timestamp**, but there is no restriction as to what type the index can be within SDS. Sometimes it can be another property, like **Index**.
+
+    **Key property**
+
+    ![key property](../images/key-property.png)
+
+1. Configure the remaining property values for the event.
 
     For enumerated data types, values map to the friendly name rather than an integer.
 

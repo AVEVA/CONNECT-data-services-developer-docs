@@ -38,7 +38,7 @@ When setting a ranged value query type, you must provide additional parameters t
 |--|--|
 | Start Index | The start index for the range. Choose a date and time. By default, this value is the current date and time.  |
 | Count | The maximum number of data values returned by the query. By default, this value is 100. |
-| Reversed | The order that data is queried from the start index—forward or reversed. When set to **True**, the query returns data searching reversed through time (reverse chronologically). When set to **False**, the query returns data forward through from the provided start index (chronologically). |
+| Reversed | The order that data is queried from the start index—forward or reversed. When set to **True**, the query returns data searching reversed through time (reverse chronologically). When set to **False**, the query returns data forward through from the provided start index (chronologically). By default, this setting is set to **True**. |
 
 Select **Apply** to apply your parameters and execute the query. The data values included in the query are listed on screen, and they are plotted in a graph as well. For streams with multiple properties, you can view different data values included in the stream by editing the **X Axis** and **Y Axis** dropdowns, as depicted in the image below.
 

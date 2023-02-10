@@ -20,7 +20,7 @@ To add an event to a stream, complete the following steps.
 
 1. (Required) Configure the key property for the event.
 
-    The key property is the index value for the event. This property is usually **Timestamp**, but there is no restriction as to what type the index can be within SDS. Sometimes it can be another property, like **Index**.
+    The key property is the index value for the event. This property is usually a DateTime value, but there is no restriction as to what data type the index can be within SDS.
 
     **Key property**
 

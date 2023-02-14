@@ -107,7 +107,7 @@ The PI to OCS collection method transfers PI time series data from a local PI Se
 
 #### Custom OMF applications
 
-OSIsoft Message Format (OMF) is a platform-independent format for passing JSON messages to OCS over HTTP. 
+Open Message Format (OMF) is a platform-independent format for passing JSON messages to OCS over HTTP. 
 
 For programmatic access to data, use OMF to develop data acquisition applications on platforms and in languages for which there is no native support. This allows you to integrate data collection directly into a device or asset. 
 
@@ -251,6 +251,6 @@ The following diagram depicts multiple streams organized into a data view that a
 
 1. Ordered and normalized data is then consumable by data science applications for in-depth analysis. 
 
-![](images/how-does-ocs-work/dataviews.jpg)
+![Data stream diagram](images/how-does-ocs-work/dataviews.png)
 
 **Note**: You can reference metadata defined in a metadata rule when creating a data view. This action will include all streams containing the specified metadata.

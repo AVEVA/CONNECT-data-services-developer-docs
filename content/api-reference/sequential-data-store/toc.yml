@@ -2,9 +2,15 @@
   href: sds-access-control-list.md
 - name: Quantities
   href: sds-quantities.md
+<<<<<<< HEAD
 - name: Sds stream data
   href: sds-stream-data.md
 - name: Steams data bulk
+=======
+- name: Streams
+  href: sds-streams.md
+- name: Stream data bulk
+>>>>>>> 98c2a08f9cce670eeb5adaaad4954f3f0d05f1aa
   href: sds-stream-bulk-data.md
 - name: Stream data read
   href: sds-read-data-api.md

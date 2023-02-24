@@ -132,6 +132,7 @@
   - topicUid: SoftwareMgmt
     items:
     - topicUid: ViewEdgeSystem
+    - topicUid: StatusDefinitions
     - topicUid: AddBaseConfiguration
     - topicUid: DeployConfig
     - topicUid: DeployModule

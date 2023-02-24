@@ -1,10 +1,10 @@
 ---
 uid: sds-types
+
 ---
 
 # Types
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section 
-interact with types. For more information, see [Types](xref:sdsTypes).
+The API in this section interacts with types.
 
 ## `List Types`
 
@@ -12,36 +12,26 @@ interact with types. For more information, see [Types](xref:sdsTypes).
 
 Gets a list of `SdsType` objects. If the optional parameters are not set, this call will return up to the first 100 SdsTypes
 
-### Request
+<h3>Request</h3>
+
 ```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}&orderby={orderby}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types
+?query={query}&skip={skip}&count={count}&orderby={orderby}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>
-`[Optional] string query`  
-Query identifier. 
-See [Search in SDS](xref:sdsSearching) for information about specifying the search parameter.
-<br/><br/>
-`[Optional] int skip`  
-Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.
-<br/><br/>
-`[Optional] int count`  
-Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.
-<br/><br/>
-`[Optional] string orderby`  
-Parameter representing sorted order.
-A field name is required.
-The sorting is based on the stored values for a given field (of type `string`). 
-For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default). 
-Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values ``asc`` or ``desc``, respectively.
-For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending. 
-If no value is specified, there is no sorting of results.
-<br/><br/>
-### Response
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+`[optional] string query`
+<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
+<br/><br/>`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
+<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
+
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -52,7 +42,8 @@ If no value is specified, there is no sorting of results.
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -135,19 +126,20 @@ Content-Type: application/json
 
 Gets the specified `SdsType`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string typeId`
-<br/>Type identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -159,7 +151,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -239,19 +232,20 @@ Content-Type: application/json
 
 Creates the specified type. If a type with a matching identifier already exists, SDS compares the existing type with the type that was sent.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string typeId`
-<br/>Type identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -266,7 +260,8 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response ([SdsType](#schemasdstype))
 
 ```json
@@ -277,97 +272,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
   "SdsTypeCode": 0,
   "IsGenericType": true,
   "IsReferenceType": true,
-  "GenericArguments": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null,
-          "IsQuality": true
-        }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
-    }
-  ],
+  "GenericArguments": "[<SdsType>]",
   "Properties": [
     {
       "Id": "string",
@@ -376,206 +281,15 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
       "Order": 0,
       "IsKey": true,
       "FixedSize": 0,
-      "SdsType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
+      "SdsType": "<SdsType>",
       "Value": null,
       "Uom": "string",
       "InterpolationMode": 0,
       "IsQuality": true
     }
   ],
-  "BaseType": {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "SdsTypeCode": 0,
-    "IsGenericType": true,
-    "IsReferenceType": true,
-    "GenericArguments": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
-    "Properties": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "Order": 0,
-        "IsKey": true,
-        "FixedSize": 0,
-        "SdsType": null,
-        "Value": null,
-        "Uom": "string",
-        "InterpolationMode": null,
-        "IsQuality": true
-      }
-    ],
-    "BaseType": {
-      "Id": null,
-      "Name": null,
-      "Description": null,
-      "SdsTypeCode": null,
-      "IsGenericType": null,
-      "IsReferenceType": null,
-      "GenericArguments": null,
-      "Properties": null,
-      "BaseType": null,
-      "DerivedTypes": null,
-      "InterpolationMode": null,
-      "ExtrapolationMode": null
-    },
-    "DerivedTypes": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
-    "InterpolationMode": 0,
-    "ExtrapolationMode": 0
-  },
-  "DerivedTypes": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null,
-          "IsQuality": true
-        }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
-    }
-  ],
+  "BaseType": "<SdsType>",
+  "DerivedTypes": "[<SdsType>]",
   "InterpolationMode": 0,
   "ExtrapolationMode": 0
 }
@@ -724,19 +438,20 @@ Content-Type: application/json
 
 Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams, stream views, or other types reference it.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string typeId`
-<br/>Type identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -749,22 +464,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
 ---
 
 ## `Get Type Reference Count`
@@ -773,19 +472,20 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
 
 Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/><br/>`string typeId`
-<br/>Type identifier.<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -797,7 +497,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Reference
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -832,21 +533,21 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Reference
 <a id="tocSsdstype"></a>
 <a id="tocssdstype"></a>
 
-A contract defining the type of data to read or write in a SdsStream
+A contract defining the type of data to read or write in a SdsStream.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|A unique identifier for the SdsType object|
-|Name|string|false|true|An optional user-friendly name for the SdsType object|
-|Description|string|false|true|A brief description of the SdsType object|
-|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The SdsTypeCode of the SdsType object|
-|IsGenericType|boolean|false|false|A boolean value indicating whether the current SdsType is a generic type This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer, https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics|
-|IsReferenceType|boolean|false|false|Enabling this property preserves objects as references during serialization/de-serialization of the SdsType data while using the SdsFormatter This property behaves similar to IsReference property for DataContractSerializer and is only valid for serialization if SdsFormatter is used.|
-|GenericArguments|[[SdsType](#schemasdstype)]|false|true|Contains the parameterized SdsTypes of the current generic SdsType This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer to https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics|
-|Properties|[[SdsTypeProperty](#schemasdstypeproperty)]|false|true|List of SdsTypePropertys of the SdsType|
-|BaseType|[SdsType](#schemasdstype)|false|true|Defines the base type of the SdsType Commonly used by SdsTypeBuilder to generate SdsType from contracts not explicitly defined and maintained by the user.|
+|Id|string|false|true|A unique identifier for the SdsType object.|
+|Name|string|false|true|An optional user-friendly name for the SdsType object.|
+|Description|string|false|true|A brief description of the SdsType object.|
+|SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The SdsTypeCode of the SdsType object.|
+|IsGenericType|boolean|false|false|A boolean value indicating whether the current SdsType is a generic type. This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer, https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index.|
+|IsReferenceType|boolean|false|false|Enabling this property preserves objects as references during serialization/de-serialization of the SdsType data while using the SdsFormatter. This property behaves similar to IsReference property for DataContractSerializer and is only valid for serialization if SdsFormatter is used.|
+|GenericArguments|[[SdsType](#schemasdstype)]|false|true|Contains the parameterized SdsTypes of the current generic SdsType. This property is only used when using templates or generics. It will be automatically set if the SdsType is generated using SdsTypeBuilder. For further information on generics, please refer to https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index.|
+|Properties|[[SdsTypeProperty](#schemasdstypeproperty)]|false|true|List of SdsTypePropertys of the SdsType.|
+|BaseType|[SdsType](#schemasdstype)|false|true|Defines the base type of the SdsType. Commonly used by SdsTypeBuilder to generate SdsType from contracts not explicitly defined and maintained by the user.|
 |DerivedTypes|[[SdsType](#schemasdstype)]|false|true|List of SdsTypes that should be recognized by SdsFormatter during serialization/de-serialization. This property behaves similar to KnownTypeAttribute attribute for DataContractSerializer and only valid for serialization if SdsFormatter is used.|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|false|Defines the SdsInterpolationMode of the SdsType. This property is only valid for the root SdsType and invalid for SdsTypes of SdsTypePropertys.|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|false|Defines the SdsExtrapolationMode of the SdsType. This property is only valid for the root SdsType and invalid for SdsTypes of SdsTypePropertys.|
@@ -859,97 +560,7 @@ A contract defining the type of data to read or write in a SdsStream
   "SdsTypeCode": 0,
   "IsGenericType": true,
   "IsReferenceType": true,
-  "GenericArguments": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null,
-          "IsQuality": true
-        }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
-    }
-  ],
+  "GenericArguments": "[<SdsType>]",
   "Properties": [
     {
       "Id": "string",
@@ -958,206 +569,15 @@ A contract defining the type of data to read or write in a SdsStream
       "Order": 0,
       "IsKey": true,
       "FixedSize": 0,
-      "SdsType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
+      "SdsType": "<SdsType>",
       "Value": null,
       "Uom": "string",
       "InterpolationMode": 0,
       "IsQuality": true
     }
   ],
-  "BaseType": {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "SdsTypeCode": 0,
-    "IsGenericType": true,
-    "IsReferenceType": true,
-    "GenericArguments": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
-    "Properties": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "Order": 0,
-        "IsKey": true,
-        "FixedSize": 0,
-        "SdsType": null,
-        "Value": null,
-        "Uom": "string",
-        "InterpolationMode": null,
-        "IsQuality": true
-      }
-    ],
-    "BaseType": {
-      "Id": null,
-      "Name": null,
-      "Description": null,
-      "SdsTypeCode": null,
-      "IsGenericType": null,
-      "IsReferenceType": null,
-      "GenericArguments": null,
-      "Properties": null,
-      "BaseType": null,
-      "DerivedTypes": null,
-      "InterpolationMode": null,
-      "ExtrapolationMode": null
-    },
-    "DerivedTypes": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
-    "InterpolationMode": 0,
-    "ExtrapolationMode": 0
-  },
-  "DerivedTypes": [
-    {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "SdsTypeCode": 0,
-      "IsGenericType": true,
-      "IsReferenceType": true,
-      "GenericArguments": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "Properties": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "Order": 0,
-          "IsKey": true,
-          "FixedSize": 0,
-          "SdsType": null,
-          "Value": null,
-          "Uom": "string",
-          "InterpolationMode": null,
-          "IsQuality": true
-        }
-      ],
-      "BaseType": {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      },
-      "DerivedTypes": [
-        {
-          "Id": "string",
-          "Name": "string",
-          "Description": "string",
-          "SdsTypeCode": null,
-          "IsGenericType": true,
-          "IsReferenceType": true,
-          "GenericArguments": [
-            {}
-          ],
-          "Properties": [
-            {}
-          ],
-          "BaseType": null,
-          "DerivedTypes": [
-            {}
-          ],
-          "InterpolationMode": null,
-          "ExtrapolationMode": null
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0
-    }
-  ],
+  "BaseType": "<SdsType>",
+  "DerivedTypes": "[<SdsType>]",
   "InterpolationMode": 0,
   "ExtrapolationMode": 0
 }
@@ -1173,7 +593,7 @@ A contract defining the type of data to read or write in a SdsStream
 <a id="tocSsdstypecode"></a>
 <a id="tocssdstypecode"></a>
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1276,23 +696,23 @@ A contract defining the type of data to read or write in a SdsStream
 <a id="tocSsdstypeproperty"></a>
 <a id="tocssdstypeproperty"></a>
 
-A contract defining a property of a SdsType
+A contract defining a property of a SdsType.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|An unique identifier for the SdsTypeProperty object|
-|Name|string|false|true|An optional user-friendly name for the SdsTypeProperty object|
-|Description|string|false|true|A brief description of the SdsTypeProperty object|
-|Order|int32|false|false|The order used for comparison among SdsTypePropertys if a compound index is specified for SdsType|
-|IsKey|boolean|false|false|A boolean value indicating whether the current SdsTypeProperty must be used for indexing Used in combination with property to enable compound indexing|
-|FixedSize|int32|false|false|An optional property specifying the length of string Exclusively used for that is of|
-|SdsType|[SdsType](#schemasdstype)|false|true|SdsType of the current SdsTypeProperty|
-|Value|any|false|true|An enum value of the current SdsTypeProperty. Exclusively used for a of an enum|
-|Uom|string|false|true|Indicates the Unit of Measure of the current SdsTypeProperty|
-|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|An InterpolationMode that overrides the root SdsType's InterpolationMode for this SdsTypeProperty|
-|IsQuality|boolean|false|false|Indicates whether this property marks data quality|
+|Id|string|false|true|A unique identifier for the SdsTypeProperty object.|
+|Name|string|false|true|An optional user-friendly name for the SdsTypeProperty object.|
+|Description|string|false|true|A brief description of the SdsTypeProperty object.|
+|Order|int32|false|false|The order used for comparison among SdsTypePropertys if a compound index is specified for SdsType.|
+|IsKey|boolean|false|false|A boolean value indicating whether the current SdsTypeProperty must be used for indexing.|
+|FixedSize|int32|false|false|An optional property specifying the length of string.|
+|SdsType|[SdsType](#schemasdstype)|false|true|SdsType of the current SdsTypeProperty.|
+|Value|any|false|true|An enum value of the current SdsTypeProperty.|
+|Uom|string|false|true|Indicates the Unit of Measure of the current SdsTypeProperty.|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|An InterpolationMode that overrides the root SdsType's InterpolationMode for this SdsTypeProperty.|
+|IsQuality|boolean|false|false|Indicates whether this property marks data quality.|
 
 ```json
 {
@@ -1309,79 +729,10 @@ A contract defining a property of a SdsType
     "SdsTypeCode": 0,
     "IsGenericType": true,
     "IsReferenceType": true,
-    "GenericArguments": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
-    "Properties": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "Order": 0,
-        "IsKey": true,
-        "FixedSize": 0,
-        "SdsType": null,
-        "Value": null,
-        "Uom": "string",
-        "InterpolationMode": null,
-        "IsQuality": true
-      }
-    ],
-    "BaseType": {
-      "Id": null,
-      "Name": null,
-      "Description": null,
-      "SdsTypeCode": null,
-      "IsGenericType": null,
-      "IsReferenceType": null,
-      "GenericArguments": null,
-      "Properties": null,
-      "BaseType": null,
-      "DerivedTypes": null,
-      "InterpolationMode": null,
-      "ExtrapolationMode": null
-    },
-    "DerivedTypes": [
-      {
-        "Id": "string",
-        "Name": "string",
-        "Description": "string",
-        "SdsTypeCode": null,
-        "IsGenericType": true,
-        "IsReferenceType": true,
-        "GenericArguments": [
-          null
-        ],
-        "Properties": [
-          null
-        ],
-        "BaseType": null,
-        "DerivedTypes": [
-          null
-        ],
-        "InterpolationMode": null,
-        "ExtrapolationMode": null
-      }
-    ],
+    "GenericArguments": "[<SdsType>]",
+    "Properties": "[<SdsTypeProperty>]",
+    "BaseType": "<SdsType>",
+    "DerivedTypes": "[<SdsType>]",
     "InterpolationMode": 0,
     "ExtrapolationMode": 0
   },
@@ -1402,14 +753,14 @@ A contract defining a property of a SdsType
 <a id="tocSsdsinterpolationmode"></a>
 <a id="tocssdsinterpolationmode"></a>
 
-Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects
+Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
-|Default|0|
 |Continuous|0|
+|Default|0|
 |StepwiseContinuousLeading|1|
 |StepwiseContinuousTrailing|2|
 |Discrete|3|
@@ -1427,7 +778,7 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.
 
-#### Enumerated Values
+<h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
@@ -1445,9 +796,9 @@ Defines how a stream responds to requests with indexes that precede or follow al
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-Contains the error message format that follows the AVEVA Data Hub error standards
+The error response contains standard details on the cause and resolution of the error.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

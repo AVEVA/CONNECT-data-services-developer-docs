@@ -56,7 +56,7 @@ The following table provides a list and descriptions of these toolbar commands.
 |---------------|----------|
 | ![Manage permissions icon](../../_icons/default/account-lock.svg) Manage permissions | Change role-based access to portal resources. |
 | Change namespace | Choose a different namespace. |
-| ![View notifications icon](../../_icons/custom/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. |
-| ![Documentation icon](../../_icons/custom/help-circle.svg) Help | Access the online documentation. |
-| ![User Profile icon](../../_icons/custom/account-circle.svg) User profile | View a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
+| ![View notifications icon](../../_icons/default/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. |
+| ![Documentation icon](../../_icons/default/help-circle.svg) Help | Access the online documentation. |
+| ![User Profile icon](../../_icons/default/account-circle.svg) User profile | View a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
 | ![Customize icon](../../_icons/branded/pencil.svg) Customize | Customize the layout of the portal dashboard. |

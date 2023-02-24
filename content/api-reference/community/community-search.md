@@ -16,7 +16,7 @@ Searches for streams within a community by query
 
 ```text 
 GET /api/v1-preview/search/communities/{communityId}/streams
-?query={query}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&orderBy={orderBy}
+?query={query}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&orderBy={orderBy}&mockCount={mockCount}
 ```
 
 <h4>Parameters</h4>
@@ -30,7 +30,8 @@ GET /api/v1-preview/search/communities/{communityId}/streams
 <br/>The number of results to return per page. Supercedes 'count' if specified. Will also cause a Link response header to be created with links to subsequent result sets. Those result sets are first, last, next or previous.<br/><br/>`[optional] integer maxPages`
 <br/>The maximum number of result records that can be returned. This is used in conjunction with pageSize.<br/><br/>`[optional] string continuationToken`
 <br/>If specified, this call retrieves a set of results as specified within the token. The possible result sets are first, last, next or previous.<br/><br/>`[optional] string orderBy`
-<br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, Description, Self, TenantId, NamespaceId, TenantName, and CommunityId. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: NamespaceID DESC<br/><br/>
+<br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, Description, Self, TenantId, NamespaceId, TenantName, and CommunityId. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: NamespaceID DESC<br/><br/>`[optional] integer mockCount`
+<br/>The mock count.<br/><br/>
 
 <h3>Response</h3>
 

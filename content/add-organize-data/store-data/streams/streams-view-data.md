@@ -4,7 +4,7 @@ uid: streams-view-data
 
 # View stream data
 
-You can view each data value for a stream by choosing it from the Sequential Data Store.
+You can view each property value for a stream by choosing it from the Sequential Data Store.
 
 1. In the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -14,7 +14,7 @@ You can view each data value for a stream by choosing it from the Sequential Dat
 
 1. Select **View Data**.
 
-By default, the last data value available for the stream displays. However, you can change which data values are displayed by editing the **Query Type** dropdown. See the heading below for more information.
+The queried data for the stream displays, listing the index value and property value included in the query. For enumeration properties, both the enumeration and its mapped value display. You can change the data that is displayed by editing the **Query Type** dropdown. See the heading below for more information.
 
 **Tip:** You can manually add data values to a stream by adding an event. For more information, see <xref:streams-add-event>.
 

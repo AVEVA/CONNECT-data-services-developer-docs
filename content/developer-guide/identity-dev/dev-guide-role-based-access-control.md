@@ -14,7 +14,7 @@ Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), which
 - AccessType - the access permitted, either allowed or denied
 - AccessRights - the access rights allowed or denied to the Trustee specified 
 
-A User or Client that attempts to read, write, delete, or manage access control of an entity assigned an ACL must possess a role that corresponds to a Role trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
+A User or Client that attempts to read, write, delete, or manage access control of an entity assigned an ACL must possess a Role that corresponds to a Role Trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
 
 ### Collections with ACL endpoints
 

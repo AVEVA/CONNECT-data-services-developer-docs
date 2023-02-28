@@ -45,7 +45,7 @@ The following table shows whether endpoint collections have an endpoint for acce
 
 ### Trustee
 
-The following table shows TrusteeTypes and the corresponding TypeIds. Please note that only Role TrusteeType is allowed for AccessControlLists.
+The following table shows TrusteeTypes and the corresponding TypeIds. Only Role TrusteeType is allowed for AccessControlLists.
 
 | TrusteeType           | TypeId |
 |-----------------------|--------|

@@ -84,36 +84,33 @@ The following code sample shows the structure and format for an ACL that gives R
 Sample  body:
 
 ```json
-HTTP/1.1 200
-Content-Type: application/json
-
 {
-  "RoleTrusteeAccessControlEntries": [
-    {
-    	"Trustee": {
-    		"Type": 3,
-    		"ObjectId": "11111111-1111-1111-1111-111111111111"
-    	},
-    	"AccessType": 0,
-    	"AccessRights": 1
-    },
-    {
-		"Trustee": {
-			"Type": 3,
-    		"ObjectId": "22222222-2222-2222-2222-222222222222"
-    	},
-    	"AccessType": 0,
-    	"AccessRights": 15
-    },
-    {
-		"Trustee": {
-    		"Type": 3,
-    		"ObjectId": "33333333-3333-3333-3333-333333333333"
-    	},
-    	"AccessType": 1,
-    	"AccessRights": 8
-	}
-],
+	"RoleTrusteeAccessControlEntries": [
+		{
+			"Trustee": {
+				"Type": 3,
+				"ObjectId": "11111111-1111-1111-1111-111111111111"
+			},
+			"AccessType": 0,
+			"AccessRights": 1
+		},
+		{
+			"Trustee": {
+				"Type": 3,
+				"ObjectId": "22222222-2222-2222-2222-222222222222"
+			},
+			"AccessType": 0,
+			"AccessRights": 15
+		},
+		{
+			"Trustee": {
+				"Type": 3,
+				"ObjectId": "33333333-3333-3333-3333-333333333333"
+			},
+			"AccessType": 1,
+			"AccessRights": 8
+		}
+	],
 }
 ```
 

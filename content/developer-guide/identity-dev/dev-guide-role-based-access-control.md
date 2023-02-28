@@ -14,7 +14,7 @@ Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), which
 - AccessType - the access permitted, either allowed or denied
 - AccessRights - the access rights allowed or denied to the Trustee specified 
 
-A user or application that attempts to read, write, delete, or manage access control of an entity assigned an ACL must be assigned a trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
+A User or Client that attempts to read, write, delete, or manage access control of an entity assigned an ACL must possess a role that corresponds to a Role trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
 
 ### Collections with ACL endpoints
 
@@ -50,7 +50,7 @@ The following table shows TrusteeTypes and the corresponding TypeIds.
 | TrusteeType           | TypeId |
 |-----------------------|--------|
 | User                  | 1      |
-| Application           | 2      |
+| Client                | 2      |
 | Role                  | 3      |
 
 The following table shows AccessTypes and the corresponding TypeIds.
@@ -92,7 +92,7 @@ Content-Type: application/json
     {
     	"Trustee": {
     		"Type": 3,
-    		"RoleId": "11111111-1111-1111-1111-111111111111"
+    		"ObjectId": "11111111-1111-1111-1111-111111111111"
     	},
     	"AccessType": 0,
     	"AccessRights": 1
@@ -100,7 +100,7 @@ Content-Type: application/json
     {
 		"Trustee": {
 			"Type": 3,
-    		"RoleId": "22222222-2222-2222-2222-222222222222"
+    		"ObjectId": "22222222-2222-2222-2222-222222222222"
     	},
     	"AccessType": 0,
     	"AccessRights": 15
@@ -108,7 +108,7 @@ Content-Type: application/json
     {
 		"Trustee": {
     		"Type": 3,
-    		"RoleId": "33333333-3333-3333-3333-333333333333"
+    		"ObjectId": "33333333-3333-3333-3333-333333333333"
     	},
     	"AccessType": 1,
     	"AccessRights": 8
@@ -119,26 +119,26 @@ Content-Type: application/json
 
 ## Owner
 
-Set an owner on an entity to grant access for all operations on the entity regardless of the access set in the ACL. Only users and applications are valid owners for entities. Users are identified with their `ObjectId`, and applications are identified with the `ApplicationId`.
+Set an owner on an entity to grant access for all operations on the entity regardless of the access set in the ACL. Only Users and Clients are valid owners for entities. Both User and Client Trustee types use the `ObjectId` property to specify the User's ID or Client's ID, respectively.
 
 The following code samples shows the format and structure of an owner object.
 
 **User Owner Body**
 
 ```json
-"Owner": {
+{
 	"Type": 1,
 	"TenantId": "55555555-5555-5555-5555-555555555555",
 	"ObjectId": "44444444-4444-4444-4444-444444444444"
 },
 ```
 
-**Application Owner Body**
+**Client Owner Body**
 
 ```json
-"Owner": {
+{
 	"Type": 2,
 	"TenantId": "55555555-5555-5555-5555-555555555555",
-	"ApplicationId": "66666666-6666-6666-6666-666666666666"
+	"ObjectId": "66666666-6666-6666-6666-666666666666"
 },
 ```

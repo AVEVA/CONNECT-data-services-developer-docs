@@ -45,7 +45,7 @@ The following table shows whether endpoint collections have an endpoint for acce
 
 ### Trustee
 
-The following table shows TrusteeTypes and the corresponding TypeIds.
+The following table shows TrusteeTypes and the corresponding TypeIds. Please note that only Role TrusteeType is allowed for AccessControlLists.
 
 | TrusteeType           | TypeId |
 |-----------------------|--------|
@@ -81,7 +81,7 @@ The following code sample shows the structure and format for an ACL that gives R
 
 **Body**
 
-Sample  body:
+Sample body:
 
 ```json
 {
@@ -116,7 +116,7 @@ Sample  body:
 
 ## Owner
 
-Set an owner on an entity to grant access for all operations on the entity regardless of the access set in the ACL. Only Users and Clients are valid owners for entities. Both User and Client Trustee types use the `ObjectId` property to specify the User's ID or Client's ID, respectively.
+Set an owner on an entity to grant access for all operations on the entity regardless of the access set in the ACL. Only Users and Clients are valid owners for entities. Both User and Client Trustee types use the `ObjectId` property to specify either the User's ID or Client's ID, respectively.
 
 The following code samples shows the format and structure of an owner object.
 

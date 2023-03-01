@@ -150,6 +150,8 @@ You can view details about an individual AF element such as related attribute na
 
 You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
 
+To build a PI points transfer list:
+
 1. Select the **PI Point Search** tab.
 
 1. To filter the results, do the following:

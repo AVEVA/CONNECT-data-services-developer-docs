@@ -205,7 +205,7 @@ You can group and organize operational PI, IoT, and AVEVA Data Hub data. By arra
 
 Two dynamic methods are available to allow you to filter and order data after they are in place. These methods include the following: 
 
-- [Metadata rules](#metadata-rules) - Metadata rules assign metadata to streams matching defined stream name patterns.
+- [Metadata rules](#stream-metadata-rules) - Metadata rules assign metadata to streams matching defined stream name patterns.
 - [Data views](#data-views) - Data views order, index, and organize data from multiple streams. 
 
 ### Stream metadata rules 

@@ -28,6 +28,32 @@ expression:
 > [!NOTE]
 > You use logical operators on ordered properties.  
 
+## Math functions
+The following math functions are supported for use within a filter
+expression:
+
+| Function  | Description                 |
+|-----------|-------------------------|
+| ``add``   | Addition                |
+| ``sub``   | Subtraction             |
+| ``mul``   | Multiplication          |
+| ``div``   | Division                |
+| ``mod``   | Modulo                  |
+| ``round`` | Rounds to the nearest numeric component without a decimal, with the midpoint rounded away from 0. For example, 0.5 rounds to 1; -0.5 rounds to -1) |
+| ``floor`` | Rounds down to the nearest numeric component without a decimal |
+|``ceiling``| Rounds up to the nearest numeric component without a decimal |
+
+### Examples of math functions
+The examples below use the ``ConversionFactor`` and ``ConversionOffset`` properties of an SdsUom, which are of type *double*: 
+- ``ConversionFactor eq (6.0 add 3.0)``
+- ``ConversionFactor eq (6.0 sub 3.0)``
+- ``ConversionFactor eq (6.0 mul 3.0)``
+- ``ConversionFactor eq (6.0 div 3.0)``
+- ``ConversionOffset eq (7.0 mod 3.0)``
+- ``round(ConversionOffset) eq 16``
+- ``floor(ConversionOffset) eq 15``
+- ``ceiling(ConversionOffset) eq 16``
+
 ### Examples of logical operators
 - ``ModifiedDate gt 2022-12-06T00:00:00Z``
 - ``CreatedDate le 2022-01-01T00:00:00Z``

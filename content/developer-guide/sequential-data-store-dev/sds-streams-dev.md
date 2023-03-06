@@ -29,6 +29,8 @@ for internal SDS use.
 | InterpolationMode | SdsInterpolationMode             | Optional    | No		  | Interpolation setting of the stream. Default is null. |
 | ExtrapolationMode | SdsExtrapolationMode             | Optional    | No		  | Extrapolation setting of the stream. Default is null. |
 | PropertyOverrides | IList\<SdsStreamPropertyOverride\> | Optional    | No		  | Used to define unit of measure and interpolation mode overrides for a stream. |
+| CreatedDate       | DateTime               | No    | No |  Timestamp in ISO 8601 extended format and UTC time standard at which the SdsStream was created. Cannot be modified by users. |
+| ModifiedDate      | DateTime               | No   | No |  Timestamp in ISO 8601 extended format and UTC time standard at which the SdsStream was last modified. Cannot be modified by users. |
 | [Tags](xref:sds-streams-tags)*		| IList\<String\>					| Optional    | Yes		  | A list of tags denoting special attributes or categories.|
 | [Metadata](xref:sds-streams-metadata)*	| IDictionary\<String, String\>	| Optional    | Yes		  | A dictionary of string keys and associated string values.  |
 

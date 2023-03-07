@@ -2,5 +2,7 @@
   href: sds-compression.md
 - name: Filter expressions for SDS values
   href: sds-filter-expressions.md
+- name: Filter expressions for SDS objects
+  href: sds-metadata-objects-filter-expressions.md
 - name: Table format
   href: sds-table-format.md

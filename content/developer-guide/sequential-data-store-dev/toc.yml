@@ -10,8 +10,6 @@
   href: sds-stream-views-dev.md
 - name: Search in SDS
   href: sds-search.md
-- name: Filter expressions for SDS objects
-  href: sds-metadata-objects-filter-expressions.md
 - name: Read data
   href: read-data/toc.yml
   topicHref: sds-read-data.md

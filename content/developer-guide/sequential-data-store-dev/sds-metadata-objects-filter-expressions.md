@@ -26,10 +26,12 @@ expression:
 | ``-``      | Negation                                            |
 
 > [!NOTE]
+> 
 > You can use logical operators on ordered properties.  
 > You can only use negation on numeric properties.
 
 ### Examples of logical operators
+The examples below are using the ``CreatedDate`` and ``ModifiedDate`` properties of an SDS object, which are of type *DateTime*:
 - ``ModifiedDate gt 2022-12-06T00:00:00Z``
 - ``CreatedDate le 2022-01-01T00:00:00Z``
 - ``(ModifiedDate gt 2022-12-06T00:00:00Z) and (CreatedDate le 2022-01-01T00:00:00Z)``
@@ -108,6 +110,7 @@ expression:
 | ``second`` | Get second value from DateTime   |
 
 ### Examples of DateTime functions
+The examples below are using the ``CreatedDate`` and ``ModifiedDate`` properties of an SDS object, which are of type *DateTime*:
 -  ``year(CreatedDate) eq 2015``
 -  ``month(CreatedDate) eq 11``
 -  ``day(CreatedDate) eq 3``

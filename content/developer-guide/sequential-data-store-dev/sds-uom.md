@@ -23,8 +23,8 @@ The following table shows the required and optional SdsUom fields.
 | QuantityId       | String | Required    | The identifier associated with the quantity that this unit is a measure of | Velocity|
 | ConversionFactor | Double | Required    | Used for unit conversions.  When a value of this unit is multiplied by the ConversionFactor and then incremented by the ConversionOffset, the value in terms of the base unit of the corresponding quantity is returned. | 1.0 |
 | ConversionOffset | Double | Required    | Used for unit conversions. See details for ConversionFactor | 0.0  |
-| CreatedDate       | DateTime               | No    | No |  Timestamp in ISO 8601 extended format and UTC time standard at which the SdsUom was created. Cannot be modified by users. |
-| ModifiedDate      | DateTime               | No   | No |  Timestamp in ISO 8601 extended format and UTC time standard at which the SdsUom was last modified. Cannot be modified by users. |
+| CreatedDate       | DateTime               | No    | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsUom was created. Cannot be modified by users. |
+| ModifiedDate      | DateTime               | No   | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsUom was last modified. Cannot be modified by users. |
 
 ## SdsUomQuantity
 
@@ -38,8 +38,8 @@ The following table shows the required and optional SdsUomQuantity fields.
 | Name       | String  | Optional    | Full name for the quantity | Velocity |
 | BaseUom    | SdsUom  | Required    | The base unit of measure for this quantity. All other Uom's measuring this quantity will have ConversionFactor's and ConversionOffsets relative to the BaseUom  | SdsUom representing "meters per second" |
 | Dimensions | short[] | Optional    | Reserved for internal use. Represents the seven base SI dimensions: Length, Mass, Time, Electric Current, Thermodynamic Temperature, Amount of Substance, and Luminous Density. | [1,0,-1,0,0,0,0] |
-| CreatedDate       | DateTime               | No    | No |  Timestamp in ISO 8601 extended format and UTC time standard at which the SdsUomQuantity was created. Cannot be modified by users. |
-| ModifiedDate      | DateTime               | No   | No |  Timestamp in ISO 8601 extended format and UTC time standard at which the SdsUomQuantity was last modified. Cannot be modified by users. |
+| CreatedDate       | DateTime               | No    | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsUomQuantity was created. Cannot be modified by users. |
+| ModifiedDate      | DateTime               | No   | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsUomQuantity was last modified. Cannot be modified by users. |
 
 ## Supported system-defined unit quantities
 

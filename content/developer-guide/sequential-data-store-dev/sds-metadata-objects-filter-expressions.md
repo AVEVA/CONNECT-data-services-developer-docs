@@ -26,7 +26,15 @@ expression:
 | ``-``      | Negation                                            |
 
 > [!NOTE]
-> You use logical operators on ordered properties.  
+> You can use logical operators on ordered properties.  
+> You can only use negation on numeric properties.
+
+### Examples of logical operators
+- ``ModifiedDate gt 2022-12-06T00:00:00Z``
+- ``CreatedDate le 2022-01-01T00:00:00Z``
+- ``(ModifiedDate gt 2022-12-06T00:00:00Z) and (CreatedDate le 2022-01-01T00:00:00Z)``
+- ``(ModifiedDate gt 2022-12-06T00:00:00Z) and (ModifiedDate lt 2022-12-07T00:00:00Z)``
+- ``not ModifiedDate gt 2022-12-06T00:00:00Z``
 
 ## Math functions
 The following math functions are supported for use within a filter
@@ -53,13 +61,6 @@ The examples below use the ``ConversionFactor`` and ``ConversionOffset`` propert
 - ``round(ConversionOffset) eq 16``
 - ``floor(ConversionOffset) eq 15``
 - ``ceiling(ConversionOffset) eq 16``
-
-### Examples of logical operators
-- ``ModifiedDate gt 2022-12-06T00:00:00Z``
-- ``CreatedDate le 2022-01-01T00:00:00Z``
-- ``(ModifiedDate gt 2022-12-06T00:00:00Z) and (CreatedDate le 2022-01-01T00:00:00Z)``
-- ``(ModifiedDate gt 2022-12-06T00:00:00Z) and (ModifiedDate lt 2022-12-07T00:00:00Z)``
-- ``not ModifiedDate gt 2022-12-06T00:00:00Z``
 
 ## String functions
 The character index in a string is zero-based. The following string functions are supported for use within a

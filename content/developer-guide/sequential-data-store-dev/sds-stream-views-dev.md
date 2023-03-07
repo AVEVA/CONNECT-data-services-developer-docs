@@ -21,6 +21,8 @@ See [Search in SDS](xref:sdsSearching#search-for-stream-views) for limitations o
 | SourceTypeId | String                 | Yes    | Yes		   |Identifier of the SdsType of the SdsStream |
 | TargetTypeId | String                 | Yes    | Yes		   |Identifier of the SdsType to convert events to |
 | Properties   | IList\<SdsStreamViewProperty\> | No    | Yes, with limitations*	  |Property-level mapping |
+| CreatedDate       | DateTime               | No    | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was created. Cannot be modified by users. |
+| ModifiedDate      | DateTime               | No   | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was last modified. Cannot be modified by users. |
 
 > [!NOTE]
 > SdsStreamViewProperty objects are not searchable.

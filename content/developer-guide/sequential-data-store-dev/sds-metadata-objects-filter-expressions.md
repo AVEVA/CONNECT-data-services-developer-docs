@@ -3,7 +3,7 @@ uid: sdsFilterExpressions
 ---
 
 # Filter expressions for SDS objects
-Filter expressions can be applied to read operations such as, [List Types](xref:sds-types#list-types) and [List Streams](xref:sds-streams#list-streams), that return Sequential Data Store (SDS) objects (SdsTypes, SdsStreams, SdsStreamViews, SdsUomQuantities, and SdsUoms). 
+Filter expressions can be applied to read operations (such as [List Types](xref:sds-types#list-types) and [List Streams](xref:sds-streams#list-streams)) that return Sequential Data Store (SDS) objects (SdsTypes, SdsStreams, SdsStreamViews, SdsUomQuantities, and SdsUoms). 
 All filter expressions for metadata objects are case-insensitive.
 
 

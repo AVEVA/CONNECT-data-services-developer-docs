@@ -36,6 +36,8 @@ Ranged value queries get a range of recorded values for a stream. You can either
 
 ### [By Count](#tab/tabid-1)
 
+To query range by count, select **By count** and configure the following parameters:
+
 | Parameter | Description |
 |--|--|
 | Start Index | The start index for the range. Choose a date and time. By default, this value is the current date and time.  |
@@ -43,6 +45,8 @@ Ranged value queries get a range of recorded values for a stream. You can either
 | Reversed | The order that data is queried from the start index—forward or reversed. When set to **True**, the query returns data searching reversed through time (reverse chronologically). When set to **False**, the query returns data forward through from the provided start index (chronologically). By default, this setting is set to **True**. |
 
 ### [By Range](#tab/tabid-2)
+
+To query by range, select **By range** and configure the following parameters:
 
 | Parameter | Description |
 |--|--|

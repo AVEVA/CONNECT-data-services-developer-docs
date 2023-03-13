@@ -36,7 +36,7 @@ Ranged value queries get a range of recorded values for a stream. You can either
 
 ### [By Count](#tab/tabid-1)
 
-To query range by count, select **By count** and configure the following parameters:
+To query by count, select **By count** and configure the following parameters:
 
 | Parameter | Description |
 |--|--|

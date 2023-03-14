@@ -18,8 +18,6 @@
   href: identity-hybrid-clients.md
 - name: Identity providers
   href: identity-identity-providers.md
-- name: Implicit clients
-  href: identity-implicit-clients.md
 - name: Invitation
   href: invitation.md
 - name: Invitations

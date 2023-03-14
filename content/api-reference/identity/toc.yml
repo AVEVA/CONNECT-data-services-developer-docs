@@ -2,8 +2,6 @@
   href: identity-authorization-code-clients.md
 - name: Automation identities
   href: identity-automation-identities.md
-- name: Azure Active Directory tenants
-  href: identity-azure-active-directory-tenants.md
 - name: Claim type names
   href: identity-claim-type-names.md
 - name: Claims

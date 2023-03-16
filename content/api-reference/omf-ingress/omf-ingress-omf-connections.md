@@ -15,7 +15,7 @@ Gets a list of all `OmfConnection` objects in the given namespace.
 <h3>Request</h3>
 
 ```text 
-GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections
 ```
 
 <h4>Parameters</h4>
@@ -94,7 +94,7 @@ Creates a new `OmfConnection` mapped to the specified `ClientIds`. A given `Clie
 <h3>Request</h3>
 
 ```text 
-POST /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections
+POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections
 ```
 
 <h4>Parameters</h4>
@@ -175,7 +175,7 @@ Gets the specified `OmfConnection`.
 <h3>Request</h3>
 
 ```text 
-GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}
 ```
 
 <h4>Parameters</h4>
@@ -241,7 +241,7 @@ Updates the `Name`, `Description`, and/or `ClientIds` for the specified `OmfConn
 <h3>Request</h3>
 
 ```text 
-PUT /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}
 ```
 
 <h4>Parameters</h4>
@@ -323,7 +323,7 @@ Deletes the specified `OmfConnection`.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}
+DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}
 ```
 
 <h4>Parameters</h4>

@@ -6,3 +6,5 @@
   href: omf-editor.md  
 - name: Subscriptions 
   href: omf-ingress-subscriptions.md
+- name: OMF API v1 to v2 migration
+  href: omf-migration.md

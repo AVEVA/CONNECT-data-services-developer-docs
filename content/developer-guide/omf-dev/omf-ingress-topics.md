@@ -4,6 +4,8 @@ uid: omfIngressTopics
 
 # Topics 
 
+**Note:** OMF topics and subscriptions have been replaced by <xref:omf-ingress-omf-connections>. See <xref:OMFmigration>.
+
 OMF topics aggregate OMF messages received from one or more clients and make them available for consumption by a subscription.
 
 ## Topic information 

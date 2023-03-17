@@ -60,6 +60,8 @@ The supported AF change synchronization events and the result of each change are
 
   - **Addition or updates to attributes**: An SDS stream is created if newly referenced in transfer. The stream reference of the asset is added or updated.
 
+    - **Note:** If an AF element has a PI point reference that is not yet created when the transfer is started, creating that PI point reference will not trigger change synchronization. The PI point reference must be created before a transfer is started.
+
   - **Deletion of attributes**: The stream reference is removed from the asset. The SDS stream is removed if a point is no longer referenced in the transfer.<sup>1</sup>
 
   - **Deletion of the element**: The asset is deleted.<sup>1</sup>

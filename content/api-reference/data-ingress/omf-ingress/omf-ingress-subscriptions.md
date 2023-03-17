@@ -3,7 +3,7 @@ uid: omf-ingress-subscriptions
 
 ---
 
-# Subscriptions
+# Subscriptions (legacy)
 APIs for managing Subscriptions.
 
 **Note:** OMF topics and subscriptions have been replaced by <xref:omf-ingress-omf-connections>. See <xref:OMFmigration>.

@@ -2,7 +2,7 @@
 uid: omfIngressTopics
 ---
 
-# Topics 
+# Topics (legacy)
 
 **Note:** OMF topics and subscriptions have been replaced by <xref:omf-ingress-omf-connections>. See <xref:OMFmigration>.
 

@@ -1274,6 +1274,8 @@ Represents an asset object.
 |Id|string|false|true|Identifier. If you do not provide an identifier, a random GUID will be assigned as the identifier.|
 |Name|string|false|true|User-friendly name. If not specified, name will be set to the same value as the `Id` field.|
 |Description|string|false|true|Description|
+|CreatedDate|date-time|false|false|Created Date|
+|ModifiedDate|date-time|false|false|Modified Date|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Metadata|
 |AssetTypeId|string|false|true|Asset type identifier. Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|Asset stream reference|

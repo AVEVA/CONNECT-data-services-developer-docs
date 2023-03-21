@@ -4,7 +4,7 @@ uid: gs-data-hub-use
 
 # Step 5: AVEVA Data Hub use
 
-After configuring security and ingress, your options for using AVEVA Data Hub expand.
+After initial setup of folders/namespaces, users, and ingress data sources, 
 
 ## Streams
 

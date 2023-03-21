@@ -10,7 +10,6 @@ Because AVEVA Data Hub sits on top of the AVEVA Connect platform, setup and conf
 
 Complete the following major steps to get up and running in AVEVA Data Hub.
 
-- <xref:gs-prerequisites>
 - <xref:gs-setup-connect>
 - <xref:gs-setup-connect-users>
 - <xref:gs-setup-data-hub-users>

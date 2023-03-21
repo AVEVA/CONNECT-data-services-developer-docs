@@ -20,7 +20,6 @@
   - topicUid: Search
 - topicUid: gs-get-started
   items:
-  - topicUid: gs-prerequisites
   - topicUid: gs-setup-connect
     items: 
     - topicUid: sign-in-cnnxt

@@ -2,7 +2,7 @@
 uid: create-folders
 ---
 
-# Create a folder and turn on AVEVA Data Hub
+# Step 1C: Create a folder and turn on AVEVA Data Hub
 
 Before users can access AVEVA Data Hub, you must create a folder in AVEVA Connect and then turn on the AVEVA Data Hub service for that folder.  
 

@@ -12,7 +12,7 @@ Data views allow you to access subsets of data items from AVEVA Data Hub in data
 
 1. [Create and configure data view](https://docs.aveva.com/bundle/data-hub/page/analytics/data-views/data-views-create-and-configure.html)
 
-First, you must create and configure a data view. The AVEVA Data Hub resources included in the data view are based on the result of one or more queries, which you must configure. Streams, assets, and other AVEVA Data Hub resources that can be included in a data view are known as _data items_. Streams shared to communities can also be included. Properties from data objects and information about the data items (such as Id and Metadata) can be included in the data view as _fields_.
+    First, you must create and configure a data view. The AVEVA Data Hub resources included in the data view are based on the result of one or more queries, which you must configure. Streams, assets, and other AVEVA Data Hub resources that can be included in a data view are known as _data items_. Streams shared to communities can also be included. Properties from data objects and information about the data items (such as Id and Metadata) can be included in the data view as _fields_.
 
 ## API Console
 

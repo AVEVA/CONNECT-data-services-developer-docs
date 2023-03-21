@@ -2,7 +2,7 @@
 uid: map-group-adh
 ---
 
-# Map a group to an AVEVA Data Hub role
+# Step 3B: Map a group to an AVEVA Data Hub role
 
 Assign an existing AVEVA Connect group to a Data Hub role to control what actions users assigned to this group can take in AVEVA Data Hub. There are six built-in tenant roles which cannot be removed:
 

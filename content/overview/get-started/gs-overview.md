@@ -2,7 +2,7 @@
 uid: gs-overview
 ---
 
-## Log into AVEVA Data Hub
+# Step 3A: Log into AVEVA Data Hub
 
 Log into AVEVA Data Hub.
 

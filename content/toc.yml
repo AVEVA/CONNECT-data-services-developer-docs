@@ -38,7 +38,6 @@
     items:
     - topicUid: gs-overview
     - topicUid: map-group-adh
-    - topicUid: map-user-adh
     - topicUid: namespaces-manage-permissions
   - topicUid: gs-ingress
   - topicUid: gs-data-hub-use

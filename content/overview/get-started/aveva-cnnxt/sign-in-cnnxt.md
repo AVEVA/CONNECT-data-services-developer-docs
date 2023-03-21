@@ -2,7 +2,7 @@
 uid: sign-in-cnnxt
 ---
 
-# Sign in to AVEVA Connect and navigate to AVEVA Data Hub 
+# Step 1A: Log into AVEVA Connect
 
 This topic explains how to navigate to AVEVA Data Hub via [AVEVA Connect](https://connect.aveva.com/) for the following types of accounts:
 

@@ -8,7 +8,7 @@ Before you can use AVEVA Data Hub, you must log into AVEVA Connect and subscribe
 
 ## Step 1A: Log into AVEVA Connect
 
-[Sign in to AVEVA Connect](https://connect.aveva.com/) using one of the available sign in options. If you need more help signing in, see [Sign in to AVEVA Connect](https://docs.aveva.com/bundle/aveva-connect/page/885334.html) in the AVEVA Connect documentation.
+[Sign in to AVEVA Connect](https://connect.aveva.com/) using one of the available sign in options. If you need more help signing in, see <xref:sign-in-cnnxt>.
 
 ## Step 1B: Subscribe to AVEVA Data Hub
 

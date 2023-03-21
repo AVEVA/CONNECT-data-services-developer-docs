@@ -2,7 +2,7 @@
 uid: create-group
 ---
 
-# Create a group
+# Step 2B: Add Groups
 
 To be assigned access to AVEVA Data Hub, users must belong to one or more groups (unless you have assigned individual roles to your user). 
 

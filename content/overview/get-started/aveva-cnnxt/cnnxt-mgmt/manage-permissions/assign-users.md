@@ -2,7 +2,7 @@
 uid: assign-users
 ---
 
-# Add and assign users to a group
+# Step 2C: Add Users to a Group
 
 Assign users to groups to control what actions they can take in Data Hub.
 

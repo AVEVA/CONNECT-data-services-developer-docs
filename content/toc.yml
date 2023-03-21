@@ -5,28 +5,12 @@
     - topicUid: DifferencesFromOCS
   - topicUid: WhoUsesADH
   - topicUid: WhatADHdoes
-  - topicUid: what-is-cnnxt
-    items:
-    - topicUid: sign-in-cnnxt
-    - topicUid: aveva-svcs
-    - topicUid: add-display-name
-    - topicUid: sign-out-cnnxt
-  - topicUid: cnnxt-setup
-    items:
-    - topicUid: subscribe-adh
-    - topicUid: ccNamespaces
-      items: 
-      - topicUid: create-folders
-      - topicUid: bpNamespaces
-    - topicUid: ManageUsersConnect
-      items:
-      - topicUid: create-group
-      - topicUid: assign-roles-groups
-      - topicUid: invite-users
-      - topicUid: assign-users
-      - topicUid: map-group-adh
-      - topicUid: map-user-adh
-      - topicUid: namespaces-manage-permissions
+  # - topicUid: what-is-cnnxt
+  #   items:
+  #   - topicUid: aveva-svcs
+  # - topicUid: cnnxt-setup
+  #   items:
+  #   - topicUid: ManageUsersConnect
 - topicUid: introPortalInterface
   items:
   - topicUid: viewProfile
@@ -34,27 +18,52 @@
   - topicUid: ResourceUsage
   - topicUid: home-health
   - topicUid: Search
-- topicUid: gs-overview
+- topicUid: gs-get-started
   items:
-  - topicUid: gsConnections
+  - topicUid: gs-prerequisites
+  - topicUid: gs-setup-connect
+    items: 
+    - topicUid: sign-in-cnnxt
+    - topicUid: subscribe-adh
+    - topicUid: ccNamespaces
+    - topicUid: bpNamespaces
+    - topicUid: create-folders
+  - topicUid: gs-setup-connect-users
     items:
-    - topicUid: gsPItoOCS
-    - topicUid: gsOMF
-  - topicUid: gsTypes
-  - topicUid: gsStreams
-  - topicUid: gsRoles
-  - topicUid: gsUsers
-  - topicUid: gsClients
+    - topicUid: invite-users
+    - topicUid: create-group
+    - topicUid: assign-users
+    - topicUid: assign-roles-groups
+  - topicUid: gs-setup-data-hub-users
     items:
-    - topicUid: gsClientCredentialsClients
-    - topicUid: gsAuthorizationCodeClients
-    - topicUid: gsHybridClients
-  - topicUid: gsAssets
-  - topicUid: gsAssetTypes
-  - topicUid: gsDataViews
-  - topicUid: gsMetadataRules
-  - topicUid: gsStreamviews
-  - topicUid: gsAssetRules
+    - topicUid: gs-overview
+    - topicUid: map-group-adh
+    - topicUid: map-user-adh
+    - topicUid: namespaces-manage-permissions
+  - topicUid: gs-ingress
+  - topicUid: gs-data-hub-use
+  - topicUid: gs-egress
+# - topicUid: gs-overview
+#   items:
+#   - topicUid: gsConnections
+#     items:
+#     - topicUid: gsPItoOCS
+#     - topicUid: gsOMF
+#   - topicUid: gsTypes
+#   - topicUid: gsStreams
+#   - topicUid: gsRoles
+#   - topicUid: gsUsers
+#   - topicUid: gsClients
+#     items:
+#     - topicUid: gsClientCredentialsClients
+#     - topicUid: gsAuthorizationCodeClients
+#     - topicUid: gsHybridClients
+#   - topicUid: gsAssets
+#   - topicUid: gsAssetTypes
+#   - topicUid: gsDataViews
+#   - topicUid: gsMetadataRules
+#   - topicUid: gsStreamviews
+#   - topicUid: gsAssetRules
 - topicUid: DataManagement
   items:
     - topicUid: lpstoredata

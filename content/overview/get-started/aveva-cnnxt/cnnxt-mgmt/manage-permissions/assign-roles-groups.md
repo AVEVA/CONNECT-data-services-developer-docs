@@ -28,7 +28,7 @@ To assign roles to a group:
 
 1. From **Folder**, select the folder that you created in <xref:create-folders>.
 
-1. From **Role**, select  **Data Hub Viewer**.
+1. From **Role**, select **Data Hub Viewer**.
 
 1. Select **Save** to save these changes.
 

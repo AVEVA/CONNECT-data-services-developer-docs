@@ -26,13 +26,11 @@ Perform the following steps to create a folder in AVEVA Connect:
     | EU-West | (northeurope) |
     | Australia | (australiaeast) |
 
-1. (Optional) Set a **Credits budget** for Flex Credits for the folder. For more information, see [About Flex Credits](https://help.connect.aveva.com/#/home/767994/10/11).
+1. (Optional) Set a **Credits budget** for Flex Credits for the folder. For more information, see [Flex Credits](https://docs.aveva.com/bundle/aveva-connect/page/885356.html).
 
 1. Select an **Image** to represent the folder. Either upload your own image or select a stock image.
 
 1. Select **Save**.
-
-   The image appears in the carousel of folders displayed on the AVEVA Connect home page.
 
 1. Select ![menu](../../../../_icons/default/menu.svg) > **Folder Management**. Open the folder that you just created.
 

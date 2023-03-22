@@ -4,13 +4,13 @@ uid: assign-roles-groups
 
 # Step 2D: Assign Groups the Data Hub Viewer Role
 
-When the DataHub Viewer role is assigned to a group, all the users in that group will see the AVEVA Data Hub tile on their home page in AVEVA Connect. 
+Users cannot access AVEVA Data Hub until their group is assigned the DataHub Viewer role. This role adds the AVEVA Data Hub tile to the AVEVA Connect Home page when your folder is selected from the carousel.
 
 To assign roles to a group:
 
-1. From the AVEVA Connect home page, select the menu icon, then select **User Management**.
+1. From the AVEVA Connect home page, select ![menu](../../../../../_icons/default/menu.svg) > **User Management**.
 
-1. Select the **Groups** tab. 
+1. Select the **Groups** tab.
 
    The existing groups are listed.
 
@@ -20,24 +20,16 @@ To assign roles to a group:
 
    **Note:** You can search for the required group by typing a few letters in the **Filter by group name** field.
 
-1. Select **Assign role** to assign more roles to the group. 
+1. Select **Assign role** to assign more roles to the group.
 
    The `Assign role` area is displayed.
- 
-1. Select the type of role:
 
-   - `Service role` - to assign a functional role to the group.
+1. Select **Service role**.
 
-   - `Account role` - to assign an administrative role (giving users and/or groups access to administer your AVEVA Connect account). 
+1. From **Folder**, select the folder that you created in <xref:create-folders>.
 
-1. If you selected `Service role`, select the required service and folder from the **Service** and **Folder** lists.
+1. From **Role**, select  **Data Hub Viewer**.
 
-1. Select the role to assign from the **Role** list.
+1. Select **Save** to save these changes.
 
-1. Select the groups to assign this role. You can select multiple groups at once. You can search for the group names by typing a few letters in the **Enter group name(s)** field.
-
-   **Note:** You must assign the role to at least one group or user.
-
-1. Select **Save** to save these changes. 
-
-   The role is assigned to the selected groups. 
+   The role is assigned to the selected groups.

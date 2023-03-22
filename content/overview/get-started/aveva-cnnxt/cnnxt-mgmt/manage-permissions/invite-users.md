@@ -8,11 +8,9 @@ As an administrator, you set up new users in AVEVA Connect. When a new user is a
 
 To set up new users:
 
-1. From the AVEVA Connect home page, select the menu icon, then select **User Management**.
+1. From the AVEVA Connect home page, select ![menu](../../../../../_icons/default/menu.svg) > **User Management**.
 
-1. (Optional) Select the **Users** tab.
-
-   The existing users display.
+1. Make sure the **Users** tab is selected.
 
 1. Select **Add user**.
 
@@ -20,9 +18,7 @@ To set up new users:
 
 1. In the **Username** field, enter the user's email address.
 
-1. (Optional) Select the **Groups** field, then select one or more groups.
-
-   The user is assigned to the selected groups.
+1. Skip the **Groups** field for now. You will add users to groups in <xref:assign-users>.
 
 1. Under **Add individual role**, select one of the following role types:
 

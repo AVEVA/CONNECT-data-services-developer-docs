@@ -105,6 +105,8 @@ To modify a base configuration and export it for use:
 
 1. Find and select the base configuration to modify.
 
+1. (Optional) To search for specific base configurations, select the **Search for Base Configurations** search bar. The search function provides examples for filtering by criteria such as device name and version. For more information, read [Search in AVEVA Data Hub](xref:Search).
+
 1. In the right pane, select the edit icon ![Edit](../../../_icons/default/pencil.svg).
 
 1. Modify the base configuration name, **Type**, and **Version** as needed.

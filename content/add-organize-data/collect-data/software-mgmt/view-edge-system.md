@@ -22,6 +22,8 @@ To view an edge system:
 
   **Note:** Filter for multiple tags using `and` and `or` syntax to refine the filter.
 
+1. (Optional) To search for specific edge systems, select the **Search for Edge Systems** search bar. The search function provides examples for filtering by criteria such as device name, status, version, and tags. For more information, read [Search in AVEVA Data Hub](xref:Search).
+
 1. To open the right pane that displays information for a device, select the device. 
 
 1. To see the edge system installed on the device and the configured components, select the **Details** tab.

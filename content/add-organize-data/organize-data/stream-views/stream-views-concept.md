@@ -14,10 +14,6 @@ Use the AVEVA Data Hub portal to set up stream views, or use REST APIs to define
 
 For information about setting up a stream view, see [Get started with stream views](xref:gsStreamviews).
 
-For more information about types, see [Types](xref:sdsTypes).
-
-**NOTE:** In rare cases, you might want to use a stream view to permanently change a stream's type. For more information, see [Streams](xref:sds-streams#update-stream-type).
-
 ### <a name="streamviews-pi-server"></a>PI Server counterpart
 
 While there is no direct counterpart for stream views in PI Server, the closest analog is the PI point data reference in PI AF. Like stream views, PI point data references allow you to give a friendly name and unit of measure on top of an existing PI point, effectively viewing it in a different way. PI point data references do not alter the underlying PI point, just as stream views do not change the source stream or type in the Sequential Data Store.
@@ -30,6 +26,6 @@ The following best practices are recommended when working with stream views:
 You can use stream views to limit these properties or to give them a more meaningful name.
 
 * When you use a stream view, use caution when not all properties in the target type exist in the source type. Properties that are not mapped return their default value in the target type. For example, if the target type contains a property of data type double that is not mapped, data transformation gives that property a value of `0`.
-Assume you have a source type with the properties, Timestamp and Pressure. You create a stream view that maps to a type with the properties Timestamp, Pressure, and Temperature. If Temperature is of data type `double`, a value of 0 (zero) is always returned for it, because it cannot be mapped from the source type. 
+Assume you have a source type with the properties, Timestamp and Pressure. You create a stream view that maps to a type with the properties Timestamp, Pressure, and Temperature. If Temperature is of data type `double`, a value of 0 (zero) is always returned for it, because it cannot be mapped from the source type.
 
-* You can use a stream view to change a stream's underlying type, as described in [Streams](xref:sds-streams#update-stream-type). Use caution if you do so, because any source properties that cannot be mapped to a target property are removed from the stream data. Unmapped target properties are set to their default value for all existing events. For example, if you have a source type that has the properties Timestamp, Pressure, and Temperature, and you use a stream view to map to a type with the properties Timestamp, Pressure, and Depth, you can map only Timestamp and Pressure. In this case, the source data for the Temperature field will be lost, and the existing events will be given a value of 0 for the new Depth property.
+* You can use a stream view to change a stream's underlying type. Use caution if you do so, because any source properties that cannot be mapped to a target property are removed from the stream data. Unmapped target properties are set to their default value for all existing events. For example, if you have a source type that has the properties Timestamp, Pressure, and Temperature, and you use a stream view to map to a type with the properties Timestamp, Pressure, and Depth, you can map only Timestamp and Pressure. In this case, the source data for the Temperature field will be lost, and the existing events will be given a value of 0 for the new Depth property.

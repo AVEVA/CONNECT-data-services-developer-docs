@@ -6,8 +6,6 @@ uid: gpTypes
 
 Sequential Data Store (SDS) types define the shape and structure of events and how to associate events with streams of data. Once created, you cannot modify a type. You can add one of two types: **Standard Types** or **Enum Types**.
 
-**Tip:** For a list of the supported property types, see [Supported types](xref:sdsTypes#sdstypecode). 
-
 # [Standard type](#tab/tabid-1)
 
 To add a base type: 

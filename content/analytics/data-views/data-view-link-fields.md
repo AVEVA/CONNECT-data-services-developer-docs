@@ -17,7 +17,3 @@ To link data items, drag and drop one field onto another. Properties can only be
 ## To unlink fields
 
 To unlink a linked field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > ![alt](../../_icons/default/link-variant-off.svg) **Unlink All**.
-
-## Developer documentation
-
-Within the Developer Guide, the term "linking" is synonymous with "consolidating". For more information, see <xref:ConsolidateDataFields>.

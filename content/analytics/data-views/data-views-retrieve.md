@@ -58,7 +58,3 @@ Use one of the starter projects listed in [Option B: Interact with the REST API]
 ### Tip: Use the API Console to retrieve your data view
 
 [!include[api-console](_includes/api-console.md)]
-
-### Developer documentation
-
-For more information on interacting with a data view using the API console, see the [Developer Guide](xref:DataViewsOverview).

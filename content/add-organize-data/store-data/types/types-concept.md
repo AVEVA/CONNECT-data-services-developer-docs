@@ -4,13 +4,11 @@ uid: ccTypes
 
 # Types
 
-A Sequential Data Store (SDS) type defines the shape and structure of events and how to associate events within a stream of data. A type is comprised of at least two properties. One property serves as the primary index, most commonly a `timestamp` or `DateTime`. In addition, it has one or more additional properties called value properties that describe the data in each stream event. Each value property can have a different property type. A wide variety of property types are supported. For a list of the supported property types, see [Supported Types](xref:sdsTypes#sdstypecode). 
+A Sequential Data Store (SDS) type defines the shape and structure of events and how to associate events within a stream of data. A type is comprised of at least two properties. One property serves as the primary index, most commonly a `timestamp` or `DateTime`. In addition, it has one or more additional properties called value properties that describe the data in each stream event. Each value property can have a different property type. A wide variety of property types are supported.
 
 **Note:** You can also create complex secondary indexes. 
 
 Types are immutable; once created, they cannot be updated. Therefore, it is important to determine the correct type definition before you begin building streams and data in the Sequential Data Store.
-
-For more information, see [Types](xref:sdsTypes).
 
 ### <a name="types-pi-server"></a>PI Server counterpart
 

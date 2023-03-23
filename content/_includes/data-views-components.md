@@ -8,6 +8,6 @@ A data view is a declarative query and shape for AVEVA Data Hub data. It include
 
 - **Index field**: Determines the primary index type and label of the index. The index must be a timestamp and displays in the first column of the data view.
 
-	**Note:** You can create data views with non-DateTime indexes using the REST API. For more information, see <xref:DataViewsQuickStartDefine>.
+	**Note:** You can create data views with non-DateTime indexes using the REST API.
 
 Data views also include other configurations such as grouping instructions and default date range and interval.

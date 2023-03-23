@@ -51,7 +51,3 @@ To add a client-credentials client:
 1. Select **Close**.  
 
    **Note:** In the list of secrets, the **Client Id** is still visible. If you did not save the client secret, select the client in the list and use the `Details` pane to remove the old secret and add a new secret.
-
-## Related links
-
-- [Client Credential Clients](xref:identityClientCredentialClient) API

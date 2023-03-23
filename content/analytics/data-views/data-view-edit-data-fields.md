@@ -4,7 +4,7 @@ uid: data-view-edit-data-fields
 
 # Edit data field labels
 
-Edit data field labels to create a friendly for a field that displays in your data view.
+Edit data field labels to create a friendly name for a field that displays in your data view.
 
 ## Data field labels
 
@@ -18,7 +18,7 @@ To edit data field labels, enter `{` to display tokens to use as a data field la
 
 1. (Optional) Select the **Include UOM as a Column** checkbox. This option includes the unit of measure as a column in your data view.
 
-1. (Optional) Select a **Summary direction**. This option controls whether the start or end index of the summary is used by the data view to calculate the summary values. For more information, see <xref:DataViewsSummaries>.
+1. (Optional) Select a **Summary direction**. This option controls whether the start or end index of the summary is used by the data view to calculate the summary values.
 
 1. Review the **Data Field Preview**. This preview lists each data field and property included within the affected data view queries.
 

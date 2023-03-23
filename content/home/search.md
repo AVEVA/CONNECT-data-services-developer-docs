@@ -36,12 +36,3 @@ Token autocomplete suggestions consist of a single token and an occurrence count
 
 Faceted autocomplete suggestions consist of a collection of matching phrases, each with a list of categories and a object count for each category. The categories are the name of the property for properties comprising of simple types (Int32, DateTime, etc.) and collections of simple types (static facets). For collections of key-value pairs, the keys represent categories and the values represent phrases. Suggestions are ranked by the phrase's object count. In other words, the phrase that appears in the most number of objects ranks first in the results.
 
-## Developer documentation
-
-See the following topics in for full details about search and the objects and properties that you can search for:
-
-- <xref:asset-search-dev-guide>: Information on searchable properties while using the Asset Store.
-
-- <xref:sdsSearching>: Information on searchable properties while using the Sequential Data Store.
-
-**Note:** You can use the search information above to search for data objects when editing data view queries as well.

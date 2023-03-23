@@ -267,19 +267,8 @@
     - topicUid: ClientMaintenance
   - topicUid: permissions-management
   - topicUid: cross-region-data-sharing
-- topicUid: DeveloperTools
-  items:
-    - topicUid: samples
-    - topicUid: apiConsole
-    - topicUid: omfEditor
 - topicUid: lpSupport
   items:
     - topicUid: download-tenant-log
     - topicUid: ServiceBlog
-- name: Developer guide
-  href: developer-guide/toc.yml
-  topicHref: developer-guide/dev-guide-introduction.md
-- name: API reference
-  href: api-reference/toc.yml
-  topicHref: api-reference/ocs-api-reference.md
 # - topicUid: support

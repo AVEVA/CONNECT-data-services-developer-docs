@@ -56,8 +56,8 @@ For more information on search including limitations, see [Search in SDS](xref:s
 | InterpolationMode | SdsInterpolationMode   | No    | No | Interpolation setting of the type. Default is Continuous. For more information, see [Interpolation](xref:sdsReadingData#interpolation).|
 | ExtrapolationMode | SdsExtrapolationMode   | No    | No | Extrapolation setting of the type. For more information, see [Extrapolation](xref:sdsReadingData#extrapolation). |
 | Properties        | IList\<SdsTypeProperty\> | Yes    | Yes, with limitations | List of SdsTypeProperty items. See [SdsTypeProperty](#sdstypeproperty) below.  |
-| CreatedDate       | DateTime               | No    | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsType was created. Cannot be modified by users. |
-| ModifiedDate      | DateTime               | No   | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsType was last modified. Cannot be modified by users. |
+| CreatedDate       | DateTime               | Set by server | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsType was created. Cannot be modified by users. |
+| ModifiedDate      | DateTime               | Set by server | No |  Timestamp in ISO 8601 extended format and UTC time standard when the SdsType was last modified. Cannot be modified by users. |
 
 ### Rules for the type identifier (SdsType.Id)
 1. Is not case sensitive

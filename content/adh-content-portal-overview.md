@@ -4,16 +4,16 @@ uid: ADH-content-portal-overview
 
 # AVEVA™ Data Hub
 
-AVEVA™ Data Hub is a cloud-native platform for aggregating, storing, enriching, accessing and analyzing real-time operations data from historians, edge devices and more. 
+AVEVA Data Hub is a secure cloud platform for aggregating, storing, enriching, accessing, and analyzing real-time operations data.
 
-With AVEVA Data Hub, people in and out of your organization have flexible and secure access to operations data. AVEVA Data Hub can collect operations data from within a primary control network to the edge of the industrial network. 
+AVEVA Data Hub creates a seamless, trustworthy data infrastructure to incorporate information from sensors, plants, enterprises, edge devices, and communities of interested users. This infrastructure enables data sharing and usage within your organization, across locations, and even with external partners.
 
-Select one of the following topics to get started with AVEVA Data Hub:
+With AVEVA Data Hub you can use a web-based portal to manage and monitor your tenant, namespace resources, streams, and assets. AVEVA Data Hub can also be accessed and managed via REST APIs.
 
-- [Sign in to AVEVA Data Hub via AVEVA Connect](xref:sign-in-cnnxt)
-- [Manage permissions in AVEVA Connect](xref:manage-permissions-connect)
-- [Take a tour of the AVEVA Data Hub portal](xref:introPortalInterface)
-- [Bring your data in from different sources](xref:gsConnections)
-- [Visualize your data](xref:lpvisualizedata)
+You can integrate and view AVEVA Data Hub data in the following ways: 
+
+- Build applications with client libraries to read and write data to AVEVA Data Hub.
+- Use the REST APIs to read and write data to AVEVA Data Hub.
+- Retrieve tabular data with Data Views.
 
 **Note:** You must have an account to use AVEVA Data Hub. To request an AVEVA Data Hub tenant account, contact AVEVA at https://www.aveva.com/en/contact/.

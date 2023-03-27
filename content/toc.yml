@@ -1,7 +1,7 @@
 - topicUid: ADH-content-portal-overview
   items:
-  - topicUid: WhoUsesADH
   - topicUid: WhatADHdoes
+  - topicUid: WhoUsesADH
   - topicUid: Architecture
   - topicUid: DifferencesFromOCS
   - topicUid: what-is-cnnxt

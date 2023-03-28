@@ -5,7 +5,7 @@ uid: sdsReadingData
 # Read data
 
 The .NET and REST APIs provide programmatic access to read and write data. This section identifies and describes
-the APIs used to read [SdsStreams](xref:sdsStreams) data. Results are influenced by [SdsTypes](xref:sdsTypes), [SdsStreamViews](xref:sdsStreamViews), [filter expressions](xref:sdsFilterExpressions), and [table format](xref:sdsTableFormat).
+the APIs used to read [SdsStreams](xref:sdsStreams) data. Results are influenced by [SdsTypes](xref:sdsTypes), [SdsStreamViews](xref:sdsStreamViews), [filter expressions](xref:sdsFilterExpressionsValues), and [table format](xref:sdsTableFormat).
 
 If you are working in a .NET environment, convenient SDS Client Libraries are available.
 The `ISdsDataService` interface, which is accessed using the ``SdsService.GetDataService()`` helper,
@@ -68,24 +68,24 @@ This enables compression. For more information, see [Compression](xref:sdsCompre
 Depending on the scenario, there are different read data APIs available.
 They return an overview of the values instead of reading all values at once.
 These APIs provide a good high-level view of the values without displaying them all at the same time:
-- [List Values](xref:sdsReadingDataApi#list-values) with filters
-- [Get Summaries](xref:sdsReadingDataApi#get-summaries)
-- [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values)
+- [List Values](xref:sds-stream-data#list-values) with filters
+- [List Summaries](xref:sds-stream-data#list-summaries)
+- [List Sampled Values](xref:sds-stream-data#list-sampled-values)
 
 ## Single stream reads
 The following methods for reading a single value are available:
 
-* [Get First Value](xref:sdsReadingDataApi#get-first-value) returns the first value in the stream.
-* [Get Last Value](xref:sdsReadingDataApi#get-last-value) returns the last value in the stream.
-* [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value) returns a value based on a starting index and search criteria.
+* [Get First Value](xref:sds-stream-data#get-first-value) returns the first value in the stream.
+* [Get Last Value](xref:sds-stream-data#get-last-value) returns the last value in the stream.
+* [Find Distinct Value](xref:sds-stream-data#list-values) returns a value based on a starting index and search criteria.
 
 In addition, the following methods support reading multiple values:
 
-* [List Values](xref:sdsReadingDataApi#list-values) retrieves a collection of stored values based on the request parameters.
-* [List Interpolated Values](xref:sdsReadingDataApi#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
-* [Get Summaries](xref:sdsReadingDataApi#get-summaries) retrieves a collection of evenly spaced summary intervals based on a count
+* [List Values](xref:sds-stream-data#list-values) retrieves a collection of stored values based on the request parameters.
+* [List Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
+* [List Summaries](xref:sds-stream-data#list-summaries) retrieves a collection of evenly spaced summary intervals based on a count
   and specified start and end indexes.
-* [Get Sampled Values](xref:sdsReadingDataApi#get-sampled-values) retrieves a collection of sampled data based on the request parameters.
+* [List Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
 
 <!-- removing per Chris M feedback
 All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
@@ -108,7 +108,7 @@ The stream identifier
 ## Bulk reads
 
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
-* [Join Values](xref:sdsReadingDataApi#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
+* [Join Values](xref:sds-stream-data#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
 <!-- removing per Chris feedback
 Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
@@ -232,7 +232,7 @@ show how ExtrapolationMode affects returned values for each InterpolationMode va
 | Backward            | 3                   | Returns the default value         | No event is returned      |
 
 For additional information about the effect of read characteristics, see the
-documentation on the [read method](xref:sdsReadingDataApi)
+documentation on the [read method](xref:sds-stream-data)
 you are using.
 
 
@@ -242,7 +242,7 @@ Filter expressions can be applied to any read that returns multiple values, incl
 Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally
 filtering events that do not meet the filter conditions.
 
-Filter expressions are covered in detail in the [Filter expressions](xref:sdsFilterExpressions) section.
+Filter expressions are covered in detail in the [Filter expressions](xref:sdsFilterExpressionsValues) section.
 
 ## Table format
 

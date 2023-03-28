@@ -46,4 +46,4 @@ When entering a URI for a namespace- or community-scoped API request, the API co
 
 ## Related
 
-For more information, see [Read data API](xref:sdsReadingDataApi).
+For more information, see [Stream data](xref:sds-stream-data).

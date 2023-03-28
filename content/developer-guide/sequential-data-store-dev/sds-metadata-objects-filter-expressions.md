@@ -1,5 +1,5 @@
 ---
-uid: sdsFilterExpressions
+uid: sdsFilterExpressionsObjects
 ---
 
 # Filter expressions for SDS objects

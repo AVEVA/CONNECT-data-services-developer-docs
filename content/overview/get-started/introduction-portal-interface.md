@@ -4,9 +4,11 @@ uid: introPortalInterface
 
 # Take a tour of the AVEVA Data Hub portal
 
-Access and interact with AVEVA Data Hub through the web-based portal. When you first access the portal, there is information about the system's health as well as quick links to popular documentation topics.
+Access and interact with AVEVA Data Hub through the web-based portal. 
 
 ## AVEVA Data Hub home page
+
+When you first access the portal, the home page provides you with information about the system and other reference materials.
 
 ![Portal window](../images/portal-interface.png "Portal interface")
 

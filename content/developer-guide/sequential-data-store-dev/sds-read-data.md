@@ -77,7 +77,6 @@ The following methods for reading a single value are available:
 
 * [Get First Value](xref:sds-stream-data#get-first-value) returns the first value in the stream.
 * [Get Last Value](xref:sds-stream-data#get-last-value) returns the last value in the stream.
-* [Find Distinct Value](xref:sds-stream-data#list-values) returns a value based on a starting index and search criteria.
 
 In addition, the following methods support reading multiple values:
 

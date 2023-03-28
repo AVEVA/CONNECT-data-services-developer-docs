@@ -20,7 +20,7 @@ OCS offers the following capabilities:
 OCS provides a variety of methods to collect data into the system. You can ingress data from an external application or from PI Server directly to OCS using any of the following methods: 
 
 - PI to OCS Agent
-- OSIsoft Message Format
+- Open Message Format
 - Edge Data Store
 - PI Adapters
 - REST API
@@ -29,9 +29,9 @@ OCS provides a variety of methods to collect data into the system. You can ingre
 
 The PI to OCS Agent transfers PI time-series data from an on-premises PI Server into OCS. PI to OCS maps PI Data Archive PI points to SDS types and streams. 
 
-### OSIsoft Message Format
+### Open Message Format
 
-OSIsoft Message Format (OMF) is a platform-independent format for passing JSON messages to OCS using an HTTP client. Use OMF to achieve a high-throughput data feed into OCS. 
+Open Message Format (OMF) is a platform-independent format for passing JSON messages to OCS using an HTTP client. Use OMF to achieve a high-throughput data feed into OCS. 
 
 ### Edge Data Store
 

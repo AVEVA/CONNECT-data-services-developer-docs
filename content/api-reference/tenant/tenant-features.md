@@ -4,7 +4,7 @@ uid: tenant-features
 ---
 
 # Features
-APIs for managing the feature states of an OCS Tenant.
+APIs for managing the feature states of a Tenant.
 
 ## `List All`
 
@@ -12,42 +12,51 @@ APIs for managing the feature states of an OCS Tenant.
 
 Returns all `FeatureState`s for the specified `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Features
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>
+<br/>The identifier of the `Tenant`.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)[]|An array of all `Feature`s for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|403|None|Forbidden.|
+|404|None|Could not retrieve the specified `FeatureState`s due to missing or invalid data.|
 
-#### Example response body
-> 200 Response ([FeatureState](#schemafeaturestate)[])
+<h4>Example response body</h4>
+
+> 200 Response
 
 ```json
 [
   {
     "Feature": {
-      "Id": "string",
-      "Name": "string",
-      "Description": "string",
-      "DefaultState": 0
+      "Id": "95c2b5fe-355d-4b33-a748-b738707e0648",
+      "Name": "Feature1",
+      "Description": "Feature Description"
+    },
+    "CurrentState": 1
+  },
+  {
+    "Feature": {
+      "Id": "95c2b5fe-355d-4b33-a748-b738707e0648",
+      "Name": "Feature2",
+      "Description": "Feature Description"
     },
     "CurrentState": 0
   }
 ]
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -62,41 +71,41 @@ Allowed for these roles:
 
 Returns a `FeatureState` with the specified identifier from a `Tenant`.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Features/{id}
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/><br/>`string id`
-<br/>Feature state identifier.<br/><br/><br/>
+<br/>The identifier of the `Tenant`.<br/><br/>`string id`
+<br/>The identifier of the `FeatureState`.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[FeatureState](#schemafeaturestate)|The state of the `Feature` for the tenant with identifier `tenantId`.|
-|400|None|Missing or invalid inputs.<br/>|
-|403|None|Forbidden.<br/>|
+|404|None|Could not retrieve the specified `FeatureState` due to missing or invalid input.|
 
-#### Example response body
-> 200 Response ([FeatureState](#schemafeaturestate))
+<h4>Example response body</h4>
+
+> 200 Response
 
 ```json
 {
   "Feature": {
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "DefaultState": 0
+    "Id": "95c2b5fe-355d-4b33-a748-b738707e0648",
+    "Name": "Feature1",
+    "Description": "Feature Description"
   },
-  "CurrentState": 0
+  "CurrentState": 1
 }
 ```
 
-### Authorization
+<h3>Authorization</h3>
 
 Allowed for these roles: 
 <ul>
@@ -115,12 +124,12 @@ Allowed for these roles:
 
 Representation of a server-side database interpretation of a feature state.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Feature|[Feature](#schemafeature)|false|true|The feature to which the feature state corresponds.|
-|CurrentState|int32|false|false|Current state of the feature.|
+|Feature|[Feature](#schemafeature)|false|true|Gets or sets the feature.|
+|CurrentState|int32|false|false|Gets or sets the current state of the feature.|
 
 ```json
 {
@@ -146,14 +155,14 @@ Representation of a server-side database interpretation of a feature state.
 
 Representation of a server-side database interpretation of a feature.
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|Identifier of this feature.|
-|Name|string|false|true|Name of the feature.|
-|Description|string|false|true|Description of the feature.|
-|DefaultState|int32|false|false|Default state of the feature.|
+|Id|string|false|true|Gets or sets the identifier.|
+|Name|string|false|true|Gets or sets the name.|
+|Description|string|false|true|Gets or sets the description.|
+|DefaultState|int32|false|false|Gets or sets the default state.|
 
 ```json
 {

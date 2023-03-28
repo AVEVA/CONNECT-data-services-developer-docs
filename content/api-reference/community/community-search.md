@@ -1,5 +1,6 @@
 ---
 uid: community-search
+
 ---
 
 # Search
@@ -14,14 +15,13 @@ Searches for streams within a community by query
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/search/communities/{communityId}/streams
-?query={query}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&searchTenantId={searchTenantId}&searchTenantIds={searchTenantIds}&orderBy={orderBy}
+GET /api/v1-preview/search/communities/{communityId}/streams
+?query={query}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&orderBy={orderBy}
 ```
 
 <h4>Parameters</h4>
 
-`string tenantId`
-<br/>Calling tenant identifier<br/><br/>`string communityId`
+`string communityId`
 <br/>Community identifier<br/><br/>
 `[optional] string query`
 <br/>Query to execute. The query uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] integer skip`
@@ -29,9 +29,7 @@ GET /api/v1-preview/tenants/{tenantId}/search/communities/{communityId}/streams
 <br/>The maximum number of results to return.<br/><br/>`[optional] integer pageSize`
 <br/>The number of results to return per page. Supercedes 'count' if specified. Will also cause a Link response header to be created with links to subsequent result sets. Those result sets are first, last, next or previous.<br/><br/>`[optional] integer maxPages`
 <br/>The maximum number of result records that can be returned. This is used in conjunction with pageSize.<br/><br/>`[optional] string continuationToken`
-<br/>If specified, this call retrieves a set of results as specified within the token. The possible result sets are first, last, next or previous.<br/><br/>`[optional] string searchTenantId`
-<br/>The tenant identifier of the stream to be searched. This parameter enables the API to search streams based on a tenant Id. By default this parameter holds an empty GUID.<br/><br/>`[optional] string searchTenantIds`
-<br/>The tenant identifiers of the streams to be searched. This parameter enables the API to search streams based on tenant Ids. If this parameter is specified, the format is a comma-separated string of tenant Ids.<br/><br/>`[optional] string orderBy`
+<br/>If specified, this call retrieves a set of results as specified within the token. The possible result sets are first, last, next or previous.<br/><br/>`[optional] string orderBy`
 <br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, Description, Self, TenantId, NamespaceId, TenantName, and CommunityId. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: NamespaceID DESC<br/><br/>
 
 <h3>Response</h3>
@@ -39,6 +37,7 @@ GET /api/v1-preview/tenants/{tenantId}/search/communities/{communityId}/streams
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[StreamSearchResult](#schemastreamsearchresult)|Returns the stream information that matches the search criteria. This is a set of objects of type `StreamSearchResult`.|
+|207|[PartialFailureResult](#schemapartialfailureresult)|Returns the stream information that matches the search criteria. This is a set of objects of type `StreamSearchResult`.|
 |400|[ErrorResponse](#schemaerrorresponse)|Bad Request. The server could not understand the request due to invalid syntax.|
 |401|None|Unauthorized. The client has not been authenticated.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden. The client does not have the required permissions to make the request.|
@@ -60,31 +59,30 @@ GET /api/v1-preview/tenants/{tenantId}/search/communities/{communityId}/streams
   "TenantId": "string",
   "TenantName": "string",
   "NamespaceId": "string",
-  "CommunityId": "string"
+  "CommunityId": "string",
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ]
 }
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-<li>Tenant Member</li>
-</ul>
-
 ---
 
-## `List Streams By Namespace (GET Method)`
+## `List Streams By Namespace 1`
 
-<a id="opIdCommunitySearch_List Streams By Namespace (GET Method)"></a>
+<a id="opIdCommunitySearch_List Streams By Namespace 1"></a>
 
 Searches for shared streams within a namespace by query.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
-?query={query}&skip={skip}&count={count}
+GET /api/v1-preview/tenants/{tenantId}/search/namespaces/{namespaceId}/streams
+?query={query}&skip={skip}&count={count}&orderBy={orderBy}
 ```
 
 <h4>Parameters</h4>
@@ -95,7 +93,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
 `[optional] string query`
 <br/>Query to execute. The query uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Maximum total results.<br/><br/>
+<br/>Maximum total results.<br/><br/>`[optional] string orderBy`
+<br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, and Description. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: TypeID DESC<br/><br/>
 
 <h3>Response</h3>
 
@@ -118,32 +117,32 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
   {
     "Id": "string",
     "Name": "string",
-    "TypeId": "string"
+    "TypeId": "string",
+    "Description": "string",
+    "PropertyOverrides": [
+      {
+        "SdsTypePropertyId": "string",
+        "Uom": "string",
+        "InterpolationMode": 0
+      }
+    ]
   }
 ]
 ```
 
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-<li>Tenant Member</li>
-</ul>
-
 ---
 
-## `Search Streams By Namespace (POST Method)`
+## `Search Streams By Namespace 2`
 
-<a id="opIdCommunitySearch_Search Streams By Namespace (POST Method)"></a>
+<a id="opIdCommunitySearch_Search Streams By Namespace 2"></a>
 
 Searches for shared streams within a namespace by query.
 
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
-?query={query}&skip={skip}&count={count}
+POST /api/v1-preview/tenants/{tenantId}/search/namespaces/{namespaceId}/streams
+?query={query}&skip={skip}&count={count}&orderBy={orderBy}
 ```
 
 <h4>Parameters</h4>
@@ -154,7 +153,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shared/streams
 `[optional] string query`
 <br/>Query to execute. The query uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Maximum total results.<br/><br/>
+<br/>Maximum total results.<br/><br/>`[optional] string orderBy`
+<br/>The search result order specification. If not specified, the results are ordered by ascending stream name. If a search result order is specified, it should consist of one stream result attribute name (attribute-name) with an optional sort order (sort-order). The sort-order, if specified, is separated from the attribute-name by a space. The supported stream result attribute names are Id, Name, TypeId, and Description. The sort order values are ASC, for ascending, which is the default, and DESC, for descending. Attribute names and sort order values are not case sensitive. Example: TypeID DESC<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -189,18 +189,18 @@ Input used to search namespace.<br/>
   {
     "Id": "string",
     "Name": "string",
-    "TypeId": "string"
+    "TypeId": "string",
+    "Description": "string",
+    "PropertyOverrides": [
+      {
+        "SdsTypePropertyId": "string",
+        "Uom": "string",
+        "InterpolationMode": 0
+      }
+    ]
   }
 ]
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Community Member</li>
-<li>Tenant Member</li>
-</ul>
 
 ---
 ## Definitions
@@ -222,11 +222,12 @@ The StreamSearchResult object. This is the model representation exposed to calle
 |Name|string|false|true|The name|
 |TypeId|string|false|true|The type Id|
 |Description|string|false|true|The description|
-|Self|string|false|true|The self link|
+|Self|string|false|true|The base URL for shared access self link to access community data. For more information, see [Shared Access Requests](xref:shared-access-routes).|
 |TenantId|string|false|true|The Tenant Id of stream|
 |TenantName|string|false|true|The Tenant name of stream|
 |NamespaceId|string|false|true|The Namespace ID of stream|
 |CommunityId|string|false|true|The Community Id|
+|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|The Stream PropertyOverrides.|
 
 ```json
 {
@@ -238,7 +239,158 @@ The StreamSearchResult object. This is the model representation exposed to calle
   "TenantId": "string",
   "TenantName": "string",
   "NamespaceId": "string",
-  "CommunityId": "string"
+  "CommunityId": "string",
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ]
+}
+
+```
+
+---
+
+### SdsStreamPropertyOverride
+
+<a id="schemasdsstreampropertyoverride"></a>
+<a id="schema_SdsStreamPropertyOverride"></a>
+<a id="tocSsdsstreampropertyoverride"></a>
+<a id="tocssdsstreampropertyoverride"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|SdsTypePropertyId|string|false|true|None|
+|Uom|string|false|true|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+
+```json
+{
+  "SdsTypePropertyId": "string",
+  "Uom": "string",
+  "InterpolationMode": 0
+}
+
+```
+
+---
+
+### SdsInterpolationMode
+
+<a id="schemasdsinterpolationmode"></a>
+<a id="schema_SdsInterpolationMode"></a>
+<a id="tocSsdsinterpolationmode"></a>
+<a id="tocssdsinterpolationmode"></a>
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|Default|0|
+|Continuous|0|
+|StepwiseContinuousLeading|1|
+|StepwiseContinuousTrailing|2|
+|Discrete|3|
+|ContinuousNullableLeading|4|
+|ContinuousNullableTrailing|5|
+
+---
+
+### PartialFailureResult
+
+<a id="schemapartialfailureresult"></a>
+<a id="schema_PartialFailureResult"></a>
+<a id="tocSpartialfailureresult"></a>
+<a id="tocspartialfailureresult"></a>
+
+PartialFailureResult object. Used for HTTP status code 207 responses. This is a model representation exposed to callers of the Search Streams By Community controller endpoint.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|The Id for the executed operation.|
+|Error|string|false|true|Error message for 207|
+|ReasonPhrase|string|false|true|Reason for the 207 response|
+|ChildErrors|[[ChildError](#schemachilderror)]|false|true|A list of encountered errors|
+|Data|[[StreamSearchResult](#schemastreamsearchresult)]|false|true|A list of successfully returned content|
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "ReasonPhrase": "string",
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "TenantId": "string",
+      "NamespaceId": "string",
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string",
+      "StatusCode": 0
+    }
+  ],
+  "Data": [
+    {
+      "Id": "string",
+      "Name": "string",
+      "TypeId": "string",
+      "Description": "string",
+      "Self": "string",
+      "TenantId": "string",
+      "TenantName": "string",
+      "NamespaceId": "string",
+      "CommunityId": "string",
+      "PropertyOverrides": [
+        {
+          "SdsTypePropertyId": "string",
+          "Uom": "string",
+          "InterpolationMode": 0
+        }
+      ]
+    }
+  ]
+}
+
+```
+
+---
+
+### ChildError
+
+<a id="schemachilderror"></a>
+<a id="schema_ChildError"></a>
+<a id="tocSchilderror"></a>
+<a id="tocschilderror"></a>
+
+The ChildError object. This is a model representation exposed to callers of the Search Streams By Community controller endpoint.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|The Id for the executed operation.|
+|TenantId|string|false|true|The Tenant Id of stream|
+|NamespaceId|string|false|true|The Namespace Id of stream|
+|Error|string|false|true|The error.|
+|Reason|string|false|true|Reason for the exception.|
+|Resolution|string|false|true|Suggested resolution.|
+|StatusCode|int32|false|false|HTTP Status Code|
+
+```json
+{
+  "OperationId": "string",
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "StatusCode": 0
 }
 
 ```
@@ -289,12 +441,22 @@ The StreamFromSearchByNamespace object. This is the model representation exposed
 |Id|string|false|true|The Stream Id.|
 |Name|string|false|true|The Stream Name.|
 |TypeId|string|false|true|The Stream TypeId.|
+|Description|string|false|true|The Stream Description.|
+|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|The Stream PropertyOverrides.|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
-  "TypeId": "string"
+  "TypeId": "string",
+  "Description": "string",
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ]
 }
 
 ```

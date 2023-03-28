@@ -1,24 +1,14 @@
-- name: Access control list
+- name: Access control
   href: sds-access-control-list.md
+- name: Quantities
+  href: sds-quantities.md
+- name: Sds stream data
+  href: sds-stream-data.md
 - name: Streams
   href: sds-streams.md
-- name: Bulk data
-  href: sds-stream-bulk-data.md
-- name: Read data
-  href: sds-read-data-api.md
-- name: Write data
-  href: sds-write-data-api.md
-- name: Transform data
-  href: sds-stream-data-transform.md
-- name: Streams metadata
-  href: sds-streams-metadata.md
-- name: Streams tags
-  href: sds-streams-tags.md
 - name: Stream views
   href: sds-stream-views.md
 - name: Types
   href: sds-types.md
-- name: Quantities
-  href: sds-quantities.md
 - name: Units of measure
   href: sds-units-of-measure.md

@@ -22,12 +22,11 @@ SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in 
 ## Single stream writes   
 
 The following methods support writing a single or multiple values:
-* [Insert Values](xref:sdsWritingDataApi#insert-values) inserts a collection of events.
-* [Patch Values](xref:sdsWritingDataApi#patch-values) updates specific fields for a collection of events.
-* [Replace Values](xref:sdsWritingDataApi#replace-values) replaces a collection of events.
-* [Remove Values](xref:sdsWritingDataApi#remove-values) deletes the events based on the request parameters.
-* [Update Values](xref:sdsWritingDataApi#update-values) add or replaces a collection of events.
-
+* [Insert Values](xref:sds-stream-data#insert-values) inserts a collection of events.
+* [Patch Values](xref:sds-stream-data#patch-values) updates specific fields for a collection of events.
+* [Remove Values](xref:sds-stream-data#remove-values) deletes the events based on the request parameters.
+* [Update Values](xref:sds-stream-data#update-values) add or replaces a collection of events.
+sds-stream-data
 <!--removing per Chris' feedback
 The base URI for writing SDS data to a single stream is:
  ```text

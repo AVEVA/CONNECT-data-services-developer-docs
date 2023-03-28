@@ -4,7 +4,7 @@ uid: DataViewsSummaries
 
 # Display calculated summaries
 
-Data views can be configured to show summary calculations for streams and assets.  Summary calculations are defined as the summary types enumerated in [SdsSummaryType](xref:sdsReadingDataApi#get-summaries). This topic describes how to include summaries in a data view. 
+Data views can be configured to show summary calculations for streams and assets.  Summary calculations are defined as the summary types enumerated in [SdsSummaryType](xref:sds-stream-data#list-summaries). This topic describes how to include summaries in a data view. 
 
 ## Available summaries
 Not all properties have summaries. For example, a string property has no Mean value. If a data item field requests a summary that is unavailable these values will be null in the view data.  
@@ -12,7 +12,7 @@ Not all properties have summaries. For example, a string property has no Mean va
 ## Include summaries in a data view
 Users may include any mix of interpolated or summary data fields in a data view. Multiple summary types for a stream property or an asset are requested by defining a field for each desired summary type. Units of measure can also be included for a summary, if applicable, not all summaries do (e.g. Kurtosis and Skewness).
 
-In the data view a data field defines the type of summary with the SummaryType property as [SdsSummaryType](xref:sdsReadingDataApi#get-summaries). Another property, SummaryDirection, allows the direction of the summary to be defined as [SummaryDirection](xref:ResolvedDataView#summarydirection-enumeration). SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values.
+In the data view a data field defines the type of summary with the SummaryType property as [SdsSummaryType](xref:sds-stream-data#list-summaries). Another property, SummaryDirection, allows the direction of the summary to be defined as [SummaryDirection](xref:ResolvedDataView#summarydirection-enumeration). SummaryDirection controls whether the start or end index of the summary is used by the data view to calculate the summary values.
 If the SummaryType is "None", the SummaryDirection (if specified) will be accepted but ignored. If the SummaryType is not "None", and SummaryDirection is not specified, it will be initialized to "Forward". 
 
 The label tokens: \{SummaryType\} and \{SummaryDirection\} will resolve in the field mappings and show in dataview table header columns for a summary field.

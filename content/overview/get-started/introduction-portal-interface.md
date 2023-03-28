@@ -20,7 +20,7 @@ The AVEVA Data Hub home page displays the following:
 
 - **Resource Usage**: View resource usage at a glance and select this box to see in-depth information on your [resource usage](xref:ResourceUsage).
 
-- **System Health**: Overall system health for AVEVA Data Hub. Select to see a breakdown of tenant health.
+- **System Health**: Overall system health for AVEVA Data Hub. Select to see a breakdown of [tenant health](xref:home-health).
 
 - **PI to Data Hub Agents**: Health status for each PI to Data Hub agent. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each agent.
 

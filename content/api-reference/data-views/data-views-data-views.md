@@ -286,6 +286,8 @@ Content-Type: application/json
     { 
       "Id": "weather",
       "Kind": "Stream",
+      "SourceKind": "Default",
+      "SourceId": "",
       "Value":"*weather*" 
     }
   ],

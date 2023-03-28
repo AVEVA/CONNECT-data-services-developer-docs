@@ -64,6 +64,9 @@ Content-Type: application/json
       "Name": "WS_BILT",
       "TypeId": "quickstart-omf-weather-gen1",
       "ResourceType": "Stream",
+      "TenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+      "NamespaceId": "development",
+      "CommunityId": "",
       "Tags": [
         "Weather",
         "High Resolution",
@@ -180,6 +183,9 @@ Content-Type: application/json
       "Name": "Some Ineligible Stream",
       "TypeId": "type-with-different-index",
       "ResourceType": "Stream",
+      "TenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+      "NamespaceId": "development",
+      "CommunityId": "",
       "Tags": [],
       "Metadata": [],
       "DataItemFields": [],
@@ -289,6 +295,9 @@ Content-Type: application/json
             "Name": "WS_BILT",
             "TypeId": "quickstart-omf-weather-gen1",
             "ResourceType": "Stream",
+            "TenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "NamespaceId": "development",
+            "CommunityId": "",
             "Tags": [
                 "Weather",
                 "High Resolution",
@@ -426,6 +435,9 @@ HTTP 200 OK
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
+            "TargetTenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "TargetNamespaceId": "development",
+            "TargetCommunityId": "",
             "TargetFieldKey": "Temperature",
             "TypeCode": "Double",
             "FieldSetIndex": 1,
@@ -433,6 +445,9 @@ HTTP 200 OK
           },
           {
             "TargetId": "WS_ROSE",
+            "TargetTenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "TargetNamespaceId": "development",
+            "TargetCommunityId": "",
             "TargetFieldKey": "Temperature",
             "TypeCode": "Double",
             "FieldSetIndex": 1,
@@ -440,6 +455,9 @@ HTTP 200 OK
           },
           {
             "TargetId": "WS_WINT",
+            "TargetTenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "TargetNamespaceId": "development",
+            "TargetCommunityId": "",
             "TargetFieldKey": "AmbientTemperature",
             "TypeCode": "Double",
             "FieldSetIndex": 1,
@@ -797,6 +815,7 @@ Holds a collection of items that were resolved at a specific time.
     {
       "Id": "string",
       "Name": "string",
+      "ClusterEndpoint": "string",
       "Description": "string",
       "TypeId": "string",
       "ResourceType": 1,
@@ -860,6 +879,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |---|---|---|---|---|
 |Id|string|false|true|The data item's unique identifier|
 |Name|string|false|true|The data item's friendly name|
+|ClusterEndpoint|string|false|true|The data item's cluster endpoint|
 |Description|string|false|true|The data item's description|
 |TypeId|string|false|true|The identifier of the data item's type|
 |ResourceType|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource this data item comes from|
@@ -875,6 +895,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 {
   "Id": "string",
   "Name": "string",
+  "ClusterEndpoint": "string",
   "Description": "string",
   "TypeId": "string",
   "ResourceType": 1,
@@ -1181,6 +1202,7 @@ Holds a collection of items that were resolved at a specific time.
           {
             "Id": "string",
             "Name": "string",
+            "ClusterEndpoint": "string",
             "Description": "string",
             "TypeId": "string",
             "ResourceType": 1,
@@ -1227,6 +1249,7 @@ Holds a collection of items that were resolved at a specific time.
           {
             "Id": "string",
             "Name": "string",
+            "ClusterEndpoint": "string",
             "Description": "string",
             "TypeId": "string",
             "ResourceType": 1,
@@ -1308,6 +1331,7 @@ A group resolved by a data view
       {
         "Id": "string",
         "Name": "string",
+        "ClusterEndpoint": "string",
         "Description": "string",
         "TypeId": "string",
         "ResourceType": 1,
@@ -1354,6 +1378,7 @@ A group resolved by a data view
       {
         "Id": "string",
         "Name": "string",
+        "ClusterEndpoint": "string",
         "Description": "string",
         "TypeId": "string",
         "ResourceType": 1,
@@ -1446,6 +1471,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |---|---|---|---|---|
 |Id|string|false|true|The data item's unique identifier|
 |Name|string|false|true|The data item's friendly name|
+|ClusterEndpoint|string|false|true|The data item's cluster endpoint|
 |Description|string|false|true|The data item's description|
 |TypeId|string|false|true|The identifier of the data item's type|
 |ResourceType|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource this data item comes from|
@@ -1461,6 +1487,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 {
   "Id": "string",
   "Name": "string",
+  "ClusterEndpoint": "string",
   "Description": "string",
   "TypeId": "string",
   "ResourceType": 1,

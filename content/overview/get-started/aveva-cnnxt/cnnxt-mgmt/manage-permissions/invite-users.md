@@ -18,21 +18,7 @@ To set up new users:
 
 1. In the **Username** field, enter the user's email address.
 
-1. Skip the **Groups** field for now. You will add users to groups in <xref:assign-users>.
-
-1. Under **Add individual role**, select one of the following role types:
-
-   * `Service role` - Select this role to control what Connect service and folder the user can access, and then assign an additional role.
-
-   * `Account role` - Select this role to assign the user to a Connect role.
-
-1. (Optional) If you selected the `Service role`, select the service, folder, and role from the dropdown lists.
-
-   The user is granted access to the designated service and folder, and inherits the permissions of the assigned role.
-
-1. (Optional) If you selected the `Account role`, select a role from the **Role** dropdown list.
-
-   The user inherits the permissions of the assigned AVEVA Connect role.
+1. Skip the **Groups** and **Add individual role** controls for now. You will add users to groups and apply roles to them in future steps.
 
 1. Select **Save**.
 

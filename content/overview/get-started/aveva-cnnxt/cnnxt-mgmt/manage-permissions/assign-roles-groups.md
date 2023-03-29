@@ -10,26 +10,22 @@ To assign roles to a group:
 
 1. From the AVEVA Connect home page, select ![menu](../../../../../_icons/default/menu.svg) > **User Management**.
 
-1. Select the **Groups** tab.
+1. Select the **Roles** tab.
 
-   The existing groups are listed.
-
-1. Select the group to which you want to assign roles.
-
-1. Select the **Roles** tab. The list of existing roles assigned to the group is displayed.
-
-   **Note:** You can search for the required group by typing a few letters in the **Filter by group name** field.
-
-1. Select **Assign role** to assign more roles to the group.
+1. Select **Assign role**.
 
    The `Assign role` area is displayed.
 
-1. Select **Service role**.
+1. Verify that the **Service role** option is selected.
+
+1. From **Service**, select **Data Hub (Int)**.
 
 1. From **Folder**, select the folder that you created in <xref:create-folders>.
 
 1. From **Role**, select **Data Hub Viewer**.
 
+1. From **Groups**, select the groups that you created in <xref:create-group>.
+
 1. Select **Save** to save these changes.
 
-   The role is assigned to the selected groups.
+   The **Data Hub Viewer** role is assigned to the selected groups.

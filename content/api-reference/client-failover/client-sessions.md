@@ -44,7 +44,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
     "Id": "string",
     "Name": "string",
     "Heartbeat": {
-      "FailoverStatus": 0,
+      "FailoverScore": 0,
       "LastDataProcessedTime": "2019-08-24T14:15:22Z",
       "HeartbeatTime": "2019-08-24T14:15:22Z"
     },
@@ -112,7 +112,7 @@ The client session being created.<br/>
   "Id": "string",
   "Name": "string",
   "Heartbeat": {
-    "FailoverStatus": 0,
+    "FailoverScore": 0,
     "LastDataProcessedTime": "2019-08-24T14:15:22Z",
     "HeartbeatTime": "2019-08-24T14:15:22Z"
   },
@@ -167,7 +167,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
   "Id": "string",
   "Name": "string",
   "Heartbeat": {
-    "FailoverStatus": 0,
+    "FailoverScore": 0,
     "LastDataProcessedTime": "2019-08-24T14:15:22Z",
     "HeartbeatTime": "2019-08-24T14:15:22Z"
   },
@@ -241,9 +241,7 @@ The heartbeat of the client session.<br/>
 
 ```json
 {
-  "FailoverStatus": 100,
-  "LastDataProcessedTime": "2019-08-24T14:15:22Z",
-  "HeartbeatTime": "2019-08-24T14:15:22Z"
+  "FailoverScore": 100
 }
 ```
 
@@ -251,7 +249,7 @@ The heartbeat of the client session.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[FailoverResponse](#schemafailoverresponse)|The failover response.|
+|200|[FailoverHeartbeatResponse](#schemafailoverheartbeatresponse)|The failover response.|
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
@@ -259,7 +257,7 @@ The heartbeat of the client session.<br/>
 
 <h4>Example response body</h4>
 
-> 200 Response ([FailoverResponse](#schemafailoverresponse))
+> 200 Response ([FailoverHeartbeatResponse](#schemafailoverheartbeatresponse))
 
 ```json
 {
@@ -349,7 +347,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{
   "Id": "string",
   "Name": "string",
   "Heartbeat": {
-    "FailoverStatus": 0,
+    "FailoverScore": 0,
     "LastDataProcessedTime": "2019-08-24T14:15:22Z",
     "HeartbeatTime": "2019-08-24T14:15:22Z"
   },
@@ -380,13 +378,13 @@ Failover heartbeat.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|FailoverStatus|float|false|false|The percentage of active streams managed by an adapter.|
+|FailoverScore|float|false|false|The percentage of active streams managed by an adapter.|
 |LastDataProcessedTime|date-time|false|true|Last time data was processed by client.|
 |HeartbeatTime|date-time|false|false|UTC time that the client generated the heartbeat message.|
 
 ```json
 {
-  "FailoverStatus": 0,
+  "FailoverScore": 0,
   "LastDataProcessedTime": "2019-08-24T14:15:22Z",
   "HeartbeatTime": "2019-08-24T14:15:22Z"
 }
@@ -495,12 +493,12 @@ Configuration for creating a new client session.
 
 ---
 
-### FailoverResponse
+### FailoverHeartbeatResponse
 
-<a id="schemafailoverresponse"></a>
-<a id="schema_FailoverResponse"></a>
-<a id="tocSfailoverresponse"></a>
-<a id="tocsfailoverresponse"></a>
+<a id="schemafailoverheartbeatresponse"></a>
+<a id="schema_FailoverHeartbeatResponse"></a>
+<a id="tocSfailoverheartbeatresponse"></a>
+<a id="tocsfailoverheartbeatresponse"></a>
 
 <h4>Properties</h4>
 
@@ -519,26 +517,22 @@ Configuration for creating a new client session.
 
 ---
 
-### FailoverHeartbeat
+### FailoverHeartbeatRequest
 
-<a id="schemafailoverheartbeat"></a>
-<a id="schema_FailoverHeartbeat"></a>
-<a id="tocSfailoverheartbeat"></a>
-<a id="tocsfailoverheartbeat"></a>
+<a id="schemafailoverheartbeatrequest"></a>
+<a id="schema_FailoverHeartbeatRequest"></a>
+<a id="tocSfailoverheartbeatrequest"></a>
+<a id="tocsfailoverheartbeatrequest"></a>
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|FailoverStatus|float|false|false|The percentage of active streams managed by an adapter.|
-|LastDataProcessedTime|date-time|false|true|Last time data was processed by client.|
-|HeartbeatTime|date-time|false|false|UTC time that the client generated the heartbeat message.|
+|FailoverScore|float|true|false|The percentage of active streams managed by an adapter.|
 
 ```json
 {
-  "FailoverStatus": 100,
-  "LastDataProcessedTime": "2019-08-24T14:15:22Z",
-  "HeartbeatTime": "2019-08-24T14:15:22Z"
+  "FailoverScore": 100
 }
 
 ```

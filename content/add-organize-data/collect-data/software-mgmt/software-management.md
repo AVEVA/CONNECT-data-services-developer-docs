@@ -4,7 +4,11 @@ uid: SoftwareMgmt
 
 # Software management (Preview)
 
-Software management provides a centralized location to monitor the health and manage the software configuration of edge systems, including Edge Data Store and PI Adapters. This gives you visibility into the data collection software that is deployed on remote devices. To be available in software management, an edge system must have an OCS health endpoint configured. For information on configuring health endpoints, see the specific edge system product documentation.
+Software management provides a centralized location to monitor the health and manage the software configuration of edge modules and edge systems, including Edge Data Store and PI Adapters. This shows you the data collection software that deploys to remote devices. To be available in software management, an edge system must have an OCS health endpoint configured. For information on configuring health endpoints, see the specific edge system product documentation.
+
+Edge systems have product executables that you install on devices in the field. Use software management to create configuration files that you then deploy directly on those devices.
+
+Edge modules have the same functionality as their corresponding edge systems, but are deployed and managed through AVEVA Edge Management. Edge modules operate in Alpine Linux containers on devices. Each edge module deployment includes the container OS, the edge system, and its configuration files. For details, see the [AVEVA Edge Management](https://docs.osisoft.com/bundle/pi-adapter-azure-event-hubs/page/configuration/configuration.html) documentation.
 
 ## Health monitoring
 

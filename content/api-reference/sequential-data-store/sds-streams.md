@@ -16,7 +16,7 @@ Returns a list of streams.
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
-?query={query}&skip={skip}&count={count}&orderby={orderby}
+?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 <h4>Parameters</h4>
@@ -25,7 +25,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
 `[optional] string query`
-<br/>Parameter representing a string search.<br/><br/>`[optional] integer skip`
+<br/>Parameter representing a string search.<br/><br/>`[optional] string filter`
+<br/>Parameter representing a filter expression.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
 <br/>Parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, orderby=name would sort the returned results by the name values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values asc or desc, respectively. For example, orderby=name desc would sort the returned results by the name values, descending. If no value is specified, there is no sorting of result.<br/><br/>
@@ -66,7 +67,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams
         "Uom": "string",
         "InterpolationMode": 0
       }
-    ]
+    ],
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   }
 ]
 ```
@@ -127,7 +130,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
       "Uom": "string",
       "InterpolationMode": 0
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -189,7 +194,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
       "Uom": "string",
       "InterpolationMode": 0
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -251,7 +258,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
       "Uom": "string",
       "InterpolationMode": 0
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -352,7 +361,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Type
   "BaseType": "<SdsType>",
   "DerivedTypes": "[<SdsType>]",
   "InterpolationMode": 0,
-  "ExtrapolationMode": 0
+  "ExtrapolationMode": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -450,6 +461,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamI
       "InterpolationMode": 0
     }
   ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
   "Resolved": true,
   "Type": {
     "Id": "string",
@@ -485,7 +498,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamI
         "BaseType": "<SdsType>",
         "DerivedTypes": "[<SdsType>]",
         "InterpolationMode": 0,
-        "ExtrapolationMode": 0
+        "ExtrapolationMode": 0,
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
     "Properties": [
@@ -529,7 +544,9 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamI
       "BaseType": "<SdsType>",
       "DerivedTypes": "[<SdsType>]",
       "InterpolationMode": 0,
-      "ExtrapolationMode": 0
+      "ExtrapolationMode": 0,
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z"
     },
     "DerivedTypes": [
       {
@@ -558,11 +575,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamI
         "BaseType": "<SdsType>",
         "DerivedTypes": "[<SdsType>]",
         "InterpolationMode": 0,
-        "ExtrapolationMode": 0
+        "ExtrapolationMode": 0,
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
     "InterpolationMode": "Default",
-    "ExtrapolationMode": "All"
+    "ExtrapolationMode": "All",
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   }
 }
 ```
@@ -622,6 +643,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Re
           "InterpolationMode": 0
         }
       ],
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z",
       "Resolved": true,
       "Type": {
         "Id": "string",
@@ -657,7 +680,9 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Re
             "BaseType": "<SdsType>",
             "DerivedTypes": "[<SdsType>]",
             "InterpolationMode": 0,
-            "ExtrapolationMode": 0
+            "ExtrapolationMode": 0,
+            "CreatedDate": "2019-08-24T14:15:22Z",
+            "ModifiedDate": "2019-08-24T14:15:22Z"
           }
         ],
         "Properties": [
@@ -701,7 +726,9 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Re
           "BaseType": "<SdsType>",
           "DerivedTypes": "[<SdsType>]",
           "InterpolationMode": 0,
-          "ExtrapolationMode": 0
+          "ExtrapolationMode": 0,
+          "CreatedDate": "2019-08-24T14:15:22Z",
+          "ModifiedDate": "2019-08-24T14:15:22Z"
         },
         "DerivedTypes": [
           {
@@ -730,11 +757,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Re
             "BaseType": "<SdsType>",
             "DerivedTypes": "[<SdsType>]",
             "InterpolationMode": 0,
-            "ExtrapolationMode": 0
+            "ExtrapolationMode": 0,
+            "CreatedDate": "2019-08-24T14:15:22Z",
+            "ModifiedDate": "2019-08-24T14:15:22Z"
           }
         ],
         "InterpolationMode": "Default",
-        "ExtrapolationMode": "All"
+        "ExtrapolationMode": "All",
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     }
   ],
@@ -779,6 +810,8 @@ A contract defining read and write operations on data of SdsType.
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|Defines the SdsInterpolationMode of the SdsStream. Default is null.|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|Defines the SdsExtrapolationMode of the SdsStream. Default is null.|
 |PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|List of SdsStreamPropertyOverrides to define unit of measure and interpolation mode overrides for the SdsStream.|
+|CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStream was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
+|ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStream was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 
 ```json
 {
@@ -799,7 +832,9 @@ A contract defining read and write operations on data of SdsType.
       "Uom": "string",
       "InterpolationMode": 0
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```
@@ -961,6 +996,8 @@ A contract defining the type of data to read or write in a SdsStream.
 |DerivedTypes|[[SdsType](#schemasdstype)]|false|true|List of SdsTypes that should be recognized by SdsFormatter during serialization/de-serialization. This property behaves similar to KnownTypeAttribute attribute for DataContractSerializer and only valid for serialization if SdsFormatter is used.|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|false|Defines the SdsInterpolationMode of the SdsType. This property is only valid for the root SdsType and invalid for SdsTypes of SdsTypePropertys.|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|false|Defines the SdsExtrapolationMode of the SdsType. This property is only valid for the root SdsType and invalid for SdsTypes of SdsTypePropertys.|
+|CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsType was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
+|ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsType was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 
 ```json
 {
@@ -989,7 +1026,9 @@ A contract defining the type of data to read or write in a SdsStream.
   "BaseType": "<SdsType>",
   "DerivedTypes": "[<SdsType>]",
   "InterpolationMode": 0,
-  "ExtrapolationMode": 0
+  "ExtrapolationMode": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```
@@ -1144,7 +1183,9 @@ A contract defining a property of a SdsType.
     "BaseType": "<SdsType>",
     "DerivedTypes": "[<SdsType>]",
     "InterpolationMode": 0,
-    "ExtrapolationMode": 0
+    "ExtrapolationMode": 0,
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "Value": null,
   "Uom": "string",
@@ -1177,6 +1218,8 @@ A contract defining resolution of SdsStream.
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|Defines the SdsInterpolationMode of the SdsStream. Default is null.|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|Defines the SdsExtrapolationMode of the SdsStream. Default is null.|
 |PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|List of SdsStreamPropertyOverrides to define unit of measure and interpolation mode overrides for the SdsStream|
+|CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStream was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
+|ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStream was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 |Resolved|boolean|false|false|None|
 |Type|[SdsResolvedType](#schemasdsresolvedtype)|false|true|A contract defining the type of data to read or write in a SdsResolvedStream.|
 
@@ -1200,6 +1243,8 @@ A contract defining resolution of SdsStream.
       "InterpolationMode": 0
     }
   ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
   "Resolved": true,
   "Type": {
     "Id": "string",
@@ -1235,7 +1280,9 @@ A contract defining resolution of SdsStream.
         "BaseType": "<SdsType>",
         "DerivedTypes": "[<SdsType>]",
         "InterpolationMode": 0,
-        "ExtrapolationMode": 0
+        "ExtrapolationMode": 0,
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
     "Properties": [
@@ -1279,7 +1326,9 @@ A contract defining resolution of SdsStream.
       "BaseType": "<SdsType>",
       "DerivedTypes": "[<SdsType>]",
       "InterpolationMode": 0,
-      "ExtrapolationMode": 0
+      "ExtrapolationMode": 0,
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z"
     },
     "DerivedTypes": [
       {
@@ -1308,11 +1357,15 @@ A contract defining resolution of SdsStream.
         "BaseType": "<SdsType>",
         "DerivedTypes": "[<SdsType>]",
         "InterpolationMode": 0,
-        "ExtrapolationMode": 0
+        "ExtrapolationMode": 0,
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
     "InterpolationMode": "Default",
-    "ExtrapolationMode": "All"
+    "ExtrapolationMode": "All",
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   }
 }
 
@@ -1345,6 +1398,8 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
 |DerivedTypes|[[SdsType](#schemasdstype)]|false|true|[A contract defining the type of data to read or write in a SdsStream.]|
 |InterpolationMode|[SdsInterpolationMode2](#schemasdsinterpolationmode2)|false|false|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
 |ExtrapolationMode|[SdsExtrapolationMode2](#schemasdsextrapolationmode2)|false|false|Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.|
+|CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsType was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
+|ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsType was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 
 ```json
 {
@@ -1381,7 +1436,9 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
       "BaseType": "<SdsType>",
       "DerivedTypes": "[<SdsType>]",
       "InterpolationMode": 0,
-      "ExtrapolationMode": 0
+      "ExtrapolationMode": 0,
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z"
     }
   ],
   "Properties": [
@@ -1425,7 +1482,9 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
     "BaseType": "<SdsType>",
     "DerivedTypes": "[<SdsType>]",
     "InterpolationMode": 0,
-    "ExtrapolationMode": 0
+    "ExtrapolationMode": 0,
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "DerivedTypes": [
     {
@@ -1454,11 +1513,15 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
       "BaseType": "<SdsType>",
       "DerivedTypes": "[<SdsType>]",
       "InterpolationMode": 0,
-      "ExtrapolationMode": 0
+      "ExtrapolationMode": 0,
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z"
     }
   ],
   "InterpolationMode": "Default",
-  "ExtrapolationMode": "All"
+  "ExtrapolationMode": "All",
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```
@@ -1532,7 +1595,9 @@ A contract defining the type of data to read or write in a SdsResolvedType.
         "BaseType": "<SdsType>",
         "DerivedTypes": "[<SdsType>]",
         "InterpolationMode": 0,
-        "ExtrapolationMode": 0
+        "ExtrapolationMode": 0,
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
     "Properties": "[<SdsResolvedTypeProperty>]",
@@ -1562,7 +1627,9 @@ A contract defining the type of data to read or write in a SdsResolvedType.
       "BaseType": "<SdsType>",
       "DerivedTypes": "[<SdsType>]",
       "InterpolationMode": 0,
-      "ExtrapolationMode": 0
+      "ExtrapolationMode": 0,
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z"
     },
     "DerivedTypes": [
       {
@@ -1591,11 +1658,15 @@ A contract defining the type of data to read or write in a SdsResolvedType.
         "BaseType": "<SdsType>",
         "DerivedTypes": "[<SdsType>]",
         "InterpolationMode": 0,
-        "ExtrapolationMode": 0
+        "ExtrapolationMode": 0,
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
     "InterpolationMode": "Default",
-    "ExtrapolationMode": "All"
+    "ExtrapolationMode": "All",
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "Value": null,
   "Uom": "string",
@@ -1791,6 +1862,8 @@ A contract defining bulk response of SdsResolvedStream
           "InterpolationMode": 0
         }
       ],
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z",
       "Resolved": true,
       "Type": {
         "Id": "string",
@@ -1826,7 +1899,9 @@ A contract defining bulk response of SdsResolvedStream
             "BaseType": "<SdsType>",
             "DerivedTypes": "[<SdsType>]",
             "InterpolationMode": 0,
-            "ExtrapolationMode": 0
+            "ExtrapolationMode": 0,
+            "CreatedDate": "2019-08-24T14:15:22Z",
+            "ModifiedDate": "2019-08-24T14:15:22Z"
           }
         ],
         "Properties": [
@@ -1870,7 +1945,9 @@ A contract defining bulk response of SdsResolvedStream
           "BaseType": "<SdsType>",
           "DerivedTypes": "[<SdsType>]",
           "InterpolationMode": 0,
-          "ExtrapolationMode": 0
+          "ExtrapolationMode": 0,
+          "CreatedDate": "2019-08-24T14:15:22Z",
+          "ModifiedDate": "2019-08-24T14:15:22Z"
         },
         "DerivedTypes": [
           {
@@ -1899,11 +1976,15 @@ A contract defining bulk response of SdsResolvedStream
             "BaseType": "<SdsType>",
             "DerivedTypes": "[<SdsType>]",
             "InterpolationMode": 0,
-            "ExtrapolationMode": 0
+            "ExtrapolationMode": 0,
+            "CreatedDate": "2019-08-24T14:15:22Z",
+            "ModifiedDate": "2019-08-24T14:15:22Z"
           }
         ],
         "InterpolationMode": "Default",
-        "ExtrapolationMode": "All"
+        "ExtrapolationMode": "All",
+        "CreatedDate": "2019-08-24T14:15:22Z",
+        "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     }
   ],

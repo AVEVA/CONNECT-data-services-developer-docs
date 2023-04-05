@@ -2,43 +2,57 @@
 uid: WhatADHdoes
 ---
 
-# Core functionality of AVEVA Data Hub
+# Core functionality
 
 AVEVA Data Hub consists of several areas of core functionality.
 
 ## Access management
 
-Customize AVEVA Data Hub to meet your organization's requirements and needs. Administrators create users and clients, define and assign roles, and manage folders/namespaces. Authentication and authorization are also customizable. Administrators can define the permissions to an AVEVA Data Hub resource by configuring the access control list (ACL) for that resource. Administrators can perform tenant management using the AVEVA Data Hub REST API or the AVEVA Data Hub portal.
+You can customize AVEVA Data Hub access management to meet your organization's requirements and needs. Administrators can:
+
+- Create and manage users and clients
+
+- Define and assign roles
+
+- Manage folders/namespaces
+
+- Customize authentication and authorization
+
+Administrators can define the permissions to an AVEVA Data Hub resource by configuring the
+access control list (ACL) for that resource. They can also perform tenant management using the AVEVA Data
+Hub REST API or the AVEVA Data Hub portal.
 
 ## Data collection
 
 AVEVA Data Hub provides a variety of methods to collect data. You can ingress data from an external application or from PI Server directly to AVEVA Data Hub using any of the following methods: 
 
-- PI to Data Hub Agent: The PI to Data Hub Agent transfers on-premises PI data and Asset Framework (AF) data into AVEVA Data Hub.
+- PI to Data Hub Agent: Transfers on-premises PI data and Asset Framework (AF) data into AVEVA Data Hub.
 
 - Custom Open Message Format (OMF) applications: OMF is a platform-independent format for passing JSON messages to AVEVA Data Hub using an HTTP client. Use OMF to achieve a high-throughput data feed into AVEVA Data Hub. 
 
-- Edge Data Store (EDS): EDS uses OMF messages to send data into AVEVA Data Hub from edge devices.
+- Edge Data Store (EDS): Uses OMF messages to send data into AVEVA Data Hub from edge devices.
 
-- PI Adapters: PI Adapters use OMF messaging to send data into AVEVA Data Hub from a variety of data collection devices. 
+- PI Adapters: Use OMF messages to send data into AVEVA Data Hub from a variety of data collection devices. 
 
-- REST API: Developer-friendly REST APIs provide programmatic access to read and write sequential data into AVEVA Data Hub.
+- REST APIs: Developer-friendly APIs provide programmatic access to read and write sequential data into AVEVA Data Hub.
  
 ## Data management 
 
-The Sequential Data Store is the storage layer of AVEVA Data Hub. It is used to store, retrieve, and organize any type of streaming data. Typically, developers use the SDS as part of their customized applications. It is not only for time-series data, but also more complex data such as location, time/depth, etc.
+The Sequential Data Store (SDS) is the storage layer of AVEVA Data Hub. It is used to store, retrieve, and organize any type of streaming data. Typically, developers use the SDS as part of their customized applications. It is primarily for time-series data, but also more complex data such as location, time/depth, etc.
 
 The basic features of the SDS include: 
 
 - Types: A type defines the structure of data to be collected in AVEVA Data Hub. A type is analogous to a template that defines each instance in a stream of data.
+
 - Streams: A stream is a series of ordered events. Each event is an instance of a type. Collectively, the stream of data forms the structure that the type specifies.
+
 - Stream views: A stream view is a logical overlay for stream data that allows you to create customized views of data streams that meet the needs of multiple users without changing the original data. With a stream view you can do things such as include a subset of the data in a stream, convert units of measure, and change names so terminology is appropriate for a particular audience.
 
 ## Community sharing
 
 With Communities you can create a private group where operational data can be shared and viewed by trusted business partners, service providers, and analytics providers. Sharing data with AVEVA Data Hub allows real-time updating of data, full data granularity, and an automated data copy outside your organization. You can share data from a PI server without requiring your partners to have a PI system.
 
-Sharing data streams allows you and your partners to find value in each other's operational data:
+Sharing data streams allows you to:
 
 - Collectively operate more efficiently and reduce waste.
 

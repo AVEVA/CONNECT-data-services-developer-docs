@@ -2,11 +2,11 @@
 uid: WhoUsesADH
 ---
 
-# Applications of AVEVA Data Hub
+# Platform uses
 
-AVEVA Data Hub extends the data infrastructure seamlessly by integrating existing AVEVA products and third-party vendors from edge to cloud. This allows data to be shared across the entire infrastructure, reaching new people such as developers creating custom applications, data scientists engaged in data modeling, operations staff who monitor real-time performance, and data analysts using visualized data. 
+AVEVA Data Hub extends the data infrastructure seamlessly by integrating existing AVEVA products and third-party vendors from edge to cloud. This extensibility allows data to be shared across the entire infrastructure, reaching new people such as developers creating custom applications, data scientists engaged in data modeling, operations staff who monitor real-time performance, and data analysts using visualized data. 
 
-Extending the collection and accessibility of operational data allows new analysis and decision-making processes to benefit the company. Some of the possible uses of this data include:
+Extending the collection and accessibility of operational data allows new analysis and decision-making processes to benefit your company. Some of the possible uses of this data include:
 
 - [Remote operations monitoring](#remote-monitoring)
 
@@ -14,7 +14,7 @@ Extending the collection and accessibility of operational data allows new analys
 
 - Providing real-time troubleshooting data for support personnel
 
-- [Data science enablement](#data-science-enablement)
+- [Data science analysis](#data-science-analysis)
 
 - [Sharing data with external partners](#sharing-data-with-business-partners)
 
@@ -26,7 +26,7 @@ Extending the collection and accessibility of operational data allows new analys
 
 AVEVA Data Hub provides the ability to integrate data infrastructure from edge to cloud seamlessly. Designed to serve as a "system of systems," AVEVA Data Hub supports data usage across the global enterprise. 
 
-In the past, data was often left stranded at remote locations due to the lack of reliable network connectivity. For instance, farms need data to answer questions such as how much grain is in a silo or what is the predicted corn harvest this season. Mining companies require data from mining trucks to know when maintenance is necessary. This untapped data can provide valuable insights for an enterprise and its decision making. 
+In the past, data was often isolated at remote locations due to unreliable network connectivity. For instance, farms need data to answer questions such as how much grain is in a silo or what is the predicted corn harvest this season. Mining companies require data from mining trucks to know when maintenance is necessary. This untapped data can provide valuable insights for an enterprise and its decision making. 
 
 Accessing and integrating these "dark" data locations is possible with edge systems and AVEVA Data Hub. With pervasive data collectors, PI Adapters, Edge Data Store, and custom OMF applications, operational assets that were previously inaccessible are now viable data sources. 
 
@@ -42,7 +42,7 @@ The benefits of seamless integration of data infrastructure include:
 
 - Existing edge and PI Server data is integrated into AVEVA Data Hub.
 
-## Data science enablement 
+## Data science analysis
 
 Data scientists can easily integrate operational data from multiple sources for a variety of applications, such as process optimization and maintenance. Better data modeling enables smart decision-making based on clear answers about what is most relevant to a company’s goals. AVEVA Data Hub uses the entire data infrastructure to gather the right type of data for modeling tools that answer business questions such as maintenance and demand forecasting. 
 

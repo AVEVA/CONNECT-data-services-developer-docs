@@ -14,8 +14,6 @@ To set up new users:
 
 1. Select **Add user**.
 
-   The `Add User` pane opens.
-
 1. In the **Username** field, enter the user's email address.
 
 1. Skip the **Groups** and **Add individual role** controls for now. You will add users to groups and apply roles to them in future steps.

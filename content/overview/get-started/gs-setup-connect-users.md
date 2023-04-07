@@ -8,16 +8,16 @@ As a best practice, AVEVA recommends managing users and groups for AVEVA Data Hu
 
 ## Step 2A: Add Users
 
-Add the users that will use AVEVA Data Hub to AVEVA Connect. For instructions on completing this process, see [Add User](xref:invite-users).
+Add the users that will use AVEVA Data Hub to AVEVA Connect. For instructions on completing this process, see <xref:invite-users>.
 
 ## Step 2B: Add Groups
 
-As a best practice, AVEVA recommends managing users as groups, so you should create one or more groups to organize your users. For instructions, see [Add a Group](xref:create-group).
+As a best practice, AVEVA recommends managing users as groups, so you should create one or more groups to organize your users. For instructions, see <xref:create-group>.
 
 ## Step 2C: Add Users to a Group
 
-Place your users in the appropriate groups. For instructions, see [Add Users to a Group](xref:assign-users).
+Place your users in the appropriate groups. For instructions, see <xref:assign-users>.
 
 ## Step 2D: Assign Groups the Data Hub Viewer Role
 
-Before you or any other user can log into Data Hub from Connect, you must first assign your user group the **DataHub Viewer** role in Connect. This role allows users to see the service tile within Connect that allows you to log into AVEVA Data Hub. For instructions, see [Assign groups the Data Hub Viewer role](xref:assign-roles-groups).
+Before you or any other user can log into Data Hub from Connect, you must first assign your user group the **DataHub Viewer** role in Connect. This role allows users to see the service tile within Connect that allows you to log into AVEVA Data Hub. For instructions, see <xref:assign-roles-groups>.

@@ -4,7 +4,7 @@ uid: create-folders
 
 # Step 1C: Create a folder and turn on AVEVA Data Hub
 
-Before users can access AVEVA Data Hub, you must create a folder in AVEVA Connect and then turn on the AVEVA Data Hub service for that folder. A folder is used to partition data into logical units that represent your organization's hierarchy. The folder is where data and resources are stored. For example, you can create folders to divide up assets or to represent geographical locations at your organization.
+Before AVEVA Data Hub can be accessed, you must create a folder in AVEVA Connect and then turn on the AVEVA Data Hub service for that folder. A folder is used to partition data into logical units that represent your organization's hierarchy. The folder is where data and resources are stored. For example, you can create folders to divide up assets or to represent geographical locations at your organization.
 
 When you create a folder in AVEVA Connect, the folder name is also saved as a namespace within AVEVA Data Hub. For more information, see [Folders and namespaces](xref:ccNamespaces).
 

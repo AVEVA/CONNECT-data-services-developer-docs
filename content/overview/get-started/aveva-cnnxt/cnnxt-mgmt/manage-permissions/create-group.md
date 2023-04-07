@@ -4,11 +4,19 @@ uid: create-group
 
 # Step 2B: Add Groups
 
-To be assigned access to AVEVA Data Hub, users must belong to one or more groups (unless you have assigned individual roles to your user).
+To be assigned access to AVEVA Data Hub, users must belong to one or more groups (unless you have assigned individual roles to your user). By default, all users created in your account belong to the **User** group in AVEVA Connect.
 
-**Note:** All users created in your account belong to the default 'User' group in AVEVA Connect.
+AVEVA recommends creating the following groups for each of your business units (BU).
 
-To create a group and add users to the group:
+| Group | Description |
+|-------|-------------|
+| Administrator | Administrator for namespace. |
+| Admin_OMF | Manage OMF connections for namespace. |
+| OMF_Writer | OMF applications. |
+| Contributor | Editor for namespace. |
+| Viewer | Read only access. |
+
+To create groups:
 
 1. From the AVEVA Connect home page, select ![menu](../../../../../_icons/default/menu.svg) > **User Management**.
 
@@ -24,10 +32,8 @@ To create a group and add users to the group:
 
 1. Enter a description for the group in the **Group description** field.
 
-1. (Optional) Assign users to the group.
-
 1. Select **Save**.
 
    The group is created and any users you selected are assigned to the group.
 
-   **Note:** The new group does not have permissions to perform tasks in AVEVA Data Hub until you assign a role to the group. You can modify existing groups from the Groups tab. After you select an existing group from the list, you can add or remove existing users from that group and assign or revoke roles to the existing users in that group.
+   The new group does not have permissions to perform tasks in AVEVA Data Hub until you assign a role to the group. You can modify existing groups from the **Groups** tab. After you select an existing group from the list, you can add or remove existing users from that group and assign or revoke roles to the existing users in that group.

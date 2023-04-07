@@ -18,7 +18,7 @@ Perform the following steps to create a folder in AVEVA Connect:
 
 1. Choose a **Region** that supports AVEVA Data Hub. Select **Change** to choose a region.
 
-    AVEVA Data Hub is only supported in a limited number of geographical regions. Choose one of the supported Connect regions listed in the following table. Note that the table also indicates differences between naming of regions in AVEVA Connect and AVEVA Data Hub:
+    AVEVA Data Hub is only supported in a limited number of geographical regions. Choose one of the supported Connect regions listed in the following table. The table also lists the mapping between region labels in AVEVA Connect and AVEVA Data Hub:
 
     | AVEVA Connect region label | AVEVA Data Hub region label |
     | ------------- | ------------- |
@@ -34,6 +34,8 @@ Perform the following steps to create a folder in AVEVA Connect:
 
 1. Select ![menu](../../../../_icons/default/menu.svg) > **Folder Management**. Open the folder that you just created.
 
-1. Set **AVEVA Data Hub** to **On**. Then select **Enable** to confirm the selection.
+1. Set **Data Hub** to **On**. Then select **Enable** to confirm the selection.
 
-   **Note:** The default maximum number of namespaces for a tenant is five. To increase this maximum, customers must communicate this request to AVEVA.
+    ![Data Hub: On](../images/data-hub-on.png)
+
+   The default maximum number of namespaces for a tenant is five. To increase this maximum, customers must communicate this request to AVEVA.

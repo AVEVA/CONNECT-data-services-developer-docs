@@ -16,10 +16,8 @@ Before you can use AVEVA Data Hub, you must subscribe to it within AVEVA Connect
 
 ## Step 1C: Create a folder and turn on AVEVA Data Hub
 
-Begin by creating a folder for AVEVA Data Hub. A folder is an organizational unit used to partition data. They are analogous to folders in a traditional tree explorer.
-
-Within AVEVA Data Hub, you can switch between AVEVA Connect folders by changing _namespaces_, which are what Connect folders are known as in Data Hub.
+Begin by creating a folder for AVEVA Data Hub. A *folder* is an organizational unit used to partition data. They are analogous to folders in a traditional tree explorer. Within AVEVA Data Hub, folders map one-to-one with _namespaces_, which is the AVEVA Data Hub term for a folder. Folders and namespaces are synonymous.
 
 For information and best practices and best practices on folders, see <xref:ccNamespaces> and <xref:bpNamespaces>.
 
-For instruction on creating a folder and enabling AVEVA Data Hub, see <xref:create-folders>
+For instruction on creating a folder and enabling AVEVA Data Hub, see <xref:create-folders>.

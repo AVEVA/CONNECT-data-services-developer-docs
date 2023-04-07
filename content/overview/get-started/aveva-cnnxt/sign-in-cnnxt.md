@@ -20,25 +20,25 @@ Some AVEVA Connect accounts use Active Directory Federation Services (AD FS), wh
 
 To sign-in with single sign-on:
 
-1. Browse to [AVEVA Connect page](https://connect.aveva.com/).
+1. Browse to [AVEVA Connect](https://connect.aveva.com/).
 
 1. Select **Sign in**.
 
 1. Sign in with your credentials.
 
-    The AVEVA Connect home page is displayed.
+    The AVEVA Connect home page displays.
 
 ## Single user sign-in
 
 To sign in as a single user:
 
-1. Browse to [AVEVA Connect page](https://connect.aveva.com/).
+1. Browse to [AVEVA Connect](https://connect.aveva.com/).
 
 1. Select **Sign in**.
 
 1. Sign in with your credentials.
 
-    The AVEVA Connect home page is displayed.
+    The AVEVA Connect home page displays.
 
 ## Third-party user access
 
@@ -48,18 +48,18 @@ A connection code enables third-party users to access specific accounts associat
 
 To sign in as a third-party user using a connection code:
 
-1. Browse to [AVEVA Connect page](https://connect.aveva.com/).
+1. Browse to [AVEVA Connect](https://connect.aveva.com/).
 
-1.	Select **Have a connection code?**.
+1. Select **Have a connection code?**
 
     ![Connection code screen](./images/cnnxtn-code-3rd-party.png)
 
-1.	Enter your connection code. This code is provided by AVEVA.
+1. Enter your connection code. This code is provided by AVEVA.
 
     **Note:** A direct sign-in link can be provided to enable quick access to restricted accounts. The third-party user will receive an email invitation that contains the direct link.
 
-1.	Select **Next**.
+1. Select **Next**.
 
-1.	Select the desired account.
+1. Select the desired account.
 
     The AVEVA Connect home page displays for the selected account.

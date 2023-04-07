@@ -4,7 +4,7 @@ uid: ccNamespaces
 
 # Folders and namespaces
 
-An AVEVA Data Hub tenant is the equivalent of an AVEVA Connect account. An AVEVA Connect account can only be associated with one AVEVA Data Hub tenant. Each tenant may have more than one namespace, and each namespace is associated with a unique folder in an AVEVA Connect account.
+An AVEVA Data Hub tenant is the equivalent of an AVEVA Connect account. An AVEVA Connect account can only be associated with one AVEVA Data Hub tenant. Each tenant may have more than one namespace, and each namespace maps to a unique folder in an AVEVA Connect account.
 
 A namespace represents a logical unit of organization for data within a tenant. When you enable an AVEVA Data Hub tile and create a folder in AVEVA Connect, a namespace is automatically created in AVEVA Data Hub. Multiple folders in AVEVA Connect can have AVEVA Data Hub turned on. Each folder represents an AVEVA Data Hub namespace, and all of the namespaces are part of one tenant and one AVEVA Connect account.
 

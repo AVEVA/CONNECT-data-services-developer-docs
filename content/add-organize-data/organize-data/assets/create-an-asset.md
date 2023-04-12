@@ -58,10 +58,10 @@ To create an asset:
 
 1. In the `Select Property` window, select the property that determines the asset status and select **Continue**.
 
-    You can only specify one property to determine the asset status, and that property must have enumerated states or string values.
+    You can only specify one property to determine the asset status, and that property must have enumerated states or string values. Up to 20 total integers can be used to define the value for the available statuses. Integers cannot be repeated and can be separated by commas.
 
-    **Tip:** You can switch to a different property by selecting the ![Change property icon](../../../_icons/branded/swap-horizontal.svg) icon.
+    **Tip:** You can switch to a different property by selecting the ![Change property icon](../../../_icons/branded/swap-horizontal.svg) icon. Each property must be configured separately.
 
-1. For each value listed, select the status icon to map the value to a status. To add other values, select **Add Value Mapping**, enter the value, and select the corresponding status.
+1. For each value listed, select the status icon to map the value to a status. To add other values, select **Add Value Mapping**, enter the integer value(s), and select the corresponding status.
 
 1. To save the asset type, select **Save**.

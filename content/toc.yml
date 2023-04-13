@@ -266,6 +266,7 @@
   items:
     - topicUid: samples
     - topicUid: apiConsole
+    - topicUid: graphQLConsole
     - topicUid: omfEditor
 - topicUid: lpSupport
   items:

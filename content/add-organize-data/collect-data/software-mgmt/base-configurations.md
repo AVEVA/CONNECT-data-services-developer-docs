@@ -1,10 +1,10 @@
 ---
-uid: AddBaseConfiguration
+uid: AddConfigurationTemplate
 ---
 
-# Add and edit base configurations
+# Add and edit configuration templates
 
-You can create and edit base configurations for edge systems in AVEVA Data Hub. Once the configuration is complete, export the configuration in a text file to manually apply it to the edge system in the field or to deploy it to the edge module using AVEVA Edge Management. You can also use an exported configuration text file as a template for configuring other edge systems by importing it. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
+You can create and edit configuration templates for edge systems in AVEVA Data Hub. Once the configuration is complete, export the configuration in a text file to manually apply it to the edge system in the field or to deploy it to the edge module using AVEVA Edge Management. You can also use an exported configuration text file as a template for configuring other edge systems by importing it. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
 
 You can create configuration templates for the following edge system types:
 
@@ -40,7 +40,7 @@ You can create configuration templates for the following edge system types:
 
 **Note:** You can only deploy edge modules using AVEVA Edge Management. 
 
-The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the configuration template is created. For example, if the namespace of the configuration template is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
 ## Edge module configuration
 
@@ -57,17 +57,17 @@ For edge modules, use variables to denote secrets in configuration files. Variab
 When you deploy the configuration in AVEVA Edge Management, you define values for the variables and securely transfer those values to the device. For more information, see [Deploy an edge module](xref:DeployModule).
 
 
-## Add a new base configuration
+## Add a new configuration template
 
-To create a edge system base configuration and export it for use:
+To create a edge system configuration template and export it for use:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Base Configurations**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Configuration Templates**.
 
-1. Select **New Base Configuration**.
+1. Select **New Configuration Template**.
 
-1. In the **Base Configuration Name** field, enter a name to identify the configuration.
+1. In the **Configuration Template Name** field, enter a name to identify the configuration.
 
 1. In the **Type** and **Version** fields, select the edge system type and version for which to create the configuration.
 
@@ -95,21 +95,21 @@ To create a edge system base configuration and export it for use:
 
 1. Select **Save & Close** to confirm the changes. 
 
-## Edit an existing base configuration
+## Edit an existing configuration template
 
-To modify a base configuration and export it for use:
+To modify a configuration template and export it for use:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Base Configurations**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Configuration Templates**.
 
-1. Find and select the base configuration to modify.
+1. Find and select the configuration template to modify.
 
-1. (Optional) To search for specific base configurations, select the **Search for Base Configurations** search bar. The search function provides examples for filtering by criteria such as device name and version. For more information, read [Search in AVEVA Data Hub](xref:Search).
+1. (Optional) To search for specific configuration templates, select the **Search for Configuration Templates** search bar. The search function provides examples for filtering by criteria such as device name and version. For more information, read [Search in AVEVA Data Hub](xref:Search).
 
 1. In the right pane, select the edit icon ![Edit](../../../_icons/default/pencil.svg).
 
-1. Modify the base configuration name, **Type**, and **Version** as needed.
+1. Modify the configuration template name, **Type**, and **Version** as needed.
 
 1. (Optional)  In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 

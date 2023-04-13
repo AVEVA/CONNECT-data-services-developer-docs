@@ -14,9 +14,9 @@ To use the GraphQL console:
 
    The `GraphQL Explorer` pane populates with the queries for search and aggregation from your organization's schema.
 
-1. Select the **Query** tab in the `GraphQL Explorer` pane to compose a data retrieval request, or the **Mutation** tab to modify data.
+1. Select the **Query** tab in the `GraphQL Explorer` pane to compose a data retrieval request, or the **Mutation** tab to upsert or delete data.
 
-1. Select ![expand](../_icons/branded/plus-circle-outline.svg) next to an object in the GraphQL Explorer to show the available fields.
+1. Select ![expand](../_icons/branded/plus-circle-outline.svg) next to an object in the GraphQL Explorer to drill down and show the available filtering options and fields.
 
 1. Use the GraphQL Explorer tree to create a query.
 
@@ -25,6 +25,8 @@ To use the GraphQL console:
    - Use the selections under the `options:` argument to retrieve a specified count of objects or to sort the data returned. Select **+ Add** to add a secondary sort field.
 
    - For fields that can be arrays, select **+ Add** below them to add spaces for additional values to the query.
+
+   - For upsert or delete operations, use the selections under `input:` to identify the object to update or delete.
 
    - Select the fields to include in the response.
 
@@ -66,13 +68,13 @@ GraphQL supports reusable units called fragments. With fragments you construct s
 
    ```
    fragment AlarmFields on Alarm {
-    id
-    eventStartTime
-    eventState
-    severity
+     id
+     eventStartTime
+     eventState
+     severity
    }
    ```
 
 1. Within the query, place instances of the fragment in the format `...[fragment name]`.
 
-Fragments are only in the `Query` pane and are not reflected in the GraphQL Explorer. They persist when you make changes in the GraphQL Explorer.
+Fragments appear only in the `Query` pane and are not reflected in the GraphQL Explorer. They persist when you make changes in the GraphQL Explorer.

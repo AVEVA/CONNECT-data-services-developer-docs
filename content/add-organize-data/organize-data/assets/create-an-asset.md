@@ -67,6 +67,6 @@ To create an asset:
 
     **Tip:** You can switch to a different property by selecting the ![Change property icon](../../../_icons/branded/swap-horizontal.svg) icon. Each property must be configured separately.
 
-1. For each value listed, select the status icon to map the value to a status. To add other values, select **Add Value Mapping**, enter the value(s), and select the corresponding status.
+1. For each value listed, select the status icon to map the value to a status. To add other values, select **Add Value Mapping**, enter the value(s), and select the corresponding status(es).
 
 1. To save the asset type, select **Save**.

@@ -16,22 +16,17 @@ While SDS is a robust data storage, it performs best if you follow certain guide
 
 ### Maximum limit for events in read data calls
 
-Read data API is limited to retrieve less than 250,000 events per request.
-An error message is returned when the maximum limit is reached.
+Read data API is limited to access less than 250,000 events per request.
+This includes events that are accessed but not returned, such as events that are being filtered out of the response.
+An error message is returned when the maximum limit is reached.  
 This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
 
-
-```text
+```json
 400 bad request error
-
 {
-
-               "Error": "The request is not valid.",
-
-               "Reason": "Exceeded the maximum return count of 250000 events."
-
-               "Resolution": "Reduce query size and resubmit the request."
-
+   "Error": "The request is not valid.",
+   "Reason": "Exceeded the maximum return count of 250000 events.",
+   "Resolution": "Reduce query size and resubmit the request."
 }
 ```
 

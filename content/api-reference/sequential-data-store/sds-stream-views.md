@@ -16,7 +16,7 @@ Returns a list of `SdsStreamView`.
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
-?query={query}&skip={skip}&count={count}&orderby={orderby}
+?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 <h4>Parameters</h4>
@@ -26,7 +26,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews
 <br/>Namespace identifier.<br/><br/>
 `[optional] string query`
 <br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
-<br/><br/>`[optional] integer skip`
+<br/><br/>`[optional] string filter`
+<br/>Filter expression.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
 <br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
@@ -222,7 +223,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
       "TargetId": "string",
       "SdsStreamView": "<SdsStreamView>"
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -277,7 +280,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
       "TargetId": "string",
       "SdsStreamView": "<SdsStreamView>"
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 ```
 
@@ -414,6 +419,8 @@ A contract defining the stream view.
 |SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream.|
 |TargetTypeId|string|false|true|Identifier of the SdsType to convert events to.|
 |Properties|[[SdsStreamViewProperty](#schemasdsstreamviewproperty)]|false|true|List of SdsStreamViewProperty.|
+|CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStreamView was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
+|ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStreamView was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 
 ```json
 {
@@ -428,7 +435,9 @@ A contract defining the stream view.
       "TargetId": "string",
       "SdsStreamView": "<SdsStreamView>"
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```
@@ -462,7 +471,9 @@ A contract defining the stream view property.
     "Description": "string",
     "SourceTypeId": "string",
     "TargetTypeId": "string",
-    "Properties": "[<SdsStreamViewProperty>]"
+    "Properties": "[<SdsStreamViewProperty>]",
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   }
 }
 

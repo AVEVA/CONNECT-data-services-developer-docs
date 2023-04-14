@@ -14,7 +14,7 @@ To view an edge system:
 
 1. From the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Edge Systems**.
 
 1. (Optional) To sort by a column in descending order, select the column header. To sort in ascending order, select the header again.
 
@@ -48,7 +48,7 @@ To remove an edge system:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to remove.
 

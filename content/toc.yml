@@ -132,7 +132,7 @@
   - topicUid: SoftwareMgmt
     items:
     - topicUid: ViewEdgeSystem
-    - topicUid: AddBaseConfiguration
+    - topicUid: AddConfigurationTemplate
     - topicUid: DeployConfig
     - topicUid: DeployModule
     - topicUid: ManageConfigurations

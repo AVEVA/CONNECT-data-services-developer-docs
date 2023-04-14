@@ -8,7 +8,7 @@ Many pages in AVEVA Data Hub include a search capability, including:
 
 - Sequential Data Store (streams, types, stream views)
 - Asset Explorer (assets, asset types)
-- Software Management (edge systems, base configurations)
+- Software Management (edge systems, configuration templates)
 - Data Views (streams, assets)
 
 This topic describes the available search query options.

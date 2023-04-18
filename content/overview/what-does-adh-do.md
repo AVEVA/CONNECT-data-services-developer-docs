@@ -10,15 +10,15 @@ AVEVA Data Hub consists of several areas of core functionality.
 
 You can customize AVEVA Data Hub access management to meet your organization's requirements and needs. Administrators can:
 
-- Create and manage users (user accounts must exist first in AVEVA Connect)
+- Customize authentication (through AVEVA Connect)
 
-- Create and manage clients
+- Create and manage users (user accounts must exist first in AVEVA Connect)
 
 - Define and assign roles
 
-- Manage folders/namespaces (through AVEVA Connect)
+- Create and manage clients
 
-- Customize authentication and authorization (through AVEVA Connect)
+- Manage folders/namespaces (through AVEVA Connect)
 
 Administrators can define the permissions to an AVEVA Data Hub resource by configuring the
 access control list (ACL) for that resource. They can also perform tenant management using the AVEVA Data

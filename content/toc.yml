@@ -2,7 +2,7 @@
   items:
   - topicUid: WhatADHdoes
   - topicUid: WhoUsesADH
-  - topicUid: Architecture
+  - topicUid: SecurityReliability
   - topicUid: DifferencesFromOCS
   - topicUid: what-is-cnnxt
     items:

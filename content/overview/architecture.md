@@ -1,8 +1,8 @@
 ---
-uid: Architecture
+uid: SecurityReliability
 ---
 
-# Architecture
+# Security and reliability
 
 AVEVA manages, operates, and maintains all aspects of the AVEVA Data Hub platform. AVEVA Data Hub is built and deployed on Microsoft Azure and operates outside the AVEVA corporate firewall. Currently, AVEVA Data Hub runs in three Azure regions: West US, West Europe, and Australia. By housing the platform in multiple regions, AVEVA Data Hub accommodates regulations that mandate where data must be stored.
 

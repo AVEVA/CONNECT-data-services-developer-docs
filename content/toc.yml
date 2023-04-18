@@ -1,10 +1,9 @@
 - topicUid: ADH-content-portal-overview
   items:
-  - topicUid: WhatIsADH
-    items:
-    - topicUid: DifferencesFromOCS
-  - topicUid: WhoUsesADH
   - topicUid: WhatADHdoes
+  - topicUid: WhoUsesADH
+  - topicUid: SecurityReliability
+  - topicUid: DifferencesFromOCS
   - topicUid: what-is-cnnxt
     items:
     - topicUid: sign-in-cnnxt

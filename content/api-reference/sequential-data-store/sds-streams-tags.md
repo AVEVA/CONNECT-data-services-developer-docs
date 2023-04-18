@@ -3,7 +3,7 @@ uid: sds-streams-tags
 
 ---
 
-# Streams tags
+# Streams Tags
 Stream metadata is represented as a dictionary of string keys and associated string values. 
 It can be used to associate additional information with a stream. Stream tags are represented 
 as a list of strings. Tags can be used to categorize or denote special attributes of streams. 
@@ -17,19 +17,20 @@ stream results with the [Streams](xref:sds-streams) API.
 
 Returns the tag list for the specified stream.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string streamId`
-<br/>Stream identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -40,7 +41,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 |404|[ErrorResponseBody](#schemaerrorresponsebody)|The specified stream was not found.|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -50,7 +52,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 ]
 ```
 
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -73,19 +75,20 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 
 Replaces the tag list for the specified stream with the tags listed in the request body. Overwrites any existing tags; does not merge.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string streamId`
-<br/>Stream identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -97,7 +100,8 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 |409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict.|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|Internal server error.|
 
-#### Example response body
+<h4>Example response body</h4>
+
 > 200 Response
 
 ```json
@@ -107,7 +111,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 ]
 ```
 
-> 400 Response
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -130,19 +134,20 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 
 Deletes the tag list for the specified stream.
 
-### Request
+<h3>Request</h3>
+
 ```text 
 DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 ```
 
-#### Parameters
+<h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier<br/><br/><br/>`string namespaceId`
-<br/>Namespace identifier<br/><br/><br/>`string streamId`
-<br/>Stream identifier<br/><br/><br/>
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/>Stream identifier.<br/><br/>
 
-### Response
+<h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
@@ -154,22 +159,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Ta
 |409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict.|
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|Internal server error.|
 
-#### Example response body
-> 400 Response
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
 ---
 ## Definitions
 
@@ -180,7 +169,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Ta
 <a id="tocSerrorresponsebody"></a>
 <a id="tocserrorresponsebody"></a>
 
-#### Properties
+<h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|

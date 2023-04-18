@@ -1,10 +1,9 @@
 ---
-uid: DataViewsAccessControlAPI
+uid: data-views-access-control
 
 ---
 
-# Access control
-
+# Access Control
 This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `List Data Views Access Rights`
@@ -66,7 +65,7 @@ HTTP 200 OK
 ```
 
 # Access Control
-This portion of the [overall data views API](xref:accessControl#access-control-lists) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
+This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses on [securing data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions.
 
 ## `Get Data Views Access Control List`
 

@@ -25,3 +25,7 @@ To add a group:
 1. Specify the roles to assign to this new group.
 
 1. Select **Add**.
+
+## Video Tutorial: Provide groups in AVEVA Connect with access to AVEVA Data Hub
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b78ApFoKGMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

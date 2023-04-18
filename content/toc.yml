@@ -64,6 +64,11 @@
             - topicUid: streams-add-tags-or-metadata
             - topicUid: streams-share-streams
             - topicUid: streams-view-in-trend
+            - topicUid: streams-view-data
+              items:
+              - topicUid: streams-add-event
+              - topicUid: streams-edit-event
+              - topicUid: streams-remove-event
             - topicUid: streams-manage-stream-permissions
         - topicUid: ccTypes
           items:
@@ -126,7 +131,7 @@
   - topicUid: SoftwareMgmt
     items:
     - topicUid: ViewEdgeSystem
-    - topicUid: AddBaseConfiguration
+    - topicUid: AddConfigurationTemplate
     - topicUid: DeployConfig
     - topicUid: DeployModule
     - topicUid: ManageConfigurations
@@ -232,7 +237,7 @@
         - topicUid: manage-data-views-permissions
         - topicUid: data-views-retrieve
         - topicUid: data-view-troubleshooting
-    - topicUid: data-views-install-power-bi-connector
+    - topicUid: PowerBI
       items:
         - topicUid: SetUpPowerBI
         - topicUid: RetrieveDataViews

@@ -10,7 +10,7 @@ This release covers the PI to Data Hub Agent, a component that is installed on-p
 
 **Note:** PI to Data Hub Agent Version 2.1 is a required upgrade for existing PI to Data Hub users. Failure to upgrade will result in loss of ability to configure an AF Server for the PI to Data Hub Agent.
 
-For more information on product features and functions, including system requirements and installation/uninstallation instructions, refer to [PI to Data Hub documentation](xref:main-lp).
+For more information on product features and functions, including system requirements and installation/uninstallation instructions, refer to [PI to Data Hub documentation](xref:PItoDH).
 
 ## Enhancements
 

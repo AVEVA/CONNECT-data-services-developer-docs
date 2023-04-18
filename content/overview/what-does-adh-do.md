@@ -10,7 +10,7 @@ AVEVA Data Hub consists of several areas of core functionality.
 
 You can customize AVEVA Data Hub access management to meet your organization's requirements and needs. Administrators can:
 
-- Create and manage users (user accounts must exist in AVEVA Connect)
+- Create and manage users (user accounts must exist first in AVEVA Connect)
 
 - Create and manage clients
 

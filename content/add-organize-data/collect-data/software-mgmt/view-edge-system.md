@@ -14,13 +14,15 @@ To view an edge system:
 
 1. From the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Edge Systems**.
 
 1. (Optional) To sort by a column in descending order, select the column header. To sort in ascending order, select the header again.
 
 1. (Optional) To filter the edge systems shown based on a specific column, select the filter icon in the column header. 
 
   **Note:** Filter for multiple tags using `and` and `or` syntax to refine the filter.
+
+1. (Optional) To search for specific edge systems, select the **Search for Edge Systems** search bar. The search function provides examples for filtering by criteria such as device name, status, version, and tags. For more information, read [Search in AVEVA Data Hub](xref:Search).
 
 1. To open the right pane that displays information for a device, select the device. 
 
@@ -46,7 +48,7 @@ To remove an edge system:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to remove.
 

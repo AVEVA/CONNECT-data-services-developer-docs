@@ -79,4 +79,3 @@ You can group and organize operational PI, IoT, and AVEVA Data Hub data. By arra
 Data views allow you to order, index, and organize data from multiple streams to create curated data subsets. Data views serve as a bridge between raw AVEVA Data Hub data and data science applications. Use an API or the AVEVA Data Hub portal to create data views to arrange data for consumption by third-party data science applications.
 
 The AVEVA Data Hub Power BI Connector retrieves data views from AVEVA Data Hub and makes them available in Microsoft Power BI for advanced data visualization and analysis. You can also use Microsoft Power BI to edit the query generated from the connector to modify the dates, edit the interpolation interval, and enable an incremental refresh of data.
-

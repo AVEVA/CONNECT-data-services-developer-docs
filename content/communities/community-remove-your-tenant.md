@@ -16,7 +16,7 @@ To remove your tenant from a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community you want to leave and select **Details**.
+1. Select the community you want to leave and choose **Community Details**.
 
 1. On the `Community Details` page, select the **Tenants** tab.
 

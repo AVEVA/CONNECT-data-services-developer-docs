@@ -16,7 +16,7 @@ To view how your tenant consume data shared by other tenants, select the **My Us
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. For the community that you want to view usage for, select **Details**.
+1. Select the community that you want to view usage for, then choose **Community Details**.
 
 1. Select the **Usage** tab.
 
@@ -32,7 +32,7 @@ To view how other tenants in the community consume data, select the **Community 
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. For the community that you want to view usage for, select **Details**.
+1. Select the community that you want to view usage for, then choose **Community sDetails**.
 
 1. Select the **Usage** tab.
 
@@ -59,8 +59,6 @@ Use the view dropdown to display streams accessed by month or day. Choose betwee
 ## Legend
 
 Regardless of which parameters you choose, resource usage always display a legend that maps the colors of the graph to each community data source.
-
-**Legend**
 
 ![legend](images/legend.png)
 

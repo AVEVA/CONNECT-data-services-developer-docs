@@ -12,11 +12,9 @@ After you create a community, you can edit its name and description at any time.
 
 ## To edit a community
 
-To edit a community:
-
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community you want to edit and select **Details**.
+1. Select the community you want to edit and choose **Community Details**.
 
 1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Edit Community**.
 
@@ -27,10 +25,6 @@ To edit a community:
 	Use this field to provide an alias for the community. This alias replaces the community name in all places the name is referenced within AVEVA Data Hub. The alias applies to your tenant only; other tenants in the community do not see it.
 
 	**Note:** If you use an alias, the only location that you can see both the community name and the alias is the `Community Detail` page.
-
-1. (Optional) Edit the community **Alias**.
-
-	Use this field to provide an alias for the community. This alias appears instead of the community name for your tenant only.
 
 1. (Optional) Edit the community **Contact Email**.
 

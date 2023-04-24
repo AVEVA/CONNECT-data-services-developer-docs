@@ -18,7 +18,7 @@ To resend an invitation:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. On the `Communities` overview page, find the applicable community and select **Details**.
+1. On the `Communities` overview page, select the applicable community and choose **Community Details**.
 
 1. On the `Community Details` page, select the **Invitations** tab.
 

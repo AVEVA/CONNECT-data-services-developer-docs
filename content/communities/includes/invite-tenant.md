@@ -10,7 +10,7 @@ To invite another tenant to the community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community you want to invite another tenant to and select **Details**.
+1. Select the community you want to invite another tenant to and choose **Community Details**.
 
 1. On the **Tenants** tab, select **Invite Tenant**.
 
@@ -30,13 +30,13 @@ To confirm an invitation:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. On the `Communities` overview page, find the community that you have invited another tenant to and select **Details**.
+1. On the `Communities` overview page, select the community that you have invited another tenant to and choose **Community Details**.
 
 1. On the `Community Details` page, select the **Invitations** tab.
 
 1. Select an invitation with a status of `Pending Confirmation`.
 
-1. On the `Invitation Details` pane, select **Confirm Tenant**. 
+1. On the `Invitation Details` pane, select **Confirm Tenant**.
 
   **Important!** When prompted for confirmation, review that the expected tenant is joining before you select **Confirm Tenant**.
 

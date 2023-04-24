@@ -4,17 +4,7 @@ uid: create-group
 
 # Step 2B: Add Groups
 
-To be assigned access to AVEVA Data Hub, users must belong to one or more groups (unless you have assigned individual roles to your user). By default, all users created in your account belong to the **User** group in AVEVA Connect.
-
-AVEVA recommends creating the following groups for each of your business units (BU).
-
-| Group | Description |
-|-------|-------------|
-| Administrator | Administrator for namespace. |
-| Admin_OMF | Manage OMF connections for namespace. |
-| OMF_Writer | OMF applications. |
-| Contributor | Editor for namespace. |
-| Viewer | Read only access. |
+To be assigned access to AVEVA Data Hub, users must belong to one or more groups (unless you have assigned individual roles to your user). By default, all users created in your account belong to the **User** group in AVEVA Connect. AVEVA recommends creating groups for each of your business units.
 
 To create groups:
 

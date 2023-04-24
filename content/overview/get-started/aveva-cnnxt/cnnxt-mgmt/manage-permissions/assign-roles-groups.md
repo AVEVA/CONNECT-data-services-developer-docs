@@ -14,8 +14,6 @@ To assign roles to a group:
 
 1. Select **Assign role**.
 
-   The `Assign role` area is displayed.
-
 1. Verify that the **Service role** option is selected.
 
 1. From **Service**, select **Data Hub (Int)**.

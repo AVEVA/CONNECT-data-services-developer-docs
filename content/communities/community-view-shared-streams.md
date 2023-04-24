@@ -18,7 +18,7 @@ From the `Communities` page **Tenants** tab, you can view which data streams eac
 
 1. Select the applicable community and choose **Community Details**.
 
-    [Community details](xref:community-communities-page#community-details) open.
+    The community details open. For more information about each field, see[Community details](xref:community-communities-page#community-details).
 
 1. From the **Tenants** tab, select a tenant to view which streams that it shares with the community.
 

@@ -16,7 +16,7 @@ To pause sharing data streams from your tenant into a community, follow these st
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community that you want to pause sharing for and select **Details**.
+1. Select the community that you want to pause sharing for and choose **Community Details**.
 
 1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Pause Sharing**.
 
@@ -32,7 +32,7 @@ To resume sharing all shared data streams from your tenant with the community, f
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community that you want to resume sharing for and select **Details**.
+1. Select the community that you want to resume sharing for and choose **Community Details**.
 
 1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Resume Sharing**.
 

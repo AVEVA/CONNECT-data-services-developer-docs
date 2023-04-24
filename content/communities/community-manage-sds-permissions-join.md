@@ -16,7 +16,7 @@ When enabling stream sharing permissions, you can either enable them for an enti
 
 ### [Namespace](#tab/tabid-1)
 
-You can change permissions for all streams in a namespace with a single action. 
+You can change permissions for all streams in a namespace with a single action.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -24,14 +24,14 @@ You can change permissions for all streams in a namespace with a single action.
 
 1. Select **More options** ![More options](../_icons/default/dots-vertical.svg) > **Manage Default Permissions**.
 
-	The the `Manage Default Permissions for New Streams` window opens.
+	The `Manage Default Permissions for New Streams` window opens.
 
-1. Allow **Share** permissions for the user roles that you want to be able to share data.  
+1. Allow **Share** permissions for the user roles that you want to be able to share data.
 
 	1. Update each applicable **Share** permission dropdown list to **Allow**. If necessary, select **Add Role** to add a new role.
 
-	1. Select **Apply to all existing streams in the namespace**. 
-	
+	1. Select **Apply to all existing streams in the namespace**.
+
 	![Share permissions: Allow](images/stream-permissions-share-namespace.png)
 
 	**Note:** For more information on this window, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).

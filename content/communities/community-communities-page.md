@@ -15,7 +15,7 @@ The following table describes each field listed for a community:
 | Field | Description |
 |--|--|
 | **Community Details** | Opens the `Community details` page for the community, displaying more information about the community. | 
-| **Tenants** | The number of tenants participating in the community. |
+| **Tenants** | The number of tenants participating in the community. |s
 | **Sharing Status** | Indicates whether one or more tenant in the community is sharing data streams. Statuses include: <ul><li><img src="../_icons/custom/check-circle.svg" alt="Sharing Active"/> <strong>Sharing Active</strong>: No tenants in the community have paused sharing.</li><li><img src="../_icons/default/pause-circle.svg" alt="Sharing Paused"/> <strong>Sharing Paused</strong>: One or more tenant in the community has paused sharing their data streams. The total number of tenants that have sharing paused are also listed.</li></ul> |
 | **Member Status** | Indicates whether you are [Community Member](xref:community-community-roles#community-member) and can view data shared to the community within `Sequential Data Store`. If the field displays a status of ![information](../_icons/branded/information.svg) **Cannot view shared data**, then you are not a Community Member. If you are a Community Member, this field is omitted.<br><br>For more information on adding a Community Member, see <xref:community-manage-users>. |
 
@@ -24,7 +24,21 @@ Select **Community Detail** to administrate the community or view more informati
 - <xref:community-community-administration>
 - <xref:community-tenant-administration>
 
-You can also toggle the `Communities` page between the default list view and a card view.
+### Community list sorting
+
+You can sort the community list by using the following sorting options:
+
+| Option | Description |
+|--|--|
+| **Community Membership** | Sorts communities numerically by the number of users in the community. |
+| **Name** | Sorts communities alphabetically by name. |
+| **Description** | Sorts communities alphabetically by description. |
+| **Tenant Count** | Sorts communities numerically by the number of tenants in the community. |
+| **Sharing Status** | Sorts communities alphabetically by its current sharing status: **Paused** or **Sharing Active**. |
+
+Select the ![Sort](../_icons/default/sort-ascending.svg) **Sort** icon to sort the communities by ascending or descending order for the applied option.
+
+You can also toggle between the default list view and a card view.
 
 | View | Icon | Description |
 |-|-|-|

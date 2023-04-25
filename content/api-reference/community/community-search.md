@@ -292,8 +292,8 @@ The StreamSearchResult object. This is the model representation exposed to calle
 
 |Property|Value|
 |---|---|
-|Default|0|
 |Continuous|0|
+|Default|0|
 |StepwiseContinuousLeading|1|
 |StepwiseContinuousTrailing|2|
 |Discrete|3|

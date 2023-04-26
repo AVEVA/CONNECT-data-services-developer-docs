@@ -2,7 +2,7 @@
   href: omf-ingress-access-control.md
 - name: OMF connections
   href: omf-ingress-omf-connections.md
-- name: Subscriptions
+- name: Subscriptions (legacy)
   href: omf-ingress-subscriptions.md
-- name: Topics 
+- name: Topics (legacy)
   href: omf-ingress-topics.md

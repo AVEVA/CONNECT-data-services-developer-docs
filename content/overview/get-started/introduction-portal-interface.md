@@ -4,9 +4,27 @@ uid: introPortalInterface
 
 # Take a tour of the AVEVA Data Hub portal
 
-Access and interact with AVEVA Data Hub through the web-based portal. When you first access the portal, there is information about the system's health as well as quick links to popular documentation topics.
+Access and interact with AVEVA Data Hub through the web-based portal. 
+
+## AVEVA Data Hub home page
+
+When you first access the portal, the home page provides you with information about the system and other reference materials.
 
 ![Portal window](../images/portal-interface.png "Portal interface")
+
+The AVEVA Data Hub home page displays the following:
+
+- **Latest Service Updates**: Most recent updates to AVEVA Data Hub such as visual improvements, navigation updates, and new features.
+
+- **Quick Links**: Links to important and popular content such as API documentation and commonly used guides.
+
+- **Resource Usage**: View resource usage at a glance and select this box to see in-depth information on your [resource usage](xref:ResourceUsage).
+
+- **System Health**: Overall system health for AVEVA Data Hub. Select to see a breakdown of [tenant health](xref:home-health).
+
+- **PI to Data Hub Agents**: Health status for each PI to Data Hub agent. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each agent.
+
+- **Edge Systems**: Health status for each edge system. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each edge system.
 
 ## AVEVA Data Hub features
 

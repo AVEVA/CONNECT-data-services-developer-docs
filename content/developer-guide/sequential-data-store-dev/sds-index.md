@@ -167,7 +167,7 @@ You use indexes to order data.
 On a stream level, you can set the property to be the secondary index.
 To improve performance when working with a large set of data: 
 - Ensure that the property is a secondary index.
-- Use [logical operators](xref:sdsFilterExpressions#examples-of-logical-operators) for filtering. 
+- Use [logical operators](xref:sdsFilterExpressionsValues#examples-of-logical-operators) for filtering. 
 
 
 

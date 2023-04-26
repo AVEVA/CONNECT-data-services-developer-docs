@@ -32,7 +32,7 @@ Configuration is available for the following edge system types:
 
  - PI Adapter for Structured Data Files
 
-The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the configuration template is created. For example, if the namespace of the configuration template is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
 An edge system appears on the `Software Management Edge Systems` page once it is writing health data to AVEVA Data Hub. For information on configuring health endpoints, see the specific edge system product documentation at [docs.osisoft.com](https://docs.osisoft.com/).
 
@@ -46,7 +46,7 @@ To import an edge system configuration from the field to the corresponding edge 
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to configure.
 
@@ -70,7 +70,7 @@ To edit an edge system configuration and export it for use:
 
 1. In the left pane, select **Data Collection** > **Software Management**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Edge Systems**.
 
 1. Find and select the edge device to configure.
 

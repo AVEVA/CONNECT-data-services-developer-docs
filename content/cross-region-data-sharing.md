@@ -17,11 +17,7 @@ Cross-region data sharing is enabled by default. When cross-region data sharing 
 
 ### Additional processing
 
-Each namespace in AVEVA Data Hub is bound to a geographical region. Operational data stored in each namespace is usually processed within that region, which is chosen while [adding the namespace](xref:gpNamespaces), as depicted below.
-
-**Geographical region chosen during namespace creation**
-
-![Namespace region](_images/add-namespace-region.png)
+Each namespace in AVEVA Data Hub is bound to a geographical region. Operational data stored in each namespace is usually processed within that region, which is chosen while adding the namespace.
 
 However, AVEVA Data Hub may process a namespace's operational data in a different region (in other words, _cross-region_). For example, if you create a namespace in the `US-West` region, AVEVA Data Hub may process its operational data cross-region in `EU-West`.
 

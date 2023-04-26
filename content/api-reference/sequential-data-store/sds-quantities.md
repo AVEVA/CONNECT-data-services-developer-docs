@@ -16,7 +16,7 @@ Returns a list of all quantities available within a given namespace
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
-?skip={skip}&count={count}
+?filter={filter}&skip={skip}&count={count}&orderby={orderby}
 ```
 
 <h4>Parameters</h4>
@@ -24,9 +24,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] integer skip`
+`[optional] string filter`
+<br/>Filter expression.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>
+<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>`[optional] string orderby`
+<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
 
 <h3>Response</h3>
 
@@ -343,6 +345,8 @@ DataContract representing a measurable quantity. i.e. A unit of measure 'meter' 
 |Name|string|false|true|Friendly name for this quantity.|
 |BaseUom|[SdsUom](#schemasdsuom)|false|true|The base unit of measurement for this quantity. All other uom's measuring this quantity will be calculated relative to the base uom.|
 |Dimensions|[integer]|false|true|Powers of each dimension that define this quantity. This array must have a length of 7. Dimensions represented in index order are Length, Mass, Time, Electric Current, Thermodynamic Temperature, Amount of Substance, and Luminous Density. i.e. A velocity quantity would have values [1,0,-1,0,0,0,0] for (length)/(time)|
+|CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsUomQuantity was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
+|ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsUomQuantity was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 
 ```json
 {
@@ -355,11 +359,15 @@ DataContract representing a measurable quantity. i.e. A unit of measure 'meter' 
     "DisplayName": "string",
     "QuantityId": "string",
     "ConversionFactor": 0,
-    "ConversionOffset": 0
+    "ConversionOffset": 0,
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "Dimensions": [
     0
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```
@@ -386,6 +394,8 @@ DataContract representing a unit of measure.
 |QuantityId|string|false|true|The Id of the quantity that this unit is a measure of.|
 |ConversionFactor|double|false|false|When a value of this unit is multiplied by the ConversionFactor and then incremented by the ConversionOffset, the value in terms of the base unit of the corresponding quantity is returned.|
 |ConversionOffset|double|false|false|When a value of this unit is multiplied by the ConversionFactor and then incremented by the ConversionOffset, the value in terms of the base unit of the corresponding quantity is returned.|
+|CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsUom was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
+|ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsUom was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 
 ```json
 {
@@ -395,7 +405,9 @@ DataContract representing a unit of measure.
   "DisplayName": "string",
   "QuantityId": "string",
   "ConversionFactor": 0,
-  "ConversionOffset": 0
+  "ConversionOffset": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```

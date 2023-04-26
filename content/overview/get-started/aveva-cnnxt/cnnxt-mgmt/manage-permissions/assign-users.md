@@ -4,7 +4,7 @@ uid: assign-users
 
 # Step 2C: Add Users to a Group
 
-As a best practice, AVEVA recommends assigning users to groups so that they can be managed as a single object in AVEVA Data Hub. Add the users that you created in <xref:invite-users> to the appropriate groups that you created in <xref:assign-users>.
+As a best practice, AVEVA recommends assigning users to groups so that they can be managed as a single object in AVEVA Data Hub. Add the users that you created in <xref:invite-users> to the appropriate groups that you created in <xref:create-group>.
 
 To add users to a group:
 
@@ -20,4 +20,4 @@ To add users to a group:
 
 1. Enter the usernames of the users you want to add to this group. You can add multiple users at a time.
 
-1. After you have added the required users, select **Save**.
+1. After you have added users, select **Save**.

@@ -30,7 +30,7 @@ You can sort the community list by using the following sorting options:
 
 | Option | Description |
 |--|--|
-| **Community Membership** | Sorts communities numerically by the number of users in the community. |
+| **Community Membership** | Sorts communities by whether you are a member or the community. |
 | **Name** | Sorts communities alphabetically by name. |
 | **Description** | Sorts communities alphabetically by description. |
 | **Tenant Count** | Sorts communities numerically by the number of tenants in the community. |

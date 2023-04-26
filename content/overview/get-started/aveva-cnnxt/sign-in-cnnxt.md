@@ -12,7 +12,7 @@ You can log into AVEVA Connect using one of the following sign-in methods:
 
 * Third-party user access
 
-**Note:** If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login is blocked. If this happens, contact [AVEVA Customer Support](https://softwaresupport.aveva.com) to unlock your account.
+If you attempt a sign-in ten times consecutively with a wrong password from the same location (IP address), then your login is blocked. If this happens, contact [AVEVA Customer Support](https://softwaresupport.aveva.com) to unlock your account.
 
 ## Corporate sign-in: federation for single sign-on
 
@@ -56,7 +56,7 @@ To sign in as a third-party user using a connection code:
 
 1. Enter your connection code. This code is provided by AVEVA.
 
-    **Note:** A direct sign-in link can be provided to enable quick access to restricted accounts. The third-party user will receive an email invitation that contains the direct link.
+    A direct sign-in link can be provided to enable quick access to restricted accounts. The third-party user will receive an email invitation that contains the direct link.
 
 1. Select **Next**.
 

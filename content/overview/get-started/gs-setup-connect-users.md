@@ -4,7 +4,7 @@ uid: gs-setup-connect-users
 
 # Step 2: Set up AVEVA Connect users and groups
 
-As a best practice, AVEVA recommends managing users and groups for AVEVA Data Hub primarily through AVEVA Connect. This step guides you through creation of users and assigning them to a group. Later, in Step 3: Set up AVEVA Data Hub groups, roles, and permissions, you will add these users and groups to AVEVA Data Hub.
+As a best practice, AVEVA recommends managing users and groups for AVEVA Data Hub primarily through AVEVA Connect. This step guides you through creation of users and assigning them to a group. Later, in <xref:gs-setup-data-hub-users>, you will add these users and groups to AVEVA Data Hub.
 
 ## Step 2A: Add Users
 

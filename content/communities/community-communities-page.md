@@ -24,9 +24,16 @@ Select **Community Detail** to administrate the community or view more informati
 - <xref:community-community-administration>
 - <xref:community-tenant-administration>
 
+You can also toggle between a card view and a list view.
+
+| View | Icon | Description |
+|-|-|-|
+| **List view** | ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
+| **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
+
 ### Community list sorting
 
-You can sort the community list by using the following sorting options:
+While in **Card view**, you can sort the community list by using the following sorting options:
 
 | Option | Description |
 |--|--|
@@ -38,12 +45,7 @@ You can sort the community list by using the following sorting options:
 
 Select the ![Sort](../_icons/default/sort-ascending.svg) **Sort** icon to sort the communities by ascending or descending order for the applied option.
 
-You can also toggle between the default list view and a card view.
-
-| View | Icon | Description |
-|-|-|-|
-| **List view** | ![list view](../_icons/branded/view-list.svg) | Lists each community your tenant participates in as list items. |
-| **Card view** | ![card view](../_icons/branded/view-grid.svg) | Lists each community your tenant participates in as cards. |
+**Note:** Sorting options are unavailable in **List view**.
 
 ## Community toolbar
 

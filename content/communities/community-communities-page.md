@@ -45,7 +45,7 @@ While in **Card view**, you can sort the community list by using the following s
 
 Select the ![Sort](../_icons/default/sort-ascending.svg) **Sort** icon to sort the communities by ascending or descending order for the applied option.
 
-**Note:** Sorting options are unavailable in **List view**.
+While in **List view**, you can sort the community list by clicking each column header. The list is sorted by the last column header that you click.
 
 ## Community toolbar
 

@@ -2,7 +2,7 @@
 uid: create-folders
 ---
 
-# Step 1C: Create a folder and turn on AVEVA Data Hub
+# Step 1C: Create a folder and enable AVEVA Data Hub
 
 Before AVEVA Data Hub can be accessed, you must create a folder in AVEVA Connect and then turn on the AVEVA Data Hub service for that folder. A folder is used to partition data into logical units that represent your organization's hierarchy. The folder is where data and resources are stored. For example, you can create folders to divide up assets or to represent geographical locations at your organization.
 
@@ -18,7 +18,7 @@ Perform the following steps to create a folder in AVEVA Connect:
 
 1. Choose a **Region** that supports AVEVA Data Hub. Select **Change** to choose a region.
 
-    AVEVA Data Hub is only supported in a limited number of geographical regions. Choose one of the supported Connect regions listed in the following table. The table also lists the mapping between region labels in AVEVA Connect and AVEVA Data Hub:
+    Support for AVEVA Data Hub is limited to specific geographical regions. Choose one of the supported Connect regions listed in the following table. The table also lists the mapping between region labels in AVEVA Connect and AVEVA Data Hub:
 
     | AVEVA Connect region label | AVEVA Data Hub region label |
     | ------------- | ------------- |

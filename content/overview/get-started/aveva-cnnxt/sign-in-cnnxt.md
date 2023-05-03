@@ -44,8 +44,6 @@ To sign in as a single user:
 
 A connection code enables third-party users to access specific accounts associated with an Identity Provider. Any accounts that are not intended for the third-party user are hidden.
 
-**Note:** You must have a federated connection.
-
 To sign in as a third-party user using a connection code:
 
 1. Browse to [AVEVA Connect](https://connect.aveva.com/).

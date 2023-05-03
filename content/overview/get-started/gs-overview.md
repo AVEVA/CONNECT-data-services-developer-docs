@@ -2,9 +2,9 @@
 uid: gs-overview
 ---
 
-# Step 3A: Log into AVEVA Data Hub
+# Step 3A: Log in to AVEVA Data Hub
 
-Log into AVEVA Data Hub.
+Log in to AVEVA Data Hub.
 
 **Note:** These browsers are supported for the most recent three versions, unless otherwise stated: Microsoft Edge, Google Chrome, Mozilla Firefox
 

@@ -2,9 +2,9 @@
 uid: assign-roles-groups
 ---
 
-# Step 2D: Assign Groups the Data Hub Viewer Role
+# Step 2D: Assign groups the Data Hub Viewer role
 
-Assigning groups the Data Hub Viewer role allows users to see the AVEVA Data Hub tile on the AVEVA Connect Home page.
+Assigning groups the **Data Hub Viewer** role allows users to see the AVEVA Data Hub tile on the AVEVA Connect Home page.
 
 To assign roles to a group:
 

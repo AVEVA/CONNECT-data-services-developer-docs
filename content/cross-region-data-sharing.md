@@ -39,13 +39,11 @@ Optionally, you can opt out of sharing operational data from namespaces and comm
 
 When you disable cross-region data sharing, any queries for namespace data are routed to the appropriate region for complete results to be returned. Repeat these steps for each namespace that you want to disable cross-region data sharing.
 
-1. From the **Namespace** drop-down, select a namespace for which you want to opt out of cross-region data sharing.
+1. From the **Namespace** dropdown, select a namespace for which you want to opt out of cross-region data sharing.
 
-1. From the **Namespace** drop-down, select the **Cog** ![Cog](./_icons/default/cog.svg).
+1. Select the **Manage Settings** ![Manage Settings](./_icons/default/cog.svg) icon next to the **Namespace** dropdown.
 
 1. Select the **Data Sharing** tab.
-
-1. Select **Edit**.
 
 1. Enable **Opt-out for Namespace** and select **Save**.
 

@@ -2,7 +2,7 @@
 uid: sign-in-cnnxt
 ---
 
-# Step 1A: Log into AVEVA Connect
+# Step 1A
 
 You can log into AVEVA Connect using one of the following sign-in methods:
 

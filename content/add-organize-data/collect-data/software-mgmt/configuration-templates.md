@@ -4,9 +4,9 @@ uid: AddConfigurationTemplate
 
 # Add and edit configuration templates
 
-You can create and edit configuration templates for edge systems in AVEVA Data Hub. Once the configuration is complete, export the configuration in a text file to manually apply it to the edge system in the field or to deploy it to the edge module using AVEVA Edge Management. You can also use an exported configuration text file as a template for configuring other edge systems by importing it. Default configurations are available for supported edge system types. The maximum size for a configuration file is 16 MB.
+You can create and edit configuration templates for systems in AVEVA Data Hub. Once the configuration is complete, export the configuration in a text file to manually apply it to the system in the field or to deploy it to the edge module using AVEVA Edge Management. You can also use an exported configuration text file as a template for configuring other systems by importing it. Default configurations are available for supported system types. The maximum size for a configuration file is 16 MB.
 
-You can create configuration templates for the following edge system types:
+You can create configuration templates for the following system types:
 
  - PI Adapter for Azure Event Hubs
  
@@ -59,25 +59,25 @@ When you deploy the configuration in AVEVA Edge Management, you define values fo
 
 ## Add a new configuration template
 
-To create a edge system configuration template and export it for use:
+To create a system configuration template and export it for use:
 
-1. In the left pane, select **Data Collection** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Edge Data Store & Adapters**.
 
-1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Configuration Templates**.
+1. Verify that the **Systems/Configuration Templates** selector is set to **Configuration Templates**.
 
 1. Select **New Configuration Template**.
 
 1. In the **Configuration Template Name** field, enter a name to identify the configuration.
 
-1. In the **Type** and **Version** fields, select the edge system type and version for which to create the configuration.
+1. In the **Type** and **Version** fields, select the system type and version for which to create the configuration.
 
-   The default configuration for the selected edge system type displays.
+   The default configuration for the selected system type displays.
 
 1. To import a configuration, select **Import Configuration**, then browse to the JSON file that contains the configuration, and select **Import**.
 
 1. (Optional) In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
-1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
+1. Modify the JSON as needed. For configuration guidelines, refer to the specific system documentation.
 
    **WARNING:** For security reasons, do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. For edge modules, variables must be used within the configuration file in place of actual secret and password values. For more details, see the [Configure a Module](https://edgemanagement.connect.aveva.com/help/#/home/665922/10/11) topic in the AVEVA Edge Management documentation.
 
@@ -99,9 +99,9 @@ To create a edge system configuration template and export it for use:
 
 To modify a configuration template and export it for use:
 
-1. In the left pane, select **Data Collection** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Edge Data Store & Adapters**.
 
-1. Verify that the **Edge Systems/Configuration Templates** selector is set to **Configuration Templates**.
+1. Verify that the **Systems/Configuration Templates** selector is set to **Configuration Templates**.
 
 1. Find and select the configuration template to modify.
 
@@ -113,7 +113,7 @@ To modify a configuration template and export it for use:
 
 1. (Optional)  In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
-1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
+1. Modify the JSON as needed. For configuration guidelines, refer to the specific system documentation.
 
   **WARNING:** For security reasons, do not include secrets or passwords in the configuration. Secrets and passwords cannot be stored or exported in a configuration. Client secrets and passwords must be applied directly on the device. For edge modules, variables must be used within the configuration file in place of actual secret and password values. For more details, see the [Configure a Module](https://edgemanagement.connect.aveva.com/help/#/home/665922/10/11) topic in the AVEVA Edge Management documentation
 

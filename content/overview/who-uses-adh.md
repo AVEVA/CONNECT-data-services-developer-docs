@@ -28,7 +28,7 @@ AVEVA Data Hub provides the ability to integrate data infrastructure from edge t
 
 In the past, data was often isolated at remote locations due to unreliable network connectivity. For instance, farms need data to answer questions such as how much grain is in a silo or what is the predicted corn harvest this season. Mining companies require data from mining trucks to know when maintenance is necessary. This untapped data can provide valuable insights for an enterprise and its decision making. 
 
-Accessing and integrating these "dark" data locations is possible with edge systems and AVEVA Data Hub. With pervasive data collectors, PI Adapters, Edge Data Store, and custom OMF applications, operational assets that were previously inaccessible are now viable data sources. 
+Accessing and integrating these "dark" data locations is possible with systems and AVEVA Data Hub. With pervasive data collectors, PI Adapters, Edge Data Store, and custom OMF applications, operational assets that were previously inaccessible are now viable data sources. 
 
 The benefits of seamless integration of data infrastructure include: 
 

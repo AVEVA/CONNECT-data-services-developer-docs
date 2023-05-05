@@ -16,7 +16,7 @@ Returns an array of asset types in a given namespace and the total number of ass
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
-?skip={skip}&count={count}
+?skip={skip}&count={count}&filter={filter}
 ```
 
 <h4>Parameters</h4>
@@ -26,7 +26,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 <br/>Namespace identifier.<br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
+<br/>Filter expression for CreatedDate and LastModifiedDate properties.<br/><br/>
 
 <h3>Response</h3>
 
@@ -118,7 +119,7 @@ Returns the Headers corresponding to the GET AssetTypes call, including a collec
 
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
-?includeTotalCount={includeTotalCount}
+?filter={filter}&includeTotalCount={includeTotalCount}
 ```
 
 <h4>Parameters</h4>
@@ -126,7 +127,8 @@ HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] boolean includeTotalCount`
+`[optional] string filter`
+<br/>Filter expression for CreatedDate and LastModifiedDate properties.<br/><br/>`[optional] boolean includeTotalCount`
 <br/>Optional Parameter. Default value is false. If set to true, Total-count header will be included in the returned headers. Total-Count refers to the number of asset types that the user has permission to access corresponding to an optional query.<br/><br/>
 
 <h3>Response</h3>

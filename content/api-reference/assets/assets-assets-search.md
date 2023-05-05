@@ -42,10 +42,43 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 
 <h4>Example response body</h4>
 
-> 200 Response ([SearchResultsOfSearchResult](#schemasearchresultsofsearchresult))
+> 200 Response
 
 ```json
-"{\n    \"Count\": 1,\n    \"Results\": [\n    {\n        \"MatchedProperties\": [\n        {\n            \"Field\": \"Name\",\n            \"Value\": \"Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818\"\n        }],\n        \"Id\": \"AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4\",\n        \"TypeId\": \"AssetMineTruckType\",\n        \"Name\": \"Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818\",\n        \"Description\": \"First mine truck used the mine diamond hands\",\n        \"ETag\": \"1\",\n        \"CreatedDate\": \"2021-05-26T19:05:33.8979442Z\",\n        \"ModifiedDate\": \"2021-05-26T19:05:33.8979442Z\"\n        \"LastModifiedDate\": \"2021-05-26T19:05:33.8979442Z\"\n    }]\n}"
+{
+  "Count": 1,
+  "Results": [
+    {
+      "MatchedProperties": [
+        {
+          "Field": "Name",
+          "Value": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818"
+        }
+      ],
+      "Id": "AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4",
+      "TypeId": "AssetMineTruckType",
+      "Name": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818",
+      "Description": "First mine truck used the mine diamond hands",
+      "ETag": "1",
+      "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+      "ModifiedDate": "2021-05-26T19:05:33.8979442Z",
+      "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
+    }
+  ]
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
 ```
 
 ---
@@ -223,7 +256,27 @@ The set of search results matching search query.
 |ContinuationTokens|string[]|false|true|The list of continuation tokens. Each continuation token corresponds to a page of results.|
 
 ```json
-"{\n    \"Count\": 1,\n    \"Results\": [\n    {\n        \"MatchedProperties\": [\n        {\n            \"Field\": \"Name\",\n            \"Value\": \"Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818\"\n        }],\n        \"Id\": \"AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4\",\n        \"TypeId\": \"AssetMineTruckType\",\n        \"Name\": \"Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818\",\n        \"Description\": \"First mine truck used the mine diamond hands\",\n        \"ETag\": \"1\",\n        \"CreatedDate\": \"2021-05-26T19:05:33.8979442Z\",\n        \"ModifiedDate\": \"2021-05-26T19:05:33.8979442Z\"\n        \"LastModifiedDate\": \"2021-05-26T19:05:33.8979442Z\"\n    }]\n}"
+{
+  "Count": 1,
+  "Results": [
+    {
+      "MatchedProperties": [
+        {
+          "Field": "Name",
+          "Value": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818"
+        }
+      ],
+      "Id": "AssetId2b5f41ae-0929-4977-bfbd-1e046d8a66f4",
+      "TypeId": "AssetMineTruckType",
+      "Name": "Asset Mine Truck 353e3cfe-f20b-4bef-b9c4-f75fbbdc0818",
+      "Description": "First mine truck used the mine diamond hands",
+      "ETag": "1",
+      "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+      "ModifiedDate": "2021-05-26T19:05:33.8979442Z",
+      "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
+    }
+  ]
+}
 
 ```
 
@@ -255,7 +308,59 @@ Search results
 |LastModifiedDate|date-time|false|false|Modified date of the matched asset.|
 
 ```json
-"{\n    \"TotalCount\": 2,\n    \"Results\": [\n    {\n        \"MatchedFields\": [\n        {\n            \"Field\": \"Description\",\n            \"Terms\": [\n                \"searchedDescription\"\n            ]\n        },\n        {\n            \"Field\": \"Name\",\n            \"Terms\": [\n                \"searchedName\"\n            ]\n        }],\n    \"Score\": 0.07410964510231982,\n    \"Id\": \"AssetsSearchDemo1\",\n    \"Name\": \"SearchedName 1\",\n    \"Description\": \"SearchedDescription 1\",\n    \"ETag\": \"1\",\n    \"CreatedDate\": \"2021-06-28T05:57:13.4249707Z\",\n    \"ModifiedDate\": \"2021-06-28T05:57:13.4249707Z\"\n    \"LastModifiedDate\": \"2021-06-28T05:57:13.4249707Z\"\n    },\n    {\n        \"MatchedFields\": [\n        {\n            \"Field\": \"Description\",\n            \"Terms\": [\n                \"searchedDescription\"\n            ]\n        },\n        {\n            \"Field\": \"Name\",\n            \"Terms\": [\n                \"searchedName\"\n            ]\n        }],\n    \"Score\": 0.062210717451675585,\n    \"Id\": \"AssetsSearchDemo2\",\n    \"Name\": \"SearchResultName 2\",\n    \"Description\": \"SearchResultDescription 2\",\n    \"ETag\": \"6\",\n    \"CreatedDate\": \"2021-06-28T05:57:13.5965826Z\",\n    \"ModifiedDate\": \"2021-06-28T05:57:13.4249707Z\"\n    \"LastModifiedDate\": \"2021-06-28T05:57:13.5965826Z\"\n    }]\n}"
+{
+  "TotalCount": 2,
+  "Results": [
+    {
+      "MatchedFields": [
+        {
+          "Field": "Description",
+          "Terms": [
+            "searchedDescription"
+          ]
+        },
+        {
+          "Field": "Name",
+          "Terms": [
+            "searchedName"
+          ]
+        }
+      ],
+      "Score": 0.07410964510231982,
+      "Id": "AssetsSearchDemo1",
+      "Name": "SearchedName 1",
+      "Description": "SearchedDescription 1",
+      "ETag": "1",
+      "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+      "ModifiedDate": "2021-06-28T05:57:13.4249707Z",
+      "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
+    },
+    {
+      "MatchedFields": [
+        {
+          "Field": "Description",
+          "Terms": [
+            "searchedDescription"
+          ]
+        },
+        {
+          "Field": "Name",
+          "Terms": [
+            "searchedName"
+          ]
+        }
+      ],
+      "Score": 0.062210717451675585,
+      "Id": "AssetsSearchDemo2",
+      "Name": "SearchResultName 2",
+      "Description": "SearchResultDescription 2",
+      "ETag": "6",
+      "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+      "ModifiedDate": "2021-06-28T05:57:13.4249707Z",
+      "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
+    }
+  ]
+}
 
 ```
 

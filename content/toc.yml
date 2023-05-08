@@ -52,8 +52,8 @@
     items:
     - topicUid: loginADH
     - topicUid: map-group-adh
-    - topicUid: namespaces-manage-permissions
     - topicUid: permissions-management
+    - topicUid: namespaces-manage-permissions
     - topicUid: cross-region-data-sharing
   - topicUid: gs-ingress
   - topicUid: gs-data-hub-use

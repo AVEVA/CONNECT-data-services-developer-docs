@@ -20,7 +20,7 @@ Use the **Namespaces** dropdown list that is available on all pages to edit perm
 
     The **Manage Permissions** tab of the `Namespace Settings` window opens.
 
-1. Use the `Manage Permissions for Namespace` window to:
+1. Use this window to:
 
     - (Optional) Add user roles that have permissions on the namespace.
     - Edit namespace permissions for each user role.

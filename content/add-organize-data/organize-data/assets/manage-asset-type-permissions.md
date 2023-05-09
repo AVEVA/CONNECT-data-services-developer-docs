@@ -16,6 +16,8 @@ To manage asset type permissions, you must be assigned the **Manage Permissions*
 
 1. From the **Assets/Asset Types** selector, select **Asset Types**.
 
+1. Select an Asset Type. 
+
 1. From the side panel, select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
 
     The `Manage Permissions for Asset Type` window opens.

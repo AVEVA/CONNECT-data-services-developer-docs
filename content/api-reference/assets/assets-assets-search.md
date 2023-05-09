@@ -27,7 +27,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
 <br/>Query identifier.<br/><br/>`[optional] string filter`
-<br/>String used to filter the asset search results. Filter strings are not case sensitive. The strings on which you can filter results are limited to the asset `AssetTypeName` property and the asset metadata properties (using the syntax filter[*property_name*]=*property_value*).<br/><br/>
+<br/>Filter expression for CreatedDate and LastModifiedDate properties.<br/><br/>
 
 <h3>Response</h3>
 
@@ -60,6 +60,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets
       "Description": "First mine truck used the mine diamond hands",
       "ETag": "1",
       "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+      "ModifiedDate": "2021-05-26T19:05:33.8979442Z",
       "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
     }
   ]
@@ -270,6 +271,7 @@ The set of search results matching search query.
       "Description": "First mine truck used the mine diamond hands",
       "ETag": "1",
       "CreatedDate": "2021-05-26T19:05:33.8979442Z",
+      "ModifiedDate": "2021-05-26T19:05:33.8979442Z",
       "LastModifiedDate": "2021-05-26T19:05:33.8979442Z"
     }
   ]
@@ -301,6 +303,7 @@ Search results
 |LastStatus|[StatusData](#schemastatusdata)|false|true|Last status of the matched asset. If a status is not defined for the asset, this field will be null. If a status is defined, this field will correspond to Unknown, Good, Warning, or Bad.|
 |ETag|string|false|true|Etag of the matched asset.|
 |CreatedDate|date-time|false|false|Created date of the matched asset.|
+|ModifiedDate|date-time|false|false|Modified date of the matched asset.|
 |LastModifiedDate|date-time|false|false|Modified date of the matched asset.|
 
 ```json
@@ -328,6 +331,7 @@ Search results
       "Description": "SearchedDescription 1",
       "ETag": "1",
       "CreatedDate": "2021-06-28T05:57:13.4249707Z",
+      "ModifiedDate": "2021-06-28T05:57:13.4249707Z",
       "LastModifiedDate": "2021-06-28T05:57:13.4249707Z"
     },
     {
@@ -351,6 +355,7 @@ Search results
       "Description": "SearchResultDescription 2",
       "ETag": "6",
       "CreatedDate": "2021-06-28T05:57:13.5965826Z",
+      "ModifiedDate": "2021-06-28T05:57:13.4249707Z",
       "LastModifiedDate": "2021-06-28T05:57:13.5965826Z"
     }
   ]

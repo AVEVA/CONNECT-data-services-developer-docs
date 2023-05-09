@@ -14,6 +14,10 @@ From AVEVA Connect, log into AVEVA Data Hub. For instructions, see <xref:loginAD
 
 Add the groups that you created in AVEVA Connect to AVEVA Data Hub. Then assign one or more roles to the groups. For instructions, see <xref:map-group-adh>.
 
-**Step 3C: Manage permissions**
+**Step 3C: Manage namespace permissions**
 
-Assign permissions to each user role for system resources using the **Manage Permissions** window. For instructions, see <xref:permissions-management>.
+Assign namespace permissions to each user role using the **Namespace Settings** window. For instructions, see <xref:namespaces-manage-permissions>.
+
+**Step 3D: Manage resource permissions**
+
+Assign permissions for system resources to each user role using the **Manage Permissions** window. For instructions, see <xref:permissions-management>.

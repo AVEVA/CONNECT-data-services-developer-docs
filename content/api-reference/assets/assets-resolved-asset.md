@@ -544,7 +544,9 @@ Resolved stream is a property of the resolved asset.
     "BaseType": "<SdsType>",
     "DerivedTypes": "[<SdsType>]",
     "InterpolationMode": 0,
-    "ExtrapolationMode": 0
+    "ExtrapolationMode": 0,
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "StreamReferenceName": "string",
   "StreamId": "string",
@@ -583,6 +585,8 @@ Resolved stream is a property of the resolved asset.
 |DerivedTypes|[[SdsType](#schemasdstype)]|false|true|None|
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|false|None|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|false|None|
+|CreatedDate|date-time|false|false|None|
+|ModifiedDate|date-time|false|false|None|
 
 ```json
 {
@@ -611,7 +615,9 @@ Resolved stream is a property of the resolved asset.
   "BaseType": "<SdsType>",
   "DerivedTypes": "[<SdsType>]",
   "InterpolationMode": 0,
-  "ExtrapolationMode": 0
+  "ExtrapolationMode": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```
@@ -661,7 +667,9 @@ Resolved stream is a property of the resolved asset.
     "BaseType": "<SdsType>",
     "DerivedTypes": "[<SdsType>]",
     "InterpolationMode": 0,
-    "ExtrapolationMode": 0
+    "ExtrapolationMode": 0,
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "Value": null,
   "Uom": "string",
@@ -684,8 +692,8 @@ Resolved stream is a property of the resolved asset.
 
 |Property|Value|
 |---|---|
-|Default|0|
 |Continuous|0|
+|Default|0|
 |StepwiseContinuousLeading|1|
 |StepwiseContinuousTrailing|2|
 |Discrete|3|

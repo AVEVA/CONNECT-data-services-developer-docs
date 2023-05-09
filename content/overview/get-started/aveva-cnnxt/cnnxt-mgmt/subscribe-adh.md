@@ -2,7 +2,7 @@
 uid: subscribe-adh
 ---
 
-# Step 1B
+# Step 1B: Subscribe to AVEVA Data Hub
 
 Before your organization can use AVEVA Data Hub, you must first subscribe to the AVEVA Data Hub service within AVEVA Connect. You must be an AVEVA Connect administrator to complete the subscription process.
 

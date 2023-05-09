@@ -2,7 +2,7 @@
 uid: namespaces-manage-permissions
 ---
 
-# Step 3C
+# Step 3C: Manage permissions for namespaces
 
 If you are assigned the **Manage Permissions** access right, then you can configure namespace permissions for other user roles in your tenant. You can granularly assign individual namespace permissions to each user role.
 

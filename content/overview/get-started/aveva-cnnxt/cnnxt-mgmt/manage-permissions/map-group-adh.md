@@ -2,7 +2,7 @@
 uid: map-group-adh
 ---
 
-# Step 3B
+# Step 3B: Add groups and assign roles
 
 Add existing AVEVA Connect groups to AVEVA Data Hub and then assign roles to the group. Roles control the individual permissions assigned to users in the group, controlling the actions they can make in AVEVA Data Hub.
 

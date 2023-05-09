@@ -39,9 +39,9 @@
     items: 
     - topicUid: sign-in-cnnxt
     - topicUid: subscribe-adh
+    - topicUid: create-folders
     - topicUid: ccNamespaces
     - topicUid: bpNamespaces
-    - topicUid: create-folders
   - topicUid: gs-setup-connect-users
     items:
     - topicUid: invite-users

@@ -4,7 +4,7 @@ uid: loginADH
 
 # Log into AVEVA Data Hub
 
-Log into AVEVA Data Hub.
+Log in to AVEVA Data Hub.
 
 **Note:** AVEVA Data Hub supports the latest versions of Microsoft Edge, Google Chrome, and Mozilla Firefox.
 

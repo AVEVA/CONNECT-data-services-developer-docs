@@ -2,7 +2,7 @@
 uid: sign-in-cnnxt
 ---
 
-# Step 1A: Log into AVEVA Connect
+# Log into AVEVA Connect
 
 You can log into AVEVA Connect using one of the following sign-in methods:
 
@@ -43,8 +43,6 @@ To sign in as a single user:
 ## Third-party user access
 
 A connection code enables third-party users to access specific accounts associated with an Identity Provider. Any accounts that are not intended for the third-party user are hidden.
-
-**Note:** You must have a federated connection.
 
 To sign in as a third-party user using a connection code:
 

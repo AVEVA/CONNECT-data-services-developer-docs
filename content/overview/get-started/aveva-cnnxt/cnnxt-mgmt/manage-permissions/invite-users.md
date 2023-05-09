@@ -2,7 +2,7 @@
 uid: invite-users
 ---
 
-# Step 2A: Add users
+# Add users
 
 As an administrator, you set up new users in AVEVA Connect. When a new user is added and assigned to a role, an email is sent to the user with an invitation to access AVEVA Connect.
 

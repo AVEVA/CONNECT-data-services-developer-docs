@@ -30,6 +30,10 @@ In this situation, an asset type can be used to create multiple similar assets. 
 | Status        | Status            | No          | Asset and asset type status configuration | Yes | Yes            |
 | Tags| String list | Yes        | Asset tag | Yes | No|
 | TypeReferences | Type Reference List | No        | Asset type type references                                     | No | Yes            |
+| CreatedDate| DateTime | No*        | System-generated timestamp of the asset or asset type's creation date | Yes | Yes |
+| LastModifiedDate | DateTime | No*        | System-generated timestamp of the asset or asset type's last modified date. Upon creation, it will be set to the same value as the `CreatedDate` field. | No | Yes            |
+
+\* The `CreatedDate` and `LastModifiedDate` are not searchable, but they can be queried via filter expressions.
 
 ## Asset and asset type name and id
 The asset and asset type resource has name and Id properties. The Id property cannot be changed; it remains constant. All asset and asset type API calls depend on the Id. The purpose of the name is be a user-friendly way of displaying a given asset or asset type. This can be changed freely without effecting data egress from assets.
@@ -47,7 +51,7 @@ An asset or asset type metadata is static information associated with a given as
 | Uom         | String | Optional  | Asset metadata unit of measure (UOM). Select from the list of supported UOM types. |
 | Value       | String | Optional  | String representation of the metadata.                      |
 
-\* The`Id` property is not required if the `Name` property matches a `Name` on the asset type metadata. In this case, the `Id` of the metadata on the asset is inherited from the metadata `Id` of the asset type. This also applies when an asset is updated.
+\* The `Id` property is not required if the `Name` property matches a `Name` on the asset type metadata. In this case, the `Id` of the metadata on the asset is inherited from the metadata `Id` of the asset type. This also applies when an asset is updated.
 
 \* If the `Id` property is not specified, the `Name` property must be specified. In this case, a random GUID will be assigned as the `Id` on the metadata.
 

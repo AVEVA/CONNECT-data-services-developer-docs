@@ -2,7 +2,7 @@
 uid: create-group
 ---
 
-# Step 2B: Add groups
+# Add groups
 
 To be assigned access to AVEVA Data Hub, Users must belong to one or more groups (unless you have assigned individual roles to your users). By default, all users created in your account belong to the **User** group in AVEVA Connect. AVEVA recommends creating groups for each of your business units.
 

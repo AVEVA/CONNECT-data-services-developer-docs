@@ -2,7 +2,7 @@
 uid: assets-filter-expressions-dev-guide
 ---
 
-# Asset Filter Expressions
+# Asset filter expressions
 
 Filter expressions can be used to filter Asset and Asset Type objects on their `CreatedDate` and `LastModifiedDate` property values. Filter expressions can be applied to all collection-level GET and HEAD operations for Assets and Asset Types, including Asset Search.
 
@@ -24,7 +24,6 @@ The following logical operators are supported for use within a filter expression
 | `not`      | Not logical operator                                        |
 | `-`        | Negation                                                    |
 
-
 ### Examples of logical operators
 
 - `ModifiedDate gt 2015-01-01T00:00:00Z`
@@ -32,7 +31,7 @@ The following logical operators are supported for use within a filter expression
 - `(ModifiedDate gt 2021-01-01T00:00:00Z) and (ModifiedDate lt 2021-01-02T00:00:00Z)`
 - `not ModifiedDate gt 2023-01-01T00:00:00Z`
 
-## DateTime Functions
+## DateTime functions
 
 The following DateTime functions are supported for use within a filter expression:
 
@@ -46,9 +45,10 @@ The following DateTime functions are supported for use within a filter expressio
 | `second`   | Get second value              |
 
 ### Examples of DateTime functions
--  `year(CreatedDate) eq 2020`
--  `month(CreatedDate) eq 11`
--  `day(CreatedDate) eq 3`
--  `hour(ModifiedDate) eq 8`
--  `minute(ModifiedDate) eq 45`
--  `second(ModifiedDate) eq 10`
+
+- `year(CreatedDate) eq 2020`
+- `month(CreatedDate) eq 11`
+- `day(CreatedDate) eq 3`
+- `hour(ModifiedDate) eq 8`
+- `minute(ModifiedDate) eq 45`
+- `second(ModifiedDate) eq 10`

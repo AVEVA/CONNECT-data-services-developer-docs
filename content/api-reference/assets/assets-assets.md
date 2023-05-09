@@ -722,7 +722,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
 <br/>Query identifier.<br/><br/>`[optional] string filter`
-<br/>String used to filter the asset search results. Filter strings are not case-sensitive. Filters can be applied for the `AssetTypeName` property, the `Status` property, and the asset metadata properties, using the syntax filter[*property_name*]=*property_value*.<br/><br/>
+<br/>Filter expression for CreatedDate and LastModifiedDate properties.<br/><br/>
 
 <h3>Response</h3>
 
@@ -828,7 +828,7 @@ HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 `[optional] string query`
 <br/>Search query. Defaults to all assets if unspecified.<br/><br/>`[optional] boolean includeTotalCount`
 <br/>Optional parameter. If set to false, Total-Count header will not be included.<br/><br/>`[optional] string filter`
-<br/>String used to filter the asset search results. Filter strings are not case-sensitive. Filters can be applied for the `AssetTypeName` property, the `Status` property, and the asset metadata properties, using the syntax filter[*property_name*]=*property_value*.<br/><br/>
+<br/>Filter expression for CreatedDate and LastModifiedDate properties.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1274,6 +1274,8 @@ Represents an asset object.
 |Id|string|false|true|Identifier. If you do not provide an identifier, a random GUID will be assigned as the identifier.|
 |Name|string|false|true|User-friendly name. If not specified, name will be set to the same value as the `Id` field.|
 |Description|string|false|true|Description|
+|CreatedDate|date-time|false|false|Created Date|
+|ModifiedDate|date-time|false|false|Modified Date|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Metadata|
 |AssetTypeId|string|false|true|Asset type identifier. Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route.|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|Asset stream reference|

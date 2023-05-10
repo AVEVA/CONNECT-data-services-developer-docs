@@ -2,6 +2,8 @@
   href: asset-and-asset-types-dev-guide.md
 - name: Asset Search
   href: asset-search-dev-guide.md
+- name: Asset filter expressions
+  href: asset-filter-expression-dev-guide.md
 - name: Asset Status
   href: asset-status-dev-guide.md
 - name: Resolved Asset

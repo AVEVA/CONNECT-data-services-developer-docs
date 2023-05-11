@@ -753,3 +753,165 @@ get-stream-view-map:
         ]
     }
     ```
+# Streams
+get-resolved-stream:
+    type: markdown
+    value: |
+        ```json
+        {
+            "Id": "string",
+            "Name": "string",
+            "Description": "string",
+            "Indexes": [
+                {
+                "SdsTypePropertyId": "string"
+                }
+            ],
+            "CreatedDate": "2019-08-24T14:15:22Z",
+            "ModifiedDate": "2019-08-24T14:15:22Z",
+            "Resolved": true,
+            "Type": {
+                "Id": "string",
+                "Name": "string",
+                "Description": "string",
+                "SdsTypeCode": "Empty",
+                "IsGenericType": true,
+                "IsReferenceType": true,
+                "GenericArguments": [
+                {
+                    "Id": "string",
+                    "Name": "string",
+                    "Description": "string",
+                    "SdsTypeCode": 0,
+                    "IsGenericType": true,
+                    "IsReferenceType": true,
+                    "GenericArguments": "[<SdsType>]",
+                    "Properties": [
+                    {
+                        "Id": "string",
+                        "Name": "string",
+                        "Description": "string",
+                        "Order": 0,
+                        "IsKey": true,
+                        "FixedSize": 0,
+                        "SdsType": "<SdsType>",
+                        "Value": null,
+                        "Uom": "string",
+                        "InterpolationMode": 0,
+                        "IsQuality": true
+                    }
+                    ],
+                    "InterpolationMode": 0,
+                    "ExtrapolationMode": 0,
+                    "CreatedDate": "2019-08-24T14:15:22Z",
+                    "ModifiedDate": "2019-08-24T14:15:22Z"
+                }
+                ],
+                "Properties": [
+                {
+                    "Id": "string",
+                    "Name": "string",
+                    "Description": "string",
+                    "Order": 0,
+                    "IsKey": true,
+                    "FixedSize": 0,
+                    "SdsType": "<SdsResolvedType>",
+                    "Value": null,
+                    "Uom": "string",
+                    "InterpolationMode": "Default",
+                    "IsQuality": true
+                }
+                ],
+                "InterpolationMode": "Default",
+                "ExtrapolationMode": "All",
+                "CreatedDate": "2019-08-24T14:15:22Z",
+                "ModifiedDate": "2019-08-24T14:15:22Z"
+            }
+        }
+        ```
+get-resolved-streams:
+    type: markdown
+    value: |
+        ```json
+        {
+            "Data": [
+              {
+                "Id": "string",
+                "Name": "string",
+                "Description": "string",
+                "Indexes": [{ "SdsTypePropertyId": "string" }],
+                "CreatedDate": "2019-08-24T14:15:22Z",
+                "ModifiedDate": "2019-08-24T14:15:22Z",
+                "Resolved": true,
+                "Type": {
+                  "Id": "string",
+                  "Name": "string",
+                  "Description": "string",
+                  "SdsTypeCode": "Empty",
+                  "IsGenericType": true,
+                  "IsReferenceType": true,
+                  "GenericArguments": [
+                    {
+                      "Id": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "SdsTypeCode": 0,
+                      "IsGenericType": true,
+                      "IsReferenceType": true,
+                      "GenericArguments": "[<SdsType>]",
+                      "Properties": [
+                        {
+                          "Id": "string",
+                          "Name": "string",
+                          "Description": "string",
+                          "Order": 0,
+                          "IsKey": true,
+                          "FixedSize": 0,
+                          "SdsType": "<SdsType>",
+                          "Value": null,
+                          "Uom": "string",
+                          "InterpolationMode": "[",
+                          "IsQuality": true
+                        }
+                      ],
+                      "InterpolationMode": 0,
+                      "ExtrapolationMode": 0,
+                      "CreatedDate": "2019-08-24T14:15:22Z",
+                      "ModifiedDate": "2019-08-24T14:15:22Z"
+                    }
+                  ],
+                  "Properties": [
+                    {
+                      "Id": "string",
+                      "Name": "string",
+                      "Description": "string",
+                      "Order": 0,
+                      "IsKey": true,
+                      "FixedSize": 0,
+                      "SdsType": "<SdsResolvedType>",
+                      "Value": null,
+                      "Uom": "string",
+                      "InterpolationMode": "Default",
+                      "IsQuality": true
+                    }
+                  ],
+                  "InterpolationMode": "Default",
+                  "ExtrapolationMode": "All",
+                  "CreatedDate": "2019-08-24T14:15:22Z",
+                  "ModifiedDate": "2019-08-24T14:15:22Z"
+                }
+              }
+            ],
+            "ChildErrors": [
+              {
+                "OperationId": "string",
+                "Error": "string",
+                "Reason": "string",
+                "Resolution": "string",
+                "Parameters": { "property1": "string", "property2": "string" },
+                "StreamId": "string",
+                "StatusCode": 100
+              }
+            ]
+          }
+        ```

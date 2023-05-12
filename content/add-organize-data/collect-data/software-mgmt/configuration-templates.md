@@ -8,35 +8,29 @@ You can create and edit configuration templates for systems in AVEVA Data Hub. O
 
 You can create configuration templates for the following system types:
 
- - PI Adapter for Azure Event Hubs
+ - AVEVA Adapter for Azure Event Hubs
  
- - PI Adapter for BACnet 
+ - AVEVA Adapter for BACnet 
 
- - PI Adapter for DNP3
+ - AVEVA Adapter for DNP3
 
- - PI Adapter for Azure Event Hubs
+ - AVEVA Adapter for Azure Event Hubs
  
- - PI Adapter for BACnet 
+ - AVEVA Adapter for BACnet 
 
- - PI Adapter for DNP3
+ - AVEVA Adapter for DNP3
 
  - Edge Data Store
 
- - Edge Data Store Module
-
- - PI Adapter for Modbus TCP
+ - AVEVA Adapter for Modbus TCP
  
- - PI Adapter for MQTT
+ - AVEVA Adapter for MQTT
 
- - AVEVA Adapter for MQTT Module
+ - AVEVA Adapter for OPC UA
 
- - PI Adapter for OPC UA
+ - AVEVA Adapter for RDBMS
 
- - AVEVA Adapter for OPC UA Module
-
- - PI Adapter for RDBMS
-
- - PI Adapter for Structured Data Files
+ - AVEVA Adapter for Structured Data Files
 
 **Note:** You can only deploy edge modules using AVEVA Edge Management. 
 

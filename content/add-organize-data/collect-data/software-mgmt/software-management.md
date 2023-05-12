@@ -4,7 +4,7 @@ uid: SoftwareMgmt
 
 # Edge data store & adapters (Preview)
 
-`Edge Data Store & Adapters` provides a centralized location to monitor the health and manage the software configuration of edge modules and systems, including Edge Data Store and PI Adapters. This shows you the data collection software that deploys to remote devices. To be available in `Edge Data Store & Adapters`, a system must have an AVEVA Data Hub health endpoint configured. For information on configuring health endpoints, see the specific system product documentation.
+`AVEVA Data Hub` provides a centralized location to monitor the health and manage the software configuration of edge modules and systems, including Edge Data Store and AVEVA Adapters. This shows you the data collection software that deploys to remote devices. To be available in `AVEVA Data Hub`, a system must have an AVEVA Data Hub health endpoint configured. For information on configuring health endpoints, see the specific system product documentation.
 
 Systems have product executables that you install on devices in the field. Use `Edge Data Store & Adapters` to create configuration files that you then deploy directly on those devices.
 
@@ -12,7 +12,7 @@ Edge modules have the same functionality as their corresponding systems, but are
 
 ## Health monitoring
 
-The `Edge Data Store & Adapters Systems` page displays a list of system digital twins. Each system twin is a virtual representation of an actual system that is currently writing health data to the selected namespace. You can review health information for systems, including the current status of each system and when it last communicated with AVEVA Data Hub. Use sort and filter functionality to navigate system twins to pinpoint problems and identify gaps in data collection. View detailed health information for your systems to understand their overall health. Digital twins are also created for PI Interfaces that send health data to AVEVA Data Hub, and can be used to monitor PI Interface health. 
+The `Edge Data Store & Adapters Systems` page displays a list of system digital twins. Each system twin is a virtual representation of an actual system that is currently writing health data to the selected namespace. You can review health information for systems, including the current status of each system and when it last communicated with AVEVA Data Hub. Use sort and filter functionality to navigate system twins to pinpoint problems and identify gaps in data collection. View detailed health information for your systems to understand their overall health. 
 
 ## Configuration management
 

@@ -8,29 +8,23 @@ You can import a system configuration from the field to its corresponding system
 
 Configuration is available for the following system types:
 
- - PI Adapter for Azure Event Hubs
+ - AVEVA Adapter for Azure Event Hubs
 
- - PI Adapter for BACnet
+ - AVEVA Adapter for BACnet
 
- - PI Adapter for DNP3
+ - AVEVA Adapter for DNP3
 
  - Edge Data Store
 
- - Edge Data Store Module
+ - AVEVA Adapter for Modbus TCP
 
- - PI Adapter for Modbus TCP
+ - AVEVA Adapter for MQTT
 
- - PI Adapter for MQTT
+ - AVEVA Adapter for OPC UA
 
- - AVEVA Adapter for MQTT Module
+ - AVEVA Adapter for RDBMS
 
- - PI Adapter for OPC UA
-
- - AVEVA Adapter for OPC UA Module
-
- - PI Adapter for RDBMS
-
- - PI Adapter for Structured Data Files
+ - AVEVA Adapter for Structured Data Files
 
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the configuration template is created. For example, if the namespace of the configuration template is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 

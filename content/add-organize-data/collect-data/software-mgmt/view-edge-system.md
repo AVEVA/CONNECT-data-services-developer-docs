@@ -40,7 +40,7 @@ To view a system:
 
    - To see the diagnostic data available for a specific component, select the icon at the component level. 
 
-## Remove an system
+## Remove a system
 
 You can remove systems from the list in AVEVA Data Hub, but the system remains on the device. After a system is removed from AVEVA Data Hub and it is no longer sending data to AVEVA Data Hub, you can no longer see or manage it from AVEVA Data Hub. If a system sends health data to AVEVA Data Hub after it has been removed from the list, it will reappear in the list of systems.
 

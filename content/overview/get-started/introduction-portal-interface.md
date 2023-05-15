@@ -24,7 +24,7 @@ The AVEVA Data Hub home page displays the following:
 
 - **PI to Data Hub Agents**: Health status for each PI to Data Hub agent. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each agent.
 
-- **Systems**: Health status for each system. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each system.
+- **Edge Data Store & Adapters**: Health status for each system. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each system.
 
 ## AVEVA Data Hub features
 

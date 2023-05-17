@@ -58,7 +58,7 @@ Rather than entering specific values for your query, you can use variables.
 
    You can also make an array a variable and include multiple values, such as `[98, 99, ...]`.
 
-If you manually edit the variable name within the `Request` pane, click ![Format](../_icons/default/auto-fix.svg) to automatically update the variable name in the header and `Variables` pane.
+If you manually edit the variable name within the `Request` pane, select ![Format](../_icons/default/auto-fix.svg) to automatically update the variable name in the header and `Variables` pane.
 
 ## Fragments
 

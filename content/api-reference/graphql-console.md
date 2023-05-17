@@ -18,13 +18,13 @@ To use the GraphQL console:
 
 1. Select ![expand](../_icons/branded/plus-circle-outline.svg) next to an object in the GraphQL Explorer to drill down and show the available filtering options and fields.
 
-1. Use the GraphQL Explorer tree to create a query.
+1. Use the GraphQL Explorer tree to create a request.
 
    - Use the selections under the `where:` argument to filter by fields that equal, contain, start with, or end with a specified value, or are included in an array of values.
 
    - Use the selections under the `options:` argument to retrieve a specified count of objects or to sort the data returned. Select **+ Add** to add a secondary sort field.
 
-   - For fields that can be arrays, select **+ Add** below them to add spaces for additional values to the query.
+   - For fields that can be arrays, select **+ Add** below them to add spaces for additional values.
 
    - For upsert or delete operations, use the selections under `input:` to identify the object to update or delete.
 
@@ -32,9 +32,9 @@ To use the GraphQL console:
 
    - Select **Reset** to clear all selections.
 
-   - Select ![GraphQL Explorer Panel](../_icons/branded/sitemap.svg) to hide or show the explorer panel.
+   - Select ![GraphQL Explorer Pane](../_icons/branded/sitemap.svg) to hide or show the explorer pane.
 
-   **Note:** The `GraphQL Explorer` and `Query` panes work in both directions. The query is updated as you make selections in the GraphQL Explorer tree, and editing the text directly in the query or pasting a complete query will update the GraphQL Explorer tree.
+   **Note:** The `GraphQL Explorer` and `Request` panes work in both directions. The request is updated as you make selections in the GraphQL Explorer tree, and editing the text directly in the request or pasting a complete request updates the GraphQL Explorer tree. When editing the request directly, select ![Format](../_icons/default/auto-fix.svg) to automatically format the request.
 
 1. Select ![left arrow](../_icons/branded/arrow-left.svg) to return to the top level and repeat the process with other objects, as needed.
 
@@ -48,21 +48,23 @@ To use the GraphQL console:
 
 Rather than entering specific values for your query, you can use variables.
 
-1. Select the green **$** that appears next to an argument when you hover over it.
+1. Select the ![set variable](../_icons/custom/currency-usd-off.svg) icon that appears next to an argument when you hover over it.
 
 1. Enter a variable name in the box that appears.
 
-   A variable declaration is added to the `Query` pane and the new variable is added to the `Variables` pane in JSON format. The variable is assigned a value of `null` by default.
+   A variable declaration is added to the `Request` pane and the new variable is added to the `Variables` pane in JSON format. The variable is assigned a value of `null` by default.
 
 1. Edit the value in the `Variables` pane to assign a value to the variable.
 
    You can also make an array a variable and include multiple values, such as `[98, 99, ...]`.
 
+If you manually edit the variable name within the `Request` pane, click ![Format](../_icons/default/auto-fix.svg) to automatically update the variable name in the header and `Variables` pane.
+
 ## Fragments
 
 GraphQL supports reusable units called fragments. With fragments you construct sets of fields once, and then reuse them in multiple locations in a query.
 
-1. In the `Query` pane, add the fragment text above or below the query. The location does not matter.
+1. In the `Request` pane, add the fragment text above or below the query. The location does not matter.
 
    For example:
 
@@ -77,4 +79,4 @@ GraphQL supports reusable units called fragments. With fragments you construct s
 
 1. Within the query, place instances of the fragment in the format `...[fragment name]`.
 
-Fragments appear only in the `Query` pane and are not reflected in the GraphQL Explorer. They persist when you make changes in the GraphQL Explorer.
+Fragments appear only in the `Request` pane and are not reflected in the GraphQL Explorer. They persist when you make changes in the GraphQL Explorer.

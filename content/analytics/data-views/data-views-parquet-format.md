@@ -1,5 +1,5 @@
 ---
-uid: data-views-parquet-format-notes
+uid: data-views-parquet-format
 ---
 
 # Parquet data format

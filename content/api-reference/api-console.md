@@ -44,6 +44,10 @@ When entering a URI for a namespace- or community-scoped API request, the API co
 
 ![Path autocomplete](images/api-console-autocomplete.png)
 
+## Download response body
+
+While using the API console, you can download the response body for any request by choosing the **Download** ![download](../_icons/default/download.svg) icon. Response bodies are downloaded in the file format specified in the **form** dropdown.
+
 ## Related
 
 For more information, see [Stream data](xref:sds-stream-data).

@@ -4,7 +4,7 @@ uid: data-view-data-type-conversion
 
 # Data view data type conversion
 
-When requesting a data view that includes multiple data types in a single column, the data view will:
+When requesting a data view that includes multiple data types in a single column by [linking data fields](xref:data-view-link-fields), the data view will:
 
 1. Convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information.
 
@@ -70,7 +70,7 @@ The following table lists the resulting SDS data type when two are converted:
 | UInt64 | Decimal| Decimal |
 | Single | Double | Double  |
 
-Nullable types and non-nullable types convert into a nullable type. If AVEVA Data Hub cannot convert two data types into a compatible type, it will convert them into strings as a last resort. When you request a data view in the Parquet format with the **Narrow** data view shape selected, AVEVA Data Hub usually converts combined columns into strings.
+Nullable types and non-nullable types convert into a nullable type. If AVEVA Data Hub cannot convert two data types into a compatible type, it will convert them into strings. When you request a data view in the Parquet format with the **Narrow** data view shape selected, AVEVA Data Hub usually converts combined columns into strings.
 
 ## SDS to Parquet data type conversion
 

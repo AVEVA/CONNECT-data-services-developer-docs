@@ -12,7 +12,7 @@ When you request a data view in Parquet format, AVEVA Data Hub serializes the da
 
 ## Handling multiple data types
 
-When requesting a data view in the Parquet format that includes multiple data types in a single column, the data view will:
+When requesting a data view that includes multiple data types in a single column by [linking data fields](xref:data-view-link-fields), the data view will:
 
 1. Convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information.
 

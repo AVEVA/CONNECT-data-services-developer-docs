@@ -89,5 +89,4 @@ When requesting a data view in the Parquet format, an additional conversion take
 | Int64 (Long) | INT64 |  |
 | Double (Double) | DOUBLE |  |
 | Decimal (Decimal) | BYTE_ARRAY | DECIMAL |
-| DateTimeOffset (DateTimeOffset) | INT96 |  |
 | DateTime (DateTime) | INT96 |  |

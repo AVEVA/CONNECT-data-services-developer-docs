@@ -2,6 +2,6 @@
 uid: data-view-api-console-use
 ---
 
-# Data view API Console use
+# Data views and the API Console
 
-While creating or editing a data view, you can use the AVEVA Data Hub API Console to build, edit, and preview the data view endpoint configuration before specifying its URI in your application code or Microsoft Power BI.
+While creating or editing a data view, you can launch it within the API Console by choosing the **View in API Console** button. Launching the data view in the API console allows you to refine the data view endpoint query before specifying its URI in your application code or Microsoft Power BI.

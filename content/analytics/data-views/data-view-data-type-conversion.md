@@ -76,19 +76,18 @@ Nullable types and non-nullable types convert into a nullable type. If AVEVA Dat
 
 When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
 
-| CLR Type | Parquet Type | Parquet Annotation |
+| SDS Type/CLR Type | Parquet Type | Parquet Annotation |
 |--|--|--|
-| System.Byte (byte) | INT32 | UNIT_8 |
-| System.SByte (sbyte) | INT32 | UINT_8 |
-| byte[] | BYTE_ARRAY |  |
-| System.Int16 (short) | INT_32 | INT_16 |
-| System.UInt16 (ushort) | INT_32 | UINT_16 |
-| System.Int32 (int) | INT32 |  |
-| System.Boolean (bool) | BOOLEAN |  |
-| System.String (string) | BYTE_ARRAY | UTF8 |
-| System.Single (float) | FLOAT |  |
-| System.Int64 (long) | INT64 |  |
-| System.Double (double) | DOUBLE |  |
-| System.Decimal (decimal) | BYTE_ARRAY | DECIMAL |
-| System.DateTimeOffset (DateTimeOffset) | INT96 |  |
-| System.DateTime (DateTime) | INT96 |  |
+| Byte (Byte) | INT32 | UNIT_8 |
+| SByte (Sbyte) | INT32 | UINT_8 |
+| Int16 (Short) | INT_32 | INT_16 |
+| UInt16 (Ushort) | INT_32 | UINT_16 |
+| Int32 (Int) | INT32 |  |
+| Boolean (Bool) | BOOLEAN |  |
+| String (String) | BYTE_ARRAY | UTF8 |
+| Single (Float) | FLOAT |  |
+| Int64 (Long) | INT64 |  |
+| Double (Double) | DOUBLE |  |
+| Decimal (Decimal) | BYTE_ARRAY | DECIMAL |
+| DateTimeOffset (DateTimeOffset) | INT96 |  |
+| DateTime (DateTime) | INT96 |  |

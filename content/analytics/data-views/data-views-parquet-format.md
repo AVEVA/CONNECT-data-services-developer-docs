@@ -12,13 +12,10 @@ When you request a data view in Parquet format, AVEVA Data Hub serializes the da
 
 ## Handling multiple data types
 
-When requesting a data view in the Parquet format that includes multiple data types in a single column, the data view will coalesce them into a compatible data type wide enough to accommodate all types without losing information. This coalescence occurs to accommodate the strongly-typed data in the Parquet format.
+When requesting a data view in the Parquet format that includes multiple data types in a single column, the data view will:
 
-For example, AVEVA Data Hub will coalesce `UInt32` and `Sbyte` data types into a single Int64 column. Nullable types and non-nullable types coalesce into a nullable type. If AVEVA Data Hub cannot coalesce two data types into a compatible type, it will coalesce them into strings. When you request a data view in the Parquet format with the **Narrow** data view shape selected, AVEVA Data Hub usually coalesces combined columns into strings. Review the following table for examples of coalesced data type results.
+1. Convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information.
 
-| Types                     | Result   |
-|---------------------------|----------|
-| `Int16`, `Int32`, `Int64` | `Int64`  |
-| `UInt64`, `Int64`         | `String` |
-| `Float`, `Double`         | `Double` |
-| `Double`, `Int64`         | `String` |
+1. Convert the compatible SDS data type to a Parquet data type. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
+
+For more information on the conversion, see <xref:data-view-data-type-conversion>.

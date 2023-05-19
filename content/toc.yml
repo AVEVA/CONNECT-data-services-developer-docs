@@ -234,10 +234,11 @@
             - topicUid: data-views-configure-identifying-fields
             - topicUid: data-view-configure-field-order
             - topicUid: data-view-link-fields
+              items:
+                - topicUid: data-view-data-type-conversion
         - topicUid: manage-data-views-permissions
         - topicUid: data-views-retrieve
         - topicUid: data-views-parquet-format
-        - topicUid: data-view-data-type-conversion
         - topicUid: data-view-troubleshooting
     - topicUid: PowerBI
       items:

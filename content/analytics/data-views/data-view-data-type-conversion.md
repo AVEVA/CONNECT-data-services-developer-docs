@@ -4,17 +4,15 @@ uid: data-view-data-type-conversion
 
 # Data view data type conversion
 
-When requesting a data view that includes multiple data types in a single column by [linking data fields](xref:data-view-link-fields), the data view will:
+When requesting a data view that includes multiple data types in a single column, the data view will:
 
-1. Convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information.
+1. Convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
 
-    **Note:** This SDS data type conversion occurs for all data view output formats, not only Parquet.
-
-1. When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
+1. When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs because the Parquet format does not support all data types natively.
 
 ## SDS data type conversion
 
-When requesting a data view that includes multiple data types in a single column, the data view will convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information.
+When requesting a data view that includes multiple data types in a single column, the data view will convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
 
 The following table lists the resulting SDS data type when two are converted:
 
@@ -74,19 +72,25 @@ Nullable types and non-nullable types convert into a nullable type. If AVEVA Dat
 
 ## SDS to Parquet data type conversion
 
-When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
+When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs because the Parquet format does not support all data types natively.
 
-| SDS Type/CLR Type | Parquet Type | Parquet Annotation |
-|--|--|--|
-| Byte (Byte) | INT32 | UNIT_8 |
-| SByte (Sbyte) | INT32 | UINT_8 |
-| Int16 (Short) | INT_32 | INT_16 |
-| UInt16 (Ushort) | INT_32 | UINT_16 |
-| Int32 (Int) | INT32 |  |
-| Boolean (Bool) | BOOLEAN |  |
-| String (String) | BYTE_ARRAY | UTF8 |
-| Single (Float) | FLOAT |  |
-| Int64 (Long) | INT64 |  |
-| Double (Double) | DOUBLE |  |
-| Decimal (Decimal) | BYTE_ARRAY | DECIMAL |
-| DateTime (DateTime) | INT96 |  |
+| SDS Type Code/CLR Type | Physical Type | Converted Type | Logical Type |
+|--|--|--|--|
+| Byte (Byte) | INT32 | UNIT_8 | INT (8, false) |
+| SByte (Sbyte) | INT32 | INT_8 | INT (8, true) |
+| Int16 (Short) | INT32 | INT_16 | INT (16, true) |
+| UInt16 (Ushort) | INT32 | UINT_16 | INT (16, false) |
+| Int32 (Int) | INT32 | INT_32 | INT (32, true) |
+| UInt32 (Uint) | INT32 | UINT_32 | INT (32, false) |
+| Boolean (Bool) | BOOLEAN | UTF8 |  |
+| String (String) | BYTE_ARRAY | UTF8 | STRING |
+| Single (Float) | FLOAT | UTF8 |  |
+| Int64 (Long) | INT64 | INT_64 | INT (64, true) |
+| UInt64 (Ulong) | INT64 | UINT_64 | INT (64, false) |
+| Double (Double) | DOUBLE | UTF8 |  |
+| Decimal (Decimal) | FIXED_LEN_BYTE_ARRAY | DECIMAL | DECIMAL |
+| DateTime (DateTime) | INT64 | UTF8 | TIMESTAMP (false, MICROS) |
+| DateTimeOffset (DateTimeOffset) | INT64 | UTF8 | TIMESTAMP (false, MICROS) |
+| Char (char) | BYTE_ARRAY | UTF8 | STRING |
+| Guid (Guid) | BYTE_ARRAY | UTF8 | STRING |
+| Version (Version) | BYTE_ARRAY | UTF8 | STRING |

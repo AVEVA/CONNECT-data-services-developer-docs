@@ -44,9 +44,14 @@ When entering a URI for a namespace- or community-scoped API request, the API co
 
 ![Path autocomplete](images/api-console-autocomplete.png)
 
-## Download response body
+## Copy or download response body
 
-While using the API console, you can download the response body for any request by choosing the **Download** ![download](../_icons/default/download.svg) icon. Response bodies are downloaded in the file format specified in the **form** dropdown.
+While making requests using the API console, you can copy or download the response body by choosing the appropriate icon.
+
+- Choose **Copy** ![copy](../../_icons/default/content-copy.svg) to copy the response body to your clipboard.
+- Choose **Download** ![download](../../_icons/default/download.svg) to download the response body.
+
+Response bodies are downloaded in the file format specified in the **form** dropdown.
 
 ## Related
 

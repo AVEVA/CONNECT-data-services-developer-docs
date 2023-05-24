@@ -4,15 +4,13 @@ uid: data-view-data-type-conversion
 
 # Data view data type conversion
 
-When requesting a data view that includes multiple data types in a single column, the data view will:
+When you request a data view that includes multiple data types in a single column:
 
-1. Convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
+1. The data view converts two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
 
 1. When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs because the Parquet format does not support all data types natively.
 
 ## SDS data type conversion
-
-When requesting a data view that includes multiple data types in a single column, the data view will convert two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
 
 The following table lists the resulting SDS data type when two are converted:
 
@@ -72,7 +70,7 @@ Nullable types and non-nullable types convert into a nullable type. If AVEVA Dat
 
 ## SDS to Parquet data type conversion
 
-When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs because the Parquet format does not support all data types natively.
+The following table lists the SDS data types and their corresponding Parquet data types.
 
 | SDS Type Code/CLR Type | Physical Type | Converted Type | Logical Type |
 |--|--|--|--|

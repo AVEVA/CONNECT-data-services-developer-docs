@@ -33,9 +33,9 @@ When requesting data views from the API Console, the REST API is capable of retu
 | csvh (Comma separated values with headers) | Comma-separated values with header row. |
 | parquet | Parquet format. For more information on the Parquet format, see <xref:data-views-parquet-format>. |
 
-## Copy/Download response body
+## Copy or download response body
 
-While making requests using the API console, you can copy/download the response body by choosing the appropriate icon.
+While making requests using the API console, you can copy or download the response body by choosing the appropriate icon.
 
 - Choose **Copy** ![copy](../../_icons/default/content-copy.svg) to copy the response body to your clipboard.
 - Choose **Download** ![download](../../_icons/default/download.svg) to download the response body.

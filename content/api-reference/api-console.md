@@ -46,12 +46,10 @@ When entering a URI for a namespace- or community-scoped API request, the API co
 
 ## Copy or download response body
 
-While making requests using the API console, you can copy or download the response body by choosing the appropriate icon.
+While making requests using the API console, you can copy or download the JSON response body by choosing the appropriate icon.
 
 - Choose **Copy** ![copy](../../_icons/default/content-copy.svg) to copy the response body to your clipboard.
 - Choose **Download** ![download](../../_icons/default/download.svg) to download the response body.
-
-Response bodies are downloaded in the file format specified in the **form** dropdown.
 
 ## Related
 

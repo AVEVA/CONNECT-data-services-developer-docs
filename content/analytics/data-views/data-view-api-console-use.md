@@ -40,4 +40,4 @@ While making requests using the API console, you can copy or download the respon
 - Choose **Copy** ![copy](../../_icons/default/content-copy.svg) to copy the response body to your clipboard.
 - Choose **Download** ![download](../../_icons/default/download.svg) to download the response body.
 
-When working with Data Views, response bodies are downloaded in the file format specified in the **form** dropdown.
+When working with Data Views resources, response bodies are downloaded in the file format specified in the **form** dropdown.

@@ -8,7 +8,7 @@ Data items included in a data view may have slight differences in property namin
 
 Data views can overcome property naming differences by linking these similar properties into a single data field. This applies to stream properties referenced by Id or by name, and to stream metadata keys. Asset properties can also be linked.
 
-When data fields are linked, AVEVA Data Hub converts the data types in the linked into compatible data types. For more information, see <xref:data-view-data-type-conversion>.
+When data fields are linked, AVEVA Data Hub converts the data types in the linked fields into compatible data types. For more information, see <xref:data-view-data-type-conversion>.
 
 ## To link fields
 

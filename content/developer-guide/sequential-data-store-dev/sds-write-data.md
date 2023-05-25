@@ -4,20 +4,15 @@ uid: sdsWritingData
 
 # Write data
 
-The SDS REST APIs provide programmatic access to read and write SDS data. This section describes 
-things to note when writing to an SdsStream.
+The SDS REST APIs provide programmatic access to read and write SDS data. This section describes things to note when writing to an SdsStream.
 
-When working in .NET, convenient SDS Client libraries are available. The `ISdsDataService` interface, accessed using the
-``SdsService.GetDataService()`` helper, defines the available functions.
+When working in .NET, convenient SDS Client libraries are available. The `ISdsDataService` interface, accessed using the ``SdsService.GetDataService()`` helper, defines the available functions.
 
-All writes rely on a stream's key or primary index. The primary index determines the order of events in the stream. Secondary indexes are updated, but they do not contribute 
-to the request. All references to indexes are to the primary index.
+All writes rely on a stream's key or primary index. The primary index determines the order of events in the stream. Secondary indexes are updated, but they do not contribute to the request. All references to indexes are to the primary index.
 
 The maximum size of the payload for a single write request is 28.6 MB. Additionally, compressed requests are limited to a maximum inflated payload size of 190 MB. Requests that exceed these limits will be rejected with an HTTP status code of `413 Payload Too Large`.
 
-> [!NOTE]
-> Use the ISO 8601 representation of dates and times in SDS, `2020-02-20T08:30:00-08:00` for February 20, 2020 at 8:30 AM PST, for example.
-SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in local time if it is of `DateTimeOffset`. 
+**Note:** Use the ISO 8601 representation of dates and times in SDS, `2020-02-20T08:30:00-08:00` for February 20, 2020 at 8:30 AM PST, for example. SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in local time if it is of `DateTimeOffset`. 
 
 ## Single stream writes   
 
@@ -26,8 +21,9 @@ The following methods support writing a single or multiple values:
 * [Patch Values](xref:sds-stream-data#patch-values) updates specific fields for a collection of events.
 * [Remove Values](xref:sds-stream-data#remove-values) deletes the events based on the request parameters.
 * [Update Values](xref:sds-stream-data#update-values) add or replaces a collection of events.
+
+<!-- removing per Chris' feedback
 sds-stream-data
-<!--removing per Chris' feedback
 The base URI for writing SDS data to a single stream is:
  ```text
       api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data  
@@ -89,11 +85,4 @@ The events must be formatted as a serialized JSON array of the stream's type. JS
 You can serialize your data using one of many available JSON serializers available at [Introducing JSON](http://json.org/index.html). 
 
 ## Indexes
-Writing to the SDS relies on the primary index for positioning within the streams and locating existing events. 
-Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, 
-indexes are specified as strings in the URI, or, when using the SDS Client Libraries, the index may be 
-passed as-is to DELETE methods that take the index type as a generic argument. For more information on working 
-with indexes, see [Indexes](xref:sdsIndexes). For information on compound indexes, see [Compound indexes](xref:sdsIndexes#compound-indexes).
-
-***********************
-
+Writing to the SDS relies on the primary index for positioning within the streams and locating existing events. Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI, or, when using the SDS Client Libraries, the index may be passed as-is to DELETE methods that take the index type as a generic argument. For more information on working with indexes, see [Indexes](xref:sdsIndexes). For information on compound indexes, see [Compound indexes](xref:sdsIndexes#compound-indexes).

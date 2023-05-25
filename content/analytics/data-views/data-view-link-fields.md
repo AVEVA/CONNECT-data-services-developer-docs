@@ -18,7 +18,7 @@ To link data items, drag and drop one field onto another. Properties can only be
 
 ## To unlink fields
 
-To unlink a linked field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > ![alt](../../_icons/default/link-variant-off.svg) **Unlink All**.
+To unlink a linked field, select **More options** ![more options](../../_icons/branded/dots-vertical.svg) > ![unlink all](../../_icons/default/link-variant-off.svg) **Unlink All**.
 
 ## Developer documentation
 

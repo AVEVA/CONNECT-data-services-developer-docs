@@ -10,15 +10,15 @@ Ingress data into your AVEVA Data Hub tenant using any of the following options.
 
 Transfer on-premises PI data and Asset Framework (AF) data into AVEVA Data Hub via a PI to Data Hub Agent.
 
-1. <xref:install-agent>
+1. <xref:install-agent>.
 
-1. <xref:pi-to-ocs-utility>
+1. <xref:pi-to-ocs-utility>.
 
-1. <xref:create-transfer>
+1. <xref:create-transfer>.
 
 ## Option B: Collect data directly from edge devices
 
-Review the following documentation and complete the following tasks:
+Collect data from edge devices using an AVEVA Data Hub client and OMF connection.
 
 **Prerequisite:** You must have EDS or an adapter installed and configured on an edge device.
 
@@ -30,6 +30,6 @@ Review the following documentation and complete the following tasks:
 
 ## Option C: Ingress data programmatically
 
-APIs provide programmatic access to read and write sequential data into AVEVA Data Hub. This can be done through custom OMF applications or utilizing SDS data writes.
+APIs provide programmatic access to bring sequential data into AVEVA Data Hub. This can be done through custom OMF applications or utilizing SDS data writes.
 
 See <xref:omfVsSds>.

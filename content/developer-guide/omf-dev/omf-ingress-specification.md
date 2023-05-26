@@ -4,7 +4,7 @@ uid: omfIngressSpecification
 
 # Use Open Message Format with AVEVA Data Hub
 
-[The Open Message Format (OMF) specification](https://docs.osisoft.com/bundle/omf/) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by the AVEVA Data Hub back-end system. 
+[The Open Message Format (OMF) specification](https://docs.osisoft.com/bundle/omf/) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification, which describes how OMF is interpreted by the AVEVA Data Hub back-end system. 
 
 ## Headers
 For a description of each of the headers, see [OMF specification](https://docs.osisoft.com/bundle/omf/). Note that rather than using a ``producertoken``, data collection calls to AVEVA Data Hub require a bearer token to be attached in the header, as documented in the [AVEVA Data Hub Quick Start](xref:sdsQuickStart) documentation. The bearer token is used to authenticate the sender and to authorize the sender for use with a particular tenant. The client ID associated with this token is used to route messages to a particular [topic](xref:omfIngressTopics) that it is mapped to.
@@ -17,8 +17,7 @@ OMF message types fall into three categories: *type*, *container*, and *data*, w
 ### Type messages
 A *type* message is interpreted by AVEVA Data Hub as an SdsType in the Sequential Data Store. Because SdsTypes are immutable, update operations are not supported. The keywords in the Type definition are interpreted as follows:
 
-- ``id``: Corresponds to the SdsType Id field. It must conform to the rules defined for a 
-    typeId specified here: [Types](xref:sdsTypes)
+- ``id``: Corresponds to the SdsType Id field. It must conform to the rules defined for a typeId specified here: [Types](xref:sdsTypes).
 
   **Note:** For this field, both forward slashes (`/`) and back slashes (`\`) are supported. Forward slashes are automatically replaced with periods (`.`) when it receives a message.
 
@@ -34,7 +33,7 @@ A *type* message is interpreted by AVEVA Data Hub as an SdsType in the Sequentia
 
 - ``metadata``: Currently unsupported.
 
-The ``isindex`` keyword corresponds to the ``isKey`` attribute of an SdsTypeProperty. SdsTypes support clustered indexes which can be specified with multiple properties marked with the ``isindex`` keyword with a value of ``true``. For compound indexes, the index property order within the message corresponds to the ``Order`` field of an SdsTypeProperty. The ``isname`` keyword is not supported.
+The ``isindex`` keyword corresponds to the ``isKey`` attribute of an SdsTypeProperty. SdsTypes support clustered indexes, which can be specified with multiple properties marked with the ``isindex`` keyword with a value of ``true``. For compound indexes, the index property order within the message corresponds to the ``Order`` field of an SdsTypeProperty. The ``isname`` keyword is not supported.
 
 ### Link type
 Link types are not supported in Sequential Data Store and will be ignored.

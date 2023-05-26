@@ -30,6 +30,6 @@ Collect data from edge devices using an AVEVA Data Hub client and OMF connection
 
 ## Option C: Ingress data programmatically
 
-APIs provide programmatic access to bring sequential data into AVEVA Data Hub. This can be done through custom OMF applications or utilizing SDS data writes.
+APIs provide programmatic access to bring sequential data into AVEVA Data Hub. This can be done through custom OMF applications or utilizing SDS data writes. See <xref:sdsWritingData>.
 
-See <xref:omfVsSds>.
+<xref:omfVsSds> explains the benefits of the two options.

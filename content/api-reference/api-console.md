@@ -44,6 +44,20 @@ When entering a URI for a namespace- or community-scoped API request, the API co
 
 ![Path autocomplete](images/api-console-autocomplete.png)
 
+## Continuation token
+
+The continuation token field is used in support of server-side pagination. A continuation token is a mechanism used to handle large amounts of data efficiently. When you request data from a data view using the AVEVA Data Hub REST API, there might be too many results to retrieve all at once. To address this, the API provides you with a subset of the data and a continuation token.
+
+The continuation token serves as a marker or reference point that helps you keep track of your progress and indicates where you left off. When you want to fetch the next portion of the data, you include the continuation token in your subsequent API request. Continuation tokens are only supported for `GET` requests.
+
+When the **Load from Response** ![load from response](../_icons/default/code-json.svg) button is enabled, the continuation token from the last API console data view request is loaded into the `continuationToken` field automatically. The continuation token will be loaded from the response when all of the following conditions are met:
+
+- The request verb is `GET`.
+- There is a response present.
+- The current response verb, path, and query parameters (excluding the `continuationToken`) all match the current request.
+
+The continuation token parameter is available when working with streams or data views.
+
 ## Related
 
 For more information, see [Stream data](xref:sds-stream-data).

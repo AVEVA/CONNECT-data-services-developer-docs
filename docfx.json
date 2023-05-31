@@ -73,7 +73,7 @@
 		"dest": "_site",
 		"globalMetadataFiles": [],
 		"fileMetadataFiles": [],
-		"template": ["default", "modern"],
+		"template": ["default", "_exported_templates/default"],
 		"noLangKeyword": false,
 		"keepFileLink": false,
 		"cleanupCacheHistory": false,

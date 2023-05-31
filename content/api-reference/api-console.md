@@ -56,7 +56,7 @@ When the **Load from Response** ![load from response](../_icons/branded/code-jso
 - There is a response present.
 - The current response verb, path, and query parameters (excluding the `continuationToken`) all match the current request.
 
-The continuation token parameter is available when working with streams or data views.
+The continuation token parameter is available when working with streams or data views. When working with streams, select the checkbox to include the parameter in your request when no value is set.
 
 ## Related
 

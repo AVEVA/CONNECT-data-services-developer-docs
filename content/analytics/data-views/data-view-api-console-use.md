@@ -2,9 +2,9 @@
 uid: data-view-api-console-use
 ---
 
-# Data view API Console use
+# Data views and the API Console
 
-While creating or editing a data view, you can use the AVEVA Data Hub API Console to build, edit, and preview the data view endpoint configuration before specifying its URI in your application code or Microsoft Power BI.
+While creating or editing a data view, you can launch it within the API Console by choosing the **View in API Console** button. Launching the data view in the API console allows you to refine the data view endpoint query before specifying its URI in your application code or Microsoft Power BI.
 
 ## Data view API console parameters
 
@@ -25,3 +25,16 @@ When viewing a data view from the API Console, you can edit the default paramete
 The continuation token field is used in support of server-side pagination. A continuation token is a mechanism used to handle large amounts of data efficiently. When you request data from a data view using the AVEVA Data Hub REST API, there might be too many results to retrieve all at once. To address this, the API provides you with a subset of the data and a continuation token.
 
 When the **Load from Response** ![load from response](../../_icons/branded/book-arrow-right-outline.svg) button is enabled, the continuation token from the last API console data view request is loaded into the `continuationToken` field automatically. For more information, see <xref:apiConsole#continuation-token>.
+
+## Response forms
+
+When requesting data views from the API Console, the REST API is capable of returning requests in a variety of file formats. Select a form from the dropdown. Supported response forms include:
+
+| Form | Description |
+|--|--|
+| default (JSON) | Object-style JSON. |
+| table (Table) | Table-style JSON. |
+| tableh (Table with headers) | Table-style JSON with header row. |
+| csv (Comma separated values) | Comma-separated values. |
+| csvh (Comma separated values with headers) | Comma-separated values with header row. |
+| parquet | Parquet format. For more information on the Parquet format, see <xref:data-views-parquet-format>. |

@@ -25,7 +25,3 @@ When viewing a data view from the API Console, you can edit the default paramete
 The continuation token field is used in support of server-side pagination. A continuation token is a mechanism used to handle large amounts of data efficiently. When you request data from a data view using the AVEVA Data Hub REST API, there might be too many results to retrieve all at once. To address this, the API provides you with a subset of the data and a continuation token.
 
 When the **Load from Response** ![load from response](../../_icons/branded/book-arrow-right-outline.svg) button is enabled, the continuation token from the last API console data view request is loaded into the `continuationToken` field automatically. For more information, see <xref:apiConsole#continuation-token>.
-
-## Response forms
-
-<!-- TODO: define -->

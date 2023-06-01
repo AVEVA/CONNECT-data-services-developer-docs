@@ -50,7 +50,7 @@ The continuation token field is used in support of server-side pagination. A con
 
 The continuation token serves as a marker or reference point that helps you keep track of your progress and indicates where you left off. When you want to fetch the next portion of the data, you include the continuation token in your subsequent API request. Continuation tokens are only supported for `GET` requests.
 
-When the **Load from Response** ![load from response](../_icons/branded/code-json.svg) button is enabled, the continuation token from the last API console data view request is loaded into the `continuationToken` field automatically. The continuation token will be loaded from the response when all of the following conditions are met:
+When the **Load from Response** ![load from response](../_icons/branded/book-arrow-right-outline.svg) button is enabled, the continuation token from the last API console data view request is loaded into the `continuationToken` field automatically. The continuation token will be loaded from the response when all of the following conditions are met:
 
 - The request verb is `GET`.
 - There is a response present.

@@ -10,7 +10,7 @@ The following best practices are recommended for types and streams:
 
 - An SDS type can include multiple data measurements of different data types. Each data measurement is a property of the type.
 
-   For example, assume the SDS type, `MyData.PumpState`, has two measurements represented by the Temperature and Pressure properties. You would define the following fields for each property: Id, Name, Description, Type, and Key. At least one property in the SDS type must be an index, most commonly a timestamp. For the Temperature and Pressure measurements, the Timestamp property is the index. Each property is a value in each event of this type. Therefore, in an event of the `MyData.PumpState` type, there is a value for Timestamp, Temperature, and Pressure.
+   For example, assume the SDS type, `MyData.PumpState`, has two measurements represented by the Temperature and Pressure properties. You would define the following fields for each property: Id, Name, Description, Type, and Key. In SDS, the key of type is also an index. At least one property in the SDS type must be an index, most commonly a timestamp. For the Temperature and Pressure measurements, the Timestamp property is the index. Each property is a value in each event of this type. Therefore, in an event of the `MyData.PumpState` type, there is a value for Timestamp, Temperature, and Pressure.
 
    **Note:** You may use the REST API or client libraries to define additional optional fields, including Value, Order, and InterpolationMode for each property. Therefore, it may be preferable to create types programmatically.
 

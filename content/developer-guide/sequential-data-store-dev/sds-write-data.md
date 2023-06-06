@@ -95,5 +95,8 @@ indexes are specified as strings in the URI, or, when using the SDS Client Libra
 passed as-is to DELETE methods that take the index type as a generic argument. For more information on working 
 with indexes, see [Indexes](xref:sdsIndexes). For information on compound indexes, see [Compound indexes](xref:sdsIndexes#compound-indexes).
 
+## Out-of-Order Data
+Sequential Data Store is optimized for sending and retrieving data in order of the data's index. When writing data, clients should take care to send it in a sequential manner. Failure to do so can drastically impact performance both when it is being written and when it is later retrieved. This is especially pertinent when backfilling large amounts of historical data. Note that "sequential order" is desirable not just within the context of one batch that is sent, but also in a general sense over time.
+
 ***********************
 

@@ -15,7 +15,7 @@ Returns an array of EventTypes in a given namespace and the version ETag in the 
 
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
-?skip={skip}&count={count}&includeDeleted={includeDeleted}
+?skip={skip}&count={count}&includeDeleted={includeDeleted}&filter={filter}
 ```
 
 <h4>Parameters</h4>
@@ -26,6 +26,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeDeleted`
+<br/><br/>`[optional] string filter`
 <br/><br/>
 
 <h3>Response</h3>
@@ -45,10 +46,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 ```json
 [
   {
-    "Id": "string",
     "Name": "string",
-    "State": 0,
+    "GraphQLName": "string",
     "Version": 0,
+    "Id": "string",
+    "State": 0,
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z",
     "Description": "string",
@@ -57,13 +59,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
         "PropertyTypeCode": 0,
         "Id": "string",
         "Name": "string",
+        "GraphQLName": "string",
         "Flags": 0,
         "State": 0,
         "PropertyTypeId": "string",
         "RemoteReferenceName": "string",
         "Description": "string"
       }
-    ]
+    ],
+    "DefaultAuthorizationTag": "string"
   }
 ]
 ```
@@ -74,7 +78,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 
 <a id="opIdEventTypes_Create Event Type With Server Generated Id"></a>
 
-Creates a new EventType. Response includes ETag header..
+Creates a new EventType. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -127,10 +131,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -139,13 +144,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -190,10 +197,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -202,13 +210,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -218,7 +228,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 
 <a id="opIdEventTypes_Get Or Create Event Type"></a>
 
-Creates a new EventType or returns the current one if the body is equivalent to what is stored. Response includes ETag header..
+Creates a new EventType or returns the current one if the body is equivalent to what is stored. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -275,10 +285,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -287,13 +298,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -359,10 +372,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -371,13 +385,15 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -417,7 +433,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{i
 
 <a id="opIdEventTypes_Bulk Create Event Type"></a>
 
-Creates multiple new EventType and returns a list of any errors along with the created objects. Response includes ETag header..
+Creates multiple new EventType and returns a list of any errors along with the created objects. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -433,7 +449,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#EventGraphEventTypeDto<br/>
 
 <h3>Response</h3>
 
@@ -450,10 +466,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -462,13 +479,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -734,21 +753,24 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
 |Name|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|GraphQLName|string|false|true|None|
 |Version|int32|false|false|None|
+|Id|string|false|true|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |CreatedDate|date-time|false|true|None|
 |ModifiedDate|date-time|false|true|None|
 |Description|string|false|true|None|
 |Properties|[[TypeProperty](#schematypeproperty)]|false|true|None|
+|DefaultAuthorizationTag|string|false|true|None|
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -757,13 +779,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 
 ```
@@ -801,6 +825,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 |PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|None|
 |Id|string|false|true|None|
 |Name|string|false|true|None|
+|GraphQLName|string|false|true|None|
 |Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|None|
 |State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |PropertyTypeId|string|false|true|None|
@@ -812,6 +837,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
   "PropertyTypeCode": 0,
   "Id": "string",
   "Name": "string",
+  "GraphQLName": "string",
   "Flags": 0,
   "State": 0,
   "PropertyTypeId": "string",

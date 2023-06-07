@@ -15,7 +15,7 @@ Returns an array of Enumerations in a given namespace and the version ETag in th
 
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
-?skip={skip}&count={count}&includeDeleted={includeDeleted}
+?skip={skip}&count={count}&filter={filter}&includeDeleted={includeDeleted}
 ```
 
 <h4>Parameters</h4>
@@ -25,7 +25,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 <br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeDeleted`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
+<br/><br/>`[optional] boolean includeDeleted`
 <br/><br/>
 
 <h3>Response</h3>
@@ -45,18 +46,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 ```json
 [
   {
-    "Id": "string",
     "Name": "string",
-    "State": 0,
+    "GraphQLName": "string",
     "Version": 0,
+    "Id": "string",
+    "State": 0,
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z",
     "Description": "string",
     "Members": [
       {
         "Name": "string",
+        "GraphQLName": "string",
         "Code": 0,
-        "LifeCycleState": 0,
+        "State": 0,
         "Description": "string"
       }
     ]
@@ -70,7 +73,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 
 <a id="opIdEnumerations_Create Enumeration With Server Generated Id"></a>
 
-Creates a new Enumeration. Response includes ETag header..
+Creates a new Enumeration. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -119,18 +122,20 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -178,18 +183,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -202,7 +209,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 <a id="opIdEnumerations_Get Or Create Enumeration"></a>
 
-Creates a new Enumeration or returns the current one if the body is equivalent to what is stored. Response includes ETag header..
+Creates a new Enumeration or returns the current one if the body is equivalent to what is stored. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -255,18 +262,20 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{i
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -331,18 +340,20 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -378,6 +389,65 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+
+---
+
+## `Bulk Create Enumeration`
+
+<a id="opIdEnumerations_Bulk Create Enumeration"></a>
+
+Creates multiple new Enumeration and returns a list of any errors along with the created objects. Response includes ETag header.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+<h4>Request Body</h4>
+
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
+|207|[ErrorResponse](#schemaerrorresponse)|Partial.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
+
+```json
+{
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
+  "Members": [
+    {
+      "Name": "string",
+      "GraphQLName": "string",
+      "Code": 0,
+      "State": 0,
+      "Description": "string"
+    }
+  ]
+}
+```
 
 ---
 
@@ -639,10 +709,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
 |Name|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|GraphQLName|string|false|true|None|
 |Version|int32|false|false|None|
+|Id|string|false|true|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |CreatedDate|date-time|false|true|None|
 |ModifiedDate|date-time|false|true|None|
 |Description|string|false|true|None|
@@ -650,18 +721,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -700,15 +773,17 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|None|
+|GraphQLName|string|false|true|None|
 |Code|int32|false|false|None|
-|LifeCycleState|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |Description|string|false|true|None|
 
 ```json
 {
   "Name": "string",
+  "GraphQLName": "string",
   "Code": 0,
-  "LifeCycleState": 0,
+  "State": 0,
   "Description": "string"
 }
 

@@ -57,6 +57,10 @@
     - topicUid: cross-region-data-sharing
   - topicUid: gs-ingress
   - topicUid: gs-data-hub-use
+    items:
+      - topicUid: gsStreams
+      - topicUid: gsAssets
+      - topicUid: gs-communities
   - topicUid: gs-egress
 # - topicUid: gs-overview
 #   items:

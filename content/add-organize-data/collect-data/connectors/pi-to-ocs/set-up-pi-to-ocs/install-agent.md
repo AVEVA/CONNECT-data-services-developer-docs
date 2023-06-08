@@ -100,37 +100,45 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
 1. Change to the folder where you have downloaded the PI To Data Hub Agent installation kit. 
 
-1. If you do not wish to configure an Alternate Display Name for your Data Archive or AF Servers, enter the following command: 
+1. If you wish to configure an Alternate Display Name for your Data Archive or AF Servers, enter the following command: 
 
    **Note:** The TENTANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required. All keywords are case sensitive. SERVICEACCOUNT and SERVICEPASSWORD provide the "RunAs" user/password for the PI to Data Hub Agent service to connect to the PI Server (with Read permission). The "RunAs" account typically needs to be specified when PI to Data Hub Agent is remote to PI Data Archive or AF Server. 
 
-   `PItoDataHubAgent_SetupKit.exe TENTANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] DATAARCHIVE=[DataArchiveName] AFSERVER=[AFServerName]SERVICEACCOUNT=[user] SERVICEPASSWORD=[password] AGENTDESCRIPTION= "Your Description" /quiet`
+   `PItoDataHubAgent_SetupKit.exe TENTANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] DATAARCHIVE=[DataArchiveName] AFSERVER=[AFServerName] SERVICEACCOUNT=[user] SERVICEPASSWORD=[password] AGENTDESCRIPTION= "Your Description" /quiet`
 
-1. If you wish to configure an Alternate Display Name for your Data Archive or AF Servers, enter the following command:
+1. If you do not wish to configure an Alternate Display Name for your Data Archive or AF Servers, enter the following command:
 
    **Note:** The TENTANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required. All keywords are case sensitive. 
 
    `PItoDataHubAgent_SetupKit.exe TENTANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] AGENTDESCRIPTION= "Your Description" /quiet`
 
-1. Check that the PIToDataHubAgent service is running. From an administrative command prompt, run the command `net start | find "PI"` and verify that "PI To Data Hub Agent" is in the list. 
+1. Check that the PIToDataHubAgent service is running.
 
-1. Check Event Logs (for Windows Server Core operating systems, you can connect to the Event Viewer remotely) 
+   From an administrative command prompt, run the command `net start | find "PI"` and verify that "PI To Data Hub Agent" is in the list. 
 
-View Event Log > Event Viewer > Applications and Services > PI to Data Hub 
+1. Check the event logs for any errors.
 
-Check for any errors. 
+   Right-click on Start and select **Event Viewer**.
 
-1. Check Setup Logs. Open a command prompt and navigate to `%ProgramData%/OSIsoft/Setup/log`. Logs can be listed from oldest to newest with the command `dir /od`.
+   Select **Applications and Services Logs** and double-click **PI to Data Hub**.
 
-1. (Optional) Configure Alternate Display Name for PI Data Archive and/or AF Server.
+   For Windows Server Core operating systems, you can connect to the Event Viewer remotely.
+
+1. Check the setup logs.
+
+   Open a command prompt and navigate to `%ProgramData%/OSIsoft/Setup/log`.
+
+   Logs can be listed from oldest to newest with the command `dir /od`.
+
+1. (Optional) Configure an Alternate Display Name for PI Data Archive and/or AF Server.
 
    **Note:** Do not configure a PI to Data Hub Transfer until you complete this step if you do not want to replicate your Data Archive or AF Server name to AVEVA Data Hub. 
 
-   a. Open an administrative command prompt and navigate to `%ProgramData%/OSIsoft/PItoDataHub`.
+   1. Open an administrative command prompt and navigate to `%ProgramData%/OSIsoft/PItoDataHub`.
 
-   a. Run the command `notepad.exe appsettings.json`.
+   1. Run the command `notepad.exe appsettings.json`.
 
-   a. To specify an alternate display name for the Data Archive, add the following AlternateDisplayName entry. If you did not specify AFSERVER and DATAARCHIVE on the command line above, you will need to add the server names in this step as well as specifying the alternate display name. 
+   1. To specify an alternate display name for the Data Archive, add the following AlternateDisplayName entry. If you did not specify AFSERVER and DATAARCHIVE on the command line above, you will need to add the server names in this step as well as specifying the alternate display name. 
 
       ```
       "PIDataArchiveServerNames": [ 
@@ -143,7 +151,7 @@ Check for any errors.
         ],
       ```
 
-   a. To specify an alternate display name for AF, add the following AlternateDisplayName Entry: 
+   1. To specify an alternate display name for AF, add the following AlternateDisplayName Entry: 
 
       ```
       "PIAssetFrameworkServerNames": [ 
@@ -156,6 +164,6 @@ Check for any errors.
         ], 
       ```
 
-   a. Save the changes and restart the PI to Data Hub Agent service from an administrative command prompt with the command `net start pitodatahubagent`.
+   1. Save the changes and restart the PI to Data Hub Agent service from an administrative command prompt with the command `net start pitodatahubagent`.
  
 1. Verify your Agent is visible on the `PI to Data Hub Agents` page in the portal and ready to configure. 

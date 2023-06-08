@@ -170,6 +170,7 @@
       - topicUid: VerboseLogging
     - topicUid: lp-troubleshoot
       items: 
+      - topicUid: VerifyPItoADHService
       - topicUid: troubleshoot-failed-af-indexing
       - topicUid: troubleshoot-failed-mapping
       - topicUid: troubleshoot-missing-pida

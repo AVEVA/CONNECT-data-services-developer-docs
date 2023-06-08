@@ -29,8 +29,6 @@ The following table provides descriptions of the fields shown in the configurati
 
 The PI to Data Hub Agent Configuration Utility opens after you install or upgrade a PI to Data Hub Agent. You can open the PI to Data Hub Agent Configuration Utility at any time to change server connections and other settings after initial setup. 
 
-**Note:** If you use a different user account than the one that was used originally to install the agent, authentication is required before you can access the utility. 
-
 To open the PI to Data Hub Agent Configuration Utility:
 
 1. Select **Start** > **AVEVA** > **PI to Data Hub Agent Configuration Utility**, and then select **Yes** to confirm.
@@ -38,7 +36,15 @@ To open the PI to Data Hub Agent Configuration Utility:
 1. Select **Connect to AVEVA Data Hub**.
 
    After successful authentication, the PI to Data Hub Agent Configuration Utility opens.
-   
+
+1. Select a namespace from the **Data Hub Namespace** dropdown list.
+
+1. (Optional) In the **Agent Description** field, enter a descriptive name for the agent.
+
+1. To display the hostname in the portal, select the **Opt-in to publishing PI to Data Hub Agent Hostname** option.
+
+1. Select **Continue**.
+
 ## Add an AF server
 
 Add an AF server to the utility to be able to use it in data transfers. The utility validates an AF server connection to ensure the following criteria is met:
@@ -194,13 +200,11 @@ To create a PI mapping:
 
 1. Select **Close** to return to the utility, and then select **Save** in the utility.
 
-## Set data privacy and add an agent description
+## Set data privacy and edit an agent description
 
-Use the PI to Data Hub Agent Settings to add a descriptive name for the agent and to configure data privacy. This description appears where the agent is referenced and allows you to search by agent description. Data privacy settings control whether a host name of a Data Archive is published and displayed in AVEVA Data Hub. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to Data Hub Agents` page as shown below: 
+Use the PI to Data Hub Agent Settings to edit the descriptive name for the agent and to change the data privacy setting. This description appears where the agent is referenced and allows you to search by agent description. The data privacy setting controls whether the host name of a Data Archive is published and displayed in AVEVA Data Hub. By default, host names are not published. If you opt to have a host name published, it appears in the portal on the `PI to Data Hub Agents` page as shown below: 
 
 ![Agent description and hostname displayed in PI to Data Hub Agents page](../../images/pi-to-ocs-agents-hostname.png)
-
-To configure data privacy and add an agent description:
 
 1. Open the PI to Data Hub Agent Configuration Utility.
 

@@ -56,7 +56,7 @@
     - topicUid: permissions-management
     - topicUid: cross-region-data-sharing
   - topicUid: gs-ingress
-  - topicUid: gs-data-hub-use
+  - topicUid: gs-data-management
     items:
       - topicUid: gsStreams
       - topicUid: gsAssets

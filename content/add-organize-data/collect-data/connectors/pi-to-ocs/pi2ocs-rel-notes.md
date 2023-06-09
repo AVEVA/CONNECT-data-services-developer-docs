@@ -42,4 +42,4 @@ We [proactively disclose](https://docs.aveva.com/bundle/security-commitment-and-
 |---------------------------------- | ---------------- |
 | PI to Data Hub Agent Installation | 2.2.1163         |
 
-©`<2023>` AVEVA Group plc and its subsidiaries. All rights reserved.
+©`2023` AVEVA Group plc and its subsidiaries. All rights reserved.

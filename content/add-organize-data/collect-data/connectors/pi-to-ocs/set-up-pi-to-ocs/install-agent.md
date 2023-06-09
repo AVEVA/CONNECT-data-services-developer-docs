@@ -118,17 +118,17 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
 1. Check the event logs for any errors.
 
-   Right-click on Start and select **Event Viewer**.
+   1. Right-click on Start and select **Event Viewer**.
 
-   Select **Applications and Services Logs** and double-click **PI to Data Hub**.
+   1. Select **Applications and Services Logs** and double-click **PI to Data Hub**.
 
    For Windows Server Core operating systems, you can connect to the Event Viewer remotely.
 
 1. Check the setup logs.
 
-   Open a command prompt and navigate to `%ProgramData%/OSIsoft/Setup/log`.
+   1. Open a command prompt and navigate to `%ProgramData%/OSIsoft/Setup/log`.
 
-   Logs can be listed from oldest to newest with the command `dir /od`.
+   1. Logs can be listed from oldest to newest with the command `dir /od`.
 
 1. (Optional) Configure an Alternate Display Name for PI Data Archive and/or AF Server.
 

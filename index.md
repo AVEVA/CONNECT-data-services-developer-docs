@@ -2,8 +2,8 @@
 uid: index
 ---
 
-# AVEVA™ Data Hub
-
-## [API Reference](xref:osisoftCloudServices)
+# AVEVA™ Data Hub Developer Content
 
 ## [Developer guide](xref:lp-dev-guide)
+
+## [API Reference](xref:osisoftCloudServices)

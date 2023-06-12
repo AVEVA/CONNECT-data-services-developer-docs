@@ -1,12 +1,7 @@
 
-# AVEVA Data Hub Docs
+# AVEVA Data Hub Developer Documentation
 
-AVEVA Data Hub is an AVEVA Connect application for storing, retrieving, and analyzing sequentially indexed data. This repository contains the documentation for AVEVA Data Hub.
-## Notes
-
-This repository is forked from the [OSIsoft Cloud Services documentation repository](https://github.com/osisoft/OCS-Docs). Updates from this upstream repository are synced to the AVEVA Data Hub documentation repository periodically.
-
-AVEVA Data Hub is a rebranding of OSIsoft Cloud Services. When AVEVA completes this rebrand, the OSIsoft Cloud Services documentation repository will be retired, and the AVEVA Data Hubs documentation repository will supercede it at a date to be determined.
+AVEVA Data Hub is an AVEVA Connect application for storing, retrieving, and analyzing sequentially indexed data. This repository contains the documentation for AVEVA Data Hub. This developer documentation includes a developer guide and API reference about using the AVEVA Data Hub API.
 
 ## License
 

@@ -1,7 +1,9 @@
 - name: API console
-  topicHref: api-console.md
+  topicUid: apiConsole
 - name: Regional endpoints
-  topicHref: regional-endpoints.md
+  topicUid: regional-endpoints
+- name: HTTP status codes
+  topicUid: ocsStatusCodes
 - name: Asset store
   href: assets/toc.yml
   topicHref: assets/assets.md
@@ -35,5 +37,3 @@
 - name: Tenant management
   href: tenant/toc.yml
   topicHref: tenant/management-overview.md
-- name: HTTP status codes
-  topicHref: http-status-codes.md

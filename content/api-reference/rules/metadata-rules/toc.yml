@@ -1,8 +1,8 @@
 - name: Access control 
-  topicHref: metadata-access-control-list.md
+  topicUid: metadata-access-control-list
 - name: Metadata rules
-  topicHref: metadata-metadata-rules.md
+  topicUid: metadata-metadata-rules
 - name: Metadata rules preview
-  topicHref: metadata-metadata-rule-preview.md
+  topicUid: metadata-metadata-rule-preview
 - name: Metadata rule suggestion 
-  topicHref: metadata-metadata-rule-suggestion.md
+  topicUid: metadata-metadata-rule-suggestion

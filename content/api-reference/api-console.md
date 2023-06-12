@@ -48,8 +48,8 @@ When entering a URI for a namespace- or community-scoped API request, the API co
 
 While making requests using the API console, you can copy or download the response body by choosing the appropriate icon.
 
-- Choose **Copy** ![copy](../../_icons/default/content-copy.svg) to copy the response body to your clipboard.
-- Choose **Download** ![download](../../_icons/default/download.svg) to download the response body.
+- Choose **Copy** ![copy](../_icons/default/content-copy.svg) to copy the response body to your clipboard.
+- Choose **Download** ![download](../_icons/default/download.svg) to download the response body.
 
 When working with Data Views resources, response bodies are downloaded in the file format specified in the **form** dropdown. Response bodies for other resources are downloaded as JSON.
 

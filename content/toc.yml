@@ -237,6 +237,8 @@
         - topicUid: manage-data-views-permissions
         - topicUid: data-views-retrieve
         - topicUid: data-view-api-console-use
+        - topicUid: data-view-data-type-conversion
+        - topicUid: data-views-parquet-format
         - topicUid: data-view-troubleshooting
     - topicUid: PowerBI
       items:

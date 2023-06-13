@@ -6,6 +6,10 @@ uid: data-view-api-console-use
 
 While creating or editing a data view, you can launch it within the API Console by choosing the **View in API Console** button. Launching the data view in the API console allows you to refine the data view endpoint query before specifying its URI in your application code or Microsoft Power BI.
 
+**View in API Console button**
+
+![view-in-api-console](_images/view-in-api-console.png)
+
 ## Data view API console parameters
 
 When viewing a data view from the API Console, you can edit the default parameters that you configured during initial creation of the data view. Additionally, you can provide continuation tokens (in support of data pagination), caching data, or choosing different support response formats.

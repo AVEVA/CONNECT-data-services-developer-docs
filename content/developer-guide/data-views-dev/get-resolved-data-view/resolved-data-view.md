@@ -48,7 +48,16 @@ The defaults are intended to strike a balance between predictability and freshne
 
 #### Invalidation
 
-[!include[data-view-opt-out](../../../_includes/data-view-opt-out.md)]
+If the data view is modified, any cached information is reset. The data view re-resolves the next time that information is requested.
+
+No guarantee is made of the durability or lifespan of cached information. If cached information is invalidated, the data view is re-resolved the next time that information is requested.
+
+Cached information may be reset under any of the following circumstances:
+
+- The data view is modified
+- A community referenced by the data view is modified (for example, sharing is paused)
+- The cached information expiration time elapses
+- System maintenance
 
 #### Paging through data
 When using the [Data API](xref:data-views-data-views-data) to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on [Getting Data](xref:DataViewsQuickStartGetData) describes how the paging token helps guarantee consistency.

@@ -42,9 +42,9 @@ To import a system configuration from the field to the corresponding system digi
 
 1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
 
-1. Find and select the edge device to configure.
+1. Find and select the system to configure.
 
-1. Select **Edit System**.
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
 
 1. Select **Import Configuration**.
 
@@ -58,7 +58,31 @@ To import a system configuration from the field to the corresponding system digi
 
 1. To confirm the changes, select **Save & Close**.
 
-## Edit an system configuration
+## Copy a configuration from a configuration template
+
+To copy a system configuration from a template to the corresponding system digital twin:
+
+1. In the left pane, select **Data Collection** > **Edge Data Store & Adapters**.
+
+1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
+
+1. Find and select the system to configure.
+
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
+
+1. Select **Copy From Configuration Template**.
+
+1. You can use the **Filter Templates** search bar to find the configuration template you want to apply to your system.
+
+    - You can filter by configuration template name, description, or version number.
+    
+    - Select **Edit Configuration Template** to edit a configuration template before you apply it to a system.
+
+1. Select the configuration template you want to apply to a system.
+
+1. Select **Save and Close**.
+
+## Edit a system configuration
 
 To edit a system configuration and export it for use:
 
@@ -66,9 +90,9 @@ To edit a system configuration and export it for use:
 
 1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
 
-1. Find and select the edge device to configure.
+1. Find and select the system to configure.
 
-1. In the right pane, select **Edit System** or ![Edit](../../../_icons/default/pencil.svg).
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
 
 1. To manage the tags for a system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
 

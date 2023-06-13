@@ -10,6 +10,14 @@ AVEVA Data Hub can output your data view in Apache Parquet, an open source, colu
 
 When you request a data view in Parquet format, AVEVA Data Hub serializes the data from text-based data to the Parquet binary file format, which is not human-readable. To read the Parquet file, you will need to open it with a programming language routine or application capable of deserialization, such as Databricks, Snowflake, Azure, AWS, and so on.
 
+## Parquet file download
+
+While making requests against a dataview in the AVEVA Data Hub [API Console](xref:apiConsole) with the Parquet form selected, you can download the request as a Parquet file that you can open in an application that supports the format. Select **Download Parquet File** to download the file.
+
+**API Console: Download Parquet File**
+
+![API Console: Download Parquet File](_images/download-parquet.png)
+
 ## Handling multiple data types
 
 When you request a data view that includes multiple data types in a single column:

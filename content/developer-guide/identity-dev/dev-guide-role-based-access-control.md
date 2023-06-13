@@ -25,7 +25,7 @@ The following table shows whether endpoint collections have an endpoint for acce
 | [Asset store](xref:assets-access-control-list) | &#10004; |
 | [Communities](../../api-reference/identity/community-tenant-collection-acls.md)<sup>1</sup> | &#10004; |
 | [Data collection](xref:omf-ingress-access-control) | &#10004; |
-| [Data views](xref:DataViewsAccessControlAPI) | &#10004; |
+| [Data views](xref:data-views-access-control) | &#10004; |
 | Identity and access management | ✘ |
 | Operations | ✘ |
 | [Rules: Asset rules](xref:assets-access-control-list) | &#10004; |

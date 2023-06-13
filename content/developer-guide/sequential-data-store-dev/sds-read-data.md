@@ -107,7 +107,7 @@ The stream identifier
 ## Bulk reads
 
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
-* [Join Values](xref:sds-stream-data#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
+* [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
 <!-- removing per Chris feedback
 Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:

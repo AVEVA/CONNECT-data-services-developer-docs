@@ -16,4 +16,4 @@ You can integrate and view AVEVA Data Hub data in the following ways:
 - Use the REST APIs to read and write data to AVEVA Data Hub.
 - Retrieve tabular data with Data Views.
 
-You must have an AVEVA Connect™ account to use AVEVA Data Hub. See <xref:what-is-cnnxt>. To request an AVEVA Data Hub tenant account, contact [AVEVA](https://www.aveva.com/en/contact/).
+You must have an AVEVA Connect™ account to use AVEVA Data Hub. To request an AVEVA Data Hub tenant account, contact [AVEVA](https://www.aveva.com/en/contact/).

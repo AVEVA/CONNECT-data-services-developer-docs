@@ -41,7 +41,7 @@ When requesting data views from the API Console, the REST API is capable of retu
 | tableh (Table with headers) | Table-style JSON with header row. |
 | csv (Comma separated values) | Comma-separated values. |
 | csvh (Comma separated values with headers) | Comma-separated values with header row. |
-| parquet | Parquet format. For more information on the Parquet format, see <xref:data-views-parquet-format>. |
+| parquet (Apache Parquet) | Parquet format. For more information on the Parquet format, see <xref:data-views-parquet-format>. |
 
 ## Copy or download response body
 

@@ -29,15 +29,6 @@ For AF server transfers, write permission on the assets collection is also requi
 
 To remove items from a transfer and also the corresponding streams and/or assets from the portal via Edit transfer mode, the user account used to edit the transfer must be the owner with write permission on the items. 
 
-## Configure access to PI Data Archive security tables and PI point data
-
-The account you configure to run the PI to Data Hub Agent service on the host computer must have read access to the following PI Data Archive data:
-
-* Archive data (the PIARCDATA Security table)
-* The PI points configuration table (PIPOINT Security table)
-* The PI points and data to be transferred
-* Read permission to the AF server, elements, and AF attribute data
-
 ## Open firewall port for communication to PI to Data Hub
 
 Port 443 must be opened for https communication to the PI to Data Hub gateway. The URL used for https communication depends on the namespace to which the agent is communicating, as indicated in the following table.

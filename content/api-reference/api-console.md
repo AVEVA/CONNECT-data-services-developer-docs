@@ -6,17 +6,17 @@ uid: apiConsole
 
 The API Console provides a graphical interface for using the REST API. Developers can use this console to configure and test API requests before implementing them in their own applications. When using the API Console, you select a GET, POST, PUT, DELETE, or PATCH action, select the objects for the action, and execute. To use the API Console, select select **Developer Tools** > **API Console** from the left pane.
 
-## Request Area
+## Request area
 
 Use the request area to configure an API request to AVEVA Data Hub. Use this space to choose a version of the API, the request scope, the request verb, and the URI endpoint. This area is also used to configure the request header, body, and parameters.
 
 ![request area](../_images/request-area.png)
 
-### API Version
+### API version
 
 Select a version from the dropdown list. For more information on the available versions, see [AVEVA Data Hub API versioning](xref:osisoftCloudServices#aveva-data-hub-api-versioning).
 
-### Tenant Path Button
+### Tenant path
 
 Select the **Root/Tenant path enabled** ![root/tenant path enabled](../_icons/default/home.svg) icon to toggle between a tenant-scoped path or a root-scoped path. The **Full Path** field (which is readonly) updates according to your selection.
 
@@ -84,7 +84,7 @@ When the **Load from Response** ![load from response](../_icons/branded/book-arr
 - There is a response present.
 - The current response verb, path, and query parameters (excluding the `continuationToken`) all match the current request.
 
-### Copy Request URI
+### Copy request URI
 
 This button copies the request URI to your clipboard.
 
@@ -104,11 +104,11 @@ Use the response area to view the API response to your previous request. This ar
 
 The **Details** tab lists metadata related to the previous API request, along with the response body (if you made a `POST`, `PUT`, or `PATCH` request).
 
-#### URI Path
+#### URI path
 
 This field displays the method and URI used in the previous API request.
 
-#### HTTP Status
+#### HTTP status
 
 The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made in AVEVA Data Hub, the system returns one of the codes listed in the table below. For more information about the possible status codes, see <xref:ocsStatusCodes>.
 

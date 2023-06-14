@@ -137,7 +137,7 @@ To create an AF Mapping:
 
 ## Add a Data Archive
 
-If you plan on transferring AF server data, it is recommended to add an AF server first, because the PI to Data Hub Configuration Utility will detect automatically the PI Data Archive servers that are referenced by AF server, allowing you to select the source PI Data Archive that contains the PI points you want to transfer. However, you can also add a PI Data Archive without adding an AF server.
+If you plan on transferring AF server data, it is recommended to add an AF server first, because the PI to Data Hub Agent Configuration Utility will detect automatically the PI Data Archive servers that are referenced by AF server, allowing you to select the source PI Data Archive that contains the PI points you want to transfer. However, you can also add a PI Data Archive without adding an AF server.
 
 **Note:** There is a one-to-one (1:1) PI Data Archive to PI to Data Hub Agent constraint for PI to Data Hub transfers. If your AF server references multiple Data Archives, only one Data Archive can be selected and configured for the transfer.  
 
@@ -219,7 +219,7 @@ Use the PI to Data Hub Agent Settings to edit the descriptive name for the agent
 
 ## List of agent states
 
-After saving in the PI to Data Hub Agent Configuration Utility, it may take a few minutes for the PI to Data Hub Agent to register with AVEVA Data Hub. The table below lists the various states that may appear under **Agent State** in the PI to Data Hub Configuration Utility.
+After saving in the PI to Data Hub Agent Configuration Utility, it may take a few minutes for the PI to Data Hub Agent to register with AVEVA Data Hub. The table below lists the various states that may appear under **Agent State** in the PI to Data Hub Agent Configuration Utility.
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |

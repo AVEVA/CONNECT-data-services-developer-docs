@@ -18,6 +18,6 @@ If Internet Explorer Enhanced Security Configuration (IE ESC) is turned on, you 
 
 1. Select **OK**.
 
-You should now be able to connect via the PI to Data Hub configuration utility.
+You should now be able to connect via the PI to Data Hub Agent Configuration Utility.
 
 **Note:** You can turn on IE Enhanced Security Configuration after you complete the PI to Data Hub Agent installation. See [FAQ about IE ESC](https://docs.microsoft.com/en-us/troubleshoot/developer/browsers/security-privacy/enhanced-security-configuration-faq) for more information.

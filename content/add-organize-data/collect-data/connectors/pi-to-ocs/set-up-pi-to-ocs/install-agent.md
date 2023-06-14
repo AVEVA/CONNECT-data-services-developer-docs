@@ -8,7 +8,7 @@ The PI to Data Hub Agent can be installed as part of the PI Server installation 
 
 ## Configure access to PI Data Archive Security tables, PI point data, and optional AF server
 
-For the following PI Server data, you will need to enable read access to the PI identity, PI group, or PI user that the PI to Data Hub Agent is connecting as. For AF Server, ensure the AF Identity that the PI to Data Hub Agent is connecting as has read access to the elements and attributes to be transferred. 
+For the following PI Data Archive security configuration items, you will need to enable read access to the PI identity, PI group, or PI user that the PI to Data Hub Agent is connecting as. 
 
 - Archive data (PIARCDATA Security table)
 
@@ -16,9 +16,7 @@ For the following PI Server data, you will need to enable read access to the PI 
 
 - The PI points and data to be transferred
 
-- The AF server elements and attributes to be transferred 
-
-If PI to Data Hub is remote to PI Data Archive and AF server, it is recommended to use a domain account as the `Run as` user for the PI to Data Hub Agent service. 
+For AF Server security configuration, ensure the AF Identity that the PI to Data Hub Agent is connecting as has read access to the elements and attributes to be transferred. 
 
 ## Install the PI to Data Hub Agent
 
@@ -54,9 +52,9 @@ To install the standalone PI to Data Hub Agent:
 
 1. After the agent is installed, select **Close**.
 
-   The PI to Data Hub Configuration Utility opens. See [Run the PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
+   The PI to Data Hub Agent Configuration Utility opens. See [Run the PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
 
-   **Note:** Agent registration is not complete until you add and configure a PI Data Archive server in the PI to Data Hub Configuration Utility.
+   **Note:** Agent registration is not complete until you add and configure a PI Data Archive server in the PI to Data Hub Agent Configuration Utility.
 
 ## Silent Installation Instructions for PI to Data Hub Agent 
 
@@ -70,7 +68,7 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
 ### Silent installs for new installations 
 
-These instructions can be used to set up a new installation of the PI to Data Hub Agent, configured with connections to AVEVA Data Hub, without needing to run the PI to Data Hub Configuration Utility. The command lines in this section can be used for upgrades as well, but tenant, namespace, PI Data Archive, and AF server cannot be changed during an upgrade. Command line parameters related to this will be ignored. For the minimal command line needed for upgrades, see Silent Installations for Upgrades or Minimal New Installations.
+These instructions can be used to set up a new installation of the PI to Data Hub Agent, configured with connections to AVEVA Data Hub, without needing to run the PI to Data Hub Agent Configuration Utility. The command lines in this section can be used for upgrades as well, but tenant, namespace, PI Data Archive, and AF server cannot be changed during an upgrade. Command line parameters related to this will be ignored. For the minimal command line needed for upgrades, see Silent Installations for Upgrades or Minimal New Installations.
 
 1. Create a client-credentials client with an assigned role of Tenant Contributor and add a secret. See <xref:gpClientCredentialsClient>.
 
@@ -168,7 +166,7 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 
 ### Silent installations for upgrades or minimal new installations 
 
-These instructions can be used to upgrade the PI to Data Hub Agent. They can also be used for a new installation of the PI to Data Hub Agent, but the installation requires configuration with the PI to Data Hub Configuration Utility for the new installation.   
+These instructions can be used to upgrade the PI to Data Hub Agent. They can also be used for a new installation of the PI to Data Hub Agent, but the installation requires configuration with the PI to Data Hub Agent Configuration Utility for the new installation.   
 
 1. Open a Windows command prompt as an administrator. 
 
@@ -178,4 +176,4 @@ These instructions can be used to upgrade the PI to Data Hub Agent. They can als
 
    `PItoDataHubAgent_SetupKit.exe /quiet`
 
-The above command is sufficient for an upgrade. For a new installation, run the PI to Data Hub Configuration Utility to register the PI to Data Hub Agent after the silent installation completes.
+The above command is sufficient for an upgrade. For a new installation, run the PI to Data Hub Agent Configuration Utility to register the PI to Data Hub Agent after the silent installation completes.

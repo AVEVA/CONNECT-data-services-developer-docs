@@ -8,7 +8,7 @@ The API Console provides a graphical interface for using the AVEVA Data Hub REST
 
 ## Request area
 
-Use the request area to configure an API request. Use this space to choose a version of the API, the request scope, the request verb, and the URI endpoint. This area is also used to configure the request header, body, and parameters.
+Use the request area to configure an API request. Choose a version of the API, the request scope, the request verb, and the URI endpoint. This area is also used to configure the request header, body, and parameters.
 
 ![request area](../_images/request-area.png)
 

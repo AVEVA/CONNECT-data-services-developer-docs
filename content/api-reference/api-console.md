@@ -100,19 +100,33 @@ Use the response area to view the API response to your previous request. This ar
 
 ![response area](../_images/response-area.png)
 
+### Body
+
+The **Body** tab displays the JSON payload returned by the API following a request.
+
+### Table
+
+The **Table** tab displays the JSON response body in tablular form.
+
+### CSV
+
+For routes that support responses in CSV format, such as Data Views, a CSV tab is available. This tab displays the response body as CSV.
+
+### Parquet
+
+When making requests to the <xref:data-views-data-views-data> route, responses are available in the Parquet format. For more information, see <xref:data-views-parquet-format>.
+
 ### Details
 
-The **Details** tab lists metadata related to the previous API request, along with the response body (if you made a `POST`, `PUT`, or `PATCH` request).
+The **Details** tab lists metadata related to the previous API request, including:
 
-#### URI path
+- **URI Path**: This field displays the method and URI used in the previous API request. Select **Copy** ![copy](../../_icons/default/content-copy.svg) to copy the URI to your clipboard.
 
-This field displays the method and URI used in the previous API request.
+- **HTTP status**: The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made to AVEVA Data Hub, the system returns a status code. For more information about the possible status codes, see <xref:ocsStatusCodes>.
 
-#### HTTP status
+- **Link**: For `GET` requests that include a [continuation token](#continuation-token), one or more link header is included in support of pagination. Each header is a clickable link.
 
-The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made to AVEVA Data Hub, the system returns a status code. For more information about the possible status codes, see <xref:ocsStatusCodes>.
-
-#### Toolbar
+### Toolbar icons
 
 While making requests using the API console, you can copy or download the response body by choosing the appropriate icon.
 
@@ -120,9 +134,3 @@ While making requests using the API console, you can copy or download the respon
 - Choose **Download** ![download](../_icons/default/download.svg) to download the response body.
 
 When working with Data Views resources, response bodies are downloaded in the file format specified in the **form** dropdown. Response bodies for other resources are downloaded as JSON.
-
-#### Response body
-
-The response body displays the payload returned by the API following a request. Supported response formats include JSON, verbose JSON, and SDS. The default response format for SDS is JSON. Default JSON responses do not include any values that are equal to the default value for their type. To specify SDS format, set the Accept header in the request to application/sds.
-
-When making requests to the <xref:data-views-data-views-data> route, responses are available in the Parquet format. For more information, see <xref:data-views-parquet-format>.

@@ -34,7 +34,7 @@ Use the **Verb** dropdown to select a request method. By default the API Console
 
 ### URI
 
-Use the **URI** field to enter an API route to make a request against. If your request is tenant-scoped, you can type a forward slash (/) in the field to display a dropdown list of path autocomplete options. If you selected a root-scoped path, a different dropdown list gives you other categories of data.
+Use the **URI** field to enter an API route to make a request against. If your request is tenant-scoped, you can type a forward slash (/) in the field to display a dropdown list of path autocomplete options. If you select a root-scoped path, a different dropdown list gives you other categories of data.
 
 For a complete reference of URI endpoints available in the AVEVA Data Hub API, refer to the [API Reference](xref:osisoftCloudServices).
 

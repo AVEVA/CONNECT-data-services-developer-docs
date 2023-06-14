@@ -40,7 +40,7 @@ For a complete reference of URI endpoints available in the AVEVA Data Hub API, r
 
 #### Path autocomplete
 
-When entering a URI for an API request, the API console automatically suggests available identifiers for path completion. Additionally, a chip next to the identifier displays the resource name that it resolves to. Resources are listed in alphabetical order.
+When entering a URI for an API request, the API console automatically suggests available identifiers for path completion. Additionally, a tag next to the identifier displays the resource name that it resolves to. Resources are listed in alphabetical order.
 
 ![Path autocomplete](images/api-console-autocomplete.png)
 

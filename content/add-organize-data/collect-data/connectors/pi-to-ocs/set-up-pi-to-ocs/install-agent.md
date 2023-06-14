@@ -161,6 +161,7 @@ These instructions can be used to set up a new installation of the PI to Data Hu
    1. Save the changes and restart the PI to Data Hub Agent service from an administrative command prompt with the commands:
 
       `net stop pitodatahubagent`
+
       `net start pitodatahubagent`
 
 1. Verify your agent is visible on the `PI to Data Hub Agents` page in the portal and ready to configure. 

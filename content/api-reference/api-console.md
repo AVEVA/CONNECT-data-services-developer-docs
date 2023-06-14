@@ -4,11 +4,11 @@ uid: apiConsole
 
 # API console
 
-The API Console provides a graphical interface for using the REST API. Developers can use this console to configure and test API requests before implementing them in their own applications. When using the API Console, you select a GET, POST, PUT, DELETE, or PATCH action, select the objects for the action, and execute. To use the API Console, select select **Developer Tools** > **API Console** from the left pane.
+The API Console provides a graphical interface for using the AVEVA Data Hub REST API. Developers can use this console to configure and test API requests before implementing them in their own applications. To use the API Console, select select **Developer Tools** > **API Console** from the left pane.
 
 ## Request area
 
-Use the request area to configure an API request to AVEVA Data Hub. Use this space to choose a version of the API, the request scope, the request verb, and the URI endpoint. This area is also used to configure the request header, body, and parameters.
+Use the request area to configure an API request. Use this space to choose a version of the API, the request scope, the request verb, and the URI endpoint. This area is also used to configure the request header, body, and parameters.
 
 ![request area](../_images/request-area.png)
 
@@ -24,7 +24,7 @@ The **Full Path** field shows an encrypted version of the selections you have ma
 
 ### Verb
 
-Use the **Verb** dropdown to select a request method. By default the API Console selects the `GET` method for new request. `GET` methods are typically for retrieving data from an API. You can use a variety of other methods to send data to your APIs, including:
+Use the **Verb** dropdown to select a request method. By default the API Console selects the `GET` method for new request. You can use a variety of other methods to send data to your APIs, including:
 
 - `GET`: Retrieves data.
 - `POST`: Adds new data.
@@ -68,7 +68,7 @@ When making `POST`, `PUT`, or `PATCH` requests, you can enter your JSON payload 
 
 ### Parameters
 
-When making `GET` requests, you can specify parameters available for the route on the **Parameters** tab. The parameter fields available will change based on the route configured in the URI field. For more information on the parameters available for each route, refer to the [API Reference](xref:osisoftCloudServices).
+When making `GET` requests, you can specify parameters available for the route on the **Parameters** tab. The parameter fields available will change based on the route configured in the URI field. Query parameters are appended to the end of the request URI. For more information on the parameters available for each route, refer to the [API Reference](xref:osisoftCloudServices).
 
 #### Continuation token
 
@@ -78,11 +78,11 @@ The continuation token parameter is available when working with streams or data 
 
 The continuation token serves as a marker or reference point that helps you keep track of your progress and indicates where you left off. When you want to fetch the next portion of the data, you include the continuation token in your subsequent API request. Continuation tokens are only supported for `GET` requests.
 
-When the **Load from Response** ![load from response](../_icons/branded/book-arrow-right-outline.svg) button is enabled, the continuation token from the last API console data view request is loaded into the `continuationToken` field automatically. The continuation token will be loaded from the response when all of the following conditions are met:
+When the **Load from Response** ![load from response](../_icons/branded/book-arrow-right-outline.svg) button is enabled, the continuation token from the last API console data view request is loaded into the **continuationToken** field automatically. The continuation token will be loaded from the response when all of the following conditions are met:
 
 - The request verb is `GET`.
 - There is a response present.
-- The current response verb, path, and query parameters (excluding the `continuationToken`) all match the current request.
+- The current response verb, path, and query parameters (excluding the **continuationToken**) all match the current request.
 
 ### Copy request URI
 
@@ -110,7 +110,7 @@ This field displays the method and URI used in the previous API request.
 
 #### HTTP status
 
-The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made in AVEVA Data Hub, the system returns one of the codes listed in the table below. For more information about the possible status codes, see <xref:ocsStatusCodes>.
+The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made to AVEVA Data Hub, the system returns a status code. For more information about the possible status codes, see <xref:ocsStatusCodes>.
 
 #### Toolbar
 

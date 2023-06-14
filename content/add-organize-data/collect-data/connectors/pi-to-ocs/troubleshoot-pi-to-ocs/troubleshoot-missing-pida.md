@@ -4,7 +4,7 @@ uid: troubleshoot-missing-pida
 
 # Troubleshoot missing PI Data Archive configuration
 
-If a PI to Data Hub agent's status appears as `No PI Data Archive Configured` in the `PI to Data Hub Agent` window, you may be missing a PI mapping from your Data Archive server to your agent service account. You can correct this issue in the PI to Data Hub Agent Configuration Utility.
+If a PI to Data Hub Agent's status appears as `No PI Data Archive Configured` in the `PI to Data Hub Agent` window, you may be missing a PI mapping from your Data Archive server to your agent service account. You can correct this issue in the PI to Data Hub Agent Configuration Utility.
 
 **Note:** There may be different reasons why the `No PI Data Archive Configured` status appears under **Data Archive Connection Status** in the PI to Data Hub Agent Configuration Utility. This topic addresses troubleshooting due to a missing PI mapping.
 

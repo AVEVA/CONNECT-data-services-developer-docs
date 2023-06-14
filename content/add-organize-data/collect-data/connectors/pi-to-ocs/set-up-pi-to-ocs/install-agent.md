@@ -4,25 +4,11 @@ uid: install-agent
 
 # Install the PI to Data Hub Agent
 
-The PI to Data Hub Agent can be installed as part of the PI Server installation kit, or as a standalone install. When you install the PI to Data Hub Agent, make sure to follow these guidelines:
-
-- Use a domain account that has been granted Administrator privileges on a computer registered to the same domain.
-
-- Enable read access to Data Archive security tables and the PI points and data to be transferred.
-
-- Enable read access to the AF server elements and attributes to be transferred.
-
-- Use an account that is assigned to the `Tenant Administrator` role for the PI to Data Hub Agent installation.
-
-- For heavy workloads, install the agent on a host computer separate from your PI Server deployment.
-
-You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on the portal and then transfer it to the computer that will host the agent.
-
-**Note:** The PI to Data Hub Agent installation cannot be completed if the system time is not correct. Additionally, you will not be able to complete the PI to Data Hub Agent installation if Internet Explorer Enhanced Security Configuration is enabled. For more information, see [Disable Internet Explorer Enhanced Security Configuration](xref:disable-ie-security). 
+The PI to Data Hub Agent can be installed as part of the PI Server installation kit, or as a standalone install.
 
 ## Configure access to PI Data Archive Security tables, PI point data, and optional AF server
 
-**Important:** The PI to Data Hub Agent requires the Windows service account to `Run as user`. Enable read access to the following PI Server data:
+For the following PI Server data, you will need to enable read access to the PI identity, PI group, or PI user that the PI to Data Hub Agent is connecting as. For AF Server, ensure the AF Identity that the PI to Data Hub Agent is connecting as has read access to the elements and attributes to be transferred. 
 
 - Archive data (PIARCDATA Security table)
 
@@ -32,17 +18,21 @@ You can download the PI to Data Hub Agent from the PI to Data Hub Agents page on
 
 - The AF server elements and attributes to be transferred 
 
+If PI to Data Hub is remote to PI Data Archive and AF server, it is recommended to use a domain account as the `Run as` user for the PI to Data Hub Agent service. 
+
 ## Install the PI to Data Hub Agent
+
+This section describes how to install the PI to Data Hub Agent using the standalone PI to Data Hub Agent installation kit. For guidance on installing the PI to Data Hub Agent with the PI Server installation kit, refer to the PI Server 2023 (or greater) documentation. 
 
 To install the standalone PI to Data Hub Agent:
 
-1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
+1. In the left pane of the AVEVA Data Hub portal, select **Data Collection** > **PI to Data Hub Agents**.
 
 1. Select **Download Agent**.
 
 1. On the `Agent Installer Download` window, select **Download**. When the download completes, close the window.
 
-1. Open the downloaded PI to Data Hub agent installation file, then select **Yes** to confirm running the installation file.
+1. Open the downloaded PI to Data Hub Agent installation file, then select **Yes** to confirm running the installation file.
    
    The `Welcome` page of the PI to Data Hub Agent window opens.
 
@@ -50,13 +40,15 @@ To install the standalone PI to Data Hub Agent:
 
    The `Service Account` page opens.
 
+   **Note:** The Service Account page is shown only for new installations.
+
 1. On the `Service Account` page, select the service account type for the connection:
 
-   - **NT Service** - Enter an NT account to connect to PI Data Archive.
+   - **NT Service** - Select NT account for the service to run as NT SERVICE\PIToDataHubAgent.
 
-   - **This account** - Specify a user name and password (domain\account) to connect to PI Data Archive.
+   - **This account** - Specify a username and password (domain\account) for the `Run as` user for the PI to Data Hub Agent service.
 
-   **Note:** The service account requires read access to the PIARCDATA Security and PIPOINT Security tables, the PI points and data to be transferred, and the AF server, elements, and attribute data.
+   **Note:** For Windows integrated security, the service account selected on this page determines the account to use for PI Identity mapping and AF Mapping. The `Run as` user can be changed after the installation from the Windows Service control panel. Changing this account may require configuration changes to PI Mapping and AF Mapping, but changing the account will not otherwise affect the access to local resources needed by the agent.
 
 1. Select **Install**.
 
@@ -64,7 +56,7 @@ To install the standalone PI to Data Hub Agent:
 
    The PI to Data Hub Configuration Utility opens. See [Run the PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
 
-   **Note:** An agent cannot be registered until a PI Data Archive server has been added and configured in the PI to Data Hub Configuration Utility.
+   **Note:** Agent registration is not complete until you add and configure a PI Data Archive server in the PI to Data Hub Configuration Utility.
 
 ## Silent Installation Instructions for PI to Data Hub Agent 
 
@@ -72,9 +64,13 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
 - Silent installations are useful for automating deployments. 
 
-- Silent installations avoid browser logins to PI to Data Hub. In particular, a new, interactive installation requires that Internet Explorer enhanced security be disabled, and some customers cannot disable this security. 
+- Silent installations avoid browser logins to PI to Data Hub. A new, interactive installation requires that Internet Explorer Enhanced Security be disabled, and some customers cannot disable this security. 
 
 - Installations of the PI to Data Hub Agent on Windows Server Core Operating System is supported only with a silent installation. 
+
+### Silent installs for new installations 
+
+These instructions can be used to set up a new installation of the PI to Data Hub Agent, configured with connections to AVEVA Data Hub, without needing to run the PI to Data Hub Configuration Utility. The command lines in this section can be used for upgrades as well, but tenant, namespace, PI Data Archive, and AF server cannot be changed during an upgrade. Command line parameters related to this will be ignored. For the minimal command line needed for upgrades, see Silent Installations for Upgrades or Minimal New Installations.
 
 1. Create a client-credentials client with an assigned role of Tenant Contributor and add a secret. See <xref:gpClientCredentialsClient>.
 
@@ -94,23 +90,23 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
    ![NamespaceID in API response](../../images/namespace-id.png)
 
-   **Note:** If you have multiple namespaces, you will have multiple entries in this list. Be sure to select the NAMESPACE Id of the namespace where you want PI to Data Hub to send data. 
+   **Note:** If you have multiple namespaces, you will have multiple entries in this list. Be sure to select the NAMESPACE Id of the namespace where you want PI to Data Hub Agent to send data. 
 
 1. Open a Windows command prompt as an administrator.
 
 1. Change to the folder where you have downloaded the PI To Data Hub Agent installation kit. 
 
-1. If you wish to configure an Alternate Display Name for your Data Archive or AF Servers, enter the following command: 
+1. If you do not need to configure an Alternate Display Name for your Data Archive or AF servers, enter the following command. This command will immediately register the agent with the actual PI Data Archive name specified by the DATAARCHIVE command line argument.
 
-   **Note:** The TENTANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required. All keywords are case sensitive. SERVICEACCOUNT and SERVICEPASSWORD provide the "RunAs" user/password for the PI to Data Hub Agent service to connect to the PI Server (with Read permission). The "RunAs" account typically needs to be specified when PI to Data Hub Agent is remote to PI Data Archive or AF Server. 
+   **Note:** The TENANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required for the agent to connect to AVEVA Data Hub at installation time. All keywords are case sensitive. SERVICEACCOUNT and SERVICEPASSWORD provide the `Run As` user and password, respectively, for the PI to Data Hub Agent service. 
 
-   `PItoDataHubAgent_SetupKit.exe TENTANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] DATAARCHIVE=[DataArchiveName] AFSERVER=[AFServerName] SERVICEACCOUNT=[user] SERVICEPASSWORD=[password] AGENTDESCRIPTION= "Your Description" /quiet`
+   `PItoDataHubAgent_SetupKit.exe TENANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] DATAARCHIVE=[DataArchiveName] AFSERVER=[AFServerName] SERVICEACCOUNT=[user] SERVICEPASSWORD=[password] AGENTDESCRIPTION="Your Description" /quiet`
 
-1. If you do not wish to configure an Alternate Display Name for your Data Archive or AF Servers, enter the following command:
+1. If you need to configure an Alternate Display Name for your Data Archive or AF servers, enter the following command. The PI Data Archive, AF server, and Alternate Display Names will be configured in a subsequent step.
 
-   **Note:** The TENTANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required. All keywords are case sensitive. 
+   **Note:** The TENANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required. All keywords are case sensitive. 
 
-   `PItoDataHubAgent_SetupKit.exe TENTANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] AGENTDESCRIPTION= "Your Description" /quiet`
+   `PItoDataHubAgent_SetupKit.exe TENANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] AGENTDESCRIPTION="Your Description" /quiet`
 
 1. Check that the PIToDataHubAgent service is running.
 
@@ -130,9 +126,7 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
    1. Logs can be listed from oldest to newest with the command `dir /od`.
 
-1. (Optional) Configure an Alternate Display Name for PI Data Archive and/or AF Server.
-
-   **Note:** Do not configure a PI to Data Hub Transfer until you complete this step if you do not want to replicate your Data Archive or AF Server name to AVEVA Data Hub. 
+1. (Optional) Configure an Alternate Display Name for PI Data Archive and/or AF server.
 
    1. Open an administrative command prompt and navigate to `%ProgramData%/OSIsoft/PItoDataHub`.
 
@@ -164,6 +158,23 @@ There are several use cases for doing a silent installation of the PI to Data Hu
         ], 
       ```
 
-   1. Save the changes and restart the PI to Data Hub Agent service from an administrative command prompt with the command `net start pitodatahubagent`.
- 
-1. Verify your Agent is visible on the `PI to Data Hub Agents` page in the portal and ready to configure. 
+   1. Save the changes and restart the PI to Data Hub Agent service from an administrative command prompt with the commands:
+
+      `net stop pitodatahubagent`
+      `net start pitodatahubagent`
+
+1. Verify your agent is visible on the `PI to Data Hub Agents` page in the portal and ready to configure. 
+
+### Silent installations for upgrades or minimal new installations 
+
+These instructions can be used to upgrade the PI to Data Hub Agent. They can also be used for a new installation of the PI to Data Hub Agent, but the installation requires configuration with the PI to Data Hub Configuration Utility for the new installation.   
+
+1. Open a Windows command prompt as an administrator. 
+
+1. Change to the folder where you have downloaded the PI To Data Hub Agent installation kit. 
+
+1. Run the following command:
+
+   `PItoDataHubAgent_SetupKit.exe /quiet`
+
+The above command is sufficient for an upgrade. For a new installation, run the PI to Data Hub Configuration Utility to register the PI to Data Hub Agent after the silent installation completes.

@@ -4,7 +4,7 @@ uid: VerifyPItoADHService
 
 # Verify the PI to Data Hub Agent is running and registered
 
-As a first step in troubleshooting, check that the PI to Data Hub Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in AVEVA Data Hub. 
+As a first step in troubleshooting, check that the PI to Data Hub Agent Windows service is running on the machine where the agent is installed. You also should confirm the agent is registered in AVEVA Data Hub. For a new installation, the PI to Data Hub Agent service will not be running and registered until the PI to Data Hub Configuration Utility is completed.
 
 1. On the computer where the agent is installed, open the Microsoft Management Console (MMC) snap-in for Services. 
 

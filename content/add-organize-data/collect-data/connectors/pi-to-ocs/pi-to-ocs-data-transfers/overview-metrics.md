@@ -18,7 +18,7 @@ The following table provides a description of the fields in the **Transfer Metri
 | Historical Start | The historical start date of the transfer. |
 | Historical End | The historical end date of the transfer. |
 | Total PI Points In Transfer | Total number of PI points selected for transfer. |
-| Total Points Updated | The number of PI Points added to or removed from the transfer configuration. |
+| Total Points Updated | The number of PI points added to or removed from the transfer configuration. |
 | Stream Creation Status | The progress of streams creation during transfer progression.  |
 | Total Streams Created | Total number of streams created.  |
 | Total Streams Updated | Total number of streams updated with new configuration and metadata. |

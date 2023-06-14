@@ -6,18 +6,18 @@ uid: af-data-transferred
 
 You can transfer the following AF element data into AVEVA Data Hub:
 
-* Simple PI point attributes
-* Static attribute values
+* Dynamic AF attributes with PI point data references
+* Static AF attributes (attributes with no data reference)
 
-A simple PI point attribute consists of only a server and tag name. This data does not include any data retrieval qualifiers. The associated event data contains simple PI point attributes with the same historical and streaming transfer mechanism as points not associated with AF. 
+Supported dynamic AF attributes can reference a PI point via a PI Data Archive server name and tag name. This transferred data does not include any data retrieval qualifiers. The associated event data contains simple PI point attributes with the same historical and streaming transfer mechanism as explicit PI points. 
 
 The table below lists the AF objects that can be included in a PI to Data Hub data transfer and what those objects appear as in AVEVA Data Hub.
 
 | AF Object                                             | AVEVA Data Hub Object |
 | ----------------------------------------------------- | --------------------- |
 | Elements                                              | Assets |
-| PI point data reference attributes                    | Asset stream reference properties |
-| Static ("None") data reference attributes<sup>1</sup> | Asset metadata properties |
+| Dynamic AF attributes with PI point data references   | Asset stream reference properties |
+| Static AF attributes<sup>1</sup>                      | Asset metadata properties |
 | Excluded attributes                                   | Dependent on attribute type |
 
 <sup>1</sup>Static AF attributes configured as type 'Boolean' are not supported and will not be transferred.
@@ -64,7 +64,7 @@ When an AF element is transferred and a corresponding AVEVA Data Hub asset is cr
 
 An AF attribute can have two different UOMs set, both the [Default UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_DefaultUOM.htm) and the [Source UOM](https://docs.osisoft.com/bundle/af-sdk/page/html/P_OSIsoft_AF_Asset_AFAttribute_SourceUOM.htm) (also called DataReference UOM). AVEVA Data Hub only allows for one UOM. PI to Data Hub considers an attribute's UOM to be its Source UOM if set; otherwise, it uses the default UOM. If both are set and they are different UOM classes, PI to Data Hub logs a warning that they are mismatched, but still uses the Source UOM.
 
-Multiple PI point data reference attributes can reference the same PI Point. If multiple attributes reference the same PI Point but have different UOMs, a stream UOM is not transferred. If you update your AF attributes to resolve the conflict, the UOM will be transferred.
+Multiple PI point data reference attributes can reference the same PI point. If multiple attributes reference the same PI point but have different UOMs, a stream UOM is not transferred. If you update your AF attributes to resolve the conflict, the UOM will be transferred.
 
 Custom units of measure (UOMs) do not transfer.
 

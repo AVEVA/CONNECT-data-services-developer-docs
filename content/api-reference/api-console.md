@@ -124,7 +124,7 @@ Some routes include a **Trend** tab that you can use to visualize data.
 
 The **Details** tab lists metadata related to the previous API request, including:
 
-- **URI Path**: This field displays the method and URI used in the previous API request. Select **Copy** ![copy](../../_icons/default/content-copy.svg) to copy the URI to your clipboard.
+- **URI Path**: This field displays the method and URI used in the previous API request. Select **Copy** ![copy](../_icons/default/content-copy.svg) to copy the URI to your clipboard.
 
 - **HTTP status**: The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made to AVEVA Data Hub, the system returns a status code. For more information about the possible status codes, see <xref:ocsStatusCodes>.
 

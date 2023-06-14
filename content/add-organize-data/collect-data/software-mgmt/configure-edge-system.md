@@ -82,7 +82,7 @@ To copy a system configuration from a template to the corresponding system digit
 
 1. To confirm the changes, select **Save and Close**.
 
-## Edit a system configuration
+## Edit a system
 
 To edit a system configuration and export it for use:
 
@@ -100,11 +100,11 @@ To edit a system configuration and export it for use:
 
    - To delete a tag, select **X** in the tag bubble.
 
-1. To create the configuration, do one of the following:
+1. To set the configuration, do one of the following:
 
-   - To use the default configuration for the system type, select **Start With Default**.
+   - To use a configuration template, select **Copy From Configuration Template**.
 
-   - To select a JSON file that contains the configuration, select **Start With Default**.
+   - To select a JSON file that contains the configuration, select **Import Configuration**.
 
 1. (Optional) In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 

@@ -4,7 +4,7 @@ uid: pi-to-ocs-utility
 
 # Run the PI to Data Hub Agent Configuration Utility
 
-Use the PI to Data Hub Agent Configuration Utility to set up and configure AF server and Data Archive data sources before creating a data transfer. After installing or upgrading a PI to Data Hub Agent, use the utility to select a source AF server or Data Archive, view connection details, create AF and PI Mappings, set data privacy settings, and register the agent. 
+Use the PI to Data Hub Agent Configuration Utility to set up and configure AF server and Data Archive data sources before creating a data transfer. After installing or upgrading a PI to Data Hub Agent, use the utility to select a source AF server or Data Archive, view connection details, create AF and PI mappings, set data privacy settings, and register the agent. 
 
 **Note:** A connection to AVEVA Data Hub with the post-installation utility cannot be established if the system time is not correct. Additionally, you will not be able to connect to AVEVA Data Hub if Internet Explorer Enhanced Security Configuration is enabled. For more information, see <xref:disable-ie-security>. 
 
@@ -24,7 +24,7 @@ The following table provides descriptions of the fields shown in the configurati
 | Refresh Display ![Refresh icon](../../images/agent-refresh-icon.png) | Refresh the displayed agent and server information. |
 | AF Server Name/Data Archive Server Name  | Source AF or Data Archive server name. |
 | Alternate Display Name | An optional, alternate name for an AF or Data Archive server. | 
-| AF Mapping/PI Mapping | The type of AF/PI Mapping configured on the service account. |
+| AF Mapping/PI Mapping | The type of AF/PI mapping configured on the service account. |
 | Connection Timeout | The time before the agent connection times out. |
 
 ## Open the PI to Data Hub Agent Configuration Utility
@@ -115,13 +115,13 @@ To select the default Data Archive:
  
 1. Close PI System Explorer.  
  
-## Create an AF Mapping
+## Create an AF mapping
 
-You can assign an AF Mapping to an AF identity. AF Mappings enable a specific service account assigned to an AF identity in PI System Explorer to read and transfer AF element and AF attribute data. You can also edit mappings with the utility.
+You can assign an AF mapping to an AF identity. AF mappings enable a specific service account assigned to an AF identity in PI System Explorer to read and transfer AF element and AF attribute data. You can also edit mappings with the utility.
 
 **Note:** The user account used to launch the utility must have permission to create mappings.
 
-To create an AF Mapping:
+To create an AF mapping:
 
 1. Open the PI to Data Agent Configuration Utility.
 
@@ -129,9 +129,9 @@ To create an AF Mapping:
    
 1. In the `Configure AF Mapping` window, select an identity and select **Create**.
 
-  The AF Mapping is created for the selected identity.
+  The AF mapping is created for the selected identity.
                                              
-  **Note:** If an AF Mapping has been created with another tool, a warning is displayed.
+  **Note:** If an AF mapping has been created with another tool, a warning is displayed.
   
 1. Select **Close** to return to the utility.
 
@@ -175,13 +175,13 @@ To add a Data Archive:
 
 1. To retain the current Data Archive configuration, select **Save**.
 
-## Create a PI Mapping 
+## Create a PI mapping 
 
-PI Mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity. PI Mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to AVEVA Data Hub. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit Mappings with the utility.
+PI mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to AVEVA Data Hub. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit mappings with the utility.
 
-**Note:** The user account used to launch the utility must have permissions to create Mappings.
+**Note:** The user account used to launch the utility must have permissions to create mappings.
 
-To create a PI Mapping:
+To create a PI mapping:
 
 1. Open the PI to Data Hub Agent Configuration Utility.
 
@@ -193,11 +193,11 @@ To create a PI Mapping:
 
    ![Configure Mapping dialog box](../../images/configure-mapping-window.png)
 
-1. Select an identity for the PI Mapping, then select **Create**.
+1. Select an identity for the PI mapping, then select **Create**.
 
-   The PI Mapping is created for the selected PI Identity, PI Group, or PI User.
+   The PI mapping is created for the selected PI identity, PI group, or PI user.
 
-   **Note:** If a PI Mapping has already been created with another tool, a warning is displayed. 
+   **Note:** If a PI mapping has already been created with another tool, a warning is displayed. 
 
 1. Select **Close** to return to the utility, and then select **Save** in the utility.
 

@@ -46,7 +46,7 @@ To install the standalone PI to Data Hub Agent:
 
    - **This account** - Specify a username and password (domain\account) for the `Run as` user for the PI to Data Hub Agent service.
 
-   **Note:** For Windows integrated security, the service account selected on this page determines the account to use for PI Identity mapping and AF Mapping. The `Run as` user can be changed after the installation from the Windows Service control panel. Changing this account may require configuration changes to PI Mapping and AF Mapping, but changing the account will not otherwise affect the access to local resources needed by the agent.
+   **Note:** For Windows integrated security, the service account selected on this page determines the account to use for PI identity mapping and AF mapping. The `Run as` user can be changed after the installation from the Windows Service control panel. Changing this account may require configuration changes to PI mapping and AF mapping, but changing the account will not otherwise affect the access to local resources needed by the agent.
 
 1. Select **Install**.
 

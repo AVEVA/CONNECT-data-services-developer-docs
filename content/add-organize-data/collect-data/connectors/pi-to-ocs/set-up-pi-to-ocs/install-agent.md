@@ -102,7 +102,7 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 
 1. If you need to configure an Alternate Display Name for your Data Archive or AF servers, enter the following command. The PI Data Archive, AF server, and Alternate Display Names will be configured in a subsequent step.
 
-   **Note:** The TENANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required. All keywords are case sensitive. 
+   **Note:** The TENANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required for the agent to connect to AVEVA Data Hub at installation time. All keywords are case sensitive. 
 
    `PItoDataHubAgent_SetupKit.exe TENANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] AGENTDESCRIPTION="Your Description" /quiet`
 

@@ -20,7 +20,7 @@ To start a data transfer:
 
 1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 
-   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See <xref:data-transfer-statuses> for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
+   **Note:** The rate at which data transfers varies and depends on the density of data in the source Data Archive and/or AF server. See <xref:data-transfer-statuses> for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
 
 1. (Optional) To view more information about an agent's status, select **Agent Health Events**.
 
@@ -60,7 +60,7 @@ The following table provides a description of the fields in the **Transfer Metri
 
 | Field name | Description   |
 | ------------- | ---------- |
-| PI Data Archive Server Version | The version of PI Data Archive that is installed on the source server configured to send PI point data via the agent. |
+| Data Archive Server Version | The version of Data Archive that is installed on the source server configured to send PI point data via the agent. |
 | Last Streaming Read | The date of the latest stream value read.|
 | Streaming Events Per Second | The average number of streaming events transferred to the PI to Data Hub Agent per second over the last minute. This value is updated every 10 seconds during data transfer.  |
 | Historical Events Per Second | The average number of historical events transferred to the PI to Data Hub Agent per second over the last minute. This value is updated every 10 seconds during data transfer. |

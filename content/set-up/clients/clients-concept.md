@@ -20,7 +20,7 @@ Use client-credentials clients for server-to-server communication that does not 
 
 ### <a name="client-credentials-pi-server"></a>Client-credentials client PI Server counterpart
 
-Client-credentials clients are very similar to Microsoft Windows service accounts that applications can use to authenticate against PI Data Archive or PI AF server. 
+Client-credentials clients are very similar to Microsoft Windows service accounts that applications can use to authenticate against Data Archive or PI AF server. 
 
 ### <a name="client-credentials-bp"></a>Client-credentials client best practices
 
@@ -40,7 +40,7 @@ Authorization code clients are used to authenticate using any supported browser.
 
 ### <a name="authorization-code-pi-server"></a>Authorization code client PI Server counterpart
 
-Authorization code clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, authorization code clients require the user to authenticate as a known user account within the tenant.
+Authorization code clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, authorization code clients require the user to authenticate as a known user account within the tenant.
 
 ### <a name="authorization-code-bp"></a>Authorization code client best practices
 
@@ -56,7 +56,7 @@ Use hybrid clients for native and server-side web applications. This client util
 
 ### <a name="hybrid-client-pi-server"></a>Hybrid client PI Server counterpart
 
-Hybrid clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
+Hybrid clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 

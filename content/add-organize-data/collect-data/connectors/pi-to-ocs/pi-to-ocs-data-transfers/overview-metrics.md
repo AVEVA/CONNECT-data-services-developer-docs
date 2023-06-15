@@ -10,7 +10,7 @@ The following table provides a description of the fields in the **Transfer Metri
 
 | Field name | Description   |
 | ------------- | ---------- |
-| PI Data Archive Server Version | The version of PI Data Archive that is installed on the source server configured to send PI point data via the agent. |
+| Data Archive Server Version | The version of Data Archive that is installed on the source server configured to send PI point data via the agent. |
 | Last Streaming Read | The date of the latest stream read.|
 | Streaming Events Per Second | The average number of streaming events transferred to the PI to Data Hub Agent per second over the last minute. This value is updated every 10 seconds during data transfer.  |
 | Historical Events Per Second | The average number of historical events transferred to the PI to Data Hub Agent per second over the last minute. This value is updated every 10 seconds during data transfer. |

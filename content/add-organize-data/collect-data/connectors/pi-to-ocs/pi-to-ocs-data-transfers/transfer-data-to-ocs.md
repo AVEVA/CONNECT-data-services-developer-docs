@@ -8,13 +8,13 @@ You create a data transfer from the `PI to Data Hub Agents` page. A transfer can
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#explicit-versus-implicit-pi-points).
 
-**Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
+**Before you begin:** Download and install the PI to Data Hub Agent. Register your Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
 
 Transfer creation consists of the following tasks:
 
-1. Name the transfer and set data privacy settings. Assign a name, description, and optional historical start and end time for data retrieval.
+1. Name the transfer and set data privacy settings. Assign a name, description, and optional historical start time for data retrieval.
 
-1. Select Stream Metadata Replication Policy (High, Medium, Low, or None) to control which PI point attributes will be stored as metadata in SDS Streams. This policy provides a level of data privacy in cases where sensitive information is stored in PI point attributes that you do not want replicated to the cloud.
+1. Select Stream Metadata Replication Policy (High, Medium, Low, or None) to control which PI point attributes will be stored as metadata in SDS streams. This policy provides a level of data privacy in cases where sensitive information is stored in PI point attributes that you do not want replicated to the cloud.
 
 1. Build an AF elements transfer list. For agents with AF server configured, search for AF elements to add to the transfer. Add AF elements to the transfer. PI points referenced by AF elements will be implicitly added to the transfer. Points added to the transfer in this manner are referred to as Implicit PI points.  
 
@@ -22,7 +22,7 @@ Transfer creation consists of the following tasks:
 
 1. View transfer details.
 
-1. Save the transfer. Before you can save a transfer, at least one Implicit or Explicit PI point must be added to the transfer and the Implicit or Explicit PI point must correspond to the same PI Data Archive.
+1. Save the transfer. Before you can save a transfer, at least one Implicit or Explicit PI point must be added to the transfer and the Implicit or Explicit PI points must correspond to the same Data Archive.
 
 **Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to Data Hub Agents` page. The following image shows AF indexing in progress:
 
@@ -46,7 +46,7 @@ To name the data transfer:
 
 1. (Optional) In the **Historical Start Time** field, enter a historical time context for the data retrieval. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See <xref:lp-transfer> to learn more about transferring historical data.
 
-   **Note:** The PI to Data Hub Agent supports transferring out-of-order events written to PI Data Archive.
+   **Note:** The PI to Data Hub Agent supports transferring out-of-order events written to Data Archive.
 
 1. To set the data privacy level for the transfer, select the **Stream Metadata Replication Policy**. Metadata, in this context, refers to PI point attributes transferred as SDS stream metadata.
 
@@ -76,7 +76,7 @@ To name the data transfer:
 
    The transfer is created and the `Transfer` page opens.
 
-**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Settings` window and modify the name, description, historical start and end times, and data privacy settings as needed.
+**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Settings` window and modify the name, description, historical start time, and data privacy settings as needed.
 
 ## Build an AF elements transfer list
 
@@ -186,7 +186,7 @@ To build a PI points transfer list:
 
 PI points added to a transfer are assigned one of the following reference types:
 
-- Explicit - PI points directly retrieved from a PI Data Archive.
+- Explicit - PI points directly retrieved from a Data Archive.
 
 - Implicit - PI points referenced by AF element attributes that have been retrieved by searching an AF server.
 

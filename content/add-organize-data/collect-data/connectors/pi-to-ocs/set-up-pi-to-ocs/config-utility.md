@@ -69,7 +69,7 @@ To add an AF server:
 
 1. Select one of the Data Archives listed under `Detected Data Archives`, and then select **Add Selected Data Archive**.
 
-   **Note:** You can select **Add Data Archive Server** on the left at any time to add a PI Data Archive before the scan completes.
+   **Note:** You can select **Add Data Archive Server** on the left at any time to add a Data Archive before the scan completes.
 
 1. Review the AF source server details to ensure they are correct:
 
@@ -87,7 +87,7 @@ To add an AF server:
 
 1. To keep the current AF server configuration settings and restart the agent, select **Save**.
 
-   **Note:** After you save the AF server configuration settings and restart and register the agent, you need to select a default Data Archive in PI System Explorer to resolve substitution references for AF element attributes.
+   **Note:** After you save the AF server configuration settings, you need to select a default Data Archive in PI System Explorer to resolve substitution references for AF element attributes.
 
 ## Usage of server names and alternate display names within AVEVA Data Hub
 
@@ -97,11 +97,11 @@ The Data Archive name, or its alternate display name, appears in the `PI to Data
 
 **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.
 
-The maximum character length for an AF server alternate display name is 63 and the maximum character length for the Data Archive alternate display name is 86. The difference is due to added information. Both fields start with a maximum of 100 characters because Asset Id and Stream Id have a 100-character limit. To form as Asset Id, the agent adds an underscore and a 36-character GUID to an AF server alternate display name, allowing 63 characters (100-37) for the alternate display name. To form a Stream Id, the agent prepends the PI Data Archive alternate display name with `PI_` and appends `_[PIPointIDNumber]` (maximum of 10 characters), allowing 86 characters (100-14) for the alternate display name.
+The maximum character length for an AF server alternate display name is 63 and the maximum character length for the Data Archive alternate display name is 86. The difference is due to added information. Both fields start with a maximum of 100 characters because Asset Id and Stream Id have a 100-character limit. To form as Asset Id, the agent adds an underscore and a 36-character GUID to an AF server alternate display name, allowing 63 characters (100-37) for the alternate display name. To form a Stream Id, the agent prepends the Data Archive alternate display name with `PI_` and appends `_[PIPointIDNumber]` (maximum of 10 characters), allowing 86 characters (100-14) for the alternate display name.
 
 ## Select the default Data Archive in PI System Explorer
 
-You need to specify the default Data Archive, also referred to as the default data server, for the PI System and PI AF database after setting an AF server. By default, PI AF databases inherit the PI AF Server's local default data server. See [Find the default Data Archive server](https://docs.osisoft.com/bundle/pi-server/page/find-the-default-pi-data-archive-server.html) for more information.
+You need to specify the default Data Archive, also referred to as the default data server, for the PI System and PI AF database after setting an AF server. By default, PI AF databases inherit the PI AF Server's local default data server. See [Find the default Data Archive server](https://docs.aveva.com/bundle/pi-server-af-pse/page/1018897.html) for more information.
 
 To select the default Data Archive:
 
@@ -137,11 +137,11 @@ To create an AF mapping:
 
 ## Add a Data Archive
 
-If you plan on transferring AF server data, it is recommended to add an AF server first, because the PI to Data Hub Agent Configuration Utility will detect automatically the PI Data Archive servers that are referenced by AF server, allowing you to select the source PI Data Archive that contains the PI points you want to transfer. However, you can also add a PI Data Archive without adding an AF server.
+If you plan on transferring AF server data, it is recommended to add an AF server first, because the PI to Data Hub Agent Configuration Utility will detect automatically the Data Archive servers that are referenced by AF server, allowing you to select the source Data Archive that contains the PI points you want to transfer. However, you can also add a Data Archive without adding an AF server.
 
-**Note:** There is a one-to-one (1:1) PI Data Archive to PI to Data Hub Agent constraint for PI to Data Hub transfers. If your AF server references multiple Data Archives, only one Data Archive can be selected and configured for the transfer.  
+**Note:** There is a one-to-one (1:1) Data Archive to PI to Data Hub Agent constraint for PI to Data Hub transfers. If your AF server references multiple Data Archives, only one Data Archive can be selected and configured for the transfer.  
 
-The list of available PI Data Archive servers is based on the servers referenced by AF elements on the AF server you selected. If you are upgrading an agent, the PI to Data Hub Agent Configuration Utility maintains the previously selected PI Data Archive configuration.  
+The list of available Data Archive servers is based on the servers referenced by AF elements on the AF server you selected. If you are upgrading an agent, the PI to Data Hub Agent Configuration Utility maintains the previously selected Data Archive configuration.  
 
 **Note:** If you are not adding an AF server, select the Data Archive icon on the first page of the PI to Data Hub Agent Configuration Utility.
 
@@ -177,7 +177,7 @@ To add a Data Archive:
 
 ## Create a PI mapping 
 
-PI mappings enable access to data stored on a PI Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to AVEVA Data Hub. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit mappings with the utility.
+PI mappings enable access to data stored on a Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to AVEVA Data Hub. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit mappings with the utility.
 
 **Note:** The user account used to launch the utility must have permissions to create mappings.
 
@@ -223,9 +223,9 @@ After saving in the PI to Data Hub Agent Configuration Utility, it may take a fe
 
 | **State**                     | **Description**                                              |
 | ----------------------------- | ------------------------------------------------------------ |
-| Data Source Connection Issue  | Indicates the PI To Data Hub Agent cannot connect to the PI Data Archive. Some reasons for this status include the PI Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the PI Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
-| Data Source Security Issue    | Indicates the PI Data Archive connection security settings need to be addressed. |
-| Missing Configuration         | The PI Data Archive server has not been configured in the PI to Data Hub Agent. |
+| Data Source Connection Issue  | Indicates the PI To Data Hub Agent cannot connect to the Data Archive. Some reasons for this status include the Data Archive is turned off, a firewall issue is preventing connections, or an incorrect name is configured for the Data Archive. For example, the agent is trying to connect to a machine that does not exist or was renamed. There may be additional reasons for this status. |
+| Data Source Security Issue    | Indicates the Data Archive connection security settings need to be addressed. |
+| Missing Configuration         | The Data Archive server has not been configured in the PI to Data Hub Agent. |
 | Registration Failed           | Contact [AVEVA Customer Support](https://softwaresupport.aveva.com) for assistance. |
 | Registering                   | The PI to Data Hub Cloud portion is creating the necessary resources for the PI to Data Hub Agent. |
 | Shutdown                      | The last communication that the PI to Data Hub Cloud had with the agent was a shutdown message. |

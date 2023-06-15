@@ -9,7 +9,7 @@ You can transfer the following AF element data into AVEVA Data Hub:
 * Dynamic AF attributes with PI point data references
 * Static AF attributes (attributes with no data reference)
 
-Supported dynamic AF attributes can reference a PI point via a PI Data Archive server name and tag name. This transferred data does not include any data retrieval qualifiers. The associated event data contains simple PI point attributes with the same historical and streaming transfer mechanism as explicit PI points. 
+Supported dynamic AF attributes can reference a PI point via a Data Archive server name and tag name. This transferred data does not include any data retrieval qualifiers. The associated event data contains simple PI point attributes with the same historical and streaming transfer mechanism as explicit PI points. 
 
 The table below lists the AF objects that can be included in a PI to Data Hub data transfer and what those objects appear as in AVEVA Data Hub.
 
@@ -18,7 +18,6 @@ The table below lists the AF objects that can be included in a PI to Data Hub da
 | Elements                                              | Assets |
 | Dynamic AF attributes with PI point data references   | Asset stream reference properties |
 | Static AF attributes<sup>1</sup>                      | Asset metadata properties |
-| Excluded attributes                                   | Dependent on attribute type |
 
 <sup>1</sup>Static AF attributes configured as type 'Boolean' are not supported and will not be transferred.
 
@@ -26,7 +25,7 @@ These AF objects are not included in a PI to Data Hub data transfer:
 
 * Analysis data reference attributes
 
-* Attributes that reference a non-registered data source/PI Data Archive
+* Attributes that reference a non-registered data source/Data Archive
 
 * AF categories
 

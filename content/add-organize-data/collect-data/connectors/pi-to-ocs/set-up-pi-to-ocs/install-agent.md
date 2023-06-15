@@ -6,9 +6,9 @@ uid: install-agent
 
 The PI to Data Hub Agent can be installed as part of the PI Server installation kit, or as a standalone install.
 
-## Configure access to PI Data Archive Security tables, PI point data, and optional AF server
+## Configure access to Data Archive Security tables, PI point data, and optional AF server
 
-For the following PI Data Archive security configuration items, you will need to enable read access to the PI identity, PI group, or PI user that the PI to Data Hub Agent is connecting as. 
+For the following Data Archive security configuration items, you will need to enable read access to the PI identity, PI group, or PI user that the PI to Data Hub Agent is connecting as. 
 
 - Archive data (PIARCDATA Security table)
 
@@ -54,7 +54,7 @@ To install the standalone PI to Data Hub Agent:
 
    The PI to Data Hub Agent Configuration Utility opens. See [Run the PI to Data Hub Agent Configuration Utility](xref:pi-to-ocs-utility) for instructions.
 
-   **Note:** Agent registration is not complete until you add and configure a PI Data Archive server in the PI to Data Hub Agent Configuration Utility.
+   **Note:** Agent registration is not complete until you add and configure a Data Archive server in the PI to Data Hub Agent Configuration Utility.
 
 ## Silent Installation Instructions for PI to Data Hub Agent 
 
@@ -68,7 +68,7 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
 ### Silent installs for new installations 
 
-These instructions can be used to set up a new installation of the PI to Data Hub Agent, configured with connections to AVEVA Data Hub, without needing to run the PI to Data Hub Agent Configuration Utility. The command lines in this section can be used for upgrades as well, but tenant, namespace, PI Data Archive, and AF server cannot be changed during an upgrade. Command line parameters related to this will be ignored. For the minimal command line needed for upgrades, see Silent Installations for Upgrades or Minimal New Installations.
+These instructions can be used to set up a new installation of the PI to Data Hub Agent, configured with connections to AVEVA Data Hub, without needing to run the PI to Data Hub Agent Configuration Utility. The command lines in this section can be used for upgrades as well, but tenant, namespace, Data Archive, and AF server cannot be changed during an upgrade. Command line parameters related to this will be ignored. For the minimal command line needed for upgrades, see Silent Installations for Upgrades or Minimal New Installations.
 
 1. Create a client-credentials client with an assigned role of Tenant Contributor and add a secret. See <xref:gpClientCredentialsClient>.
 
@@ -94,13 +94,13 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 
 1. Change to the folder where you have downloaded the PI To Data Hub Agent installation kit. 
 
-1. If you do not need to configure an Alternate Display Name for your Data Archive or AF servers, enter the following command. This command will immediately register the agent with the actual PI Data Archive name specified by the DATAARCHIVE command line argument.
+1. If you do not need to configure an Alternate Display Name for your Data Archive or AF servers, enter the following command. This command will immediately register the agent with the actual Data Archive name specified by the DATAARCHIVE command line argument.
 
    **Note:** The TENANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required for the agent to connect to AVEVA Data Hub at installation time. All keywords are case sensitive. SERVICEACCOUNT and SERVICEPASSWORD provide the `Run As` user and password, respectively, for the PI to Data Hub Agent service. 
 
    `PItoDataHubAgent_SetupKit.exe TENANTID=[tenantid] CLIENTID=[clientid] CLIENTSECRET=[clientsecret] NAMESPACE=[namespaceID] DATAARCHIVE=[DataArchiveName] AFSERVER=[AFServerName] SERVICEACCOUNT=[user] SERVICEPASSWORD=[password] AGENTDESCRIPTION="Your Description" /quiet`
 
-1. If you need to configure an Alternate Display Name for your Data Archive or AF servers, enter the following command. The PI Data Archive, AF server, and Alternate Display Names will be configured in a subsequent step.
+1. If you need to configure an Alternate Display Name for your Data Archive or AF servers, enter the following command. The Data Archive, AF server, and Alternate Display Names will be configured in a subsequent step.
 
    **Note:** The TENANTID, CLIENTID, CLIENTSECRET, and NAMESPACE keywords are required for the agent to connect to AVEVA Data Hub at installation time. All keywords are case sensitive. 
 
@@ -120,13 +120,13 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 
 1. Check the setup logs.
 
-   1. Open a command prompt and navigate to `%ProgramData%/OSIsoft/Setup/log`.
+   1. Open a command prompt and navigate to `%ProgramData%\OSIsoft\Setup\log`.
 
    1. Logs can be listed from oldest to newest with the command `dir /od`.
 
-1. (Optional) Configure an Alternate Display Name for PI Data Archive and/or AF server.
+1. (Optional) Configure an Alternate Display Name for Data Archive and/or AF server.
 
-   1. Open an administrative command prompt and navigate to `%ProgramData%/OSIsoft/PItoDataHub`.
+   1. Open an administrative command prompt and navigate to `%ProgramData%\OSIsoft\PItoDataHub`.
 
    1. Run the command `notepad.exe appsettings.json`.
 

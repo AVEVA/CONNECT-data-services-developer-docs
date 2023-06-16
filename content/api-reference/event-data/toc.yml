@@ -1,4 +1,4 @@
-- name: Event type store
+- name: Event Type Store
   href: ../event-type-store/toc.yml 
   topicHref: ../event-type-store/event-type-store.md
 - name: Event GraphQL

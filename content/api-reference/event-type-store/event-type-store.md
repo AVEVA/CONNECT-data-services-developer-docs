@@ -2,6 +2,6 @@
 uid: EventTypeStore
 ---
 
-# Event type store
+# Event Type Store
 
-The event type store APIs allow you to create, read, update, and delete types, which are then converted to a GraphQL schema.
+The Event Type Store APIs allow you to create, read, update, and delete types, which are then converted to a GraphQL schema.

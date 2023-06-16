@@ -16,7 +16,7 @@ To use the GraphQL console:
 
 1. Select the **Query** tab in the `GraphQL Explorer` pane to compose a data retrieval request, or the **Mutation** tab to upsert or delete data.
 
-1. Select ![expand](../_icons/branded/plus-circle-outline.svg) next to an object in the GraphQL Explorer to drill down and show the available filtering options and fields.
+1. Select ![drill-down](../_icons/branded/arrow-right-circle-outline.svg) next to an object in the GraphQL Explorer to drill down and show the available filtering options and fields.
 
 1. Use the GraphQL Explorer tree to create a request.
 
@@ -32,11 +32,15 @@ To use the GraphQL console:
 
    - Select **Reset** to clear all selections.
 
-   - Select ![GraphQL Explorer Pane](../_icons/branded/sitemap.svg) to hide or show the explorer pane.
+   - Select ![copy](../_icons/branded/content-copy.svg) in the `Request` or `Variables` pane to copy the contents of that pane to the clipboard.
+
+   - Select ![GraphQL Explorer Pane](../_icons/branded/sitemap.svg) to hide or show the `GraphQL Explorer` pane.
+
+   - Select ![Response pane](../_icons/branded/response.svg) to hide or show the `Response` pane.
 
    **Note:** The `GraphQL Explorer` and `Request` panes work in both directions. The request is updated as you make selections in the GraphQL Explorer tree, and editing the text directly in the request or pasting a complete request updates the GraphQL Explorer tree. When editing the request directly, select ![Format](../_icons/default/auto-fix.svg) to automatically format the request.
 
-1. Select ![left arrow](../_icons/branded/arrow-left.svg) to return to the top level and repeat the process with other objects, as needed.
+1. Select ![return](../_icons/branded/arrow-left-circle-outline.svg) to return to the top level and repeat the process with other objects, as needed.
 
 1. When you have completed the query, select **Send Request** to run the query.
 

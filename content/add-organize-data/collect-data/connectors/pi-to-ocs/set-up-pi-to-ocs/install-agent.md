@@ -16,7 +16,7 @@ For the following Data Archive security configuration items, you will need to en
 
 - The PI points and data to be transferred
 
-For AF Server security configuration, ensure the AF Identity that the PI to Data Hub Agent is connecting as has read access to the elements and attributes to be transferred. 
+For AF Server security configuration, ensure the AF Identity that the PI to Data Hub Agent is connecting and has read access to the elements and attributes to be transferred. 
 
 ## Install the PI to Data Hub Agent
 
@@ -56,7 +56,7 @@ To install the standalone PI to Data Hub Agent:
 
    **Note:** Agent registration is not complete until you add and configure a Data Archive server in the PI to Data Hub Agent Configuration Utility.
 
-## Silent Installation Instructions for PI to Data Hub Agent 
+## Silent installation
 
 There are several use cases for doing a silent installation of the PI to Data Hub Agent. 
 
@@ -68,7 +68,7 @@ There are several use cases for doing a silent installation of the PI to Data Hu
 
 ### Silent installs for new installations 
 
-These instructions can be used to set up a new installation of the PI to Data Hub Agent, configured with connections to AVEVA Data Hub, without needing to run the PI to Data Hub Agent Configuration Utility. The command lines in this section can be used for upgrades as well, but tenant, namespace, Data Archive, and AF server cannot be changed during an upgrade. Command line parameters related to this will be ignored. For the minimal command line needed for upgrades, see Silent Installations for Upgrades or Minimal New Installations.
+These instructions can be used to set up a new installation of the PI to Data Hub Agent, configured with connections to AVEVA Data Hub, without needing to run the PI to Data Hub Agent Configuration Utility. The command lines in this section can be used for upgrades as well, but tenant, namespace, Data Archive, and AF server cannot be changed during an upgrade. Command line parameters related to this will be ignored. For the minimal command line needed for upgrades, see [Silent installs for upgrades or minimal new installations](#silent-installs-for-upgrades-or-minimal-new-installations).
 
 1. Create a client-credentials client with an assigned role of Tenant Contributor and add a secret. See <xref:gpClientCredentialsClient>.
 
@@ -77,9 +77,11 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 1. Find the TENANTID and record it where you can access it.
 
    When you log into AVEVA Data Hub, the TENANTID is visible in the URL. It is the long GUID.
+
    `https://datahub.connect.aveva.com/tenant/[YOUR TENANT ID]/dashboard`
 
    Alternatively, select **Developer Tools** > **API Console** and the TENANTID is displayed in the Full Path.
+
    `uswe.datahub.connect.aveva.com/api/v1/Tenants/[YOUR TENANT ID]/Namespaces`. 
 
 1. Find the NAMESPACE Id and record it where you can access it.
@@ -164,7 +166,7 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 
 1. Verify your agent is visible on the `PI to Data Hub Agents` page in the portal and ready to configure. 
 
-### Silent installations for upgrades or minimal new installations 
+### Silent installs for upgrades or minimal new installations 
 
 These instructions can be used to upgrade the PI to Data Hub Agent. They can also be used for a new installation of the PI to Data Hub Agent, but the installation requires configuration with the PI to Data Hub Agent Configuration Utility for the new installation.   
 

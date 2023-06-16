@@ -177,7 +177,7 @@ To add a Data Archive:
 
 ## Create a PI mapping 
 
-PI mappings enable access to data stored on a Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to AVEVA Data Hub. For more information, see ["What are PI identities and mappings?"](https://docs.osisoft.com/bundle/pi-server/page/what-are-pi-identities-and-mappings_new.html). You can also edit mappings with the utility.
+PI mappings enable access to data stored on a Data Archive by service accounts assigned to a PI identity. PI mappings can be created for a PI identity, user, or group. Accounts assigned to a PI identity can read and transfer PI point data to AVEVA Data Hub. For more information, see ["What are PI identities and mappings?"](https://docs.aveva.com/bundle/pi-server-install/page/1022322.html). You can also edit mappings with the utility.
 
 **Note:** The user account used to launch the utility must have permissions to create mappings.
 

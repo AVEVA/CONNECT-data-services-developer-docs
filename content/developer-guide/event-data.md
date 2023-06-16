@@ -67,7 +67,7 @@ It is best practice to name types, properties and enumerations in a GraphQL frie
   - Properties are camelCase: (ex: myProperty)
   - Enum values are upper-case
 
-### Relationships
+## Relationships
 
 Properties can point to other types you define to form relationships. Event Type relationship properties can point to Reference Data Types, but Reference Data Types cannot point to Event Types.
 
@@ -89,7 +89,7 @@ Scalar and relationship properties can be made a collection by specifying the `I
 
 Scalar and relationship properties can be made searchable by specifying the `Indexed` flag. They can be made required by specifying the `Required` flag. Required means it must be specified on a top-level ingress operation. It can also restrict a delete operation to maintain integrity.
 
-## Generating the GraphQL Schema
+## Generating the GraphQL schema
 
 When types are written to the Type Store, an ontology manager detects the changes within 60 seconds and generates a GraphQL schema. The GraphQL schema represents a strongly-typed model and set of APIs for querying and modifying your Type data.
 
@@ -105,7 +105,7 @@ Authorization Tag changes will also be detected within 60 seconds of changes and
 
 You can short-circuit the 60 second detection by calling the `…/graphql/schema` endpoint. POST a non-empty body using text/plain content-type.
 
-## GraphQL Endpoint and APIs
+## GraphQL endpoint and APIs
 
 The generated GraphQL APIs are the entry point to use GraphQL. These are visible in the portal by navigating to **Developer Tools** > **GraphQL API Console**. The console adds a user-friendly interface to help you learn GraphQL and to build queries and mutations. You can also use GraphQL clients or even REST clients to interact with the GraphQL endpoint.
 

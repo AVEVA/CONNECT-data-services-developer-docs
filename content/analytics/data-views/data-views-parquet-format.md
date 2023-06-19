@@ -12,7 +12,7 @@ When you request a data view in Parquet format, AVEVA Data Hub serializes the da
 
 ## Parquet file download
 
-While making requests against a dataview in the AVEVA Data Hub [API Console](xref:apiConsole) with the Parquet form selected, you can download the request as a Parquet file that you can open in an application that supports the format. Select **Download Parquet File** to download the file.
+While making requests against a dataview in the AVEVA Data Hub [API Console](xref:apiConsole) with the Parquet form selected, you can download the request as a Parquet file that you can open in an application that supports the format. Select **Download Parquet File** to download the file. For more information on how to request a data view in the Parquet format, see <xref:data-view-api-console-use>.
 
 **API Console: Download Parquet File**
 

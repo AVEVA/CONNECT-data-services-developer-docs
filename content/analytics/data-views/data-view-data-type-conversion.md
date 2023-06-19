@@ -6,9 +6,9 @@ uid: data-view-data-type-conversion
 
 When you request a data view that includes multiple data types in a single column:
 
-1. The data view converts two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information. This conversion occurs to accommodate the strongly-typed data in the Parquet format.
+1. The data view converts two or more SDS data types into a compatible SDS data type wide enough to accommodate all types without losing information. This conversion occurs to accommodate the strongly-typed data in the [Parquet format](xref:data-views-parquet-format).
 
-1. When requesting a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs because the Parquet format does not support all data types natively.
+1. When you request a data view in the Parquet format, an additional conversion takes place. The compatible SDS data type referenced in step 1 is converted to a Parquet data type. This conversion occurs because the Parquet format does not support all data types natively.
 
 ## SDS data type conversion
 
@@ -66,7 +66,7 @@ The following table lists the resulting SDS data type when two are converted:
 | UInt64 | Decimal| Decimal |
 | Single | Double | Double  |
 
-Nullable types and non-nullable types convert into a nullable type. If AVEVA Data Hub cannot convert two data types into a compatible type, it will convert them into strings. When you request a data view in the Parquet format with the **Narrow** data view shape selected, AVEVA Data Hub usually converts combined columns into strings.
+Nullable types and non-nullable types convert into a nullable type. If AVEVA Data Hub cannot convert two data types into a compatible type, it will convert them into strings. When you request a data view in the Parquet format with the **Narrow** data view shape selected, AVEVA Data Hub converts combined columns into strings.
 
 ## SDS to Parquet data type conversion
 

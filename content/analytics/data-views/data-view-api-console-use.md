@@ -12,7 +12,7 @@ While creating or editing a data view, you can launch it within the API Console 
 
 ## Data view API console parameters
 
-When viewing a data view from the API Console, you can edit the default parameters that you configured during initial creation of the data view. Additionally, you can provide continuation tokens (in support of data pagination), caching data, or choosing different support response formats.
+When viewing a data view from the API Console, you can edit the default parameters that you configured during initial creation of the data view. Additionally, you can provide continuation tokens (in support of data pagination), caching data, or choose different support response formats.
 
 | Field | Description |
 |--|--|
@@ -22,7 +22,7 @@ When viewing a data view from the API Console, you can edit the default paramete
 | interval | The requested interval between index values. |
 | continuationToken | The field for specifying a continuation token when a request returns. For more information on this field and the **Load from Response** ![load from response](../../_icons/branded/book-arrow-right-outline.svg) button, see [Continuation token](xref:apiConsole#continuation-token). |
 | cache | The field for setting cache behavior. Values include: <ul><li><code>Preserve</code> (default): Uses cached information, if available.</li><li><code>Refresh</code>: Forces the resource to re-resolve.</li></ul> |
-| form | The file format that request responses are returned. For information on the response forms available, see [Response forms](#response-forms). |
+| form | The file format that request response returns. For information on the response forms available, see [Response forms](#response-forms). |
 
 ## Response forms
 

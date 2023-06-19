@@ -2,68 +2,35 @@
 uid: gsAssets
 ---
 
-# Get started with assets
+# Get started: Assets
 
-An asset is a container that includes metadata and references to streams related to a logical asset. For more information about assets, see [Assets](xref:ccAssets).
+An _asset_ is a container for data streams and metadata associated with a particular device or object. Assets allow you to group related streams and provide context to the stream data.
 
-To create an asset:
+[Asset best practices](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/asset-concept.html#assets-best-practices)
 
-1. In the left pane, select **Visualization** > **Asset Explorer**.
+1. [Asset Explorer](https://docs.aveva.com/bundle/data-hub/page/visualize-data/asset-explorer.html)
 
-1. From the **Assets/Asset Types** selector, select **Assets**.
+    Use the asset explorer to create assets, then visualize data streams and properties to troubleshoot and analyze the associated devices. You can create assets as needed, create them from an asset type, which acts as a template for creating similar assets, and generate them based on stream naming patterns using asset rules.
 
-1. In the toolbar, select **Add Asset**. 
+1. [Add asset](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/create-an-asset.html)
 
-1. In the `Select Type for New Asset` window, select **None** and select **Continue**.
+    Assets are digital twins of real-world equipment.
 
-1. In the right pane, complete the following fields:
+1. [Create asset types](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/asset-type-overview.html)
 
-   - **Asset** - Enter *MyData.Tank*.
+    An _asset type_ is a template for creating assets that share a common structure or type. When you create an asset type, you define the expected metadata and stream references for assets created from that asset type.
 
-   - **Description** - (Optional) Add a description for the asset. 
-   
-1. Select the **Metadata** tab, and select **Add Metadata**.
+    Before working with asset types, review the following documentation: [Asset types best practices](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/asset-type-overview.html#asset-types-best-practices)
 
-1. Complete the following fields:
+    There are two ways to create an asset type:
 
-   - **Metadata** - Enter *Capacity*.
+   - [From stratch](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/create-asset-type-asset-editor.html)
+   - [(Recommended) From an existing asset](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/convert-asset-to-asset-type.html)
 
-   - **Value** - Enter *200*.
+1. [Create asset rules](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/create-asset-rule.html)
 
-   - **Type** - Select *Double*.
+    An asset rule identifies patterns in a stream name and uses this information to automatically create assets.
 
-   - **UOM** - Select *US gallon (Volume)*.
+    Additional documentation:
 
-1. Select the **Properties** tab, and select **Add Stream References**.
-
-1. In the `Select Streams` window, enter *MyData*_*_ in the search field and press Enter.
-
-1. Select **MyData.NorthAmerica.SLTC.PumpA** from the list and select **Add**.
-
-1. In the **Stream References** field, enter *Output Pump State* as the user-friendly name for the stream reference.
-
-1. Assign a unit of measure (UOM) to the stream properties, select **Configure UOMs**.  
-
-   **Note:** The UOM set here overrides any UOM assigned to property. No data conversion occurs between the two UOMs.
-   
-1. Select the **Status** tab, and select **Add Status Configuration**.
-
-   The `Select Property` window lists the properties whose values can be displayed as a status. Only properties with an enumerated state or that have a string value can be displayed.
-   
-1. Select the **Output Pump Status | Status** property, and then select **Continue**. 
-
-   If there are no values in the stream, there will be no eligible values to choose from. If there are eligible values that can be mapped to different statuses, 
-   
-1. For each value listed, select the associated status, **Good**, **Warning**, or **Bad**. 
-
-1. To save the asset, select **Save**. 
-
-1. In the `Assets` pane, use the icons in the upper-right to switch between the following views:
-
-   - ![Card view](../../_icons/branded/view-grid.svg) - Card view displays the assets as a series of tiles.
-    
-   - ![Table view](../../_icons/branded/view-list.svg) - Table view displays the assets in a table format. 
-
-## Next step
-
-Continue with [Get started with asset types](xref:gsAssetTypes).
+   - [Asset rules](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/assets/asset-rules-concept.html)

@@ -34,7 +34,7 @@ To remove the PI to Data Hub Agent application from a host machine, uninstall it
 
 ## Remove the PI to Data Hub Agent on the portal
 
-If the agent was uninstalled without the **Unregister agent from Data Hub** option, you also need to remove it from the portal.
+If the agent was uninstalled without the **Unregister agent from Data Hub** option, you also need to remove the agent from the portal.
 
 1. In the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 

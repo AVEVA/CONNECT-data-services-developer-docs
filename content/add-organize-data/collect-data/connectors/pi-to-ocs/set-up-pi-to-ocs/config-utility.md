@@ -77,7 +77,7 @@ To add an AF server:
    - IP address
    - Connection status and timeout
 
-1. (Optional) To add an alternate display name, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. The alternate display name will be stored in Data Hub instead of the actual AF server name. See [Usage of server names and alternate display names within Data Hub](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
+1. (Optional) To add an alternate display name, select the pencil icon, type an alternate name, select **Set Display Name** and then select **Close**. AVEVA Data Hub stores the alternate display name instead of the actual AF server name. See [Usage of server names and alternate display names within AVEVA Data Hub](#usage-of-server-names-and-alternate-display-names-within-aveva-data-hub).
 
 1. (Optional) To change the length of time the agent checks for a server connection before timing out, select the pencil icon next to **Connection Timeout**.
 
@@ -97,7 +97,7 @@ The Data Archive name, or its alternate display name, appears in the `PI to Data
 
 **Note:** Setting an alternate display name for a Data Archive must be done *before* the initial start of a transfer. StreamIds are immutable. Once a stream is built, to change it you must delete all the original streams, configure the alternate display name, and restart the transfer.
 
-The maximum character length for an AF server alternate display name is 63 and the maximum character length for the Data Archive alternate display name is 86. The difference is due to added information. Both fields start with a maximum of 100 characters because Asset Id and Stream Id have a 100-character limit. To form as Asset Id, the agent adds an underscore and a 36-character GUID to an AF server alternate display name, allowing 63 characters (100-37) for the alternate display name. To form a Stream Id, the agent prepends the Data Archive alternate display name with `PI_` and appends `_[PIPointIDNumber]` (maximum of 10 characters), allowing 86 characters (100-14) for the alternate display name.
+The maximum character length for an AF server alternate display name is 63 and the maximum character length for the Data Archive alternate display name is 86. The difference is due to added information. Both fields start with a maximum of 100 characters because Asset Id and Stream Id have a 100-character limit. To form an Asset Id, the agent adds an underscore and a 36-character GUID to an AF server alternate display name, allowing 63 characters (100-37) for the alternate display name. To form a Stream Id, the agent prepends the Data Archive alternate display name with `PI_` and appends `_[PIPointIDNumber]` (maximum of 10 characters), allowing 86 characters (100-14) for the alternate display name.
 
 ## Select the default Data Archive in PI System Explorer
 
@@ -137,7 +137,7 @@ To create an AF mapping:
 
 ## Add a Data Archive
 
-If you plan on transferring AF server data, it is recommended to add an AF server first, because the PI to Data Hub Agent Configuration Utility will detect automatically the Data Archive servers that are referenced by AF server, allowing you to select the source Data Archive that contains the PI points you want to transfer. However, you can also add a Data Archive without adding an AF server.
+If you plan on transferring AF server data, we recommend you add an AF server first, because the PI to Data Hub Agent Configuration Utility will detect automatically the Data Archive servers that are referenced by AF server. This allows you to select the source Data Archive that contains the PI points you want to transfer. However, you can also add a Data Archive without adding an AF server.
 
 **Note:** There is a one-to-one (1:1) Data Archive to PI to Data Hub Agent constraint for PI to Data Hub transfers. If your AF server references multiple Data Archives, only one Data Archive can be selected and configured for the transfer.  
 

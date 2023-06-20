@@ -16,7 +16,7 @@ For the following Data Archive security configuration items, you will need to en
 
 - The PI points and data to be transferred
 
-For AF Server security configuration, ensure the AF Identity that the PI to Data Hub Agent is connecting and has read access to the elements and attributes to be transferred. 
+For AF Server security configuration, ensure the AF Identity that the PI to Data Hub Agent is connecting as has read access to the elements and attributes to be transferred. 
 
 ## Install the PI to Data Hub Agent
 
@@ -72,7 +72,7 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 
 1. Create a client-credentials client with an assigned role of Tenant Contributor and add a secret. See <xref:gpClientCredentialsClient>.
 
-   **Note:** Be sure to record the Client Id and Client Secret where you can access it again, because this is the only time you will have access to this information. You will need this information to proceed with the silent install. 
+   **Note:** Be sure to securely store the Client Id and Client Secret where you can access it again, because this is the only time you will have access to this information. You will need this information to proceed with the silent install. 
 
 1. Find the TENANTID and record it where you can access it.
 
@@ -80,7 +80,7 @@ These instructions can be used to set up a new installation of the PI to Data Hu
 
    `https://datahub.connect.aveva.com/tenant/[YOUR TENANT ID]/dashboard`
 
-   Alternatively, select **Developer Tools** > **API Console** and the TENANTID is displayed in the Full Path.
+   Alternatively, select **Developer Tools** > **API Console** and the TENANTID displays in the Full Path.
 
    `uswe.datahub.connect.aveva.com/api/v1/Tenants/[YOUR TENANT ID]/Namespaces`. 
 

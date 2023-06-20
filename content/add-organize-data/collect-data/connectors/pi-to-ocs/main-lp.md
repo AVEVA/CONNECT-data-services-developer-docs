@@ -4,7 +4,7 @@ uid: PItoDH
 
 # PI to Data Hub
 
-PI to Data Hub enables you to transfer on-premises data from Data Archive and Asset Framework (AF) to AVEVA Data Hub. PI to Data Hub also enables an offering called AVEVA PI Data Infrastructure - aggregate tag, available in small (100,000 tags), medium (250,000 tags) and large (500,000 tags), eliminating the concern about exceeding maximum PI point counts on individual Data Archive servers. Instead, customers purchase an aggregate number of tags and configure PI points as needed on individual Data Archive servers.
+PI to Data Hub enables you to transfer on-premises data from Data Archive and Asset Framework (AF) to AVEVA Data Hub. PI to Data Hub also enables AVEVA PI Data Infrastructure - aggregate tag, which allows customers to purchase an aggregate number of tags and configure PI points as needed on individual Data Archive servers. This eliminates the concern about exceeding maximum PI point counts on individual Data Archive servers. Aggregate tags are available in small (100,000 tags), medium (250,000 tags), and large (500,000 tags). 
 
 ## PI to Data Hub architecture
 
@@ -26,10 +26,10 @@ See also <xref:pi-to-ocs-limitations>.
 
 ## PI to Data Hub best practices
 
-- Windows integrated security is recommended for connections to Data Archive. Alternatives, such as local Windows Accounts or PI trusts, can be used but they are not as secure as using Active Directory on a Windows Domain. For remote connections to Data Archive, using a dedicated domain account as the Run As user for the PI to Data Hub Agent service provides the finest granularity. The PI to Data Hub Agent Configuration Utility can be used to configure PI mappings to Data Archive. If you want to use a different security mechanism, such as PI trusts, you can use a different tool to configure the PI trusts, such as PI System Management Tools. When OIDC connections are supported by the PI to Data Hub Agent, OIDC will provide a secure alternative to Windows integrated security.  
+- Windows integrated security is recommended for connections to Data Archive. Alternatives, such as local Windows Accounts or PI trusts, can be used but they are not as secure as using Active Directory on a Windows Domain. For remote connections to Data Archive, using a dedicated domain account as the Run As user for the PI to Data Hub Agent service provides the finest granularity. The PI to Data Hub Agent Configuration Utility can configure PI mappings to Data Archive. If you want to use a different security mechanism, such as PI trusts, you can use a different tool to configure the PI trusts, such as PI System Management Tools. When OIDC connections are supported by the PI to Data Hub Agent, OIDC will provide a secure alternative to Windows integrated security.  
 
 - For heavy workloads, install the PI to Data Hub Agent on a host computer that is separate from the Data Archive deployment.
 
 - Keep the PI to Data Hub Agent software version up-to-date. The portal indicates when an agent is out of date and needs to be updated.
 
-- Turn off compression only for PI points that do not update often. Turning compression off on a PI point instructs PI to Data Hub to collect the snapshot value rather than the most recently archived value for that PI point. For tags that update infrequently, if compression is left on, there may be long delays before seeing data in AVEVA Data Hub.
+- Turn off compression only for PI points that do not update often. Turning compression off on a PI point instructs PI to Data Hub to collect the snapshot value rather than the most recently archived value for that PI point. If compression is left on for tags that update infrequently, there may be long delays before seeing data in AVEVA Data Hub.

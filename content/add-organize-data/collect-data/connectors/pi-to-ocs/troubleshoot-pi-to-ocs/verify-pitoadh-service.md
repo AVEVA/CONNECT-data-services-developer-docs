@@ -22,4 +22,4 @@ As a first step in troubleshooting, check that the PI to Data Hub Agent Windows 
 
    ![Agent status](../../images/details-pane.png)
 
-   **Note:** The agent status is also displayed in the PI to Data Hub Agent Configuration Utility. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-states).
+   **Note:** The PI to Data Hub Agent Configuration Utility also displays agent status. For a list of states and descriptions that explain why an agent may not be running, see [List of agent status states](xref:pi-to-ocs-utility#list-of-agent-states).

@@ -14,7 +14,7 @@ Transfer creation consists of the following tasks:
 
 1. Name the transfer and set data privacy settings. Assign a name, description, and optional historical start time for data retrieval.
 
-1. Select Stream Metadata Replication Policy (High, Medium, Low, or None) to control which PI point attributes will be stored as metadata in SDS streams. This policy provides a level of data privacy in cases where sensitive information is stored in PI point attributes that you do not want replicated to the cloud.
+1. Select Stream Metadata Replication Policy (High, Medium, Low, or None) to control which PI point attributes the transfer stores as metadata in SDS streams. This policy provides a level of data privacy in cases where sensitive information is stored in PI point attributes that you do not want replicated to the cloud.
 
 1. Build an AF elements transfer list. For agents with AF server configured, search for AF elements to add to the transfer. Add AF elements to the transfer. PI points referenced by AF elements will be implicitly added to the transfer. Points added to the transfer in this manner are referred to as Implicit PI points.  
 
@@ -48,7 +48,7 @@ To name the data transfer:
 
    **Note:** The PI to Data Hub Agent supports transferring out-of-order events written to Data Archive.
 
-1. To set the data privacy level for the transfer, select the **Stream Metadata Replication Policy**. Metadata, in this context, refers to PI point attributes transferred as SDS stream metadata.
+1. To set the data privacy level for the transfer, select the **Stream Metadata Replication Policy**. In this context, metadata refers to PI point attributes transferred as SDS stream metadata.
 
    - **High**: Sends all supported PI point attributes as metadata.
    - **Medium**: Default. Sends metadata without logical addresses from the data source.

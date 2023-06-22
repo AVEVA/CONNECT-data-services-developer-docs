@@ -4,7 +4,7 @@ uid: pi2dh-rel-history
 
 # PI to Data Hub release history
 
-## PI to Data Hub 2.1.0 Release Notes
+## 2.1.0 release: 11/14/2022
 
 ### Overview
 
@@ -71,5 +71,3 @@ AVEVA [proactively discloses](https://docs.osisoft.com/bundle/security-commitmen
 | Product  | Software Version |
 |------------- | ------------ |
 | PI to Data Hub Agent Installation | 2.1 |
-
-©2022 AVEVA Group plc and its subsidiaries. All rights reserved.

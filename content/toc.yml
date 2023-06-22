@@ -179,6 +179,7 @@
     - topicUid: pi-to-ocs-limitations
     - topicUid: known-issues
     - topicUid: pi2ocs-rel-summary
+    - topicUid: pi2dh-rel-history
   - topicUid: lpomfoverview
     items:
     - topicUid: bpOMFConnection

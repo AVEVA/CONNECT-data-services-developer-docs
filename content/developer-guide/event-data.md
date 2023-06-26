@@ -26,10 +26,12 @@ Event Types have the following base properties:
 - eventStartTime
 - eventEndTime
 - eventDuration
+- eventType
 - eventState
 - createdDate
 - modifiedDate
 - createdByUser
+- authorizationTags
 
 ## Reference Data Types
 
@@ -43,6 +45,12 @@ Reference Data Types have the following base properties:
 - createdDate
 - modifiedDate
 - createdByUser
+- authorizationTags
+
+Reference Data Types that reference external data have the following additional base properties:
+
+-	sourceId
+-	resourceId
 
 ## Type properties
 
@@ -56,16 +64,16 @@ PropertyTypeCode
 - Double
 - TimeSpan
 - DateTime
-- Enumeration – these are defined using the Enumerations endpoint
+- Enumeration – These are defined using the Enumerations endpoint
   - PropertyTypeId is the enumeration Id
 
-It is best practice to name types, properties and enumerations in a GraphQL friendly manner. If they are not in the proper format, a GraphQLName will be generated.
+It is best practice to name types, properties, and enumerations in a GraphQL-friendly manner. If the name is in the proper format, the generated GraphQLName will be the same as the name. Otherwise, the GraphQLName will not match the name field.
 
-- Best Practice GraphQL naming
-  - Name can use these characters: [_A-Za-z][_0-9A-Za-z]
-  - Types and Enum types are pascal case (ex: MyType)
-  - Properties are camelCase: (ex: myProperty)
-  - Enum values are upper-case
+Best practice GraphQL naming:
+- Name can use these characters: [_A-Za-z][_0-9A-Za-z]
+- Types and enum types are Pascal case (MyType)
+- Properties are camel case (myProperty)
+- Enum values are uppercase
 
 ## Relationships
 
@@ -87,11 +95,11 @@ Scalar and relationship properties can be made a collection by specifying the `I
 
 **Note:** Collections are limited in the number of elements they can hold (ex: 64 elements).
 
-Scalar and relationship properties can be made searchable by specifying the `Indexed` flag. They can be made required by specifying the `Required` flag. Required means it must be specified on a top-level ingress operation. It can also restrict a delete operation to maintain integrity.
+You can make scalar and relationship properties searchable by specifying the `Indexed` flag. You can make them required by specifying the `Required` flag. Required means the property must be specified on a top-level ingress operation. It can also restrict a delete operation to maintain integrity.
 
 ## Generating the GraphQL schema
 
-When types are written to the Type Store, an ontology manager detects the changes within 60 seconds and generates a GraphQL schema. The GraphQL schema represents a strongly-typed model and set of APIs for querying and modifying your Type data.
+An ontology manager detects types that are written to the Type Store within 60 seconds and generates a GraphQL schema. The GraphQL schema represents a strongly-typed model and set of APIs for querying and modifying your type data.
 
 **Note:** Depending on your changes, you can break existing queries and ingress operations. It is usually safe to add new types and properties. Deleting or renaming properties is more dangerous.
 
@@ -111,31 +119,45 @@ The generated GraphQL APIs are the entry point to use GraphQL. These are visible
 
 The APIs generated in the GraphQL schema are:
 
--	assets – allow you to query assets from the asset service
--	events – allow you to query and upsert/delete your event data
--	referenceData - allow you to query and upsert/delete your reference data
+-	assets – allows you to query assets from the asset service
+-	events – allows you to query and upsert/delete your event data
+-	referenceData - allows you to query and upsert/delete your reference data
 
 GraphQL APIs return a standard GraphQL response type. This has the basic JSON format of:
 
 -	data
+
   -	apiCollection (ex: events)
+
     -	apiName (ex: queryMyEvent)
+
       -	array of requested data
+
 -	errors
+
   -	array of errors
+
     -	message – error message
+
     -	path – specifies where in input the failure happened
+
     -	locations
+
     -	extensions
+
       -	code – specifies what went wrong (maps to HttpStatus)
+
       -	data
+
         -	id – specifies the id of the top-level item (for retry purposes)
+
 -	extensions
+
   -	continuation – used for paging
 
 ## Mutations
 
-Mutations allow you to upsert and delete data in the Graph Store. These APIs allow you to send in a collection of items to upsert or delete. If there are errors, it is not rolled back. Instead some may succeed and some may fail. You can use the <xref:graphQLConsole> to create queries and mutations.
+Mutations allow you to upsert and delete data in the Graph Store. These APIs allow you to send in a collection of items to upsert or delete. If there are errors, the operation does not roll back. Instead, some items may succeed and some may fail. You can use the <xref:graphQLConsole> to create queries and mutations.
 
 -	Upsert – Creates the item node if it does not exist; else it updates it. 
 
@@ -187,8 +209,58 @@ Queries allow you to query data in the Graph Store. These APIs allow you to choo
 
 ## Managing permissions
 
-Permissions to view event data are managed with authorization tags.
+You manage permissions to view event data with authorization tags.
 
-Each event or reference data type has a default tag which is applied to any node of that type. Additional authorization tags can be written when a node is created or updated. Roles are given access to authorization tags.
+Each event or reference data type has a default tag, which is applied to any node of that type. Additional authorization tags can be written when a node is created or updated. Roles are given access to authorization tags.
 
 Currently, a user must have read access to ALL authorization tags on an event to read the event.
+
+## REST endpoints for querying and mutating event and reference data
+
+Along with the GraphQL endpoint, there are also two REST endpoints for querying and mutating event and reference data. These are `/events` and `/referenceData`. They both work the same, except one works with Event Types and the other with Reference Data Types. The queries and results from these endpoints are simpler than GraphQL, but not as powerful.
+
+### GET
+
+You can pass typeId, fields, filter, order by, count, and continuation token arguments to query these endpoints. These are then turned into GraphQL for execution. The results are returned in a simple JSON array of objects.
+
+-	typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
+
+-	id – This is a specific entity Id. If you pass an id, you will get a single object back, not an array.
+
+-	fields – if not provided, all non-collection fields are returned from the entities. Otherwise, this is a GraphQL field selection specification. For example: fields=id name asset {id name}
+
+-	filter – This allows you to write expressions that are turned into GraphQL filters. Only AND operations are supported. Here are some examples:
+
+  - id eq “id_001”
+
+  - eventStartTime ge "2022-02-21T05:17:00Z" AND eventEndTime lt "2022-02-21T05:18:00Z"
+
+  - Assume that you have a event property called assetMember, and it references Asset. You can filter on the Asset properties as below:
+
+    - assetMember.Name eq "Asset1"
+
+    - contains(assetMember.Name, "Asset")
+
+    - contains(assetMember.Name, "Asset") AND startsWith(assetMember.AssetTypeName, "Turbine")
+
+    - assetMember.metadata.Site in ["Buffalo", "New York"]
+
+-	orderBy – This specifies a single sort property and ASC or DESC.
+
+-	count – This specifies the number of rows to be returned.
+
+-	continuationToken – specifies if you want paging or not. The paged results have a different format than the non-paged results. They include an extra level that can hold a continuationToken. You must specify a blank continuationToken to start a paging request. Ex: continuationToken= 
+
+### POST
+
+You can pass a typeId argument and a body of JSON (array or single object) to upsert entities to these endpoints.
+
+-	typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
+
+### DELETE
+
+You can pass a typeId and id arguments to delete entities using these endpoints.
+
+-	typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
+
+-	id – This is the id of a specific entity.

@@ -38,15 +38,15 @@ To use the GraphQL console:
 
    - Select ![Response pane](../_icons/branded/response.svg) to hide or show the `Response` pane.
 
-   **Note:** The `GraphQL Explorer` and `Request` panes work in both directions. The request is updated as you make selections in the GraphQL Explorer tree, and editing the text directly in the request or pasting a complete request updates the GraphQL Explorer tree. When editing the request directly, select ![Format](../_icons/default/auto-fix.svg) to automatically format the request.
+   **Note:** The `GraphQL Explorer` and `Request` panes work in both directions. The request updates as you make selections in the GraphQL Explorer tree, and editing the text directly in the request or pasting a complete request updates the GraphQL Explorer tree. When editing the request directly, select ![Format](../_icons/default/auto-fix.svg) to automatically format the request.
 
 1. Select ![return](../_icons/branded/arrow-left-circle-outline.svg) to return to the top level and repeat the process with other objects, as needed.
 
-1. When you have completed the query, select **Send Request** to run the query.
+1. When your query is complete, select **Send Request** to run the query.
 
    The results of your query appear in the `Response` pane.
 
-1. When a certain amount of fields has been requested, such as `count: 1`, and there are more fields available to display, a continuation token appears in the response. Select `Resend with Continuation` to view the next item.
+1. When you request a certain amount of fields, such as `count: 1`, and there are more fields available to display, a continuation token appears in the response. Select `Resend with Continuation` to view the next item.
 
 ## Variables
 

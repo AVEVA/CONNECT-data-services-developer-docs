@@ -127,11 +127,11 @@ GraphQL APIs return a standard GraphQL response type. This has the basic JSON fo
 
 -	data
 
-  -	apiCollection (ex: events)
+  - apiCollection (ex: events)
 
-    -	apiName (ex: queryMyEvent)
+    - apiName (ex: queryMyEvent)
 
-      -	array of requested data
+      - array of requested data
 
 -	errors
 
@@ -149,7 +149,7 @@ GraphQL APIs return a standard GraphQL response type. This has the basic JSON fo
 
       -	data
 
-        -	id – specifies the id of the top-level item (for retry purposes)
+        - id – specifies the id of the top-level item (for retry purposes)
 
 -	extensions
 
@@ -237,19 +237,19 @@ You can pass typeId, fields, filter, order by, count, and continuation token arg
 
   - Assume that you have a event property called assetMember, and it references Asset. You can filter on the Asset properties as below:
 
-    - assetMember.Name eq "Asset1"
+     - assetMember.Name eq "Asset1"
 
-    - contains(assetMember.Name, "Asset")
+     - contains(assetMember.Name, "Asset")
 
-    - contains(assetMember.Name, "Asset") AND startsWith(assetMember.AssetTypeName, "Turbine")
+     - contains(assetMember.Name, "Asset") AND startsWith(assetMember.AssetTypeName, "Turbine")
 
-    - assetMember.metadata.Site in ["Buffalo", "New York"]
+     - assetMember.metadata.Site in ["Buffalo", "New York"]
 
 -	orderBy – This specifies a single sort property and ASC or DESC.
 
 -	count – This specifies the number of rows to be returned.
 
--	continuationToken – specifies if you want paging or not. The paged results have a different format than the non-paged results. They include an extra level that can hold a continuationToken. You must specify a blank continuationToken to start a paging request. Ex: continuationToken= 
+-	continuationToken – specifies if you want paging or not. The paged results have a different format than the non-paged results. They include an extra level that can hold a continuationToken. You must specify a blank continuationToken to start a paging request. Ex: `continuationToken=` 
 
 ### POST
 

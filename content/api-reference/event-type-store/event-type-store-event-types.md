@@ -34,10 +34,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[EventGraphEventType](#schemaeventgrapheventtype)[]|Success.|
-|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
+|304|None|Not modified|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
@@ -94,7 +94,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
+An EventGraphEventType.<br/>
 
 ```json
 {
@@ -122,8 +122,8 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 |Status Code|Body Type|Description|
 |---|---|---|
 |201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -176,7 +176,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 `[optional] boolean includeDeleted`
 <br/><br/>
 
@@ -185,11 +185,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
-|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
-|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
+|304|None|Not modified.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
@@ -241,11 +241,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
+An EventGraphEventType.<br/>
 
 ```json
 {
@@ -275,9 +275,9 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 |200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
 |201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
 |302|None|Found.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|409|[ErrorResponse](#schemaerrorresponse)|Found.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Found.|
 
 <h4>Example response body</h4>
 
@@ -329,11 +329,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
+An EventGraphEventType.<br/>
 
 ```json
 {
@@ -362,9 +362,9 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 |---|---|---|
 |200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
 |201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
@@ -416,16 +416,16 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{i
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|Deleted.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 
@@ -449,16 +449,16 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#EventGraphEventTypeDto<br/>
+A list of EventGraphEventType objects.<br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
-|207|[ErrorResponse](#schemaerrorresponse)|Partial.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|207|[AdhErrorResponse](#schemaadherrorresponse)|Partial.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -510,15 +510,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -559,11 +559,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
+An access control list.<br/>
 
 ```json
 {
@@ -593,8 +593,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -635,15 +635,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -676,11 +676,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
+A Trustee.<br/>
 
 ```json
 {
@@ -695,8 +695,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -729,15 +729,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the EventType.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 ## Definitions
@@ -894,15 +894,31 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 
 ---
 
-### ErrorResponse
+### AdhErrorResponse
 
-<a id="schemaerrorresponse"></a>
-<a id="schema_ErrorResponse"></a>
-<a id="tocSerrorresponse"></a>
-<a id="tocserrorresponse"></a>
+<a id="schemaadherrorresponse"></a>
+<a id="schema_AdhErrorResponse"></a>
+<a id="tocSadherrorresponse"></a>
+<a id="tocsadherrorresponse"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Reason|string|false|true|None|
+|Resolution|string|false|true|None|
 
 ```json
-{}
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
+}
 
 ```
 

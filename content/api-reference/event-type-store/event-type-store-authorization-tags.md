@@ -22,7 +22,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
@@ -66,11 +66,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTa
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
-Only return clients that have these tags.<br/>
+An AuthorizationTag.<br/>
 
 ```json
 {
@@ -85,8 +85,8 @@ Only return clients that have these tags.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
-|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
+|200|[AuthorizationTag](#schemaauthorizationtag)|Success.|
+|201|[AuthorizationTag](#schemaauthorizationtag)|Created.|
 |302|None|Found.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
@@ -94,27 +94,15 @@ Only return clients that have these tags.<br/>
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
+> 200 Response ([AuthorizationTag](#schemaauthorizationtag))
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
   "Id": "string",
   "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Members": [
-    {
-      "Name": "string",
-      "GraphQLName": "string",
-      "Code": 0,
-      "State": 0,
-      "Description": "string"
-    }
-  ]
+  "Description": "string"
 }
 ```
 
@@ -137,11 +125,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
-Only return clients that have these tags.<br/>
+An AuthorizationTag.<br/>
 
 ```json
 {
@@ -156,34 +144,22 @@ Only return clients that have these tags.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
-|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
+|200|[AuthorizationTag](#schemaauthorizationtag)|Success.|
+|201|[AuthorizationTag](#schemaauthorizationtag)|Created.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
+> 200 Response ([AuthorizationTag](#schemaauthorizationtag))
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
   "Id": "string",
   "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Members": [
-    {
-      "Name": "string",
-      "GraphQLName": "string",
-      "Code": 0,
-      "State": 0,
-      "Description": "string"
-    }
-  ]
+  "Description": "string"
 }
 ```
 
@@ -206,14 +182,14 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Authorization
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|Deleted.|
-|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
+|304|None|Not modified.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 |404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
@@ -247,34 +223,22 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEnumeration](#schemaeventgraphenumeration)[]|Success.|
+|200|[AuthorizationTag](#schemaauthorizationtag)[]|Success.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration)[])
+> 200 Response ([AuthorizationTag](#schemaauthorizationtag)[])
 
 ```json
 [
   {
-    "Name": "string",
-    "GraphQLName": "string",
-    "Version": 0,
     "Id": "string",
     "State": 0,
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z",
-    "Description": "string",
-    "Members": [
-      {
-        "Name": "string",
-        "GraphQLName": "string",
-        "Code": 0,
-        "State": 0,
-        "Description": "string"
-      }
-    ]
+    "Description": "string"
   }
 ]
 ```
@@ -298,7 +262,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
@@ -347,11 +311,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#acl<br/>
+An access control list.<br/>
 
 ```json
 {
@@ -421,7 +385,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
@@ -462,11 +426,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
+A Trustee.<br/>
 
 ```json
 {
@@ -570,82 +534,6 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
   "Resolution": "string",
   "property1": null,
   "property2": null
-}
-
-```
-
----
-
-### EventGraphEnumeration
-
-<a id="schemaeventgraphenumeration"></a>
-<a id="schema_EventGraphEnumeration"></a>
-<a id="tocSeventgraphenumeration"></a>
-<a id="tocseventgraphenumeration"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Members|[[EnumerationState](#schemaenumerationstate)]|false|true|None|
-
-```json
-{
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Members": [
-    {
-      "Name": "string",
-      "GraphQLName": "string",
-      "Code": 0,
-      "State": 0,
-      "Description": "string"
-    }
-  ]
-}
-
-```
-
----
-
-### EnumerationState
-
-<a id="schemaenumerationstate"></a>
-<a id="schema_EnumerationState"></a>
-<a id="tocSenumerationstate"></a>
-<a id="tocsenumerationstate"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Code|int32|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|Description|string|false|true|None|
-
-```json
-{
-  "Name": "string",
-  "GraphQLName": "string",
-  "Code": 0,
-  "State": 0,
-  "Description": "string"
 }
 
 ```

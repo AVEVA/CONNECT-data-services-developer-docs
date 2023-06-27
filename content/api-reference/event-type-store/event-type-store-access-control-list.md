@@ -28,8 +28,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -73,7 +73,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
+An access control list.<br/>
 
 ```json
 {
@@ -103,8 +103,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -151,8 +151,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -196,7 +196,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
+An access control list.<br/>
 
 ```json
 {
@@ -226,8 +226,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -274,8 +274,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -319,7 +319,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
+An access control list.<br/>
 
 ```json
 {
@@ -349,8 +349,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -397,8 +397,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Eve
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 
@@ -425,8 +425,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Ref
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 
@@ -453,8 +453,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enu
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 ## Definitions
@@ -580,15 +580,31 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enu
 
 ---
 
-### ErrorResponse
+### AdhErrorResponse
 
-<a id="schemaerrorresponse"></a>
-<a id="schema_ErrorResponse"></a>
-<a id="tocSerrorresponse"></a>
-<a id="tocserrorresponse"></a>
+<a id="schemaadherrorresponse"></a>
+<a id="schema_AdhErrorResponse"></a>
+<a id="tocSadherrorresponse"></a>
+<a id="tocsadherrorresponse"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|None|
+|Error|string|false|true|None|
+|Reason|string|false|true|None|
+|Resolution|string|false|true|None|
 
 ```json
-{}
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
+}
 
 ```
 

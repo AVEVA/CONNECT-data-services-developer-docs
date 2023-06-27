@@ -213,7 +213,7 @@ You can pass typeId, fields, filter, order by, count, and continuation token arg
 
 -	id – This is a specific entity Id. If you pass an id, you will get a single object back, not an array.
 
--	fields – if not provided, all non-collection fields are returned from the entities. Otherwise, this is a GraphQL field selection specification. For example: fields=id name asset {id name}
+-	fields – If not provided, all non-collection fields are returned from the entities. Otherwise, this is a GraphQL field selection specification. For example: `fields=id name asset {id name}`
 
 -	filter – This allows you to write expressions that are turned into GraphQL filters. Only AND operations are supported. Here are some examples:
 
@@ -221,7 +221,7 @@ You can pass typeId, fields, filter, order by, count, and continuation token arg
 
   - eventStartTime ge "2022-02-21T05:17:00Z" AND eventEndTime lt "2022-02-21T05:18:00Z"
 
-  - Assume that you have a event property called assetMember, and it references Asset. You can filter on the Asset properties as below:
+  - Assume that you have an event property called assetMember, and it references Asset. You can filter on the Asset properties as below:
 
      - assetMember.Name eq "Asset1"
 
@@ -235,7 +235,7 @@ You can pass typeId, fields, filter, order by, count, and continuation token arg
 
 -	count – This specifies the number of rows to be returned.
 
--	continuationToken – specifies if you want paging or not. The paged results have a different format than the non-paged results. They include an extra level that can hold a continuationToken. You must specify a blank continuationToken to start a paging request. Ex: `continuationToken=` 
+-	continuationToken – This specifies if you want paging or not. The paged results have a different format than the non-paged results. They include an extra level that can hold a continuationToken. You must specify a blank continuationToken to start a paging request. Ex: `continuationToken=` 
 
 ### POST
 

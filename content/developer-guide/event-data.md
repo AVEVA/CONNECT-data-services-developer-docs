@@ -77,7 +77,7 @@ Best practices for GraphQL naming:
 
 ## Relationships
 
-Properties can point to other types you define to form relationships. Event Type relationship properties can point to Reference Data Types, but Reference Data Types cannot point to Event Types.
+Properties can point to other types you define to form relationships. As a best practice, Event Type relationship properties can point to Reference Data Types, but Reference Data Types should not point to Event Types because if an event does not exist it will cause an error.
 
 PropertyTypeCode:
 - Event

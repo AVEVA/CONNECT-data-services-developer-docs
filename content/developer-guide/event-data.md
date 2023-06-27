@@ -64,12 +64,12 @@ PropertyTypeCode
 - Double
 - TimeSpan
 - DateTime
-- Enumeration – These are defined using the Enumerations endpoint
+- Enumeration – defined using the Enumerations endpoint
   - PropertyTypeId is the enumeration Id
 
 It is best practice to name types, properties, and enumerations in a GraphQL-friendly manner. If the name is in the proper format, the generated GraphQLName will be the same as the name. Otherwise, the GraphQLName will not match the name field.
 
-Best practice GraphQL naming:
+Best practices for GraphQL naming:
 - Name can use these characters: [_A-Za-z][_0-9A-Za-z]
 - Types and enum types are Pascal case (MyType)
 - Properties are camel case (myProperty)
@@ -121,38 +121,24 @@ The APIs generated in the GraphQL schema are:
 
 -	assets – allows you to query assets from the asset service
 -	events – allows you to query and upsert/delete your event data
--	referenceData - allows you to query and upsert/delete your reference data
+-	referenceData – allows you to query and upsert/delete your reference data
 
 GraphQL APIs return a standard GraphQL response type. This has the basic JSON format of:
 
 -	data
-
   - apiCollection (ex: events)
-
-    - apiName (ex: queryMyEvent)
-
-      - array of requested data
-
+     - apiName (ex: queryMyEvent)
+       - array of requested data
 -	errors
-
   -	array of errors
-
-    -	message – error message
-
-    -	path – specifies where in input the failure happened
-
-    -	locations
-
-    -	extensions
-
-      -	code – specifies what went wrong (maps to HttpStatus)
-
-      -	data
-
-        - id – specifies the id of the top-level item (for retry purposes)
-
+     -	message – error message
+     -	path – specifies where in input the failure happened
+     -	locations
+     -	extensions
+        -	code – specifies what went wrong (maps to HttpStatus)
+        -	data
+           - id – specifies the id of the top-level item (for retry purposes)
 -	extensions
-
   -	continuation – used for paging
 
 ## Mutations
@@ -165,7 +151,7 @@ Mutations allow you to upsert and delete data in the Graph Store. These APIs all
 
   - Missing properties are ignored on update, set to null on create.
 
-    - This can work like a REST PATCH.
+     - This can work like a REST PATCH.
 
   - Null property values will clear a value.
 
@@ -175,7 +161,7 @@ Mutations allow you to upsert and delete data in the Graph Store. These APIs all
 
   - An error writing a node at any level of the tree will cause the upsert to cancel the current write, up to the top-level. It will then continue with the next top-level item.
 
-    - Errors are reported in the GraphQL errors collection.
+     - Errors are reported in the GraphQL errors collection.
 
   - Writing a collection property always updates the entire collection. No partial collection changes can be made.
 

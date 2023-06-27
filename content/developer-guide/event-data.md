@@ -49,8 +49,8 @@ Reference Data Types have the following base properties:
 
 Reference Data Types that reference external data have the following additional base properties:
 
--	sourceId
--	resourceId
+- sourceId
+- resourceId
 
 ## Type properties
 
@@ -105,9 +105,9 @@ An ontology manager detects types that are written to the Type Store within 60 s
 
 The `State` property on each Type and Enum affects how the GraphQL is generated.
 
--	Active – schema generated for query and ingress
--	Deprecated – schema generated for query only
--	Deleted – not generated in schema; this is a soft-delete
+- Active – schema generated for query and ingress
+- Deprecated – schema generated for query only
+- Deleted – not generated in schema; this is a soft-delete
 
 Authorization Tag changes will also be detected within 60 seconds of changes and the new access policy will be pushed into the GraphQL server.
 
@@ -119,33 +119,33 @@ The generated GraphQL APIs are the entry point to use GraphQL. These are visible
 
 The APIs generated in the GraphQL schema are:
 
--	assets – allows you to query assets from the asset service
--	events – allows you to query and upsert/delete your event data
--	referenceData – allows you to query and upsert/delete your reference data
+- assets – allows you to query assets from the asset service
+- events – allows you to query and upsert/delete your event data
+- referenceData – allows you to query and upsert/delete your reference data
 
 GraphQL APIs return a standard GraphQL response type. This has the basic JSON format of:
 
--	data
+- data
   - apiCollection (ex: events)
      - apiName (ex: queryMyEvent)
        - array of requested data
--	errors
-  -	array of errors
-     -	message – error message
-     -	path – specifies where in input the failure happened
-     -	locations
-     -	extensions
-        -	code – specifies what went wrong (maps to HttpStatus)
-        -	data
+- errors
+  - array of errors
+     - message – error message
+     - path – specifies where in input the failure happened
+     - locations
+     - extensions
+        - code – specifies what went wrong (maps to HttpStatus)
+        - data
            - id – specifies the id of the top-level item (for retry purposes)
--	extensions
-  -	continuation – used for paging
+- extensions
+  - continuation – used for paging
 
 ## Mutations
 
 Mutations allow you to upsert and delete data in the Graph Store. These APIs allow you to send in a collection of items to upsert or delete. If there are errors, the operation does not roll back. Instead, some items may succeed and some may fail. You can use the <xref:graphQLConsole> to create queries and mutations.
 
--	Upsert – Creates the item node if it does not exist; else it updates it. 
+- Upsert – Creates the item node if it does not exist; else it updates it. 
 
   - The id property must always be provided. The eventStartTime is required when creating a new event.
 
@@ -191,7 +191,7 @@ Queries allow you to query data in the Graph Store. These APIs allow you to choo
 
   - Queries have node limits at every level. As you go deeper, the limits are reduced based on the number of nodes at the parent level.
 
-  -	Queries are limited to a certain number of levels (depth) and a certain number of relationships (complexity).
+  - Queries are limited to a certain number of levels (depth) and a certain number of relationships (complexity).
 
 ## Managing permissions
 
@@ -209,13 +209,13 @@ Along with the GraphQL endpoint, there are also two REST endpoints for querying 
 
 You can pass typeId, fields, filter, order by, count, and continuation token arguments to query these endpoints. These are then turned into GraphQL for execution. The results are returned in a simple JSON array of objects.
 
--	typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
+- typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
 
--	id – This is a specific entity Id. If you pass an id, you will get a single object back, not an array.
+- id – This is a specific entity Id. If you pass an id, you will get a single object back, not an array.
 
--	fields – If not provided, all non-collection fields are returned from the entities. Otherwise, this is a GraphQL field selection specification. For example: `fields=id name asset {id name}`
+- fields – If not provided, all non-collection fields are returned from the entities. Otherwise, this is a GraphQL field selection specification. For example: `fields=id name asset {id name}`
 
--	filter – This allows you to write expressions that are turned into GraphQL filters. Only AND operations are supported. Here are some examples:
+- filter – This allows you to write expressions that are turned into GraphQL filters. Only AND operations are supported. Here are some examples:
 
   - id eq “id_001”
 
@@ -231,22 +231,22 @@ You can pass typeId, fields, filter, order by, count, and continuation token arg
 
      - assetMember.metadata.Site in ["Buffalo", "New York"]
 
--	orderBy – This specifies a single sort property and ASC or DESC.
+- orderBy – This specifies a single sort property and ASC or DESC.
 
--	count – This specifies the number of rows to be returned.
+- count – This specifies the number of rows to be returned.
 
--	continuationToken – This specifies if you want paging or not. The paged results have a different format than the non-paged results. They include an extra level that can hold a continuationToken. You must specify a blank continuationToken to start a paging request. Ex: `continuationToken=` 
+- continuationToken – This specifies if you want paging or not. The paged results have a different format than the non-paged results. They include an extra level that can hold a continuationToken. You must specify a blank continuationToken to start a paging request. Ex: `continuationToken=` 
 
 ### POST
 
 You can pass a typeId argument and a body of JSON (array or single object) to upsert entities to these endpoints.
 
--	typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
+- typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
 
 ### DELETE
 
 You can pass a typeId and id arguments to delete entities using these endpoints.
 
--	typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
+- typeId – This is the Type Id from the type in the TypeStore. It must be one of the defined types.
 
--	id – This is the id of a specific entity.
+- id – This is the id of a specific entity.

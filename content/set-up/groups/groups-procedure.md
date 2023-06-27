@@ -28,4 +28,4 @@ To add a group:
 
 ## Video Tutorial: Provide groups in AVEVA Connect with access to AVEVA Data Hub
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b78ApFoKGMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rb1buxc3e7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

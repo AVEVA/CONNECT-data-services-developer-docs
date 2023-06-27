@@ -42,23 +42,47 @@ To import a system configuration from the field to the corresponding system digi
 
 1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
 
-1. Find and select the edge device to configure.
+1. Find and select the system to configure.
 
-1. Select **Edit System**.
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
 
 1. Select **Import Configuration**.
 
-1. In the `Import Configuration` window, click **Select file**, browse to the configuration file to import, and then select **Open**.
+1. In the `Import Configuration` window, choose **Select file**, browse to the configuration file to import, and then select **Open**.
 
 1. Select **Import**.
 
-1. Review the imported file contents to ensure it is correct.
+1. Review the imported file to ensure the contents are correct.
 
 1. When you have finished, select **Save & Close**.
 
 1. To confirm the changes, select **Save & Close**.
 
-## Edit an system configuration
+## Copy a configuration from a configuration template
+
+To copy a system configuration from a template to the corresponding system digital twin:
+
+1. In the left pane, select **Data Collection** > **Edge Data Store & Adapters**.
+
+1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
+
+1. Find and select the system to configure.
+
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
+
+1. Select **Copy From Configuration Template**.
+
+1. Use the **Filter Templates** search bar to find the configuration template you want to apply to your system.
+
+    - You can filter by configuration template name, description, or version number.
+    
+    - Select **Edit Configuration Template** to edit a configuration template before you apply it to a system.
+
+1. Select the configuration template you want to apply to a system.
+
+1. To confirm the changes, select **Save and Close**.
+
+## Edit a system
 
 To edit a system configuration and export it for use:
 
@@ -66,9 +90,9 @@ To edit a system configuration and export it for use:
 
 1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
 
-1. Find and select the edge device to configure.
+1. Find and select the system to configure.
 
-1. In the right pane, select **Edit System** or ![Edit](../../../_icons/default/pencil.svg).
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
 
 1. To manage the tags for a system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
 
@@ -76,11 +100,11 @@ To edit a system configuration and export it for use:
 
    - To delete a tag, select **X** in the tag bubble.
 
-1. To create the configuration, do one of the following:
+1. To set the configuration, do one of the following:
 
-   - To use the default configuration for the system type, select **Start With Default**.
+   - To use a configuration template, select **Copy From Configuration Template**.
 
-   - To select a JSON file that contains the configuration, select **Start With Default**.
+   - To select a JSON file that contains the configuration, select **Import Configuration**.
 
 1. (Optional) In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
@@ -88,7 +112,7 @@ To edit a system configuration and export it for use:
 
    **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. 
 
-   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.
+   Errors in the JSON syntax are underlined. To see an explanation of the issue, hover over the underlined text. The overall status of the JSON syntax is displayed over the right pane.
 
 1. To export the completed configuration, do one of the following:
 
@@ -96,7 +120,7 @@ To edit a system configuration and export it for use:
 
    - To export the entire configuration in one file, select **Export Configuration**.
 
-   The JSON file is downloaded to your browser.
+   The JSON file downloads to your browser.
 
 1. When you have finished, select **Save & Close**.
 

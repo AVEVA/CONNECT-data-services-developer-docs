@@ -12,7 +12,7 @@ To use the GraphQL console:
 
 1. In the left pane, select **Developer Tools** > **GraphQL Console**.
 
-   The `GraphQL Explorer` pane populates with the queries for search and aggregation from your organization's schema.
+   The `GraphQL Explorer` pane populates with your organization's schema.
 
 1. Select the **Query** tab in the `GraphQL Explorer` pane to compose a data retrieval request, or the **Mutation** tab to upsert or delete data.
 
@@ -22,7 +22,7 @@ To use the GraphQL console:
 
    - Use the selections under the `where:` argument to filter by fields that equal, contain, start with, or end with a specified value, or are included in an array of values.
 
-   - Use the selections under the `options:` argument to retrieve a specified count of objects or to sort the data returned. Select **+ Add** to add a secondary sort field.
+   - Use the selections under the `options:` argument to retrieve a specified count of objects or to sort the data returned. If you select multiple sort fields, the order in which you select them determines the sort order.
 
    - For fields that can be arrays, select **+ Add** below them to add spaces for additional values.
 

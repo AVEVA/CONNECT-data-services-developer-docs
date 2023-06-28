@@ -6,7 +6,7 @@ uid: gsStreams
 
 [Streams](xref:sdsStreams) are a collection of ordered events, or a series of events, where each event is an instance of the type you have defined. You create and write data to streams using a simple REST API. The streams you create can be used to store simple or complex data types to suit your application needs. You can define simple or complex [indexes](xref:sdsIndexes) to arrange and relate your data.
 
-[Streams best practices](xref:streams-manage-streams#streams-best-practices)
+For additional information about stream best practices, see [Streams best practices](xref:streams-manage-streams#streams-best-practices).
 
 1. <xref:lpstoredata>
 
@@ -24,7 +24,7 @@ uid: gsStreams
 
     A _type_ defines the shape and structure of events and how to associate events within a stream of data. A type is comprised of at least two properties. One property serves as the primary index, most commonly a timestamp or DateTime. In addition, it has one or more additional properties called value properties that describe the data in each stream event. Each value property can have a different property type. A wide variety of property types are supported.
 
-    Additional documentation:
+    **Additional documentation**:
 
     - <xref:bpTypes>
     - Learn more about types in the Developer Guide: <xref:sdsTypes>
@@ -37,7 +37,7 @@ uid: gsStreams
 
     A metadata rule is a user-defined stream name pattern in which each part is assigned a metadata type. Metadata rules capture any streams currently stored in an AVEVA Data Hub namespace, as well as matching streams that are subsequently added to the namespace.
 
-    Additional documentation:
+    **Additional documentation**:
 
    - <xref:ccMetadataRules>
    - Learn more about metadata rules in the API Reference: <xref:MetadataRulesOverview>

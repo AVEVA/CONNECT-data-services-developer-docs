@@ -6,7 +6,7 @@ uid: gsAssets
 
 An _asset_ is a container for data streams and metadata associated with a particular device or object. Assets allow you to group related streams and provide context to the stream data.
 
-[Asset best practices](xref:sccAssets)
+For additional information about asset best practices, see <xref:ccAssets>.
 
 1. [Asset Explorer](xref:AssetExplorers)
 
@@ -31,6 +31,6 @@ An _asset_ is a container for data streams and metadata associated with a partic
 
     An asset rule identifies patterns in a stream name and uses this information to automatically create assets.
 
-    Additional documentation:
+    **Additional documentation**:
 
    - [Asset rules](xref:AssetRulesCC)

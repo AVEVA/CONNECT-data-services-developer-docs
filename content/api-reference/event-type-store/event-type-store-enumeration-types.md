@@ -41,30 +41,74 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 
 <h4>Example response body</h4>
 
-> 200 Response ([Enumeration](#schemaenumeration)[])
+> 200 Response
 
 ```json
 [
   {
-    "Name": "string",
-    "GraphQLName": "string",
-    "Version": 0,
-    "Id": "string",
-    "State": 0,
-    "CreatedDate": "2019-08-24T14:15:22Z",
-    "ModifiedDate": "2019-08-24T14:15:22Z",
-    "Description": "string",
+    "Id": "SimpleEnumeration",
+    "Name": "SimpleEnumeration",
+    "GraphQLName": "SimpleEnumeration",
     "Members": [
       {
-        "Name": "string",
-        "GraphQLName": "string",
+        "Name": "ACTIVE",
+        "GraphQLName": "ACTIVE",
         "Code": 0,
-        "State": 0,
-        "Description": "string"
+        "State": "Active",
+        "Description": "This is an active state"
+      },
+      {
+        "Name": "CLOSED",
+        "GraphQLName": "CLOSED",
+        "Code": 1,
+        "State": "Active",
+        "Description": "This is a closed state"
       }
-    ]
+    ],
+    "Version": 1,
+    "State": "Active",
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z"
+  },
+  {
+    "Id": "SimpleEnumeration",
+    "Name": "SimpleEnumeration",
+    "GraphQLName": "SimpleEnumeration",
+    "Members": [
+      {
+        "Name": "ACTIVE",
+        "GraphQLName": "ACTIVE",
+        "Code": 0,
+        "State": "Active",
+        "Description": "This is an active state"
+      },
+      {
+        "Name": "CLOSED",
+        "GraphQLName": "CLOSED",
+        "Code": 1,
+        "State": "Active",
+        "Description": "This is a closed state"
+      }
+    ],
+    "Version": 1,
+    "State": "Active",
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z"
   }
 ]
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
+}
 ```
 
 ---
@@ -118,27 +162,46 @@ An Enumeration.<br/>
 
 <h4>Example response body</h4>
 
-> 201 Response ([Enumeration](#schemaenumeration))
+> 201 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
   "Members": [
     {
-      "Name": "string",
-      "GraphQLName": "string",
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
       "Code": 0,
-      "State": 0,
-      "Description": "string"
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
     }
-  ]
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -179,27 +242,46 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 <h4>Example response body</h4>
 
-> 200 Response ([Enumeration](#schemaenumeration))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
   "Members": [
     {
-      "Name": "string",
-      "GraphQLName": "string",
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
       "Code": 0,
-      "State": 0,
-      "Description": "string"
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
     }
-  ]
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -258,27 +340,76 @@ An Enumeration.<br/>
 
 <h4>Example response body</h4>
 
-> 200 Response ([Enumeration](#schemaenumeration))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
   "Members": [
     {
-      "Name": "string",
-      "GraphQLName": "string",
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
       "Code": 0,
-      "State": 0,
-      "Description": "string"
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
     }
-  ]
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
+  "Members": [
+    {
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
+      "Code": 0,
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
+    }
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -337,27 +468,76 @@ An Enumeration.<br/>
 
 <h4>Example response body</h4>
 
-> 200 Response ([Enumeration](#schemaenumeration))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
   "Members": [
     {
-      "Name": "string",
-      "GraphQLName": "string",
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
       "Code": 0,
-      "State": 0,
-      "Description": "string"
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
     }
-  ]
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
+  "Members": [
+    {
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
+      "Code": 0,
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
+    }
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -428,27 +608,46 @@ A list of Enumeration objects.<br/>
 
 <h4>Example response body</h4>
 
-> 200 Response ([Enumeration](#schemaenumeration))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
   "Members": [
     {
-      "Name": "string",
-      "GraphQLName": "string",
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
       "Code": 0,
-      "State": 0,
-      "Description": "string"
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
     }
-  ]
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
+}
+```
+
+> 207 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -708,6 +907,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 <a id="tocSenumeration"></a>
 <a id="tocsenumeration"></a>
 
+Represents an Enumeration object.
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
@@ -724,23 +925,29 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
+  "Id": "SimpleEnumeration",
+  "Name": "SimpleEnumeration",
+  "GraphQLName": "SimpleEnumeration",
   "Members": [
     {
-      "Name": "string",
-      "GraphQLName": "string",
+      "Name": "ACTIVE",
+      "GraphQLName": "ACTIVE",
       "Code": 0,
-      "State": 0,
-      "Description": "string"
+      "State": "Active",
+      "Description": "This is an active state"
+    },
+    {
+      "Name": "CLOSED",
+      "GraphQLName": "CLOSED",
+      "Code": 1,
+      "State": "Active",
+      "Description": "This is a closed state"
     }
-  ]
+  ],
+  "Version": 1,
+  "State": "Active",
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z"
 }
 
 ```

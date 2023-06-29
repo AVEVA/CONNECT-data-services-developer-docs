@@ -17,7 +17,7 @@ An Event Type is a collection of properties, each configured as:
 - A scalar value (int, double, datetime, string, bool, ID, etc.)
 - A custom enumeration
 - A relationship to another Event Type
-- A relationship to a type from an adjacent service (assets, stream, etc.)
+- A relationship to a type from an adjacent service (such as assets)
 - A collection of any of these things
 
 Event Types have the following base properties:
@@ -35,7 +35,7 @@ Event Types have the following base properties:
 
 ## Reference Data Types
 
-Reference data provides additional information that can be referenced in the context of an asset or event, and is useful for users and/or applications when data is consumed, analyzed, visualized, and reported on. Reference data is typically configuration or system definition information. 
+Reference data provides additional information that can be referenced in the context of an event, and is useful for users and/or applications when data is consumed, analyzed, visualized, and reported on. Reference data is typically configuration or system definition information. 
 
 Reference Data Types are collections of configurable properties that can include references to other Reference Data or Events.
 
@@ -84,6 +84,7 @@ PropertyTypeCode:
   - PropertyTypeId is the event Id
 - ReferenceData
   - PropertyTypeId is the reference data Id
+- Asset
 
 Relationship properties can specify if the relationship should be created in both directions. This is done by specifying the ReverseLookup flag and a RemoteReferenceName. This should be the plural remote property name that points back to the current type.
 

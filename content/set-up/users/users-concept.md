@@ -30,4 +30,4 @@ Some points to note about adding and managing users:
 
 ## <a name="users-pi-server"></a>PI Server counterpart
 
-A user is comparable to a mapping in PI Data Archive. For example, in PI Data Archive a mapping may be added from a Microsoft Windows account to a specified PI identity. The user enters their Windows credentials to authenticate against PI Data Archive and gets the permissions specified by the PI identity. AVEVA Connect handles authentication for AVEVA Data Hub, and users get their permissions from the roles that are assigned to them.
+A user is comparable to a mapping in Data Archive. For example, in Data Archive a mapping may be added from a Microsoft Windows account to a specified PI identity. The user enters their Windows credentials to authenticate against Data Archive and gets the permissions specified by the PI identity. AVEVA Connect handles authentication for AVEVA Data Hub, and users get their permissions from the roles that are assigned to them.

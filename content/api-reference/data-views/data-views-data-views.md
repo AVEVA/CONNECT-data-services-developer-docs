@@ -1,14 +1,14 @@
 ---
-uid: DataViewAPI
+uid: data-views-data-views
+
 ---
 
-# Data view
+# Data Views
+The `DataView` API provides mechanisms to create, read, update, and delete data views. This is one portion of the whole [data views API](xref:DataViewsAPIOverview).
 
-The data view API provides mechanisms to create, read, update, and delete data views. This is one portion of the whole [data views API](xref:DataViewsAPIOverview).
+For a description of the `DataView` object type, see the [DataView documentation](xref:DataViewsAPIOverview).
 
-For a description of the `DataView` object type, see the [data views documentation](xref:DataViewsOverview).
-
-Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [access control](xref:DataViewsAccessControlAPI).
+Other sections of documentation describe how to [secure data views](xref:DataViewsSecuringDataViews) by setting their ownership and permissions, and the corresponding [API](xref:data-views-access-control).
 
 ## `List Data Views`
 
@@ -133,6 +133,8 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -284,6 +286,8 @@ Content-Type: application/json
     { 
       "Id": "weather",
       "Kind": "Stream",
+      "SourceKind": "Default",
+      "SourceId": "",
       "Value":"*weather*" 
     }
   ],
@@ -359,6 +363,8 @@ A `DataView` object whose `Id` is `null` or unspecified.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -514,6 +520,8 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -609,6 +617,8 @@ A `DataView` object whose `Id` matches the `dataViewId` in the URL.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -708,7 +718,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}
 <a id="tocSdataview"></a>
 <a id="tocsdataview"></a>
 
-A declarative way to select, label and shape data from AVEVA Data Hub
+A declarative way to select, label and shape data
 
 <h4>Properties</h4>
 
@@ -749,6 +759,8 @@ A declarative way to select, label and shape data from AVEVA Data Hub
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -871,6 +883,12 @@ The targeted part of a DataItem
 |PropertyName|4|
 |Metadata|5|
 |Tags|6|
+|TenantId|7|
+|TenantName|8|
+|NamespaceId|9|
+|NamespaceName|10|
+|CommunityId|11|
+|CommunityName|12|
 
 ---
 
@@ -935,12 +953,16 @@ A query for data items of a specified resource type.
 |---|---|---|---|---|
 |Id|string|false|true|The unique identifier of this query|
 |Kind|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource being queried|
+|SourceKind|[QuerySourceKind](#schemaquerysourcekind)|false|false|The kind of source to query from|
+|SourceId|string|false|true|The community or namespace that will be queried from|
 |Value|string|false|true|The text of this query|
 
 ```json
 {
   "Id": "string",
   "Kind": 1,
+  "SourceKind": 0,
+  "SourceId": "string",
   "Value": "string"
 }
 
@@ -963,6 +985,25 @@ The type of resource that a data item represents
 |---|---|
 |Stream|1|
 |Asset|2|
+
+---
+
+### QuerySourceKind
+
+<a id="schemaquerysourcekind"></a>
+<a id="schema_QuerySourceKind"></a>
+<a id="tocSquerysourcekind"></a>
+<a id="tocsquerysourcekind"></a>
+
+Different source kinds that Queries can execute against
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|Default|0|
+|Namespace|1|
+|Community|2|
 
 ---
 

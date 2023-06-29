@@ -53,7 +53,7 @@ $body = @{
     client_secret=$clientSecret
     }
 $contentType = 'application/x-www-form-urlencoded'
-$token = (Invoke-WebRequest -UseBasicParsing –Uri "https://dat-b.osisoft.com/identity/connect/token" -Method post -body $body -ContentType $contentType).content|Convertfrom-Json|select access_token
+$token = (Invoke-WebRequest -UseBasicParsing –Uri "https://uswe.datahub.connect.aveva.com/identity/connect/token" -Method post -body $body -ContentType $contentType).content|Convertfrom-Json|select access_token
 write-host $token
 ```
 

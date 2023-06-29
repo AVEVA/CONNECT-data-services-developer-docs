@@ -1,11 +1,10 @@
 ---
-uid: DataViewsDataAPI
+uid: data-views-data-views-data
 
 ---
 
-# Data views data
-
-The data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view. This API is one portion of the [data views API](xref:DataViewsAPIOverview).
+# Data Views Data
+The Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Interpolated Data`
 
@@ -69,9 +68,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 > 200 Response
 
 ```json
-{
-  "ERROR": "Parameter \"data-interpolated-get-multiple-formats\" could not be found in external reference file"
-}
+null
 ```
 
 > 400 Response ([ErrorResponse](#schemaerrorresponse))
@@ -141,6 +138,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 |400|[ErrorResponse](#schemaerrorresponse)|The request could not be understood by the server due to malformed syntax.|
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
 |404|[ErrorResponse](#schemaerrorresponse)|The specified data view identifier is not found.|
+|409|[ErrorResponse](#schemaerrorresponse)|The specified data view conflicts with an existing data view that is not identical. To forcibly update the data view, see *Create Or Update Data View*.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
@@ -156,9 +154,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 > 200 Response
 
 ```json
-{
-  "ERROR": "Parameter \"data-stored-get-multiple-formats\" could not be found in external reference file"
-}
+null
 ```
 
 > 400 Response ([ErrorResponse](#schemaerrorresponse))

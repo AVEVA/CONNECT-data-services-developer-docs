@@ -1,11 +1,10 @@
 ---
-uid: DataViewsPreviewDataAPI
+uid: data-views-preview-data-views-data
 
 ---
 
-# Preview data views data
-
-The preview data views data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view. This API is one portion of the [data views API](xref:DataViewsAPIOverview).
+# Preview Data Views Data
+The Preview Data API allows users to [retrieve data](xref:DataViewsQuickStartGetData) for a specified data view.  This API is one portion of the [data views API](xref:DataViewsAPIOverview).
 
 ## `Get Data View Interpolated Data`
 
@@ -73,6 +72,8 @@ A `DataView` object to get the results for.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -381,6 +382,8 @@ A `DataView` object to get the results for.<br/>
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -447,6 +450,7 @@ A `DataView` object to get the results for.<br/>
 |200|string|Successfully retrieved data.|
 |400|[ErrorResponse](#schemaerrorresponse)|The data view or the query parameters are not valid. See the response body for details.|
 |403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|409|[ErrorResponse](#schemaerrorresponse)|The specified data view conflicts with an existing data view that is not identical. To forcibly update the data view, see *Create Or Update Data View*.|
 |500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
 
 <h4>Response Headers</h4>
@@ -670,7 +674,7 @@ Content-Type: application/json
 <a id="tocSdataview"></a>
 <a id="tocsdataview"></a>
 
-A declarative way to select, label and shape data from AVEVA Data Hub
+A declarative way to select, label and shape data
 
 <h4>Properties</h4>
 
@@ -711,6 +715,8 @@ A declarative way to select, label and shape data from AVEVA Data Hub
     {
       "Id": "string",
       "Kind": 1,
+      "SourceKind": 0,
+      "SourceId": "string",
       "Value": "string"
     }
   ],
@@ -833,6 +839,12 @@ The targeted part of a DataItem
 |PropertyName|4|
 |Metadata|5|
 |Tags|6|
+|TenantId|7|
+|TenantName|8|
+|NamespaceId|9|
+|NamespaceName|10|
+|CommunityId|11|
+|CommunityName|12|
 
 ---
 
@@ -897,12 +909,16 @@ A query for data items of a specified resource type.
 |---|---|---|---|---|
 |Id|string|false|true|The unique identifier of this query|
 |Kind|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource being queried|
+|SourceKind|[QuerySourceKind](#schemaquerysourcekind)|false|false|The kind of source to query from|
+|SourceId|string|false|true|The community or namespace that will be queried from|
 |Value|string|false|true|The text of this query|
 
 ```json
 {
   "Id": "string",
   "Kind": 1,
+  "SourceKind": 0,
+  "SourceId": "string",
   "Value": "string"
 }
 
@@ -925,6 +941,25 @@ The type of resource that a data item represents
 |---|---|
 |Stream|1|
 |Asset|2|
+
+---
+
+### QuerySourceKind
+
+<a id="schemaquerysourcekind"></a>
+<a id="schema_QuerySourceKind"></a>
+<a id="tocSquerysourcekind"></a>
+<a id="tocsquerysourcekind"></a>
+
+Different source kinds that Queries can execute against
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|Default|0|
+|Namespace|1|
+|Community|2|
 
 ---
 
@@ -991,97 +1026,97 @@ A set of fields defined for a particular source of data.
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Empty|0|
-|Object|1|
-|Boolean|3|
-|Char|4|
-|SByte|5|
-|Byte|6|
-|Int16|7|
-|UInt16|8|
-|Int32|9|
-|UInt32|10|
-|Int64|11|
-|UInt64|12|
-|Single|13|
-|Double|14|
-|Decimal|15|
-|DateTime|16|
-|String|18|
-|Guid|19|
-|DateTimeOffset|20|
-|TimeSpan|21|
-|Version|22|
-|NullableBoolean|103|
-|NullableChar|104|
-|NullableSByte|105|
-|NullableByte|106|
-|NullableInt16|107|
-|NullableUInt16|108|
-|NullableInt32|109|
-|NullableUInt32|110|
-|NullableInt64|111|
-|NullableUInt64|112|
-|NullableSingle|113|
-|NullableDouble|114|
-|NullableDecimal|115|
-|NullableDateTime|116|
-|NullableGuid|119|
-|NullableDateTimeOffset|120|
-|NullableTimeSpan|121|
-|BooleanArray|203|
-|CharArray|204|
-|SByteArray|205|
-|ByteArray|206|
-|Int16Array|207|
-|UInt16Array|208|
-|Int32Array|209|
-|UInt32Array|210|
-|Int64Array|211|
-|UInt64Array|212|
-|SingleArray|213|
-|DoubleArray|214|
-|DecimalArray|215|
-|DateTimeArray|216|
-|StringArray|218|
-|GuidArray|219|
-|DateTimeOffsetArray|220|
-|TimeSpanArray|221|
-|VersionArray|222|
-|Array|400|
-|IList|401|
-|IDictionary|402|
-|IEnumerable|403|
-|SdsType|501|
-|SdsTypeProperty|502|
-|SdsStreamView|503|
-|SdsStreamViewProperty|504|
-|SdsStreamViewMap|505|
-|SdsStreamViewMapProperty|506|
-|SdsStream|507|
-|SdsStreamIndex|508|
-|SdsTable|509|
-|SdsColumn|510|
-|SdsValues|511|
-|SdsObject|512|
-|SByteEnum|605|
-|ByteEnum|606|
-|Int16Enum|607|
-|UInt16Enum|608|
-|Int32Enum|609|
-|UInt32Enum|610|
-|Int64Enum|611|
-|UInt64Enum|612|
-|NullableSByteEnum|705|
-|NullableByteEnum|706|
-|NullableInt16Enum|707|
-|NullableUInt16Enum|708|
-|NullableInt32Enum|709|
-|NullableUInt32Enum|710|
-|NullableInt64Enum|711|
-|NullableUInt64Enum|712|
+|Property|Value|Description|
+|---|---|---|
+|Empty|0||
+|Object|1||
+|Boolean|3||
+|Char|4||
+|SByte|5||
+|Byte|6||
+|Int16|7||
+|UInt16|8||
+|Int32|9||
+|UInt32|10||
+|Int64|11||
+|UInt64|12||
+|Single|13||
+|Double|14||
+|Decimal|15||
+|DateTime|16||
+|String|18||
+|Guid|19||
+|DateTimeOffset|20||
+|TimeSpan|21||
+|Version|22||
+|NullableBoolean|103||
+|NullableChar|104||
+|NullableSByte|105||
+|NullableByte|106||
+|NullableInt16|107||
+|NullableUInt16|108||
+|NullableInt32|109||
+|NullableUInt32|110||
+|NullableInt64|111||
+|NullableUInt64|112||
+|NullableSingle|113||
+|NullableDouble|114||
+|NullableDecimal|115||
+|NullableDateTime|116||
+|NullableGuid|119||
+|NullableDateTimeOffset|120||
+|NullableTimeSpan|121||
+|BooleanArray|203||
+|CharArray|204||
+|SByteArray|205||
+|ByteArray|206||
+|Int16Array|207||
+|UInt16Array|208||
+|Int32Array|209||
+|UInt32Array|210||
+|Int64Array|211||
+|UInt64Array|212||
+|SingleArray|213||
+|DoubleArray|214||
+|DecimalArray|215||
+|DateTimeArray|216||
+|StringArray|218||
+|GuidArray|219||
+|DateTimeOffsetArray|220||
+|TimeSpanArray|221||
+|VersionArray|222||
+|Array|400||
+|IList|401||
+|IDictionary|402||
+|IEnumerable|403||
+|SdsType|501||
+|SdsTypeProperty|502||
+|SdsStreamView|503||
+|SdsStreamViewProperty|504||
+|SdsStreamViewMap|505||
+|SdsStreamViewMapProperty|506||
+|SdsStream|507||
+|SdsStreamIndex|508||
+|SdsTable|509||
+|SdsColumn|510||
+|SdsValues|511||
+|SdsObject|512||
+|SByteEnum|605||
+|ByteEnum|606||
+|Int16Enum|607||
+|UInt16Enum|608||
+|Int32Enum|609||
+|UInt32Enum|610||
+|Int64Enum|611||
+|UInt64Enum|612||
+|NullableSByteEnum|705||
+|NullableByteEnum|706||
+|NullableInt16Enum|707||
+|NullableUInt16Enum|708||
+|NullableInt32Enum|709||
+|NullableUInt32Enum|710||
+|NullableInt64Enum|711||
+|NullableUInt64Enum|712||
 
 ---
 
@@ -1096,10 +1131,10 @@ The shape of the data view. By default, each Field will resolve to one or more F
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|
-|---|---|
-|Standard|0|
-|Narrow|1|
+|Property|Value|Description|
+|---|---|---|
+|Standard|0|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
+|Narrow|1|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
 
 ---
 

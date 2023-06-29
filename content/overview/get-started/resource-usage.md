@@ -61,3 +61,7 @@ Regardless of which parameters you choose, resource usage always display a legen
 ## Tabular data
 
 Regardless of which parameters you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can download this data in CSV format by selecting **Download Usage**.
+
+## Video Tutorial: View your AVEVA Data Hub usage
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y-GxLMH1vYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

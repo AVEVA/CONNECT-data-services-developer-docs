@@ -2,99 +2,117 @@
 uid: ManageConfigurations
 ---
 
-# Manage edge system configurations
+# Manage system configurations
 
-You can import an edge system configuration from the field to its corresponding edge system digital twin as a record. You can also create a new configuration, using a default configuration or a configuration template. Once the configuration is complete, you can export the configuration file for each component or for the edge system to manually apply to the edge system. You can use an exported configuration file to configure other edge systems by importing it. The maximum size for a configuration file is 16 MB.
+You can import a system configuration from the field to its corresponding system digital twin as a record. You can also create a new configuration, using a default configuration or a configuration template. Once the configuration is complete, you can export the configuration file for each component or for the system. You can use an exported configuration file to configure other systems by importing it. The maximum size for a configuration file is 16 MB.
 
-Configuration is available for the following edge system types:
+Configuration is available for the following system types:
 
- - PI Adapter for Azure Event Hubs
+ - AVEVA Adapter for Azure Event Hubs
 
- - PI Adapter for BACnet
+ - AVEVA Adapter for BACnet
 
- - PI Adapter for DNP3
+ - AVEVA Adapter for DNP3
 
  - Edge Data Store
 
- - Edge Data Store Module
+ - AVEVA Adapter for Modbus TCP
 
- - PI Adapter for Modbus TCP
+ - AVEVA Adapter for MQTT
 
- - PI Adapter for MQTT
+ - AVEVA Adapter for OPC UA
 
- - AVEVA Adapter for MQTT Module
+ - AVEVA Adapter for RDBMS
 
- - PI Adapter for OPC UA
+ - AVEVA Adapter for Structured Data Files
 
- - AVEVA Adapter for OPC UA Module
+The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the configuration template is created. For example, if the namespace of the configuration template is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
- - PI Adapter for RDBMS
+A system appears on the `Edge Data Store & Adapters Systems` page once it is writing health data to AVEVA Data Hub. For information on configuring health endpoints, see the specific system product documentation at [docs.aveva.com](https://docs.aveva.com/).
 
- - PI Adapter for Structured Data Files
-
-The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the base configuration is created. For example, if the namespace of the base configuration is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
-
-An edge system appears on the `Software Management Edge Systems` page once it is writing health data to AVEVA Data Hub. For information on configuring health endpoints, see the specific edge system product documentation at [docs.osisoft.com](https://docs.osisoft.com/).
-
-For edge systems, use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the edge system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
+For systems, use mustache tokens, in the format `{{SecretA}}`, to denote secrets in configuration files. Secrets are managed using clients. The token name must match an Edge Management System property defined for the system. Tokens must be used in fields where `isEncrypted=true`. After deploying the configuration to the device, you must manually update the configuration on the device with the secret.
 
 For edge modules, use variables, in the format `{{VariableA}}`, to denote secrets in configuration files. The variable is associated with a secret in AVEVA Edge Management.
 
-## Import an edge system configuration
+## Import a system configuration
 
-To import an edge system configuration from the field to the corresponding edge system digital twin:
+To import a system configuration from the field to the corresponding system digital twin:
 
-1. In the left pane, select **Data Collection** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Edge Data Store & Adapters**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
 
-1. Find and select the edge device to configure.
+1. Find and select the system to configure.
 
-1. Select **Edit Edge System**.
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
 
 1. Select **Import Configuration**.
 
-1. In the `Import Configuration` window, click **Select file**, browse to the configuration file to import, and then select **Open**.
+1. In the `Import Configuration` window, choose **Select file**, browse to the configuration file to import, and then select **Open**.
 
 1. Select **Import**.
 
-1. Review the imported file contents to ensure it is correct.
+1. Review the imported file to ensure the contents are correct.
 
 1. When you have finished, select **Save & Close**.
 
 1. To confirm the changes, select **Save & Close**.
 
-## Edit an edge system configuration
+## Copy a configuration from a configuration template
 
-To edit an edge system configuration and export it for use:
+To copy a system configuration from a template to the corresponding system digital twin:
 
-1. In the left pane, select **Data Collection** > **Software Management**.
+1. In the left pane, select **Data Collection** > **Edge Data Store & Adapters**.
 
-1. Verify that the **Edge Systems/Base Configurations** selector is set to **Edge Systems**.
+1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
 
-1. Find and select the edge device to configure.
+1. Find and select the system to configure.
 
-1. In the right pane, select **Edit Edge System** or ![Edit](../../../_icons/default/pencil.svg).
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
 
-1. To manage the tags for an edge system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
+1. Select **Copy From Configuration Template**.
+
+1. Use the **Filter Templates** search bar to find the configuration template you want to apply to your system.
+
+    - You can filter by configuration template name, description, or version number.
+    
+    - Select **Edit Configuration Template** to edit a configuration template before you apply it to a system.
+
+1. Select the configuration template you want to apply to a system.
+
+1. To confirm the changes, select **Save and Close**.
+
+## Edit a system
+
+To edit a system configuration and export it for use:
+
+1. In the left pane, select **Data Collection** > **Edge Data Store & Adapters**.
+
+1. Verify that the **Systems/Configuration Templates** selector is set to **Systems**.
+
+1. Find and select the system to configure.
+
+1. In the right pane, select **Edit System** ![Edit](../../../_icons/default/pencil.svg).
+
+1. To manage the tags for a system, select **Add Tag** ![Add Tag](../../../_icons/default/plus.svg) and then do the following:
 
    - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 
    - To delete a tag, select **X** in the tag bubble.
 
-1. To create the configuration, do one of the following:
+1. To set the configuration, do one of the following:
 
-   - To use the default configuration for the edge system type, select **Start With Default**.
+   - To use a configuration template, select **Copy From Configuration Template**.
 
-   - To select a JSON file that contains the configuration, select **Start With Default**.
+   - To select a JSON file that contains the configuration, select **Import Configuration**.
 
 1. (Optional) In the **Section Select** dropdown list, select the section of the configuration to modify. The default option of `JSON Configuration` shows the entire configuration.
 
-1. Modify the JSON as needed. For configuration guidelines, refer to the specific edge system documentation.
+1. Modify the JSON as needed. For configuration guidelines, refer to the specific system documentation.
 
    **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. 
 
-   Errors in the JSON syntax are underlined. To see an explanation of the issue, hold the mouse over the underlined text. The overall status of the JSON syntax is displayed over the right pane.
+   Errors in the JSON syntax are underlined. To see an explanation of the issue, hover over the underlined text. The overall status of the JSON syntax is displayed over the right pane.
 
 1. To export the completed configuration, do one of the following:
 
@@ -102,7 +120,7 @@ To edit an edge system configuration and export it for use:
 
    - To export the entire configuration in one file, select **Export Configuration**.
 
-   The JSON file is downloaded to your browser.
+   The JSON file downloads to your browser.
 
 1. When you have finished, select **Save & Close**.
 

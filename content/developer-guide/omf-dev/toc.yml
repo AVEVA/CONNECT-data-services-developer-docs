@@ -1,8 +1,10 @@
 - name: OMF ingress specification
   href: omf-ingress-specification.md
-- name: Topics 
+- name: Topics (legacy)
   href: omf-ingress-topics.md
 - name: OMF editor
   href: omf-editor.md  
-- name: Subscriptions 
+- name: Subscriptions (legacy)
   href: omf-ingress-subscriptions.md
+- name: Migrate OMF topics/subscriptions to connections
+  href: omf-migration.md

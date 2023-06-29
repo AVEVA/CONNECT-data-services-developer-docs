@@ -14,7 +14,7 @@ Gets the `AccessControlList` for the specified `OmfConnection`.
 <h3>Request</h3>
 
 ```text 
-GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/accesscontrol
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/accesscontrol
 ```
 
 <h4>Parameters</h4>
@@ -68,7 +68,7 @@ Updates the `AccessControlList` for the specified `OmfConnection`.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/accesscontrol
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/accesscontrol
 ```
 
 <h4>Parameters</h4>
@@ -143,7 +143,7 @@ Gets a list of the `CommonAccessRights` to the specified `OmfConnection` for the
 <h3>Request</h3>
 
 ```text 
-GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/accessrights
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/accessrights
 ```
 
 <h4>Parameters</h4>
@@ -177,7 +177,7 @@ Gets the `Trustee` of the specified `OmfConnectionId`.
 <h3>Request</h3>
 
 ```text 
-GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/owner
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/owner
 ```
 
 <h4>Parameters</h4>
@@ -222,7 +222,7 @@ Updates the `Trustee` of the specified `OmfConnection`.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/owner
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omfConnections/{omfConnectionId}/owner
 ```
 
 <h4>Parameters</h4>
@@ -282,7 +282,7 @@ Gets the `AccessControlList` for the `OmfConnection` collection.
 <h3>Request</h3>
 
 ```text 
-GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/omfConnections
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/omfConnections
 ```
 
 <h4>Parameters</h4>
@@ -335,7 +335,7 @@ Updates the `AccessControlList` for the `OmfConnection` collection.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/omfConnections
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/omfConnections
 ```
 
 <h4>Parameters</h4>
@@ -410,7 +410,7 @@ Gets a list of the `CommonAccessRights` to the `OmfConnection` collection for th
 <h3>Request</h3>
 
 ```text 
-GET /api/v2-preview/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/omfConnections
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/omfConnections
 ```
 
 <h4>Parameters</h4>
@@ -1448,4 +1448,3 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/topics
 ```
 
 ---
-

@@ -1,10 +1,9 @@
 - topicUid: ADH-content-portal-overview
   items:
-  - topicUid: WhatIsADH
-    items:
-    - topicUid: DifferencesFromOCS
-  - topicUid: WhoUsesADH
   - topicUid: WhatADHdoes
+  - topicUid: WhoUsesADH
+  - topicUid: SecurityReliability
+  - topicUid: DifferencesFromOCS
   - topicUid: what-is-cnnxt
     items:
     - topicUid: sign-in-cnnxt
@@ -134,6 +133,7 @@
     - topicUid: ViewEdgeSystem
     - topicUid: StatusDefinitions
     - topicUid: AddBaseConfiguration
+    - topicUid: AddConfigurationTemplate
     - topicUid: DeployConfig
     - topicUid: DeployModule
     - topicUid: ManageConfigurations
@@ -172,6 +172,7 @@
       - topicUid: VerboseLogging
     - topicUid: lp-troubleshoot
       items: 
+      - topicUid: VerifyPItoADHService
       - topicUid: troubleshoot-failed-af-indexing
       - topicUid: troubleshoot-failed-mapping
       - topicUid: troubleshoot-missing-pida
@@ -180,6 +181,7 @@
     - topicUid: pi-to-ocs-limitations
     - topicUid: known-issues
     - topicUid: pi2ocs-rel-summary
+    - topicUid: pi2dh-rel-history
   - topicUid: lpomfoverview
     items:
     - topicUid: bpOMFConnection
@@ -238,6 +240,9 @@
             - topicUid: data-view-link-fields
         - topicUid: manage-data-views-permissions
         - topicUid: data-views-retrieve
+        - topicUid: data-view-api-console-use
+        - topicUid: data-view-data-type-conversion
+        - topicUid: data-views-parquet-format
         - topicUid: data-view-troubleshooting
     - topicUid: PowerBI
       items:

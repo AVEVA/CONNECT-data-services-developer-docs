@@ -35,7 +35,7 @@ Event Types have the following base properties:
 
 ## Reference Data Types
 
-Reference data provides additional information that can be referenced in the context of an event, and is useful for users and/or applications when data is consumed, analyzed, visualized, and reported on. Reference data is typically configuration or system definition information. 
+Reference data provides additional information for the context of an event, and is useful for users and/or applications when data is consumed, analyzed, visualized, and reported on. Reference data is typically configuration or system definition information. 
 
 Reference Data Types are collections of configurable properties that can include references to other Reference Data or Events.
 

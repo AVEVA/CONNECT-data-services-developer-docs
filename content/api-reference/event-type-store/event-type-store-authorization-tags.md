@@ -29,9 +29,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AuthorizationTag](#schemaauthorizationtag)|Success.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Authorization Tag not found.|
 
 <h4>Example response body</h4>
 
@@ -90,7 +89,7 @@ An AuthorizationTag.<br/>
 |302|None|Found.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Found.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 
 <h4>Example response body</h4>
 
@@ -192,7 +191,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Authorization
 |304|None|Not modified.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Authorization Tag not found.|
 
 ---
 
@@ -217,7 +216,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeDeleted`
-<br/><br/>
+<br/>Parameter indicating whether to include soft-deleted Authorization Tags. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -270,7 +269,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Authorization Tag not found.|
 
 <h4>Example response body</h4>
 
@@ -315,7 +314,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 
 <h4>Request Body</h4>
 
-An access control list.<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -344,7 +343,7 @@ An access control list.<br/>
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Authorization Tag not found.|
 
 <h4>Example response body</h4>
 
@@ -393,7 +392,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Authorization Tag not found.|
 
 <h4>Example response body</h4>
 
@@ -446,7 +445,7 @@ A Trustee.<br/>
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|Authorization Tag not found.|
 
 <h4>Example response body</h4>
 

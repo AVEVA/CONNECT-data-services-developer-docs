@@ -26,22 +26,22 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeDeleted`
-<br/><br/>`[optional] string filter`
-<br/><br/>
+<br/>Parameter indicating whether to include soft-deleted EventTypes. If unspecified, a default value of false is used.<br/><br/>`[optional] string filter`
+<br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEventType](#schemaeventgrapheventtype)[]|Success.|
-|304|None|Not modified|
+|200|[EventType](#schemaeventtype)[]|Success.|
+|304|None|Not modified.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 |412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype)[])
+> 200 Response ([EventType](#schemaeventtype)[])
 
 ```json
 [
@@ -94,11 +94,10 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 
 <h4>Request Body</h4>
 
-An EventGraphEventType.<br/>
+An EventType.<br/>
 
 ```json
 {
-  "Id": "SimpleEvent",
   "Name": "SimpleEvent",
   "Properties": [
     {
@@ -121,13 +120,14 @@ An EventGraphEventType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
+|201|[EventType](#schemaeventtype)|Created.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 
 <h4>Example response body</h4>
 
-> 201 Response ([EventGraphEventType](#schemaeventgrapheventtype))
+> 201 Response ([EventType](#schemaeventtype))
 
 ```json
 {
@@ -178,22 +178,22 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 <br/><br/>`string id`
 <br/>The id of the EventType.<br/><br/>
 `[optional] boolean includeDeleted`
-<br/><br/>
+<br/>Parameter indicating whether to include soft-deleted EventTypes. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
+|200|[EventType](#schemaeventtype)|Success.|
 |304|None|Not modified.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
 |412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
+> 200 Response ([EventType](#schemaeventtype))
 
 ```json
 {
@@ -245,7 +245,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 
 <h4>Request Body</h4>
 
-An EventGraphEventType.<br/>
+An EventType.<br/>
 
 ```json
 {
@@ -272,16 +272,16 @@ An EventGraphEventType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
-|201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
+|200|[EventType](#schemaeventtype)|Success.|
+|201|[EventType](#schemaeventtype)|Created.|
 |302|None|Found.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Found.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
+> 200 Response ([EventType](#schemaeventtype))
 
 ```json
 {
@@ -333,7 +333,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 
 <h4>Request Body</h4>
 
-An EventGraphEventType.<br/>
+An EventType.<br/>
 
 ```json
 {
@@ -360,15 +360,16 @@ An EventGraphEventType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
-|201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
+|200|[EventType](#schemaeventtype)|Success.|
+|201|[EventType](#schemaeventtype)|Created.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|None|
 |412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
+> 200 Response ([EventType](#schemaeventtype))
 
 ```json
 {
@@ -425,7 +426,8 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{i
 |204|None|Deleted.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 
 ---
 
@@ -449,20 +451,21 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 
 <h4>Request Body</h4>
 
-A list of EventGraphEventType objects.<br/>
+A list of EventType objects.<br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
+|200|[EventType](#schemaeventtype)|Success.|
 |207|[AdhErrorResponse](#schemaadherrorresponse)|Partial.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
+> 200 Response ([EventType](#schemaeventtype))
 
 ```json
 {
@@ -518,7 +521,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
 
 <h4>Example response body</h4>
 
@@ -563,7 +566,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 
 <h4>Request Body</h4>
 
-An access control list.<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -594,7 +597,7 @@ An access control list.<br/>
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
 
 <h4>Example response body</h4>
 
@@ -643,7 +646,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
 
 <h4>Example response body</h4>
 
@@ -696,7 +699,7 @@ A Trustee.<br/>
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
 
 <h4>Example response body</h4>
 
@@ -737,17 +740,17 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 |---|---|---|
 |200|Inline|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
 
 ---
 ## Definitions
 
-### EventGraphEventType
+### EventType
 
-<a id="schemaeventgrapheventtype"></a>
-<a id="schema_EventGraphEventType"></a>
-<a id="tocSeventgrapheventtype"></a>
-<a id="tocseventgrapheventtype"></a>
+<a id="schemaeventtype"></a>
+<a id="schema_EventType"></a>
+<a id="tocSeventtype"></a>
+<a id="tocseventtype"></a>
 
 <h4>Properties</h4>
 

@@ -29,7 +29,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -73,7 +72,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 
 <h4>Request Body</h4>
 
-An access control list.<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -103,8 +102,8 @@ An access control list.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -152,7 +151,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -196,7 +194,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 
 <h4>Request Body</h4>
 
-An access control list.<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -226,8 +224,8 @@ An access control list.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -275,7 +273,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -319,7 +316,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 
 <h4>Request Body</h4>
 
-An access control list.<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -349,8 +346,8 @@ An access control list.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -398,7 +395,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Eve
 |---|---|---|
 |200|Inline|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 
@@ -426,7 +422,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Ref
 |---|---|---|
 |200|Inline|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 
@@ -454,7 +449,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enu
 |---|---|---|
 |200|Inline|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
 
 ---
 ## Definitions

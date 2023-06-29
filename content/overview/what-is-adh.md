@@ -32,7 +32,7 @@ AVEVA Data Hub provides a variety of methods to collect data into the system. Yo
 
 ### PI to Data Hub Agent
 
-The PI to Data Hub Agent transfers PI time-series data from an on-premises PI Server into AVEVA Data Hub. PI to Data Hub maps PI Data Archive PI points to SDS types and streams. 
+The PI to Data Hub Agent transfers PI time-series data from an on-premises PI Server into AVEVA Data Hub. PI to Data Hub maps Data Archive PI points to SDS types and streams. 
 
 ### Open Message Format
 

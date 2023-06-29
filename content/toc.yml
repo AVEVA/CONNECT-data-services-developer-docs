@@ -170,6 +170,7 @@
       - topicUid: VerboseLogging
     - topicUid: lp-troubleshoot
       items: 
+      - topicUid: VerifyPItoADHService
       - topicUid: troubleshoot-failed-af-indexing
       - topicUid: troubleshoot-failed-mapping
       - topicUid: troubleshoot-missing-pida
@@ -178,6 +179,7 @@
     - topicUid: pi-to-ocs-limitations
     - topicUid: known-issues
     - topicUid: pi2ocs-rel-summary
+    - topicUid: pi2dh-rel-history
   - topicUid: lpomfoverview
     items:
     - topicUid: bpOMFConnection

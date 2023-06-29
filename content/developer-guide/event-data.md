@@ -4,7 +4,7 @@ uid: EventData
 
 # Event data (Preview)
 
-You can store event data, such as manufacturing execution systems (MES) data, in AVEVA Data Hub, as well as related reference data. This allows you to store data from multiple site systems into AVEVA Data Hub to visualize, create reports, and work with data across the enterprise.  
+You can store event data, such as manufacturing execution systems (MES) data, in AVEVA Data Hub. This allows you to store data from multiple site systems into AVEVA Data Hub to visualize, create reports, and work with data across the enterprise.  
 
 ## Event Types
 
@@ -92,7 +92,7 @@ For example, a `Type: Alarm` with `Property: asset` would specify `RemoteReferen
 
 **Note:** A remote reference is always created as a searchable array.
 
-Scalar and relationship properties can be made a collection by specifying the `IsCollection` flag.
+You can make scalar and relationship properties a collection by specifying the `IsCollection` flag.
 
 **Note:** Collections are limited in the number of elements they can hold (ex: 64 elements).
 

@@ -4,7 +4,7 @@ uid: search-agent
 
 # Search for an agent
 
-You can search for PI to Data Hub Agents that have been installed on host machines at your organization to quickly locate agents of interest. For example, you may want to remove older agents. The global filter feature allows you to search by agent name, status, version number, hostname, PI Data Archive or AF server name, region, and namespace. 
+You can search for PI to Data Hub Agents that have been installed on host machines at your organization to quickly locate agents of interest. For example, you may want to remove older agents. The global filter feature allows you to search by agent name, status, version number, hostname, Data Archive or AF server name, region, and namespace. 
 
 To search for an agent in the portal:
 

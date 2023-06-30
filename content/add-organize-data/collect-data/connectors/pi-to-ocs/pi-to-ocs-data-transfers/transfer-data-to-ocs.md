@@ -4,23 +4,25 @@ uid: create-transfer
 
 # Create a data transfer
 
-You create a data transfer from the `PI to Data Hub Agents` page. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point.
+You create a data transfer from the `PI to Data Hub Agents` page. A transfer can consist of PI points and AF elements or AF elements that reference at least one PI point. AF elements reference PI points via AF attributes that have a PI point data reference.
 
 PI points can be added to a transfer explicitly using a tag search or implicitly using AF element references. For information about the difference between implicit and explicit references, see [Explicit versus implicit PI points](#explicit-versus-implicit-pi-points).
 
-**Before you begin:** Download and install the PI to Data Hub Agent. Register your PI Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
+**Before you begin:** Download and install the PI to Data Hub Agent. Register your Data Archive and AF data sources using the PI to Data Hub Agent Configuration Utility. 
 
 Transfer creation consists of the following tasks:
 
-1. Assign a name, description, and optional historical start and end time for data retrieval.
+1. Name the transfer and set data privacy settings. Assign a name, description, and optional historical start time for data retrieval.
 
-1. Select a level of data privacy to control how much identifying information about an asset is sent with PI point data.
+1. Select Stream Metadata Replication Policy (High, Medium, Low, or None) to control which PI point attributes the transfer stores as metadata in SDS streams. This policy provides a level of data privacy in cases where sensitive information is stored in PI point attributes that you do not want replicated to the cloud.
 
-1. Set query criteria and retrieve and add optional AF elements, which reference at least one implicit or explicit PI point, and/or PI point data to the transfer lists.
+1. Build an AF elements transfer list. For agents with AF server configured, search for AF elements to add to the transfer. Add AF elements to the transfer. PI points referenced by AF elements will be implicitly added to the transfer. Points added to the transfer in this manner are referred to as Implicit PI points.  
+
+1. Build a PI points transfer list. Instead of or in addition to adding AF elements, you can search for PI points explicitly and add these to the transfer. Points added to the transfer in this manner are referred to as Explicit PI points.   
 
 1. View transfer details.
 
-1. Save the transfer.
+1. Save the transfer. Before you can save a transfer, at least one Implicit or Explicit PI point must be added to the transfer and the Implicit or Explicit PI points must correspond to the same Data Archive.
 
 **Note:** If you have configured an AF server, you will not be able to create a transfer until AF indexing is complete. AF indexing status is listed on the **Manage Agent** tab in the `PI to Data Hub Agents` page. The following image shows AF indexing in progress:
 
@@ -42,13 +44,13 @@ To name the data transfer:
    
 1. In the **Name** and **Description** fields, enter a name and description for the transfer.
 
-1. (Optional) In the **Historical Start time** fields, enter a historical time context for the data retrieval.
+1. (Optional) In the **Historical Start Time** field, enter a historical time context for the data retrieval. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See <xref:lp-transfer> to learn more about transferring historical data.
 
-   **Note:** AVEVA Data Hub supports out of order events and stores data in chronological order by timestamp. PI Data Archive 2017 SP2 or higher is required for this feature. Be sure to enter the historical start date and time correctly to ensure all data is included in the transfer. No data before the historical start time will be captured and stored in SDS. See <xref:lp-transfer> to learn more about transferring historical data.
+   **Note:** The PI to Data Hub Agent supports transferring out-of-order events written to Data Archive.
 
-1. To set the data privacy level for the transfer, select one of the following **Stream Metadata Replication Policy** settings: 
+1. To set the data privacy level for the transfer, select the **Stream Metadata Replication Policy**. In this context, metadata refers to PI point attributes transferred as SDS stream metadata.
 
-   - **High**: Sends all intended metadata.
+   - **High**: Sends all supported PI point attributes as metadata.
    - **Medium**: Default. Sends metadata without logical addresses from the data source.
    - **Low**: Sends no metadata from the data source namespace. Locally configured metadata such as point source and local aliases is allowed (point name, point ID and point source only).
    - **None**: Sends only the point ID and point name; no metadata is included in the transfer.
@@ -74,11 +76,11 @@ To name the data transfer:
 
    The transfer is created and the `Transfer` page opens.
 
-**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Settings` window and modify the name, description, historical start and end times, and data privacy settings as needed.
+**Note:** To modify the transfer settings, select **Settings** to access the `Transfer Settings` window and modify the name, description, historical start time, and data privacy settings as needed.
 
 ## Build an AF elements transfer list
 
-After naming the transfer, build an AF elements transfer list by setting query criteria and then selecting AF elements. You can narrow your search by filtering by element name, asset group, attribute name/value, template, and category. A corresponding asset is created for every AF element in your transfer. Static AF element attributes become asset properties. 
+After naming the transfer, build an AF elements transfer list by setting query criteria and then selecting AF elements. You can narrow your search by filtering by element name, root element, attribute name/value, template, and category. A corresponding asset is created for every AF element in your transfer. Static AF element attributes become asset metadata. 
 
 1. On the `Transfer` page, select the source AF database from the **AF Database** dropdown list.
 
@@ -86,9 +88,9 @@ After naming the transfer, build an AF elements transfer list by setting query c
 
 1. (Optional) Select **Root Element**.
 
-1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root asset in the AF database hierarchy, select a root asset, then choose **Select**.
+1. (Optional) In the `Select Root Element` window, select the plus buttons to drill down to the root element in the AF database hierarchy, select a root element, then choose **Select**.
 
-1. (Optional) In the **Element Name** field, enter search criteria to filter by part or all of an AF element name.
+1. (Optional) In the **Element Name** field, enter search criteria to filter by part or an entire AF element name.
 
    **Note:** If you do not enter filter criteria, the search defaults to `*` or all.  
 
@@ -118,7 +120,7 @@ After naming the transfer, build an AF elements transfer list by setting query c
 
    A check mark appears next to each selected AF element.
 
-   **Tip:** To select a range of elements, select an element and then hold Shift and select a non-adjacent element. To advance through multiple-paged query results, select the back and forward arrows or enter a page number in the **Page** field.
+   **Tip:** To select a range of elements, select an element, hold the Shift key, and select a non-adjacent element. To advance through multiple-paged query results, select the back and forward arrows or enter a page number in the **Page** field.
 
 1. When you are done selecting elements, select **Add AF Elements To Transfer**.
     
@@ -149,6 +151,8 @@ You can view details about an individual AF element such as related attribute na
 ## Build a PI points transfer list
 
 You build a PI points transfer list by setting query criteria and then adding the desired PI points. A PI points transfer list may contain both implicit and explicit PI points. See [Explicit vs. implicit PI points](#explicit-versus-implicit-pi-points) for more information.
+
+To build a PI points transfer list:
 
 1. Select the **PI Point Search** tab.
 
@@ -182,15 +186,15 @@ You build a PI points transfer list by setting query criteria and then adding th
 
 PI points added to a transfer are assigned one of the following reference types:
 
-- Explicit - PI points directly retrieved from a PI Data Archive.
+- Explicit - PI points directly retrieved from a Data Archive.
 
 - Implicit - PI points referenced by AF element attributes that have been retrieved by searching an AF server.
 
-The reference type indicates the PI point's source and how it was retrieved. The reference type for each PI point is listed in the `Reference Type` column on the **PI Points** tab. 
+The reference type for each PI point is listed in the `Reference Type` column on the **PI Points** tab. 
 
 ## View PI point details and hide implicit PI points
 
-You can view attribute details for selected PI points in a transfer. Implicit PI points are PI points referenced by AF elements in a transfer. You can hide implicit PI points to temporarily remove them from view on the **PI Points** tab. Hidden implicit PI points are still included in a transfer unless the referencing AF elements are removed from the transfer list. 
+You can view attribute details for selected PI points in a transfer. Implicit PI points are PI points referenced only by AF elements in a transfer. You can hide implicit PI points to temporarily remove them from view on the **PI Points** tab. Hidden implicit PI points are still included in a transfer unless the referencing AF elements are removed from the transfer list. 
 
 1. In the `Transfer` pane, select the **PI Points** tab.
 

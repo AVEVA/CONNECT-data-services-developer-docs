@@ -3,8 +3,7 @@ uid: sdsCompression
 ---
 
 # Compression
-To use network bandwidth efficiently, the Sequential Data Store supports compression for [reading](xref:sdsReadingDataApi) and
-[writing data](xref:sdsWritingDataApi) through the REST API.
+To use network bandwidth efficiently, the Sequential Data Store supports compression for [stream data](xref:sds-stream-data) through the REST API.
 
 ## Supported compression schemes
 - ``gzip``

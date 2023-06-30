@@ -4,7 +4,7 @@ uid: PItoDHSync
 
 # PI to Data Hub change synchronization
 
-The PI to Data Hub Agent supports synchronizing changes in the PI Data Archive and PI Asset Framework. Updates are automatically sent to AVEVA Data Hub without any user interaction. 
+The PI to Data Hub Agent supports synchronizing changes in the Data Archive and PI Asset Framework. Updates are automatically sent to AVEVA Data Hub without any user interaction. 
 
 ## Data Archive synchronization 
 
@@ -60,6 +60,8 @@ The supported AF change synchronization events and the result of each change are
 
   - **Addition or updates to attributes**: An SDS stream is created if newly referenced in transfer. The stream reference of the asset is added or updated.
 
+    - **Note:** If an AF element has a PI point reference that is not yet created when the transfer is started, creating that PI point reference will not trigger change synchronization. The PI point reference must be created before a transfer is started.
+
   - **Deletion of attributes**: The stream reference is removed from the asset. The SDS stream is removed if a point is no longer referenced in the transfer.<sup>1</sup>
 
   - **Deletion of the element**: The asset is deleted.<sup>1</sup>
@@ -102,7 +104,7 @@ The supported AF change synchronization events and the result of each change are
 
 ## PI point type change
 
-When the PI to Data Hub Agent detects that a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database, it takes the following actions:
+When the PI to Data Hub Agent detects that a PI point's type is changed on the source Data Archive after the corresponding stream has been created in the SDS database, it takes the following actions:
 
 - The `PI Point Type Change Detected` message displays next to **Current Activity** in the `Details` pane, as shown below:
 
@@ -130,4 +132,4 @@ After you create an SDS stream, its underlying SdsType cannot change. As a resul
 
 1. Change the PI point type to match the SDS stream type and then restart the transfer.
 
-To see what types of point coercions are supported in PI Data Archive, refer to the [Allowable point type coercions](https://docs.osisoft.com/bundle/pi-server/page/allowable-point-type-coercions.html) topic.
+To see what types of point coercions are supported in Data Archive, refer to the [Allowable point type coercions](https://docs.aveva.com/bundle/pi-server-da-admin/page/1021626.html) topic.

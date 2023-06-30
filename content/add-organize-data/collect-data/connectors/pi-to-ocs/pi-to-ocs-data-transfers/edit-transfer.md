@@ -36,7 +36,7 @@ To edit an existing transfer:
 
    **Note:** Any implicitly referenced PI points that are not referenced by another AF element will also be removed from the transfer.
 
-1. (Optional) To add the removed PI points back to the transfer, select **Undo Last Element Removal** .
+1. (Optional) To add the removed PI points back to the transfer, select **Undo Last Element Removal**.
  
 1. (Optional) To open the `Transfer Settings` dialog box and edit transfer settings, select **Settings** and then perform the desired action(s):
 

@@ -11,4 +11,4 @@ The SDS stream container uses metadata and tags to define information about the 
 
 ## PI Server counterpart
 
-An SDS stream is comparable to a PI point in the PI Data Archive. For example, a `float32` PI point might be sent to AVEVA Data Hub as an SDS stream with a type that contains a `timestamp` index and `float32` value. If you use PI to Data Hub to import data into SDS, each PI point in the PI Data Archive is created in SDS as an individual stream and the data itself is added as values in the stream.
+An SDS stream is comparable to a PI point in the Data Archive. For example, a `float32` PI point might be sent to AVEVA Data Hub as an SDS stream with a type that contains a `timestamp` index and `float32` value. If you use PI to Data Hub to import data into SDS, each PI point in the Data Archive is created in SDS as an individual stream and the data itself is added as values in the stream.

@@ -1,10 +1,9 @@
 ---
-uid: ResolvedDataViewAPI
+uid: data-views-data-views-resolved
 
 ---
 
-# Resolved data views
-
+# Data Views Resolved
 This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the [documentation](xref:ResolvedDataView) for resolved data views.
 
 ## `Get Data Items by Query`
@@ -65,6 +64,9 @@ Content-Type: application/json
       "Name": "WS_BILT",
       "TypeId": "quickstart-omf-weather-gen1",
       "ResourceType": "Stream",
+      "TenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+      "NamespaceId": "development",
+      "CommunityId": "",
       "Tags": [
         "Weather",
         "High Resolution",
@@ -181,6 +183,9 @@ Content-Type: application/json
       "Name": "Some Ineligible Stream",
       "TypeId": "type-with-different-index",
       "ResourceType": "Stream",
+      "TenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+      "NamespaceId": "development",
+      "CommunityId": "",
       "Tags": [],
       "Metadata": [],
       "DataItemFields": [],
@@ -290,6 +295,9 @@ Content-Type: application/json
             "Name": "WS_BILT",
             "TypeId": "quickstart-omf-weather-gen1",
             "ResourceType": "Stream",
+            "TenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "NamespaceId": "development",
+            "CommunityId": "",
             "Tags": [
                 "Weather",
                 "High Resolution",
@@ -427,6 +435,9 @@ HTTP 200 OK
         "DataMappings": [
           {
             "TargetId": "WS_BILT",
+            "TargetTenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "TargetNamespaceId": "development",
+            "TargetCommunityId": "",
             "TargetFieldKey": "Temperature",
             "TypeCode": "Double",
             "FieldSetIndex": 1,
@@ -434,6 +445,9 @@ HTTP 200 OK
           },
           {
             "TargetId": "WS_ROSE",
+            "TargetTenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "TargetNamespaceId": "development",
+            "TargetCommunityId": "",
             "TargetFieldKey": "Temperature",
             "TypeCode": "Double",
             "FieldSetIndex": 1,
@@ -441,6 +455,9 @@ HTTP 200 OK
           },
           {
             "TargetId": "WS_WINT",
+            "TargetTenantId": "fb3ee10e-91f0-4473-98b9-0353daeaa9e7",
+            "TargetNamespaceId": "development",
+            "TargetCommunityId": "",
             "TargetFieldKey": "AmbientTemperature",
             "TypeCode": "Double",
             "FieldSetIndex": 1,
@@ -575,7 +592,7 @@ HTTP 200 OK
 
 <a id="opIdDataViewsResolved_Get All Field Sets"></a>
 
-ERROR: Parameter "allfieldsets-get" could not be found in external reference file
+Returns the collection of all field sets eligible for use in the data view, including fields which are currently included in the data view.
 
 <h3>Request</h3>
 
@@ -607,11 +624,55 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 > 200 Response
 
 ```json
+HTTP 200 OK
 {
-  "ERROR": "Parameter \"allfieldsets-get\" could not be found in external reference file"
+    "TimeOfResolution": "2019-12-13T01:23:45Z",
+    "Items": [
+        {
+            "QueryId": "weather",
+            "DataFields": [
+                {
+                    "Source": "Id",
+                    "Keys": [],
+                    "Label": "{IdentifyingValue} Id"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "SolarRadiation"
+                    ],
+                    "Label": "{IdentifyingValue} SolarRadiation {Uom} {SummaryType}"
+                },
+                {
+                    "Source": "PropertyId",
+                    "Keys": [
+                        "Temperature"
+                    ],
+                    "Label": "{IdentifyingValue} Temperature {Uom} {SummaryType}"
+                },
+                {
+                    "Source": "Metadata",
+                    "Keys": [
+                        "Site"
+                    ],
+                    "Label": "{IdentifyingValue} Site {Uom}"
+                },
+                {
+                    "Source": "Tags",
+                    "Keys": [
+                        "Weather",
+                        "Low Resolution",
+                        "High Resolution",
+                        "Gen1",
+                        "Gen2",
+                    ],
+                    "Label": "{IdentifyingValue} Tags"
+                }
+            ]
+        }
+    ]
 }
 ```
-
 > 403 Response ([ErrorResponse](#schemaerrorresponse))
 
 ```json
@@ -754,9 +815,13 @@ Holds a collection of items that were resolved at a specific time.
     {
       "Id": "string",
       "Name": "string",
+      "ClusterEndpoint": "string",
       "Description": "string",
       "TypeId": "string",
       "ResourceType": 1,
+      "TenantId": "string",
+      "NamespaceId": "string",
+      "CommunityId": "string",
       "Tags": [
         "string"
       ],
@@ -774,10 +839,10 @@ Holds a collection of items that were resolved at a specific time.
           "Id": "string",
           "Name": "string",
           "StreamReferenceName": "string",
+          "StreamId": "string",
           "TypeCode": 0,
           "Uom": "string",
-          "IsKey": true,
-          "StreamId": "string"
+          "IsKey": true
         }
       ],
       "IneligibleDataItemFields": [
@@ -785,10 +850,10 @@ Holds a collection of items that were resolved at a specific time.
           "Id": "string",
           "Name": "string",
           "StreamReferenceName": "string",
+          "StreamId": "string",
           "TypeCode": 0,
           "Uom": "string",
-          "IsKey": true,
-          "StreamId": "string"
+          "IsKey": true
         }
       ]
     }
@@ -806,7 +871,7 @@ Holds a collection of items that were resolved at a specific time.
 <a id="tocSdataitem"></a>
 <a id="tocsdataitem"></a>
 
-A data item resolved by the data view. Can represent various DataItemResourceTypes from AVEVA Data Hub
+A data item resolved by the data view. Can represent various DataItemResourceTypes
 
 <h4>Properties</h4>
 
@@ -814,21 +879,29 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |---|---|---|---|---|
 |Id|string|false|true|The data item's unique identifier|
 |Name|string|false|true|The data item's friendly name|
+|ClusterEndpoint|string|false|true|The data item's cluster endpoint|
 |Description|string|false|true|The data item's description|
 |TypeId|string|false|true|The identifier of the data item's type|
 |ResourceType|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource this data item comes from|
+|TenantId|string|false|true|The tenant identifier this data item originates from|
+|NamespaceId|string|false|true|The namespace identifier this data item originates from|
+|CommunityId|string|false|true|The community identifier this data item originates from|
 |Tags|string[]|false|true|The collection of tags specified on this data item|
 |Metadata|[[MetadataValueOfObject](#schemametadatavalueofobject)]|false|true|The list of metadata value objects specified on this data item|
 |DataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of data fields this data item exposes|
-|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes. These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values.|
+|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
+  "ClusterEndpoint": "string",
   "Description": "string",
   "TypeId": "string",
   "ResourceType": 1,
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "CommunityId": "string",
   "Tags": [
     "string"
   ],
@@ -846,10 +919,10 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
       "Id": "string",
       "Name": "string",
       "StreamReferenceName": "string",
+      "StreamId": "string",
       "TypeCode": 0,
       "Uom": "string",
-      "IsKey": true,
-      "StreamId": "string"
+      "IsKey": true
     }
   ],
   "IneligibleDataItemFields": [
@@ -857,10 +930,10 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
       "Id": "string",
       "Name": "string",
       "StreamReferenceName": "string",
+      "StreamId": "string",
       "TypeCode": 0,
       "Uom": "string",
-      "IsKey": true,
-      "StreamId": "string"
+      "IsKey": true
     }
   ]
 }
@@ -1038,20 +1111,20 @@ A field exposed by some DataItem
 |Id|string|false|true|The field's unique identifier|
 |Name|string|false|true|The field's friendly name|
 |StreamReferenceName|string|false|true|Name of the corresponding asset stream reference, if applicable|
+|StreamId|string|false|true|Stream id corresponding to the asset stream reference, if applicable|
 |TypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The field's data type|
 |Uom|string|false|true|The field's unit of measure unique identifier|
 |IsKey|boolean|false|false|Whether or not this field is its data item's primary key/index True if the field is its data item's primary key/index; false otherwise.|
-|StreamId|string|false|true|Stream id corresponding to the asset stream reference, if applicable|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
   "StreamReferenceName": "string",
+  "StreamId": "string",
   "TypeCode": 0,
   "Uom": "string",
-  "IsKey": true,
-  "StreamId": "string"
+  "IsKey": true
 }
 
 ```
@@ -1129,9 +1202,13 @@ Holds a collection of items that were resolved at a specific time.
           {
             "Id": "string",
             "Name": "string",
+            "ClusterEndpoint": "string",
             "Description": "string",
             "TypeId": "string",
             "ResourceType": 1,
+            "TenantId": "string",
+            "NamespaceId": "string",
+            "CommunityId": "string",
             "Tags": [
               "string"
             ],
@@ -1149,10 +1226,10 @@ Holds a collection of items that were resolved at a specific time.
                 "Id": "string",
                 "Name": "string",
                 "StreamReferenceName": "string",
+                "StreamId": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true,
-                "StreamId": "string"
+                "IsKey": true
               }
             ],
             "IneligibleDataItemFields": [
@@ -1160,10 +1237,10 @@ Holds a collection of items that were resolved at a specific time.
                 "Id": "string",
                 "Name": "string",
                 "StreamReferenceName": "string",
+                "StreamId": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true,
-                "StreamId": "string"
+                "IsKey": true
               }
             ]
           }
@@ -1172,9 +1249,13 @@ Holds a collection of items that were resolved at a specific time.
           {
             "Id": "string",
             "Name": "string",
+            "ClusterEndpoint": "string",
             "Description": "string",
             "TypeId": "string",
             "ResourceType": 1,
+            "TenantId": "string",
+            "NamespaceId": "string",
+            "CommunityId": "string",
             "Tags": [
               "string"
             ],
@@ -1192,10 +1273,10 @@ Holds a collection of items that were resolved at a specific time.
                 "Id": "string",
                 "Name": "string",
                 "StreamReferenceName": "string",
+                "StreamId": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true,
-                "StreamId": "string"
+                "IsKey": true
               }
             ],
             "IneligibleDataItemFields": [
@@ -1203,10 +1284,10 @@ Holds a collection of items that were resolved at a specific time.
                 "Id": "string",
                 "Name": "string",
                 "StreamReferenceName": "string",
+                "StreamId": "string",
                 "TypeCode": 0,
                 "Uom": "string",
-                "IsKey": true,
-                "StreamId": "string"
+                "IsKey": true
               }
             ]
           }
@@ -1250,9 +1331,13 @@ A group resolved by a data view
       {
         "Id": "string",
         "Name": "string",
+        "ClusterEndpoint": "string",
         "Description": "string",
         "TypeId": "string",
         "ResourceType": 1,
+        "TenantId": "string",
+        "NamespaceId": "string",
+        "CommunityId": "string",
         "Tags": [
           "string"
         ],
@@ -1270,10 +1355,10 @@ A group resolved by a data view
             "Id": "string",
             "Name": "string",
             "StreamReferenceName": "string",
+            "StreamId": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true,
-            "StreamId": "string"
+            "IsKey": true
           }
         ],
         "IneligibleDataItemFields": [
@@ -1281,10 +1366,10 @@ A group resolved by a data view
             "Id": "string",
             "Name": "string",
             "StreamReferenceName": "string",
+            "StreamId": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true,
-            "StreamId": "string"
+            "IsKey": true
           }
         ]
       }
@@ -1293,9 +1378,13 @@ A group resolved by a data view
       {
         "Id": "string",
         "Name": "string",
+        "ClusterEndpoint": "string",
         "Description": "string",
         "TypeId": "string",
         "ResourceType": 1,
+        "TenantId": "string",
+        "NamespaceId": "string",
+        "CommunityId": "string",
         "Tags": [
           "string"
         ],
@@ -1313,10 +1402,10 @@ A group resolved by a data view
             "Id": "string",
             "Name": "string",
             "StreamReferenceName": "string",
+            "StreamId": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true,
-            "StreamId": "string"
+            "IsKey": true
           }
         ],
         "IneligibleDataItemFields": [
@@ -1324,10 +1413,10 @@ A group resolved by a data view
             "Id": "string",
             "Name": "string",
             "StreamReferenceName": "string",
+            "StreamId": "string",
             "TypeCode": 0,
             "Uom": "string",
-            "IsKey": true,
-            "StreamId": "string"
+            "IsKey": true
           }
         ]
       }
@@ -1374,7 +1463,7 @@ The value resolved by a grouping field defined in the data view
 <a id="tocSdataitemofobject"></a>
 <a id="tocsdataitemofobject"></a>
 
-A data item resolved by the data view. Can represent various DataItemResourceTypes from AVEVA Data Hub
+A data item resolved by the data view. Can represent various DataItemResourceTypes
 
 <h4>Properties</h4>
 
@@ -1382,21 +1471,29 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
 |---|---|---|---|---|
 |Id|string|false|true|The data item's unique identifier|
 |Name|string|false|true|The data item's friendly name|
+|ClusterEndpoint|string|false|true|The data item's cluster endpoint|
 |Description|string|false|true|The data item's description|
 |TypeId|string|false|true|The identifier of the data item's type|
 |ResourceType|[DataItemResourceType](#schemadataitemresourcetype)|false|false|The type of resource this data item comes from|
+|TenantId|string|false|true|The tenant identifier this data item originates from|
+|NamespaceId|string|false|true|The namespace identifier this data item originates from|
+|CommunityId|string|false|true|The community identifier this data item originates from|
 |Tags|string[]|false|true|The collection of tags specified on this data item|
 |Metadata|[[MetadataValueOfObject](#schemametadatavalueofobject)]|false|true|The list of metadata value objects specified on this data item|
 |DataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of data fields this data item exposes|
-|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes. These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values.|
+|IneligibleDataItemFields|[[DataItemField](#schemadataitemfield)]|false|true|The collection of ineligible data fields this data item exposes These fields are not supported by data views and will not be included in the available field sets These fields can be manually added to a data view but the data result will show null values|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
+  "ClusterEndpoint": "string",
   "Description": "string",
   "TypeId": "string",
   "ResourceType": 1,
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "CommunityId": "string",
   "Tags": [
     "string"
   ],
@@ -1414,6 +1511,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
       "Id": "string",
       "Name": "string",
       "StreamReferenceName": "string",
+      "StreamId": "string",
       "TypeCode": 0,
       "Uom": "string",
       "IsKey": true
@@ -1424,6 +1522,7 @@ A data item resolved by the data view. Can represent various DataItemResourceTyp
       "Id": "string",
       "Name": "string",
       "StreamReferenceName": "string",
+      "StreamId": "string",
       "TypeCode": 0,
       "Uom": "string",
       "IsKey": true
@@ -1466,6 +1565,9 @@ Holds a collection of items that were resolved at a specific time.
       "DataMappings": [
         {
           "TargetId": "string",
+          "TargetTenantId": "string",
+          "TargetNamespaceId": "string",
+          "TargetCommunityId": "string",
           "TargetStreamReferenceName": "string",
           "TargetFieldKey": "string",
           "TypeCode": 0,
@@ -1518,6 +1620,9 @@ A resolved field of the data view, identifying its data source for each group.
   "DataMappings": [
     {
       "TargetId": "string",
+      "TargetTenantId": "string",
+      "TargetNamespaceId": "string",
+      "TargetCommunityId": "string",
       "TargetStreamReferenceName": "string",
       "TargetFieldKey": "string",
       "TypeCode": 0,
@@ -1615,6 +1720,9 @@ Information about the data source resolved for an individual Field for a specifi
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |TargetId|string|false|true|The identifier of the target data source|
+|TargetTenantId|string|false|true|The identifier of the target’s tenant|
+|TargetNamespaceId|string|false|true|The identifier of the target’s namespace|
+|TargetCommunityId|string|false|true|The identifier of the target’s community|
 |TargetStreamReferenceName|string|false|true|The name of the target stream reference|
 |TargetFieldKey|string|false|true|The subpath within the target data source Null in case of non-"keyed" mapping (e.g. stream id, as opposed to a specific Stream property)|
 |TypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The field's data type|
@@ -1627,6 +1735,9 @@ Information about the data source resolved for an individual Field for a specifi
 ```json
 {
   "TargetId": "string",
+  "TargetTenantId": "string",
+  "TargetNamespaceId": "string",
+  "TargetCommunityId": "string",
   "TargetStreamReferenceName": "string",
   "TargetFieldKey": "string",
   "TypeCode": 0,
@@ -1813,6 +1924,12 @@ The targeted part of a DataItem
 |PropertyName|4|
 |Metadata|5|
 |Tags|6|
+|TenantId|7|
+|TenantName|8|
+|NamespaceId|9|
+|NamespaceName|10|
+|CommunityId|11|
+|CommunityName|12|
 
 ---
 

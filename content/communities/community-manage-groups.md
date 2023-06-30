@@ -18,7 +18,7 @@ To add groups from your own tenant to a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community where you want to add groups and select **Details**.
+1. Select the community where you want to add groups and choose **Community Details**.
 
 1. On the **My Groups** tab, select **Add Group**.
 
@@ -26,7 +26,7 @@ To add groups from your own tenant to a community:
 
 1. Select **Save**.
 
-Each group is added to the community and its users are assigned the Community Member role. Additionally, each group user is implicitly added to the **Members** tab. For more information, see [User from groups](xref:community-manage-users#users-from-groups). 
+Each group is added to the community and its users are assigned the Community Member role. Additionally, each group user is implicitly added to the **Members** tab. For more information, see [User from groups](xref:community-manage-users#users-from-groups).
 
 ## Remove groups from a community
 
@@ -34,7 +34,7 @@ To remove tenant groups from a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community where you want to remove groups and select **Details**.
+1. Select the community where you want to remove groups and choose **Community Details**.
 
 1. On the **My Groups** tab, select one or more groups. A details pane appears. If necessary, filter the list of groups by typing in the **Filter groups** field.
 

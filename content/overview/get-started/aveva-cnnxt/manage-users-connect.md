@@ -51,3 +51,7 @@ Linda is an Account Administrator for her organization in AVEVA Connect. She wan
 For Karl, all Linda has to do is add a user for him in AVEVA Connect that is part of the User group, then add that user in AVEVA Data Hub. Because the DataHub Viewer role is added by default to the User group in AVEVA Connect, and the Tenant Member role is assigned by default in AVEVA Data Hub, nothing more needs to be done.
 
 For Luis, Linda could follow the same process and manually add the Tenant Contributor role when adding Luis as a user in AVEVA Data Hub. However, she decides to handle the role assignment at a group level so any future changes can be applied to multiple users simultaneously. She creates a group in AVEVA Connect called Contributor, then adds that group in AVEVA Data Hub and assigns it the role of Tenant Contributor. Linda adds a user for Luis in AVEVA Connect that belongs to the group Contributor. She then adds a user for him in AVEVA Data Hub. Because he belongs to the Contributor group, AVEVA Data Hub assigns the Tenant Contributor role to him automatically.
+
+## Video Tutorial: Provide an AVEVA Connect user with access to AVEVA Data Hub
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zHvBFNIfIGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

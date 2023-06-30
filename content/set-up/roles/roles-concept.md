@@ -28,7 +28,7 @@ Access to resources is a combination of 1) the roles assigned to a user and grou
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 
-Roles are comparable to PI identities in PI Data Archive or identities in PI AF server. An administrator grants permissions to roles instead of directly to individual users or clients. This is similar to how PI Server uses identities to assign permissions for a set of users or clients.
+Roles are comparable to PI identities in Data Archive or identities in PI AF server. An administrator grants permissions to roles instead of directly to individual users or clients. This is similar to how PI Server uses identities to assign permissions for a set of users or clients.
 
 ## <a name="roles-bp"></a>Roles best practices
 

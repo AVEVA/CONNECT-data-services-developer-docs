@@ -26,14 +26,14 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
-<br/><br/>`[optional] boolean includeDeleted`
-<br/><br/>
+<br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>`[optional] boolean includeDeleted`
+<br/>Parameter indicating whether to include soft-deleted ReferenceDataTypes. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)[]|Success.|
+|200|[ReferenceDataType](#schemareferencedatatype)[]|Success.|
 |304|None|Not modified.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
@@ -41,36 +41,142 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)[])
+> 200 Response
 
 ```json
 [
   {
-    "Name": "string",
-    "GraphQLName": "string",
-    "Version": 0,
-    "Id": "string",
-    "State": 0,
-    "CreatedDate": "2019-08-24T14:15:22Z",
-    "ModifiedDate": "2019-08-24T14:15:22Z",
-    "Description": "string",
-    "Category": 0,
+    "Id": "SimpleReferenceData",
+    "Name": "SimpleReferenceData",
+    "GraphQLName": "SimpleReferenceData",
+    "Category": "ReferenceData",
+    "State": "Active",
     "Properties": [
       {
-        "PropertyTypeCode": 0,
-        "Id": "string",
-        "Name": "string",
-        "GraphQLName": "string",
-        "Flags": 0,
-        "State": 0,
-        "PropertyTypeId": "string",
-        "RemoteReferenceName": "string",
-        "Description": "string"
+        "PropertyTypeCode": "String",
+        "Id": "id",
+        "Name": "id",
+        "GraphQLName": "id",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "A unique identifier for the ReferenceData instance."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "modifiedDate",
+        "Name": "modifiedDate",
+        "GraphQLName": "modifiedDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The last modified date and time of the ReferenceData."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "createdDate",
+        "Name": "createdDate",
+        "GraphQLName": "createdDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The date and time at which the ReferenceData was created."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "createdByUser",
+        "Name": "createdByUser",
+        "GraphQLName": "createdByUser",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The identity of the user that created the ReferenceData."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "authorizationTags",
+        "Name": "authorizationTags",
+        "GraphQLName": "authorizationTags",
+        "Flags": "IsCollection",
+        "State": "Active",
+        "Description": "The list of tags used to authorize access to the ReferenceData."
       }
     ],
-    "DefaultAuthorizationTag": "string"
+    "Version": 1,
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z",
+    "DefaultAuthorizationTag": "BaseAuthorizationTag",
+    "Description": "This is a simple reference data type"
+  },
+  {
+    "Id": "SimpleReferenceData",
+    "Name": "SimpleReferenceData",
+    "GraphQLName": "SimpleReferenceData",
+    "Category": "ReferenceData",
+    "State": "Active",
+    "Properties": [
+      {
+        "PropertyTypeCode": "String",
+        "Id": "id",
+        "Name": "id",
+        "GraphQLName": "id",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "A unique identifier for the ReferenceData instance."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "modifiedDate",
+        "Name": "modifiedDate",
+        "GraphQLName": "modifiedDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The last modified date and time of the ReferenceData."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "createdDate",
+        "Name": "createdDate",
+        "GraphQLName": "createdDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The date and time at which the ReferenceData was created."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "createdByUser",
+        "Name": "createdByUser",
+        "GraphQLName": "createdByUser",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The identity of the user that created the ReferenceData."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "authorizationTags",
+        "Name": "authorizationTags",
+        "GraphQLName": "authorizationTags",
+        "Flags": "IsCollection",
+        "State": "Active",
+        "Description": "The list of tags used to authorize access to the ReferenceData."
+      }
+    ],
+    "Version": 1,
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z",
+    "DefaultAuthorizationTag": "BaseAuthorizationTag",
+    "Description": "This is a simple reference data type"
   }
 ]
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
+}
 ```
 
 ---
@@ -95,11 +201,10 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTy
 
 <h4>Request Body</h4>
 
-An EventGraphReferenceDataType.<br/>
+A ReferenceDataType.<br/>
 
 ```json
 {
-  "Id": "SimpleReferenceData",
   "Name": "SimpleReferenceData",
   "Properties": [
     {
@@ -118,39 +223,87 @@ An EventGraphReferenceDataType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)|Created.|
+|201|[ReferenceDataType](#schemareferencedatatype)|Created.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 
 <h4>Example response body</h4>
 
-> 201 Response ([EventGraphReferenceDataType](#schemaeventgraphreferencedatatype))
+> 201 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Category": 0,
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
   "Properties": [
     {
-      "PropertyTypeCode": 0,
-      "Id": "string",
-      "Name": "string",
-      "GraphQLName": "string",
-      "Flags": 0,
-      "State": 0,
-      "PropertyTypeId": "string",
-      "RemoteReferenceName": "string",
-      "Description": "string"
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
     }
   ],
-  "DefaultAuthorizationTag": "string"
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -176,48 +329,95 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 <br/><br/>`string id`
 <br/>The id of the ReferenceDataType.<br/><br/>
 `[optional] boolean includeDeleted`
-<br/><br/>
+<br/>Parameter indicating whether to include soft-deleted ReferenceDataTypes. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)|Success.|
+|200|[ReferenceDataType](#schemareferencedatatype)|Success.|
 |304|None|Not modified.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|ReferenceDataType not found.|
 |412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphReferenceDataType](#schemaeventgraphreferencedatatype))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Category": 0,
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
   "Properties": [
     {
-      "PropertyTypeCode": 0,
-      "Id": "string",
-      "Name": "string",
-      "GraphQLName": "string",
-      "Flags": 0,
-      "State": 0,
-      "PropertyTypeId": "string",
-      "RemoteReferenceName": "string",
-      "Description": "string"
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
     }
   ],
-  "DefaultAuthorizationTag": "string"
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -244,7 +444,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTy
 
 <h4>Request Body</h4>
 
-An EventGraphReferenceDataType.<br/>
+A ReferenceDataType.<br/>
 
 ```json
 {
@@ -267,42 +467,153 @@ An EventGraphReferenceDataType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)|Success.|
-|201|[EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)|Created.|
+|200|[ReferenceDataType](#schemareferencedatatype)|Success.|
+|201|[ReferenceDataType](#schemareferencedatatype)|Created.|
 |302|None|Found.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Found.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphReferenceDataType](#schemaeventgraphreferencedatatype))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Category": 0,
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
   "Properties": [
     {
-      "PropertyTypeCode": 0,
-      "Id": "string",
-      "Name": "string",
-      "GraphQLName": "string",
-      "Flags": 0,
-      "State": 0,
-      "PropertyTypeId": "string",
-      "RemoteReferenceName": "string",
-      "Description": "string"
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
     }
   ],
-  "DefaultAuthorizationTag": "string"
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
+  "Properties": [
+    {
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
+    }
+  ],
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -329,7 +640,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 <h4>Request Body</h4>
 
-An EventGraphReferenceDataType.<br/>
+A ReferenceDataType.<br/>
 
 ```json
 {
@@ -352,35 +663,153 @@ An EventGraphReferenceDataType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
-|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
+|200|[ReferenceDataType](#schemareferencedatatype)|Success.|
+|201|[ReferenceDataType](#schemareferencedatatype)|Created.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 |412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Members": [
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
+  "Properties": [
     {
-      "Name": "string",
-      "GraphQLName": "string",
-      "Code": 0,
-      "State": 0,
-      "Description": "string"
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
     }
-  ]
+  ],
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
+}
+```
+
+> 201 Response
+
+```json
+{
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
+  "Properties": [
+    {
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
+    }
+  ],
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
+}
+```
+
+> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -412,7 +841,8 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceData
 |204|None|Deleted.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|ReferenceDataType not found.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 
 ---
 
@@ -420,7 +850,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceData
 
 <a id="opIdReferenceDataTypes_Bulk Create Reference Data Type"></a>
 
-Creates multiple new EventGraphReferenceDataType and returns a list of any errors along with the created objects. Response includes ETag header.
+Creates multiple new ReferenceDataTypes and returns a list of any errors along with the created objects. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -436,46 +866,94 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceD
 
 <h4>Request Body</h4>
 
-A list of EventGraphReferenceDataType objects.<br/>
+A list of ReferenceDataType objects.<br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)|Success.|
+|200|[ReferenceDataType](#schemareferencedatatype)|Success.|
 |207|[AdhErrorResponse](#schemaadherrorresponse)|Partial.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
 
 <h4>Example response body</h4>
 
-> 200 Response ([EventGraphReferenceDataType](#schemaeventgraphreferencedatatype))
+> 200 Response
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Category": 0,
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
   "Properties": [
     {
-      "PropertyTypeCode": 0,
-      "Id": "string",
-      "Name": "string",
-      "GraphQLName": "string",
-      "Flags": 0,
-      "State": 0,
-      "PropertyTypeId": "string",
-      "RemoteReferenceName": "string",
-      "Description": "string"
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
     }
   ],
-  "DefaultAuthorizationTag": "string"
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
+}
+```
+
+> 207 Response ([AdhErrorResponse](#schemaadherrorresponse))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
 }
 ```
 
@@ -506,7 +984,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|ReferenceDataType not found.|
 
 <h4>Example response body</h4>
 
@@ -551,7 +1029,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 <h4>Request Body</h4>
 
-An access control list.<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -582,7 +1060,7 @@ An access control list.<br/>
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|ReferenceDataType not found.|
 
 <h4>Example response body</h4>
 
@@ -631,7 +1109,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|ReferenceDataType not found.|
 
 <h4>Example response body</h4>
 
@@ -684,7 +1162,7 @@ A Trustee.<br/>
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|ReferenceDataType not found.|
 
 <h4>Example response body</h4>
 
@@ -725,17 +1203,19 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 |---|---|---|
 |200|Inline|Success.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Client or tenant not found.|
+|404|[AdhErrorResponse](#schemaadherrorresponse)|ReferenceDataType not found.|
 
 ---
 ## Definitions
 
-### EventGraphReferenceDataType
+### ReferenceDataType
 
-<a id="schemaeventgraphreferencedatatype"></a>
-<a id="schema_EventGraphReferenceDataType"></a>
-<a id="tocSeventgraphreferencedatatype"></a>
-<a id="tocseventgraphreferencedatatype"></a>
+<a id="schemareferencedatatype"></a>
+<a id="schema_ReferenceDataType"></a>
+<a id="tocSreferencedatatype"></a>
+<a id="tocsreferencedatatype"></a>
+
+Represents a ReferenceDataType object.
 
 <h4>Properties</h4>
 
@@ -749,35 +1229,69 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 |CreatedDate|date-time|false|true|None|
 |ModifiedDate|date-time|false|true|None|
 |Description|string|false|true|None|
-|Category|[EventGraphReferenceDataCategory](#schemaeventgraphreferencedatacategory)|false|false|None|
+|Category|[ReferenceDataCategory](#schemareferencedatacategory)|false|false|None|
 |Properties|[[TypeProperty](#schematypeproperty)]|false|true|None|
 |DefaultAuthorizationTag|string|false|true|None|
 
 ```json
 {
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Category": 0,
+  "Id": "SimpleReferenceData",
+  "Name": "SimpleReferenceData",
+  "GraphQLName": "SimpleReferenceData",
+  "Category": "ReferenceData",
+  "State": "Active",
   "Properties": [
     {
-      "PropertyTypeCode": 0,
-      "Id": "string",
-      "Name": "string",
-      "GraphQLName": "string",
-      "Flags": 0,
-      "State": 0,
-      "PropertyTypeId": "string",
-      "RemoteReferenceName": "string",
-      "Description": "string"
+      "PropertyTypeCode": "String",
+      "Id": "id",
+      "Name": "id",
+      "GraphQLName": "id",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "A unique identifier for the ReferenceData instance."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "modifiedDate",
+      "Name": "modifiedDate",
+      "GraphQLName": "modifiedDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The last modified date and time of the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "DateTime",
+      "Id": "createdDate",
+      "Name": "createdDate",
+      "GraphQLName": "createdDate",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The date and time at which the ReferenceData was created."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "createdByUser",
+      "Name": "createdByUser",
+      "GraphQLName": "createdByUser",
+      "Flags": "None",
+      "State": "Active",
+      "Description": "The identity of the user that created the ReferenceData."
+    },
+    {
+      "PropertyTypeCode": "String",
+      "Id": "authorizationTags",
+      "Name": "authorizationTags",
+      "GraphQLName": "authorizationTags",
+      "Flags": "IsCollection",
+      "State": "Active",
+      "Description": "The list of tags used to authorize access to the ReferenceData."
     }
   ],
-  "DefaultAuthorizationTag": "string"
+  "Version": 1,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "ModifiedDate": "0001-01-01T00:00:00Z",
+  "DefaultAuthorizationTag": "BaseAuthorizationTag",
+  "Description": "This is a simple reference data type"
 }
 
 ```
@@ -793,20 +1307,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 <h4>Enumerated Values</h4>
 
-|Property|Value|Description|
-|---|---|---|
-|Active|0||
-|Deprecated|1||
-|Deleted|2||
+|Property|Value|
+|---|---|
+|Active|0|
+|Deprecated|1|
+|Deleted|2|
 
 ---
 
-### EventGraphReferenceDataCategory
+### ReferenceDataCategory
 
-<a id="schemaeventgraphreferencedatacategory"></a>
-<a id="schema_EventGraphReferenceDataCategory"></a>
-<a id="tocSeventgraphreferencedatacategory"></a>
-<a id="tocseventgraphreferencedatacategory"></a>
+<a id="schemareferencedatacategory"></a>
+<a id="schema_ReferenceDataCategory"></a>
+<a id="tocSreferencedatacategory"></a>
+<a id="tocsreferencedatacategory"></a>
 
 <h4>Enumerated Values</h4>
 
@@ -924,82 +1438,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
   "Resolution": "string",
   "property1": null,
   "property2": null
-}
-
-```
-
----
-
-### EventGraphEnumeration
-
-<a id="schemaeventgraphenumeration"></a>
-<a id="schema_EventGraphEnumeration"></a>
-<a id="tocSeventgraphenumeration"></a>
-<a id="tocseventgraphenumeration"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Members|[[EnumerationState](#schemaenumerationstate)]|false|true|None|
-
-```json
-{
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Members": [
-    {
-      "Name": "string",
-      "GraphQLName": "string",
-      "Code": 0,
-      "State": 0,
-      "Description": "string"
-    }
-  ]
-}
-
-```
-
----
-
-### EnumerationState
-
-<a id="schemaenumerationstate"></a>
-<a id="schema_EnumerationState"></a>
-<a id="tocSenumerationstate"></a>
-<a id="tocsenumerationstate"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Code|int32|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|Description|string|false|true|None|
-
-```json
-{
-  "Name": "string",
-  "GraphQLName": "string",
-  "Code": 0,
-  "State": 0,
-  "Description": "string"
 }
 
 ```

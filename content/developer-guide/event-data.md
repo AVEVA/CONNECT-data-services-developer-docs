@@ -75,6 +75,19 @@ Best practices for GraphQL naming:
 - Properties are camel case (myProperty)
 - Enum values are uppercase
 
+## Retrieval of types 
+
+There are two parameters you can use when retrieving the collection of Enumerations, Reference Data Types, or Event Types. The boolean `includeDeleted` parameter allows the user to specify whether to include soft-deleted resources in the response body. The `filter` parameter allows the user to supply a comparison operator, the CreatedDate or ModifiedDate property, and a DateTime to indicate which resources to return. For example, the query string "CreatedDate gt 2023-06-01T00:00:00.00Z" will return resources created after the specified date. The following comparison operators can be used with the `filter` parameter. 
+
+- Eq: Equal to 
+- Ne: Not equal to 
+- Lt: Less than 
+- Gt: Greater than 
+- Le: Less than or equal to 
+- Ge: Greater than or equal to 
+
+The filter string is case-insensitive. 
+
 ## Relationships
 
 Properties can point to other types you define to form relationships. As a best practice, Event Type relationship properties can point to Reference Data Types, but Reference Data Types should not point to Event Types because if an event does not exist it will cause an error.

@@ -18,7 +18,9 @@
 - name: Asset store
   href: asset-dev/toc.yml
   topicHref: asset-dev/asset-dev-guide.md
+- topicUid: EventData
+  items:
+  - topicUid: EventUsageExamples
 - name: Samples
   topicHref: samples.md
-- topicUid: EventData
 - topicUid: UseExcel

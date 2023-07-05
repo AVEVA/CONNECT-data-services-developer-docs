@@ -10,7 +10,7 @@ You can store event data, such as manufacturing execution systems (MES) data, in
 
 Events are time-oriented operational data. All event data must have a type. You can create and manage a set of namespace-scoped Event Types, which are definitions for domain-specific events and surrounding metadata.
 
-The [Event Type Store APIs](xref:EventTypeStore) allow you to set up the event types, reference data types, and enumerations. 
+The [Event Type Store APIs](xref:EventTypeStore) allow you to set up the Event Types, Reference Data Types, and Enumerations. 
 
 An Event Type is a collection of properties, each configured as:
 

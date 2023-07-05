@@ -8,8 +8,7 @@ The following sample types demonstrate how Event Types and Reference Data Types 
 
 First, we create a Reference Data Type referencing an external asset: 
 
-`POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/assetReference`
-<br>
+`POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/assetReference`<br>
 
 ```json
 {
@@ -31,8 +30,7 @@ First, we create a Reference Data Type referencing an external asset:
 
 Then, we create an Event Type with a property referencing the previously created Reference Data Type:
 
-`POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/LowProductionEvent`
-<br>
+`POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/LowProductionEvent`<br>
   
 ```json
 {
@@ -66,8 +64,7 @@ Then, we create an Event Type with a property referencing the previously created
 }
 ```
 
-Finally, once events of the above Event Type have been created, we use the GraphQL API to query these assets, allowing the user to gather data about related events.
-<br>
+Finally, once events of the above Event Type have been created, we use the GraphQL API to query these assets, allowing the user to gather data about related events.<br>
   
 ```json
 {
@@ -86,8 +83,7 @@ Finally, once events of the above Event Type have been created, we use the Graph
 }
 ```
 
-A sample result of the query is shown below. 
-<br>
+A sample result of the query is shown below.<br>
   
 ```json
 {

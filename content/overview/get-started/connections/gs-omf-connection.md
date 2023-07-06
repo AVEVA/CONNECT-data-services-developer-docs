@@ -16,27 +16,29 @@ To create an OMF connection:
 
 1. In the left pane, select **Data Collection** > **OMF Connections**.
 
-1. In the **Namespace** field, select `MyData`.
-
-1. Select **Add Connection** to open the `Add Connection` pane.
+1. Select **Add OMF Connection** to open the `Add Connection` pane.
 
 1. In the **Name** field, enter *MyData*.
 
-1. In the **Clients** dropdown list, select a client in the list and select **Save**.
+1. Select **Add Client**.
+
+1. Select a client in the list and select ![Assign](../../../_icons/default/plus.svg) to add it to the assigned clients.
 
    **Note:** For the purposes of this exercise, you may choose any client.
+
+1. Select **Save**.
 
    An application can now use the selected client-credentials client to write OMF data to the `MyData` namespace.
 
 1. To learn more about OMF connections, do the following:
 
-   - Select **Manage Permissions** to open the `Manage Permissions` window.
+   - Select **More Options** ![more options](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.
 
      In this window, you configure permissions only on the connection object itself. Select **Cancel** to continue.
 
-   - Select **Edit Connection** to open the `Edit` window.
+   - Select **Edit Connection** ![edit connection](../../../_icons/default/pencil.svg) to open the `Edit` window.
 
-     Use this window to edit the name and description of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, select **Next** until you get to the **Review** tab, and then select **Save**.
+     Use this window to edit the name, description, and assigned clients of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, select **Save**.
 
 ## Next step
 

@@ -32,11 +32,11 @@ To create an OMF connection:
 
 1. To learn more about OMF connections, do the following:
 
-   - Select **More Options** ![more options](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.
+   - In the `Connection` pane, select **More Options** ![more options](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.
 
      In this window, you configure permissions only on the connection object itself. Select **Cancel** to continue.
 
-   - Select **Edit Connection** ![edit connection](../../../_icons/default/pencil.svg) to open the `Edit` window.
+   - In the `Connection` pane, select **Edit Connection** ![edit connection](../../../_icons/default/pencil.svg) to open the `Edit Connection` pane.
 
      Use this window to edit the name, description, and assigned clients of the connection. Enter the new name *MyDataEdit* and enter the description *OMF Connection used by MyData*. When you are done, select **Save**.
 

@@ -18,7 +18,7 @@ For each `/DataViews/{dataViewId}`, resources for reading and updating its `/Own
 
 Resources to create, read, update, and delete `/DataViews`. For more information, see [Data View](xref:DataViewsOverview)
 
-## [Data views data](xref:DataViewsDataAPI)
+## [Data views data](xref:data-views-data-views-data)
 
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range
 

@@ -4,7 +4,7 @@ uid: DataViewsQuickStartGetData
 
 # Get data view data
 
-You retrieve data view data with the [Data API](xref:DataViewsDataAPI). This topic explains the concepts and workflow to retrieve data view data.
+You retrieve data view data with the [Data API](xref:data-views-data-views-data). This topic explains the concepts and workflow to retrieve data view data.
 
 ## General concepts
 
@@ -18,7 +18,7 @@ All data in a data view is associated with an index value, for example, a timest
 
 Though `DateTime` is the most common index type for stream data, data views can target data of other index types, as noted in [Define a Data View](xref:DataViewsQuickStartDefine).
 
-For `DateTime` indexed data views, use the ISO 8601 format as the index value. Format interval timespan values using the standard timespan format. For example, d.hh:mm:ss.fffffff. Use either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:DataViewsDataAPI) returns in UTC.
+For `DateTime` indexed data views, use the ISO 8601 format as the index value. Format interval timespan values using the standard timespan format. For example, d.hh:mm:ss.fffffff. Use either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:data-views-data-views-data) returns in UTC.
 
 #### Index range
 

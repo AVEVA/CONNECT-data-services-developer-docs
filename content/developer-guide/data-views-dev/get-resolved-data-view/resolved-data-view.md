@@ -51,7 +51,7 @@ The defaults are intended to strike a balance between predictability and freshne
 [!include[data-view-opt-out](../../../_includes/data-view-opt-out.md)]
 
 #### Paging through data
-When using the [Data API](xref:DataViewsDataAPI) to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on [Getting Data](xref:DataViewsQuickStartGetData) describes how the paging token helps guarantee consistency.
+When using the [Data API](xref:data-views-data-views-data) to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on [Getting Data](xref:DataViewsQuickStartGetData) describes how the paging token helps guarantee consistency.
 
 ## Object types
 

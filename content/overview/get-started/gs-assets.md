@@ -33,6 +33,6 @@ For additional information about asset best practices, see <xref:ccAssets>.
 
      Use asset rules to efficiently scale creation of assets. An asset rule identifies patterns in the naming convention for streams and uses this information to automatically create or update assets.
 
-    *Additional documentation*:
+    **Additional documentation**:
 
    - [Asset rules](xref:AssetRulesCC)

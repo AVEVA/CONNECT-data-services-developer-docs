@@ -54,4 +54,4 @@ For Luis, Linda could follow the same process and manually add the Tenant Contri
 
 ## Video Tutorial: Provide an AVEVA Connect user with access to AVEVA Data Hub
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yBRdGqnl7Vw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zHvBFNIfIGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

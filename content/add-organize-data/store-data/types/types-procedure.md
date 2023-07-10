@@ -35,6 +35,8 @@ To add a base type:
 1. For each property to add to the type, select **Add Property** and complete the following fields:
  
     - **Key** - Select the checkbox to indicate the property is an index. Only system SDS types can be designated as keys. You can select up to three properties as indexes. Drag and drop the properties in the list to reorder the index keys.
+
+         **Important:** You can only create streams from types that have an indexed defined. In other words, the type must have a key defined, or the type will not be available for selection when [adding a stream](xref:streams-manage-streams#add-a-stream).
     
     - **Id** - Enter the identifier for referencing the property.
     

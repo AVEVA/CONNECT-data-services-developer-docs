@@ -64,4 +64,4 @@ Regardless of which parameters you choose, the data displayed in the bar graph i
 
 ## Video Tutorial: View your AVEVA Data Hub usage
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eVkxVC36XsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y-GxLMH1vYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

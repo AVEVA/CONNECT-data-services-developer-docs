@@ -4,9 +4,7 @@ uid: disable-ie-security
 
 # Disable IE enhanced security
 
-If Internet Explorer Enhanced Security Configuration (IE ESC) is turned on, you will receive an error message to disable this setting before you can log on and register the PI to Data Hub Agent. To avoid this issue, you can switch to another web browser during agent installation.
-
-To turn off Internet Explorer Enhanced Security Configuration:
+If Internet Explorer Enhanced Security Configuration (IE ESC) is turned on, you will receive an error message to disable this setting before you can log on and register the PI to Data Hub Agent. To turn off Internet Explorer Enhanced Security Configuration:
 
 1. On the computer where the agent is installed (Windows Server operating system), enter **Server Manager** in Windows search to start Server manager application.
 
@@ -20,6 +18,6 @@ To turn off Internet Explorer Enhanced Security Configuration:
 
 1. Select **OK**.
 
-You can now complete the PI to Data Hub Agent install and registration.
+You should now be able to connect via the PI to Data Hub Agent Configuration Utility.
 
 **Note:** You can turn on IE Enhanced Security Configuration after you complete the PI to Data Hub Agent installation. See [FAQ about IE ESC](https://docs.microsoft.com/en-us/troubleshoot/developer/browsers/security-privacy/enhanced-security-configuration-faq) for more information.

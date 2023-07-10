@@ -26,23 +26,7 @@ The following methods support writing a single or multiple values:
 * [Patch Values](xref:sds-stream-data#patch-values) updates specific fields for a collection of events.
 * [Remove Values](xref:sds-stream-data#remove-values) deletes the events based on the request parameters.
 * [Update Values](xref:sds-stream-data#update-values) add or replaces a collection of events.
-sds-stream-data
-<!--removing per Chris' feedback
-The base URI for writing SDS data to a single stream is:
- ```text
-      api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data  
- ```
 
-### Parameters
-``string tenantId``  
-The tenant identifier  
-
-``string namespaceId``  
-The namespace identifier  
-
-``string streamId``  
-The stream identifier  
--->
 ### Request body format
 With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
 
@@ -94,6 +78,9 @@ Most writes use the index as specified by the value. Deletes are the exception t
 indexes are specified as strings in the URI, or, when using the SDS Client Libraries, the index may be 
 passed as-is to DELETE methods that take the index type as a generic argument. For more information on working 
 with indexes, see [Indexes](xref:sdsIndexes). For information on compound indexes, see [Compound indexes](xref:sdsIndexes#compound-indexes).
+
+## Out-of-Order Data
+Sequential Data Store is optimized for sending and retrieving data in order of the data's index. When writing data, clients should take care to send it in a sequential manner. Failure to do so can drastically impact performance both when it is being written and when it is later retrieved. This is especially pertinent when backfilling large amounts of historical data. Note that "sequential order" is desirable not just within the context of one batch that is sent, but also in a general sense over time.
 
 ***********************
 

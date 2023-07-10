@@ -107,7 +107,7 @@ For example, a `Type: Alarm` with `Property: asset` would specify `RemoteReferen
 
 You can make scalar and relationship properties a collection by specifying the `IsCollection` flag.
 
-**Note:** Collections are limited in the number of elements they can hold (ex: 64 elements).
+**Note:** Collections are limited to 64 elements.
 
 You can make scalar and relationship properties searchable by specifying the `Indexed` flag. You can make them required by specifying the `Required` flag. Required means the property must be specified on a top-level ingress operation. It can also restrict a delete operation to maintain integrity.
 
@@ -218,6 +218,22 @@ Currently, a user must have read access to ALL authorization tags on an event to
 ## REST endpoints for querying and mutating event and reference data
 
 Along with the GraphQL endpoint, there are also two REST endpoints for querying and mutating event and reference data. These are `/events` and `/referenceData`. They both work the same, except one works with Event Types and the other with Reference Data Types. The queries and results from these endpoints are simpler than GraphQL, but not as powerful.
+
+Some of the advantages of REST endpoints versus GraphQL:
+
+- POST body is a simple JSON object or object array.
+
+- Responses are JSON objects or object arrays instead of the GraphQL Request/Response object type.
+
+- Errors have an HttpStatus code instead of the GraphQL Error collection (mainly useful to detect 400 level errors).
+
+The REST endpoints also have some limitations:
+
+- There is no editor intellisense support; you need to know the typeIds and property names you are working with.
+
+- Filters are limited to 2 object levels (ex: asset.id eq "123").
+
+- Syntax errors can be cryptic because they may still come from GraphQL.
 
 ### GET
 

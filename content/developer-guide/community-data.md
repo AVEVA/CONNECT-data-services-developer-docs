@@ -26,6 +26,8 @@ You can use APIs to read community data shared with your tenant. The steps are a
 
 1. Use the resolved route with the communityId in the header to get Type information; types can not be accessed directly. See [Get Resolved Stream](xref:sds-streams#get-resolved-stream).
 
+   ![resolved route](images/community-resolved.png)
+
 1. Use data calls as normal, including the communityId in the header. See <xref:sds-stream-data>.
 
    ![stream data](images/community-data.png)

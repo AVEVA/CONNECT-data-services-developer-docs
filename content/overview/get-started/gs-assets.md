@@ -12,11 +12,11 @@ For additional information about asset best practices, see <xref:ccAssets>.
 
     Assets are digital twins of real-world equipment. Using assets, you can apply:
 
-    - *Metadata*: Add static metadata to your assets—information about the asset that does not change. This metadata provides contextual knowledge for assets. For example, if you are adding metadata for a wind turbine, you can add information such as its region or manufacturer number.
+    - *Metadata*—Add static metadata to your assets—information about the asset that does not change. This metadata provides contextual knowledge for assets. For example, if you are adding metadata for a wind turbine, you can add information such as its region or manufacturer number.
 
-    - *Properties*: Properties are references that associate real-time data streams with an asset. They also add extra context, such as when a user adds a stream reference to an asset. Properties provide a user-friendly name for reference, such as "temperature" or "pressure", to add context to underlying streams that often have naming conventions that may be difficult to understand.
+    - *Properties*—Properties are references that associate real-time data streams with an asset. They also add extra context, such as when a user adds a stream reference to an asset. Properties provide a user-friendly name for reference, such as "temperature" or "pressure", to add context to underlying streams that often have naming conventions that may be difficult to understand.
 
-    - *Status*: Map statuses to a variety of values that indicate the asset status. Then use that status to filter through assets in the Asset Explorer using real-time measurements, viewing their current status based on a property value. You can choose an enumeration or integer property on the asset and map its values to "Good", "Warning", or "Bad" as the asset status. These statuses help you filter through assets and locate those that need immediate attention.
+    - *Status*—Map statuses to a variety of values that indicate the asset status. Then use that status to filter through assets in the Asset Explorer using real-time measurements, viewing their current status based on a property value. You can choose an enumeration or integer property on the asset and map its values to "Good", "Warning", or "Bad" as the asset status. These statuses help you filter through assets and locate those that need immediate attention.
 
 1. [Create asset types](xref:AssetTypes)
 

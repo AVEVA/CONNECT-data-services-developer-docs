@@ -4,7 +4,7 @@ uid: streaming-updates-signups
 ---
 
 # Signups
-The Signups API allows users to create, update, view, and delete signups. Signups allow for users to subscribe resources (e.g. streams) to a signup and receive updates to the resources.
+The Signups API allows users to create, update, view, and delete signups. Signups allow for users to subscribe resources (for example, streams) to a signup and receive updates to the resources.
 
 ## `List All Signups`
 
@@ -198,7 +198,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 
 <a id="opIdSignupManager_Update Signup"></a>
 
-Updates the properties (e.g name) of a signup.
+Updates the properties (for example, name) of a signup.
 
 <h3>Request</h3>
 
@@ -560,16 +560,16 @@ The resource type.
 <a id="tocSsignupstate"></a>
 <a id="tocssignupstate"></a>
 
-Signup Status
+Signup Status.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|Description|
 |---|---|---|
-|Activating|Activating|Signup Status|
-|Active|Active|Signup Status|
-|Expired|Expired|Signup Status|
-|Failed|Failed|Signup Status|
+|Activating|Activating|Signup Status.|
+|Active|Active|Signup Status.|
+|Expired|Expired|Signup Status.|
+|Failed|Failed|Signup Status.|
 
 ---
 

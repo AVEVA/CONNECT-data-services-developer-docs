@@ -18,6 +18,9 @@
 - name: Asset store
   href: asset-dev/toc.yml
   topicHref: asset-dev/asset-dev-guide.md
+- topicUid: EventData
+  items:
+  - topicUid: EventUsageExamples
 - topicUid: CommunityData
 - name: Samples
   topicHref: samples.md

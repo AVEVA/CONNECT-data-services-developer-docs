@@ -44,6 +44,8 @@ To add a stream, follow these steps:
 
    - **Type** &ndash; SDS type identifier of the type used in this stream.
 
+       **Important:** Only types that have a key configured are available for selection. If you want to use a type that is not listed, you must first configure a key. For more information see <xref:gpTypes>.
+
 1. To add tags to the stream, select the **Tags** tab.
 
 1. For each tag you want to add, enter the name of the tag in the **New Tag** field, and then select **+**. 

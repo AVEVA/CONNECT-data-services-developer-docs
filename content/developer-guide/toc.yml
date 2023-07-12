@@ -18,6 +18,7 @@
 - name: Asset store
   href: asset-dev/toc.yml
   topicHref: asset-dev/asset-dev-guide.md
+- topicUid: CommunityData
 - name: Samples
   topicHref: samples.md
 - topicUid: UseExcel

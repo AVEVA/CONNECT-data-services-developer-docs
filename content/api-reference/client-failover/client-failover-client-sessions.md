@@ -33,6 +33,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -102,6 +103,7 @@ The client session being created.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
 |409|[ErrorResponse](#schemaerrorresponse)|A client session with the specified configuration already exists.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -157,6 +159,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -212,6 +215,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 ---
 
@@ -254,6 +258,7 @@ The heartbeat of the client session.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
 |429|[ErrorResponse](#schemaerrorresponse)|Too many requests.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -307,6 +312,7 @@ The role override detail configuration for the client session RoleOverrideConfig
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 

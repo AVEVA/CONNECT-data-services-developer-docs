@@ -35,6 +35,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups
 |200|[GroupConfiguration](#schemagroupconfiguration)[]|A list of failover groups.|
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Response Headers</h4>
 
@@ -107,6 +108,7 @@ The configuration of the failover group being created or updated.<br/>
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |409|[ErrorResponse](#schemaerrorresponse)|Group already exists with different configuration.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -154,6 +156,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -202,6 +205,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
 |409|[ErrorResponse](#schemaerrorresponse)|The failover group has active sessions and cannot be deleted.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 ---
 
@@ -232,6 +236,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 

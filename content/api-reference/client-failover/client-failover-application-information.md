@@ -31,6 +31,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover
 |200|[EndpointInfo](#schemaendpointinfo)|The application information.|
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 

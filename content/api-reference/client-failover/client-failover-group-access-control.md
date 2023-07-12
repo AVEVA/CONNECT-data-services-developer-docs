@@ -33,6 +33,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -103,6 +104,7 @@ The new access control list.<br/>
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 ---
 ## Definitions

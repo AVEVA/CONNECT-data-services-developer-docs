@@ -2,9 +2,9 @@
 uid: CommunityData
 ---
 
-# Read Community data
+# Read community data
 
-You can use APIs to read community data shared with your tenant. The steps are as follows:
+You can use APIs to read community data shared with your tenant. The steps are:
 
 1. Connect to AVEVA Data Hub with a role that has access to communities.
 

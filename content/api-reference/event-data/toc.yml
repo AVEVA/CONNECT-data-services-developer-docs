@@ -1,6 +1,6 @@
-- name: Event Type Store
+- name: Event Type Store (Preview)
   href: ../event-type-store/toc.yml 
   topicHref: ../event-type-store/event-type-store.md
-- name: Event GraphQL
+- name: Event GraphQL (Preview)
   href: ../event-graphql-api/toc.yml
   topicHref: ../event-graphql-api/event-graphql.md

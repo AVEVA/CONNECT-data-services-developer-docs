@@ -2,7 +2,7 @@
 uid: EventDataOverview
 ---
 
-# Event data overview
+# Event data overview (Preview)
 
 You can store and access event data and reference data in AVEVA Data Hub.
 

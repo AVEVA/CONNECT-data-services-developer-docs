@@ -75,4 +75,4 @@ The following table provides a list and descriptions of these toolbar commands.
 | ![View notifications icon](../../_icons/default/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. |
 | ![Documentation icon](../../_icons/default/help-circle.svg) Help | Access the online documentation. |
 | ![User Profile icon](../../_icons/default/account-circle.svg) User profile | View a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
-| ![Customize icon](../../_icons/branded/pencil.svg) Customize | Customize the layout of the portal dashboard. |
+| ![Customize icon](../../_icons/default/pencil.svg) Customize | Customize the layout of the portal dashboard. |

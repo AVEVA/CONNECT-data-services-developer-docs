@@ -30,9 +30,7 @@ The AVEVA Data Hub home page displays the following:
 
 Collapse or expand the left pane to view a menu of AVEVA Data Hub features. This pane is always available in the portal, and you can hover over the icons to make selections even while the menu is collapsed.
 
-| Pane expanded | Pane collapsed |
-|:--:|:--:|
-| ![pane expanded](../images/left-pane-expanded.png) | ![pane collapsed](../images/left-pane-collapsed.png) |
+![The navigation panel being expanded and collapsed](../images/expand-panel.gif)
 
 AVEVA Data Hub includes the following features:
 

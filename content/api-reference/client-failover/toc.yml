@@ -5,8 +5,8 @@
 - name: Client sessions
   href: client-failover-client-sessions.md
 - name: Collection access control
-  href: client-failover-collection-access-control.md
+  uid: client-failover-collection-access-control
 - name: Group access control
-  href: client-failover-group-access-control.md
+  uid: client-failover-group-access-control
 - name: Groups
-  href: client-failover-groups.md
+  uid: client-failover-groups

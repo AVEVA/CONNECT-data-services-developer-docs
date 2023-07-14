@@ -70,7 +70,7 @@ The following table provides a list and descriptions of these toolbar commands.
 
 | Item          | Function |
 |---------------|----------|
-| ![Manage permissions icon](../../_icons/default/account-lock.svg) Manage permissions | Change role-based access to portal resources. |
+| ![Manage permissions icon](../../_icons/default/cog.svg) Manage permissions | Change role-based access to portal resources. |
 | Change namespace | Choose a different namespace. |
 | ![View notifications icon](../../_icons/default/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. |
 | ![Documentation icon](../../_icons/default/help-circle.svg) Help | Access the online documentation. |

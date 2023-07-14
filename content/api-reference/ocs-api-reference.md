@@ -8,11 +8,7 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Asset store](xref:Assets)—Use the information in this section to create or find assets of different types, along with their data and status.
 
-<!-- MB 2/1/23: ADH only 
-
 * [Client failover](xref:FailoverOverview)—The Client Failover Service provides failover capability for adapters to minimize data loss. 
-
--->
 
 * [Communities](xref:communityOverview)—OCS Communities help industrial companies share their operational data with external business partners, service providers, and analytics providers.
 

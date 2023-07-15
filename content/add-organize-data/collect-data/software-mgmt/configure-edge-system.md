@@ -98,7 +98,7 @@ To edit a system configuration and export it for use:
 
    - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 
-   - To delete a tag, select **X** in the tag bubble.
+   - To delete a tag, select ![<title>](../../../_icons/default/close-circle.svg) in the tag bubble.
 
 1. To set the configuration, do one of the following:
 

@@ -22,5 +22,5 @@ Tags and metadata allow you to associate additional information with a stream. F
 
    - Select the **Metadata** tab, and then select **Add Metadata** ![plus icon](../../../_icons/default/plus.svg). In the `Metadata Key` box, enter the name of the key and in the `Metadata Value` box, enter a value for that key.
 
-   - To remove a metadata, select the **Remove Tag** ![<title>](../../../_icons/default/close-circle.svg) icon beside the row to be deleted.
+   - To remove a metadata, select the **Remove Metadata** ![<title>](../../../_icons/default/close-circle.svg) icon beside the row to be deleted.
 

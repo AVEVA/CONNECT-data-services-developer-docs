@@ -9,11 +9,6 @@ Use trace data in a trend session to monitor assets, anticipate problems, and pr
 To create a trending session:
 
 1. In the left pane, select **Visualization** > **Trend**.
-<<<<<<< HEAD
-=======
-
-1. In the `Trend` pane, for each trace to add to the trend, do the following:
->>>>>>> 43858115d8b5d1730c9f9130b3edd4a0b90776d0
 
 1. In the `Add Traces` pane, select the **Assets** or **Streams** tab.
 
@@ -21,21 +16,12 @@ To create a trending session:
 
 1. Add one or more traces to the trend session.
 
-<<<<<<< HEAD
     To search for a trace, enter the asset name, stream name, or description in the **Enter search query** field. For more information on other ways to query, see <xref:search>.
 
     After you find the traces that you want, select the **Add** ![add](../_icons/branded/plus.svg) icon to add them to the Trend.
 
     When you finish adding traces, select the **Close** ![close](../_icons/default/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display the trend session.
 
-=======
-    **Tips:**
-
-       * In the **Search** field, specify the asset name, stream name, or description to find the trace you are interested in.
-
-       * After you have finished adding traces, select the **Close** ![close](../_icons/default/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display the trend session.
-
->>>>>>> 43858115d8b5d1730c9f9130b3edd4a0b90776d0
 1. From the **Change Y-axis Mode** ![Trend views menu](../_icons/branded/layers.svg) menu, select a view:
 
     | Trend View | Icon | Description |

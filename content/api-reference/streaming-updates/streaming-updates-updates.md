@@ -4,7 +4,7 @@ uid: streaming-updates-updates
 ---
 
 # Updates
-The Updates API allows users to retrieve updates for resources (e.g., streams) in a specified Signup. This API is to be used after the user has successfully created a Signup using the Signups API. The user may begin a polling flow with this API by using the starter request URI provided in the 'Get-Updates' response header through the Signups API.
+The Updates API allows users to retrieve updates for resources (for example, streams) in a specified Signup. This API is to be used after the user has successfully created a Signup using the Signups API. The user may begin a polling flow with this API by using the starter request URI provided in the 'Get-Updates' response header through the Signups API.
 
 ## `Get Updates`
 

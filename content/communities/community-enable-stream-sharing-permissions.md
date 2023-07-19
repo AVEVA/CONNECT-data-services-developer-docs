@@ -16,7 +16,7 @@ When enabling stream sharing permissions, you can either enable them for an enti
 
 ### [Namespace](#tab/tabid-1)
 
-You can change permissions for all streams in a namespace with a single action. 
+You can change permissions for all streams in a namespace with a single action.
 
 1. From the left pane, select **Data Management** > **Sequential Data Store**.
 
@@ -26,13 +26,13 @@ You can change permissions for all streams in a namespace with a single action.
 
 	The the `Manage Default Permissions for New Streams` window opens.
 
-1. Allow **Share** permissions for the user roles that you want to be able to share data.  
+1. Allow **Share** permissions for the user roles that you want to be able to share data.
 
 	1. Update each applicable **Share** permission dropdown list to **Allow**. If necessary, select **Add Role** to add a new role.
 
-	1. Select **Apply to all existing streams in the namespace**. 
-	
-	![Share permissions: Allow](images/stream-permissions-share-namespace.png)
+	1. Select **Apply to all existing streams in the namespace**.
+
+	![Share permissions for "Tenant Data Steward" set to "Allow" ](images/stream-permissions-share-namespace.png)
 
 	**Note:** For more information on this window, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 
@@ -48,13 +48,13 @@ To apply sharing permission to specific streams in a namespace:
 
 1. From the right pane, select **Manage Permissions**.
 
-	**Note:** If you only have one stream selected, select **More options** ![More options icon](../_icons/branded/dots-vertical.svg) > **Manage Permissions** instead.
+	**Note:** If you only have one stream selected, select **More options** ![More options](../_icons/branded/dots-vertical.svg) > **Manage Permissions** instead.
 
 	The `Manage Permissions for Streams` window opens.
 
 1. For user roles that you want to have the ability to share data, update each **Share** permission dropdown list to **Allow**.
 
-	![Share permissions: Allow](images/stream-permissions-share.png)
+	![Share permissions for "Tenant Data Steward" set to "Allow"](images/stream-permissions-share.png)
 
 	**Tips:** For more information on this window, see [Manage Permissions window](xref:permissions-management#manage-permissions-window).
 

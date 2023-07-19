@@ -10,7 +10,7 @@ uid: data-views-add-query
 
 1. (Optional) From **Query Id**, overwrite the default value of `Query1` with a unique identifier.
 
-1. From **Query Source**, select a namespace ![namespace](../../_icons/default/database.svg) or community ![community](../../_icons/default/share-variant.svg) to query operational data from. The source can either be a namespace from your own tenant or a community.
+1. From **Query Source**, select a namespace ![namespace icon](../../_icons/default/database.svg) or community ![community icon](../../_icons/default/share-variant.svg) to query operational data from. The source can either be a namespace from your own tenant or a community.
 
    You can filter the namespaces and communities that are listed using the slide toggles and the filter field.
 

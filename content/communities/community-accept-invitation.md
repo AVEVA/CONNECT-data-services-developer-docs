@@ -28,7 +28,7 @@ When another tenant invites you to a community, you receive an email invitation 
 
 1. Select **Join**.
 
-  ![join](images/join-community.png)
+  ![join tenant tile](images/join-community.png)
 
   The tenant that invited you to the community is updated that you accepted their invitation.
 
@@ -40,7 +40,7 @@ When another tenant invites you to a community, you receive an email invitation 
 
 1. After your tenant is confirmed for the community, select **Data Management** > **Communities**, choose your community, and then choose **Community Details** to set up Community Administrators and Community Members for your tenant.
 
-  ![community details](images/community-details.png)
+  ![community details displaying data about the community](images/community-details.png)
 
   A setup wizard opens.
 
@@ -62,7 +62,7 @@ When another tenant invites you to a community, you receive an email invitation 
 
 1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are members within your tenant that have read access to the community and its data.
 
-  To add new Community Members, select **Add Members** > **Add User** ![Add](../_icons/branded/plus.svg) for each user or group that you want to add.
+  To add new Community Members, select **Add Members** > **Add User** ![Add Users](../_icons/branded/plus.svg) for each user or group that you want to add.
 
   **Note:** Community Administrators are not automatically added as Community Members. If you want your Community Administrators to also be Community Members with access to shared resources, you must manually add them.
 

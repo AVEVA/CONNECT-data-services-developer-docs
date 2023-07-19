@@ -8,9 +8,9 @@ You can quickly view key performance indicator (KPI) metrics for installed PI to
 
 To view PI to Data Hub Agent metrics:
 
-1. To open the portal home page, select **Home** in the left pane. 
+1. To open the portal home page, select **Home** in the left pane.
 
-   ![](../../images/kpi-tile.png)
+   ![Home page displaying PI to Data Hub Agents tile](../../images/kpi-tile.png)
 
 1. View the information in the `PI to Data Hub Agents` tile to see the current state of your agents. States are:
 

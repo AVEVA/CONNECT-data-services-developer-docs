@@ -24,10 +24,10 @@ To retrieve data views:
 
 1. In the `AVEVA Data Hub Data Views` sign-in window, select **Connect**.
 
-1. In the `Navigator` pane, do one of the following: 
+1. In the `Navigator` pane, do one of the following:
 
-   - To get data using the stored retrieval mode, select **Stored Data Views**, and then select the data view to work with in Microsoft Power BI. 
-   
+   - To get data using the stored retrieval mode, select **Stored Data Views**, and then select the data view to work with in Microsoft Power BI.
+
    - To get data using the interpolated retrieval mode, select **Interpolated Data Views**, and then select the data view to work with in Microsoft Power BI.
 
    ![Select Data Views](../../analytics/data-views/_images/click-data-view-box.png)

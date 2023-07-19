@@ -43,7 +43,7 @@ While in **Card view**, you can sort the community list by using the following s
 | **Tenant Count** | Sorts communities numerically by the number of tenants in the community. |
 | **Sharing Status** | Sorts communities alphabetically by its current sharing status: **Paused** or **Sharing Active**. |
 
-Select the ![Sort](../_icons/default/sort-ascending.svg) **Sort** icon to sort the communities by ascending or descending order for the applied option.
+Select the **Sort** ![Sort](../_icons/default/sort-ascending.svg) icon to sort the communities by ascending or descending order for the applied option.
 
 While in **List view**, you can sort the community list by clicking each column header. The list is sorted by the last column header that you click.
 

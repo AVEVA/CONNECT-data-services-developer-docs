@@ -1,5 +1,5 @@
 ---
-uid: ""
+uid: client-failover-client-sessions
 
 ---
 
@@ -33,6 +33,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -102,6 +103,7 @@ The client session being created.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group with the specified identifier was not found.|
 |409|[ErrorResponse](#schemaerrorresponse)|A client session with the specified configuration already exists.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -157,6 +159,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{g
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -212,6 +215,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 ---
 
@@ -254,6 +258,7 @@ The heartbeat of the client session.<br/>
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
 |429|[ErrorResponse](#schemaerrorresponse)|Too many requests.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -290,7 +295,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{
 
 <h4>Request Body</h4>
 
-<br/>
+The role override detail configuration for the client session RoleOverrideConfiguration. Role override value of Primary puts session as forced Primary and Off puts session's role back to be automatically calculated. Optional "expirationPeriod" of timespan in the format of "d.hh:mm:ss". "expirationPeriod" value is only applicable when role override value is Primary. When not specified, default is no expiration time.<br/>
 
 ```json
 {
@@ -307,6 +312,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover/groups/{
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
 |404|[ErrorResponse](#schemaerrorresponse)|A failover group or client session with the specified identifier was not found.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -588,3 +594,4 @@ Response to the role override request.
 ```
 
 ---
+

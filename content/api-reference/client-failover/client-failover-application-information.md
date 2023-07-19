@@ -1,14 +1,14 @@
 ---
-uid: ""
+uid: client-failover-application-information
 
 ---
 
-# Client Failover
+# Application Information
 API for Client Failover application information.
 
 ## `Get Information`
 
-<a id="opIdClientFailover_Get Information"></a>
+<a id="opIdApplicationInformation_Get Information"></a>
 
 Gets the Client Failover application information.
 
@@ -31,6 +31,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/clientfailover
 |200|[EndpointInfo](#schemaendpointinfo)|The application information.|
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -103,3 +104,4 @@ Response error for controller methods.
 ```
 
 ---
+

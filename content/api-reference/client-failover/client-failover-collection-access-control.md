@@ -1,5 +1,5 @@
 ---
-uid: ""
+uid: client-failover-collection-access-control
 
 ---
 
@@ -31,6 +31,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/clientfail
 |200|[AccessControlList](#schemaaccesscontrollist)|The access control list for the collection.|
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 <h4>Example response body</h4>
 
@@ -99,6 +100,7 @@ The new access control list.<br/>
 |204|None|The access control list was updated.|
 |400|[ErrorResponse](#schemaerrorresponse)|Request is not valid. See the response body for additional details.|
 |403|[ErrorResponse](#schemaerrorresponse)|Request is not authorized.|
+|503|[ErrorResponse](#schemaerrorresponse)|Service unavailable.|
 
 ---
 ## Definitions
@@ -260,3 +262,4 @@ Response error for controller methods.
 ```
 
 ---
+

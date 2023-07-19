@@ -30,7 +30,7 @@ To choose a data shape, choose between the **Standard** and **Narrow** options a
 
 **Data view shape options**
 
-![data-view-shape-options](_images/data-view-shape-options.png)
+![Data view shape options](_images/data-view-shape-options.png)
 
 ## Developer documentation
 

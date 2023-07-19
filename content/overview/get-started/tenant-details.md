@@ -16,6 +16,6 @@ Only the tenant administrator can make changes to the tenant details.
 
 To view the `Tenant Details` page:
 
-1. Select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg).
+1. Select the **User profile** icon ![User Profile icon](../../_icons/default/account-circle.svg).
 
 1. Select **Tenant Details**.

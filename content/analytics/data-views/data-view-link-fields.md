@@ -14,7 +14,7 @@ When data fields are linked, AVEVA Data Hub converts the data types in the linke
 
 To link data items, drag and drop one field onto another. Properties can only be linked to other properties of the same data type. Metadata can only be linked to other metadata of the same data type.
 
-![link fields](_images/link-fields.gif)
+![Field sets: link fields](_images/link-fields.gif)
 
 ## To unlink fields
 

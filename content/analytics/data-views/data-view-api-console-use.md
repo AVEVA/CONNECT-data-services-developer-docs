@@ -8,7 +8,7 @@ While creating or editing a data view, you can launch it within the API Console 
 
 **View in API Console button**
 
-![view-in-api-console](_images/view-in-api-console.png)
+![view in api console button](_images/view-in-api-console.png)
 
 ## Data view API console parameters
 

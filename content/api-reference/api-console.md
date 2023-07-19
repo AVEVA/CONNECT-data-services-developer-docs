@@ -6,6 +6,8 @@ uid: apiConsole
 
 The API Console provides a graphical interface for using the AVEVA Data Hub REST API. Developers can use this console to configure and test API requests before implementing them in their own applications. To use the API Console, select select **Developer Tools** > **API Console** from the left pane.
 
+![API Console](../_images/api-console.png)
+
 ## Request area
 
 Use the request area to configure an API request. Choose a version of the API, the request scope, the request verb, and the URI endpoint. This area is also used to configure the request header, body, and parameters.

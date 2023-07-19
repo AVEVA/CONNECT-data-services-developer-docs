@@ -8,23 +8,23 @@ You can import a system configuration from the field to its corresponding system
 
 Configuration is available for the following system types:
 
- - AVEVA Adapter for Azure Event Hubs
+- AVEVA Adapter for Azure Event Hubs
 
- - AVEVA Adapter for BACnet
+- AVEVA Adapter for BACnet
 
- - AVEVA Adapter for DNP3
+- AVEVA Adapter for DNP3
 
- - Edge Data Store
+- Edge Data Store
 
- - AVEVA Adapter for Modbus TCP
+- AVEVA Adapter for Modbus TCP
 
- - AVEVA Adapter for MQTT
+- AVEVA Adapter for MQTT
 
- - AVEVA Adapter for OPC UA
+- AVEVA Adapter for OPC UA
 
- - AVEVA Adapter for RDBMS
+- AVEVA Adapter for RDBMS
 
- - AVEVA Adapter for Structured Data Files
+- AVEVA Adapter for Structured Data Files
 
 The `namespaceId` in the data and health endpoint URLs defaults to the namespace where the configuration template is created. For example, if the namespace of the configuration template is MyData, the endpoint URL would be `https://website.com/api/v1/Tenants/{tenantId}/Namespaces/MyData/Omf`.
 
@@ -75,7 +75,7 @@ To copy a system configuration from a template to the corresponding system digit
 1. Use the **Filter Templates** search bar to find the configuration template you want to apply to your system.
 
     - You can filter by configuration template name, description, or version number.
-    
+
     - Select **Edit Configuration Template** to edit a configuration template before you apply it to a system.
 
 1. Select the configuration template you want to apply to a system.
@@ -98,7 +98,7 @@ To edit a system configuration and export it for use:
 
    - To add a tag, enter the tag text in the **New Tag** field and press Enter.
 
-   - To delete a tag, select **X** in the tag bubble.
+   - To delete a tag, select ![close](../../../_icons/default/close-circle.svg) in the tag bubble.
 
 1. To set the configuration, do one of the following:
 
@@ -110,7 +110,7 @@ To edit a system configuration and export it for use:
 
 1. Modify the JSON as needed. For configuration guidelines, refer to the specific system documentation.
 
-   **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration. 
+   **WARNING:** Do not include secrets in the configuration. Secrets cannot be stored or exported in a configuration.
 
    Errors in the JSON syntax are underlined. To see an explanation of the issue, hover over the underlined text. The overall status of the JSON syntax is displayed over the right pane.
 

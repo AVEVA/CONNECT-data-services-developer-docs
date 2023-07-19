@@ -8,7 +8,7 @@ Use the `Trend` page to show data from assets and streams in a graphical format 
 
 The following image shows the important elements of the `Trend` page, and the table below describes how to use these elements. For more information on how to use the `Trend` page to analyze traces, see [View trend data](xref:CreateTrendSession).
 
-![Trend page](images/Trend_full_page.png)
+![Trend page legend with callouts to table below](images/Trend_full_page.png)
 
 | Callout | Description |
 |--|--|

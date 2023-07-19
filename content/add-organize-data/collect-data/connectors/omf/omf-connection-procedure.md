@@ -16,7 +16,7 @@ To configure an OMF connection:
 
 1. In the left pane, select **Data Collection** > **OMF Connections**.
 
-2. In the toolbar, select **Add OMF Connection**.
+1. In the toolbar, select **Add OMF Connection**.
 
    The `Add Connection` pane appears.
 
@@ -28,7 +28,7 @@ To configure an OMF connection:
 
 1. Select **Add Client**.
 
-1. Select a client in the list and select ![Assign](../../../../_icons/default/plus.svg) to add it to the assigned clients.
+1. Select a client in the list and select **Assign** ![assign](../../../../_icons/default/plus.svg) to add it to the assigned clients.
 
 1. Select **Save**.
 

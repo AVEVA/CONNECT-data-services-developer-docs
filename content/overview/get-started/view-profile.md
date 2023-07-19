@@ -10,7 +10,7 @@ The `My Profile` window displays your user information and assigned roles.
 
 To update your contact information:
 
-1. To open your user profile, select the **User Profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. To open your user profile, select the **User Profile** icon ![User Profile icon](../../_icons/default/account-circle.svg) and select your name.
 
 1. Select **Edit**.
 
@@ -42,6 +42,6 @@ The properties that contain values are easier to find and the properties that co
 
 To change your user preferences:
 
-1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/default/account-circle.svg) and select your name.
 
 1. To use friendly property names, turn on the the **Show user friendly property names** toggle under **User Preferences**. The setting saves automatically.

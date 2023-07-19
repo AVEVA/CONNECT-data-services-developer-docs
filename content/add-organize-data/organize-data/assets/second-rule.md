@@ -21,7 +21,7 @@ Therefore, you must create a second asset rule, called Tank Rule B, to identify 
 
 **Note:** Use the same names for all of the tokens in both rules. This naming pattern makes it easier to manage the rules and troubleshoot any problems that may occur.
 
-![](images/second-rule-token.png)
+![Stream name token rules configuration](images/second-rule-token.png)
 
 Set up the mappings and configure the asset as described in [Create an asset rule](xref:CreateAssetRules).
 

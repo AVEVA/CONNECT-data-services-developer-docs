@@ -50,7 +50,7 @@ From the `Communities` page, each tile displays if there is one or more tenant i
 
 **Communities page tile: Paused tenants**
 
-![paused tenants](images/pause-tile.png)
+![Communities page tile: Paused tenants](images/pause-tile.png)
 
 The `Community Details` page **Tenants** tab displays:
 
@@ -60,4 +60,4 @@ The `Community Details` page **Tenants** tab displays:
 
 	**Community Detail page: Paused tenants**
 
-	![paused tenants](images/community-details-pause.png)
+	![Community Details page: Paused tenants](images/community-details-pause.png)

@@ -22,7 +22,7 @@ When editing permissions for a single stream, each user role that has permission
 
 1. Select a single stream that you want to manage permissions for.
 
-1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.  
+1. Select **More options** ![More options icon](../../../_icons/default/dots-vertical.svg) > **Manage Permissions**.
 
     The `Manage Permissions for Stream` window opens. Because you are editing permissions for a single stream, all user roles that have permissions on the stream are displayed along with their settings.
 
@@ -52,12 +52,12 @@ Updating streams in bulk uses a patch operation, meaning only the permissions fo
 1. Select **Manage Permissions**.
 
     The `Manage Permissions for Selected Streams` window opens. Because you are editing permissions for multiple streams, no user roles or settings are listed, as the permission settings for each stream are different.
-    
-    **Note:** If your user account does not have permissions to manage permissions for a selected stream, **Manage Permissions** is unavailable. Contact an administrative user to request permissions to share the stream.  
+
+    **Note:** If your user account does not have permissions to manage permissions for a selected stream, **Manage Permissions** is unavailable. Contact an administrative user to request permissions to share the stream.
 
     **Streams without pre-populated user roles and permissions**
-    
-    ![Manage Permissions for Selected Streams](../images/manage-stream-permissions-bulk.png)
+
+    ![Manage Permissions for Selected Streams with no roles or permissions added](../images/manage-stream-permissions-bulk.png)
 
 1. Use the `Manage Permissions` window to:
 
@@ -88,7 +88,7 @@ You can edit the default user roles and permissions added to a stream when it is
 
     **Apply to all existing streams option**
 
-    ![Apply to all existing streams](../images/apply-to-all-existing-streams.png)
+    ![Manage stream permissions window with option selected to apply settings to all existing streams](../images/apply-to-all-existing-streams.png)
 
 1. When you are finished editing permissions, select **Save**.
 
@@ -96,7 +96,7 @@ You can edit the default user roles and permissions added to a stream when it is
 
 When you update stream permissions in bulk or use the `Manage Default Permissions` window to update all namespace stream permissions by selecting the **Apply to all existing streams in the namespace** option, AVEVA Data Hub runs a job to update applicable permissions. When this job completes, the completed operation is listed in your notifications ![notifications](../../../_icons/default/bell.svg). If this job fails to update any streams, the job notification links to a page that lists resource identifiers and errors for the applicable streams. Select the link to review job errors.
 
-![Open jobs page](../images/notifications-jobs.png)
+![Notifications with link to open jobs page](../images/notifications-jobs.png)
 
 - Select **Download Failed Jobs** to download the listed error messages in JSON format.
 

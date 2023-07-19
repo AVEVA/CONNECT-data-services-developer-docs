@@ -10,7 +10,7 @@ You can edit the permissions applied to a user role from any page in AVEVA Data 
 
 1. Select the **Manage Permissions** ![Manage Permissions](../../_icons/default/account-lock.svg) icon.
 
-    ![Manage Permissions](../images/manage-permissions-icon.png)
+    ![Toolbar: Manage Permissions icon](../images/manage-permissions-icon.png)
 
     The `Manage Permissions for Namespace` window opens.
 

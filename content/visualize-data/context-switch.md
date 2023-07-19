@@ -4,13 +4,13 @@ uid: ContextSwitch
 
 # Context switch in visual trending
 
-On the `Trend` page, you can switch between assets that are created with the same asset type. Instead of searching for and adding the traces for each asset, use the Swap Asset feature to streamline this process. You add the traces for a single asset, and then you use the Swap Asset feature to replace the asset in the trend with another asset.  
+On the `Trend` page, you can switch between assets that are created with the same asset type. Instead of searching for and adding the traces for each asset, use the Swap Asset feature to streamline this process. You add the traces for a single asset, and then you use the Swap Asset feature to replace the asset in the trend with another asset.
 
 To switch assets in a trend:
 
 1. In the left pane, select **Visualization** > **Trend**.
 
-1. On the `Trend` page, select the **Assets** tab in the `Add Traces` pane. 
+1. On the `Trend` page, select the **Assets** tab in the `Add Traces` pane.
 
 1. Select the **+** sign to add one or more traces for the same asset to the trend.
 
@@ -18,9 +18,9 @@ To switch assets in a trend:
 
    The following image shows several traces for the `Philadelphia Weather Station` asset. The data displayed show the wind speed, wind direction, and the relative barometric pressure.
 
-   ![Asset in trend](images/asset-trend.png)
+   ![Trend session: asset traces](images/asset-trend.png)
 
-1. Select the **Swap Asset** icon ![Swap Asset](../_icons/branded/swap-horizontal.svg) next to the asset name in the legend table to open the `Swap Asset` window, which displays a list of assets of the same asset type. 
+1. Select the **Swap Asset** icon ![Swap Asset](../_icons/branded/swap-horizontal.svg) next to the asset name in the legend table to open the `Swap Asset` window, which displays a list of assets of the same asset type.
 
 1. Select the asset to view and select **Continue**.
 
@@ -34,7 +34,7 @@ To switch assets while performance testing:
 
 1. In the left pane, select **Visualization** > **Trend**.
 
-1. On the Trend page, select the **Assets** tab in the `Add Traces` pane. 
+1. On the Trend page, select the **Assets** tab in the `Add Traces` pane.
 
 1. Add a trace for the asset that provides the standard for all assets.
 
@@ -42,14 +42,14 @@ To switch assets while performance testing:
 
    In the following image, there are two traces with solar radiation data. In this example, the Oakland Weather Station is the standard and the Scottsdale Weather Station trace is compared against it.
 
-   ![](images/testing-one.png)
+   ![Trend session: two asset traces related to solar radiation](images/testing-one.png)
 
 1. Select the **Swap Asset** icon ![Swap Asset](../_icons/branded/swap-horizontal.svg) for the asset you are comparing with the standard.
 
    In this example, select the ![Swap Asset](../_icons/branded/swap-horizontal.svg) icon for the `Scottsdale Weather Station`.
 
-1. In the `Swap Asset` window, select another asset and select **Continue**. 
+1. In the `Swap Asset` window, select another asset and select **Continue**.
 
    In this example, the solar radiation trace for the `Scottsdale Weather Station` is replaced with the solar radiation trace for the `Philadelphia Weather Station`. Now you can compare the trace for the `Philadelphia Weather Station` against the `Oakland Weather Station`.
 
-   ![](images/testing-two.png)
+   ![Trend session: swapped asset for trace](images/testing-two.png)

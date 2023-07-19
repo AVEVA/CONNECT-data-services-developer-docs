@@ -12,7 +12,7 @@ Some **Search** and **Query** bars include a tooltip that opens when you select 
 
 **Search tooltip**
 
-![search tooltip](images/tooltip.png)
+![search field displaying tooltip](images/tooltip.png)
 
 ## Autocomplete
 
@@ -26,7 +26,7 @@ Autocomplete includes suggestions for tokens, facets, and status matches, as wel
 
 **Search autocomplete**
 
-![search autocomplete](images/autocomplete.png)
+![search field displaying autocomplete options](images/autocomplete.png)
 
 ### Token Autocomplete
 

@@ -12,7 +12,7 @@ Setup of a community involves coordination between two tenants and users with di
 
 **Workflow: Community setup**
 
-![Workflow: Community setup](images/workflow-community-setup.drawio.svg)
+![Workflow: Community setup for two separate tenants](images/workflow-community-setup.drawio.svg)
 
 This diagram lists each task that must be completed to form an operational community, broken down by each user role that performs them. Each of these tasks are documented in the upcoming sections:
 

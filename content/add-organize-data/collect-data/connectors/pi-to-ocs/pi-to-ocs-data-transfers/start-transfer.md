@@ -38,7 +38,7 @@ To start a data transfer:
 
 The `Health Events` window provides information about an agent's activity and status. Health events are based on log messages. You can sort messages by severity, source, time and message content.
 
-![](../../images/health-evts-window.png)
+![Health events window displaying log messages](../../images/health-evts-window.png)
 
 The following table provides descriptions for the elements of the `Health Events` window.
 

@@ -14,7 +14,7 @@ After you save the queries that you create in the previous step, AVEVA Data Hub 
 
 From the `Add Data Fields` window, select the fields that you want to include in your data view. If you have more than one query, select fields for each query.
 
-**Tips:** 
+**Tips:**
 
 - Use the data field filters to find a specific field. For more information, see [Data field filters](#data-field-filters).
 
@@ -32,9 +32,9 @@ You can filter the data fields listed for each query by summary type, which retu
 
 - To add a summary type chip, select the **Filter by Summary Type** field and select a value.
 
-- To remove a summary type chip, select ![alt](../../_icons/default/close-circle.svg) for the chip.
+- To remove a summary type tag, select ![remove summary tag](../../_icons/default/close-circle.svg) for the chip.
 
-- To remove all summary type chips, select ![alt](../../_icons/branded/close.svg) for the **Filter by Summary Type** field.
+- To remove all summary type tags, select ![remove all summary tags](../../_icons/branded/close.svg) for the **Filter by Summary Type** field.
 
 ### Filter by text
 

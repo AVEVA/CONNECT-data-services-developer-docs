@@ -10,27 +10,27 @@ While working with data views, you may encounter warnings about your data view c
 
 While browsing the list of data views, you may encounter the following warnings.
 
-### Alert chip
+### Alert tag
 
-Query sources that include a yellow or red alert chip indicate that you have an issue affecting your view of the data view. There are several contexts for when an alert chip displays:
+Query sources that include a yellow or red alert tag indicate that you have an issue affecting your view of the data view. There are several contexts for when an alert tag displays:
 
-- **Unknown community chip**
+- **Unknown community tag**
 
-    ![unknown](_images/unknown-community.png)
+    ![unknown community tag](_images/unknown-community.png)
 
-    Yellow alert chips that read `Unknown Community` indicate that you have insufficient permissions to access the community or that has been deleted. You must be a member of the community to access its data. Additionally, you cannot edit the query for the community until you are member of the community. Request that a community administrator add you to the community.
+    Yellow alert tags that read `Unknown Community` indicate that you have insufficient permissions to access the community or that has been deleted. You must be a member of the community to access its data. Additionally, you cannot edit the query for the community until you are member of the community. Request that a community administrator add you to the community.
 
-- **Read access chip with community name**
+- **Read access tag with community name**
 
-    ![read access chip](_images/test-community-chip.png)
+    ![read access tag](_images/test-community-chip.png)
 
-    Yellow alert chips that display the community name indicate that you are a [Community Administrator](xref:community-community-roles#community-administrators) or [Community Member](xref:community-community-roles#community-member) with read access, but not a member of the community itself. Community Administrators can use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>.
+    Yellow alert tags that display the community name indicate that you are a [Community Administrator](xref:community-community-roles#community-administrators) or [Community Member](xref:community-community-roles#community-member) with read access, but not a member of the community itself. Community Administrators can use the visible community name to add users to the community. For more information on adding a user to the community, see <xref:community-manage-users>.
 
-- **Cross region opt out chip**
+- **Cross region opt out tag**
 
-    ![opt out chip](_images/opt-out-chip.png)
+    ![opt out tag](_images/opt-out-chip.png)
 
-    Red alert chips indicate that the data view queries a namespace that has opted out of [Cross region data sharing](xref:cross-region-data-sharing), but the data view resides in a different region. For more information, see [Cross region processing opt out](#cross-region-processing-opt-out).
+    Red alert tags indicate that the data view queries a namespace that has opted out of [Cross region data sharing](xref:cross-region-data-sharing), but the data view resides in a different region. For more information, see [Cross region processing opt out](#cross-region-processing-opt-out).
 
 ## Data View page
 
@@ -42,7 +42,7 @@ If the field set for a query includes no fields, an alert of `No Included Fields
 
 **No Included Fields**
 
-![no included fields](_images/no-included-fields.png)
+![query: no included fields](_images/no-included-fields.png)
 
 ### `There are included fields that don't map to anything`
 
@@ -68,13 +68,13 @@ You can encounter the message above in different contexts:
 
     While you are adding a query, AVEVA Data Hub compares the region of the current namespace against the region of the namespace you are adding to the data view. If you attempt to add a namespace that has opted out of cross region data sharing, and the currently selected namespace has a different geographical region than that namespace, the source is unavailable and therefore cannot be added. A tooltip displays if you mouse over the source:
 
-    ![opt-out tooltip](_images/opt-out-tooltip.png)
+    ![adding a query: opt-out tooltip](_images/opt-out-tooltip.png)
 
 - **While managing an existing query**
 
     If a data view is created that includes a namespace that later opts out of cross region data sharing, an alert displays in the **Query** panel that the data view includes a source that cannot be shared across region:
 
-    ![another opt-out tooltip](_images/opt-out-warning-tooltip.png)
+    ![editing existing query: opt-out tooltip](_images/opt-out-warning-tooltip.png)
 
     When the query that includes a disabled source is selected, the following message displays:
 

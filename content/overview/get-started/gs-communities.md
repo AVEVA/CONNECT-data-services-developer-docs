@@ -16,7 +16,7 @@ Communities allow a tenant to create a private group where operational data can 
 
 - Share data across engineering and operational partners.
 
-To create or join a community, follow the applicable scenario below listed in the headings below. Regardless of which scenario you follow, reviewing the following documentation on communities is recommended:
+To create or join a community, follow the applicable scenario listed in the headings below. Regardless of which scenario you follow, reviewing the following documentation on communities is recommended:
 
 - <xref:communities>
 - [Community user roles](xref:community-setup#community-user-roles)

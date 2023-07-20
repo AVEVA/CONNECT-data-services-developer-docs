@@ -24,6 +24,8 @@ The information in the sections that follow document the APIs and usage for each
 
 * [Sequential Data Store (SDS)](xref:sds)—Use the information in this section to learn about the AVEVA Data Hub Sequential Data Store. The SDS is optimized for sequential data operations.
 
+* [Streaming Updates](xref:sds)—The Updates API allows users to retrieve updates for resources (for example, streams) in a specified Signup.
+
 * [Tenant Management](xref:AccountManagementOverview)—Use the information in this section to create, manage, and administer your account by assigning users, roles, and namespaces to your tenant.
 
 ## Access to AVEVA Data Hub

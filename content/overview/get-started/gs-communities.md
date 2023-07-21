@@ -6,15 +6,13 @@ uid: gs-communities
 
 Communities allow a tenant to create a private group where operational data can be shared and viewed across other tenants. Using communities, industrial companies can share their data streams externally with trusted business partners, service providers, and analytics providers.
 
-- Sharing data streams allows you and your partners to find value in each other's operational data:
+- **Seamless Data Sharing**: Facilitate easy and secure data exchange among engineering and operational partners.
 
-- Collectively operate more efficiently and reduce waste.
+- **Enhance Operational Efficiency**: Collaboratively streamline operations and minimize waste through shared operations data.
 
-- Detect hidden problems in your equipment and processes, helping to troubleshoot issues.
+- **Uncover Hidden Issues**: Detect and troubleshoot equipment and process problems with insights from your partners' operational data and expertise.
 
-- Predict future failures before they occur.
-
-- Share data across engineering and operational partners.
+- **Proactive Failure Prediction**: Predict and prevent future failures by leveraging collective data intelligence.
 
 To create or join a community, follow the applicable scenario listed in the headings below. Regardless of which scenario you follow, reviewing the following documentation on communities is recommended:
 
@@ -23,8 +21,8 @@ To create or join a community, follow the applicable scenario listed in the head
 
 ## Scenario A: Create community and invite other tenants
 
-To create a community, invite other tenants, and share streams into the community, complete the following workflow: <xref:community-workflow-create>.
+To create a community, invite other tenants, and share streams into the community, complete the instructions in the following topic: <xref:community-workflow-create>.
 
 ## Scenario B: Join an existing community
 
-To join a community that another tenant has invited you to, complete the following workflow: <xref:community-workflow-join>.
+To join a community that another tenant has invited you to, complete the instructions in the following topic: <xref:community-workflow-join>.

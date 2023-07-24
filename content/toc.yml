@@ -192,6 +192,7 @@
 - topicUid: lpvisualizedata
   items:
   - topicUid: CreateTrendSession
+  - topicUid: download-trend-data
   - topicUid: TrendUserInterface
     items:
     - topicUid: LegendTableReference

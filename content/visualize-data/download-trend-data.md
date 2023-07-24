@@ -4,7 +4,7 @@ uid: download-trend-data
 
 # Download trend data
 
-After you create a trend session that includes traces from assets, streams, or both, you can download the data depicted in trend session as a .csv file.
+After you create a trend session that includes traces from assets, streams, or both, you can download the data depicted in the trend session as a .csv file.
 
 1. In the left pane, select **Visualization** > **Trend**.
 

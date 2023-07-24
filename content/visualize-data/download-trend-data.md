@@ -14,8 +14,9 @@ After you create a trend session that includes traces from assets, streams, or b
 
 1. Select the data from the trend session that you want to download. Each option is downloaded as a separate .csv file.
 
-    - **Trend Data**: Downloads the data depicted in the [Trend pane](xref:TrendUserInterface#trend-pane).
-    - **UOM/Summary Data** Downloads the data listed in the [Legend table](xref:TrendUserInterface#legend-table).
+   - **Trend Data**: Downloads the data depicted in the [Trend pane](xref:TrendUserInterface).
+
+   - **UOM/Summary Data** Downloads the data listed in the [Legend table](xref:TrendUserInterface).
 
 1. Select **Download**.
 

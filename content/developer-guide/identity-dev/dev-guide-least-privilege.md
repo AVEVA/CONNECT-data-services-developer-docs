@@ -4,7 +4,7 @@ uid: LeastPrivilege
 
 # Least privileges
 
-When creating new users or client credential clients, configure them using the principle of Least Privilege. For more information, see the Cybersecurity & Infrastructure Security Agency article [Least Privilege](https://us-cert.cisa.gov/bsi/articles/knowledge/principles/least-privilege). Assign users and clients the lowest privileged role necessary to access resources.
+When creating new users or client credential clients, configure them using the principle of Least Privilege. For more information, see Microsoft's article "Enhance security with the principle of least privilege" [Least Privilege](https://learn.microsoft.com/en-us/azure/active-directory/develop/secure-least-privileged-access). Assign users and clients the lowest privileged role necessary to access resources.
 
 Ensure that clients which are not in use are either deleted or disabled by setting the **Enabled** property to false.
 To limit the potential consequences of client credential theft, do not assign client credentials clients to the Administrator role. Any actions that require Administrator privileges should be done through the portal, when possible. 

@@ -308,7 +308,7 @@ string index = DateTime.Parse("2017-08-17T17:21:36.3494129Z")
                .ToUniversalTime().ToString("o");
 ```
 
-To read a value at a distinct index, you can use the SDS .NET client libraries method. `Time` is the index here, which is a property of a type named `Simple`:
+To read a value at a distinct index, use the SDS .NET client libraries method. `Time` is the index here, which is a property of a type named `Simple`:
 
 ```csharp
 value = await client.GetDistinctValueAsync<Simple>(simpleStream.Id, index);

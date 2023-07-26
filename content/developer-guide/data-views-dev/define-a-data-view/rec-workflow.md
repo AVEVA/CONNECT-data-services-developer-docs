@@ -76,7 +76,7 @@ HTTP 200 OK
 
 ### Add a query for data items
 
-Creating a data view begins with including some data items. This example will use SDS Streams.
+Creating a data view begins with including some data items. This example will use SDS streams.
 
 #### Action
 Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.

@@ -22,6 +22,9 @@
 - name: Data views
   href: data-views/toc.yml
   topicHref: data-views/data-views-api-overview.md
+- name: Event data (Preview)
+  href: event-data/toc.yml
+  topicHref: event-data/event-data-overview.md
 - name: Identity and access management
   href: identity/toc.yml
   topicHref: identity/identity-and-access-management.md

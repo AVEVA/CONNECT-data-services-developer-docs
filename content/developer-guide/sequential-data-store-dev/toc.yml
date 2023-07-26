@@ -1,21 +1,11 @@
-- name: Quick Start SDS
-  href: sds-quick-start.md
-- name: Types
-  href: sds-types-dev.md
-- name: Indexes
-  href: sds-index.md
-- name: Streams
-  href: sds-streams-dev.md
-- name: Stream views
-  href: sds-stream-views-dev.md
-- name: Search in SDS
-  href: sds-search.md
-- name: Filter expressions for SDS objects
-  href: sds-metadata-objects-filter-expressions.md
-- name: Read data
+- href: sds-quick-start.md
+- href: sds-types-dev.md
+- href: sds-streams-dev.md
+- href: sds-write-data.md
+- topicHref: sds-read-data.md
   href: read-data/toc.yml
-  topicHref: sds-read-data.md
-- name: Write data
-  href: sds-write-data.md
-- name: UoM and quantities
-  href: sds-uom.md
+- href: sds-stream-views-dev.md
+- href: sds-index.md
+- href: sds-search.md
+- href: sds-metadata-objects-filter-expressions.md
+- href: sds-uom.md

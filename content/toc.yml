@@ -116,6 +116,9 @@
             - topicUid: community-view-shared-streams
             - topicUid: community-view-shared-data
             - topicUid: communities-usage
+    - topicUid: ChangeBroker
+      items:
+        - topicUid: StreamUpdates
     - topicUid: ccMetadataRules
       items:
         - topicUid: gpMetadataRules

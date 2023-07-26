@@ -20,7 +20,7 @@ To add an authorization code client:
 
 1. In the toolbar, select **Add Client**.
 
-   The `Add Client` window appears.
+   The `Add Client` pane appears.
 
 1. In the **Name** field, enter a name to identify the device or application that will use this client.
 
@@ -40,9 +40,9 @@ To add an authorization code client:
 
    The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
-1. Select **Add**.  
+1. Select **Save**.  
 
-   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. To copy the client Id, select the **Copy** icon. After you close this window, you can also retrieve the client Id from the list of clients.
+   The `Client Successfully Created` window displays the client Id for the client. The application must specify this client Id when it makes an authentication request. To copy the client Id, select **Copy** ![copy](../../_icons/branded/content-copy.svg). After you close this window, you can also retrieve the client Id from the list of clients.
 
 ## Related links
 

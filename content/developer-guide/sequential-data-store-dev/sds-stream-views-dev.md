@@ -25,7 +25,8 @@ Stream views provide flexibility in the use of types and allow you to expose dat
 | CreatedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was created. Cannot be modified by users. |
 | ModifiedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was last modified. Cannot be modified by users. |
 
-> [!NOTE] SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its `Id`, `SourceTypeId`, and `TargetTypeId`, which are used to return the top level SdsStreamView object when searching. The same is true for nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
+> [!NOTE]
+> SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its `Id`, `SourceTypeId`, and `TargetTypeId`, which are used to return the top level SdsStreamView object when searching. The same is true for nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
 
 **Rules for the Stream View Identifier (SdsStreamView.Id)**
 

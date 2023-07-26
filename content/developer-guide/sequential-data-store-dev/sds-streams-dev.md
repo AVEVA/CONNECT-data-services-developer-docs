@@ -29,7 +29,8 @@ The following table shows the required and optional stream fields. Fields not li
 | [Tags](xref:sds-streams-tags)\* | IList\<String\> | Optional | Yes | A list of tags denoting special attributes or categories. |
 | [Metadata](xref:sds-streams-metadata)\* | IDictionary\<String, String\> | Optional | Yes | A dictionary of string keys and associated string values. |
 
-> [!NOTE] You can access stream metadata and tags through Metadata API and Tags API respectively. Because they are associated with SdsStream objects, you can use them as search criteria.
+> [!NOTE]
+> You can access stream metadata and tags through Metadata API and Tags API respectively. Because they are associated with SdsStream objects, you can use them as search criteria.
 
 **Rules for the stream identifier (SdsStream.Id)**
 

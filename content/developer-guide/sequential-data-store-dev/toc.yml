@@ -1,11 +1,21 @@
-- href: sds-quick-start.md
-- href: sds-types-dev.md
-- href: sds-streams-dev.md
-- href: sds-write-data.md
-- topicHref: sds-read-data.md
+- name: "Quick Start: Sequential Data Store"
+  href: sds-quick-start.md
+- name: Types
+  href: sds-types-dev.md
+- name: Streams
+  href: sds-streams-dev.md
+- name: Write data
+  href: sds-write-data.md
+- name: Read data
+  topicHref: sds-read-data.md
   href: read-data/toc.yml
-- href: sds-stream-views-dev.md
-- href: sds-index.md
-- href: sds-search.md
-- href: sds-metadata-objects-filter-expressions.md
-- href: sds-uom.md
+- name: Steam views
+  href: sds-stream-views-dev.md
+- name: Indexes
+  href: sds-index.md
+- name: Search in SDS
+  href: sds-search.md
+- name: Filter expressions for SDS objects
+  href: sds-metadata-objects-filter-expressions.md
+- name: Units of measure and quantities
+  href: sds-uom.md

@@ -30,7 +30,8 @@ The table below lists supported and unsupported types within a filter expression
 | `UInt32`         |                  |
 | `UInt64`         |                  |
 
-> [!NOTE] While Nullable Types are not supported, some supported types can have null values. When evaluating a filter expression, null values always return false/no match. For example, both `"Value" eq null` and `"Value" ne null` return false.
+> [!NOTE]
+> While Nullable Types are not supported, some supported types can have null values. When evaluating a filter expression, null values always return false/no match. For example, both `"Value" eq null` and `"Value" ne null` return false.
 
 ## Logical operators
 
@@ -50,7 +51,8 @@ The following logical operators are supported for use within a filter expression
 | `not`    | Not logical operator                                         |
 | `-`      | Negation                                                     |
 
-> [!NOTE] You use logical operators on ordered properties. When filtering on an ordered property, performance improves significantly if the property is a [secondary index](xref:sdsIndexes#secondary-indexes).
+> [!NOTE]
+> You use logical operators on ordered properties. When filtering on an ordered property, performance improves significantly if the property is a [secondary index](xref:sdsIndexes#secondary-indexes).
 
 ### Examples of logical operators
 

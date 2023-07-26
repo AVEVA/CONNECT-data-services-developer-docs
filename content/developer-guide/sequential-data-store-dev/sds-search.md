@@ -91,7 +91,8 @@ For more information on stream properties, see [Streams](xref:sdsStreams#streamp
 | ACL                                     | No         |
 | Owner                                   | No         |
 
-> [!Note] You can access stream metadata and tags through Metadata API and Tags API respectively. Metadata and tags are associated with streams and can be used as search criteria. See [below](#Stream_Metadata_search_topic) for more information.
+> [!Note]
+> You can access stream metadata and tags through Metadata API and Tags API respectively. Metadata and tags are associated with streams and can be used as search criteria. See [below](#Stream_Metadata_search_topic) for more information.
 
 #### Request
 
@@ -138,8 +139,7 @@ Type search is exposed through the REST API and the client libraries method `Get
 | ExtrapolationMode | No                      |
 | Properties        | Yes, with limitations\* |
 
-> [!NOTE] 
-> > `Properties` field
+> [!NOTE]
 > `Name` and `Id` of an SdsType are included in its `Properties` field. Similarly, `Name` and `Id` of a nested type are included in its `Properties`. If there are two types with the same `Properties`, `Name` or `Id`, the search will return both types in the result.
 
 #### Request
@@ -184,7 +184,8 @@ Stream view search is exposed through the REST API and the client libraries meth
 | TargetTypeId | Yes                     |
 | Properties   | Yes, with limitations\* |
 
-> [!NOTE] The `Properties` collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty's `Id`, `SourceTypeId`, and `TargetTypeId` fields. The `Properties` collection of nested views will also be searched. See the example below.
+> [!NOTE]
+> The `Properties` collection contains a list of SdsStreamViewProperty objects. The query will attempt to find a match on the SdsStreamViewProperty's `Id`, `SourceTypeId`, and `TargetTypeId` fields. The `Properties` collection of nested views will also be searched. See the example below.
 
 #### Example
 

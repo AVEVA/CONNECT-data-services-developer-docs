@@ -8,7 +8,7 @@ The Sequential Data Store (SDS) stores streams of events and provides convenient
 
 You can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or complex or nested types using the [Properties collection of SdsTypes](#sdstypeproperty).
 
-A type that is used to define a stream must have a key. A key is a [Property, or a combination of Properties](#sdstypeproperty) that constitutes an ordered, unique identity. If the key is ordered so it functions as an index, it is known as the _primary index_. While a timestamp (`DateTime`) is a very common type of index, any type that can be ordered is permitted. Secondary and other indexes are defined in the stream. For more information, see [Indexes](xref:sdsIndexes).
+A type that is used to define a stream must have a key. A _key_ is a [Property, or a combination of Properties](#sdstypeproperty) that constitutes an ordered, unique identity. If the key is ordered so it functions as an index, it is known as the _primary index_. While a timestamp (`DateTime`) is a very common type of index, any type that can be ordered is permitted. Secondary and other indexes are defined in the stream. For more information, see [Indexes](xref:sdsIndexes).
 
 Consider how the events will be represented in a stream as the type defines each event in a stream. An event is a single unit whose properties have values that relate to the index; that is, each property of a type event is related to the event's index. Each event is a single unit.
 
@@ -16,11 +16,11 @@ A type is referenced by its identifier or `Id` field. Type identifiers must be u
 
 A type can also refer to other types by using their identifiers. This enables type re-usability. Nested types and base types are automatically created as separate types. For more information, see [Type Reusability](#type-reusability).
 
-Types define how events are read and associated within a collection of streams. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the type. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
+Types define how events are read and associated within a collection of streams. The read characteristics when attempting to read non-existent indexes—indexes that fall between, before, or after existing indexes—are determined by the interpolation and extrapolation settings of the type. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
-Types are immutable. After a type is created, its definition cannot be updated. A type must be deleted and recreated if the definition is incorrect. You can delete a type only if no streams, stream views, or other types reference it.
+Types are immutable. After a type is created, its definition cannot be updated. The type must be deleted and recreated if the definition is incorrect. You can delete a type only if no streams, stream views, or other types reference it.
 
-Only the types that are used to define streams or stream views are required to be added to the SDS. Types that define [properties](#sdstypeproperty) or base types are contained within the parent type so they don't need to be added to the SDS independently.
+Only the types that are used to define streams or stream views are required to be added to SDS. Types that define [properties](#sdstypeproperty) or base types are contained within the parent type so they do not need to be added to SDS independently.
 
 ## Types API
 
@@ -28,14 +28,14 @@ Only the types that are used to define streams or stream views are required to b
 
 ## SdsType fields and properties table
 
-<a name="typepropertiestable"></a> The table below lists required and optional fields in a type. Fields that are not included are reserved for internal SDS use. For more information on search including limitations, see [Search in SDS](xref:sdsSearching).
+The table below lists required and optional fields in a type. Fields that are not included are reserved for internal SDS use. For more information on search including limitations, see [Search in SDS](xref:sdsSearching).
 
 | Property Name | Data Type | Required | Searchable | Details |
 | --- | --- | --- | --- | --- |
-| Id | String | Yes | Yes | Identifier for referencing the type |
-| Name | String | No | Yes | Friendly name |
-| Description | String | No | Yes | Description text |
-| SdsTypeCode | SdsTypeCode | Yes | No | Numeric code identifying the base SdsType |
+| Id | String | Yes | Yes | Identifier for referencing the type. |
+| Name | String | No | Yes | Friendly name. |
+| Description | String | No | Yes | Description text. |
+| SdsTypeCode | SdsTypeCode | Yes | No | Numeric code identifying the base SdsType. |
 | InterpolationMode | SdsInterpolationMode | No | No | Interpolation setting of the type. Default is Continuous. For more information, see [Interpolation](xref:sdsReadingData#interpolation). |
 | ExtrapolationMode | SdsExtrapolationMode | No | No | Extrapolation setting of the type. For more information, see [Extrapolation](xref:sdsReadingData#extrapolation). |
 | Properties | IList\<SdsTypeProperty\> | Yes | Yes, with limitations | List of SdsTypeProperty items. See [SdsTypeProperty](#sdstypeproperty) below. |
@@ -44,19 +44,19 @@ Only the types that are used to define streams or stream views are required to b
 
 ### Rules for the type identifier (SdsType.Id)
 
-1. Is not case sensitive
-2. Cannot just be whitespace
-3. Cannot contain leading or trailing whitespace
-4. Cannot contain forward slash ("/")
-5. Can contain a maximum of 100 characters
+1. Is not case sensitive.
+2. Cannot just be whitespace.
+3. Cannot contain leading or trailing whitespace.
+4. Cannot contain forward slash ("/").
+5. Can contain a maximum of 100 characters.
 
-Type management using the .NET SDS client libraries methods is performed through `ISdsMetadataService`. You can create `ISdsMetadataService` using one of the `SdsService.GetMetadataService()` factory methods. .NET client libraries provide `SdsTypeBuilder` to help build SdsTypes from .NET types. SdsTypeBuilder is discussed in greater detail below.
+Type management using the .NET SDS client libraries methods is performed through `ISdsMetadataService`. You can create `ISdsMetadataService` using one of the `SdsService.GetMetadataService()` factory methods. .NET client libraries provide `SdsTypeBuilder` to help build SdsTypes from .NET types. SdsTypeBuilder is discussed in greater detail in [SDS Types in .NET Framework](#sdstypes-in-net-framework).
 
 ## SdsTypeCode
 
-The SdsTypeCode is a numeric identifier used by the SDS to identify SdsTypes. An SdsTypeCode exists for every supported type.
+The SdsTypeCode is a numeric identifier used by SDS to identify SdsTypes. An SdsTypeCode exists for every supported type.
 
-Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode and do not need other fields to define the type.
+Atomic types (such as strings, floats, and arrays) are defined entirely by the SdsTypeCode and do not need other fields to define the type.
 
 Types that require additional definition (enumerations and objects, for example) are identified with a generic SdsTypeCode (`ByteEnum`, `Int32Enum`, `NullableInt32withEnum`, or `Object`, for example) _and_ additional SdsTypeProperty fields.
 
@@ -147,23 +147,23 @@ The following types are supported and defined by the SdsTypeCode:
 
 ## SdsTypeProperty
 
-The `Properties` collection defines the fields in a type. Type properties will appear in every stream that is created from a given type.
+The `Properties` collection defines the fields in a type. Type properties appear in every stream that is created from a given type.
 
 The following table shows the required and optional `SdsTypeProperty` fields. Fields that are not included are reserved for internal SDS use.
 
 | Property Name | Data Type | Required | Details |
 | --- | --- | --- | --- |
-| Id | String | Yes | Identifier for referencing the type |
-| Name | String | No | Friendly name |
-| Description | String | No | Description text |
-| SdsType | SdsType | Yes | Field defining the property's SdsType |
-| IsKey | Boolean | Yes | Identifies the property as the index |
-| Value | Object | No | Value of the property |
-| Order | Int | No | Order of comparison within a compound index |
+| Id | String | Yes | Identifier for referencing the type. |
+| Name | String | No | Friendly name. |
+| Description | String | No | Description text. |
+| SdsType | SdsType | Yes | Field defining the property's SdsType. |
+| IsKey | Boolean | Yes | Identifies the property as the index. |
+| Value | Object | No | Value of the property. |
+| Order | Int | No | Order of comparison within a compound index. |
 | InterpolationMode | SdsInterpolationMode | No | Interpolation setting of the property. Default is null. |
-| Uom | String | No | Unit of measure of the property |
+| Uom | String | No | Unit of measure of the property. |
 
-**ID rule** The SdsTypeProperty ID follows the same [rules](#typepropertiestable) as the type identifier.
+**ID rule** The SdsTypeProperty ID follows the same [rules](#sdstype-fields-and-properties-table) as the type identifier.
 
 **`IsKey`**  
 Boolean value `IsKey` identifies the primary index of a type in a single index. An index that is defined by more than one SdsTypeProperty is called a compound index. The maximum number of properties that can define a compound index is three. In a compound index, each `SdsTypeProperty` that is included in the index is specified as `IsKey`. The `Order` field marks the order of comparison within a compound index.
@@ -272,7 +272,7 @@ The SdsType is created with the following parameters. `SdsTypeBuilder` automatic
 |  |  | Properties | null |
 |  | Value | null |  |
 
-The `SdsTypeBuilder` also supports derived types. Note that you need not add the base types to the SDS before using `SdsTypeBuilder`. Base types are maintained within the SdsType.
+The `SdsTypeBuilder` also supports derived types. Note that you need not add the base types to SDS before using `SdsTypeBuilder`. Base types are maintained within the SdsType.
 
 ## SdsTypes outside of .NET framework
 
@@ -720,7 +720,7 @@ The new type may also include the full type definition of the reference type ins
 }
 ```
 
-If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist, a new type will be created automatically by the SDS. Further type creations can reference them as shown above. Note that when trying to get types back from the SDS, the results will also include types that were automatically created by the SDS.
+If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist, a new type will be created automatically by SDS. Further type creations can reference them as shown above. Note that when trying to get types back from SDS, the results will also include types that were automatically created by SDS.
 
 Base types and properties of type `object`, `enum`, or user-defined collections such as `array`, `list` and `dictionary`, will be treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of a particular type is to be created, the type should contain at least one property with a valid index type as described in the [Indexes](xref:sdsIndexes) section. The index property may also be in the base type as shown in the example above.
 

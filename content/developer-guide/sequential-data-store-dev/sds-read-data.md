@@ -4,18 +4,17 @@ uid: sdsReadingData
 
 # Read data
 
-The .NET and REST APIs provide programmatic access to read and write data. This section identifies and describes the APIs used to read [SdsStreams](xref:sdsStreams) data. Results are influenced by [SdsTypes](xref:sdsTypes), [SdsStreamViews](xref:sdsStreamViews), [filter expressions](xref:sdsFilterExpressionsValues), and [table format](xref:sdsTableFormat).
+.NET and the Sequential Data Store (SDS) REST APIs provide programmatic access to read and write data. This topic identifies and describes the APIs used to read [SdsStreams](xref:sdsStreams) data. Results are affected by [SdsTypes](xref:sdsTypes), [SdsStreamViews](xref:sdsStreamViews), [filter expressions](xref:sdsFilterExpressionsValues), and [table format](xref:sdsTableFormat).
 
 If you are working in a .NET environment, convenient SDS Client Libraries are available. The `ISdsDataService` interface, which is accessed using the `SdsService.GetDataService()` helper, defines the functions that are available.
 
 ## Reading data from streams
 
-While SDS is a robust data storage, it performs best if you follow certain guidelines:
+While SDS provides robust data storage, it performs best if you follow certain guidelines:
 
 ### Maximum limit for events in read data calls
 
-Read data API is limited to access less than 250,000 events per request. This includes events that are accessed but not returned, such as events that are being filtered out of the response. An error message is returned when the maximum limit is reached.  
-This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
+The Read data API is limited to access less than 250,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
 
 ```json
 400 bad request error
@@ -28,18 +27,18 @@ This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [
 
 ### Increase the Request-Timeout in the header
 
-Increase the Request-Timeout in the header to 5 minutes for large range calls that are requesting 250,000 events in a read call. The gateway will send `408 - Operation timed out error` if the request needs more than 30 seconds.
+Increase the Request-Timeout in the header to five minutes for large-range calls that are requesting 250,000 events in a read call. The gateway responds with `408 - Operation timed out error` if the request needs more than 30 seconds.
 
-The range of values that are held in memory can be large and be anywhere between 1 GB and 2GB, so the system needs enough time to read and return the data.
+The range of values that are held in memory can be large and be anywhere between 1 GB and 2 GB, so the system needs enough time to read and return the data.
 
-If multiple calls return `408 - Operation timed out error` even after increasing the timeout limit to 5 minutes, do one of the following:
+If multiple calls return `408 - Operation timed out error`, even after increasing the timeout limit to five minutes, do one of the following:
 
 - Reduce the range in the request calls of this type
 - Retry with an exponential back-off policy
 
 ### Maximum data read response
 
-Responses are limited to 2<sup>31</sup> bytes, so the number of bytes written during response serialization cannot exceed that value. An error message suggesting a smaller read request is returned when the response limit is reached.
+Responses are limited to 2<sup>31</sup> bytes. The number of bytes written during response serialization cannot exceed that value. An error message suggesting a smaller read request is returned when the response limit is reached.
 
 **400 bad request error**
 
@@ -53,7 +52,7 @@ Responses are limited to 2<sup>31</sup> bytes, so the number of bytes written du
 
 ### Compression
 
-Include `Accept-Encoding: gzip, deflate` in the HTTP header. This enables compression. For more information, see [Compression](xref:sdsCompression#supported-compression-schemes).
+Include `Accept-Encoding: gzip, deflate` in the HTTP header. This header enables compression. For more information, see [Compression](xref:sdsCompression#supported-compression-schemes).
 
 ### Use available read data APIs
 
@@ -68,53 +67,24 @@ Depending on the scenario, there are different read data APIs available. They re
 The following methods for reading a single value are available:
 
 - [Get First Value](xref:sds-stream-data#get-first-value) returns the first value in the stream.
+
 - [Get Last Value](xref:sds-stream-data#get-last-value) returns the last value in the stream.
 
 In addition, the following methods support reading multiple values:
 
 - [List Values](xref:sds-stream-data#list-values) retrieves a collection of stored values based on the request parameters.
+
 - [List Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
+
 - [List Summaries](xref:sds-stream-data#list-summaries) retrieves a collection of evenly spaced summary intervals based on a count and specified start and end indexes.
+
 - [List Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
-
-<!-- removing per Chris M feedback
-All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:
- ```text
-	api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
- ```
-
-**Parameters**
-
-``string tenantId``
-The tenant identifier
-
-``string namespaceId``
-The namespace identifier
-
-``string streamId``
-The stream identifier
--->
 
 ## Bulk reads
 
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
 
 - [Join Values](xref:sds-stream-data#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
-
-<!-- removing per Chris feedback
-Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is as follows:
- ```text
-    api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
- ```
-
-**Parameters**
-``string tenantId``
-The tenant identifier
-
-``string namespaceId``
-The namespace identifier
-
--->
 
 ### Response format
 
@@ -129,46 +99,46 @@ Most read operations take at least one index as a parameter. Indexes may be spec
 When data is requested at an index for which no stored event exists, the read characteristics determine whether the result is an error, no event, interpolated event, or extrapolated event. The combination of the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream determine the read characteristics.
 
 > [!NOTE]
-> Use the ISO 8601 representation of dates and times in SDS, `2020-02-20T08:30:00-08:00` for February 20, 2020 at 8:30 AM PST, for example. SDS returns timestamps in UTC if the timestamp is of property `DateTime` and in local time if it is of `DateTimeOffset`.
+> Use the ISO 8601 representation of dates and times in SDS. For example, `2020-02-20T08:30:00-08:00` represents February 20, 2020 at 8:30 AM PST. SDS returns timestamps in different formats based on the set property. For the `DateTime` property, timestamps are returned in UTC. For the `DateTimeOffset` property, timestamps are returned in local time.
 
 ## Interpolation
 
-Interpolation determines how a stream behaves when asked to return an event at an index between two existing events. InterpolationMode determines how the returned event is constructed. SDS provides multiple ways to set the interpolation mode to get the desired behavior. The table below lists InterpolationModes:
+Interpolation determines how a stream behaves when queried to return an event at an index between two existing events. InterpolationMode determines how the returned event is constructed. SDS provides multiple ways to set the interpolation mode to get the desired behavior. The table below lists InterpolationModes:
 
 | Mode | Enumeration value | Operation |
 | --- | --- | --- |
-| Default | 0 | The default InterpolationMode is Continuous |
-| Continuous | 0 | Returns interpolated data using previous and next index values |
-| StepwiseContinuousLeading | 1 | Returns the data from the previous index |
-| StepwiseContinuousTrailing | 2 | Returns the data from the next index |
-| Discrete | 3 | No event is returned |
-| ContinuousNullableLeading | 4 | Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value |
-| ContinuousNullableTrailing | 5 | Returns interpolated data or data from the trailing index if either of the surrounding indexes has a null value |
+| Default | 0 | The default InterpolationMode is Continuous. |
+| Continuous\* | 0 | Returns interpolated data using previous and next index values. |
+| StepwiseContinuousLeading | 1 | Returns the data from the previous index. |
+| StepwiseContinuousTrailing | 2 | Returns the data from the next index. |
+| Discrete | 3 | No event is returned. |
+| ContinuousNullableLeading | 4 | Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value. |
+| ContinuousNullableTrailing | 5 | Returns interpolated data or data from the trailing index if either of the surrounding indexes has a null value. |
 
-Note that `Continuous` cannot return values for type properties that cannot be interpolated, such as when the type property is not numeric.
+\*`Continuous` cannot return values for type properties that cannot be interpolated, such as when the type property is not numeric.
 
-The table below describes how the **Continuous InterpolationMode** affects properties that occur between data in a stream: **InterpolationMode = Continuous or Default**
+The table below describes how the **Continuous InterpolationMode** affects properties that occur between data in a stream: **InterpolationMode = Continuous or Default**.
 
 | Property Type | Result for a property for an index between data in a stream | Comment |
 | --- | --- | --- |
-| Numeric Types | Interpolated\* | Rounding is done as needed for integer types |
-| Time-related Types | Interpolated | DateTime, DateTimeOffset, TimeSpan |
-| Nullable Types | Interpolated\*\* | Limited support for nullable numeric types |
+| Numeric Types | Interpolated\* | Rounding is done as needed for integer types. |
+| Time-related Types | Interpolated | DateTime, DateTimeOffset, TimeSpan. |
+| Nullable Types | Interpolated\*\* | Limited support for nullable numeric types. |
 | Array and List Types | Default value |  |
 | String Type | Default value |  |
 | Boolean Type | Returns value of nearest index |  |
-| Enumeration Types | Returns Enum value at 0 | This may have a value for the enumeration |
+| Enumeration Types | Returns Enum value at 0 | This may have a value for the enumeration. |
 | GUID | Default value |  |
 | Version | Default value |  |
 | IDictionary or IEnumerable | Default value | Dictionary, Array, List, and so on. |
 | Empty Type | Not supported |  |
 | Object Type | Not supported |  |
 
-\*When extreme values are involved in an interpolation (for example Decimal.MaxValue) the call might result in a BadRequest exception.
+\*When extreme values are involved in an interpolation (for example Decimal.MaxValue), the call may result in a BadRequest exception.
 
-\*\*For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
+\*\*For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nullable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value is null.
 
-If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property see [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream see [Sds Streams](xref:sdsStreams).
+If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Sds Streams](xref:sdsStreams).
 
 ## Extrapolation
 
@@ -203,13 +173,13 @@ ExtrapolationMode works with the InterpolationMode to determine how a stream res
 | Forward | 2 | No event is returned | Returns the default value |
 | Backward | 3 | Returns the default value | No event is returned |
 
-For additional information about the effect of read characteristics, see the documentation on the [read method](xref:sds-stream-data) you are using.
+For additional information about the effect of read characteristics, see the documentation on the read method you are using in <xref:sds-stream-data>.
 
 ## Filter expressions
 
-Filter expressions can be applied to any read that returns multiple values, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.
+You can apply filter expressions any read operation that returns multiple values, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.
 
-Filter expressions are covered in detail in the [Filter expressions](xref:sdsFilterExpressionsValues) section.
+For more information, see [Filter expressions](xref:sdsFilterExpressionsValues).
 
 ## Table format
 
@@ -217,18 +187,18 @@ Results of a query can be organized into tables by directing the form parameter 
 
 When the form parameter is specified as table, `?form=table`, events are returned in row column form. Results include a collection named `Columns` that lists column name and type and a collection named `Rows` containing a collection of rows matching the order of the columns.
 
-Specifying a form of type `table-headers`, `?form=tableh`, results in a collection where the Rows collection contains a column header list.
+Specifying a form of type `table-headers`, `?form=tableh`, results in a collection where the rows collection contains a column header list.
 
-Table formats are covered in detail in the [Table format](xref:sdsTableFormat) section.
+For more information, see [Table format](xref:sdsTableFormat).
 
 ## SdsBoundaryType
 
-The `SdsBoundaryType` enum defines how data on the boundary of queries is handled: around the start index for range value queries, and around the start and end index for window values. The following are valid values for `SdsBoundaryType`:
+The `SdsBoundaryType` enum defines how data on the boundary of queries is handled: around the start index for range value queries, and around the start and end index for window values. The following values are valid for `SdsBoundaryType`:
 
 | Boundary | Enumeration value | Operation |
 | --- | --- | --- |
 | Exact | 0 | Results include the event at the specified index boundary if a stored event exists at that index. |
-| Inside | 1 | Results include only events within the index boundaries |
+| Inside | 1 | Results include only events within the index boundaries. |
 | Outside | 2 | Results include up to one event that falls immediately outside of the specified index boundary. |
 | ExactOrCalculated | 3 | Results include the event at the specified index boundary. If no stored event exists at that index, one is calculated based on the index type and interpolation and extrapolation settings. |
 
@@ -250,10 +220,10 @@ The `SdsSearchMode` enum defines search behavior when seeking a stored event nea
 
 SDS provides the ability to transform data upon reads. The supported data transformations are:
 
-- [Reading with SdsStreamViews](#reading-with-sdsstreamviews): Changing the shape of the returned data
-- [Unit of Measure Conversions](#unit-conversion-of-data): Converting the unit of measure of the data
+- [Reading with SdsStreamViews](#reading-with-sdsstreamviews): Changing the shape of the returned data.
+- [Unit of Measure Conversions](#unit-conversion-of-data): Converting the unit of measure of the data.
 
-Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the tranformation endpoints:
+Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the transformation endpoints:
 
 ```text
 api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
@@ -266,15 +236,15 @@ api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Trans
 
 ### Reading with SdsStreamViews
 
-When transforming data with an SdsStreamView, the data read is converted to the _target type_ specified in the SdsStreamView. Working with stream views is covered in detail in the [Stream Views](xref:sdsStreamViews) section.
+When transforming data with an SdsStreamView, the data read is converted to the _target type_ specified in the SdsStreamView. For more information on working with stream views, see [Stream Views](xref:sdsStreamViews).
 
 All stream view transformations are HTTP GET requests. Specify the stream view ID (`streamViewId={streamViewId}`) at the end of the transformation endpoint in the request as shown below. For example, the following request returns the first event of the stream _transformed_ to the target type (per stream view definition specified by `streamViewId`):
 
 ```text
-   GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
 ```
 
-All single stream data reads support stream view transformations.
+All single-stream data reads support stream view transformations.
 
 ```text
 # Get 100 events from start index
@@ -287,15 +257,15 @@ When data is requested with an SdsStreamView, the read characteristics defined b
 
 ### Unit conversion of data
 
-SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (UOM) to stream data. If stream data has UOM information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
+SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (UOM) to stream data. If stream data has UOM information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user-defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
 
 | Property | Type | Optionality | Details |
 | --- | --- | --- | --- |
-| SdsTypePropertyId | String | Required | Identifier for an SdsTypeProperty with a UOM assigned |
-| Uom | String | Required | Target unit of measure |
-| InterpolationMode | SdsInterpolationMode | N/A | Currently not supported in context of data reads |
+| SdsTypePropertyId | String | Required | Identifier for an SdsTypeProperty with a UOM assigned. |
+| Uom | String | Required | Target unit of measure. |
+| InterpolationMode | SdsInterpolationMode | N/A | Currently not supported in context of data reads. |
 
-This is supported in the .NET client libraries methods via overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API via HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects.
+This assignment is supported in the .NET client libraries methods using overloads that accept a collection of `SdsStreamPropertyOverride` objects, and in the REST API using HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects.
 
 All unit conversions are POST HTTP requests. The unit conversion transformation URI is as follows:
 

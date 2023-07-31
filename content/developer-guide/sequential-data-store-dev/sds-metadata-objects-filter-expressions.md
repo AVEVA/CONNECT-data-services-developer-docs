@@ -26,8 +26,7 @@ The following logical operators are supported for use within a filter expression
 
 > [!NOTE]
 >
-> You can use logical operators on ordered properties.  
-> You can only use negation on numeric properties.
+> You can use logical operators on ordered properties. You can only use negation on numeric properties.
 
 ### Examples of logical operators
 
@@ -73,17 +72,17 @@ The character index in a string is zero-based. The following string functions ar
 
 | Function | Description |
 | --- | --- |
-| `endswith` | Compare the character at the end of the input string |
-| `startswith` | Compare the character at the start of the input string |
-| `length` | Examines the string length |
-| `indexof` | Examines the character starting at a given index |
-| `substring` | Examine characters within another string at a specific location |
-| `contains` | Search for characters anywhere in another string |
-| `tolower` | Convert characters to lowercase |
-| `toupper` | Convert characters to uppercase |
-| `trim` | Remove whitespace from front and end of a string |
-| `concat` | Concatenate strings together |
-| `replace` | Replace one set of characters with another |
+| `endswith` | Compare the character at the end of the input string. |
+| `startswith` | Compare the character at the start of the input string. |
+| `length` | Examines the string length. |
+| `indexof` | Examines the character starting at a given index. |
+| `substring` | Examine characters within another string at a specific location. |
+| `contains` | Search for characters anywhere in another string. |
+| `tolower` | Convert characters to lowercase. |
+| `toupper` | Convert characters to uppercase. |
+| `trim` | Remove whitespace from front and end of a string. |
+| `concat` | Concatenate strings together. |
+| `replace` | Replace one set of characters with another. |
 
 ### Examples of string functions
 
@@ -91,17 +90,17 @@ The examples below are using the `Id`, `Name`, and `Description` properties of a
 
 | Example | Result |
 | --- | --- |
-| `endswith(Id, 'XYZ')` | True if `Id` ends with the characters ‘XYZ’ |
-| `startswith(Id, 'Val'` | True if `Id` starts with the characters ‘Val’ |
-| `length(Id) eq 11` | True if `Id` is 11 characters |
-| `indexof(Id, 'ab') eq 4` | True if the 5th and 6th characters of `Id` are ‘ab’ |
-| `contains(Description, 'ab')` | True if characters ‘ab’ are found anywhere in `Description` |
-| `substring(Description, 10) eq 'a b'` | True if ‘a b’ is found in `Description` at index 10 |
-| `tolower(Name) eq 'val5'` | Change `Name` to lowercase and compare to ‘val5’ |
-| `toupper(Name) eq 'ABC'` | Change `Name` to uppercase and compare to ‘ABC’ |
-| `trim(Name) eq 'vall22'` | Trim whitespace from front and end of `Name` and compare to ‘val22’ |
-| `concat(Name,'xyz') eq 'dataValue_7xyz'` | Add characters to `Name` and compare to ‘dataValue_7xyz’ |
-| `replace(Name,'L','D') eq 'Dog1'` | Replace any ‘L’ in `Name` with ‘D’ and compare to ‘Dog1’ |
+| `endswith(Id, 'XYZ')` | True if `Id` ends with the characters 'XYZ'. |
+| `startswith(Id, 'Val'` | True if `Id` starts with the characters 'Val'. |
+| `length(Id) eq 11` | True if `Id` is 11 characters. |
+| `indexof(Id, 'ab') eq 4` | True if the 5th and 6th characters of `Id` are 'ab'. |
+| `contains(Description, 'ab')` | True if characters 'ab' are found anywhere in `Description`. |
+| `substring(Description, 10) eq 'a b'` | True if 'a b' is found in `Description` at index 10. |
+| `tolower(Name) eq 'val5'` | Change `Name` to lowercase and compare to 'val5'. |
+| `toupper(Name) eq 'ABC'` | Change `Name` to uppercase and compare to 'ABC'. |
+| `trim(Name) eq 'vall22'` | Trim whitespace from front and end of `Name` and compare to 'val22'. |
+| `concat(Name,'xyz') eq 'dataValue_7xyz'` | Add characters to `Name` and compare to 'dataValue_7xyz'. |
+| `replace(Name,'L','D') eq 'Dog1'` | Replace any 'L' in `Name` with 'D' and compare to 'Dog1'. |
 
 ## DateTime functions
 

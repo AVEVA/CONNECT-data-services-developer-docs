@@ -4,11 +4,11 @@ uid: sdsIndexes
 
 # Indexes
 
-Indexes speed up and order the results of searches. A key uniquely identifies a record within a collection of records. Keys are unique within the collection.
+Indexes expedite and order the results of searches. A key uniquely identifies a record within a collection of records. Keys are unique within the collection.
 
 In SDS, the key of type is also an index. The key is often referred to as the _primary index,_ while all other indexes are referred to as _secondary indexes_ or _secondaries_.
 
-A type that is used to define a stream must specify a key. When you add data to a stream, every key value must be unique. SDS will not store more than a single event for a given key; an event with a particular key may be deleted or updated, but two events with the same key cannot exist.
+A type that is used to define a stream must specify a key. When you add data to a stream, every key value must be unique. SDS does not store more than a single event for a given key; an event with a particular key may be deleted or updated, but two events with the same key cannot exist.
 
 In .NET, the SdsType properties that define the primary index are identified using an `OSIsoft.Sds.SdsMemberAttribute` and setting its `IsKey` field to true. If the key consists of only a single property, you can use the `System.ComponentModel.DataAnnotations.KeyAttribute`. Property or properties representing the primary index of a type have their `SdsTypeProperty.IsKey` field set to true.
 
@@ -45,7 +45,7 @@ When defining a compound index within .NET framework, you should apply the `OSIs
 
 When defining compound indexes outside of .NET framework, specify the `IsKey` and `Order` fields on the `SdsTypeProperty` object.
 
-You can specify a maximum of three properties to define a compound index. In read and write data operations, specify compound indexes in the URI by ordering each property that composes the index separated by the pipe character, '|'. To help those using compound indexes, .NET client libraries methods also allow the use of tuples for indexes.
+You can specify a maximum of three properties to define a compound index. In read and write data operations, specify compound indexes in the URI by ordering each property that composes the index separated by the pipe character (`|`). To help those using compound indexes, .NET client libraries methods also allow the use of tuples for indexes.
 
 > [!NOTE]
 >
@@ -76,39 +76,37 @@ Task RemoveValueAsync(compoundStream.Id, 1/20/2017 01:00|1/20/2017 00:00);
 
 ## Indexes in .NET framework
 
-Examples below are in C# but you can apply the concepts such as simple, compound and secondary indexes to any language.  
-For more information on indexes in JavaScript and Python, go to [Indexes outside of .NET framework](#indexes-outside-of-net-framework).
+Examples below are in C# but you can apply the concepts such as simple, compound, and secondary indexes to any language. For more information on indexes in JavaScript and Python, go to [Indexes outside of .NET framework](#indexes-outside-of-net-framework).
 
 ### Simple indexes
 
 When working in .NET, use the `SdsTypeBuilder` together with either the `OSIsoft.Sds.SdsMemberAttribute` (preferred) or the `System.ComponentModel.DataAnnotations.KeyAttribute` to identify the property that defines the simple index. Using the `SdsTypeBuilder` eliminates potential errors that might occur when working with SdsTypes manually.
 
 ```csharp
-      public enum State
-      {
-        Ok,
-        Warning,
-        Alarm
-      }
+public enum State
+{
+  Ok,
+  Warning,
+  Alarm
+}
 
-      public class Simple
-      {
-        [SdsMember(IsKey = true, Order = 0) ]
-        public DateTime Time { get; set; }
-        public State State { get; set; }
-        public Double Measurement { get; set; }
-      }
+public class Simple
+{
+  [SdsMember(IsKey = true, Order = 0) ]
+  public DateTime Time { get; set; }
+  public State State { get; set; }
+  public Double Measurement { get; set; }
+}
 
-      SdsType simpleType = SdsTypeBuilder.CreateSdsType<Simple>();
+SdsType simpleType = SdsTypeBuilder.CreateSdsType<Simple>();
 ```
 
 To read data that is located between two indexes, define both a start index and an end index. For `DateTime`, use the ISO 8601 representation of dates and times. For example, to query for a window of simple values between January 1, 2010 and February 1, 2010, you can define indexes and query as follows:
 
 ```csharp
-
-      IEnumerable<Simple> values = await
-      client.GetWindowValuesAsync<Simple>(simpleStream.Id,
-      "2010-01-01T08:00:00.000Z","2010-02-01T08:00:00.000Z");
+IEnumerable<Simple> values = await
+client.GetWindowValuesAsync<Simple>(simpleStream.Id,
+"2010-01-01T08:00:00.000Z","2010-02-01T08:00:00.000Z");
 ```
 
 For more information about querying data, see [Read data](xref:sdsReadingData).
@@ -120,24 +118,23 @@ Secondary indexes are defined at the stream level. To add indexes to a stream, y
 For example, to add a second index on `Measurement`, use the following code:
 
 ```csharp
-
-      SdsStreamIndex measurementIndex = new SdsStreamIndex()
-      {
-          SdsTypePropertyId = simpleType.Properties.First(p => p.Id.Equals("Measurement")).Id
-      };
-      SdsStream secondary = new SdsStream()
-      {
-          Id = "Simple with Secondary",
-          TypeId = simpleType.Id,
-          Indexes = new List<SdsStreamIndex>()
-          {
-              measurementIndex
-          }
-      };
-      secondary = await config.GetOrCreateStreamAsync(secondary);
+SdsStreamIndex measurementIndex = new SdsStreamIndex()
+{
+    SdsTypePropertyId = simpleType.Properties.First(p => p.Id.Equals("Measurement")).Id
+};
+SdsStream secondary = new SdsStream()
+{
+    Id = "Simple with Secondary",
+    TypeId = simpleType.Id,
+    Indexes = new List<SdsStreamIndex>()
+    {
+        measurementIndex
+    }
+};
+secondary = await config.GetOrCreateStreamAsync(secondary);
 ```
 
-To read data indexed by a secondary index, use a filtered GET method(`IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id, "Measurement gt 0 and Measurement lt 6");`).
+To read data indexed by a secondary index, use a filtered GET method (`IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id, "Measurement gt 0 and Measurement lt 6");`).
 
 You use indexes to order data. On a stream level, you can set the property to be the secondary index. To improve performance when working with a large set of data:
 
@@ -145,66 +142,65 @@ You use indexes to order data. On a stream level, you can set the property to be
 - Use [logical operators](xref:sdsFilterExpressionsValues#examples-of-logical-operators) for filtering.
 
 ```csharp
+await client.UpdateValuesAsync<Simple>(secondary.Id, new List<Simple>()
+  {
+      new Simple()
+      {
+          Time = time,
+          State = State.Ok,
+          Measurement = 5
+      },
+      new Simple()
+      {
+          Time = time + TimeSpan.FromSeconds(1),
+          State = State.Ok,
+          Measurement = 4
+      },
+      new Simple()
+      {
+          Time = time + TimeSpan.FromSeconds(2),
+          State = State.Ok,
+          Measurement = 3
+      },
+      new Simple()
+      {
+          Time  = time + TimeSpan.FromSeconds(3),
+          State = State.Ok,
+          Measurement = 2
+      },
+      new Simple()
+      {
+          Time = time + TimeSpan.FromSeconds(4),
+          State = State.Ok,
+          Measurement = 1
+      },
+  });
 
-      await client.UpdateValuesAsync<Simple>(secondary.Id, new List<Simple>()
-        {
-            new Simple()
-            {
-                Time = time,
-                State = State.Ok,
-                Measurement = 5
-            },
-            new Simple()
-            {
-                Time = time + TimeSpan.FromSeconds(1),
-                State = State.Ok,
-                Measurement = 4
-            },
-            new Simple()
-            {
-                Time = time + TimeSpan.FromSeconds(2),
-                State = State.Ok,
-                Measurement = 3
-            },
-            new Simple()
-            {
-                Time  = time + TimeSpan.FromSeconds(3),
-                State = State.Ok,
-                Measurement = 2
-            },
-            new Simple()
-            {
-                Time = time + TimeSpan.FromSeconds(4),
-                State = State.Ok,
-                Measurement = 1
-            },
-        });
+IEnumerable<Simple> orderedByKey = await client.GetWindowValuesAsync<Simple>(secondary.Id,
+    time.ToString("o"), time.AddSeconds(4).ToString("o"));
+foreach (Simple value in orderedByKey)
+    Console.WriteLine("{0}: {1}", value.Time, value.Measurement);
 
-      IEnumerable<Simple> orderedByKey = await client.GetWindowValuesAsync<Simple>(secondary.Id,
-          time.ToString("o"), time.AddSeconds(4).ToString("o"));
-      foreach (Simple value in orderedByKey)
-          Console.WriteLine("{0}: {1}", value.Time, value.Measurement);
+Console.WriteLine();
 
-      Console.WriteLine();
+IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id,
+"Measurement gt 0 and Measurement lt 6");
+foreach (Simple value in orderedBySecondary)
+    Console.WriteLine("{0}: {1}", value.Time, value.Measurement);
+Console.WriteLine();
 
-      IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id,
-      "Measurement gt 0 and Measurement lt 6");
-      foreach (Simple value in orderedBySecondary)
-          Console.WriteLine("{0}: {1}", value.Time, value.Measurement);
-      Console.WriteLine();
-
-      // Output:
-      // 1/20/2017 12:00:00 AM: 5
-      // 1/20/2017 12:00:01 AM: 4
-      // 1/20/2017 12:00:02 AM: 3
-      // 1/20/2017 12:00:03 AM: 2
-      // 1/20/2017 12:00:04 AM: 1
-      //
-      // 1/20/2017 12:00:04 PM: 1
-      // 1/20/2017 12:00:03 PM: 2
-      // 1/20/2017 12:00:02 PM: 3
-      // 1/20/2017 12:00:01 PM: 4
-      // 1/20/2017 12:00:00 PM: 5
+// Output:
+// 1/20/2017 12:00:00 AM: 5
+// 1/20/2017 12:00:01 AM: 4
+// 1/20/2017 12:00:02 AM: 3
+// 1/20/2017 12:00:03 AM: 2
+// 1/20/2017 12:00:04 AM: 1
+//
+// 1/20/2017 12:00:04 PM: 1
+// 1/20/2017 12:00:03 PM: 2
+// 1/20/2017 12:00:02 PM: 3
+// 1/20/2017 12:00:01 PM: 4
+// 1/20/2017 12:00:00 PM: 5
 ```
 
 ### Compound indexes
@@ -212,22 +208,22 @@ You use indexes to order data. On a stream level, you can set the property to be
 Compound indexes are defined using the `SdsMemberAttribute` as follows:
 
 ```csharp
-      public class Simple
-      {
-        [SdsMember(IsKey = true, Order = 0)]
-        public DateTime Time { get; set; }
-        public State State { get; set; }
-        public Double Measurement { get; set; }
-      }
+public class Simple
+{
+  [SdsMember(IsKey = true, Order = 0)]
+  public DateTime Time { get; set; }
+  public State State { get; set; }
+  public Double Measurement { get; set; }
+}
 
-      public class DerivedCompoundIndex : Simple
-      {
-        [SdsMember(IsKey = true, Order = 1)]
-        public DateTime Recorded { get; set; }
-      }
+public class DerivedCompoundIndex : Simple
+{
+  [SdsMember(IsKey = true, Order = 1)]
+  public DateTime Recorded { get; set; }
+}
 ```
 
-Events of type `DerivedCompoundIndex` are sorted first by the `Time` parameter and then by the `Recorded` parameter. A collection of times would be sorted as follows:
+Events of type `DerivedCompoundIndex` are sorted first by the `Time` parameter and then by the `Recorded` parameter. A collection of times is sorted as follows:
 
 | **Time** | **Recorded** | **Measurement** |
 | -------- | ------------ | --------------- |
@@ -239,7 +235,7 @@ Events of type `DerivedCompoundIndex` are sorted first by the `Time` parameter a
 | 02:00    | 02:00        | 4               |
 | 02:00    | 14:00        | 6               |
 
-If the `Order` parameter was reversed, with `Recorded` set to 0 and `Time` set to 1, the results would be sorted as follows:
+If the `Order` parameter is reversed, with `Recorded` set to 0 and `Time` set to 1, the results are sorted as follows:
 
 | **Time** | **Recorded** | **Measurement** |
 | -------- | ------------ | --------------- |
@@ -252,91 +248,91 @@ If the `Order` parameter was reversed, with `Recorded` set to 0 and `Time` set t
 | 02:00    | 14:00        | 6               |
 
 ```csharp
-      // estimates at 1/20/2017 00:00
-      await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
-        {
-            new DerivedCompoundIndex()
-            {
-                Time = DateTime.Parse("1/20/2017 01:00"),
-                Recorded = DateTime.Parse("1/20/2017 00:00"),
-                State = State.Ok,
-                Measurement = 0
-            },
-            new DerivedCompoundIndex()
-            {
-                Time = DateTime.Parse("1/20/2017 02:00"),
-                Recorded = DateTime.Parse("1/20/2017 00:00"),
-                State = State.Ok,
-                Measurement = 1
-            },
-        });
+// estimates at 1/20/2017 00:00
+await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
+  {
+      new DerivedCompoundIndex()
+      {
+          Time = DateTime.Parse("1/20/2017 01:00"),
+          Recorded = DateTime.Parse("1/20/2017 00:00"),
+          State = State.Ok,
+          Measurement = 0
+      },
+      new DerivedCompoundIndex()
+      {
+          Time = DateTime.Parse("1/20/2017 02:00"),
+          Recorded = DateTime.Parse("1/20/2017 00:00"),
+          State = State.Ok,
+          Measurement = 1
+      },
+  });
 
-      // measure and estimates at 1/20/2017 01:00
-      await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
-        {
-            new DerivedCompoundIndex()
-            {
-                Time = DateTime.Parse("1/20/2017 01:00"),
-                Recorded = DateTime.Parse("1/20/2017 01:00"),
-                State = State.Ok,
-                Measurement = 2
-            },
-            new DerivedCompoundIndex()
-            {
-                Time = DateTime.Parse("1/20/2017 02:00"),
-                Recorded = DateTime.Parse("1/20/2017 01:00"),
-                State = State.Ok,
-                Measurement = 3
-            },
-        });
+// measure and estimates at 1/20/2017 01:00
+await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
+  {
+      new DerivedCompoundIndex()
+      {
+          Time = DateTime.Parse("1/20/2017 01:00"),
+          Recorded = DateTime.Parse("1/20/2017 01:00"),
+          State = State.Ok,
+          Measurement = 2
+      },
+      new DerivedCompoundIndex()
+      {
+          Time = DateTime.Parse("1/20/2017 02:00"),
+          Recorded = DateTime.Parse("1/20/2017 01:00"),
+          State = State.Ok,
+          Measurement = 3
+      },
+  });
 
-      // measure at 1/20/2017 02:00
-      await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
-        {
-            new DerivedCompoundIndex()
-            {
-                Time = DateTime.Parse("1/20/2017 02:00"),
-                Recorded = DateTime.Parse("1/20/2017 02:00"),
-                State = State.Ok,
-                Measurement = 4
-            },
-        });
+// measure at 1/20/2017 02:00
+await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
+  {
+      new DerivedCompoundIndex()
+      {
+          Time = DateTime.Parse("1/20/2017 02:00"),
+          Recorded = DateTime.Parse("1/20/2017 02:00"),
+          State = State.Ok,
+          Measurement = 4
+      },
+  });
 
-      // adjust earlier values at 1/20/2017 14:00
-      await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
-        {
-            new DerivedCompoundIndex()
-            {
-                Time = DateTime.Parse("1/20/2017 01:00"),
-                Recorded = DateTime.Parse("1/20/2017 14:00"),
-                State = State.Ok,
-                Measurement = 5
-            },
-            new DerivedCompoundIndex()
-            {
-                Time = DateTime.Parse("1/20/2017 02:00"),
-                Recorded = DateTime.Parse("1/20/2017 14:00"),
-                State = State.Ok,
-                Measurement = 6
-            },
-        });
+// adjust earlier values at 1/20/2017 14:00
+await client.UpdateValuesAsync(compoundStream.Id, new List<DerivedCompoundIndex>()
+  {
+      new DerivedCompoundIndex()
+      {
+          Time = DateTime.Parse("1/20/2017 01:00"),
+          Recorded = DateTime.Parse("1/20/2017 14:00"),
+          State = State.Ok,
+          Measurement = 5
+      },
+      new DerivedCompoundIndex()
+      {
+          Time = DateTime.Parse("1/20/2017 02:00"),
+          Recorded = DateTime.Parse("1/20/2017 14:00"),
+          State = State.Ok,
+          Measurement = 6
+      },
+  });
 
-      var from = new Tuple<DateTime, DateTime>(DateTime.Parse("1/20/2017 01:00"), DateTime.Parse("1/20/2017 00:00"));
-      var to = new Tuple<DateTime, DateTime>(DateTime.Parse("1/20/2017 02:00"), DateTime.Parse("1/20/2017 14:00"));
+var from = new Tuple<DateTime, DateTime>(DateTime.Parse("1/20/2017 01:00"), DateTime.Parse("1/20/2017 00:00"));
+var to = new Tuple<DateTime, DateTime>(DateTime.Parse("1/20/2017 02:00"), DateTime.Parse("1/20/2017 14:00"));
 
-      var compoundValues = await client.GetWindowValuesAsync<DerivedCompoundIndex, DateTime, DateTime>(compoundStream.Id, from, to);
+var compoundValues = await client.GetWindowValuesAsync<DerivedCompoundIndex, DateTime, DateTime>(compoundStream.Id, from, to);
 
-      foreach (DerivedCompoundIndex value in compoundValues)
-         Console.WriteLine("{0}:{1} {2}", value.Time, value.Recorded, value.Measurement);
+foreach (DerivedCompoundIndex value in compoundValues)
+    Console.WriteLine("{0}:{1} {2}", value.Time, value.Recorded, value.Measurement);
 
-      // Output:
-      // 1/20/2017 1:00:00 AM:1/20/2017 12:00:00 AM 0
-      // 1/20/2017 1:00:00 AM:1/20/2017 1:00:00 AM 2
-      // 1/20/2017 1:00:00 AM:1/20/2017 2:00:00 PM 5
-      // 1/20/2017 2:00:00 AM:1/20/2017 12:00:00 AM 1
-      // 1/20/2017 2:00:00 AM:1/20/2017 1:00:00 AM 3
-      // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 AM 4
-      // 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 PM 6
+// Output:
+// 1/20/2017 1:00:00 AM:1/20/2017 12:00:00 AM 0
+// 1/20/2017 1:00:00 AM:1/20/2017 1:00:00 AM 2
+// 1/20/2017 1:00:00 AM:1/20/2017 2:00:00 PM 5
+// 1/20/2017 2:00:00 AM:1/20/2017 12:00:00 AM 1
+// 1/20/2017 2:00:00 AM:1/20/2017 1:00:00 AM 3
+// 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 AM 4
+// 1/20/2017 2:00:00 AM:1/20/2017 2:00:00 PM 6
 ```
 
 Note that the `GetWindowValuesAsync()` call specifies an expected return type and the index types as generic parameters.
@@ -356,29 +352,29 @@ To build an SdsType representation of sample classes in Python and Java Script, 
 ##### [Python](#tab/tabid-1)
 
 ```python
-      class State(Enum):
-        Ok = 0
-        Warning = 1
-        Alarm = 2
+class State(Enum):
+  Ok = 0
+  Warning = 1
+  Alarm = 2
 
-      class Simple(object):
-        Time = property(getTime, setTime)
-        def getTime(self):
-          return self.__time
-        def setTime(self, time):
-          self.__time = time
+class Simple(object):
+  Time = property(getTime, setTime)
+  def getTime(self):
+    return self.__time
+  def setTime(self, time):
+    self.__time = time
 
-        State = property(getState, setState)
-        def getState(self):
-          return self.__state
-        def setState(self, state):
-          self.__state = state
+  State = property(getState, setState)
+  def getState(self):
+    return self.__state
+  def setState(self, state):
+    self.__state = state
 
-        Measurement = property(getValue, setValue)
-        def getValue(self):
-          return self.__measurement
-        def setValue(self, measurement):
-          self.__measurement = measurement
+  Measurement = property(getValue, setValue)
+  def getValue(self):
+    return self.__measurement
+  def setValue(self, measurement):
+    self.__measurement = measurement
 ```
 
 ##### [JavaScript](#tab/tabid-2)
@@ -406,54 +402,54 @@ The following code is used to build an SdsType representation of the sample clas
 ##### [Python](#tab/tabid-3)
 
 ```python
-      # Create the properties
+# Create the properties
 
-      # Time is the primary index
-      time = SdsTypeProperty()
-      time.Id = "Time"
-      time.Name = "Time"
-      time.IsKey = True
-      time.SdsType = SdsType()
-      time.SdsType.Id = "DateTime"
-      time.SdsType.Name = "DateTime"
-      time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
+# Time is the primary index
+time = SdsTypeProperty()
+time.Id = "Time"
+time.Name = "Time"
+time.IsKey = True
+time.SdsType = SdsType()
+time.SdsType.Id = "DateTime"
+time.SdsType.Name = "DateTime"
+time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
-      # State is not a pre-defined type. An SdsType must be defined to represent the enum
-      stateTypePropertyOk = SdsTypeProperty()
-      stateTypePropertyOk.Id = "Ok"
-      stateTypePropertyOk.Measurement = State.Ok
-      stateTypePropertyWarning = SdsTypeProperty()
-      stateTypePropertyWarning.Id = "Warning"
-      stateTypePropertyWarning.Measurement = State.Warning
-      stateTypePropertyAlarm = SdsTypeProperty()
-      stateTypePropertyAlarm.Id = "Alarm"
-      stateTypePropertyAlarm.Measurement = State.Alarm
+# State is not a pre-defined type. An SdsType must be defined to represent the enum
+stateTypePropertyOk = SdsTypeProperty()
+stateTypePropertyOk.Id = "Ok"
+stateTypePropertyOk.Measurement = State.Ok
+stateTypePropertyWarning = SdsTypeProperty()
+stateTypePropertyWarning.Id = "Warning"
+stateTypePropertyWarning.Measurement = State.Warning
+stateTypePropertyAlarm = SdsTypeProperty()
+stateTypePropertyAlarm.Id = "Alarm"
+stateTypePropertyAlarm.Measurement = State.Alarm
 
-      stateType = SdsType()
-      stateType.Id = "State"
-      stateType.Name = "State"
-      stateType.Properties = [ stateTypePropertyOk, stateTypePropertyWarning,\
-                             stateTypePropertyAlarm ]
-      state = SdsTypeProperty()
-      state.Id = "State"
-      state.Name = "State"
-      state.SdsType = stateType
+stateType = SdsType()
+stateType.Id = "State"
+stateType.Name = "State"
+stateType.Properties = [ stateTypePropertyOk, stateTypePropertyWarning,\
+                        stateTypePropertyAlarm ]
+state = SdsTypeProperty()
+state.Id = "State"
+state.Name = "State"
+state.SdsType = stateType
 
-      # Measurement property is a simple non-indexed, pre-defined type
-      measurement = SdsTypeProperty()
-      measurement.Id = "Measurement"
-      measurement.Name = "Measurement"
-      measurement.SdsType = SdsType()
-      measurement.SdsType.Id = "Double"
-      measurement.SdsType.Name = "Double"
+# Measurement property is a simple non-indexed, pre-defined type
+measurement = SdsTypeProperty()
+measurement.Id = "Measurement"
+measurement.Name = "Measurement"
+measurement.SdsType = SdsType()
+measurement.SdsType.Id = "Double"
+measurement.SdsType.Name = "Double"
 
-      # Create the Simple SdsType
-      simple = SdsType()
-      simple.Id = str(uuid.uuid4())
-      simple.Name = "Simple"
-      simple.Description = "Basic sample type"
-      simple.SdsTypeCode = SdsTypeCode.Object
-      simple.Properties = [ time, state, measurement ]
+# Create the Simple SdsType
+simple = SdsType()
+simple.Id = str(uuid.uuid4())
+simple.Name = "Simple"
+simple.Description = "Basic sample type"
+simple.SdsTypeCode = SdsTypeCode.Object
+simple.Properties = [ time, state, measurement ]
 ```
 
 ##### [JavaScript](#tab/tabid-4)
@@ -523,15 +519,15 @@ The `Time` property is identified as the primary index by defining its SdsTypePr
 ##### [Python](#tab/tabid-5)
 
 ```python
-      # Time is the primary index
-      time = SdsTypeProperty()
-      time.Id = "Time"
-      time.Name = "Time"
-      time.IsKey = True
-      time.SdsType = SdsType()
-      time.SdsType.Id = "DateTime"
-      time.SdsType.Name = "DateTime"
-      time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
+# Time is the primary index
+time = SdsTypeProperty()
+time.Id = "Time"
+time.Name = "Time"
+time.IsKey = True
+time.SdsType = SdsType()
+time.SdsType.Id = "DateTime"
+time.SdsType.Name = "DateTime"
+time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 ```
 
 ##### [JavaScript](#tab/tabid-6)
@@ -563,18 +559,17 @@ Secondary indexes are defined at the stream level. To create a stream using the 
 ##### [Python](#tab/tabid-7)
 
 ```python
-      # Create the properties
+# Create the properties
 
-      measurementIndex = SdsStreamIndex()
-      measurementIndex.SdsTypePropertyId = measurement.Id
+measurementIndex = SdsStreamIndex()
+measurementIndex.SdsTypePropertyId = measurement.Id
 
-      stream = SdsStream()
-      stream.Id = str(uuid.uuid4())
-      stream.Name = "SimpleWithSecond"
-      stream.Description = "Simple with secondary index"
-      stream.TypeId = simple.Id
-      stream.Indexes = [ measurementIndex ]
-
+stream = SdsStream()
+stream.Id = str(uuid.uuid4())
+stream.Name = "SimpleWithSecond"
+stream.Description = "Simple with secondary index"
+stream.TypeId = simple.Id
+stream.Indexes = [ measurementIndex ]
 ```
 
 ##### [JavaScript](#tab/tabid-8)
@@ -602,34 +597,34 @@ Consider the following Python and JavaScript types:
 ##### [Python](#tab/tabid-9)
 
 ```python
-      class Simple(object):
-      # First-order index property
-      Time = property(getTime, setTime)
-      def getTime(self):
-        return self.__time
-      def setTime(self, time):
-        self.__time = time
+class Simple(object):
+# First-order index property
+Time = property(getTime, setTime)
+def getTime(self):
+  return self.__time
+def setTime(self, time):
+  self.__time = time
 
-      State = property(getState, setState)
-      def getState(self):
-        return self.__state
-      def setState(self, state):
-        self.__state = state
+State = property(getState, setState)
+def getState(self):
+  return self.__state
+def setState(self, state):
+  self.__state = state
 
-      Measurement = property(getValue, setValue)
-      def getValue(self):
-        return self.__measurement
-      def setValue(self, measurement):
-        self.__measurement = measurement
+Measurement = property(getValue, setValue)
+def getValue(self):
+  return self.__measurement
+def setValue(self, measurement):
+  self.__measurement = measurement
 
-      class DerivedCompoundIndex(Simple):
-      # Second-order index property
-      @property
-      def Recorded(self):
-        return self.__recorded
-      @Recorded.setter
-      def Recorded(self, recorded):
-        self.__recorded = recorded
+class DerivedCompoundIndex(Simple):
+# Second-order index property
+@property
+def Recorded(self):
+  return self.__recorded
+@Recorded.setter
+def Recorded(self, recorded):
+  self.__recorded = recorded
 ```
 
 ##### [JavaScript](#tab/tabid-10)
@@ -654,26 +649,25 @@ To turn the simple type shown in the example into a type supporting the `Derived
 ##### [Python](#tab/tabid-11)
 
 ```python
-      # We set the order for this property. The order of the first property defaulted to 0
-      recorded = SdsTypeProperty()
-      recorded.Id = "Recorded"
-      recorded.Name = "Recorded"
-      recorded.IsKey = True
-      recorded.Order = 1
-      recorded.SdsType = SdsType()
-      recorded.SdsType.Id = "DateTime"
-      recorded.SdsType.Name = "DateTime"
-      recorded.SdsType.SdsTypeCode = SdsTypeCode.DateTime
+# We set the order for this property. The order of the first property defaulted to 0
+recorded = SdsTypeProperty()
+recorded.Id = "Recorded"
+recorded.Name = "Recorded"
+recorded.IsKey = True
+recorded.Order = 1
+recorded.SdsType = SdsType()
+recorded.SdsType.Id = "DateTime"
+recorded.SdsType.Name = "DateTime"
+recorded.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
-      # Create the Derived SdsType
-      derived = SdsType()
-      derived.Id = str(uuid.uuid4())
-      derived.Name = "Compound"
-      derived.Description = "Derived compound index sample type"
-      derived.BaseType = simple
-      derived.SdsTypeCode = SdsTypeCode.Object
-      derived.Properties = [ recorded ]
-
+# Create the Derived SdsType
+derived = SdsType()
+derived.Id = str(uuid.uuid4())
+derived.Name = "Compound"
+derived.Description = "Derived compound index sample type"
+derived.BaseType = simple
+derived.SdsTypeCode = SdsTypeCode.Object
+derived.Properties = [ recorded ]
 ```
 
 ##### [JavaScript](#tab/tabid-12)
@@ -705,7 +699,7 @@ var derivedType = new SdsObjects.SdsTyp({
 
 ---
 
-Data in the stream will be ordered as follows:
+Data in the stream is ordered as follows:
 
 | **Time** | **Recorded** | **Measurement** |
 | -------- | ------------ | --------------- |
@@ -717,7 +711,7 @@ Data in the stream will be ordered as follows:
 | 02:00    | 02:00        | 4               |
 | 02:00    | 14:00        | 6               |
 
-If the `Order` parameters were reversed with `Recorded` set to 0 and `Time` set to 1, the results would be sorted as follows:
+If the `Order` parameters are reversed with `Recorded` set to 0 and `Time` set to 1, the results are sorted as follows:
 
 | **Time** | **Recorded** | **Measurement** |
 | -------- | ------------ | --------------- |

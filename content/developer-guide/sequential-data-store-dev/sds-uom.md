@@ -4,25 +4,25 @@ uid: unitsOfMeasure
 
 # Units of measure and quantities
 
-The Sequential Data Store (SDS) provides a collection of built-in units of measure (UOM). These units of measure can be [associated](#associating-a-unit-of-measure-with-a-type) with streams and types in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. See [Reading data](xref:sdsReadingData) for more information.
+The Sequential Data Store (SDS) provides a collection of built-in units of measure (UOM). These units of measure can be [associated](#associating-a-unit-of-measure-with-a-type) with streams and types to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS supports unit conversions when retrieving data. For more information, see [Reading data](xref:sdsReadingData).
 
-Since a unit of measure (meter, for example) defines the magnitude of a quantity (for example, length), SDS represents this by way of two objects: SdsUom and SdsUomQuantity.
+Because a UOM (meter, for example) defines the magnitude of a quantity (for example, length), SDS represents this by way of two objects: SdsUom and SdsUomQuantity.
 
 ## SdsUom
 
 SdsUom represents a single unit of measure, such as 'meter'.
 
-The following table shows the required and optional SdsUom fields.
+The following table lists the required and optional SdsUom fields.
 
 | Property | Type | Optionality | Details | Example |
 | --- | --- | --- | --- | --- |
-| Id | String | Required | Unique identifier for the unit of measure | meters per second |
-| Abbreviation | String | Optional | Abbreviation for the unit of measure | m/s |
-| Name | String | Optional | Full name for the unit of measure | Meters per second |
-| DisplayName | String | Optional | Friendly display name for the unit of measure | meters per second |
-| QuantityId | String | Required | The identifier associated with the quantity that this unit is a measure of | Velocity |
+| Id | String | Required | Unique identifier for the unit of measure. | meters per second |
+| Abbreviation | String | Optional | Abbreviation for the unit of measure. | m/s |
+| Name | String | Optional | Full name for the unit of measure. | Meters per second |
+| DisplayName | String | Optional | Friendly display name for the unit of measure. | meters per second |
+| QuantityId | String | Required | The identifier associated with the quantity that this unit is a measure of. | Velocity |
 | ConversionFactor | Double | Required | Used for unit conversions. When a value of this unit is multiplied by the ConversionFactor and then incremented by the ConversionOffset, the value in terms of the base unit of the corresponding quantity is returned. | 1.0 |
-| ConversionOffset | Double | Required | Used for unit conversions. See details for ConversionFactor | 0.0 |
+| ConversionOffset | Double | Required | Used for unit conversions. See details for ConversionFactor. | 0.0 |
 | CreatedDate | DateTime | Set by server | Timestamp in ISO 8601 extended format and UTC time standard when the SdsUom was created. Cannot be modified by users. | 0001-01-01T00:00:00Z |
 | ModifiedDate | DateTime | Set by server | Timestamp in ISO 8601 extended format and UTC time standard when the SdsUom was last modified. Cannot be modified by users. | 0001-01-01T00:00:00Z |
 
@@ -34,16 +34,16 @@ The following table shows the required and optional SdsUomQuantity fields.
 
 | Property | Type | Optionality | Details | Example |
 | --- | --- | --- | --- | --- |
-| Id | String | Required | Unique identifier for the quantity | Velocity |
-| Name | String | Optional | Full name for the quantity | Velocity |
-| BaseUom | SdsUom | Required | The base unit of measure for this quantity. All other Uom's measuring this quantity will have ConversionFactor's and ConversionOffsets relative to the BaseUom | SdsUom representing "meters per second" |
+| Id | String | Required | Unique identifier for the quantity. | Velocity |
+| Name | String | Optional | Full name for the quantity. | Velocity |
+| BaseUom | SdsUom | Required | The base unit of measure for this quantity. All other Uom's measuring this quantity will have ConversionFactor's and ConversionOffsets relative to the BaseUom. | SdsUom representing "meters per second" |
 | Dimensions | short[] | Optional | Reserved for internal use. Represents the seven base SI dimensions: Length, Mass, Time, Electric Current, Thermodynamic Temperature, Amount of Substance, and Luminous Density. | [1,0,-1,0,0,0,0] |
 | CreatedDate | DateTime | Set by server | Timestamp in ISO 8601 extended format and UTC time standard when the SdsUomQuantity was created. Cannot be modified by users. | 0001-01-01T00:00:00Z |
 | ModifiedDate | DateTime | Set by server | Timestamp in ISO 8601 extended format and UTC time standard when the SdsUomQuantity was last modified. Cannot be modified by users. | 0001-01-01T00:00:00Z |
 
 ## Supported system-defined unit quantities
 
-A list of the supported quantities and their base units of measure is below. Supported quantities are read-only.
+Supported quantities and their base units of measure are listed below. Supported quantities are read-only.
 
 | Quantity Id                                 | Base Uom Id               |
 | ------------------------------------------- | ------------------------- |
@@ -91,7 +91,7 @@ A list of the supported quantities and their base units of measure is below. Sup
 
 ## Supported system-defined units of measure
 
-A list of the supported units of measure is below. Supported units of measure are read-only.
+Supported units of measure are listed below. Supported units of measure are read-only.
 
 | Uom Id | Abbreviation | Quantity Id | Conversion Factor | Conversion Offset |
 | --- | --- | --- | --- | --- |
@@ -323,8 +323,8 @@ A list of the supported units of measure is below. Supported units of measure ar
 
 ## Associating a unit of measure with a type
 
-At [type](xref:sdsTypes) creation, SdsUom can be associated with an [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For types API, see [Types](xref:sds-types).
+At [type](xref:sdsTypes) creation, you can associate SdsUom with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information, see [Types](xref:sds-types).
 
 ## Associating a unit of measure with a stream
 
-At [stream](xref:sdsStreams) creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This enables the reuse of a type that may have default unit information associated with it already. For streams API, see [Streams](xref:sds-streams).
+At [stream](xref:sdsStreams) creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This override enables the reuse of a type that may have default unit information associated with it already. For more information, see [Streams](xref:sds-streams).

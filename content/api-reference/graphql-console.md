@@ -24,7 +24,7 @@ To use the GraphQL console:
 
    - Use the selections under the `options:` argument to retrieve a specified count of objects or to sort the data returned. If you select multiple sort fields, the order in which you select them determines the sort order.
 
-   - For fields that can be arrays, select **+ Add** below them to add spaces for additional values.
+   - For fields that can be arrays, when an item is selected or entered, a new blank item appears below it to allow for additional values.
 
    - For upsert or delete operations, use the selections under `input:` to identify the object to update or delete.
 

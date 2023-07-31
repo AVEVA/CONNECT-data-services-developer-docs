@@ -252,7 +252,7 @@ foreach (Simple1 value in simple1Values)
 //  4 / 1 / 2017 7:09:00 AM: Warning, 9
 ```
 
-A quick look at the SdsStreamViewMap shows that SDS determined that mapping from `Measurement` to `Value` resulted in renaming.
+A review of the SdsStreamViewMap shows that SDS determined that mapping from `Measurement` to `Value` resulted in renaming.
 
 SDS can also determine mapping of properties of the same name but different type. Note that the location of the `Measurement` property is also different, yet it is still mapped.
 

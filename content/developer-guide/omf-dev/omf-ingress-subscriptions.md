@@ -23,7 +23,3 @@ OMF messages that the subscription is processing are temporarily stored in the r
 An OMF Subscription retrieves OMF messages from a topic and writes them directly to a namespace in the Sequential Data Store. 
 
 Currently only OMF subscriptions are supported. The documentation uses OMF subscription and subscription interchangeably.
-
-## Subscriptions API
-
-- [Subscriptions](xref:omf-ingress-subscriptions)

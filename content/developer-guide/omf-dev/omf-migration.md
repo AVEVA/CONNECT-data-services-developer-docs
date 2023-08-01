@@ -32,7 +32,7 @@ You will need to manually migrate any existing topics and subscriptions to OMF c
 
 1. Resume sending OMF data through these clients.
 
-   - For AVEVA Adapters, start the adapter service. Data collection and data egress will resume. Refer to the adapter online documentation for details.
+   - For AVEVA adapters, start the adapter service. Data collection and data egress will resume. Refer to the adapter online documentation for details.
 
    - For custom OMF applications, consult the application provider for guidance.
 

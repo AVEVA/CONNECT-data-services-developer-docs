@@ -22,4 +22,4 @@ After you create a trend session that includes traces from assets, streams, or b
 
 The selected trend session data is downloaded as .csv files.
 
-**Note:** When downloading trend session data, the data is not retrieved from the trend session—rather, the data is retrieved from the assets and streams. This approach allows the downloaded data be be more accurate, as the the data does not include interpolated or calculated data included in the trend session.
+**Note:** When downloading trend session data, the data is not retrieved from the trend session—rather, the data is retrieved from the assets and streams. This approach allows the downloaded data to include the actual stream data points, as the the data does not include interpolated or calculated data included in the trend session.

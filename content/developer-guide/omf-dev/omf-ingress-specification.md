@@ -4,11 +4,11 @@ uid: omfIngressSpecification
 
 # Use Open Message Format with AVEVA Data Hub
 
-[The Open Message Format (OMF) specification](https://docs.osisoft.com/bundle/omf/) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by AVEVA Data Hub back-end system. 
+[The Open Message Format (OMF) specification](https://docs.aveva.com/bundle/omf) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by AVEVA Data Hub back-end system. 
 
 ## Headers
 
-For a description of each of the headers, see [OMF specification](https://docs.osisoft.com/bundle/omf/). Note that rather than using a ``producertoken``, data collection calls to AVEVA Data Hub require a bearer token to be attached in the header, as documented in the <xref:sdsQuickStart> documentation. The bearer token is used to authenticate the sender and to authorize the sender for use with a particular tenant. The client ID associated with this token is used to route messages to a particular OMF connection.
+For a description of each of the headers, see [OMF specification](https://docs.aveva.com/bundle/omf). Note that rather than using a ``producertoken``, data collection calls to AVEVA Data Hub require a bearer token to be attached in the header, as documented in the <xref:sdsQuickStart> documentation. The bearer token is used to authenticate the sender and to authorize the sender for use with a particular tenant. The client ID associated with this token is used to route messages to a particular OMF connection.
 
 The ``omfversion`` header must match the version of the OMF spec used to construct the message. Versions 1.0 and 1.1 of the spec are currently supported. 
 

@@ -9,13 +9,13 @@
 - name: Read data
   topicHref: sds-read-data.md
   href: read-data/toc.yml
-  - name: Indexes
+- name: Indexes
   href: sds-index.md
-  - name: Search in SDS
+- name: Search in SDS
   href: sds-search.md
-  - name: Filter expressions for SDS objects
+- name: Filter expressions for SDS objects
   href: sds-metadata-objects-filter-expressions.md
-  - name: Units of measure and quantities
+- name: Units of measure and quantities
   href: sds-uom.md
-  - name: Steam views
-    href: sds-stream-views-dev.md
+- name: Steam views
+  href: sds-stream-views-dev.md

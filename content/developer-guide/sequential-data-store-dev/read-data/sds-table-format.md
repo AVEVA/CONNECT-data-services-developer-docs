@@ -8,7 +8,7 @@ A table is a convenient structure for analytics and display. The REST APIs for r
 
 Table format can be applied to any read that returns multiple values and summaries.
 
-##### [Csharp](#tab/tabid-0)
+## [Csharp](#tab/tabid-0)
 
 ```csharp
 public enum State
@@ -27,7 +27,7 @@ public class Simple
 }
 ```
 
-##### [Python](#tab/tabid-1)
+## [Python](#tab/tabid-1)
 
 ```python
 class State(Enum):
@@ -55,7 +55,7 @@ class Simple(object):
       self.__measurement = measurement
 ```
 
-##### [JavaScript](#tab/tabid-2)
+## [JavaScript](#tab/tabid-2)
 
 ```javascript
 var State =
@@ -85,14 +85,14 @@ With values as follows:
 
 ---
 
-The following is a request to retrieve values using the window parameters:
+The following request retrieves values using the window parameters:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
 ?startIndex=2017-04-01T07:00:00Z&endIndex=2017-04-01T07:10:00Z
 ```
 
-The following response would be returned from the above code:
+The following response returns from the above code:
 
 ```json
 Content-Type: application/json
@@ -158,7 +158,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
 &form=table
 ```
 
-Response
+**Response**
 
 ```json
 Content-Type: application/json
@@ -242,7 +242,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data
 &form=tableh
 ```
 
-Response
+**Response**
 
 ```json
 Content-Type: application/json

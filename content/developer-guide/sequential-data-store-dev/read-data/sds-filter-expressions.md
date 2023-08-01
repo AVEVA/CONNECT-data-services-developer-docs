@@ -74,14 +74,14 @@ The following math functions are supported for use within a filter expression:
 
 | Function | Description |
 | --- | --- |
-| `add` | Addition |
-| `sub` | Subtraction |
-| `mul` | Multiplication |
-| `div` | Division |
-| `mod` | Modulo |
-| `round` | Rounds to the nearest numeric component without a decimal, with the midpoint rounded away from 0. For example, 0.5 rounds to 1; -0.5 rounds to -1) |
-| `floor` | Rounds down to the nearest numeric component without a decimal |
-| `ceiling` | Rounds up to the nearest numeric component without a decimal |
+| `add` | Addition. |
+| `sub` | Subtraction. |
+| `mul` | Multiplication. |
+| `div` | Division. |
+| `mod` | Modulo. |
+| `round` | Rounds to the nearest numeric component without a decimal, with the midpoint rounded away from 0. For example, 0.5 rounds to 1; -0.5 rounds to -1). |
+| `floor` | Rounds down to the nearest numeric component without a decimal. |
+| `ceiling` | Rounds up to the nearest numeric component without a decimal. |
 
 ### Examples of math functions
 
@@ -102,17 +102,17 @@ String operations are case sensitive. The character index in a string is zero-ba
 
 | Function | Description |
 | --- | --- |
-| `endswith` | Compare the character at the end of the input string |
-| `startswith` | Compare the character at the start of the input string |
-| `length` | Examines the string length |
-| `indexof` | Examines the character starting at a given index |
-| `substring` | Examine characters within another string at a specific location |
-| `contains` | Search for characters anywhere in another string |
-| `tolower` | Convert characters to lowercase |
-| `toupper` | Convert characters to uppercase |
-| `trim` | Remove whitespace from front and end of a string |
-| `concat` | Concatenate strings together |
-| `replace` | Replace one set of characters with another |
+| `endswith` | Compare the character at the end of the input string. |
+| `startswith` | Compare the character at the start of the input string. |
+| `length` | Examines the string length. |
+| `indexof` | Examines the character starting at a given index. |
+| `substring` | Examine characters within another string at a specific location. |
+| `contains` | Search for characters anywhere in another string. |
+| `tolower` | Convert characters to lowercase. |
+| `toupper` | Convert characters to uppercase. |
+| `trim` | Remove whitespace from front and end of a string. |
+| `concat` | Concatenate strings together. |
+| `replace` | Replace one set of characters with another. |
 
 ### Examples of string functions
 
@@ -120,17 +120,17 @@ The examples below assume that the SdsType event includes a field named `sValue`
 
 | Example | Result |
 | --- | --- |
-| `endswith(sValue, 'XYZ')` | True if `sValue` ends with the characters ‘XYZ’ |
-| `startswith(sValue, 'Val'` | True if `sValue` starts with the characters ‘Val’ |
-| `length(sValue) eq 11` | True if `sValue` is 11 characters |
-| `indexof(sValue, 'ab') eq 4` | True if the 5th and 6th characters are ‘ab’ |
-| `contains(sValue, 'ab')` | True if characters ‘ab’ are found anywhere in `sValue` |
-| `substring(sValue, 10) eq 'a b'` | True if ‘a b’ is found in `sValue` at index 10 |
-| `tolower(sValue) eq 'val5'` | Change `sValue` to lowercase and compare to ‘val5’ |
-| `toupper(sValue) eq 'ABC'` | Change `sValue` to uppercase and compare to ‘ABC’ |
-| `trim(sValue) eq 'vall22'` | Trim whitespace from front and end of `sValue` and compare to ‘val22’ |
-| `concat(sValue,'xyz') eq 'dataValue_7xyz'` | Add characters to `sValue` and compare to ‘dataValue_7xyz’ |
-| `replace(sValue,'L','D') eq 'Dog1'` | Replace any ‘L’ in `sValue` with ‘D’ and compare to ‘Dog1’ |
+| `endswith(sValue, 'XYZ')` | True if `sValue` ends with the characters 'XYZ'. |
+| `startswith(sValue, 'Val'` | True if `sValue` starts with the characters 'Val'. |
+| `length(sValue) eq 11` | True if `sValue` is 11 characters. |
+| `indexof(sValue, 'ab') eq 4` | True if the 5th and 6th characters are 'ab'. |
+| `contains(sValue, 'ab')` | True if characters 'ab' are found anywhere in `sValue`. |
+| `substring(sValue, 10) eq 'a b'` | True if 'a b' is found in `sValue` at index 10. |
+| `tolower(sValue) eq 'val5'` | Change `sValue` to lowercase and compare to 'val5'. |
+| `toupper(sValue) eq 'ABC'` | Change `sValue` to uppercase and compare to 'ABC'. |
+| `trim(sValue) eq 'vall22'` | Trim whitespace from front and end of `sValue` and compare to 'val22'. |
+| `concat(sValue,'xyz') eq 'dataValue_7xyz'` | Add characters to `sValue` and compare to 'dataValue_7xyz'. |
+| `replace(sValue,'L','D') eq 'Dog1'` | Replace any 'L' in `sValue` with 'D' and compare to 'Dog1'. |
 
 ## DateTime functions
 
@@ -138,12 +138,12 @@ The following DateTime functions are supported for use within a filter expressio
 
 | Function | Description                    |
 | -------- | ------------------------------ |
-| `year`   | Get year value from DateTime   |
-| `month`  | Get month value from DateTime  |
-| `day`    | Get day value from DateTime    |
-| `hour`   | Get hour value from DateTime   |
-| `minute` | Get minute value from DateTime |
-| `second` | Get second value from DateTime |
+| `year`   | Get year value from DateTime.   |
+| `month`  | Get month value from DateTime.  |
+| `day`    | Get day value from DateTime.    |
+| `hour`   | Get hour value from DateTime.   |
+| `minute` | Get minute value from DateTime. |
+| `second` | Get second value from DateTime. |
 
 ### Examples of DateTime functions
 
@@ -162,11 +162,11 @@ The following TimeSpan functions are supported for use within a filter expressio
 
 | Function  | Description                    |
 | --------- | ------------------------------ |
-| `years`   | Get year value from TimeSpan   |
-| `days`    | Get day value from TimeSpan    |
-| `hours`   | Get hour value from TimeSpan   |
-| `minutes` | Get minute value from TimeSpan |
-| `seconds` | Get second value from TimeSpan |
+| `years`   | Get year value from TimeSpan.   |
+| `days`    | Get day value from TimeSpan.    |
+| `hours`   | Get hour value from TimeSpan.   |
+| `minutes` | Get minute value from TimeSpan. |
+| `seconds` | Get second value from TimeSpan. |
 
 ### Examples of TimeSpan functions
 

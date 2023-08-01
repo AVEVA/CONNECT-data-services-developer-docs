@@ -44,7 +44,7 @@ Sequential Data Store (SDS) automatically maps properties from the source to the
 - The properties are of the same data type.
 - The properties are of the same name.
 
-When SDS is unable to determine how to map a property of the source type, the property is removed. If a property of the target type cannot map to the source property, SDS adds a property that is configured with a default value. To map a property that is beyond the ability of SDS to map on its own, you should define an [SdsStreamViewProperty](#sdsstreamviewproperty) and add it to the SdsStreamView’s properties collection. SDS largely supports mapping within the same data type.
+When SDS is unable to determine how to map a property of the source type, the property is removed. If a property of the target type cannot map to the source property, SDS adds a property that is configured with a default value. To map a property that is beyond the ability of SDS to map on its own, you should define an [SdsStreamViewProperty](#sdsstreamviewproperty) and add it to the SdsStreamView's properties collection. SDS largely supports mapping within the same data type.
 
 **Mapping compatibility chart**
 
@@ -60,7 +60,7 @@ When SDS is unable to determine how to map a property of the source type, the pr
 
 ### SdsStreamViewProperty
 
-The SdsStreamView properties collection provides detailed instructions for specifying the mapping of event properties. Each SdsStreamViewProperty in the properties collection defines the mapping of an event’s property. SdsStreamView properties are required only when property mapping is not straightforward. If you do not want a particular SdsType property in the source type to be mapped, there is no need to create a property for it.
+The SdsStreamView properties collection provides detailed instructions for specifying the mapping of event properties. Each SdsStreamViewProperty in the properties collection defines the mapping of an event's property. SdsStreamView properties are required only when property mapping is not straightforward. If you do not want a particular SdsType property in the source type to be mapped, there is no need to create a property for it.
 
 The following table shows the required and optional SdsStreamViewProperty fields.
 

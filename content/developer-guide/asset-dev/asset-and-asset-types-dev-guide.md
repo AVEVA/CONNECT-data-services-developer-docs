@@ -19,21 +19,21 @@ In this situation, an asset type can be used to create multiple similar assets. 
 
 ### Asset and asset type properties
 
-| Property      | Type              | Searchable? | Description                                                  | Asset Property? | Asset Type Property? |
-| ------------- | ----------------- | ----------- | ------------------------------------------------------------ | ----- | --------------- |
-| Id            | String            | Yes         | Asset or Asset Type identifier. If the  `Id` field is not specified, the system autogenerates a GUID. | Yes  | Yes            |
-| Name          | String            | Yes         | User-friendly name. If not specified, name will be set to the same value as the `Id` field. | Yes  | Yes            |
-| Description   | String            | Yes         | User-provided description                                   | Yes  | Yes            |
-| AssetTypeId   | String            | No          | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | Yes  | No            |
-| Metadata      | Metadata List     | Yes         | Asset and asset type metadata                               | Yes  | Yes            |
-| StreamReferences   | Stream Reference List  | No| Asset stream references                                             | Yes  | No            |
-| Status        | Status            | No          | Asset and asset type status configuration | Yes | Yes            |
-| Tags| String list | Yes        | Asset tag | Yes | No|
-| TypeReferences | Type Reference List | No        | Asset type type references                                     | No | Yes            |
-| CreatedDate| DateTime | No*        | System-generated timestamp of the asset or asset type's creation date | Yes | Yes |
-| LastModifiedDate | DateTime | No*        | System-generated timestamp of the asset or asset type's last modified date. Upon creation, it will be set to the same value as the `CreatedDate` field. | No | Yes            |
+| Property | Type | Searchable? | Description | Validation Requirements | Asset Property? | Asset Type Property? |
+|--|--|--|--|--|--|--|
+| Id | String | Yes | Asset or Asset Type identifier. If the `Id` field is not specified, the system autogenerates a GUID. |  &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Forward slash (`/`) and null characters (`\0`) are disallowed.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid whitespaces. | Yes | Yes |
+| Name | String | Yes | User-friendly name. If not specified, name will be set to the same value as the `Id` field. | &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid whitespaces. | Yes | Yes |
+| Description | String | Yes | User-provided description |  Must be able to parse as string. | Yes | Yes |
+| AssetTypeId | String | No | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Forward slash (`/`) and null characters (`\0`) are disallowed.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid whitespaces. | Yes | No |
+| Metadata | Metadata List | Yes | Asset and asset type metadata | &#x2022; Metadata Name and Id have `MaxStringLength = 100`<br><br>&#x2022; Metadata Name for an AssetType cannot be null or empty <br><br>&#x2022; Metadata Name can be null for an asset <br><br>&#x2022;Metadata Id can be null in a user request, but Id and Name cannot both be null. <br><br>&#x2022; SDSTypeCode for an AssetType's Metadata cannot be empty or zero | Yes | Yes |
+| StreamReferences | Stream Reference List | No | Asset stream references | &#x2022; Stream references Name and Id have `MaxStringLength = 100`<br><br>&#x2022; Cannot be null and must be an SDS reference stream <br><br>&#x2022; Stream reference Names and Id must be unique within asset | Yes | No |
+| Status | Status | No | Asset and asset type status configuration | &#x2022; Not null or empty with no leading or trailing space <br><br>&#x2022;Requires valid status type definition <br><br>&#x2022; Status mapping must be defined on status enum | Yes | Yes |
+| Tags | String list | Yes | Asset tag | &#x2022; Cannot be null or whitespace <br><br>&#x2022; Must be able to parse as type List\<string\> | Yes | No |
+| TypeReferences | Type Reference List | No | Asset type type references | &#x2022; Type references Name and Id have `MaxStringLength = 100` <br><br>&#x2022; Cannot be null <br><br>&#x2022; Type reference Names/Ids must be unique <br><br>&#x2022; Type reference Id and Name cannot both be null | No | Yes |
+| CreatedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's creation date | Must be able to parse as a DateTime object  | Yes | Yes |
+| LastModifiedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's last modified date. Upon creation, it will be set to the same value as the `CreatedDate` field. | Must be able to parse as a DateTime object  | No | Yes |
 
-\* The `CreatedDate` and `LastModifiedDate` are not searchable, but they can be queried via filter expressions.
+\*The `CreatedDate` and `LastModifiedDate` are not searchable, but they can be queried via filter expressions.
 
 ## Asset and asset type name and id
 The asset and asset type resource has name and Id properties. The Id property cannot be changed; it remains constant. All asset and asset type API calls depend on the Id. The purpose of the name is be a user-friendly way of displaying a given asset or asset type. This can be changed freely without effecting data egress from assets.

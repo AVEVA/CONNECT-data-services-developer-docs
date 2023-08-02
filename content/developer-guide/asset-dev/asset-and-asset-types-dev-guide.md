@@ -17,7 +17,7 @@ In many instances, you will have multiple assets of the same type.
 
 In this situation, an asset type can be used to create multiple similar assets. A change to the asset type is reflected in all assets that are derived from the asset type.
 
-### Asset and asset type properties
+## Asset and asset type properties
 
 | Property | Type | Searchable? | Description | Validation Requirements | Asset Property? | Asset Type Property? |
 |--|--|--|--|--|--|--|
@@ -25,15 +25,18 @@ In this situation, an asset type can be used to create multiple similar assets. 
 | Name | String | Yes | User-friendly name. If not specified, name will be set to the same value as the `Id` field. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid white space. | Yes | Yes |
 | Description | String | Yes | User-provided description. | Must be able to parse as string. | Yes | Yes |
 | AssetTypeId | String | No | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Forward slash (`/`) and null characters (`\0`) are disallowed.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid white space. | Yes | No |
-| Metadata | Metadata List | Yes | Asset and asset type metadata. | &#x2022; Metadata `Name` and `Id` have a maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Metadata `Name` for an AssetType cannot be null or empty. <br><br>&#x2022; Metadata `Name` can be null for an asset.<br><br>&#x2022; Metadata `Id` can be null in a user request, but `Name` and `Id` cannot both be null. <br><br>&#x2022; SDSTypeCode for an AssetType's Metadata cannot be empty or zero. | Yes | Yes |
+| Metadata<sup>1</sup> | Metadata List | Yes | Asset and asset type metadata. | &#x2022; Metadata `Name` and `Id` have a maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Metadata `Name` for an AssetType cannot be null or empty. <br><br>&#x2022; Metadata `Name` can be null for an asset.<br><br>&#x2022; Metadata `Id` can be null in a user request, but `Name` and `Id` cannot both be null. <br><br>&#x2022; SDSTypeCode for an AssetType's Metadata cannot be empty or zero. | Yes | Yes |
 | StreamReferences | Stream Reference List | No | Asset stream references. | &#x2022; Stream references `Name` and `Id` have a maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot be null and must be an SDS reference stream.<br><br>&#x2022; Stream reference `Name` and `Id` must be unique within asset.<br><br>&#x2022;Stream reference `Name` and `Id` cannot both be null. | Yes | No |
 | Status | Status | No | Asset and asset type status configuration. | &#x2022; Not null or empty with no leading or trailing space. <br><br>&#x2022; Requires valid status type definition. <br><br>&#x2022; Status mapping must be defined on status enum. | Yes | Yes |
 | Tags | String list | Yes | Asset tag. | &#x2022; Cannot be null or white space.<br><br>&#x2022; Must be able to parse as type List\<string\>. | Yes | No |
 | TypeReferences | Type Reference List. | No | Asset type type references. | &#x2022; Type references `Name` and `Id` have a maximum length of 100 characters: `MaxStringLength = 100`. <br><br>&#x2022; Cannot be null. <br><br>&#x2022; Type reference `Name` and `Id` must be unique. <br><br>&#x2022; Type reference `Name` and `Id` cannot both be null. | No | Yes |
-| CreatedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's creation date. | Must be able to parse as a DateTime object. | Yes | Yes |
-| LastModifiedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's last modified date. Upon creation, it will be set to the same value as the `CreatedDate` field. | Must be able to parse as a DateTime object. | No | Yes |
+| CreatedDate | DateTime | No<sup>2</sup> | System-generated timestamp of the asset or asset type's creation date. | Must be able to parse as a DateTime object. | Yes | Yes |
+| LastModifiedDate | DateTime | No<sup>2</sup> | System-generated timestamp of the asset or asset type's last modified date. Upon creation, it will be set to the same value as the `CreatedDate` field. | Must be able to parse as a DateTime object. | No | Yes |
 
-\*The `CreatedDate` and `LastModifiedDate` are not searchable, but they can be queried via filter expressions.
+<sup>1</sup> Required for Asset metadata, but optional for AssetType metadata.
+
+<sup>2</sup> The `CreatedDate` and `LastModifiedDate` are not searchable, but they can be queried via filter expressions.
+
 
 ## Asset and asset type name and id
 The asset and asset type resource has name and Id properties. The Id property cannot be changed; it remains constant. All asset and asset type API calls depend on the Id. The purpose of the name is be a user-friendly way of displaying a given asset or asset type. This can be changed freely without effecting data egress from assets.
@@ -44,16 +47,18 @@ An asset or asset type metadata is static information associated with a given as
 
 | Property | Type | Required? | Description | Validation Requirements |  
 |--|--|--|--|--|
-| Id | String | Required* | Metadata value identifier. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. <br><br>&#x2022; If not null, must be unique within an asset or asset type. |
+| Id | String | Required<sup>1</sup> | Metadata value identifier. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. <br><br>&#x2022; If not null, must be unique within an asset or asset type. |
 | Name | String | Optional | User-friendly name for the metadata value. If not null, must be unique within an asset or asset type. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space.<br><br>&#x2022; If not null, must be unique within an asset or asset type. |
 | Description | String | Optional | User-provided description. | Must be able to parse as a string. |
-| SdsTypeCode | Int | Optional | This integer corresponds to the SdsTypeCode. Asset metadata support the following integer or string values: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String"). | &#x2022; Must be able to convert between integer and string values for: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String")<br><br>&#x2022; SdsTypeCode for an AssetType's Metadata cannot be empty or zero. |
+| SdsTypeCode | Int | Required/Optional<sup>2</sup> | This integer corresponds to the SdsTypeCode. Asset metadata support the following integer or string values: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String"). | &#x2022; Must be able to convert between integer and string values for: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String")<br><br>&#x2022; SdsTypeCode for an AssetType's Metadata cannot be empty or zero. |
 | Uom | String | Optional | Asset metadata unit of measure (UOM). Select from the list of supported UOM types. | Cannot contain invalid white space. |
 | Value | String | Optional | String representation of the metadata. | Must be able to parse as a string. |
 
-\* The `Id` property is not required if the `Name` property matches a `Name` on the asset type metadata. In this case, the `Id` of the metadata on the asset is inherited from the metadata `Id` of the asset type. This also applies when an asset is updated.
+<sup>1</sup> The `Id` property is not required if the `Name` property matches a `Name` on the asset type metadata. In this case, the `Id` of the metadata on the asset is inherited from the metadata `Id` of the asset type. This also applies when an asset is updated.
 
-\* If the `Id` property is not specified, the `Name` property must be specified. In this case, a random GUID will be assigned as the `Id` on the metadata.
+<sup>1</sup> If the `Id` property is not specified, the `Name` property must be specified. In this case, a random GUID will be assigned as the `Id` on the metadata.
+
+<sup>2</sup> Required for Asset metadata, but optional for AssetType metadata.
 
 ## Asset stream reference properties
 

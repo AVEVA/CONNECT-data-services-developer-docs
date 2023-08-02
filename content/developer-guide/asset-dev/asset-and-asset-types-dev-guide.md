@@ -21,17 +21,17 @@ In this situation, an asset type can be used to create multiple similar assets. 
 
 | Property | Type | Searchable? | Description | Validation Requirements | Asset Property? | Asset Type Property? |
 |--|--|--|--|--|--|--|
-| Id | String | Yes | Asset or Asset Type identifier. If the `Id` field is not specified, the system autogenerates a GUID. | &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Forward slash (`/`) and null characters (`\0`) are disallowed.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid whitespaces. | Yes | Yes |
-| Name | String | Yes | User-friendly name. If not specified, name will be set to the same value as the `Id` field. | &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid whitespaces. | Yes | Yes |
-| Description | String | Yes | User-provided description | Must be able to parse as string. | Yes | Yes |
-| AssetTypeId | String | No | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Forward slash (`/`) and null characters (`\0`) are disallowed.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid whitespaces. | Yes | No |
-| Metadata | Metadata List | Yes | Asset and asset type metadata | &#x2022; Metadata Name and Id have `MaxStringLength = 100`<br><br>&#x2022; Metadata Name for an AssetType cannot be null or empty <br><br>&#x2022; Metadata Name can be null for an asset <br><br>&#x2022;Metadata Id can be null in a user request, but Id and Name cannot both be null. <br><br>&#x2022; SDSTypeCode for an AssetType's Metadata cannot be empty or zero | Yes | Yes |
-| StreamReferences | Stream Reference List | No | Asset stream references | &#x2022; Stream references Name and Id have `MaxStringLength = 100`<br><br>&#x2022; Cannot be null and must be an SDS reference stream <br><br>&#x2022; Stream reference Names and Id must be unique within asset | Yes | No |
-| Status | Status | No | Asset and asset type status configuration | &#x2022; Not null or empty with no leading or trailing space <br><br>&#x2022;Requires valid status type definition <br><br>&#x2022; Status mapping must be defined on status enum | Yes | Yes |
-| Tags | String list | Yes | Asset tag | &#x2022; Cannot be null or whitespace <br><br>&#x2022; Must be able to parse as type List\<string\> | Yes | No |
-| TypeReferences | Type Reference List | No | Asset type type references | &#x2022; Type references Name and Id have `MaxStringLength = 100` <br><br>&#x2022; Cannot be null <br><br>&#x2022; Type reference Names/Ids must be unique <br><br>&#x2022; Type reference Id and Name cannot both be null | No | Yes |
-| CreatedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's creation date | Must be able to parse as a DateTime object | Yes | Yes |
-| LastModifiedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's last modified date. Upon creation, it will be set to the same value as the `CreatedDate` field. | Must be able to parse as a DateTime object | No | Yes |
+| Id | String | Yes | Asset or Asset Type identifier. If the `Id` field is not specified, the system autogenerates a GUID. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Forward slash (`/`) and null characters (`\0`) are disallowed.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid white space. | Yes | Yes |
+| Name | String | Yes | User-friendly name. If not specified, name will be set to the same value as the `Id` field. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid white space. | Yes | Yes |
+| Description | String | Yes | User-provided description. | Must be able to parse as string. | Yes | Yes |
+| AssetTypeId | String | No | Identifier for the asset type that this asset is derived from. To get the merged view of the asset, get the resolved asset through the /Assets/{assetId}/Resolved route. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Forward slash (`/`) and null characters (`\0`) are disallowed.<br><br>&#x2022; Must be able to parse as string.<br><br>&#x2022; Cannot contain invalid white space. | Yes | No |
+| Metadata | Metadata List | Yes | Asset and asset type metadata. | &#x2022; Metadata `Name` and `Id` have a maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Metadata `Name` for an AssetType cannot be null or empty. <br><br>&#x2022; Metadata `Name` can be null for an asset.<br><br>&#x2022; Metadata `Id` can be null in a user request, but `Name` and `Id` cannot both be null. <br><br>&#x2022; SDSTypeCode for an AssetType's Metadata cannot be empty or zero. | Yes | Yes |
+| StreamReferences | Stream Reference List | No | Asset stream references. | &#x2022; Stream references `Name` and `Id` have a maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot be null and must be an SDS reference stream.<br><br>&#x2022; Stream reference `Name` and `Id` must be unique within asset. | Yes | No |
+| Status | Status | No | Asset and asset type status configuration. | &#x2022; Not null or empty with no leading or trailing space. <br><br>&#x2022; Requires valid status type definition. <br><br>&#x2022; Status mapping must be defined on status enum. | Yes | Yes |
+| Tags | String list | Yes | Asset tag. | &#x2022; Cannot be null or white space.<br><br>&#x2022; Must be able to parse as type List\<string\>. | Yes | No |
+| TypeReferences | Type Reference List. | No | Asset type type references. | &#x2022; Type references `Name` and `Id` have a maximum length of 100 characters: `MaxStringLength = 100`. <br><br>&#x2022; Cannot be null. <br><br>&#x2022; Type reference `Name` and `Id` must be unique. <br><br>&#x2022; Type reference `Name` and `Id` cannot both be null. | No | Yes |
+| CreatedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's creation date. | Must be able to parse as a DateTime object. | Yes | Yes |
+| LastModifiedDate | DateTime | No\* | System-generated timestamp of the asset or asset type's last modified date. Upon creation, it will be set to the same value as the `CreatedDate` field. | Must be able to parse as a DateTime object. | No | Yes |
 
 \*The `CreatedDate` and `LastModifiedDate` are not searchable, but they can be queried via filter expressions.
 
@@ -44,11 +44,11 @@ An asset or asset type metadata is static information associated with a given as
 
 | Property | Type | Required? | Description | Validation Requirements |  
 |--|--|--|--|--|
-| Id | String | Required* | Metadata value identifier. | &#x2022;`MaxStringLength = 100`<br><br>&#x2022; Cannot contain invalid whitespace <br><br>&#x2022; If not null, must be unique within an asset or asset type. |
-| Name | String | Optional | User-friendly name for the metadata value. If not null, must be unique within an asset or asset type. | &#x2022;`MaxStringLength = 100`<br><br>&#x2022; Cannot contain invalid whitespace |
+| Id | String | Required* | Metadata value identifier. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. <br><br>&#x2022; If not null, must be unique within an asset or asset type. |
+| Name | String | Optional | User-friendly name for the metadata value. If not null, must be unique within an asset or asset type. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. |
 | Description | String | Optional | User-provided description. | Must be able to parse as a string |
 | SdsTypeCode | Int | Optional | This integer corresponds to the SdsTypeCode. Asset metadata support the following integer or string values: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String"). | &#x2022; Must be able to convert between integer and string values for: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String")<br><br>&#x2022; SdsTypeCode for an AssetType's Metadata cannot be empty or zero. |
-| Uom | String | Optional | Asset metadata unit of measure (UOM). Select from the list of supported UOM types. | Cannot contain invalid whitespace |
+| Uom | String | Optional | Asset metadata unit of measure (UOM). Select from the list of supported UOM types. | Cannot contain invalid white space. |
 | Value | String | Optional | String representation of the metadata. | Must be able to parse as a string |
 
 \* The `Id` property is not required if the `Name` property matches a `Name` on the asset type metadata. In this case, the `Id` of the metadata on the asset is inherited from the metadata `Id` of the asset type. This also applies when an asset is updated.
@@ -61,10 +61,10 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 | Property | Type | Required? | Description | Validation Requirements |
 |--|--|--|--|--|
-| Id | String | Required* | Identifier for the stream reference object.  The identifier must be unique within the asset. | &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Cannot contain invalid whitespaces.<br><br>&#x2022;Stream reference Id and Name cannot both be null or empty strings. |
-| Name | String | Optional | User-friendly name for the stream reference object. If not null, must be unique within an asset. | &#x2022; Each property of type `String` has a validation requirement of a maximum of 100 characters: `MaxStringLength = 100`<br><br>&#x2022; Cannot contain invalid whitespaces.<br><br>&#x2022; If not null, must be unique within an asset or asset type<br><br>&#x2022;Stream reference Id and Name cannot both be null or empty strings. |
-| Description | String | Optional | Description text. | Must be able to parse as a string |
-| StreamId | String | Required | The SDS stream `Id` of this stream reference. | &#x2022; Cannot be null<br><br>&#x2022; Cannot contain invalid whitespace |
+| Id | String | Required* | Identifier for the stream reference object.  The identifier must be unique within the asset. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space.<br><br>&#x2022;Stream reference `Name` and `Id` cannot both be null or empty strings. |
+| Name | String | Optional | User-friendly name for the stream reference object. If not null, must be unique within an asset. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space.<br><br>&#x2022; If not null, must be unique within an asset or asset type.<br><br>&#x2022; Stream reference `Name` and `Id` cannot both be null or empty strings. |
+| Description | String | Optional | Description text. | Must be able to parse as a string. |
+| StreamId | String | Required | The SDS stream `Id` of this stream reference. | &#x2022; Cannot be null.<br><br>&#x2022; Cannot contain invalid white space. |
 
 \* The`Id` property is not required if the `Name` property matches a `Name` on the asset type type reference. In this case, the `Id` of the stream reference on the asset is inherited from the type reference `Id` of the asset type. This also applies when an asset is updated.
 
@@ -76,10 +76,10 @@ An asset type type reference represents dynamic stream data associated with an a
 
 | Property | Type | Required? | Description | Validation Requirements |  |
 |--|--|--|--|--|--|
-| StreamReferenceId | String | Required | The `Id` for this type reference. If an asset is derived from this asset type, this `Id` must be referenced in the asset reference type object. This `Id` must be unique within the asset type. | &#x2022; `MaxStringLength = 100`<br><br>&#x2022; Cannot contain invalid whitespace <br><br>&#x2022; Stream reference Id and Name cannot both be null or empty strings. |
-| StreamReferenceName | String | Required | The user friendly name for this type reference. If not null, must be unique within an asset type. | &#x2022;`MaxStringLength = 100`<br><br>&#x2022; Cannot contain invalid whitespace  <br><br>&#x2022; If not null, must be unique within an asset or asset type <br><br>&#x2022; Type reference 'Id' and 'Name' cannot both be null or empty strings. |
-| Description | String | Optional | Description text | Must be able to parse as a string |
-| TypeId | String | Required | This string must be an SDS stream type `Id` in the referenced SDS stream. | &#x2022; Cannot be null <br><br>&#x2022; Cannot contain invalid whitespace |
+| StreamReferenceId | String | Required | The `Id` for this type reference. If an asset is derived from this asset type, this `Id` must be referenced in the asset reference type object. This `Id` must be unique within the asset type. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. <br><br>&#x2022; Stream reference `Name` and `Id` cannot both be null or empty strings. |
+| StreamReferenceName | String | Required | The user friendly name for this type reference. If not null, must be unique within an asset type. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space.  <br><br>&#x2022; If not null, must be unique within an asset or asset type. <br><br>&#x2022; Type reference `Name` and `Id` cannot both be null or empty strings. |
+| Description | String | Optional | Description text. | Must be able to parse as a string. |
+| TypeId | String | Required | This string must be an SDS stream type `Id` in the referenced SDS stream. | &#x2022; Cannot be null. <br><br>&#x2022; Cannot contain invalid white space. |
 
 ## Asset Type Concordance
 

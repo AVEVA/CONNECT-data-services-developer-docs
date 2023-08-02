@@ -6,7 +6,7 @@ uid: LeastPrivilege
 
 When creating new users or client-credentials clients, configure them using the principle of least privilege, which is that a process, user, or program should be able to access only the information and resources that are necessary for its legitimate purpose. Assign users and clients the lowest privileged role necessary to access resources.
 
-Ensure that clients which are not in use are either deleted or disabled by setting the **Enabled** property to false. This can be done through the portal (see <xref:ClientMaintenance>) or through the appropriate API (see <xref:identityClientCredentialClient>, <xref:identityHybridClient>, or <xref:identity-authorization-code-clients>).
+Ensure that clients that are not in use are either deleted or disabled by setting the **Enabled** property to false. This can be done through the portal (see <xref:ClientMaintenance>) or through the appropriate API (see <xref:identityClientCredentialClient>, <xref:identityHybridClient>, or <xref:identity-authorization-code-clients>).
 
 To limit the potential consequences of client credential theft, do not assign client credentials clients to the Administrator role. Any actions that require Administrator privileges should be done through the portal, when possible. 
 

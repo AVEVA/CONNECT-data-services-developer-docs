@@ -16,7 +16,7 @@ To add an authorization code client:
 
 1. In the left pane, select **Security** > **Clients**.
 
-1. In the **Client Type** dropdown list, select **Authorization Code**.
+1. In the **Client Type** dropdown list, select **Authorization Code Clients**.
 
 1. In the toolbar, select **Add Client**.
 

@@ -21,12 +21,19 @@ OMF message types fall into three categories: *type*, *container*, and *data*, w
 A *type* message is interpreted by AVEVA Data Hub as an SdsType in the Sequential Data Store. Because SdsTypes are immutable, update operations are not supported. The keywords in the Type definition are interpreted as follows:
 
 - ``id``: Corresponds to the SdsType Id field. It must conform to the rules defined for a typeId specified here: [Types](xref:sdsTypes)
-  **Note:** For this field, both forward slashes (`/`) and back slashes (`\`) are supported. Forward slashes are automatically replaced with periods (`.`) when it receives a message.
+
+   **Note:** For this field, both forward slashes (`/`) and back slashes (`\`) are supported. Forward slashes are automatically replaced with periods (`.`) when it receives a message.
+
 - ``classification``: Only the ``dynamic`` classification is currently supported.
+
 - ``version``: Versioning of SdsTypes is not supported.
+
 - ``name``: Corresponds to the SdsType Name field. This is the friendly name for the type.
+
 - ``description``: Corresponds to the SdsType Description field. 
+
 - ``tags``: Currently unsupported.
+
 - ``metadata``: Currently unsupported.
 
 The ``isindex`` keyword corresponds to the ``isKey`` attribute of an SdsTypeProperty. SdsTypes support clustered indexes which can be specified with multiple properties marked with the ``isindex`` keyword with a value of ``true``. For compound indexes, the index property order within the message corresponds to the ``Order`` field of an SdsTypeProperty. The ``isname`` keyword is not supported.
@@ -38,7 +45,7 @@ Link types are not supported in Sequential Data Store and will be ignored.
 ### Property types and formats
 
 OMF supports setting the ``format`` keyword to specify how a particular JSON type should be interpreted. The following is a mapping for the Sequential Data Store supported types (see [types](xref:sdsTypes)):
-
+<br>&nbsp;
 Type     | Format     | SdsTypeCode
 -------- | ---------- | -----------
 array    |            | IEnumerable

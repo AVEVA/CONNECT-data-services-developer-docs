@@ -74,8 +74,8 @@ An asset stream reference represents dynamic stream data associated with an asse
 
 An asset type type reference represents dynamic stream data associated with an asset. The references must either be an SDS stream or an SDS stream view. Asset-centric data routes provide direct access to dynamic data for a given asset. There are no limitations on the number of references an asset may contain. However, an asset cannot contain multiple references to the same SDS stream. An asset reference does not stand alone. It must be specified within an asset object; therefore, asset references do not have direct API routes. 
 
-| Property | Type | Required? | Description | Validation Requirements |  |
-|--|--|--|--|--|--|
+| Property | Type | Required? | Description | Validation Requirements |
+|--|--|--|--|--|
 | StreamReferenceId | String | Required | The `Id` for this type reference. If an asset is derived from this asset type, this `Id` must be referenced in the asset reference type object. This `Id` must be unique within the asset type. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. <br><br>&#x2022; Stream reference `Name` and `Id` cannot both be null or empty strings. |
 | StreamReferenceName | String | Required | The user friendly name for this type reference. If not null, must be unique within an asset type. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space.  <br><br>&#x2022; If not null, must be unique within an asset or asset type. <br><br>&#x2022; Type reference `Name` and `Id` cannot both be null or empty strings. |
 | Description | String | Optional | Description text. | Must be able to parse as a string. |

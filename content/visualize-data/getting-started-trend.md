@@ -16,13 +16,13 @@ To create a trending session:
 
 1. Add one or more traces to the trend session.
 
-    To search for a trace, enter the asset name, stream name, or description in the **Enter search query** field. For more information on other ways to query, see <xref:search>.
+    To search for a trace, enter the asset name, stream name, or description in the **Enter search query** field. For more information on other ways to query, see <xref:search>. When adding asset traces (but not stream traces), the search field includes [autocomplete](xref:search#autocomplete) functionality.
 
     After you find the traces that you want, select the **Add** ![add](../_icons/branded/plus.svg) icon to add them to the Trend.
 
     When you finish adding traces, select the **Close** ![close](../_icons/default/window-close.svg) icon in the `Add Traces` pane to hide the pane and maximize the available area to display the trend session.
 
-1. From the **Change Y-axis Mode** ![Trend views menu](../_icons/branded/layers.svg) menu, select a view:
+1. From the **Change Y-axis Mode** ![Change Y-axis mode, with stacked mode selected](images/trend-views-icon.png)  menu, select a view:
 
     | Trend View | Icon | Description |
     |--|--|--|

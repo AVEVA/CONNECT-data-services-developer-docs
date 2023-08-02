@@ -46,10 +46,10 @@ An asset or asset type metadata is static information associated with a given as
 |--|--|--|--|--|
 | Id | String | Required* | Metadata value identifier. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. <br><br>&#x2022; If not null, must be unique within an asset or asset type. |
 | Name | String | Optional | User-friendly name for the metadata value. If not null, must be unique within an asset or asset type. | &#x2022; Maximum length of 100 characters: `MaxStringLength = 100`.<br><br>&#x2022; Cannot contain invalid white space. |
-| Description | String | Optional | User-provided description. | Must be able to parse as a string |
+| Description | String | Optional | User-provided description. | Must be able to parse as a string. |
 | SdsTypeCode | Int | Optional | This integer corresponds to the SdsTypeCode. Asset metadata support the following integer or string values: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String"). | &#x2022; Must be able to convert between integer and string values for: 11 ("Int64"), 14 ("Double"), 16 ("DateTime"), and 18 ("String")<br><br>&#x2022; SdsTypeCode for an AssetType's Metadata cannot be empty or zero. |
 | Uom | String | Optional | Asset metadata unit of measure (UOM). Select from the list of supported UOM types. | Cannot contain invalid white space. |
-| Value | String | Optional | String representation of the metadata. | Must be able to parse as a string |
+| Value | String | Optional | String representation of the metadata. | Must be able to parse as a string. |
 
 \* The `Id` property is not required if the `Name` property matches a `Name` on the asset type metadata. In this case, the `Id` of the metadata on the asset is inherited from the metadata `Id` of the asset type. This also applies when an asset is updated.
 

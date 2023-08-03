@@ -28,7 +28,7 @@ To add a client-credentials client:
 
    The default, 3600 seconds (one hour), is the maximum length of time. The minimum value is 60 seconds.
 
-1. In the **Tenant Roles** and **Communithy Roles** tabs, select the roles that are appropriate for the client.  
+1. In the **Tenant Roles** and **Community Roles** tabs, select the roles that are appropriate for the client.  
 
    By default, the client has the `Tenant Member` role, which cannot be removed. Roles can be modified after the client is created.
 

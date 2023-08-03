@@ -8,7 +8,7 @@ When creating new users or client-credentials clients, configure them using the 
 
 Ensure that clients that are not in use are either deleted or disabled by setting the **Enabled** property to false. This can be done through the portal (see <xref:ClientMaintenance>) or through the appropriate API (see <xref:identityClientCredentialClient>, <xref:identityHybridClient>, or <xref:identity-authorization-code-clients>).
 
-To limit the potential consequences of client credential theft, do not assign client credentials clients to the Administrator role. Any actions that require Administrator privileges should be done through the portal, when possible. 
+To limit the potential consequences of client credential theft, do not assign client-credentials clients to the administrator role. Any actions that require administrator privileges should be done through the portal, when possible. 
 
 ## One client per application
 

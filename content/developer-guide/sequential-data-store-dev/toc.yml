@@ -15,7 +15,3 @@
   href: sds-search.md
 - name: Filter expressions for SDS objects
   href: sds-metadata-objects-filter-expressions.md
-- name: Units of measure and quantities
-  href: sds-uom.md
-- name: Steam views
-  href: sds-stream-views-dev.md

@@ -14,7 +14,7 @@ You can define simple or complex [indexes](xref:sdsIndexes) to arrange and relat
 
 ## Samples
 
-The best way to get started with SDS is to run one or more of the code samples. Code samples available in different programming languages illustrate how to interact with SDS. The code samples are available on GitHub in the [Sample library](https://github.com/osisoft/OSI-Samples). Obtain SDS REST API access keys from the [AVEVA Data Hub portal](https://datahub.connect.aveva.com) before running the sample code.
+The best way to get started with SDS is to run one or more of the code samples. Code samples available in different programming languages provide examples of how to interact with SDS. The code samples are available on GitHub in the [Sample library](https://github.com/osisoft/OSI-Samples). Obtain SDS REST API access keys from the [AVEVA Data Hub portal](https://datahub.connect.aveva.com) before running the sample code.
 
 Each sample includes a README file that describes the steps required to run the sample and a brief description of the sample's functionality. Read the README file to understand how the sample works.
 

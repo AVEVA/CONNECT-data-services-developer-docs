@@ -10,11 +10,11 @@ You can define simple atomic types, such as integers, floats, strings, arrays, a
 
 A type that is used to define a stream must have a key. A _key_ is a [Property, or a combination of Properties](#sdstypeproperty) that constitutes an ordered, unique identity. If the key is ordered so it functions as an index, it is known as the _primary index_. While a timestamp (`DateTime`) is a very common type of index, any type that can be ordered is permitted. Secondary and other indexes are defined in the stream. For more information, see [Indexes](xref:sdsIndexes).
 
-Consider how the events will be represented in a stream as the type defines each event in a stream. An event is a single unit whose properties have values that relate to the index; that is, each property of a type event is related to the event's index. Each event is a single unit.
+Consider how the events will be represented in a stream, as the type defines each event in a stream. An event is a single unit with properties that have values related to the index; that is, each property of a type event is related to the event's index. Each event is a single unit.
 
-A type is referenced by its identifier or `Id` field. Type identifiers must be unique within a namespace.
+Reference a type by its identifier or `Id` field. Type identifiers must be unique within a namespace.
 
-A type can also refer to other types by using their identifiers. This enables type re-usability. Nested types and base types are automatically created as separate types. For more information, see [Type Reusability](#type-reusability).
+A type can also refer to other types by using their identifiers. This referencing enables type re-usability. Nested types and base types are automatically created as separate types. For more information, see [Type Reusability](#type-reusability).
 
 Types define how events are read and associated within a collection of streams. The read characteristics when attempting to read non-existent indexes—indexes that fall between, before, or after existing indexes—are determined by the interpolation and extrapolation settings of the type. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
@@ -32,7 +32,7 @@ The table below lists required and optional fields in a type. Fields that are no
 
 | Property Name | Data Type | Required | Searchable | Details |
 | --- | --- | --- | --- | --- |
-| Id | String | Yes | Yes | Identifier for referencing the type. |
+| Id | String | Yes | Yes | Identifier for referencing the type. For a list of identifier requirements, see [Rules for the type identifier](#rules-for-the-type-identifier-sdstypeid). |
 | Name | String | No | Yes | Friendly name. |
 | Description | String | No | Yes | Description text. |
 | SdsTypeCode | SdsTypeCode | Yes | No | Numeric code identifying the base SdsType. |
@@ -276,9 +276,9 @@ The `SdsTypeBuilder` also supports derived types. Note that you need not add the
 
 ## SdsTypes outside of .NET framework
 
-You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you'll see how types are built and defined in [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
+You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you can see how types are built and defined in [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
 
-### SdsTypeCode, SdsTypeProperty and SdsType
+### SdsTypeCode, SdsTypeProperty, and SdsType
 
 #### [Python](#tab/tabid-1)
 
@@ -720,14 +720,13 @@ The new type may also include the full type definition of the reference type ins
 }
 ```
 
-If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist, a new type will be created automatically by SDS. Further type creations can reference them as shown above. Note that when trying to get types back from SDS, the results will also include types that were automatically created by SDS.
+If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist, a new type is created automatically by SDS. Further type creations can reference them as shown above. Note that when trying to get types back from SDS, the results also include types that were automatically created by SDS.
 
-Base types and properties of type `object`, `enum`, or user-defined collections such as `array`, `list` and `dictionary`, will be treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of a particular type is to be created, the type should contain at least one property with a valid index type as described in the [Indexes](xref:sdsIndexes) section. The index property may also be in the base type as shown in the example above.
+Base types and properties of type `object`, `enum`, or user-defined collections such as `array`, `list` and `dictionary`, are treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of a particular type is to be created, the type should contain at least one property with a valid index type as described in the [Indexes](xref:sdsIndexes) section. The index property may also be in the base type as shown in the example above.
 
 You can do this using any programming languages. Here's an example in .NET:
 
 ```csharp
-
 public class Basic
 {
     [SdsMember(IsKey = true, Order = 0)]

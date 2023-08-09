@@ -10,7 +10,7 @@ If you are working in a .NET environment, convenient SDS Client Libraries are av
 
 ## Reading data from streams
 
-While SDS provides robust data storage, it performs best if you follow certain guidelines:
+While SDS provides robust data storage, it performs best if you follow certain guidelines listed in the following subheadings.
 
 ### Maximum limit for events in read data calls
 
@@ -19,17 +19,17 @@ The Read data API is limited to access less than 250,000 events per request. Thi
 ```json
 400 bad request error
 {
-   "Error": "The request is not valid.",
-   "Reason": "Exceeded the maximum return count of 250000 events.",
-   "Resolution": "Reduce query size and resubmit the request."
+    "Error": "The request is not valid.",
+    "Reason": "Exceeded the maximum return count of 250000 events.",
+    "Resolution": "Reduce query size and resubmit the request."
 }
 ```
 
 ### Increase the Request-Timeout in the header
 
-Increase the Request-Timeout in the header to five minutes for large-range calls that are requesting 250,000 events in a read call. The gateway responds with `408 - Operation timed out error` if the request needs more than 30 seconds.
+For large-range requests that include more than 250,000 in a read call, increase the Request-Timeout in the header to five minutes. For requests that need more than 30 seconds, the gateway responds with `408 - Operation timed out error`.
 
-The range of values that are held in memory can be large and be anywhere between 1 GB and 2 GB, so the system needs enough time to read and return the data.
+The range of values that are held in memory can be large (between 1 GB and 2 GB), so the system needs enough time to read and return the data.
 
 If multiple calls return `408 - Operation timed out error`, even after increasing the timeout limit to five minutes, do one of the following:
 
@@ -44,9 +44,9 @@ Responses are limited to 2<sup>31</sup> bytes. The number of bytes written durin
 
 ```json
 {
-  "Error": "Failed to serialize response.",
-  "Reason": "The response size might be too large.",
-  "Resolution": "Try again with a smaller read request."
+    "Error": "Failed to serialize response.",
+    "Reason": "The response size might be too large.",
+    "Resolution": "Try again with a smaller read request."
 }
 ```
 
@@ -88,7 +88,7 @@ SDS supports reading from multiple streams in one request. The following method 
 
 ### Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [AVEVA Data Hub API reference](xref:osisoftCloudServices).
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [Response format](xref:osisoftCloudServices#reponse-format).
 
 ## Indexes and reading data
 
@@ -108,22 +108,22 @@ Interpolation determines how a stream behaves when queried to return an event at
 | Mode | Enumeration value | Operation |
 | --- | --- | --- |
 | Default | 0 | The default InterpolationMode is Continuous. |
-| Continuous\* | 0 | Returns interpolated data using previous and next index values. |
+| Continuous<sup>1</sup> | 0 | Returns interpolated data using previous and next index values. |
 | StepwiseContinuousLeading | 1 | Returns the data from the previous index. |
 | StepwiseContinuousTrailing | 2 | Returns the data from the next index. |
 | Discrete | 3 | No event is returned. |
 | ContinuousNullableLeading | 4 | Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value. |
 | ContinuousNullableTrailing | 5 | Returns interpolated data or data from the trailing index if either of the surrounding indexes has a null value. |
 
-\*`Continuous` cannot return values for type properties that cannot be interpolated, such as when the type property is not numeric.
+<sup>1</sup>`Continuous` cannot return values for type properties that cannot be interpolated, such as when the type property is not numeric.
 
 The table below describes how the **Continuous InterpolationMode** affects properties that occur between data in a stream: **InterpolationMode = Continuous or Default**.
 
 | Property Type | Result for a property for an index between data in a stream | Comment |
 | --- | --- | --- |
-| Numeric Types | Interpolated\* | Rounding is done as needed for integer types. |
+| Numeric Types | Interpolated<sup>1</sup> | Rounding is done as needed for integer types. |
 | Time-related Types | Interpolated | DateTime, DateTimeOffset, TimeSpan. |
-| Nullable Types | Interpolated\*\* | Limited support for nullable numeric types. |
+| Nullable Types | Interpolated<sup>2</sup> | Limited support for nullable numeric types. |
 | Array and List Types | Default value |  |
 | String Type | Default value |  |
 | Boolean Type | Returns value of nearest index |  |
@@ -134,15 +134,15 @@ The table below describes how the **Continuous InterpolationMode** affects prope
 | Empty Type | Not supported |  |
 | Object Type | Not supported |  |
 
-\*When extreme values are involved in an interpolation (for example Decimal.MaxValue), the call may result in a BadRequest exception.
+<sup>1</sup>When extreme values are involved in an interpolation (for example Decimal.MaxValue), the call may result in a BadRequest exception.
 
-\*\*For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nullable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value is null.
+<sup>2</sup>For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nullable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value is null.
 
 If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Sds Streams](xref:sdsStreams).
 
 ## Extrapolation
 
-Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the steam. ExtrapolationMode acts as a master switch to determine whether extrapolation occurs and at which end of the data.
+Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the stream. ExtrapolationMode acts as a master switch to determine whether extrapolation occurs and at which end of the data.
 
 ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables show how ExtrapolationMode affects returned values for each InterpolationMode value:
 
@@ -177,9 +177,9 @@ For additional information about the effect of read characteristics, see the doc
 
 ## Filter expressions
 
-You can apply filter expressions any read operation that returns multiple values, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.
+You can apply filter expressions to any read operation that returns multiple values, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.
 
-For more information, see [Filter expressions](xref:sdsFilterExpressionsValues).
+For more information, see <xref:sdsFilterExpressionsValues>.
 
 ## Table format
 

@@ -30,7 +30,7 @@ The following table shows the required and optional stream fields. Fields not li
 | [Metadata](xref:sds-streams-metadata)\* | IDictionary\<String, String\> | Optional | Yes | A dictionary of string keys and associated string values. |
 
 > [!NOTE]
-> You can access stream metadata and tags through Metadata API and Tags API respectively. Because stream metadata and tags are associated with SdsStream objects, you can use them as search criteria.
+>You can access stream metadata and tags through Metadata API and Tags API respectively. Because stream metadata and tags are associated with SdsStream objects, you can use them as search criteria.
 
 **Rules for the stream identifier (SdsStream.Id)**
 
@@ -68,7 +68,7 @@ The `SdsStreamPropertyOverride` object has the following structure:
 | InterpolationMode | SdsInterpolationMode | Optional | Interpolation setting. Default is null. |
 | Uom | String | Optional | Unit of measure. |
 
-You can override the unit of measure for any SdsTypeProperty defined by the stream type, including primary and secondary indexes. For more information on SdsTypeProperty `Uom`, see [Types](xref:sdsTypes#sdstypeproperty).
+You can override the unit of measure (UOM) for any SdsTypeProperty defined by the stream type, including primary and secondary indexes. For more information on SdsTypeProperty `Uom`, see [Types](xref:sdsTypes#sdstypeproperty).
 
 Read characteristics of the stream are determined by the type and the `PropertyOverride` of the stream. You can define or override the interpolation mode for non-index properties at the stream level. For more information about type read characteristics, see [Types](xref:sdsTypes#sdstypeproperty).
 

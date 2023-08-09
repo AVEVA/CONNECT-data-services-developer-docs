@@ -4,7 +4,7 @@ uid: sds-dev-lp
 
 # Sequential Data Store
 
-The Sequential Data Store (SDS) is a streaming database optimized for storing sequential data, typically time-series data. It can store any data that is indexed by an ordered sequence. For each namespace that is created, an SDS instance or SDS resources is created. The services and storage are scoped to a particular region. Data is written into SDS using REST APIs. Use SDS to store, retrieve, and analyze data.
+The Sequential Data Store (SDS) is a streaming database optimized for storing sequential data, typically time-series data. It can store any data that is indexed by an ordered sequence. For each namespace that is created, an SDS instance or SDS resource is created. The services and storage are scoped to a particular region. Data is written into SDS using REST APIs. Use SDS to store, retrieve, and analyze data.
 
 [Types](xref:sdsTypes) define the shape of a single measured event or object. A type gives structure to your data. For example, if you are measuring three things (longitude, latitude, speed) from a device at the same time, then you want those three properties to be included in your type.
 

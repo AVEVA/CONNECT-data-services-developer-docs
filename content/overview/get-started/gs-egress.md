@@ -18,7 +18,7 @@ Refer to the following topic for a workflow of how to get started creating and c
 
 AVEVA Data Hub includes an API console that you can use to create and refine requests to the AVEVA Data Hub REST API. After building and refining your requests using the console GUI—including edits to the URI, query parameters, request headers, and request body—you can implement the request in your own application. For more information about the console, see <xref:apiConsole>.
 
-For a list of service endpoints available within the API console, refer to the <xref:osisoftCloudServices>. This reference lists each service available within AVEVA Data Hub, their available endpoints, and their available parameters. Enter these endpoints and parameters in the API console to create and refine API requests.
+For a list of service endpoints available within the API console, refer to the <xref:osisoftCloudServices>. This reference lists each service available within AVEVA Data Hub, their available endpoints, and their available parameters. Enter these endpoints and parameters into the API console to create and refine API requests.
 
 ## Microsoft Power BI
 

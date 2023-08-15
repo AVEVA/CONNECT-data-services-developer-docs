@@ -182,10 +182,9 @@ Stream view search is exposed through the REST API and the client libraries meth
 | Description  | Yes                     |
 | SourceTypeId | Yes                     |
 | TargetTypeId | Yes                     |
-| Properties   | Yes, with limitations\* |
+| Properties   | Yes, with limitations<sup>1</sup> |
 
-> [!NOTE]
-> The `Properties` collection contains a list of SdsStreamViewProperty objects. The query attempts to find a match on the SdsStreamViewProperty's `Id`, `SourceTypeId`, and `TargetTypeId` fields. The `Properties` collection of nested views is also searched. See the example below.
+<sup>1</sup>The `Properties` collection contains a list of SdsStreamViewProperty objects. The query attempts to find a match on the SdsStreamViewProperty's `Id`, `SourceTypeId`, and `TargetTypeId` fields. The `Properties` collection of nested views is also searched. See the example below.
 
 #### Example
 

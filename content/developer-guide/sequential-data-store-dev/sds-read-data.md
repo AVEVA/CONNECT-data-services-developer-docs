@@ -273,7 +273,9 @@ All unit conversions are POST HTTP requests. The unit conversion transformation 
 POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
 ```
 
-**Request body** The Request Body contains a collection of `SdsStreamPropertyOverride` objects.
+**Request body**
+
+The Request Body contains a collection of `SdsStreamPropertyOverride` objects.
 
 The following code defines a `Simple Type` with one index, `Time`, and one additional property, `Measurement`. `Measurement` has an assigned unit of measure, meter.
 

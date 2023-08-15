@@ -57,4 +57,4 @@ To query by range, select **By range** and configure the following parameters:
 
 Select **Apply** to apply your parameters and execute the query. The data values included in the query are listed on screen, and they are plotted in a graph as well. For streams with multiple properties, you can view different data values included in the stream by editing the **X Axis** and **Y Axis** dropdowns, as depicted in the image below.
 
-![view data](../images/view-data.png)
+![Data for stream displayed by range](../images/view-data.png)

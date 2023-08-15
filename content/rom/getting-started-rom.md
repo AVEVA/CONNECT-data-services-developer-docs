@@ -12,8 +12,8 @@ The following procedure describes how to use the portal to monitor assets and qu
 
 To use the portal to monitor assets and identify problems:
 
-1. From the left pane, select **Visualization** > **Asset Explorer**. 
-   
+1. From the left pane, select **Visualization** > **Asset Explorer**.
+
     The asset explorer displays the available assets. In this example, it provides an overview of the health of the fleet of trucks.
 
     **Tip:** Select the ![View grid](../_icons/branded/view-grid.svg) or ![View list](../_icons/branded/view-list.svg) icons in the toolbar to toggle between the card and table views of the assets.
@@ -38,16 +38,20 @@ To use the portal to monitor assets and identify problems:
 1. Select the **Properties** tab.
 
     The `Asset Details` pane displays the following:
-    
+
      - Data associated with the asset. These values are updated in real time.
-    
+
      - A trend of the selected measurements.
 
 1. Select one or more of the properties that might be the cause for the warning.
 
-1. Review the history of the selected properties in the trend to see if the data suggests you have identified a potential cause. 
+1. Review the history of the selected properties in the trend to see if the data suggests you have identified a potential cause.
 
-    By default, the trend shows the property data for the last 8-hour period. Use the navigational arrows on the Time picker ![Time picker](images/Time-picker.png) to pick another time-range option or specify a custom time range.
+    By default, the trend shows the property data for the last 8-hour period. Use the navigational arrows on the **Time picker** to pick another time-range option or specify a custom time range.
+
+    **Time picker**
+
+    ![Time picker](images/Time-picker.png)
 
 1. To see the details of these properties, select the **View full trend** icon ![View full trend icon](../_icons/branded/launch.svg) to see the `Trend` page.
 
@@ -59,7 +63,7 @@ To use the portal to monitor assets and identify problems:
     **Note:** The legend table shows the legend for each trace, the last value, minimum, maximum, and average values in the displayed time range.
 
     ![Legend Table](images/Legend_Table_Med.png)
-    
+
 1. (Optional) If the error did not occur in the time range currently in view, select **Step backward** ![Step backward](../_icons/branded/skip-backward.svg) or **Step forward** ![Step forward](../_icons/branded/skip-forward.svg) to move the time range backward or forward.
 
     **Note:** The trace will move in increments of time that are displayed in the trend. If the trend displays the last 12 hours, use the step backward arrow in the Time picker to show the previous 12-hour period. If it displays the last 30 days, the step forward arrow shows the next 30-day period.
@@ -68,7 +72,7 @@ To use the portal to monitor assets and identify problems:
 
     The trace is highlighted, and two cursors automatically mark the minimum and maximum values for the displayed time range.
 
-    ![Maximum and minimum cursors](images/Max_min_cursors.png)
+    ![Trend session: Maximum and minimum cursors](images/Max_min_cursors.png)
 
     Select **+** above the trace to lock the cursor in place. The **+** turns into an **x**. Select the **x** to unlock the cursor.
 

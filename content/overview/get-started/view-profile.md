@@ -10,7 +10,7 @@ The `My Profile` window displays your user information and assigned roles.
 
 To update your contact information:
 
-1. To open your user profile, select the **User Profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. To open your user profile, select the **User Profile** icon ![User Profile icon](../../_icons/default/account-circle.svg) and select your name.
 
 1. Select **Edit**.
 
@@ -22,7 +22,7 @@ To update your contact information:
 
 ## Show user-friendly property names
 
-The **Show user friendly property names** option controls the appearance of property names for streams that originate through PI to Data Hub agents on the `Trend` and `Asset Explorer` pages. When this option is turned on, those stream property names mimic PI tag naming and certain stream properties are hidden. For example, say you have the following streams and properties:
+The **Show user friendly property names** option controls the appearance of property names for streams that originate through PI to Data Hub Agents on the `Trend` and `Asset Explorer` pages. When this option is turned on, those stream property names mimic PI tag naming and certain stream properties are hidden. For example, say you have the following streams and properties:
 
  - SL-Tank01|Pressure|Value
 
@@ -42,6 +42,6 @@ The properties that contain values are easier to find and the properties that co
 
 To change your user preferences:
 
-1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/custom/account-circle.svg) and select your name.
+1. To open your user profile, select the **User profile** icon ![User Profile icon](../../_icons/default/account-circle.svg) and select your name.
 
 1. To use friendly property names, turn on the the **Show user friendly property names** toggle under **User Preferences**. The setting saves automatically.

@@ -4,7 +4,7 @@ uid: start-transfer
 
 # Start a data transfer
 
-Once you [Create a data transfer](xref:create-transfer), you can start the transfer. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on prem to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
+Once you [Create a data transfer](xref:create-transfer), you can start the transfer. During the transfer, events are sent asynchronously. Historical events are sent first, followed by current events. Data is transferred from on-premises to the cloud every 30 seconds or for every 50,000 events, whichever occurs first.
 
 To start a data transfer:
 
@@ -14,13 +14,13 @@ To start a data transfer:
 
 1. Select **Start Transfer**, then select **Start**.
 
-   The data transfer begins and transfer status is updated in the `Transfer Overview` section on the **Manage Agent** tab.
+   The data transfer begins, and transfer status is updated in the `Transfer Overview` section on the **Manage Agent** tab.
 
    **Note:** The **Manage Agent** tab provides information about the agent associated with the transfer and the transfer progress.
 
 1. In the `Transfer Overview` section, view the transfer status as data is sent to the agent and stream data is created.
 
-   **Note:** The rate at which data transfers varies and depends on the density of data in the source PI Data Archive and/or AF server. See <xref:data-transfer-statuses> for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
+   **Note:** The rate at which data transfers varies and depends on the density of data in the source Data Archive and/or AF server. See <xref:data-transfer-statuses> for a list of transfer statuses and descriptions. To find out more information about an asset error, agent status, or asset create/update error, select **Logs** above the list of agents to access more information. Possible statuses that appear in the **Current Activity** field may indicate an issue and include Uncategorized Error, PI Point Type Change Detected, and No Valid PI Points In Transfer.   
 
 1. (Optional) To view more information about an agent's status, select **Agent Health Events**.
 
@@ -36,9 +36,9 @@ To start a data transfer:
 
 ## Health Events window
 
-The `Health Events` window provides information about an agent's activity and current status. Health events are based on log messages. You can sort messages by severity, source, time and message content.
+The `Health Events` window provides information about an agent's activity and status. Health events are based on log messages. You can sort messages by severity, source, time and message content.
 
-![](../../images/health-evts-window.png)
+![Health events window displaying log messages](../../images/health-evts-window.png)
 
 The following table provides descriptions for the elements of the `Health Events` window.
 
@@ -60,15 +60,15 @@ The following table provides a description of the fields in the **Transfer Metri
 
 | Field name | Description   |
 | ------------- | ---------- |
-| PI Data Archive Server Version | The version of PI Data Archive that is installed on the source server configured to send PI point data via the agent. |
-| Last Streaming Read | The date of the latest stream read.|
+| Data Archive Server Version | The version of Data Archive that is installed on the source server configured to send PI point data via the agent. |
+| Last Streaming Read | The date of the latest stream value read.|
 | Streaming Events Per Second | The average number of streaming events transferred to the PI to Data Hub Agent per second over the last minute. This value is updated every 10 seconds during data transfer.  |
 | Historical Events Per Second | The average number of historical events transferred to the PI to Data Hub Agent per second over the last minute. This value is updated every 10 seconds during data transfer. |
 | Historical Transfer | Transfer progress for historical data.  |
 | Historical Start | The historical start date of the transfer. |
 | Historical End | The historical end date of the transfer. |
 | Total PI Points In Transfer | Total number of PI points selected for transfer. |
-| Total Points Updated | The number of PI Points added to or removed from the transfer configuration. |
+| Total Points Updated | The number of PI points added to or removed from the transfer configuration. |
 | Stream Creation Status | The progress of streams creation during transfer progression.  |
 | Total Streams Created | Total number of streams created.  |
 | Total Streams Updated | Total number of streams updated with new configuration and metadata. |

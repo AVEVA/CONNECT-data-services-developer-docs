@@ -83,3 +83,4 @@ The currently supported versions are:
 
 * v1
 * v1-preview
+* v2-preview

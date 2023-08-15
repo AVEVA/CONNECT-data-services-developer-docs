@@ -12,7 +12,7 @@ To create an asset based on an asset type:
 
 1. From the **Assets/Asset Types** selector, select **Assets**.
 
-1. In the toolbar, select **Add Asset**. 
+1. In the toolbar, select **Add Asset**.
 
 1. In the `Select Type for New Asset` window, select the type and select **Continue**.
 
@@ -22,9 +22,9 @@ To create an asset based on an asset type:
 
    - **Asset Type** - Displays the asset type on which this asset is based.
 
-   - **Description** - (Optional) Add a description for the asset. 
+   - **Description** - (Optional) Add a description for the asset.
 
-1. Select the **Metadata** tab. 
+1. Select the **Metadata** tab.
 
 1. If needed, edit the values the metadata.
 
@@ -32,6 +32,6 @@ To create an asset based on an asset type:
 
 1. Select the **Properties** tab.
 
-1. To see the stream reference configuration details, select the caret ![](../../../_icons/default/chevron-up.svg) icon. 
+1. To see the stream reference configuration details, select the caret ![caret](../../../_icons/default/chevron-up.svg) icon.
 
 1. To save the asset, select **Save**.

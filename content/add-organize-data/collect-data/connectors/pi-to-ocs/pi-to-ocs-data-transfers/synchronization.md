@@ -4,9 +4,9 @@ uid: PItoDHSync
 
 # PI to Data Hub change synchronization
 
-The PI to Data Hub Agent supports synchronizing changes in the PI Data Archive and PI Asset Framework. Updates are automatically sent to AVEVA Data Hub without any user interaction. 
+The PI to Data Hub Agent supports synchronizing changes in the Data Archive and PI Asset Framework. Updates are automatically sent to AVEVA Data Hub without any user interaction.
 
-## Data Archive synchronization 
+## Data Archive synchronization
 
 The PI to Data Hub Agent signs up for the following updates to stay in sync with the Data Archive:
 
@@ -30,7 +30,7 @@ The PI to Data Hub Agent signs up for the following updates to stay in sync with
 
 Sign-up for PI point updates and digital state updates occurs when the agent starts, while data updates do not begin until the start of a transfer.
 
-### Data Archive synchronization limitations 
+### Data Archive synchronization limitations
 
 | Issue | Restrictions |
 | ----- | ------------ |
@@ -38,7 +38,7 @@ Sign-up for PI point updates and digital state updates occurs when the agent sta
 | Analysis backfilling and rapid succession of data addition and deletion | There is a possibility for a data gap after an analysis backfill operation due to the nature of rapid data deletion and insertions being performed by the analysis service on the PI point. |
 | Updating digital state | The SDS stream will store the updated state name and values at time of change. Previously stored state values are preserved.<br />Updated digital state values will not be backfilled or recalculated for existing data saved to the corresponding SDS stream. |
 
-## Asset Framework synchronization 
+## Asset Framework synchronization
 
 The agent performs an indexing of the AF server after agent registration is successful. The indexing caches all known elements and templates along with their attributes. The agent updates this index periodically.
 
@@ -104,11 +104,11 @@ The supported AF change synchronization events and the result of each change are
 
 ## PI point type change
 
-When the PI to Data Hub Agent detects that a PI point's type is changed on the source PI Data Archive after the corresponding stream has been created in the SDS database, it takes the following actions:
+When the PI to Data Hub Agent detects that a PI point's type is changed on the source Data Archive after the corresponding stream has been created in the SDS database, it takes the following actions:
 
 - The `PI Point Type Change Detected` message displays next to **Current Activity** in the `Details` pane, as shown below:
 
-  ![PI point type change](../../images/pi-point-type-change.png)
+  ![Details pane displaying a transfer in progress](../../images/pi-point-type-change.png)
 
 - The agent prevents data being sent from the source PI point to the SDS stream until the type is changed to match the corresponding SDS stream type.
 
@@ -118,9 +118,9 @@ When the PI to Data Hub Agent detects that a PI point's type is changed on the s
 
 A point change can occur for multiple reasons, including:
 
-* The source PI point data and type is configured incorrectly. The data and point must be deleted and recreated.
+- The source PI point data and type is configured incorrectly. The data and point must be deleted and recreated.
 
-* The source PI point was misconfigured initially. For example, the point needs to be updated from `Float32` to `Float64`. The data is still relevant and should be kept.
+- The source PI point was misconfigured initially. For example, the point needs to be updated from `Float32` to `Float64`. The data is still relevant and should be kept.
 
 ### Resume streaming data to an existing SDS stream after a type change
 
@@ -132,4 +132,4 @@ After you create an SDS stream, its underlying SdsType cannot change. As a resul
 
 1. Change the PI point type to match the SDS stream type and then restart the transfer.
 
-To see what types of point coercions are supported in PI Data Archive, refer to the [Allowable point type coercions](https://docs.osisoft.com/bundle/pi-server/page/allowable-point-type-coercions.html) topic.
+To see what types of point coercions are supported in Data Archive, refer to the [Allowable point type coercions](https://docs.aveva.com/bundle/pi-server-da-admin/page/1021626.html) topic.

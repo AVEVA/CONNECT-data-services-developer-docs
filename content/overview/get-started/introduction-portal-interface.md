@@ -24,15 +24,13 @@ The AVEVA Data Hub home page displays the following:
 
 - **PI to Data Hub Agents**: Health status for each PI to Data Hub agent. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each agent.
 
-- **Edge Systems**: Health status for each edge system. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each edge system.
+- **Edge Data Store & Adapters**: Health status for each system. Statuses include Good, Warning, Bad, and Stopped. Select to see individual statuses for each system.
 
 ## AVEVA Data Hub features
 
 Collapse or expand the left pane to view a menu of AVEVA Data Hub features. This pane is always available in the portal, and you can hover over the icons to make selections even while the menu is collapsed.
 
-| Pane expanded | Pane collapsed |
-|:--:|:--:|
-| ![pane expanded](../images/left-pane-expanded.png) | ![pane collapsed](../images/left-pane-collapsed.png) |
+![The navigation panel being expanded and collapsed](../images/expand-panel.gif)
 
 AVEVA Data Hub includes the following features:
 
@@ -72,9 +70,9 @@ The following table provides a list and descriptions of these toolbar commands.
 
 | Item          | Function |
 |---------------|----------|
-| ![Manage permissions icon](../../_icons/default/account-lock.svg) Manage permissions | Change role-based access to portal resources. |
+| ![Manage permissions icon](../../_icons/default/cog.svg) Manage permissions | Change role-based access to portal resources. |
 | Change namespace | Choose a different namespace. |
 | ![View notifications icon](../../_icons/default/bell.svg) View notifications | View AVEVA Data Hub-generated notifications. |
 | ![Documentation icon](../../_icons/default/help-circle.svg) Help | Access the online documentation. |
 | ![User Profile icon](../../_icons/default/account-circle.svg) User profile | View a menu of the following commands: current user profile, tenant details, resource usage, feedback page, and sign out of the portal. |
-| ![Customize icon](../../_icons/branded/pencil.svg) Customize | Customize the layout of the portal dashboard. |
+| ![Customize icon](../../_icons/default/pencil.svg) Customize | Customize the layout of the portal dashboard. |

@@ -4,7 +4,7 @@ uid: export-missing-points
 
 # Export a list of missing PI points
 
-Sometimes, PI points cannot be transferred because they have been removed on the source PI Server. When this occurs, the points are flagged as missing and a message is displayed. You can export a file that contains a list of these missing PI points for your records. The .csv file contains the following information:
+Sometimes, PI points cannot be transferred because they have been removed on the source Data Archive. When this occurs, the points are flagged as missing and a message is displayed. You can export a file that contains a list of these missing PI points for your records. The .csv file contains the following information:
 
 - Transfer name
 

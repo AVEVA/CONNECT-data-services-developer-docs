@@ -23,6 +23,6 @@ Each data view can be individually [access-controlled](xref:DataViewsSecuringDat
 
 ## Consuming a data view
 
-[Data view data](xref:DataViewsQuickStartGetData) is available via queries to the RESTful data views [data API resource](xref:DataViewsDataAPI). 
+[Data view data](xref:DataViewsQuickStartGetData) is available via queries to the RESTful data views [data API resource](xref:data-views-data-views-data). 
 
 To understand the source of each data field, inspect how the data view [resolved](xref:ResolvedDataView).

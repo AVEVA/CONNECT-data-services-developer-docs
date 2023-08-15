@@ -4,13 +4,13 @@ uid: ccClients
 
 # AVEVA Data Hub clients
 
-Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The following types of clients are supported, and each support different types of applications:
+Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The following types of clients are supported, and each supports different types of applications:
 
 - [Client-credentials clients](#client-credentials-client)
 
 - [Authorization code clients](#authorization-code-client)
 
-- [Hybrid clients](#hybrid-client) <!-- Josh Kim Mar19021: Similar to the comment as before where we should ask if Hybrid Clients are still worth mentioning?. -->
+- [Hybrid clients](#hybrid-client)
 
 You must have the Tenant Administrator role to add and manage clients in a tenant.
 
@@ -20,7 +20,7 @@ Use client-credentials clients for server-to-server communication that does not 
 
 ### <a name="client-credentials-pi-server"></a>Client-credentials client PI Server counterpart
 
-Client-credentials clients are very similar to Microsoft Windows service accounts that applications can use to authenticate against PI Data Archive or PI AF server. 
+Client-credentials clients are very similar to Microsoft Windows service accounts that applications can use to authenticate against Data Archive or PI AF server. 
 
 ### <a name="client-credentials-bp"></a>Client-credentials client best practices
 
@@ -32,7 +32,7 @@ We recommend the following best practices with a client credentials client:
 
 - Use secrets that expire and rotate them on a schedule. When it is time to switch to a new secret, we recommend that you create the new secret, redirect the application to use the new secret, and only delete the old secret from the client when it is no longer being used.
 
-##  <a name="authorization-code-client"></a>Authorization code clients
+## <a name="authorization-code-client"></a>Authorization code clients
 
 Authorization code clients are used with customer web applications that use AVEVA Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
 
@@ -40,7 +40,7 @@ Authorization code clients are used to authenticate using any supported browser.
 
 ### <a name="authorization-code-pi-server"></a>Authorization code client PI Server counterpart
 
-Authorization code clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, authorization code clients require the user to authenticate as a known user account within the tenant.
+Authorization code clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, authorization code clients require the user to authenticate as a known user account within the tenant.
 
 ### <a name="authorization-code-bp"></a>Authorization code client best practices
 
@@ -56,7 +56,7 @@ Use hybrid clients for native and server-side web applications. This client util
 
 ### <a name="hybrid-client-pi-server"></a>Hybrid client PI Server counterpart
 
-Hybrid clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in PI Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
+Hybrid clients have no direct PI Server equivalent, but they are similar to the combined behavior of a trust and mappings in Data Archive. These clients are similar to trusts because they only allow users to access the portal if the application that uses them meets certain criteria, for example, the application must be served at a specific URL. However, like a mapping, hybrid clients require the user to authenticate as a known user account within the tenant.
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 

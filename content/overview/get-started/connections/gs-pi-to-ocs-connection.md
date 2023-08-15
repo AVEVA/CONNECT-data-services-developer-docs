@@ -10,7 +10,7 @@ To use PI to Data Hub to transfer data from your PI System to AVEVA Data Hub, yo
 
 - Install the PI to Data Hub Agent.
 
-- Set up your PI to Data Hub connection in the PI to Data Hub Configuration Utility.
+- Set up your PI to Data Hub connection in the PI to Data Hub Agent Configuration Utility.
 
 - Create a data transfer.
 

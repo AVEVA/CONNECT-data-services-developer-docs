@@ -45,7 +45,7 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 
 1. From the **Grouping Fields** accordion, select **Add a Grouping Field**.
 
-	![add-a-grouping-field](_images/add-a-grouping-field.png)
+	![Grouping fields: add a grouping field](_images/add-a-grouping-field.png)
 
 1. Choose a grouping field.
 
@@ -55,13 +55,13 @@ To add a grouping field, select **Add a Grouping Field** and choose an eligible 
 
 ## To ungroup a field
 
-To ungroup a field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > **Ungroup Field** > **All Eligible Queries**.
+To ungroup a field, select **More options** ![more options](../../_icons/branded/dots-vertical.svg) > **Ungroup Field** > **All Eligible Queries**.
 
 ## To remove a grouping field
 
 Removing a field from grouping fields completely removes the field from the data view rather than merely ungrouping it.
 
-To remove a field, select **More options** ![alt](../../_icons/branded/dots-vertical.svg) > **Remove**.
+To remove a field, select **More options** ![more options](../../_icons/branded/dots-vertical.svg) > **Remove**.
 
 ## Other grouping tasks
 

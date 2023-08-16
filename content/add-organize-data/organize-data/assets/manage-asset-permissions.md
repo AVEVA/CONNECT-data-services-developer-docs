@@ -31,7 +31,7 @@ To manage asset permissions, you must be assigned the **Manage Permissions** acc
 
 ## To manage default permissions for new assets
 
-You can edit the default user roles and permissions added to a assets when it is created.
+You can edit the default user roles and permissions added to an asset when it is created.
 
 1. From the left pane, select **Visualization** > **Asset Explorer**.
 

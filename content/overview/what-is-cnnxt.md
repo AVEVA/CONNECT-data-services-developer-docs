@@ -10,7 +10,7 @@ AVEVA™ Connect (https://connect.aveva.com/) is the common cloud platform on wh
 
 * [Subscribe to Data Hub](xref:subscribe-adh)
 
-* [Manage users and permissions](xref:manage-permissions-connect)
+* [Manage users and permissions](xref:ManageUsersConnect)
 
 It is important to understand how solutions, folders, and permissions work before you configure AVEVA Connect to work with AVEVA Data Hub.
 

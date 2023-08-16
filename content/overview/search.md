@@ -54,7 +54,7 @@ When using double quotes, the matching text must include the whole value of the 
 
 Also, you can use wildcards (the `*` asterisk character) on the outside of the quote operators, but if an asterisk is inside of the quotes, it is treated as a string literal rather than a wildcard operator. For example, you can search for `"pump three"*` (asterisk outside the quotes) to find text that starts with `"pump three"`, but if you search for `"pump three*"` (asterisk within the quotes), it only matches on a value of `"pump three*"`.
 
-| **Matches field value** | **Does not match field value** |
+| Query string | Matches field value | Does not match field value |
 |---|---|---|
 | **``"pump pressure"``** | pump pressure | pressure, pressure pump, pump pressure gauge |
 | **``"pump pressure"*``** | pump pressure, pump pressure gauge | pressure, pressure pump, the pump pressure gauge |
@@ -68,7 +68,7 @@ Add the backslash escape character ( \ ) before any special characters in search
 
 The following are examples of using the escape character in query strings.
 
-| Example Field Value                    | Query String                               |
+| Example field value                    | Query string                               |
 | -------------------------------------- | ------------------------------------------ |
 | Austin\Dallas\Fort Worth               | Austin\\\Dallas\\\Fort Worth               |
 | 1:100                                  | 1\\:100                                    |
@@ -76,7 +76,7 @@ The following are examples of using the escape character in query strings.
 
 ## Examples of query strings
 
-| Query String | Applies to | Description |
+| Query string | Applies to | Description |
 |---|---|---|
 | Id:Id1 | assets, streams, stream types, stream views | Returns the item whose Id is **Id1**. |
 | Id:Id* | assets, streams, stream types, stream views | Returns all items with Ids that begin with **Id**. |

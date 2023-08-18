@@ -14,11 +14,11 @@ The following image displays each feature available in AVEVA Data Hub. The topic
 
 Complete the following major steps to get up and running in AVEVA Data Hub.
 
-1. <xref:gs-setup-connect>
-1. <xref:gs-setup-connect-users>
-1. <xref:gs-setup-data-hub-users>
-1. <xref:gs-ingress>
-1. <xref:gs-data-management>
-1. <xref:gs-egress>
+- <xref:gs-setup-connect>
+- <xref:gs-setup-connect-users>
+- <xref:gs-setup-data-hub-users>
+- <xref:gs-ingress>
+- <xref:gs-data-management>
+- <xref:gs-egress>
 
 **Tip:** Use the [Workflow map](https://aveva-dev.zoominsoftware.io/category/adh-get-started) for a visual walkthrough of getting started.

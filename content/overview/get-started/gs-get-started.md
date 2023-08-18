@@ -8,13 +8,17 @@ Welcome to AVEVA Data Hub! This Get Started guide walks you through initial setu
 
 Because AVEVA Data Hub sits on top of the AVEVA Connect platform, setup and configuration of AVEVA Data Hub also requires use of AVEVA Connect. Therefore, this Get Started guide refers to various help topics in both the AVEVA Data Hub and AVEVA Connect documentation.
 
+The following image displays each feature available in AVEVA Data Hub. The topics listed below describe the features, functionality, and implementation of the features depicted in the image.
+
+![AVEVA Data Hub capabilities: the features available in AVEVA Data Hub](../../_images/aveva-data-hub-capabilities.jpg)
+
 Complete the following major steps to get up and running in AVEVA Data Hub.
 
-- <xref:gs-setup-connect>
-- <xref:gs-setup-connect-users>
-- <xref:gs-setup-data-hub-users>
-- <xref:gs-ingress>
-- <xref:gs-data-management>
-- <xref:gs-egress>
+1. <xref:gs-setup-connect>
+1. <xref:gs-setup-connect-users>
+1. <xref:gs-setup-data-hub-users>
+1. <xref:gs-ingress>
+1. <xref:gs-data-management>
+1. <xref:gs-egress>
 
 **Tip:** Use the [Workflow map](https://aveva-dev.zoominsoftware.io/category/adh-get-started) for a visual walkthrough of getting started.

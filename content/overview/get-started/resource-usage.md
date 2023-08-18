@@ -24,7 +24,7 @@ The `Resource Usage` page displays the streams created and viewed within your te
 
 Resource usage always displays your license information, regardless of what page parameters you select. This license information lists your total number of licenses available along with the number consumed.
 
-Field | Desription
+Field | Description
 --|--
 **Namespaces** | The total number of namespaces the tenant is licensed for and the number of licenses consumed.
 **Created Streams** | The total number of streams the tenant is licensed for and the number of licenses consumed.
@@ -38,7 +38,7 @@ For data source, you can view streams from your native tenant namespaces or from
 
 - **Shared Streams Accessed**: Displays usage data about streams shared into communities that your tenant holds membership in.
 
-##  View
+## View
 
 Use the view dropdown to display streams accessed by month or day. Choose between the following options:
 
@@ -53,8 +53,6 @@ Use the view dropdown to display streams accessed by month or day. Choose betwee
 ## Legend
 
 Regardless of which parameters you choose, resource usage always display a legend that maps the colors of the graph to each data source. The legend also lists whether the data source is a native namespace or a shared community namespace. 
-
-**Legend**
 
 ![legend](../../communities/images/legend.png)
 

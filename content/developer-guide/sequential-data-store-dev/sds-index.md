@@ -134,7 +134,11 @@ SdsStream secondary = new SdsStream()
 secondary = await config.GetOrCreateStreamAsync(secondary);
 ```
 
-To read data indexed by a secondary index, use a filtered GET method (`IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id, "Measurement gt 0 and Measurement lt 6");`).
+To read data indexed by a secondary index, use a filtered GET method:
+
+```csharp
+IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id, "Measurement gt 0 and Measurement lt 6");
+```
 
 You use indexes to order data. On a stream level, you can set the property to be the secondary index. To improve performance when working with a large set of data:
 

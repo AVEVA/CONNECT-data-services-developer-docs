@@ -7,3 +7,4 @@
 - name: Stream views
   href: sds-stream-views-dev.md
 - name: Units of measure and quantities
+  href: sds-uom.md

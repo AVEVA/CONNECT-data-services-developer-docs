@@ -44,7 +44,7 @@ To use the GraphQL console:
 
 1. When your query is complete, select **Send Request** to run the query.
 
-   The results of your query appear in the `Response` pane. Select ![copy](../_icons/branded/content-copy.svg) in the `Response` pane to copy the response to the clipboard, or select ![download](../_icons/branded/download.svg) to download the JSON file.
+   The results of your query appear in the `Response` pane. Select ![copy](../_icons/default/content-copy.svg) in the `Response` pane to copy the response to the clipboard, or select ![download](../_icons/default/download.svg) to download the JSON file.
 
 1. When you request a certain amount of fields, such as `count: 1`, and there are more fields available to display, a continuation token appears in the response. Select `Resend with Continuation` to view the next item.
 

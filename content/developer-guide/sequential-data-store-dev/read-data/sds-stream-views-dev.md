@@ -76,7 +76,7 @@ The SdsStreamView field supports nested properties.
 
 When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. The SdsStreamViewMap provides a detailed property-by-property definition of the mapping.
 
-The table below shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to the SDS, so required and optional have no meaning.
+The table below shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, so required and optional have no meaning.
 
 | Property | Data Type | Required | Description |
 | --- | --- | --- | --- |

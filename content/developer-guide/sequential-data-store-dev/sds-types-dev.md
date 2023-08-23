@@ -52,7 +52,7 @@ The table below lists required and optional fields in a type. Fields that are no
 
 Type management using the .NET SDS client libraries methods is performed through `ISdsMetadataService`. You can create `ISdsMetadataService` using one of the `SdsService.GetMetadataService()` factory methods. .NET client libraries provide `SdsTypeBuilder` to help build SdsTypes from .NET types. SdsTypeBuilder is discussed in greater detail in [SDS Types in .NET Framework](#sdstypes-in-net-framework).
 
-## SdsTypeCode
+### SdsTypeCode
 
 The SdsTypeCode is a numeric identifier used by SDS to identify SdsTypes. An SdsTypeCode exists for every supported type.
 
@@ -145,7 +145,7 @@ The following types are supported and defined by the SdsTypeCode:
 | Version                | 22          |
 | VersionArray           | 222         |
 
-## SdsTypeProperty
+### SdsTypeProperty
 
 The `Properties` collection defines the fields in a type. Type properties appear in every stream that is created from a given type.
 
@@ -153,30 +153,36 @@ The following table shows the required and optional `SdsTypeProperty` fields. Fi
 
 | Property Name | Data Type | Required | Details |
 | --- | --- | --- | --- |
-| Id | String | Yes | Identifier for referencing the type. |
+| Id | String | Yes | Identifier for referencing the type. For more information, see [Rules for the SdsTypeProperty identifier](#rules-for-the-sdstypeproperty-identifier-sdstypepropertyid). |
 | Name | String | No | Friendly name. |
 | Description | String | No | Description text. |
 | SdsType | SdsType | Yes | Field defining the property's SdsType. |
-| IsKey | Boolean | Yes | Identifies the property as the index. |
-| Value | Object | No | Value of the property. |
+| IsKey | Boolean | Yes | Identifies the property as the index. For more information, see [IsKey](#iskey).|
+| Value | Object | No | Value of the property. For more information, see [Value](#value). |
 | Order | Int | No | Order of comparison within a compound index. |
-| InterpolationMode | SdsInterpolationMode | No | Interpolation setting of the property. Default is null. |
-| Uom | String | No | Unit of measure of the property. |
+| InterpolationMode | SdsInterpolationMode | No | Interpolation setting of the property. Default is null. For more information, see [InterpolationMode](#interpolationmode). |
+| Uom | String | No | Unit of measure of the property. For more information, see [Uom](#uom). |
 
-**ID rule** The SdsTypeProperty ID follows the same [rules](#sdstype-fields-and-properties-table) as the type identifier.
+#### Rules for the SdsTypeProperty identifier (SdsTypeProperty.Id)
 
-**`IsKey`**  
+The SdsTypeProperty ID follows the same [rules](#sdstype-fields-and-properties-table) as the type identifier.
+
+#### IsKey
+
 Boolean value `IsKey` identifies the primary index of a type in a single index. An index that is defined by more than one SdsTypeProperty is called a compound index. The maximum number of properties that can define a compound index is three. In a compound index, each `SdsTypeProperty` that is included in the index is specified as `IsKey`. The `Order` field marks the order of comparison within a compound index.
 
-**`Value`**  
+#### Value
+
 The `Value` field is used for the properties of enumeration types. An enumeration is a collection of named constants with associated constant values. Each named constant is defined by the `Id` of the SdsTypeProperty. The associated constant value is defined by the `Value` of the SdsTypeProperty. For more information, see the enumeration `State` definitions in the sample code below.
 
-**`InterpolationMode`**  
+#### InterpolationMode
+
 `InterpolationMode` is assigned when the SdsTypeProperty of the event should be interpolated in a specific way that differs from the interpolation mode of the SdsType. `InterpolationMode` is only applied to an SdsTypeProperty that is not part of the index. If the `InterpolationMode` is not set, the SdsTypeProperty is interpolated in the manner defined by the SdsType's `InterpolationMode`.
 
 An SdsType with the `InterpolationMode` set to `Discrete` cannot also have the SdsTypeProperty with `InteroplationMode`. For more information on interpolation of events, see [Interpolation](xref:sdsReadingData#interpolation).
 
-**`Uom`**  
+#### Uom
+
 `Uom` is the unit of measure for the SdsTypeProperty. The `Uom` of the SdsTypeProperty may be specified by the name or the abbreviation. The names and abbreviations of `Uoms` are case sensitive.
 
 The `InterpolationMode` and `Uom` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [Streams](xref:sdsStreams#sdsstreampropertyoverride).

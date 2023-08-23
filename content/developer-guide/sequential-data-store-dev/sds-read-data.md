@@ -67,17 +67,13 @@ Depending on the scenario, there are different read data APIs available. They re
 The following methods for reading a single value are available:
 
 - [Get First Value](xref:sds-stream-data#get-first-value) returns the first value in the stream.
-
 - [Get Last Value](xref:sds-stream-data#get-last-value) returns the last value in the stream.
 
 In addition, the following methods support reading multiple values:
 
 - [List Values](xref:sds-stream-data#list-values) retrieves a collection of stored values based on the request parameters.
-
 - [List Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
-
 - [List Summaries](xref:sds-stream-data#list-summaries) retrieves a collection of evenly spaced summary intervals based on a count and specified start and end indexes.
-
 - [List Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
 
 ## Bulk reads
@@ -86,7 +82,7 @@ SDS supports reading from multiple streams in one request. The following method 
 
 - [Join Values](xref:sds-stream-data#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
-### Response format
+## Response format
 
 Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [Response format](xref:osisoftCloudServices#reponse-format).
 
@@ -227,10 +223,15 @@ Data transformations are supported for all single stream reads, but transformati
 
 ```text
 api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
+
 api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
+
 api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform
+
 api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Interpolated
+
 api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Summaries
+
 api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Sampled
 ```
 
@@ -249,6 +250,7 @@ All single-stream data reads support stream view transformations.
 ```text
 # Get 100 events from start index
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform?startIndex={startIndex}&count=100&streamViewId={streamViewId}
+
 # Get last value
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last?streamViewId={streamViewId}
 ```

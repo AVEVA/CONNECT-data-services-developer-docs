@@ -37,17 +37,12 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump n
 
 #### Parameters
 
-`string query`
-[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`.
-
-`int skip`
-[Optional] Parameter representing the zero-based offset of the first SdsStream to retrieve. The number of matched items to skip over before returning. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
-
-`int count`
-[Optional] Parameter representing the maximum number of streams to retrieve. If unspecified, a default value of 100 is used.
-
-`string orderby`
-[Optional] Parameter representing the sorted order in which streams are returned. Requires a field name (`orderby=name`, for example). Default order is ascending (`asc`). Add `desc` for descending order (`orderby=name desc`, for example). If unspecified, there is no sorting of results.
+| Parameter | Required? | Description |
+|--|--|--|
+| `string query` | Optional | Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`. |
+| `int skip` | Optional | Parameter representing the zero-based offset of the first SdsStream to retrieve. The number of matched items to skip over before returning. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call. |
+| `int count` | Optional | Parameter representing the maximum number of streams to retrieve. If unspecified, a default value of 100 is used. |
+| `string orderby` | Optional | Parameter representing the sorted order in which streams are returned. Requires a field name (`orderby=name`, for example). Default order is ascending (`asc`). Add `desc` for descending order (`orderby=name desc`, for example). If unspecified, there is no sorting of results. |
 
 #### .NET client libraries methods
 
@@ -104,14 +99,11 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&ski
 
 #### Parameters
 
-`string query`
-[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`.
-
-`int skip`
-[Optional] Parameter representing the zero-based offset of the first SdsStream to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
-
-`int count`
-[Optional] Parameter representing the maximum number of streams to retrieve. If unspecified, a default value of 100 is used.
+| Parameter | Required? | Description |
+|--|--|--|
+| `string query` | Optional | Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`. |
+| `int skip` | Optional | Parameter representing the zero-based offset of the first SdsStream to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call. |
+| `int count` | Optional | Parameter representing the maximum number of streams to retrieve. If unspecified, a default value of 100 is used. |
 
 #### .NET client libraries method
 
@@ -137,10 +129,9 @@ Type search is exposed through the REST API and the client libraries method `Get
 | SdsTypeCode       | No                      |
 | InterpolationMode | No                      |
 | ExtrapolationMode | No                      |
-| Properties        | Yes, with limitations\* |
+| Properties        | Yes, with limitations<sup>1</sup>|
 
-> [!NOTE]
-> `Name` and `Id` of an SdsType are included in its `Properties` field. Similarly, `Name` and `Id` of a nested type are included in its `Properties`. If there are two types with the same `Properties`, `Name` or `Id`, the search returns both types in the result.
+<sup>1</sup>:`Name` and `Id` of an SdsType are included in its `Properties` field. Similarly, `Name` and `Id` of a nested type are included in its `Properties`. If there are two types with the same `Properties`, `Name` or `Id`, the search returns both types in the result.
 
 #### Request
 
@@ -152,14 +143,11 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip=
 
 #### Parameters
 
-`string query`
-[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`.
-
-`int skip`
-[Optional] Parameter representing the zero-based offset of the first type to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
-
-`int count`
-[Optional] Parameter representing the maximum number of types to retrieve. If unspecified, a default value of 100 is used.
+| Parameter | Required? | Description |
+|--|--|--|
+| `string query` | Optional | Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`. |
+| `int skip` | Optional | Parameter representing the zero-based offset of the first type to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call. |
+| `int count` | Optional | Parameter representing the maximum number of types to retrieve. If unspecified, a default value of 100 is used. |
 
 #### .NET client libraries method
 
@@ -228,14 +216,11 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}
 
 #### Parameters
 
-`string query`
-[Optional] Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`.
-
-`int skip`
-[Optional] Parameter representing the zero-based offset of the first stream view to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call.
-
-`int count`
-[Optional] Parameter representing the maximum number of stream views to retrieve. If unspecified, a default value of 100 is used.
+| Parameter | Required? | Description |
+|--|--|--|
+| `string query` | Optional | Parameter representing the search criteria. If unspecified, returns all values. Can be used with `skip`, `count`, and `orderby`. |
+| `int skip` | Optional | Parameter representing the zero-based offset of the first stream view to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call. |
+| `int count` | Optional | Parameter representing the maximum number of stream views to retrieve. If unspecified, a default value of 100 is used. |
 
 #### .NET client libraries method
 
@@ -249,7 +234,11 @@ _metadataService.GetStreamViewsAsync(query:"QueryString", skip:0, count:100);
 
 Tokenization is the process of breaking a string sequence into pieces called tokens using specific characters to delimit tokens. User-specified queries are tokenized into search terms. How the query string is tokenized can affect search results.
 
-Delimit the terms with 1) a space, or 2) one or more punctuation characters (`*`, `!`, `?`, `.`, for example) and a space. Any query string followed without a space or by other punctuation characters does not trigger tokenization and is treated as part of the term.
+Delimit the terms with either:
+
+1. A space.
+
+1. One or more punctuation characters (`*`, `!`, `?`, `.`, for example) and a space. Any query string followed without a space or by other punctuation characters does not trigger tokenization and is treated as part of the term.
 
 If your query has a wildcard (`*`) operator after a punctuation character, neither the punctuation nor the wildcard operator is tokenized. To specifically search for a term that has trailing punctuation, enclose the query in quotation marks to ensure that the punctuation is part of the query. See examples below:
 
@@ -429,7 +418,11 @@ GetStreamsAsync(query:"manufa*turer:compan*");
 
 <!--- This section is an exact replication of the same titled section in asset-search-api.md -->
 
-Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character: " | / \* \ ( ) :
+Add the backslash escape character ( \ ) before any special characters in search queries. The following special characters require an escape character:
+
+```text
+" | / \* \ ( ) :
+```
 
 The following are examples of using the escape character in query strings.
 

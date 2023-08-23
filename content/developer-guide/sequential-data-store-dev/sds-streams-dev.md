@@ -16,23 +16,22 @@ The following table shows the required and optional stream fields. Fields not li
 
 | Property | Type | Optionality | Searchable | Details |
 | --- | --- | --- | --- | --- |
-| Id | String | Required | Yes | An identifier for referencing the stream. |
+| Id | String | Required | Yes | An identifier for referencing the stream. For identifier rules, see [Rules for the stream identifier](#rules-for-the-stream-identifier-sdsstreamid). |
 | TypeId | String | Required | Yes | The SdsType identifier of the type to be used for this stream. |
 | Name | String | Optional | Yes | Friendly name. |
 | Description | String | Optional | Yes | Description text. |
-| Indexes | IList\<SdsStreamIndex\> | Optional | No | Used to define secondary indexes for stream. |
-| InterpolationMode | SdsInterpolationMode | Optional | No | Interpolation setting of the stream. Default is null. |
+| Indexes | IList\<SdsStreamIndex\> | Optional | No | Used to define secondary indexes for stream. For more information, see [Indexes](#indexes). |
+| InterpolationMode | SdsInterpolationMode | Optional | No | Interpolation setting of the stream. Default is null. For more information, see [Interpolation and extrapolation](#interpolation-and-extrapolation). |
 | ExtrapolationMode | SdsExtrapolationMode | Optional | No | Extrapolation setting of the stream. Default is null. |
-| PropertyOverrides | IList\<SdsStreamPropertyOverride\> | Optional | No | Used to define unit of measure and interpolation mode overrides for a stream. |
+| PropertyOverrides | IList\<SdsStreamPropertyOverride\> | Optional | No | Used to define unit of measure and interpolation mode overrides for a stream. For more information, see [SdsStreamPropertyOverride](#sdsstreampropertyoverride). |
 | CreatedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStream was created. Cannot be modified by users. |
 | ModifiedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStream was last modified. Cannot be modified by users. |
-| [Tags](xref:sds-streams-tags)\* | IList\<String\> | Optional | Yes | A list of tags denoting special attributes or categories. |
-| [Metadata](xref:sds-streams-metadata)\* | IDictionary\<String, String\> | Optional | Yes | A dictionary of string keys and associated string values. |
+| [Tags](xref:sds-streams-tags)<sup>1</sup> | IList\<String\> | Optional | Yes | A list of tags denoting special attributes or categories. |
+| [Metadata](xref:sds-streams-metadata)<sup>1</sup> | IDictionary\<String, String\> | Optional | Yes | A dictionary of string keys and associated string values. |
 
-> [!NOTE]
->You can access stream metadata and tags through Metadata API and Tags API respectively. Because stream metadata and tags are associated with SdsStream objects, you can use them as search criteria.
+<sup>1</sup> You can access stream metadata and tags through Metadata API and Tags API respectively. Because stream metadata and tags are associated with SdsStream objects, you can use them as search criteria.
 
-**Rules for the stream identifier (SdsStream.Id)**
+## Rules for the stream identifier (SdsStream.Id)
 
 1. Is not case sensitive
 2. Cannot just be whitespace

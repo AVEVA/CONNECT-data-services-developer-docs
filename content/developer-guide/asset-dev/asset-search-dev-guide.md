@@ -2,36 +2,37 @@
 uid: asset-search-dev-guide
 ---
 
-# Asset Search Criteria
+# Asset search criteria
 
 The assets search API allows you to search for your assets with search criteria.
 
-### Searchable Properties
+## Searchable properties
+
 Assets can be searched on the following asset properties:
 
-- Asset Top-level Properties
+- Asset top-level properties
   - Id, Name, Description, AssetTypeId, AssetTypeName
 
-- Metadata Properties
+- Metadata properties
   - Name, Description, Value
 
-- Stream Reference Properties
+- Stream reference properties
   - StreamReferenceName - Stream Reference Name
   - StreamPropertyId - SDS Stream Property Ids, not including indices
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
-## Search Matched Fields 
+## Search matched fields 
 
 Searches all assets and returns a list of asset identifiers and their matched fields. 
 
 ### Example response body
 
-Below is a response when query string is "Name:Tracer".
+Below is a response when the query string is "Name:Tracer".
 
 - `TotalCount` - Represents the number of matched assets in the database which matched the given query.
 
-    A list of results is returned. Each result contains:  
+A list of results is returned. Each result contains:  
 
 - `MatchProperties` - A list of matched property objects. Each `MatchProperties` object contains the matched fields and their values.
 

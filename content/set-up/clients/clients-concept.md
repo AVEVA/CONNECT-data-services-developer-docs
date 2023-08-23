@@ -4,13 +4,13 @@ uid: ccClients
 
 # AVEVA Data Hub clients
 
-Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The following types of clients are supported, and each support different types of applications:
+Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The following types of clients are supported, and each supports different types of applications:
 
 - [Client-credentials clients](#client-credentials-client)
 
 - [Authorization code clients](#authorization-code-client)
 
-- [Hybrid clients](#hybrid-client) <!-- Josh Kim Mar19021: Similar to the comment as before where we should ask if Hybrid Clients are still worth mentioning?. -->
+- [Hybrid clients](#hybrid-client)
 
 You must have the Tenant Administrator role to add and manage clients in a tenant.
 
@@ -32,7 +32,7 @@ We recommend the following best practices with a client credentials client:
 
 - Use secrets that expire and rotate them on a schedule. When it is time to switch to a new secret, we recommend that you create the new secret, redirect the application to use the new secret, and only delete the old secret from the client when it is no longer being used.
 
-##  <a name="authorization-code-client"></a>Authorization code clients
+## <a name="authorization-code-client"></a>Authorization code clients
 
 Authorization code clients are used with customer web applications that use AVEVA Data Hub as their backend. They provide a secure means of authenticating users of the website to view assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
 

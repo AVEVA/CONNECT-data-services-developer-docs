@@ -16,19 +16,18 @@ The following table shows the required and optional SdsStreamView fields. Fields
 
 | Property | Data Type | Required | Searchable | Description |
 | --- | --- | --- | --- | --- |
-| Id | String | Yes | Yes | Identifier for referencing the stream view. |
+| Id | String | Yes | Yes | Identifier for referencing the stream view. For more information, see [Rules for the Stream View Identifier](#rules-for-the-stream-view-identifier-sdsstreamviewid).|
 | Name | String | No | Yes | Friendly name. |
 | Description | String | No | Yes | Description text. |
 | SourceTypeId | String | Yes | Yes | Identifier of the SdsType of the SdsStream. |
 | TargetTypeId | String | Yes | Yes | Identifier of the SdsType to convert events to. |
-| Properties | IList\<SdsStreamViewProperty\> | No | Yes, with limitations\* | Property-level mapping. |
+| Properties | IList\<SdsStreamViewProperty\> | No | Yes, with limitations<sup>1</sup> | Property-level mapping. |
 | CreatedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was created. Cannot be modified by users. |
 | ModifiedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was last modified. Cannot be modified by users. |
 
-> [!NOTE]
-> SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its `Id`, `SourceTypeId`, and `TargetTypeId`, which are used to return the top level SdsStreamView object when searching. The same is true for nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
+<sup>1</sup>:SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its `Id`, `SourceTypeId`, and `TargetTypeId`, which are used to return the top level SdsStreamView object when searching. The same is true for nested SdsStreamViewProperties. For more information, see [search for stream views](xref:sdsSearching#search-for-stream-views).
 
-**Rules for the Stream View Identifier (SdsStreamView.Id)**
+## Rules for the Stream View Identifier (SdsStreamView.Id)
 
 1. Is not case sensitive
 2. Cannot just be whitespace
@@ -54,9 +53,9 @@ When SDS is unable to determine how to map a property of the source type, the pr
 | Nullable numeric types | Yes | Yes | No | No | No |
 | Enumeration types | No | No | Yes | Yes | No |
 | Nullable enumeration types | No | No | Yes | Yes | No |
-| Object types | No | No | No | No | Yes\* |
+| Object types | No | No | No | No | Yes<sup>1</sup> |
 
-\* Mappable if `typeId` matches between the source and the target type.
+<sup>1</sup>:Mappable if `typeId` matches between the source and the target type.
 
 ### SdsStreamViewProperty
 

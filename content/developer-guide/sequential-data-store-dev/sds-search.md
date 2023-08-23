@@ -81,13 +81,12 @@ For more information on stream properties, see [Streams](xref:sdsStreams#streamp
 
 | Property                                | Searchable |
 | --------------------------------------- | ---------- |
-| [Metadata](xref:sds-streams-metadata)\* | Yes        |
-| [Tags](xref:sds-streams-tags)\*         | Yes        |
+| [Metadata](xref:sds-streams-metadata)<sup>1</sup> | Yes        |
+| [Tags](xref:sds-streams-tags)<sup>1</sup>         | Yes        |
 | ACL                                     | No         |
 | Owner                                   | No         |
 
-> [!Note]
-> You can access stream metadata and tags through Metadata API and Tags API respectively. Metadata and tags are associated with streams and can be used as search criteria. For more information, see  [How search works with stream metadata](#how-search-works-with-stream-metadata).
+<sup>1</sup>:You can access stream metadata and tags through Metadata API and Tags API respectively. Metadata and tags are associated with streams and can be used as search criteria. For more information, see [How search works with stream metadata](#how-search-works-with-stream-metadata).
 
 #### Request
 

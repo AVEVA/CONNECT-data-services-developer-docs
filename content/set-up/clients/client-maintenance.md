@@ -18,11 +18,29 @@ To edit an existing client:
 
 1. Select an existing client.
 
-1. Select **Edit Client**.
+1. In the `Details` pane, select **Edit Client** ![edit client](../../_icons/default/pencil.svg).
 
 1. Make any desired changes to the client configuration.
 
 1. Select **Save**.
+
+## Disable/enable a client
+
+To disable a client without removing it:
+
+1. In the left pane, select **Security** > **Clients**.
+
+1. In the **Client Type** dropdown list, select the appropriate client type.
+
+1. Select an existing client.
+
+1. In the `Details` pane, next to Status, select **Disable Client** ![disable client](../../_icons/branded/pencil.svg).
+
+1. Select **Disable** to confirm.
+
+1. To reenable the client, in the `Details` pane, next to Status, select **Enable Client** ![enable client](../../_icons/branded/pencil.svg).
+
+1. Select **Enable** to confirm.
 
 ## Remove a client
 
@@ -34,7 +52,7 @@ To remove an existing client:
 
 1. Select an existing client.
 
-1. Select **Remove Client**.
+1. In the `Details` pane, select **More Options** ![more options](../../_icons/default/dots-vertical.svg) > **Remove Client**.
 
 1. Select **Remove** to confirm.
 
@@ -48,7 +66,9 @@ To create a new secret for an existing Client-Credentials or Hybrid client:
 
 1. Select the client in the list.
 
-1. Select **Add Secret** in the `Details` pane.
+1. In the `Details` pane, select the **Secrets** tab.
+
+1. Select **Add Secret**.
 
 1. (Optional) In the **Description** field, enter a description for the client secret.
 
@@ -68,7 +88,9 @@ To edit secret details for a client:
 
 1. Select the client in the list.
 
-1. Select an existing secret and select **Edit Secret** in the `Details` pane.
+1. In the `Details` pane, select the **Secrets** tab.
+
+1. Select an existing secret and select **Edit Secret**.
 
 1. Make any changes and select **Save**.
 
@@ -82,6 +104,8 @@ To remove a secret from a client:
 
 1. Select the client in the list.
 
-1. Select an existing secret and select **Remove Secret** in the `Details` pane.
+1. In the `Details` pane, select the **Secrets** tab.
+
+1. Select an existing secret and select **Remove Secret**.
 
 1. Select **Remove** to confirm.

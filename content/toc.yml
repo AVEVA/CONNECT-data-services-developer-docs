@@ -70,6 +70,7 @@
               - topicUid: streams-edit-event
               - topicUid: streams-remove-event
             - topicUid: streams-manage-stream-permissions
+            - topicUid: streams-download-data
         - topicUid: ccTypes
           items:
             - topicUid: bpTypes
@@ -191,6 +192,7 @@
 - topicUid: lpvisualizedata
   items:
   - topicUid: CreateTrendSession
+  - topicUid: download-trend-data
   - topicUid: TrendUserInterface
     items:
     - topicUid: LegendTableReference

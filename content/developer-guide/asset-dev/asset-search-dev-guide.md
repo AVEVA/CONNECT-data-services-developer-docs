@@ -50,7 +50,7 @@ A list of results is returned. Each result contains:
 
 - `LastModifiedDate` - Last modified date of the asset.
 
-- `LastStatus` - Last status of the matched asset. If a status is not defined for the asset, this field will be null. If a status is defined, this field will correspond to Unknown, Good, Warning, or Bad. The display name of the asset status had no effect on this field.
+- `LastStatus` - Last status of the matched asset. If a status is not defined for the asset, this field will be null. If a status is defined, this field will correspond to Unknown, Good, Warning, or Bad. The display name of the asset status has no effect on this field.
 
 ```json 
 HTTP 200 OK 
@@ -187,7 +187,7 @@ Content-Type: application/json
 ]
 ```
 
-## Asset Autocomplete
+## Asset autocomplete
 
 Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. 
 

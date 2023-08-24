@@ -6,7 +6,7 @@ uid: sdsWritingData
 
 The Sequential Data Store (SDS) REST APIs provide programmatic access to read and write SDS data. This topic provides guidelines when writing to an SdsStream.
 
-When working in .NET, convenient SDS Client libraries are available. The `ISdsDataService` interface, accessed using the `SdsService.GetDataService()` helper, defines the available functions.
+If you are working in .NET, convenient SDS Client libraries are available. The `ISdsDataService` interface, accessed using the `SdsService.GetDataService()` helper, defines the available functions.
 
 All writes rely on a stream's key or primary index. The primary index determines the order of events in the stream. Secondary indexes are updated, but they do not contribute to the request. All references to indexes are to the primary index.
 
@@ -17,7 +17,7 @@ The maximum size of the payload for a single write request is 28.6 MB. Additiona
 
 ## Single stream writes
 
-The following methods support writing a single or multiple values:
+The following methods support writing a single value or multiple values:
 
 - [Insert Values](xref:sds-stream-data#insert-values) inserts a collection of events.
 - [Patch Values](xref:sds-stream-data#patch-values) updates specific fields for a collection of events.
@@ -28,7 +28,7 @@ The following methods support writing a single or multiple values:
 
 With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
 
-You must format the events as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the [AVEVA Data Hub-Samples](https://github.com/osisoft/OSI-Samples-ADH) for the complete example.
+You must format the events as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the [AVEVA Data Hub Samples](https://github.com/osisoft/OSI-Samples-ADH) for the complete example.
 
 ```json
 [

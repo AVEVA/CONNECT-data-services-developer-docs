@@ -10,11 +10,11 @@ You can define simple atomic types, such as integers, floats, strings, arrays, a
 
 A type that is used to define a stream must have a key. A _key_ is a [Property, or a combination of Properties](#sdstypeproperty) that constitutes an ordered, unique identity. If the key is ordered so it functions as an index, it is known as the _primary index_. While a timestamp (`DateTime`) is a very common type of index, any type that can be ordered is permitted. Secondary and other indexes are defined in the stream. For more information, see [Indexes](xref:sdsIndexes).
 
-Consider how the events will be represented in a stream as the type defines each event in a stream. An event is a single unit whose properties have values that relate to the index; that is, each property of a type event is related to the event's index. Each event is a single unit.
+Consider how the events will be represented in a stream, as the type defines each event in a stream. An event is a single unit with properties that have values related to the index; that is, each property of a type event is related to the event's index. Each event is a single unit.
 
-A type is referenced by its identifier or `Id` field. Type identifiers must be unique within a namespace.
+Reference a type by its identifier or `Id` field. Type identifiers must be unique within a namespace.
 
-A type can also refer to other types by using their identifiers. This enables type re-usability. Nested types and base types are automatically created as separate types. For more information, see [Type Reusability](#type-reusability).
+A type can also refer to other types by using their identifiers. This referencing enables type re-usability. Nested types and base types are automatically created as separate types. For more information, see [Type Reusability](#type-reusability).
 
 Types define how events are read and associated within a collection of streams. The read characteristics when attempting to read non-existent indexes—indexes that fall between, before, or after existing indexes—are determined by the interpolation and extrapolation settings of the type. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
@@ -32,7 +32,7 @@ The table below lists required and optional fields in a type. Fields that are no
 
 | Property Name | Data Type | Required | Searchable | Details |
 | --- | --- | --- | --- | --- |
-| Id | String | Yes | Yes | Identifier for referencing the type. |
+| Id | String | Yes | Yes | Identifier for referencing the type. For a list of identifier requirements, see [Rules for the type identifier](#rules-for-the-type-identifier-sdstypeid). |
 | Name | String | No | Yes | Friendly name. |
 | Description | String | No | Yes | Description text. |
 | SdsTypeCode | SdsTypeCode | Yes | No | Numeric code identifying the base SdsType. |
@@ -52,7 +52,7 @@ The table below lists required and optional fields in a type. Fields that are no
 
 Type management using the .NET SDS client libraries methods is performed through `ISdsMetadataService`. You can create `ISdsMetadataService` using one of the `SdsService.GetMetadataService()` factory methods. .NET client libraries provide `SdsTypeBuilder` to help build SdsTypes from .NET types. SdsTypeBuilder is discussed in greater detail in [SDS Types in .NET Framework](#sdstypes-in-net-framework).
 
-## SdsTypeCode
+### SdsTypeCode
 
 The SdsTypeCode is a numeric identifier used by SDS to identify SdsTypes. An SdsTypeCode exists for every supported type.
 
@@ -145,7 +145,7 @@ The following types are supported and defined by the SdsTypeCode:
 | Version                | 22          |
 | VersionArray           | 222         |
 
-## SdsTypeProperty
+### SdsTypeProperty
 
 The `Properties` collection defines the fields in a type. Type properties appear in every stream that is created from a given type.
 
@@ -153,30 +153,36 @@ The following table shows the required and optional `SdsTypeProperty` fields. Fi
 
 | Property Name | Data Type | Required | Details |
 | --- | --- | --- | --- |
-| Id | String | Yes | Identifier for referencing the type. |
+| Id | String | Yes | Identifier for referencing the type. For more information, see [Rules for the SdsTypeProperty identifier](#rules-for-the-sdstypeproperty-identifier-sdstypepropertyid). |
 | Name | String | No | Friendly name. |
 | Description | String | No | Description text. |
 | SdsType | SdsType | Yes | Field defining the property's SdsType. |
-| IsKey | Boolean | Yes | Identifies the property as the index. |
-| Value | Object | No | Value of the property. |
+| IsKey | Boolean | Yes | Identifies the property as the index. For more information, see [IsKey](#iskey).|
+| Value | Object | No | Value of the property. For more information, see [Value](#value). |
 | Order | Int | No | Order of comparison within a compound index. |
-| InterpolationMode | SdsInterpolationMode | No | Interpolation setting of the property. Default is null. |
-| Uom | String | No | Unit of measure of the property. |
+| InterpolationMode | SdsInterpolationMode | No | Interpolation setting of the property. Default is null. For more information, see [InterpolationMode](#interpolationmode). |
+| Uom | String | No | Unit of measure of the property. For more information, see [Uom](#uom). |
 
-**ID rule** The SdsTypeProperty ID follows the same [rules](#sdstype-fields-and-properties-table) as the type identifier.
+#### Rules for the SdsTypeProperty identifier (SdsTypeProperty.Id)
 
-**`IsKey`**  
+The SdsTypeProperty ID follows the same [rules](#sdstype-fields-and-properties-table) as the type identifier.
+
+#### IsKey
+
 Boolean value `IsKey` identifies the primary index of a type in a single index. An index that is defined by more than one SdsTypeProperty is called a compound index. The maximum number of properties that can define a compound index is three. In a compound index, each `SdsTypeProperty` that is included in the index is specified as `IsKey`. The `Order` field marks the order of comparison within a compound index.
 
-**`Value`**  
+#### Value
+
 The `Value` field is used for the properties of enumeration types. An enumeration is a collection of named constants with associated constant values. Each named constant is defined by the `Id` of the SdsTypeProperty. The associated constant value is defined by the `Value` of the SdsTypeProperty. For more information, see the enumeration `State` definitions in the sample code below.
 
-**`InterpolationMode`**  
+#### InterpolationMode
+
 `InterpolationMode` is assigned when the SdsTypeProperty of the event should be interpolated in a specific way that differs from the interpolation mode of the SdsType. `InterpolationMode` is only applied to an SdsTypeProperty that is not part of the index. If the `InterpolationMode` is not set, the SdsTypeProperty is interpolated in the manner defined by the SdsType's `InterpolationMode`.
 
 An SdsType with the `InterpolationMode` set to `Discrete` cannot also have the SdsTypeProperty with `InteroplationMode`. For more information on interpolation of events, see [Interpolation](xref:sdsReadingData#interpolation).
 
-**`Uom`**  
+#### Uom
+
 `Uom` is the unit of measure for the SdsTypeProperty. The `Uom` of the SdsTypeProperty may be specified by the name or the abbreviation. The names and abbreviations of `Uoms` are case sensitive.
 
 The `InterpolationMode` and `Uom` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [Streams](xref:sdsStreams#sdsstreampropertyoverride).
@@ -276,9 +282,9 @@ The `SdsTypeBuilder` also supports derived types. Note that you need not add the
 
 ## SdsTypes outside of .NET framework
 
-You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you'll see how types are built and defined in [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
+You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you can see how types are built and defined in [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
 
-### SdsTypeCode, SdsTypeProperty and SdsType
+### SdsTypeCode, SdsTypeProperty, and SdsType
 
 #### [Python](#tab/tabid-1)
 
@@ -720,14 +726,13 @@ The new type may also include the full type definition of the reference type ins
 }
 ```
 
-If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist, a new type will be created automatically by SDS. Further type creations can reference them as shown above. Note that when trying to get types back from SDS, the results will also include types that were automatically created by SDS.
+If the full definition is sent, the referenced types (base type "Simple" in the above example) should match the actual type that was initially created. If the full definition is sent and the referenced types do not exist, a new type is created automatically by SDS. Further type creations can reference them as shown above. Note that when trying to get types back from SDS, the results also include types that were automatically created by SDS.
 
-Base types and properties of type `object`, `enum`, or user-defined collections such as `array`, `list` and `dictionary`, will be treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of a particular type is to be created, the type should contain at least one property with a valid index type as described in the [Indexes](xref:sdsIndexes) section. The index property may also be in the base type as shown in the example above.
+Base types and properties of type `object`, `enum`, or user-defined collections such as `array`, `list` and `dictionary`, are treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of a particular type is to be created, the type should contain at least one property with a valid index type as described in the [Indexes](xref:sdsIndexes) section. The index property may also be in the base type as shown in the example above.
 
 You can do this using any programming languages. Here's an example in .NET:
 
 ```csharp
-
 public class Basic
 {
     [SdsMember(IsKey = true, Order = 0)]

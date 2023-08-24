@@ -37,19 +37,19 @@ The table below lists supported and unsupported types within a filter expression
 
 The following logical operators are supported for use within a filter expression:
 
-| Operator | Description                                                  |
-| -------- | ------------------------------------------------------------ |
-| `eq`     | Equal to                                                     |
-| `ne`     | Not equal                                                    |
-| `ge`     | Greater than or equal to                                     |
-| `le`     | Less than or equal to                                        |
-| `lt`     | Less than                                                    |
-| `gt`     | Greater than                                                 |
-| `( )`    | Parenthesis can be used to affect the order of the operation |
-| `or`     | Or logical operator                                          |
-| `and`    | And logical operator                                         |
-| `not`    | Not logical operator                                         |
-| `-`      | Negation                                                     |
+| Operator | Description                                                   |
+|----------|---------------------------------------------------------------|
+| `eq`     | Equal to.                                                     |
+| `ne`     | Not equal.                                                    |
+| `ge`     | Greater than or equal to.                                     |
+| `le`     | Less than or equal to.                                        |
+| `lt`     | Less than.                                                    |
+| `gt`     | Greater than.                                                 |
+| `( )`    | Parenthesis can be used to affect the order of the operation. |
+| `or`     | Or logical operator.                                          |
+| `and`    | And logical operator.                                         |
+| `not`    | Not logical operator.                                         |
+| `-`      | Negation.                                                     |
 
 > [!NOTE]
 > You use logical operators on ordered properties. When filtering on an ordered property, performance improves significantly if the property is a [secondary index](xref:sdsIndexes#secondary-indexes).

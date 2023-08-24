@@ -54,9 +54,17 @@ This simple example shows the `IncludeUom` property of a data field is set to `t
 }
 ```
 
-The resulting data view in standard mode: | Timestamp | Value | Value Uom | |----------------------|-------|-----------| | 2020-11-06T08:00:00Z | 1.21 | kW |
+The resulting data view in standard mode:
 
-The resulting data view in narrow mode: | Timestamp | Field | Value | Uom | |----------------------|-------|-------|-----| | 2020-11-06T08:00:00Z | Value | 1.21 | kW |
+| Timestamp            | Value | Value Uom |
+| -------------------- | ----- | --------- |
+| 2020-11-06T08:00:00Z | 1.21  | kW        |
+
+The resulting data view in narrow mode:
+
+| Timestamp            | Field | Value | Uom |
+| -------------------- | ----- | ----- | --- |
+| 2020-11-06T08:00:00Z | Value | 1.21  | kW  |
 
 ### Show units of measure in field labels
 
@@ -92,6 +100,14 @@ The following example shows how the field label token `{Uom}` of a data field is
 }
 ```
 
-The resulting data view in standard mode: | Timestamp | Value kW | |----------------------|----------| | 2020-11-06T08:00:00Z | 1.21 |
+The resulting data view in standard mode:
 
-The resulting data view in narrow mode: | Timestamp | Field | Value | |----------------------|----------|-------| | 2020-11-06T08:00:00Z | Value kW | 1.21 |
+| Timestamp            | Value kW |
+| -------------------- | -------- |
+| 2020-11-06T08:00:00Z | 1.21     |
+
+The resulting data view in narrow mode:
+
+| Timestamp            | Field    | Value |
+| -------------------- | -------- | ----- |
+| 2020-11-06T08:00:00Z | Value kW | 1.21  |

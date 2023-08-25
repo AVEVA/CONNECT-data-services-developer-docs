@@ -113,7 +113,7 @@ The view data is available in several formats. A format can be specified using t
 | Table with header | `tableh` | 2 | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |
 | CSV | `csv` | 3 | Comma-separated values. Each row describes one data record. |
 | CSV with header | `csvh` | 4 | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
-| Apache Parquet | `parquet` | 5 | Parquet format. For more information on the Parquet format, see <xref:data-views-parquet-format>. |
+| Apache Parquet | `parquet` | 5 | Parquet format. |
 
 #### Response format
 

@@ -85,7 +85,7 @@ SDS supports reading from multiple streams in one request. The following method 
 
 ## Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [Response format](xref:osisoftCloudServices#reponse-format).
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [Response format](xref:osisoftCloudServices#response-format).
 
 ## Indexes and reading data
 

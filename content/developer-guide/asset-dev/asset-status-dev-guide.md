@@ -2,7 +2,7 @@
 uid: asset-status-dev-guide
 ---
 
-# Asset and Asset Type Status
+# Asset and asset type status
 
 Status is a property of an asset or asset type that defines the simple status of an asset or asset type. There is one status property for each asset or asset type.
 

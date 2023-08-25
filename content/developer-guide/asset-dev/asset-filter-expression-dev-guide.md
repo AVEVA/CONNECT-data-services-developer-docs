@@ -4,7 +4,7 @@ uid: assets-filter-expressions-dev-guide
 
 # Asset filter expressions
 
-Filter expressions can be used to filter Asset and Asset Type objects on their `CreatedDate` and `LastModifiedDate` property values. Filter expressions can be applied to all collection-level GET and HEAD operations for Assets and Asset Types, including Asset Search.
+Filter expressions can be used to filter asset and asset type objects on their `CreatedDate` and `LastModifiedDate` property values. Filter expressions can be applied to all collection-level GET and HEAD operations for assets and asset types, including asset search.
 
 ## Logical operators
 

@@ -286,7 +286,8 @@
   items:
     - topicUid: download-tenant-log
     - topicUid: ServiceBlog
-    - topicUid: flex-credits
+    - name: Flex credits
+      topicUid: flex-credits
 - name: Developer guide
   href: developer-guide/toc.yml
   topicHref: developer-guide/dev-guide-introduction.md

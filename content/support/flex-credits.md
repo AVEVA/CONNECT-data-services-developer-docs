@@ -18,7 +18,7 @@ _Streams stored_ flex credit transactions occur when data streams are stored wit
 
 _Streams accessed_ flex credit transactions occur when data streams are accessed by users. Similar to streams stored, these transactions are tied to namespaces and communities. Accessing streams from multiple namespaces or communities generates corresponding streams accessed transactions.
 
-## Charges
+## Overage charges
 
 The charging process with flex credits provides a balance between usage and cost. You are charged only when you exceed the usage thresholds outlined in your rate plan. For example, if you have a rate plan that includes 500 streams stored as part of your base capacity:
 

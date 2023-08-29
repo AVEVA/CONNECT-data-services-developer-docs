@@ -12,11 +12,11 @@ Flex credits are units of virtual currency that represent usage within AVEVA Dat
 
 ### Streams stored
 
-_Streams stored_ flex credit transactions occur when data streams are stored within AVEVA Data Hub. Every namespace that a tenant has is associated with streams stored transactions. For instance, if a customer has two namespaces, they could have up to two streams stored transactions.
+Streams stored flex credit transactions occur when data streams are stored within AVEVA Data Hub. Every namespace that a tenant has is associated with streams stored transactions. For instance, if a customer has two namespaces, they could have up to two streams stored transactions.
 
 ### Streams accessed
 
-_Streams accessed_ flex credit transactions occur when data streams are accessed by users. Similar to streams stored, these transactions are tied to namespaces and communities. Accessing streams from multiple namespaces or communities generates corresponding streams accessed transactions.
+Streams accessed flex credit transactions occur when data streams are accessed by users. Similar to streams stored, these transactions are tied to namespaces and communities. Accessing streams from multiple namespaces or communities generates corresponding streams accessed transactions.
 
 ## Overage charges
 

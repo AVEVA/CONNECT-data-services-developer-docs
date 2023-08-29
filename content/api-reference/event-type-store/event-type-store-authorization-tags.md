@@ -40,10 +40,10 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 ```json
 {
   "Id": "string",
-  "LifeCycleState": 0,
-  "Description": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z"
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string"
 }
 ```
 
@@ -98,18 +98,20 @@ Only return clients that have these tags.<br/>
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -165,18 +167,20 @@ Only return clients that have these tags.<br/>
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -254,18 +258,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 ```json
 [
   {
-    "Id": "string",
     "Name": "string",
-    "State": 0,
+    "GraphQLName": "string",
     "Version": 0,
+    "Id": "string",
+    "State": 0,
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z",
     "Description": "string",
     "Members": [
       {
         "Name": "string",
+        "GraphQLName": "string",
         "Code": 0,
-        "LifeCycleState": 0,
+        "State": 0,
         "Description": "string"
       }
     ]
@@ -505,18 +511,18 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Id|string|false|true|None|
-|LifeCycleState|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|Description|string|false|true|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |CreatedDate|date-time|false|true|None|
 |ModifiedDate|date-time|false|true|None|
+|Description|string|false|true|None|
 
 ```json
 {
   "Id": "string",
-  "LifeCycleState": 0,
-  "Description": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z"
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string"
 }
 
 ```
@@ -581,10 +587,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
 |Name|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|GraphQLName|string|false|true|None|
 |Version|int32|false|false|None|
+|Id|string|false|true|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |CreatedDate|date-time|false|true|None|
 |ModifiedDate|date-time|false|true|None|
 |Description|string|false|true|None|
@@ -592,18 +599,20 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -625,15 +634,17 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|None|
+|GraphQLName|string|false|true|None|
 |Code|int32|false|false|None|
-|LifeCycleState|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |Description|string|false|true|None|
 
 ```json
 {
   "Name": "string",
+  "GraphQLName": "string",
   "Code": 0,
-  "LifeCycleState": 0,
+  "State": 0,
   "Description": "string"
 }
 

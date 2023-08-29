@@ -4,7 +4,7 @@ uid: community-accept-invite
 
 # Step 1: Accept community invitation
 
-When another tenant invites you to a community, you receive an email invitation that you can use to join. 
+When another tenant invites you to a community, you receive an email invitation that you can use to join.
 
 **Note:** Invitations are valid for 14 days before they expire. If you do not accept the invitation within that time, or you do not receive an invitation email, you must request a new invitation from the administrative tenant.
 
@@ -37,8 +37,8 @@ When another tenant invites you to a community, you receive an email invitation 
   When the administrative tenant confirms your tenant, you receive a notification email.
 
   **Tip:** You can view or cancel your invitations that are pending confirmation from the `Communities` page. For more information, see <xref:community-view-invitations>.
- 
-1. After your tenant is confirmed for the community, select **Data Management** > **Communities** and select **Details** to set up Community Administrators and Community Members for your tenant.
+
+1. After your tenant is confirmed for the community, select **Data Management** > **Communities**, choose your community, and then choose **Community Details** to set up Community Administrators and Community Members for your tenant.
 
   ![community details](images/community-details.png)
 
@@ -46,12 +46,12 @@ When another tenant invites you to a community, you receive an email invitation 
 
 1. From the **Welcome** page, verify the **Contact Email** address and then select **Next**.
 
-  The **Contact Email** is an email address that your business partners can use to contact you for any questions or issues related to this community. This field defaults to the email address for your user account, but you can override it by selecting ![close](../_icons/default/close.svg) and entering a new address. 
+  The **Contact Email** is an email address that your business partners can use to contact you for any questions or issues related to this community. This field defaults to the email address for your user account, but you can override it by selecting ![close](../_icons/default/close.svg) and entering a new address.
 
   **Tip:** You can update your **Contact Email** later. For more information, see <xref:community-contact-email>.
 
-1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks within their own tenant, but not the entire community. You can either accept the default roles or add new ones. 
-   
+1. On the `Community Administrators` page, choose the [roles](xref:ccRoles) that are assigned [community administration permissions](xref:community-community-roles#community-administrators). Users assigned these roles can perform administration tasks within their own tenant, but not the entire community. You can either accept the default roles or add new ones.
+
    - To add community administrator permissions to a user role, select **Add Roles** > **Add Role** ![Add Role](../_icons/branded/plus.svg) for any role that you want to function as community administrator.
 
    - To remove community administrator permissions from a user role, select **Remove Role** ![Remove Role](../_icons/branded/window-close.svg) for the role that you want to remove.
@@ -61,7 +61,7 @@ When another tenant invites you to a community, you receive an email invitation 
 1. After you finish, select **Next**.
 
 1. On the `Community Members` page, add [Community Members](xref:community-community-roles#community-member), which are members within your tenant that have read access to the community and its data.
-      
+
   To add new Community Members, select **Add Members** > **Add User** ![Add](../_icons/branded/plus.svg) for each user or group that you want to add.
 
   **Note:** Community Administrators are not automatically added as Community Members. If you want your Community Administrators to also be Community Members with access to shared resources, you must manually add them.

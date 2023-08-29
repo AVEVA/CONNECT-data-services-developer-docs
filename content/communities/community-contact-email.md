@@ -14,9 +14,9 @@ After your tenant provides an initial contact email during the invitation proces
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community you want to edit and select **Details**.
+1. Select the community you want to edit and choose **Community Details**.
 
-1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Edit Community**. 
+1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Edit Community**.
 
 1. Edit the community **Contact Email**.
 

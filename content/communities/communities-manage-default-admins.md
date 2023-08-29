@@ -18,9 +18,9 @@ To manage default community administrators:
 
 1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Manage Default Community Administrators**.
 
-1. Add or remove roles as default community administrators. 
+1. Add or remove roles as default community administrators.
 
-	To add a role, select **Add Roles** and then select **Add Role** ![add role](../_icons/branded/plus.svg) for any role that you want to function as community administrator. 
+	To add a role, select **Add Roles** and then select **Add Role** ![add role](../_icons/branded/plus.svg) for any role that you want to function as community administrator.
 
 	To remove a role, select **Remove Role** ![Remove Role](../_icons/branded/window-close.svg).
 

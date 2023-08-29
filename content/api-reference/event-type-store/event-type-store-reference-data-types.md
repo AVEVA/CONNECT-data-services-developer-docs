@@ -15,7 +15,7 @@ Returns an array of ReferenceDataTypes in a given namespace and the version ETag
 
 ```text 
 GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
-?skip={skip}&count={count}&includeDeleted={includeDeleted}
+?skip={skip}&count={count}&filter={filter}&includeDeleted={includeDeleted}
 ```
 
 <h4>Parameters</h4>
@@ -25,7 +25,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 <br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeDeleted`
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
+<br/><br/>`[optional] boolean includeDeleted`
 <br/><br/>
 
 <h3>Response</h3>
@@ -45,10 +46,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 ```json
 [
   {
-    "Id": "string",
     "Name": "string",
-    "State": 0,
+    "GraphQLName": "string",
     "Version": 0,
+    "Id": "string",
+    "State": 0,
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z",
     "Description": "string",
@@ -58,13 +60,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
         "PropertyTypeCode": 0,
         "Id": "string",
         "Name": "string",
+        "GraphQLName": "string",
         "Flags": 0,
         "State": 0,
         "PropertyTypeId": "string",
         "RemoteReferenceName": "string",
         "Description": "string"
       }
-    ]
+    ],
+    "DefaultAuthorizationTag": "string"
   }
 ]
 ```
@@ -75,7 +79,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 <a id="opIdReferenceDataTypes_Create Reference Data Type With Server Generated Id"></a>
 
-Creates a new ReferenceDataType. Response includes ETag header..
+Creates a new ReferenceDataType. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -124,10 +128,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTy
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -137,13 +142,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTy
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -188,10 +195,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -201,13 +209,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -217,7 +227,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 <a id="opIdReferenceDataTypes_Get Or Create Reference Data Type"></a>
 
-Creates a new ReferenceDataType or returns the current one if the body is equivalent to what is stored. Response includes ETag header..
+Creates a new ReferenceDataType or returns the current one if the body is equivalent to what is stored. Response includes ETag header.
 
 <h3>Request</h3>
 
@@ -270,10 +280,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTy
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -283,13 +294,15 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTy
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -351,18 +364,20 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -398,6 +413,71 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceData
 |400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
 |403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 |404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+
+---
+
+## `Bulk Create Reference Data Type`
+
+<a id="opIdReferenceDataTypes_Bulk Create Reference Data Type"></a>
+
+Creates multiple new EventGraphReferenceDataType and returns a list of any errors along with the created objects. Response includes ETag header.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+<h4>Request Body</h4>
+
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#EventGraphReferenceDataTypeDto<br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[EventGraphReferenceDataType](#schemaeventgraphreferencedatatype)|Success.|
+|207|[ErrorResponse](#schemaerrorresponse)|Partial.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+
+<h4>Example response body</h4>
+
+> 200 Response ([EventGraphReferenceDataType](#schemaeventgraphreferencedatatype))
+
+```json
+{
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
+  "Category": 0,
+  "Properties": [
+    {
+      "PropertyTypeCode": 0,
+      "Id": "string",
+      "Name": "string",
+      "GraphQLName": "string",
+      "Flags": 0,
+      "State": 0,
+      "PropertyTypeId": "string",
+      "RemoteReferenceName": "string",
+      "Description": "string"
+    }
+  ],
+  "DefaultAuthorizationTag": "string"
+}
+```
 
 ---
 
@@ -661,22 +741,25 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
 |Name|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|GraphQLName|string|false|true|None|
 |Version|int32|false|false|None|
+|Id|string|false|true|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |CreatedDate|date-time|false|true|None|
 |ModifiedDate|date-time|false|true|None|
 |Description|string|false|true|None|
 |Category|[EventGraphReferenceDataCategory](#schemaeventgraphreferencedatacategory)|false|false|None|
 |Properties|[[TypeProperty](#schematypeproperty)]|false|true|None|
+|DefaultAuthorizationTag|string|false|true|None|
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
@@ -686,13 +769,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
       "PropertyTypeCode": 0,
       "Id": "string",
       "Name": "string",
+      "GraphQLName": "string",
       "Flags": 0,
       "State": 0,
       "PropertyTypeId": "string",
       "RemoteReferenceName": "string",
       "Description": "string"
     }
-  ]
+  ],
+  "DefaultAuthorizationTag": "string"
 }
 
 ```
@@ -746,6 +831,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 |PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|None|
 |Id|string|false|true|None|
 |Name|string|false|true|None|
+|GraphQLName|string|false|true|None|
 |Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|None|
 |State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |PropertyTypeId|string|false|true|None|
@@ -757,6 +843,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
   "PropertyTypeCode": 0,
   "Id": "string",
   "Name": "string",
+  "GraphQLName": "string",
   "Flags": 0,
   "State": 0,
   "PropertyTypeId": "string",
@@ -838,10 +925,11 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
 |Name|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|GraphQLName|string|false|true|None|
 |Version|int32|false|false|None|
+|Id|string|false|true|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |CreatedDate|date-time|false|true|None|
 |ModifiedDate|date-time|false|true|None|
 |Description|string|false|true|None|
@@ -849,18 +937,20 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 
 ```json
 {
-  "Id": "string",
   "Name": "string",
-  "State": 0,
+  "GraphQLName": "string",
   "Version": 0,
+  "Id": "string",
+  "State": 0,
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "Description": "string",
   "Members": [
     {
       "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "LifeCycleState": 0,
+      "State": 0,
       "Description": "string"
     }
   ]
@@ -882,15 +972,17 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|None|
+|GraphQLName|string|false|true|None|
 |Code|int32|false|false|None|
-|LifeCycleState|[LifeCycleState](#schemalifecyclestate)|false|false|None|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
 |Description|string|false|true|None|
 
 ```json
 {
   "Name": "string",
+  "GraphQLName": "string",
   "Code": 0,
-  "LifeCycleState": 0,
+  "State": 0,
   "Description": "string"
 }
 

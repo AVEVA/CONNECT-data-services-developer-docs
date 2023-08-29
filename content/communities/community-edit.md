@@ -12,15 +12,13 @@ After you create a community, you can edit its name and description at any time.
 
 ## To edit a community
 
-To edit a community:
-
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community you want to edit and select **Details**.
+1. Select the community you want to edit and choose **Community Details**.
 
 1. Select **More Options** ![More Options](../_icons/default/dots-vertical.svg) > **Edit Community**.
 
-1. In **Edit Community**, edit the community **Name** and **Description**. 
+1. In **Edit Community**, edit the community **Name** and **Description**.
 
 1. (Optional) Edit the community **Alias**.
 

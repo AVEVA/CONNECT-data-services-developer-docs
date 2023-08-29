@@ -16,11 +16,11 @@ To add users from your own tenant to a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community where you want to add users and select **Details**.
+1. Select the community where you want to add users and choose **Community Details**.
 
 1. On the **My Members** tab, select **Add Member**.
 
-1. Select tenant users for membership. 
+1. Select tenant users for membership.
 
 	**Tip:** If necessary, you can filter the list of users by typing in the **Filter users** field.
 
@@ -34,7 +34,7 @@ To remove tenant users from a community:
 
 1. In the left pane, select **Data Management** > **Communities**.
 
-1. Find the community where you want to remove users and select **Details**.
+1. Select the community where you want to remove users and choose **Community Details**.
 
 1. On the **My Members** tab, select one or more users.
 

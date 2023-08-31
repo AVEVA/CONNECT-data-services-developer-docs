@@ -38,6 +38,7 @@ For example, the following table describes a rate plan that includes **500 strea
 - If another 99 streams are accessed in a different namespace, and the customer has already consumed their 500 streams accessed capacity, the entire 99 streams are considered for charging based on the rate plan.
 
 The same principle applies to streams stored and shared streams accessed transactions.
+
 ## Evolution of rate plans
 
 While the structure of rate plans remains consistent, the pricing and features they include may evolve over time. The rate plans aim to accommodate varying customer needs and usage patterns.

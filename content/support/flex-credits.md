@@ -24,19 +24,20 @@ Streams accessed flex credit transactions occur when data streams are accessed b
 
 ## Overage charges
 
-The charging process with flex credits provides a balance between usage and cost. You are charged only when you exceed the usage thresholds outlined in your rate plan. For example, the following table describes a rate plan that includes **500 streams** accessed as part of your base capacity:
+The charging process involves both fixed and variable charges, providing a balance between usage and cost. There is a fixed monthly charge that allows the account to use a certain amount of each usage metric daily. Within the day, if the account goes beyond this amount, then variable, per-stream charges are applied for the day. After midnight, the counter on each usage metric is reset.
+
+For example, the following table describes a rate plan that includes **500 streams** accessed as part of your base capacity:
 
 | Tenant Namespaces | Streams Accessed | Streams Charged |
 |--|--|--|
 | Namespace 1 | 550 | 50 |
 | Namespace 2 | 99 | 99 |
 
-- When 550 streams accessed are posted, only 50 streams are counted for charging. This excess usage is multiplied by the flex credit per stream stored rate specified in your rate plan.
+- When 550 streams are accessed, only 50 streams are counted for charging. This excess usage is multiplied by the flex credit per-stream stored rate specified in your rate plan.
 
-- If another 99 streams accessed are used in a different namespace, and the customer has already consumed their 500 streams accessed capacity, the entire 99 streams accessed is considered for charging based on the rate plan.
+- If another 99 streams are accessed in a different namespace, and the customer has already consumed their 500 streams accessed capacity, the entire 99 streams are considered for charging based on the rate plan.
 
 The same principle applies to streams stored and shared streams accessed transactions.
-
 ## Evolution of rate plans
 
 While the structure of rate plans remains consistent, the pricing and features they include may evolve over time. The rate plans aim to accommodate varying customer needs and usage patterns.

@@ -2,13 +2,17 @@
 uid: flex-credits
 ---
 
-# Flex credits: How they work
+# How AVEVA Data Hub charges flex credits
 
-Flex credits are the currency used for transactions in AVEVA Data Hub, designed to provide customers with flexible pricing based on their usage. This document outlines the key concepts and processes behind flex credits and their application within AVEVA Data Hub.
+This document outlines the key concepts and processes behind flex credits and their application within AVEVA Data Hub.
 
 ## Flex credit transactions
 
-Flex credits are units of virtual currency that represent usage within AVEVA Data Hub (or other applications available on AVEVA Connect). For AVEVA Data Hub, these credits are consumed based on the volume of data streams stored and accessed by a customer. Each interaction with data streams results in a flex credit transaction. There are two main types of flex credit transactions: _streams stored_ and _streams accessed_.
+Flex credits are units of virtual currency that represent usage within AVEVA Data Hub (or other applications available on AVEVA Connect). You can commit to an amount of flex credits for cloud offerings and spend them how you like across a portfolio of cloud offerings, allowing you the flexibility to adjust mid-contract how your spend those flex credits based on how your usage evolves.
+
+For AVEVA Data Hub, these credits are consumed based on the volume of data streams stored and accessed by a customer. Each interaction with data streams results in a flex credit transaction. There are two main types of flex credit transactions: _streams stored_ and _streams accessed_.
+
+Flex credit transactions occur at the end of each day. AVEVA Data Hub records usage of streams throughout the day and reports the final summary to Connect after the day completes. When that report is sent, the credit deduction occurs.
 
 ### Streams stored
 
@@ -16,17 +20,22 @@ Streams stored flex credit transactions occur when data streams are stored withi
 
 ### Streams accessed
 
-Streams accessed flex credit transactions occur when data streams are accessed by users. Similar to streams stored, these transactions are tied to namespaces and communities. Accessing streams from multiple namespaces or communities generates corresponding streams accessed transactions.
+Streams accessed flex credit transactions occur when data streams are accessed by users. You are charged based on unique data streams accessed. No matter the application/user, AVEVA Data Hub does not count the access more than once for the same stream within a day. Similar to streams stored, these transactions are tied to namespaces and communities. Accessing streams from multiple namespaces or communities generates corresponding streams accessed transactions.
 
 ## Overage charges
 
-The charging process with flex credits provides a balance between usage and cost. You are charged only when you exceed the usage thresholds outlined in your rate plan. For example, if you have a rate plan that includes 500 streams stored as part of your base capacity:
+The charging process with flex credits provides a balance between usage and cost. You are charged only when you exceed the usage thresholds outlined in your rate plan. For example, the following table describes a rate plan that includes **500 streams** accessed as part of your base capacity:
 
-- When 550 streams stored are posted, only 50 streams are counted for charging. This excess usage is multiplied by the flex credit per stream stored rate specified in your rate plan.
+| Tenant Namespaces | Streams Accessed | Streams Charged |
+|--|--|--|
+| Namespace 1 | 550 | 50 |
+| Namespace 2 | 99 | 99 |
 
-- If another 99 streams stored are used in a different namespace, and the customer has already consumed their 500 streams stored capacity, the entire 99 streams stored is considered for charging based on the rate plan.
+- When 550 streams accessed are posted, only 50 streams are counted for charging. This excess usage is multiplied by the flex credit per stream stored rate specified in your rate plan.
 
-The same principle applies to streams accessed and shared streams accessed transactions.
+- If another 99 streams accessed are used in a different namespace, and the customer has already consumed their 500 streams accessed capacity, the entire 99 streams accessed is considered for charging based on the rate plan.
+
+The same principle applies to streams stored and shared streams accessed transactions.
 
 ## Evolution of rate plans
 
@@ -35,3 +44,7 @@ While the structure of rate plans remains consistent, the pricing and features t
 ## Flex credit customer support
 
 In cases of confusion or inquiries about flex credits, customers can seek clarification from the [AVEVA support team](https://softwaresupport.aveva.com/).
+
+## Additional flex credit documentation
+
+For more information about flex credits, such as information about credit agreements or rate plans, see the [AVEVA Connect documentation](https://docs.aveva.com/bundle/aveva-connect/page/885356.html).

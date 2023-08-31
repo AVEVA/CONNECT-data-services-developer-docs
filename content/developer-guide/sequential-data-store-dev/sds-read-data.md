@@ -229,7 +229,6 @@ When you send an API request to the [List Summaries](xref:sds-stream-data#list-s
 - WeightedPopulationStandardDeviation
 - WeightedStandardDeviation
 
-
 ---
 
 ## Transforming data

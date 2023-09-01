@@ -12,7 +12,7 @@ Flex credits are units of virtual currency that represent usage within AVEVA Dat
 
 For AVEVA Data Hub, flex credits are debited from your account based on the volume of data streams stored and accessed in your tenant.
 
-Each interaction with data streams results in a flex credit transaction. There are three main types of flex credit transactions for AVEVA Data Hub: streams stored, streams accessed, and shared streams accessed (details below).
+Each interaction with data streams results in a flex credit transaction. There are three main types of flex credit transactions for AVEVA Data Hub: _streams stored_, _streams accessed_, and _shared streams accessed_ (details below).
 
 Each tenant is billed a fixed monthly price for a base plan that provides daily base thresholds for each transaction type. For example, a starter plan allocates the following thresholds:
 

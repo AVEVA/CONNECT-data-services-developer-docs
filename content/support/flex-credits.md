@@ -32,7 +32,7 @@ _Streams stored_ flex credit transactions occur when data streams are stored wit
 
 ### Streams accessed
 
-_Streams accessed_ flex credit transactions occur when data streams are accessed by users. You are charged based on unique data streams accessed. No matter the application/user, AVEVA Data Hub does not count the access more than once for the same stream within a day. For example, if two separate users access the same stream, only a single flex credit transaction occurs.
+_Streams accessed_ flex credit transactions occur when data streams are accessed by users. You are charged based on unique data streams accessed. No matter the user, AVEVA Data Hub does not count the access more than once for the same stream within a day. For example, if two separate users access the same stream, only a single flex credit transaction occurs.
 
 Similar to streams stored, these transactions are tied to namespaces. Accessing streams from multiple namespaces generates corresponding streams accessed transactions.
 
@@ -46,7 +46,7 @@ Shared stream accessed flex credit transactions only occur when you _access_ sha
 
 Charges for stored or accessed streams involve fixed and variable components, striking a balance between usage and cost. There is a fixed monthly charge for your base plan that lets you store or access streams at your threshold at no additional cost. Within a given day, if you exceed a threshold in your base plan, then additional variable, per-stream charges are applied for each stream. After 12:00 AM, the counter on each usage metric is reset so that you are no longer charged overages.
 
-Take for example, the started plan previously mentioned in [Flex credit transaction](#flex-credit-transactions). If the tenant exceeds their daily threshold for _streams accessed_ of 200, each additional stream accessed incurs additional flex credit debits. The same principle applies to streams stored and shared streams accessed transactions.
+Take for example, the starter plan previously mentioned in [Flex credit transaction](#flex-credit-transactions). If the tenant exceeds their daily threshold for _streams accessed_ of 200, each additional stream accessed incurs additional flex credit debits. The same principle applies to streams stored and shared streams accessed transactions.
 
 ## Evolution of rate plans
 

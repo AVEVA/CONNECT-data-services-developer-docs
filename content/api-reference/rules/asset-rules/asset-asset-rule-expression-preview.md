@@ -472,6 +472,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
 |ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|None|
 |PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|None|
+|CreatedDate|date-time|false|false|None|
+|ModifiedDate|date-time|false|false|None|
 
 ```json
 {
@@ -492,7 +494,9 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
       "Uom": "string",
       "InterpolationMode": 0
     }
-  ]
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
 }
 
 ```

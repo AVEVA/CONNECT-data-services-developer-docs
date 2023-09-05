@@ -28,7 +28,7 @@ Monitor and manage assets by applying filters or searching in the Asset Explorer
 
 1. Enter the name of the metadata facet in the **Search** field to find a particular facet.
 
-   For more information, see <xref:search>.
+   For more information, see <xref:Search>.
 
 1. Select one or more values from one or more facets to apply the filters to the listed assets.
 

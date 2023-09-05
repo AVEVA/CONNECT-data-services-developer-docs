@@ -16,11 +16,11 @@ Use the **Namespaces** dropdown list that is available on all pages to edit perm
 
 1. From the **Namespaces** dropdown list, select the namespace that you want to edit permissions for.
 
-1. Select the **Manage Permissions** ![Manage Permissions](../../_icons/default/cog.svg) icon.
+1. Select the **Manage Settings** ![Manage Settings](../../_icons/default/cog.svg) icon.
 
-    The `Manage Permissions for Namespace` window opens.
+    The **Manage Permissions** tab of the `Namespace Settings` window opens.
 
-1. Use the `Manage Permissions for Namespace` window to:
+1. Use this window to:
 
     - (Optional) Add user roles that have permissions on the namespace.
     - Edit namespace permissions for each user role.

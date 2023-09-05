@@ -2,68 +2,37 @@
 uid: gsAssets
 ---
 
-# Get started with assets
+# Get started: Assets
 
-An asset is a container that includes metadata and references to streams related to a logical asset. For more information about assets, see [Assets](xref:ccAssets).
+An *asset* is a digital entity that can be used to model real-world entities. For example, a wind turbine or a mixing tank. An asset consists of three parts: metadata, property and status.
 
-To create an asset:
+For additional information about asset best practices, see <xref:ccAssets>.
 
-1. In the left pane, select **Visualization** > **Asset Explorer**.
+1. [Add asset](xref:CreateConfigureAsset)
 
-1. From the **Assets/Asset Types** selector, select **Assets**.
+    Assets are digital twins of real-world equipment. Using assets, you can apply:
 
-1. In the toolbar, select **Add Asset**. 
+    - *Metadata*—Add static metadata to your assets—information about the asset that does not change. This metadata provides contextual knowledge for assets. For example, if you are adding metadata for a wind turbine, you can add information such as its region or manufacturer number.
 
-1. In the `Select Type for New Asset` window, select **None** and select **Continue**.
+    - *Properties*—Properties are references that associate real-time data streams with an asset. They also add extra context, such as when a user adds a stream reference to an asset. Properties provide a user-friendly name for reference, such as "temperature" or "pressure", to add context to underlying streams that often have naming conventions that may be difficult to understand.
 
-1. In the right pane, complete the following fields:
+    - *Status*—Map statuses to a variety of values that indicate the asset status. Then use that status to filter through assets in the Asset Explorer using real-time measurements, viewing their current status based on a property value. You can choose an enumeration or integer property on the asset and map its values to "Good", "Warning", or "Bad" as the asset status. These statuses help you filter through assets and locate those that need immediate attention.
 
-   - **Asset** - Enter *MyData.Tank*.
+1. [Create asset types](xref:AssetTypes)
 
-   - **Description** - (Optional) Add a description for the asset. 
-   
-1. Select the **Metadata** tab, and select **Add Metadata**.
+    An *asset type* is a template for creating assets that share a common structure or type. When you create an asset type, you define the expected metadata, stream references, and status for assets created from that asset type. With a defined asset type, you can easily replicate assets sharing common metadata and properties.
 
-1. Complete the following fields:
+    Before working with asset types, review the following documentation: [Asset types best practices](xref:AssetTypes#asset-types-best-pratices).
 
-   - **Metadata** - Enter *Capacity*.
+    There are two ways to create an asset type:
 
-   - **Value** - Enter *200*.
+   - [From nothing](xref:CreateAssetTypeWithEditor)
+   - [From an existing asset](xref:ConvertAssetToAssetType)
 
-   - **Type** - Select *Double*.
+1. [Create asset rules](xref:CreateAssetRules)
 
-   - **UOM** - Select *US gallon (Volume)*.
+     Use asset rules to efficiently scale creation of assets. An asset rule identifies patterns in the naming convention for streams and uses this information to automatically create or update assets.
 
-1. Select the **Properties** tab, and select **Add Stream References**.
+    **Additional documentation**:
 
-1. In the `Select Streams` window, enter *MyData*_*_ in the search field and press Enter.
-
-1. Select **MyData.NorthAmerica.SLTC.PumpA** from the list and select **Add**.
-
-1. In the **Stream References** field, enter *Output Pump State* as the user-friendly name for the stream reference.
-
-1. Assign a unit of measure (UOM) to the stream properties, select **Configure UOMs**.  
-
-   **Note:** The UOM set here overrides any UOM assigned to property. No data conversion occurs between the two UOMs.
-   
-1. Select the **Status** tab, and select **Add Status Configuration**.
-
-   The `Select Property` window lists the properties whose values can be displayed as a status. Only properties with an enumerated state or that have a string value can be displayed.
-   
-1. Select the **Output Pump Status | Status** property, and then select **Continue**. 
-
-   If there are no values in the stream, there will be no eligible values to choose from. If there are eligible values that can be mapped to different statuses, 
-   
-1. For each value listed, select the associated status, **Good**, **Warning**, or **Bad**. 
-
-1. To save the asset, select **Save**. 
-
-1. In the `Assets` pane, use the icons in the upper-right to switch between the following views:
-
-   - ![Card view](../../_icons/branded/view-grid.svg) - Card view displays the assets as a series of tiles.
-    
-   - ![Table view](../../_icons/branded/view-list.svg) - Table view displays the assets in a table format. 
-
-## Next step
-
-Continue with [Get started with asset types](xref:gsAssetTypes).
+   - [Asset rules](xref:AssetRulesCC)

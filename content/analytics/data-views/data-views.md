@@ -36,7 +36,7 @@ To create a data view:
 
 1. For the **Query Value** search field, enter a portion of the name of any known stream or asset preceded or followed by the wildcard operator (`*`), and then select **Search** to search for available streams or assets.
 
-   For more information on how to enter a query, see <xref:search>.
+   For more information on how to enter a query, see <xref:Search>.
 
 1. Select any stream or asset in the query results to display and view the individual data fields to the pane on the right.
 

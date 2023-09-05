@@ -20,7 +20,7 @@ uid: data-views-add-query
 
 1. From **Query Value**, enter a query to find the objects that you want to include in the data view. Then select **Search**.
 
-   For more information on how to enter a query, see <xref:search>.
+   For more information on how to enter a query, see <xref:Search>.
 
    When the query populates with objects, you can view more about each object by selecting it from the table. The object details display in the pane on the right.
 

@@ -20,7 +20,7 @@ User with permissions to share a data stream within a community can do so from t
 
 1. Select one or more streams to share with a community.
 
-    **Tip:** Use the **Search for streams** field to search for specific streams. For more information on using this field, see <xref:search>.
+    **Tip:** Use the **Search for streams** field to search for specific streams. For more information on using this field, see <xref:Search>.
 
 1. From the right pane, select **Share Streams**.
 

@@ -42,7 +42,7 @@ To create an asset:
 
    Selected streams and their properties are listed in the **Properties** tab.
 
-   **Tip:** To search for streams based on the stream name, description, or the type, enter the text to search for in the **Enter search query** field. For more information on using this field, see <xref:search>.
+   **Tip:** To search for streams based on the stream name, description, or the type, enter the text to search for in the **Enter search query** field. For more information on using this field, see <xref:Search>.
 
 1. If needed, modify the stream names to make them easier to identify.
 

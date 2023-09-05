@@ -116,7 +116,7 @@ The stream fields valid for search are identified in the fields table located in
 
 ## Search for types
 
-Type search is exposed through the REST API and the client libraries method `GetTypesAsync`. For more information on type properties, see [Types](xref:sdsTypes#typepropertiestable).
+Type search is exposed through the REST API and the client libraries method `GetTypesAsync`. For more information on type properties, see [Types](xref:sdsTypes#sdstypeproperty).
 
 **Searchable properties**
 
@@ -158,7 +158,7 @@ _metadataService.GetTypesAsync(query:"QueryString", skip:0, count:100);
 
 ## Search for stream views
 
-Stream view search is exposed through the REST API and the client libraries method `GetStreamViewsAsync`. For more information on stream view properties, see <xref:sdsStreamViews#streamviewpropertiestable>.
+Stream view search is exposed through the REST API and the client libraries method `GetStreamViewsAsync`. For more information on stream view properties, see <xref:sdsStreamViews#sdsstreamviewproperty>.
 
 **Searchable properties**
 

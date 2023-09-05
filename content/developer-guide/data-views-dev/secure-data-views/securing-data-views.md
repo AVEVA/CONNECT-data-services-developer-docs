@@ -13,7 +13,7 @@ The data views collection access control list is used to control which users and
 
 The data views collection access control list also determines the default access control list for individual data views. Note that changing the collection level access control list does not affect existing data views as the collection level access control list is only used when the data view is first created. Once the data view exists, data view level access control is managed independently of collection level access control. See Data Views Access Control for more information on securing individual data views.
 
-When a namespace is first created, the data views collection access control list will default to the access control list for the entire namespace. Use the API routes in [Access Control API](xref:DataViewsAccessControlAPI) to view and update the data views collection access control list. Only users and clients with `ManageAccessControl` rights on the data views collection are authorized to view and update the collection-level access control list.
+When a namespace is first created, the data views collection access control list will default to the access control list for the entire namespace. Use the API routes in [Access Control API](xref:data-views-access-control) to view and update the data views collection access control list. Only users and clients with `ManageAccessControl` rights on the data views collection are authorized to view and update the collection-level access control list.
 
 ## Data view access control
 Data views are secured individually. This allows granular control over who can see which data view, in order to restrict access to sensitive or compartmentalized information.

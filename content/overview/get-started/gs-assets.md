@@ -22,7 +22,7 @@ For additional information about asset best practices, see <xref:ccAssets>.
 
     An *asset type* is a template for creating assets that share a common structure or type. When you create an asset type, you define the expected metadata, stream references, and status for assets created from that asset type. With a defined asset type, you can easily replicate assets sharing common metadata and properties.
 
-    Before working with asset types, review the following documentation: [Asset types best practices](xref:AssetTypes#asset-types-best-pratices).
+    Before working with asset types, review the following documentation: [Asset types best practices](xref:AssetTypes#asset-types-best-practices).
 
     There are two ways to create an asset type:
 

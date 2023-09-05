@@ -12,17 +12,17 @@ The following logical operators are supported for use within a filter expression
 
 | Operator | Description                                                  |
 | -------- | ------------------------------------------------------------ |
-| `eq`     | Equal to                                                     |
-| `ne`     | Not equal                                                    |
-| `ge`     | Greater than or equal to                                     |
-| `le`     | Less than or equal to                                        |
-| `lt`     | Less than                                                    |
-| `gt`     | Greater than                                                 |
-| `( )`    | Parenthesis can be used to affect the order of the operation |
-| `or`     | Or logical operator                                          |
-| `and`    | And logical operator                                         |
-| `not`    | Not logical operator                                         |
-| `-`      | Negation                                                     |
+| `eq`     | Equal to.                                                     |
+| `ne`     | Not equal.                                                    |
+| `ge`     | Greater than or equal to.                                     |
+| `le`     | Less than or equal to.                                        |
+| `lt`     | Less than.                                                    |
+| `gt`     | Greater than.                                                 |
+| `( )`    | Parenthesis can be used to affect the order of the operation. |
+| `or`     | Or logical operator.                                          |
+| `and`    | And logical operator.                                         |
+| `not`    | Not logical operator.                                         |
+| `-`      | Negation.                                                     |
 
 > [!NOTE]
 >
@@ -33,9 +33,13 @@ The following logical operators are supported for use within a filter expression
 The examples below are using the `CreatedDate` and `ModifiedDate` properties of an SDS object, which are of type _DateTime_:
 
 - `ModifiedDate gt 2022-12-06T00:00:00Z`
+
 - `CreatedDate le 2022-01-01T00:00:00Z`
+
 - `(ModifiedDate gt 2022-12-06T00:00:00Z) and (CreatedDate le 2022-01-01T00:00:00Z)`
+
 - `(ModifiedDate gt 2022-12-06T00:00:00Z) and (ModifiedDate lt 2022-12-07T00:00:00Z)`
+
 - `not ModifiedDate gt 2022-12-06T00:00:00Z`
 
 ## Math functions
@@ -44,26 +48,33 @@ The following math functions are supported for use within a filter expression:
 
 | Function | Description |
 | --- | --- |
-| `add` | Addition |
-| `sub` | Subtraction |
-| `mul` | Multiplication |
-| `div` | Division |
-| `mod` | Modulo |
-| `round` | Rounds to the nearest numeric component without a decimal, with the midpoint rounded away from 0. For example, 0.5 rounds to 1; -0.5 rounds to -1) |
-| `floor` | Rounds down to the nearest numeric component without a decimal |
-| `ceiling` | Rounds up to the nearest numeric component without a decimal |
+| `add` | Addition. |
+| `sub` | Subtraction. |
+| `mul` | Multiplication. |
+| `div` | Division. |
+| `mod` | Modulo. |
+| `round` | Rounds to the nearest numeric component without a decimal, with the midpoint rounded away from 0. For example, 0.5 rounds to 1; -0.5 rounds to -1). |
+| `floor` | Rounds down to the nearest numeric component without a decimal. |
+| `ceiling` | Rounds up to the nearest numeric component without a decimal. |
 
 ### Examples of math functions
 
 The examples below use the `ConversionFactor` and `ConversionOffset` properties of an SdsUom, which are of type _double_:
 
 - `ConversionFactor eq (6.0 add 3.0)`
+
 - `ConversionFactor eq (6.0 sub 3.0)`
+
 - `ConversionFactor eq (6.0 mul 3.0)`
+
 - `ConversionFactor eq (6.0 div 3.0)`
+
 - `ConversionOffset eq (7.0 mod 3.0)`
+
 - `round(ConversionOffset) eq 16`
+
 - `floor(ConversionOffset) eq 15`
+
 - `ceiling(ConversionOffset) eq 16`
 
 ## String functions
@@ -108,20 +119,25 @@ The following DateTime functions are supported for use within a filter expressio
 
 | Function | Description                    |
 | -------- | ------------------------------ |
-| `year`   | Get year value from DateTime   |
-| `month`  | Get month value from DateTime  |
-| `day`    | Get day value from DateTime    |
-| `hour`   | Get hour value from DateTime   |
-| `minute` | Get minute value from DateTime |
-| `second` | Get second value from DateTime |
+| `year`   | Get year value from DateTime.   |
+| `month`  | Get month value from DateTime.  |
+| `day`    | Get day value from DateTime.    |
+| `hour`   | Get hour value from DateTime.   |
+| `minute` | Get minute value from DateTime. |
+| `second` | Get second value from DateTime. |
 
 ### Examples of DateTime functions
 
 The examples below are using the `CreatedDate` and `ModifiedDate` properties of an SDS object, which are of type _DateTime_:
 
 - `year(CreatedDate) eq 2015`
+
 - `month(CreatedDate) eq 11`
+
 - `day(CreatedDate) eq 3`
+
 - `hour(ModifiedDate) eq 1`
+
 - `minute(ModifiedDate) eq 5`
+
 - `second(ModifiedDate) eq 3`

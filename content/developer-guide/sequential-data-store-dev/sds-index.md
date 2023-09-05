@@ -134,7 +134,11 @@ SdsStream secondary = new SdsStream()
 secondary = await config.GetOrCreateStreamAsync(secondary);
 ```
 
-To read data indexed by a secondary index, use a filtered GET method (`IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id, "Measurement gt 0 and Measurement lt 6");`).
+To read data indexed by a secondary index, use a filtered GET method:
+
+```csharp
+IEnumerable<Simple> orderedBySecondary = await client.GetFilteredValuesAsync<Simple>(secondary.Id, "Measurement gt 0 and Measurement lt 6");
+```
 
 You use indexes to order data. On a stream level, you can set the property to be the secondary index. To improve performance when working with a large set of data:
 
@@ -205,7 +209,7 @@ Console.WriteLine();
 
 ### Compound indexes
 
-Compound indexes are defined using the `SdsMemberAttribute` as follows:
+When working in .NET, you define compound indexes using `SdsMemberAttribute` as follows:
 
 ```csharp
 public class Simple
@@ -554,7 +558,7 @@ For additional information, see [Read data](xref:sdsReadingData).
 
 ### Secondary indexes
 
-Secondary indexes are defined at the stream level. To create a stream using the `Simple` class and adding a secondary index on the `Measurement`, you use the previously defined type. Then you create `SdsStreamIndex` specifying the `Measurement` property and define a stream identifying the `Measurement` as the secondary index as shown below:
+Secondary indexes are defined at the stream level. To create a stream using the `Simple` class and adding a secondary index on the `Measurement`, use the previously defined type. Then you create `SdsStreamIndex` specifying the `Measurement` property and define a stream identifying the `Measurement` as the secondary index as shown below:
 
 ##### [Python](#tab/tabid-7)
 

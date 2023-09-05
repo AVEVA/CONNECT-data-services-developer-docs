@@ -24,7 +24,7 @@ To use the GraphQL console:
 
    - Use the selections under the `options:` argument to retrieve a specified count of objects or to sort the data returned. If you select multiple sort fields, the order in which you select them determines the sort order.
 
-   - For fields that can be arrays, select **+ Add** below them to add spaces for additional values.
+   - For fields that can be arrays, when an item is selected or entered, a new blank item appears below it to allow for additional values.
 
    - For upsert or delete operations, use the selections under `input:` to identify the object to update or delete.
 
@@ -44,7 +44,7 @@ To use the GraphQL console:
 
 1. When your query is complete, select **Send Request** to run the query.
 
-   The results of your query appear in the `Response` pane.
+   The results of your query appear in the `Response` pane. Select ![copy](../_icons/default/content-copy.svg) in the `Response` pane to copy the response to the clipboard, or select ![download](../_icons/default/download.svg) to download the JSON file.
 
 1. When you request a certain amount of fields, such as `count: 1`, and there are more fields available to display, a continuation token appears in the response. Select `Resend with Continuation` to view the next item.
 

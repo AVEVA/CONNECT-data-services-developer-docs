@@ -21,4 +21,4 @@ Complete the following major steps to get up and running in AVEVA Data Hub.
 - <xref:gs-data-management>
 - <xref:gs-egress>
 
-**Tip:** Use the [Workflow map](https://aveva-dev.zoominsoftware.io/category/adh-get-started) for a visual walkthrough of getting started.
+<!-- **Tip:** Use the [Workflow map](https://aveva-dev.zoominsoftware.io/category/adh-get-started) for a visual walkthrough of getting started. -->

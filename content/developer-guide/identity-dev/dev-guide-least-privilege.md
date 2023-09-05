@@ -4,7 +4,7 @@ uid: LeastPrivilege
 
 # Least privilege
 
-When creating new users or client-credentials clients, configure them using the principle of least privilege, which is that a process, user, or program should be able to access only the information and resources that are necessary for its legitimate purpose. Assign users and clients the lowest privileged role necessary to access resources.
+When creating new users or client credential clients, configure them using the principle of Least Privilege. For more information, see Microsoft's article "Enhance security with the principle of least privilege" [Least Privilege](https://learn.microsoft.com/en-us/azure/active-directory/develop/secure-least-privileged-access). Assign users and clients the lowest privileged role necessary to access resources.
 
 Ensure that clients that are not in use are either deleted or disabled by setting the **Enabled** property to false. This can be done through the portal (see <xref:ClientMaintenance>) or through the appropriate API (see <xref:identityClientCredentialClient>, <xref:identityHybridClient>, or <xref:identity-authorization-code-clients>).
 

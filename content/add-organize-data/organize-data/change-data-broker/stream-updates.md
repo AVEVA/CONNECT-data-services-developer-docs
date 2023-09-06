@@ -6,7 +6,7 @@ uid: StreamUpdates
 
 You can sign up for data event updates for streams of interest with AVEVA Data Hub's API Console. This works with the Sequential Data Store (SDS) event provider service. For more on SDS and streams, read [Sequential Data Store](xref:lpstoredata).
 
-Follow the steps below to sign up to create a Signup, activate Signups, and receive change data updates. Note that all steps must be done in order.
+Follow the steps below to create a Signup, activate Signups, and receive change data updates. Note that all steps must be done in order.
 
 ## Create a Signup
 

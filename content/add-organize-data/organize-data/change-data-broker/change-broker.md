@@ -8,7 +8,7 @@ Change Broker is an Enterprise-scale egress capability for AVEVA Data Hub. Updat
 
 ## Change Data
 
-This feature solves both new and changing data issues, and can provide near real-time data. More specifically, Change Broker monitors changes to the streams’ property values. The change data supported by the Signup includes the following capabilities: Update, Insert, Replace, Remove, and RemoveWindow. These are all write modes supported by Sequential Data Store (SDS). This capability serves both customers and partners for analytics, visualization/dashboarding, rules processing, evolving search indexes, anomaly detection, application providers, transaction processing, and digital service providers.
+This feature solves both new and changing data issues, and can provide near real-time data. More specifically, Change Broker monitors changes to the streams’ data values. The change data supported by the Signup includes the following capabilities: Update, Insert, Replace, Remove, and RemoveWindow. These are all write modes supported by Sequential Data Store (SDS). This capability serves both customers and partners for analytics, visualization/dashboarding, rules processing, evolving search indexes, anomaly detection, application providers, transaction processing, and digital service providers.
 
 Change Broker is designed to support the egress of millions of data events per second, retain the events for a period of time (1 hour), and serve that data to multiple, parallel consumers. A Signup is retained for 24 hours relative to the last query made. There is no known limitation on the size of data that can be held in a Signup during the one-hour expiration window.
 

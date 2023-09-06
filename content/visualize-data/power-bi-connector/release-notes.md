@@ -18,7 +18,7 @@ Release 2.1.0.x adds a new option for authentication between Microsoft Power BI 
 
 The new client-credential client authentication method does not replace the original OAuth authentication. You have the option of continuing to use OAuth authentication option.
 
-For more information on your authentication options, see <xref:RetrieveDataViews>.
+For more information on authentication options and how to configure them, see <xref:RetrieveDataViews>.
 
 ### Known issues
 

@@ -8,13 +8,13 @@ Use AVEVA Power BI Connector to retrieve AVEVA Data Hub data views for use in Mi
 
 ## Prerequisites
 
-While retrieving a data view from AVEVA Data Hub, Power BI Connector prompts you to authenticate with Microsoft Power BI. You have two options for authentication:
+While retrieving a data view from AVEVA Data Hub, AVEVA Power BI Connector prompts you to authenticate with Microsoft Power BI. You have two options for authentication:
 
 - **(Recommended) Client-credential client**
 
     Use an AVEVA Data Hub client-credential client Id and client secret to authenticate with Microsoft Power BI. This authentication option is preferred over organizational account because it allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without prompting you to reauthenticate every seven days.
 
-    If you choose this option, you must create and configure a client-credential client for use during authentication. These credentials are used while completing [To retrieve data views](#to-retrieve-data-views). For instructions on creating these credentials, see <xref:gpClientCredentialsClient>. While creating the credentials, record the **Client Id** and **Client Secret** to enter while retrieving a data view.
+    If you choose this option, you must create and configure a client-credential client for use during authentication. These credentials are used while completing [To retrieve data views](#to-retrieve-data-views). For instructions on creating these credentials, see <xref:gpClientCredentialsClient>. While creating the credentials, select one or more **Tenant Roles** that provide access to the data view, applying the concept of <xref:LeastPrivileges>. While creating the credentials, record the **Client Id** and **Client Secret** to enter while retrieving a data view.
 
 - **Organizational account**
 

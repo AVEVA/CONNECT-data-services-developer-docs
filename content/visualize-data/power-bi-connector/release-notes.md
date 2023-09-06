@@ -14,9 +14,9 @@ The following new features and known issues are included for release 2.1.0.x.
 
 ### New features
 
-Release 2.1.0.x adds a new option for authentication between Microsoft Power BI and AVEVA Data Hub: _Client-credential clients_ authentication. AVEVA recommends this new authentication option over the original authentication option of OAuth, as it improves user experience without sacrificing security.  Authentication using client-credential clients allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without having to reauthenticate every seven days as you do with the original authentication option, OAuth.
+Release 2.1.0.x adds a new option for authentication between Microsoft Power BI and AVEVA Data Hub: _Client-credential clients_ authentication. AVEVA recommends this new authentication option over the original authentication option using your organizational account, as it improves user experience without sacrificing security.  Authentication using client-credential clients allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without having to reauthenticate every seven days as you do with the original authentication option, OAuth.
 
-The new client-credential client authentication method does not replace the original OAuth authentication. You have the option of continuing to use OAuth authentication option.
+The new client-credential client authentication method does not replace the original authentication option of using your organizational account. However, using the new client-credential client authentication is recommended.
 
 For more information on authentication options and how to configure them, see <xref:RetrieveDataViews>.
 

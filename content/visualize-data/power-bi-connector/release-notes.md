@@ -51,6 +51,10 @@ The installer is released as a self-extracting executable file that contains:
 - ADHDataviews.pqx
 - ADHDataviews_LICENSE
 
+### Upgrading Power BI Connector
+
+To upgrade a previous installation of AVEVA Power BI Connector to the latest version, run the latest version of the installer on the host that has the previous version installed.
+
 ### Uninstalling Power BI Connector
 
 Remove the product using **Uninstall a program** in the Windows Control Panel for both Desktop and on-prem data gateway installations.

@@ -4,75 +4,52 @@ uid: PowerBIReleaseNotes
 
 # Release notes
 
-AVEVA Data Hub Power BI Connector 2.0.0.54
-
-## Overview
-
 The AVEVA Data Hub Power BI Connector allows AVEVA Data Hub Data Views to be imported into Power BI so the data can be visually analyzed or utilized in Power BI reports or dashboards.
 
 The Power BI Connector can be installed on Windows Operating System installations of Power BI Desktop. The connector can also be used with the Power BI Service through installation of an On-premises Data Gateway. Data sets using AVEVA Data Hub Data Views can be configured for scheduled refresh in the Power BI Service to create and share dynamically updating Power BI dashboards with data from AVEVA Data Hub.
 
-## Known issues
+## AVEVA Data Hub Power BI Connector 2.1.0.x
+
+The following new features and known issues are included for release 2.1.0.x.
+
+### New features
+
+Release 2.1.0.x adds a new option for authentication between Microsoft Power BI and AVEVA Data Hub: _Client-credential clients_ authentication. AVEVA recommends this new authentication option over the original authentication option of OAuth, as it improves user experience without sacrificing security.  Authentication using client-credential clients allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without having to reauthenticate every seven days as you do with the original authentication option, OAuth.
+
+The new client-credential client authentication method does not replace the original OAuth authentication. You have the option of continuing to use OAuth authentication option.
+
+For more information on your authentication options, see <xref:RetrieveDataViews>.
+
+### Known issues
+
+The known issues and limitations from release 2.0.0.54 have not been resolved and remain in release 2.1.0.x.
+
+## AVEVA Data Hub Power BI Connector 2.0.0.54
+
+The following known issues and limitations are included for release 2.0.0.54.
+
+### Known issues
 
 | Work item | Description |
-|-----------|-------------|
-| 248772    | When the same installer runs twice, the dialog appears offering the user the chance to uninstall the connector. If the user clicks on Uninstall option and then clicks on the **Back** button, the user is brought to a screen from which she did not start. The uninstall will work, however, if the user moves forward through the screens. |
+|--|--|
+| 248772 | When the same installer runs twice, the dialog appears offering the user the chance to uninstall the connector. If the user clicks on Uninstall option and then clicks on the **Back** button, the user is brought to a screen from which she did not start. The uninstall will work, however, if the user moves forward through the screens. |
 
-## Known limitations
+### Known limitations
 
 When loading a Data View which has multiple pages, the loading screen prints the JSON body of the call that is used to retrieve the pages of data.
 
 When selecting a Data View from the navigation table which does not have default start and end index values defined, the name of the previous Data View persists on the page title even though the user navigated away from it.
 
-## Setup
+## Requirements and setup
 
-### Operating systems
-
-Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2016, Windows Server 2019
-
-### Other system requirements
-
-Supported Microsoft Power BI versions:
-
-- Microsoft Power BI Desktop 2.91.884.0 or later
-
-- Microsoft Power BI On-premises Data Gateway 3000.89.6 or later
+For more information on system requirements and installation, see <xref:SetUpPowerBI>.
 
 ### Distribution kit files
 
 The installer is released as a self-extracting executable file that contains:
 
 - ADHDataviews.pqx
-
 - ADHDataviews_LICENSE
-
-### Installation and upgrade
-
-#### Desktop installation
-
-##### Before you install
-
-- Power BI Desktop is installed
-
-- User has Administrator rights on the local machine
-
-##### Installation
-
-The AVEVA Data Hub Power BI Connector installer will extract and install the connector for Power BI.
-
-See the accompanying [AVEVA Data Hub Power BI Connector User Guide](xref:PowerBI) for detailed Desktop installation instructions.
-
-#### On-premises Data Gateway installation
-
-##### Before you install
-
-- Microsoft Power BI On-premises Data Gateway is installed
-
-- User has Administrator rights on the local machine
-
-##### Installation
-
-See the accompanying [AVEVA Data Hub Power BI Connector User Guide](xref:PowerBI) for detailed Desktop installation instructions.
 
 ### Uninstalling Power BI Connector
 
@@ -101,7 +78,3 @@ AVEVA has selected the [Common Vulnerability Scoring System (CVSS)](https://www.
 This section is intended to provide relevant security-related information to guide your installation or upgrade decision. AVEVA is proactively disclosing aggregate information about the number and severity of AVEVA Data Hub Power BI Connector security vulnerabilities that are fixed in this release.
 
 No security-related information is applicable to this release.
-
-## Documentation overview
-
-[AVEVA Data Hub Power BI Connector User Guide](xref:PowerBI): An introduction to AVEVA Data Hub Power BI Connector for the end user. This user guide provides the installation procedure and a usage tutorial on the product features.

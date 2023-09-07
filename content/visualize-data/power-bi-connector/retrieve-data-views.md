@@ -40,9 +40,13 @@ While retrieving a data view from AVEVA Data Hub, AVEVA Power BI Connector promp
 
    - **Client Credentials:**
 
+       ![client credentials](../../analytics/data-views/_images/power-bi-connector-client-credentials.png)
+
        Select **Client Credentials**. Then enter the **ClientId** and the **Client Secret** for the client credential clients that you created while fulfilling the [Prerequisites](#prerequisites).
 
    - **Organizational Account:**
+
+       ![organization account](../../analytics/data-views/_images/power-bi-connector-org-account.png)
 
        Select **Organizational account**. Then select **Log in**. Then enter the credentials you use to sign in with AVEVA Data Hub.
 

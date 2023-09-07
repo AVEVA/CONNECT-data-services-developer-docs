@@ -8,13 +8,13 @@ The AVEVA Data Hub Power BI Connector allows AVEVA Data Hub Data Views to be imp
 
 The Power BI Connector can be installed on Windows Operating System installations of Power BI Desktop. The connector can also be used with the Power BI Service through installation of an On-premises Data Gateway. Data sets using AVEVA Data Hub Data Views can be configured for scheduled refresh in the Power BI Service to create and share dynamically updating Power BI dashboards with data from AVEVA Data Hub.
 
-## AVEVA Data Hub Power BI Connector 2.1.0.x
+## AVEVA Data Hub Power BI Connector 2.1.0.0
 
-The following new features and known issues are included for release 2.1.0.x.
+The following new features and known issues are included for release 2.1.0.0.
 
 ### New features
 
-Release 2.1.0.x adds a new option for authentication between Microsoft Power BI and AVEVA Data Hub: _Client-credential clients_ authentication. AVEVA recommends this new authentication option over the original authentication option using your organizational account, as it improves user experience without sacrificing security.  Authentication using client-credential clients allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without having to reauthenticate every seven days as you do with the original authentication option, OAuth.
+Release 2.1.0.0 adds a new option for authentication between Microsoft Power BI and AVEVA Data Hub: _Client-credential clients_ authentication. AVEVA recommends this new authentication option over the original authentication option using your organizational account, as it improves user experience without sacrificing security.  Authentication using client-credential clients allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without having to reauthenticate every seven days as you do with the original authentication option, OAuth.
 
 The new client-credential client authentication method does not replace the original authentication option of using your organizational account. However, using the new client-credential client authentication is recommended.
 
@@ -22,7 +22,7 @@ For more information on authentication options and how to configure them, see <x
 
 ### Known issues
 
-The known issues and limitations from release 2.0.0.54 have not been resolved and remain in release 2.1.0.x.
+The known issues and limitations from release 2.0.0.54 have not been resolved and remain in release 2.1.0.0.
 
 ## AVEVA Data Hub Power BI Connector 2.0.0.54
 

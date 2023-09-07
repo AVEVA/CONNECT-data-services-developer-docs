@@ -1,3 +1,5 @@
+- name: Welcome
+  href: index.md
 - name: Developer guide
   href: developer-guide/toc.yml
   topicHref: developer-guide/dev-guide-introduction.md

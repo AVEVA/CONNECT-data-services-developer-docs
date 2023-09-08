@@ -1,5 +1,5 @@
 ---
-uid: MetadataRulesOverview
+uid: metadata-metadata-rules-overview
 ---
 
 # Metadata rules
@@ -11,12 +11,12 @@ A metadata rule is a user-defined stream name pattern in which each part is assi
 The Metadata Rules feature in the OCS Portal simplifies the process of assigning metadata to streams. The user interface guides users through the process of designating  metadata types for a stream name pattern.
 
 ## Metadata rules example
-Users base metadata rules on an existing stream name in the OCS Portal. Stream name parts are “delimited,” or separated, by non-alphanumeric characters placed within the name, typically to separate meaningful sections of the name.
+Users base metadata rules on an existing stream name in the OCS Portal. Stream name parts are ï¿½delimited,ï¿½ or separated, by non-alphanumeric characters placed within the name, typically to separate meaningful sections of the name.
 An example metadata rule stream name pattern follows:
 ```
 UFL.DS1:InternalPumpLeakage
 ```
-In the above example, a metadata rule is based on the stream name UFL.DS1:InternalPumpLeakage. A period delimits “UFL” and “DS1,” the first two parts of the stream name. A colon delimits “DS1” and “InternalPumpLeakage,” the second and third parts of the stream name.  The three parts of the stream name have the following meanings:
+In the above example, a metadata rule is based on the stream name UFL.DS1:InternalPumpLeakage. A period delimits ï¿½UFLï¿½ and ï¿½DS1,ï¿½ the first two parts of the stream name. A colon delimits ï¿½DS1ï¿½ and ï¿½InternalPumpLeakage,ï¿½ the second and third parts of the stream name.  The three parts of the stream name have the following meanings:
 
 - UFL = facility location
 - DS1 = a specific device
@@ -24,11 +24,11 @@ In the above example, a metadata rule is based on the stream name UFL.DS1:Intern
 
 Each part of the example stream name is assigned a query condition:
 
-- UFL, the facility location, is assigned string literal, which captures only stream names exactly matching “UFL” in the first part of the stream name.
+- UFL, the facility location, is assigned string literal, which captures only stream names exactly matching ï¿½UFLï¿½ in the first part of the stream name.
 - DS1, the device identifier, is assigned wildcard, which captures streams with any value in the second part of the stream name.
 - InternalPumpLeakage, the data provided by the example stream, is assigned metadata, expressed as a key-value pair.
 
-This metadata rule identifies all stream names beginning with “UFL,” with any value for the device identifier, and creates a key-value pair for InternalPumpLeakage. This rule provides a way to quickly search for every stream containing Internal Pump Leakage data for every device in the UFL facility location.
+This metadata rule identifies all stream names beginning with ï¿½UFL,ï¿½ with any value for the device identifier, and creates a key-value pair for InternalPumpLeakage. This rule provides a way to quickly search for every stream containing Internal Pump Leakage data for every device in the UFL facility location.
 
 The defined metadata is assigned to every stream that matches the stream name pattern.  When users edit a metadata rule, the modified rule may capture a different set of streams.  Users can choose whether to keep or delete metadata previously assigned by the original metadata rule.
 

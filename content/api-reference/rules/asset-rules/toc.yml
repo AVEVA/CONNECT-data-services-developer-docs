@@ -1,7 +1,5 @@
 - name: Access control
   topicHref: asset-access-control-list.md
-- name: Asset asset rule expression preview
-  href: asset-asset-rule-expression-preview.md
 - name: Asset asset rules overview
   href: asset-asset-rules-overview.md
 - name: Asset rule suggestion
@@ -16,5 +14,4 @@
   topicHref: asset-asset-rule-errors.md
 - name: Asset rules preview
   topicHref: asset-asset-rule-preview.md
-- name: Asset sds read only replica admin
-  href: asset-sds-read-only-replica-admin.md
+

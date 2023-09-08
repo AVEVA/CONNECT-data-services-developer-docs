@@ -1,5 +1,5 @@
 ---
-uid: AssetRules
+uid: asset-rules
 ---
 # Asset Rules
 

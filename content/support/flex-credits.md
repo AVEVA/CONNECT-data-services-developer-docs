@@ -56,4 +56,6 @@ In cases of confusion or inquiries about flex credits, customers can seek clarif
 
 ## Additional flex credit documentation
 
-For more information about flex credits, such as information about credit agreements or rate plans, see the [AVEVA Connect documentation](https://docs.aveva.com/bundle/aveva-connect/page/885356.html).
+- For more information about flex credits, such as information about credit agreements or rate plans, see the [AVEVA Connect documentation](https://docs.aveva.com/bundle/aveva-connect/page/885356.html).
+
+- For a description of each AVEVA cloud service available, see [AVEVA Service Descriptions for Cloud Services](https://www.aveva.com/en/legal/service-description/).

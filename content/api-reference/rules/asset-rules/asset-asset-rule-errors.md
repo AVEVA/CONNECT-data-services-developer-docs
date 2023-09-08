@@ -31,7 +31,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/erro
 |200|[RuleError](#schemaruleerror)[]|An `IEnumerable<T>`|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|None|
+|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 <h4>Example response body</h4>
 
@@ -129,7 +129,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/e
 |202|None|No content.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
-|500|[ResponseBody](#schemaresponsebody)|None|
+|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 ---
 ## Definitions

@@ -1,12 +1,12 @@
 ---
-uid: asset-rules
+uid: asset-asset-rules-overview
 ---
 # Asset Rules
 
 Asset rules create assets based on stream properties (such as ID, Name, Description, and stream metadata).  Asset rules are executed on streams in the following ways:
 
-- On-demand execution &ndash; an asset rule is defined and created and it is applied to all existing applicable streams
-- Unattended execution &ndash; all asset rules are run whenever a stream is created, updated, or deleted.
+- On-demand execution &ndash; an asset rule is defined and created and it is applied to all existing applicable streams
+- Unattended execution &ndash; all asset rules are run whenever a stream is created, updated, or deleted.
 
 The asset rules API allows you to programmatically create, read, update, and delete asset rules.
 
@@ -95,8 +95,8 @@ The asset rules API allows you to programmatically create, read, update, and del
 
 Rule expressions define which streams a rule applies to and what information is extracted from the stream. For a rule to apply to a stream, all of the rule's expressions must match. Expressions have the following properties:
 
-- Fields &ndash; strings  that determine which stream property to look at for specifications
-- Specifications  &ndash; objects that define specifications of a segment in a pattern. Refer to [Specification Types][xref:AssetRules#specification-types]  and [Specification Objects][xref:AssetRules#specification-objects] for a description.
+- Fields &ndash; strings  that determine which stream property to look at for specifications
+- Specifications  &ndash; objects that define specifications of a segment in a pattern. Refer to [Specification Types][xref:AssetRules#specification-types]  and [Specification Objects][xref:AssetRules#specification-objects] for a description.
 
 ### Fields
 

@@ -1,12 +1,17 @@
 - name: Access control
-  topicUid: asset-access-control-list
+  topicHref: asset-access-control-list.md
+- name: Asset asset rules overview
+  href: asset-asset-rules-overview.md
+- name: Asset rule suggestion
+  topicHref: asset-asset-rule-suggestion.md
 - name: Asset rules
-  topicUid: asset-asset-rules
-- name: Asset rules change data 
-  topicUid: asset-asset-change-data
+  topicHref: asset-asset-rules.md
+- name: Asset rules api
+  href: asset-rules-api.md
+- name: Asset rules change data
+  topicHref: asset-asset-change-data.md
 - name: Asset rules errors
-  topicUid: asset-asset-rule-errors
+  topicHref: asset-asset-rule-errors.md
 - name: Asset rules preview
-  topicUid: asset-asset-rule-preview
-- name: Asset rule suggestion 
-  topicUid: asset-asset-rule-suggestion
+  topicHref: asset-asset-rule-preview.md
+

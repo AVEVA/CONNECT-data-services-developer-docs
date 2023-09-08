@@ -166,8 +166,8 @@ Creates a `RulePreviewResponse` of a `RuleModel` object.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
-?KeepOldMetadata={KeepOldMetadata}&Skip={Skip}&Count={Count}
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
+?KeepOldMetadata={KeepOldMetadata}&Skip={Skip}&Count={Count}&PageSize={PageSize}
 ```
 
 <h4>Parameters</h4>
@@ -179,7 +179,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 <br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted.
 Defaults to false.<br/><br/>`[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip.<br/><br/>`[optional] integer Count`
-<br/>An Int32 to determine how many results to return.<br/><br/>
+<br/>An Int32 to determine how many results to return.<br/><br/>`[optional] integer PageSize`
+<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -711,7 +712,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |AssetId|string|false|true|None|
-|Streams|[[SdsStream](#schemasdsstream)]|false|true|None|
+|Streams|[[SdsStreamModel](#schemasdsstreammodel)]|false|true|None|
 |Asset|[Asset](#schemaasset)|false|true|None|
 
 ```json
@@ -722,21 +723,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
       "Id": "string",
       "Name": "string",
       "Description": "string",
-      "TypeId": "string",
-      "Indexes": [
-        {
-          "SdsTypePropertyId": "string"
-        }
-      ],
-      "InterpolationMode": 0,
-      "ExtrapolationMode": 0,
-      "PropertyOverrides": [
-        {
-          "SdsTypePropertyId": "string",
-          "Uom": "string",
-          "InterpolationMode": 0
-        }
-      ]
+      "TypeId": "string"
     }
   ],
   "Asset": {
@@ -763,16 +750,12 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
       }
     ],
     "Status": {
-      "StreamReferenceId": "string",
-      "StreamPropertyId": "string",
-      "ValueStatusMappings": [
-        {
-          "Value": null,
-          "Status": 0,
-          "DisplayName": "string"
-        }
-      ]
-    }
+      "DefinitionType": 0,
+      "Definition": null
+    },
+    "Tags": [
+      "string"
+    ]
   }
 }
 
@@ -780,12 +763,12 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 
 ---
 
-### SdsStream
+### SdsStreamModel
 
-<a id="schemasdsstream"></a>
-<a id="schema_SdsStream"></a>
-<a id="tocSsdsstream"></a>
-<a id="tocssdsstream"></a>
+<a id="schemasdsstreammodel"></a>
+<a id="schema_SdsStreamModel"></a>
+<a id="tocSsdsstreammodel"></a>
+<a id="tocssdsstreammodel"></a>
 
 <h4>Properties</h4>
 
@@ -795,118 +778,13 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 |Name|string|false|true|None|
 |Description|string|false|true|None|
 |TypeId|string|false|true|None|
-|Indexes|[[SdsStreamIndex](#schemasdsstreamindex)]|false|true|None|
-|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
-|ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|None|
-|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|None|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
   "Description": "string",
-  "TypeId": "string",
-  "Indexes": [
-    {
-      "SdsTypePropertyId": "string"
-    }
-  ],
-  "InterpolationMode": 0,
-  "ExtrapolationMode": 0,
-  "PropertyOverrides": [
-    {
-      "SdsTypePropertyId": "string",
-      "Uom": "string",
-      "InterpolationMode": 0
-    }
-  ]
-}
-
-```
-
----
-
-### SdsStreamIndex
-
-<a id="schemasdsstreamindex"></a>
-<a id="schema_SdsStreamIndex"></a>
-<a id="tocSsdsstreamindex"></a>
-<a id="tocssdsstreamindex"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|SdsTypePropertyId|string|false|true|None|
-
-```json
-{
-  "SdsTypePropertyId": "string"
-}
-
-```
-
----
-
-### SdsInterpolationMode
-
-<a id="schemasdsinterpolationmode"></a>
-<a id="schema_SdsInterpolationMode"></a>
-<a id="tocSsdsinterpolationmode"></a>
-<a id="tocssdsinterpolationmode"></a>
-
-<h4>Enumerated Values</h4>
-
-|Property|Value|
-|---|---|
-|Default|0|
-|Continuous|0|
-|StepwiseContinuousLeading|1|
-|StepwiseContinuousTrailing|2|
-|Discrete|3|
-|ContinuousNullableLeading|4|
-|ContinuousNullableTrailing|5|
-
----
-
-### SdsExtrapolationMode
-
-<a id="schemasdsextrapolationmode"></a>
-<a id="schema_SdsExtrapolationMode"></a>
-<a id="tocSsdsextrapolationmode"></a>
-<a id="tocssdsextrapolationmode"></a>
-
-<h4>Enumerated Values</h4>
-
-|Property|Value|
-|---|---|
-|All|0|
-|None|1|
-|Forward|2|
-|Backward|3|
-
----
-
-### SdsStreamPropertyOverride
-
-<a id="schemasdsstreampropertyoverride"></a>
-<a id="schema_SdsStreamPropertyOverride"></a>
-<a id="tocSsdsstreampropertyoverride"></a>
-<a id="tocssdsstreampropertyoverride"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|SdsTypePropertyId|string|false|true|None|
-|Uom|string|false|true|None|
-|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
-
-```json
-{
-  "SdsTypePropertyId": "string",
-  "Uom": "string",
-  "InterpolationMode": 0
+  "TypeId": "string"
 }
 
 ```
@@ -930,7 +808,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 |Description|string|false|true|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
-|Status|[StatusMapping](#schemastatusmapping)|false|true|None|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
+|Tags|string[]|false|true|None|
 
 ```json
 {
@@ -957,16 +836,12 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
     }
   ],
   "Status": {
-    "StreamReferenceId": "string",
-    "StreamPropertyId": "string",
-    "ValueStatusMappings": [
-      {
-        "Value": null,
-        "Status": 0,
-        "DisplayName": "string"
-      }
-    ]
-  }
+    "DefinitionType": 0,
+    "Definition": null
+  },
+  "Tags": [
+    "string"
+  ]
 }
 
 ```
@@ -1136,79 +1011,43 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules
 
 ---
 
-### StatusMapping
+### StatusConfiguration
 
-<a id="schemastatusmapping"></a>
-<a id="schema_StatusMapping"></a>
-<a id="tocSstatusmapping"></a>
-<a id="tocsstatusmapping"></a>
+<a id="schemastatusconfiguration"></a>
+<a id="schema_StatusConfiguration"></a>
+<a id="tocSstatusconfiguration"></a>
+<a id="tocsstatusconfiguration"></a>
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|StreamReferenceId|string|false|true|None|
-|StreamPropertyId|string|false|true|None|
-|ValueStatusMappings|[[ValueStatusMapping](#schemavaluestatusmapping)]|false|true|None|
+|DefinitionType|[StatusDefinitionType](#schemastatusdefinitiontype)|false|false|None|
+|Definition|any|false|true|None|
 
 ```json
 {
-  "StreamReferenceId": "string",
-  "StreamPropertyId": "string",
-  "ValueStatusMappings": [
-    {
-      "Value": null,
-      "Status": 0,
-      "DisplayName": "string"
-    }
-  ]
+  "DefinitionType": 0,
+  "Definition": null
 }
 
 ```
 
 ---
 
-### ValueStatusMapping
+### StatusDefinitionType
 
-<a id="schemavaluestatusmapping"></a>
-<a id="schema_ValueStatusMapping"></a>
-<a id="tocSvaluestatusmapping"></a>
-<a id="tocsvaluestatusmapping"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Value|any|false|true|None|
-|Status|[StatusEnum](#schemastatusenum)|false|false|None|
-|DisplayName|string|false|true|None|
-
-```json
-{
-  "Value": null,
-  "Status": 0,
-  "DisplayName": "string"
-}
-
-```
-
----
-
-### StatusEnum
-
-<a id="schemastatusenum"></a>
-<a id="schema_StatusEnum"></a>
-<a id="tocSstatusenum"></a>
-<a id="tocsstatusenum"></a>
+<a id="schemastatusdefinitiontype"></a>
+<a id="schema_StatusDefinitionType"></a>
+<a id="tocSstatusdefinitiontype"></a>
+<a id="tocsstatusdefinitiontype"></a>
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|
 |---|---|
-|Unknown|0|
-|Good|1|
-|Warning|2|
-|Bad|3|
+|Unspecified|0|
+|StreamPropertyMapping|1|
 
 ---
 

@@ -26,89 +26,45 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
-<br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted Enumerations. If unspecified, a default value of false is used.<br/><br/>
+<br/><br/>`[optional] boolean includeDeleted`
+<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Enumeration](#schemaenumeration)[]|Success.|
-|304|None|Not modified.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
+|200|[EventGraphEnumeration](#schemaeventgraphenumeration)[]|Success.|
+|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration)[])
 
 ```json
 [
   {
-    "Id": "SimpleEnumeration",
-    "Name": "SimpleEnumeration",
-    "GraphQLName": "SimpleEnumeration",
+    "Name": "string",
+    "GraphQLName": "string",
+    "Version": 0,
+    "Id": "string",
+    "State": 0,
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z",
+    "Description": "string",
     "Members": [
       {
-        "Name": "ACTIVE",
-        "GraphQLName": "ACTIVE",
+        "Name": "string",
+        "GraphQLName": "string",
         "Code": 0,
-        "State": "Active",
-        "Description": "This is an active state"
-      },
-      {
-        "Name": "CLOSED",
-        "GraphQLName": "CLOSED",
-        "Code": 1,
-        "State": "Active",
-        "Description": "This is a closed state"
+        "State": 0,
+        "Description": "string"
       }
-    ],
-    "Version": 1,
-    "State": "Active",
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z"
-  },
-  {
-    "Id": "SimpleEnumeration",
-    "Name": "SimpleEnumeration",
-    "GraphQLName": "SimpleEnumeration",
-    "Members": [
-      {
-        "Name": "ACTIVE",
-        "GraphQLName": "ACTIVE",
-        "Code": 0,
-        "State": "Active",
-        "Description": "This is an active state"
-      },
-      {
-        "Name": "CLOSED",
-        "GraphQLName": "CLOSED",
-        "Code": 1,
-        "State": "Active",
-        "Description": "This is a closed state"
-      }
-    ],
-    "Version": 1,
-    "State": "Active",
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z"
+    ]
   }
 ]
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
 ```
 
 ---
@@ -133,10 +89,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 
 <h4>Request Body</h4>
 
-An Enumeration.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
 
 ```json
 {
+  "Id": "SimpleEnumeration",
   "Name": "SimpleEnumeration",
   "Members": [
     {
@@ -155,53 +112,33 @@ An Enumeration.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[Enumeration](#schemaenumeration)|Created.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict|
+|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
-> 201 Response
+> 201 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
 
 ```json
 {
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Members": [
     {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
+      "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
+      "State": 0,
+      "Description": "string"
     }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  ]
 }
 ```
 
@@ -225,63 +162,44 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 `[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted Enumerations. If unspecified, a default value of false is used.<br/><br/>
+<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Enumeration](#schemaenumeration)|Success.|
-|304|None|Not modified.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Enumeration not found.|
-|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
+|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
+|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
 
 ```json
 {
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Members": [
     {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
+      "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
+      "State": 0,
+      "Description": "string"
     }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  ]
 }
 ```
 
@@ -304,11 +222,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{i
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-An Enumeration.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
 
 ```json
 {
@@ -331,85 +249,36 @@ An Enumeration.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Enumeration](#schemaenumeration)|Success.|
-|201|[Enumeration](#schemaenumeration)|Created.|
+|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
+|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
 |302|None|Found.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|409|[ErrorResponse](#schemaerrorresponse)|Found.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
 
 ```json
 {
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Members": [
     {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
+      "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
+      "State": 0,
+      "Description": "string"
     }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
-}
-```
-
-> 201 Response
-
-```json
-{
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
-  "Members": [
-    {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
-      "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
-    }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  ]
 }
 ```
 
@@ -432,11 +301,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-An Enumeration.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
 
 ```json
 {
@@ -459,85 +328,35 @@ An Enumeration.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Enumeration](#schemaenumeration)|Success.|
-|201|[Enumeration](#schemaenumeration)|Created.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
-|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
+|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
+|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
 
 ```json
 {
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Members": [
     {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
+      "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
+      "State": 0,
+      "Description": "string"
     }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
-}
-```
-
-> 201 Response
-
-```json
-{
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
-  "Members": [
-    {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
-      "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
-    }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  ]
 }
 ```
 
@@ -560,17 +379,16 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|Deleted.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Enumeration not found.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 ---
 
@@ -594,60 +412,40 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumeratio
 
 <h4>Request Body</h4>
 
-A list of Enumeration objects.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Enumeration](#schemaenumeration)|Success.|
-|207|[AdhErrorResponse](#schemaadherrorresponse)|Partial.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
+|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
+|207|[ErrorResponse](#schemaerrorresponse)|Partial.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEnumeration](#schemaeventgraphenumeration))
 
 ```json
 {
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Members": [
     {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
+      "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
+      "State": 0,
+      "Description": "string"
     }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
-}
-```
-
-> 207 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  ]
 }
 ```
 
@@ -670,15 +468,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Enumeration not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -719,11 +517,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-An AccessControlList.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
 
 ```json
 {
@@ -751,8 +549,8 @@ An AccessControlList.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Enumeration not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -793,15 +591,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Enumeration not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -834,11 +632,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-A Trustee.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
 
 ```json
 {
@@ -853,8 +651,8 @@ A Trustee.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Enumeration not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -887,27 +685,25 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|Enumeration not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 ---
 ## Definitions
 
-### Enumeration
+### EventGraphEnumeration
 
-<a id="schemaenumeration"></a>
-<a id="schema_Enumeration"></a>
-<a id="tocSenumeration"></a>
-<a id="tocsenumeration"></a>
-
-Represents an Enumeration object.
+<a id="schemaeventgraphenumeration"></a>
+<a id="schema_EventGraphEnumeration"></a>
+<a id="tocSeventgraphenumeration"></a>
+<a id="tocseventgraphenumeration"></a>
 
 <h4>Properties</h4>
 
@@ -925,29 +721,23 @@ Represents an Enumeration object.
 
 ```json
 {
-  "Id": "SimpleEnumeration",
-  "Name": "SimpleEnumeration",
-  "GraphQLName": "SimpleEnumeration",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Members": [
     {
-      "Name": "ACTIVE",
-      "GraphQLName": "ACTIVE",
+      "Name": "string",
+      "GraphQLName": "string",
       "Code": 0,
-      "State": "Active",
-      "Description": "This is an active state"
-    },
-    {
-      "Name": "CLOSED",
-      "GraphQLName": "CLOSED",
-      "Code": 1,
-      "State": "Active",
-      "Description": "This is a closed state"
+      "State": 0,
+      "Description": "string"
     }
-  ],
-  "Version": 1,
-  "State": "Active",
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z"
+  ]
 }
 
 ```
@@ -1001,31 +791,15 @@ Represents an Enumeration object.
 
 ---
 
-### AdhErrorResponse
+### ErrorResponse
 
-<a id="schemaadherrorresponse"></a>
-<a id="schema_AdhErrorResponse"></a>
-<a id="tocSadherrorresponse"></a>
-<a id="tocsadherrorresponse"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+<a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a>
 
 ```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
+{}
 
 ```
 

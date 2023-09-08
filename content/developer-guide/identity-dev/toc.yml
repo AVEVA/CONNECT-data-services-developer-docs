@@ -1,7 +1,7 @@
 - name: Credential management
-  topicHref: dev-guide-credential-management.md
+  topicUid: CredentialManagement
 - name: Least privilege
-  topicHref: dev-guide-least-privilege.md
+  topicUid: LeastPrivilege
 - name: Role-based access control 
   topicUid: accessControl
 - name: Token management 

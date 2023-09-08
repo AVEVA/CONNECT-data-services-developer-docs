@@ -1,8 +1,12 @@
-- name: Access control 
-  topicUid: metadata-access-control-list
+- name: Access control
+  topicHref: metadata-access-control-list.md
+- name: Metadata metadata rule expression preview
+  href: metadata-metadata-rule-expression-preview.md
+- name: Metadata metadata rules overview
+  href: metadata-metadata-rules-overview.md
+- name: Metadata rule suggestion
+  topicHref: metadata-metadata-rule-suggestion.md
 - name: Metadata rules
   topicUid: metadata-metadata-rules
 - name: Metadata rules preview
-  topicUid: metadata-metadata-rule-preview
-- name: Metadata rule suggestion 
-  topicUid: metadata-metadata-rule-suggestion
+  topicHref: metadata-metadata-rule-preview.md

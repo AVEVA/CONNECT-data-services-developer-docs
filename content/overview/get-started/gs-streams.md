@@ -2,76 +2,46 @@
 uid: gsStreams
 ---
 
-# Get started with streams
+# Get started: Streams
 
-After creating types, you can add streams and associate a type with the stream. A stream is a container that holds data. For more information on streams, see the following topics:
+[Streams](xref:sdsStreams) are a collection of ordered events, or a series of events, where each event is an instance of the type you have defined. You create and write data to streams using a simple REST API. The streams you create can be used to store simple or complex data types to suit your application needs. You can define simple or complex [indexes](xref:sdsIndexes) to arrange and relate your data.
 
-- [Streams](xref:ccStreams)
+For additional information about stream best practices, see [Streams best practices](xref:streams-manage-streams#streams-best-practices).
 
-- [Streams best practices](xref:streams-manage-streams#streams-best-practices)
+1. <xref:lpstoredata>
 
-## Procedure
+    The _Sequential Data Store_ (SDS) is a streaming database optimized for storing sequential data, typically time-series data. It can store any data that is indexed by an ordered sequence. For each namespace that is created, an SDS instance or SDS resources is created. Use SDS to store, retrieve, and analyze data.
 
-1. In the left pane, select **Data Management** > **Sequential Data Store**.
+1. [Search for streams](xref:Search)
 
-1. From the **Streams** dropdown list, select **Streams**. 
-   
-1. Select **Add Stream**.
+    From the Sequential Data Store, use the **Search for Streams** field to find streams that you want to work with. For more information on using the field and specifying search criteria, see <xref:Search>.
 
-1. In the `Add Stream` window, enter the following values for these fields:
+1. <xref:CreateTrendSession>
 
-   - **Id** - *MyData.NorthAmerica.SLTC.PumpA*
+    Using a _Trend session_, you can look for pattens in your streams over time. Trend sessions display property values from your streams with a given time range. You can view multiple streams in a Trend session, and you can view all property data for each stream.
 
-   - **Name** - Leave this field blank. By default, it will take the value of the Stream Id.
+1. [Create types](xref:gpTypes)
 
-   - **Description** - *SDS Stream used by MyData*
+    A _type_ defines the shape and structure of events and how to associate events within a stream of data. A type is comprised of at least two properties. One property serves as the primary index, most commonly a timestamp or DateTime. In addition, it has one or more additional properties called value properties that describe the data in each stream event. Each value property can have a different property type. A wide variety of property types are supported.
 
-   - **Type** - *MyData.PumpState*
+    **Additional documentation**:
 
-1. Select the **Tags** tab.
+    - <xref:bpTypes>
+    - Learn more about types in the Developer Guide: <xref:sdsTypes>
 
-1. In the **New Tag** field, type *AVEVA*, and select **+** to add the tag. 
+1. [Create stream metadata rules](xref:gpMetadataRules)
 
-    **Note:** Select the **X** to delete the tag from the stream.
+    When possible, you should explicitly include metadata when you create streams. However, when that is not possible, you can use metadata rules to leverage a consistent naming pattern for streams to embed metadata.
 
-1. Select the **Metadata** tab and select **Add Metadata**.
+    Metadata, or data about data, is a collection of attributes that stream instances of a stream type are expected to provide. The type and units of measure for the value can be defined. Metadata enriches sequential data in AVEVA Data Hub and it logically silos and contextualizes data. It supports data analysis, visualization, organization, and search capabilities.
 
-1. In the **Metadata Key** field,  enter *Site*, and in **Metadata Value**, enter *SLTC*. 
+    A metadata rule is a user-defined stream name pattern in which each part is assigned a metadata type. Metadata rules capture any streams currently stored in an AVEVA Data Hub namespace, as well as matching streams that are subsequently added to the namespace.
 
-    **Note:** Select the **X** to delete metadata from the stream. Once the stream is created, you can make changes to the tags and the metadata.
+    **Additional documentation**:
 
-1. Select **Save**.
+   - <xref:ccMetadataRules>
+   - Learn more about metadata rules in the API Reference: <xref:MetadataRulesOverview>
 
-1. In the **Search** field, enter *Site:SLTC*.
+1. [Stream views](https://docs.aveva.com/bundle/data-hub/page/add-organize-data/organize-data/stream-views/stream-views-concept.html)
 
-    This search query searches for streams that have the metadata key *Site* and the value *SLTC*, and returns the MyData stream. 
-   
-    **Note:** 
-    
-    - Use quotation marks around the value if there are spaces in the text.
-    
-    - You can also search by the Type Id. If you enter *TypeId:MyData.PumpState*, it returns the `MyData.NorthAmerica.SLTC.PumpA` stream.
-    
-1. Select the **MyData.NorthAmerica.SLTC.PumpA** stream and select **Manage Data**. 
-
-    This allows you to run queries against the data in the stream and to add, edit, and remove events.
-
-1. Select **Add Event**.
-
-1. In the `Add Event` window, complete the following fields: 
-
-    - **Timestamp** &ndash; Leave this setting as it appears, displaying the current time.
-     
-    - **Temperature** &ndash; Enter *21*.
-    
-    - **Pressure** &ndash; Enter *325*.
- 
-    - **Status** &ndash; Enter *Running*.
-
-1. Select **Save**. 
-
-    The event appears as the latest value in the stream. 
-
-## Next step
-
-Continue with [Get started with roles](xref:gsRoles).
+    A stream view is a logical overlay that enables you to customize your view of streaming data so it is most useful to you. While you cannot change the properties of types, stream views enable you to create a view of a stream, so it appears as if you had changed the type. You create a stream view by choosing a source and target type, and then defining mappings between the properties of the two types. The source type is the type associated with the stream. The target type includes the properties you want to include in the stream view. In effect, you can remove, rename, or add properties without altering the original stream type.

@@ -12,7 +12,7 @@ To manage agent permissions, you must be assigned the **Manage Permissions** acc
 
 ## To manage permissions for agents
 
-1. From the left pane, select **Data Collection** > **Data Hub Agents**.
+1. From the left pane, select **Data Collection** > **PI to Data Hub Agents**.
 
 1. Select an agent and choose **Manage Permissions**.
 

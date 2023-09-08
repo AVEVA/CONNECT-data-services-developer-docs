@@ -8,13 +8,13 @@ Communities allow a tenant to create a private group where operational data can 
 
 Sharing data streams allows you and your partners to find value in each other's operational data:
 
-* Collectively operate more efficiently and reduce waste.
+- **Seamless Data Sharing**: Facilitate easy and secure data exchange among engineering and operational partners.
 
-* Detect hidden problems in your equipment and processes, helping to troubleshoot issues.
+- **Enhance Operational Efficiency**: Collaboratively streamline operations and minimize waste through shared operations data.
 
-* Predict future failures before they occur.
+- **Uncover Hidden Issues**: Detect and troubleshoot equipment and process problems with insights from your partners' operational data and expertise.
 
-* Share data across engineering and operational partners.
+- **Proactive Failure Prediction**: Predict and prevent future failures by leveraging collective data intelligence.
 
 **Want to set up a community now?** See <xref:community-workflow-create>.
 

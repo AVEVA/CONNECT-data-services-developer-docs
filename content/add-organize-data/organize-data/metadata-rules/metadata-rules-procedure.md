@@ -22,7 +22,7 @@ To create a new metadata rule:
 
 1. On the `Select Stream` page in the **Search for streams** field, enter the stream name to use as a model for the stream name pattern.
 
-    For more information on using the field, see <xref:search>.
+    For more information on using the field, see <xref:Search>.
 
    All streams that match the name pattern display.
 

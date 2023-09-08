@@ -2,29 +2,9 @@
 uid: osisoftCloudServices
 ---
 
-# AVEVA Data Hub API reference
+# AVEVA Data Hub API reference guide
 
-The information in the sections that follow document the APIs and usage for each of the following:
-
-* [Asset store](xref:Assets)—Use the information in this section to create or find assets of different types, along with their data and status.
-
-* [Client failover](xref:FailoverOverview)—The Client Failover Service provides failover capability for adapters to minimize data loss. 
-
-* [Communities](xref:communityOverview)—Communities help industrial companies share their operational data with external business partners, service providers, and analytics providers.
-
-* [Data collection](xref:dataIngress)—You use Open Message Format (OMF) to achieve high-throughput asynchronous data ingress into the AVEVA Data Hub Sequential Data Store.
-
-* [Data views](xref:DataViewsOverview)—Use the information in this section to create user-selected subsets of data stored in AVEVA Data Hub which are mapped into customizable table formats.
-
-* [Identity and access management](xref:identityandaccessmanagement)—Use the information in this section to create, manage and administer users and clients.
-
-* [Operations](xref:operationsOverview)—Use the information in this section to get metrics on AVEVA Data Hub operation.
-
-* [Rules](xref:rules-lp)—The metadata rules feature in the AVEVA Data Hub Portal simplifies the process of assigning metadata to streams.
-
-* [Sequential Data Store (SDS)](xref:sds)—Use the information in this section to learn about the AVEVA Data Hub Sequential Data Store. The SDS is optimized for sequential data operations.
-
-* [Tenant Management](xref:AccountManagementOverview)—Use the information in this section to create, manage, and administer your account by assigning users, roles, and namespaces to your tenant.
+This guide provide detailed information about the functions, classes, methods, and endpoints exposed by the AVEVA Data Hub REST API. It serves as a reference manual for developers who want precise information about how to interact with the software programmatically. It is written for developers who are already familiar with AVEVA Data Hub and need specific information about its API endpoints, parameters, return values, and usage.
 
 ## Access to AVEVA Data Hub
 

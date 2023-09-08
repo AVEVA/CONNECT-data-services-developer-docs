@@ -20,6 +20,15 @@ The new client-credential client authentication method does not replace the orig
 
 For more information on authentication options and how to configure them, see <xref:RetrieveDataViews>.
 
+### Resolved issues
+
+The following issues have been resolved for the 2.1.0.0 release:
+
+| Work Item | Description |
+|--|--|
+| 401709 | Namespace name is not recognized when folder is renamed in Connect. |
+| 385539 | DataViews do not load after retrying from a "No Data Views found for Namespace" error. |
+
 ### Known issues
 
 The known issues and limitations from release 2.0.0.54 have not been resolved and remain in release 2.1.0.0.

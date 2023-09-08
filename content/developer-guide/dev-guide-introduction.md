@@ -4,7 +4,7 @@ uid: lp-dev-guide
 
 # Developer guide
 
-Welcome to the Developer Guide for AVEVA Data Hub. This guide is your comprehensive resource for mastering the AVEVA Data Hub REST API and libraries to create powerful client applications.
+Welcome to the Developer guide for AVEVA Data Hub. This guide is your comprehensive resource for mastering the AVEVA Data Hub REST API and libraries to create powerful client applications.
 
 ## In this guide
 

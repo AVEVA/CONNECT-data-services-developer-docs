@@ -19,4 +19,4 @@ Throughout each chapter, you will find code examples to assist you in implementi
 
 ## Nuget package
 
-To simplify your development process, we provide a NuGet package containing public client libraries designed to work seamlessly with AVEVA Data Hub. These libraries empower you to create applications that interface with AVEVA Data Hub effortlessly. For more details and installation instructions, visit the [NuGet package page](https://www.nuget.org/packages/OSIsoft.OCSClients/#readme-body-tab).
+To simplify your development process, we provide a NuGet package containing public client libraries designed to work seamlessly with AVEVA Data Hub. These libraries empower you to create applications that interface with AVEVA Data Hub effortlessly. For more details and installation instructions, visit the [NuGet package page](https://www.nuget.org/packages/OSIsoft.OCSClients).

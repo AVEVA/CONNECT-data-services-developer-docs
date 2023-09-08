@@ -26,249 +26,50 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted EventTypes. If unspecified, a default value of false is used.<br/><br/>`[optional] string filter`
-<br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>
+<br/><br/>`[optional] string filter`
+<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventType](#schemaeventtype)[]|Success.|
-|304|None|Not modified.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
+|200|[EventGraphEventType](#schemaeventgrapheventtype)[]|Success.|
+|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype)[])
 
 ```json
 [
   {
-    "Id": "SimpleEvent",
-    "Name": "SimpleEvent",
-    "GraphQLName": "SimpleEvent",
-    "State": "Active",
+    "Name": "string",
+    "GraphQLName": "string",
+    "Version": 0,
+    "Id": "string",
+    "State": 0,
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z",
+    "Description": "string",
     "Properties": [
       {
-        "PropertyTypeCode": "DateTime",
-        "Id": "eventStartTime",
-        "Name": "eventStartTime",
-        "GraphQLName": "eventStartTime",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The start time of the event."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "eventEndTime",
-        "Name": "eventEndTime",
-        "GraphQLName": "eventEndTime",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The end time of the event."
-      },
-      {
-        "PropertyTypeCode": "TimeSpan",
-        "Id": "eventDuration",
-        "Name": "eventDuration",
-        "GraphQLName": "eventDuration",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The duration of the event."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "id",
-        "Name": "id",
-        "GraphQLName": "id",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "A unique identifier for the event instance."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "modifiedDate",
-        "Name": "modifiedDate",
-        "GraphQLName": "modifiedDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The last modified date and time of the event."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "createdDate",
-        "Name": "createdDate",
-        "GraphQLName": "createdDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The date and time at which the event was created."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "createdByUser",
-        "Name": "createdByUser",
-        "GraphQLName": "createdByUser",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The identity of the user that created the event."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "eventType",
-        "Name": "eventType",
-        "GraphQLName": "eventType",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The type of the event."
-      },
-      {
-        "PropertyTypeCode": "Enumeration",
-        "Id": "eventState",
-        "Name": "eventState",
-        "GraphQLName": "eventState",
-        "Flags": "None",
-        "State": "Active",
-        "PropertyTypeId": "EventState",
-        "RemoteReferenceName": "EventState",
-        "Description": "The state of the event."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "authorizationTags",
-        "Name": "authorizationTags",
-        "GraphQLName": "authorizationTags",
-        "Flags": "IsCollection",
-        "State": "Active",
-        "Description": "The list of tags used to authorize access to the event."
+        "PropertyTypeCode": 0,
+        "Id": "string",
+        "Name": "string",
+        "GraphQLName": "string",
+        "Flags": 0,
+        "State": 0,
+        "PropertyTypeId": "string",
+        "RemoteReferenceName": "string",
+        "Description": "string"
       }
     ],
-    "Version": 1,
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z",
-    "DefaultAuthorizationTag": "BaseAuthorizationTag",
-    "Description": "This is a simple event type"
-  },
-  {
-    "Id": "SimpleEvent",
-    "Name": "SimpleEvent",
-    "GraphQLName": "SimpleEvent",
-    "State": "Active",
-    "Properties": [
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "eventStartTime",
-        "Name": "eventStartTime",
-        "GraphQLName": "eventStartTime",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The start time of the event."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "eventEndTime",
-        "Name": "eventEndTime",
-        "GraphQLName": "eventEndTime",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The end time of the event."
-      },
-      {
-        "PropertyTypeCode": "TimeSpan",
-        "Id": "eventDuration",
-        "Name": "eventDuration",
-        "GraphQLName": "eventDuration",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The duration of the event."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "id",
-        "Name": "id",
-        "GraphQLName": "id",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "A unique identifier for the event instance."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "modifiedDate",
-        "Name": "modifiedDate",
-        "GraphQLName": "modifiedDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The last modified date and time of the event."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "createdDate",
-        "Name": "createdDate",
-        "GraphQLName": "createdDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The date and time at which the event was created."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "createdByUser",
-        "Name": "createdByUser",
-        "GraphQLName": "createdByUser",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The identity of the user that created the event."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "eventType",
-        "Name": "eventType",
-        "GraphQLName": "eventType",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The type of the event."
-      },
-      {
-        "PropertyTypeCode": "Enumeration",
-        "Id": "eventState",
-        "Name": "eventState",
-        "GraphQLName": "eventState",
-        "Flags": "None",
-        "State": "Active",
-        "PropertyTypeId": "EventState",
-        "RemoteReferenceName": "EventState",
-        "Description": "The state of the event."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "authorizationTags",
-        "Name": "authorizationTags",
-        "GraphQLName": "authorizationTags",
-        "Flags": "IsCollection",
-        "State": "Active",
-        "Description": "The list of tags used to authorize access to the event."
-      }
-    ],
-    "Version": 1,
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z",
-    "DefaultAuthorizationTag": "BaseAuthorizationTag",
-    "Description": "This is a simple event type"
+    "DefaultAuthorizationTag": "string"
   }
 ]
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
 ```
 
 ---
@@ -293,10 +94,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 
 <h4>Request Body</h4>
 
-An EventType.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
 
 ```json
 {
+  "Id": "SimpleEvent",
   "Name": "SimpleEvent",
   "Properties": [
     {
@@ -319,133 +121,38 @@ An EventType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|201|[EventType](#schemaeventtype)|Created.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
+|201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
-> 201 Response
+> 201 Response ([EventGraphEventType](#schemaeventgrapheventtype))
 
 ```json
 {
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Properties": [
     {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
+      "PropertyTypeCode": 0,
+      "Id": "string",
+      "Name": "string",
+      "GraphQLName": "string",
+      "Flags": 0,
+      "State": 0,
+      "PropertyTypeId": "string",
+      "RemoteReferenceName": "string",
+      "Description": "string"
     }
   ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -469,143 +176,49 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 `[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted EventTypes. If unspecified, a default value of false is used.<br/><br/>
+<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventType](#schemaeventtype)|Success.|
-|304|None|Not modified.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
-|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
+|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
+|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
 
 ```json
 {
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Properties": [
     {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
+      "PropertyTypeCode": 0,
+      "Id": "string",
+      "Name": "string",
+      "GraphQLName": "string",
+      "Flags": 0,
+      "State": 0,
+      "PropertyTypeId": "string",
+      "RemoteReferenceName": "string",
+      "Description": "string"
     }
   ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -628,11 +241,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-An EventType.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
 
 ```json
 {
@@ -659,245 +272,41 @@ An EventType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventType](#schemaeventtype)|Success.|
-|201|[EventType](#schemaeventtype)|Created.|
+|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
+|201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
 |302|None|Found.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|409|[ErrorResponse](#schemaerrorresponse)|Found.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
 
 ```json
 {
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Properties": [
     {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
+      "PropertyTypeCode": 0,
+      "Id": "string",
+      "Name": "string",
+      "GraphQLName": "string",
+      "Flags": 0,
+      "State": 0,
+      "PropertyTypeId": "string",
+      "RemoteReferenceName": "string",
+      "Description": "string"
     }
   ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
-}
-```
-
-> 201 Response
-
-```json
-{
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
-  "Properties": [
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
-    }
-  ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -920,11 +329,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-An EventType.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#eventGraphEnumerationDto<br/>
 
 ```json
 {
@@ -951,245 +360,40 @@ An EventType.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventType](#schemaeventtype)|Success.|
-|201|[EventType](#schemaeventtype)|Created.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
-|412|[AdhErrorResponse](#schemaadherrorresponse)|Precondition failed.|
+|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
+|201|[EventGraphEventType](#schemaeventgrapheventtype)|Created.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|412|[ErrorResponse](#schemaerrorresponse)|Precondition failed.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
 
 ```json
 {
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Properties": [
     {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
+      "PropertyTypeCode": 0,
+      "Id": "string",
+      "Name": "string",
+      "GraphQLName": "string",
+      "Flags": 0,
+      "State": 0,
+      "PropertyTypeId": "string",
+      "RemoteReferenceName": "string",
+      "Description": "string"
     }
   ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
-}
-```
-
-> 201 Response
-
-```json
-{
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
-  "Properties": [
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
-    }
-  ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
-}
-```
-
-> 400 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -1212,17 +416,16 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{i
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|Deleted.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 ---
 
@@ -1246,140 +449,45 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 
 <h4>Request Body</h4>
 
-A list of EventType objects.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#EventGraphEventTypeDto<br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventType](#schemaeventtype)|Success.|
-|207|[AdhErrorResponse](#schemaadherrorresponse)|Partial.|
-|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
+|200|[EventGraphEventType](#schemaeventgrapheventtype)|Success.|
+|207|[ErrorResponse](#schemaerrorresponse)|Partial.|
+|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
-> 200 Response
+> 200 Response ([EventGraphEventType](#schemaeventgrapheventtype))
 
 ```json
 {
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Properties": [
     {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
+      "PropertyTypeCode": 0,
+      "Id": "string",
+      "Name": "string",
+      "GraphQLName": "string",
+      "Flags": 0,
+      "State": 0,
+      "PropertyTypeId": "string",
+      "RemoteReferenceName": "string",
+      "Description": "string"
     }
   ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
-}
-```
-
-> 207 Response ([AdhErrorResponse](#schemaadherrorresponse))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  "DefaultAuthorizationTag": "string"
 }
 ```
 
@@ -1402,15 +510,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -1451,11 +559,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-An AccessControlList.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
 
 ```json
 {
@@ -1485,8 +593,8 @@ An AccessControlList.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -1527,15 +635,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -1568,11 +676,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-A Trustee.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
 
 ```json
 {
@@ -1587,8 +695,8 @@ A Trustee.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Trustee](#schematrustee)|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 <h4>Example response body</h4>
 
@@ -1621,27 +729,25 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
-|404|[AdhErrorResponse](#schemaadherrorresponse)|EventType not found.|
+|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
+|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
 
 ---
 ## Definitions
 
-### EventType
+### EventGraphEventType
 
-<a id="schemaeventtype"></a>
-<a id="schema_EventType"></a>
-<a id="tocSeventtype"></a>
-<a id="tocseventtype"></a>
-
-Represents an EventType object.
+<a id="schemaeventgrapheventtype"></a>
+<a id="schema_EventGraphEventType"></a>
+<a id="tocSeventgrapheventtype"></a>
+<a id="tocseventgrapheventtype"></a>
 
 <h4>Properties</h4>
 
@@ -1660,109 +766,28 @@ Represents an EventType object.
 
 ```json
 {
-  "Id": "SimpleEvent",
-  "Name": "SimpleEvent",
-  "GraphQLName": "SimpleEvent",
-  "State": "Active",
+  "Name": "string",
+  "GraphQLName": "string",
+  "Version": 0,
+  "Id": "string",
+  "State": 0,
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
+  "Description": "string",
   "Properties": [
     {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventStartTime",
-      "Name": "eventStartTime",
-      "GraphQLName": "eventStartTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The start time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "eventEndTime",
-      "Name": "eventEndTime",
-      "GraphQLName": "eventEndTime",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The end time of the event."
-    },
-    {
-      "PropertyTypeCode": "TimeSpan",
-      "Id": "eventDuration",
-      "Name": "eventDuration",
-      "GraphQLName": "eventDuration",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The duration of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "id",
-      "Name": "id",
-      "GraphQLName": "id",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "A unique identifier for the event instance."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "modifiedDate",
-      "Name": "modifiedDate",
-      "GraphQLName": "modifiedDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The last modified date and time of the event."
-    },
-    {
-      "PropertyTypeCode": "DateTime",
-      "Id": "createdDate",
-      "Name": "createdDate",
-      "GraphQLName": "createdDate",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The date and time at which the event was created."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "createdByUser",
-      "Name": "createdByUser",
-      "GraphQLName": "createdByUser",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The identity of the user that created the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "eventType",
-      "Name": "eventType",
-      "GraphQLName": "eventType",
-      "Flags": "None",
-      "State": "Active",
-      "Description": "The type of the event."
-    },
-    {
-      "PropertyTypeCode": "Enumeration",
-      "Id": "eventState",
-      "Name": "eventState",
-      "GraphQLName": "eventState",
-      "Flags": "None",
-      "State": "Active",
-      "PropertyTypeId": "EventState",
-      "RemoteReferenceName": "EventState",
-      "Description": "The state of the event."
-    },
-    {
-      "PropertyTypeCode": "String",
-      "Id": "authorizationTags",
-      "Name": "authorizationTags",
-      "GraphQLName": "authorizationTags",
-      "Flags": "IsCollection",
-      "State": "Active",
-      "Description": "The list of tags used to authorize access to the event."
+      "PropertyTypeCode": 0,
+      "Id": "string",
+      "Name": "string",
+      "GraphQLName": "string",
+      "Flags": 0,
+      "State": 0,
+      "PropertyTypeId": "string",
+      "RemoteReferenceName": "string",
+      "Description": "string"
     }
   ],
-  "Version": 1,
-  "CreatedDate": "0001-01-01T00:00:00Z",
-  "ModifiedDate": "0001-01-01T00:00:00Z",
-  "DefaultAuthorizationTag": "BaseAuthorizationTag",
-  "Description": "This is a simple event type"
+  "DefaultAuthorizationTag": "string"
 }
 
 ```
@@ -1869,31 +894,15 @@ Represents an EventType object.
 
 ---
 
-### AdhErrorResponse
+### ErrorResponse
 
-<a id="schemaadherrorresponse"></a>
-<a id="schema_AdhErrorResponse"></a>
-<a id="tocSadherrorresponse"></a>
-<a id="tocsadherrorresponse"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+<a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a>
 
 ```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
+{}
 
 ```
 

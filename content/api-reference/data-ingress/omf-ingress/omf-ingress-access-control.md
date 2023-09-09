@@ -588,3 +588,4 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/omfConnecti
 ```
 
 ---
+

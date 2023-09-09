@@ -554,3 +554,4 @@ Object used to update an `OmfConnection`.
 ```
 
 ---
+

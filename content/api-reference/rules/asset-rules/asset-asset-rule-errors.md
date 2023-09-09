@@ -14,7 +14,7 @@ Returns the `RuleError` objects for the specified ruleId.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/errors
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/errors
 ```
 
 <h4>Parameters</h4>
@@ -112,7 +112,37 @@ Deletes the `RuleError` objects associated with the specified rule.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/errors
+DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/errors
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/>Rule identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|202|None|No content.|
+|403|[ResponseBody](#schemaresponsebody)|Forbidden.|
+|404|[ResponseBody](#schemaresponsebody)|The specified rule was not found.|
+|500|[ResponseBody](#schemaresponsebody)|Internal server error.|
+
+---
+
+## `Overwrite User Conflicts`
+
+<a id="opIdAssetRuleErrors_Overwrite User Conflicts"></a>
+
+Overwrites the user conflict `RuleError` objects associated with the specified rule.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/errors/overwrite
 ```
 
 <h4>Parameters</h4>

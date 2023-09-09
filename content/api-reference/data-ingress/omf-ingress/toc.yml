@@ -1,4 +1,6 @@
 - name: Access control
   href: omf-ingress-access-control.md
-- name: OMF connections
+- name: Omf connections
   href: omf-ingress-omf-connections.md
+- name: Validation
+  href: omf-ingress-validation.md

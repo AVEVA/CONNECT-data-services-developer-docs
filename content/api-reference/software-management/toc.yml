@@ -1,4 +1,4 @@
-- name: Access
+- name: Access control
   href: access.md
 - name: Configuration
   href: configuration.md

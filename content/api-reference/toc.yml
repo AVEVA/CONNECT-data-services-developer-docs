@@ -38,7 +38,7 @@
   href: sequential-data-store/toc.yml
   topicHref: sequential-data-store/sds-lp.md
 - name: Software management
-  href: software-managment/toc.yml
+  href: software-management/toc.yml
 - name: Tenant management
   href: tenant/toc.yml
   topicHref: tenant/management-overview.md

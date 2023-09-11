@@ -1,21 +1,21 @@
 ---
-uid: metadata-metadata-rule-suggestion
+uid: asset-asset-rule-expression-preview
 
 ---
 
-# Metadata Rule Suggestion
+# Asset Rule Expression Preview
 
-## `Get Suggestion Results`
+## `Get Expression Preview Results`
 
-<a id="opIdMetadataRuleSuggestion_Get Suggestion Results"></a>
+<a id="opIdAssetRuleExpressionPreview_Get Expression Preview Results"></a>
 
-Returns a `SuggestionResult`.
+Returns a `ExpressionPreviewResult`.
 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
-?token={token}
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules/expressions
+?token={token}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -23,16 +23,19 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `!:StartSuggestion` method.<br/><br/>
+<br/>A `Guid` which corresponds to a preview that has been created using the `StartExpressionPreview` method.<br/><br/>
+`[optional] integer skip`
+<br/>An `Int32` to determine the number of preview results to skip.<br/><br/>`[optional] integer count`
+<br/>An `Int32` to determine the number of preview results to return.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SuggestionResult](#schemasuggestionresult)|A `SuggestionResult` object.|
+|200|[ExpressionPreviewResult](#schemaexpressionpreviewresult)|A `ExpressionPreviewResult` object.|
 |400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
-|404|[ResponseBody](#schemaresponsebody)|The specified suggestion was not found.|
+|404|[ResponseBody](#schemaresponsebody)|The specified preview was not found.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
 
 <h4>Example response body</h4>
@@ -41,16 +44,17 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
 
 ```json
 {
-  "Status": "complete",
-  "Result": {
-    "key1": [
-      "value1",
-      "value2"
-    ],
-    "key2": [
-      "value1",
-      "value2"
-    ]
+  "Streams": [
+    {
+      "Id": "streamId",
+      "Name": "streamName",
+      "TypeId": "streamTypeId"
+    }
+  ],
+  "Status": "Complete",
+  "Statistics": {
+    "StreamsProcessed": 4,
+    "MatchingStreams": 1
   }
 }
 ```
@@ -117,75 +121,36 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
 
 ---
 
-## `Start Suggestion`
+## `Start Expression Preview`
 
-<a id="opIdMetadataRuleSuggestion_Start Suggestion"></a>
+<a id="opIdAssetRuleExpressionPreview_Start Expression Preview"></a>
 
-Creates a `SuggestionResponse` for a `RuleModel` object.
+Creates a `ExpressionPreviewResponse` of a `RuleExpression` object.
 
 <h3>Request</h3>
 
 ```text 
-POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
-?token={token}
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules/expressions
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`boolean token`
-<br/>The `!:Token` toggles paging token<br/><br/>
+<br/>Namespace identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
-The RuleModel object to create a suggestion for.<br/>
-
-```json
-{
-  "Id": "ruleId",
-  "Name": "name",
-  "Description": "description",
-  "ExampleStreamId": "exampleId",
-  "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "State": "Started",
-  "Expressions": [
-    {
-      "Field": "Id",
-      "Specification": [
-        {
-          "Type": "Wildcard",
-          "Name": "id"
-        }
-      ]
-    }
-  ],
-  "Outputs": [
-    {
-      "Field": "Metadata",
-      "Value": {
-        "key": "{id}"
-      }
-    }
-  ],
-  "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00",
-  "ErrorInfo": {
-    "ErrorCount": 2
-  }
-}
-```
+The RuleModel object to preview.<br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|202|[SuggestionResponse](#schemasuggestionresponse)|A `SuggestionResponse` object.|
-|204|[ResponseBody](#schemaresponsebody)|A `SuggestionResponse` object.|
+|202|[ExpressionPreviewResponse](#schemaexpressionpreviewresponse)|A `ExpressionPreviewResponse` object.|
 |400|[ResponseBody](#schemaresponsebody)|Missing or invalid inputs.|
 |403|[ResponseBody](#schemaresponsebody)|Forbidden.|
 |500|[ResponseBody](#schemaresponsebody)|Internal server error.|
-|503|[ResponseBody](#schemaresponsebody)|Dependent service error.|
 
 <h4>Example response body</h4>
 
@@ -193,23 +158,8 @@ The RuleModel object to create a suggestion for.<br/>
 
 ```json
 {
-  "SuggestionLink": "/api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules?Token=00000000-0000-0000-0000-000000000000",
+  "PreviewLink": "/api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules/expressions?Token=00000000-0000-0000-0000-000000000000",
   "Expires": 7200
-}
-```
-
-> 204 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
 }
 ```
 
@@ -258,33 +208,18 @@ The RuleModel object to create a suggestion for.<br/>
 }
 ```
 
-> 503 Response
-
-```json
-{
-  "OperationId": "00000000-0000-0000-0000-000000000000",
-  "Error": "Error message.",
-  "Reason": "Reason that caused the error.",
-  "Resolution": "Possible resolution for the error.",
-  "Parameters": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-```
-
 ---
 
-## `Cancel Suggestion`
+## `Cancel Expression Preview`
 
-<a id="opIdMetadataRuleSuggestion_Cancel Suggestion"></a>
+<a id="opIdAssetRuleExpressionPreview_Cancel Expression Preview"></a>
 
-Cancels a running suggestion query.
+Cancels a running preview.
 
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
+DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrules/expressions
 ?token={token}
 ```
 
@@ -293,7 +228,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `!:StartSuggestion` method.<br/><br/>
+<br/>A `Guid` which corresponds to a preview that has been created using the `StartExpressionPreview` method.<br/><br/>
 
 <h3>Response</h3>
 
@@ -308,24 +243,24 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 ---
 ## Definitions
 
-### SuggestionResponse
+### ExpressionPreviewResponse
 
-<a id="schemasuggestionresponse"></a>
-<a id="schema_SuggestionResponse"></a>
-<a id="tocSsuggestionresponse"></a>
-<a id="tocssuggestionresponse"></a>
+<a id="schemaexpressionpreviewresponse"></a>
+<a id="schema_ExpressionPreviewResponse"></a>
+<a id="tocSexpressionpreviewresponse"></a>
+<a id="tocsexpressionpreviewresponse"></a>
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|SuggestionLink|string|false|true|None|
+|ExpressionPreviewLink|string|false|true|None|
 |Expires|int32|false|false|None|
 
 ```json
 {
-  "SuggestionLink": "/api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules?Token=00000000-0000-0000-0000-000000000000",
-  "Expires": 7200
+  "ExpressionPreviewLink": "string",
+  "Expires": 0
 }
 
 ```
@@ -362,82 +297,6 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 }
 
 ```
-
----
-
-### RuleModel
-
-<a id="schemarulemodel"></a>
-<a id="schema_RuleModel"></a>
-<a id="tocSrulemodel"></a>
-<a id="tocsrulemodel"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|Description|string|false|true|None|
-|ExampleStreamId|string|false|true|None|
-|AutomationId|string|false|true|None|
-|State|[RuleStateEnum](#schemarulestateenum)|false|false|None|
-|Expressions|[[RuleExpression](#schemaruleexpression)]|false|true|None|
-|Outputs|[[RuleOutput](#schemaruleoutput)]|false|true|None|
-|CreationTime|date-time|false|false|None|
-|ModifiedTime|date-time|false|false|None|
-
-```json
-{
-  "Id": "ruleId",
-  "Name": "name",
-  "Description": "description",
-  "ExampleStreamId": "exampleId",
-  "AutomationId": "00000000-0000-0000-0000-000000000000",
-  "State": "Started",
-  "Expressions": [
-    {
-      "Field": "Id",
-      "Specification": [
-        {
-          "Type": "Wildcard",
-          "Name": "id"
-        }
-      ]
-    }
-  ],
-  "Outputs": [
-    {
-      "Field": "Metadata",
-      "Value": {
-        "key": "{id}"
-      }
-    }
-  ],
-  "CreationTime": "0001-01-01T00:00:00",
-  "ModifiedTime": "0001-01-01T00:00:00",
-  "ErrorInfo": {
-    "ErrorCount": 2
-  }
-}
-
-```
-
----
-
-### RuleStateEnum
-
-<a id="schemarulestateenum"></a>
-<a id="schema_RuleStateEnum"></a>
-<a id="tocSrulestateenum"></a>
-<a id="tocsrulestateenum"></a>
-
-<h4>Enumerated Values</h4>
-
-|Property|Value|Description|
-|---|---|---|
-|Started|0||
-|Stopped|1||
 
 ---
 
@@ -559,57 +418,196 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 
 ---
 
-### RuleOutput
+### ExpressionPreviewResult
 
-<a id="schemaruleoutput"></a>
-<a id="schema_RuleOutput"></a>
-<a id="tocSruleoutput"></a>
-<a id="tocsruleoutput"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Field|string|false|true|None|
-|Value|any|false|true|None|
-
-```json
-{
-  "Field": "string",
-  "Value": null
-}
-
-```
-
----
-
-### SuggestionResult
-
-<a id="schemasuggestionresult"></a>
-<a id="schema_SuggestionResult"></a>
-<a id="tocSsuggestionresult"></a>
-<a id="tocssuggestionresult"></a>
+<a id="schemaexpressionpreviewresult"></a>
+<a id="schema_ExpressionPreviewResult"></a>
+<a id="tocSexpressionpreviewresult"></a>
+<a id="tocsexpressionpreviewresult"></a>
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Status|string|false|true|None|
-|Result|object|false|true|None|
+|Streams|[[SdsStream](#schemasdsstream)]|false|true|None|
+|Statistics|[ExpressionPreviewStatistics](#schemaexpressionpreviewstatistics)|false|true|None|
 
 ```json
 {
-  "Status": "complete",
-  "Result": {
-    "key1": [
-      "value1",
-      "value2"
-    ],
-    "key2": [
-      "value1",
-      "value2"
-    ]
+  "Streams": [
+    {
+      "Id": "streamId",
+      "Name": "streamName",
+      "TypeId": "streamTypeId"
+    }
+  ],
+  "Status": "Complete",
+  "Statistics": {
+    "StreamsProcessed": 4,
+    "MatchingStreams": 1
   }
+}
+
+```
+
+---
+
+### SdsStream
+
+<a id="schemasdsstream"></a>
+<a id="schema_SdsStream"></a>
+<a id="tocSsdsstream"></a>
+<a id="tocssdsstream"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|Name|string|false|true|None|
+|Description|string|false|true|None|
+|TypeId|string|false|true|None|
+|Indexes|[[SdsStreamIndex](#schemasdsstreamindex)]|false|true|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+|ExtrapolationMode|[SdsExtrapolationMode](#schemasdsextrapolationmode)|false|true|None|
+|PropertyOverrides|[[SdsStreamPropertyOverride](#schemasdsstreampropertyoverride)]|false|true|None|
+|CreatedDate|date-time|false|false|None|
+|ModifiedDate|date-time|false|false|None|
+
+```json
+{
+  "Id": "string",
+  "Name": "string",
+  "Description": "string",
+  "TypeId": "string",
+  "Indexes": [
+    {
+      "SdsTypePropertyId": "string"
+    }
+  ],
+  "InterpolationMode": 0,
+  "ExtrapolationMode": 0,
+  "PropertyOverrides": [
+    {
+      "SdsTypePropertyId": "string",
+      "Uom": "string",
+      "InterpolationMode": 0
+    }
+  ],
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z"
+}
+
+```
+
+---
+
+### SdsStreamIndex
+
+<a id="schemasdsstreamindex"></a>
+<a id="schema_SdsStreamIndex"></a>
+<a id="tocSsdsstreamindex"></a>
+<a id="tocssdsstreamindex"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|SdsTypePropertyId|string|false|true|None|
+
+```json
+{
+  "SdsTypePropertyId": "string"
+}
+
+```
+
+---
+
+### SdsInterpolationMode
+
+<a id="schemasdsinterpolationmode"></a>
+<a id="schema_SdsInterpolationMode"></a>
+<a id="tocSsdsinterpolationmode"></a>
+<a id="tocssdsinterpolationmode"></a>
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|Continuous|0|
+|Default|0|
+|StepwiseContinuousLeading|1|
+|StepwiseContinuousTrailing|2|
+|Discrete|3|
+|ContinuousNullableLeading|4|
+|ContinuousNullableTrailing|5|
+
+---
+
+### SdsExtrapolationMode
+
+<a id="schemasdsextrapolationmode"></a>
+<a id="schema_SdsExtrapolationMode"></a>
+<a id="tocSsdsextrapolationmode"></a>
+<a id="tocssdsextrapolationmode"></a>
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|
+|---|---|
+|All|0|
+|None|1|
+|Forward|2|
+|Backward|3|
+
+---
+
+### SdsStreamPropertyOverride
+
+<a id="schemasdsstreampropertyoverride"></a>
+<a id="schema_SdsStreamPropertyOverride"></a>
+<a id="tocSsdsstreampropertyoverride"></a>
+<a id="tocssdsstreampropertyoverride"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|SdsTypePropertyId|string|false|true|None|
+|Uom|string|false|true|None|
+|InterpolationMode|[SdsInterpolationMode](#schemasdsinterpolationmode)|false|true|None|
+
+```json
+{
+  "SdsTypePropertyId": "string",
+  "Uom": "string",
+  "InterpolationMode": 0
+}
+
+```
+
+---
+
+### ExpressionPreviewStatistics
+
+<a id="schemaexpressionpreviewstatistics"></a>
+<a id="schema_ExpressionPreviewStatistics"></a>
+<a id="tocSexpressionpreviewstatistics"></a>
+<a id="tocsexpressionpreviewstatistics"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|StreamsProcessed|int32|false|false|None|
+|MatchingStreams|int32|false|false|None|
+
+```json
+{
+  "StreamsProcessed": 0,
+  "MatchingStreams": 0
 }
 
 ```

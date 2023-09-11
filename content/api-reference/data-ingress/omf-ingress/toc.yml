@@ -2,3 +2,5 @@
   href: omf-ingress-access-control.md
 - name: OMF connections
   href: omf-ingress-omf-connections.md
+- name: Validation
+  href: omf-ingress-validation.md

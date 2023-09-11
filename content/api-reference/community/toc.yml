@@ -1,7 +1,9 @@
-- name: Client credential clients
-  href: ../identity/community-client-credential-clients.md
 - name: Communities
   href: ../identity/communities.md
+- name: Client credential clients
+  href: ../identity/community-client-credential-clients.md
+- name: Groups
+  href: ../identity/community-groups.md
 - name: Identity provider
   href: ../identity/community-identity-provider.md
 - name: Invitations
@@ -18,4 +20,3 @@
   href: ../identity/community-tenants.md
 - name: Users
   href: ../identity/community-users.md
-    

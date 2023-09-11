@@ -356,7 +356,7 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[Trustee](#schematrustee)|Ok. Returns the signup's resource.|
+|200|[SignupResourceIds](#schemasignupresourceids)|Ok. Returns the signup's resource.|
 |400|None|Bad request.|
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
@@ -364,13 +364,16 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 
 <h4>Example response body</h4>
 
-> 200 Response ([Trustee](#schematrustee))
+> 200 Response ([SignupResourceIds](#schemasignupresourceids))
 
 ```json
 {
-  "Type": 1,
-  "ObjectId": "string",
-  "TenantId": "string"
+  "AccessibleResources": [
+    "string"
+  ],
+  "InaccessibleResources": [
+    "string"
+  ]
 }
 ```
 
@@ -621,6 +624,36 @@ The UpdateSignupInput object.
 ```json
 {
   "Name": "string"
+}
+
+```
+
+---
+
+### SignupResourceIds
+
+<a id="schemasignupresourceids"></a>
+<a id="schema_SignupResourceIds"></a>
+<a id="tocSsignupresourceids"></a>
+<a id="tocssignupresourceids"></a>
+
+A model that holds lists of accessible and inaccessible recources retrieved from memory.
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|AccessibleResources|string[]|false|false|Public accessor for accessible resources list|
+|InaccessibleResources|string[]|false|false|Public accessor for inaccessible resources list|
+
+```json
+{
+  "AccessibleResources": [
+    "string"
+  ],
+  "InaccessibleResources": [
+    "string"
+  ]
 }
 
 ```

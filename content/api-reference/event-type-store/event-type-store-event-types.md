@@ -2366,7 +2366,6 @@ Represents an EventType object.
 |Indexed|2|
 |Required|4|
 |IsCollection|8|
-|ReverseLookup|16|
 
 ---
 

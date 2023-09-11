@@ -30,7 +30,7 @@ Field | Description
 **Created Streams** | The total number of streams the tenant is licensed for and the number of licenses consumed.
 **Current Month Accessed Streams** | The total number of streams the tenant is licensed the access during the month and the number of licenses consumed.
 
-##  Data sources
+## Data sources
 
 For data source, you can view streams from your native tenant namespaces or from communities you are a member of. Choose between the following options:
 
@@ -59,6 +59,10 @@ Regardless of which parameters you choose, resource usage always display a legen
 ## Tabular data
 
 Regardless of which parameters you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can download this data in CSV format by selecting **Download Usage**.
+
+## Flex credit transactions
+
+For more information on how usage consumes flex credits, see <xref:flex-credits>.
 
 ## Video Tutorial: View your AVEVA Data Hub usage
 

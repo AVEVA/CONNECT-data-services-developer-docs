@@ -1,6 +1,5 @@
 ---
-uid: ""
-
+uid: software-mgmt-access
 ---
 
 # Access

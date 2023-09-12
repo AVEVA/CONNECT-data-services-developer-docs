@@ -1,6 +1,5 @@
 ---
-uid: ""
-
+uid: software-mgmt-configuration-template
 ---
 
 # Configuration Template

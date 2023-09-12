@@ -2,7 +2,7 @@
 uid: PowerBIReleaseNotes
 ---
 
-# Release notes
+# AVEVA Data Hub Power BI Connector release notes
 
 The AVEVA Data Hub Power BI Connector allows AVEVA Data Hub Data Views to be imported into Power BI so the data can be visually analyzed or utilized in Power BI reports or dashboards.
 

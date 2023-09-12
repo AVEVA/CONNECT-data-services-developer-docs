@@ -212,7 +212,7 @@ You can view attribute details for selected PI points in a transfer. Implicit PI
 
 1. (Optional) To show hidden implicit PI points, turn on the **Show Implicit PI Points** toggle.
 
-1. To view another PI point's details, select to select a different PI point in the transfer list.
+1. To view another PI point's details, select a different PI point in the transfer list.
 
 1. To close the `PI Point Information` pane, select **View Details** or **x**.
 

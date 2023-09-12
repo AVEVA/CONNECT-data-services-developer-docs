@@ -4,7 +4,7 @@ uid: data-view-edit-data-fields
 
 # Edit data field labels
 
-Edit data field labels to create a friendly for a field that displays in your data view.
+Edit data field labels to create a friendly name for a field that displays in your data view.
 
 ## Data field labels
 

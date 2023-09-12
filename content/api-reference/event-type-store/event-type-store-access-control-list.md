@@ -28,8 +28,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -73,7 +72,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -103,8 +102,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Ev
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -151,8 +150,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -196,7 +194,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -226,8 +224,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Re
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -274,8 +272,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -319,7 +316,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#accessControlList<br/>
+An AccessControlList.<br/>
 
 ```json
 {
@@ -349,8 +346,8 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/En
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[AccessControlList](#schemaaccesscontrollist)|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 <h4>Example response body</h4>
 
@@ -397,8 +394,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Eve
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 ---
 
@@ -425,8 +421,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Ref
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 ---
 
@@ -453,8 +448,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enu
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Success.|
-|403|[ErrorResponse](#schemaerrorresponse)|Forbidden.|
-|404|[ErrorResponse](#schemaerrorresponse)|Client or tenant not found.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
 ---
 ## Definitions

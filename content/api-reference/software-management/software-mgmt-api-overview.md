@@ -14,8 +14,4 @@ Software management, or [Edge data store & adapters](xref:SoftwareMgmt), shows y
 
 * [Edge system](software-mgmt-edge-system)
 
-* [Edge system cluster]()
-
 * [Edge system type](software-mgmt-edge-system-type)
-
-* [Summary]()

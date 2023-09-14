@@ -4,7 +4,7 @@ uid: communities-usage
 
 # View community usage
 
-The `Usage` tab displays consumption information for the streams created and viewed within the selected community. You can view these streams by your usage of them within the community or by Community Usage. 
+The `Usage` tab displays consumption information for the streams created and viewed within the selected community. You can view these streams by your usage of them within the community or by Community Usage.
 
 ## To view community usage
 
@@ -44,7 +44,7 @@ To view how other tenants in the community consume data, select the **Community 
 
 ***
 
-##  View
+## View
 
 Use the view dropdown to display streams accessed by month or day. Choose between the following options:
 
@@ -52,7 +52,7 @@ Use the view dropdown to display streams accessed by month or day. Choose betwee
 
 	![streams accessed monthly](images/streams-accessed-monthly.png)
 
-- **Daily**: Displays usage data for the chosen data source for each day in a chosen month. There is a daily view for each day of the month that shared stream access occurred. 
+- **Daily**: Displays usage data for the chosen data source for each day in a chosen month. There is a daily view for each day of the month that shared stream access occurred.
 
 	![streams accessed daily](images/streams-accessed-daily.png)
 
@@ -65,3 +65,7 @@ Regardless of which parameters you choose, resource usage always display a legen
 ## Tabular data
 
 Regardless of which parameters or chart you choose, the data displayed in the bar graph is also displayed below it as tabular data. View the [Legend](#legend) to see how the stream data maps to a data source. You can export this data in CSV format by selecting **Download Usage**.
+
+## Flex credit transactions
+
+For more information on how usage consumes flex credits, see <xref:flex-credits>.

@@ -1,9 +1,8 @@
 ---
-uid: ""
-
+uid: software-mgmt-access
 ---
 
-# Access
+# Access control
 
 ## `Get Collection Acl`
 

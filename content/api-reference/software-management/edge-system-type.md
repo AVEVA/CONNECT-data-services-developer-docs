@@ -1,6 +1,5 @@
 ---
-uid: ""
-
+uid: software-mgmt-edge-system-type
 ---
 
 # Edge System Type

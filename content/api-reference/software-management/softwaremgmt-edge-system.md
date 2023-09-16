@@ -1,6 +1,5 @@
 ---
-uid: softwaremgmt-edge-system
-
+uid: software-mgmt-edge-system
 ---
 
 # Edge System

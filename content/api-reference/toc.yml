@@ -40,7 +40,7 @@
   topicHref: software-management/software-mgmt-api-overview.md
 - name: Streaming updates (Preview)
   href: streaming-updates/toc.yml
-  topicHref: streaming-updates.md
+  topicHref: streaming-updates/streaming-updates.md
 - name: Tenant management
   href: tenant/toc.yml
   topicHref: tenant/management-overview.md

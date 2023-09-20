@@ -14,7 +14,7 @@ The following new features and known issues are included for release 2.1.0.0.
 
 ### New features
 
-Release 2.1.0.0 adds a new option for authentication between Microsoft Power BI and AVEVA Data Hub: _Client-credential clients_ authentication. AVEVA recommends this new authentication option over the original authentication option using your organizational account, as it improves user experience without sacrificing security.  Authentication using client-credential clients allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without having to reauthenticate every seven days as you do with the original authentication option, OAuth.
+Release 2.1.0.0 adds a new option for authentication between Microsoft Power BI and AVEVA Data Hub: _Client-credential clients_ authentication. Authentication using client-credential clients allows Microsoft Power BI to remain securely connected with AVEVA Data Hub without having to reauthenticate every seven days as you do with the original authentication option, OAuth. This new authentication method improves user experience without sacrificing security.  
 
 The new client-credential client authentication method does not replace the original authentication option of using your organizational account. Client credentials are recommended when using the AVEVA Data Hub Power BI Connector for scheduled refresh in the Power BI Service (but not when using the connector with Power BI Desktop).
 
@@ -85,9 +85,3 @@ To report a security vulnerability, refer to [Report a Security Vulnerability (h
 ### Vulnerability scoring
 
 AVEVA has selected the [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/v2/guide) to quantify the severity of security vulnerabilities for disclosure. To calculate the CVSS scores, AVEVA uses the [National Vulnerability Database (NVD)](https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?calculator&amp;.0) calculator maintained by the National Institute of Standards and Technology (NIST).  AVEVA uses Critical, High, Medium, and Low categories to aggregate the CVSS Base scores. This removes some of the opinion related errors of CVSS scoring. As noted in the [CVSS specification](https://www.first.org/cvss/specification-document), Base score range from 0 for the lowest severity to 10 for the highest severity.
-
-### Overview of new vulnerabilities fixed or mitigated
-
-This section is intended to provide relevant security-related information to guide your installation or upgrade decision. AVEVA is proactively disclosing aggregate information about the number and severity of AVEVA Data Hub Power BI Connector security vulnerabilities that are fixed in this release.
-
-No security-related information is applicable to this release.

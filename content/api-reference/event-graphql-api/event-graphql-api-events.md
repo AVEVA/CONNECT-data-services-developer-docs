@@ -71,15 +71,17 @@ GET /api/v1.0-preview/tenants/{tenantId}/namespaces/{namespaceId}/events
 {
   "reason": "string",
   "error": "string",
+  "resolution": "string",
   "data": [
     null
   ],
   "childErrors": [
     {
-      "statusCode": 100,
-      "reason": "string",
-      "error": "string",
-      "id": "string"
+      "StatusCode": 100,
+      "Reason": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Id": "string"
     }
   ]
 }
@@ -183,15 +185,17 @@ POST /api/v1.0-preview/tenants/{tenantId}/namespaces/{namespaceId}/events
 {
   "reason": "string",
   "error": "string",
+  "resolution": "string",
   "data": [
     null
   ],
   "childErrors": [
     {
-      "statusCode": 100,
-      "reason": "string",
-      "error": "string",
-      "id": "string"
+      "StatusCode": 100,
+      "Reason": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Id": "string"
     }
   ]
 }
@@ -248,6 +252,7 @@ event response
 |---|---|---|---|---|
 |reason|string|false|true|reason|
 |error|string|false|true|error|
+|resolution|string|false|true|resolution|
 |data|[any]|false|true|data|
 |childErrors|[[EventError](#schemaeventerror)]|false|true|Child Errors|
 
@@ -255,15 +260,17 @@ event response
 {
   "reason": "string",
   "error": "string",
+  "resolution": "string",
   "data": [
     null
   ],
   "childErrors": [
     {
-      "statusCode": 100,
-      "reason": "string",
-      "error": "string",
-      "id": "string"
+      "StatusCode": 100,
+      "Reason": "string",
+      "Error": "string",
+      "Resolution": "string",
+      "Id": "string"
     }
   ]
 }
@@ -285,17 +292,19 @@ Event child error
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|statusCode|[HttpStatusCode](#schemahttpstatuscode)|false|false|status code|
-|reason|string|false|true|reason|
-|error|string|false|true|error|
-|id|string|false|true|top level id|
+|StatusCode|[HttpStatusCode](#schemahttpstatuscode)|false|false|status code|
+|Reason|string|false|true|reason|
+|Error|string|false|true|error|
+|Resolution|string|false|true|resolution|
+|Id|string|false|true|top level id|
 
 ```json
 {
-  "statusCode": 100,
-  "reason": "string",
-  "error": "string",
-  "id": "string"
+  "StatusCode": 100,
+  "Reason": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Id": "string"
 }
 
 ```

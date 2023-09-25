@@ -114,7 +114,7 @@ For routes that support responses in CSV format, such as Data Views, a CSV tab i
 
 ### Parquet
 
-When making requests to the <xref:data-views-data-views-data> route, responses are available in the Parquet format. For more information, see <xref:data-views-parquet-format>.
+When making requests to the <xref:data-views-data-views-data> route, responses are available in the Parquet format.
 
 ### Trend
 

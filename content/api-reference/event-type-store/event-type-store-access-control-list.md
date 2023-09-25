@@ -574,31 +574,15 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enu
 
 ---
 
-### AdhErrorResponse
+### ErrorResponse
 
-<a id="schemaadherrorresponse"></a>
-<a id="schema_AdhErrorResponse"></a>
-<a id="tocSadherrorresponse"></a>
-<a id="tocsadherrorresponse"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+<a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a>
 
 ```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
+{}
 
 ```
 

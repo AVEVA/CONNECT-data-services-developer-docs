@@ -6,8 +6,6 @@ uid: accessControl
 
 Use an Access Control List (ACL) to manage role-based access control to entities such as namespaces and streams. ACLs control user access to entities based on their roles. Each entity has an owner, who has access for all operations regardless of the contents of the ACL. Not all entities support role-based access control.
 
-See [AVEVA Data Hub roles](xref:ccRoles) for details about default system roles.
-
 ## Access Control Lists
 
 Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), which contain the following information:

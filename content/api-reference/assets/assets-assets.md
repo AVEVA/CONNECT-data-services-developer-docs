@@ -709,7 +709,7 @@ Returns an array of assets in a given namespace and the total number of assets r
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}&filter={filter}
+?filter={filter}&skip={skip}&count={count}&orderBy={orderBy}&query={query}
 ```
 
 <h4>Parameters</h4>
@@ -717,12 +717,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] integer skip`
+`[optional] string filter`
+<br/>String used to filter the asset search results. Filter strings are not case-sensitive. Filters can be applied for the `AssetTypeName` property, the `Status` property, and the asset metadata properties, using the syntax filter[*property_name*]=*property_value*.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderBy`
 <br/>Optional parameter which returns assets ordered either by the asset `Id` or the asset `Name`. Specify `asc` or `desc` to return the results in ascending or descending order. If not specified, the default is ascending order.<br/><br/>`[optional] string query`
-<br/>Query identifier.<br/><br/>`[optional] string filter`
-<br/>Filter expression for CreatedDate and LastModifiedDate properties.<br/><br/>
+<br/>Query identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -817,7 +817,7 @@ Returns the Headers corresponding to the GET Assets call, including a collection
 
 ```text 
 HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
-?query={query}&includeTotalCount={includeTotalCount}&filter={filter}
+?filter={filter}&query={query}&includeTotalCount={includeTotalCount}
 ```
 
 <h4>Parameters</h4>
@@ -825,10 +825,10 @@ HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>
-`[optional] string query`
+`[optional] string filter`
+<br/>String used to filter the asset search results. Filter strings are not case-sensitive. Filters can be applied for the `AssetTypeName` property, the `Status` property, and the asset metadata properties, using the syntax filter[*property_name*]=*property_value*.<br/><br/>`[optional] string query`
 <br/>Search query. Defaults to all assets if unspecified.<br/><br/>`[optional] boolean includeTotalCount`
-<br/>Optional parameter. If set to false, Total-Count header will not be included.<br/><br/>`[optional] string filter`
-<br/>Filter expression for CreatedDate and LastModifiedDate properties.<br/><br/>
+<br/>Optional parameter. If set to false, Total-Count header will not be included.<br/><br/>
 
 <h3>Response</h3>
 

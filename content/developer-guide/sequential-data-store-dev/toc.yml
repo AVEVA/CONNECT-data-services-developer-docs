@@ -3,30 +3,42 @@
 - name: Types
   href: sds-types-dev.md
   items:
-    - href: sds-sdstypes-props.md
-    - href: sds-sdstypes-dotnet.md
-    - href: sds-sdstypes-other-langs.md
-    - href: sds-type-reusability.md
-- name: Streams
+    - name: "SdsType properties"
+      href: sds-sdstypes-props.md
+    - name: "SdsType in .NET Framework"
+      href: sds-sdstypes-dotnet.md
+    - name: "SdsType outside of .NET Framework"
+      href: sds-sdstypes-other-langs.md
+    - name: "Type reuse"
+      href: sds-type-reusability.md
+- name: "Streams"
   href: sds-streams-dev.md
   items: 
-    - href: sds-stream-properties.md
-- name: Indexes
+    - name: "Stream properties"
+      href: sds-stream-properties.md
+- name: "Indexes"
   href: sds-index.md
-- name: Write data
+- name: "Write data"
   href: sds-write-data.md
-- name: Read data
+- name: "Read data"
   topicHref: sds-read-data.md
   items:
-    - href: read-data/sds-filter-expressions.md
-    - href: read-data/sds-table-format.md
+    - name: "Filter expressions for SDS values"
+      href: read-data/sds-filter-expressions.md
+    - name: "Table format"
+      href: read-data/sds-table-format.md
     - href: read-data/sds-data-transformation.md
       items: 
-        - href: read-data/sds-stream-views-dev.md
-        - href: read-data/sds-uom.md
-- href: sds-retrieve-sds-objects.md
+        - name: "Data transformation"
+          href: read-data/sds-stream-views-dev.md
+        - name: "Units of measure and quantities"
+          href: read-data/sds-uom.md
+- name: "Retrieve types, streams, and stream views"
+  href: sds-retrieve-sds-objects.md
   items:
-    - href: sds-search.md
-    - href: sds-metadata-objects-filter-expressions.md
-- href: sds-compression.md
-
+    - name: "Search in SDS"
+      href: sds-search.md
+    - name: "Filter expressions for SDS objects"
+      href: sds-metadata-objects-filter-expressions.md
+- name: "Compression"
+  href: sds-compression.md

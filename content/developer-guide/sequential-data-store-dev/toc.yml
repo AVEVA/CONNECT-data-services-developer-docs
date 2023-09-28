@@ -1,6 +1,6 @@
 - name: "Quick Start"
   href: sds-quick-start.md
-- name: Types
+- name: "Types"
   href: sds-types-dev.md
   items:
     - name: "SdsType properties"
@@ -27,9 +27,10 @@
       href: read-data/sds-filter-expressions.md
     - name: "Table format"
       href: read-data/sds-table-format.md
-    - href: read-data/sds-data-transformation.md
+    - name: "Data transformation"
+      href: read-data/sds-data-transformation.md
       items: 
-        - name: "Data transformation"
+        - name: "Stream views"
           href: read-data/sds-stream-views-dev.md
         - name: "Units of measure and quantities"
           href: read-data/sds-uom.md

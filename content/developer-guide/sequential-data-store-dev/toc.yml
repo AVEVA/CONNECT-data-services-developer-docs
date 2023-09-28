@@ -22,8 +22,8 @@
     - href: read-data/sds-table-format.md
     - href: read-data/sds-data-transformation.md
       items: 
-        - read-data/sds-stream-views-dev.md
-        - read-data/sds-uom.md
+        - href: read-data/sds-stream-views-dev.md
+        - href: read-data/sds-uom.md
 - href: sds-retrieve-sds-objects.md
   items:
     - href: sds-search.md

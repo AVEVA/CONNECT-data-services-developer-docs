@@ -1,5 +1,5 @@
 ---
-uid: sds-sdstypes-props
+uid: sds-retrieve-sds-objects
 ---
 
 # Retrieve types, streams, and stream views

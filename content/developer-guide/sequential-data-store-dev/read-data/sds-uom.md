@@ -327,4 +327,4 @@ At type creation, you can associate SdsUom with a [SdsTypeProperty](xref:sds-sds
 
 ## Associating a unit of measure with a stream
 
-At stream creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This override enables the reuse of a type that may have default unit information associated with it already. For more information, see [SdsStreamPropertyOverride](xref:sds-stream-properties#SdsStreamPropertyOverride).
+At stream creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This override enables the reuse of a type that may have default unit information associated with it already. For more information, see [SdsStreamPropertyOverride](xref:sds-stream-properties#sdsstreampropertyoverride).

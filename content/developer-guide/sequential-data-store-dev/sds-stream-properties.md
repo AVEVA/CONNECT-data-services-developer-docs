@@ -33,7 +33,7 @@ The following table shows the required and optional stream fields. Fields not li
 
 ## Indexes
 
-While you define the primary index on the type, the stream is where you define secondary indexes. If the primary index defined on the type is a compound index, secondary indexes on the stream are allowed as long as that compound index does not have more than two properties. For more information on see [Compound indexes](xref:sdsIndexes#compound-indexes).
+While you define the primary index on the type, the stream is where you define secondary indexes. If the primary index defined on the type is a compound index, secondary indexes on the stream are allowed as long as that compound index does not have more than two properties. For more information on see [Compound ndexes](xref:sdsIndexes#compound-indexes).
 
 <!-- Secondary indexes apply to a single property. In other words, there are no compound secondary indexes.-->
 

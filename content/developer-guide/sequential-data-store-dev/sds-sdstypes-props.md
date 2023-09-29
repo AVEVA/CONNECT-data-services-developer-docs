@@ -4,7 +4,7 @@ uid: sds-sdstypes-props
 
 # SdsType fields and properties
 
-The table below lists required and optional fields in a type. Fields that are not included are reserved for internal SDS use. For more information on search including limitations, see [Search in SDS](xref:sdsSearching).
+The table below lists required and optional fields in a type. Fields that are not included are reserved for internal SDS use. For more information on search including limitations, see <xref:sdsSearching>.
 
 | Property Name | Data Type | Required | Searchable | Details |
 | --- | --- | --- | --- | --- |
@@ -161,9 +161,8 @@ An SdsType with the `InterpolationMode` set to `Discrete` cannot also have the S
 
 `Uom` is the unit of measure for the SdsTypeProperty. The `Uom` of the SdsTypeProperty may be specified by the name or the abbreviation. The names and abbreviations of `Uoms` are case sensitive.
 
-The `InterpolationMode` and `Uom` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [Streams](xref:sdsStreams#sdsstreampropertyoverride).
+The `InterpolationMode` and `Uom` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [Streams](xref:sds-stream-properties#sdsstreampropertyoverride).
 
 ### Supported units of measure
 
 For a list of units of measures that are supported for an SdsTypeProperty, see [Units of measure](xref:unitsOfMeasure#supported-system-defined-units-of-measure).
-

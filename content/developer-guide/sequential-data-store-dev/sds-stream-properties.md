@@ -33,7 +33,7 @@ The following table shows the required and optional stream fields. Fields not li
 
 ## Indexes
 
-While you define the primary index on the type, the stream is where you define secondary indexes. If the primary index defined on the type is a compound index, secondary indexes on the stream are allowed as long as that compound index does not have more than two properties. For more information on compound indexes, see [Indexes](xref:sdsIndexes#compound-indexes).
+While you define the primary index on the type, the stream is where you define secondary indexes. If the primary index defined on the type is a compound index, secondary indexes on the stream are allowed as long as that compound index does not have more than two properties. For more information on see [Compound indexes](xref:sdsIndexes#compound-indexes).
 
 <!-- Secondary indexes apply to a single property. In other words, there are no compound secondary indexes.-->
 
@@ -55,8 +55,8 @@ The `SdsStreamPropertyOverride` object has the following structure:
 | InterpolationMode | SdsInterpolationMode | Optional | Interpolation setting. Default is null. |
 | Uom | String | Optional | Unit of measure. |
 
-You can override the unit of measure (UOM) for any SdsTypeProperty defined by the stream type, including primary and secondary indexes. For more information on SdsTypeProperty `Uom`, see [Types](xref:sds-sdstypes-props#sdstypeproperty).
+You can override the unit of measure (UOM) for any SdsTypeProperty defined by the stream type, including primary and secondary indexes. For more information on SdsTypeProperty `Uom`, see [SdsTypeProperty](xref:sds-sdstypes-props#sdstypeproperty).
 
-Read characteristics of the stream are determined by the type and the `PropertyOverride` of the stream. You can define or override the interpolation mode for non-index properties at the stream level. For more information about type read characteristics, see [Types](xref:sds-sdstypes-props#sdstypeproperty).
+Read characteristics of the stream are determined by the type and the `PropertyOverride` of the stream. You can define or override the interpolation mode for non-index properties at the stream level. For more information about type read characteristics, see [SdsTypeProperty](xref:sds-sdstypes-props#sdstypeproperty).
 
 If you set `InterpolationMode` of the type to `Discrete`, it cannot be overridden at any level. When `InterpolationMode` is set to `Discrete` and an event is not defined for the index, a null value is returned for the entire event.

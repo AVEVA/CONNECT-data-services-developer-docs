@@ -49,7 +49,7 @@ You can specify a maximum of three properties to define a compound index. In rea
 
 > [!NOTE]
 >
-> - Compound indexing only applies to types. In other words, there is no compound indexing for secondary indexes that are on streams. For more information, see [Stream properties](xref:sds-stream-properties#indexes).
+> - Compound indexing only applies to types. In other words, there is no compound indexing for secondary indexes that are on streams. For more information, see [Indexes](xref:sds-stream-properties#indexes).
 > - The examples below are for compound indexes on types and not of secondary indexes on streams.
 
 **REST API**

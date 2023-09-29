@@ -141,7 +141,7 @@ The following table shows the required and optional `SdsTypeProperty` fields. Fi
 
 #### Rules for the SdsTypeProperty identifier (SdsTypeProperty.Id)
 
-The SdsTypeProperty ID follows the same [rules](#sdstype-fields-and-properties-table) as the type identifier.
+The SdsTypeProperty Id follows the same [rules as the type identifier](#rules-for-the-type-identifier-sdstypeid).
 
 #### IsKey
 
@@ -161,7 +161,7 @@ An SdsType with the `InterpolationMode` set to `Discrete` cannot also have the S
 
 `Uom` is the unit of measure for the SdsTypeProperty. The `Uom` of the SdsTypeProperty may be specified by the name or the abbreviation. The names and abbreviations of `Uoms` are case sensitive.
 
-The `InterpolationMode` and `Uom` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [Streams](xref:sds-stream-properties#sdsstreampropertyoverride).
+The `InterpolationMode` and `Uom` of the SdsTypeProperty can be overridden on the SdsStream. For more information, see [SdsStreamPropertyOverride](xref:sds-stream-properties#sdsstreampropertyoverride).
 
 ### Supported units of measure
 

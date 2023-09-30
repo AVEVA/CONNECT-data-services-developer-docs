@@ -27,13 +27,8 @@
       href: read-data/sds-filter-expressions.md
     - name: "Table format"
       href: read-data/sds-table-format.md
-    - name: "Data transformation"
-      href: read-data/sds-data-transformation.md
-      items: 
-        - name: "Stream views"
-          href: read-data/sds-stream-views-dev.md
-        - name: "Units of measure and quantities"
-          href: read-data/sds-uom.md
+- name: "Stream views"
+  href: sds-stream-views-dev.md
 - name: "Retrieve types, streams, and stream views"
   href: sds-retrieve-sds-objects.md
   items:
@@ -43,3 +38,5 @@
       href: sds-metadata-objects-filter-expressions.md
 - name: "Compression"
   href: sds-compression.md
+- name: "Units of measure and quantities"
+  href: sds-uom.md

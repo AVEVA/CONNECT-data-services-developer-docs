@@ -41,7 +41,7 @@ You can only use the SdsTypeCodes of type properties that can be ordered (`DateT
 
 ## Interpolation and extrapolation
 
-You can use the `InterpolationMode`, `ExtrapolationMode`, and [SdsStreamPropertyOverride object](#sdsstreampropertyoverride) to determine how a specific stream reads data. If you do not define these read characteristics at the stream level, the stream inherits them from the type.
+You can use the `InterpolationMode`, `ExtrapolationMode`, and SdsStreamPropertyOverride to determine how a specific stream reads data. If you do not define these read characteristics at the stream level, the stream inherits them from the type.
 
 ## SdsStreamPropertyOverride
 

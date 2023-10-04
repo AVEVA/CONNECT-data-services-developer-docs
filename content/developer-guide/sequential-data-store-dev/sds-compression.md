@@ -13,13 +13,13 @@ To use network bandwidth efficiently, the Sequential Data Store supports compres
 
 ## Request compression for writing data
 
-The body content of an HTTP request can be compressed using the [supported compression schemes](#supported-compression-schemes), allowing you to send stream values to the REST API more efficiently.
+The body content of an HTTP request can be compressed using the supported compression schemes, allowing you to send stream values to the REST API more efficiently.
 
 Use the `Content-Encoding` HTTP header to specify the compression scheme of compressed-content requests. This header provides context to the API to properly decode the request content.
 
 ## Response compression for reading data
 
-You can request compressed responses from the REST API by specifying one of the [supported compression schemes](#supported-compression-schemes) using the `Accept-Encoding` HTTP header.
+You can request compressed responses from the REST API by specifying one of the supported compression schemes using the `Accept-Encoding` HTTP header.
 
 Compressed responses from the REST API include a `Content-Encoding` HTTP header that indicates the compression scheme used to compress the response content.
 

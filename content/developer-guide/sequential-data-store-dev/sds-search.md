@@ -62,7 +62,7 @@ _metadataService.GetStreamsAsync(query:"temperature", skip:100, count:100)
 
 Streams search is exposed through the REST API and the client libraries method `GetStreamsAsync`.
 
-For more information on stream properties, see [Streams](xref:sdsStreams#streampropertiestable).
+For more information on stream properties, see <xref:sds-stream-properties>.
 
 **Searchable properties**
 
@@ -112,11 +112,11 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&ski
 _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
 ```
 
-The stream fields valid for search are identified in the fields table located in [Streams](xref:sdsStreams#streampropertiestable). Note that stream metadata has unique syntax rules. See [How search works with stream metadata](#how-search-works-with-stream-metadata).
+The stream fields valid for search are identified in the fields table located in <xref:sds-stream-properties>. Note that stream metadata has unique syntax rules. See [How search works with stream metadata](#how-search-works-with-stream-metadata).
 
 ## Search for types
 
-Type search is exposed through the REST API and the client libraries method `GetTypesAsync`. For more information on type properties, see [Types](xref:sdsTypes#sdstypeproperty).
+Type search is exposed through the REST API and the client libraries method `GetTypesAsync`. For more information on type properties, see <xref:sds-sdstypes-props>.
 
 **Searchable properties**
 

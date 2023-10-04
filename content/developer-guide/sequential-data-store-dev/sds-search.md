@@ -62,7 +62,7 @@ _metadataService.GetStreamsAsync(query:"temperature", skip:100, count:100)
 
 Streams search is exposed through the REST API and the client libraries method `GetStreamsAsync`.
 
-For more information on stream properties, see <<xref:sds-stream-properties>.
+For more information on stream properties, see <xref:sds-stream-properties>.
 
 **Searchable properties**
 

@@ -10,7 +10,7 @@ API for sending OMF messages.
 
 <a id="opIdOmf_Post OMF Message"></a>
 
-[Full OMF Specification](https://omf-docs.osisoft.com)
+[Full OMF Specification](https://docs.aveva.com/bundle/omf)
 
 <h3>Request</h3>
 
@@ -30,7 +30,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omf
 |---|---|---|---|
 |MessageType|string|true|Describes the type of message contained in the message body. One of: `type`, `container`, or `data`.|
 |MessageFormat|string|true|Describes the data serialization format employed in the message body. Currently limited to `json`.|
-|OmfVersion|string|true|Specifies the version of the OSIsoft Message Format used in the message. Current supported versions are `1.0`, `1.1`, and `1.2`.|
+|OmfVersion|string|true|Specifies the version of the Open Message Format used in the message. Current supported versions are `1.0`, `1.1`, and `1.2`.|
 |Action|string|false|Describes the action to be performed using the data in the message body. One of: `create`, `update`, or `delete`. If omitted, `create` is assumed.|
 |Compression|string|false|The compression algorithm used to compress the message body. Currently limited to `gzip`.  If not specified, the message body is assumed to be uncompressed.|
 
@@ -89,7 +89,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/omf
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Operation-Id|string|false|true|The `Operation-Id` associated with this request. If there are any issues with data flow, contact OSIsoft Technical Support with this value.|
+|Operation-Id|string|false|true|The `Operation-Id` associated with this request. If there are any issues with data flow, contact AVEVA Technical Support with this value.|
 
 ```json
 {

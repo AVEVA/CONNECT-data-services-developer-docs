@@ -16,6 +16,7 @@ Gets all signups in a tenant's namespace.
 
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups
+?skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -23,6 +24,9 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>
+`[optional] integer skip`
+<br/>The amount of signups to skip before returning signups.<br/><br/>`[optional] integer count`
+<br/>The amount of signups to show per page.<br/><br/>
 
 <h4>Request Headers</h4>
 
@@ -167,6 +171,12 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
+
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Get-Updates|string|Continuation bookmark token for retrieving updates.|
 
 <h4>Example response body</h4>
 
@@ -333,16 +343,17 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 
 ---
 
-## `Get Signup Resources`
+## `List Signup Resources`
 
-<a id="opIdSignupManager_Get Signup Resources"></a>
+<a id="opIdSignupManager_List Signup Resources"></a>
 
-Retrieves a model that contains collections of accessible and inaccessible resources for a signup.
+Retrieves a list of the signup's resources.
 
 <h3>Request</h3>
 
 ```text 
 GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
+?skip={skip}&count={count}&resourceFilter={resourceFilter}
 ```
 
 <h4>Parameters</h4>
@@ -351,30 +362,38 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
 <br/>Signup unique identifier<br/><br/>
+`[optional] integer skip`
+<br/>Parameter representing the zero-based offset of the first resource to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Maximum number of signup resources to be returned. If unspecified, a default value of 100 is used.<br/><br/>`[optional] any resourceFilter`
+<br/>SignupResourceFilter specifies the accessibility of resources to be returned. If unspecified, all resources will be returned.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SignupResourceIds](#schemasignupresourceids)|Ok. Returns the signup's resource.|
+|200|[SignupResource](#schemasignupresource)[]|Ok. Returns the signup's resource.|
 |400|None|Bad request.|
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
 
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Total-Count|integer|Total number of signup resources.|
+
 <h4>Example response body</h4>
 
-> 200 Response ([SignupResourceIds](#schemasignupresourceids))
+> 200 Response ([SignupResource](#schemasignupresource)[])
 
 ```json
-{
-  "AccessibleResources": [
-    "string"
-  ],
-  "InaccessibleResources": [
-    "string"
-  ]
-}
+[
+  {
+    "ResourceId": "string",
+    "IsAccessible": true
+  }
+]
 ```
 
 ---
@@ -630,33 +649,48 @@ The UpdateSignupInput object.
 
 ---
 
-### SignupResourceIds
+### SignupResource
 
-<a id="schemasignupresourceids"></a>
-<a id="schema_SignupResourceIds"></a>
-<a id="tocSsignupresourceids"></a>
-<a id="tocssignupresourceids"></a>
+<a id="schemasignupresource"></a>
+<a id="schema_SignupResource"></a>
+<a id="tocSsignupresource"></a>
+<a id="tocssignupresource"></a>
 
-A model that holds lists of accessible and inaccessible recources retrieved from memory.
+A model that holds a signup resource.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|AccessibleResources|string[]|false|false|Public accessor for accessible resources list|
-|InaccessibleResources|string[]|false|false|Public accessor for inaccessible resources list|
+|ResourceId|string|false|false|Resource Identifier.|
+|IsAccessible|boolean|false|false|Boolean indicating if resource is accessible or inaccessible.|
 
 ```json
 {
-  "AccessibleResources": [
-    "string"
-  ],
-  "InaccessibleResources": [
-    "string"
-  ]
+  "ResourceId": "string",
+  "IsAccessible": true
 }
 
 ```
+
+---
+
+### SignupResourceFilter
+
+<a id="schemasignupresourcefilter"></a>
+<a id="schema_SignupResourceFilter"></a>
+<a id="tocSsignupresourcefilter"></a>
+<a id="tocssignupresourcefilter"></a>
+
+Filter to be applied to Signup Resources.
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|Description|
+|---|---|---|
+|Inaccessible|Inaccessible|Returns inaccessible signup resources.|
+|Accessible|Accessible|Returns accessible signup resources.|
+|All|All|Returns accessible and inaccessible signup resources.|
 
 ---
 

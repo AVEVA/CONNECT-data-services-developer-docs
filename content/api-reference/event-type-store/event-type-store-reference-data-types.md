@@ -1599,6 +1599,7 @@ Represents a ReferenceDataType object.
 |PropertyTypeId|string|false|true|None|
 |RemoteReferenceName|string|false|true|None|
 |Description|string|false|true|None|
+|Uom|string|false|true|None|
 
 ```json
 {
@@ -1610,7 +1611,8 @@ Represents a ReferenceDataType object.
   "State": 0,
   "PropertyTypeId": "string",
   "RemoteReferenceName": "string",
-  "Description": "string"
+  "Description": "string",
+  "Uom": "string"
 }
 
 ```
@@ -1659,6 +1661,8 @@ Represents a ReferenceDataType object.
 |Indexed|2|
 |Required|4|
 |IsCollection|8|
+|NoUom|16|
+|NoAggregation|32|
 
 ---
 

@@ -323,8 +323,8 @@ Supported units of measure are listed below. Supported units of measure are read
 
 ## Associating a unit of measure with a type
 
-At type creation, you can associate SdsUom with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information, see [Types](xref:sds-types).
+At type creation, you can associate SdsUom with a [SdsTypeProperty](xref:sds-sdstypes-props#sdstypeproperty).
 
 ## Associating a unit of measure with a stream
 
-At stream creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This override enables the reuse of a type that may have default unit information associated with it already. For more information, see <xref:sds-streams>.
+At stream creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the type of the stream. This override enables the reuse of a type that may have default unit information associated with it already. For more information, see [SdsStreamPropertyOverride](xref:sds-stream-properties#sdsstreampropertyoverride).

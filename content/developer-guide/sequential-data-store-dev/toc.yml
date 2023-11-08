@@ -1,21 +1,42 @@
-- name: "Quick Start: Sequential Data Store"
+- name: "Quick Start"
   href: sds-quick-start.md
-- name: Types
+- name: "Types"
   href: sds-types-dev.md
-- name: Streams
+  items:
+    - name: "SdsType properties"
+      href: sds-sdstypes-props.md
+    - name: "SdsType in .NET Framework"
+      href: sds-sdstypes-dotnet.md
+    - name: "SdsType outside of .NET Framework"
+      href: sds-sdstypes-other-langs.md
+    - name: "Type reuse"
+      href: sds-type-reusability.md
+- name: "Streams"
   href: sds-streams-dev.md
-- name: Write data
-  href: sds-write-data.md
-- name: Read data
-  topicHref: sds-read-data.md
-  href: read-data/toc.yml
-- name: Stream views
-  href: sds-stream-views-dev.md
-- name: Indexes
+  items: 
+    - name: "Stream properties"
+      href: sds-stream-properties.md
+- name: "Indexes"
   href: sds-index.md
-- name: Search in SDS
-  href: sds-search.md
-- name: Filter expressions for SDS objects
-  href: sds-metadata-objects-filter-expressions.md
-- name: Units of measure and quantities
+- name: "Write data"
+  href: sds-write-data.md
+- name: "Read data"
+  topicHref: sds-read-data.md
+  items:
+    - name: "Filter expressions for SDS values"
+      href: read-data/sds-filter-expressions.md
+    - name: "Table format"
+      href: read-data/sds-table-format.md
+- name: "Stream views"
+  href: sds-stream-views-dev.md
+- name: "Retrieve types, streams, and stream views"
+  href: sds-retrieve-sds-objects.md
+  items:
+    - name: "Search in SDS"
+      href: sds-search.md
+    - name: "Filter expressions for SDS objects"
+      href: sds-metadata-objects-filter-expressions.md
+- name: "Compression"
+  href: sds-compression.md
+- name: "Units of measure and quantities"
   href: sds-uom.md

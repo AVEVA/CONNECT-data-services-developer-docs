@@ -23,7 +23,7 @@ A `GetStreamsAsync` call with different queries returns:
 | `DeviceA*`       | stream1, stream2, stream3 |
 | `humidity*`      | nothing                   |
 
-#### Requests
+## Requests
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name
@@ -35,7 +35,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump n
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump name:pressure&orderby=name desc&skip=10&count=20
 ```
 
-#### Parameters
+## Parameters
 
 | Parameter | Required? | Description |
 |--|--|--|
@@ -44,7 +44,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query=name:pump n
 | `int count` | Optional | Parameter representing the maximum number of streams to retrieve. If unspecified, a default value of 100 is used. |
 | `string orderby` | Optional | Parameter representing the sorted order in which streams are returned. Requires a field name (`orderby=name`, for example). Default order is ascending (`asc`). Add `desc` for descending order (`orderby=name desc`, for example). If unspecified, there is no sorting of results. |
 
-#### .NET client libraries methods
+## .NET client libraries methods
 
 If there are 175 streams that match the search criteria "temperature" in a single call for example, the following call returns the first 100 matches:
 
@@ -62,7 +62,7 @@ _metadataService.GetStreamsAsync(query:"temperature", skip:100, count:100)
 
 Streams search is exposed through the REST API and the client libraries method `GetStreamsAsync`.
 
-For more information on stream properties, see [Streams](xref:sdsStreams#streampropertiestable).
+For more information on stream properties, see <xref:sds-stream-properties>.
 
 **Searchable properties**
 
@@ -88,7 +88,7 @@ For more information on stream properties, see [Streams](xref:sdsStreams#streamp
 
 <sup>1</sup>:You can access stream metadata and tags through Metadata API and Tags API respectively. Metadata and tags are associated with streams and can be used as search criteria. For more information, see [How search works with stream metadata](#how-search-works-with-stream-metadata).
 
-#### Request
+### Request
 
 Search for streams using the REST API and specifying the optional `query` parameter:
 
@@ -96,7 +96,7 @@ Search for streams using the REST API and specifying the optional `query` parame
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+### Parameters
 
 | Parameter | Required? | Description |
 |--|--|--|
@@ -104,7 +104,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&ski
 | `int skip` | Optional | Parameter representing the zero-based offset of the first SdsStream to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call. |
 | `int count` | Optional | Parameter representing the maximum number of streams to retrieve. If unspecified, a default value of 100 is used. |
 
-#### .NET client libraries method
+### .NET client libraries method
 
 `GetStreamsAsync` is used to search for and return streams.
 
@@ -112,11 +112,11 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams?query={query}&ski
 _metadataService.GetStreamsAsync(query:"QueryString", skip:0, count:100);
 ```
 
-The stream fields valid for search are identified in the fields table located in [Streams](xref:sdsStreams#streampropertiestable). Note that stream metadata has unique syntax rules. See [How search works with stream metadata](#how-search-works-with-stream-metadata).
+The stream fields valid for search are identified in the fields table located in <xref:sds-stream-properties>. Note that stream metadata has unique syntax rules. See [How search works with stream metadata](#how-search-works-with-stream-metadata).
 
 ## Search for types
 
-Type search is exposed through the REST API and the client libraries method `GetTypesAsync`. For more information on type properties, see [Types](xref:sdsTypes#sdstypeproperty).
+Type search is exposed through the REST API and the client libraries method `GetTypesAsync`. For more information on type properties, see <xref:sds-sdstypes-props>.
 
 **Searchable properties**
 
@@ -131,8 +131,7 @@ Type search is exposed through the REST API and the client libraries method `Get
 | Properties        | Yes, with limitations<sup>1</sup>|
 
 <sup>1</sup>:`Name` and `Id` of an SdsType are included in its `Properties` field. Similarly, `Name` and `Id` of a nested type are included in its `Properties`. If there are two types with the same `Properties`, `Name` or `Id`, the search returns both types in the result.
-
-#### Request
+### Request
 
 Search for types using the REST API and specifying the optional `query` parameter:
 
@@ -140,7 +139,7 @@ Search for types using the REST API and specifying the optional `query` paramete
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+### Parameters
 
 | Parameter | Required? | Description |
 |--|--|--|
@@ -148,7 +147,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types?query={query}&skip=
 | `int skip` | Optional | Parameter representing the zero-based offset of the first type to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call. |
 | `int count` | Optional | Parameter representing the maximum number of types to retrieve. If unspecified, a default value of 100 is used. |
 
-#### .NET client libraries method
+### .NET client libraries method
 
 `GetTypesAsync` is used to search for and return types.
 
@@ -173,7 +172,7 @@ Stream view search is exposed through the REST API and the client libraries meth
 
 <sup>1</sup>The `Properties` collection contains a list of SdsStreamViewProperty objects. The query attempts to find a match on the SdsStreamViewProperty's `Id`, `SourceTypeId`, and `TargetTypeId` fields. The `Properties` collection of nested views is also searched. See the example below.
 
-#### Example
+### Example
 
 You can search for `ComplexView` using the `Id`("NestedView"), `SourceTypeId`, and `TargetTypeId` of `NestedView`, but not its `Description` ("An example of a nested view").
 
@@ -205,7 +204,7 @@ You can search for `ComplexView` using the `Id`("NestedView"), `SourceTypeId`, a
 }
 ```
 
-#### Request
+### Request
 
 Search for stream views using the REST API and specifying the optional `query` parameter:
 
@@ -213,7 +212,7 @@ Search for stream views using the REST API and specifying the optional `query` p
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}
 ```
 
-#### Parameters
+### Parameters
 
 | Parameter | Required? | Description |
 |--|--|--|
@@ -221,7 +220,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews?query={query}
 | `int skip` | Optional | Parameter representing the zero-based offset of the first stream view to retrieve. If unspecified, a default value of 0 is used. Use when more items match the search criteria than can be returned in a single call. |
 | `int count` | Optional | Parameter representing the maximum number of stream views to retrieve. If unspecified, a default value of 100 is used. |
 
-#### .NET client libraries method
+### .NET client libraries method
 
 `GetStreamViewsAsync` is used to search for and return stream views.
 

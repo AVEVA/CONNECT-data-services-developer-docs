@@ -601,7 +601,7 @@ A list of Enumeration objects.<br/>
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[Enumeration](#schemaenumeration)|Success.|
-|207|[AdhErrorResponse](#schemaadherrorresponse)|Partial.|
+|207|[MultiStatusResultOfEnumerationAndAdhErrorResponse](#schemamultistatusresultofenumerationandadherrorresponse)|Partial.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 |409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
@@ -638,16 +638,196 @@ A list of Enumeration objects.<br/>
 }
 ```
 
-> 207 Response ([AdhErrorResponse](#schemaadherrorresponse))
+> 207 Response ([MultiStatusResultOfEnumerationAndAdhErrorResponse](#schemamultistatusresultofenumerationandadherrorresponse))
 
 ```json
 {
-  "OperationId": "string",
-  "Error": "string",
   "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SimpleEnumeration",
+      "Name": "SimpleEnumeration",
+      "GraphQLName": "SimpleEnumeration",
+      "Members": [
+        {
+          "Name": "ACTIVE",
+          "GraphQLName": "ACTIVE",
+          "Code": 0,
+          "State": "Active",
+          "Description": "This is an active state"
+        },
+        {
+          "Name": "CLOSED",
+          "GraphQLName": "CLOSED",
+          "Code": 1,
+          "State": "Active",
+          "Description": "This is a closed state"
+        }
+      ],
+      "Version": 1,
+      "State": "Active",
+      "CreatedDate": "0001-01-01T00:00:00Z",
+      "ModifiedDate": "0001-01-01T00:00:00Z"
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string",
+      "property1": null,
+      "property2": null
+    }
+  ]
+}
+```
+
+---
+
+## `Bulk Delete Enumeration`
+
+<a id="opIdEnumerations_Bulk Delete Enumeration"></a>
+
+Deletes multiple Enumerations and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were succesful will be returned in the data.
+
+<h3>Request</h3>
+
+```text 
+DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/><br/>`string namespaceId`
+<br/><br/>
+
+<h4>Request Body</h4>
+
+A list of Enumeration object ids.<br/>
+
+```json
+[
+  "string"
+]
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Enumeration](#schemaenumeration)[]|Success.|
+|207|[MultiStatusResultOfEnumerationAndAdhErrorResponse](#schemamultistatusresultofenumerationandadherrorresponse)|Partial.|
+|400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
+|403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
+|409|[AdhErrorResponse](#schemaadherrorresponse)|Conflict.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+[
+  {
+    "Id": "SimpleEnumeration",
+    "Name": "SimpleEnumeration",
+    "GraphQLName": "SimpleEnumeration",
+    "Members": [
+      {
+        "Name": "ACTIVE",
+        "GraphQLName": "ACTIVE",
+        "Code": 0,
+        "State": "Active",
+        "Description": "This is an active state"
+      },
+      {
+        "Name": "CLOSED",
+        "GraphQLName": "CLOSED",
+        "Code": 1,
+        "State": "Active",
+        "Description": "This is a closed state"
+      }
+    ],
+    "Version": 1,
+    "State": "Active",
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z"
+  },
+  {
+    "Id": "SimpleEnumeration",
+    "Name": "SimpleEnumeration",
+    "GraphQLName": "SimpleEnumeration",
+    "Members": [
+      {
+        "Name": "ACTIVE",
+        "GraphQLName": "ACTIVE",
+        "Code": 0,
+        "State": "Active",
+        "Description": "This is an active state"
+      },
+      {
+        "Name": "CLOSED",
+        "GraphQLName": "CLOSED",
+        "Code": 1,
+        "State": "Active",
+        "Description": "This is a closed state"
+      }
+    ],
+    "Version": 1,
+    "State": "Active",
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z"
+  }
+]
+```
+
+> 207 Response ([MultiStatusResultOfEnumerationAndAdhErrorResponse](#schemamultistatusresultofenumerationandadherrorresponse))
+
+```json
+{
+  "Reason": "string",
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SimpleEnumeration",
+      "Name": "SimpleEnumeration",
+      "GraphQLName": "SimpleEnumeration",
+      "Members": [
+        {
+          "Name": "ACTIVE",
+          "GraphQLName": "ACTIVE",
+          "Code": 0,
+          "State": "Active",
+          "Description": "This is an active state"
+        },
+        {
+          "Name": "CLOSED",
+          "GraphQLName": "CLOSED",
+          "Code": 1,
+          "State": "Active",
+          "Description": "This is a closed state"
+        }
+      ],
+      "Version": 1,
+      "State": "Active",
+      "CreatedDate": "0001-01-01T00:00:00Z",
+      "ModifiedDate": "0001-01-01T00:00:00Z"
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string",
+      "property1": null,
+      "property2": null
+    }
+  ]
 }
 ```
 
@@ -838,7 +1018,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 <h4>Request Body</h4>
 
-A Trustee.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
 
 ```json
 {
@@ -1001,30 +1181,79 @@ Represents an Enumeration object.
 
 ---
 
-### AdhErrorResponse
+### ErrorResponse
 
-<a id="schemaadherrorresponse"></a>
-<a id="schema_AdhErrorResponse"></a>
-<a id="tocSadherrorresponse"></a>
-<a id="tocsadherrorresponse"></a>
+<a id="schemaerrorresponse"></a>
+<a id="schema_ErrorResponse"></a>
+<a id="tocSerrorresponse"></a>
+<a id="tocserrorresponse"></a>
+
+```json
+{}
+
+```
+
+---
+
+### MultiStatusResultOfEnumerationAndAdhErrorResponse
+
+<a id="schemamultistatusresultofenumerationandadherrorresponse"></a>
+<a id="schema_MultiStatusResultOfEnumerationAndAdhErrorResponse"></a>
+<a id="tocSmultistatusresultofenumerationandadherrorresponse"></a>
+<a id="tocsmultistatusresultofenumerationandadherrorresponse"></a>
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+|Reason|string|false|false|None|
+|Error|string|false|false|None|
+|OperationId|string|false|false|None|
+|Data|[[Enumeration](#schemaenumeration)]|false|false|[Represents an Enumeration object.]|
+|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|None|
 
 ```json
 {
-  "OperationId": "string",
-  "Error": "string",
   "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
+  "Error": "string",
+  "OperationId": "string",
+  "Data": [
+    {
+      "Id": "SimpleEnumeration",
+      "Name": "SimpleEnumeration",
+      "GraphQLName": "SimpleEnumeration",
+      "Members": [
+        {
+          "Name": "ACTIVE",
+          "GraphQLName": "ACTIVE",
+          "Code": 0,
+          "State": "Active",
+          "Description": "This is an active state"
+        },
+        {
+          "Name": "CLOSED",
+          "GraphQLName": "CLOSED",
+          "Code": 1,
+          "State": "Active",
+          "Description": "This is a closed state"
+        }
+      ],
+      "Version": 1,
+      "State": "Active",
+      "CreatedDate": "0001-01-01T00:00:00Z",
+      "ModifiedDate": "0001-01-01T00:00:00Z"
+    }
+  ],
+  "ChildErrors": [
+    {
+      "OperationId": "string",
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string",
+      "property1": null,
+      "property2": null
+    }
+  ]
 }
 
 ```

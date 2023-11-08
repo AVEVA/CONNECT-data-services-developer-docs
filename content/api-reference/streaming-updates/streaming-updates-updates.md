@@ -4,7 +4,8 @@ uid: streaming-updates-updates
 ---
 
 # Updates
-The Updates API allows users to retrieve updates for resources (for example, streams) in a specified Signup. This API is to be used after the user has successfully created a Signup using the Signups API. The user may begin a polling flow with this API by using the starter request URI provided in the 'Get-Updates' response header through the Signups API.
+
+The Updates API allows users to retrieve updates for resources (for example, streams) in a specified Signup. This API is to be used after the user has successfully created a Signup using the Signups API. The user may begin a polling flow with this API by using the starter bookmark of an active Signup, provided through the Signups API (via GET /Signups/{signupId}).
 
 ## `Get Updates`
 
@@ -25,7 +26,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 <br/>The tenant identifier.<br/><br/>`string namespaceId`
 <br/>The namespace identifier.<br/><br/>`string signupId`
 <br/>The signup identifier.<br/><br/>`string bookmark`
-<br/>An encoded token representing a sequential starting point from which updates are to be retrieved for the current request. A request URI including a starter Bookmark token is provided in the 'Get-Updates' header of a successful Signup activation response.<br/><br/>
+<br/>An encoded token representing a sequential starting point from which users can retrieve updates for the current request. A starter Bookmark token appears in the response body of a successfully activated Signup.<br/><br/>
+
 
 <h3>Response</h3>
 
@@ -37,8 +39,3 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 |403|None|Forbidden. The client is not authorized.|
 |500|None|Internal Server Error. The server has encountered an error while processing the request.|
 
-<h4>Response Headers</h4>
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|200|Next-Request|string|A request URI including an encoded token to be used in the subsequent request to retrieve the next sequence of updates.|

@@ -21,5 +21,5 @@
   - topicUid: EventUsageExamples
 - topicUid: CommunityData
 - name: Samples
-  topicHref: samples.md
+  topicUid: samples
 - topicUid: UseExcel

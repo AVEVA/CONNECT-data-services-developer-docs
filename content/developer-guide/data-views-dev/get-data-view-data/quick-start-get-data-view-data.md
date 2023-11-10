@@ -4,7 +4,7 @@ uid: DataViewsQuickStartGetData
 
 # Get data view data
 
-You retrieve data view data with the [Data API](xref:data-views-data-views-data). This topic explains the concepts and workflow to retrieve data view data.
+You retrieve data view data with the [Data API](xref:data-views-data-views). This topic explains the concepts and workflow to retrieve data view data.
 
 ## General concepts
 
@@ -18,7 +18,7 @@ All data in a data view is associated with an index value, for example, a timest
 
 Though `DateTime` is the most common index type for stream data, data views can target data of other index types, as noted in [Define a Data View](xref:DataViewsQuickStartDefine).
 
-For `DateTime` indexed data views, use the ISO 8601 format as the index value. Format interval timespan values using the standard timespan format. For example, d.hh:mm:ss.fffffff. Use either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:data-views-data-views-data) returns in UTC.
+For `DateTime` indexed data views, use the ISO 8601 format as the index value. Format interval timespan values using the standard timespan format. For example, d.hh:mm:ss.fffffff. Use either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:data-views-data-views) returns in UTC.
 
 #### Index range
 
@@ -113,7 +113,7 @@ The view data is available in several formats. A format can be specified using t
 | Table with header | `tableh` | 2 | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |
 | CSV | `csv` | 3 | Comma-separated values. Each row describes one data record. |
 | CSV with header | `csvh` | 4 | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
-| Apache Parquet | `parquet` | 5 | Parquet format. For more information on the Parquet format, see <xref:data-views-parquet-format>. |
+| Apache Parquet | `parquet` | 5 | Parquet format. |
 
 #### Response format
 

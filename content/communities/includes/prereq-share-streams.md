@@ -1,1 +1,0 @@
-Your user role must be assigned the **Share** permissions for applicable data streams. If you do not have these permissions, request them from a user that can manage Sequential Data Store permissions (such as a [Tenant Administrator](xref:ccRoles)).

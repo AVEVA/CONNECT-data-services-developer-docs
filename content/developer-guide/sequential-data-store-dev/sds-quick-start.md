@@ -42,7 +42,7 @@ A _type_ describes the structure of a single measured event or object. A stream 
 
 A type consists of one or more data properties, one of which must represent an index. Indexes can be simple (a single integer property, for example) or compound (represented by multiple properties). `DateTime` is a common index for time-series stores.
 
-SDS supports a wide variety of property types, both simple (integers, strings and floats, for example) and complex (lists, arrays and enumerations, for example). Properties can be of any complex type. See [Types](xref:sdsTypes#sdstypecode) for a detailed list of supported data types.
+SDS supports a wide variety of property types, both simple (integers, strings and floats, for example) and complex (lists, arrays and enumerations, for example). Properties can be of any complex type. See [Types](xref:sds-sdstypes-props#sdstypecode) for a detailed list of supported data types.
 
 The type is defined in JSON and is posted to an AVEVA Data Hub endpoint.
 

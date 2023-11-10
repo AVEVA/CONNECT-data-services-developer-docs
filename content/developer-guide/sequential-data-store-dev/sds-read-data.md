@@ -80,11 +80,12 @@ In addition, the following methods support reading multiple values:
 
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
 
+- [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 - [Join Values](xref:sds-stream-data#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
 ## Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [Response format](xref:osisoftCloudServices#reponse-format).
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [Response format](xref:osisoftCloudServices#response-format).
 
 ## Indexes and reading data
 
@@ -134,7 +135,7 @@ The table below describes how the **Continuous InterpolationMode** affects prope
 
 <sup>2</sup>For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nullable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value is null.
 
-If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Sds Streams](xref:sdsStreams).
+If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sds-sdstypes-props#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Sds Streams](xref:sdsStreams).
 
 ## Extrapolation
 

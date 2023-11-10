@@ -1,26 +1,26 @@
 - name: Add identifying field
-  topicHref: add-identifying-field.md
+  topicUid: AddIdentifyingField
 - name: Consolidate data fields
-  topicHref: consolidate-data-fields.md
+  topicUid: ConsolidateDataFields
 - name: Data view shape
-  topicHref: data-view-shape.md
+  topicUid: DataViewShape
 - name: Define data field sets
-  topicHref: field-sets.md
+  topicUid: DataViewsFieldSets
 - name: Define queries
-  topicHref: define-queries.md
+  topicUid: DataViewsQueries
 - name: Display calculated summaries
-  topicHref: display-calculated-summaries.md
+  topicUid: DataViewsSummaries
 - name: Display units of measure
-  topicHref: units-of-measure.md
+  topicUid: DataViewsUnitsOfMeasure
 - name: Group data items
-  topicHref: group-data-items.md
+  topicUid: DataViewsGrouping
 - name: Identify data items
-  topicHref: data-items-and-groups.md
-- name: Quick start define a data view
-  href: quick-start-define-a-data-view.md
+  topicUid: DataViewsDataItemsandGroups
+- name: Define a data view
+  topicUid: DataViewsQuickStartDefine
 - name: Recommended workflow - Define a data view
-  topicHref: rec-workflow.md
+  topicUid: DefineaDataViewRecommendedWorkflow
 - name: Retrieve available field sets
-  topicHref: available-field-sets.md
+  topicUid: DataViewsAvailableFieldSets
 - name: View field mappings
-  topicHref: field-mappings.md
+  topicUid: DataViewsFieldMappings

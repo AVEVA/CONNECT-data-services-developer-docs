@@ -27,6 +27,8 @@
       href: read-data/sds-filter-expressions.md
     - name: "Table format"
       href: read-data/sds-table-format.md
+    - name: "Calculated summaries"
+      href: sds-calculated-summaries.md
 - name: "Stream views"
   href: sds-stream-views-dev.md
 - name: "Retrieve types, streams, and stream views"

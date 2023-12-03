@@ -15,7 +15,7 @@ Gets all signups in a tenant's namespace.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 ?skip={skip}&count={count}
 ```
 
@@ -81,7 +81,7 @@ Creates a signup for the list of resource identifiers provided.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups
+POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 ```
 
 <h4>Parameters</h4>
@@ -152,7 +152,7 @@ Input of the signup to be created.<br/>
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 ```
 
 <h4>Parameters</h4>
@@ -208,7 +208,7 @@ Updates the properties (for example, name) of a signup.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 ```
 
 <h4>Parameters</h4>
@@ -273,7 +273,7 @@ Deletes a signup and related resources.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
+DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 ```
 
 <h4>Parameters</h4>
@@ -304,7 +304,7 @@ Retrieves the trustee (owner) of a signup.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/owner
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/owner
 ```
 
 <h4>Parameters</h4>
@@ -347,7 +347,7 @@ Retrieves a list of the signup's resources.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
 ?skip={skip}&count={count}&resourceFilter={resourceFilter}
 ```
 
@@ -404,7 +404,7 @@ Update Signup Resources.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
+POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
 ```
 
 <h4>Parameters</h4>

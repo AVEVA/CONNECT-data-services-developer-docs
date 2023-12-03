@@ -15,7 +15,7 @@ Returns a sequence of updates for all resources within the Signup, starting from
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/updates
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/updates
 ?bookmark={bookmark}
 ```
 

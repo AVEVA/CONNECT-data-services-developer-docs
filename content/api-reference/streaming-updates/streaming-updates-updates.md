@@ -4,7 +4,6 @@ uid: streaming-updates-updates
 ---
 
 # Updates
-
 The Updates API allows users to retrieve updates for resources (for example, streams) in a specified Signup. This API is to be used after the user has successfully created a Signup using the Signups API. The user may begin a polling flow with this API by using the starter bookmark of an active Signup, provided through the Signups API (via GET /Signups/{signupId}).
 
 ## `Get Updates`
@@ -16,7 +15,7 @@ Returns a sequence of updates for all resources within the Signup, starting from
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/updates
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/updates
 ?bookmark={bookmark}
 ```
 
@@ -27,7 +26,6 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 <br/>The namespace identifier.<br/><br/>`string signupId`
 <br/>The signup identifier.<br/><br/>`string bookmark`
 <br/>An encoded token representing a sequential starting point from which users can retrieve updates for the current request. A starter Bookmark token appears in the response body of a successfully activated Signup.<br/><br/>
-
 
 <h3>Response</h3>
 

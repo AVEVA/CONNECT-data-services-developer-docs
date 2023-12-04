@@ -15,7 +15,7 @@ Gets all signups in a tenant's namespace.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 ?skip={skip}&count={count}
 ```
 
@@ -76,12 +76,12 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups
 
 <a id="opIdSignupManager_Create Signup"></a>
 
-Creates a signup for the list of resource identifiers provided.
+Creates a signup for the list of resource identifiers provided. Upon creating your signup, it will be placed in the Activating state. It is essential to invoke GetSignupById while your signup is in this Activating state. Note that GetSignupById will activate your signup only when the setup process is finished.
 
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups
+POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 ```
 
 <h4>Parameters</h4>
@@ -149,10 +149,12 @@ Input of the signup to be created.<br/>
 
 <a id="opIdSignupManager_Get Signup By Id"></a>
 
+Retrieves a signup by signup identifier. If a signup is successfully activated, the response will include an encoded bookmark token for retrieving updates. To set your signup to Active state, it is essential to invoke this route while it is in Activating state. Note that this route will only activate your signup once the setup process is finished.
+
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 ```
 
 <h4>Parameters</h4>
@@ -160,17 +162,17 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupI
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
-<br/><br/>
+<br/>Signup Identifier.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SignupWithBookmark](#schemasignupwithbookmark)|None|
-|400|None|None|
-|403|None|None|
-|404|None|None|
-|500|None|None|
+|200|[SignupWithBookmark](#schemasignupwithbookmark)|Success. Returns the signup.|
+|400|None|Bad request.|
+|403|None|Forbidden. The client does not have the required permissions to make the request.|
+|404|None|Not Found.|
+|500|None|The server has encountered a situation it doesn't know how to handle.|
 
 <h4>Example response body</h4>
 
@@ -208,7 +210,7 @@ Updates the properties (for example, name) of a signup.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
+PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 ```
 
 <h4>Parameters</h4>
@@ -273,7 +275,7 @@ Deletes a signup and related resources.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
+DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 ```
 
 <h4>Parameters</h4>
@@ -304,7 +306,7 @@ Retrieves the trustee (owner) of a signup.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/owner
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/owner
 ```
 
 <h4>Parameters</h4>
@@ -347,7 +349,7 @@ Retrieves a list of the signup's resources.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
+GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
 ?skip={skip}&count={count}&resourceFilter={resourceFilter}
 ```
 
@@ -404,7 +406,7 @@ Update Signup Resources.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
+POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resources
 ```
 
 <h4>Parameters</h4>
@@ -871,5 +873,4 @@ The SignupResourcesInput object.
 ```
 
 ---
-
 

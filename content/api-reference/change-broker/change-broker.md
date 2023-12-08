@@ -1,5 +1,5 @@
 ---
-uid: streaming-updates
+uid: change-broker
 ---
 
 # Change Broker (Preview)

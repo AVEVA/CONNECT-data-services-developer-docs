@@ -7,6 +7,9 @@
 - name: Asset store
   href: assets/toc.yml
   topicHref: assets/assets.md
+- name: Change Broker (Preview)
+  href: streaming-updates/toc.yml
+  topicHref: streaming-updates/streaming-updates.md
 - name: Client failover
   href: client-failover/toc.yml
   topicHref: client-failover/client-failover-overview.md
@@ -40,9 +43,6 @@
 - name: Software management (Preview)
   href: software-management/toc.yml
   topicHref: software-management/software-mgmt-api-overview.md
-- name: Change Broker (Preview)
-  href: streaming-updates/toc.yml
-  topicHref: streaming-updates/streaming-updates.md
 - name: Tenant management
   href: tenant/toc.yml
   topicHref: tenant/management-overview.md

@@ -1,5 +1,5 @@
 ---
-uid: streaming-updates-updates
+uid: change-broker-updates
 
 ---
 

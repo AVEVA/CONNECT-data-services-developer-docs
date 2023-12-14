@@ -1,5 +1,8 @@
 - name: Signups
   href: streaming-updates-signups.md
+- name: Signups
+  href: change-broker-signups.md
 - name: Updates
   href: streaming-updates-updates.md
-
+- name: Updates
+  href: change-broker-updates.md

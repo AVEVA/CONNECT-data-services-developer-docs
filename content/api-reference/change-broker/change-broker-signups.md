@@ -1,5 +1,5 @@
 ---
-uid: streaming-updates-signups
+uid: change-broker-signups
 
 ---
 

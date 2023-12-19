@@ -39,18 +39,6 @@ Then, we create an Event Type with a property referencing the previously created
     "Properties":
     [
         {
-            "Id": "eventStartTime",
-            "PropertyTypeCode": "DateTime"
-        },
-        {
-            "Id": "eventEndTime",
-            "PropertyTypeCode": "DateTime"
-        },
-        {
-            "Id": "eventDuration",
-            "PropertyTypeCode": "TimeSpan"
-        },
-        {
             "Id": "referenceAssets",
             "PropertyTypeCode": "ReferenceData",
             "Flags": "IsCollection",
@@ -70,9 +58,9 @@ Finally, once events of the above Event Type have been created, we use the Graph
 {
     events {
         LowProductionEvent {
-            eventStartTime
-            eventEndTime
-            eventDuration
+            startTime
+            endTime
+            duration
             referenceAssets {
                 id
                 name
@@ -91,9 +79,9 @@ A sample result of the query is shown below.<br>
         "events": {
             "LowProductionEvent": [
                 {
-                    "eventStartTime": "2023-06-01T05:43:27.00Z",
-                    "eventEndTime": "2023-06-01T06:43:27.00Z",
-                    "eventDuration": "01:00:00",
+                    "startTime": "2023-06-01T05:43:27.00Z",
+                    "endTime": "2023-06-01T06:43:27.00Z",
+                    "duration": "01:00:00",
                     "referenceAssets": [
                         {
                             "id": "Asset1",
@@ -107,9 +95,9 @@ A sample result of the query is shown below.<br>
                     "totalRevenueLoss": 5.2
                 },
                 {
-                    "eventStartTime": "2023-06-03T09:00:02.00Z",
-                    "eventEndTime": "2023-06-03T10:00:02.00Z",
-                    "eventDuration": "01:00:00",
+                    "startTime": "2023-06-03T09:00:02.00Z",
+                    "endTime": "2023-06-03T10:00:02.00Z",
+                    "duration": "01:00:00",
                     "referenceAssets": [
                         {
                             "id": "Asset3",
@@ -119,9 +107,9 @@ A sample result of the query is shown below.<br>
                     "totalRevenueLoss": 12.1
                 },
                 {
-                    "eventStartTime": "2023-06-03T15:20:25.00Z",
-                    "eventEndTime": "2023-06-03T16:20:25.00Z",
-                    "eventDuration": "01:00:00",
+                    "startTime": "2023-06-03T15:20:25.00Z",
+                    "endTime": "2023-06-03T16:20:25.00Z",
+                    "duration": "01:00:00",
                     "referenceAssets": [
                         {
                             "id": "Asset3",

@@ -709,6 +709,12 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerat
 
 A list of Enumeration object ids.<br/>
 
+```json
+[
+  "string"
+]
+```
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

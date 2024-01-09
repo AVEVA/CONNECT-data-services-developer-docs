@@ -1521,12 +1521,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTyp
 
 A list of EventType object ids.<br/>
 
-```json
-[
-  "string"
-]
-```
-
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

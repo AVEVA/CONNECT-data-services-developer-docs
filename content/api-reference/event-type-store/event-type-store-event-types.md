@@ -2300,7 +2300,7 @@ Represents an EventType object.
 |PropertyTypeId|string|false|true|None|
 |RemoteReferenceName|string|false|true|None|
 |Description|string|false|true|None|
-|Uom|string|false|true|None|
+|Uom|string|false|true|no idea if this works, but note that Uoms can only be set for the numeric property type codes|
 
 ```json
 {

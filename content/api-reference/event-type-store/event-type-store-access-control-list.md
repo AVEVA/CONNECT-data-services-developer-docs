@@ -14,7 +14,7 @@ Returns the `AccessControlList` for the EventTypes collection.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/EventTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -61,7 +61,7 @@ Updates and returns the `AccessControlList` for the EventTypes collection.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/EventTypes
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -136,7 +136,7 @@ Returns the `AccessControlList` for the ReferenceDataTypes collection.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/ReferenceDataTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -183,7 +183,7 @@ Updates and returns the `AccessControlList` for the ReferenceDataTypes collectio
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/ReferenceDataTypes
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -258,7 +258,7 @@ Returns the `AccessControlList` for the enumeration collection.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Enumerations
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -305,7 +305,7 @@ Updates and returns the `AccessControlList` for the enumeration collection.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Enumerations
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessControl/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -380,7 +380,7 @@ Returns a list of `CommonAccessRights` for the EventTypes collection.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/EventTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -407,7 +407,7 @@ Returns a list of `CommonAccessRights` for the ReferenceDataTypes collection.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/ReferenceDataTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -434,7 +434,7 @@ Returns a list of `CommonAccessRights` for the enumerations collection.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enumerations
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enumerations
 ```
 
 <h4>Parameters</h4>

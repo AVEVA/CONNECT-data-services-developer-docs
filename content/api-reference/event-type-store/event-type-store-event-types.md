@@ -14,7 +14,7 @@ Returns an array of EventTypes in a given namespace and the version ETag in the 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 ?skip={skip}&count={count}&includeDeleted={includeDeleted}&filter={filter}
 ```
 
@@ -282,7 +282,7 @@ Creates a new EventType. Response includes ETag header.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -460,7 +460,7 @@ Returns the specified EventType and the version ETag in the HTTP response header
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ?includeDeleted={includeDeleted}
 ```
 
@@ -620,7 +620,7 @@ Creates a new EventType or returns the current one if the body is equivalent to 
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -912,7 +912,7 @@ Creates a new EventType or updates an existing and adds its Etag in the HTTP res
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -1204,7 +1204,7 @@ Deletes the EventType.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -1235,7 +1235,7 @@ Creates multiple new EventType and returns a list of any errors along with the c
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -1508,7 +1508,7 @@ Deletes multiple EventTypes and returns an Ok if successful. In the case where a
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -1894,7 +1894,7 @@ Returns the `AccessControlList` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -1943,7 +1943,7 @@ Updates and returns the `AccessControlList` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -2019,7 +2019,7 @@ Returns the `Trustee` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -2060,7 +2060,7 @@ Updates and returns the `Trustee` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -2113,7 +2113,7 @@ Returns a list of `CommonAccessRights` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessRights
 ```
 
 <h4>Parameters</h4>

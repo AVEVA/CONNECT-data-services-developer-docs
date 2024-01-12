@@ -14,7 +14,7 @@ Returns an array of Authorization Tags in a given namespace and the version ETag
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags
 ?skip={skip}&count={count}&includeDeleted={includeDeleted}
 ```
 
@@ -83,7 +83,7 @@ Returns the specified Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -139,7 +139,7 @@ Creates a new Authorization Tag or returns the current one if the body is equiva
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -223,7 +223,7 @@ Creates a new Authorization Tag or updates an existing Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -305,7 +305,7 @@ Deletes the Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -336,7 +336,7 @@ Returns the `AccessControlList` for the specified Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -385,7 +385,7 @@ Updates and returns the `AccessControlList` for the specified Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -459,7 +459,7 @@ Returns the `Trustee` for the specified AuthorizationTag.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -500,7 +500,7 @@ Updates and returns the `Trustee` for the specified AuthorizationTag.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
 ```
 
 <h4>Parameters</h4>

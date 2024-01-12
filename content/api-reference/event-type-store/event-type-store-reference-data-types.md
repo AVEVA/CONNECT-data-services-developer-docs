@@ -14,7 +14,7 @@ Returns an array of ReferenceDataTypes in a given namespace and the version ETag
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
 ?skip={skip}&count={count}&filter={filter}&includeDeleted={includeDeleted}
 ```
 
@@ -190,7 +190,7 @@ Creates a new ReferenceDataType. Response includes ETag header.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -318,7 +318,7 @@ Returns the specified ReferenceDataType and the version ETag in the HTTP respons
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ?includeDeleted={includeDeleted}
 ```
 
@@ -432,7 +432,7 @@ Creates a new ReferenceDataType or returns the current one if the body is equiva
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -628,7 +628,7 @@ Creates a new ReferenceDataType or updates an existing and adds its Etag in the 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -824,7 +824,7 @@ Deletes the ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -855,7 +855,7 @@ Creates multiple new ReferenceDataTypes and returns a list of any errors along w
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -968,7 +968,7 @@ Deletes multiple ReferenceDataTypes and returns an Ok if successful. In the case
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -1216,7 +1216,7 @@ Returns the `AccessControlList` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -1265,7 +1265,7 @@ Updates and returns the `AccessControlList` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -1341,7 +1341,7 @@ Returns the `Trustee` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1382,7 +1382,7 @@ Updates and returns the `Trustee` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1435,7 +1435,7 @@ Returns a list of `CommonAccessRights` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessRights
 ```
 
 <h4>Parameters</h4>

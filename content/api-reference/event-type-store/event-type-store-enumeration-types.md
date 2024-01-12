@@ -14,7 +14,7 @@ Returns an array of Enumerations in a given namespace and the version ETag in th
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 ?skip={skip}&count={count}&filter={filter}&includeDeleted={includeDeleted}
 ```
 
@@ -122,7 +122,7 @@ Creates a new Enumeration. Response includes ETag header.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -216,7 +216,7 @@ Returns the specified Enumeration and the version ETag in the HTTP response head
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ?includeDeleted={includeDeleted}
 ```
 
@@ -296,7 +296,7 @@ Creates a new Enumeration or returns the current one if the body is equivalent t
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ```
 
 <h4>Parameters</h4>
@@ -424,7 +424,7 @@ Creates a new Enumeration or updates an existing and adds its Etag in the HTTP r
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ```
 
 <h4>Parameters</h4>
@@ -552,7 +552,7 @@ Deletes the Enumeration.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ```
 
 <h4>Parameters</h4>
@@ -583,7 +583,7 @@ Creates multiple new Enumeration and returns a list of any errors along with the
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -696,7 +696,7 @@ Deletes multiple Enumerations and returns an Ok if successful. In the case where
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -842,7 +842,7 @@ Returns the `AccessControlList` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -891,7 +891,7 @@ Updates and returns the `AccessControlList` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -965,7 +965,7 @@ Returns the `Trustee` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1006,7 +1006,7 @@ Updates and returns the `Trustee` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1059,7 +1059,7 @@ Returns a list of `CommonAccessRights` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessRights
 ```
 
 <h4>Parameters</h4>

@@ -5,135 +5,9 @@ uid: softwaremgmt-edge-system
 
 # Edge System
 
-## `List Edge Systems (Edge path)`
+## `List Edge Systems`
 
-<a id="opIdEdgeSystem_List Edge Systems (Edge path)"></a>
-
-Returns a list of Edge Systems.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first Edge System to retrieve. If unspecified, a default value of 0 is used. Value must be greater than 0.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used. Value cannot be less than 1 or greater than 1000.<br/><br/>`[optional] string orderBy`
-<br/>Query parameter to specify sort order. Valid sort order properties are EdgeSystemId, DeviceName, Name, Type, Tags, Status, StatusDescription, LastContactedTime, and SoftwareVersion. If unspecified, a default value of 'name asc' is used.<br/><br/>`[optional] string query`
-<br/>Query parameter to specify filter. Valid filter properties are EdgeSystemId, DeviceName, Name, Type, Tags, Status, StatusDescription, LastContactedTime, and SoftwareVersion.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[EdgeSystem](#schemaedgesystem)[]|List of edge systems.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Response Headers</h4>
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|200|Total-Count|integer|The total number of edge systems.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([EdgeSystem](#schemaedgesystem)[])
-
-```json
-[
-  {
-    "Id": "string",
-    "DeviceName": "string",
-    "Name": "string",
-    "Type": "string",
-    "SoftwareVersion": "string",
-    "CreatedDate": "2019-08-24T14:15:22Z",
-    "LastContactedTime": "2019-08-24T14:15:22Z",
-    "ModifiedDate": "2019-08-24T14:15:22Z",
-    "ModifiedBy": "string",
-    "ModifiedByType": 1,
-    "Status": 1,
-    "StatusDescription": "string",
-    "SystemDiagnosticsStreamId": "string",
-    "Components": [
-      {
-        "Id": "string",
-        "ComponentType": "string",
-        "DeviceStatusStreamId": "string",
-        "NextHealthMessageExpectedStreamId": "string",
-        "DiagnosticsStreams": [
-          {
-            "Id": "string",
-            "NamespaceId": "string",
-            "TypeId": "string"
-          }
-        ],
-        "Status": 1,
-        "StatusDescription": "string",
-        "Errors": [
-          "string"
-        ]
-      }
-    ],
-    "Tags": [
-      "string"
-    ],
-    "IsVisible": true
-  }
-]
-```
-
----
-
-## `Get Edge Systems Summary (Edge path)`
-
-<a id="opIdEdgeSystem_Get Edge Systems Summary (Edge path)"></a>
-
-Returns header information for Edge Systems.
-
-<h3>Request</h3>
-
-```text 
-HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems
-?query={query}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-`[optional] string query`
-<br/>Query parameter to specify a filter. Valid filter properties are EdgeSystemId, DeviceName, Name, Type, Tags, Status, StatusDescription, LastContactedTime, and SoftwareVersion.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|Headers for Edge Systems found.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Response Headers</h4>
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|204|Total-Count|integer|The total number of edge systems.|
-
----
-
-## `List Edge Systems 1`
-
-<a id="opIdEdgeSystem_List Edge Systems 1"></a>
+<a id="opIdEdgeSystem_List Edge Systems"></a>
 
 Returns a list of Edge Systems.
 
@@ -220,9 +94,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Syste
 
 ---
 
-## `Get Edge Systems Summary 1`
+## `Get Edge Systems Summary`
 
-<a id="opIdEdgeSystem_Get Edge Systems Summary 1"></a>
+<a id="opIdEdgeSystem_Get Edge Systems Summary"></a>
 
 Returns header information for Edge Systems.
 
@@ -257,163 +131,9 @@ HEAD /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Syst
 
 ---
 
-## `Get Edge System (Edge path)`
+## `Get Edge System`
 
-<a id="opIdEdgeSystem_Get Edge System (Edge path)"></a>
-
-Returns a specific Edge System.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems/{edgeSystemId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string edgeSystemId`
-<br/>Edge System identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[EdgeSystem](#schemaedgesystem)|Edge System with the specified identifier.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|404|[ErrorResponse](#schemaerrorresponse)|Edge System not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([EdgeSystem](#schemaedgesystem))
-
-```json
-{
-  "Id": "string",
-  "DeviceName": "string",
-  "Name": "string",
-  "Type": "string",
-  "SoftwareVersion": "string",
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "LastContactedTime": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "ModifiedBy": "string",
-  "ModifiedByType": 1,
-  "Status": 1,
-  "StatusDescription": "string",
-  "SystemDiagnosticsStreamId": "string",
-  "Components": [
-    {
-      "Id": "string",
-      "ComponentType": "string",
-      "DeviceStatusStreamId": "string",
-      "NextHealthMessageExpectedStreamId": "string",
-      "DiagnosticsStreams": [
-        {
-          "Id": "string",
-          "NamespaceId": "string",
-          "TypeId": "string"
-        }
-      ],
-      "Status": 1,
-      "StatusDescription": "string",
-      "Errors": [
-        "string"
-      ]
-    }
-  ],
-  "Tags": [
-    "string"
-  ],
-  "IsVisible": true
-}
-```
-
----
-
-## `Show Or Hide System (Edge path)`
-
-<a id="opIdEdgeSystem_Show Or Hide System (Edge path)"></a>
-
-Reactivates a specific System.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems/{edgeSystemId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string edgeSystemId`
-<br/>Edge System identifier.<br/><br/>
-
-<h4>Request Body</h4>
-
-object to reactivate.<br/>
-
-```json
-{
-  "Id": "string",
-  "DeviceName": "string",
-  "Name": "string",
-  "Type": "string",
-  "SoftwareVersion": "string",
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "LastContactedTime": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "ModifiedBy": "string",
-  "ModifiedByType": 1,
-  "Status": 1,
-  "StatusDescription": "string",
-  "SystemDiagnosticsStreamId": "string",
-  "Components": [
-    {
-      "Id": "string",
-      "ComponentType": "string",
-      "DeviceStatusStreamId": "string",
-      "NextHealthMessageExpectedStreamId": "string",
-      "DiagnosticsStreams": [
-        {
-          "Id": "string",
-          "NamespaceId": "string",
-          "TypeId": "string"
-        }
-      ],
-      "Status": 1,
-      "StatusDescription": "string",
-      "Errors": [
-        "string"
-      ]
-    }
-  ],
-  "Tags": [
-    "string"
-  ],
-  "IsVisible": true
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|None|Success.|
-|204|None|No content.|
-|400|[ErrorResponse](#schemaerrorresponse)|None|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|404|[ErrorResponse](#schemaerrorresponse)|None|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Get Edge System 1`
-
-<a id="opIdEdgeSystem_Get Edge System 1"></a>
+<a id="opIdEdgeSystem_Get Edge System"></a>
 
 Returns a specific Edge System.
 
@@ -487,9 +207,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Syste
 
 ---
 
-## `Show Or Hide System 1`
+## `Show Or Hide System`
 
-<a id="opIdEdgeSystem_Show Or Hide System 1"></a>
+<a id="opIdEdgeSystem_Show Or Hide System"></a>
 
 Reactivates a specific System.
 
@@ -565,43 +285,9 @@ object to reactivate.<br/>
 
 ---
 
-## `List Tags (Edge path)`
+## `List Tags`
 
-<a id="opIdEdgeSystem_List Tags (Edge path)"></a>
-
-Returns a list of tags present on Edge Systems.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Tags
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|List of tags|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Response Headers</h4>
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|200|Total-Count|integer|The total number of tags.|
-
----
-
-## `List Tags 1`
-
-<a id="opIdEdgeSystem_List Tags 1"></a>
+<a id="opIdEdgeSystem_List Tags"></a>
 
 Returns a list of tags present on Edge Systems.
 
@@ -633,48 +319,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Tags
 
 ---
 
-## `Update Tags (Edge path)`
+## `Update Tags`
 
-<a id="opIdEdgeSystem_Update Tags (Edge path)"></a>
-
-Creates or updates the tags of a specific Edge System.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems/{edgeSystemId}/Tags
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string edgeSystemId`
-<br/>Edge System identifier.<br/><br/>
-
-<h4>Request Body</h4>
-
-Serialized list of tags.<br/>
-
-```json
-[
-  "string"
-]
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|No content.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Update Tags 1`
-
-<a id="opIdEdgeSystem_Update Tags 1"></a>
+<a id="opIdEdgeSystem_Update Tags"></a>
 
 Creates or updates the tags of a specific Edge System.
 
@@ -711,132 +358,9 @@ Serialized list of tags.<br/>
 
 ---
 
-## `Get Configuration (Edge path)`
+## `Get Configuration`
 
-<a id="opIdEdgeSystem_Get Configuration (Edge path)"></a>
-
-Returns an Edge System Configuration.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems/{edgeSystemId}/Configuration
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string edgeSystemId`
-<br/>Edge System identifier used as blob name in the storage account.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|Configuration for the specified Edge System.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|404|[ErrorResponse](#schemaerrorresponse)|Configuration not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Create Configuration (Edge path)`
-
-<a id="opIdEdgeSystem_Create Configuration (Edge path)"></a>
-
-Creates an Edge System Configuration in the storage account. Does not save any secrets supplied as part of the edge system configuration.
-
-<h3>Request</h3>
-
-```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems/{edgeSystemId}/Configuration
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string edgeSystemId`
-<br/>Edge System identifier used as blob name in the storage account.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|201|Inline|Configuration created.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|409|[ErrorResponse](#schemaerrorresponse)|Conflict.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Update Configuration (Edge path)`
-
-<a id="opIdEdgeSystem_Update Configuration (Edge path)"></a>
-
-Updates an Edge System Configuration. Does not save any secrets supplied as part of the edge system configuration.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems/{edgeSystemId}/Configuration
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string edgeSystemId`
-<br/>Edge System identifier used as blob name in the storage account.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|No content.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Delete Configuration (Edge path)`
-
-<a id="opIdEdgeSystem_Delete Configuration (Edge path)"></a>
-
-Deletes an Edge System Configuration.
-
-<h3>Request</h3>
-
-```text 
-DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Systems/{edgeSystemId}/Configuration
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string edgeSystemId`
-<br/>Edge System identifier used as blob name in the storage account.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|No content.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|404|[ErrorResponse](#schemaerrorresponse)|Configuration not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Get Configuration 1`
-
-<a id="opIdEdgeSystem_Get Configuration 1"></a>
+<a id="opIdEdgeSystem_Get Configuration"></a>
 
 Returns an Edge System Configuration.
 
@@ -865,9 +389,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Syste
 
 ---
 
-## `Create Configuration 1`
+## `Create Configuration`
 
-<a id="opIdEdgeSystem_Create Configuration 1"></a>
+<a id="opIdEdgeSystem_Create Configuration"></a>
 
 Creates an Edge System Configuration in the storage account. Does not save any secrets supplied as part of the edge system configuration.
 
@@ -896,9 +420,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Syst
 
 ---
 
-## `Update Configuration 1`
+## `Update Configuration`
 
-<a id="opIdEdgeSystem_Update Configuration 1"></a>
+<a id="opIdEdgeSystem_Update Configuration"></a>
 
 Updates an Edge System Configuration. Does not save any secrets supplied as part of the edge system configuration.
 
@@ -926,9 +450,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Syste
 
 ---
 
-## `Delete Configuration 1`
+## `Delete Configuration`
 
-<a id="opIdEdgeSystem_Delete Configuration 1"></a>
+<a id="opIdEdgeSystem_Delete Configuration"></a>
 
 Deletes an Edge System Configuration.
 

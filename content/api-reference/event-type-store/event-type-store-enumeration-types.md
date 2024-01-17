@@ -709,12 +709,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
 
 A list of Enumeration object ids.<br/>
 
-```json
-[
-  "string"
-]
-```
-
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

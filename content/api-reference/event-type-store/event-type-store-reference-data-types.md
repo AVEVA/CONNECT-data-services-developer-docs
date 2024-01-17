@@ -981,12 +981,6 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTyp
 
 A list of ReferenceDataType object ids.<br/>
 
-```json
-[
-  "string"
-]
-```
-
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
@@ -1599,7 +1593,7 @@ Represents a ReferenceDataType object.
 |PropertyTypeId|string|false|true|None|
 |RemoteReferenceName|string|false|true|None|
 |Description|string|false|true|None|
-|Uom|string|false|true|None|
+|Uom|string|false|true|The unit of measure for the type property. This property is only present/valid for numeric PropertyTypeCodes|
 
 ```json
 {

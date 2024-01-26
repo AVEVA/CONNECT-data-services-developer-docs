@@ -150,6 +150,35 @@ query-searchstring:
   type: text/plain
   value: |
     (Not supported) Search string identifier.
+# Event data
+acl:
+  type: text/plain
+  value: |
+    An AccessControlList.
+accessControlList:
+  type: text/plain
+  value: |
+    An AccessControlList.
+eventGraphTypeDto:
+  type: text/plain
+  value: |
+    A ReferenceDataType.
+eventGraphEnumerationDto:
+  type: text/plain
+  value: |
+    A ReferenceDataType.
+EventGraphEventTypeDto:
+  type: text/plain
+  value: |
+    A list of EventType objects.
+EventGraphReferenceDataTypeDto:
+  type: text/plain
+  value: |
+    A ReferenceDataType.
+owner:
+  type: text/plain
+  value: |
+    A Trustee.
 # Response codes
 200:
   type: text/plain
@@ -171,6 +200,10 @@ query-searchstring:
   type: text/plain
   value: |
     Found.
+304:
+  type: text/plain
+  value: |
+    Not modified.
 400:
   type: text/plain
   value: |

@@ -1,7 +1,5 @@
-- name: Access control
+- name: Access
   href: access.md
-- name: Configuration
-  href: configuration.md
 - name: Configuration template
   href: configuration-template.md
 - name: Edge system

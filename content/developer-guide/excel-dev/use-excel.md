@@ -53,17 +53,16 @@ $body = @{
     client_secret=$clientSecret
     }
 $contentType = 'application/x-www-form-urlencoded'
-$token = (Invoke-WebRequest -UseBasicParsing –Uri "https://uswe.datahub.connect.aveva.com/identity/connect/token" -Method post -body $body -ContentType $contentType).content|Convertfrom-Json|select access_token
-write-host $token
+$token = ((Invoke-WebRequest -UseBasicParsing -Uri "https://euno.datahub.connect.aveva.com/identity/connect/token" -Method post -body $Body -ContentType $contentType).content | Convertfrom-Json).access_token
+Write-Host $token
+Set-Clipboard -Value $token
 ```
 
-This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The last line writes the contents of `$token` to the screen as `@access_token=<ACCESS_TOKEN>`. Everything to the right of the `=` sign is your bearer token, which by default allows you to send and receive data for 3600 seconds. You need this entire token for the next step.
+This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The last line writes the contents of `$token` to the screen as `@access_token=<ACCESS_TOKEN>`. Everything to the right of the `=` sign is your bearer token, which by default allows you to send and receive data for 3600 seconds. You need this entire token for step four.
 
 ## Step 3 – Create an API request
 
 Build an API request in the API console. See <xref:apiConsole>.
-
-The example below gets data from one stream over the period covered from **startIndex** to **endIndex**, in this case ten minutes on 11-Mar-2020 from a stream called `PI_PISRV01_185`.
 
 ![API console](../images/api_console.png)
 
@@ -91,7 +90,7 @@ The example below gets data from one stream over the period covered from **start
 
    ![Convert to table](../images/pqe_columns.png)
 
-1. Select the split button in the column header to split the JSON records apart into an Excel table and select **OK**.
+1. Select the split button (../images/split_button.png) in the column header to split the JSON records apart into an Excel table and select **OK**.
 
    ![Split columns](../images/pqe_split.png)
 

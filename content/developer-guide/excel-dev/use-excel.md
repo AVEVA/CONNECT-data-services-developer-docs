@@ -90,7 +90,7 @@ Build an API request in the API console. See <xref:apiConsole>.
 
    ![Convert to table](../images/pqe_columns.png)
 
-1. Select the split button (../images/split_button.png) in the column header to split the JSON records apart into an Excel table and select **OK**.
+1. Select the split button ![Split button](../images/split_button.png) in the column header to split the JSON records apart into an Excel table and select **OK**.
 
    ![Split columns](../images/pqe_split.png)
 

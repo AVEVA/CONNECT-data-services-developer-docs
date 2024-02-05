@@ -58,11 +58,11 @@ Write-Host $token
 Set-Clipboard -Value $token
 ```
 
-This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The last line writes the contents of `$token` to the screen as `@access_token=<ACCESS_TOKEN>`. Everything to the right of the `=` sign is your bearer token, which by default allows you to send and receive data for 3600 seconds. You need this entire token for step four.
+This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The `Write-Host $token` command displays the full text of the bearer token that you have received. You will need that entire token for step four. To help with this, the `Set-Clipboard -Value $token` command copies that full token text to your clipboard, so that you may easily use it later.
 
 ## Step 3 – Create an API request
 
-Build an API request in the API console. See <xref:apiConsole>.
+Build an API request in the [API console](xref:apiConsole), such as one that returns interpolated JSON data for a Data View. See [Use the API Console to retrieve your data view](https://docs.aveva.com/bundle/aveva-data-hub/page/1263302.html#_tip_use_the_api_console_to_retrieve_your_data_view).
 
 ![API console](../images/api_console.png)
 

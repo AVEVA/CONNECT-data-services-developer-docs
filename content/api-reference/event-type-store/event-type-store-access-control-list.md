@@ -585,10 +585,10 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enumeration
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+|OperationId|string|false|true|An optional unique string used to identify an operation|
+|Error|string|false|true|Description of the error|
+|Reason|string|false|true|Short blurb on why the error occured|
+|Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
 {

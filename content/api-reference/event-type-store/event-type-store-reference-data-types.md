@@ -1463,17 +1463,17 @@ Represents a ReferenceDataType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Category|[ReferenceDataCategory](#schemareferencedatacategory)|false|false|None|
-|Properties|[[TypeProperty](#schematypeproperty)]|false|true|None|
-|DefaultAuthorizationTag|string|false|true|None|
+|Name|string|false|true|The name of this object|
+|GraphQLName|string|false|true|The name of this object as it appears in GraphQL|
+|Version|int32|false|false|The current version number of this object|
+|Id|string|false|true|The id which is used in lookup|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this object|
+|CreatedDate|date-time|false|true|Date this object was created|
+|ModifiedDate|date-time|false|true|The last time this object was modified|
+|Description|string|false|true|Description of what this object is|
+|Category|[ReferenceDataCategory](#schemareferencedatacategory)|false|false|Determine what category the ReferenceDataType falls into|
+|Properties|[[TypeProperty](#schematypeproperty)]|false|true|List of TypeProperty associated with this ReferenceDataType|
+|DefaultAuthorizationTag|string|false|true|The authorization tag that will be added to all instances of nodes based on the type|
 
 ```json
 {
@@ -1584,15 +1584,15 @@ Represents a ReferenceDataType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|None|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|PropertyTypeId|string|false|true|None|
-|RemoteReferenceName|string|false|true|None|
-|Description|string|false|true|None|
+|PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|Code that explains what kind of typeProperty this is|
+|Id|string|false|true|The id; used in lookup|
+|Name|string|false|true|The name of this TypeProperty|
+|GraphQLName|string|false|true|The name of this TypeProperty as it appears in GraphQL|
+|Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|Flag that denotes what special attributes this property has|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this TypeProperty|
+|PropertyTypeId|string|false|true|The id of the type that this property points to|
+|RemoteReferenceName|string|false|true|The name of the invisible property that is generated in GraphQL type schema if the ReverseLookup flag is set that points to this TypeProperty|
+|Description|string|false|true|Description of what this TypeProperty is|
 |Uom|string|false|true|The unit of measure for the type property. This property is only present/valid for numeric PropertyTypeCodes|
 
 ```json
@@ -1671,10 +1671,10 @@ Represents a ReferenceDataType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+|OperationId|string|false|true|An optional unique string used to identify an operation|
+|Error|string|false|true|Description of the error|
+|Reason|string|false|true|Short blurb on why the error occured|
+|Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
 {
@@ -1701,11 +1701,11 @@ Represents a ReferenceDataType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|false|None|
-|Error|string|false|false|None|
-|OperationId|string|false|false|None|
-|Data|[[ReferenceDataType](#schemareferencedatatype)]|false|false|[Represents a ReferenceDataType object.]|
-|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|None|
+|Reason|string|false|false|Short blurb on why the error occured|
+|Error|string|false|false|Description of the error|
+|OperationId|string|false|false|An optional unique string used to identify an operation|
+|Data|[[ReferenceDataType](#schemareferencedatatype)]|false|false|List of data returned from the multi-calls|
+|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|List of errors from all the multi-calls|
 
 ```json
 {

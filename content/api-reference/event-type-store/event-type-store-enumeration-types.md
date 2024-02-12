@@ -1087,15 +1087,15 @@ Represents an Enumeration object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Members|[[EnumerationState](#schemaenumerationstate)]|false|true|None|
+|Name|string|false|true|The name of this object|
+|GraphQLName|string|false|true|The name of this object as it appears in GraphQL|
+|Version|int32|false|false|The current version number of this object|
+|Id|string|false|true|The id which is used in lookup|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this object|
+|CreatedDate|date-time|false|true|Date this object was created|
+|ModifiedDate|date-time|false|true|The last time this object was modified|
+|Description|string|false|true|Description of what this object is|
+|Members|[[EnumerationState](#schemaenumerationstate)]|false|true|List of all the states the Enumeration can be in.|
 
 ```json
 {
@@ -1156,11 +1156,11 @@ Represents an Enumeration object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Code|int32|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|Description|string|false|true|None|
+|Name|string|false|true|The name of this EnumerationState|
+|GraphQLName|string|false|true|The name of this EnumerationState as it appears in GraphQL|
+|Code|int32|false|false|The code the enumeration state is associated with. Must be non-negative and unique|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this EnumerationState|
+|Description|string|false|true|Description of what this EnumerationState is for|
 
 ```json
 {
@@ -1186,10 +1186,10 @@ Represents an Enumeration object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+|OperationId|string|false|true|An optional unique string used to identify an operation|
+|Error|string|false|true|Description of the error|
+|Reason|string|false|true|Short blurb on why the error occured|
+|Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
 {
@@ -1216,11 +1216,11 @@ Represents an Enumeration object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|false|None|
-|Error|string|false|false|None|
-|OperationId|string|false|false|None|
-|Data|[[Enumeration](#schemaenumeration)]|false|false|[Represents an Enumeration object.]|
-|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|None|
+|Reason|string|false|false|Short blurb on why the error occured|
+|Error|string|false|false|Description of the error|
+|OperationId|string|false|false|An optional unique string used to identify an operation|
+|Data|[[Enumeration](#schemaenumeration)]|false|false|List of data returned from the multi-calls|
+|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|List of errors from all the multi-calls|
 
 ```json
 {

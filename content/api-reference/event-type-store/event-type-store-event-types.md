@@ -14,7 +14,7 @@ Returns an array of EventTypes in a given namespace and the version ETag in the 
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 ?skip={skip}&count={count}&includeDeleted={includeDeleted}&filter={filter}
 ```
 
@@ -282,7 +282,7 @@ Creates a new EventType. Response includes ETag header.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -460,7 +460,7 @@ Returns the specified EventType and the version ETag in the HTTP response header
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ?includeDeleted={includeDeleted}
 ```
 
@@ -620,7 +620,7 @@ Creates a new EventType or returns the current one if the body is equivalent to 
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -912,7 +912,7 @@ Creates a new EventType or updates an existing and adds its Etag in the HTTP res
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -1204,7 +1204,7 @@ Deletes the EventType.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -1235,7 +1235,7 @@ Creates multiple new EventType and returns a list of any errors along with the c
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -1508,7 +1508,7 @@ Deletes multiple EventTypes and returns an Ok if successful. In the case where a
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTypes
 ```
 
 <h4>Parameters</h4>
@@ -1520,12 +1520,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/EventTyp
 <h4>Request Body</h4>
 
 A list of EventType object ids.<br/>
-
-```json
-[
-  "string"
-]
-```
 
 <h3>Response</h3>
 
@@ -1894,7 +1888,7 @@ Returns the `AccessControlList` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -1943,7 +1937,7 @@ Updates and returns the `AccessControlList` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -2019,7 +2013,7 @@ Returns the `Trustee` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -2060,7 +2054,7 @@ Updates and returns the `Trustee` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -2113,7 +2107,7 @@ Returns a list of `CommonAccessRights` for the specified EventType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessRights
 ```
 
 <h4>Parameters</h4>
@@ -2147,16 +2141,16 @@ Represents an EventType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Properties|[[TypeProperty](#schematypeproperty)]|false|true|None|
-|DefaultAuthorizationTag|string|false|true|None|
+|Name|string|false|true|The name of this object|
+|GraphQLName|string|false|true|The name of this object as it appears in GraphQL|
+|Version|int32|false|false|The current version number of this object|
+|Id|string|false|true|The id which is used in lookup|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this object|
+|CreatedDate|date-time|false|true|Date this object was created|
+|ModifiedDate|date-time|false|true|The last time this object was modified|
+|Description|string|false|true|Description of what this object is|
+|Properties|[[TypeProperty](#schematypeproperty)]|false|true|List of TypeProperty associated with this EventType|
+|DefaultAuthorizationTag|string|false|true|The authorization tag that will be added to all instances of nodes based on the type|
 
 ```json
 {
@@ -2297,15 +2291,16 @@ Represents an EventType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|None|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|PropertyTypeId|string|false|true|None|
-|RemoteReferenceName|string|false|true|None|
-|Description|string|false|true|None|
+|PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|Code that explains what kind of typeProperty this is|
+|Id|string|false|true|The id; used in lookup|
+|Name|string|false|true|The name of this TypeProperty|
+|GraphQLName|string|false|true|The name of this TypeProperty as it appears in GraphQL|
+|Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|Flag that denotes what special attributes this property has|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this TypeProperty|
+|PropertyTypeId|string|false|true|The id of the type that this property points to|
+|RemoteReferenceName|string|false|true|The name of the invisible property that is generated in GraphQL type schema if the ReverseLookup flag is set that points to this TypeProperty|
+|Description|string|false|true|Description of what this TypeProperty is|
+|Uom|string|false|true|The unit of measure for the type property. This property is only present/valid for numeric PropertyTypeCodes|
 
 ```json
 {
@@ -2317,7 +2312,8 @@ Represents an EventType object.
   "State": 0,
   "PropertyTypeId": "string",
   "RemoteReferenceName": "string",
-  "Description": "string"
+  "Description": "string",
+  "Uom": "string"
 }
 
 ```
@@ -2366,15 +2362,26 @@ Represents an EventType object.
 |Indexed|2|
 |Required|4|
 |IsCollection|8|
+|NoUom|16|
+|NoAggregation|32|
 
 ---
 
 ### ErrorResponse
 
-<a id="schemaerrorresponse"></a>
-<a id="schema_ErrorResponse"></a>
-<a id="tocSerrorresponse"></a>
-<a id="tocserrorresponse"></a>
+<a id="schemaadherrorresponse"></a>
+<a id="schema_AdhErrorResponse"></a>
+<a id="tocSadherrorresponse"></a>
+<a id="tocsadherrorresponse"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|An optional unique string used to identify an operation|
+|Error|string|false|true|Description of the error|
+|Reason|string|false|true|Short blurb on why the error occured|
+|Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
 {}
@@ -2394,11 +2401,11 @@ Represents an EventType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|false|None|
-|Error|string|false|false|None|
-|OperationId|string|false|false|None|
-|Data|[[EventType](#schemaeventtype)]|false|false|[Represents an EventType object.]|
-|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|None|
+|Reason|string|false|false|Short blurb on why the error occured|
+|Error|string|false|false|Description of the error|
+|OperationId|string|false|false|An optional unique string used to identify an operation|
+|Data|[[EventType](#schemaeventtype)]|false|false|List of data returned from the multi-calls|
+|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|List of errors from all the multi-calls|
 
 ```json
 {

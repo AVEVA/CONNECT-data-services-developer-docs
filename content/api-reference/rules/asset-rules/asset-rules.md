@@ -1,5 +1,5 @@
 ---
-uid: AssetRules
+uid: asset-rules
 ---
 # Asset Rules
 
@@ -34,6 +34,7 @@ The asset rules API allows you to programmatically create, read, update, and del
             {
                "Type":"Group",
                "Name":"location",
+               "StrictValueMappings":true,
                "ValueMappings":{
                   "SL":"San leandro",
                   "AUS":"Austin"
@@ -133,6 +134,7 @@ For more information on available properties for a stream type, see [Types][xref
 | CharacterLength    | Integer    | Optional  | Required only for the group specification type.<br />Specifies the length of characters expected to be extracted by the group. If not specified, it defaults to the longest string length of the group. |
 | RequiredDelimiters | Array      | Optional  | Required only for the group specification type.<br />Sequence of required delimiters within a group. If specified, each delimiter within the array must appear in the exact order and number within the group. If not specified, the default value is an empty array. |
 | ValueMappings      | Dictionary | Optional  | Required only for the group and wildcard specification types.<br />A collection of mapped values for each group. If not specified, the default is null. |
+| StrictValueMappings| Boolean    | Optional  | If set to true, for a stream to match a rule, you must set a value / mapping pair within `ValueMappings`. If false, and a matching value mapping is not present, the value itself is passed through. For example, if you set a value mapping of `"PDX":"Portland"` within `ValueMappings` and `StrictValueMappings` is 'false', a value of `PDX` is passed through because the `ValueMappings` object is ignored. If not specified, the default value of `true` is used.
 
 ### JSON Paths
 

@@ -1012,7 +1012,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
 
 <h4>Request Body</h4>
 
-A Trustee.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
 
 ```json
 {
@@ -1175,7 +1175,7 @@ Represents an Enumeration object.
 
 ---
 
-### AdhErrorResponse
+### ErrorResponse
 
 <a id="schemaadherrorresponse"></a>
 <a id="schema_AdhErrorResponse"></a>
@@ -1192,14 +1192,7 @@ Represents an Enumeration object.
 |Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
+{}
 
 ```
 

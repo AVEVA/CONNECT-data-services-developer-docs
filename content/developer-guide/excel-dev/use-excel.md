@@ -34,7 +34,7 @@ These are the basics to get new Excel and AVEVA Data Hub users up and running qu
 
 Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The first thing that you must do is create a client to connect to AVEVA Data Hub.
 
-Create a client with any name and accept the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed. See <xref:gpClientCredentialsClient> for the steps. 
+Create a client with any name and accept the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed.
 
 An existing client can be used, and many connections can be made through one client. All you need are the client Id and secret.
 
@@ -53,17 +53,16 @@ $body = @{
     client_secret=$clientSecret
     }
 $contentType = 'application/x-www-form-urlencoded'
-$token = (Invoke-WebRequest -UseBasicParsing –Uri "https://uswe.datahub.connect.aveva.com/identity/connect/token" -Method post -body $body -ContentType $contentType).content|Convertfrom-Json|select access_token
-write-host $token
+$token = ((Invoke-WebRequest -UseBasicParsing -Uri "https://euno.datahub.connect.aveva.com/identity/connect/token" -Method post -body $Body -ContentType $contentType).content | Convertfrom-Json).access_token
+Write-Host $token
+Set-Clipboard -Value $token
 ```
 
-This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The last line writes the contents of `$token` to the screen as `@access_token=<ACCESS_TOKEN>`. Everything to the right of the `=` sign is your bearer token, which by default allows you to send and receive data for 3600 seconds. You need this entire token for the next step.
+This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The `Write-Host $token` command displays the full text of the bearer token that you have received. You will need that entire token for step four. To help with this, the `Set-Clipboard -Value $token` command copies that full token text to your clipboard, so that you may easily use it later.
 
 ## Step 3 – Create an API request
 
-Build an API request in the API console. See <xref:apiConsole>.
-
-The example below gets data from one stream over the period covered from **startIndex** to **endIndex**, in this case ten minutes on 11-Mar-2020 from a stream called `PI_PISRV01_185`.
+Build an API request in the [API console](xref:apiConsole), such as one that returns interpolated JSON data for a Data View. See [Use the API Console to retrieve your data view](https://docs.aveva.com/bundle/aveva-data-hub/page/1263302.html#_tip_use_the_api_console_to_retrieve_your_data_view).
 
 ![API console](../images/api_console.png)
 
@@ -91,7 +90,7 @@ The example below gets data from one stream over the period covered from **start
 
    ![Convert to table](../images/pqe_columns.png)
 
-1. Select the split button in the column header to split the JSON records apart into an Excel table and select **OK**.
+1. Select the split button ![Split button](../images/split_button.png) in the column header to split the JSON records apart into an Excel table and select **OK**.
 
    ![Split columns](../images/pqe_split.png)
 

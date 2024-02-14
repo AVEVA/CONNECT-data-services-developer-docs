@@ -4,28 +4,28 @@ uid: accessControl
 
 # Role-based access control
 
-Use an Access Control List (ACL) to manage role-based access control to entities such as namespaces and streams. ACLs control user access to entities based on their roles. Each entity has an owner, who has access for all operations regardless of the contents of the ACL. Not all entities support role-based access control.  <!--Angela Flores 6/23/21 We should not talk about unreleased functionality or future functionality in the end-user documentation. Original text "Not all entities in the AVEVA Data Hub system support role-based access control at this time, but the list will quickly grow and currently includes Namespaces and several unreleased entities." We should list all the entities that do support an ACL. How does access work for entities that don't support an ACL? -->
+Use an Access Control List (ACL) to manage role-based access control to entities such as namespaces and streams. ACLs control user access to entities based on their roles. Each entity has an owner, who has access for all operations regardless of the contents of the ACL. Not all entities support role-based access control.
 
 ## Access Control Lists
 
 Access Control Lists (ACLs) contain sets of Access Control Entries (ACEs), which contain the following information:
 
-- TrusteeType - the role for whom access is set 
-- AccessType - the access permitted, either allowed or denied
-- AccessRights - the access rights allowed or denied to the Trustee specified 
+- TrusteeType: The role for whom access is set.
+- AccessType: The access permitted, either allowed or denied.
+- AccessRights: The access rights allowed or denied to the Trustee specified.
 
-A User or Client that attempts to read, write, delete, or manage access control of an entity assigned an ACL must possess a Role that corresponds to a Role Trustee that has `AccessType` set to `Allowed` for the AccessRight corresponding to that operation.
+A user or client that attempts to read, write, delete, or manage access control of an entity assigned an ACL must possess a role that corresponds to a Role Trustee that has `AccessType` set to `Allowed` for the AccessRights corresponding to that operation.
 
 ### Collections with ACL endpoints
 
-The following table shows whether endpoint collections have an endpoint for access control. For more information on using access control for each supported collection, select the collection link.
+The following table shows which endpoint collections have an endpoint for access control. For more information on using access control for each supported collection, select the collection link.
 
 | Endpoint Collection | ACL Endpoint |
 |--|:--:|
 | [Asset store](xref:assets-access-control-list) | &#10004; |
 | [Communities](../../api-reference/identity/community-tenant-collection-acls.md)<sup>1</sup> | &#10004; |
 | [Data collection](xref:omf-ingress-access-control) | &#10004; |
-| [Data views](xref:DataViewsAccessControlAPI) | &#10004; |
+| [Data views](xref:data-views-access-control) | &#10004; |
 | Identity and access management | ✘ |
 | Operations | ✘ |
 | [Rules: Asset rules](xref:assets-access-control-list) | &#10004; |
@@ -38,10 +38,12 @@ The following table shows whether endpoint collections have an endpoint for acce
 ### Notes
 
 - If an operation requires more than one access right, then an identity obtains those rights from multiple ACL entries.
-- `AccessType.Denied` takes precedence over `AccessType.Allowed`.
+
+- `AccessType.Denied` takes precedence over `AccessType.Allowed`. For example, an identity that has multiple roles, one of which is assigned AccessType.Denied will be forbidden the associated AccessRight, even if another one of their roles is assigned AccessType.Allowed for the same Access Right.
   <!--VTT, 12/14/21: Reworded this bullet per SME request, N. Parakh: For example, an identity that has multiple roles, one of which is assigned AccessType.Denied will be forbidden the associated AccessRight, even if another Role they also have assigned to them is assigned AccessType.Allowed for the same Access Right.-->
-  - For example, an identity that has multiple roles, one of which is assigned AccessType.Denied will be forbidden the associated AccessRight, even if another one of their roles is assigned AccessType.Allowed for the same Access Right.
+
 - Roles are the only TrusteeType currently supported for AccessControlList ACEs.
+
 - At least one role must be given Manage Permission access.
 
 ### Trustee
@@ -74,11 +76,11 @@ The following table shows predefined access rights and their corresponding integ
 | Share                 | 16   |   10000 |
 | All                   | 31   |   11111 |
 
-Access rights are determined by the union or summation of one or more individual access rights. For example `AccessRights: 3` indicates that the `Read (1)` and `Write (2)` access are permitted.
+Access rights are determined by the union or summation of one or more individual access rights. For example, `AccessRights: 3` indicates that the `Read (1)` and `Write (2)` access are permitted.
 
 ### Sample Access Control List
 
-The following code sample shows the structure and format for an ACL that gives Role 1 `Read` access, Role 2 `All` access but denies Role 3 `ManageAccessControl` access:
+The following code sample shows the structure and format for an ACL that gives Role 1 `Read` access and Role 2 `All` access, but denies Role 3 `ManageAccessControl` access:
 
 **Body**
 
@@ -117,7 +119,7 @@ Sample body:
 
 ## Owner
 
-Set an owner on an entity to grant access for all operations on the entity regardless of the access set in the ACL. Only Users and Clients are valid owners for entities. Both User and Client Trustee types use the `ObjectId` property to specify either the User's ID or Client's ID, respectively.
+Set an owner on an entity to grant access for all operations on the entity regardless of the access set in the ACL. Only users and clients are valid owners for entities. Both user and client Trustee types use the `ObjectId` property to specify either the user's ID or client's ID, respectively.
 
 The following code samples shows the format and structure of an owner object.
 

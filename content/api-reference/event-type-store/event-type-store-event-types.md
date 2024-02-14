@@ -469,7 +469,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 `[optional] boolean includeDeleted`
 <br/>Parameter indicating whether to include soft-deleted EventTypes. If unspecified, a default value of false is used.<br/><br/>
 
@@ -628,7 +628,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -920,7 +920,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -1212,7 +1212,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1896,7 +1896,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessCo
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1945,7 +1945,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessCo
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -2021,7 +2021,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
@@ -2062,11 +2062,11 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/Owner
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h4>Request Body</h4>
 
-A Trustee.<br/>
+#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
 
 ```json
 {
@@ -2115,7 +2115,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}/AccessRi
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
+<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
 
 <h3>Response</h3>
 
@@ -2367,7 +2367,7 @@ Represents an EventType object.
 
 ---
 
-### AdhErrorResponse
+### ErrorResponse
 
 <a id="schemaadherrorresponse"></a>
 <a id="schema_AdhErrorResponse"></a>
@@ -2384,14 +2384,7 @@ Represents an EventType object.
 |Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "property1": null,
-  "property2": null
-}
+{}
 
 ```
 

@@ -574,7 +574,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enumeration
 
 ---
 
-### ErrorResponse
+### AdhErrorResponse
 
 <a id="schemaadherrorresponse"></a>
 <a id="schema_AdhErrorResponse"></a>
@@ -591,7 +591,14 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AccessRights/Enumeration
 |Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
-{}
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
+}
 
 ```
 

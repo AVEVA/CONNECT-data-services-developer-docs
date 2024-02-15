@@ -69,31 +69,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
     "State": "Active",
     "CreatedDate": "0001-01-01T00:00:00Z",
     "ModifiedDate": "0001-01-01T00:00:00Z"
-  },
-  {
-    "Id": "SimpleEnumeration",
-    "Name": "SimpleEnumeration",
-    "GraphQLName": "SimpleEnumeration",
-    "Members": [
-      {
-        "Name": "ACTIVE",
-        "GraphQLName": "ACTIVE",
-        "Code": 0,
-        "State": "Active",
-        "Description": "This is an active state"
-      },
-      {
-        "Name": "CLOSED",
-        "GraphQLName": "CLOSED",
-        "Code": 1,
-        "State": "Active",
-        "Description": "This is a closed state"
-      }
-    ],
-    "Version": 1,
-    "State": "Active",
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z"
   }
 ]
 ```
@@ -725,31 +700,6 @@ A list of Enumeration object ids.<br/>
 
 ```json
 [
-  {
-    "Id": "SimpleEnumeration",
-    "Name": "SimpleEnumeration",
-    "GraphQLName": "SimpleEnumeration",
-    "Members": [
-      {
-        "Name": "ACTIVE",
-        "GraphQLName": "ACTIVE",
-        "Code": 0,
-        "State": "Active",
-        "Description": "This is an active state"
-      },
-      {
-        "Name": "CLOSED",
-        "GraphQLName": "CLOSED",
-        "Code": 1,
-        "State": "Active",
-        "Description": "This is a closed state"
-      }
-    ],
-    "Version": 1,
-    "State": "Active",
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z"
-  },
   {
     "Id": "SimpleEnumeration",
     "Name": "SimpleEnumeration",

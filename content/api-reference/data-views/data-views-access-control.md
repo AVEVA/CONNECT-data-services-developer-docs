@@ -204,7 +204,7 @@ This portion of the [overall data views API](xref:DataViewsAPIOverview) focuses 
 
 <a id="opIdDataViewsPermissions_Get Data View Access Control List"></a>
 
-Returns the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
+Returns the [`AccessControlList`](xref:accessControl#access-control-lists) of the specified data view.
 
 <h3>Request</h3>
 
@@ -289,7 +289,7 @@ HTTP 200 OK
 
 <a id="opIdDataViewsPermissions_Update Data View Access Control List"></a>
 
-Updates the default [`AccessControlList`](xref:accessControl#access-control-lists) for the DataViews collection.
+Updates the [`AccessControlList`](xref:accessControl#access-control-lists) of the specified data view.
 
 <h3>Request</h3>
 

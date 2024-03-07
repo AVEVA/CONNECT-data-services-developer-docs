@@ -378,6 +378,7 @@ Resolved metadata is a property of a resolved asset.
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Metadata name|
+|Id|string|false|true|Metadata Id|
 |SdsTypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|Metadata data type represented as an SdsTypeCode|
 |Value|any|false|true|Metadata static value|
 |Uom|string|false|true|Metadata unit of measurement|
@@ -385,6 +386,7 @@ Resolved metadata is a property of a resolved asset.
 ```json
 {
   "Name": "ModelNumber",
+  "Id": "Id-abcde",
   "SdsTypeCode": "Double",
   "Value": 0.01
 }
@@ -512,6 +514,7 @@ Resolved stream is a property of the resolved asset.
 |Name|string|false|true|Resolved stream name. The resolved stream name corresponds to the stream reference name as defined in the stream reference on the asset.|
 |Type|[SdsType](#schemasdstype)|false|true|SdsType of the referenced stream|
 |StreamReferenceName|string|false|true|Stream reference name used in the asset|
+|Id|string|false|true|Stream reference id used in the asset|
 |StreamId|string|false|true|SDS stream identifier of the referenced stream|
 |PropertyMaps|[[PropertyMap](#schemapropertymap)]|false|true|SDS stream property maps|
 
@@ -549,6 +552,7 @@ Resolved stream is a property of the resolved asset.
     "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "StreamReferenceName": "string",
+  "Id": "string",
   "StreamId": "string",
   "PropertyMaps": [
     {
@@ -760,10 +764,11 @@ Unresolved stream, a property of the resolved asset, is a stream that could not 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Name of the stream reference that could not be resolved|
+|Id|string|false|true|Stream reference id that could not be resolved|
 |Reason|string|false|true|Reason why the stream reference could not be resolved|
 
 ```json
-"{\n    \"Name\": \"InputTemperature\",\n    \"Reason\": \"SDS Stream 'temperature' not found\"\"\n}"
+"{\n    \"Name\": \"InputTemperature\",\n    \"Id\": \"5345e98d-dc43-4f9d-a666-158a3baaf244\",\n    \"Reason\": \"SDS Stream 'temperature' not found\"\"\n}"
 
 ```
 

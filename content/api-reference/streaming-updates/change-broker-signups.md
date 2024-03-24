@@ -64,7 +64,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
       "ModifiedDate": "2019-08-24T14:15:22Z",
       "ExpiredDate": "2019-08-24T14:15:22Z",
       "ResourcesDeleted": true,
-      "SignupState": "Activating"
+      "SignupState": "Activating",
+      "AzureBlobIndexTagsCount": 0
     }
   ]
 }
@@ -139,7 +140,8 @@ Input of the signup to be created.<br/>
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "ExpiredDate": "2019-08-24T14:15:22Z",
   "ResourcesDeleted": true,
-  "SignupState": "Activating"
+  "SignupState": "Activating",
+  "AzureBlobIndexTagsCount": 0
 }
 ```
 
@@ -195,6 +197,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
   "ExpiredDate": "2019-08-24T14:15:22Z",
   "ResourcesDeleted": true,
   "SignupState": "Activating",
+  "AzureBlobIndexTagsCount": 0,
   "Bookmark": "string"
 }
 ```
@@ -260,7 +263,8 @@ Signup input object to replace the existing signup's properties.<br/>
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "ExpiredDate": "2019-08-24T14:15:22Z",
   "ResourcesDeleted": true,
-  "SignupState": "Activating"
+  "SignupState": "Activating",
+  "AzureBlobIndexTagsCount": 0
 }
 ```
 
@@ -490,6 +494,7 @@ Represents a signup base model.
 |ExpiredDate|date-time|false|true|Date Signup is set to expire.|
 |ResourcesDeleted|boolean|false|true|Flag to indicate if all the partitions have successfully deleted the associated resources after expiring the signup.|
 |SignupState|[SignupState](#schemasignupstate)|false|false|Signup Status.|
+|AzureBlobIndexTagsCount|int64|false|false|Number of Azure blob index tags associated with this signup's blob.|
 
 ```json
 {
@@ -507,7 +512,8 @@ Represents a signup base model.
   "ModifiedDate": "2019-08-24T14:15:22Z",
   "ExpiredDate": "2019-08-24T14:15:22Z",
   "ResourcesDeleted": true,
-  "SignupState": "Activating"
+  "SignupState": "Activating",
+  "AzureBlobIndexTagsCount": 0
 }
 
 ```
@@ -657,7 +663,8 @@ A collection of signups.
       "ModifiedDate": "2019-08-24T14:15:22Z",
       "ExpiredDate": "2019-08-24T14:15:22Z",
       "ResourcesDeleted": true,
-      "SignupState": "Activating"
+      "SignupState": "Activating",
+      "AzureBlobIndexTagsCount": 0
     }
   ]
 }
@@ -690,6 +697,7 @@ Represents a signup model with encoded bookmark.
 |ExpiredDate|date-time|false|true|Date Signup is set to expire.|
 |ResourcesDeleted|boolean|false|true|Flag to indicate if all the partitions have successfully deleted the associated resources after expiring the signup.|
 |SignupState|[SignupState](#schemasignupstate)|false|false|Signup Status.|
+|AzureBlobIndexTagsCount|int64|false|false|Number of Azure blob index tags associated with this signup's blob.|
 |Bookmark|string|false|false|An encoded string representing a starting point for updates retrieval.|
 
 ```json
@@ -709,6 +717,7 @@ Represents a signup model with encoded bookmark.
   "ExpiredDate": "2019-08-24T14:15:22Z",
   "ResourcesDeleted": true,
   "SignupState": "Activating",
+  "AzureBlobIndexTagsCount": 0,
   "Bookmark": "string"
 }
 

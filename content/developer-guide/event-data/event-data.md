@@ -2,7 +2,7 @@
 uid: EventData
 --- 
 
-# Event data (Preview)
+# Event data
 
 You can store event data, such as manufacturing execution systems (MES) data, in AVEVA Data Hub. This allows you to store data from multiple site systems into AVEVA Data Hub to visualize, create reports, and work with data across the enterprise.  
 

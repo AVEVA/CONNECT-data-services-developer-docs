@@ -38,7 +38,7 @@ Namespaces are provisioned within a region. The Namespace's services and data st
 
 AVEVA Data Hub provides data residency via namespaces in the following regions:
 
-| AVEVA Connect region label | AVEVA Data Hub region label |
+| CONNECT region label | AVEVA Data Hub region label |
 | ------------- | ------------- |
 | US-West | (westus) |
 | EU-West | (northeurope) |

@@ -4,7 +4,7 @@ uid: identity-identity-providers
 ---
 
 # Identity Providers
-An identity provider provides authentication services and maintains credentials for users that have been provisioned in the platform. Each tenant can have one or more identity providers. Each user is associated with one of the available identity providers in the tenant. A user can only log in with the same identity provider with which they signed up. Note: Identity Provider options differ by platform. OSIsoft Cloud Services supports multiple Identity Providers. AVEVA Data Hub supports only a single Identity Provider: AVEVA Connect.
+An identity provider provides authentication services and maintains credentials for users that have been provisioned in the platform. Each tenant can have one or more identity providers. Each user is associated with one of the available identity providers in the tenant. A user can only log in with the same identity provider with which they signed up. Note: Identity Provider options differ by platform. OSIsoft Cloud Services supports multiple Identity Providers. AVEVA Data Hub supports only a single Identity Provider: CONNECT.
 
 ## `Get Identity Provider`
 
@@ -967,7 +967,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get Identity Provider Groups"></a>
 
-Returns the groups based on the identifiers. Only Advanced Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
+Returns the groups based on the identifiers. Only Advanced Integration Identity providers such as Azure Active Directory and CONNECT support this method.
 
 <h3>Request</h3>
 
@@ -1035,7 +1035,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get Identity Provider Group Mapping Roles"></a>
 
-Returns the groups based on the identifiers that have tenant member access role Only Advanced Integration Identity providers such as Azure Active Directory and AVEVA Connect support this method.
+Returns the groups based on the identifiers that have tenant member access role. Only Advanced Integration Identity providers such as Azure Active Directory and CONNECT support this method.
 
 <h3>Request</h3>
 

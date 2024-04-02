@@ -29,11 +29,11 @@ Event Types have the following base properties:
 - startTime
 - endTime
 - duration
-- state
+- state (active – the event only has a startTime, closed – the event has a startTime and endTime)
 - createdDate
 - modifiedDate
 - createdByUser
-- authorizationTags
+- authorizationTags (see [Managing Permissions](#managing-permissions))
 
 ### Reference Data Types
 
@@ -49,7 +49,7 @@ Reference Data Types have the following base properties:
 - createdDate
 - modifiedDate
 - createdByUser
-- authorizationTags
+- authorizationTags (see [Managing Permissions](#managing-permissions))
 
 Reference Data Types that reference external data have the following additional base properties:
 
@@ -122,7 +122,9 @@ You can make scalar and relationship properties searchable by specifying the `In
 
 **Note:** At this time, collections are not a searchable property.
 
-You can make them required by specifying the `Required` flag. Required means the property must be specified on a top-level ingress operation. It can also restrict a delete operation to maintain integrity. You can opt out of making numeric values aggregate properties or UOM properties by using the `NoAggregate` and `NoUom` flags.
+You can make them required by specifying the `Required` flag. Required means the property must be specified on a top-level ingress operation. It can also restrict a delete operation to maintain integrity.
+
+You can opt out of making numeric values aggregate properties or UOM properties by using the `NoAggregate` and `NoUom` flags. This means the properties will not have the extra GraphQL schema structure to hold aggregations or UOMs.
 
 ## Generating the GraphQL schema
 
@@ -176,6 +178,8 @@ Mutations allow you to upsert and delete data in the Graph Store. These APIs all
 
   - The id property must always be provided. The startTime is required when creating a new top-level event.
 
+  - Single point-in-time events can be modeled by setting endTime=startTime.
+
   - Missing properties are ignored on update, set to null on create.
 
      - This can work like a REST PATCH.
@@ -183,6 +187,16 @@ Mutations allow you to upsert and delete data in the Graph Store. These APIs all
   - Null property values will clear a value.
 
   - Required properties must be passed at the top-level of an upsert. However, this is not enforced on child nodes.
+
+  - When writing a numeric property, the format varies depending on whether it supports UOM structure or not.
+  
+    **Note**: The default behavior is to support UOM structure. You need to opt-out of UOM structure support when creating the type with the NoUom property flag.
+
+     - NoUom structure: `{ quantity: 99 }`
+
+     - Uom structure: `{ quantity: { value: 99  uom: { id: tons } } }`
+
+       **Note**: uom can be set to null, in which case it defaults to the uom defined on the type property.
 
   - When writing a tree of item nodes, the writes are done from the leaf nodes up.
 
@@ -235,8 +249,6 @@ Queries allow you to query data in the Graph Store. These APIs allow you to choo
   - Where filters can request a UOM to apply as part of the Where operator. All values will be converted to that UOM before comparing to the value. Not specifying a UOM will use the default UOM. Ex: `where: { length: { lt: 1000 uom: "meters" } }`
 
   - Aggregations can request a UOM to apply before aggregating the values. This is passed as an argument to the aggregate.property. The result will be in the requested UOM. Not specifying a UOM will use the default UOM. Ex: `aggregate: { length( uom: "meters" ){ sum } }`
-
-  - Property values can be requested in a specific UOM. This is done by passing the UOM as an argument to the property. Not specifying a UOM will result in the UOM being returned as written. Ex: `length( uom: "meters" ) { value uom: { id }}`
 
 ## Managing permissions
 

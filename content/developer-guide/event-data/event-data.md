@@ -20,20 +20,26 @@ An Event Type is a collection of properties, each configured as:
 - A relationship to a type from an adjacent service (such as assets)
 - A collection of any of these things
 
-Event Types have the following base properties:
+Event Types have the following auto-generated properties by default when they are created. Some properties can be populated by the user when creating an event. The rest will auto-populate.
 
 - id
 - name
+  If a name is not provided, the id will be assigned to the name.
 - description
 - asset
 - startTime
 - endTime
 - duration
-- state (active – the event only has a startTime, closed – the event has a startTime and endTime)
+- state
+  This property is read-only. The state is active if an event only has a startTime, or closed if an event has a startTime and endTime.
 - createdDate
+  This property is read-only.
 - modifiedDate
+  This property is read-only.
 - createdByUser
-- authorizationTags (see [Managing Permissions](#managing-permissions))
+  This property is read-only.
+- authorizationTags
+  See [Managing Permissions](#managing-permissions).
 
 ### Reference Data Types
 
@@ -41,17 +47,22 @@ Reference data provides additional information for the context of an event, and 
 
 Reference Data Types are collections of configurable properties that can include references to other Reference Data or Events.
 
-Reference Data Types have the following base properties:
+Reference Data Types have the following auto-generated properties by default when they are created. Some properties can be populated by the user when creating an event. The rest will auto-populate.
 
 - id
 - name
+  If a name is not provided, the id will be assigned to the name.
 - description
 - createdDate
+  This property is read-only.
 - modifiedDate
+  This property is read-only.
 - createdByUser
-- authorizationTags (see [Managing Permissions](#managing-permissions))
+  This property is read-only.
+- authorizationTags
+  See [Managing Permissions](#managing-permissions).
 
-Reference Data Types that reference external data have the following additional base properties:
+Reference Data Types that reference external data have the following additional default properties:
 
 - sourceId
 - resourceId

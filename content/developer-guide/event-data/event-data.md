@@ -24,22 +24,22 @@ Event Types have the following auto-generated properties by default when they ar
 
 - id
 - name
-  If a name is not provided, the id will be assigned to the name.
+   If a name is not provided, the id will be assigned to the name.
 - description
 - asset
 - startTime
 - endTime
 - duration
 - state
-  This property is read-only. The state is active if an event only has a startTime, or closed if an event has a startTime and endTime.
+   This property is read-only. The state is active if an event only has a startTime, or closed if an event has a startTime and endTime.
 - createdDate
-  This property is read-only.
+   This property is read-only.
 - modifiedDate
-  This property is read-only.
+   This property is read-only.
 - createdByUser
-  This property is read-only.
+   This property is read-only.
 - authorizationTags
-  See [Managing Permissions](#managing-permissions).
+   See [Managing Permissions](#managing-permissions).
 
 ### Reference Data Types
 
@@ -51,16 +51,16 @@ Reference Data Types have the following auto-generated properties by default whe
 
 - id
 - name
-  If a name is not provided, the id will be assigned to the name.
+   If a name is not provided, the id will be assigned to the name.
 - description
 - createdDate
-  This property is read-only.
+   This property is read-only.
 - modifiedDate
-  This property is read-only.
+   This property is read-only.
 - createdByUser
-  This property is read-only.
+   This property is read-only.
 - authorizationTags
-  See [Managing Permissions](#managing-permissions).
+   See [Managing Permissions](#managing-permissions).
 
 Reference Data Types that reference external data have the following additional default properties:
 

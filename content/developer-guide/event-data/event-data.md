@@ -40,7 +40,7 @@ Event Types have the following auto-generated properties by default when they ar
 
 - state
 
-  This property is read-only. The state is active if an event only has a startTime, or closed if an event has a startTime and endTime.
+  This property is read-only. The state is `active` if an event only has a startTime, or `closed` if an event has a startTime and endTime.
 
 - createdDate
 

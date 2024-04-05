@@ -11,7 +11,7 @@ get-signup:
     
     All ``SignupState``s are accompanied by a separate property of ``ModifiedDate``, which indicates 
     the date and time of the most recent modification to the signup, such as changing its properties 
-    by invoking the 'Update Signup' route or when the signup's' ``SignupState`` changes.
+    by invoking the 'Update Signup' route or when the signup's ``SignupState`` changes.
 
     Based on the returned ``SignupState`` value, the response may include additional properties, which are described below:
     - [Activating]: Includes an empty ``Bookmark``.

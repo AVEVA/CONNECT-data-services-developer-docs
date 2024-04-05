@@ -1,0 +1,17 @@
+get-signup:
+  type: markdown
+  value: |
+    Retrieves a signup by signup identifier.
+    
+    **Notes:** If a signup is successfully activated, the response will include an encoded ``Bookmark`` token for retrieving updates. 
+    To set your signup to an ``Active`` ``SignupState``, it is essential to invoke this route while the signup is in an ``Activating`` ``SignupState``. Signups in an ``Expired`` ``SignupState`` cannot be reactivated.
+    Note that this route can only activate your signup once the background setup process is finished, so retries may be required if the signup response is still in an ``Activating`` ``SignupState``. 
+      
+    Please note that the response will differ slightly based on the signup's lifecycle. For example:
+    - [Activating SignupState]: Signups that are still in their initial ``Activating`` ``SignupState`` will have an empty ``Bookmark``.
+    
+    - [Active SignupState]: Signups that are in an ``Active`` ``SignupState`` will include a non-empty encoded ``Bookmark`` that can be used to retrieve updates from subscribed resources.
+    
+    - [Expired SignupState]: Signups that are in an ``Expired`` ``SignupState``, i.e. signups that have not been used for an extended period of time, will have an empty ``Bookmark`` and will include an additional ``ExpiredDate`` timestamp indicating when the signup expired.
+  
+    - [ModifiedDate]: The ``ModifiedDate`` property on a signup reflects the date and time of the most recent modification to the signup (e.g. Changing a signup's properties by invoking Update Signup, or when a signup's ``SignupState`` changes).

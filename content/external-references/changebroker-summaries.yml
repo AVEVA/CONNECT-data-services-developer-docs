@@ -5,7 +5,7 @@ get-signup:
     
     **Notes:** If a signup is successfully activated, the response will include an encoded ``Bookmark`` token for retrieving updates. 
     To set your signup to an ``Active`` ``SignupState``, it is essential to invoke this route while the signup is in an ``Activating`` ``SignupState``. Signups in an ``Expired`` ``SignupState`` cannot be reactivated.
-    Note that this route can only activate your signup once the background setup process is finished, so retries may be required if the signup response is still in an ``Activating`` ``SignupState``. 
+    This route can only activate your signup once the background setup process is finished, so retries may be required if the signup response is still in an ``Activating`` ``SignupState``. 
       
     Please note that the response will differ slightly based on the signup's lifecycle. For example:
     - [Activating SignupState]: Signups that are still in their initial ``Activating`` ``SignupState`` will have an empty ``Bookmark``.

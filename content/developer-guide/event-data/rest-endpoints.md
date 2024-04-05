@@ -2,7 +2,7 @@
 uid: RESTEndpoints
 --- 
 
-# REST endpoints for querying and mutating event and reference data
+# REST endpoints for event and reference data
 
 Along with the GraphQL endpoint, there are also two REST endpoints for querying and mutating event and reference data. These are `/events` and `/referenceData`. They both work the same, except one works with Event Types and the other with Reference Data Types. The queries and results from these endpoints are simpler than GraphQL, but not as powerful.
 

@@ -160,7 +160,7 @@ You can make scalar and relationship properties a collection by specifying the `
 
 You can make scalar and relationship properties searchable by specifying the `Indexed` flag.
 
-**Note:** At this time, collections are not a searchable property.
+**Note:** At this time, collections are not searchable properties.
 
 You can make them required by specifying the `Required` flag. Required means the property must be specified on a top-level ingress operation. It can also restrict a delete operation to maintain integrity.
 

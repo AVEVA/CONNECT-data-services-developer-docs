@@ -4,7 +4,7 @@ uid: change-broker-signups
 ---
 
 # Signups
-The Signups API allows users to create, update, view, and delete signups. Signups allow for users to subscribe resources (for example, streams) to a signup and receive updates to the resources.
+The Signups API allows users to create, update, view, and delete signups. Signups allow for users to subscribe resources (for example, streams) to a signup and receive updates from the resources.
 
 ## `Get All Signups`
 
@@ -25,8 +25,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 <br/><br/>`string namespaceId`
 <br/><br/>
 `[optional] integer skip`
-<br/>The amount of signups to skip before returning signups.<br/><br/>`[optional] integer count`
-<br/>The amount of signups to show per page.<br/><br/>
+<br/>Parameter representing the zero-based offset of the first signup to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
+<br/>Parameter representing the maximum number of signups to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h4>Request Headers</h4>
 
@@ -42,9 +42,15 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |500|None|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|Total-Count|integer|Total number of signups.|
+
 <h4>Example response body</h4>
 
-> 200 Response ([SignupCollection](#schemasignupcollection))
+> 200 Response
 
 ```json
 {
@@ -60,11 +66,37 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
       "CommunityId": "string",
       "Type": "Stream",
       "CreatedDate": "2019-08-24T14:15:22Z",
-      "LastAccessedDate": "2019-08-24T14:15:22Z",
       "ModifiedDate": "2019-08-24T14:15:22Z",
-      "ExpiredDate": "2019-08-24T14:15:22Z",
-      "ResourcesDeleted": true,
       "SignupState": "Activating"
+    },
+    {
+      "Id": "string",
+      "Name": "string",
+      "Owner": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "CommunityId": "string",
+      "Type": "Stream",
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z",
+      "SignupState": "Active"
+    },
+    {
+      "Id": "string",
+      "Name": "string",
+      "Owner": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "CommunityId": "string",
+      "Type": "Stream",
+      "CreatedDate": "2019-08-24T14:15:22Z",
+      "ModifiedDate": "2019-08-24T14:15:22Z",
+      "ExpiredDate": "2019-09-24T14:15:22Z",
+      "SignupState": "Expired"
     }
   ]
 }
@@ -76,7 +108,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 
 <a id="opIdSignupManager_Create Signup"></a>
 
-Creates a signup for the list of resource identifiers provided. Upon creating your signup, it will be placed in the Activating state. It is essential to invoke GetSignupById while your signup is in this Activating state. Note that GetSignupById will activate your signup only when the setup process is finished.
+Creates a signup for the list of resource identifiers provided. Upon creating your signup, it will be placed in the Activating `SignupState`. It is essential to invoke GetSignupById while your signup is in this Activating `SignupState`. Note that invoking GetSignupById will change the signup's `SignupState` from Activating to Active only when the background setup process is finished.
 
 <h3>Request</h3>
 
@@ -98,7 +130,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 
 <h4>Request Body</h4>
 
-Input of the signup to be created.<br/>
+CreateSignupInput. Input of the signup to be created.<br/>
 
 ```json
 {
@@ -121,24 +153,21 @@ Input of the signup to be created.<br/>
 
 <h4>Example response body</h4>
 
-> 202 Response ([Signup](#schemasignup))
+> 202 Response
 
 ```json
 {
   "Id": "string",
   "Name": "string",
   "Owner": {
-    "Type": 1,
+    "Type": "Client",
     "ObjectId": "string",
     "TenantId": "string"
   },
   "CommunityId": "string",
   "Type": "Stream",
   "CreatedDate": "2019-08-24T14:15:22Z",
-  "LastAccessedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
-  "ExpiredDate": "2019-08-24T14:15:22Z",
-  "ResourcesDeleted": true,
   "SignupState": "Activating"
 }
 ```
@@ -149,7 +178,7 @@ Input of the signup to be created.<br/>
 
 <a id="opIdSignupManager_Get Signup By Id"></a>
 
-Retrieves a signup by signup identifier. If a signup is successfully activated, the response will include an encoded bookmark token for retrieving updates. To set your signup to Active state, it is essential to invoke this route while it is in Activating state. Note that this route will only activate your signup once the setup process is finished.
+Retrieves a signup by signup identifier. If a signup is successfully activated, the response will include an encoded Bookmark token for retrieving updates. Only Active signups will have non-empty Bookmarks. To set your signup to an Active `SignupState`, it is essential to invoke this route while the signup is in an Activating `SignupState`. Note that this route can only activate your signup once the background setup process is finished, so retries may be required if the signup response is still in an Activating `SignupState`. Specific responses from this route will differ slightly based on the `SignupState` of the signup. A signup that is in an Expired `SignupState` will include an additional timestamp property "ExpiredDate" in the response indicating when the signup expired.
 
 <h3>Request</h3>
 
@@ -176,26 +205,23 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 
 <h4>Example response body</h4>
 
-> 200 Response ([SignupWithBookmark](#schemasignupwithbookmark))
+> 200 Response
 
 ```json
 {
+  "Bookmark": "string",
   "Id": "string",
   "Name": "string",
   "Owner": {
-    "Type": 1,
+    "Type": "Client",
     "ObjectId": "string",
     "TenantId": "string"
   },
   "CommunityId": "string",
   "Type": "Stream",
   "CreatedDate": "2019-08-24T14:15:22Z",
-  "LastAccessedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
-  "ExpiredDate": "2019-08-24T14:15:22Z",
-  "ResourcesDeleted": true,
-  "SignupState": "Activating",
-  "Bookmark": "string"
+  "SignupState": "Active"
 }
 ```
 
@@ -222,7 +248,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 
 <h4>Request Body</h4>
 
-Signup input object to replace the existing signup's properties.<br/>
+UpdateSignupInput. Signup input object to replace the existing signup's properties.<br/>
 
 ```json
 {
@@ -242,25 +268,22 @@ Signup input object to replace the existing signup's properties.<br/>
 
 <h4>Example response body</h4>
 
-> 200 Response ([Signup](#schemasignup))
+> 200 Response
 
 ```json
 {
   "Id": "string",
   "Name": "string",
   "Owner": {
-    "Type": 1,
+    "Type": "Client",
     "ObjectId": "string",
     "TenantId": "string"
   },
   "CommunityId": "string",
   "Type": "Stream",
   "CreatedDate": "2019-08-24T14:15:22Z",
-  "LastAccessedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
-  "ExpiredDate": "2019-08-24T14:15:22Z",
-  "ResourcesDeleted": true,
-  "SignupState": "Activating"
+  "SignupState": "Active"
 }
 ```
 
@@ -270,7 +293,7 @@ Signup input object to replace the existing signup's properties.<br/>
 
 <a id="opIdSignupManager_Delete Signup"></a>
 
-Deletes a signup and related resources.
+Deletes a signup.
 
 <h3>Request</h3>
 
@@ -362,13 +385,13 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resou
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first resource to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Maximum number of signup resources to be returned. If unspecified, a default value of 100 is used.<br/><br/>`[optional] any resourceFilter`
-<br/>SignupResourceFilter specifies the accessibility of resources to be returned. If unspecified, all resources will be returned.<br/><br/>
+<br/>`SignupResourceFilter`. Specifies the accessibility of resources to be returned. If unspecified, all resources will be returned.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[SignupResources](#schemasignupresources)|Ok. Returns the signup's resource.|
+|200|[SignupResources](#schemasignupresources)|Ok. Returns the signup's resources.|
 |400|None|Bad request.|
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
@@ -424,7 +447,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/reso
 
 <h4>Request Body</h4>
 
-Signup resources input object to replace signup's resources.<br/>
+SignupResourcesInput. Signup resources input object to replace signup's resources.<br/>
 
 ```json
 {
@@ -441,8 +464,8 @@ Signup resources input object to replace signup's resources.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|202|None|Accepted. Background services are validating access permission to updated resources.|
-|207|[SignupInvalidResources](#schemasignupinvalidresources)|Multistatus response if some resources to be updated were invalid.|
+|202|None|Accepted. Background services are validating access permission to added resources.|
+|207|[SignupInvalidResources](#schemasignupinvalidresources)|Multistatus response if some resources to be updated were invalid or failed.|
 |400|None|Bad request.|
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
@@ -479,35 +502,30 @@ Represents a signup base model.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|false|Signup Identifier.|
-|Name|string|false|true|Signup Name.|
-|Owner|[Trustee](#schematrustee)|false|false|Signup Owner.|
+|Id|string|true|false|Signup Identifier.|
+|Name|string|true|false|Signup Name.|
+|Owner|[Trustee](#schematrustee)|true|false|Signup Owner.|
 |CommunityId|string|false|true|Community Identifier Associated with Signup.|
-|Type|[ResourceType](#schemaresourcetype)|false|false|Signup Resource Type.|
-|CreatedDate|date-time|false|false|Date Signup was Created.|
-|LastAccessedDate|date-time|false|true|Date Signup was Last Accessed.|
-|ModifiedDate|date-time|false|true|Date Signup was Last Modified.|
-|ExpiredDate|date-time|false|true|Date Signup is set to expire.|
-|ResourcesDeleted|boolean|false|true|Flag to indicate if all the partitions have successfully deleted the associated resources after expiring the signup.|
-|SignupState|[SignupState](#schemasignupstate)|false|false|Signup Status.|
+|Type|[ResourceType](#schemaresourcetype)|true|false|Signup Resource Type.|
+|CreatedDate|date-time|true|false|Date Signup was Created.|
+|ModifiedDate|date-time|true|false|Date Signup was Last Modified.|
+|ExpiredDate|date-time|false|true|Date Signup was expired. Signups expire after 24 hours of inactivity.|
+|SignupState|[SignupState](#schemasignupstate)|true|false|Signup Status.|
 
 ```json
 {
   "Id": "string",
   "Name": "string",
   "Owner": {
-    "Type": 1,
+    "Type": "Client",
     "ObjectId": "string",
     "TenantId": "string"
   },
   "CommunityId": "string",
   "Type": "Stream",
   "CreatedDate": "2019-08-24T14:15:22Z",
-  "LastAccessedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
-  "ExpiredDate": "2019-08-24T14:15:22Z",
-  "ResourcesDeleted": true,
-  "SignupState": "Activating"
+  "SignupState": "Active"
 }
 
 ```
@@ -608,8 +626,8 @@ The CreateSignupInput object.
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Name|string|false|true|Signup Name.|
-|ResourceType|[ResourceType](#schemaresourcetype)|false|false|Resource type of the resource identifiers.|
-|ResourceIds|string[]|false|false|Collection of resource identifiers.|
+|ResourceType|[ResourceType](#schemaresourcetype)|true|false|Resource type of the resource identifiers.|
+|ResourceIds|string[]|true|false|Collection of resource identifiers.|
 
 ```json
 {
@@ -637,7 +655,7 @@ A collection of signups.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Signups|[[Signup](#schemasignup)]|false|false|Collection of signups.|
+|Signups|[[Signup](#schemasignup)]|true|false|Collection of signups.|
 
 ```json
 {
@@ -653,11 +671,8 @@ A collection of signups.
       "CommunityId": "string",
       "Type": "Stream",
       "CreatedDate": "2019-08-24T14:15:22Z",
-      "LastAccessedDate": "2019-08-24T14:15:22Z",
       "ModifiedDate": "2019-08-24T14:15:22Z",
-      "ExpiredDate": "2019-08-24T14:15:22Z",
-      "ResourcesDeleted": true,
-      "SignupState": "Activating"
+      "SignupState": "Active"
     }
   ]
 }
@@ -679,37 +694,32 @@ Represents a signup model with encoded bookmark.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|false|Signup Identifier.|
-|Name|string|false|true|Signup Name.|
-|Owner|[Trustee](#schematrustee)|false|false|Signup Owner.|
+|Id|string|true|false|Signup Identifier.|
+|Name|string|true|false|Signup Name.|
+|Owner|[Trustee](#schematrustee)|true|false|Signup Owner.|
 |CommunityId|string|false|true|Community Identifier Associated with Signup.|
-|Type|[ResourceType](#schemaresourcetype)|false|false|Signup Resource Type.|
-|CreatedDate|date-time|false|false|Date Signup was Created.|
-|LastAccessedDate|date-time|false|true|Date Signup was Last Accessed.|
-|ModifiedDate|date-time|false|true|Date Signup was Last Modified.|
-|ExpiredDate|date-time|false|true|Date Signup is set to expire.|
-|ResourcesDeleted|boolean|false|true|Flag to indicate if all the partitions have successfully deleted the associated resources after expiring the signup.|
-|SignupState|[SignupState](#schemasignupstate)|false|false|Signup Status.|
-|Bookmark|string|false|false|An encoded string representing a starting point for updates retrieval.|
+|Type|[ResourceType](#schemaresourcetype)|true|false|Signup Resource Type.|
+|CreatedDate|date-time|true|false|Date Signup was Created.|
+|ModifiedDate|date-time|true|false|Date Signup was Last Modified.|
+|ExpiredDate|date-time|false|true|Date Signup was expired. Signups expire after 24 hours of inactivity.|
+|SignupState|[SignupState](#schemasignupstate)|true|false|Signup Status.|
+|Bookmark|string|true|false|An encoded string representing a starting point for updates retrieval. Bookmarks expire after 1 hour.|
 
 ```json
 {
+  "Bookmark": "string",
   "Id": "string",
   "Name": "string",
   "Owner": {
-    "Type": 1,
+    "Type": "Client",
     "ObjectId": "string",
     "TenantId": "string"
   },
   "CommunityId": "string",
   "Type": "Stream",
   "CreatedDate": "2019-08-24T14:15:22Z",
-  "LastAccessedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z",
-  "ExpiredDate": "2019-08-24T14:15:22Z",
-  "ResourcesDeleted": true,
-  "SignupState": "Activating",
-  "Bookmark": "string"
+  "SignupState": "Active"
 }
 
 ```
@@ -729,7 +739,7 @@ The UpdateSignupInput object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|false|Signup name to be updated.|
+|Name|string|true|false|Signup name to be updated.|
 
 ```json
 {
@@ -753,7 +763,7 @@ A model that holds lists of recources retrieved from signup.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Resources|[[SignupResource](#schemasignupresource)]|false|false|Collection of resources from a signup.|
+|Resources|[[SignupResource](#schemasignupresource)]|true|false|Collection of resources from a signup.|
 
 ```json
 {
@@ -782,8 +792,8 @@ A model that holds a signup resource.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|ResourceId|string|false|false|Resource Identifier.|
-|IsAccessible|boolean|false|false|Boolean indicating if resource is accessible or inaccessible.|
+|ResourceId|string|true|false|Resource Identifier.|
+|IsAccessible|boolean|true|false|Boolean indicating if resource is accessible or inaccessible.|
 
 ```json
 {
@@ -827,7 +837,7 @@ The SignupInvalidResources object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|InvalidResourcesToRemove|string[]|false|false|Invalid resources that could not be deleted.|
+|InvalidResourcesToRemove|string[]|false|false|Invalid resources to remove that were not subscribed to the signup.|
 |FailedResourceIds|string[]|false|true|Failed resources that could not be added or removed.|
 
 ```json
@@ -857,8 +867,8 @@ The SignupResourcesInput object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|ResourcesToAdd|string[]|false|true|Signup resources to be added.|
-|ResourcesToRemove|string[]|false|true|Signup resources to be removed.|
+|ResourcesToAdd|string[]|true|false|Signup resources to be added.|
+|ResourcesToRemove|string[]|true|false|Signup resources to be removed.|
 
 ```json
 {
@@ -873,4 +883,3 @@ The SignupResourcesInput object.
 ```
 
 ---
-

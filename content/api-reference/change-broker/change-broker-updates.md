@@ -4,7 +4,7 @@ uid: change-broker-updates
 ---
 
 # Updates
-The Updates API allows users to retrieve updates for resources (for example, streams) in a specified Signup. This API is to be used after the user has successfully created a Signup using the Signups API. The user may begin a polling flow with this API by using the starter bookmark of an active Signup, provided through the Signups API (via GET /Signups/{signupId}).
+The Updates API allows users to retrieve updates for resources (for example, streams) in a specified Signup. This API is to be used after the signup Owner has successfully created a Signup using the Signups API. The signup Owner may begin a polling flow with this API by using the starter bookmark of an active Signup, provided through the Signups API (via GET /Signups/{signupId}).
 
 ## `Get Updates`
 
@@ -37,3 +37,61 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/updat
 |403|None|Forbidden. The client is not authorized.|
 |500|None|Internal Server Error. The server has encountered an error while processing the request.|
 
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+{
+  "data": [
+    {
+      "resourceId": "stream2",
+      "operation": "Insert",
+      "events": [
+        {
+          "Timestamp": "3/7/2024 12:00:00 AM",
+          "Value": 12
+        },
+        {
+          "Timestamp": "3/8/2024 12:00:00 AM",
+          "Value": 53
+        }
+      ]
+    },
+    {
+      "resourceId": "stream1",
+      "operation": "Insert",
+      "events": [
+        {
+          "Timestamp": "3/7/2024 12:00:00 AM",
+          "Value": 234
+        },
+        {
+          "Timestamp": "3/8/2024 12:00:00 AM",
+          "Value": 7
+        }
+      ]
+    },
+    {
+      "resourceId": "stream1",
+      "operation": "Remove",
+      "events": [
+        {
+          "Timestamp": "2024-03-07T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "resourceId": "stream2",
+      "operation": "Update",
+      "events": [
+        {
+          "Timestamp": "3/7/2024 12:00:00 AM",
+          "Value": 121
+        }
+      ]
+    }
+  ],
+  "bookmark": "H4sIAAAAAAAAChXEiQ2AMAwEwYKQ0dlxXtqggTxOFS6eoF1NyU_VZNusUw4LpCUqVVuDlHVP7dNkDheIEv5fkcalcb1DTJKLXEADnOGHEzz8foLRcKNaAAAA"
+}
+```

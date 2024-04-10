@@ -11,11 +11,12 @@ get-signup:
     
     All ``SignupState``s are accompanied by a separate property of ``ModifiedDate``, which indicates 
     the date and time of the most recent modification to the signup, such as changing its properties 
-    by invoking the 'Update Signup' route or when the signup's ``SignupState`` changes.
+    by invoking the 'Update Signup' route, updating a signup's resource subscriptions, or when the 
+    signup's ``SignupState`` changes.
 
     Based on the returned ``SignupState`` value, the response may include additional properties, which are described below:
     - [Activating]: Includes an empty ``Bookmark``.
     
-    - [Active]: Includes an encoded ``Bookmark`` that can be used to retrieve updates from subscribed resources.
+    - [Active]: Includes an encoded ``Bookmark`` that can be used to retrieve change data updates from subscribed resources.
     
     - [Expired]: Includes an empty ``Bookmark`` and an additional ``ExpiredDate`` timestamp. Expired signups cannot be reactivated.

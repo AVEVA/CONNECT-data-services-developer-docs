@@ -218,12 +218,12 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">MAP</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">cloud</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">pi_system</Data></Cell>
     <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">cloud</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">pi_system</Data></Cell>
     <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">

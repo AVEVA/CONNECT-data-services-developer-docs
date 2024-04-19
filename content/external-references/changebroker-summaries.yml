@@ -15,8 +15,8 @@ get-signup:
     signup's ``SignupState`` changes.
 
     Based on the returned ``SignupState`` value, the response may include additional properties, which are described below:
-    - [Activating]: Includes an empty ``Bookmark``.
+    - **Activating**: Includes an empty ``Bookmark``.
     
-    - [Active]: Includes an encoded ``Bookmark`` that can be used to retrieve change data updates from subscribed resources.
+    - **Active**: Includes an encoded ``Bookmark`` that can be used to retrieve change data updates from subscribed resources.
     
-    - [Expired]: Includes an empty ``Bookmark`` and an additional ``ExpiredDate`` timestamp. Expired signups cannot be reactivated.
+    - **Expired**: Includes an empty ``Bookmark`` and an additional ``ExpiredDate`` timestamp. Expired signups cannot be reactivated.

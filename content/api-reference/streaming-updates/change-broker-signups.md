@@ -4,7 +4,7 @@ uid: change-broker-signups
 ---
 
 # Signups
-The Signups API allows users to create, update, view, and delete signups. Signups allow for users to subscribe resources (for example, streams) to a signup and receive updates from the resources.
+The Signups API allows users to create, update, view, and delete signups. Signups allow for the user who creates the Signup, the owner, to subscribe resources (for example, streams) to a signup and receive all 'change data' updates from the resources.
 
 ## `Get All Signups`
 
@@ -39,6 +39,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|[SignupCollection](#schemasignupcollection)|Returns the signups for the tenant. This is a collection containing a list of `Signup` objects.|
+|400|None|Bad request.|
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |500|None|Internal Server Error. The server has encountered a situation it doesn't know how to handle.|
 
@@ -178,7 +179,25 @@ CreateSignupInput. Input of the signup to be created.<br/>
 
 <a id="opIdSignupManager_Get Signup By Id"></a>
 
-Retrieves a signup by signup identifier. If a signup is successfully activated, the response will include an encoded Bookmark token for retrieving updates. Only Active signups will have non-empty Bookmarks. To set your signup to an Active `SignupState`, it is essential to invoke this route while the signup is in an Activating `SignupState`. Note that this route can only activate your signup once the background setup process is finished, so retries may be required if the signup response is still in an Activating `SignupState`. Specific responses from this route will differ slightly based on the `SignupState` of the signup. A signup that is in an Expired `SignupState` will include an additional timestamp property "ExpiredDate" in the response indicating when the signup expired.
+Retrieves a signup by signup identifier.
+
+**Notes:** Each signup includes a ``SignupState`` that describes its current status.
+To set your signup to a ``SignupState`` of 'Active', you must invoke the 'Get Signup' route 
+while the ``SignupState`` is 'Activating'. This route can only activate your signup after 
+the background setup process completes, so retries may be required if the signup response is 
+still in a ``SignupState`` of 'Activating'. 
+
+All ``SignupState``s are accompanied by a separate property of ``ModifiedDate``, which indicates 
+the date and time of the most recent modification to the signup, such as changing its properties 
+by invoking the 'Update Signup' route, updating a signup's resource subscriptions, or when the 
+signup's ``SignupState`` changes.
+
+Based on the returned ``SignupState`` value, the response may include additional properties, which are described below:
+- **Activating**: Includes an empty ``Bookmark``.
+
+- **Active**: Includes an encoded ``Bookmark`` that can be used to retrieve change data updates from subscribed resources.
+
+- **Expired**: Includes an empty ``Bookmark`` and an additional ``ExpiredDate`` timestamp. Expired signups cannot be reactivated.
 
 <h3>Request</h3>
 
@@ -191,7 +210,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
-<br/>Signup Identifier.<br/><br/>
+<br/>Signup unique identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -244,7 +263,7 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
-<br/>Signup Identifier.<br/><br/>
+<br/>Signup unique identifier.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -306,7 +325,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
-<br/>Signup unique identifier<br/><br/>
+<br/>Signup unique identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -337,7 +356,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/owner
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
-<br/>Signup unique identifier<br/><br/>
+<br/>Signup unique identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -381,7 +400,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resou
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
-<br/>Signup unique identifier<br/><br/>
+<br/>Signup unique identifier.<br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first resource to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Maximum number of signup resources to be returned. If unspecified, a default value of 100 is used.<br/><br/>`[optional] any resourceFilter`
@@ -424,7 +443,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resou
 
 <a id="opIdSignupManager_Update Signup Resources"></a>
 
-Update Signup Resources.
+Subscribes and/or unsubscribes resources to an Active Signup.
 
 <h3>Request</h3>
 
@@ -437,7 +456,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/reso
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
-<br/>Unique Signup Identifier.<br/><br/>
+<br/>Signup unique identifier.<br/><br/>
 
 <h4>Request Headers</h4>
 

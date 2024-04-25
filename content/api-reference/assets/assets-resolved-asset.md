@@ -148,8 +148,8 @@ Asset identifiers<br/>
 
 ```json
 [
-  "AssetId-1",
-  "AssetId-2"
+  "Equipment1",
+  "Equipment2"
 ]
 ```
 
@@ -170,66 +170,126 @@ Asset identifiers<br/>
 ```json
 [
   {
-    "Id": "AssetId-1",
-    "Name": "Asset1",
-    "Description": "An example asset.",
-    "AssetTypeId": "Asset1Type",
-    "AssetTypeName": "NameOfAsset1Type",
+    "Id": "Equipment1",
+    "Name": "Equipment1",
+    "Resolved": true,
+    "Description": "An example asset",
+    "AssetTypeId": "Equipment",
+    "AssetTypeName": "Equipment",
     "Metadata": [
       {
-        "Id": "Metadata1",
-        "Name": "Metadata1",
-        "Description": "Description of Metadata1",
+        "Name": "site",
+        "Id": "site",
         "SdsTypeCode": "String",
-        "Value": "This is an example metadata for example asset",
-        "Uom": null
+        "Value": "PHYL"
       }
     ],
     "Streams": [
       {
-        "Name": "StreamReference1",
-        "Properties": [
+        "Name": "Reader1",
+        "Type": {
+          "Id": "TimeIndexedDouble",
+          "SdsTypeCode": "Object",
+          "Properties": [
+            {
+              "Id": "Timestamp",
+              "IsKey": true,
+              "SdsType": {
+                "Id": "TimeIndexedDouble.Timestamp",
+                "SdsTypeCode": "DateTime"
+              },
+              "InterpolationMode": "Default"
+            },
+            {
+              "Id": "Value",
+              "SdsType": {
+                "Id": "TimeIndexedDouble.Value",
+                "SdsTypeCode": "Double"
+              },
+              "InterpolationMode": "Default"
+            }
+          ]
+        },
+        "StreamReferenceName": "Reader1",
+        "Id": "Reader1",
+        "StreamId": "Equipment1-Reader1",
+        "PropertyMaps": [
           {
-            "Id": "SdsStream_1",
-            "IsKey": true,
-            "Uom": null,
-            "Order": 0,
-            "InterpolationMode": "Default",
-            "ExtrapolationMode": "All",
-            "SdsType": "SimpleSdsType",
-            "Source": null
+            "Id": "Timestamp",
+            "SourcePropertyId": "Timestamp"
+          },
+          {
+            "Id": "Value",
+            "SourcePropertyId": "Value"
           }
         ]
       }
     ],
-    "UnresolvedStreams": [
-      {}
-    ],
-    "Status": {}
+    "UnresolvedStreams": [],
+    "UnresolvedMetadata": [],
+    "StatusDefinitionType": "StreamPropertyMapping",
+    "Tags": []
   },
   {
-    "Id": "AssetId-2",
-    "Name": "Asset2",
-    "Description": "A second example asset.",
-    "AssetTypeId": null,
-    "AssetTypeName": null,
+    "Id": "Equipment2",
+    "Name": "Equipment2",
+    "Resolved": true,
+    "Description": "Setup Script Asset Type",
+    "AssetTypeId": "Equipment",
+    "AssetTypeName": "Equipment",
     "Metadata": [
       {
-        "Id": "Metadata2",
-        "Name": "Metadata2",
-        "Description": "Description of Metadata2",
+        "Name": "site",
+        "Id": "site",
         "SdsTypeCode": "String",
-        "Value": "This is an example metadata for example asset 2",
-        "Uom": null
+        "Value": "SLTC"
       }
     ],
     "Streams": [
-      {}
+      {
+        "Name": "Reader1",
+        "Type": {
+          "Id": "TimeIndexedDouble",
+          "SdsTypeCode": "Object",
+          "Properties": [
+            {
+              "Id": "Timestamp",
+              "IsKey": true,
+              "SdsType": {
+                "Id": "TimeIndexedDouble.Timestamp",
+                "SdsTypeCode": "DateTime"
+              },
+              "InterpolationMode": "Default"
+            },
+            {
+              "Id": "Value",
+              "SdsType": {
+                "Id": "TimeIndexedDouble.Value",
+                "SdsTypeCode": "Double"
+              },
+              "InterpolationMode": "Default"
+            }
+          ]
+        },
+        "StreamReferenceName": "Reader1",
+        "Id": "Reader1",
+        "StreamId": "Equipment2-Reader1",
+        "PropertyMaps": [
+          {
+            "Id": "Timestamp",
+            "SourcePropertyId": "Timestamp"
+          },
+          {
+            "Id": "Value",
+            "SourcePropertyId": "Value"
+          }
+        ]
+      }
     ],
-    "UnresolvedStreams": [
-      {}
-    ],
-    "Status": {}
+    "UnresolvedStreams": [],
+    "UnresolvedMetadata": [],
+    "StatusDefinitionType": "StreamPropertyMapping",
+    "Tags": []
   }
 ]
 ```

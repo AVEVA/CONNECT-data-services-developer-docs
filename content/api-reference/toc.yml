@@ -7,7 +7,7 @@
 - name: Asset store
   href: assets/toc.yml
   topicHref: assets/assets.md
-- name: Change Broker
+- name: Change broker
   href: change-broker/toc.yml
   topicHref: change-broker/change-broker.md
 - name: Client failover

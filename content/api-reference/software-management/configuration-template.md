@@ -1,117 +1,13 @@
 ---
-uid: software-mgmt-configuration-template
+uid: ""
+
 ---
 
 # Configuration Template
 
-## `List Templates (Edge path)`
+## `List Templates`
 
-<a id="opIdConfigurationTemplate_List Templates (Edge path)"></a>
-
-Returns a list of templates.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Templates
-?skip={skip}&count={count}&orderBy={orderBy}&query={query}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first template to retrieve. If unspecified, a default value of 0 is used. Value must be greater than 0.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used. Value cannot be less than 1 or greater than 1000.<br/><br/>`[optional] string orderBy`
-<br/>Query parameter to specify sort order. Valid sort order properties are Name, Type, Version, Description. If unspecified, a default value of 'name asc' is used.<br/><br/>`[optional] string query`
-<br/>Query parameter to specify filter. Valid filter properties are Name, Type, Version, Description.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[ConfigurationTemplate](#schemaconfigurationtemplate)[]|List of templates.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
-<h4>Response Headers</h4>
-
-|Status|Header|Type|Description|
-|---|---|---|---|
-|200|Total-Count|integer|The total number of templates.|
-
-<h4>Example response body</h4>
-
-> 200 Response ([ConfigurationTemplate](#schemaconfigurationtemplate)[])
-
-```json
-[
-  {
-    "Id": "string",
-    "Name": "string",
-    "Type": "string",
-    "Version": "string",
-    "Description": "string",
-    "CreatedDate": "2019-08-24T14:15:22Z",
-    "CreatedBy": "string",
-    "ModifiedDate": "2019-08-24T14:15:22Z",
-    "ModifiedBy": "string"
-  }
-]
-```
-
----
-
-## `Create Template (Edge path)`
-
-<a id="opIdConfigurationTemplate_Create Template (Edge path)"></a>
-
-Creates a template.
-
-<h3>Request</h3>
-
-```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Templates
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h4>Request Body</h4>
-
-Template data to store.<br/>
-
-```json
-{
-  "Name": "string",
-  "Type": "string",
-  "Version": "string",
-  "Description": "string",
-  "Configuration": "string"
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|201|Inline|Configuration created.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|409|[ErrorResponse](#schemaerrorresponse)|Conflict.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `List Templates 1`
-
-<a id="opIdConfigurationTemplate_List Templates 1"></a>
+<a id="opIdConfigurationTemplate_List Templates"></a>
 
 Returns a list of templates.
 
@@ -170,9 +66,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Templ
 
 ---
 
-## `Create Template 1`
+## `Create Template`
 
-<a id="opIdConfigurationTemplate_Create Template 1"></a>
+<a id="opIdConfigurationTemplate_Create Template"></a>
 
 Creates a template.
 
@@ -214,114 +110,9 @@ Template data to store.<br/>
 
 ---
 
-## `Get Template (Edge path)`
+## `Get Template`
 
-<a id="opIdConfigurationTemplate_Get Template (Edge path)"></a>
-
-Returns a configuration template.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Templates/{templateId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string templateId`
-<br/>Configuration template identifier used as blob name in the storage account.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|Template|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|404|[ErrorResponse](#schemaerrorresponse)|Template not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Update Template (Edge path)`
-
-<a id="opIdConfigurationTemplate_Update Template (Edge path)"></a>
-
-Updates a template.
-
-<h3>Request</h3>
-
-```text 
-PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Templates/{templateId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string templateId`
-<br/>Template identifier.<br/><br/>
-
-<h4>Request Body</h4>
-
-Template.<br/>
-
-```json
-{
-  "Name": "string",
-  "Type": "string",
-  "Version": "string",
-  "Description": "string"
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|No content.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Delete Template (Edge path)`
-
-<a id="opIdConfigurationTemplate_Delete Template (Edge path)"></a>
-
-Deletes a template.
-
-<h3>Request</h3>
-
-```text 
-DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Templates/{templateId}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string templateId`
-<br/>Template identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|No content.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|404|[ErrorResponse](#schemaerrorresponse)|Template not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Get Template 1`
-
-<a id="opIdConfigurationTemplate_Get Template 1"></a>
+<a id="opIdConfigurationTemplate_Get Template"></a>
 
 Returns a configuration template.
 
@@ -350,9 +141,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Templ
 
 ---
 
-## `Update Template 1`
+## `Update Template`
 
-<a id="opIdConfigurationTemplate_Update Template 1"></a>
+<a id="opIdConfigurationTemplate_Update Template"></a>
 
 Updates a template.
 
@@ -393,9 +184,9 @@ Template.<br/>
 
 ---
 
-## `Delete Template 1`
+## `Delete Template`
 
-<a id="opIdConfigurationTemplate_Delete Template 1"></a>
+<a id="opIdConfigurationTemplate_Delete Template"></a>
 
 Deletes a template.
 
@@ -424,70 +215,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Te
 
 ---
 
-## `Get Template Configuration (Edge path)`
+## `Get Template Configuration`
 
-<a id="opIdConfigurationTemplate_Get Template Configuration (Edge path)"></a>
-
-Returns a template's configuration.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Templates/{templateId}/Configuration
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string templateId`
-<br/>Configuration template identifier used as blob name in the storage account.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|Inline|Configuration for the specified template.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|404|[ErrorResponse](#schemaerrorresponse)|Configuration not found.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Update Template Configuration (Edge path)`
-
-<a id="opIdConfigurationTemplate_Update Template Configuration (Edge path)"></a>
-
-Updates a template configuration.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Edge/Templates/{templateId}/Configuration
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string templateId`
-<br/>Template identifier used as blob name in the storage account.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|No content.|
-|400|[ErrorResponse](#schemaerrorresponse)|Missing or invalid inputs.|
-|401|[ErrorResponse](#schemaerrorresponse)|Unauthorized.|
-|500|[ErrorResponse](#schemaerrorresponse)|Internal server error.|
-
----
-
-## `Get Template Configuration 1`
-
-<a id="opIdConfigurationTemplate_Get Template Configuration 1"></a>
+<a id="opIdConfigurationTemplate_Get Template Configuration"></a>
 
 Returns a template's configuration.
 
@@ -516,9 +246,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/SoftwareManagement/Templ
 
 ---
 
-## `Update Template Configuration 1`
+## `Update Template Configuration`
 
-<a id="opIdConfigurationTemplate_Update Template Configuration 1"></a>
+<a id="opIdConfigurationTemplate_Update Template Configuration"></a>
 
 Updates a template configuration.
 

@@ -8,13 +8,13 @@ A regional endpoint is the URL host address referenced by API requests. The regi
 
 The following table lists the current AVEVA Data Hub region labels and corresponding endpoints.
 
-| AVEVA Connect region label | AVEVA Data Hub region label | AVEVA Data Hub regional endpoints |
+| CONNECT region label | AVEVA Data Hub region label | AVEVA Data Hub regional endpoints |
 | ------------- | ------------- | ----------------- |
 | US-West | (westus) | https://uswe.datahub.connect.aveva.com/ |
-| EU-West | (northeurope) | https://euno.datahub.connect.aveva.com/ | 
+| EU-West | (northeurope) | https://euno.datahub.connect.aveva.com/ |
 | Australia | (australiaeast) | https://auea.datahub.connect.aveva.com |
 
-**Note:** US-West is the primary region. The region is selected at initial setup when an AVEVA Connect folder is created, and cannot be changed after folder creation. If a region other than the primary region has been selected, calls may still be made to the US-West region.
+**Note:** US-West is the primary region. The region is selected at initial setup when a CONNECT folder is created, and cannot be changed after folder creation. If a region other than the primary region has been selected, calls may still be made to the US-West region.
 
 ## Endpoint usage guidelines
 

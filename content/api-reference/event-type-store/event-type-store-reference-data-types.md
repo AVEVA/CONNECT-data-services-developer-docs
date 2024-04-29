@@ -14,7 +14,7 @@ Returns an array of ReferenceDataTypes in a given namespace and the version ETag
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
 ?skip={skip}&count={count}&filter={filter}&includeDeleted={includeDeleted}
 ```
 
@@ -103,65 +103,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
     "ModifiedDate": "0001-01-01T00:00:00Z",
     "DefaultAuthorizationTag": "BaseAuthorizationTag",
     "Description": "This is a simple reference data type"
-  },
-  {
-    "Id": "SimpleReferenceData",
-    "Name": "SimpleReferenceData",
-    "GraphQLName": "SimpleReferenceData",
-    "Category": "ReferenceData",
-    "State": "Active",
-    "Properties": [
-      {
-        "PropertyTypeCode": "String",
-        "Id": "id",
-        "Name": "id",
-        "GraphQLName": "id",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "A unique identifier for the ReferenceData instance."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "modifiedDate",
-        "Name": "modifiedDate",
-        "GraphQLName": "modifiedDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The last modified date and time of the ReferenceData."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "createdDate",
-        "Name": "createdDate",
-        "GraphQLName": "createdDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The date and time at which the ReferenceData was created."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "createdByUser",
-        "Name": "createdByUser",
-        "GraphQLName": "createdByUser",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The identity of the user that created the ReferenceData."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "authorizationTags",
-        "Name": "authorizationTags",
-        "GraphQLName": "authorizationTags",
-        "Flags": "IsCollection",
-        "State": "Active",
-        "Description": "The list of tags used to authorize access to the ReferenceData."
-      }
-    ],
-    "Version": 1,
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z",
-    "DefaultAuthorizationTag": "BaseAuthorizationTag",
-    "Description": "This is a simple reference data type"
   }
 ]
 ```
@@ -190,7 +131,7 @@ Creates a new ReferenceDataType. Response includes ETag header.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -318,7 +259,7 @@ Returns the specified ReferenceDataType and the version ETag in the HTTP respons
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ?includeDeleted={includeDeleted}
 ```
 
@@ -327,7 +268,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 `[optional] boolean includeDeleted`
 <br/>Parameter indicating whether to include soft-deleted ReferenceDataTypes. If unspecified, a default value of false is used.<br/><br/>
 
@@ -432,7 +373,7 @@ Creates a new ReferenceDataType or returns the current one if the body is equiva
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -440,7 +381,7 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTy
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -628,7 +569,7 @@ Creates a new ReferenceDataType or updates an existing and adds its Etag in the 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -636,7 +577,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -824,7 +765,7 @@ Deletes the ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 ```
 
 <h4>Parameters</h4>
@@ -832,7 +773,7 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceData
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h3>Response</h3>
 
@@ -855,7 +796,7 @@ Creates multiple new ReferenceDataTypes and returns a list of any errors along w
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -968,7 +909,7 @@ Deletes multiple ReferenceDataTypes and returns an Ok if successful. In the case
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/ReferenceDataTypes
 ```
 
 <h4>Parameters</h4>
@@ -980,12 +921,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Referenc
 <h4>Request Body</h4>
 
 A list of ReferenceDataType object ids.<br/>
-
-```json
-[
-  "string"
-]
-```
 
 <h3>Response</h3>
 
@@ -1003,65 +938,6 @@ A list of ReferenceDataType object ids.<br/>
 
 ```json
 [
-  {
-    "Id": "SimpleReferenceData",
-    "Name": "SimpleReferenceData",
-    "GraphQLName": "SimpleReferenceData",
-    "Category": "ReferenceData",
-    "State": "Active",
-    "Properties": [
-      {
-        "PropertyTypeCode": "String",
-        "Id": "id",
-        "Name": "id",
-        "GraphQLName": "id",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "A unique identifier for the ReferenceData instance."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "modifiedDate",
-        "Name": "modifiedDate",
-        "GraphQLName": "modifiedDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The last modified date and time of the ReferenceData."
-      },
-      {
-        "PropertyTypeCode": "DateTime",
-        "Id": "createdDate",
-        "Name": "createdDate",
-        "GraphQLName": "createdDate",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The date and time at which the ReferenceData was created."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "createdByUser",
-        "Name": "createdByUser",
-        "GraphQLName": "createdByUser",
-        "Flags": "None",
-        "State": "Active",
-        "Description": "The identity of the user that created the ReferenceData."
-      },
-      {
-        "PropertyTypeCode": "String",
-        "Id": "authorizationTags",
-        "Name": "authorizationTags",
-        "GraphQLName": "authorizationTags",
-        "Flags": "IsCollection",
-        "State": "Active",
-        "Description": "The list of tags used to authorize access to the ReferenceData."
-      }
-    ],
-    "Version": 1,
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z",
-    "DefaultAuthorizationTag": "BaseAuthorizationTag",
-    "Description": "This is a simple reference data type"
-  },
   {
     "Id": "SimpleReferenceData",
     "Name": "SimpleReferenceData",
@@ -1216,7 +1092,7 @@ Returns the `AccessControlList` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -1224,7 +1100,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1265,7 +1141,7 @@ Updates and returns the `AccessControlList` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -1273,7 +1149,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -1341,7 +1217,7 @@ Returns the `Trustee` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1349,7 +1225,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1382,7 +1258,7 @@ Updates and returns the `Trustee` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1390,11 +1266,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
+A Trustee.<br/>
 
 ```json
 {
@@ -1435,7 +1311,7 @@ Returns a list of `CommonAccessRights` for the specified ReferenceDataType.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}/AccessRights
 ```
 
 <h4>Parameters</h4>
@@ -1443,7 +1319,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTyp
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1469,17 +1345,17 @@ Represents a ReferenceDataType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Category|[ReferenceDataCategory](#schemareferencedatacategory)|false|false|None|
-|Properties|[[TypeProperty](#schematypeproperty)]|false|true|None|
-|DefaultAuthorizationTag|string|false|true|None|
+|Name|string|false|true|The name of this object|
+|GraphQLName|string|false|true|The name of this object as it appears in GraphQL|
+|Version|int32|false|false|The current version number of this object|
+|Id|string|false|true|The id which is used in lookup|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this object|
+|CreatedDate|date-time|false|true|Date this object was created|
+|ModifiedDate|date-time|false|true|The last time this object was modified|
+|Description|string|false|true|Description of what this object is|
+|Category|[ReferenceDataCategory](#schemareferencedatacategory)|false|false|Determine what category the ReferenceDataType falls into|
+|Properties|[[TypeProperty](#schematypeproperty)]|false|true|List of TypeProperty associated with this ReferenceDataType|
+|DefaultAuthorizationTag|string|false|true|The authorization tag that will be added to all instances of nodes based on the type|
 
 ```json
 {
@@ -1590,15 +1466,16 @@ Represents a ReferenceDataType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|None|
-|Id|string|false|true|None|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|PropertyTypeId|string|false|true|None|
-|RemoteReferenceName|string|false|true|None|
-|Description|string|false|true|None|
+|PropertyTypeCode|[PropertyTypeCode](#schemapropertytypecode)|false|false|Code that explains what kind of typeProperty this is|
+|Id|string|false|true|The id; used in lookup|
+|Name|string|false|true|The name of this TypeProperty|
+|GraphQLName|string|false|true|The name of this TypeProperty as it appears in GraphQL|
+|Flags|[PropertyTypeFlags](#schemapropertytypeflags)|false|false|Flag that denotes what special attributes this property has|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this TypeProperty|
+|PropertyTypeId|string|false|true|The id of the type that this property points to|
+|RemoteReferenceName|string|false|true|The name of the invisible property that is generated in GraphQL type schema if the ReverseLookup flag is set that points to this TypeProperty|
+|Description|string|false|true|Description of what this TypeProperty is|
+|Uom|string|false|true|The unit of measure for the type property. This property is only present/valid for numeric PropertyTypeCodes|
 
 ```json
 {
@@ -1610,7 +1487,8 @@ Represents a ReferenceDataType object.
   "State": 0,
   "PropertyTypeId": "string",
   "RemoteReferenceName": "string",
-  "Description": "string"
+  "Description": "string",
+  "Uom": "string"
 }
 
 ```
@@ -1659,18 +1537,36 @@ Represents a ReferenceDataType object.
 |Indexed|2|
 |Required|4|
 |IsCollection|8|
+|NoUom|16|
+|NoAggregation|32|
 
 ---
 
-### ErrorResponse
+### AdhErrorResponse
 
-<a id="schemaerrorresponse"></a>
-<a id="schema_ErrorResponse"></a>
-<a id="tocSerrorresponse"></a>
-<a id="tocserrorresponse"></a>
+<a id="schemaadherrorresponse"></a>
+<a id="schema_AdhErrorResponse"></a>
+<a id="tocSadherrorresponse"></a>
+<a id="tocsadherrorresponse"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|An optional unique string used to identify an operation|
+|Error|string|false|true|Description of the error|
+|Reason|string|false|true|Short blurb on why the error occured|
+|Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
-{}
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
+}
 
 ```
 
@@ -1687,11 +1583,11 @@ Represents a ReferenceDataType object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|false|None|
-|Error|string|false|false|None|
-|OperationId|string|false|false|None|
-|Data|[[ReferenceDataType](#schemareferencedatatype)]|false|false|[Represents a ReferenceDataType object.]|
-|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|None|
+|Reason|string|false|false|Short blurb on why the error occured|
+|Error|string|false|false|Description of the error|
+|OperationId|string|false|false|An optional unique string used to identify an operation|
+|Data|[[ReferenceDataType](#schemareferencedatatype)]|false|false|List of data returned from the multi-calls|
+|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|List of errors from all the multi-calls|
 
 ```json
 {

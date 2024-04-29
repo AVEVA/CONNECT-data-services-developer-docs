@@ -14,7 +14,7 @@ Returns an array of Authorization Tags in a given namespace and the version ETag
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags
 ?skip={skip}&count={count}&includeDeleted={includeDeleted}
 ```
 
@@ -83,7 +83,7 @@ Returns the specified Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -91,7 +91,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
@@ -139,7 +139,7 @@ Creates a new Authorization Tag or returns the current one if the body is equiva
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -147,11 +147,11 @@ POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTa
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
-Only return clients that have these tags.<br/>
+An AuthorizationTag.<br/>
 
 ```json
 {
@@ -166,8 +166,8 @@ Only return clients that have these tags.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
-|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
+|200|[AuthorizationTag](#schemaauthorizationtag)|Success.|
+|201|[AuthorizationTag](#schemaauthorizationtag)|Created.|
 |302|None|Found.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
@@ -223,7 +223,7 @@ Creates a new Authorization Tag or updates an existing Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -231,11 +231,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
-Only return clients that have these tags.<br/>
+An AuthorizationTag.<br/>
 
 ```json
 {
@@ -250,8 +250,8 @@ Only return clients that have these tags.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[EventGraphEnumeration](#schemaeventgraphenumeration)|Success.|
-|201|[EventGraphEnumeration](#schemaeventgraphenumeration)|Created.|
+|200|[AuthorizationTag](#schemaauthorizationtag)|Success.|
+|201|[AuthorizationTag](#schemaauthorizationtag)|Created.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 
@@ -305,7 +305,7 @@ Deletes the Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}
 ```
 
 <h4>Parameters</h4>
@@ -313,14 +313,14 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Authorization
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
 |204|None|Deleted.|
-|304|None|#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#304|
+|304|None|Not modified.|
 |400|[AdhErrorResponse](#schemaadherrorresponse)|Missing or invalid inputs.|
 |403|[AdhErrorResponse](#schemaadherrorresponse)|Forbidden.|
 |404|[AdhErrorResponse](#schemaadherrorresponse)|Authorization Tag not found.|
@@ -336,7 +336,7 @@ Returns the `AccessControlList` for the specified Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -344,7 +344,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
@@ -385,7 +385,7 @@ Updates and returns the `AccessControlList` for the specified Authorization Tag.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -393,7 +393,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -459,7 +459,7 @@ Returns the `Trustee` for the specified AuthorizationTag.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -467,7 +467,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h3>Response</h3>
 
@@ -500,7 +500,7 @@ Updates and returns the `Trustee` for the specified AuthorizationTag.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTags/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -508,11 +508,11 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/AuthorizationTag
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>Unordered list of identifiers for all clients to get. Empty or whitespace identifiers will be ignored.<br/><br/>
+<br/>The id of the Authorization Tag.<br/><br/>
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
+A Trustee.<br/>
 
 ```json
 {
@@ -558,11 +558,11 @@ Represents an AuthorizationTag object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
+|Id|string|false|true|The id which is used in lookup|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this object|
+|CreatedDate|date-time|false|true|Date this object was created|
+|ModifiedDate|date-time|false|true|The last time this object was modified|
+|Description|string|false|true|Description of what this object is|
 
 ```json
 {
@@ -605,10 +605,10 @@ Represents an AuthorizationTag object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
+|OperationId|string|false|true|An optional unique string used to identify an operation|
+|Error|string|false|true|Description of the error|
+|Reason|string|false|true|Short blurb on why the error occured|
+|Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
 {
@@ -618,82 +618,6 @@ Represents an AuthorizationTag object.
   "Resolution": "string",
   "property1": null,
   "property2": null
-}
-
-```
-
----
-
-### EventGraphEnumeration
-
-<a id="schemaeventgraphenumeration"></a>
-<a id="schema_EventGraphEnumeration"></a>
-<a id="tocSeventgraphenumeration"></a>
-<a id="tocseventgraphenumeration"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Members|[[EnumerationState](#schemaenumerationstate)]|false|true|None|
-
-```json
-{
-  "Name": "string",
-  "GraphQLName": "string",
-  "Version": 0,
-  "Id": "string",
-  "State": 0,
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z",
-  "Description": "string",
-  "Members": [
-    {
-      "Name": "string",
-      "GraphQLName": "string",
-      "Code": 0,
-      "State": 0,
-      "Description": "string"
-    }
-  ]
-}
-
-```
-
----
-
-### EnumerationState
-
-<a id="schemaenumerationstate"></a>
-<a id="schema_EnumerationState"></a>
-<a id="tocSenumerationstate"></a>
-<a id="tocsenumerationstate"></a>
-
-<h4>Properties</h4>
-
-|Property Name|Data Type|Required|Nullable|Description|
-|---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Code|int32|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|Description|string|false|true|None|
-
-```json
-{
-  "Name": "string",
-  "GraphQLName": "string",
-  "Code": 0,
-  "State": 0,
-  "Description": "string"
 }
 
 ```

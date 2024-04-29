@@ -2,9 +2,9 @@
 uid: software-mgmt-api-overview
 ---
 
-# Software management (Preview)
+# Software management
 
-Software management, also known as Edge data store & adapters, shows you the data collection software that deploys to remote devices. This section contains APIs for use with Edge data store & adapters. API use includes:
+Software management, also known as Edge Data Store & Adapters, shows you the data collection software that deploys to remote devices. This section contains APIs for use with Edge Data Store & Adapters. API use includes:
 
 * [Access](xref:software-mgmt-access)
 

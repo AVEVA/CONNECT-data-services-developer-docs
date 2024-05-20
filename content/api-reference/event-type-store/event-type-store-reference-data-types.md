@@ -234,7 +234,7 @@ A ReferenceDataType.<br/>
 
 ```json
 {
-  "Id": "SimpleReferenceData",
+  "Id": "6B29FC40-CA47-1067-B31D-00DD010662DA",
   "Name": "SimpleReferenceData",
   "GraphQLName": "SimpleReferenceData",
   "Category": "ReferenceData",

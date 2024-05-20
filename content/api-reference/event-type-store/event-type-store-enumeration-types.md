@@ -141,7 +141,7 @@ An Enumeration.<br/>
 
 ```json
 {
-  "Id": "SimpleEnumeration",
+  "Id": "6B29FC40-CA47-1067-B31D-00DD010662DA",
   "Name": "SimpleEnumeration",
   "GraphQLName": "SimpleEnumeration",
   "Members": [

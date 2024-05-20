@@ -225,7 +225,7 @@ An EventType.<br/>
 
 ```json
 {
-  "Id": "SimpleEvent",
+  "Id": "6B29FC40-CA47-1067-B31D-00DD010662DA",
   "Name": "SimpleEvent",
   "GraphQLName": "SimpleEvent",
   "State": "Active",

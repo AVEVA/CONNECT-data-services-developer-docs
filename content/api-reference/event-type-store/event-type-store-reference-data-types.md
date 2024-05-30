@@ -27,7 +27,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
 <br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted ReferenceDataTypes. If unspecified, a default value of false is used.<br/><br/>
+<br/>Parameter indicating whether to include deleted ReferenceData properties. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -327,9 +327,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/ReferenceDataTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the ReferenceDataType.<br/><br/>
-`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted ReferenceDataTypes. If unspecified, a default value of false is used.<br/><br/>
+<br/>The id of the ReferenceDataType.<br/><br/>`boolean includeDeleted`
+<br/>Parameter indicating whether to include deleted ReferenceData properties. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 

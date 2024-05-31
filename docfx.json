@@ -9,7 +9,7 @@
 			"dest": "api",
 			"disableGitFeatures": false,
 			"_appLogoPath": "./content/api-reference/images/atlas_icon.png",
-			"_appName": "OSIsoft Cloud Services Documentation"
+			"_appName": "AVEVA Data Hub Developer Documentation"
 		}
 	],
 	"build": {
@@ -37,26 +37,7 @@
 			{
 				"files": [
 					"content/_images/**",
-					"content/rom/images/**",
-					"content/home/images/**",
 					"content/api-reference/images/**",
-					"content/add-organize-data/images/**",
-					"content/add-organize-data/collect-data/connectors/images/**",
-					"content/add-organize-data/collect-data/connectors/omf/images/**",
-          			"content/add-organize-data/collect-data/software-mgmt/images/**",
-					"content/add-organize-data/organize-data/assets/images/**",
-					"content/add-organize-data/organize-data/data-views/_images/**",
-					"content/add-organize-data/organize-data/metadata-rules/images/**",
-					"content/add-organize-data/store-data/images/**",
-					"content/analytics/data-views/_images/**",
-					"content/communities/images/**",
-					"content/set-up/images/**",
-					"content/set-up/roles/images/**",
-					"content/visualize-data/images/**",
-					"content/overview/images/**",
-					"content/overview/get-started/images/**",
-					"content/overview/get-started/clients/images/**",
-					"content/overview/get-started/connections/images/**",
 					"content/developer-guide/images/**",
 					"content/_icons/**"
 				]
@@ -71,10 +52,10 @@
 		"dest": "_site",
 		"globalMetadataFiles": [],
 		"fileMetadataFiles": [],
-		"template": ["default", "_exported_templates/default"],
+		"template": ["default", "modern"],
 		"noLangKeyword": false,
 		"keepFileLink": false,
-		"cleanupCacheHistory": false,
+		"cleanupCacheHistory": true,
 		"disableGitFeatures": false
 	}
 }

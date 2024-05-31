@@ -12,12 +12,12 @@ A resolved data view is used to describe the output of a data view at the time i
 A data view specifies `.Queries` to find data items, `.GroupingFields` (optionally) to group those data items into groups, and `.FieldSets` to include fields of data into the data view. *Resolving* the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.
 
 ### What resolved information is available?
-- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - OCS resources retrieved by the data view query
+- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - AVEVA Data Hub resources retrieved by the data view query
 - [Available field sets](xref:DataViewsAvailableFieldSets) - fields which are present on the data items but not included in the data view
 - [Field mappings](xref:DataViewsFieldMappings) - details of the data behind each group of each field
 - [Statistics](xref:ResolvedDataView#statistics) about how the view resolved
 
-These are available via the [Resolved Data View API](xref:ResolvedDataViewAPI). The relevant [object types](xref:ResolvedDataView#object-types) are described below.
+These are available via the [Resolved Data View API](xref:data-views-data-views-resolved). The relevant [object types](xref:ResolvedDataView#object-types) are described below.
 
 #### Paged collections
 Some of this information is exposed as paged collections, which accept parameters controlling `skip` and `count` within the collection. 
@@ -42,16 +42,25 @@ By default:
 - requesting a first page of data will cause the data view to re-resolve: *refresh* the cache
 
 These defaults are overridable on each API call.
-See the [Resolved Data View API](xref:ResolvedDataViewAPI) and [Getting Data](xref:DataViewsQuickStartGetData) for details.
+See the [Resolved Data View API](xref:data-views-data-views-resolved) and [Getting Data](xref:DataViewsQuickStartGetData) for details.
 
 The defaults are intended to strike a balance between predictability and freshness. When retrieving the various resolved information that is available, you will not cause regeneration (and possible changes) simply by viewing the resolved information. This is useful when diagnosing a data view that is not returning the data you expect.
 
 #### Invalidation
 
-[!include[data-view-opt-out](../../../_includes/data-view-opt-out.md)]
+If the data view is modified, any cached information is reset. The data view re-resolves the next time that information is requested.
+
+No guarantee is made of the durability or lifespan of cached information. If cached information is invalidated, the data view is re-resolved the next time that information is requested.
+
+Cached information may be reset under any of the following circumstances:
+
+- The data view is modified
+- A community referenced by the data view is modified (for example, sharing is paused)
+- The cached information expiration time elapses
+- System maintenance
 
 #### Paging through data
-When using the [Data API](xref:DataViewsDataAPI) to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on [Getting Data](xref:DataViewsQuickStartGetData) describes how the paging token helps guarantee consistency.
+When using the [Data API](xref:data-views-data-views-data) to page through data view data, the cache is automatically preserved on all pages after the first. This ensures consistency while paging through view data: if the view were re-resolved between pages, it might resolve differently (e.g. new streams just added to SDS) and return unpredictable results. The documentation on [Getting Data](xref:DataViewsQuickStartGetData) describes how the paging token helps guarantee consistency.
 
 ## Object types
 
@@ -77,7 +86,7 @@ Holds an item that was resolved at a specific time.
 | Refresh | 2 | Re-resolve the resource values |
 
 ### DataItem
-An OCS resource retrieved by the data view query.
+An AVEVA Data Hub resource retrieved by the data view query.
 
 |Property | Type | Details |
 |--|--|--|

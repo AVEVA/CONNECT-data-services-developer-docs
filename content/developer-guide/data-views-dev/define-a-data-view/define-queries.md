@@ -16,7 +16,7 @@ The query text is the same as the corresponding data item's query syntax. For ex
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by `FieldSet` to link to the query's results. |
 | Kind  | DataItemResourceType | Optional | Stream | Type of resource to be queried. |
-| Value | string | Optional | null | A query for OCS resources in the corresponding query syntax.
+| Value | string | Optional | null | A query for AVEVA Data Hub resources in the corresponding query syntax.
 
 ## Using queries
 
@@ -41,7 +41,7 @@ For example:
 Using separate queries means the data items will be available in separate field sets. This is good, because a power inverter has completely different fields versus a weather station.
 
 ### Querying data items of a common nature
-In the example scenario, streams that originate from an OSIsoft PI System represent only one fundamental measurement (e.g. Power In), unlike the more general case where the stream may represent several measurements (e.g. Temperature, Solar Radiation, and Cloud Cover). This means that multiple streams refer to the same physical or logical asset. 
+In the example scenario, streams that originate from an PI System represent only one fundamental measurement (e.g. Power In), unlike the more general case where the stream may represent several measurements (e.g. Temperature, Solar Radiation, and Cloud Cover). This means that multiple streams refer to the same physical or logical asset. 
 
 In the example scenario, each power inverter is associated with two streams. It makes sense to structure our query around the physical asset, returning all "power*" measurements of all inverters:
 ```json

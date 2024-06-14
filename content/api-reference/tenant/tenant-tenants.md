@@ -4,7 +4,7 @@ uid: tenant-tenants
 ---
 
 # Tenants
-APIs to manage a Customer Tenant. A tenant represents the set of services, applications, data, and configuration state available to a customer. Users are associated with a tenant via at least one configured identity provider and access to resources can be managed for those users via the assignment of roles. Data and services provided by a tenant may also span geographical regions. A tenant has APIs to manage a customer tenant. Unlike namespaces, tenants are not scoped to a region. Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes. Write operations for tenant management and identity and access management are only supported through the global base URL, such as https://dat-b.osisoft.com/Tenants/{tenantId}. Requests to local URLs will return a status of Method Not Allowed (405). Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes.
+APIs to manage a Customer Tenant. A tenant represents the set of services, applications, data, and configuration state available to a customer. Users are associated with a tenant via at least one configured identity provider and access to resources can be managed for those users via the assignment of roles. Data and services provided by a tenant may also span geographical regions. A tenant has APIs to manage a customer tenant. Unlike namespaces, tenants are not scoped to a region. Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes. Write operations for tenant management and identity and access management are only supported through the global base URL, such as https://uswe.datahub.connect.aveva.com/Tenants/{tenantId}. Requests to local URLs will return a status of Method Not Allowed (405). Tenant level information, such as users and clients, is stored in all supported regions for read-only purposes.
 
 ## `Get Tenant`
 
@@ -340,9 +340,9 @@ Allowed for these roles:
 
 ---
 
-## `Get Regions`
+## `List Regions`
 
-<a id="opIdTenant_Get Regions"></a>
+<a id="opIdTenant_List Regions"></a>
 
 Returns the `RegionBase` list for the specified `Tenant`.
 
@@ -361,7 +361,7 @@ GET /api/v1/Tenants/{tenantId}/Regions
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[RegionBase](#schemaregionbase)|The `RegionBase` list associated with the `Tenant`.|
+|200|[RegionBase](#schemaregionbase)[]|The `RegionBase` list associated with the `Tenant`.|
 |403|None|Forbidden.|
 |404|None|Not Found.|
 
@@ -374,13 +374,13 @@ GET /api/v1/Tenants/{tenantId}/Regions
   {
     "Id": "WestEurope",
     "Name": "West Europe",
-    "BaseAddress": "https://dat-d.osisoft.com"
+    "BaseAddress": "https://euno.datahub.connect.aveva.com/"
   },
   {
     "Id": "WestUS",
     "Name": "West US",
     "AdministrativeEndpointsWritable": true,
-    "BaseAddress": "https://dat-b.osisoft.com"
+    "BaseAddress": "https://uswe.datahub.connect.aveva.com"
   }
 ]
 ```

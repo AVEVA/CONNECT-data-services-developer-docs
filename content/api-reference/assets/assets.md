@@ -4,4 +4,4 @@ uid: Assets
 
 # Asset store
 
-APIs for assets and asset types
+The Asset store section contains APIs for assets and asset types.

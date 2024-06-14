@@ -6,7 +6,7 @@ uid: DefineaDataViewRecommendedWorkflow
 
 This is an introduction to the recommended workflow for creating and defining data views. The following sections show these concepts in action.
 
-[!include[iteration](../../../analytics/data-views/_includes/iteration.md)]
+Designing and editing a data view is an iterative process. Your first iteration of the data view will likely not work as expected and will require additional iterations. Adjust the included queries and data fields until it meets your requirements.
 
 There are three main steps required to define a data view: 
 
@@ -76,7 +76,7 @@ HTTP 200 OK
 
 ### Add a query for data items
 
-Creating a data view begins with including some data items. This example will use SDS Streams.
+Creating a data view begins with including some data items. This example will use SDS streams.
 
 #### Action
 Use the result of the previous step as the starting point. All following steps will involve modifying the data view definition, or seeing the effects of those modifications.

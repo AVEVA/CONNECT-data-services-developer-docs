@@ -1,8 +1,15 @@
+- name: API console
+  topicUid: apiConsole
 - name: Regional endpoints
-  topicHref: regional-endpoints.md
+  topicUid: regional-endpoints
+- name: HTTP status codes
+  topicUid: ocsStatusCodes
 - name: Asset store
   href: assets/toc.yml
   topicHref: assets/assets.md
+- name: Change broker
+  href: change-broker/toc.yml
+  topicHref: change-broker/change-broker.md
 - name: Client failover
   href: client-failover/toc.yml
   topicHref: client-failover/client-failover-overview.md
@@ -18,6 +25,9 @@
 - name: Data views
   href: data-views/toc.yml
   topicHref: data-views/data-views-api-overview.md
+- name: Event data
+  href: event-data/toc.yml
+  topicHref: event-data/event-data-overview.md
 - name: Identity and access management
   href: identity/toc.yml
   topicHref: identity/identity-and-access-management.md
@@ -30,8 +40,9 @@
 - name: Sequential Data Store
   href: sequential-data-store/toc.yml
   topicHref: sequential-data-store/sds-lp.md
+- name: Software management
+  href: software-management/toc.yml
+  topicHref: software-management/software-mgmt-api-overview.md
 - name: Tenant management
   href: tenant/toc.yml
   topicHref: tenant/management-overview.md
-- name: HTTP status codes
-  topicHref: http-status-codes.md

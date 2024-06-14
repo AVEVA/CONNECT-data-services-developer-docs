@@ -8,3 +8,4 @@ obj/
 /content/.vs
 /**/.DS_Store
 /OCS-Docs
+/.vscode

@@ -23,7 +23,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `!:StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
 
@@ -127,13 +127,15 @@ Creates a `SuggestionResponse` for a `RuleModel` object.
 
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
+?token={token}
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/>Namespace identifier.<br/><br/>`boolean token`
+<br/>The `!:Token` toggles paging token<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -291,7 +293,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `!:StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
 

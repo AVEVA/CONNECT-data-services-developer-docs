@@ -2,36 +2,37 @@
 uid: asset-search-dev-guide
 ---
 
-# Asset Search Criteria
+# Asset search criteria
 
 The assets search API allows you to search for your assets with search criteria.
 
-### Searchable Properties
+## Searchable properties
+
 Assets can be searched on the following asset properties:
 
-- Asset Top-level Properties
+- Asset top-level properties
   - Id, Name, Description, AssetTypeId, AssetTypeName
 
-- Metadata Properties
+- Metadata properties
   - Name, Description, Value
 
-- Stream Reference Properties
+- Stream reference properties
   - StreamReferenceName - Stream Reference Name
   - StreamPropertyId - SDS Stream Property Ids, not including indices
 
 Search criteria can be chained together using an **AND**. See examples below. 
 
-## Search Matched Fields 
+## Search matched fields 
 
 Searches all assets and returns a list of asset identifiers and their matched fields. 
 
 ### Example response body
 
-Below is a response when query string is "Name:Tracer".
+Below is a response when the query string is "Name:Tracer".
 
 - `TotalCount` - Represents the number of matched assets in the database which matched the given query.
 
-    A list of results is returned. Each result contains:  
+A list of results is returned. Each result contains:  
 
 - `MatchProperties` - A list of matched property objects. Each `MatchProperties` object contains the matched fields and their values.
 
@@ -49,7 +50,7 @@ Below is a response when query string is "Name:Tracer".
 
 - `LastModifiedDate` - Last modified date of the asset.
 
-- `LastStatus` - Last status of the matched asset. If a status is not defined for the asset, this field will be null. If a status is defined, this field will correspond to Unknown, Good, Warning, or Bad. The display name of the asset status had no effect on this field.
+- `LastStatus` - Last status of the matched asset. If a status is not defined for the asset, this field will be null. If a status is defined, this field will correspond to Unknown, Good, Warning, or Bad. The display name of the asset status has no effect on this field.
 
 ```json 
 HTTP 200 OK 
@@ -110,10 +111,6 @@ Content-Type: application/json
 | StreamPropertyId:Pressure    | Returns all assets that have one or more stream references with the stream property ID **Pressure**. Note: This search only searches non-key Sds stream properties. |
 | StreamReferenceName:Name1    | Returns all assets whose stream references contain a stream reference name that matches **Name1**. |
 | Tags:MarkedAsset             | Returns all assets which has "MarkedAsset" as a tag.         |
-
-### Search operators
-
-You can use search operators to get more refined search results for assets. For more information, see [Search operators](xref:Search#search-operators).
 
 ### Special characters in search queries
 
@@ -186,7 +183,7 @@ Content-Type: application/json
 ]
 ```
 
-## Asset Autocomplete
+## Asset autocomplete
 
 Asset autocomplete allows you to query assets and retrieve a list of suggested assets based on your search criteria. 
 

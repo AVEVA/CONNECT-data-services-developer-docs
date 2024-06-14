@@ -2,11 +2,11 @@
 uid: UseExcel
 ---
 
-# Use Excel with OCS
+# Use Excel with AVEVA Data Hub
 
-You can use Microsoft Excel to import data from OCS. With Power Query (known as Get & Transform in Excel), you can connect to external data and then shape that data in ways that meet your needs. Then, you can load your query into Excel to create charts and reports.
+You can use Microsoft Excel to import data from AVEVA Data Hub. With Power Query (known as Get & Transform in Excel), you can connect to external data and then shape that data in ways that meet your needs. Then, you can load your query into Excel to create charts and reports.
 
-The basic steps needed to use OCS with Excel are:
+The basic steps needed to use AVEVA Data Hub with Excel are:
 
 - Step 1 – Create a client
 
@@ -18,29 +18,29 @@ The basic steps needed to use OCS with Excel are:
 
 - Step 3 – Create an API request
 
-   Create an API request using the API console in OCS.
+   Create an API request using the API console in AVEVA Data Hub.
 
-- Step 4 – Use Excel Power Query to get data from OCS
+- Step 4 – Use Excel Power Query to get data from AVEVA Data Hub
 
-   Use Excel Power Query to get data from OCS, supplying the query along with the bearer token. 
+   Use Excel Power Query to get data from AVEVA Data Hub, supplying the query along with the bearer token. 
 
 - Step 5 – Transform the data
 
    Transform the data in Power Query and load it into an Excel table.
 
-These are the basics to get new Excel and OCS users up and running quickly. More advanced Excel users can automate parts of this process to retrieve and renew a bearer token if needed.
+These are the basics to get new Excel and AVEVA Data Hub users up and running quickly. More advanced Excel users can automate parts of this process to retrieve and renew a bearer token if needed.
 
 ## Step 1 – Create a client
 
-Clients allow applications to authenticate against OCS from outside the OCS portal. The first thing that you must do is create a client to connect to OCS.
+Clients allow applications to authenticate against AVEVA Data Hub from outside the portal. The first thing that you must do is create a client to connect to AVEVA Data Hub.
 
-Create a client with any name and accept the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed. See <xref:gpClientCredentialsClient> for the steps. 
+Create a client with any name and accept the rest of the defaults including a Token Lifetime of 3600 seconds. Make note of the secret somewhere secure as there is no way to retrieve it. However, you can create multiple secrets for the same client Id or delete a client if needed.
 
 An existing client can be used, and many connections can be made through one client. All you need are the client Id and secret.
 
 ## Step 2 – Retrieve the token
 
-The token is the pass you use to connect to OCS, send requests, and get responses. It is passed with every request you send.
+The token is the pass you use to connect to AVEVA Data Hub, send requests, and get responses. It is passed with every request you send.
 
 Use the following PowerShell example to write a small app to retrieve a token. Substitute your client Id and secret for `XXX` and `YYY` in the first two lines:
 
@@ -53,21 +53,20 @@ $body = @{
     client_secret=$clientSecret
     }
 $contentType = 'application/x-www-form-urlencoded'
-$token = (Invoke-WebRequest -UseBasicParsing –Uri "https://dat-b.osisoft.com/identity/connect/token" -Method post -body $body -ContentType $contentType).content|Convertfrom-Json|select access_token
-write-host $token
+$token = ((Invoke-WebRequest -UseBasicParsing -Uri "https://euno.datahub.connect.aveva.com/identity/connect/token" -Method post -body $Body -ContentType $contentType).content | Convertfrom-Json).access_token
+Write-Host $token
+Set-Clipboard -Value $token
 ```
 
-This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The last line writes the contents of `$token` to the screen as `@access_token=<ACCESS_TOKEN>`. Everything to the right of the `=` sign is your bearer token, which by default allows you to send and receive data for 3600 seconds. You need this entire token for the next step.
+This code sends a request along with your client Id and secret to an endpoint and receives a bearer token in return. The `Write-Host $token` command displays the full text of the bearer token that you have received. You will need that entire token for step four. To help with this, the `Set-Clipboard -Value $token` command copies that full token text to your clipboard, so that you may easily use it later.
 
 ## Step 3 – Create an API request
 
-Build an API request in the API console. See <xref:apiConsole>.
-
-The example below gets data from one stream over the period covered from **startIndex** to **endIndex**, in this case ten minutes on 11-Mar-2020 from a stream called `PI_PISRV01_185`.
+Build an API request in the [API console](xref:apiConsole), such as one that returns interpolated JSON data for a Data View. See [Use the API Console to retrieve your data view](https://docs.aveva.com/bundle/aveva-data-hub/page/1263302.html#_tip_use_the_api_console_to_retrieve_your_data_view).
 
 ![API console](../images/api_console.png)
 
-## Step 4 – Use Excel Power Query to get data from OCS
+## Step 4 – Use Excel Power Query to get data from AVEVA Data Hub
 
 1. Launch Excel and create a new workbook.
 
@@ -91,7 +90,7 @@ The example below gets data from one stream over the period covered from **start
 
    ![Convert to table](../images/pqe_columns.png)
 
-1. Select the split button in the column header to split the JSON records apart into an Excel table and select **OK**.
+1. Select the split button ![Split button](../images/split_button.png) in the column header to split the JSON records apart into an Excel table and select **OK**.
 
    ![Split columns](../images/pqe_split.png)
 

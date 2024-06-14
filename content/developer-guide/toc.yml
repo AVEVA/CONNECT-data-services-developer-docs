@@ -1,6 +1,3 @@
-- name: Tenant management
-  href: tenant-dev/toc.yml
-  topicHref: tenant-dev/dev-guide-tenant-management.md
 - name: Identity and access management
   href: identity-dev/toc.yml
   topicHref: identity-dev/dev-guide-identity-access-management.md
@@ -19,4 +16,12 @@
 - name: Asset store
   href: asset-dev/toc.yml
   topicHref: asset-dev/asset-dev-guide.md
+- topicUid: EventData
+  items:
+  - topicUid: GraphQLEndpoint
+  - topicUid: RESTEndpoints
+  - topicUid: EventUsageExamples
+- topicUid: CommunityData
+- name: Samples
+  topicUid: samples
 - topicUid: UseExcel

@@ -1,4 +1,4 @@
 - name: Quick start get data view data
-  href: quick-start-get-data-view-data.md
+  topicUid: DataViewsQuickStartGetData
 - name: Recommended workflow - Get data view data
-  topicHref: rec-workflow-get.md
+  topicUid: GetDataViewDataRecommendedWorkflow

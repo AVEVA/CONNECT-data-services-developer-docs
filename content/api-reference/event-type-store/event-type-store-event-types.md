@@ -906,7 +906,7 @@ An EventType.<br/>
 
 <a id="opIdEventTypes_Create Or Update Event Type"></a>
 
-Creates a new EventType or updates an existing and adds its Etag in the HTTP response header. The If-Match header is supported.
+Creates a new EventType or updates an existing and adds its Etag in the HTTP response header. Updating the state of the properties to deleted is supported through this route. Hard Delete of the type however must be done with through the DELETE endpoint. The If-Match header is supported.
 
 <h3>Request</h3>
 
@@ -1502,7 +1502,7 @@ A list of EventType objects.<br/>
 
 <a id="opIdEventTypes_Bulk Delete Event Type"></a>
 
-Deletes multiple EventTypes and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were succesful will be returned in the data.
+Deletes multiple EventTypes and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were successful will be returned in the data.
 
 <h3>Request</h3>
 

@@ -622,7 +622,7 @@ A ReferenceDataType.<br/>
 
 <a id="opIdReferenceDataTypes_Create Or Update Reference Data Type"></a>
 
-Creates a new ReferenceDataType or updates an existing and adds its Etag in the HTTP response header. The If-Match header is supported.
+Creates a new ReferenceDataType or updates an existing and adds its Etag in the HTTP response header. Updating the state of the properties to deleted is supported through this route. Hard Delete of the type however must be done with through the DELETE endpoint. The If-Match header is supported.
 
 <h3>Request</h3>
 
@@ -962,7 +962,7 @@ A list of ReferenceDataType objects.<br/>
 
 <a id="opIdReferenceDataTypes_Bulk Delete Reference Data Type"></a>
 
-Deletes multiple ReferenceDataTypes and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were succesful will be returned in the data.
+Deletes multiple ReferenceDataTypes and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were successful will be returned in the data.
 
 <h3>Request</h3>
 

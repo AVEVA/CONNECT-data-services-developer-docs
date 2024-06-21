@@ -418,7 +418,7 @@ An Enumeration.<br/>
 
 <a id="opIdEnumerations_Create Or Update Enumeration"></a>
 
-Creates a new Enumeration or updates an existing and adds its Etag in the HTTP response header. The If-Match header is supported.
+Creates a new Enumeration or updates an existing and adds its Etag in the HTTP response header. Hard delete of the type is not supported through this route. The If-Match header is supported.
 
 <h3>Request</h3>
 
@@ -690,7 +690,7 @@ A list of Enumeration objects.<br/>
 
 <a id="opIdEnumerations_Bulk Delete Enumeration"></a>
 
-Deletes multiple Enumerations and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were succesful will be returned in the data.
+Deletes multiple Enumerations and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were successful will be returned in the data.
 
 <h3>Request</h3>
 

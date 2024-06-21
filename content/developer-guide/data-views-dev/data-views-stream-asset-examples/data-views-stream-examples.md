@@ -5,7 +5,8 @@ uid: DataViewsStreamExamples
 # Stream examples
 
 This section uses example streams to illustrate data view concepts. The streams are of three types:
-- docs-pi-inverter | _simulates solar power inverter data collected via PI to OCS_
+
+- docs-pi-inverter | _simulates solar power inverter data collected via PI to Data Hub_
 - docs-omf-weather-gen1 | _simulates weather data collected from an OMF source_
 - docs-omf-weather-gen2 | _simulates weather data collected from an OMF source, but with some additional/renamed properties_
 
@@ -16,9 +17,10 @@ Use the [bulk uploader](https://github.com/osisoft/sample-ocs-bulk_upload-dotnet
 Data views are made to bring order to a tangle of data streams. Despite appearing complex and verbose, this example is likely much simpler than your real-world data. This example illustrates how data views can render real-world data consumable for data science.
 
 ## Solar inverter streams
-These streams represent values collected via PI to OCS, originally collected by a PI System. Each stream value contains a timestamp _(Timestamp)_ and a measurement _(Value)_.
+These streams represent values collected via PI to Data Hub, originally collected by a PI System. Each stream value contains a timestamp _(Timestamp)_ and a measurement _(Value)_.
 
 ### Type
+
 ```json
   {
     "Id": "docs-pi-inverter",
@@ -40,7 +42,9 @@ These streams represent values collected via PI to OCS, originally collected by 
   }
 ```
 ### Stream IDs
+
 16 inverter streams are defined:
+
 ```text
 "BILT.Meter.Primary.Inverter.0.PwrIn",
 "BILT.Meter.Primary.Inverter.0.PwrOut",
@@ -60,7 +64,9 @@ These streams represent values collected via PI to OCS, originally collected by 
 "WINT.Meter.Secondary.Inverter.0.PwrOut",
 ```
 ### Tags and metadata
+
 Each inverter stream has some descriptive tags assigned, and metadata key-values describing its function.
+
 ```text
 Tags: some subset of [ "Commercial", "Residential", "Critical Asset" ]
 Metadata: { 
@@ -71,18 +77,24 @@ Metadata: {
             "Nominal Power MW": "1.21"
           }
 ```
+
 ## Weather streams
+
 These streams simulate data collected via OMF from a weather station. There are two "generations" represented: Gen2 adds one property and renames another, as compared to Gen1.
 
 ### Tags and metadata
+
 Each weather stream has some descriptive tags assigned, and one metadata key-value indicating its Site. These are the same sites with which the inverters are associated.
+
 ```text
 Tags: some subset of [ "Weather", "Low Resolution", "High Resolution", "Gen1", "Gen2" ]
 Metadata: { "Site" : one of ( "Biltmore" | "Rosecliff" | "Winterthur" ) }
 ```
 
 ### Weather, generation 1
+
 #### Type
+
 ```json
   {
     "Id": "docs-omf-weather-gen1",
@@ -108,7 +120,9 @@ Metadata: { "Site" : one of ( "Biltmore" | "Rosecliff" | "Winterthur" ) }
     ]
   }
 ```
+
 #### Stream IDs
+
 Two streams of this type are defined:
 ```text
 "WS_BILT",
@@ -116,9 +130,11 @@ Two streams of this type are defined:
 ```
 
 ### Weather, generation 2
+
 The latest and greatest Gen2 weather stations report a new property, _Cloud Cover_, but also rename _Temperature_ to _Ambient Temperature_. They are otherwise similar to Gen1.
 
 #### Type
+
 ```json
   {
     "Id": "docs-omf-weather-gen2",
@@ -151,8 +167,9 @@ The latest and greatest Gen2 weather stations report a new property, _Cloud Cove
 ```
 
 #### Stream IDs
+
 One stream of this type is defined:
+
 ```text
 "WS_WINT"
 ```
-

@@ -4,7 +4,10 @@ uid: identity-invitations
 ---
 
 # Invitations
-Invitations are issued after the creation of a user object in OCS, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
+
+**Note:** Invitations are for OSIsoft Cloud Services platform, not the AVEVA Data Hub platform. AVEVA Data Hub users do not require invitations. Invitations are issued after the creation of a user object in the platform, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
+
+Invitations are issued after the creation of a user object, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
 
 ## `Get User's Invitation`
 
@@ -277,7 +280,7 @@ Allowed for these roles:
 </ul>
 
 # Invitations
-Invitations are issued after the creation of a user object in OCS, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
+Invitations are issued after the creation of a user object, to begin the provisioning process for a user with one of the identity providers in a tenant. There can only be one invitation for a user at a time. An invitation can expire, at which time the administrator can either delete it, or extend it. When creating an invitation a tenant administrator has the option to resend the invitation email to the contact email configured for the user the invitation is attached to. The email can be re-sent by updating the invitation. When an invitation expires the user cannot accept it. If the expiration date is extended the user can accept an invitation. Invitations that are past of their expiration date by more than two weeks will be deleted. The only way to provision a user after this, is to send a new invitation.
 
 ## `Get Invitation`
 
@@ -287,7 +290,7 @@ Returns an invitation from tenant.
 
 <h3>Request</h3>
 
-```text 
+```text
 GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
@@ -325,7 +328,7 @@ GET /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 <h3>Authorization</h3>
 
-Allowed for these roles: 
+Allowed for these roles:
 <ul>
 <li>Tenant Administrator</li>
 </ul>
@@ -340,7 +343,7 @@ Validates that an invitation exists. This method is identical to the GET method,
 
 <h3>Request</h3>
 
-```text 
+```text
 HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
@@ -362,7 +365,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 <h3>Authorization</h3>
 
-Allowed for these roles: 
+Allowed for these roles:
 <ul>
 <li>Tenant Administrator</li>
 </ul>
@@ -377,7 +380,7 @@ Updates an invitation. Expired invitations will not be extended automatically up
 
 <h3>Request</h3>
 
-```text 
+```text
 PUT /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
@@ -430,7 +433,7 @@ New InvitationCreateOrUpdate object. Properties that are not set or are null wil
 
 <h3>Authorization</h3>
 
-Allowed for these roles: 
+Allowed for these roles:
 <ul>
 <li>Tenant Administrator</li>
 </ul>
@@ -445,7 +448,7 @@ Deletes an invitation. Users who already have an invitation email will not be ab
 
 <h3>Request</h3>
 
-```text 
+```text
 DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 ```
 
@@ -469,7 +472,7 @@ DELETE /api/v1/Tenants/{tenantId}/Invitations/{invitationId}
 
 <h3>Authorization</h3>
 
-Allowed for these roles: 
+Allowed for these roles:
 <ul>
 <li>Tenant Administrator</li>
 </ul>
@@ -484,7 +487,7 @@ Returns all non-expired invitations from a tenant. Optionally, includes expired 
 
 <h3>Request</h3>
 
-```text 
+```text
 GET /api/v1/Tenants/{tenantId}/Invitations
 ?query={query}&skip={skip}&count={count}&includeExpiredInvitations={includeExpiredInvitations}
 ```
@@ -530,7 +533,7 @@ GET /api/v1/Tenants/{tenantId}/Invitations
 
 <h3>Authorization</h3>
 
-Allowed for these roles: 
+Allowed for these roles:
 <ul>
 <li>Tenant Administrator</li>
 </ul>
@@ -545,7 +548,7 @@ Returns the total number of non-expired invitations in a tenant. Optionally, inc
 
 <h3>Request</h3>
 
-```text 
+```text
 HEAD /api/v1/Tenants/{tenantId}/Invitations
 ?includeExpiredInvitations={includeExpiredInvitations}
 ```
@@ -570,7 +573,7 @@ HEAD /api/v1/Tenants/{tenantId}/Invitations
 
 <h3>Authorization</h3>
 
-Allowed for these roles: 
+Allowed for these roles:
 <ul>
 <li>Tenant Administrator</li>
 </ul>
@@ -640,7 +643,7 @@ Invitation states.
 <a id="tocSerrorresponse"></a>
 <a id="tocserrorresponse"></a>
 
-Object returned when there is an error
+Object returned when there is an error.
 
 <h4>Properties</h4>
 

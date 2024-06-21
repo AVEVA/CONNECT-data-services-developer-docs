@@ -201,17 +201,94 @@ Each data field represents a particular source of information, such as a data it
 
 ### Label
 
-[!include[data-view-label](../../../_includes/data-view-label.md)]
+A data field label is a friendly name that you can specify directly or using rules. Null, empty, or whitespace is not allowed for a data field label.
+
+When the data view is resolved and data fields produce field mappings, labels are trimmed of whitespace and used as the field mappings' identifier. For example:
+
+```md
+| Timestamp | Power In Value | Power Out Value |
+```
+
+In cases where the identifiers are not unique, the identifier is suffixed with an ordinal number, its position. For example:
+
+```md
+| Timestamp.0 | Value.1 | Value.2 |
+```
 
 #### Available data field label tokens
 
-[!include[data field label tokens](../../../_includes/data-view-field-label-tokens.md)]
+There are a variety of special tokens available for use in field labels. These tokens resolve to a specific value for a field. The following list describes each available token.
+
+<table>
+	<thead>
+	<tr>
+		<th>Token</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><code>{CommunityId}</code></td>
+		<td>The identifier of the community associated with the data field set's query, or empty if a namespace was queried instead.</td>
+	</tr>
+	<tr>
+		<td><code>{CommunityName}</code></td>
+		<td>The name of the community associated with the data field set's query, or empty if a namespace was queried instead. If a community alias is in effect, the alias is used instead of the community name</td>
+	</tr>
+	<tr>
+		<td><code>{IdentifyingValue}</code></td>
+		<td>The value of the identifying field.</td>
+	</tr>
+	<tr>
+		<td><code>{Key}</code></td>
+		<td>The value of the first of the <code>Key</code> objects specified on the field.</td>
+	</tr>
+	<tr>
+		<td><code>{NamespaceId}</code></td>
+		<td>The identifier of the namespace where the corresponding stream/asset originates from. For community queries, this is the owner's namespace from which this stream/asset was shared.</td>
+	</tr>
+	<tr>
+		<td><code>{NamespaceDescription}</code></td>
+		<td>The description of the namespace where the corresponding stream/asset originates from. For community queries, this is the owner's namespace from which this stream/asset was shared. /td>
+	</tr>
+	<tr>
+		<td><code>{QueryId}</code></td>
+		<td>The identifier of the query that produced the field.</td>
+	</tr>
+	<tr>
+		<td><code>{StreamReferenceName}</code></td>
+		<td>The value of the first of the <code>StreamReferenceName</code> objects specified on the field.</td>
+	</tr>
+	<tr>
+		<td><code>{SummaryType}</code></td>
+		<td>The value of the summary type of the field (if defined).</td>
+	</tr>
+	<tr>
+		<td><code>{SummaryDirection}</code></td>
+		<td>The value of the summary direction of the field (if summary type is defined).</td>
+	</tr>
+	<tr>
+		<td><code>{TenantId}</code></td>
+		<td>The identifier of the tenant where the corresponding stream/asset originates from. For community queries, this is the owner's tenant from which this stream/asset was shared.</td>
+	</tr>
+	<tr>
+		<td><code>{TenantName}</code></td>
+		<td>The name of the tenant where the corresponding stream/asset originates from. For community queries, this is owner's tenant from which this stream/asset was shared.</td>
+	</tr>
+	<tr>
+		<td><code>{Uom}</code></td>
+		<td>The value of the unit of measure of the field (if UOM is present in the source).</td>
+	</tr>
+	<tbody>
+</table>
+
+If a special parameter fails to resolve, it becomes an empty string, `""`.
 
 ### Source
 A field's [`.Source`](xref:DataViewsQuickStartDefine#fieldsource-enumeration) indicates where the field's values will come from, if applicable. A field of source type `FieldSource.NotApplicable` cannot be used as a data field.
 
 ### Keys
-The collection of data items in the data view represents all OCS resources that match the `.Queries` field of the data view, excluding data items that are ineligible. The list of data items can be retrieved from a resolved data view. The ineligible data items can be retrieved from a resolved data view to determine OCS resources that match the queries but cannot be included in the data view results. A data item is ineligible if it does not contain at least one eligible non-key data item field. In certain cases, a field may need to address data _within_ its data source, such as a particular Metadata value of a data item.  This applies to the sources `Metadata`, `PropertyId`, and `PropertyName`.
+The collection of data items in the data view represents all AVEVA Data Hub resources that match the `.Queries` field of the data view, excluding data items that are ineligible. The list of data items can be retrieved from a resolved data view. The ineligible data items can be retrieved from a resolved data view to determine AVEVA Data Hub resources that match the queries but cannot be included in the data view results. A data item is ineligible if it does not contain at least one eligible non-key data item field. In certain cases, a field may need to address data _within_ its data source, such as a particular Metadata value of a data item.  This applies to the sources `Metadata`, `PropertyId`, and `PropertyName`.
 
 Multiple keys may be specified in the field's `.Keys`. This is a way to overcome differences in properties or metadata across data items. Keys are evaluated in order specified until a match is found, i.e. first-match-wins.
 

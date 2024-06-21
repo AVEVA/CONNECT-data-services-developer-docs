@@ -79,17 +79,17 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 Returns a collection of stored values at indexes based on request parameters.
   
 SDS supports four ways of specifying which stored events to return:
-- [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
+- **Find Distinct Value**: Returns a stored event based on the specified index and searchMode. 
     
     **Parameters**: Accepts ``index`` and ``searchMode``.
-- [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+- **Filtered**: Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
     
     **Parameters**: Accepts a ``filter`` expression. 
-- [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+- **Range**: Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
     Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
     
     **Parameters**: Accepts ``startIndex`` and ``count``.
-- [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+- **Window**: Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
     
     **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 

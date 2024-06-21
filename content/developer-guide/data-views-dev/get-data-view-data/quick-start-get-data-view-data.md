@@ -4,7 +4,7 @@ uid: DataViewsQuickStartGetData
 
 # Get data view data
 
-You retrieve data view data with the [Data API](xref:DataViewsDataAPI). This topic explains the concepts and workflow to retrieve data view data.
+You retrieve data view data with the [Data API](xref:data-views-data-views). This topic explains the concepts and workflow to retrieve data view data.
 
 ## General concepts
 
@@ -18,17 +18,17 @@ All data in a data view is associated with an index value, for example, a timest
 
 Though `DateTime` is the most common index type for stream data, data views can target data of other index types, as noted in [Define a Data View](xref:DataViewsQuickStartDefine).
 
-For `DateTime` indexed data views, use the ISO 8601 format as the index value. Format interval timespan values using the standard timespan format. For example, d.hh:mm:ss.fffffff. Use either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:DataViewsDataAPI) returns in UTC.
+For `DateTime` indexed data views, use the ISO 8601 format as the index value. Format interval timespan values using the standard timespan format. For example, d.hh:mm:ss.fffffff. Use either UTC or local time with an offset specified. Data retrieved using the [Data API](xref:data-views-data-views) returns in UTC.
 
 #### Index range
 
 Three parameters control the range and granularity of data returned:
 
 | Name | Query-time parameter | Default property | Description |
-|--|--|--|--|
-| Start index | `startIndex` | `DefaultStartIndex` | The inclusive start boundary of the data view data
-| End index | `endIndex` | `DefaultEndIndex` | The inclusive end boundary of the data view data
-| Interval | `interval` | `DefaultInterval` | The interval between index values: only applies to interpolated retrieval mode
+| --- | --- | --- | --- |
+| Start index | `startIndex` | `DefaultStartIndex` | The inclusive start boundary of the data view data |
+| End index | `endIndex` | `DefaultEndIndex` | The inclusive end boundary of the data view data |
+| Interval | `interval` | `DefaultInterval` | The interval between index values: only applies to interpolated retrieval mode |
 
 Default values may, optionally, be defined on the data view itself. It is not necessary to define defaults for all three properties.
 
@@ -56,24 +56,24 @@ Stored retrieval mode returns stored or window data. The resulting data view dat
 
 ```json
 [
-    {
-        "Time": "2018-01-01T00:00:03Z",
-        "Temperature": 24,
-        "Flowrate": null,
-        "Volume": 245
-    },
-    {
-        "Time": "2018-01-01T00:00:14Z",
-        "Temperature": 24,
-        "Flowrate": 44,
-        "Volume": null
-    },
-    {
-        "Time": "2018-01-01T00:00:32Z",
-        "Temperature": null,
-        "Flowrate": null,
-        "Volume": 245
-    }
+  {
+    "Time": "2018-01-01T00:00:03Z",
+    "Temperature": 24,
+    "Flowrate": null,
+    "Volume": 245
+  },
+  {
+    "Time": "2018-01-01T00:00:14Z",
+    "Temperature": 24,
+    "Flowrate": 44,
+    "Volume": null
+  },
+  {
+    "Time": "2018-01-01T00:00:32Z",
+    "Temperature": null,
+    "Flowrate": null,
+    "Volume": 245
+  }
 ]
 ```
 
@@ -87,10 +87,11 @@ If one or more of these parameters is not specified at query time or as a defaul
 #### Empty or missing values
 
 SDS stream properties may be of nullable (e.g. `NullableInt32`) or non-nullable (e.g. `Int32`) types. Data views treats all fields as nullable, as is necessary for its fundamental goal of aligning large datasets.
-| SDS property type  | Corresponding data view field type |
-|--|--|
-| Double | NullableDouble |
-| NullableDouble | NullableDouble |
+
+| SDS property type | Corresponding data view field type |
+| ----------------- | ---------------------------------- |
+| Double            | NullableDouble                     |
+| NullableDouble    | NullableDouble                     |
 
 If there is no value in an SDS stream for a requested index, the value of the corresponding data view fields(s) will be `null`.
 
@@ -106,16 +107,17 @@ Data records are ordered
 The view data is available in several formats. A format can be specified using the `form` parameter, for example, `form=table`.
 
 | Name | Id | Enumeration Id | Description |
-|--|--|--|--|
-| JSON  | `default` | 0 | JSON object representation. An array of objects, each describing one data record. (default) |
-| Table | `table` | 1 | JSON row-column representation. Includes an array describing the `.Columns` (corresponding to field mappings of the data view) and an array of data `.Rows`. Each row describes one data record.
+| --- | --- | --- | --- |
+| JSON | `default` | 0 | JSON object representation. An array of objects, each describing one data record. (default) |
+| Table | `table` | 1 | JSON row-column representation. Includes an array describing the `.Columns` (corresponding to field mappings of the data view) and an array of data `.Rows`. Each row describes one data record. |
 | Table with header | `tableh` | 2 | Similar to `table`. The first of the `.Rows` is an array of the field mapping identifiers, information that is also available in the `.Columns` of both table formats. |
 | CSV | `csv` | 3 | Comma-separated values. Each row describes one data record. |
 | CSV with header | `csvh` | 4 | Similar to `csv`. The first row contains the identifier of its corresponding field mapping. |
+| Apache Parquet | `parquet` | 5 | Parquet format. |
 
 #### Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [OCS API reference](xref:osisoftCloudServices).
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [AVEVA Data Hub API reference](xref:osisoftCloudServices).
 
 ### Paging
 
@@ -143,7 +145,7 @@ The hyperlink preserves all request parameters, while adding or updating a `cont
 
 For example:
 
-```
+```text
 Link: <.../dataViews/{dataViewId}/data/interpolated?continuationToken=MjAxOC0wMS0wMVQwMDowMDoxMVo_MD90Yk1OblE_QUxXcEZBP1VEdGxIMWJROG9z&count=1000>; rel="next"
 ```
 
@@ -157,7 +159,7 @@ If the continuation token becomes invalid and paging must be restarted, clients 
 
 For example:
 
-```
+```text
 Link: <.../dataViews/{dataViewId}/data/interpolated?cache=Preserve&count=1000>; rel="first"
 ```
 
@@ -177,13 +179,13 @@ It is recommended to suppress [re-resolution](xref:ResolvedDataView#when-is-a-da
 
 ### Resolution behavior
 
-By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any data items that have been added to or removed from the underlying OCS data store. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
+By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any data items that have been added to or removed from the underlying AVEVA Data Hub data store. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
 
 Requests for subsequent pages include a `continuationToken`. This implictly suppresses re-resolution, akin to cache "preserve" behavior.
 
 ### Field mapping maximum count
 
-Shape plays an important role in both the performance and usefulness of a data view. In order to retain this balance, a maximum threshold of 1,000 field mappings is imposed for each data view. OCS checks the field mapping count prior to constructing the data set and returns a message if the limit has been exceeded.
+Shape plays an important role in both the performance and usefulness of a data view. In order to retain this balance, a maximum threshold of 1,000 field mappings is imposed for each data view. AVEVA Data Hub checks the field mapping count prior to constructing the data set and returns a message if the limit has been exceeded.
 
 If your data view exceeds this limit, there are several ways to shape the data view to reduce the number of field mappings generated:
 

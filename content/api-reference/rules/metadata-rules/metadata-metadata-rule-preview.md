@@ -145,7 +145,7 @@ Creates a `RulePreviewResponse` of a `RuleModel` object.
 
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
-?KeepOldMetadata={KeepOldMetadata}&Skip={Skip}&Count={Count}
+?KeepOldMetadata={KeepOldMetadata}&Skip={Skip}&Count={Count}&PageSize={PageSize}
 ```
 
 <h4>Parameters</h4>
@@ -157,7 +157,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/metadatarules
 <br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted.
 Defaults to false.<br/><br/>`[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip.<br/><br/>`[optional] integer Count`
-<br/>An Int32 to determine how many results to return.<br/><br/>
+<br/>An Int32 to determine how many results to return.<br/><br/>`[optional] integer PageSize`
+<br/><br/>
 
 <h4>Request Body</h4>
 

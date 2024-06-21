@@ -21,8 +21,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7920</WindowHeight>
-  <WindowWidth>21570</WindowWidth>
+  <WindowHeight>13950</WindowHeight>
+  <WindowWidth>24735</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <TabRatio>500</TabRatio>
@@ -47,10 +47,10 @@
    <Protection/>
   </Style>
   <Style ss:ID="s63">
-   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Bold="1"/>
   </Style>
   <Style ss:ID="s64">
-   <Font ss:FontName="Arial" x:Family="Swiss" ss:Bold="1"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
   </Style>
   <Style ss:ID="s65">
    <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:Indent="1"/>
@@ -202,29 +202,40 @@
   <NamedRange ss:Name="TaskType" ss:RefersTo="='tag index lookup'!R6C3:R14C3"/>
  </Names>
  <Worksheet ss:Name="classification">
-  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="4" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="4" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="69" ss:DefaultRowHeight="12.9375">
    <Column ss:AutoFitWidth="0" ss:Width="234.75"/>
-   <Column ss:AutoFitWidth="0" ss:Width="144.75"/>
-   <Column ss:Width="106.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="144.75" ss:Span="1"/>
+   <Column ss:Index="4" ss:Width="106.5"/>
    <Column ss:Width="161.25"/>
    <Column ss:AutoFitWidth="0" ss:Width="87" ss:Span="2"/>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">Filename</Data></Cell>
     <Cell><Data ss:Type="String">Title</Data></Cell>
+    <Cell><Data ss:Type="String">Experience</Data></Cell>
     <Cell><Data ss:Type="String">Product Family</Data></Cell>
     <Cell><Data ss:Type="String">Product Name</Data></Cell>
     <Cell><Data ss:Type="String">Keywords</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">MAP</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">cloud</Data></Cell>
+<<<<<<< HEAD
+    <Cell ss:Index="3"><Data ss:Type="String">pi_system</Data></Cell>
     <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">cloud</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">pi_system</Data></Cell>
     <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data></Cell>
+=======
+    <Cell ss:Index="3"><Data ss:Type="String">connect</Data></Cell>
+    <Cell><Data ss:Type="String">AVEVA-Data-Hub</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="15">
+    <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">connect</Data></Cell>
+    <Cell><Data ss:Type="String">AVEVA-Data-Hub</Data></Cell>
+>>>>>>> downstream/main
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">default</Data></Cell>
@@ -251,8 +262,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>3</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>34</ActiveRow>
+     <ActiveCol>1</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -266,7 +277,7 @@
    <Column ss:Width="318"/>
    <Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="87" ss:Span="3"/>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s64"><Data ss:Type="String">Notes</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Notes</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">Apply Product Name key by using correct version subkey. Do not apply parent key and version subkey. Only apply one Product Name key per publication.</Data></Cell>
@@ -274,18 +285,18 @@
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">Apply Product Family only to publications where family is relevant. See Tags by Publication Lookup tab. Some products should not have a family (OCS, Server, Edge, Cloud Connect). Product Family is used to group and filter groups of parallel products.</Data></Cell>
    </Row>
-   <Row ss:Index="5" ss:AutoFitHeight="0" ss:StyleID="s64">
+   <Row ss:Index="5" ss:AutoFitHeight="0" ss:StyleID="s63">
     <Cell><Data ss:Type="String">Product Family</Data></Cell>
     <Cell><Data ss:Type="String">Product Name</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">adapter</Data><NamedCell ss:Name="Product"/></Cell>
-    <Cell ss:StyleID="s63"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data><NamedCell
+    <Cell ss:StyleID="s64"><Data ss:Type="String">OSIsoft-Cloud-Services-(OCS)</Data><NamedCell
       ss:Name="Role"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">connector</Data><NamedCell ss:Name="Product"/></Cell>
-    <Cell ss:StyleID="s63"><Data ss:Type="String">PI-Server</Data><NamedCell
+    <Cell ss:StyleID="s64"><Data ss:Type="String">PI-Server</Data><NamedCell
       ss:Name="Role"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
@@ -295,7 +306,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">integrator</Data><NamedCell ss:Name="Product"/></Cell>
-    <Cell ss:StyleID="s63"><Data ss:Type="String">PI-Vision</Data><NamedCell
+    <Cell ss:StyleID="s64"><Data ss:Type="String">PI-Vision</Data><NamedCell
       ss:Name="Role"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">

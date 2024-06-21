@@ -4,9 +4,9 @@ uid: DataViewShape
 
 # Data view shape
 
-[!include[choose-data-shape](../../../analytics/data-views/_includes/choose-data-shape.md)]
+Data views can be configured to return data in either a standard shape or a narrow shape. Standard shape returns data in a grouped row format. Narrow shape is a pivot of the standard table.
 
-[!include[data-shape-intro](../../../analytics/data-views/_includes/data-shape-intro.md)]
+With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
 The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsQuickStartGetData#format) (form = csvh).
 
@@ -16,7 +16,9 @@ Set the [`DataViewShape`](xref:DataViewsQuickStartDefine#data-view-properties) p
 
 ## Standard shape
 
-[!include[standard-shape](../../..//analytics/data-views/_includes/standard-shape.md)]
+The standard table column structure is built horizontally from left to right. The index field is first, followed by the grouping fields, if any exist.  Data field sets come next, in the order they are presented in the data view. Fields are presented in order of appearance within each data field set for each data item from the associated query.
+
+Vertically, the standard structure depends on the inclusion of grouping fields. If grouping fields are not defined, each resultant index appears only once, and all interpolated data is in that row. If grouping fields are defined, then the resultant indexes will repeat vertically for each group. The groups are presented in alphabetical order.
 
 ### Example: Get data response body for standard shape with no grouping field
 
@@ -54,7 +56,18 @@ Timestamp,Site,Id,SolarRadiation,Temperature,Tags
 
 ## Narrow shape
 
-![include[narrow-shape](../../../analytics/data-views/_includes/narrow-shape.md)]
+The narrow table pivots the standard table. Each data field becomes a row comprised of the following columns: 
+
+- Index column
+- Grouping value column(s)
+- Field column, which holds the resolved column label of the field
+- Value column, which holds the field value such as the property or metadata value
+
+The column label of the index and grouping value columns may vary depending on the resolved label. The Field and Value column labels are not modifiable.
+
+The data view is built vertically by grouping field, if present, then by field.
+
+Data views resolving into multiple data items with the same property ids or names, should use a grouping field or an identifier in order to differentiate the data rows.
 
 ### Example: Get data response body for narrow shape with grouping field (site)
 

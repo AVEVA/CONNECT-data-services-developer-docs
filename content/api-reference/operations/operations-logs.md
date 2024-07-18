@@ -56,7 +56,7 @@ GET /api/v1/tenants/{tenantId}/logs
 
 <a id="opIdLog_Get Namespace Logs"></a>
 
-Returns logs for a namespace. The source parameter can be repeated multiple times. Valid sources are: - Data ingress - Data storage - Data views - Metadata - PI to Data Hub Omit the source parameter to retrieve all sources. The severity parameter can be repeated multiple times. Valid severities are: - Critical - Error - Warning - Information - Verbose Omit the severity parameter to retrieve all severities.
+Returns logs for a namespace. The source parameter can be repeated multiple times. Valid sources are: - Data ingress - Data storage - Data views - Metadata - PI to CONNECT Omit the source parameter to retrieve all sources. The severity parameter can be repeated multiple times. Valid severities are: - Critical - Error - Warning - Information - Verbose Omit the severity parameter to retrieve all severities.
 
 ### Request
 ```text 

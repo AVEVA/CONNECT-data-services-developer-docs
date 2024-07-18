@@ -213,7 +213,7 @@ await config.CreateTypeAsync(simpleType);
 
 A stream has an associated type and stores a stream of events or objects that take the shape of that type. For more information, see [Streams](xref:sds-streams).
 
-Define and post a JSON representation of a stream to an CONNECT data services endpoint.
+Define and post a JSON representation of a stream to a CONNECT data services endpoint.
 
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}

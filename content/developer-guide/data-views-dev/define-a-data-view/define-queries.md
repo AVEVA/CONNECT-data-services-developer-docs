@@ -16,7 +16,7 @@ The query text is the same as the corresponding data item's query syntax. For ex
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by `FieldSet` to link to the query's results. |
 | Kind  | DataItemResourceType | Optional | Stream | Type of resource to be queried. |
-| Value | string | Optional | null | A query for AVEVA Data Hub resources in the corresponding query syntax.
+| Value | string | Optional | null | A query for CONNECT data services resources in the corresponding query syntax.
 
 ## Using queries
 

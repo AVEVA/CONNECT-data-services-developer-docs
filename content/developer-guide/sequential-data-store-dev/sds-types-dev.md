@@ -4,7 +4,7 @@ uid: sdsTypes
 
 # Types
 
-The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate events. Events are stored in streams. A primitive type is available in AVEVA Data Hub and is used within the API and REST definitions to identify a stream type.
+The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate events. Events are stored in streams. A primitive type is available in CONNECT data services and is used within the API and REST definitions to identify a stream type.
 
 You can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or complex or nested types using the properties collection of SdsTypes. For more information, see <xref:sds-sdstypes-props#sdstypeproperty>.
 

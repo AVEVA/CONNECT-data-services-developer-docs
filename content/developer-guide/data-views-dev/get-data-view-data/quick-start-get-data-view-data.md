@@ -117,7 +117,7 @@ The view data is available in several formats. A format can be specified using t
 
 #### Response format
 
-Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [AVEVA Data Hub API reference](xref:osisoftCloudServices).
+Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [CONNECT data services API reference](xref:osisoftCloudServices).
 
 ### Paging
 
@@ -179,13 +179,13 @@ It is recommended to suppress [re-resolution](xref:ResolvedDataView#when-is-a-da
 
 ### Resolution behavior
 
-By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any data items that have been added to or removed from the underlying AVEVA Data Hub data store. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
+By default, requests for a first page of data will cause the data view to re-resolve. See the documentation on [resolved data views](xref:ResolvedDataView#when-is-a-data-view-resolved). This ensures that the data view accounts for any data items that have been added to or removed from the underlying CONNECT data services data store. Re-resolution may be suppressed by explicitly specifying a cache behavior of "preserve".
 
 Requests for subsequent pages include a `continuationToken`. This implictly suppresses re-resolution, akin to cache "preserve" behavior.
 
 ### Field mapping maximum count
 
-Shape plays an important role in both the performance and usefulness of a data view. In order to retain this balance, a maximum threshold of 1,000 field mappings is imposed for each data view. AVEVA Data Hub checks the field mapping count prior to constructing the data set and returns a message if the limit has been exceeded.
+Shape plays an important role in both the performance and usefulness of a data view. In order to retain this balance, a maximum threshold of 1,000 field mappings is imposed for each data view. CONNECT data services checks the field mapping count prior to constructing the data set and returns a message if the limit has been exceeded.
 
 If your data view exceeds this limit, there are several ways to shape the data view to reduce the number of field mappings generated:
 

@@ -4,7 +4,7 @@ uid: apiConsole
 
 # API console
 
-The API Console provides a graphical interface for using the AVEVA Data Hub REST API. Developers can use this console to configure and test API requests before implementing them in their own applications. To use the API Console, select select **Developer Tools** > **API Console** from the left pane.
+The API Console provides a graphical interface for using the CONNECT data services REST API. Developers can use this console to configure and test API requests before implementing them in their own applications. To use the API Console, select select **Developer Tools** > **API Console** from the left pane.
 
 ## Request area
 
@@ -14,7 +14,7 @@ Use the request area to configure an API request. Choose a version of the API, t
 
 ### API version
 
-Select a version from the dropdown list. For more information on the available versions, see [AVEVA Data Hub API versioning](xref:osisoftCloudServices#aveva-data-hub-api-versioning).
+Select a version from the dropdown list. For more information on the available versions, see [CONNECT data services API versioning](xref:osisoftCloudServices#aveva-data-hub-api-versioning).
 
 ### Tenant path
 
@@ -36,7 +36,7 @@ Use the **Verb** dropdown to select a request method. By default the API Console
 
 Use the **URI** field to enter an API route to make a request against. If your request is tenant-scoped, you can type a forward slash (/) in the field to display a dropdown list of path autocomplete options. If you select a root-scoped path, a different dropdown list gives you other categories of data.
 
-For a complete reference of URI endpoints available in the AVEVA Data Hub API, refer to the [API Reference](xref:osisoftCloudServices).
+For a complete reference of URI endpoints available in the CONNECT data services API, refer to the [API Reference](xref:osisoftCloudServices).
 
 #### Path autocomplete
 
@@ -72,7 +72,7 @@ When making `GET` requests, you can specify parameters available for the route o
 
 #### Continuation token
 
-The continuation token field is used in support of server-side pagination. A continuation token is a mechanism used to handle large amounts of data efficiently. When you request data from a data view using the AVEVA Data Hub REST API, there might be too many results to retrieve all at once. To address this, the API provides you with a subset of the data and a continuation token.
+The continuation token field is used in support of server-side pagination. A continuation token is a mechanism used to handle large amounts of data efficiently. When you request data from a data view using the CONNECT data services REST API, there might be too many results to retrieve all at once. To address this, the API provides you with a subset of the data and a continuation token.
 
 The continuation token parameter is available when working with streams or data views. When working with streams, select the checkbox to include the parameter in your request when no value is set.
 
@@ -126,7 +126,7 @@ The **Details** tab lists metadata related to the previous API request, includin
 
 - **URI Path**: This field displays the method and URI used in the previous API request. Select **Copy** ![copy](../_icons/default/content-copy.svg) to copy the URI to your clipboard.
 
-- **HTTP status**: The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made to AVEVA Data Hub, the system returns a status code. For more information about the possible status codes, see <xref:ocsStatusCodes>.
+- **HTTP status**: The server issues HTTP response status codes when a client makes a request over HTTP. In response to the requests made to CONNECT data services, the system returns a status code. For more information about the possible status codes, see <xref:ocsStatusCodes>.
 
 - **Link**: For `GET` requests that include a [continuation token](#continuation-token), one or more link header is included in support of pagination. Each header is a clickable link that updates the request metadata.
 

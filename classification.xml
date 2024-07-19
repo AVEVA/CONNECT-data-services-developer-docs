@@ -219,13 +219,13 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">MAP</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">CONNECT</Data></Cell>
-    <Cell><Data ss:Type="String">CONNECT-data-services</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">connect</Data></Cell>
+    <Cell><Data ss:Type="String">connect-data-services</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="15">
     <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
-    <Cell ss:Index="3"><Data ss:Type="String">CONNECT</Data></Cell>
-    <Cell><Data ss:Type="String">CONNECT-data-services</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">connect</Data></Cell>
+    <Cell><Data ss:Type="String">connect-data-services</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell><Data ss:Type="String">default</Data></Cell>

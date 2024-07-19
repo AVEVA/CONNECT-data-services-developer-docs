@@ -120,7 +120,7 @@ Best practices for GraphQL naming:
 - Types and enum names are Pascal case (MyType)
 - Property names are camel case (myProperty)
 
-Numeric properties can also be given a default UOM with the `uom` property. This would be the Id or abbreviation of the UOM as defined by ADH Streams `units` endpoint. Defining a default UOM specifies the UOM that will be used if one is not provided during ingress. It also restricts the possible set of ingress UOM's to the same dimension as the default UOM. 
+Numeric properties can also be given a default UOM with the `uom` property. This would be the Id or abbreviation of the UOM as defined by SDS Streams `units` endpoint. Defining a default UOM specifies the UOM that will be used if one is not provided during ingress. It also restricts the possible set of ingress UOM's to the same dimension as the default UOM. 
 
 ## Retrieval of types 
 
@@ -176,7 +176,6 @@ The `State` property on each Type and Enum affects how the GraphQL is generated.
 
 - Active – schema generated for query and ingress
 - Deprecated – schema generated for query only
-- Deleted – not generated in schema; this is a soft-delete
 
 Authorization Tag changes will also be detected within 60 seconds of changes and the new access policy will be pushed into the GraphQL server.
 

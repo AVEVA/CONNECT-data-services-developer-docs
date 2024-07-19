@@ -4,13 +4,13 @@ uid: DataViewsOverview
 
 # Data views
 
-Data views allow you to access subsets of data items from AVEVA Data Hub in data-driven applications, where the items can be used for data science enablement. With data views, you can bridge your raw AVEVA Data Hub data to third-party applications like Microsoft Power BI, where it can be used for analytics, machine learning, and so on. Users can programmatically retrieve data view content using the AVEVA Data Hub API. Data views deliver shaped data that is ready for consumption because it is normalized, aligned, and contextualized.
+Data views allow you to access subsets of data items from CONNECT data services in data-driven applications, where the items can be used for data science enablement. With data views, you can bridge your raw CONNECT data services data to third-party applications like Microsoft Power BI, where it can be used for analytics, machine learning, and so on. Users can programmatically retrieve data view content using the CONNECT data services API. Data views deliver shaped data that is ready for consumption because it is normalized, aligned, and contextualized.
 
 Understanding how the data view resolves into content is important for both the user designing the data view and the user working with that view for data science. Data views provide extensive visibility into the data included in the view. The concept of "resolving" a data view is when the data view's queries and logic are executed to determine the data view's exact schema and content.
 
 ## Defining and refining a data view
 
-There are several concepts and types used when defining data views. This is accomplished via the RESTful [data views API](xref:DataViewsAPIOverview). See the AVEVA Data Hub documentation for greater detail on these concepts:
+There are several concepts and types used when defining data views. This is accomplished via the RESTful [data views API](xref:DataViewsAPIOverview). See the CONNECT data services documentation for greater detail on these concepts:
 
 - [Define queries](xref:DataViewsQueries)
 - [Define data field sets](xref:DataViewsFieldSets)

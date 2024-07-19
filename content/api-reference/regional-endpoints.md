@@ -4,11 +4,11 @@ uid: regional-endpoints
 
 # Regional endpoints
 
-A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where AVEVA Data Hub cloud resources and data are stored. 
+A regional endpoint is the URL host address referenced by API requests. The region represents the cluster where CONNECT data services cloud resources and data are stored. 
 
-The following table lists the current AVEVA Data Hub region labels and corresponding endpoints.
+The following table lists the current CONNECT data services region labels and corresponding endpoints.
 
-| CONNECT region label | AVEVA Data Hub region label | AVEVA Data Hub regional endpoints |
+| CONNECT region label | CONNECT data services region label | CONNECT data services regional endpoints |
 | ------------- | ------------- | ----------------- |
 | US-West | (westus) | https://uswe.datahub.connect.aveva.com/ |
 | EU-West | (northeurope) | https://euno.datahub.connect.aveva.com/ |
@@ -20,7 +20,7 @@ The following table lists the current AVEVA Data Hub region labels and correspon
 
 Reference the regional endpoint in GET, POST, PUT, PATCH, and DELETE requests. To retrieve a region's host URL for an object that belongs to a namespace, such as a stream, use the `Self` property within the context of the namespace.
 
-In general, most AVEVA Data Hub API routes allow these actions:
+In general, most CONNECT data services API routes allow these actions:
  
 * GET
 
@@ -34,9 +34,9 @@ In general, most AVEVA Data Hub API routes allow these actions:
 
 ## List of objects and actions (US-West region only)
 
-The following table lists all the actions you can use on AVEVA Data Hub objects in the US-West (primary) region. 
+The following table lists all the actions you can use on CONNECT data services objects in the US-West (primary) region. 
 
-| AVEVA Data Hub Object |	GET |	POST |	PUT | PATCH |	DELETE |
+| CONNECT data services Object |	GET |	POST |	PUT | PATCH |	DELETE |
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | Automation Identities |	 | ✔ | ✔ |	✔ |	✔ |
 |Blogs|	✔|	**N/A**|	**N/A**|	**N/A**|	**N/A**|

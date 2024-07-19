@@ -2,13 +2,13 @@
 uid: omfIngressSpecification
 ---
 
-# Use Open Message Format with AVEVA Data Hub
+# Use Open Message Format with CONNECT data services
 
-[The Open Message Format (OMF) specification](https://docs.aveva.com/bundle/omf) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by AVEVA Data Hub back-end system.
+[The Open Message Format (OMF) specification](https://docs.aveva.com/bundle/omf) is generic in that it does not specify a particular back-end system. This topic is a companion to the OMF specification which describes how OMF is interpreted by CONNECT data services back-end system.
 
 ## Headers
 
-For a description of each of the headers, see [OMF specification](https://docs.aveva.com/bundle/omf). Note that rather than using a ``producertoken``, data collection calls to AVEVA Data Hub require a bearer token to be attached in the header, as documented in the <xref:sdsQuickStart> documentation. The bearer token is used to authenticate the sender and to authorize the sender for use with a particular tenant. The client ID associated with this token is used to route messages to a particular OMF connection that it is mapped to.
+For a description of each of the headers, see [OMF specification](https://docs.aveva.com/bundle/omf). Note that rather than using a ``producertoken``, data collection calls to CONNECT data services require a bearer token to be attached in the header, as documented in the <xref:sdsQuickStart> documentation. The bearer token is used to authenticate the sender and to authorize the sender for use with a particular tenant. The client ID associated with this token is used to route messages to a particular OMF connection that it is mapped to.
 
 The ``omfversion`` header must match the version of the OMF spec used to construct the message. Versions 1.0 and 1.1 of the spec are currently supported.
 
@@ -18,7 +18,7 @@ OMF message types fall into three categories: *type*, *container*, and *data*, w
 
 ### Type messages
 
-A *type* message is interpreted by AVEVA Data Hub as an SdsType in the Sequential Data Store. Because SdsTypes are immutable, update operations are not supported. The keywords in the Type definition are interpreted as follows:
+A *type* message is interpreted by CONNECT data services as an SdsType in the Sequential Data Store. Because SdsTypes are immutable, update operations are not supported. The keywords in the Type definition are interpreted as follows:
 
 - ``id``: Corresponds to the SdsType Id field. It must conform to the rules defined for a typeId specified here: [Types](xref:sdsTypes)
 

@@ -9,7 +9,7 @@
 			"dest": "api",
 			"disableGitFeatures": false,
 			"_appLogoPath": "./content/api-reference/images/atlas_icon.png",
-			"_appName": "AVEVA Data Hub Developer Documentation"
+			"_appName": "CONNECT data services Developer Documentation"
 		}
 	],
 	"build": {

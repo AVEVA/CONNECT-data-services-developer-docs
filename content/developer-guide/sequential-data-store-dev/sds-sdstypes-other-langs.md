@@ -4,7 +4,7 @@ uid: sds-sdstypes-other-langs
 
 # SdsType outside of .NET Framework
 
-You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you can see how types are built and defined in [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. For samples in other languages, go to [AVEVA Data Hub code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
+You can manually build types when .NET `SdsTypeBuilder` is unavailable. Below, you can see how types are built and defined in [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples. For samples in other languages, go to [CONNECT data services code samples in GitHub](https://github.com/osisoft/OSI-Samples-ADH/blob/main/docs/SDS_WAVEFORM.md).
 
 ## SdsTypeCode, SdsTypeProperty, and SdsType
 

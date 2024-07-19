@@ -77,7 +77,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules/statist
 
 <a id="opIdAssetRuleAdmin_Reset Tracking"></a>
 
-Resets the asset tracking table. If assetIds is specified, it will only clear the entries for those assets. This will cause rules to no longer identify rule-generated asset properties as rule-generated. That means rules will not delete or edit those asset properties. Only call this route if directed by AVEVA Data Hub Support.
+Resets the asset tracking table. If assetIds is specified, it will only clear the entries for those assets. This will cause rules to no longer identify rule-generated asset properties as rule-generated. That means rules will not delete or edit those asset properties. Only call this route if directed by CONNECT data services Support.
 
 <h3>Request</h3>
 

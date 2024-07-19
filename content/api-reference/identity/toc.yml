@@ -16,12 +16,6 @@
   href: identity-hybrid-clients.md
 - name: Identity providers
   href: identity-identity-providers.md
-- name: Invitation
-  href: invitation.md
-- name: Invitations
-  href: identity-invitations.md
-- name: Invitations
-  href: invitations.md
 - name: Secrets
   href: identity-secrets.md
 - name: Tenants roles

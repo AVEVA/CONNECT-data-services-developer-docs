@@ -259,7 +259,7 @@ GET /api/v1/tenants/{tenantId}/usage
 <a id="tocSusagedatarecord"></a>
 <a id="tocsusagedatarecord"></a>
 
-Usage within AVEVA Data Hub
+Usage within CONNECT data services
 
 #### Properties
 

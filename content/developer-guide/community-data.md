@@ -6,7 +6,7 @@ uid: CommunityData
 
 You can use APIs to read community data shared with your tenant. The steps are:
 
-1. Connect to AVEVA Data Hub with a role that has access to communities.
+1. Connect to CONNECT data services with a role that has access to communities.
 
 1. Query for the list of communities to which your tenant is connected. See [List Communities a Tenant is Joined to](../api-reference/identity/communities.md#list-communities-a-tenant-is-joined-to).
 

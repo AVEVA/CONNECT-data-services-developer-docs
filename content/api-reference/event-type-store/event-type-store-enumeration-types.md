@@ -27,7 +27,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
 <br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted Enumerations. If unspecified, a default value of false is used.<br/><br/>
+<br/>Parameter indicating whether to include deleted Enumeration members. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -200,9 +200,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
-`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted Enumerations. If unspecified, a default value of false is used.<br/><br/>
+<br/>The id of the Enumeration.<br/><br/>`boolean includeDeleted`
+<br/>Parameter indicating whether to include deleted Enumeration members. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -394,7 +393,7 @@ An Enumeration.<br/>
 
 <a id="opIdEnumerations_Create Or Update Enumeration"></a>
 
-Creates a new Enumeration or updates an existing and adds its Etag in the HTTP response header. The If-Match header is supported.
+Creates a new Enumeration or updates an existing and adds its Etag in the HTTP response header. Hard delete of the type is not supported through this route. The If-Match header is supported.
 
 <h3>Request</h3>
 
@@ -666,7 +665,7 @@ A list of Enumeration objects.<br/>
 
 <a id="opIdEnumerations_Bulk Delete Enumeration"></a>
 
-Deletes multiple Enumerations and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were succesful will be returned in the data.
+Deletes multiple Enumerations and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were successful will be returned in the data.
 
 <h3>Request</h3>
 

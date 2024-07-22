@@ -15,7 +15,7 @@ Returns an array of EventTypes in a given namespace and the version ETag in the 
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
-?skip={skip}&count={count}&includeDeleted={includeDeleted}&filter={filter}
+?skip={skip}&count={count}&filter={filter}&includeDeleted={includeDeleted}
 ```
 
 <h4>Parameters</h4>
@@ -25,9 +25,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
 <br/><br/>
 `[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted EventTypes. If unspecified, a default value of false is used.<br/><br/>`[optional] string filter`
-<br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>
+<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
+<br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>`[optional] boolean includeDeleted`
+<br/>Parameter indicating whether to include deleted EventType properties. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -364,9 +364,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes/{id}
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the EventType.<br/><br/>
-`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted EventTypes. If unspecified, a default value of false is used.<br/><br/>
+<br/>The id of the EventType.<br/><br/>`boolean includeDeleted`
+<br/>Parameter indicating whether to include deleted EventType properties. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -802,7 +801,7 @@ An EventType.<br/>
 
 <a id="opIdEventTypes_Create Or Update Event Type"></a>
 
-Creates a new EventType or updates an existing and adds its Etag in the HTTP response header. The If-Match header is supported.
+Creates a new EventType or updates an existing and adds its Etag in the HTTP response header. Updating the state of the properties to deleted is supported through this route. Hard Delete of the type however must be done with through the DELETE endpoint. The If-Match header is supported.
 
 <h3>Request</h3>
 
@@ -1398,7 +1397,7 @@ A list of EventType objects.<br/>
 
 <a id="opIdEventTypes_Bulk Delete Event Type"></a>
 
-Deletes multiple EventTypes and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were succesful will be returned in the data.
+Deletes multiple EventTypes and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were successful will be returned in the data.
 
 <h3>Request</h3>
 

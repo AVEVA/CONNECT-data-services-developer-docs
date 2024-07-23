@@ -32,7 +32,7 @@ GraphQL APIs return a standard GraphQL response type. This has the basic JSON fo
 
 ## Mutations
 
-Mutations allow you to upsert and delete data in the Graph Store. These APIs allow you to send in a collection of items to upsert or delete. If there are errors, the operation does not roll back. Instead, some items may succeed and some may fail. You can use the [GraphQL Console](https://docs.aveva.com/bundle/aveva-data-hub/page/1263333.html) to create queries and mutations.
+Mutations allow you to upsert and delete data in the Graph Store. These APIs allow you to send in a collection of items to upsert or delete. If there are errors, the operation does not roll back. Instead, some items may succeed and some may fail. You can use the [GraphQL Console](https://docs.aveva.com/bundle/connect-data-services/page/1263333.html) to create queries and mutations.
 
 - Upsert – Creates the item node if it does not exist; else it updates it. 
 
@@ -40,7 +40,7 @@ Mutations allow you to upsert and delete data in the Graph Store. These APIs all
 
   - Single point-in-time events can be modeled by setting endTime=startTime.
 
-  - Missing properties are ignored on update, set to null on create.
+  - Missing properties are ignored on update and set to null on create.
 
      - This can work like a REST PATCH.
 
@@ -80,7 +80,7 @@ Mutations allow you to upsert and delete data in the Graph Store. These APIs all
 
 ## Queries
 
-Queries allow you to query data in the Graph Store. These APIs allow you to choose your response structure (fields and relationships). They also allow you to filter, sort and page. You can use the <xref:graphQLConsole> to create queries and mutations.
+Queries allow you to query data in the Graph Store. These APIs allow you to choose your response structure (fields and relationships). They also allow you to filter, sort and page. You can use the [GraphQL Console](https://docs.aveva.com/bundle/connect-data-services/page/1263333.html) to create queries and mutations.
 
 - Query – Returns the results as requested by the query.
 
@@ -109,4 +109,6 @@ Queries allow you to query data in the Graph Store. These APIs allow you to choo
   - Where filters can request a UOM to apply as part of the Where operator. All values will be converted to that UOM before comparing to the value. Not specifying a UOM will use the default UOM. Ex: `where: { length: { lt: 1000 uom: "meters" } }`
 
   - Aggregations can request a UOM to apply before aggregating the values. This is passed as an argument to the aggregate.property. The result will be in the requested UOM. Not specifying a UOM will use the default UOM. Ex: `aggregate: { length( uom: "meters" ){ sum } }`
+
+  - Property values can be requested in a specific UOM. This is done by passing the UOM as an argument to the property. Not specifying a UOM will result in the UOM being returned as written. Ex: `length( uom: "meters" ) { value uom: { id }}`
 

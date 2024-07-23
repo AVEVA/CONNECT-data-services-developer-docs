@@ -62,7 +62,7 @@ This code sends a request along with your client Id and secret to an endpoint an
 
 ## Step 3 – Create an API request
 
-Build an API request in the [API console](xref:apiConsole), such as one that returns interpolated JSON data for a Data View. See [Use the API Console to retrieve your data view](https://docs.aveva.com/bundle/aveva-data-hub/page/1263302.html#_tip_use_the_api_console_to_retrieve_your_data_view).
+Build an API request in the [API console](xref:apiConsole), such as one that returns interpolated JSON data for a Data View. See [Use the API Console to retrieve your data view](https://docs.aveva.com/bundle/connect-data-services/page/1263302.html#_tip_use_the_api_console_to_retrieve_your_data_view).
 
 ![API console](../images/api_console.png)
 

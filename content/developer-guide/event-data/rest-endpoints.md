@@ -50,7 +50,7 @@ You can pass typeId, fields, filter, order by, count, and continuation token arg
 
      - `assetMember.metadata.Site in ["Buffalo", "New York"]`
 
-- orderBy – This specifies a single sort property and ASC or DESC.
+- orderBy – This specifies a single sort property and ASC or DESC. For example: `&orderBy=endTime desc`
 
 - count – This specifies the number of rows to be returned.
 

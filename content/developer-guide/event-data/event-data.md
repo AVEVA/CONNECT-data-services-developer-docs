@@ -8,7 +8,7 @@ You can store event data, such as manufacturing execution systems (MES) data, in
 
 ## Types
 
-Events are time-oriented operational data. All event data must have a type. You can create and manage a set of namespace-scoped Event Types, which are definitions for domain-specific events and surrounding metadata. The [Event Type Store APIs](xref:EventTypeStore) allow you to set up the Event Types, Reference Data Types, and Enumerations. 
+Events are time-oriented operational data. All event data must have a type. You can create and manage a set of namespace-scoped Event Types, which are definitions for domain-specific events and surrounding metadata. The [Event Type Store APIs](xref:EventTypeStore) allow you to create, read, update, and delete Event Types, Reference Data Types, and Enumerations. To delete an Event Type you must first delete all events of that type.
 
 ### Event Types
 
@@ -124,7 +124,7 @@ Numeric properties can also be given a default UOM with the `uom` property. This
 
 ## Retrieval of types 
 
-There are two parameters you can use when retrieving the collection of Enumerations, Reference Data Types, or Event Types. The boolean `includeDeleted` parameter allows the user to specify whether to include soft-deleted resources in the response body. The `filter` parameter allows the user to supply a comparison operator, the CreatedDate or ModifiedDate property, and a DateTime to indicate which resources to return. For example, the query string "CreatedDate gt 2023-06-01T00:00:00.00Z" will return resources created after the specified date. The following comparison operators can be used with the `filter` parameter. 
+There are two parameters you can use when retrieving the collection of Enumerations, Reference Data Types, or Event Types. The `filter` parameter allows the user to supply a comparison operator, the CreatedDate or ModifiedDate property, and a DateTime to indicate which resources to return. For example, the query string "CreatedDate gt 2023-06-01T00:00:00.00Z" will return resources created after the specified date. The following comparison operators can be used with the `filter` parameter. 
 
 - Eq: Equal to 
 - Ne: Not equal to 

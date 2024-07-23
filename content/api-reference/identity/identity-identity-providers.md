@@ -842,7 +842,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of all Groups on an Identity Provider"></a>
 
-Returns a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the Data Hub tenant.
+Returns a list of groups that matches the query string on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
 
 <h3>Request</h3>
 
@@ -904,7 +904,7 @@ Allowed for these roles:
 
 <a id="opIdIdentityProviders_Get a List of All Groups that a User Belongs to on an Identity Provider"></a>
 
-Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the Data Hub tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
+Returns a list of all groups that the specified user belongs to on an identity provider that supports advanced integration, such as Azure Active Directory. The prerequisite is that the identity provider must have already consented to sharing access to its directory with the tenant. The consent grants User.Read.All and GroupMember.Read.All permissions to the tenant.
 
 <h3>Request</h3>
 

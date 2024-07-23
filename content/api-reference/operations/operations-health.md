@@ -199,14 +199,14 @@ This represents a view model of a ServiceForTenantDbo
 <a id="tocSregiondto"></a>
 <a id="tocsregiondto"></a>
 
-The health for a suite of services representing a Data Hub capability within a region.
+The health for a suite of services representing a CONNECT data services capability within a region.
 
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Region|string|false|true|Region in which the services are located.|
-|Name|string|false|true|Name for the Data Hub capability facilitated by the region scoped services.|
+|Name|string|false|true|Name for the CONNECT data services capability facilitated by the region scoped services.|
 |HealthState|[State](#schemastate)|false|false|Health state of the region scoped services.|
 
 ```json

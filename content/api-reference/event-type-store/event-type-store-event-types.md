@@ -149,6 +149,111 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/EventTypes
     "ModifiedDate": "0001-01-01T00:00:00Z",
     "DefaultAuthorizationTag": "BaseAuthorizationTag",
     "Description": "This is a simple event type"
+  },
+  {
+    "Id": "SimpleEvent",
+    "Name": "SimpleEvent",
+    "GraphQLName": "SimpleEvent",
+    "State": "Active",
+    "Properties": [
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "eventStartTime",
+        "Name": "eventStartTime",
+        "GraphQLName": "eventStartTime",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The start time of the event."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "eventEndTime",
+        "Name": "eventEndTime",
+        "GraphQLName": "eventEndTime",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The end time of the event."
+      },
+      {
+        "PropertyTypeCode": "TimeSpan",
+        "Id": "eventDuration",
+        "Name": "eventDuration",
+        "GraphQLName": "eventDuration",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The duration of the event."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "id",
+        "Name": "id",
+        "GraphQLName": "id",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "A unique identifier for the event instance."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "modifiedDate",
+        "Name": "modifiedDate",
+        "GraphQLName": "modifiedDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The last modified date and time of the event."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "createdDate",
+        "Name": "createdDate",
+        "GraphQLName": "createdDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The date and time at which the event was created."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "createdByUser",
+        "Name": "createdByUser",
+        "GraphQLName": "createdByUser",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The identity of the user that created the event."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "eventType",
+        "Name": "eventType",
+        "GraphQLName": "eventType",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The type of the event."
+      },
+      {
+        "PropertyTypeCode": "Enumeration",
+        "Id": "eventState",
+        "Name": "eventState",
+        "GraphQLName": "eventState",
+        "Flags": "None",
+        "State": "Active",
+        "PropertyTypeId": "EventState",
+        "RemoteReferenceName": "EventState",
+        "Description": "The state of the event."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "authorizationTags",
+        "Name": "authorizationTags",
+        "GraphQLName": "authorizationTags",
+        "Flags": "IsCollection",
+        "State": "Active",
+        "Description": "The list of tags used to authorize access to the event."
+      }
+    ],
+    "Version": 1,
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z",
+    "DefaultAuthorizationTag": "BaseAuthorizationTag",
+    "Description": "This is a simple event type"
   }
 ]
 ```
@@ -1431,6 +1536,111 @@ A list of EventType object ids.<br/>
 
 ```json
 [
+  {
+    "Id": "SimpleEvent",
+    "Name": "SimpleEvent",
+    "GraphQLName": "SimpleEvent",
+    "State": "Active",
+    "Properties": [
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "eventStartTime",
+        "Name": "eventStartTime",
+        "GraphQLName": "eventStartTime",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The start time of the event."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "eventEndTime",
+        "Name": "eventEndTime",
+        "GraphQLName": "eventEndTime",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The end time of the event."
+      },
+      {
+        "PropertyTypeCode": "TimeSpan",
+        "Id": "eventDuration",
+        "Name": "eventDuration",
+        "GraphQLName": "eventDuration",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The duration of the event."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "id",
+        "Name": "id",
+        "GraphQLName": "id",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "A unique identifier for the event instance."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "modifiedDate",
+        "Name": "modifiedDate",
+        "GraphQLName": "modifiedDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The last modified date and time of the event."
+      },
+      {
+        "PropertyTypeCode": "DateTime",
+        "Id": "createdDate",
+        "Name": "createdDate",
+        "GraphQLName": "createdDate",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The date and time at which the event was created."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "createdByUser",
+        "Name": "createdByUser",
+        "GraphQLName": "createdByUser",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The identity of the user that created the event."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "eventType",
+        "Name": "eventType",
+        "GraphQLName": "eventType",
+        "Flags": "None",
+        "State": "Active",
+        "Description": "The type of the event."
+      },
+      {
+        "PropertyTypeCode": "Enumeration",
+        "Id": "eventState",
+        "Name": "eventState",
+        "GraphQLName": "eventState",
+        "Flags": "None",
+        "State": "Active",
+        "PropertyTypeId": "EventState",
+        "RemoteReferenceName": "EventState",
+        "Description": "The state of the event."
+      },
+      {
+        "PropertyTypeCode": "String",
+        "Id": "authorizationTags",
+        "Name": "authorizationTags",
+        "GraphQLName": "authorizationTags",
+        "Flags": "IsCollection",
+        "State": "Active",
+        "Description": "The list of tags used to authorize access to the event."
+      }
+    ],
+    "Version": 1,
+    "CreatedDate": "0001-01-01T00:00:00Z",
+    "ModifiedDate": "0001-01-01T00:00:00Z",
+    "DefaultAuthorizationTag": "BaseAuthorizationTag",
+    "Description": "This is a simple event type"
+  },
   {
     "Id": "SimpleEvent",
     "Name": "SimpleEvent",

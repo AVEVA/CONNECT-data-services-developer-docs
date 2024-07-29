@@ -4,6 +4,8 @@
   href: event-type-store-authorization-tags.md
 - name: Enumeration types
   href: event-type-store-enumeration-types.md
+- name: Event type store
+  href: event-type-store.md
 - name: Event types
   href: event-type-store-event-types.md
 - name: Reference data types

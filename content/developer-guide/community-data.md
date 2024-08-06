@@ -14,7 +14,7 @@ You can use APIs to read community data shared with your tenant. The steps are:
 
 1. (Optional) Retrieve a community's information using the communityId. See [Get a Community by Id](../api-reference/identity/communities.md#get-a-community-by-id).
 
-1. Query the community for streams using the communityId. See [Search Streams By Community](xref:community-search#search-streams-by-community).
+1. Query the community for streams using the communityId. See [List Streams By Community](xref:community-search#list-streams-by-community).
 
    ![community streams](images/community-streams.png)
 

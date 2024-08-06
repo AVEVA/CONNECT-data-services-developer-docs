@@ -14,7 +14,7 @@ Use the request area to configure an API request. Choose a version of the API, t
 
 ### API version
 
-Select a version from the dropdown list. For more information on the available versions, see [CONNECT data services API versioning](xref:osisoftCloudServices#aveva-data-hub-api-versioning).
+Select a version from the dropdown list. For more information on the available versions, see [CONNECT data services API versioning](xref:osisoftCloudServices#connect-data-services-api-versioning).
 
 ### Tenant path
 

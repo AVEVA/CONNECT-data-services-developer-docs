@@ -731,6 +731,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
     "AssetTypeId": "string",
     "Name": "string",
     "Description": "string",
+    "CreatedDate": "2019-08-24T14:15:22Z",
+    "ModifiedDate": "2019-08-24T14:15:22Z",
     "Metadata": [
       {
         "Id": "string",
@@ -806,6 +808,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |AssetTypeId|string|false|true|None|
 |Name|string|false|true|None|
 |Description|string|false|true|None|
+|CreatedDate|date-time|false|false|None|
+|ModifiedDate|date-time|false|false|None|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|None|
 |StreamReferences|[[StreamReference](#schemastreamreference)]|false|true|None|
 |Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|None|
@@ -817,6 +821,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
   "AssetTypeId": "string",
   "Name": "string",
   "Description": "string",
+  "CreatedDate": "2019-08-24T14:15:22Z",
+  "ModifiedDate": "2019-08-24T14:15:22Z",
   "Metadata": [
     {
       "Id": "string",

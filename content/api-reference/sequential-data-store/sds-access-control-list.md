@@ -5,9 +5,163 @@ uid: sds-access-control-list
 
 # Access Control List
 
-## `Get Quantity Access Control List`
+## `Get Quantity Access Control List (Account path)`
 
-<a id="opIdQuantityAccessControl_Get Quantity Access Control List"></a>
+<a id="opIdQuantityAccessControl_Get Quantity Access Control List (Account path)"></a>
+
+Gets the ACL of the specified quantity
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the `AccessControlList`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Quantity Access Control List (Account path)`
+
+<a id="opIdQuantityAccessControl_Update Quantity Access Control List (Account path)"></a>
+
+Updates the ACL of the specified quantity
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`AccessControlList` was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Quantity Access Control List (Account path)`
+
+<a id="opIdQuantityAccessControl_Patch Quantity Access Control List (Account path)"></a>
+
+Updates the ACL for the specified quantity using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the `AccessControlList`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition Failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Get Quantity Access Control List (Tenants path)`
+
+<a id="opIdQuantityAccessControl_Get Quantity Access Control List (Tenants path)"></a>
 
 Gets the ACL of the specified quantity
 
@@ -58,9 +212,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Update Quantity Access Control List`
+## `Update Quantity Access Control List (Tenants path)`
 
-<a id="opIdQuantityAccessControl_Update Quantity Access Control List"></a>
+<a id="opIdQuantityAccessControl_Update Quantity Access Control List (Tenants path)"></a>
 
 Updates the ACL of the specified quantity
 
@@ -92,9 +246,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Patch Quantity Access Control List`
+## `Patch Quantity Access Control List (Tenants path)`
 
-<a id="opIdQuantityAccessControl_Patch Quantity Access Control List"></a>
+<a id="opIdQuantityAccessControl_Patch Quantity Access Control List (Tenants path)"></a>
 
 Updates the ACL for the specified quantity using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
 
@@ -153,9 +307,92 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId
 
 ---
 
-## `Get Quantity Owner`
+## `Get Quantity Owner (Account path)`
 
-<a id="opIdQuantityAccessControl_Get Quantity Owner"></a>
+<a id="opIdQuantityAccessControl_Get Quantity Owner (Account path)"></a>
+
+Gets the Owner of the specified quantity
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Trustee](#schematrustee)|Returns the `Trustee`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([Trustee](#schematrustee))
+
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+```
+
+---
+
+## `Update Quantity Owner (Account path)`
+
+<a id="opIdQuantityAccessControl_Update Quantity Owner (Account path)"></a>
+
+Updates the Owner of the specified quantity
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`Trustee` was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Quantity Owner (Tenants path)`
+
+<a id="opIdQuantityAccessControl_Get Quantity Owner (Tenants path)"></a>
 
 Gets the Owner of the specified quantity
 
@@ -198,9 +435,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Update Quantity Owner`
+## `Update Quantity Owner (Tenants path)`
 
-<a id="opIdQuantityAccessControl_Update Quantity Owner"></a>
+<a id="opIdQuantityAccessControl_Update Quantity Owner (Tenants path)"></a>
 
 Updates the Owner of the specified quantity
 
@@ -232,9 +469,69 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `List Quantity Access Rights`
+## `List Quantity Access Rights (Account path)`
 
-<a id="opIdQuantityAccessControl_List Quantity Access Rights"></a>
+<a id="opIdQuantityAccessControl_List Quantity Access Rights (Account path)"></a>
+
+Gets the Access Rights associated with the specified quantity for the requesting identity
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/AccessRights
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[CommonAccessRights](#schemacommonaccessrights)[]|Returns a list of `CommonAccessRights`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+["Read", "Write"]
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `List Quantity Access Rights (Tenants path)`
+
+<a id="opIdQuantityAccessControl_List Quantity Access Rights (Tenants path)"></a>
 
 Gets the Access Rights associated with the specified quantity for the requesting identity
 
@@ -290,9 +587,146 @@ Content-Type: application/json
 
 ---
 
-## `Get Quantity Unit of Measure Access Control List`
+## `Get Quantity Unit of Measure Access Control List (Account path)`
 
-<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Access Control List"></a>
+<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Access Control List (Account path)"></a>
+
+Gets the ACL of the specified unit of measure
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the `AccessControlList`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Quantity Unit of Measure Access Control List (Account path)`
+
+<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Access Control List (Account path)"></a>
+
+Updates the ACL of the specified unit of measure
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`AccessControlList` was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Quantity Unit of Measure Access Control List (Account path)`
+
+<a id="opIdQuantityAccessControl_Patch Quantity Unit of Measure Access Control List (Account path)"></a>
+
+Updates the ACL for the specified unit of measure using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Units/{uomId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|Returns the `AccessControlList`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition Failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Quantity Unit of Measure Access Control List (Tenants path)`
+
+<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Access Control List (Tenants path)"></a>
 
 Gets the ACL of the specified unit of measure
 
@@ -344,9 +778,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Update Quantity Unit of Measure Access Control List`
+## `Update Quantity Unit of Measure Access Control List (Tenants path)`
 
-<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Access Control List"></a>
+<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Access Control List (Tenants path)"></a>
 
 Updates the ACL of the specified unit of measure
 
@@ -379,9 +813,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Patch Quantity Unit of Measure Access Control List`
+## `Patch Quantity Unit of Measure Access Control List (Tenants path)`
 
-<a id="opIdQuantityAccessControl_Patch Quantity Unit of Measure Access Control List"></a>
+<a id="opIdQuantityAccessControl_Patch Quantity Unit of Measure Access Control List (Tenants path)"></a>
 
 Updates the ACL for the specified unit of measure using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
 
@@ -421,9 +855,94 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId
 
 ---
 
-## `Get Quantity Unit of Measure Owner`
+## `Get Quantity Unit of Measure Owner (Account path)`
 
-<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Owner"></a>
+<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Owner (Account path)"></a>
+
+Gets the Owner of the specified unit of measure
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Trustee](#schematrustee)|Returns the `Trustee`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([Trustee](#schematrustee))
+
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+```
+
+---
+
+## `Update Quantity Unit of Measure Owner (Account path)`
+
+<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Owner (Account path)"></a>
+
+Updates the Owner of the specified unit of measure
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Units/{uomId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|Returns the `Trustee`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Quantity Unit of Measure Owner (Tenants path)`
+
+<a id="opIdQuantityAccessControl_Get Quantity Unit of Measure Owner (Tenants path)"></a>
 
 Gets the Owner of the specified unit of measure
 
@@ -467,9 +986,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `Update Quantity Unit of Measure Owner`
+## `Update Quantity Unit of Measure Owner (Tenants path)`
 
-<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Owner"></a>
+<a id="opIdQuantityAccessControl_Update Quantity Unit of Measure Owner (Tenants path)"></a>
 
 Updates the Owner of the specified unit of measure
 
@@ -502,9 +1021,70 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Quantities/{quantityId}/
 
 ---
 
-## `List Quantity Unit of Measure Access Rights`
+## `List Quantity Unit of Measure Access Rights (Account path)`
 
-<a id="opIdQuantityAccessControl_List Quantity Unit of Measure Access Rights"></a>
+<a id="opIdQuantityAccessControl_List Quantity Unit of Measure Access Rights (Account path)"></a>
+
+Gets the Access Rights associated with the specified unit of measure for the requesting identity
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Quantities/{quantityId}/Units/{uomId}/AccessRights
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string quantityId`
+<br/>The quantity identifier<br/><br/>`string uomId`
+<br/>The unit of measure identifier<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[CommonAccessRights](#schemacommonaccessrights)[]|Returns a list of `CommonAccessRights`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+["Read", "Write"]
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `List Quantity Unit of Measure Access Rights (Tenants path)`
+
+<a id="opIdQuantityAccessControl_List Quantity Unit of Measure Access Rights (Tenants path)"></a>
 
 Gets the Access Rights associated with the specified unit of measure for the requesting identity
 
@@ -689,6 +1269,72 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Acc
 
 ---
 
+## `Get Stream Access Control List Bulk`
+
+<a id="opIdStreamAccessControl_Get Stream Access Control List Bulk"></a>
+
+Returns the ACL information associated with provided streams. The list of stream identifiers needing ACL information should be supplied as a list of stream IDs in the request body. HTTP 207 is returned regardless of partial or complete success of stream resolution. Any stream where ACL information cannot be fetched will be included in the Errors property of the `BulkResults<T>`.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|207|[BulkResultsOfObjectAcl](#schemabulkresultsofobjectacl)|`BulkResults<T>` was successfully retrieved|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 207 Response ([BulkResultsOfObjectAcl](#schemabulkresultsofobjectacl))
+
+```json
+{
+  "Results": [
+    {
+      "Id": "string",
+      "AccessControlList": {
+        "RoleTrusteeAccessControlEntries": [
+          {
+            "Trustee": {
+              "Type": 1,
+              "ObjectId": "string",
+              "TenantId": "string"
+            },
+            "AccessType": 0,
+            "AccessRights": 0
+          }
+        ]
+      }
+    }
+  ],
+  "Errors": [
+    {
+      "Id": "string",
+      "OperationStatus": 0,
+      "Error": {
+        "property1": null,
+        "property2": null
+      }
+    }
+  ]
+}
+```
+
+---
+
 ## `Get Stream Owner`
 
 <a id="opIdStreamAccessControl_Get Stream Owner"></a>
@@ -768,6 +1414,64 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Owner
 
 ---
 
+## `Get Stream Owner Bulk`
+
+<a id="opIdStreamAccessControl_Get Stream Owner Bulk"></a>
+
+Returns the owner information associated with provided streams. The list of stream identifiers needing owner information should be supplied as a list of stream IDs in the request body. HTTP 207 is returned regardless of partial or complete success of stream resolution. Any stream where owner information cannot be fetched will be included in the Errors property of the `BulkResults<T>`.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Owner
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|207|[BulkResultsOfObjectOwner](#schemabulkresultsofobjectowner)|`BulkResults<T>` was successfully retrieved|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 207 Response ([BulkResultsOfObjectOwner](#schemabulkresultsofobjectowner))
+
+```json
+{
+  "Results": [
+    {
+      "Id": "string",
+      "Owner": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      }
+    }
+  ],
+  "Errors": [
+    {
+      "Id": "string",
+      "OperationStatus": 0,
+      "Error": {
+        "property1": null,
+        "property2": null
+      }
+    }
+  ]
+}
+```
+
+---
+
 ## `List Stream Access Rights`
 
 <a id="opIdStreamAccessControl_List Stream Access Rights"></a>
@@ -826,9 +1530,140 @@ Content-Type: application/json
 
 # Access Control List
 
-## `Get Type Access Control List`
+## `Get Type Access Control List (Account path)`
 
-<a id="opIdTypeAccessControl_Get Type Access Control List"></a>
+<a id="opIdTypeAccessControl_Get Type Access Control List (Account path)"></a>
+
+Gets the ACL of the specified type
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Types/{typeId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the `AccessControlList`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Type Access Control List (Account path)`
+
+<a id="opIdTypeAccessControl_Update Type Access Control List (Account path)"></a>
+
+Updates the ACL of the specified type
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Types/{typeId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|The `SdsType`'s ACL was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Type Access Control List (Account path)`
+
+<a id="opIdTypeAccessControl_Patch Type Access Control List (Account path)"></a>
+
+Updates the ACL for the specified type using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Types/{typeId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|The `SdsType`'s ACL was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Type Access Control List (Tenants path)`
+
+<a id="opIdTypeAccessControl_Get Type Access Control List (Tenants path)"></a>
 
 Gets the ACL of the specified type
 
@@ -879,9 +1714,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessCon
 
 ---
 
-## `Update Type Access Control List`
+## `Update Type Access Control List (Tenants path)`
 
-<a id="opIdTypeAccessControl_Update Type Access Control List"></a>
+<a id="opIdTypeAccessControl_Update Type Access Control List (Tenants path)"></a>
 
 Updates the ACL of the specified type
 
@@ -912,9 +1747,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessCon
 
 ---
 
-## `Patch Type Access Control List`
+## `Patch Type Access Control List (Tenants path)`
 
-<a id="opIdTypeAccessControl_Patch Type Access Control List"></a>
+<a id="opIdTypeAccessControl_Patch Type Access Control List (Tenants path)"></a>
 
 Updates the ACL for the specified type using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
 
@@ -951,9 +1786,91 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/AccessC
 
 ---
 
-## `Get Type Owner`
+## `Get Type Owner (Account path)`
 
-<a id="opIdTypeAccessControl_Get Type Owner"></a>
+<a id="opIdTypeAccessControl_Get Type Owner (Account path)"></a>
+
+Gets the Owner of the specified type
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Types/{typeId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Trustee](#schematrustee)|Returns the `Trustee`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([Trustee](#schematrustee))
+
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+```
+
+---
+
+## `Update Type Owner (Account path)`
+
+<a id="opIdTypeAccessControl_Update Type Owner (Account path)"></a>
+
+Updates the Owner of the specified type
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Types/{typeId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|The `SdsType`'s owner was updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Type Owner (Tenants path)`
+
+<a id="opIdTypeAccessControl_Get Type Owner (Tenants path)"></a>
 
 Gets the Owner of the specified type
 
@@ -996,9 +1913,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 
 ---
 
-## `Update Type Owner`
+## `Update Type Owner (Tenants path)`
 
-<a id="opIdTypeAccessControl_Update Type Owner"></a>
+<a id="opIdTypeAccessControl_Update Type Owner (Tenants path)"></a>
 
 Updates the Owner of the specified type
 
@@ -1029,9 +1946,69 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}/Owner
 
 ---
 
-## `List Type Access Rights`
+## `List Type Access Rights (Account path)`
 
-<a id="opIdTypeAccessControl_List Type Access Rights"></a>
+<a id="opIdTypeAccessControl_List Type Access Rights (Account path)"></a>
+
+Gets the Access Rights associated with the specified type for the requesting identity
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Types/{typeId}/AccessRights
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string typeId`
+<br/>Type identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[CommonAccessRights](#schemacommonaccessrights)[]|Returns a list of `CommonAccessRights`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+["Read", "Write"]
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `List Type Access Rights (Tenants path)`
+
+<a id="opIdTypeAccessControl_List Type Access Rights (Tenants path)"></a>
 
 Gets the Access Rights associated with the specified type for the requesting identity
 
@@ -1087,9 +2064,141 @@ Content-Type: application/json
 
 # Access Control List
 
-## `Get Stream View Access Control List`
+## `Get Stream View Access Control List (Account path)`
 
-<a id="opIdViewAccessControl_Get Stream View Access Control List"></a>
+<a id="opIdViewAccessControl_Get Stream View Access Control List (Account path)"></a>
+
+Gets the ACL of the specified stream view
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AccessControlList](#schemaaccesscontrollist)|Returns the `AccessControlList`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([AccessControlList](#schemaaccesscontrollist))
+
+```json
+{
+  "RoleTrusteeAccessControlEntries": [
+    {
+      "Trustee": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      },
+      "AccessType": 0,
+      "AccessRights": 0
+    }
+  ]
+}
+```
+
+---
+
+## `Update Stream View Access Control List (Account path)`
+
+<a id="opIdViewAccessControl_Update Stream View Access Control List (Account path)"></a>
+
+Updates the ACL of the specified stream view
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`AccessControlList` was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Patch Stream View Access Control List (Account path)`
+
+<a id="opIdViewAccessControl_Patch Stream View Access Control List (Account path)"></a>
+
+Updates the ACL of the specified stream view using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}/AccessControl
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|If-Match|string|false|The entity tag header from a previous read of the Access Control List (ACL). If provided, the ACL will not be <br/>patched unless the current ETag of the ACL, on the server, matches the value passed into the If-Match header.  |
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`AccessControlList` was successfully updated|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|412|[ErrorResponseBody](#schemaerrorresponsebody)|Precondition Failed|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Stream View Access Control List (Tenants path)`
+
+<a id="opIdViewAccessControl_Get Stream View Access Control List (Tenants path)"></a>
 
 Gets the ACL of the specified stream view
 
@@ -1140,9 +2249,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 
 ---
 
-## `Update Stream View Access Control List`
+## `Update Stream View Access Control List (Tenants path)`
 
-<a id="opIdViewAccessControl_Update Stream View Access Control List"></a>
+<a id="opIdViewAccessControl_Update Stream View Access Control List (Tenants path)"></a>
 
 Updates the ACL of the specified stream view
 
@@ -1173,9 +2282,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 
 ---
 
-## `Patch Stream View Access Control List`
+## `Patch Stream View Access Control List (Tenants path)`
 
-<a id="opIdViewAccessControl_Patch Stream View Access Control List"></a>
+<a id="opIdViewAccessControl_Patch Stream View Access Control List (Tenants path)"></a>
 
 Updates the ACL of the specified stream view using an RFC 6902 compliant JSON Patch document. This allows the ACL to be modified without submitting the entire Access Control List.
 
@@ -1213,9 +2322,92 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVie
 
 ---
 
-## `Get Stream View Owner`
+## `Get Stream View Owner (Account path)`
 
-<a id="opIdViewAccessControl_Get Stream View Owner"></a>
+<a id="opIdViewAccessControl_Get Stream View Owner (Account path)"></a>
+
+Gets the Owner of the specified stream view
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[Trustee](#schematrustee)|Returns the `Trustee`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response ([Trustee](#schematrustee))
+
+```json
+{
+  "Type": 1,
+  "ObjectId": "string",
+  "TenantId": "string"
+}
+```
+
+---
+
+## `Update Stream View Owner (Account path)`
+
+<a id="opIdViewAccessControl_Update Stream View Owner (Account path)"></a>
+
+Updates the Owner of the specified stream view
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}/Owner
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|204|None|`Trustee` was successfully returned|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+---
+
+## `Get Stream View Owner (Tenants path)`
+
+<a id="opIdViewAccessControl_Get Stream View Owner (Tenants path)"></a>
 
 Gets the Owner of the specified stream view
 
@@ -1258,9 +2450,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 
 ---
 
-## `Update Stream View Owner`
+## `Update Stream View Owner (Tenants path)`
 
-<a id="opIdViewAccessControl_Update Stream View Owner"></a>
+<a id="opIdViewAccessControl_Update Stream View Owner (Tenants path)"></a>
 
 Updates the Owner of the specified stream view
 
@@ -1292,9 +2484,69 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 
 ---
 
-## `List Stream View Access Rights`
+## `List Stream View Access Rights (Account path)`
 
-<a id="opIdViewAccessControl_List Stream View Access Rights"></a>
+<a id="opIdViewAccessControl_List Stream View Access Rights (Account path)"></a>
+
+Gets the Access Rights associated with the specified stream view for the requesting identity
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}/AccessRights
+```
+
+<h4>Parameters</h4>
+
+`string accountId`
+<br/><br/>`string serviceInstanceId`
+<br/><br/>`string streamViewId`
+<br/>Stream view identifier.<br/><br/>`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[CommonAccessRights](#schemacommonaccessrights)[]|Returns a list of `CommonAccessRights`|
+|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
+|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
+|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
+|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
+|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
+|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+["Read", "Write"]
+```
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "Parameters": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+
+---
+
+## `List Stream View Access Rights (Tenants path)`
+
+<a id="opIdViewAccessControl_List Stream View Access Rights (Tenants path)"></a>
 
 Gets the Access Rights associated with the specified stream view for the requesting identity
 
@@ -1525,6 +2777,191 @@ The error response contains standard details on the cause and resolution of the 
 |ManageAccessControl|8|
 |Share|16|
 |All|31|
+
+---
+
+### BulkResultsOfObjectAcl
+
+<a id="schemabulkresultsofobjectacl"></a>
+<a id="schema_BulkResultsOfObjectAcl"></a>
+<a id="tocSbulkresultsofobjectacl"></a>
+<a id="tocsbulkresultsofobjectacl"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Results|[[ObjectAcl](#schemaobjectacl)]|false|true|None|
+|Errors|[[ObjectError](#schemaobjecterror)]|false|true|None|
+
+```json
+{
+  "Results": [
+    {
+      "Id": "string",
+      "AccessControlList": {
+        "RoleTrusteeAccessControlEntries": [
+          {
+            "Trustee": {
+              "Type": 1,
+              "ObjectId": "string",
+              "TenantId": "string"
+            },
+            "AccessType": 0,
+            "AccessRights": 0
+          }
+        ]
+      }
+    }
+  ],
+  "Errors": [
+    {
+      "Id": "string",
+      "OperationStatus": 0,
+      "Error": {
+        "property1": null,
+        "property2": null
+      }
+    }
+  ]
+}
+
+```
+
+---
+
+### ObjectAcl
+
+<a id="schemaobjectacl"></a>
+<a id="schema_ObjectAcl"></a>
+<a id="tocSobjectacl"></a>
+<a id="tocsobjectacl"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|AccessControlList|[AccessControlList](#schemaaccesscontrollist)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "AccessControlList": {
+    "RoleTrusteeAccessControlEntries": [
+      {
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
+        "AccessRights": 0
+      }
+    ]
+  }
+}
+
+```
+
+---
+
+### ObjectError
+
+<a id="schemaobjecterror"></a>
+<a id="schema_ObjectError"></a>
+<a id="tocSobjecterror"></a>
+<a id="tocsobjecterror"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|OperationStatus|int32|false|false|None|
+|Error|object|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "OperationStatus": 0,
+  "Error": {
+    "property1": null,
+    "property2": null
+  }
+}
+
+```
+
+---
+
+### BulkResultsOfObjectOwner
+
+<a id="schemabulkresultsofobjectowner"></a>
+<a id="schema_BulkResultsOfObjectOwner"></a>
+<a id="tocSbulkresultsofobjectowner"></a>
+<a id="tocsbulkresultsofobjectowner"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Results|[[ObjectOwner](#schemaobjectowner)]|false|true|None|
+|Errors|[[ObjectError](#schemaobjecterror)]|false|true|None|
+
+```json
+{
+  "Results": [
+    {
+      "Id": "string",
+      "Owner": {
+        "Type": 1,
+        "ObjectId": "string",
+        "TenantId": "string"
+      }
+    }
+  ],
+  "Errors": [
+    {
+      "Id": "string",
+      "OperationStatus": 0,
+      "Error": {
+        "property1": null,
+        "property2": null
+      }
+    }
+  ]
+}
+
+```
+
+---
+
+### ObjectOwner
+
+<a id="schemaobjectowner"></a>
+<a id="schema_ObjectOwner"></a>
+<a id="tocSobjectowner"></a>
+<a id="tocsobjectowner"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Id|string|false|true|None|
+|Owner|[Trustee](#schematrustee)|false|true|None|
+
+```json
+{
+  "Id": "string",
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  }
+}
+
+```
 
 ---
 

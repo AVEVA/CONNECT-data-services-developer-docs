@@ -597,6 +597,97 @@ Asset type to create or update.<br/>
 
 ---
 
+## `Patch Asset Type`
+
+<a id="opIdAssetTypes_Patch Asset Type"></a>
+
+Performs a Patch operation on the asset type with the specified identifier. The request body is expected to be a JSON Patch (RFC 6902) document. For the purposes of Patch operations, TypeReferences and Metadata are treated as dictionaries keyed by their identifiers, even though these properties are lists in the underlying asset type model. This permits individual TypeReferences and Metadata items to be indexed by their identifiers in the operation path.
+
+<h3>Request</h3>
+
+```text 
+PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/AssetTypes/{assetTypeId}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string assetTypeId`
+<br/>Asset Type identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+Asset Type patch document.<br/>
+
+```json
+{
+  "Operations": [
+    {
+      "value": null,
+      "path": "string",
+      "op": "string",
+      "from": "string"
+    }
+  ]
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|[AssetType](#schemaassettype)|None|
+|400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
+|403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
+|404|[ErrorTemplate](#schemaerrortemplate)|None|
+|408|[ErrorTemplate](#schemaerrortemplate)|Request Timeout.|
+|409|[ErrorTemplate](#schemaerrortemplate)|Conflict.|
+|412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed.|
+|503|[ErrorTemplate](#schemaerrortemplate)|Service unavailable.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+{
+  "Id": "SampleAssetType01",
+  "Description": "This is a sample asset type.",
+  "Metadata": [
+    {
+      "Id": "Id-fbd82b97-d29e-4022-968e",
+      "Name": "ModelNumber",
+      "Description": "This is a static attribute on the asset type which represents the model number.",
+      "SdsTypeCode": "Double",
+      "Value": 0.01
+    }
+  ],
+  "TypeReferences": [
+    {
+      "StreamReferenceId": "f1bf9da2-3858-4bcd-bf93-e7c26ab0d28e",
+      "StreamReferenceName": "ReferenceName",
+      "TypeId": "PI-Float32"
+    }
+  ]
+}
+```
+
+> 400 Response ([ErrorTemplate](#schemaerrortemplate))
+
+```json
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Resolution": "string",
+  "Reason": "string",
+  "property1": null,
+  "property2": null
+}
+```
+
+---
+
 ## `Delete Asset Type`
 
 <a id="opIdAssetTypes_Delete Asset Type"></a>
@@ -1494,6 +1585,63 @@ A multi status result is returned to indicate a partial success.
   "StatusCode": 0,
   "property1": null,
   "property2": null
+}
+
+```
+
+---
+
+### JsonPatchDocumentOfPatchAssetType
+
+<a id="schemajsonpatchdocumentofpatchassettype"></a>
+<a id="schema_JsonPatchDocumentOfPatchAssetType"></a>
+<a id="tocSjsonpatchdocumentofpatchassettype"></a>
+<a id="tocsjsonpatchdocumentofpatchassettype"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Operations|[[OperationOfPatchAssetType](#schemaoperationofpatchassettype)]|false|true|None|
+
+```json
+{
+  "Operations": [
+    {
+      "value": null,
+      "path": "string",
+      "op": "string",
+      "from": "string"
+    }
+  ]
+}
+
+```
+
+---
+
+### OperationOfPatchAssetType
+
+<a id="schemaoperationofpatchassettype"></a>
+<a id="schema_OperationOfPatchAssetType"></a>
+<a id="tocSoperationofpatchassettype"></a>
+<a id="tocsoperationofpatchassettype"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|value|any|false|true|None|
+|path|string|false|true|None|
+|op|string|false|true|None|
+|from|string|false|true|None|
+
+```json
+{
+  "value": null,
+  "path": "string",
+  "op": "string",
+  "from": "string"
 }
 
 ```

@@ -81,7 +81,7 @@ In addition, the following methods support reading multiple values:
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
 
 - [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
-- [Join Values](xref:sds-stream-data#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
+- [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
 ## Response format
 
@@ -210,8 +210,6 @@ The `SdsSearchMode` enum defines search behavior when seeking a stored event nea
 | Next | 2 | Returns the stored event after the specified index. |
 | ExactOrPrevious | 3 | If a stored event exists at the specified index, that event is returned. Otherwise the previous event in the stream is returned. |
 | Previous | 4 | Returns the stored event before the specified index. |
-
----
 
 ## Transforming data
 

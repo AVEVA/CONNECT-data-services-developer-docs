@@ -6,9 +6,9 @@ uid: sdsQuickStart
 
 Sequential Data Store (SDS) is a centralized cloud-based data store. The steps listed in this topic describe a simple interaction with SDS. To follow along with these steps, you need a tenant, a user account, and associated security credentials.
 
-Contact your AVEVA account manager at <https://softwaresupport.aveva.com> to get access to AVEVA Data Hub.
+Contact your AVEVA account manager at <https://softwaresupport.aveva.com> to get access to CONNECT data services.
 
-These instruction are mainly completed from the AVEVA Data Hub portal. Sign into the portal using credentials that authenticate with the tenant. A namespace and administrative client keys are also required.
+These instruction are mainly completed from the CONNECT data services portal. Sign into the portal using credentials that authenticate with the tenant. A namespace and administrative client keys are also required.
 
 ## Before you get started
 
@@ -16,7 +16,7 @@ To work with SDS, you must first acquire a client identity, secret, and authenti
 
 ### Acquire client identity and secret
 
-The application acts as a confidential client—an application that securely maintains a secret. AVEVA Data Hub supports confidential client authentication with a client identifier (Client Id) and a client secret.
+The application acts as a confidential client—an application that securely maintains a secret. CONNECT data services supports confidential client authentication with a client identifier (Client Id) and a client secret.
 
 To acquire a client identity from the portal, open the navigation menu and select **Security** > **Clients**.
 
@@ -44,7 +44,7 @@ A type consists of one or more data properties, one of which must represent an i
 
 SDS supports a wide variety of property types, both simple (integers, strings and floats, for example) and complex (lists, arrays and enumerations, for example). Properties can be of any complex type. See [Types](xref:sds-sdstypes-props#sdstypecode) for a detailed list of supported data types.
 
-The type is defined in JSON and is posted to an AVEVA Data Hub endpoint.
+The type is defined in JSON and is posted to a CONNECT data services endpoint.
 
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Types/{typeId}
@@ -182,7 +182,7 @@ Host: uswe.datahub.connect.aveva.com
 }
 ```
 
-To help users develop .NET client applications for SDS, AVEVA provides client libraries through [NuGet packages](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients includes necessary libraries to connect to AVEVA Data Hub and manage data. SDS client libraries are only available in .NET.
+To help users develop .NET client applications for SDS, AVEVA provides client libraries through [NuGet packages](https://www.nuget.org/packages/OSIsoft.OCSClients/). OCSClients includes necessary libraries to connect to CONNECT data services and manage data. SDS client libraries are only available in .NET.
 
 You can use `SdsTypeBuilder` in .NET client libraries to create types:
 
@@ -213,7 +213,7 @@ await config.CreateTypeAsync(simpleType);
 
 A stream has an associated type and stores a stream of events or objects that take the shape of that type. For more information, see [Streams](xref:sds-streams).
 
-Define and post a JSON representation of a stream to an AVEVA Data Hub endpoint.
+Define and post a JSON representation of a stream to a CONNECT data services endpoint.
 
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}
@@ -251,7 +251,7 @@ simpleStream = config.CreateStreamAsync(simpleStream);
 
 SDS supports a number of methods for adding and updating data. In this section, you will insert data. Inserts fail if events with the same index already exist in the database. Update adds new events and replaces existing events. For more information, see [Write data](xref:sdsWritingData).
 
-Add data to SDS by posting a JSON serialized event to AVEVA Data Hub endpoint:
+Add data to SDS by posting a JSON serialized event to CONNECT data services endpoint:
 
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
@@ -286,7 +286,7 @@ await client.InsertValueAsync(simpleStream.Id, value);
 
 SDS includes different read methods for retrieving data from streams. For more information, see [Read data](xref:sdsReadingData). The examples below are of reading a value that was recently written. You need an index or indexes in a read data call—in this case, a timestamp of that value.
 
-Read a value from SDS at a distinct index by making a REST API call to AVEVA Data Hub:
+Read a value from SDS at a distinct index by making a REST API call to CONNECT data services:
 
 ```json
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index=2017-08-17T17:21:36.3494129Z
@@ -324,7 +324,7 @@ All applications that communicate with remote systems must manage transient faul
 
 If you access SDS with .NET client libraries methods, transient fault handling is built in; the SDS client automatically retries error codes identified as transient.
 
-If you are directly calling AVEVA Data Hub through SDS REST APIs (not using .NET), you should consider creating your own retry logic to handle errors identified as transient. In this case, we recommend a logic that returns HTTP status code `503: Service Unavailable`: an immediate first retry followed by an exponential backoff.
+If you are directly calling CONNECT data services through SDS REST APIs (not using .NET), you should consider creating your own retry logic to handle errors identified as transient. In this case, we recommend a logic that returns HTTP status code `503: Service Unavailable`: an immediate first retry followed by an exponential backoff.
 
 ### SDS client error
 
@@ -346,7 +346,7 @@ Dictionary<string, object> Errors
 
 Handling timeout issues can be difficult and confusing in a distributed programming environment. When a client times out, for example, the request is terminated before the client receives a response from the server. Meanwhile, the application is unaware of the state of the server.
 
-One solution is to use the `Request-Timeout` header, which is recognized by many services in AVEVA Data Hub. Using this header, you can tell the server how long to process a particular request before timing out. If possible, the server terminates the request if it the request exceeds the timeout value set in the header.
+One solution is to use the `Request-Timeout` header, which is recognized by many services in CONNECT data services. Using this header, you can tell the server how long to process a particular request before timing out. If possible, the server terminates the request if it the request exceeds the timeout value set in the header.
 
 To specify the request timeout value, include the Request-Timeout header and specify the value in seconds.
 

@@ -4,7 +4,7 @@ uid: DataViewsQuickStartDefine
 
 # Define a data view
 
-The `DataView` object is a declarative query and shape for AVEVA Data Hub data. This section describes the `DataView` object. See the [Data View API section](xref:data-views-data-views) for the corresponding API routes.
+The `DataView` object is a declarative query and shape for CONNECT data services data. This section describes the `DataView` object. See the [Data View API section](xref:data-views-data-views) for the corresponding API routes.
 
 At times, this section makes reference to ways the view *resolves* into further resources, such as the collection of data items found by each data item query. See the [Resolved Data View](xref:ResolvedDataView) and [Resolved Data View API](xref:data-views-data-views-resolved) sections for details.
 
@@ -42,7 +42,7 @@ The field used for indexing. If not specified, a default value is applied. If sp
 
 ### Define index type and default range
 
-The data view is targeted to include Streams and Assets of a common index property type. Often in AVEVA Data Hub, data is indexed by its timestamp property (of type "DateTime"). In certain cases, data may instead be indexed by a numeric value such as depth. Data views supports all index type codes allowed by the Sequential Data Store with the exception of TimeSpan. If not specified, the default `.IndexTypeCode` is "DateTime". Compound index types are not supported.
+The data view is targeted to include Streams and Assets of a common index property type. Often in CONNECT data services, data is indexed by its timestamp property (of type "DateTime"). In certain cases, data may instead be indexed by a numeric value such as depth. Data views supports all index type codes allowed by the Sequential Data Store with the exception of TimeSpan. If not specified, the default `.IndexTypeCode` is "DateTime". Compound index types are not supported.
 
 Default values may be defined for the start index, end index, and/or interval used when data view data is queried.
 
@@ -60,7 +60,7 @@ The following table lists the properties of a `DataView`:
 | Name | string | Optional | value of Id | Friendly name
 | Description | string | Optional  | null | Longer description of the view
 | IndexField | Field | Optional | { Label:"{DefaultIndexName}" } | The field used for indexing. If unspecified a field labeled "{DefaultIndexName}" is included. This token resolves into "Timestamp" for time-indexed data views and "Index" for all other index types.
-| Queries | Query[] | Optional | [ ] | Queries for AVEVA Data Hub resources (such as streams and assets) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like data items. To include data items that represent very different items (e.g. solar inverters and weather), use separate queries.
+| Queries | Query[] | Optional | [ ] | Queries for CONNECT data services resources (such as streams and assets) to include in the view. This is the starting point when defining a data view. Each Query should represent a collection of like data items. To include data items that represent very different items (e.g. solar inverters and weather), use separate queries.
 | DataFieldSets | FieldSet[] | Optional | [ ] | The sets of fields included in the data view. Often copied or adapted from the view's available field sets, which are exposed in a resolved resource.
 | GroupingFields | Field[] | Optional | [ ] | Fields by which the data items are partitioned/grouped.
 | DefaultStartIndex | string | Optional | null | The default value of StartIndex used when querying the data view data if none is specified.
@@ -82,17 +82,17 @@ The following sections describe the classes and enumerations used when defining 
 
 ### Query
 
-A query for AVEVA Data Hub resources to include in the view.
+A query for CONNECT data services resources to include in the view.
 
 |Property| Type | Optionality  | Default  | Details |
 |--|--|--|--|--|
 | Id  | string | Required |  | Unique identifier. Used by FieldSet to link to the query's results. |
 | Kind  | DataItemResourceType | Optional | Stream | Type of resource to be queried. |
-| Value | string | Optional | null | A query for AVEVA Data Hub resources in the corresponding query syntax. For example, a query for streams must be in SDS query syntax. A null or empty query will not match any data items.
+| Value | string | Optional | null | A query for CONNECT data services resources in the corresponding query syntax. For example, a query for streams must be in SDS query syntax. A null or empty query will not match any data items.
 
 ### DataItemResourceType enumeration
 
-The `DataItemResourceType` enumeration specifies the AVEVA Data Hub resource type included in the data view query.
+The `DataItemResourceType` enumeration specifies the CONNECT data services resource type included in the data view query.
 
 | Name | Enumeration Id | Details |
 |--|--|--|--|

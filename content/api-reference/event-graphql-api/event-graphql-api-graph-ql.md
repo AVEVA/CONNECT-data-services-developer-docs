@@ -75,7 +75,7 @@ GET /api/v1.0-preview/tenants/{tenantId}/namespaces/{namespaceId}/graphql
 
 <a id="opIdGraphQL_Graph QL Post"></a>
 
-Executes a GraphQL Query or Mutation based on the **GraphQLRequest** body content in a POST request.<br>            The query or mutation will run against a loaded GraphQL schema that defines all the Types and API's available for an ADH namespace.<br>            The request **query** property contains the GraphQL query or mutation.<br>            The request **variables** property can be used to pass named values into a query or mutation. The value can be a scalar or any schema defined type or type collection (serialized JSON).<br>            It returns a **GraphQLResponse** in JSON format. The format of the response varies depending on the request.
+Executes a GraphQL Query or Mutation based on the **GraphQLRequest** body content in a POST request.<br>            The query or mutation will run against a loaded GraphQL schema that defines all the Types and APIs available for a namespace.<br>            The request **query** property contains the GraphQL query or mutation.<br>            The request **variables** property can be used to pass named values into a query or mutation. The value can be a scalar or any schema defined type or type collection (serialized JSON).<br>            It returns a **GraphQLResponse** in JSON format. The format of the response varies depending on the request.
 
 <h3>Request</h3>
 

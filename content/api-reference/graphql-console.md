@@ -4,7 +4,7 @@ uid: graphQLConsole
 
 # GraphQL console (Preview)
 
-The GraphQL console provides a graphical interface for creating queries for the GraphQL API. The GraphQL API returns event data and associated reference data stored in AVEVA Data Hub.
+The GraphQL console provides a graphical interface for creating queries for the GraphQL API. The GraphQL API returns event data and associated reference data stored in CONNECT data services.
 
 You can run a query within the console, or use it to create a query that can be used by an external application.
 

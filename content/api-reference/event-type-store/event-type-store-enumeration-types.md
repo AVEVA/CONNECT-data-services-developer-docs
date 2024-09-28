@@ -14,7 +14,7 @@ Returns an array of Enumerations in a given namespace and the version ETag in th
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 ?skip={skip}&count={count}&filter={filter}&includeDeleted={includeDeleted}
 ```
 
@@ -27,7 +27,7 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
 <br/>Parameter representing the condition for results to be filtered by. If unspecified, results are not filtered.<br/><br/>`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted Enumerations. If unspecified, a default value of false is used.<br/><br/>
+<br/>Parameter indicating whether to include deleted Enumeration members. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -45,31 +45,6 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 
 ```json
 [
-  {
-    "Id": "SimpleEnumeration",
-    "Name": "SimpleEnumeration",
-    "GraphQLName": "SimpleEnumeration",
-    "Members": [
-      {
-        "Name": "ACTIVE",
-        "GraphQLName": "ACTIVE",
-        "Code": 0,
-        "State": "Active",
-        "Description": "This is an active state"
-      },
-      {
-        "Name": "CLOSED",
-        "GraphQLName": "CLOSED",
-        "Code": 1,
-        "State": "Active",
-        "Description": "This is a closed state"
-      }
-    ],
-    "Version": 1,
-    "State": "Active",
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z"
-  },
   {
     "Id": "SimpleEnumeration",
     "Name": "SimpleEnumeration",
@@ -122,7 +97,7 @@ Creates a new Enumeration. Response includes ETag header.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -166,7 +141,7 @@ An Enumeration.<br/>
 
 ```json
 {
-  "Id": "SimpleEnumeration",
+  "Id": "6B29FC40-CA47-1067-B31D-00DD010662DA",
   "Name": "SimpleEnumeration",
   "GraphQLName": "SimpleEnumeration",
   "Members": [
@@ -216,7 +191,7 @@ Returns the specified Enumeration and the version ETag in the HTTP response head
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ?includeDeleted={includeDeleted}
 ```
 
@@ -225,9 +200,8 @@ GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 `string tenantId`
 <br/><br/>`string namespaceId`
 <br/><br/>`string id`
-<br/>The id of the Enumeration.<br/><br/>
-`[optional] boolean includeDeleted`
-<br/>Parameter indicating whether to include soft-deleted Enumerations. If unspecified, a default value of false is used.<br/><br/>
+<br/>The id of the Enumeration.<br/><br/>`boolean includeDeleted`
+<br/>Parameter indicating whether to include deleted Enumeration members. If unspecified, a default value of false is used.<br/><br/>
 
 <h3>Response</h3>
 
@@ -296,7 +270,7 @@ Creates a new Enumeration or returns the current one if the body is equivalent t
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ```
 
 <h4>Parameters</h4>
@@ -419,12 +393,12 @@ An Enumeration.<br/>
 
 <a id="opIdEnumerations_Create Or Update Enumeration"></a>
 
-Creates a new Enumeration or updates an existing and adds its Etag in the HTTP response header. The If-Match header is supported.
+Creates a new Enumeration or updates an existing and adds its Etag in the HTTP response header. Hard delete of the type is not supported through this route. The If-Match header is supported.
 
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ```
 
 <h4>Parameters</h4>
@@ -552,7 +526,7 @@ Deletes the Enumeration.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}
 ```
 
 <h4>Parameters</h4>
@@ -583,7 +557,7 @@ Creates multiple new Enumeration and returns a list of any errors along with the
 <h3>Request</h3>
 
 ```text 
-POST /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
+POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -691,12 +665,12 @@ A list of Enumeration objects.<br/>
 
 <a id="opIdEnumerations_Bulk Delete Enumeration"></a>
 
-Deletes multiple Enumerations and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were succesful will be returned in the data.
+Deletes multiple Enumerations and returns an Ok if successful. In the case where a deletion is invalid, it will be added to a child errors list while the ones that were successful will be returned in the data.
 
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
+DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerations
 ```
 
 <h4>Parameters</h4>
@@ -708,12 +682,6 @@ DELETE /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Enumerat
 <h4>Request Body</h4>
 
 A list of Enumeration object ids.<br/>
-
-```json
-[
-  "string"
-]
-```
 
 <h3>Response</h3>
 
@@ -731,31 +699,6 @@ A list of Enumeration object ids.<br/>
 
 ```json
 [
-  {
-    "Id": "SimpleEnumeration",
-    "Name": "SimpleEnumeration",
-    "GraphQLName": "SimpleEnumeration",
-    "Members": [
-      {
-        "Name": "ACTIVE",
-        "GraphQLName": "ACTIVE",
-        "Code": 0,
-        "State": "Active",
-        "Description": "This is an active state"
-      },
-      {
-        "Name": "CLOSED",
-        "GraphQLName": "CLOSED",
-        "Code": 1,
-        "State": "Active",
-        "Description": "This is a closed state"
-      }
-    ],
-    "Version": 1,
-    "State": "Active",
-    "CreatedDate": "0001-01-01T00:00:00Z",
-    "ModifiedDate": "0001-01-01T00:00:00Z"
-  },
   {
     "Id": "SimpleEnumeration",
     "Name": "SimpleEnumeration",
@@ -842,7 +785,7 @@ Returns the `AccessControlList` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -891,7 +834,7 @@ Updates and returns the `AccessControlList` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessControl
 ```
 
 <h4>Parameters</h4>
@@ -965,7 +908,7 @@ Returns the `Trustee` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1006,7 +949,7 @@ Updates and returns the `Trustee` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
+PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/Owner
 ```
 
 <h4>Parameters</h4>
@@ -1018,7 +961,7 @@ PUT /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id
 
 <h4>Request Body</h4>
 
-#https://raw.githubusercontent.com/osisoft/OCS-Docs/main/content/external-references/common.yaml#owner<br/>
+A Trustee.<br/>
 
 ```json
 {
@@ -1059,7 +1002,7 @@ Returns a list of `CommonAccessRights` for the specified Enumeration.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessRights
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Enumerations/{id}/AccessRights
 ```
 
 <h4>Parameters</h4>
@@ -1093,15 +1036,15 @@ Represents an Enumeration object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Version|int32|false|false|None|
-|Id|string|false|true|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|CreatedDate|date-time|false|true|None|
-|ModifiedDate|date-time|false|true|None|
-|Description|string|false|true|None|
-|Members|[[EnumerationState](#schemaenumerationstate)]|false|true|None|
+|Name|string|false|true|The name of this object|
+|GraphQLName|string|false|true|The name of this object as it appears in GraphQL|
+|Version|int32|false|false|The current version number of this object|
+|Id|string|false|true|The id which is used in lookup|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this object|
+|CreatedDate|date-time|false|true|Date this object was created|
+|ModifiedDate|date-time|false|true|The last time this object was modified|
+|Description|string|false|true|Description of what this object is|
+|Members|[[EnumerationState](#schemaenumerationstate)]|false|true|List of all the states the Enumeration can be in.|
 
 ```json
 {
@@ -1162,11 +1105,11 @@ Represents an Enumeration object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Name|string|false|true|None|
-|GraphQLName|string|false|true|None|
-|Code|int32|false|false|None|
-|State|[LifeCycleState](#schemalifecyclestate)|false|false|None|
-|Description|string|false|true|None|
+|Name|string|false|true|The name of this EnumerationState|
+|GraphQLName|string|false|true|The name of this EnumerationState as it appears in GraphQL|
+|Code|int32|false|false|The code the enumeration state is associated with. Must be non-negative and unique|
+|State|[LifeCycleState](#schemalifecyclestate)|false|false|The lifecycle state of this EnumerationState|
+|Description|string|false|true|Description of what this EnumerationState is for|
 
 ```json
 {
@@ -1181,15 +1124,31 @@ Represents an Enumeration object.
 
 ---
 
-### ErrorResponse
+### AdhErrorResponse
 
-<a id="schemaerrorresponse"></a>
-<a id="schema_ErrorResponse"></a>
-<a id="tocSerrorresponse"></a>
-<a id="tocserrorresponse"></a>
+<a id="schemaadherrorresponse"></a>
+<a id="schema_AdhErrorResponse"></a>
+<a id="tocSadherrorresponse"></a>
+<a id="tocsadherrorresponse"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|OperationId|string|false|true|An optional unique string used to identify an operation|
+|Error|string|false|true|Description of the error|
+|Reason|string|false|true|Short blurb on why the error occured|
+|Resolution|string|false|true|Short blurb on how to fix the error|
 
 ```json
-{}
+{
+  "OperationId": "string",
+  "Error": "string",
+  "Reason": "string",
+  "Resolution": "string",
+  "property1": null,
+  "property2": null
+}
 
 ```
 
@@ -1206,11 +1165,11 @@ Represents an Enumeration object.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Reason|string|false|false|None|
-|Error|string|false|false|None|
-|OperationId|string|false|false|None|
-|Data|[[Enumeration](#schemaenumeration)]|false|false|[Represents an Enumeration object.]|
-|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|None|
+|Reason|string|false|false|Short blurb on why the error occured|
+|Error|string|false|false|Description of the error|
+|OperationId|string|false|false|An optional unique string used to identify an operation|
+|Data|[[Enumeration](#schemaenumeration)]|false|false|List of data returned from the multi-calls|
+|ChildErrors|[[AdhErrorResponse](#schemaadherrorresponse)]|false|false|List of errors from all the multi-calls|
 
 ```json
 {

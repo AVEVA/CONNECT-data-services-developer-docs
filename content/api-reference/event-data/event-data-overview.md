@@ -2,9 +2,9 @@
 uid: EventDataOverview
 ---
 
-# Event data overview (Preview)
+# Event data overview
 
-You can store and access event data and reference data in AVEVA Data Hub.
+You can store and access event data and reference data in CONNECT data services.
 
 The Event Type Store APIs allow you to set up the Event Types, Reference Data Types, and enumerations for this data. These types are converted into a GraphQL schema.
 

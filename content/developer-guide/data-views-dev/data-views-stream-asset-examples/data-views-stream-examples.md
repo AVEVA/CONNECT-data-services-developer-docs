@@ -6,7 +6,7 @@ uid: DataViewsStreamExamples
 
 This section uses example streams to illustrate data view concepts. The streams are of three types:
 
-- docs-pi-inverter | _simulates solar power inverter data collected via PI to Data Hub_
+- docs-pi-inverter | _simulates solar power inverter data collected via PI to CONNECT_
 - docs-omf-weather-gen1 | _simulates weather data collected from an OMF source_
 - docs-omf-weather-gen2 | _simulates weather data collected from an OMF source, but with some additional/renamed properties_
 
@@ -17,7 +17,7 @@ Use the [bulk uploader](https://github.com/osisoft/sample-ocs-bulk_upload-dotnet
 Data views are made to bring order to a tangle of data streams. Despite appearing complex and verbose, this example is likely much simpler than your real-world data. This example illustrates how data views can render real-world data consumable for data science.
 
 ## Solar inverter streams
-These streams represent values collected via PI to Data Hub, originally collected by a PI System. Each stream value contains a timestamp _(Timestamp)_ and a measurement _(Value)_.
+These streams represent values collected via PI to CONNECT, originally collected by a PI System. Each stream value contains a timestamp _(Timestamp)_ and a measurement _(Value)_.
 
 ### Type
 

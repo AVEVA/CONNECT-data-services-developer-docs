@@ -12,7 +12,7 @@ A resolved data view is used to describe the output of a data view at the time i
 A data view specifies `.Queries` to find data items, `.GroupingFields` (optionally) to group those data items into groups, and `.FieldSets` to include fields of data into the data view. *Resolving* the data view means the data views engine executes those queries and computes how the resulting data items will form a data view.
 
 ### What resolved information is available?
-- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - AVEVA Data Hub resources retrieved by the data view query
+- [Data items, ineligible data items, and the groups they form](xref:DataViewsDataItemsandGroups) - CONNECT data services resources retrieved by the data view query
 - [Available field sets](xref:DataViewsAvailableFieldSets) - fields which are present on the data items but not included in the data view
 - [Field mappings](xref:DataViewsFieldMappings) - details of the data behind each group of each field
 - [Statistics](xref:ResolvedDataView#statistics) about how the view resolved
@@ -86,7 +86,7 @@ Holds an item that was resolved at a specific time.
 | Refresh | 2 | Re-resolve the resource values |
 
 ### DataItem
-An AVEVA Data Hub resource retrieved by the data view query.
+A CONNECT data services resource retrieved by the data view query.
 
 |Property | Type | Details |
 |--|--|--|

@@ -4,9 +4,9 @@ uid: DataViewsSecuringDataViews
 
 # Secure data views
 
-Access rights to data views and their data are configurable in several ways. Permissions to the overall data views collection govern which users may create data views, and are also used as the default permissions for each data view that is created. Access to each data view is independently configurable. Finally, the permissions set on each data item, such as a [stream](xref:sdsStreams) or [asset](xref:asset-and-asset-types-dev-guide), apply globally within AVEVA Data Hub, including within the data views feature.
+Access rights to data views and their data are configurable in several ways. Permissions to the overall data views collection govern which users may create data views, and are also used as the default permissions for each data view that is created. Access to each data view is independently configurable. Finally, the permissions set on each data item, such as a [stream](xref:sdsStreams) or [asset](xref:asset-and-asset-types-dev-guide), apply globally within CONNECT data services, including within the data views feature.
 
-This section covers information specific to access control within the data views feature. For background information about access control throughout AVEVA Data Hub and how to configure the access control objects, see [Role-based access control](xref:accessControl).
+This section covers information specific to access control within the data views feature. For background information about access control throughout CONNECT data services and how to configure the access control objects, see [Role-based access control](xref:accessControl).
 
 ## Data views collection access control
 The data views collection access control list is used to control which users and clients are authorized to create data views. Only users and clients with "Write" access rights can create data views. See [Common access rights](xref:accessControl#common-access-rights) for a complete list of available access rights.
@@ -32,7 +32,7 @@ The data view owner and access control list control basic authorization to a giv
 | Update access control | `ManageAccessControl` |
 
 ## Data access control
-The access control rights of each data item, such as a [stream](xref:sdsStreams) or [asset](xref:asset-and-asset-types-dev-guide), apply globally within AVEVA Data Hub, including within data views. When a data view [resolves](xref:ResolvedDataView) per-user, each [`Query`](xref:DataViewsQueries) is executed with the user's own permissions, honoring the access control configured for each data item. Read access to a data view does not affect the user's read access to (or even the visibility of) any streams or assets.
+The access control rights of each data item, such as a [stream](xref:sdsStreams) or [asset](xref:asset-and-asset-types-dev-guide), apply globally within CONNECT data services, including within data views. When a data view [resolves](xref:ResolvedDataView) per-user, each [`Query`](xref:DataViewsQueries) is executed with the user's own permissions, honoring the access control configured for each data item. Read access to a data view does not affect the user's read access to (or even the visibility of) any streams or assets.
 
 When you inspect the _data items_ that resolve for a data view, you see only the data items that you have `Read` access to.
 

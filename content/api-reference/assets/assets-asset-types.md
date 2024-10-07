@@ -1140,7 +1140,7 @@ An asset type can be used to create multiple similar assets. A change to the ass
 |ModifiedDate|date-time|false|false|Modified Date|
 |Metadata|[[MetadataItem](#schemametadataitem)]|false|true|Metadata|
 |TypeReferences|[[TypeReference](#schematypereference)]|false|true|Asset type description|
-|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset of an this asset type, asset type statuses will take precedence over asset status.|
+|Status|[StatusConfiguration](#schemastatusconfiguration)|false|true|Asset type status. If an asset is of this asset type, asset type statuses will take precedence over asset status.|
 
 ```json
 {

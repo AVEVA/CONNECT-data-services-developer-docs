@@ -4,7 +4,16 @@ uid: tenant-namespaces
 ---
 
 # Namespaces
-A Namespace is a logical unit of organization for data within a tenant. It is a collection of types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into the system for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within an account. A namespace is a collection of SDS types, streams, and stream views. Namespace identifiers are unique within a tenant. Requirements for namespace identifiers must meet the following critieria: contain 100 characters or fewer, contain only alphanumeric characters, underscores, dashes, spaces, and periods; not contain two consecutive periods, not start or end with a period, not start with two consecutive underscores, not contain leading or trailing whitespace. In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.
+A namespace is a logical unit of organization for data within a tenant. It is a collection of SDS types, streams, and stream views. Each tenant may contain more than one namespace. Before you can put any data into the system for a given tenant, a namespace must be created within the scope of that tenant. Namespace identifiers are unique within a tenant. Requirements for namespace Ids are the following:
+
+- Must contain 100 characters or fewer
+- Must only contain alphanumeric characters, underscores, dashes, spaces, and periods
+- Must not contain two consecutive periods
+- Must not start or end with a period
+- Must not start with two consecutive underscores
+- Must not contain leading or trailing whitespace
+
+In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata. Creating and deleting namespaces must be done within CONNECT. See [Create a folder and enable CONNECT data services](https://docs.aveva.com/bundle/connect-data-services/page/1284463.html).
 
 ## `List All`
 
@@ -43,7 +52,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
   {
     "Id": "Namespace1",
     "Region": "WestUS",
-    "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/00c97c8b-8f60-4f29-af71-3178c414e7a0/namespaces/Namespace1",
+    "Self": "https://dat-b.osipi.com/api/v1/tenants/00c97c8b-8f60-4f29-af71-3178c414e7a0/namespaces/Namespace1",
     "Description": "Namespace Description 1",
     "RegionId": "WestUS",
     "InstanceId": "00f602d6-0999-42e8-9ae6-e06854fdcf31",
@@ -53,7 +62,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
   {
     "Id": "Namespace2",
     "Region": "WestUS",
-    "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/tenantId/namespaces/Namespace2",
+    "Self": "https://dat-b.osipi.com/api/v1/tenants/tenantId/namespaces/Namespace2",
     "Description": "Namespace Description 2",
     "State": 1,
     "RegionId": "WestUS",
@@ -108,135 +117,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 {
   "Id": "Namespace1",
   "Region": "WestUS",
-  "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/tenantId/namespaces/namespaceId",
+  "Self": "https://dat-b.osipi.com/api/v1/tenants/tenantId/namespaces/namespaceId",
   "Description": "Namespace Description 1",
   "State": 1,
   "RegionId": "WestUS",
   "InstanceId": "8e997ea5-4b69-4486-b38c-22c73e8acfc7",
-  "Name": "NamespaceName",
-  "AllowCrossRegionProcessing": true
-}
-```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Member</li>
-</ul>
-
----
-
-## `Create`
-
-<a id="opIdNamespace_Create"></a>
-
-Creates a new `Namespace` in the specified `Tenant`.
-
-<h3>Request</h3>
-
-```text 
-POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
-?isServerTest={isServerTest}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>The identifier of the `Tenant`.<br/><br/>`string namespaceId`
-<br/>The identifier of the `Namespace`.<br/><br/>
-`[optional] boolean isServerTest`
-<br/>This parameter is unused and will be removed in the next API version.<br/><br/>
-
-<h4>Request Body</h4>
-
-The new Namespace to be created.<br/>
-
-```json
-{
-  "Id": "string",
-  "Region": "string",
-  "Self": "string",
-  "Description": "string",
-  "State": 0,
-  "Owner": {
-    "Type": 1,
-    "ObjectId": "string",
-    "TenantId": "string"
-  },
-  "AccessControl": {
-    "RoleTrusteeAccessControlEntries": [
-      {
-        "Trustee": {
-          "Type": 1,
-          "ObjectId": "string",
-          "TenantId": "string"
-        },
-        "AccessType": 0,
-        "AccessRights": 0
-      }
-    ]
-  },
-  "RegionId": "string",
-  "InstanceId": "string",
-  "Name": "string",
-  "AllowCrossRegionProcessing": true
-}
-```
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|201|[Namespace](#schemanamespace)|The created `Namespace`.|
-|302|None|Returns the location of the existing `Namespace` object.|
-|400|None|Could not create the namespace due to missing or invalid input.|
-|403|None|Forbidden.|
-|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
-|409|None|A `Namespace` already exists with different values.|
-
-<h4>Example response body</h4>
-
-> 201 Response
-
-```json
-{
-  "Id": "NamespaceId",
-  "Region": "WestUS",
-  "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/tenantId/namespaces/namespaceId",
-  "Description": "Namespace Description",
-  "Owner": {
-    "Type": 1,
-    "ObjectId": "4f9f79e2-e4e3-4cef-b302-6c4713baed5c",
-    "TenantId": "7fc97c8b-8f60-4f29-af71-3178c414e7a0"
-  },
-  "AccessControl": {
-    "RoleTrusteeAccessControlEntries": [
-      {
-        "Trustee": {
-          "Type": 3,
-          "ObjectId": "a4e06a18-9a0e-4721-9772-524c937bdb5c"
-        },
-        "AccessRights": 1
-      },
-      {
-        "Trustee": {
-          "Type": 3,
-          "ObjectId": "a9a3b01b-e0d3-49c9-b931-72433152c192"
-        },
-        "AccessRights": 3
-      },
-      {
-        "Trustee": {
-          "Type": 3,
-          "ObjectId": "e1aaf6ac-3416-4db2-bd5d-d62b13340f4d"
-        },
-        "AccessRights": 31
-      }
-    ]
-  },
-  "RegionId": "WestUS",
-  "InstanceId": "cd7df91e-b838-4c55-b43f-17560cf4ab87",
   "Name": "NamespaceName",
   "AllowCrossRegionProcessing": true
 }
@@ -322,7 +207,7 @@ The new details to store for the Namespace.<br/>
 {
   "Id": "NamespaceId",
   "Region": "WestUS",
-  "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/tenantId/namespaces/namespaceId",
+  "Self": "https://dat-d.osipi.com/api/v1/tenants/tenantId/namespaces/namespaceId",
   "Description": "New Namespace 1",
   "State": 1,
   "Owner": {
@@ -361,45 +246,6 @@ The new details to store for the Namespace.<br/>
   "AllowCrossRegionProcessing": true
 }
 ```
-
-<h3>Authorization</h3>
-
-Allowed for these roles: 
-<ul>
-<li>Tenant Member</li>
-</ul>
-
----
-
-## `Delete`
-
-<a id="opIdNamespace_Delete"></a>
-
-Deletes a `Namespace` in the specified `Tenant`.
-
-<h3>Request</h3>
-
-```text 
-DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
-?isServerTest={isServerTest}
-```
-
-<h4>Parameters</h4>
-
-`string tenantId`
-<br/>The identifier of the `Tenant`.<br/><br/>`string namespaceId`
-<br/>The identifier of the `Namespace`.<br/><br/>
-`[optional] boolean isServerTest`
-<br/>This parameter is unused and will be removed in the next API version.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|HTTP status code: 200 on successful deletion or another HTTP status codes on failure.|
-|400|None|Could not delete the namespace due to missing or invalid input.|
-|403|None|Forbidden.|
-|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
 
 <h3>Authorization</h3>
 
@@ -880,4 +726,3 @@ Status codes describing a namespace's current provisioning state.
 |Denied|1|
 
 ---
-

@@ -52,7 +52,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
   {
     "Id": "Namespace1",
     "Region": "WestUS",
-    "Self": "https://dat-b.osipi.com/api/v1/tenants/00c97c8b-8f60-4f29-af71-3178c414e7a0/namespaces/Namespace1",
+    "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/00c97c8b-8f60-4f29-af71-3178c414e7a0/namespaces/Namespace1",
     "Description": "Namespace Description 1",
     "RegionId": "WestUS",
     "InstanceId": "00f602d6-0999-42e8-9ae6-e06854fdcf31",
@@ -62,7 +62,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces
   {
     "Id": "Namespace2",
     "Region": "WestUS",
-    "Self": "https://dat-b.osipi.com/api/v1/tenants/tenantId/namespaces/Namespace2",
+    "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/tenantId/namespaces/Namespace2",
     "Description": "Namespace Description 2",
     "State": 1,
     "RegionId": "WestUS",
@@ -117,7 +117,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}
 {
   "Id": "Namespace1",
   "Region": "WestUS",
-  "Self": "https://dat-b.osipi.com/api/v1/tenants/tenantId/namespaces/namespaceId",
+  "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/tenantId/namespaces/namespaceId",
   "Description": "Namespace Description 1",
   "State": 1,
   "RegionId": "WestUS",
@@ -207,7 +207,7 @@ The new details to store for the Namespace.<br/>
 {
   "Id": "NamespaceId",
   "Region": "WestUS",
-  "Self": "https://dat-d.osipi.com/api/v1/tenants/tenantId/namespaces/namespaceId",
+  "Self": "https://uswe.datahub.connect.aveva.com/api/v1/tenants/tenantId/namespaces/namespaceId",
   "Description": "New Namespace 1",
   "State": 1,
   "Owner": {

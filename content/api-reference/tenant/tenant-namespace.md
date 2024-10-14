@@ -12,7 +12,7 @@ A namespace is a logical unit of organization for data within a tenant. It is a 
 - Must not start or end with a period
 - Must not start with two consecutive underscores
 
-In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata.
+In practice, namespaces may correspond to a specific set of infrastructure assets, but more commonly correspond to virtual partitions within a single set of assets. You can create one or more namespaces within a tenant. Each namespace is effectively an instance of SDS, within which you create types and streams, stream views, data views, and metadata. Creating and deleting namespaces must be done within CONNECT. See [Create a folder and enable CONNECT data services](https://docs.aveva.com/bundle/connect-data-services/page/1284463.html).
 
 ## Properties
 
@@ -120,60 +120,6 @@ A `Namespace` can only be retrieved if the current principal has Read access.
 
 ***
 
-## `Create New Namespace`
-
-Creates a new `Namespace` in the specified `Tenant`.
-
-### Request
-
-`POST api/v1/Tenants/{tenantId}/Namespaces/{namespaceId?}`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
-```
-
-The tenant identifier where the `Namespace` will be created.
-```csharp
-[Required]
-[FromBody]
-Namespace namespaceToCreate
-```
-
-The new `Namespace` to be created.
-```csharp
-[Optional]
-[Default = ""]
-[FromRoute]
-string namespaceId
-```
-
-The Id of the new `Namespace`. The Id can also be specified in the namespaceToCreate. If it is omitted in both,
-            the Id will be generated.
-
-
-### Authorization
-
-A `Namespace` can only be created if the current principal has Write access.
-
-### Response
-
-| Status Code | Return Type | Description | 
- | --- | --- | ---  | 
-| 201 | Namespace | Returns the created `Namespace` object. | 
-| 302 | Nothing is returned | Returns the location of the existing `Namespace` object. | 
-| 400 | Nothing is returned | Could not create the `Namespace` due to missing or invalid input. | 
-| 403 | Nothing is returned | Unauthorized to create a `Namespace` in this tenant. | 
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. | 
-| 409 | Nothing is returned | A `Namespace` already exists with different values. | 
-
-
-***
-
 ## `Update Namespace`
 
 Updates `Namespace` information: Description and TierId. The [AccessControlList](xref:accessControl) and Owner's [Trustee](xref:accessControl#trustee) can
@@ -221,49 +167,6 @@ A `Namespace` can only be updated if the current principal has Write access.
 | 400 | Nothing is returned | Could not update the `Namespace` due to missing or invalid input. |
 | 403 | Nothing is returned | Unauthorized to update the `Namespace`. |
 | 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
-
-***
-
-## `Delete Namespace`
-
-Deletes a `Namespace` in the specified `Tenant`.
-
-### Request
-
-`DELETE api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}`
-
-
-### Parameters
-
-```csharp
-[Required]
-[FromRoute]
-string tenantId
-```
-
-The identifier of the tenant to access.
-```csharp
-[Required]
-[FromRoute]
-string namespaceId
-```
-
-The identifier of the `Namespace` to delete.
-
-
-### Authorization
-
-A `Namespace` can only be deleted if the current principal has Delete access.
-
-### Response
-
-| Status Code | Return Type | Description |
-| --- | --- | ---  |
-| 204 | Nothing is returned | The `Namespace` was deleted. |
-| 400 | Nothing is returned | Could not delete the `Namespace` due to an invalid state. |
-| 403 | Nothing is returned | Unauthorized to delete the `Namespace`. |
-| 405 | Nothing is returned | Method not allowed at this base URL. Try the request again at the Global base URL. |
-
 
 ***
 

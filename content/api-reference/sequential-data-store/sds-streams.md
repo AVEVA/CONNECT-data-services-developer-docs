@@ -1840,7 +1840,7 @@ A contract defining resolution of SdsStream.
         "SdsType": "<SdsResolvedType>",
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": "Default",
+        "InterpolationMode": "Continuous",
         "IsQuality": true
       }
     ],
@@ -1906,7 +1906,7 @@ A contract defining resolution of SdsStream.
         "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
-    "InterpolationMode": "Default",
+    "InterpolationMode": "Continuous",
     "ExtrapolationMode": "All",
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z"
@@ -1996,7 +1996,7 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
       "SdsType": "<SdsResolvedType>",
       "Value": null,
       "Uom": "string",
-      "InterpolationMode": "Default",
+      "InterpolationMode": "Continuous",
       "IsQuality": true
     }
   ],
@@ -2062,7 +2062,7 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
       "ModifiedDate": "2019-08-24T14:15:22Z"
     }
   ],
-  "InterpolationMode": "Default",
+  "InterpolationMode": "Continuous",
   "ExtrapolationMode": "All",
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z"
@@ -2207,14 +2207,14 @@ A contract defining the type of data to read or write in a SdsResolvedType.
         "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
-    "InterpolationMode": "Default",
+    "InterpolationMode": "Continuous",
     "ExtrapolationMode": "All",
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "Value": null,
   "Uom": "string",
-  "InterpolationMode": "Default",
+  "InterpolationMode": "Continuous",
   "IsQuality": true
 }
 
@@ -2235,7 +2235,7 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 |Property|Value|
 |---|---|
-|Continuous|Default|
+|Continuous|Continuous|
 |Default|Default|
 |StepwiseContinuousLeading|StepwiseContinuousLeading|
 |StepwiseContinuousTrailing|StepwiseContinuousTrailing|
@@ -2459,7 +2459,7 @@ A contract defining bulk response of SdsResolvedStream
             "SdsType": "<SdsResolvedType>",
             "Value": null,
             "Uom": "string",
-            "InterpolationMode": "Default",
+            "InterpolationMode": "Continuous",
             "IsQuality": true
           }
         ],
@@ -2525,7 +2525,7 @@ A contract defining bulk response of SdsResolvedStream
             "ModifiedDate": "2019-08-24T14:15:22Z"
           }
         ],
-        "InterpolationMode": "Default",
+        "InterpolationMode": "Continuous",
         "ExtrapolationMode": "All",
         "CreatedDate": "2019-08-24T14:15:22Z",
         "ModifiedDate": "2019-08-24T14:15:22Z"

@@ -1185,7 +1185,9 @@ POST /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Bulk/Streams/Resolved
       }
     ]
   }
-```> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+```
+
+> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {

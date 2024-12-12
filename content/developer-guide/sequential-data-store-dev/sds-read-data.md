@@ -14,13 +14,13 @@ While SDS provides robust data storage, it performs best if you follow certain g
 
 ### Maximum limit for events in read data calls
 
-The Read data API is limited to access less than 250,000,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
+The Read data API is limited to access less than 2,500,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
 
 ```json
 400 bad request error
 {
     "Error": "The request is not valid.",
-    "Reason": "Exceeded the maximum return count of 250000000 events.",
+    "Reason": "Exceeded the maximum return count of 2500000 events.",
     "Resolution": "Reduce query size and resubmit the request."
 }
 ```
@@ -84,7 +84,7 @@ SDS supports reading from multiple streams in one request. The following method 
 - [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
 > [!NOTE]
-> During bulk reads, the [maximum limit for events in read data calls](#maximum-limit-for-events-in-read-data-calls) is applicable to each stream included in the read, not the entire request.
+> During bulk reads, the [maximum limit for events in read data calls](#maximum-limit-for-events-in-read-data-calls) of 2,500,000 is applicable to each stream included in the read, not the entire request.
 
 ## Response format
 

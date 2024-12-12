@@ -15,7 +15,7 @@ Returns all values between a given start and end date, joined according to a giv
 <h3>Request</h3>
 
 ```text
-GET /api/v1/Tenants/{tenantId}/Namespaces{namespaceId}/Bulk/Streams/Data/Joins?streams={streamIds}&joinMode={joinMode}&startIndex={startIndex}&endIndex={endIndex}
+GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?streams={streamIds}&joinMode={joinMode}&startIndex={startIndex}&endIndex={endIndex}
 ```
 
 <h4>Parameters</h4>
@@ -43,6 +43,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces{namespaceId}/Bulk/Streams/Data/Joins?s
 
 <h3>Response</h3>
 |Status Code|Body Type|Description|
+|---|---|---|
 |200|Inline|Returns a serialized collection of events in a format defined by the joinMode|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|

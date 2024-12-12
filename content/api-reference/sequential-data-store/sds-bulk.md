@@ -42,6 +42,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
 <br/>Index identifying the end of the request window<br/><br/>
 
 <h3>Response</h3>
+
 |Status Code|Body Type|Description|
 |---|---|---|
 |200|Inline|Returns a serialized collection of events in a format defined by the joinMode|
@@ -52,7 +53,6 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins?
 |500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
 |503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
 
----
 ## Definitions
 
 ### ErrorResponseBody

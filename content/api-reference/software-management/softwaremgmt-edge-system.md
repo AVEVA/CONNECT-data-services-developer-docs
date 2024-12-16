@@ -628,11 +628,11 @@ Status category enumeration
 
 |Property|Value|Description|
 |---|---|---|
-|Bad|1|Status category enumeration|
-|Warning|2|Status category enumeration|
-|Discovered|3|Status category enumeration|
-|Good|4|Status category enumeration|
-|Stopped|5|Status category enumeration|
+|Bad|1|Status category: Stopped|
+|Warning|2|Status category: Good|
+|Discovered|3|Status category: Discovered|
+|Good|4|Status category: Warning|
+|Stopped|5|Status category: Bad|
 
 ---
 

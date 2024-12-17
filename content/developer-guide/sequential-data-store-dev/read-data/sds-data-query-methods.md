@@ -84,7 +84,7 @@ Content-Type: application/json
 
 ## Filtered
 
-Returns a collection of stored values as determined by a `filter`. The `filter` limits results by applying an expression against event fields. Filter expressions are explained in detail in the [Filter expressions](xref:sdsFilterExpressions) section.
+Returns a collection of stored values as determined by a `filter`. The `filter` limits results by applying an expression against event fields. Filter expressions are explained in detail in the [Filter expressions](xref:sdsFilterExpressionsValues) section.
 
 ### Request
 
@@ -95,7 +95,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?f
 #### Parameters
 
 `string filter`<br>
-Filter expression (see [Filter expressions](xref:sdsFilterExpressions)).
+Filter expression (see [Filter expressions](xref:sdsFilterExpressionsValues)).
 
 #### Example request
 
@@ -331,7 +331,7 @@ Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the fi
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 `string filter`<br>
-Optional [filter expression](xref:sdsFilterExpressions)
+Optional [filter expression](xref:sdsFilterExpressionsValues)
 
 `string continuationToken`<br>
 Optional token used to retrieve the next page of data. If `count` is specified, a `continuationToken` must also be specified.

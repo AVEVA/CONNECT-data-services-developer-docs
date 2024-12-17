@@ -5,7 +5,7 @@ uid: SdsDataQueryMethods
 
 # SDS data query methods
 
-When using <xref:sds-stream-data#list-values-account-path> or <xref:sds-stream-data#list-values-tenants-path> to query for data, there are several methods of retrieval:</xref:sds-stream-data#list-values-account-path>
+When using <xref:sds-stream-data#list-values-account-path> or <xref:sds-stream-data#list-values-tenants-path> to query for data, there are several methods of retrieval:
 
 - [Find distinct value](#find-distinct-value)
 - [Filtered](#filtered)

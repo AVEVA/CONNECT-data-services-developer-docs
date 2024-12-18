@@ -328,9 +328,9 @@ Invitation states.
 
 |Property|Value|Description|
 |---|---|---|
-|None|0|Invitation states.|
-|InvitationEmailSent|1|Invitation states.|
-|InvitationAccepted|2|Invitation states.|
+|None|0|No Invitation state specified.|
+|InvitationEmailSent|1|Invitation email has been sent.|
+|InvitationAccepted|2|Invitation has been accepted.|
 
 ---
 

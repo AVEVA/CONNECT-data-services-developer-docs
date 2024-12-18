@@ -5,7 +5,7 @@ uid: SdsDataQueryMethods
 
 # SDS data query methods
 
-When using <xref:sds-stream-data#list-values-account-path> or <xref:sds-stream-data#list-values-tenants-path> to query for data, there are several methods of retrieval:
+When using `List Values` ([account path](xref:sds-stream-data#list-values-account-path) or [tenant path](xref:sds-stream-data#list-values-tenants-path)) to query for SDS data, there are several methods of retrieval:
 
 - [Find distinct value](#find-distinct-value)
 - [Filtered](#filtered)
@@ -300,13 +300,21 @@ To retrieve the next page of values, include the `continuationToken` from the re
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&endIndex={endIndex}
+```
 
+```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&endIndex={endIndex}&boundaryType={boundaryType}
+```
 
+```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&startBoundaryType={startBoundaryType}&endIndex={endIndex}&endBoundaryType={endBoundaryType}
+```
 
+```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&endIndex={endIndex}&count={count}&continuationToken={continuationToken}
+```
 
+```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&startBoundaryType={startBoundaryType}&endIndex={endIndex}&endBoundaryType={endBoundaryType}&filter={filter}&count={count}&continuationToken={continuationToken}
 ```
 

@@ -1424,7 +1424,8 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 |Property|Value|Description|
 |---|---|---|
-|Continuous (Default)|0|Interpolates the data using previous and next index values.|
+|Continuous|0|Interpolates the data using previous and next index values.|
+|Default|0||
 |StepwiseContinuousLeading|1|Returns the data from the previous index.|
 |StepwiseContinuousTrailing|2|Returns the data from the next index.|
 |Discrete|3|If set on an SdsStream, returns stored events only. If set on a property of an event, the default value of the property type will be returned.|

@@ -1185,9 +1185,7 @@ POST /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Bulk/Streams/Resolved
       }
     ]
   }
-```
-
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
+```> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
 
 ```json
 {
@@ -1425,7 +1423,7 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 |Property|Value|Description|
 |---|---|---|
 |Continuous|0|Interpolates the data using previous and next index values.|
-|Default|0|Interpolates the data using previous and next index values.|
+|Default|0||
 |StepwiseContinuousLeading|1|Returns the data from the previous index.|
 |StepwiseContinuousTrailing|2|Returns the data from the next index.|
 |Discrete|3|If set on an SdsStream, returns stored events only. If set on a property of an event, the default value of the property type will be returned.|
@@ -1447,10 +1445,10 @@ Defines how a stream responds to requests with indexes that precede or follow al
 
 |Property|Value|Description|
 |---|---|---|
-|All|0|Returns the first data value if the index is before the first event in the stream, and returns the last data value if the index is after the last event in the stream.|
-|None|1|No extrapolation occurs.|
-|Forward|2|Returns the last data value if the index is after the last event in the stream.|
-|Backward|3|Returns the first data value if the index is before the first event in the stream.|
+|All|0|Returns the first data value if the index is before the first event in the stream, and returns the last data value if the index is after the last event in the stream|
+|None|1|No extrapolation occurs|
+|Forward|2|Returns the last data value if the index is after the last event in the stream|
+|Backward|3|Returns the first data value if the index is before the first event in the stream|
 
 ---
 
@@ -1842,7 +1840,7 @@ A contract defining resolution of SdsStream.
         "SdsType": "<SdsResolvedType>",
         "Value": null,
         "Uom": "string",
-        "InterpolationMode": "Continuous",
+        "InterpolationMode": "Default",
         "IsQuality": true
       }
     ],
@@ -1908,7 +1906,7 @@ A contract defining resolution of SdsStream.
         "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
-    "InterpolationMode": "Continuous",
+    "InterpolationMode": "Default",
     "ExtrapolationMode": "All",
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z"
@@ -1998,7 +1996,7 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
       "SdsType": "<SdsResolvedType>",
       "Value": null,
       "Uom": "string",
-      "InterpolationMode": "Continuous",
+      "InterpolationMode": "Default",
       "IsQuality": true
     }
   ],
@@ -2064,7 +2062,7 @@ A contract defining the type of data to read or write in a SdsResolvedStream.
       "ModifiedDate": "2019-08-24T14:15:22Z"
     }
   ],
-  "InterpolationMode": "Continuous",
+  "InterpolationMode": "Default",
   "ExtrapolationMode": "All",
   "CreatedDate": "2019-08-24T14:15:22Z",
   "ModifiedDate": "2019-08-24T14:15:22Z"
@@ -2209,14 +2207,14 @@ A contract defining the type of data to read or write in a SdsResolvedType.
         "ModifiedDate": "2019-08-24T14:15:22Z"
       }
     ],
-    "InterpolationMode": "Continuous",
+    "InterpolationMode": "Default",
     "ExtrapolationMode": "All",
     "CreatedDate": "2019-08-24T14:15:22Z",
     "ModifiedDate": "2019-08-24T14:15:22Z"
   },
   "Value": null,
   "Uom": "string",
-  "InterpolationMode": "Continuous",
+  "InterpolationMode": "Default",
   "IsQuality": true
 }
 
@@ -2237,7 +2235,7 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 |Property|Value|
 |---|---|
-|Continuous|Continuous|
+|Continuous|Default|
 |Default|Default|
 |StepwiseContinuousLeading|StepwiseContinuousLeading|
 |StepwiseContinuousTrailing|StepwiseContinuousTrailing|
@@ -2461,7 +2459,7 @@ A contract defining bulk response of SdsResolvedStream
             "SdsType": "<SdsResolvedType>",
             "Value": null,
             "Uom": "string",
-            "InterpolationMode": "Continuous",
+            "InterpolationMode": "Default",
             "IsQuality": true
           }
         ],
@@ -2527,7 +2525,7 @@ A contract defining bulk response of SdsResolvedStream
             "ModifiedDate": "2019-08-24T14:15:22Z"
           }
         ],
-        "InterpolationMode": "Continuous",
+        "InterpolationMode": "Default",
         "ExtrapolationMode": "All",
         "CreatedDate": "2019-08-24T14:15:22Z",
         "ModifiedDate": "2019-08-24T14:15:22Z"

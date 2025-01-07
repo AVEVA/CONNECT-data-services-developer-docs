@@ -3,14 +3,22 @@ title: SDS data query methods
 uid: SdsDataQueryMethods
 ---
 
-# SDS data query methods
+# SDS data query options
 
-When using `List Values` ([account path](xref:sds-stream-data#list-values-account-path) or [tenant path](xref:sds-stream-data#list-values-tenants-path)) to query for SDS data, there are several methods of retrieval:
+When using SDS data operations to query data from a stream, you can query for data in stream using different query options based upon the operation type. The following table lists the available query options and the operations that they can be used with. 
 
-- [Find distinct value](#find-distinct-value)
-- [Filtered](#filtered)
-- [Range](#range)
-- [Window](#window)
+| Query option | Description | List values operations<sup>1</sup> | List interpolated values operations<sup>2</sup> | Remove values operations<sup>3</sup> |
+|--|--|--|--|--|
+| [Find distinct value](#find-distinct-value) | Returns a stored event based on the specified `index` and `searchMode`. | &#x2714; | | |
+| [Filtered](#filtered) | Returns a collection of stored values as determined by a `filter` expression. The filter limits results by applying an expression against event fields. | &#x2714; | |  |
+| [Index collection](#index-collection) | Removes the event at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data event. One or more indexes can be specified in the request. |  | &#x2714; | &#x2714; |
+| [Interval](#interval) | Returns events at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored event exists at an index interval, the read characteristics of the stream determine how the returned event is calculated. |  |  | &#x2714; |
+| [Range](#range) | Returns a collection of stored values as determined by a startIndex and count. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data. | &#x2714; |  |  |
+| [Window](#window) | Returns a collection of stored events based on the specified startIndex and endIndex. |  &#x2714; |  |  |
+
+1. Supported for `List values` [account path](xref:sds-stream-data#list-values-account-path) and [tenant path](xref:sds-stream-data#list-values-tenants-path).
+1. Supported for `List interpolated values` [account path](xref:sds-stream-data#list-interpolated-values-account-path) and [tenant path](xref:sds-stream-data#list-interpolated-values-tenants-path).
+1. Supported for `Remove values` [account path](xref:sds-stream-data#remove-values-account-path) and [tenant path](xref:sds-stream-data#remove-values-tenants-path).
 
 ## Find distinct value
 
@@ -22,7 +30,9 @@ Returns a stored event based on the specified `index` and `searchMode`.
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index={index}&searchMode={searchMode}
 ```
 
-#### Parameters
+### Parameters
+
+The following parameters must be defined when querying an SDS stream for a distinct value.
 
 `string index`<br>
 The index.
@@ -34,53 +44,20 @@ The [SdsSearchMode](xref:sdsReadingData#sdssearchmode). The default is `exact`.
 
 The response includes a status code and a response body containing a serialized collection with one event.
 
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Time": "2017-11-23T14:00:00Z",
+        "State": 0,
+        "Measurement": 20
+    }
+]
+```
+
 Depending on the request `index` and `searchMode`, it is possible to have an empty collection returned.
-
-#### Example request
-
-```text
-GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?index=2017-11-23T13:00:00Z&searchMode=Next
-```
-
-The request has an index that matches the index of an existing event, but since a `SdsSearchMode` of `next` was specified, the response contains the next event in the stream after the specified index.
-
-#### Example response body
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-
-[
-    {
-        "Time": "2017-11-23T14:00:00Z",
-        "State": 0,
-        "Measurement": 20
-    }
-]
-```
-
-#### Example request
-
-```text
-GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?index=2017-11-23T13:30:00Z&searchMode=Next
-```
-
-The request specifies an index that does not match an index of an existing event. The next event in the stream is retrieved.
-
-#### Example response body
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-
-[
-    {
-        "Time": "2017-11-23T14:00:00Z",
-        "State": 0,
-        "Measurement": 20
-    }
-]
-```
 
 ## Filtered
 
@@ -92,20 +69,12 @@ Returns a collection of stored values as determined by a `filter`. The `filter` 
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?filter={filter}
 ```
 
-#### Parameters
+### Parameters
 
 `string filter`<br>
 Filter expression (see [Filter expressions](xref:sdsFilterExpressionsValues)).
 
-#### Example request
-
-```text
-GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?filter=Measurement gt 10
-```
-
-The events in the stream with `Measurement` greater than 10 are returned.
-
-#### Example response body
+### Response
 
 ```json
 HTTP/1.1 200
@@ -129,6 +98,175 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
+### Examples
+
+In the following request example, The events in the stream with `Measurement` greater than 10 are returned.
+
+```text
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?filter=Measurement gt 10
+```
+
+The response returns stream events with a `Measurement` greater than 10.
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Time": "2017-11-23T14:00:00Z",
+        "Measurement": 20
+    },
+    {
+        "Time": "2017-11-23T15:00:00Z",
+        "Measurement": 30
+    },
+    {
+        "Time": "2017-11-23T16:00:00Z",
+        "Measurement": 40
+    }
+]
+```
+
+## Index collection
+
+Returns events at the specified indexes. If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
+
+### Request
+
+```text
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated?index={index}[&index={index}...]
+```
+
+### Parameters
+
+``string index``  
+One or more indexes.
+
+### Examples
+
+#### Simple stream with continuous interpolation and extrapolation
+
+Consider a stream of type ``Simple`` with the default ``InterpolationMode`` of ``Continuous`` and ``ExtrapolationMode`` of ``All``. In the following request, the specified index matches an existing stored event:
+
+```text
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/Interpolated?index=2017-11-23T13:00:00Z
+```
+
+The response will contain the event stored at the specified index.
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Time": "2017-11-23T13:00:00Z",
+        "State": 0,
+        "Measurement": 10
+    }
+]
+```
+
+#### Simple stream with an index with no stored event
+
+The following request specifies an index for which no stored event exists:
+
+```text
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/Interpolated?index=2017-11-23T13:30:00Z
+```
+
+Because the index is a valid type for interpolation and the stream has a ``InterpolationMode`` of ``Continuous``, this request receives a response with an event interpolated at the specified index:
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Time": "2017-11-23T13:30:00Z",
+        "State": 0,
+        "Measurement": 15
+    }
+]
+```
+
+#### Simple stream with discrete interpolation
+
+Consider a stream of type ``Simple`` with an ``InterpolationMode`` of ``Discrete`` and ``ExtrapolationMode`` of ``All``. In the following request, the specified indexes only match two existing stored events:
+
+```text
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/Interpolated?index=2017-11-23T12:30:00Z&index=2017-11-23T13:00:00Z&index=2017-11-23T14:00:00Z
+```
+
+For this request, the response contains events for two of the three specified indexes.
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Time": "2017-11-23T13:00:00Z",
+        "State": 0,
+        "Measurement": 10
+    },
+    {
+        "Time": "2017-11-23T14:00:00Z",
+        "State": 0,
+        "Measurement": 20
+    }
+]
+```
+
+## `Interval`
+
+Returns events at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
+
+### Request
+
+```text
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated?startIndex={startIndex}&endIndex={endIndex}&count={count}
+```
+
+### Parameters
+
+``string startIndex``  
+The index defining the beginning of the window
+
+``string endIndex``  
+The index defining the end of the window  
+
+``int count``  
+The number of events to return. Read characteristics of the stream determine how the events are constructed.
+
+### Response
+
+A serialized collection of events is returned with evenly spaced intervals as defined in the request.
+
+```json
+HTTP/1.1 200
+Content-Type: application/json
+
+[
+    {
+        "Time": "2017-11-23T13:00:00Z",
+        "State": 0,
+        "Measurement": 10
+    },
+    {
+        "Time": "2017-11-23T14:00:00Z",
+        "State": 0,
+        "Measurement": 20
+    },
+    {
+        "Time": "2017-11-23T15:00:00Z",
+        "State": 0,
+        "Measurement": 30
+    }
+]
+```
+
 ## Range
 
 Returns a collection of stored values as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
@@ -139,7 +277,7 @@ Returns a collection of stored values as determined by a `startIndex` and `count
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&count={count}[&skip={skip}&reversed={reversed}&boundaryType={boundaryType}&filter={filter}]
 ```
 
-#### Parameters
+### Parameters
 
 `string startIndex`<br>
 Index identifying the beginning of the series of events to return.
@@ -163,16 +301,6 @@ Optional filter expression.
 
 The response includes a status code and a response body containing a serialized collection of events.
 
-#### Example request
-
-```text
-GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100
-```
-
-This request will return a response with up to 100 events starting at 13:00 and extending forward toward the end of the stream:
-
-#### Example response body
-
 ```json
 HTTP/1.1 200
 Content-Type: application/json
@@ -199,15 +327,17 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-#### Example request
+### Examples
 
-To reverse the direction of the request, set reversed to true. The following request will return up to 100 events starting at 13:00 and extending back toward the start of the stream:
+#### Range of 100 events extending forward 
+
+This request will return a response with up to 100 events starting at 13:00 and extending forward toward the end of the stream:
 
 ```text
-GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100&reversed=true
+GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100
 ```
 
-#### Example response body
+The response returns the range of events starting from the `startIndex` timestamp. The response has its returned events truncated for brevity.
 
 ```json
 HTTP/1.1 200
@@ -219,24 +349,24 @@ Content-Type: application/json
         "Measurement": 10
     },
     {
-        "Time": "2017-11-23T12:00:00Z"
-    }
+        "Time": "2017-11-23T14:00:00Z",
+        "Measurement": 10
+    },
+    ...
 ]
 ```
 
-Note that `State` is not included in the JSON as its value is the default value.
+Note that `State` is not included in the JSON as its value is the default value. Further, `Measurement` is not included in the second, 12:00:00, event as zero is the default value for numbers.
 
-Further, `Measurement` is not included in the second, 12:00:00, event as zero is the default value for numbers.
+#### Range of 100 events reversed
 
-The following request specifies a boundary type of Outside for a reversed-direction range request. The response will contain up to 100 events. The boundary type Outside indicates that up to one event outside the boundary will be included in the response. For a reverse direction range request, this means one event forward of the specified start index. In a default direction range request, it would mean one event before the specified start index.
-
-#### Example request
+The following request specifies a boundary type of `outside` for a reversed-direction range request. The response will contain up to 100 events. The boundary type Outside indicates that up to one event outside the boundary will be included in the response. For a reverse direction range request, this means one event forward of the specified start index. In a default direction range request, it would mean one event before the specified start index.
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100&reversed=true&boundaryType=2
 ```
 
-#### Example response body
+The response returns the 100 events after the start index. The event outside of the index is the next event or the event at 14:00 because the request operates in reverse.
 
 ```json
 HTTP/1.1 200
@@ -261,9 +391,7 @@ Content-Type: application/json
 ]
 ```
 
-The event outside of the index is the next event or the event at 14:00 because the request operates in reverse.
-
-#### Example request
+#### Range with filter
 
 Adding a filter to the request means only events that meet the filter criteria are returned:
 
@@ -271,7 +399,7 @@ Adding a filter to the request means only events that meet the filter criteria a
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100&reversed=true&boundaryType=2&filter=Measurement gt 10
 ```
 
-#### Example response body
+The range and order is still in effect, but only events that meet filter criteria are included.
 
 ```json
 HTTP/1.1 200
@@ -318,7 +446,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?s
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&startBoundaryType={startBoundaryType}&endIndex={endIndex}&endBoundaryType={endBoundaryType}&filter={filter}&count={count}&continuationToken={continuationToken}
 ```
 
-#### Parameters
+### Parameters
 
 `string startIndex`<br>
 Index bounding the beginning of the series of events to return
@@ -350,7 +478,9 @@ The response includes a status code and a response body containing a serialized 
 
 A continuation token can be returned if specified in the request.
 
-#### Example request
+### Examples
+
+#### Window of events between two timestamps
 
 The following requests all stored events between 12:30 and 15:30:
 
@@ -359,8 +489,6 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?start
 ```
 
 The response will contain the event stored at the specified index:
-
-#### Example response body
 
 ```json
 HTTP/1.1 200
@@ -384,15 +512,15 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-#### Example request
+#### Window of events between two timestamps with a boundary of `Outside`
 
-When the request is modified to specify a boundary type of Outside, the value before 13:30 and the value after 15:30 are included:
+When the request is modified to specify a boundary type of `Outside`, the value before 13:30 and the value after 15:30 are included:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&boundaryType=2
 ```
 
-#### Example response body
+The response includes the windowed events, as well as the two values outside of the `startIndex` and `endIndex`.
 
 ```json
 HTTP/1.1 200
@@ -425,15 +553,15 @@ Note that `State` is not included in the JSON as its value is the default value.
 
 Further, `Measurement` is not included in the second event (12:00:00) as zero is the default value for numbers.
 
-#### Example request
+#### Window of events between two timestamps with mixed boundaries
 
-With a start boundary of Inside, only values inside the start boundary (after 13:30) are included in the result. With an end boundary of Outside, one value outside the end index (after 15:30) is included:
+With a `startBoundary` of `Inside`, only values inside the start boundary (after 13:30) are included in the result. With an end boundary of `Outside`, one value outside the end index (after 15:30) is included:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&&startBoundaryType=1&endIndex=2017-11-23T15:30:00Z&endBoundaryType=2
 ```
 
-#### Example response body
+Example response:
 
 ```json
 HTTP/1.1 200
@@ -463,15 +591,15 @@ Content-Type: application/json
 ]
 ```
 
-#### Example request
+#### Pagination
 
-In order to page the results of the request, a continuation token may be specified. This requests the first page of the first two stored events between `startIndex` and `endIndex` by indicating count is 2 and `continuationToken` is an empty string:
+To page the results of the request, a `continuationToken` may be specified. This requests the first page of the first two stored events between `startIndex` and `endIndex` by indicating count is 2 and `continuationToken` is an empty string:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&count=2&continuationToken=
 ```
 
-##### Example response body
+Response:
 
 ```json
 HTTP/1.1 200
@@ -494,7 +622,7 @@ Content-Type: application/json
 }
 ```
 
-#### Example request
+#### Pagination with ContinuationToken
 
 This request uses the continuation token from the previous page to request the next page of stored events:
 
@@ -502,7 +630,7 @@ This request uses the continuation token from the previous page to request the n
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&count=2&continuationToken=2017-11-23T14:00:00Z
 ```
 
-#### Example response body
+Response:
 
 ```json
 HTTP/1.1 200
@@ -521,3 +649,5 @@ Content-Type: application/json
 ```
 
 In this case, the results contain the final event. The returned continuation token is null.
+
+

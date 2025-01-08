@@ -412,9 +412,9 @@ Client failover roles.
 
 |Property|Value|Description|
 |---|---|---|
-|Secondary|0|Client failover roles.|
-|Primary|1|Client failover roles.|
-|PendingPrimary|2|Client failover roles.|
+|Secondary|0|Secondary client.|
+|Primary|1|Primary client.|
+|PendingPrimary|2|Client that is pending to become primary.|
 
 ---
 
@@ -431,8 +431,8 @@ Client failover role override.
 
 |Property|Value|Description|
 |---|---|---|
-|Off|0|Client failover role override.|
-|Primary|1|Client failover role override.|
+|Off|0|Role is calculated by Failover Engine.|
+|Primary|1|Forced Primary.|
 
 ---
 

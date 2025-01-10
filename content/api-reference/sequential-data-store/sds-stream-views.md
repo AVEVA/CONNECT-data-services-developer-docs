@@ -6,102 +6,9 @@ uid: sds-stream-views
 # Stream Views
 The API in this section interacts with stream views.
 
-## `List Stream Views (Account path)`
+## `List Stream Views`
 
-<a id="opIdView_List Stream Views (Account path)"></a>
-
-Returns a list of `SdsStreamView`.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews
-?query={query}&filter={filter}&skip={skip}&count={count}&orderby={orderby}
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-`[optional] string query`
-<br/>Parameter representing a string search. See the [Search in SDS](xref:sdsSearching) topic for information about specifying the query parameter.
-<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string orderby`
-<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsStreamView](#schemasdsstreamview)[]|Returns a list of `SdsStreamView` objects|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-[
-{
-    "Id":"StreamView",
-    "Name":"StreamView",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3"
-},
-{
-    "Id":"StreamViewWithProperties",
-    "Name":"StreamViewWithProperties",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
-        {
-            "SourceId":"State",
-            "TargetId":"State"
-        },
-        {
-            "SourceId":"Measurement",
-            "TargetId":"Value"
-        }
-    ]
-}
-]
-```
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `List Stream Views (Tenants path)`
-
-<a id="opIdView_List Stream Views (Tenants path)"></a>
+<a id="opIdView_List Stream Views"></a>
 
 Returns a list of `SdsStreamView`.
 
@@ -190,241 +97,9 @@ Content-Type: application/json
 
 ---
 
-## `Get Stream View (Account path)`
+## `Get Stream View`
 
-<a id="opIdView_Get Stream View (Account path)"></a>
-
-Returns the `SdsStreamView`.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsStreamView](#schemasdsstreamview)|Returns the `SdsStreamView`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "Id":"StreamView",
-    "Name":"StreamView",
-    "SourceTypeId":"Simple",
-    "TargetTypeId":"Simple3",
-    "Properties":[
-        {
-            "SourceId":"Time",
-            "TargetId":"Time"
-        },
-    {
-        "SourceId":"State",
-        "TargetId":"State"
-    },
-    {
-        "SourceId":"Measurement",
-        "TargetId":"Value"
-    }
-    ]
-}
-```
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `Get Or Create Stream View (Account path)`
-
-<a id="opIdView_Get Or Create Stream View (Account path)"></a>
-
-If an `SdsStreamView` with a matching identifier already exists, the stream view passed in is compared with the existing stream view. If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned. If no matching identifier is found, the specified stream view is created.
-
-<h3>Request</h3>
-
-```text 
-POST /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsStreamView](#schemasdsstreamview)|Returns the `SdsStreamView`|
-|302|[SdsStreamView](#schemasdsstreamview)|Found a Stream View|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 200 Response ([SdsStreamView](#schemasdsstreamview))
-
-```json
-{
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "SourceTypeId": "string",
-  "TargetTypeId": "string",
-  "Properties": [
-    {
-      "SourceId": "string",
-      "TargetId": "string",
-      "SdsStreamView": "<SdsStreamView>"
-    }
-  ],
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z"
-}
-```
-
----
-
-## `Create Or Update Stream View (Account path)`
-
-<a id="opIdView_Create Or Update Stream View (Account path)"></a>
-
-Creates or updates the definition of a `SdsStreamView`.
-
-<h3>Request</h3>
-
-```text 
-PUT /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsStreamView](#schemasdsstreamview)|Returns the `SdsStreamView`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|409|[ErrorResponseBody](#schemaerrorresponsebody)|Conflict|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 200 Response ([SdsStreamView](#schemasdsstreamview))
-
-```json
-{
-  "Id": "string",
-  "Name": "string",
-  "Description": "string",
-  "SourceTypeId": "string",
-  "TargetTypeId": "string",
-  "Properties": [
-    {
-      "SourceId": "string",
-      "TargetId": "string",
-      "SdsStreamView": "<SdsStreamView>"
-    }
-  ],
-  "CreatedDate": "2019-08-24T14:15:22Z",
-  "ModifiedDate": "2019-08-24T14:15:22Z"
-}
-```
-
----
-
-## `Delete Stream View (Account path)`
-
-<a id="opIdView_Delete Stream View (Account path)"></a>
-
-Deletes a stream view from the specified tenant and namespace.
-
-<h3>Request</h3>
-
-```text 
-DELETE /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|204|None|`SdsStreamView` was successfully deleted.|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
----
-
-## `Get Stream View (Tenants path)`
-
-<a id="opIdView_Get Stream View (Tenants path)"></a>
+<a id="opIdView_Get Stream View"></a>
 
 Returns the `SdsStreamView`.
 
@@ -498,9 +173,9 @@ Content-Type: application/json
 
 ---
 
-## `Get Or Create Stream View (Tenants path)`
+## `Get Or Create Stream View`
 
-<a id="opIdView_Get Or Create Stream View (Tenants path)"></a>
+<a id="opIdView_Get Or Create Stream View"></a>
 
 If an `SdsStreamView` with a matching identifier already exists, the stream view passed in is compared with the existing stream view. If the stream views are identical, a Found (302) status is returned and the stream view. If the stream views are different, the Conflict (409) error is returned. If no matching identifier is found, the specified stream view is created.
 
@@ -556,9 +231,9 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamView
 
 ---
 
-## `Create Or Update Stream View (Tenants path)`
+## `Create Or Update Stream View`
 
-<a id="opIdView_Create Or Update Stream View (Tenants path)"></a>
+<a id="opIdView_Create Or Update Stream View"></a>
 
 Creates or updates the definition of a `SdsStreamView`.
 
@@ -613,9 +288,9 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamViewI
 
 ---
 
-## `Delete Stream View (Tenants path)`
+## `Delete Stream View`
 
-<a id="opIdView_Delete Stream View (Tenants path)"></a>
+<a id="opIdView_Delete Stream View"></a>
 
 Deletes a stream view from the specified tenant and namespace.
 
@@ -646,90 +321,9 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/StreamViews/{streamVi
 
 ---
 
-## `Get Stream View Map (Account path)`
+## `Get Stream View Map`
 
-<a id="opIdView_Get Stream View Map (Account path)"></a>
-
-Returns the `SdsStreamViewMap` corresponding to the specified streamViewId.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/StreamViews/{streamViewId}/Map
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string streamViewId`
-<br/>Stream view identifier.<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsStreamViewMap](#schemasdsstreamviewmap)|Returns the `SdsStreamViewMap`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "SourceTypeId": "Simple",
-    "TargetTypeId": "Simple3",
-    "Properties": [
-        {
-            "SourceId": "Time",
-            "TargetId": "Time"
-        },
-        {
-            "SourceId": "Measurement",
-            "TargetId": "Value",
-            "Mode": 20
-        },
-        {
-            "SourceId": "State",
-            "Mode": 2
-        },
-        {
-            "TargetId": "State",
-            "Mode": 1
-        }
-    ]
-}
-```
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `Get Stream View Map (Tenants path)`
-
-<a id="opIdView_Get Stream View Map (Tenants path)"></a>
+<a id="opIdView_Get Stream View Map"></a>
 
 Returns the `SdsStreamViewMap` corresponding to the specified streamViewId.
 

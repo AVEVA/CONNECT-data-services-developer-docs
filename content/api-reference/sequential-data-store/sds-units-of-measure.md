@@ -6,98 +6,9 @@ uid: sds-units-of-measure
 # Units Of Measure
 The API in this section interacts with units of measure. Read/Get operations only. Update/Write operations interact through the quantity API.
 
-## `List Units of Measure (Account path)`
+## `List Units of Measure`
 
-<a id="opIdUnit_List Units of Measure (Account path)"></a>
-
-Returns a list of all available units of measure in the system.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Units
-?filter={filter}&skip={skip}&count={count}&orderby={orderby}
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-`[optional] string filter`
-<br/>Filter expression.<br/><br/>`[optional] integer skip`
-<br/>Parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of SdsUomQuantity to retrieve. If not specified, a default value of 100 is used<br/><br/>`[optional] string orderby`
-<br/>Parameter representing sorted order of returned objects. A field name is required. The sorting is based on the stored values for the given field.<br/>For example, ``orderby=name`` would sort the returned results by the ``name`` values (ascending by default).<br/>Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending,<br/>by using values ``asc`` or ``desc``, respectively.<br/>For example, ``orderby=name desc`` would sort the returned results by the ``name`` values, descending.<br/>If no value is specified, there is no sorting of results.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsUom](#schemasdsuom)[]|Returns a list of `SdsUom` objects|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was invalid or missing|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-[
-{
-    "Id":"count",
-    "Abbreviation":"count",
-    "Name":"count",
-    "DisplayName":"count",
-    "QuantityId":"Quantity",
-    "ConversionFactor":1
-},
-{
-    "Id":"Ampere hour",
-    "Abbreviation":"Ah",
-    "Name":"Ampere hour",
-    "DisplayName":"Ampere hour",
-    "QuantityId":"Electric Charge",
-    "ConversionFactor":3600
-},
-{
-    "Id":"coulomb",
-    "Abbreviation":"C",
-    "Name":"coulomb",
-    "DisplayName":"coulomb",
-    "QuantityId":"Electric Charge",
-    "ConversionFactor":1
-}
-]
-```
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `List Units of Measure (Tenants path)`
-
-<a id="opIdUnit_List Units of Measure (Tenants path)"></a>
+<a id="opIdUnit_List Units of Measure"></a>
 
 Returns a list of all available units of measure in the system.
 
@@ -182,75 +93,9 @@ Content-Type: application/json
 
 ---
 
-## `Get Unit of Measure (Account path)`
+## `Get Unit of Measure`
 
-<a id="opIdUnit_Get Unit of Measure (Account path)"></a>
-
-Returns the unit of measure corresponding to the specified uomId within a given namespace.
-
-<h3>Request</h3>
-
-```text 
-GET /api/v1/Account/{accountId}/sds/{serviceInstanceId}/Units/{uomId}
-```
-
-<h4>Parameters</h4>
-
-`string accountId`
-<br/><br/>`string serviceInstanceId`
-<br/><br/>`string uomId`
-<br/>The unit of measure identifier<br/><br/>`string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
-
-<h3>Response</h3>
-
-|Status Code|Body Type|Description|
-|---|---|---|
-|200|[SdsUom](#schemasdsuom)|Returns the `SdsUom`|
-|400|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was invalid or missing|
-|401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
-|403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
-|404|[ErrorResponseBody](#schemaerrorresponsebody)|One of the resources specified was not found|
-|500|[ErrorResponseBody](#schemaerrorresponsebody)|An error occurred while processing the request|
-|503|[ErrorResponseBody](#schemaerrorresponsebody)|Service Unavailable|
-
-<h4>Example response body</h4>
-
-> 200 Response
-
-```json
-HTTP/1.1 200
-Content-Type: application/json
-{
-    "Id":"ounce",
-    "Abbreviation":"oz",
-    "Name":"ounce",
-    "DisplayName":"ounce",
-    "QuantityId":"Mass",
-    "ConversionFactor":0.028349523
-}
-```
-> 400 Response ([ErrorResponseBody](#schemaerrorresponsebody))
-
-```json
-{
-  "OperationId": "string",
-  "Error": "string",
-  "Reason": "string",
-  "Resolution": "string",
-  "Parameters": {
-    "property1": "string",
-    "property2": "string"
-  }
-}
-```
-
----
-
-## `Get Unit of Measure (Tenants path)`
-
-<a id="opIdUnit_Get Unit of Measure (Tenants path)"></a>
+<a id="opIdUnit_Get Unit of Measure"></a>
 
 Returns the unit of measure corresponding to the specified uomId within a given namespace.
 

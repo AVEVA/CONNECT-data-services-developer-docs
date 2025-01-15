@@ -773,10 +773,10 @@ Defines how a stream responds to requests with indexes that precede or follow al
 
 |Property|Value|Description|
 |---|---|---|
-|All|0|Returns the first data value if the index is before the first event in the stream, and returns the last data value if the index is after the last event in the stream|
-|None|1|No extrapolation occurs|
-|Forward|2|Returns the last data value if the index is after the last event in the stream|
-|Backward|3|Returns the first data value if the index is before the first event in the stream|
+|All|0|Returns the first data value if the index is before the first event in the stream, and returns the last data value if the index is after the last event in the stream.|
+|None|1|No extrapolation occurs.|
+|Forward|2|Returns the last data value if the index is after the last event in the stream.|
+|Backward|3|Returns the first data value if the index is before the first event in the stream.|
 
 ---
 

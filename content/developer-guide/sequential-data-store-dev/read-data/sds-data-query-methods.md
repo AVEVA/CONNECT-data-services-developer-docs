@@ -7,7 +7,7 @@ uid: SdsDataQueryMethods
 
 When using SDS data operations to query data from a stream, you can query for data in stream using different query options based upon the operation type. The following table lists the available query options and the operations that they can be used with.
 
-| Query option | Description | [List values operation](xref:sds-stream-data#list-values) | [List interpolated values operation](xref:sds-stream-data#list-interpolated-values) | [Remove values](xref:sds-stream-data#remove-values) |
+| Query option | Description | [List values](xref:sds-stream-data#list-values) | [List interpolated values](xref:sds-stream-data#list-interpolated-values) | [Remove values](xref:sds-stream-data#remove-values) |
 |--|--|--|--|--|
 | [Find distinct value](#find-distinct-value) | Returns a stored event based on the specified `index` and `searchMode`. | &#x2714; | | |
 | [Filtered](#filtered) | Returns a collection of stored values as determined by a `filter` expression. The filter limits results by applying an expression against event fields. | &#x2714; | |  |

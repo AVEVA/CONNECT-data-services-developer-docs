@@ -5,9 +5,9 @@ uid: SdsDataQueryMethods
 
 # SDS data query options
 
-When using SDS data operations to query data from a stream, you can query for data in stream using different query options based upon the operation type. The following table lists the available query options and the operations that they can be used with. 
+When using SDS data operations to query data from a stream, you can query for data in stream using different query options based upon the operation type. The following table lists the available query options and the operations that they can be used with.
 
-| Query option | Description | List values operations<sup>1</sup> | List interpolated values operations<sup>2</sup> | Remove values operations<sup>3</sup> |
+| Query option | Description | [List values operation](xref:sds-stream-data#list-values) | [List interpolated values operation](xref:sds-stream-data#list-interpolated-values) | [Remove values](xref:sds-stream-data#remove-values) |
 |--|--|--|--|--|
 | [Find distinct value](#find-distinct-value) | Returns a stored event based on the specified `index` and `searchMode`. | &#x2714; | | |
 | [Filtered](#filtered) | Returns a collection of stored values as determined by a `filter` expression. The filter limits results by applying an expression against event fields. | &#x2714; | |  |
@@ -15,10 +15,6 @@ When using SDS data operations to query data from a stream, you can query for da
 | [Interval](#interval) | Returns events at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored event exists at an index interval, the read characteristics of the stream determine how the returned event is calculated. |  |  | &#x2714; |
 | [Range](#range) | Returns a collection of stored values as determined by a startIndex and count. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data. | &#x2714; |  |  |
 | [Window](#window) | Returns a collection of stored events based on the specified startIndex and endIndex. |  &#x2714; |  |  |
-
-1. Supported for `List values` [account path](xref:sds-stream-data#list-values-account-path) and [tenant path](xref:sds-stream-data#list-values-tenants-path).
-1. Supported for `List interpolated values` [account path](xref:sds-stream-data#list-interpolated-values-account-path) and [tenant path](xref:sds-stream-data#list-interpolated-values-tenants-path).
-1. Supported for `Remove values` [account path](xref:sds-stream-data#remove-values-account-path) and [tenant path](xref:sds-stream-data#remove-values-tenants-path).
 
 ## Find distinct value
 

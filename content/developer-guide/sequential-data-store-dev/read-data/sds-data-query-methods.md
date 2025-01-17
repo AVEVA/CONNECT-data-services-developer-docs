@@ -13,8 +13,8 @@ When using SDS data operations to query data from a stream, you can query for da
 | [Filtered](#filtered) | Returns a collection of stored values as determined by a `filter` expression. The filter limits results by applying an expression against event fields. | &#x2714; | |  |
 | [Index collection](#index-collection) | Removes the event at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data event. One or more indexes can be specified in the request. |  | &#x2714; | &#x2714; |
 | [Interval](#interval) | Returns events at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored event exists at an index interval, the read characteristics of the stream determine how the returned event is calculated. |  |  | &#x2714; |
-| [Range](#range) | Returns a collection of stored values as determined by a startIndex and count. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data. | &#x2714; |  |  |
-| [Window](#window) | Returns a collection of stored events based on the specified startIndex and endIndex. |  &#x2714; |  |  |
+| [Range](#range) | Returns a collection of stored values as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data. | &#x2714; |  |  |
+| [Window](#window) | Returns a collection of stored events based on the specified `startIndex` and `endIndex`. |  &#x2714; |  |  |
 
 ## Find distinct value
 
@@ -228,10 +228,10 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/I
 ### Parameters
 
 ``string startIndex``  
-The index defining the beginning of the window
+The index defining the beginning of the window.
 
 ``string endIndex``  
-The index defining the end of the window  
+The index defining the end of the window.
 
 ``int count``  
 The number of events to return. Read characteristics of the stream determine how the events are constructed.
@@ -288,7 +288,7 @@ Optional value specifying the number of events to skip at the beginning of the r
 Optional specification of the direction of the request. By default, range requests move forward from `startIndex`, collecting events after `startIndex` from the stream. A reversed request will collect events before `startIndex` from the stream.
 
 `SdsBoundaryType boundaryType`<br>
-Optional SdsBoundaryType specifies the handling of events at or near `startIndex`.
+Optional parameter that specifies the handling of events at or near `startIndex`.
 
 `string filter`<br>
 Optional filter expression.
@@ -325,7 +325,7 @@ Note that `State` is not included in the JSON as its value is the default value.
 
 ### Examples
 
-#### Range of 100 events extending forward 
+#### Range of 100 events extending forward
 
 This request will return a response with up to 100 events starting at 13:00 and extending forward toward the end of the stream:
 
@@ -414,7 +414,7 @@ Content-Type: application/json
 
 Returns a collection of stored events based on the specified `startIndex` and `endIndex`.
 
-For handling events at and near the boundaries of the window, a single SdsBoundaryType that applies to both the start and end indexes can be passed with the request, or separate boundary types may be passed for the start and end individually.
+For handling events at and near the boundaries of the window, a single `SdsBoundaryType` that applies to both the start and end indexes can be passed with the request, or separate boundary types may be passed for the start and end individually.
 
 Paging is supported for window requests with a large number of events.
 
@@ -589,7 +589,7 @@ Content-Type: application/json
 
 #### Pagination
 
-To page the results of the request, a `continuationToken` may be specified. This requests the first page of the first two stored events between `startIndex` and `endIndex` by indicating count is 2 and `continuationToken` is an empty string:
+To page the results of the request, a `continuationToken` may be specified. This requests the first page of the first two stored events between `startIndex` and `endIndex` by indicating count is 2 and `continuationToken` is an empty string
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&count=2&continuationToken=
@@ -645,5 +645,3 @@ Content-Type: application/json
 ```
 
 In this case, the results contain the final event. The returned continuation token is null.
-
-

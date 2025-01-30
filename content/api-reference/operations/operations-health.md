@@ -125,11 +125,11 @@ Represents the various health states a HealthEventViewModel can represent.
 
 |Property|Value|Description|
 |---|---|---|
-|Invalid|0|Represents the various health states a HealthEventViewModel can represent.|
-|Ok|1|Represents the various health states a HealthEventViewModel can represent.|
-|Warning|2|Represents the various health states a HealthEventViewModel can represent.|
-|Error|3|Represents the various health states a HealthEventViewModel can represent.|
-|Unknown|65535|Represents the various health states a HealthEventViewModel can represent.|
+|Invalid|0|Not used, means the enumeration value is invalid.|
+|Ok|1|Health event is in a good state.|
+|Warning|2|Health event is in a warning state.|
+|Error|3|Health event is in an error state.|
+|Unknown|65535|Health event is in an unknown state indicating the service is starting up.|
 
 ---
 

@@ -79,17 +79,17 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 Returns a collection of stored values at indexes based on request parameters.
   
 SDS supports four ways of specifying which stored events to return:
-- **Find Distinct Value**: Returns a stored event based on the specified index and searchMode. 
+- [Find Distinct Value](xref:SdsDataQueryMethods#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
     
     **Parameters**: Accepts ``index`` and ``searchMode``.
-- **Filtered**: Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+- [Filtered](xref:SdsDataQueryMethods#filtered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
     
     **Parameters**: Accepts a ``filter`` expression. 
-- **Range**: Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+- [Range](xref:SdsDataQueryMethods#range): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
     Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
     
     **Parameters**: Accepts ``startIndex`` and ``count``.
-- **Window**: Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+- [Window](xref:SdsDataQueryMethods#window): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
     
     **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 
@@ -296,17 +296,17 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 
 There are two options for specifying which events to remove from a stream: index collection and windows
 
-[Index Collection](xref:sdsWritingDataApi#index-collection): Removes the event at each index from the specified stream. 
+[Index Collection](xref:SdsDataQueryMethods#index-collection): Removes the event at each index from the specified stream. 
 Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
 One or more indexes can be specified in the request.
 
-[Window](xref:sdsWritingDataApi#window): Removes events at and between the start index and end index.
+[Window](xref:SdsDataQueryMethods#window): Removes events at and between the start index and end index.
 A window can be specified with a start index and end index.
 
 **Notes**: If any individual event fails to be removed, the entire operation is rolled back and no events are removed.
 The ``streamId`` and ``index`` that caused the issue are included in the error response.
 If you attempt to remove events at indexes that have no events, an error is returned.
-If this occurs, use the [Window](xref:sdsWritingDataApi#window) request format to remove any events from a specified window of indexes, which will not return an error if no data is found.
+If this occurs, use the [Window](xref:SdsDataQueryMethods#window) request format to remove any events from a specified window of indexes, which will not return an error if no data is found.
 
 <h3>Request</h3>
 
@@ -350,13 +350,13 @@ Interpolation is not supported for streams with compound indexes.
 
 SDS supports two ways of specifying which stored events to return: index collection and interval.
 
-[Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
+[Index collection](xref:SdsDataQueryMethods#index-collection): Returns events at the specified indexes.
 If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
 
 **Parameters**: Accepts ``index``.
 
-[Interval](xref:sdsReadingDataApi#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
-If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
+[Interval](xref:SdsDataQueryMethods#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``.
+If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated.
 
 **Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
 

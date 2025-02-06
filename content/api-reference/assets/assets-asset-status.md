@@ -306,10 +306,10 @@ Pre-defined asset status values.
 
 |Property|Value|Description|
 |---|---|---|
-|Unknown|0|Pre-defined asset status values.|
-|Good|1|Pre-defined asset status values.|
-|Warning|2|Pre-defined asset status values.|
-|Bad|3|Pre-defined asset status values.|
+|Unknown|0||
+|Good|1||
+|Warning|2||
+|Bad|3||
 
 ---
 

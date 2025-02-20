@@ -46,7 +46,7 @@ A data item field is ineligible if its index is not appropriate for the data vie
 The following are examples of ineligible index:
 
 * The index is compound (multiple properties)
-* The index property data type differs from the data view data type
+* The index property data type differs from the IndexTypeCode property on the data view
 
 The following are examples of ineligible field types:
 

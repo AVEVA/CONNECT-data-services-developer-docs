@@ -297,7 +297,7 @@ For field sources that do not use keys (`FieldSource.NotApplicable`, `FieldSourc
 #### Special case: Tags
 The field source `FieldSource.Tags` is a special case due to the nature of tags.
 
-On a field of source `FieldSource.Tags`, its collection of `.Keys` represents a whitelist.
+On a field of source `FieldSource.Tags`, its collection of `.Keys` represents an allowlist.
 
 ##### Example
 Given a stream with tags `[ "Weather", "Low Resolution", "Gen2" ]`  

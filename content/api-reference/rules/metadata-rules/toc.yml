@@ -6,7 +6,5 @@
   topicHref: metadata-metadata-rule-suggestion.md
 - name: Metadata rules
   topicHref: metadata-metadata-rules.md
-- name: Metadata rules overview
-  href: metadata-metadata-rules-overview.md
 - name: Metadata rules preview
   topicHref: metadata-metadata-rule-preview.md

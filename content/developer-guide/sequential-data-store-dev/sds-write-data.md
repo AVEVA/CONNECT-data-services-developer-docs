@@ -28,7 +28,7 @@ The following methods support writing a single value or multiple values:
 
 With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
 
-You must format the events as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the [CONNECT data services Samples](https://github.com/osisoft/OSI-Samples-ADH) for the complete example.
+You must format the events as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the [CONNECT data services Samples](https://github.com/AVEVA/AVEVA-Samples-CloudOperations) for the complete example.
 
 ```json
 [

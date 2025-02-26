@@ -142,7 +142,7 @@ If the InterpolationMode is not assigned, the events are interpolated in the def
 
 ## Extrapolation
 
-Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the stream. ExtrapolationMode acts as a master switch to determine whether extrapolation occurs and at which end of the data.
+Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the stream. ExtrapolationMode determines whether extrapolation occurs and at which end of the data.
 
 ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables show how ExtrapolationMode affects returned values for each InterpolationMode value:
 

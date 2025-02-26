@@ -3,7 +3,7 @@ uid: metadata-rules-overview
 ---
 
 # Metadata rules
-Metadata, or data about data, is a collection of properties that asset instances of an asset type are expected to provide. The type and units of measure for the value can be defined. Metadata enriches sequential data in CONNECT data services and it logically segregates and contextualizes data. It supports data analysis, visualization, organization, and search capabilities.
+Metadata, or data about data, is a collection of properties that asset instances of an asset type are expected to provide. The type and units of measure for the value can be defined. Metadata enriches sequential data in CONNECT data services and it logically separates and contextualizes data. It supports data analysis, visualization, organization, and search capabilities.
 
 A metadata rule is a user-defined stream name pattern in which each part is assigned a metadata type. Metadata rules capture any streams currently stored in a CONNECT data services namespace, as well as matching streams that are subsequently added to the namespace.
 

@@ -90,6 +90,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/sync/agents
           "TransferRevisionNumber": 0,
           "LastEditDate": "2019-08-24T14:15:22Z",
           "LastEditBy": "string",
+          "TransferImplicitEventFrames": true,
           "AutoDeleteCloudObjects": true,
           "TotalPointsInTransfer": 0,
           "PIPointsWithHealthEvents": {
@@ -263,6 +264,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/sync/deletedagents
           "TransferRevisionNumber": 0,
           "LastEditDate": "2019-08-24T14:15:22Z",
           "LastEditBy": "string",
+          "TransferImplicitEventFrames": true,
           "AutoDeleteCloudObjects": true,
           "TotalPointsInTransfer": 0,
           "PIPointsWithHealthEvents": {
@@ -679,6 +681,7 @@ Allowed for these roles:
         "TransferRevisionNumber": 0,
         "LastEditDate": "2019-08-24T14:15:22Z",
         "LastEditBy": "string",
+        "TransferImplicitEventFrames": true,
         "AutoDeleteCloudObjects": true,
         "TotalPointsInTransfer": 0,
         "PIPointsWithHealthEvents": {
@@ -856,6 +859,7 @@ Allowed for these roles:
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -932,6 +936,7 @@ Allowed for these roles:
 |TransferRevisionNumber|int32|false|false|None|
 |LastEditDate|date-time|false|false|None|
 |LastEditBy|guid|false|false|None|
+|TransferImplicitEventFrames|boolean|false|false|None|
 |AutoDeleteCloudObjects|boolean|false|false|None|
 |TotalPointsInTransfer|int64|false|false|None|
 |PIPointsWithHealthEvents|object|false|true|None|
@@ -977,6 +982,7 @@ Allowed for these roles:
   "TransferRevisionNumber": 0,
   "LastEditDate": "2019-08-24T14:15:22Z",
   "LastEditBy": "string",
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "TotalPointsInTransfer": 0,
   "PIPointsWithHealthEvents": {
@@ -1462,6 +1468,9 @@ Allowed for these roles:
 |StreamsService|5|
 |AssetsService|6|
 |DataService|7|
+|EventsCloudBlobContainer|8|
+|EventsEventHubResources|9|
+|EventsService|10|
 
 ---
 

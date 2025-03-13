@@ -94,6 +94,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources
             "TransferRevisionNumber": 0,
             "LastEditDate": "2019-08-24T14:15:22Z",
             "LastEditBy": "string",
+            "TransferImplicitEventFrames": true,
             "AutoDeleteCloudObjects": true,
             "TotalPointsInTransfer": 0,
             "PIPointsWithHealthEvents": {
@@ -276,6 +277,7 @@ The DataSourceCreateUpdateDto to use when creating the DataSource.<br/>
           "TransferRevisionNumber": 0,
           "LastEditDate": "2019-08-24T14:15:22Z",
           "LastEditBy": "string",
+          "TransferImplicitEventFrames": true,
           "AutoDeleteCloudObjects": true,
           "TotalPointsInTransfer": 0,
           "PIPointsWithHealthEvents": {
@@ -475,6 +477,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/{DataSour
           "TransferRevisionNumber": 0,
           "LastEditDate": "2019-08-24T14:15:22Z",
           "LastEditBy": "string",
+          "TransferImplicitEventFrames": true,
           "AutoDeleteCloudObjects": true,
           "TotalPointsInTransfer": 0,
           "PIPointsWithHealthEvents": {
@@ -658,6 +661,7 @@ The new property values that will be set on the DataSource.<br/>
           "TransferRevisionNumber": 0,
           "LastEditDate": "2019-08-24T14:15:22Z",
           "LastEditBy": "string",
+          "TransferImplicitEventFrames": true,
           "AutoDeleteCloudObjects": true,
           "TotalPointsInTransfer": 0,
           "PIPointsWithHealthEvents": {
@@ -845,6 +849,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/PISystems
         "TransferRevisionNumber": 0,
         "LastEditDate": "2019-08-24T14:15:22Z",
         "LastEditBy": "string",
+        "TransferImplicitEventFrames": true,
         "AutoDeleteCloudObjects": true,
         "TotalPointsInTransfer": 0,
         "PIPointsWithHealthEvents": {
@@ -1039,6 +1044,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/{DataSour
         "TransferRevisionNumber": 0,
         "LastEditDate": "2019-08-24T14:15:22Z",
         "LastEditBy": "string",
+        "TransferImplicitEventFrames": true,
         "AutoDeleteCloudObjects": true,
         "TotalPointsInTransfer": 0,
         "PIPointsWithHealthEvents": {
@@ -1228,6 +1234,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/{DataSour
         "TransferRevisionNumber": 0,
         "LastEditDate": "2019-08-24T14:15:22Z",
         "LastEditBy": "string",
+        "TransferImplicitEventFrames": true,
         "AutoDeleteCloudObjects": true,
         "TotalPointsInTransfer": 0,
         "PIPointsWithHealthEvents": {
@@ -1351,6 +1358,7 @@ The PiSystem properties to update.<br/>
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -1460,6 +1468,7 @@ The PiSystem properties to update.<br/>
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -1592,6 +1601,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/{DataSour
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -2168,6 +2178,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/{DataSour
     "TransferRevisionNumber": 0,
     "LastEditDate": "2019-08-24T14:15:22Z",
     "LastEditBy": "string",
+    "TransferImplicitEventFrames": true,
     "AutoDeleteCloudObjects": true,
     "TotalPointsInTransfer": 0,
     "StreamCreationStatus": {
@@ -2252,6 +2263,7 @@ Properties of the Transfer to create.<br/>
   "Name": "string",
   "MetadataPrivacy": 0,
   "TotalPointsInTransfer": 0,
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "VerboseLoggingConfiguration": {
     "TransferId": "string",
@@ -2327,6 +2339,7 @@ Properties of the Transfer to create.<br/>
   "TransferRevisionNumber": 0,
   "LastEditDate": "2019-08-24T14:15:22Z",
   "LastEditBy": "string",
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "TotalPointsInTransfer": 0,
   "StreamCreationStatus": {
@@ -3183,6 +3196,7 @@ The Transfer properties to update.<br/>
   ],
   "HistoricalDataStartTime": "2019-08-24T14:15:22Z",
   "ExpectedTransferRevisionNumber": 0,
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "VerboseLoggingConfiguration": {
     "TransferId": "string",
@@ -3259,6 +3273,7 @@ The Transfer properties to update.<br/>
   "TransferRevisionNumber": 0,
   "LastEditDate": "2019-08-24T14:15:22Z",
   "LastEditBy": "string",
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "TotalPointsInTransfer": 0,
   "StreamCreationStatus": {
@@ -3430,6 +3445,7 @@ The Transfer status to be changed to.<br/>
   "TransferRevisionNumber": 0,
   "LastEditDate": "2019-08-24T14:15:22Z",
   "LastEditBy": "string",
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "TotalPointsInTransfer": 0,
   "StreamCreationStatus": {
@@ -3547,6 +3563,7 @@ The PiSystem properties to update.<br/>
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -3656,6 +3673,7 @@ The PiSystem properties to update.<br/>
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -3778,6 +3796,7 @@ The PiSystem properties to update.<br/>
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -3886,6 +3905,7 @@ The PiSystem properties to update.<br/>
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -4028,6 +4048,7 @@ The updated set of points referenced by AF.<br/>
   "TransferRevisionNumber": 0,
   "LastEditDate": "2019-08-24T14:15:22Z",
   "LastEditBy": "string",
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "TotalPointsInTransfer": 0,
   "StreamCreationStatus": {
@@ -4334,6 +4355,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
           "TransferRevisionNumber": 0,
           "LastEditDate": "2019-08-24T14:15:22Z",
           "LastEditBy": "string",
+          "TransferImplicitEventFrames": true,
           "AutoDeleteCloudObjects": true,
           "TotalPointsInTransfer": 0,
           "PIPointsWithHealthEvents": {
@@ -4492,6 +4514,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
         "TransferRevisionNumber": 0,
         "LastEditDate": "2019-08-24T14:15:22Z",
         "LastEditBy": "string",
+        "TransferImplicitEventFrames": true,
         "AutoDeleteCloudObjects": true,
         "TotalPointsInTransfer": 0,
         "PIPointsWithHealthEvents": {
@@ -4669,6 +4692,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
       "TransferRevisionNumber": 0,
       "LastEditDate": "2019-08-24T14:15:22Z",
       "LastEditBy": "string",
+      "TransferImplicitEventFrames": true,
       "AutoDeleteCloudObjects": true,
       "TotalPointsInTransfer": 0,
       "PIPointsWithHealthEvents": {
@@ -4745,6 +4769,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
 |TransferRevisionNumber|int32|false|false|None|
 |LastEditDate|date-time|false|false|None|
 |LastEditBy|guid|false|false|None|
+|TransferImplicitEventFrames|boolean|false|false|None|
 |AutoDeleteCloudObjects|boolean|false|false|None|
 |TotalPointsInTransfer|int64|false|false|None|
 |PIPointsWithHealthEvents|object|false|true|None|
@@ -4790,6 +4815,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
   "TransferRevisionNumber": 0,
   "LastEditDate": "2019-08-24T14:15:22Z",
   "LastEditBy": "string",
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "TotalPointsInTransfer": 0,
   "PIPointsWithHealthEvents": {
@@ -5603,6 +5629,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
 |TransferRevisionNumber|int32|false|false|None|
 |LastEditDate|date-time|false|false|None|
 |LastEditBy|guid|false|false|None|
+|TransferImplicitEventFrames|boolean|false|false|None|
 |AutoDeleteCloudObjects|boolean|false|false|None|
 |TotalPointsInTransfer|int64|false|false|None|
 |StreamCreationStatus|[DetailedStreamCreationStatusDto](#schemadetailedstreamcreationstatusdto)|false|true|None|
@@ -5658,6 +5685,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
   "TransferRevisionNumber": 0,
   "LastEditDate": "2019-08-24T14:15:22Z",
   "LastEditBy": "string",
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "TotalPointsInTransfer": 0,
   "StreamCreationStatus": {
@@ -6313,6 +6341,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
 |Name|string|false|true|None|
 |MetadataPrivacy|[DataPrivacy](#schemadataprivacy)|false|false|None|
 |TotalPointsInTransfer|int64|false|false|None|
+|TransferImplicitEventFrames|boolean|false|false|None|
 |AutoDeleteCloudObjects|boolean|false|false|None|
 |VerboseLoggingConfiguration|[VerboseLoggingConfigurationDto](#schemaverboseloggingconfigurationdto)|false|true|None|
 
@@ -6329,6 +6358,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
   "Name": "string",
   "MetadataPrivacy": 0,
   "TotalPointsInTransfer": 0,
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "VerboseLoggingConfiguration": {
     "TransferId": "string",
@@ -6491,6 +6521,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
 |AFElementIds|string[]|false|true|None|
 |HistoricalDataStartTime|date-time|false|true|None|
 |ExpectedTransferRevisionNumber|int32|true|false|None|
+|TransferImplicitEventFrames|boolean|false|true|None|
 |AutoDeleteCloudObjects|boolean|false|true|None|
 |VerboseLoggingConfiguration|[VerboseLoggingConfigurationDto](#schemaverboseloggingconfigurationdto)|false|true|None|
 |TotalPointsInTransfer|int64|false|false|None|
@@ -6508,6 +6539,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/pi/DataSources/orphan
   ],
   "HistoricalDataStartTime": "2019-08-24T14:15:22Z",
   "ExpectedTransferRevisionNumber": 0,
+  "TransferImplicitEventFrames": true,
   "AutoDeleteCloudObjects": true,
   "VerboseLoggingConfiguration": {
     "TransferId": "string",

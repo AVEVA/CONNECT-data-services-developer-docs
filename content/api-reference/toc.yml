@@ -8,8 +8,8 @@
   href: assets/toc.yml
   topicHref: assets/assets.md
 - name: Change broker
-  href: change-broker/toc.yml
-  topicHref: change-broker/change-broker.md
+  href: streaming-updates/toc.yml
+  topicHref: streaming-updates/change-broker.md
 - name: Client failover
   href: client-failover/toc.yml
   topicHref: client-failover/client-failover-overview.md

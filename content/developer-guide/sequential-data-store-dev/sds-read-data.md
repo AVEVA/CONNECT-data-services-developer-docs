@@ -14,13 +14,13 @@ While SDS provides robust data storage, it performs best if you follow certain g
 
 ### Maximum limit for events in read data calls
 
-The Read data API is limited to access less than 250,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
+The Read data API is limited to access less than 2,500,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
 
 ```json
 400 bad request error
 {
     "Error": "The request is not valid.",
-    "Reason": "Exceeded the maximum return count of 250000 events.",
+    "Reason": "Exceeded the maximum return count of 2500000 events.",
     "Resolution": "Reduce query size and resubmit the request."
 }
 ```
@@ -83,6 +83,9 @@ SDS supports reading from multiple streams in one request. The following method 
 - [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 - [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
+> [!NOTE]
+> During bulk reads, the [maximum limit for events in read data calls](#maximum-limit-for-events-in-read-data-calls) of 2,500,000 is applicable to each stream included in the read, not the entire request.
+
 ## Response format
 
 Supported response formats include JSON, verbose JSON, and SDS. For more information on response formats, see [Response format](xref:osisoftCloudServices#response-format).
@@ -139,7 +142,7 @@ If the InterpolationMode is not assigned, the events are interpolated in the def
 
 ## Extrapolation
 
-Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the stream. ExtrapolationMode acts as a master switch to determine whether extrapolation occurs and at which end of the data.
+Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the stream. ExtrapolationMode determines whether extrapolation occurs and at which end of the data.
 
 ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables show how ExtrapolationMode affects returned values for each InterpolationMode value:
 

@@ -750,13 +750,13 @@ Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, 
 
 |Property|Value|Description|
 |---|---|---|
-|Continuous|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
-|Default|0|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
-|StepwiseContinuousLeading|1|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
-|StepwiseContinuousTrailing|2|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
-|Discrete|3|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
-|ContinuousNullableLeading|4|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
-|ContinuousNullableTrailing|5|Interpolation modes that can be applied to SdsType, SdsTypeProperty, SdsStream, and SdsStreamPropertyOverride objects.|
+|Continuous|0|Interpolates the data using previous and next index values.|
+|Default|0||
+|StepwiseContinuousLeading|1|Returns the data from the previous index.|
+|StepwiseContinuousTrailing|2|Returns the data from the next index.|
+|Discrete|3|If set on an SdsStream, returns stored events only. If set on a property of an event, the default value of the property type will be returned.|
+|ContinuousNullableLeading|4|For nullable data types only. If either the previous or next data value is null, returns the data from the previous index.|
+|ContinuousNullableTrailing|5|For nullable data types only. If either the previous or next data value is null, returns the data from the next index.|
 
 ---
 
@@ -773,10 +773,10 @@ Defines how a stream responds to requests with indexes that precede or follow al
 
 |Property|Value|Description|
 |---|---|---|
-|All|0|Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.|
-|None|1|Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.|
-|Forward|2|Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.|
-|Backward|3|Defines how a stream responds to requests with indexes that precede or follow all data in the stream. Behavior also depends on the SdsInterpolationMode for a stream. If SdsInterpolationMode is set to Discrete, extrapolation won't occur. If SdsInterpolationMode is set to ContinuousNullableLeading or ContinuousNullableTrailing, default values will be returned instead of actual data.|
+|All|0|Returns the first data value if the index is before the first event in the stream, and returns the last data value if the index is after the last event in the stream.|
+|None|1|No extrapolation occurs.|
+|Forward|2|Returns the last data value if the index is after the last event in the stream.|
+|Backward|3|Returns the first data value if the index is before the first event in the stream.|
 
 ---
 
@@ -1978,6 +1978,7 @@ The error response contains details on the cause of stream resolution failure an
 |ExpectationFailed|417|
 |MisdirectedRequest|421|
 |UnprocessableEntity|422|
+|UnprocessableContent|422|
 |Locked|423|
 |FailedDependency|424|
 |UpgradeRequired|426|

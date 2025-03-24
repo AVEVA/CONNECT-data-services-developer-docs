@@ -669,7 +669,7 @@ Asset to create or update.<br/>
 
 <a id="opIdAssets_Patch Asset"></a>
 
-Performs a JSON Patch operation on the asset with the specified identifier.
+Performs a Patch operation on the asset with the specified identifier. The request body is expected to be a JSON Patch (RFC 6902) document. For the purposes of Patch operations, Asset StreamReferences and Metadata are treated as dictionaries keyed by their identifiers, even though these properties are lists in the underlying Asset model. This permits individual StreamReferences and Metadata items to be indexed by their identifiers in the operation path.
 
 <h3>Request</h3>
 
@@ -689,16 +689,21 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}
 Asset patch document.<br/>
 
 ```json
+"SampleAssetName"
+```
+
+```json
 {
-  "Operations": [
-    {
-      "value": null,
-      "path": "string",
-      "op": "string",
-      "from": "string"
-    }
-  ]
+  "Id": "Id-vwxyz",
+  "Name": "SerialNumber",
+  "Description": "This is a static attribute on the asset which represents the serial number.",
+  "SdsTypeCode": "String",
+  "Value": "SN6845"
 }
+```
+
+```json
+"Tag3"
 ```
 
 <h3>Response</h3>
@@ -726,6 +731,7 @@ Asset patch document.<br/>
 ```json
 {
   "Id": "SampleAsset",
+  "Name": "SampleAssetName",
   "Description": "This is a sample asset.",
   "Metadata": [
     {
@@ -734,6 +740,13 @@ Asset patch document.<br/>
       "Description": "This is a static attribute on the asset which represents the model number.",
       "SdsTypeCode": "Double",
       "Value": 0.01
+    },
+    {
+      "Id": "Id-vwxyz",
+      "Name": "SerialNumber",
+      "Description": "This is a static attribute on the asset which represents the serial number.",
+      "SdsTypeCode": "String",
+      "Value": "SN6645"
     }
   ],
   "StreamReferences": [
@@ -746,7 +759,8 @@ Asset patch document.<br/>
   ],
   "Tags": [
     "Tag1",
-    "Tag2"
+    "Tag2",
+    "Tag3"
   ]
 }
 ```
@@ -970,11 +984,10 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets
 
 <h4>Request Body</h4>
 
-Asset you want to create<br/>
+Asset you want to create.<br/>
 
 ```json
 {
-  "Id": "SampleAsset",
   "Description": "This is a sample asset.",
   "Metadata": [
     {
@@ -1022,7 +1035,8 @@ Asset you want to create<br/>
 
 ```json
 {
-  "Id": "SampleAsset",
+  "Id": "6dad79ed-e0ea-423f-aed3-2ba2fccf5335",
+  "Name": "6dad79ed-e0ea-423f-aed3-2ba2fccf5335",
   "Description": "This is a sample asset.",
   "Metadata": [
     {

@@ -873,8 +873,8 @@ Status definition type. Currently, only StreamPropertyMapping is supported.
 
 |Property|Value|Description|
 |---|---|---|
-|Unspecified|0|Status definition type. Currently, only StreamPropertyMapping is supported.|
-|StreamPropertyMapping|1|Status definition type. Currently, only StreamPropertyMapping is supported.|
+|Unspecified|0||
+|StreamPropertyMapping|1||
 
 ---
 

@@ -23,6 +23,8 @@
 - name: "Read data"
   topicHref: sds-read-data.md
   items:
+    - name: "SDS data query methods"
+      href: read-data/sds-data-query-methods.md
     - name: "Filter expressions for SDS values"
       href: read-data/sds-filter-expressions.md
     - name: "Table format"

@@ -16,7 +16,7 @@ Searches for streams within a community by query
 
 ```text 
 GET /api/v1-preview/search/communities/{communityId}/streams
-?query={query}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&orderBy={orderBy}
+?query={query}&filter={filter}&skip={skip}&count={count}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}&orderBy={orderBy}
 ```
 
 <h4>Parameters</h4>
@@ -24,7 +24,8 @@ GET /api/v1-preview/search/communities/{communityId}/streams
 `string communityId`
 <br/>Community identifier<br/><br/>
 `[optional] string query`
-<br/>Query to execute. The query uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] integer skip`
+<br/>Query to execute. The query uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] string filter`
+<br/>Filter for search. The filter uses the same format as SDS. See [Search in SDS](xref:sdsSearching).<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>The maximum number of results to return.<br/><br/>`[optional] integer pageSize`
 <br/>The number of results to return per page. Supercedes 'count' if specified. Will also cause a Link response header to be created with links to subsequent result sets. Those result sets are first, last, next or previous.<br/><br/>`[optional] integer maxPages`

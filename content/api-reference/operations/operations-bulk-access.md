@@ -569,8 +569,8 @@ Operation being performed during a bulk access job.
 
 |Property|Value|Description|
 |---|---|---|
-|UpdateRoleAccess|0|Operation being performed during a bulk access job.|
-|UpdateAll|1|Operation being performed during a bulk access job.|
+|UpdateRoleAccess|0|Update only access control entries whose trustee matches one of the specified role identifiers.|
+|UpdateAll|1|Update entire access control list.|
 
 ---
 
@@ -587,8 +587,8 @@ Scope of a bulk access job.
 
 |Property|Value|Description|
 |---|---|---|
-|Namespace|0|Scope of a bulk access job.|
-|Resource|1|Scope of a bulk access job.|
+|Namespace|0|Update access for all resources of the specified type in a namespace.|
+|Resource|1|Update access for a specified list of resource identifiers.|
 
 ---
 
@@ -605,7 +605,7 @@ Type of resource whose access is being bulk updated.
 
 |Property|Value|Description|
 |---|---|---|
-|Stream|0|Type of resource whose access is being bulk updated.|
+|Stream|0|SDS Stream.|
 
 ---
 

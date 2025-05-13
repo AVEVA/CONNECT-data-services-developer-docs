@@ -46,6 +46,6 @@
 - name: Tenant management
   href: tenant/toc.yml
   topicHref: tenant/management-overview.md
-- name: Virtual tables
+- name: Virtual tables (Preview)
   href: virtual-table-sharing/toc.yml
   topicHref: virtual-table-sharing/virtual-table-api-overview.md

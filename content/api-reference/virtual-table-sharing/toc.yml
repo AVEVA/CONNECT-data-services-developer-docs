@@ -1,0 +1,6 @@
+- name: Access control
+  href: virtual-table-sharing-access-control.md
+- name: Materialization
+  href: virtual-table-sharing-materialization.md
+- name: Sharing
+  href: virtual-table-sharing-sharing.md

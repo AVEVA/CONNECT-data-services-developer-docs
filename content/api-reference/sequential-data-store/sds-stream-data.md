@@ -296,11 +296,11 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 
 There are two options for specifying which events to remove from a stream: index collection and windows
 
-[Index Collection](xref:sdsWritingDataApi#index-collection): Removes the event at each index from the specified stream. 
+[Index Collection](xref:SdsDataQueryMethods#index-collection): Removes the event at each index from the specified stream. 
 Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
 One or more indexes can be specified in the request.
 
-[Window](xref:sdsWritingDataApi#window): Removes events at and between the start index and end index.
+[Window](xref:SdsDataQueryMethods#window): Removes events at and between the start index and end index.
 A window can be specified with a start index and end index.
 
 **Notes**: If any individual event fails to be removed, the entire operation is rolled back and no events are removed.
@@ -411,11 +411,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
-`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
-<br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string filter`
+<br/>Stream identifier.<br/><br/>`string startIndex`
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>
+`[optional] integer count`
+<br/>Parameter representing the number of summary intervals to retrieve. If unspecified, a default value of 1 is used.<br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/>
 
 <h3>Response</h3>
@@ -450,12 +450,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
-<br/>Stream identifier.<br/><br/>
-`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer intervals`
-<br/>The number of intervals requested.<br/><br/>`[optional] string sampleBy`
-<br/>Property or properties to use when sampling.<br/><br/>`[optional] integer boundaryType`
+<br/>Stream identifier.<br/><br/>`string startIndex`
+<br/>Index identifying the beginning of the series of events to return.<br/><br/>`string endIndex`
+<br/>Index identifying the end of the series of events to return.<br/><br/>`integer intervals`
+<br/>The number of sample intervals requested.<br/><br/>`string sampleBy`
+<br/>Property or properties to use when sampling.<br/><br/>
+`[optional] integer boundaryType`
 <br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
 <br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`

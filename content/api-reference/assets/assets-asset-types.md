@@ -601,7 +601,7 @@ Asset type to create or update.<br/>
 
 <a id="opIdAssetTypes_Patch Asset Type"></a>
 
-Performs a Patch operation on the asset type with the specified identifier. The request body is expected to be a JSON Patch (RFC 6902) document. For the purposes of Patch operations, TypeReferences and Metadata are treated as dictionaries keyed by their identifiers, even though these properties are lists in the underlying asset type model. This permits individual TypeReferences and Metadata items to be indexed by their identifiers in the operation path.
+Performs a Patch operation on the asset type with the specified identifier. The request body is expected to be a JSON Patch (RFC 6902) document. For the purposes of Patch operations, TypeReferences and Metadata are treated as dictionaries keyed by their identifiers, even though these properties are lists in the underlying asset type model. This permits individual TypeReferences and Metadata items to be indexed by their identifiers in the operation path. Note: When using identifiers in the operation "path" field, you must escape special characters according to JSON Pointer notation. Replace "~" with "~0" and replace "/" with "~1" in the path. For example, an identifier "sample/id" should be written as "sample~1id" in the path, and an identifier "data~value" should be written as "data~0value" in the path. However, when using these identifiers in the operation "value" field, use the original unescaped identifier.
 
 <h3>Request</h3>
 
@@ -637,7 +637,7 @@ Asset Type patch document.<br/>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|[AssetType](#schemaassettype)|None|
+|200|[AssetType](#schemaassettype)|OK.|
 |400|[ErrorTemplate](#schemaerrortemplate)|Request is not valid. See the response body for additional details.|
 |403|[ErrorTemplate](#schemaerrortemplate)|Forbidden.|
 |404|[ErrorTemplate](#schemaerrortemplate)|None|
@@ -646,21 +646,35 @@ Asset Type patch document.<br/>
 |412|[ErrorTemplate](#schemaerrortemplate)|Pre-Condition Failed.|
 |503|[ErrorTemplate](#schemaerrortemplate)|Service unavailable.|
 
+<h4>Response Headers</h4>
+
+|Status|Header|Type|Description|
+|---|---|---|---|
+|200|ETag|string|Version.|
+
 <h4>Example response body</h4>
 
 > 200 Response
 
 ```json
 {
-  "Id": "SampleAssetType01",
-  "Description": "This is a sample asset type.",
+  "Id": "SampleAssetType",
+  "Name": "SampleAssetTypeName",
+  "Description": "This is a sample asset.",
   "Metadata": [
     {
-      "Id": "Id-fbd82b97-d29e-4022-968e",
+      "Id": "Id-abcde",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset type which represents the model number.",
+      "Description": "This metadata item was already defined before the patch operation was performed.",
       "SdsTypeCode": "Double",
       "Value": 0.01
+    },
+    {
+      "Id": "Source/Lot~1",
+      "Name": "Lot",
+      "Description": "Observe characters '/' and '~' in the Metadata ID are escaped as '~1' and '~0' in the path.",
+      "SdsTypeCode": "String",
+      "Value": "L04068754"
     }
   ],
   "TypeReferences": [

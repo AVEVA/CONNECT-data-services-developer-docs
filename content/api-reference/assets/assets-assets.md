@@ -669,7 +669,7 @@ Asset to create or update.<br/>
 
 <a id="opIdAssets_Patch Asset"></a>
 
-Performs a Patch operation on the asset with the specified identifier. The request body is expected to be a JSON Patch (RFC 6902) document. For the purposes of Patch operations, Asset StreamReferences and Metadata are treated as dictionaries keyed by their identifiers, even though these properties are lists in the underlying Asset model. This permits individual StreamReferences and Metadata items to be indexed by their identifiers in the operation path.
+Performs a Patch operation on the asset with the specified identifier. The request body is expected to be a JSON Patch (RFC 6902) document. For the purposes of Patch operations, Asset StreamReferences and Metadata are treated as dictionaries keyed by their identifiers, even though these properties are lists in the underlying Asset model. This permits individual StreamReferences and Metadata items to be indexed by their identifiers in the operation path.Note: When using identifiers in the operation "path" field, you must escape special characters according to JSON Pointer notation. Replace "~" with "~0" and replace "/" with "~1" in the path. For example, an identifier "sample/id" should be written as "sample~1id" in the path, and an identifier "data~value" should be written as "data~0value" in the path. However, when using these identifiers in the operation "value" field, use the original unescaped identifier.
 
 <h3>Request</h3>
 
@@ -694,11 +694,20 @@ Asset patch document.<br/>
 
 ```json
 {
-  "Id": "Id-vwxyz",
-  "Name": "SerialNumber",
-  "Description": "This is a static attribute on the asset which represents the serial number.",
+  "Id": "5345e98d-dc43-4f9d-a666-158a3baaf244",
+  "Name": "Data",
+  "Description": "This is the description for this stream reference.",
+  "StreamId": "SdsStream_1"
+}
+```
+
+```json
+{
+  "Id": "Source/Lot~1",
+  "Name": "Lot",
+  "Description": "Observe characters '/' and '~' in the Metadata ID are escaped as '~1' and '~0' in the path.",
   "SdsTypeCode": "String",
-  "Value": "SN6845"
+  "Value": "L04068754"
 }
 ```
 
@@ -737,16 +746,16 @@ Asset patch document.<br/>
     {
       "Id": "Id-abcde",
       "Name": "ModelNumber",
-      "Description": "This is a static attribute on the asset which represents the model number.",
+      "Description": "This metadata item was already defined before the patch operation was performed.",
       "SdsTypeCode": "Double",
       "Value": 0.01
     },
     {
-      "Id": "Id-vwxyz",
-      "Name": "SerialNumber",
-      "Description": "This is a static attribute on the asset which represents the serial number.",
+      "Id": "Source/Lot~1",
+      "Name": "Lot",
+      "Description": "Observe characters '/' and '~' in the Metadata ID are escaped as '~1' and '~0' in the path.",
       "SdsTypeCode": "String",
-      "Value": "SN6645"
+      "Value": "L04068754"
     }
   ],
   "StreamReferences": [

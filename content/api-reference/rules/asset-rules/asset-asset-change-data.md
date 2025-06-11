@@ -20,8 +20,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -91,9 +91,9 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
-<br/>Rule identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
+<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 specifying the number of results to skip.
 Defaults to 0.<br/><br/>`[optional] integer Count`
@@ -262,8 +262,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string assetId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -412,8 +412,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string streamId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -579,15 +579,17 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/admin/assetrules
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
+Create instance of ResponseBody
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|Parameters|object|false|true|None|
+|OperationId|string|false|true|Operation id|
+|Error|string|false|true|Error|
+|Reason|string|false|true|Reason|
+|Resolution|string|false|true|Resolution|
+|Parameters|object|false|true|Parameters|
 
 ```json
 {

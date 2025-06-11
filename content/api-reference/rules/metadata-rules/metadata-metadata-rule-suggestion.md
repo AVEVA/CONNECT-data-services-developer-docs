@@ -21,9 +21,9 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `!:StartSuggestion` method.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>`string token`
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
 
@@ -133,9 +133,9 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadatarule
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`boolean token`
-<br/>The `!:Token` toggles paging token<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>`boolean token`
+<br/>The Token toggles paging token<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -291,9 +291,9 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
-<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `!:StartSuggestion` method.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>`string token`
+<br/>A `Guid` which corresponds to a SuggestionResponse that has been created using the `StartSuggestion` method.<br/><br/>
 
 <h3>Response</h3>
 
@@ -339,15 +339,17 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
+Create instance of ResponseBody
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|Parameters|object|false|true|None|
+|OperationId|string|false|true|Operation id|
+|Error|string|false|true|Error|
+|Reason|string|false|true|Reason|
+|Resolution|string|false|true|Resolution|
+|Parameters|object|false|true|Parameters|
 
 ```json
 {
@@ -386,6 +388,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 |Outputs|[[RuleOutput](#schemaruleoutput)]|false|true|None|
 |CreationTime|date-time|false|false|None|
 |ModifiedTime|date-time|false|false|None|
+|ExecutionPropertiesModifiedTime|date-time|false|false|None|
 
 ```json
 {
@@ -453,7 +456,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Field|string|false|true|None|
-|Specifications|[[Specification](#schemaspecification)]|false|true|None|
+|Specifications|[[Specification](#schemaspecification)]|false|true|[Specification]|
 
 ```json
 {
@@ -488,18 +491,20 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 <a id="tocSspecification"></a>
 <a id="tocsspecification"></a>
 
+Specification
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Type|[SpecificationType](#schemaspecificationtype)|false|false|None|
-|Value|string|false|true|None|
-|Name|string|false|true|None|
-|CharacterType|[CharacterType](#schemacharactertype)|false|false|None|
+|Type|[SpecificationType](#schemaspecificationtype)|false|false|Specification type|
+|Value|string|false|true|Spec value|
+|Name|string|false|true|Name|
+|CharacterType|[CharacterType](#schemacharactertype)|false|false|Character type|
 |CharacterLength|int32|false|true|Null represents the longest string length within the group.|
-|StrictValueMappings|boolean|false|false|None|
-|RequiredDelimiters|string[]|false|true|None|
-|ValueMappings|object|false|true|None|
+|StrictValueMappings|boolean|false|false|Strict value mappings|
+|RequiredDelimiters|string[]|false|true|Required delimiters|
+|ValueMappings|object|false|true|Value mappings|
 
 ```json
 {
@@ -547,6 +552,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/suggestion/metadataru
 <a id="schema_CharacterType"></a>
 <a id="tocScharactertype"></a>
 <a id="tocscharactertype"></a>
+
+Character type
 
 <h4>Enumerated Values</h4>
 

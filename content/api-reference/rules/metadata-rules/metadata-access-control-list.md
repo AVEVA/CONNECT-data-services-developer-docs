@@ -20,8 +20,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -108,8 +108,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -202,8 +202,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/a
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -332,8 +332,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadataru
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 <h3>Response</h3>
 
@@ -409,8 +409,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/metadataru
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -522,8 +522,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/AccessRights/MetadataRul
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 <h3>Response</h3>
 
@@ -609,8 +609,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -696,8 +696,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/metadatarules/{ruleId}/o
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -804,15 +804,17 @@ The owner.<br/>
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
+Create instance of ResponseBody
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|Parameters|object|false|true|None|
+|OperationId|string|false|true|Operation id|
+|Error|string|false|true|Error|
+|Reason|string|false|true|Reason|
+|Resolution|string|false|true|Resolution|
+|Parameters|object|false|true|Parameters|
 
 ```json
 {

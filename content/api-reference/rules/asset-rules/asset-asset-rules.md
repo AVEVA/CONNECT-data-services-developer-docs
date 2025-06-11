@@ -15,20 +15,22 @@ Returns all `RuleModel` objects from the `IRuleStore` to which the requesting `I
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
-?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
+?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}&ForceExecute={ForceExecute}
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
 <br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
 <br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean ForceExecute`
+<br/>A Boolean to determine whether or not the rule should be executed even if no assets would be changed.
 Defaults to false.<br/><br/>
 
 <h3>Response</h3>
@@ -172,8 +174,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 
 <h4>Request Body</h4>
 
@@ -369,8 +371,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -512,8 +514,8 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h4>Request Body</h4>
@@ -706,14 +708,14 @@ Creates or updates the specified rule in the `IRuleStore`.
 
 ```text 
 PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
-?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
+?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}&ForceExecute={ForceExecute}
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
@@ -721,6 +723,8 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean ForceExecute`
+<br/>A Boolean to determine whether or not the rule should be executed even if no assets would be changed.
 Defaults to false.<br/><br/>
 
 <h4>Request Body</h4>
@@ -905,14 +909,14 @@ Deletes the specified rule from the `IRuleStore`.
 
 ```text 
 DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
-?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}
+?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}&ForceExecute={ForceExecute}
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 `[optional] integer Skip`
 <br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
@@ -920,6 +924,8 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}
 <br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
 Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
 <br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean ForceExecute`
+<br/>A Boolean to determine whether or not the rule should be executed even if no assets would be changed.
 Defaults to false.<br/><br/>
 
 <h3>Response</h3>
@@ -943,14 +949,24 @@ Executes the specified rule.
 
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/execute
+?Skip={Skip}&Count={Count}&KeepOldMetadata={KeepOldMetadata}&KeepOldAssets={KeepOldAssets}&ForceExecute={ForceExecute}
 ```
 
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
+`[optional] integer Skip`
+<br/>An Int32 to determine how many results to skip. Defaults to DefaultSkip<br/><br/>`[optional] integer Count`
+<br/>An Int32 to determine how many results to return. Defaults to DefaultCount<br/><br/>`[optional] boolean KeepOldMetadata`
+<br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted. Only valid for metadata rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean KeepOldAssets`
+<br/>A Boolean to determine whether or not existing assets created by the rule should be kept. Only valid for asset rule delete requests.
+Defaults to false.<br/><br/>`[optional] boolean ForceExecute`
+<br/>A Boolean to determine whether or not the rule should be executed even if no assets would be changed.
+Defaults to false.<br/><br/>
 
 <h3>Response</h3>
 
@@ -980,8 +996,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/prog
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -1072,6 +1088,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/prog
 |Outputs|[[RuleOutput](#schemaruleoutput)]|false|true|None|
 |CreationTime|date-time|false|false|None|
 |ModifiedTime|date-time|false|false|None|
+|ExecutionPropertiesModifiedTime|date-time|false|false|None|
 
 ```json
 {
@@ -1139,7 +1156,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/prog
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Field|string|false|true|None|
-|Specifications|[[Specification](#schemaspecification)]|false|true|None|
+|Specifications|[[Specification](#schemaspecification)]|false|true|[Specification]|
 
 ```json
 {
@@ -1174,18 +1191,20 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/prog
 <a id="tocSspecification"></a>
 <a id="tocsspecification"></a>
 
+Specification
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Type|[SpecificationType](#schemaspecificationtype)|false|false|None|
-|Value|string|false|true|None|
-|Name|string|false|true|None|
-|CharacterType|[CharacterType](#schemacharactertype)|false|false|None|
+|Type|[SpecificationType](#schemaspecificationtype)|false|false|Specification type|
+|Value|string|false|true|Spec value|
+|Name|string|false|true|Name|
+|CharacterType|[CharacterType](#schemacharactertype)|false|false|Character type|
 |CharacterLength|int32|false|true|Null represents the longest string length within the group.|
-|StrictValueMappings|boolean|false|false|None|
-|RequiredDelimiters|string[]|false|true|None|
-|ValueMappings|object|false|true|None|
+|StrictValueMappings|boolean|false|false|Strict value mappings|
+|RequiredDelimiters|string[]|false|true|Required delimiters|
+|ValueMappings|object|false|true|Value mappings|
 
 ```json
 {
@@ -1234,6 +1253,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/prog
 <a id="tocScharactertype"></a>
 <a id="tocscharactertype"></a>
 
+Character type
+
 <h4>Enumerated Values</h4>
 
 |Property|Value|
@@ -1276,15 +1297,17 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{ruleId}/prog
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
+Create instance of ResponseBody
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|Parameters|object|false|true|None|
+|OperationId|string|false|true|Operation id|
+|Error|string|false|true|Error|
+|Reason|string|false|true|Reason|
+|Resolution|string|false|true|Resolution|
+|Parameters|object|false|true|Parameters|
 
 ```json
 {

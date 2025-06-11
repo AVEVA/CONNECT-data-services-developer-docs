@@ -21,8 +21,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetrul
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
+<br/><br/>`string namespaceId`
+<br/><br/>`string token`
 <br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>`integer skip`
 <br/>An `Int32` to determine the number of preview results to skip.<br/><br/>
 `[optional] integer count`
@@ -173,8 +173,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/assetru
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>
+<br/><br/>`string namespaceId`
+<br/><br/>
 `[optional] boolean KeepOldMetadata`
 <br/>A Boolean to determine whether or not existing metadata created by the rule should be preserved if the rule were deleted.
 Defaults to false.<br/><br/>`[optional] integer Skip`
@@ -336,8 +336,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string token`
+<br/><br/>`string namespaceId`
+<br/><br/>`string token`
 <br/>A `Guid` which corresponds to a preview that has been created using the `StartPreview` method.<br/><br/>
 
 <h3>Response</h3>
@@ -360,12 +360,14 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSrulepreviewresponse"></a>
 <a id="tocsrulepreviewresponse"></a>
 
+Rule preview response
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|PreviewLink|string|false|true|None|
-|Expires|int32|false|false|None|
+|PreviewLink|string|false|true|Preview link|
+|Expires|int32|false|false|Expires in|
 
 ```json
 {
@@ -384,15 +386,17 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
+Create instance of ResponseBody
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|Parameters|object|false|true|None|
+|OperationId|string|false|true|Operation id|
+|Error|string|false|true|Error|
+|Reason|string|false|true|Reason|
+|Resolution|string|false|true|Resolution|
+|Parameters|object|false|true|Parameters|
 
 ```json
 {
@@ -431,6 +435,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Outputs|[[RuleOutput](#schemaruleoutput)]|false|true|None|
 |CreationTime|date-time|false|false|None|
 |ModifiedTime|date-time|false|false|None|
+|ExecutionPropertiesModifiedTime|date-time|false|false|None|
 
 ```json
 {
@@ -498,7 +503,7 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Field|string|false|true|None|
-|Specifications|[[Specification](#schemaspecification)]|false|true|None|
+|Specifications|[[Specification](#schemaspecification)]|false|true|[Specification]|
 
 ```json
 {
@@ -533,18 +538,20 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSspecification"></a>
 <a id="tocsspecification"></a>
 
+Specification
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|Type|[SpecificationType](#schemaspecificationtype)|false|false|None|
-|Value|string|false|true|None|
-|Name|string|false|true|None|
-|CharacterType|[CharacterType](#schemacharactertype)|false|false|None|
+|Type|[SpecificationType](#schemaspecificationtype)|false|false|Specification type|
+|Value|string|false|true|Spec value|
+|Name|string|false|true|Name|
+|CharacterType|[CharacterType](#schemacharactertype)|false|false|Character type|
 |CharacterLength|int32|false|true|Null represents the longest string length within the group.|
-|StrictValueMappings|boolean|false|false|None|
-|RequiredDelimiters|string[]|false|true|None|
-|ValueMappings|object|false|true|None|
+|StrictValueMappings|boolean|false|false|Strict value mappings|
+|RequiredDelimiters|string[]|false|true|Required delimiters|
+|ValueMappings|object|false|true|Value mappings|
 
 ```json
 {
@@ -593,6 +600,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocScharactertype"></a>
 <a id="tocscharactertype"></a>
 
+Character type
+
 <h4>Enumerated Values</h4>
 
 |Property|Value|
@@ -640,9 +649,9 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |Status|string|false|true|None|
-|Assets|[[AssetPreviewData](#schemaassetpreviewdata)]|false|true|None|
-|Statistics|[AssetRulePreviewStatistics](#schemaassetrulepreviewstatistics)|false|true|None|
-|Errors|[[RuleError](#schemaruleerror)]|false|true|None|
+|Assets|[[AssetPreviewData](#schemaassetpreviewdata)]|false|true|Assets|
+|Statistics|[AssetRulePreviewStatistics](#schemaassetrulepreviewstatistics)|false|true|Statistics|
+|Errors|[[RuleError](#schemaruleerror)]|false|true|Errrors|
 
 ```json
 {
@@ -707,13 +716,15 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/preview/asset
 <a id="tocSassetpreviewdata"></a>
 <a id="tocsassetpreviewdata"></a>
 
+Asset preview data
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|AssetId|string|false|true|None|
-|Streams|[[SdsStreamModel](#schemasdsstreammodel)]|false|true|None|
-|Asset|[Asset](#schemaasset)|false|true|None|
+|AssetId|string|false|true|Asset id|
+|Streams|[[SdsStreamModel](#schemasdsstreammodel)]|false|true|Streams|
+|Asset|[Asset](#schemaasset)|false|true|Asset|
 
 ```json
 {

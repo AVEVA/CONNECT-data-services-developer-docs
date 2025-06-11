@@ -20,8 +20,8 @@ GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rule
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -118,8 +118,8 @@ DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{r
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -148,8 +148,8 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rul
 <h4>Parameters</h4>
 
 `string tenantId`
-<br/>Tenant identifier.<br/><br/>`string namespaceId`
-<br/>Namespace identifier.<br/><br/>`string ruleId`
+<br/><br/>`string namespaceId`
+<br/><br/>`string ruleId`
 <br/>Rule identifier.<br/><br/>
 
 <h3>Response</h3>
@@ -222,15 +222,17 @@ POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/assetrules/{rul
 <a id="tocSresponsebody"></a>
 <a id="tocsresponsebody"></a>
 
+Create instance of ResponseBody
+
 <h4>Properties</h4>
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|OperationId|string|false|true|None|
-|Error|string|false|true|None|
-|Reason|string|false|true|None|
-|Resolution|string|false|true|None|
-|Parameters|object|false|true|None|
+|OperationId|string|false|true|Operation id|
+|Error|string|false|true|Error|
+|Reason|string|false|true|Reason|
+|Resolution|string|false|true|Resolution|
+|Parameters|object|false|true|Parameters|
 
 ```json
 {

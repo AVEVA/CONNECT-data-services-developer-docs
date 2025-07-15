@@ -76,7 +76,7 @@ Build an API request in the [API console](xref:apiConsole), such as one that ret
 
 1. Put your API request in the **URL parts** field, prepended with "https://".
 
-1. Under **HTTP request header parameters** enter a new parameter of **Authorization** (it will not be in the dropdown list) and gives it the value of "bearer [bearer token]".
+1. Under **HTTP request header parameters** enter a new parameter of **Authorization** (it will not be in the dropdown list) and give it the value of "bearer [bearer token]".
 
    ![Get Data From Web](../images/from_web.png)
 

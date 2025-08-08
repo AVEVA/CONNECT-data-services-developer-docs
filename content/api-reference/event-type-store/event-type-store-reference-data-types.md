@@ -208,11 +208,7 @@ A ReferenceDataType.<br/>
   "Name": "SimpleReferenceData",
   "Properties": [
     {
-      "Id": "SourceId",
-      "PropertyTypeCode": "String"
-    },
-    {
-      "Id": "ResourceId",
+      "Id": "PropertyId",
       "PropertyTypeCode": "String"
     }
   ]
@@ -451,11 +447,7 @@ A ReferenceDataType.<br/>
   "Name": "SimpleReferenceData",
   "Properties": [
     {
-      "Id": "SourceId",
-      "PropertyTypeCode": "String"
-    },
-    {
-      "Id": "ResourceId",
+      "Id": "PropertyId",
       "PropertyTypeCode": "String"
     }
   ]
@@ -647,11 +639,7 @@ A ReferenceDataType.<br/>
   "Name": "SimpleReferenceData",
   "Properties": [
     {
-      "Id": "SourceId",
-      "PropertyTypeCode": "String"
-    },
-    {
-      "Id": "ResourceId",
+      "Id": "PropertyId",
       "PropertyTypeCode": "String"
     }
   ]

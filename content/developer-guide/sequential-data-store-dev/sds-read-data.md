@@ -14,22 +14,20 @@ While SDS provides robust data storage, it performs best if you follow certain g
 
 ### Maximum limit for events in read data calls
 
-The Read data API is limited to access less than 250,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
+The Read data API is limited to access less than 2,500,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
 
 ```json
 400 bad request error
 {
     "Error": "The request is not valid.",
-    "Reason": "Exceeded the maximum return count of 250000 events.",
+    "Reason": "Exceeded the maximum return count of 2500000 events.",
     "Resolution": "Reduce query size and resubmit the request."
 }
 ```
 
 ### Increase the Request-Timeout in the header
 
-For large-range requests that include more than 250,000 in a read call, increase the Request-Timeout in the header to five minutes. For requests that need more than 30 seconds, the gateway responds with `408 - Operation timed out error`.
-
-The range of values that are held in memory can be large (between 1 GB and 2 GB), so the system needs enough time to read and return the data.
+Read calls with a large amount of data may require more time than the default 30 second timeout. If the gateway responds with `408 - Operation timed out error`, increase the Request-Timeout in the header to five minutes.
 
 If multiple calls return `408 - Operation timed out error`, even after increasing the timeout limit to five minutes, do one of the following:
 
@@ -82,6 +80,9 @@ SDS supports reading from multiple streams in one request. The following method 
 
 - [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 - [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
+
+> [!NOTE]
+> During bulk reads, the [maximum limit for events in read data calls](#maximum-limit-for-events-in-read-data-calls) of 2,500,000 is applicable to each stream included in the read, not the entire request.
 
 ## Response format
 
@@ -139,7 +140,7 @@ If the InterpolationMode is not assigned, the events are interpolated in the def
 
 ## Extrapolation
 
-Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the stream. ExtrapolationMode acts as a master switch to determine whether extrapolation occurs and at which end of the data.
+Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the stream. ExtrapolationMode determines whether extrapolation occurs and at which end of the data.
 
 ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables show how ExtrapolationMode affects returned values for each InterpolationMode value:
 

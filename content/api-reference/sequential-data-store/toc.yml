@@ -1,9 +1,9 @@
 - name: Access control
   href: sds-access-control-list.md
-- name: Stream Bulk
-  href: sds-bulk.md
 - name: Quantities
   href: sds-quantities.md
+- name: Stream bulk
+  href: sds-bulk.md
 - name: Stream data
   href: sds-stream-data.md
 - name: Stream metadata

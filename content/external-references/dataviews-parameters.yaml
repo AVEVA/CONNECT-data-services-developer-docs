@@ -34,8 +34,11 @@ cache-data-preview:
 continuation-token:
   type: markdown
   value: |
-    Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+    The token used to retrieve the next page of data when [paging](xref:DataViewsQuickStartGetData#paging) through large result sets.
 
+    Do not specify a `continuationToken` when requesting the first page of data. The value of `continuationToken` is returned in the response when additional data is available, and must be provided in the next request to continue retrieving results from where the previous request ended.
+
+    The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you
 # count
 count-data:
   type: markdown

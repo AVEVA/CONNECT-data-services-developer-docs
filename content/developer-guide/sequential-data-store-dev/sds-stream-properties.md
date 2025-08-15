@@ -29,7 +29,7 @@ The following table shows the required and optional stream fields. Fields not li
 2. Cannot just be whitespace
 3. Cannot contain leading or trailing whitespace
 4. Cannot contain forward slash ("/")
-5. Can contain a maximum of 100 characters
+5. Can contain a maximum of 250 characters
 
 ## Indexes
 

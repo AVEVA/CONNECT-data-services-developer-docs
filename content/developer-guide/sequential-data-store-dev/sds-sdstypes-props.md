@@ -24,7 +24,7 @@ The table below lists required and optional fields in a type. Fields that are no
 2. Cannot just be whitespace.
 3. Cannot contain leading or trailing whitespace.
 4. Cannot contain forward slash ("/").
-5. Can contain a maximum of 100 characters.
+5. Can contain a maximum of 250 characters.
 
 Type management using the .NET SDS client libraries methods is performed through `ISdsMetadataService`. You can create `ISdsMetadataService` using one of the `SdsService.GetMetadataService()` factory methods. .NET client libraries provide `SdsTypeBuilder` to help build SdsTypes from .NET types. SdsTypeBuilder is discussed in greater detail in <xref:sds-sdstypes-dotnet>.
 

@@ -349,7 +349,7 @@ Samples below are in Python and JavaScript.
 
 When the .NET `SdsTypeBuilder` is unavailable, indexes must be built manually.
 
-Below, SdsTypes defined in the [Python](https://github.com/osisoft/sample-ocs-waveform-python) and [JavaScript](https://github.com/osisoft/sample-ocs-waveform-nodejs) samples are shown. For samples in other languages, go to [CONNECT data services code samples in GitHub](https://github.com/AVEVA/AVEVA-Samples-CloudOperations/blob/main/docs/SDS_WAVEFORM.md).
+Below, SdsTypes defined in the [Python](https://github.com/AVEVA/sample-adh-waveform-python) and [JavaScript](https://github.com/AVEVA/sample-adh-waveform-nodejs) samples are shown. For samples in other languages, go to [CONNECT data services code samples in GitHub](https://github.com/AVEVA/AVEVA-Samples-CloudOperations/blob/main/docs/SDS_WAVEFORM.md).
 
 To build an SdsType representation of sample classes in Python and Java Script, see [Sample](#sample) below:
 

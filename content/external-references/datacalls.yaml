@@ -20,17 +20,17 @@ list-values:
     Returns a collection of stored values at indexes based on request parameters.
       
     SDS supports four ways of specifying which stored events to return:
-    - [Find Distinct Value](xref:sdsReadingDataApi#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
+    - [Find Distinct Value](xref:SdsDataQueryMethods#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
         
         **Parameters**: Accepts ``index`` and ``searchMode``.
-    - [Filtered](xref:sdsReadingDataApi#getvaluesfiltered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+    - [Filtered](xref:SdsDataQueryMethods#filtered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
         
         **Parameters**: Accepts a ``filter`` expression. 
-    - [Range](xref:sdsReadingDataApi#getvaluesrange): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
+    - [Range](xref:SdsDataQueryMethods#range): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
         Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
         
         **Parameters**: Accepts ``startIndex`` and ``count``.
-    - [Window](xref:sdsReadingDataApi#getvalueswindow): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+    - [Window](xref:SdsDataQueryMethods#window): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
         
         **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
 patch-values:
@@ -48,11 +48,11 @@ remove-values:
   value: |
     There are two options for specifying which events to remove from a stream: index collection and windows
     
-    [Index Collection](xref:sdsWritingDataApi#index-collection): Removes the event at each index from the specified stream. 
+    [Index Collection](xref:SdsDataQueryMethods#index-collection): Removes the event at each index from the specified stream. 
     Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
     One or more indexes can be specified in the request.
     
-    [Window](xref:sdsWritingDataApi#window): Removes events at and between the start index and end index.
+    [Window](xref:SdsDataQueryMethods#window): Removes events at and between the start index and end index.
     A window can be specified with a start index and end index.
     
     **Notes**: If any individual event fails to be removed, the entire operation is rolled back and no events are removed.
@@ -68,12 +68,12 @@ interpolated-values:
     
     SDS supports two ways of specifying which stored events to return: index collection and interval.
     
-    [Index collection](xref:sdsReadingDataApi#index-collection): Returns events at the specified indexes.
+    [Index collection](xref:SdsDataQueryMethods#index-collection): Returns events at the specified indexes.
     If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
     
     **Parameters**: Accepts ``index``.
     
-    [Interval](xref:sdsReadingDataApi#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
+    [Interval](xref:SdsDataQueryMethods#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``. 
     If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. 
     
     **Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
@@ -83,9 +83,9 @@ join-values:
     Returns data from multiple streams, joined based on the request specifications. Streams must be of the same type.
     GET and POST join requests are supported.
             
-    [GET method](xref:sdsReadingDataApi#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
+    [GET method](xref:SdsDataQueryMethods#getjoin): ``stream``, ``joinMode``, ``startIndex``, and ``endIndex`` are specified in the request URI.
     
-    [POST method](xref:sdsReadingDataApi#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
+    [POST method](xref:SdsDataQueryMethods#post-request): only ``joinMode`` is specified in the URI. Streams and read specifications for each stream are specified in the request body.
 stream-data-transform:
   type: markdown
   value: |

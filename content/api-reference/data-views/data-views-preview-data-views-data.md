@@ -1145,8 +1145,8 @@ The shape of the data view. By default, each Field will resolve to one or more F
 
 |Property|Value|Description|
 |---|---|---|
-|Standard|0||
-|Narrow|1||
+|Standard|0|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
+|Narrow|1|The shape of the data view. By default, each Field will resolve to one or more FieldMappings. In narrow shape, all Fields that map to a DataItem are "pivoted" vertically, into two fields: Label and Value.|
 
 ---
 

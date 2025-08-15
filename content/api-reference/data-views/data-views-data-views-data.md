@@ -36,7 +36,9 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 
 Do not specify a `continuationToken` when requesting the first page of data. The value of `continuationToken` is returned in the response when additional data is available, and must be provided in the next request to continue retrieving results from where the previous request ended.
 
-The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you
+The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you change any of these parameters, the `continuationToken` may become invalid or ignored.
+
+For example, a `continuationToken` value might look like: `eyJpZCI6IjEyMzQ1NiIsImxhc3RJbmRleCI6IjIwMjQtMDgtMTVUMDg6MDA6MDBaIn0`.
 <br/><br/>`integer count`
 <br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 <br/><br/>
@@ -125,7 +127,9 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 
 Do not specify a `continuationToken` when requesting the first page of data. The value of `continuationToken` is returned in the response when additional data is available, and must be provided in the next request to continue retrieving results from where the previous request ended.
 
-The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you
+The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you change any of these parameters, the `continuationToken` may become invalid or ignored.
+
+For example, a `continuationToken` value might look like: `eyJpZCI6IjEyMzQ1NiIsImxhc3RJbmRleCI6IjIwMjQtMDgtMTVUMDg6MDA6MDBaIn0`.
 <br/><br/>`integer count`
 <br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 <br/><br/>

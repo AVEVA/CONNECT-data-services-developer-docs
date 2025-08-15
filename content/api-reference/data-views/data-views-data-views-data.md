@@ -32,7 +32,11 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/inte
 <br/>The requested interval between index values. The default value is the ```.DefaultInterval``` of the data view. Optional if a default is specified.<br/><br/>`string form`
 <br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 <br/><br/>`string continuationToken`
-<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+<br/>The token used to retrieve the next page of data when [paging](xref:DataViewsQuickStartGetData#paging) through large result sets.
+
+Do not specify a `continuationToken` when requesting the first page of data. The value of `continuationToken` is returned in the response when additional data is available, and must be provided in the next request to continue retrieving results from where the previous request ended.
+
+The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you
 <br/><br/>`integer count`
 <br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 <br/><br/>
@@ -117,7 +121,11 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/stor
 <br/><br/>`string form`
 <br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 <br/><br/>`string continuationToken`
-<br/>Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+<br/>The token used to retrieve the next page of data when [paging](xref:DataViewsQuickStartGetData#paging) through large result sets.
+
+Do not specify a `continuationToken` when requesting the first page of data. The value of `continuationToken` is returned in the response when additional data is available, and must be provided in the next request to continue retrieving results from where the previous request ended.
+
+The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you
 <br/><br/>`integer count`
 <br/>The requested page size. The maximum is 250,000. If the parameter is not provided, [an optimal page size will be calculated](xref:DataViewsQuickStartGetData#page-size).
 <br/><br/>

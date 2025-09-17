@@ -97,14 +97,12 @@ Content-Type: application/json
 | Query String                 | Description                                                  |
 | ---------------------------- | ------------------------------------------------------------ |
 | Id:Id1                       | Returns the asset with `Id` equal to **Id1**.                |
-| Id:Id1 Name desc             | Returns the asset with `Id` equal to **Id1** return results in descending order by Name. |
-| Id:Id*                       | Returns all assets with `Id` matching **id*** wildcard.      |
+| Id:Id*                       | Returns all assets with `Id` matching **Id*** wildcard.      |
 | Name:Name1                   | Returns all asset with a friendly name equal to **Name1**.   |
-| Id:Id AND Name:Name1         | Returns all assets with `Id` matching the **id** and with a friendly name equal to **Name1**. |
+| Id:Id AND Name:Name1         | Returns all assets with `Id` matching the **Id** and with a friendly name equal to **Name1**. |
 | Description:floor1*          | Returns all assets with a description that starts with **floor1**. |
 | Metadata/Serial Number:M0000* | Returns all assets that include metadata of the name **Serial Number** that start with **M0000** (such as M000099 and M000001). |
-| Metadata/123                 | Returns all assets with at least one metadata whose Value equals 123. |
-| Metadata/sourcetag:*         | Returns all assets that have a metadata key with the name **sourcetag**. |
+| Metadata:123                 | Returns all assets with at least one metadata whose Value equals **123**. |
 | Id:X* AND Metadata/Location:B* | Returns all assets with an `Id` starting with **X** and a metadata with the name `Location` that has a value that starts with **B** (such as "Boston"). |
 | AssetTypeId:HeaterTypeId     | Returns all assets with `AssetTypeId` matching `HeaterTypeId` |
 | AssetTypeName:HeaterTypeName | Returns all assets whose `Name` field of the asset type matches **HeaterTypeName** |

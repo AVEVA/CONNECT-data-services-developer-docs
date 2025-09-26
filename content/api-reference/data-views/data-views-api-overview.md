@@ -22,6 +22,10 @@ Resources to create, read, update, and delete `/DataViews`. For more information
 
 For each `/DataViews/{dataViewId}`, resources for getting the `./Data/` for a particular time range
 
+## [Data view schemas](xref:data-views-data-views-schemas)
+
+For each `/DataViews/{dataViewId}`, resources for creating, reading, and deleting schemas.
+
 ## [Preview data views data](xref:data-views-preview-data-views-data)
 
 For each `/DataView` provided in request body, resources for getting the preview `./Data/` for a particular time range. This provides the flexibility to change the data view on the fly without saving/updating it.

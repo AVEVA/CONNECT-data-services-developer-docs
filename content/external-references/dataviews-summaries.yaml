@@ -43,6 +43,11 @@ class-dataviewsresolvedcontroller:
   value: |
     This portion of the overall [data views API](xref:DataViewsAPIOverview) is the resources that resolve per-user for each data view. For a description of what this information is, and how to use it, see the [documentation](xref:ResolvedDataView) for resolved data views.
 
+class-dataviewsschemacontroller:
+  type: markdown
+  value: |
+    This portion of the overall [data views API](xref:DataViewsAPIOverview) provides mechanisms to create, read, and delete data view schemas.
+
 # method summaries: access control
 dataview-accessrights-get:
   type: text/plain
@@ -171,3 +176,24 @@ statistics-get:
   type: text/plain
   value: |
     Returns the statistics about the size and shape on how the data view resolved. 
+
+# method summaries: data views schemas
+schemas-getall:
+  type: text/plain
+  value: |
+    Returns a list of data view schemas for the specified data view.
+
+schemas-get:
+  type: text/plain
+  value: |
+    Returns the specified data view schema.
+
+schemas-create:
+  type: text/plain
+  value: |
+    Creates a new data view schema and returns the schema as generated in the response.
+
+schemas-delete:
+  type: text/plain
+  value: |
+    Deletes the data view schema with the specified id.

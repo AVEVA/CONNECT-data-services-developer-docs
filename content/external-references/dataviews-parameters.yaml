@@ -138,3 +138,9 @@ start-index:
   type: markdown
   value: |
     The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+
+# schema
+schemaId:
+  type: text/plain
+  value: |
+    Data view schema identifier.

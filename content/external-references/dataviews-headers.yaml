@@ -41,3 +41,8 @@ total-count-groups:
   type: text/plain
   value: |
     The total count of groups.
+
+total-count-schemas:
+  type: text/plain
+  value: |
+    The total count of data view schemas for the specified data view.

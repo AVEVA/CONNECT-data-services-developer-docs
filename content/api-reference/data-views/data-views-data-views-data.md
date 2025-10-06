@@ -16,7 +16,7 @@ Returns interpolated data for the provided index parameters with paging. See [do
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/data/interpolated
-?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&continuationToken={continuationToken}&count={count}&cache={cache}
+?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&continuationToken={continuationToken}&count={count}&cache={cache}&schema={schema}
 ```
 
 <h4>Parameters</h4>
@@ -49,7 +49,8 @@ For example, a `continuationToken` value might look like: `eyJpZCI6IjEyMzQ1NiIsI
 |--|--|
 | `Refresh` | Force the resource to re-resolve.  This is the default value for this API route.  
 | `Preserve`| Use cached information, if available.
-<br/><br/>
+<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>
 
 <h3>Response</h3>
 

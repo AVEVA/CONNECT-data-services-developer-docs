@@ -116,7 +116,7 @@
 207-schemas-getbulk:
   type: text/plain
   value: |
-    A response containing the a list of the requested schemas, as well as a list of any errors encountered during schema retrieval.
+    A response containing a list of the requested schemas, as well as a list of any errors encountered during schema retrieval.
 
 # Response Code: 302 Found
 302-data-get:

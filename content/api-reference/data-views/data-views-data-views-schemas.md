@@ -255,6 +255,111 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/schema
 
 ---
 
+## `Get Data View Schemas in Bulk`
+
+<a id="opIdDataViews_Get Data View Schemas in Bulk"></a>
+
+Queries for and returns multiple data view schemas at once. The schemas requested may be associated one or more data views.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/bulk/schemas/read
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string id`
+
+<h4>Request Body</h4>
+
+A `GetBulkSchemasRequest` object.<br/>
+
+```json
+{
+  "Ids": [
+    "string"
+  ]
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|207|[GetBulkSchemasResponse](#schemabulkschemaresponse)[]|An object containing all requested schemas and any errors encountered during retrieval.|
+|400|[ErrorResponse](#schemaerrorresponse)|The request is not valid. See the response body for details.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request. See the response body for details.|
+
+<h4>Example response body</h4>
+
+> 200 Response
+
+```json
+HTTP 207 Multistatus
+Content-Type: application/json
+{
+  "Schemas": [
+    {
+      "Id": "00000000-0000-0000-0000-000000000000",
+      "DataViewId": "demo view 1",
+      "CreatedDate": "2019-12-13T01:23:45Z",
+      "Fields": [
+        ...
+      ]
+    },
+    {
+      "Id": "11111111-1111-1111-1111-111111111111",
+      "DataViewId": "demo view 1",
+      "CreatedDate": "2020-01-06T06:23:15Z",
+      "Fields": [
+        ...
+      ]
+    },
+    {
+      "Id": "22222222-2222-2222-2222-222222222222",
+      "DataViewId": "demo view 2",
+      "CreatedDate": "2020-02-15T01:31:13Z",
+      "Fields": [
+        ...
+      ]
+    },
+  ],
+  "Errors": [
+    {
+      "Error": "Error text",
+      "Reason": "Reason text",
+      "Resolution": "Resolution text"
+      "Kind":  "ErrorKind",
+      "Parameters": {
+        "Schema Id": "33333333-3333-3333-3333-333333333333",
+        ...
+      },
+      "ChildErrors": [
+        ...
+      ]
+    },
+    {
+      "Error": "Error text",
+      "Reason": "Reason text",
+      "Resolution": "Resolution text"
+      "Kind":  "ErrorKind",
+      "Parameters": {
+        "Schema Id": "44444444-4444-4444-4444-444444444444",
+        ...
+      },
+      "ChildErrors": [
+        ...
+      ]
+    }
+  ]
+}
+```
+
+---
+
 ## Definitions
 
 ### DataViewSchema
@@ -485,6 +590,53 @@ A fixed representation of a single field or column in a resolved data view as ge
     "property1": null,
     "property2": null
   }
+}
+
+```
+
+---
+
+### GetBulkSchemasResponse
+
+<a id="schemabulkschemaresponse"></a>
+<a id="schema_GetBulkSchemasResponse"></a>
+<a id="tocSbulkschemaresponse"></a>
+<a id="tocsbulkschemaresponse"></a>
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|Schemas|Array|true|false|Array containing successfully retrieved schemas.|
+|Errors|Array|true|false|Array containing any errors in schema retrieval.|
+
+```json
+{
+  "Schemas": [
+    {
+      "Id": "string",
+      "DataViewId": "string",
+      "CreatedDate": DateTime,
+      "Fields": [
+        ...
+      ]
+    }
+  ],
+  "Errors": [
+    {
+      "Error": "string",
+      "Reason": "string",
+      "Resolution": "string"
+      "Kind":  "ErrorKind",
+      "Parameters": {
+        "Schema Id": "string",
+        ...
+      },
+      "ChildErrors": [
+        ...
+      ]
+    }
+  ]
 }
 
 ```

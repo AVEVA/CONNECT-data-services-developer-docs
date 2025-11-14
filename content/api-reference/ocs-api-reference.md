@@ -43,6 +43,7 @@ CONNECT data services provides data residency via namespaces in the following re
 | US-West | (westus) |
 | EU-West | (northeurope) |
 | Australia | (australiaeast) |
+| East Japan | (tokyo) |
 
 Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See [Get regions](xref:tenant-tenants#list-regions) for information on how to access this data.
 

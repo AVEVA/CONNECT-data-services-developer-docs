@@ -36,14 +36,7 @@ Tenants are divided into one or more logical units called Namespaces. Each Names
 
 Namespaces are provisioned within a region. The Namespace's services and data stores all exist in the Namespace's region. Resources allocated to a Namespace are isolated to the Namespace's region. For more information on regions see the [Namespaces](xref:tenant-namespaces) documentation.  Isolation provided by Tenants and Namespaces prevents accidental or malicious data access.
 
-CONNECT data services provides data residency via namespaces in the following regions:
-
-| CONNECT region label | CONNECT data services region label |
-| ------------- | ------------- |
-| US-West | (westus) |
-| EU-West | (northeurope) |
-| Australia | (australiaeast) |
-| East Japan | (tokyo) |
+CONNECT data services provides data residency via namespaces. For more information, see [Regional endpoints](xref:regional-endpoints).
 
 Tenant account information is stored in all regions for read-only purposes. Write operations are only supported through the global base URL. See [Get regions](xref:tenant-tenants#list-regions) for information on how to access this data.
 

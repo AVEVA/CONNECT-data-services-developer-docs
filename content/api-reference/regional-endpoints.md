@@ -12,7 +12,8 @@ The following table lists the current CONNECT data services region labels and co
 | ------------- | ------------- | ----------------- |
 | US-West | (westus) | https://uswe.datahub.connect.aveva.com/ |
 | EU-West | (northeurope) | https://euno.datahub.connect.aveva.com/ |
-| Australia | (australiaeast) | https://auea.datahub.connect.aveva.com |
+| Australia | (australiaeast) | https://auea.datahub.connect.aveva.com/ |
+| Japan | (japaneast) | https://jpea.datahub.connect.aveva.com/ |
 
 **Note:** US-West is the primary region. The region is selected at initial setup when a CONNECT folder is created, and cannot be changed after folder creation. If a region other than the primary region has been selected, calls may still be made to the US-West region.
 

@@ -2517,9 +2517,9 @@ Information about the data source resolved for an individual Field for a specifi
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |TargetId|string|false|true|The identifier of the target data source|
-|TargetTenantId|string|false|true|The identifier of the target’s tenant|
-|TargetNamespaceId|string|false|true|The identifier of the target’s namespace|
-|TargetCommunityId|string|false|true|The identifier of the target’s community|
+|TargetTenantId|string|false|true|The identifier of the target's tenant|
+|TargetNamespaceId|string|false|true|The identifier of the target's namespace|
+|TargetCommunityId|string|false|true|The identifier of the target's community|
 |TargetStreamReferenceName|string|false|true|The name of the target stream reference|
 |TargetFieldKey|string|false|true|The subpath within the target data source Null in case of non-"keyed" mapping (e.g. stream id, as opposed to a specific Stream property)|
 |TypeCode|[SdsTypeCode](#schemasdstypecode)|false|false|The field's data type|

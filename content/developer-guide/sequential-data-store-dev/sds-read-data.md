@@ -27,9 +27,7 @@ The Read data API is limited to access less than 2,500,000 events per request. T
 
 ### Increase the Request-Timeout in the header
 
-For large-range requests that include more than 250,000 in a read call, increase the Request-Timeout in the header to five minutes. For requests that need more than 30 seconds, the gateway responds with `408 - Operation timed out error`.
-
-The range of values that are held in memory can be large (between 1 GB and 2 GB), so the system needs enough time to read and return the data.
+Read calls with a large amount of data may require more time than the default 30 second timeout. If the gateway responds with `408 - Operation timed out error`, increase the Request-Timeout in the header to five minutes.
 
 If multiple calls return `408 - Operation timed out error`, even after increasing the timeout limit to five minutes, do one of the following:
 

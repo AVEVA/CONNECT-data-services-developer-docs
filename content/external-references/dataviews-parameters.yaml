@@ -34,8 +34,13 @@ cache-data-preview:
 continuation-token:
   type: markdown
   value: |
-    Used only when [paging](xref:DataViewsQuickStartGetData#paging). Not specified when requesting the first page of data.
+    The token used to retrieve the next page of data when [paging](xref:DataViewsQuickStartGetData#paging) through large result sets.
 
+    Do not specify a `continuationToken` when requesting the first page of data. The value of `continuationToken` is returned in the response when additional data is available, and must be provided in the next request to continue retrieving results from where the previous request ended.
+
+    The token encodes information about the current position in the data set and is only valid when used with the same values for other query parameters, such as `startIndex`, `endIndex`, `interval`, `form`, `count`, and `cache`. If you change any of these parameters, the `continuationToken` may become invalid or ignored.
+
+    For example, a `continuationToken` value might look like: `eyJpZCI6IjEyMzQ1NiIsImxhc3RJbmRleCI6IjIwMjQtMDgtMTVUMDg6MDA6MDBaIn0`.
 # count
 count-data:
   type: markdown
@@ -133,3 +138,9 @@ start-index:
   type: markdown
   value: |
     The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+
+# schema
+schemaId:
+  type: text/plain
+  value: |
+    Data view schema identifier.

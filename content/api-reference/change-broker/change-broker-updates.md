@@ -27,6 +27,12 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/updat
 <br/>Signup unique identifier.<br/><br/>`string bookmark`
 <br/>An encoded token representing a sequential starting point from which users can retrieve updates for the current request. A starter Bookmark token appears in the response body of a successfully activated Signup.<br/><br/>
 
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|Community-Id|string|false|Community unique identifier. Must be provided to retrieve changed data for a signup containing resources shared through a community.|
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|

@@ -32,7 +32,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|Community-Id|string|false|Community unique identifier.|
+|Community-Id|string|false|Community unique identifier. Must be provided to retrieve signups containing resources shared in a community.|
 
 <h3>Response</h3>
 
@@ -127,7 +127,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|Community-Id|string|false|Community unique identifier. Represents a signup for resources shared to the specified Community Id.|
+|Community-Id|string|false|Community unique identifier. Represents a signup for resources shared to the specified Community Id. Must be provided if the signup contains shared resources.|
 
 <h4>Request Body</h4>
 
@@ -181,23 +181,15 @@ CreateSignupInput. Input of the signup to be created.<br/>
 
 Retrieves a signup by signup identifier.
 
-**Notes:** Each signup includes a ``SignupState`` that describes its current status.
-To set your signup to a ``SignupState`` of 'Active', you must invoke the 'Get Signup' route 
-while the ``SignupState`` is 'Activating'. This route can only activate your signup after 
-the background setup process completes, so retries may be required if the signup response is 
-still in a ``SignupState`` of 'Activating'. 
+**Notes**: Each signup includes a `SignupState` that describes its current status. To set your signup to a `SignupState` of `Active`, you must invoke this route while the `SignupState` is `Activating`. This route can only activate your signup after the background setup process completes, so retries may be required if the signup response is still in a `SignupState` of `Activating`.
 
-All ``SignupState``s are accompanied by a separate property of ``ModifiedDate``, which indicates 
-the date and time of the most recent modification to the signup, such as changing its properties 
-by invoking the 'Update Signup' route, updating a signup's resource subscriptions, or when the 
-signup's ``SignupState`` changes.
+All `SignupState`s are accompanied by a separate property of `ModifiedDate`, which indicates the date and time of the most recent modification to the signup, such as changing its properties by invoking the [Update Signup](#update-signup) route, updating a signup's resource subscriptions, or when the signup's `SignupState` changes.
 
-Based on the returned ``SignupState`` value, the response may include additional properties, which are described below:
-- **Activating**: Includes an empty ``Bookmark``.
+Based on the returned `SignupState` value, the response may include additional properties, which are described below:
 
-- **Active**: Includes an encoded ``Bookmark`` that can be used to retrieve change data updates from subscribed resources.
-
-- **Expired**: Includes an empty ``Bookmark`` and an additional ``ExpiredDate`` timestamp. Expired signups cannot be reactivated.
+* `Activating`: Includes an empty `Bookmark`.
+* `Active`: Includes an encoded `Bookmark` that can be used to retrieve change data updates from subscribed resources.
+* `Expired`: Includes an empty `Bookmark` and an additional `ExpiredDate` timestamp. Expired signups cannot be reactivated.
 
 <h3>Request</h3>
 
@@ -211,6 +203,12 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
 <br/>Signup unique identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|Community-Id|string|false|Community unique identifier. Must be provided to retrieve a signup containing resources shared through a community.|
 
 <h3>Response</h3>
 
@@ -264,6 +262,12 @@ PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
 <br/>Signup unique identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|Community-Id|string|false|Community unique identifier. Must be provided if the signup contains resources shared in a community.|
 
 <h4>Request Body</h4>
 
@@ -327,6 +331,12 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 <br/><br/>`string signupId`
 <br/>Signup unique identifier.<br/><br/>
 
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|Community-Id|string|false|Community unique identifier. Must be provided to delete a signup containing shared resources..|
+
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
@@ -357,6 +367,12 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/owner
 <br/><br/>`string namespaceId`
 <br/><br/>`string signupId`
 <br/>Signup unique identifier.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|Community-Id|string|false|Community unique identifier. Must be provided if the signup contains shared resources.|
 
 <h3>Response</h3>
 
@@ -405,6 +421,12 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resou
 <br/>Parameter representing the zero-based offset of the first resource to retrieve. If unspecified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>Maximum number of signup resources to be returned. If unspecified, a default value of 100 is used.<br/><br/>`[optional] any resourceFilter`
 <br/>`SignupResourceFilter`. Specifies the accessibility of resources to be returned. If unspecified, all resources will be returned.<br/><br/>
+
+<h4>Request Headers</h4>
+
+|Header|Type|Required|Description|
+|---|---|---|---|
+|Community-Id|string|false|Community unique identifier. Must be provided if the signup contains shared resources.|
 
 <h3>Response</h3>
 
@@ -462,7 +484,7 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/reso
 
 |Header|Type|Required|Description|
 |---|---|---|---|
-|Community-Id|string|false|Unique Community Identifier.|
+|Community-Id|string|false|Unique Community Identifier. Must be provided in order to add or remove shared resources.|
 
 <h4>Request Body</h4>
 
@@ -607,7 +629,7 @@ The resource type.
 
 |Property|Value|Description|
 |---|---|---|
-|Stream|Stream|The resource type.|
+|Stream|Stream|Stream resource.|
 
 ---
 
@@ -624,10 +646,10 @@ Signup Status.
 
 |Property|Value|Description|
 |---|---|---|
-|Activating|Activating|Signup Status.|
-|Active|Active|Signup Status.|
-|Expired|Expired|Signup Status.|
-|Failed|Failed|Signup Status.|
+|Activating|Activating|Signup is being activated.|
+|Active|Active|Signup is active.|
+|Expired|Expired|Signup is expired.|
+|Failed|Failed|Signup is failed.|
 
 ---
 
@@ -902,3 +924,4 @@ The SignupResourcesInput object.
 ```
 
 ---
+

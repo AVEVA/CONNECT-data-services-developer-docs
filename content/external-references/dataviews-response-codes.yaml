@@ -65,7 +65,22 @@
   value: |
     Successfully retrieved data.
 
+200-schemas-getall:
+  type: text/plain
+  value: |
+    A list of data view schemas for the specified data view.
+
+200-schemas-get:
+  type: text/plain
+  value: |
+    The requested data view schema.
+
 # Response Code: 201 Created
+201-schema-create:
+  type: text/plain
+  value: |
+    The data view schema as generated and persisted.
+
 201-dataview-standard-message:
   type: text/plain
   value: |
@@ -91,6 +106,11 @@
   type: text/plain
   value: |
     Successfully updated the data view owner.
+
+204-schemas-delete:
+  type: text/plain
+  value: |
+    Successfully deleted the data view schema.
 
 # Response Code: 302 Found
 302-data-get:

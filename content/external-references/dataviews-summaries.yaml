@@ -197,3 +197,8 @@ schemas-delete:
   type: text/plain
   value: |
     Deletes the data view schema with the specified id.
+
+schemas-getbulk:
+  type: text/plain
+  value: |
+    Retrieves multiple schemas at once by id.

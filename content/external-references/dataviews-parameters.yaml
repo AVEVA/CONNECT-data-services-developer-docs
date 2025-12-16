@@ -144,3 +144,8 @@ schemaId:
   type: text/plain
   value: |
     Data view schema identifier.
+
+get-schemas-bulk-request:
+  type: text/plain
+  value: |
+    An object with a single `Ids` property containing a list of schema id's to retrieve.

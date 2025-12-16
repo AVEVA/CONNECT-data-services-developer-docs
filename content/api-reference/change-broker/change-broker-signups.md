@@ -150,6 +150,7 @@ CreateSignupInput. Input of the signup to be created.<br/>
 |202|[Signup](#schemasignup)|Accepted. Background services are validating access permission to resources.|
 |400|None|Bad request.|
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
+|409|None|Conflict. The signup limit of 10000 has been reached.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
 
 <h4>Example response body</h4>

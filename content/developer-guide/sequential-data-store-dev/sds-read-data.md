@@ -76,10 +76,7 @@ In addition, the following methods support reading multiple values:
 
 ## Bulk reads
 
-SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
-
-- [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
-- [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
+SDS supports reading from multiple streams in one request. [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
 > [!NOTE]
 > During bulk reads, the [maximum limit for events in read data calls](#maximum-limit-for-events-in-read-data-calls) of 2,500,000 is applicable to each stream included in the read, not the entire request.

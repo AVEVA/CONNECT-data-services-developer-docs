@@ -2,9 +2,9 @@
 uid: sdsFilterExpressionsValues
 ---
 
-# Filter expressions for SDS values
+# Filter expressions for SDS data points
 
-Filter expressions can be applied to read operations such as [List Values](xref:sds-stream-data#list-values) and [List Summaries](xref:sds-stream-data#list-summaries) that return Sequential Data Store (SDS) values.
+Filter expressions can be applied to read operations such as [List Values](xref:sds-stream-data#list-values) and [List Summaries](xref:sds-stream-data#list-summaries) that return Sequential Data Store (SDS) data points.
 
 ## SdsTypeCodes
 

@@ -20,7 +20,7 @@ The following table shows the required and optional SdsStreamView fields. Fields
 | Name | String | No | Yes | Friendly name. |
 | Description | String | No | Yes | Description text. |
 | SourceTypeId | String | Yes | Yes | Identifier of the SdsType of the SdsStream. |
-| TargetTypeId | String | Yes | Yes | Identifier of the SdsType to convert events to. |
+| TargetTypeId | String | Yes | Yes | Identifier of the SdsType to convert data points to. |
 | Properties | IList\<SdsStreamViewProperty\> | No | Yes, with limitations<sup>1</sup> | Property-level mapping. |
 | CreatedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was created. Cannot be modified by users. |
 | ModifiedDate | DateTime | Set by server | No | Timestamp in ISO 8601 extended format and UTC time standard when the SdsStreamView was last modified. Cannot be modified by users. |
@@ -59,7 +59,7 @@ When SDS is unable to determine how to map a property of the source type, the pr
 
 ### SdsStreamViewProperty
 
-The SdsStreamView properties collection provides detailed instructions for specifying the mapping of event properties. Each SdsStreamViewProperty in the properties collection defines the mapping of an event's property. SdsStreamView properties are required only when property mapping is not straightforward. If you do not want a particular SdsType property in the source type to be mapped, there is no need to create a property for it.
+The SdsStreamView properties collection provides detailed instructions for specifying the mapping of data point properties. Each SdsStreamViewProperty in the properties collection defines the mapping of a data point's property. SdsStreamView properties are required only when property mapping is not straightforward. If you do not want a particular SdsType property in the source type to be mapped, there is no need to create a property for it.
 
 The following table shows the required and optional SdsStreamViewProperty fields.
 
@@ -80,7 +80,7 @@ The table below shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot b
 | Property | Data Type | Required | Description |
 | --- | --- | --- | --- |
 | SourceTypeId | String | Yes | Identifier of the SdsType of the SdsStream. |
-| TargetTypeId | String | Yes | Identifier of the SdsType to convert events to. |
+| TargetTypeId | String | Yes | Identifier of the SdsType to convert data points to. |
 | Properties | IList\<SdsStreamViewMapProperty\> | No | Property-level mapping. |
 
 ### SdsStreamViewMapProperty
@@ -92,7 +92,7 @@ The table below shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap 
 | Property | Data Type | Description |
 | --- | --- | --- |
 | SourceTypeId | String | Identifier of the SdsType of the SdsStream. |
-| TargetTypeId | String | Identifier of the SdsType to convert events to. |
+| TargetTypeId | String | Identifier of the SdsType to convert data points to. |
 | Mode | SdsStreamViewMode | Aggregate of actions applied to the properties. SdsStreamViewModes are combined via binary arithmetic. |
 | SdsStreamViewMap | SdsStreamViewMap | Mapping for derived types. |
 

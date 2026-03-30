@@ -9,7 +9,7 @@ When you send an API request to the [List Summaries](xref:sds-stream-data#list-s
 
 | Summary | Description |
 |--|--|
-| **Count** | The simple numerical tally of occurrences or instances of a particular event or category within a dataset. |
+| **Count** | The simple numerical tally of occurrences of data points within a dataset. |
 | **Kurtosis** | A statistical measure that quantifies the shape and distribution of data in a probability distribution or dataset. It provides insight into the "tailedness" or the extent to which the data in the distribution deviates from a normal distribution. |
 | **Maximum** | The largest or highest value observed within a dataset or a set of numerical values. |
 | **Mean** | The average of a set of numerical values. |

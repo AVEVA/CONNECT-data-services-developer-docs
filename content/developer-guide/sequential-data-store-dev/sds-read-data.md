@@ -14,7 +14,7 @@ While SDS provides robust data storage, it performs best if you follow certain g
 
 ### Maximum limit for events in read data calls
 
-The Read data API is limited to access less than 2,500,000 events per request. This limit includes events that are accessed but not returned, such as events that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
+The Read data API is limited to accessing fewer than 2,500,000 data points per request. This limit includes data points that are accessed but not returned, such as data points that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
 
 ```json
 400 bad request error
@@ -54,7 +54,7 @@ Include `Accept-Encoding: gzip, deflate` in the HTTP header. This header enables
 
 ### Use available read data APIs
 
-Depending on the scenario, there are different read data APIs available. They return an overview of the values instead of reading all values at once. These APIs provide a good high-level view of the values without displaying them all at the same time:
+Depending on the scenario, there are different read data APIs available. They return an overview of the data points instead of reading all data points at once. These APIs provide a good high-level view of the data points without displaying them all at the same time:
 
 - [List Values](xref:sds-stream-data#list-values) with filters
 - [List Summaries](xref:sds-stream-data#list-summaries)
@@ -62,15 +62,15 @@ Depending on the scenario, there are different read data APIs available. They re
 
 ## Single stream reads
 
-The following methods for reading a single value are available:
+The following methods for reading a single data point are available:
 
-- [Get First Value](xref:sds-stream-data#get-first-value) returns the first value in the stream.
-- [Get Last Value](xref:sds-stream-data#get-last-value) returns the last value in the stream.
+- [Get First Value](xref:sds-stream-data#get-first-value) returns the first data point in the stream.
+- [Get Last Value](xref:sds-stream-data#get-last-value) returns the last data point in the stream.
 
-In addition, the following methods support reading multiple values:
+In addition, the following methods support reading multiple data points:
 
-- [List Values](xref:sds-stream-data#list-values) retrieves a collection of stored values based on the request parameters.
-- [List Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated values based on the request parameters.
+- [List Values](xref:sds-stream-data#list-values) retrieves a collection of stored data points based on the request parameters.
+- [List Interpolated Values](xref:sds-stream-data#list-interpolated-values) retrieves a collection of stored or calculated data points based on the request parameters.
 - [List Summaries](xref:sds-stream-data#list-summaries) retrieves a collection of evenly spaced summary intervals based on a count and specified start and end indexes.
 - [List Sampled Values](xref:sds-stream-data#list-sampled-values) retrieves a collection of sampled data based on the request parameters.
 
@@ -78,8 +78,8 @@ In addition, the following methods support reading multiple values:
 
 SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
 
-- [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
-- [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
+- [Create Bulk Access Job](xref:operations-bulk-access#create-bulk-access-job) retrieves a collection of data points across multiple streams and joins the results based on the request parameters.
+- [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of data points across multiple streams and joins the results based on the request parameters.
 
 > [!NOTE]
 > During bulk reads, the [maximum limit for events in read data calls](#maximum-limit-for-events-in-read-data-calls) of 2,500,000 is applicable to each stream included in the read, not the entire request.
@@ -94,14 +94,14 @@ Most read operations take at least one index as a parameter. Indexes may be spec
 
 ## Read characteristics
 
-When data is requested at an index for which no stored event exists, the read characteristics determine whether the result is an error, no event, interpolated event, or extrapolated event. The combination of the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream determine the read characteristics.
+When data is requested at an index for which no stored data point exists, the read characteristics determine whether the result is an error, no data point, an interpolated data point, or an extrapolated data point. The combination of the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream determine the read characteristics.
 
 > [!NOTE]
 > Use the ISO 8601 representation of dates and times in SDS. For example, `2020-02-20T08:30:00-08:00` represents February 20, 2020 at 8:30 AM PST. SDS returns timestamps in different formats based on the set property. For the `DateTime` property, timestamps are returned in UTC. For the `DateTimeOffset` property, timestamps are returned in local time.
 
 ## Interpolation
 
-Interpolation determines how a stream behaves when queried to return an event at an index between two existing events. InterpolationMode determines how the returned event is constructed. SDS provides multiple ways to set the interpolation mode to get the desired behavior. The table below lists InterpolationModes:
+Interpolation determines how a stream behaves when queried to return a data point at an index between two existing data points. `InterpolationMode` determines how the returned data point is constructed. SDS provides multiple ways to set the interpolation mode to get the desired behavior. The table below lists `InterpolationModes`:
 
 | Mode | Enumeration value | Operation |
 | --- | --- | --- |
@@ -109,7 +109,7 @@ Interpolation determines how a stream behaves when queried to return an event at
 | Continuous<sup>1</sup> | 0 | Returns interpolated data using previous and next index values. |
 | StepwiseContinuousLeading | 1 | Returns the data from the previous index. |
 | StepwiseContinuousTrailing | 2 | Returns the data from the next index. |
-| Discrete | 3 | No event is returned. |
+| Discrete | 3 | No data point is returned. |
 | ContinuousNullableLeading | 4 | Returns interpolated data or data from the previous index if either of the surrounding indexes has a null value. |
 | ContinuousNullableTrailing | 5 | Returns interpolated data or data from the trailing index if either of the surrounding indexes has a null value. |
 
@@ -136,7 +136,7 @@ The table below describes how the **Continuous InterpolationMode** affects prope
 
 <sup>2</sup>For the `Continuous` interpolation mode, Nullable types are interpolated in the same manner as their non-nullable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value is null.
 
-If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sds-sdstypes-props#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Sds Streams](xref:sdsStreams).
+If the `InterpolationMode` is not assigned, data points are interpolated in the default manner, unless the interpolation mode is overridden in the `SdsTypeProperty` or the `SdsStream`. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sds-sdstypes-props#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Sds Streams](xref:sdsStreams).
 
 ## Extrapolation
 
@@ -148,34 +148,34 @@ ExtrapolationMode works with the InterpolationMode to determine how a stream res
 
 | ExtrapolationMode | Enumeration value | Index before data | Index after data |
 | --- | --- | --- | --- |
-| All | 0 | Returns first data value | Returns last data value |
-| None | 1 | No event is returned | No event is returned |
-| Forward | 2 | No event is returned | Returns last data value |
-| Backward | 3 | Returns first data value | No event is returned |
+| All | 0 | Returns the first data point | Returns the last data point |
+| None | 1 | No data point is returned | No data point is returned |
+| Forward | 2 | No data point is returned | Returns the last data point |
+| Backward | 3 | Returns the first data point | No data point is returned |
 
 **ExtrapolationMode with InterpolationMode = Discrete**
 
 | ExtrapolationMode | Enumeration value | Index before data | Index after data |
 | --- | --- | --- | --- |
-| All | 0 | No event is returned | No event is returned |
-| None | 1 | No event is returned | No event is returned |
-| Forward | 2 | No event is returned | No event is returned |
-| Backward | 3 | No event is returned | No event is returned |
+| All | 0 | No data point is returned | No data point is returned |
+| None | 1 | No data point is returned | No data point is returned |
+| Forward | 2 | No data point is returned | No data point is returned |
+| Backward | 3 | No data point is returned | No data point is returned |
 
 **ExtrapolationMode with InterpolationMode = ContinuousNullableLeading and ContinuousNullableTrailing**
 
 | ExtrapolationMode | Enumeration value | Index before data | Index after data |
 | --- | --- | --- | --- |
 | All | 0 | Returns the default value | Returns the default value |
-| None | 1 | No event is returned | No event is returned |
-| Forward | 2 | No event is returned | Returns the default value |
-| Backward | 3 | Returns the default value | No event is returned |
+| None | 1 | No data point is returned | No data point is returned |
+| Forward | 2 | No data point is returned | Returns the default value |
+| Backward | 3 | Returns the default value | No data point is returned |
 
 For additional information about the effect of read characteristics, see the documentation on the read method you are using in <xref:sds-stream-data>.
 
 ## Filter expressions
 
-You can apply filter expressions to any read operation that returns multiple values, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.
+You can apply filter expressions to any read operation that returns multiple data points, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection, conditionally filtering out data points that do not meet the filter conditions.
 
 For more information, see <xref:sdsFilterExpressionsValues>.
 
@@ -183,7 +183,7 @@ For more information, see <xref:sdsFilterExpressionsValues>.
 
 Results of a query can be organized into tables by directing the form parameter to return a table. Two forms of table are available: table and header table.
 
-When the form parameter is specified as table, `?form=table`, events are returned in row column form. Results include a collection named `Columns` that lists column name and type and a collection named `Rows` containing a collection of rows matching the order of the columns.
+When the form parameter is specified as table, `?form=table`, data points are returned in row-column form. Results include a collection named `Columns` that lists column name and type and a collection named `Rows` containing a collection of rows matching the order of the columns.
 
 Specifying a form of type `table-headers`, `?form=tableh`, results in a collection where the rows collection contains a column header list.
 
@@ -195,22 +195,22 @@ The `SdsBoundaryType` enum defines how data on the boundary of queries is handle
 
 | Boundary | Enumeration value | Operation |
 | --- | --- | --- |
-| Exact | 0 | Results include the event at the specified index boundary if a stored event exists at that index. |
-| Inside | 1 | Results include only events within the index boundaries. |
-| Outside | 2 | Results include up to one event that falls immediately outside of the specified index boundary. |
-| ExactOrCalculated | 3 | Results include the event at the specified index boundary. If no stored event exists at that index, one is calculated based on the index type and interpolation and extrapolation settings. |
+| Exact | 0 | Results include the data point at the specified index boundary if a stored data point exists at that index. |
+| Inside | 1 | Results include only data points within the index boundaries. |
+| Outside | 2 | Results include up to one data point that falls immediately outside of the specified index boundary. |
+| ExactOrCalculated | 3 | Results include the data point at the specified index boundary. If no stored data point exists at that index, one is calculated based on the index type and interpolation and extrapolation settings. |
 
 ## SdsSearchMode
 
-The `SdsSearchMode` enum defines search behavior when seeking a stored event near a specified index. The following are valid values for `SdsSearchMode`:
+The `SdsSearchMode` enum defines search behavior when seeking a stored data point near a specified index. The following are valid values for `SdsSearchMode`:
 
 | Mode | Enumeration value | Operation |
 | --- | --- | --- |
-| Exact | 0 | If a stored event exists at the specified index, that event is returned. Otherwise no event is returned. |
-| ExactOrNext | 1 | If a stored event exists at the specified index, that event is returned. Otherwise the next event in the stream is returned. |
-| Next | 2 | Returns the stored event after the specified index. |
-| ExactOrPrevious | 3 | If a stored event exists at the specified index, that event is returned. Otherwise the previous event in the stream is returned. |
-| Previous | 4 | Returns the stored event before the specified index. |
+| Exact | 0 | If a stored data point exists at the specified index, that data point is returned. Otherwise no data point is returned. |
+| ExactOrNext | 1 | If a stored data point exists at the specified index, that data point is returned. Otherwise the next data point in the stream is returned. |
+| Next | 2 | Returns the stored data point after the specified index. |
+| ExactOrPrevious | 3 | If a stored data point exists at the specified index, that data point is returned. Otherwise the previous data point in the stream is returned. |
+| Previous | 4 | Returns the stored data point before the specified index. |
 
 ## Transforming data
 
@@ -239,7 +239,7 @@ api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Trans
 
 When transforming data with an SdsStreamView, the data read is converted to the _target type_ specified in the SdsStreamView. For more information on working with stream views, see [Stream Views](xref:sdsStreamViews).
 
-All stream view transformations are HTTP GET requests. Specify the stream view ID (`streamViewId={streamViewId}`) at the end of the transformation endpoint in the request as shown below. For example, the following request returns the first event of the stream _transformed_ to the target type (per stream view definition specified by `streamViewId`):
+All stream view transformations are HTTP GET requests. Specify the stream view ID (`streamViewId={streamViewId}`) at the end of the transformation endpoint in the request as shown below. For example, the following request returns the first data point of the stream _transformed_ to the target type (per stream view definition specified by `streamViewId`):
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First?streamViewId={streamViewId}
@@ -248,7 +248,7 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/T
 All single-stream data reads support stream view transformations.
 
 ```text
-# Get 100 events from start index
+# Get 100 data points from start index
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform?startIndex={startIndex}&count=100&streamViewId={streamViewId}
 
 # Get last value

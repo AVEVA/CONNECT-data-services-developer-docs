@@ -4,11 +4,11 @@ uid: sdsIndexes
 
 # Indexes
 
-Indexes expedite and order the results of searches. A key uniquely identifies a record within a collection of records. Keys are unique within the collection.
+Indexes expedite and order the results of searches. A key uniquely identifies a data point within a collection of data points. Keys are unique within the collection.
 
 In SDS, the key of type is also an index. The key is often referred to as the _primary index,_ while all other indexes are referred to as _secondary indexes_ or _secondaries_.
 
-A type that is used to define a stream must specify a key. When you add data to a stream, every key value must be unique. SDS does not store more than a single event for a given key; an event with a particular key may be deleted or updated, but two events with the same key cannot exist.
+A type that is used to define a stream must specify a key. When you add data to a stream, every key value must be unique. SDS does not store more than a single data point for a given key; a data point with a particular key may be deleted or updated, but two data points with the same key cannot exist.
 
 In .NET, the SdsType properties that define the primary index are identified using an `OSIsoft.Sds.SdsMemberAttribute` and setting its `IsKey` field to true. If the key consists of only a single property, you can use the `System.ComponentModel.DataAnnotations.KeyAttribute`. Property or properties representing the primary index of a type have their `SdsTypeProperty.IsKey` field set to true.
 
@@ -101,7 +101,7 @@ public class Simple
 SdsType simpleType = SdsTypeBuilder.CreateSdsType<Simple>();
 ```
 
-To read data that is located between two indexes, define both a start index and an end index. For `DateTime`, use the ISO 8601 representation of dates and times. For example, to query for a window of simple values between January 1, 2010 and February 1, 2010, you can define indexes and query as follows:
+To read data that is located between two indexes, define both a start index and an end index. For `DateTime`, use the ISO 8601 representation of dates and times. For example, to query for a window of simple data points between January 1, 2010 and February 1, 2010, you can define indexes and query as follows:
 
 ```csharp
 IEnumerable<Simple> values = await
@@ -227,7 +227,7 @@ public class DerivedCompoundIndex : Simple
 }
 ```
 
-Events of type `DerivedCompoundIndex` are sorted first by the `Time` parameter and then by the `Recorded` parameter. A collection of times is sorted as follows:
+Data points of type `DerivedCompoundIndex` are sorted first by the `Time` parameter and then by the `Recorded` parameter. A collection of times is sorted as follows:
 
 | **Time** | **Recorded** | **Measurement** |
 | -------- | ------------ | --------------- |
@@ -552,7 +552,7 @@ var timeProperty = new SdsObjects.SdsTypeProperty({
 
 Note that the `time.IsKey` field is set to true.
 
-To read data using the index, you define a start index and an end index. For `DateTime`, use the ISO 8601 representation of dates and times. To query for a window of values between January 1, 2010 and February 1, 2010, you would define indexes as "2010-01-01T08:00:00.000Z" and "2010-02-01T08:00:00.000Z", respectively.
+To read data using the index, you define a start index and an end index. For `DateTime`, use the ISO 8601 representation of dates and times. To query for a window of data points between January 1, 2010 and February 1, 2010, you would define indexes as "2010-01-01T08:00:00.000Z" and "2010-02-01T08:00:00.000Z", respectively.
 
 For additional information, see [Read data](xref:sdsReadingData).
 

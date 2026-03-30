@@ -418,7 +418,7 @@ For handling data points at and near the boundaries of the window, a single `Sds
 
 Paging is supported for window requests with a large number of data points.
 
-To retrieve the next page of values, include the `continuationToken` from the results of the previous request. For the first request, specify a null or empty string for the `continuationToken`.
+To retrieve the next page of data points, include the `continuationToken` from the results of the previous request. For the first request, specify a null or empty string for the `continuationToken`.
 
 ### Requests
 
@@ -457,10 +457,10 @@ Optional maximum number of data points to return. If `count` is specified, a `co
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of data points at or near the start and end indexes
 
 `SdsBoundaryType startBoundaryType`<br>
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first data point in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 `SdsBoundaryType endBoundaryType`<br>
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last data point in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 `string filter`<br>
 Optional [filter expression](xref:sdsFilterExpressionsValues)
@@ -510,7 +510,7 @@ Note that `State` is not included in the JSON as its value is the default value.
 
 #### Window of data points between two timestamps with a boundary of `Outside`
 
-When the request is modified to specify a boundary type of `Outside`, the value before 13:30 and the value after 15:30 are included:
+When the request is modified to specify a boundary type of `Outside`, the data point before 13:30 and the data point after 15:30 are included:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&boundaryType=2

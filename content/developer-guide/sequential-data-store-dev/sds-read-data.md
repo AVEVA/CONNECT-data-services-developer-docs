@@ -12,7 +12,7 @@ If you are working in a .NET environment, convenient SDS Client Libraries are av
 
 While SDS provides robust data storage, it performs best if you follow certain guidelines listed in the following subheadings.
 
-### Maximum limit for events in read data calls
+### Maximum limit for data points in read data calls
 
 The Read data API is limited to accessing fewer than 2,500,000 data points per request. This limit includes data points that are accessed but not returned, such as data points that are filtered out of the response. An error message is returned when the maximum limit is reached. This maximum limit applies to [List Values](xref:sds-stream-data#list-values), [List Summaries](xref:sds-stream-data#list-summaries), [List Sampled Values](xref:sds-stream-data#list-sampled-values).
 
@@ -82,7 +82,7 @@ SDS supports reading from multiple streams in one request. The following method 
 - [Join Values](xref:streams-bulk#join-bulk-stream-values) retrieves a collection of data points across multiple streams and joins the results based on the request parameters.
 
 > [!NOTE]
-> During bulk reads, the [maximum limit for events in read data calls](#maximum-limit-for-events-in-read-data-calls) of 2,500,000 is applicable to each stream included in the read, not the entire request.
+> During bulk reads, the [maximum limit for data points in read data calls](#maximum-limit-for-data-points-in-read-data-calls) of 2,500,000 is applicable to each stream included in the read, not the entire request.
 
 ## Response format
 
@@ -251,7 +251,7 @@ All single-stream data reads support stream view transformations.
 # Get 100 data points from start index
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform?startIndex={startIndex}&count=100&streamViewId={streamViewId}
 
-# Get last value
+# Get last data point
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last?streamViewId={streamViewId}
 ```
 

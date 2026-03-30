@@ -269,7 +269,7 @@ Host: uswe.datahub.connect.aveva.com
 ]
 ```
 
-You can alternatively use .NET client libraries method `InsertValueAsync`:
+You can alternatively use the .NET client libraries method `InsertValueAsync`:
 
 ```csharp
 Simple value = new Simple()
@@ -284,7 +284,7 @@ await client.InsertValueAsync(simpleStream.Id, value);
 
 ## Step 5: Read data
 
-SDS includes different read methods for retrieving data from streams. For more information, see [Read data](xref:sdsReadingData). The examples below show reading a data point that was recently written. You need an index or indexes in a read data call—in this case, a timestamp for that data point.
+SDS includes different read methods for retrieving data from streams. For more information, see [Read data](xref:sdsReadingData). The examples below show how to read a data point that was recently written. You need an index or indexes in a read data call—in this case, a timestamp for that data point.
 
 Read a data point from SDS at a distinct index by making a REST API call to CONNECT data services:
 

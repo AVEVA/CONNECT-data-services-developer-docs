@@ -4,7 +4,7 @@ uid: sdsIndexes
 
 # Indexes
 
-Indexes expedite and order the results of searches. A key uniquely identifies a data point within a collection of data points. Keys are unique within the collection.
+Indexes expedite and order the results of searches. A key uniquely identifies a data point within a collection. Keys are unique within the collection.
 
 In SDS, the key of type is also an index. The key is often referred to as the _primary index,_ while all other indexes are referred to as _secondary indexes_ or _secondaries_.
 

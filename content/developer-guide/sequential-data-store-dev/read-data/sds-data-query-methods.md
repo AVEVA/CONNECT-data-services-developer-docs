@@ -7,36 +7,36 @@ uid: SdsDataQueryMethods
 
 When using SDS data operations to query data from a stream, you can query for data in stream using different query options based upon the operation type. The following table lists the available query options and the operations that they can be used with.
 
-| Query option | Description | [List values](xref:sds-stream-data#list-values) | [List interpolated values](xref:sds-stream-data#list-interpolated-values) | [Remove values](xref:sds-stream-data#remove-values) |
+|Query option|Description|[List values](xref:sds-stream-data#list-values)|[List interpolated values](xref:sds-stream-data#list-interpolated-values)|[Remove values](xref:sds-stream-data#remove-values)|
 |--|--|--|--|--|
-| [Find distinct value](#find-distinct-value) | Returns a stored data point based on the specified `index` and `searchMode`. | &#x2714; | | |
-| [Filtered](#filtered) | Returns a collection of stored data points as determined by a `filter` expression. The filter limits results by applying an expression against data point fields. | &#x2714; | |  |
-| [Index collection](#index-collection) | Removes the data point at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data point. One or more indexes can be specified in the request. |  | &#x2714; | &#x2714; |
-| [Interval](#interval) | Returns data points at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored data point exists at an index interval, the read characteristics of the stream determine how the returned data point is calculated. |  |  | &#x2714; |
-| [Range](#range) | Returns a collection of stored data points as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle data points near or at the start index, whether to skip a certain number of data points at the start of the range, and how to filter the data. | &#x2714; |  |  |
-| [Window](#window) | Returns a collection of stored data points based on the specified `startIndex` and `endIndex`. |  &#x2714; |  |  |
+|[Find distinct value](#find-distinct-value)|Returns a stored data point based on the specified `index` and `searchMode`.|&#x2714;|||
+|[Filtered](#filtered)|Returns a collection of stored data points as determined by a `filter` expression. The filter limits results by applying an expression against data point fields.|&#x2714;|||
+|[Index collection](#index-collection)|Removes the data point at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data point. One or more indexes can be specified in the request.||&#x2714;|&#x2714;|
+|[Interval](#interval)|Returns data points at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored data point exists at an index interval, the read characteristics of the stream determine how the returned data point is calculated.|||&#x2714;|
+|[Range](#range)|Returns a collection of stored data points as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle data points near or at the start index, whether to skip a certain number of data points at the start of the range, and how to filter the data.|&#x2714;|||
+|[Window](#window)|Returns a collection of stored data points based on the specified `startIndex` and `endIndex`.|&#x2714;|||
 
 ## Find distinct value
 
 Returns a stored data point based on the specified `index` and `searchMode`.
 
-### Request
+### Find distinct value request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index={index}&searchMode={searchMode}
 ```
 
-### Parameters
+### Find distinct value parameters
 
 The following parameters must be defined when querying an SDS stream for a distinct data point.
 
-`string index`<br>
+`string index`  
 The index.
 
-`string searchMode`<br>
+`string searchMode`  
 The [SdsSearchMode](xref:sdsReadingData#sdssearchmode). The default is `exact`.
 
-### Response
+### Find distinct value response
 
 The response includes a status code and a response body containing a serialized collection with one data point.
 
@@ -59,18 +59,18 @@ Depending on the request `index` and `searchMode`, it is possible to have an emp
 
 Returns a collection of stored data points as determined by a `filter`. The `filter` limits results by applying an expression against data point fields. Filter expressions are explained in detail in the [Filter expressions](xref:sdsFilterExpressionsValues) section.
 
-### Request
+### Filtered request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?filter={filter}
 ```
 
-### Parameters
+### Filtered parameters
 
-`string filter`<br>
+`string filter`  
 Filter expression (see [Filter expressions](xref:sdsFilterExpressionsValues)).
 
-### Response
+### Filtered response
 
 ```json
 HTTP/1.1 200
@@ -94,7 +94,7 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-### Examples
+### Filtered examples
 
 In the following request example, the data points in the stream with `Measurement` greater than 10 are returned.
 
@@ -128,18 +128,18 @@ Content-Type: application/json
 
 Returns data points at the specified indexes. If no stored data point exists at a specified index, the stream's read characteristics determine how the returned data point is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
-### Request
+### Index collection request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated?index={index}[&index={index}...]
 ```
 
-### Parameters
+### Index collection parameters
 
 ``string index``  
 One or more indexes.
 
-### Examples
+### Index collection examples
 
 #### Simple stream with continuous interpolation and extrapolation
 
@@ -219,13 +219,13 @@ Content-Type: application/json
 
 Returns data points at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored data point exists at an index interval, the stream's read characteristics determine how the returned data point is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
-### Request
+### Interval request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated?startIndex={startIndex}&endIndex={endIndex}&count={count}
 ```
 
-### Parameters
+### Interval parameters
 
 ``string startIndex``  
 The index defining the beginning of the window.
@@ -236,7 +236,7 @@ The index defining the end of the window.
 ``int count``  
 The number of data points to return. Read characteristics of the stream determine how the data points are constructed.
 
-### Response
+### Interval response
 
 A serialized collection of data points is returned with evenly spaced intervals as defined in the request.
 
@@ -267,33 +267,33 @@ Content-Type: application/json
 
 Returns a collection of stored data points as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle data points near or at the start index, whether to skip a certain number of data points at the start of the range, and how to filter the data.
 
-### Request
+### Range request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&count={count}[&skip={skip}&reversed={reversed}&boundaryType={boundaryType}&filter={filter}]
 ```
 
-### Parameters
+### Range parameters
 
-`string startIndex`<br>
+`string startIndex`  
 Index identifying the beginning of the series of data points to return.
 
-`int count`<br>
+`int count`  
 The number of data points to return.
 
-`int skip`<br>
+`int skip`  
 Optional value specifying the number of data points to skip at the beginning of the result.
 
-`bool reversed`<br>
+`bool reversed`  
 Optional specification of the direction of the request. By default, range requests move forward from `startIndex`, collecting data points after `startIndex` from the stream. A reversed request will collect data points before `startIndex` from the stream.
 
-`SdsBoundaryType boundaryType`<br>
+`SdsBoundaryType boundaryType`  
 Optional parameter that specifies the handling of data points at or near `startIndex`.
 
-`string filter`<br>
+`string filter`  
 Optional filter expression.
 
-### Response
+### Range response
 
 The response includes a status code and a response body containing a serialized collection of data points.
 
@@ -323,7 +323,7 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-### Examples
+### Range examples
 
 #### Range of 100 data points extending forward
 
@@ -420,7 +420,7 @@ Paging is supported for window requests with a large number of data points.
 
 To retrieve the next page of data points, include the `continuationToken` from the results of the previous request. For the first request, specify a null or empty string for the `continuationToken`.
 
-### Requests
+### Window requests
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&endIndex={endIndex}
@@ -442,39 +442,39 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?s
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&startBoundaryType={startBoundaryType}&endIndex={endIndex}&endBoundaryType={endBoundaryType}&filter={filter}&count={count}&continuationToken={continuationToken}
 ```
 
-### Parameters
+### Window parameters
 
-`string startIndex`<br>
+`string startIndex`  
 Index bounding the beginning of the series of data points to return
 
-`string endIndex`<br>
+`string endIndex`  
 Index bounding the end of the series of data points to return
 
-`int count`<br>
+`int count`  
 Optional maximum number of data points to return. If `count` is specified, a `continuationToken` must also be specified.
 
-`SdsBoundaryType boundaryType`<br>
+`SdsBoundaryType boundaryType`  
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of data points at or near the start and end indexes
 
-`SdsBoundaryType startBoundaryType`<br>
+`SdsBoundaryType startBoundaryType`  
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first data point in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
-`SdsBoundaryType endBoundaryType`<br>
+`SdsBoundaryType endBoundaryType`  
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last data point in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
-`string filter`<br>
+`string filter`  
 Optional [filter expression](xref:sdsFilterExpressionsValues)
 
-`string continuationToken`<br>
+`string continuationToken`  
 Optional token used to retrieve the next page of data. If `count` is specified, a `continuationToken` must also be specified.
 
-### Response
+### Window response
 
 The response includes a status code and a response body containing a serialized collection of data points.
 
 A continuation token can be returned if specified in the request.
 
-### Examples
+### Window examples
 
 #### Window of data points between two timestamps
 

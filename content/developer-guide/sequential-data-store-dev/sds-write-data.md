@@ -8,7 +8,7 @@ The Sequential Data Store (SDS) REST APIs provide programmatic access to read an
 
 If you are working in .NET, convenient SDS Client libraries are available. The `ISdsDataService` interface, accessed using the `SdsService.GetDataService()` helper, defines the available functions.
 
-All writes rely on a stream's key or primary index. The primary index determines the order of events in the stream. Secondary indexes are updated, but they do not contribute to the request. All references to indexes are to the primary index.
+All writes rely on a stream's key or primary index. The primary index determines the order of data points in the stream. Secondary indexes are updated, but they do not contribute to the request. All references to indexes are to the primary index.
 
 The maximum size of the payload for a single write request is 28.6 MB. Additionally, compressed requests are limited to a maximum inflated payload size of 190 MB. Requests that exceed these limits are rejected with an HTTP status code of `413 Payload Too Large`.
 
@@ -17,18 +17,18 @@ The maximum size of the payload for a single write request is 28.6 MB. Additiona
 
 ## Single stream writes
 
-The following methods support writing a single value or multiple values:
+The following methods support writing a single data point or multiple data points:
 
-- [Insert Values](xref:sds-stream-data#insert-values) inserts a collection of events.
-- [Patch Values](xref:sds-stream-data#patch-values) updates specific fields for a collection of events.
-- [Remove Values](xref:sds-stream-data#remove-values) deletes the events based on the request parameters.
-- [Update Values](xref:sds-stream-data#update-values) add or replaces a collection of events.
+- [Insert Values](xref:sds-stream-data#insert-values) inserts a collection of data points.
+- [Patch Values](xref:sds-stream-data#patch-values) updates specific fields for a collection of data points.
+- [Remove Values](xref:sds-stream-data#remove-values) deletes data points based on the request parameters.
+- [Update Values](xref:sds-stream-data#update-values) adds or replaces a collection of data points.
 
 ### Request body format
 
-With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
+With the exception of Remove Values, all single stream write calls require a request body containing the data points to insert or modify.
 
-You must format the events as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. See the [CONNECT data services Samples](https://github.com/AVEVA/AVEVA-Samples-CloudOperations) for the complete example.
+You must format the data points as a serialized JSON array of the stream's type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData data points that are properly formatted for insertion. See the [CONNECT data services Samples](https://github.com/AVEVA/AVEVA-Samples-CloudOperations) for the complete example.
 
 ```json
 [
@@ -72,7 +72,7 @@ You can serialize your data using one of many JSON serializers available at [Int
 
 ## Indexes
 
-Writing to SDS relies on the primary index for positioning within the streams and locating existing events. Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI, or, when using the SDS Client Libraries, the index may be passed as-is to DELETE methods that take the index type as a generic argument. For more information on working with indexes, see [Indexes](xref:sdsIndexes). For information on compound indexes, see [Compound indexes](xref:sdsIndexes#compound-indexes).
+Writing to SDS relies on the primary index for positioning within the streams and locating existing data points. Most writes use the index as specified by the data point. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI, or, when using the SDS Client Libraries, the index may be passed as-is to DELETE methods that take the index type as a generic argument. For more information on working with indexes, see [Indexes](xref:sdsIndexes). For information on compound indexes, see [Compound indexes](xref:sdsIndexes#compound-indexes).
 
 ## Out-of-Order Data
 

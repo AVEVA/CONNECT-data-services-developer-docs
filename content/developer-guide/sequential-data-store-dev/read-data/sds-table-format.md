@@ -4,9 +4,9 @@ uid: sdsTableFormat
 
 # Table format
 
-A table is a convenient structure for analytics and display. The REST APIs for retrieving multiple events from the data store supports returning results in a table. The form variable can be set to specify a table or a table with headers.
+A table is a convenient structure for analytics and display. The REST APIs for retrieving multiple data points from the data store support returning results in a table. The form variable can be set to specify a table or a table with headers.
 
-Table format can be applied to any read that returns multiple values and summaries.
+Table format can be applied to any read that returns multiple data points and summaries.
 
 ## [Csharp](#tab/tabid-0)
 
@@ -70,7 +70,7 @@ var Simple = function () {
    this.State = null;
    this.Value = null;
 }
-With values as follows:
+With data points as follows:
 4/1/2017 7:00:00 AM : Warning  0
 4/1/2017 7:01:00 AM : Warning  1
 4/1/2017 7:02:00 AM : Warning  2
@@ -85,7 +85,7 @@ With values as follows:
 
 ---
 
-The following request retrieves values using the window parameters:
+The following request retrieves data points using the window parameters:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data

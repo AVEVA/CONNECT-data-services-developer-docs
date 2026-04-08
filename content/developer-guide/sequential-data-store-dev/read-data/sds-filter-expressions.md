@@ -2,9 +2,9 @@
 uid: sdsFilterExpressionsValues
 ---
 
-# Filter expressions for SDS values
+# Filter expressions for SDS data points
 
-Filter expressions can be applied to read operations such as [List Values](xref:sds-stream-data#list-values) and [List Summaries](xref:sds-stream-data#list-summaries) that return Sequential Data Store (SDS) values.
+Filter expressions can be applied to read operations such as [List Values](xref:sds-stream-data#list-values) and [List Summaries](xref:sds-stream-data#list-summaries) that return Sequential Data Store (SDS) data points.
 
 ## SdsTypeCodes
 
@@ -56,7 +56,7 @@ The following logical operators are supported for use within a filter expression
 
 ### Examples of logical operators
 
-The examples below assume that the SdsType event includes a field named `Value` of type _double_:
+The examples below assume that the SdsType data point includes a field named `Value` of type _double_:
 
 - `Value eq 1.0`
 - `Value ne 15.6`
@@ -85,7 +85,7 @@ The following math functions are supported for use within a filter expression:
 
 ### Examples of math functions
 
-The examples below assume that the SdsType event includes a field named `Value` of type _double_:
+The examples below assume that the SdsType data point includes a field named `Value` of type _double_:
 
 - `Value eq (6.0 add 3.0)`
 - `Value eq (6.0 sub 3.0)`
@@ -116,7 +116,7 @@ String operations are case sensitive. The character index in a string is zero-ba
 
 ### Examples of string functions
 
-The examples below assume that the SdsType event includes a field named `sValue` of type _string_:
+The examples below assume that the SdsType data point includes a field named `sValue` of type _string_:
 
 | Example | Result |
 | --- | --- |
@@ -147,7 +147,7 @@ The following DateTime functions are supported for use within a filter expressio
 
 ### Examples of DateTime functions
 
-The examples below assume that the SdsType event includes a field named `TimeId` of type _DateTime_:
+The examples below assume that the SdsType data point includes a field named `TimeId` of type _DateTime_:
 
 - `year(TimeId) eq 2015`
 - `month(TimeId) eq 11`
@@ -170,7 +170,7 @@ The following TimeSpan functions are supported for use within a filter expressio
 
 ### Examples of TimeSpan functions
 
-The examples below assume that the SdsType event includes a field named `TimeSpanValue` of type _TimeSpan_:
+The examples below assume that the SdsType data point includes a field named `TimeSpanValue` of type _TimeSpan_:
 
 - `years(TimeSpanValue) eq 1`
 - `days(TimeSpanValue) eq 22`

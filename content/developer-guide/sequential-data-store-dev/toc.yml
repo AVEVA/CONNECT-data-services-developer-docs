@@ -25,7 +25,7 @@
   items:
     - name: "SDS data query methods"
       href: read-data/sds-data-query-methods.md
-    - name: "Filter expressions for SDS values"
+    - name: "Filter expressions for SDS data points"
       href: read-data/sds-filter-expressions.md
     - name: "Table format"
       href: read-data/sds-table-format.md

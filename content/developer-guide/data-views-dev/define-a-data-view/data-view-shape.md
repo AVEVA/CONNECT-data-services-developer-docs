@@ -6,7 +6,7 @@ uid: DataViewShape
 
 Data views can be configured to return data in either a standard shape or a narrow shape. Standard shape returns data in a grouped row format. Narrow shape is a pivot of the standard table.
 
-With a standard shape, each row in the resolved data view includes all the data fields for a single event or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
+With a standard shape, each row in the resolved data view includes all the data fields for a single data point or observation. With a narrow shape, each row in the resolved data view includes only one data field. This results in a narrow output schema where one column contains all the data field values, so the schema remains fixed regardless of changes to the included data fields. Narrow shape may be used when an invariant output schema is required.
 
 The shape concepts presented in this section apply to building all data view output formats; although the terminology used and examples shown, pertain to tabular output with [headers](xref:DataViewsQuickStartGetData#format) (form = csvh).
 

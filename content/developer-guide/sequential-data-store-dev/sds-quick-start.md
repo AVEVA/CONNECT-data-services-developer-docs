@@ -38,7 +38,7 @@ Use the currently selected namespace or select a different one.
 
 ## Step 2: Create data types
 
-A _type_ describes the structure of a single measured event or object. A stream has an associated type and stores a stream of events or objects that take the shape of that type.
+A _type_ describes the structure of a single data point. A stream has an associated type and stores data points that take the shape of that type.
 
 A type consists of one or more data properties, one of which must represent an index. Indexes can be simple (a single integer property, for example) or compound (represented by multiple properties). `DateTime` is a common index for time-series stores.
 
@@ -211,7 +211,7 @@ await config.CreateTypeAsync(simpleType);
 
 ## Step 3: Create stream
 
-A stream has an associated type and stores a stream of events or objects that take the shape of that type. For more information, see [Streams](xref:sds-streams).
+A stream has an associated type and stores data points that take the shape of that type. For more information, see [Streams](xref:sds-streams).
 
 Define and post a JSON representation of a stream to a CONNECT data services endpoint.
 
@@ -234,7 +234,7 @@ Host: uswe.datahub.connect.aveva.com
 }
 ```
 
-You can create a stream for simple events also by using the .NET client libraries method:
+You can create a stream for simple data points also by using the .NET client libraries method:
 
 ```csharp
 SdsStream simpleStream = new SdsStream()
@@ -249,9 +249,9 @@ simpleStream = config.CreateStreamAsync(simpleStream);
 
 ## Step 4: Write data
 
-SDS supports a number of methods for adding and updating data. In this section, you will insert data. Inserts fail if events with the same index already exist in the database. Update adds new events and replaces existing events. For more information, see [Write data](xref:sdsWritingData).
+SDS supports a number of methods for adding and updating data. In this section, you will insert data. Inserts fail if data points with the same index already exist in the database. Update adds new data points and replaces existing data points. For more information, see [Write data](xref:sdsWritingData).
 
-Add data to SDS by posting a JSON serialized event to CONNECT data services endpoint:
+Add data to SDS by posting a JSON-serialized data point to a CONNECT data services endpoint:
 
 ```json
 POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
@@ -269,7 +269,7 @@ Host: uswe.datahub.connect.aveva.com
 ]
 ```
 
-You can alternatively use .NET client libraries method `InsertValueAsync`:
+You can alternatively use the .NET client libraries method `InsertValueAsync`:
 
 ```csharp
 Simple value = new Simple()
@@ -284,9 +284,9 @@ await client.InsertValueAsync(simpleStream.Id, value);
 
 ## Step 5: Read data
 
-SDS includes different read methods for retrieving data from streams. For more information, see [Read data](xref:sdsReadingData). The examples below are of reading a value that was recently written. You need an index or indexes in a read data call—in this case, a timestamp of that value.
+SDS includes different read methods for retrieving data from streams. For more information, see [Read data](xref:sdsReadingData). The examples below show how to read a data point that was recently written. You need an index or indexes in a read data call—in this case, a timestamp for that data point.
 
-Read a value from SDS at a distinct index by making a REST API call to CONNECT data services:
+Read a data point from SDS at a distinct index by making a REST API call to CONNECT data services:
 
 ```json
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index=2017-08-17T17:21:36.3494129Z
@@ -308,7 +308,7 @@ string index = DateTime.Parse("2017-08-17T17:21:36.3494129Z")
                .ToUniversalTime().ToString("o");
 ```
 
-To read a value at a distinct index, use the SDS .NET client libraries method. `Time` is the index here, which is a property of a type named `Simple`:
+To read a data point at a distinct index, use the SDS .NET client libraries method. `Time` is the index here, which is a property of a type named `Simple`:
 
 ```csharp
 value = await client.GetDistinctValueAsync<Simple>(simpleStream.Id, index);
@@ -340,7 +340,7 @@ Dictionary<string, object> Errors
 
 - The `ReasonPhrase` may provide additional information regarding the cause of the exception. You should always evaluate the `ReasonPhrase` in addition to the `StatusCode` to determine the cause of the exception.
 
-- The errors collection may provide additional specific error information based on the response. For example, if an `InsertValues` call fails because it conflicts with an existing event in the stream, the index of the conflicting event is included in this dictionary.
+- The errors collection may provide additional specific error information based on the response. For example, if an `InsertValues` call fails because it conflicts with an existing data point in the stream, the index of the conflicting data point is included in this dictionary.
 
 ### SDS timeout request header
 

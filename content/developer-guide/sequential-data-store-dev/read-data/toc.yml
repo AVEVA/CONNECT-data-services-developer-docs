@@ -1,4 +1,4 @@
-- name: Filter expressions for SDS values
+- name: Filter expressions for SDS data points
   href: sds-filter-expressions.md
 - name: Table format
   href: sds-table-format.md

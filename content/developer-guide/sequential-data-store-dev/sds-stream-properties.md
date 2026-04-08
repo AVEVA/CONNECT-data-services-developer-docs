@@ -59,4 +59,4 @@ You can override the unit of measure (UOM) for any SdsTypeProperty defined by th
 
 Read characteristics of the stream are determined by the type and the `PropertyOverride` of the stream. You can define or override the interpolation mode for non-index properties at the stream level. For more information about type read characteristics, see [SdsTypeProperty](xref:sds-sdstypes-props#sdstypeproperty).
 
-If you set `InterpolationMode` of the type to `Discrete`, it cannot be overridden at any level. When `InterpolationMode` is set to `Discrete` and an event is not defined for the index, a null value is returned for the entire event.
+If you set `InterpolationMode` of the type to `Discrete`, it cannot be overridden at any level. When `InterpolationMode` is set to `Discrete` and a data point is not defined for the index, a null value is returned for the entire data point.

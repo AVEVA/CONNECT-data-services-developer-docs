@@ -153,9 +153,9 @@ The `Value` field is used for the properties of enumeration types. An enumeratio
 
 #### InterpolationMode
 
-`InterpolationMode` is assigned when the SdsTypeProperty of the event should be interpolated in a specific way that differs from the interpolation mode of the SdsType. `InterpolationMode` is only applied to an SdsTypeProperty that is not part of the index. If the `InterpolationMode` is not set, the SdsTypeProperty is interpolated in the manner defined by the SdsType's `InterpolationMode`.
+`InterpolationMode` is assigned when the SdsTypeProperty of the data point should be interpolated in a specific way that differs from the interpolation mode of the SdsType. `InterpolationMode` is only applied to an SdsTypeProperty that is not part of the index. If the `InterpolationMode` is not set, the SdsTypeProperty is interpolated in the manner defined by the SdsType's `InterpolationMode`.
 
-An SdsType with the `InterpolationMode` set to `Discrete` cannot also have the SdsTypeProperty with `InteroplationMode`. For more information on interpolation of events, see [Interpolation](xref:sdsReadingData#interpolation).
+An SdsType with the `InterpolationMode` set to `Discrete` cannot also have the SdsTypeProperty with `InteroplationMode`. For more information on interpolation of data points, see [Interpolation](xref:sdsReadingData#interpolation).
 
 #### Uom
 

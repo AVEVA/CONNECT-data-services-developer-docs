@@ -7,38 +7,38 @@ uid: SdsDataQueryMethods
 
 When using SDS data operations to query data from a stream, you can query for data in stream using different query options based upon the operation type. The following table lists the available query options and the operations that they can be used with.
 
-| Query option | Description | [List values](xref:sds-stream-data#list-values) | [List interpolated values](xref:sds-stream-data#list-interpolated-values) | [Remove values](xref:sds-stream-data#remove-values) |
+|Query option|Description|[List values](xref:sds-stream-data#list-values)|[List interpolated values](xref:sds-stream-data#list-interpolated-values)|[Remove values](xref:sds-stream-data#remove-values)|
 |--|--|--|--|--|
-| [Find distinct value](#find-distinct-value) | Returns a stored event based on the specified `index` and `searchMode`. | &#x2714; | | |
-| [Filtered](#filtered) | Returns a collection of stored values as determined by a `filter` expression. The filter limits results by applying an expression against event fields. | &#x2714; | |  |
-| [Index collection](#index-collection) | Removes the event at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data event. One or more indexes can be specified in the request. |  | &#x2714; | &#x2714; |
-| [Interval](#interval) | Returns events at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored event exists at an index interval, the read characteristics of the stream determine how the returned event is calculated. |  |  | &#x2714; |
-| [Range](#range) | Returns a collection of stored values as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data. | &#x2714; |  |  |
-| [Window](#window) | Returns a collection of stored events based on the specified `startIndex` and `endIndex`. |  &#x2714; |  |  |
+|[Find distinct value](#find-distinct-value)|Returns a stored data point based on the specified `index` and `searchMode`.|&#x2714;|||
+|[Filtered](#filtered)|Returns a collection of stored data points as determined by a `filter` expression. The filter limits results by applying an expression against data point fields.|&#x2714;|||
+|[Index collection](#index-collection)|Removes the data point at each index from the specified stream. Different overloads are available to make it easier to indicate the index where you want to remove a data point. One or more indexes can be specified in the request.||&#x2714;|&#x2714;|
+|[Interval](#interval)|Returns data points at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored data point exists at an index interval, the read characteristics of the stream determine how the returned data point is calculated.|||&#x2714;|
+|[Range](#range)|Returns a collection of stored data points as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle data points near or at the start index, whether to skip a certain number of data points at the start of the range, and how to filter the data.|&#x2714;|||
+|[Window](#window)|Returns a collection of stored data points based on the specified `startIndex` and `endIndex`.|&#x2714;|||
 
 ## Find distinct value
 
-Returns a stored event based on the specified `index` and `searchMode`.
+Returns a stored data point based on the specified `index` and `searchMode`.
 
-### Request
+### Find distinct value request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?index={index}&searchMode={searchMode}
 ```
 
-### Parameters
+### Find distinct value parameters
 
-The following parameters must be defined when querying an SDS stream for a distinct value.
+The following parameters must be defined when querying an SDS stream for a distinct data point.
 
-`string index`<br>
+`string index`  
 The index.
 
-`string searchMode`<br>
+`string searchMode`  
 The [SdsSearchMode](xref:sdsReadingData#sdssearchmode). The default is `exact`.
 
-### Response
+### Find distinct value response
 
-The response includes a status code and a response body containing a serialized collection with one event.
+The response includes a status code and a response body containing a serialized collection with one data point.
 
 ```json
 HTTP/1.1 200
@@ -57,20 +57,20 @@ Depending on the request `index` and `searchMode`, it is possible to have an emp
 
 ## Filtered
 
-Returns a collection of stored values as determined by a `filter`. The `filter` limits results by applying an expression against event fields. Filter expressions are explained in detail in the [Filter expressions](xref:sdsFilterExpressionsValues) section.
+Returns a collection of stored data points as determined by a `filter`. The `filter` limits results by applying an expression against data point fields. Filter expressions are explained in detail in the [Filter expressions](xref:sdsFilterExpressionsValues) section.
 
-### Request
+### Filtered request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?filter={filter}
 ```
 
-### Parameters
+### Filtered parameters
 
-`string filter`<br>
+`string filter`  
 Filter expression (see [Filter expressions](xref:sdsFilterExpressionsValues)).
 
-### Response
+### Filtered response
 
 ```json
 HTTP/1.1 200
@@ -94,15 +94,15 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-### Examples
+### Filtered examples
 
-In the following request example, The events in the stream with `Measurement` greater than 10 are returned.
+In the following request example, the data points in the stream with `Measurement` greater than 10 are returned.
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?filter=Measurement gt 10
 ```
 
-The response returns stream events with a `Measurement` greater than 10.
+The response returns stream data points with a `Measurement` greater than 10.
 
 ```json
 HTTP/1.1 200
@@ -126,30 +126,30 @@ Content-Type: application/json
 
 ## Index collection
 
-Returns events at the specified indexes. If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
+Returns data points at the specified indexes. If no stored data point exists at a specified index, the stream's read characteristics determine how the returned data point is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
-### Request
+### Index collection request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated?index={index}[&index={index}...]
 ```
 
-### Parameters
+### Index collection parameters
 
 ``string index``  
 One or more indexes.
 
-### Examples
+### Index collection examples
 
 #### Simple stream with continuous interpolation and extrapolation
 
-Consider a stream of type ``Simple`` with the default ``InterpolationMode`` of ``Continuous`` and ``ExtrapolationMode`` of ``All``. In the following request, the specified index matches an existing stored event:
+Consider a stream of type ``Simple`` with the default ``InterpolationMode`` of ``Continuous`` and ``ExtrapolationMode`` of ``All``. In the following request, the specified index matches an existing stored data point:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/Interpolated?index=2017-11-23T13:00:00Z
 ```
 
-The response will contain the event stored at the specified index.
+The response will contain the data point stored at the specified index.
 
 ```json
 HTTP/1.1 200
@@ -164,15 +164,15 @@ Content-Type: application/json
 ]
 ```
 
-#### Simple stream with an index with no stored event
+#### Simple stream with an index with no stored data point
 
-The following request specifies an index for which no stored event exists:
+The following request specifies an index for which no stored data point exists:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/Interpolated?index=2017-11-23T13:30:00Z
 ```
 
-Because the index is a valid type for interpolation and the stream has a ``InterpolationMode`` of ``Continuous``, this request receives a response with an event interpolated at the specified index:
+Because the index is a valid type for interpolation and the stream has a ``InterpolationMode`` of ``Continuous``, this request receives a response with a data point interpolated at the specified index:
 
 ```json
 HTTP/1.1 200
@@ -189,13 +189,13 @@ Content-Type: application/json
 
 #### Simple stream with discrete interpolation
 
-Consider a stream of type ``Simple`` with an ``InterpolationMode`` of ``Discrete`` and ``ExtrapolationMode`` of ``All``. In the following request, the specified indexes only match two existing stored events:
+Consider a stream of type ``Simple`` with an ``InterpolationMode`` of ``Discrete`` and ``ExtrapolationMode`` of ``All``. In the following request, the specified indexes only match two existing stored data points:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/Interpolated?index=2017-11-23T12:30:00Z&index=2017-11-23T13:00:00Z&index=2017-11-23T14:00:00Z
 ```
 
-For this request, the response contains events for two of the three specified indexes.
+For this request, the response contains data points for two of the three specified indexes.
 
 ```json
 HTTP/1.1 200
@@ -217,15 +217,15 @@ Content-Type: application/json
 
 ## `Interval`
 
-Returns events at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
+Returns data points at evenly spaced intervals based on the specified `startIndex`, `endIndex`, and `count`. If no stored data point exists at an index interval, the stream's read characteristics determine how the returned data point is calculated. For more information, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
-### Request
+### Interval request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Interpolated?startIndex={startIndex}&endIndex={endIndex}&count={count}
 ```
 
-### Parameters
+### Interval parameters
 
 ``string startIndex``  
 The index defining the beginning of the window.
@@ -234,11 +234,11 @@ The index defining the beginning of the window.
 The index defining the end of the window.
 
 ``int count``  
-The number of events to return. Read characteristics of the stream determine how the events are constructed.
+The number of data points to return. Read characteristics of the stream determine how the data points are constructed.
 
-### Response
+### Interval response
 
-A serialized collection of events is returned with evenly spaced intervals as defined in the request.
+A serialized collection of data points is returned with evenly spaced intervals as defined in the request.
 
 ```json
 HTTP/1.1 200
@@ -265,37 +265,37 @@ Content-Type: application/json
 
 ## Range
 
-Returns a collection of stored values as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
+Returns a collection of stored data points as determined by a `startIndex` and `count`. Additional optional parameters specify the direction of the range, how to handle data points near or at the start index, whether to skip a certain number of data points at the start of the range, and how to filter the data.
 
-### Request
+### Range request
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&count={count}[&skip={skip}&reversed={reversed}&boundaryType={boundaryType}&filter={filter}]
 ```
 
-### Parameters
+### Range parameters
 
-`string startIndex`<br>
-Index identifying the beginning of the series of events to return.
+`string startIndex`  
+Index identifying the beginning of the series of data points to return.
 
-`int count`<br>
-The number of events to return.
+`int count`  
+The number of data points to return.
 
-`int skip`<br>
-Optional value specifying the number of events to skip at the beginning of the result.
+`int skip`  
+Optional value specifying the number of data points to skip at the beginning of the result.
 
-`bool reversed`<br>
-Optional specification of the direction of the request. By default, range requests move forward from `startIndex`, collecting events after `startIndex` from the stream. A reversed request will collect events before `startIndex` from the stream.
+`bool reversed`  
+Optional specification of the direction of the request. By default, range requests move forward from `startIndex`, collecting data points after `startIndex` from the stream. A reversed request will collect data points before `startIndex` from the stream.
 
-`SdsBoundaryType boundaryType`<br>
-Optional parameter that specifies the handling of events at or near `startIndex`.
+`SdsBoundaryType boundaryType`  
+Optional parameter that specifies the handling of data points at or near `startIndex`.
 
-`string filter`<br>
+`string filter`  
 Optional filter expression.
 
-### Response
+### Range response
 
-The response includes a status code and a response body containing a serialized collection of events.
+The response includes a status code and a response body containing a serialized collection of data points.
 
 ```json
 HTTP/1.1 200
@@ -323,17 +323,17 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-### Examples
+### Range examples
 
-#### Range of 100 events extending forward
+#### Range of 100 data points extending forward
 
-This request will return a response with up to 100 events starting at 13:00 and extending forward toward the end of the stream:
+This request will return a response with up to 100 data points starting at 13:00 and extending forward toward the end of the stream:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100
 ```
 
-The response returns the range of events starting from the `startIndex` timestamp. The response has its returned events truncated for brevity.
+The response returns the range of data points starting from the `startIndex` timestamp. The response has its returned data points truncated for brevity.
 
 ```json
 HTTP/1.1 200
@@ -352,17 +352,17 @@ Content-Type: application/json
 ]
 ```
 
-Note that `State` is not included in the JSON as its value is the default value. Further, `Measurement` is not included in the second, 12:00:00, event as zero is the default value for numbers.
+Note that `State` is not included in the JSON as its value is the default value. Further, `Measurement` is not included in the second data point, 12:00:00, as zero is the default value for numbers.
 
-#### Range of 100 events reversed
+#### Range of 100 data points reversed
 
-The following request specifies a boundary type of `outside` for a reversed-direction range request. The response will contain up to 100 events. The boundary type Outside indicates that up to one event outside the boundary will be included in the response. For a reverse direction range request, this means one event forward of the specified start index. In a default direction range request, it would mean one event before the specified start index.
+The following request specifies a boundary type of `outside` for a reversed-direction range request. The response will contain up to 100 data points. The boundary type Outside indicates that up to one data point outside the boundary will be included in the response. For a reverse direction range request, this means one data point forward of the specified start index. In a default direction range request, it would mean one data point before the specified start index.
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100&reversed=true&boundaryType=2
 ```
 
-The response returns the 100 events after the start index. The event outside of the index is the next event or the event at 14:00 because the request operates in reverse.
+The response returns the 100 data points after the start index. The data point outside of the index is the next data point, or the data point at 14:00, because the request operates in reverse.
 
 ```json
 HTTP/1.1 200
@@ -389,13 +389,13 @@ Content-Type: application/json
 
 #### Range with filter
 
-Adding a filter to the request means only events that meet the filter criteria are returned:
+Adding a filter to the request means only data points that meet the filter criteria are returned:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T13:00:00Z&count=100&reversed=true&boundaryType=2&filter=Measurement gt 10
 ```
 
-The range and order is still in effect, but only events that meet filter criteria are included.
+The range and order is still in effect, but only data points that meet the filter criteria are included.
 
 ```json
 HTTP/1.1 200
@@ -412,15 +412,15 @@ Content-Type: application/json
 
 ## Window
 
-Returns a collection of stored events based on the specified `startIndex` and `endIndex`.
+Returns a collection of stored data points based on the specified `startIndex` and `endIndex`.
 
-For handling events at and near the boundaries of the window, a single `SdsBoundaryType` that applies to both the start and end indexes can be passed with the request, or separate boundary types may be passed for the start and end individually.
+For handling data points at and near the boundaries of the window, a single `SdsBoundaryType` that applies to both the start and end indexes can be passed with the request, or separate boundary types may be passed for the start and end individually.
 
-Paging is supported for window requests with a large number of events.
+Paging is supported for window requests with a large number of data points.
 
-To retrieve the next page of values, include the `continuationToken` from the results of the previous request. For the first request, specify a null or empty string for the `continuationToken`.
+To retrieve the next page of data points, include the `continuationToken` from the results of the previous request. For the first request, specify a null or empty string for the `continuationToken`.
 
-### Requests
+### Window requests
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&endIndex={endIndex}
@@ -442,49 +442,49 @@ GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?s
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data?startIndex={startIndex}&startBoundaryType={startBoundaryType}&endIndex={endIndex}&endBoundaryType={endBoundaryType}&filter={filter}&count={count}&continuationToken={continuationToken}
 ```
 
-### Parameters
+### Window parameters
 
-`string startIndex`<br>
-Index bounding the beginning of the series of events to return
+`string startIndex`  
+Index bounding the beginning of the series of data points to return
 
-`string endIndex`<br>
-Index bounding the end of the series of events to return
+`string endIndex`  
+Index bounding the end of the series of data points to return
 
-`int count`<br>
-Optional maximum number of events to return. If `count` is specified, a `continuationToken` must also be specified.
+`int count`  
+Optional maximum number of data points to return. If `count` is specified, a `continuationToken` must also be specified.
 
-`SdsBoundaryType boundaryType`<br>
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of events at or near the start and end indexes
+`SdsBoundaryType boundaryType`  
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of data points at or near the start and end indexes
 
-`SdsBoundaryType startBoundaryType`<br>
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+`SdsBoundaryType startBoundaryType`  
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first data point in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
-`SdsBoundaryType endBoundaryType`<br>
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+`SdsBoundaryType endBoundaryType`  
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last data point in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
-`string filter`<br>
+`string filter`  
 Optional [filter expression](xref:sdsFilterExpressionsValues)
 
-`string continuationToken`<br>
+`string continuationToken`  
 Optional token used to retrieve the next page of data. If `count` is specified, a `continuationToken` must also be specified.
 
-### Response
+### Window response
 
-The response includes a status code and a response body containing a serialized collection of events.
+The response includes a status code and a response body containing a serialized collection of data points.
 
 A continuation token can be returned if specified in the request.
 
-### Examples
+### Window examples
 
-#### Window of events between two timestamps
+#### Window of data points between two timestamps
 
-The following requests all stored events between 12:30 and 15:30:
+The following request returns all stored data points between 12:30 and 15:30:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z
 ```
 
-The response will contain the event stored at the specified index:
+The response will contain the data points stored within the specified range:
 
 ```json
 HTTP/1.1 200
@@ -508,15 +508,15 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-#### Window of events between two timestamps with a boundary of `Outside`
+#### Window of data points between two timestamps with a boundary of `Outside`
 
-When the request is modified to specify a boundary type of `Outside`, the value before 13:30 and the value after 15:30 are included:
+When the request is modified to specify a boundary type of `Outside`, the data point before 13:30 and the data point after 15:30 are included:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&boundaryType=2
 ```
 
-The response includes the windowed events, as well as the two values outside of the `startIndex` and `endIndex`.
+The response includes the windowed data points, as well as the two data points outside of the `startIndex` and `endIndex`.
 
 ```json
 HTTP/1.1 200
@@ -547,11 +547,11 @@ Content-Type: application/json
 
 Note that `State` is not included in the JSON as its value is the default value.
 
-Further, `Measurement` is not included in the second event (12:00:00) as zero is the default value for numbers.
+Further, `Measurement` is not included in the second data point (12:00:00) because zero is the default value for numbers.
 
-#### Window of events between two timestamps with mixed boundaries
+#### Window of data points between two timestamps with mixed boundaries
 
-With a `startBoundary` of `Inside`, only values inside the start boundary (after 13:30) are included in the result. With an end boundary of `Outside`, one value outside the end index (after 15:30) is included:
+With a `startBoundary` of `Inside`, only data points inside the start boundary (after 13:30) are included in the result. With an end boundary of `Outside`, one data point outside the end index (after 15:30) is included:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&&startBoundaryType=1&endIndex=2017-11-23T15:30:00Z&endBoundaryType=2
@@ -589,7 +589,7 @@ Content-Type: application/json
 
 #### Pagination
 
-To page the results of the request, a `continuationToken` may be specified. This requests the first page of the first two stored events between `startIndex` and `endIndex` by indicating count is 2 and `continuationToken` is an empty string
+To page the results of the request, a `continuationToken` may be specified. This requests the first page of the first two stored data points between `startIndex` and `endIndex` by indicating count is 2 and `continuationToken` is an empty string
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&count=2&continuationToken=
@@ -620,7 +620,7 @@ Content-Type: application/json
 
 #### Pagination with ContinuationToken
 
-This request uses the continuation token from the previous page to request the next page of stored events:
+This request uses the continuation token from the previous page to request the next page of stored data points:
 
 ```text
 GET api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data?startIndex=2017-11-23T12:30:00Z&endIndex=2017-11-23T15:30:00Z&count=2&continuationToken=2017-11-23T14:00:00Z
@@ -644,4 +644,4 @@ Content-Type: application/json
 }
 ```
 
-In this case, the results contain the final event. The returned continuation token is null.
+In this case, the results contain the final data point. The returned continuation token is null.

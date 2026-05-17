@@ -42,6 +42,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/updat
 |401|None|Unauthorized. The client is not authenticated.|
 |403|None|Forbidden. The client is not authorized.|
 |500|None|Internal Server Error. The server has encountered an error while processing the request.|
+|504|None|Gateway Timeout. The request timed out.|
 
 <h4>Example response body</h4>
 

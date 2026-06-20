@@ -73,6 +73,129 @@ Allowed for these roles:
 
 ---
 
+## `Create 1`
+
+<a id="opIdNamespace_Create 1"></a>
+
+Creates a new `Namespace` in the specified `Tenant`.
+
+<h3>Request</h3>
+
+```text 
+POST /api/v1/Tenants/{tenantId}/Namespaces
+?isServerTest={isServerTest}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>The identifier of the `Tenant`.<br/><br/>
+`[optional] boolean isServerTest`
+<br/>This parameter is unused and will be removed in the next API version.<br/><br/>
+
+<h4>Request Body</h4>
+
+The new Namespace to be created.<br/>
+
+```json
+{
+  "Id": "string",
+  "Region": "string",
+  "Self": "string",
+  "Description": "string",
+  "State": 0,
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "string",
+    "TenantId": "string"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {
+        "Trustee": {
+          "Type": 1,
+          "ObjectId": "string",
+          "TenantId": "string"
+        },
+        "AccessType": 0,
+        "AccessRights": 0
+      }
+    ]
+  },
+  "RegionId": "string",
+  "InstanceId": "string",
+  "Name": "string",
+  "AllowCrossRegionProcessing": true
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|201|[Namespace](#schemanamespace)|The created `Namespace`.|
+|302|None|Returns the location of the existing `Namespace` object.|
+|400|None|Could not create the namespace due to missing or invalid input.|
+|403|None|Forbidden.|
+|405|None|Method not allowed at this base URL. Try the request again at the Global base URL.|
+|409|None|A `Namespace` already exists with different values.|
+
+<h4>Example response body</h4>
+
+> 201 Response
+
+```json
+{
+  "Id": "NamespaceId",
+  "Region": "WestUS",
+  "Self": "https://dat-b.osipi.com/api/v1/tenants/tenantId/namespaces/namespaceId",
+  "Description": "Namespace Description",
+  "Owner": {
+    "Type": 1,
+    "ObjectId": "4f9f79e2-e4e3-4cef-b302-6c4713baed5c",
+    "TenantId": "7fc97c8b-8f60-4f29-af71-3178c414e7a0"
+  },
+  "AccessControl": {
+    "RoleTrusteeAccessControlEntries": [
+      {
+        "Trustee": {
+          "Type": 3,
+          "ObjectId": "a4e06a18-9a0e-4721-9772-524c937bdb5c"
+        },
+        "AccessRights": 1
+      },
+      {
+        "Trustee": {
+          "Type": 3,
+          "ObjectId": "a9a3b01b-e0d3-49c9-b931-72433152c192"
+        },
+        "AccessRights": 3
+      },
+      {
+        "Trustee": {
+          "Type": 3,
+          "ObjectId": "e1aaf6ac-3416-4db2-bd5d-d62b13340f4d"
+        },
+        "AccessRights": 31
+      }
+    ]
+  },
+  "RegionId": "WestUS",
+  "InstanceId": "cd7df91e-b838-4c55-b43f-17560cf4ab87",
+  "Name": "NamespaceName",
+  "AllowCrossRegionProcessing": true
+}
+```
+
+<h3>Authorization</h3>
+
+Allowed for these roles: 
+<ul>
+<li>Tenant Member</li>
+</ul>
+
+---
+
 ## `Get Namespace By Id`
 
 <a id="opIdNamespace_Get Namespace By Id"></a>
@@ -127,9 +250,9 @@ Allowed for these roles:
 
 ---
 
-## `Create`
+## `Create (namespace Id path)`
 
-<a id="opIdNamespace_Create"></a>
+<a id="opIdNamespace_Create (namespace Id path)"></a>
 
 Creates a new `Namespace` in the specified `Tenant`.
 

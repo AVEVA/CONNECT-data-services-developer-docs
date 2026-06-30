@@ -15,7 +15,7 @@ Returns the List of virtual table shares.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantid}/namespaces/{namespaceid}/shares
+GET /api/v1-preview/tenants/{tenantid}/namespaces/{namespaceid}/shares
 ?query={query}&orderBy={orderBy}&skip={skip}&count={count}
 ```
 
@@ -75,7 +75,7 @@ Created the Virtual Table Share.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1/tenants/{tenantid}/namespaces/{namespaceid}/shares
+POST /api/v1-preview/tenants/{tenantid}/namespaces/{namespaceid}/shares
 ```
 
 <h4>Parameters</h4>
@@ -155,7 +155,7 @@ Returns the Virtual Table Share.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantid}/namespaces/{namespaceid}/shares/{id}
+GET /api/v1-preview/tenants/{tenantid}/namespaces/{namespaceid}/shares/{id}
 ```
 
 <h4>Parameters</h4>
@@ -209,7 +209,7 @@ Updated the Virtual Table Share.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantid}/namespaces/{namespaceid}/shares/{id}
+PUT /api/v1-preview/tenants/{tenantid}/namespaces/{namespaceid}/shares/{id}
 ```
 
 <h4>Parameters</h4>
@@ -290,7 +290,7 @@ Deleted the Virtual Table Share.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1/tenants/{tenantid}/namespaces/{namespaceid}/shares/{id}
+DELETE /api/v1-preview/tenants/{tenantid}/namespaces/{namespaceid}/shares/{id}
 ```
 
 <h4>Parameters</h4>

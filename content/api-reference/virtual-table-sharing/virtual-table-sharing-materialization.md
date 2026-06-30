@@ -15,7 +15,7 @@ Returns a list of Virtual Tables.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables
 ?query={query}&orderBy={orderBy}&skip={skip}&count={count}
 ```
 
@@ -50,7 +50,7 @@ Creates a new Virtual Table.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables
 ```
 
 <h4>Parameters</h4>
@@ -67,10 +67,13 @@ Virtual Table.<br/>
 {
   "CreatedOn": "2019-08-24T14:15:22Z",
   "LastRefreshed": "2019-08-24T14:15:22Z",
+  "LastQueuedRegRefreshTime": "2019-08-24T14:15:22Z",
   "id": "string",
   "name": "string",
   "MaterializationStart": "2019-08-24T14:15:22Z",
   "MaterializationEnd": "2019-08-24T14:15:22Z",
+  "startIndex": "2019-08-24T14:15:22Z",
+  "endIndex": "2019-08-24T14:15:22Z",
   "TenantId": "string",
   "NamespaceId": "string",
   "dataViewId": "string",
@@ -108,7 +111,9 @@ Virtual Table.<br/>
       }
     }
   ],
-  "SecretExpirationTime": "2019-08-24T14:15:22Z"
+  "SecretExpirationTime": "2019-08-24T14:15:22Z",
+  "Comment": "string",
+  "LastEnableOrDisableActionBy": "string"
 }
 ```
 
@@ -132,7 +137,7 @@ Refreshes the Virtual Table.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/Refresh
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/Refresh
 ```
 
 <h4>Parameters</h4>
@@ -150,11 +155,20 @@ Virtual Table.<br/>
 {
   "MaterializationStart": "2019-08-24T14:15:22Z",
   "MaterializationEnd": "2019-08-24T14:15:22Z",
+  "startIndex": "2019-08-24T14:15:22Z",
+  "endIndex": "2019-08-24T14:15:22Z",
   "VirtualTableId": "string",
   "TenantId": "string",
   "IsUpdateProcess": true,
   "IsManualRefresh": true,
-  "MessageId": "string"
+  "IsRefreshAPIcall": true,
+  "Priority": 0,
+  "JobType": 1,
+  "MessageId": "string",
+  "MessageSequenceNumber": 0,
+  "Status": "string",
+  "NamespaceId": "string",
+  "JobId": 0
 }
 ```
 
@@ -178,7 +192,7 @@ Refreshes the Virtual Table.
 <h3>Request</h3>
 
 ```text 
-POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}
+POST /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}
 ```
 
 <h4>Parameters</h4>
@@ -196,11 +210,20 @@ Virtual Table.<br/>
 {
   "MaterializationStart": "2019-08-24T14:15:22Z",
   "MaterializationEnd": "2019-08-24T14:15:22Z",
+  "startIndex": "2019-08-24T14:15:22Z",
+  "endIndex": "2019-08-24T14:15:22Z",
   "VirtualTableId": "string",
   "TenantId": "string",
   "IsUpdateProcess": true,
   "IsManualRefresh": true,
-  "MessageId": "string"
+  "IsRefreshAPIcall": true,
+  "Priority": 0,
+  "JobType": 1,
+  "MessageId": "string",
+  "MessageSequenceNumber": 0,
+  "Status": "string",
+  "NamespaceId": "string",
+  "JobId": 0
 }
 ```
 
@@ -224,7 +247,7 @@ Updates the Virtual Table.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}
 ```
 
 <h4>Parameters</h4>
@@ -242,10 +265,13 @@ Virtual Table.<br/>
 {
   "CreatedOn": "2019-08-24T14:15:22Z",
   "LastRefreshed": "2019-08-24T14:15:22Z",
+  "LastQueuedRegRefreshTime": "2019-08-24T14:15:22Z",
   "id": "string",
   "name": "string",
   "MaterializationStart": "2019-08-24T14:15:22Z",
   "MaterializationEnd": "2019-08-24T14:15:22Z",
+  "startIndex": "2019-08-24T14:15:22Z",
+  "endIndex": "2019-08-24T14:15:22Z",
   "TenantId": "string",
   "NamespaceId": "string",
   "dataViewId": "string",
@@ -283,7 +309,9 @@ Virtual Table.<br/>
       }
     }
   ],
-  "SecretExpirationTime": "2019-08-24T14:15:22Z"
+  "SecretExpirationTime": "2019-08-24T14:15:22Z",
+  "Comment": "string",
+  "LastEnableOrDisableActionBy": "string"
 }
 ```
 
@@ -307,7 +335,7 @@ Returns the specified Virtual Table.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualtableId}
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualtableId}
 ```
 
 <h4>Parameters</h4>
@@ -337,7 +365,7 @@ Deletes the Virtual Table.
 <h3>Request</h3>
 
 ```text 
-DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualtableid}
+DELETE /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualtableid}
 ```
 
 <h4>Parameters</h4>
@@ -367,7 +395,7 @@ Returns the Materialized Virtual table.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/data/{format}
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/data/{format}
 ```
 
 <h4>Parameters</h4>
@@ -398,7 +426,7 @@ Returns the Materialized Virtual Table Status.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/status
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/status
 ```
 
 <h4>Parameters</h4>
@@ -407,6 +435,87 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTa
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string virtualtableid`
 <br/>Virtual Table identifier.<br/><br/>
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|Successfully retrieved the status of the virtual table materialization.|
+|400|[ErrorResponse](#schemaerrorresponse)|Bad request.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request.|
+
+---
+
+## `Enable Disable Virtual Table`
+
+<a id="opIdMaterialization_Enable Disable Virtual Table"></a>
+
+Creates a new Virtual Table.
+
+<h3>Request</h3>
+
+```text 
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/status
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>tenantId identifier.<br/><br/>`string namespaceId`
+<br/>namespaceId identifier.<br/><br/>`string virtualTableId`
+<br/>virtualTableId identifier.<br/><br/>
+
+<h4>Request Body</h4>
+
+VirtualTable<br/>
+
+```json
+{
+  "IsEnabled": true,
+  "id": "string",
+  "name": "string",
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "Status": "string",
+  "Comment": "string",
+  "LastEnableOrDisableActionBy": "string"
+}
+```
+
+<h3>Response</h3>
+
+|Status Code|Body Type|Description|
+|---|---|---|
+|200|string|Successfully created the virtual table.|
+|400|[ErrorResponse](#schemaerrorresponse)|Bad request.|
+|403|[ErrorResponse](#schemaerrorresponse)|You are not authorized for this operation.|
+|500|[ErrorResponse](#schemaerrorresponse)|An error occurred while processing the request.|
+
+---
+
+## `Get Virtual Table Message List`
+
+<a id="opIdMaterialization_Get Virtual Table Message List"></a>
+
+Returns the Materialized Virtual Table Status.
+
+<h3>Request</h3>
+
+```text 
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{virtualTableId}/errorMessages
+?skip={skip}&count={count}
+```
+
+<h4>Parameters</h4>
+
+`string tenantId`
+<br/>Tenant identifier.<br/><br/>`string namespaceId`
+<br/>Namespace identifier.<br/><br/>`string virtualtableid`
+<br/>Virtual Table identifier.<br/><br/>
+`[optional] integer skip`
+<br/>int<br/><br/>`[optional] integer count`
+<br/>int<br/><br/>
 
 <h3>Response</h3>
 
@@ -473,10 +582,13 @@ Virtual Table
 |---|---|---|---|---|
 |CreatedOn|date-time|false|false|Creation Date of Virtual table|
 |LastRefreshed|date-time|false|true|Date Virtual table was last refreshed on.|
+|LastQueuedRegRefreshTime|date-time|false|true|LastQueued in service bus only for reg refresh|
 |id|string|false|true|Virtual Table Id|
 |name|string|false|true|Virtual Table Name|
 |MaterializationStart|date-time|false|true|Materialization start|
 |MaterializationEnd|date-time|false|true|Materialization end|
+|startIndex|date-time|false|true|Start Index|
+|endIndex|date-time|false|true|End Index|
 |TenantId|guid|false|false|Tenant Id|
 |NamespaceId|string|false|true|Namespace Id|
 |dataViewId|string|false|true|Dataview Id|
@@ -494,15 +606,20 @@ Virtual Table
 |RefreshInterval|string|false|true|Refresh Interval|
 |Shares|[[ShareView](#schemashareview)]|false|true|Shares associated with VirtualTable|
 |SecretExpirationTime|date-time|false|true|Secret Expiration Time|
+|Comment|string|false|true|Comments if VTS is failing|
+|LastEnableOrDisableActionBy|string|false|true|LastEnableOrDisableActionBy|
 
 ```json
 {
   "CreatedOn": "2019-08-24T14:15:22Z",
   "LastRefreshed": "2019-08-24T14:15:22Z",
+  "LastQueuedRegRefreshTime": "2019-08-24T14:15:22Z",
   "id": "string",
   "name": "string",
   "MaterializationStart": "2019-08-24T14:15:22Z",
   "MaterializationEnd": "2019-08-24T14:15:22Z",
+  "startIndex": "2019-08-24T14:15:22Z",
+  "endIndex": "2019-08-24T14:15:22Z",
   "TenantId": "string",
   "NamespaceId": "string",
   "dataViewId": "string",
@@ -540,7 +657,9 @@ Virtual Table
       }
     }
   ],
-  "SecretExpirationTime": "2019-08-24T14:15:22Z"
+  "SecretExpirationTime": "2019-08-24T14:15:22Z",
+  "Comment": "string",
+  "LastEnableOrDisableActionBy": "string"
 }
 
 ```
@@ -661,23 +780,99 @@ Represents the refresh details for a virtual table.
 
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
-|MaterializationStart|date-time|true|false|Materialization start|
-|MaterializationEnd|date-time|true|false|Materialization end|
+|MaterializationStart|date-time|false|true|Materialization start|
+|MaterializationEnd|date-time|false|true|Materialization end|
+|startIndex|date-time|false|true|Start Index|
+|endIndex|date-time|false|true|End Index|
 |VirtualTableId|string|false|true|Virtual Table id|
 |TenantId|string|false|true|Virtual Table TenantId|
 |IsUpdateProcess|boolean|false|false|Boolean value indicating whether the process is an update.|
 |IsManualRefresh|boolean|false|false|Boolean value indicating whether the refresh is manual.|
+|IsRefreshAPIcall|boolean|false|false|IsRefreshAPIcall|
+|Priority|int32|false|false|Set Job Priority according to jobtype|
+|JobType|[JobType](#schemajobtype)|false|false|Job type used for Service Bus queue routing.|
 |MessageId|string|false|true|Message Id|
+|MessageSequenceNumber|int64|false|true|Azure Service Bus sequence number for the locked message (set when receiving from the queue).|
+|Status|string|false|true|Materialization Status|
+|NamespaceId|string|false|true|Virtual Table TenantId|
+|JobId|int64|false|true|Job ID associated with the refresh operation.|
 
 ```json
 {
   "MaterializationStart": "2019-08-24T14:15:22Z",
   "MaterializationEnd": "2019-08-24T14:15:22Z",
+  "startIndex": "2019-08-24T14:15:22Z",
+  "endIndex": "2019-08-24T14:15:22Z",
   "VirtualTableId": "string",
   "TenantId": "string",
   "IsUpdateProcess": true,
   "IsManualRefresh": true,
-  "MessageId": "string"
+  "IsRefreshAPIcall": true,
+  "Priority": 0,
+  "JobType": 1,
+  "MessageId": "string",
+  "MessageSequenceNumber": 0,
+  "Status": "string",
+  "NamespaceId": "string",
+  "JobId": 0
+}
+
+```
+
+---
+
+### JobType
+
+<a id="schemajobtype"></a>
+<a id="schema_JobType"></a>
+<a id="tocSjobtype"></a>
+<a id="tocsjobtype"></a>
+
+automatic time-expanding refresh, automatic change broker refresh, manual refresh, Backfill
+
+<h4>Enumerated Values</h4>
+
+|Property|Value|Description|
+|---|---|---|
+|RegularRefresh|1|automatic time-expanding refresh|
+|ManualRefresh|2|Manual Refresh|
+|Updateprocessor|3|automatic change broker refresh|
+|Backfill|4|Backfill|
+
+---
+
+### VirtualTableEnableModel
+
+<a id="schemavirtualtableenablemodel"></a>
+<a id="schema_VirtualTableEnableModel"></a>
+<a id="tocSvirtualtableenablemodel"></a>
+<a id="tocsvirtualtableenablemodel"></a>
+
+VirtualTableEnableModel
+
+<h4>Properties</h4>
+
+|Property Name|Data Type|Required|Nullable|Description|
+|---|---|---|---|---|
+|IsEnabled|boolean|false|true|enable = True, set Table status = Pending|
+|id|string|false|true|Virtual Table Id|
+|name|string|false|true|Virtual Table Name|
+|TenantId|guid|false|false|Tenant Id|
+|NamespaceId|string|false|true|Namespace Id|
+|Status|string|false|false|Status|
+|Comment|string|false|true|Comments if VTS is failing|
+|LastEnableOrDisableActionBy|string|false|true|LastEnableOrDisableActionBy|
+
+```json
+{
+  "IsEnabled": true,
+  "id": "string",
+  "name": "string",
+  "TenantId": "string",
+  "NamespaceId": "string",
+  "Status": "string",
+  "Comment": "string",
+  "LastEnableOrDisableActionBy": "string"
 }
 
 ```

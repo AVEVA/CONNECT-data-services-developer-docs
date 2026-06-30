@@ -4,3 +4,5 @@
   href: virtual-table-sharing-materialization.md
 - name: Sharing
   href: virtual-table-sharing-sharing.md
+- name: Virtual table jobs
+  href: virtual-table-jobs.md

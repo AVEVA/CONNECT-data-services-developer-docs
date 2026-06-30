@@ -14,7 +14,7 @@ Returns the Virtual Table Access Rights.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/virtualTables
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/virtualTables
 ```
 
 <h4>Parameters</h4>
@@ -42,7 +42,7 @@ Returns the Sharing Table Access Rights.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/shares
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accessrights/shares
 ```
 
 <h4>Parameters</h4>
@@ -70,7 +70,7 @@ Returns the Virtualtable Access Control List
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/virtualTables
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/virtualTables
 ```
 
 <h4>Parameters</h4>
@@ -118,7 +118,7 @@ Updates the Virtualtable Access Control List
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/virtualTables
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/virtualTables
 ```
 
 <h4>Parameters</h4>
@@ -167,7 +167,7 @@ Returns the Sharing Table Access Control List
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/shares
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/shares
 ```
 
 <h4>Parameters</h4>
@@ -215,7 +215,7 @@ Updates the Sharing Table Access Control List
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/shares
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/accesscontrol/shares
 ```
 
 <h4>Parameters</h4>
@@ -264,7 +264,7 @@ Returns the Virtual Table Access Control List.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/accesscontrol
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/accesscontrol
 ```
 
 <h4>Parameters</h4>
@@ -314,7 +314,7 @@ Updates the Virtual Table Access Control List.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/accesscontrol
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/accesscontrol
 ```
 
 <h4>Parameters</h4>
@@ -384,7 +384,7 @@ Returns the Virtual Table Owner.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/owner
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/owner
 ```
 
 <h4>Parameters</h4>
@@ -426,7 +426,7 @@ Updates the Virtual Table Owner.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/owner
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/owner
 ```
 
 <h4>Parameters</h4>
@@ -480,7 +480,7 @@ Returns the Virtual Table Access Rights.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/accessrights
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/virtualTables/{id}/accessrights
 ```
 
 <h4>Parameters</h4>
@@ -510,7 +510,7 @@ Returns the Sharing Table Access Control List.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/accesscontrol
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/accesscontrol
 ```
 
 <h4>Parameters</h4>
@@ -560,7 +560,7 @@ Updates the Sharing Table Access Control List.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/accesscontrol
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/accesscontrol
 ```
 
 <h4>Parameters</h4>
@@ -630,7 +630,7 @@ Returns the Share Table Owner.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/owner
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/owner
 ```
 
 <h4>Parameters</h4>
@@ -672,7 +672,7 @@ Updates the Share Table Owner.
 <h3>Request</h3>
 
 ```text 
-PUT /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/owner
+PUT /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/owner
 ```
 
 <h4>Parameters</h4>
@@ -726,7 +726,7 @@ Returns the Virtual Table Access Rights.
 <h3>Request</h3>
 
 ```text 
-GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/accessrights
+GET /api/v1-preview/tenants/{tenantId}/namespaces/{namespaceId}/shares/{id}/accessrights
 ```
 
 <h4>Parameters</h4>

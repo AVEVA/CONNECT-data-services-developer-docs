@@ -45,56 +45,111 @@ The following table shows the required and optional SdsUomQuantity fields.
 
 Supported quantities and their base units of measure are listed below. Supported quantities are read-only.
 
-| Quantity Id                                 | Base Uom Id               |
-| ------------------------------------------- | ------------------------- |
-| Acceleration                                | meter per square second   |
-| Angular Velocity                            | radian per second         |
-| Area                                        | square meter              |
-| Computer Storage                            | byte                      |
-| Conductivity                                | siemens per meter         |
-| Density                                     | kilogram per cubic meter  |
-| Dynamic Viscosity                           | pascal second             |
-| Electric Charge                             | coulomb                   |
-| Electric Current                            | ampere                    |
-| Electric Potential                          | volt                      |
-| Electric Resistance                         | ohm                       |
-| Energy                                      | joule                     |
-| Energy per Length                           | joule per meter           |
-| Entropy and Heat Capacity                   | joule per kelvin          |
-| Force                                       | newton                    |
-| Frequency                                   | hertz                     |
-| Illuminance                                 | lux                       |
-| Irradiance                                  | watt per square meter     |
-| Length                                      | meter                     |
-| Luminous Intensity                          | candela                   |
-| Mass                                        | kilogram                  |
-| Mass Flow Rate                              | kilogram per second       |
-| Molar Flow Rate                             | mole per second           |
-| Molecular Weight                            | kilogram per mole         |
-| Amount of Substance                         | mole                      |
-| Plane Angle                                 | radian                    |
-| Power                                       | watt                      |
-| Pressure                                    | pascal                    |
-| Quantity                                    | count                     |
-| Quantity per Volume                         | count per cubic meter     |
-| Ratio                                       | percent                   |
-| Reciprocal length                           | inverse meter             |
-| Specific Energy                             | joule per kilogram        |
-| Specific Entropy and Specific Heat Capacity | joule per kilogram kelvin |
-| Specific Volume                             | cubic meter per kilogram  |
-| Speed                                       | meter per second          |
-| Temperature                                 | kelvin                    |
-| Temperature (Delta)                         | delta kelvin              |
-| Time                                        | second                    |
-| Volume                                      | cubic meter               |
-| Volume Flow Rate                            | cubic meter per second    |
+| Quantity ID | Quantity Name | Length | Mass | Time | Electric current | Thermodynamic Temperature | Amount of Substance | Luminous Intensity | Base Uom ID |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Absorbed Dose | Absorbed Dose | 2 |  | -2 |  |  |  |  | gray |
+| Acceleration | Acceleration | 1 |  | -2 |  |  |  |  | meter per square second |
+| Acidity (pH) | Acidity (pH) |  |  |  |  |  |  |  | pH |
+| Amount of Substance | Amount of Substance |  |  |  |  |  |  |  | mole |
+| Angular Acceleration | Angular Acceleration |  |  | -2 |  |  |  |  | radian per square second |
+| Angular Velocity | Angular Velocity |  |  | -1 |  |  |  |  | radian per second |
+| Apparent Power | Apparent Power | 2 | 1 | -3 |  |  |  |  | volt ampere |
+| Area | Area | 2 |  |  |  |  |  |  | square meter |
+| Capacitance | Capacitance | -2 | -1 | 4 | 2 |  |  |  | farad |
+| Catalytic Activity | Catalytic Activity |  |  | -1 |  |  |  | 1 | katal |
+| Catalytic Activity per Volume | Catalytic Activity per Volume | -3 |  | -1 |  |  |  | 1 | katal per cubic meter |
+| Charge Density | Charge Density | -3 |  |  | 1 |  |  |  | coulomb per cubic meter |
+| Computer Storage | Computer Storage |  |  |  |  |  |  |  | byte |
+| Concentration | Concentration | -3 |  |  |  |  |  | 1 | mole per cubic meter |
+| Conductivity | Conductivity | -3 | -1 | 3 | 2 |  |  |  | siemens per meter |
+| Corrosion Rate | Corrosion Rate | 1 |  | -1 |  |  |  |  | millimeter per year |
+| Current per Pressure | Current per Pressure | -1 |  | 3 | 1 |  |  |  | ampere per pascal |
+| Data Rate | Data Rate |  |  | -1 |  |  |  |  | bit per second |
+| Density | Density | -3 | 1 |  |  |  |  |  | kilogram per cubic meter |
+| Dose Equivalent | Dose Equivalent | 2 |  | -2 |  |  |  |  | sievert |
+| Dose Rate | Dose Rate | 2 |  | -3 |  |  |  |  | gray per second |
+| Dynamic Viscosity | Dynamic Viscosity | -1 | 1 | -1 |  |  |  |  | pascal second |
+| Electric Charge | Electric Charge |  |  | 1 | 1 |  |  |  | coulomb |
+| Electric Conductance | Electric Conductance | -2 | -1 | 3 | 2 |  |  |  | siemens |
+| Electric Current | Electric Current |  |  | 1 |  |  |  |  | ampere |
+| Electric Current Density | Electric Current Density | -2 |  |  | -1 |  |  |  | ampere per square meter |
+| Electric Field Strength | Electric Field Strength | 1 | 1 | -3 | -1 |  |  |  | volt per meter |
+| Electric Permittivity | Electric Permittivity | -3 | -1 | 4 | 2 |  |  |  | farad per meter |
+| Electric Potential | Electric Potential | 2 | 1 | -3 | -1 |  |  |  | volt |
+| Electric Resistance | Electric Resistance | 2 | 1 | -3 | -2 |  |  |  | ohm |
+| Energy | Energy | 2 | 1 | -2 |  |  |  |  | joule |
+| Energy Density | Energy Density | -3 | 1 | -2 |  |  |  |  | joule per cubic meter |
+| Energy Efficiency | Energy Efficiency |  |  |  |  |  |  |  | megajoule per kilowatt hour |
+| Energy per Length | Energy per Length | 1 | 1 | -2 |  |  |  |  | joule per meter |
+| Entropy and Heat Capacity | Entropy and Heat Capacity | 2 | 1 | -2 |  | -1 |  |  | joule per kelvin |
+| Exposure (Ionizing Radiation) | Exposure (Ionizing Radiation) |  | -1 | 1 | 1 |  |  |  | coulomb per kilogram |
+| Force | Force | 1 | 1 | -2 |  |  |  |  | newton |
+| Frequency | Frequency |  |  | -1 |  |  |  |  | hertz |
+| Illuminance | Illuminance | -2 |  |  |  |  |  | 1 | lux |
+| Inductance | Inductance | 2 | 1 | -2 | -2 |  |  |  | henry |
+| Irradiance | Irradiance |  | 1 | -3 |  |  |  |  | watt per square meter |
+| Kinematic Viscosity | Kinematic Viscosity | 2 |  | -1 |  |  |  |  | square meter per second |
+| Length | Length | 1 |  |  |  |  |  |  | meter |
+| Linear Density | Linear Density | -1 | 1 |  |  |  |  |  | kilogram per meter |
+| Luminance | Luminance | -2 |  |  |  |  |  | 1 | candela per square meter |
+| Luminous Flux | Luminous Flux |  |  |  |  |  |  | 1 | lumen |
+| Luminous Intensity | Luminous Intensity |  |  |  |  |  |  | 1 | candela |
+| Magnetic Field Strength | Magnetic Field Strength | -1 |  |  |  | 1 |  |  | ampere per meter |
+| Magnetic Flux | Magnetic Flux | 2 | 1 | -2 | -1 |  |  |  | weber |
+| Magnetic Flux Density | Magnetic Flux Density |  | 1 | -2 | -1 |  |  |  | tesla |
+| Magnetic Permeability | Magnetic Permeability | 1 | 1 | -2 | -2 |  |  |  | henry per meter |
+| Mass | Mass |  | 1 |  |  |  |  |  | kilogram |
+| Mass Flow Rate | Mass Flow Rate |  | 1 | -1 |  |  |  |  | kilogram per second |
+| Molar Energy | Molar Energy | 2 | 1 | -2 |  |  | -1 |  | joule per mole |
+| Molar Entropy and Molar Heat Capacity | Molar Entropy and Molar Heat Capacity | 2 | 1 | -2 |  | -1 | -1 |  | joule per mole kelvin |
+| Molar Flow Rate | Molar Flow Rate |  |  | -1 |  |  | 1 |  | mole per second |
+| Molecular Weight | Molecular Weight |  | 1 |  |  |  | -1 |  | kilogram per mole |
+| Plane Angle | Plane Angle |  |  |  |  |  |  |  | radian |
+| Power | Power | 2 | 1 | -3 |  |  |  |  | watt |
+| Power Rate | Power Rate | 2 | 1 | -4 |  |  |  |  | watt per second |
+| Pressure | Pressure | -1 | 1 | -2 |  |  |  |  | pascal |
+| Pressure Gradient | Pressure Gradient | -2 | 1 | -2 |  |  |  |  | pascal per meter |
+| Pressure Rate | Pressure Rate | -1 | 1 | -3 |  |  |  |  | pascal per second |
+| Pump Displacement | Pump Displacement | 3 |  |  |  |  |  |  | cubic centimeter per revolution |
+| Quantity | Quantity |  |  |  |  |  |  |  | count |
+| Quantity per Volume | Quantity per Volume | -3 |  |  |  |  |  |  | count per cubic meter |
+| Radiance | Radiance | -2 | 1 | -3 |  |  |  |  | watt per square meter steradian |
+| Radiant Intensity | Radiant Intensity | 2 | 1 | -3 |  |  |  |  | watt per steradian |
+| Radioactivity | Radioactivity |  |  | -1 |  |  |  |  | becquerel |
+| Ratio | Ratio |  |  |  |  |  |  |  | percent |
+| Reactive Power | Reactive Power | 2 | 1 | -3 |  |  |  |  | volt ampere reactive |
+| Reciprocal Length | Reciprocal Length | -1 |  |  |  |  |  |  | inverse meter |
+| Solid Angle | Solid Angle |  |  |  |  |  |  |  | steradian |
+| Sound Level | Sound Level |  |  |  |  |  |  |  | decibel |
+| Specific Energy | Specific Energy | 2 |  | -2 |  |  |  |  | joule per kilogram |
+| Specific Entropy and Specific Heat Capacity | Specific Entropy and Specific Heat Capacity | 2 |  | -2 |  | -1 |  |  | joule per kilogram kelvin |
+| Specific Volume | Specific Volume | 3 | -1 |  |  |  |  |  | cubic meter per kilogram |
+| Speed | Speed | 1 |  | -1 |  |  |  |  | meter per second |
+| Standard Density | Standard Density | -3 | 1 |  |  |  |  |  | kilogram per standard cubic meter |
+| Standard Volume | Standard Volume | 3 |  |  |  |  |  |  | standard cubic meter |
+| Standard Volume Flow Rate | Standard Volume Flow Rate | 3 |  | -1 |  |  |  |  | standard cubic meter per second |
+| Stroke Rate | Stroke Rate |  |  | -1 |  |  |  |  | stroke per minute |
+| Surface Charge Density | Surface Charge Density | -2 |  |  | 1 |  |  |  | coulomb per square meter |
+| Temperature | Temperature |  |  |  |  | 1 |  |  | kelvin |
+| Temperature (Delta) | Temperature (Delta) |  |  |  |  | 1 |  |  | delta kelvin |
+| Thermal Conductivity | Thermal Conductivity | 1 | 1 | -3 |  | -1 |  |  | watt per meter kelvin |
+| Thermal Insulance | Thermal Insulance |  | -1 | 3 |  | 1 |  |  | square meter kelvin per watt |
+| Time | Time |  |  | 1 |  |  |  |  | second |
+| Torsional Stiffness | Torsional Stiffness | 2 | 1 | -2 |  |  |  |  | newton meter per radian |
+| Vibration Acceleration (RMS) | Vibration Acceleration (RMS) | 1 |  | -2 |  |  |  |  | meter per square second rms |
+| Vibration Displacement (p-p) | Vibration Displacement (p-p) | 1 |  |  |  |  |  |  | meter peak-to-peak |
+| Vibration Velocity (RMS) | Vibration Velocity (RMS) | 1 |  | -1 |  |  |  |  | meter per second rms |
+| Volume | Volume | 3 |  |  |  |  |  |  | cubic meter |
+| Volume Flow Rate | Volume Flow Rate | 3 |  | -1 |  |  |  |  | cubic meter per second |
+| Volumetric Concentration | Volumetric Concentration |  |  |  |  |  |  |  | volume percent |
+
 
 ## Supported system-defined units of measure
 
 Supported units of measure are listed below. Supported units of measure are read-only.
 
 | Uom ID | Uom Name | Uom Abbrev | Quantity ID | Conversion Factor | Conversion Offset |
-|--|--|--|--|--|--|
+| --- | --- | --- | --- | --- | --- |
 | count | count | count | Quantity | 1 | 0 |
 | Ampere hour | Ampere hour | Ah | Electric Charge | 3600 | 0 |
 | coulomb | coulomb | C | Electric Charge | 1 | 0 |
@@ -340,6 +395,178 @@ Supported units of measure are listed below. Supported units of measure are read
 | kilojoule per hour | kilojoule per hour | kJ/h | Power | 0.277777777777778 | 0 |
 | gram per cubic meter | gram per cubic meter | g/m3 | Density | 0.001 | 0 |
 | millimeter per second | millimeter per second | mm/s | Speed | 0.001 | 0 |
+| micrometer per square second | micrometer per square second | μm/s2 | Acceleration | 1.0E-06 | 0 |
+| gravity | gravity | g0 | Acceleration | 9.80665 | 0 |
+| radian per square second | radian per square second | rad/s2 | Angular Acceleration | 1 | 0 |
+| steradian | steradian | sr | Solid Angle | 1 | 0 |
+| farad | farad | F | Capacitance | 1 | 0 |
+| microfarad | microfarad | μF | Capacitance | 1.00E-06 | 0 |
+| nanofarad | nanofarad | nF | Capacitance | 1.00E-09 | 0 |
+| picofarad | picofarad | pF | Capacitance | 1.00E-12 | 0 |
+| farad per meter | farad per meter | F/m | Electric Permittivity | 1 | 0 |
+| katal | katal | kat | Catalytic Activity | 1 | 0 |
+| katal per cubic meter | katal per cubic meter | kat/m3 | Catalytic Activity per Volume | 1 | 0 |
+| watt per meter kelvin | watt per meter kelvin | W/(m K) | Thermal Conductivity | 1 | 0 |
+| siemens | siemens | S | Electric Conductance | 1 | 0 |
+| standard cubic meter per second | standard cubic meter per second | Sm3/s | Standard Volume Flow Rate | 1 | 0 |
+| standard cubic meter per hour | standard cubic meter per hour | Sm3/h | Standard Volume Flow Rate | 0.0002777778 | 0 |
+| kilogram per standard cubic meter | kilogram per standard cubic meter | kg/Sm3 | Standard Density | 1 | 0 |
+| standard cubic meter | standard cubic meter | Sm3 | Standard Volume | 1 | 0 |
+| ampere per pascal | ampere per pascal | A/Pa | Current per Pressure | 1 | 0 |
+| milliampere per bar | milliampere per bar | mA/bar | Current per Pressure | 1.0E-8 | 0 |
+| gram per milliliter | gram per milliliter | g/mL | Density | 1000 | 0 |
+| ampere per square meter | ampere per square meter | A/m2 | Electric Current Density | 1 | 0 |
+| weber per square meter | weber per square meter | Wb/m2 | Magnetic Flux Density | 1 | 0 |
+| tesla | tesla | T | Magnetic Flux Density | 1 | 0 |
+| gauss | gauss | G | Magnetic Flux Density | 1.0E-4 | 0 |
+| millitesla | millitesla | mT | Magnetic Flux Density | 0.001 | 0 |
+| microtesla | microtesla | µT | Magnetic Flux Density | 1.0E-06 | 0 |
+| joule per cubic meter | joule per cubic meter | J/m3 | Energy Density | 1 | 0 |
+| coulomb per cubic meter | coulomb per cubic meter | C/m3 | Charge Density | 1 | 0 |
+| coulomb per square meter | coulomb per square meter | C/m2 | Surface Charge Density | 1 | 0 |
+| millimeter per year | millimeter per year | mm/yr | Corrosion Rate | 1 | 0 |
+| meter per year | meter per year | m/yr | Corrosion Rate | 1000 | 0 |
+| inch per year | inch per year | in/yr | Corrosion Rate | 25.4 | 0 |
+| mil per year | mil per year | mpy | Corrosion Rate | 0.0254 | 0 |
+| mole per cubic meter | mole per cubic meter | mol/m3 | Concentration | 1 | 0 |
+| volume percent | volume percent | vol% | Volumetric Concentration | 1 | 0 |
+| volume per mille | volume per mille | vol‰ | Volumetric Concentration | 0.1 | 0 |
+| parts per trillion by volume | parts per trillion by volume | ppt | Volumetric Concentration | 1.0E-10 | 0 |
+| parts per quadrillion by volume | parts per quadrillion by volume | ppq | Volumetric Concentration | 1.0E-13 | 0 |
+| pH | pH | pH | Acidity (pH) | 1 | 0 |
+| kiloampere | kiloampere | kA | Electric Current | 1000 | 0 |
+| volt per meter | volt per meter | V/m | Electric Field Strength | 1 | 0 |
+| joule per mole | joule per mole | J/mol | Molar Energy | 1 | 0 |
+| watt per second | watt per second | W/s | Power Rate | 1 | 0 |
+| kilowatt per second | kilowatt per second | kW/s | Power Rate | 1000 | 0 |
+| volt ampere | volt ampere | VA | Apparent Power | 1 | 0 |
+| kilovolt ampere | kilovolt ampere | kVA | Apparent Power | 1000 | 0 |
+| megavolt ampere | megavolt ampere | MVA | Apparent Power | 1000000 | 0 |
+| kilogram meter per square second | kilogram meter per square second | kg·m/s2 | Force | 1 | 0 |
+| kilonewton | kilonewton | kN | Force | 1000 | 0 |
+| millibar gauge | millibar gauge | mbarg | Pressure | 100 | 101325 |
+| millibar absolute | millibar absolute | mbara | Pressure | 100 | 0 |
+| bar gauge | bar gauge | barg | Pressure | 100000 | 101325 |
+| bar absolute | bar absolute | bara | Pressure | 100000 | 0 |
+| kilopascal (absolute) | kilopascal (absolute) | kPa(a) | Pressure | 1000 | 0 |
+| kilopascal (gauge) | kilopascal (gauge) | kPa(g) | Pressure | 1000 | 101325 |
+| pound-force per square inch (gauge) | pound-force per square inch (gauge) | psig | Pressure | 6894.757293 | 101325 |
+| inch of water column | inch of water column | in H2O | Pressure | 249.08891 | 0 |
+| millimeter of water column | millimeter of water column | mmH2O | Pressure | 9.80665 | 0 |
+| pascal per meter | pascal per meter | Pa/m | Pressure Gradient | 1 | 0 |
+| pascal per second | pascal per second | Pa/s | Pressure Rate | 1 | 0 |
+| bar per 100 meter | bar per 100 meter | bar/100m | Pressure Gradient | 1000 | 0 |
+| bar per hour | bar per hour | bar/h | Pressure Rate | 27.7777778 | 0 |
+| newton meter per radian | newton meter per radian | Nm/rad | Torsional Stiffness | 1 | 0 |
+| kilovolt ampere hour | kilovolt ampere hour | kVAh | Energy | 3600000 | 0 |
+| megavolt ampere hour | megavolt ampere hour | MVAh | Energy | 3600000000 | 0 |
+| kilowatt hour per cubic meter | kilowatt hour per cubic meter | kWh/m3 | Energy Density | 3600000 | 0 |
+| gigajoule per hour | gigajoule per hour | GJ/h | Power | 277777.777777778 | 0 |
+| gigajoule per second | gigajoule per second | GJ/s | Power | 1000000000 | 0 |
+| gigajoule per meter | gigajoule per meter | GJ/m | Energy per Length | 1000000000 | 0 |
+| Pferdestärke | Pferdestärke | PS | Power | 735.49875 | 0 |
+| electric horsepower | electric horsepower | hpE | Power | 746 | 0 |
+| million standard cubic feet per day | million standard cubic feet per day | MMSCFD | Standard Volume Flow Rate | 0.327741982222222 | 0 |
+| million standard cubic feet per hour | million standard cubic feet per hour | MMSCFH | Standard Volume Flow Rate | 7.86579072 | 0 |
+| US gallon per second | US gallon per second | gal/s | Volume Flow Rate | 0.003785411784 | 0 |
+| US gallon per hour | US gallon per hour | gal/h | Volume Flow Rate | 1.05150327333333E-06 | 0 |
+| milliliter per minute | milliliter per minute | ml/min | Volume Flow Rate | 1.66666666666667E-08 | 0 |
+| cubic meter per minute | cubic meter per minute | m3/min | Volume Flow Rate | 0.0166666666666667 | 0 |
+| million standard cubic meter per hour | million standard cubic meter per hour | MSm3/h | Standard Volume Flow Rate | 277.777777777778 | 0 |
+| million standard cubic meter per day | million standard cubic meter per day | MSm3/d | Standard Volume Flow Rate | 11.5740740740741 | 0 |
+| standard cubic foot per minute | standard cubic foot per minute | sft3/min | Standard Volume Flow Rate | 0.0004719474432 | 0 |
+| gram per minute | gram per minute | g/min | Mass Flow Rate | 1.66666666666667E-05 | 0 |
+| gram per hour | gram per hour | g/h | Mass Flow Rate | 2.77777777777778E-07 | 0 |
+| kilogram per minute | kilogram per minute | kg/min | Mass Flow Rate | 0.0166666666666667 | 0 |
+| ton per minute | ton per minute | ton/min | Mass Flow Rate | 15.1197456666667 | 0 |
+| ton per hour | ton per hour | ton/h | Mass Flow Rate | 0.251995761111111 | 0 |
+| pound per minute | pound per minute | lb/min | Mass Flow Rate | 0.00755987283333333 | 0 |
+| pound per hour | pound per hour | lb/h | Mass Flow Rate | 0.000125997880555556 | 0 |
+| milliampere hour | milliampere hour | mAh | Electric Charge | 3.6 | 0 |
+| abcoulomb | abcoulomb | abC | Electric Charge | 10 | 0 |
+| square meter per second | square meter per second | m2/s | Kinematic Viscosity | 1 | 0 |
+| stokes | stokes | St | Kinematic Viscosity | 1.0E-04 | 0 |
+| centistokes | centistokes | cSt | Kinematic Viscosity | 1.0E-06 | 0 |
+| millimeter squared per second | millimeter squared per second | mm2/s | Kinematic Viscosity | 1.0E-06 | 0 |
+| dyne second per square centimeter | dyne second per square centimeter | dyne s/cm2 | Dynamic Viscosity | 0.1 | 0 |
+| newton second per square meter | newton second per square meter | N*s/m2 | Dynamic Viscosity | 1 | 0 |
+| millipascal second | millipascal second | mPa*s | Dynamic Viscosity | 0.001 | 0 |
+| centipoise | centipoise | cP | Dynamic Viscosity | 0.001 | 0 |
+| joule per mole kelvin | joule per mole kelvin | J/(mol K) | Molar Entropy and Molar Heat Capacity | 1 | 0 |
+| henry | henry | H | Inductance | 1 | 0 |
+| weber per ampere | weber per ampere | Wb/A | Inductance | 1 | 0 |
+| lumen | lumen | lm | Luminous Flux | 1 | 0 |
+| candela per square meter | candela per square meter | cd/m2 | Luminance | 1 | 0 |
+| lumen per square meter | lumen per square meter | lm/m2 | Illuminance | 1 | 0 |
+| becquerel | becquerel | Bq | Radioactivity | 1 | 0 |
+| megabecquerel | megabecquerel | MBq | Radioactivity | 1000000 | 0 |
+| gigabecquerel | gigabecquerel | GBq | Radioactivity | 1000000000 | 0 |
+| curie | curie | Ci | Radioactivity | 3.70E+10 | 0 |
+| gray | gray | Gy | Absorbed Dose | 1 | 0 |
+| rad (radiation unit) | rad (radiation unit) | rad (unit) | Absorbed Dose | 0.01 | 0 |
+| sievert | sievert | Sv | Dose Equivalent | 1 | 0 |
+| rem | rem | rem | Dose Equivalent | 0.01 | 0 |
+| coulomb per kilogram | coulomb per kilogram | C/kg | Exposure (Ionizing Radiation) | 1 | 0 |
+| roentgen | roentgen | R | Exposure (Ionizing Radiation) | 2.58E-04 | 0 |
+| gray per second | gray per second | Gy/s | Dose Rate | 1 | 0 |
+| watt per steradian | watt per steradian | W/sr | Radiant Intensity | 1 | 0 |
+| watt per square meter steradian | watt per square meter steradian | W/(m2 sr) | Radiance | 1 | 0 |
+| percent of lower explosive limit | percent of lower explosive limit | % LEL | Ratio | 1 | 0 |
+| percent of upper explosive limit | percent of upper explosive limit | % UEL | Ratio | 1 | 0 |
+| percent relative humidity | percent relative humidity | %RH | Ratio | 1 | 0 |
+| milligram per kilogram | milligram per kilogram | mg/kg | Ratio | 0.0001 | 0 |
+| percent by volume | percent by volume | %(v) | Volumetric Concentration | 1 | 0 |
+| meter peak-to-peak | meter peak-to-peak | m p-p | Vibration Displacement (p-p) | 1 | 0 |
+| micrometer peak-to-peak | micrometer peak-to-peak | µm p-p | Vibration Displacement (p-p) | 1.0E-06 | 0 |
+| meter per second rms | meter per second rms | m/s rms | Vibration Velocity (RMS) | 1 | 0 |
+| millimeter per second rms | millimeter per second rms | mm/s rms | Vibration Velocity (RMS) | 0.001 | 0 |
+| meter per square second rms | meter per square second rms | m/s2 rms | Vibration Acceleration (RMS) | 1 | 0 |
+| millimeter per square second rms | millimeter per square second rms | mm/s2 rms | Vibration Acceleration (RMS) | 0.001 | 0 |
+| millisecond | millisecond | ms | Time | 0.001 | 0 |
+| angstrom | angstrom | Å | Length | 1.0E-10 | 0 |
+| kilohertz | kilohertz | kHz | Frequency | 1000 | 0 |
+| megahertz | megahertz | MHz | Frequency | 1000000 | 0 |
+| kilogram per meter | kilogram per meter | kg/m | Linear Density | 1 | 0 |
+| bit per second | bit per second | b/s | Data Rate | 1 | 0 |
+| megabit per second | megabit per second | Mb/s | Data Rate | 1000000 | 0 |
+| gigabit per second | gigabit per second | Gb/s | Data Rate | 1000000000 | 0 |
+| knot | knot | kn | Speed | 0.514444444 | 0 |
+| volt ampere reactive | volt ampere reactive | var | Reactive Power | 1 | 0 |
+| kilovolt ampere reactive hour | kilovolt ampere reactive hour | kVArh | Energy | 3600000 | 0 |
+| megavolt ampere reactive hour | megavolt ampere reactive hour | MWArh | Energy | 3600000000 | 0 |
+| kiloohm | kiloohm | kΩ | Electric Resistance | 1000 | 0 |
+| megaohm | megaohm | MΩ | Electric Resistance | 1000000 | 0 |
+| gigaohm | gigaohm | GΩ | Electric Resistance | 1000000000 | 0 |
+| ampere per meter | ampere per meter | A/m | Magnetic Field Strength | 1 | 0 |
+| henry per meter | henry per meter | H/m | Magnetic Permeability | 1 | 0 |
+| weber | weber | Wb | Magnetic Flux | 1 | 0 |
+| decibel | decibel | dB | Sound Level | 1 | 0 |
+| A-weighted decibel | A-weighted decibel | dBA | Sound Level | 1 | 0 |
+| B-weighted decibel | B-weighted decibel | dBB | Sound Level | 1 | 0 |
+| C-weighted decibel | C-weighted decibel | dBC | Sound Level | 1 | 0 |
+| square meter kelvin per watt | square meter kelvin per watt | m2K/W | Thermal Insulance | 1 | 0 |
+| British thermal unit per cubic foot | British thermal unit per cubic foot | Btu/ft3 | Energy Density | 0.028316847 | 0 |
+| megajoule per kilowatt hour | megajoule per kilowatt hour | MJ/kWh | Energy Efficiency | 1 | 0 |
+| British thermal unit per bhp-hour | British thermal unit per bhp-hour | Btu/bhp-hr | Energy Efficiency | 0.745699872 | 0 |
+| mil | thousandth of an inch | mil | Length | 0.0000254 | 0 |
+| inch per second | inch per second | in/s | Speed | 0.0254 | 0 |
+| thousand cubic feet | thousand cubic feet | Mft3 | Volume | 28.3168466 | 0 |
+| thousand cubic feet per day | thousand cubic feet per day | Mft3/d | Volume Flow Rate | 0.000327741 | 0 |
+| thousand cubic feet per hour | thousand cubic feet per hour | Mft3/h | Volume Flow Rate | 0.00786579 | 0 |
+| thousand cubic meter per day | thousand cubic meter per day | Mm3/d | Volume Flow Rate | 0.011574074 | 0 |
+| thousand cubic meter per hour | thousand cubic meter per hour | Mm3/h | Volume Flow Rate | 0.27778 | 0 |
+| million cubic feet per day | million cubic feet per day | MMft3/d | Volume Flow Rate | 0.3277413 | 0 |
+| million cubic meter per day | million cubic meter per day | MMm3/d | Volume Flow Rate | 11.574074 | 0 |
+| US pint per day | US pint per day | pt/d | Volume Flow Rate | 5.47E-09 | 0 |
+| gigajoule per day | gigajoule per day | GJ/d | Power | 11574.0740740741 | 0 |
+| thousand standard cubic meter per day | thousand standard cubic meter per day | kSm3/d | Standard Volume Flow Rate | 0.011574074 | 0 |
+| cubic centimeter per revolution | cubic centimeter per revolution | cm3/r | Pump Displacement | 1 | 0 |
+| cubic meter per day per 100 rpm | cubic meter per day per 100 rpm | m3/d/100rpm | Pump Displacement | 6.94444444444444 | 0 |
+| stroke per minute | stroke per minute | SPM | Stroke Rate | 1 | 0 |
+| kilopascal per minute | kilopascal per minute | kPa/min | Pressure Rate | 16.6666666666667 | 0 |
+| meter per day | meter per day | m/d | Speed | 0.0000115740740740741 | 0 |
+| tonne per hour | tonne per hour | t/h | Mass Flow Rate | 0.277777777777778 | 0 |
+
 
 
 ## Associating a unit of measure with a type

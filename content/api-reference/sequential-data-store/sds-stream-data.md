@@ -403,7 +403,7 @@ Returns summary intervals between a specified start and end index. Index types t
 
 ```text 
 GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/Summaries
-?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}
+?startIndex={startIndex}&endIndex={endIndex}&count={count}&filter={filter}&emptyIntervalMode={emptyIntervalMode}&interpolationModeOverride={interpolationModeOverride}&extrapolationModeOverride={extrapolationModeOverride}
 ```
 
 <h4>Parameters</h4>
@@ -416,7 +416,10 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Index identifying the end of the series of events to return.<br/><br/>
 `[optional] integer count`
 <br/>Parameter representing the number of summary intervals to retrieve. If unspecified, a default value of 1 is used.<br/><br/>`[optional] string filter`
-<br/>Filter expression.<br/><br/>
+<br/>Filter expression.<br/><br/>`[optional] string emptyIntervalMode`
+<br/>#https://raw.githubusercontent.com/aveva/CONNECT-data-services-developer-docs/main/content/external-references/sds.yaml#emptyIntervalMode<br/><br/>`[optional] string interpolationModeOverride`
+<br/>#https://raw.githubusercontent.com/AVEVA/CONNECT-data-services-developer-docs/refs/heads/main/content/external-references/sds.yaml#interpolationModeOverride<br/><br/>`[optional] string extrapolationModeOverride`
+<br/>#https://raw.githubusercontent.com/AVEVA/CONNECT-data-services-developer-docs/refs/heads/main/content/external-references/sds.yaml#extrapolationModeOverride<br/><br/>
 
 <h3>Response</h3>
 

@@ -16,7 +16,7 @@ Returns the paged collection of data items that are the results of an individual
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/dataitems/{queryid}
-?cache={cache}&skip={skip}&count={count}
+?cache={cache}&schema={schema}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -27,7 +27,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>Data view identifier.<br/><br/>`string queryId`
 <br/>Query identifier.<br/><br/>
 `[optional] string cache`
-<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>`[optional] integer skip`
 <br/>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
@@ -135,7 +136,7 @@ Returns the paged collection of data items that are the results of an individual
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/ineligibledataitems/{queryid}
-?cache={cache}&skip={skip}&count={count}
+?cache={cache}&schema={schema}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -146,7 +147,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>Data view identifier.<br/><br/>`string queryId`
 <br/>Query identifier.<br/><br/>
 `[optional] string cache`
-<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>`[optional] integer skip`
 <br/>An optional parameter representing the zero-based offset of the first data item to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of data items to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
@@ -239,7 +241,7 @@ Returns the collection of `Group`s that resolved for the data view.
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/groups
-?cache={cache}&skip={skip}&count={count}
+?cache={cache}&schema={schema}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -249,7 +251,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 `[optional] string cache`
-<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>`[optional] integer skip`
 <br/>An optional parameter representing the zero-based offset of the first group to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of groups to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
@@ -369,7 +372,7 @@ Returns the collection of field mappings resolved for the data view. These show 
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/fieldmappings
-?cache={cache}&skip={skip}&count={count}
+?cache={cache}&schema={schema}&skip={skip}&count={count}
 ```
 
 <h4>Parameters</h4>
@@ -379,7 +382,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 `[optional] string cache`
-<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] integer skip`
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>`[optional] integer skip`
 <br/>An optional parameter representing the zero-based offset of the first field mapping to retrieve. If not specified, a default value of 0 is used.<br/><br/>`[optional] integer count`
 <br/>An optional parameter representing the maximum number of field mappings to retrieve. If not specified, a default value of 100 is used.<br/><br/>
 
@@ -499,7 +503,7 @@ Returns the collection of field sets that are available for use in the data view
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/availablefieldsets
-?cache={cache}
+?cache={cache}&schema={schema}
 ```
 
 <h4>Parameters</h4>
@@ -509,7 +513,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 `[optional] string cache`
-<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -598,7 +603,7 @@ Returns the collection of all field sets eligible for use in the data view, incl
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/allfieldsets
-?cache={cache}
+?cache={cache}&schema={schema}
 ```
 
 <h4>Parameters</h4>
@@ -608,7 +613,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 `[optional] string cache`
-<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -704,7 +710,7 @@ Returns the statistics about the size and shape on how the data view resolved.
 
 ```text 
 GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/statistics
-?cache={cache}
+?cache={cache}&schema={schema}
 ```
 
 <h4>Parameters</h4>
@@ -714,7 +720,8 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/dataviews/{id}/resolved/
 <br/>Namespace identifier.<br/><br/>`string id`
 <br/>Data view identifier.<br/><br/>
 `[optional] string cache`
-<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>
+<br/>"Refresh" to force the resource to re-resolve.<br/>"Preserve" to use cached information, if available. This is the default value.<br/><br/>`[optional] string schema`
+<br/>Data view schema identifier.<br/><br/>
 
 <h3>Response</h3>
 
@@ -1685,6 +1692,7 @@ Identifies the type of field
 |WeightedMean|1024|
 |WeightedStandardDeviation|2048|
 |WeightedPopulationStandardDeviation|4096|
+|WeightedTotal|8192|
 
 ---
 

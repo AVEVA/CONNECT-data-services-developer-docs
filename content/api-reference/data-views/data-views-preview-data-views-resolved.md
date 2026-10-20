@@ -1599,6 +1599,7 @@ The targeted part of a DataItem
 |WeightedMean|1024|
 |WeightedStandardDeviation|2048|
 |WeightedPopulationStandardDeviation|4096|
+|WeightedTotal|8192|
 
 ---
 

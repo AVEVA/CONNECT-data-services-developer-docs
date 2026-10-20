@@ -16,7 +16,7 @@ Returns interpolated data for the provided data view and index parameters with p
 
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/interpolated
-?startIndex={startIndex}&endIndex={endIndex}&interval={interval}&form={form}&continuationToken={continuationToken}&countPerGroup={countPerGroup}&groupCount={groupCount}&count={count}&cache={cache}
+?startIndex={startIndex}&endIndex={endIndex}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}&interval={interval}&form={form}&continuationToken={continuationToken}&countPerGroup={countPerGroup}&groupCount={groupCount}&count={count}&cache={cache}
 ```
 
 <h4>Parameters</h4>
@@ -24,9 +24,23 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string startIndex`
-<br/>The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+<br/>The requested start index. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
 <br/><br/>`string endIndex`
-<br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/>The requested end index. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string startBoundaryType`
+<br/>An optional parameter determining if the start index is inclusive or exclusive.
+
+| Value | Description | 
+|--|--|
+| `Exact` | The start index should be considered inclusive. Values exactly at the start index _will_ be included in the returned data. This is the default value.
+| `Inside` | The start index should be considered exclusive. Values exactly at the start index _will not_ be included in the returned data.
+<br/><br/>`string endBoundaryType`
+<br/>An optional parameter determining if the end index is inclusive or exclusive.
+
+| Value | Description | 
+|--|--|
+| `Exact` | The end index should be considered inclusive. Values exactly at the end index _will_ be included in the returned data. This is the default value.
+| `Inside` | The end index should be considered exclusive. Values exactly at the end index _will not_ be included in the returned data.
 <br/><br/>`string interval`
 <br/>The requested interval between index values. The default value is the ```.DefaultInterval``` of the data view. Optional if a default is specified.<br/><br/>`string form`
 <br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
@@ -333,7 +347,7 @@ Returns stored data for the provided data view and index parameters with paging.
 
 ```text 
 POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/stored
-?startIndex={startIndex}&endIndex={endIndex}&form={form}&continuationToken={continuationToken}&countPerGroup={countPerGroup}&groupCount={groupCount}&count={count}&cache={cache}
+?startIndex={startIndex}&endIndex={endIndex}&startBoundaryType={startBoundaryType}&endBoundaryType={endBoundaryType}&form={form}&continuationToken={continuationToken}&countPerGroup={countPerGroup}&groupCount={groupCount}&count={count}&cache={cache}
 ```
 
 <h4>Parameters</h4>
@@ -341,9 +355,23 @@ POST /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/preview/dataviews/data/
 `string tenantId`
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string startIndex`
-<br/>The requested start index, inclusive. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
+<br/>The requested start index. The default value is the ```.DefaultStartIndex``` of the data view. Optional if a default value is specified.
 <br/><br/>`string endIndex`
-<br/>The requested end index, inclusive. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/>The requested end index. The default value is the ```.DefaultEndIndex``` of the data view. Optional if a default value is specified.
+<br/><br/>`string startBoundaryType`
+<br/>An optional parameter determining if the start index is inclusive or exclusive.
+
+| Value | Description | 
+|--|--|
+| `Exact` | The start index should be considered inclusive. Values exactly at the start index _will_ be included in the returned data. This is the default value.
+| `Inside` | The start index should be considered exclusive. Values exactly at the start index _will not_ be included in the returned data.
+<br/><br/>`string endBoundaryType`
+<br/>An optional parameter determining if the end index is inclusive or exclusive.
+
+| Value | Description | 
+|--|--|
+| `Exact` | The end index should be considered inclusive. Values exactly at the end index _will_ be included in the returned data. This is the default value.
+| `Inside` | The end index should be considered exclusive. Values exactly at the end index _will not_ be included in the returned data.
 <br/><br/>`string form`
 <br/>The requested data [output format](xref:DataViewsQuickStartGetData#format). Output formats: `default`, `table`, `tableh`, `csv`, `csvh`.
 <br/><br/>
@@ -885,6 +913,7 @@ The targeted part of a DataItem
 |WeightedMean|1024|
 |WeightedStandardDeviation|2048|
 |WeightedPopulationStandardDeviation|4096|
+|WeightedTotal|8192|
 
 ---
 

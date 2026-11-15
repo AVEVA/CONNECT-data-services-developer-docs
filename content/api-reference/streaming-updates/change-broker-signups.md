@@ -152,6 +152,7 @@ CreateSignupInput. Input of the signup to be created.<br/>
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |409|None|Conflict. The signup limit of 10000 has been reached.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
+|503|None|Service Unavailable. The service is temporarily unable to handle the request. Retry the request later.|
 
 <h4>Example response body</h4>
 
@@ -220,6 +221,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
+|503|None|Service Unavailable. The service is temporarily unable to handle the request. Retry the request later.|
 
 <h4>Example response body</h4>
 
@@ -347,6 +349,7 @@ DELETE /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
+|503|None|Service Unavailable. The service is temporarily unable to handle the request. Retry the request later.|
 
 ---
 
@@ -438,6 +441,7 @@ GET /api/v1/tenants/{tenantId}/namespaces/{namespaceId}/signups/{signupId}/resou
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
+|503|None|Service Unavailable. The service is temporarily unable to handle the request. Retry the request later.|
 
 <h4>Response Headers</h4>
 
@@ -512,6 +516,7 @@ SignupResourcesInput. Signup resources input object to replace signup's resource
 |403|None|Forbidden. The client does not have the required permissions to make the request.|
 |404|None|Not Found.|
 |500|None|The server has encountered a situation it doesn't know how to handle.|
+|503|None|Service Unavailable. The service is temporarily unable to handle the request. Retry the request later.|
 
 <h4>Example response body</h4>
 

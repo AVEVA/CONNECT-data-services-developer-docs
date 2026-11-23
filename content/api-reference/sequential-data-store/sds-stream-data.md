@@ -29,7 +29,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns a serialized event|
+|200|Inline|Returns a serialized data point|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -62,7 +62,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns a serialized event|
+|200|Inline|Returns a serialized data point|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -78,20 +78,20 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 Returns a collection of stored values at indexes based on request parameters.
   
-SDS supports four ways of specifying which stored events to return:
-- [Find Distinct Value](xref:SdsDataQueryMethods#find-distinct-value): Returns a stored event based on the specified index and searchMode. 
+SDS supports four ways of specifying which stored data points to return:
+- [Find Distinct Value](xref:SdsDataQueryMethods#find-distinct-value): Returns a stored data point based on the specified index and searchMode. 
     
     **Parameters**: Accepts ``index`` and ``searchMode``.
-- [Filtered](xref:SdsDataQueryMethods#filtered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against event fields. 
+- [Filtered](xref:SdsDataQueryMethods#filtered): Returns a collection of stored values as determined by a filter.The filter limits results by applying an expression against data point fields. 
     
     **Parameters**: Accepts a ``filter`` expression. 
 - [Range](xref:SdsDataQueryMethods#range): Returns a collection of stored values as determined by a ``startIndex`` and ``count``. 
-    Additional optional parameters specify the direction of the range, how to handle events near or at the start index, whether to skip a certain number of events at the start of the range, and how to filter the data.
+    Additional optional parameters specify the direction of the range, how to handle data points near or at the start index, whether to skip a certain number of data points at the start of the range, and how to filter the data.
     
     **Parameters**: Accepts ``startIndex`` and ``count``.
-- [Window](xref:SdsDataQueryMethods#window): Returns a collection of stored events based on the specified ``startIndex`` and ``endIndex``. 
+- [Window](xref:SdsDataQueryMethods#window): Returns a collection of stored data points based on the specified ``startIndex`` and ``endIndex``. 
     
-    **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of events.
+    **Parameters**: Accepts ``startIndex`` and ``endIndex``. This request has an optional continuation token for large collections of data points.
 
 <h3>Request</h3>
 
@@ -108,14 +108,14 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>Stream identifier.<br/><br/>
 `[optional] string filter`
 <br/>Filter expression.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Index identifying the beginning of the series of data points to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of data points to return.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] string index`
 <br/>The index.<br/><br/>`[optional] integer searchMode`
 <br/>The `SdsSearchMode`, type of search: Exact (the default), ExactOrNext, Next, ExactOrPrevious, or Previous.<br/><br/>`[optional] integer skip`
 <br/>Parameter representing the zero-based offset of the first object to retrieve.  If unspecified, a default value of 0 is used.<br/><br/>`[optional] boolean reversed`
-<br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex from the stream. A reversed request will collect events before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>Specification of the direction of the request. By default, range requests move forward from startIndex, collecting data points after startIndex from the stream. A reversed request will collect data points before startIndex from the stream.<br/><br/>`[optional] integer boundaryType`
+<br/>SdsBoundaryType specifying the handling of data points at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
 <br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string continuationToken`
 <br/>Token used to retrieve the next page of data. If count is specified, a continuationToken must also be specified.<br/><br/>
@@ -124,7 +124,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns a serialized collection of events|
+|200|Inline|Returns a serialized collection of data points|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -174,9 +174,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamData_Insert Values"></a>
 
-Inserts data into the specified stream. Returns an error if data is already present at the index of any event.
+Inserts data into the specified stream. Returns an error if data is already present at the index of any data point.
 
-**Notes**: This request will return an error if an event already exists for any index in the request.
+**Notes**: This request will return an error if an data point already exists for any index in the request.
 If any individual index encounters a problem, the entire operation is rolled back and no insertions are made.
 The streamId and index that caused the issue are included in the error response.  
 
@@ -212,10 +212,10 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamData_Update Values"></a>
 
-Writes one or more events to or over existing events the specified stream. 
+Writes one or more data points to or over existing data points the specified stream. 
 
-**Notes**: This request performs an insert or a replace depending on whether an event already exists at the event indexes.
-If any item fails to write, the entire operation is rolled back and no events are written to the stream.
+**Notes**: This request performs an insert or a replace depending on whether an data point already exists at the data point indexes.
+If any item fails to write, the entire operation is rolled back and no data points are written to the stream.
 The index that caused the issue is included in the error response.
 
 <h3>Request</h3>
@@ -232,7 +232,7 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
 `[optional] boolean allowCreate`
-<br/>If false, writes one or more events over existing events in the specified stream.<br/><br/>
+<br/>If false, writes one or more data points over existing data points in the specified stream.<br/><br/>
 
 <h3>Response</h3>
 
@@ -252,13 +252,13 @@ PUT /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 <a id="opIdStreamData_Patch Values"></a>
 
-Modifies the specified stream event(s). 
+Modifies the specified stream data point(s). 
 Patching affects only the data item parameters that are included in the call.
 
-**Notes**: Patching is used to patch the events of the selected fields for one or more events in the stream.
+**Notes**: Patching is used to patch the data points of the selected fields for one or more data points in the stream.
 Only the fields indicated in ``selectExpression`` are modified.
-The events to be modified are indicated by the index value of each entry in the collection. 
-If there is a problem patching any individual event, the entire operation is rolled back and the error will indicate the ``streamId`` and ``index`` of the problem.
+The data points to be modified are indicated by the index value of each entry in the collection. 
+If there is a problem patching any individual data point, the entire operation is rolled back and the error will indicate the ``streamId`` and ``index`` of the problem.
 
 <h3>Request</h3>
 
@@ -274,7 +274,7 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
 `[optional] string selectExpression`
-<br/>Comma separated list of strings that indicates the event fields that will be changed in stream events.<br/><br/>
+<br/>Comma separated list of strings that indicates the data point fields that will be changed in stream data points.<br/><br/>
 
 <h3>Response</h3>
 
@@ -294,19 +294,19 @@ PATCH /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Dat
 
 <a id="opIdStreamData_Remove Values"></a>
 
-There are two options for specifying which events to remove from a stream: index collection and windows
+There are two options for specifying which data points to remove from a stream: index collection and windows
 
-[Index Collection](xref:SdsDataQueryMethods#index-collection): Removes the event at each index from the specified stream. 
-Different overloads are available to make it easier to indicate the index where you want to remove a data event. 
+[Index Collection](xref:SdsDataQueryMethods#index-collection): Removes the data point at each index from the specified stream. 
+Different overloads are available to make it easier to indicate the index where you want to remove a data data point. 
 One or more indexes can be specified in the request.
 
-[Window](xref:SdsDataQueryMethods#window): Removes events at and between the start index and end index.
+[Window](xref:SdsDataQueryMethods#window): Removes data points at and between the start index and end index.
 A window can be specified with a start index and end index.
 
-**Notes**: If any individual event fails to be removed, the entire operation is rolled back and no events are removed.
+**Notes**: If any individual data point fails to be removed, the entire operation is rolled back and no data points are removed.
 The ``streamId`` and ``index`` that caused the issue are included in the error response.
-If you attempt to remove events at indexes that have no events, an error is returned.
-If this occurs, use the [Window](xref:SdsDataQueryMethods#window) request format to remove any events from a specified window of indexes, which will not return an error if no data is found.
+If you attempt to remove data points at indexes that have no data points, an error is returned.
+If this occurs, use the [Window](xref:SdsDataQueryMethods#window) request format to remove any data points from a specified window of indexes, which will not return an error if no data is found.
 
 <h3>Request</h3>
 
@@ -322,7 +322,7 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Da
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>
 `[optional] string index`
-<br/>One or more indexes of events to remove.<br/><br/>`[optional] string startIndex`
+<br/>One or more indexes of data points to remove.<br/><br/>`[optional] string startIndex`
 <br/>Index identifying the beginning of the window.<br/><br/>`[optional] string endIndex`
 <br/>Index identifying the end of the window.<br/><br/>
 
@@ -345,18 +345,18 @@ DELETE /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Da
 <a id="opIdStreamData_List Interpolated Values"></a>
 
 Returns a collection of values based on request parameters.
-The stream's read characteristics determine how events are calculated for indexes at which no stored event exists.
+The stream's read characteristics determine how data points are calculated for indexes at which no stored data point exists.
 Interpolation is not supported for streams with compound indexes.
 
-SDS supports two ways of specifying which stored events to return: index collection and interval.
+SDS supports two ways of specifying which stored data points to return: index collection and interval.
 
-[Index collection](xref:SdsDataQueryMethods#index-collection): Returns events at the specified indexes.
-If no stored event exists at a specified index, the stream's read characteristics determine how the returned event is calculated.
+[Index collection](xref:SdsDataQueryMethods#index-collection): Returns data points at the specified indexes.
+If no stored data point exists at a specified index, the stream's read characteristics determine how the returned data point is calculated.
 
 **Parameters**: Accepts ``index``.
 
-[Interval](xref:SdsDataQueryMethods#interval): Returns events at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``.
-If no stored event exists at an index interval, the stream's read characteristics determine how the returned event is calculated.
+[Interval](xref:SdsDataQueryMethods#interval): Returns data points at evenly spaced intervals based on the specified ``startIndex``, ``endIndex``, and ``count``.
+If no stored data point exists at an index interval, the stream's read characteristics determine how the returned data point is calculated.
 
 **Parameters**: Accepts ``startIndex``, ``endIndex`` and ``count``.
 
@@ -375,15 +375,15 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Stream identifier.<br/><br/>
 `[optional] string index`
 <br/>One or more indexes.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Index identifying the beginning of the series of data points to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of data points to return.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>
 
 <h3>Response</h3>
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns a serialized collection of events. Depending on the specified indexes and read characteristics of the stream, it is possible to have less events returned than specified indexes. An empty collection can also be returned.|
+|200|Inline|Returns a serialized collection of data points. Depending on the specified indexes and read characteristics of the stream, it is possible to have less data points returned than specified indexes. An empty collection can also be returned.|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -412,8 +412,8 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>`string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>
+<br/>Index identifying the beginning of the series of data points to return.<br/><br/>`string endIndex`
+<br/>Index identifying the end of the series of data points to return.<br/><br/>
 `[optional] integer count`
 <br/>Parameter representing the number of summary intervals to retrieve. If unspecified, a default value of 1 is used.<br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/>
@@ -451,12 +451,12 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string streamId`
 <br/>Stream identifier.<br/><br/>`string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`integer intervals`
+<br/>Index identifying the beginning of the series of data points to return.<br/><br/>`string endIndex`
+<br/>Index identifying the end of the series of data points to return.<br/><br/>`integer intervals`
 <br/>The number of sample intervals requested.<br/><br/>`string sampleBy`
 <br/>Property or properties to use when sampling.<br/><br/>
 `[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the handling of data points at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
 <br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/>
@@ -465,7 +465,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns a serialized collection of events|
+|200|Inline|Returns a serialized collection of data points|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -518,17 +518,17 @@ The error response contains standard details on the cause and resolution of the 
 <a id="tocSsdssearchmode"></a>
 <a id="tocssdssearchmode"></a>
 
-The SdsSearchMode defines search behavior when seeking a stored event near a specified index.
+The SdsSearchMode defines search behavior when seeking a stored data point near a specified index.
 
 <h4>Enumerated Values</h4>
 
 |Property|Value|Description|
 |---|---|---|
-|Exact|0|If a stored event exists at the specified index, that event is returned. Otherwise no event is returned.|
-|ExactOrNext|1|If a stored event exists at the specified index, that event is returned. Otherwise the next event in the stream is returned.|
-|Next|2|Returns the stored event after the specified index.|
-|ExactOrPrevious|3|If a stored event exists at the specified index, that event is returned. Otherwise the previous event in the stream is returned.|
-|Previous|4|Returns the stored event before the specified index.|
+|Exact|0|If a stored data point exists at the specified index, that data point is returned. Otherwise no data point is returned.|
+|ExactOrNext|1|If a stored data point exists at the specified index, that data point is returned. Otherwise the next data point in the stream is returned.|
+|Next|2|Returns the stored data point after the specified index.|
+|ExactOrPrevious|3|If a stored data point exists at the specified index, that data point is returned. Otherwise the previous data point in the stream is returned.|
+|Previous|4|Returns the stored data point before the specified index.|
 
 ---
 
@@ -545,10 +545,10 @@ The SdsBoundaryType defines how data on the boundary of queries is handled: arou
 
 |Property|Value|Description|
 |---|---|---|
-|Exact|0|Results include the event at the specified index boundary if a stored event exists at that index.|
-|Inside|1|Results include only events within the index boundaries.|
-|Outside|2|Results include up to one event that falls immediately outside of the specified index boundary.|
-|ExactOrCalculated|3|Results include the event at the specified index boundary. If no stored event exists at that index, one is calculated based on the index type and interpolation and extrapolation settings.|
+|Exact|0|Results include the data point at the specified index boundary if a stored data point exists at that index.|
+|Inside|1|Results include only data points within the index boundaries.|
+|Outside|2|Results include up to one data point that falls immediately outside of the specified index boundary.|
+|ExactOrCalculated|3|Results include the data point at the specified index boundary. If no stored data point exists at that index, one is calculated based on the index type and interpolation and extrapolation settings.|
 
 ---
 

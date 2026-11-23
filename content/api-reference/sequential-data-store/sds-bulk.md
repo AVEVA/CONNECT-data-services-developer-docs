@@ -29,10 +29,10 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
 <br/>The `SdsJoinMode`, type of join: Inner, Outer, Interpolated, MergeLeft, or MergeRight.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Index identifying the beginning of the series of data points to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of data points to return.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the handling of data points at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
 <br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/>
@@ -41,7 +41,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns multiple serialized events|
+|200|Inline|Returns multiple serialized data points|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -74,10 +74,10 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 `[optional] string streams`
 <br/>Comma separated list of stream identifiers.<br/><br/>`[optional] integer joinMode`
 <br/>The `SdsJoinMode`, type of join: Inner, Outer, Interpolated, MergeLeft, or MergeRight.<br/><br/>`[optional] string startIndex`
-<br/>Index identifying the beginning of the series of events to return.<br/><br/>`[optional] string endIndex`
-<br/>Index identifying the end of the series of events to return.<br/><br/>`[optional] integer count`
+<br/>Index identifying the beginning of the series of data points to return.<br/><br/>`[optional] string endIndex`
+<br/>Index identifying the end of the series of data points to return.<br/><br/>`[optional] integer count`
 <br/>Parameter representing the maximum number of objects to retrieve. If unspecified, a default value of 100 is used.<br/><br/>`[optional] integer boundaryType`
-<br/>SdsBoundaryType specifying the handling of events at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
+<br/>SdsBoundaryType specifying the handling of data points at or near the start and end indexes.<br/><br/>`[optional] integer startBoundaryType`
 <br/>SdsBoundaryType specifying the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] integer endBoundaryType`
 <br/>SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] string filter`
 <br/>Filter expression.<br/><br/>
@@ -86,7 +86,7 @@ POST /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 |Status Code|Body Type|Description|
 |---|---|---|
-|200|Inline|Returns multiple serialized events|
+|200|Inline|Returns multiple serialized data points|
 |400|[ErrorResponseBody](#schemaerrorresponsebody)|Missing or invalid inputs|
 |401|[ErrorResponseBody](#schemaerrorresponsebody)|Unauthorized|
 |403|[ErrorResponseBody](#schemaerrorresponsebody)|Forbidden|
@@ -146,11 +146,11 @@ Join modes that specify how streams are joined.
 
 |Property|Value|Description|
 |---|---|---|
-|Inner|0|Results include stored events with common indexes across specified streams.|
-|Outer|1|Results include the stored events for all indexes across all streams.|
-|Interpolated|2|Results include events for each index across all streams for the request index boundaries. Events may be interpolated.|
-|MergeLeft|3|Results include one event for each index across all streams selecting events at indexes based on left to right stream order.|
-|MergeRight|4|Results include one event for each index across all streams selecting events at indexes based on right to left stream order.|
+|Inner|0|Results include stored data points with common indexes across specified streams.|
+|Outer|1|Results include the stored data points for all indexes across all streams.|
+|Interpolated|2|Results include data points for each index across all streams for the request index boundaries. data points may be interpolated.|
+|MergeLeft|3|Results include one data point for each index across all streams selecting data points at indexes based on left to right stream order.|
+|MergeRight|4|Results include one data point for each index across all streams selecting data points at indexes based on right to left stream order.|
 
 ---
 
@@ -167,10 +167,10 @@ The SdsBoundaryType defines how data on the boundary of queries is handled: arou
 
 |Property|Value|Description|
 |---|---|---|
-|Exact|0|Results include the event at the specified index boundary if a stored event exists at that index.|
-|Inside|1|Results include only events within the index boundaries.|
-|Outside|2|Results include up to one event that falls immediately outside of the specified index boundary.|
-|ExactOrCalculated|3|Results include the event at the specified index boundary. If no stored event exists at that index, one is calculated based on the index type and interpolation and extrapolation settings.|
+|Exact|0|Results include the data point at the specified index boundary if a stored data point exists at that index.|
+|Inside|1|Results include only data points within the index boundaries.|
+|Outside|2|Results include up to one data point that falls immediately outside of the specified index boundary.|
+|ExactOrCalculated|3|Results include the data point at the specified index boundary. If no stored data point exists at that index, one is calculated based on the index type and interpolation and extrapolation settings.|
 
 ---
 

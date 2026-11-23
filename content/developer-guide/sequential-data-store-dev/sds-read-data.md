@@ -20,7 +20,7 @@ The Read data API is limited to accessing fewer than 2,500,000 data points per r
 400 bad request error
 {
     "Error": "The request is not valid.",
-    "Reason": "Exceeded the maximum return count of 2500000 events.",
+    "Reason": "Exceeded the maximum return count of 2500000 data points.",
     "Resolution": "Reduce query size and resubmit the request."
 }
 ```

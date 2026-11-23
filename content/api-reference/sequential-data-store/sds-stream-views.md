@@ -418,7 +418,7 @@ A contract defining the stream view.
 |Name|string|false|true|An optional user-friendly name for the SdsStreamView.|
 |Description|string|false|true|A brief description of the SdsStreamView.|
 |SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream.|
-|TargetTypeId|string|false|true|Identifier of the SdsType to convert events to.|
+|TargetTypeId|string|false|true|Identifier of the SdsType to convert data points to.|
 |Properties|[[SdsStreamViewProperty](#schemasdsstreamviewproperty)]|false|true|List of SdsStreamViewProperty.|
 |CreatedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStreamView was created. This value is set upon object creation and is immutable. The default value of the CreatedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
 |ModifiedDate|date-time|false|false|The DateTime in ISO 8601 extended format and UTC time standard when the SdsStreamView was last modified. This value is initialized upon object creation and is updated each time an object's properties are successfully modified. The ModifiedDate property of an object will also update if the object's ACL or owner is modified. The default value of the ModifiedDate property of existing objects is DateTime.MinValue. This property cannot be modified by users.|
@@ -531,7 +531,7 @@ A contract defining the stream view map.
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |SourceTypeId|string|false|true|Identifier of the SdsType of the SdsStream.|
-|TargetTypeId|string|false|true|Identifier of the SdsType to convert events to.|
+|TargetTypeId|string|false|true|Identifier of the SdsType to convert data points to.|
 |Properties|[[SdsStreamViewMapProperty](#schemasdsstreamviewmapproperty)]|false|true|Identifier of the SdsStreamViewMapProperty from the target SdsType Properties list.|
 
 ```json
@@ -566,7 +566,7 @@ A contract defining stream view map property.
 |Property Name|Data Type|Required|Nullable|Description|
 |---|---|---|---|---|
 |SourceId|string|false|true|Identifier of the SdsType of the SdsStream.|
-|TargetId|string|false|true|Identifier of the SdsType to convert events to.|
+|TargetId|string|false|true|Identifier of the SdsType to convert data points to.|
 |Mode|[SdsStreamViewMode](#schemasdsstreamviewmode)|false|false|Aggregate of actions applied to the properties. SdsStreamViewMode are combined via binary arithmetic.|
 |StreamViewMap|[SdsStreamViewMap](#schemasdsstreamviewmap)|false|true|Mapping for derived types.|
 

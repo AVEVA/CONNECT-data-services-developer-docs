@@ -97,9 +97,9 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/Sa
 <br/>Number of intervals requested.<br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of stream reference names in the format of `stream={streamReferenceName}`. Multiple stream references can be requested by joining with &amp; in the format of stream={streamReferenceName1}&stream={streamReferenceName2}. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
-<br/>Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex.<br/><br/>`[optional] any startBoundaryType`
-<br/>Optional SdsBoundaryType specifies the handling of events at or near the startIndex.<br/><br/>`[optional] any endBoundaryType`
-<br/>Optional SdsBoundaryType specifies the handling of events at or near the endIndex.<br/><br/>
+<br/>Optional SdsBoundaryType specifies the handling of data points at or near the startIndex and endIndex.<br/><br/>`[optional] any startBoundaryType`
+<br/>Optional SdsBoundaryType specifies the handling of data points at or near the startIndex.<br/><br/>`[optional] any endBoundaryType`
+<br/>Optional SdsBoundaryType specifies the handling of data points at or near the endIndex.<br/><br/>
 
 <h3>Response</h3>
 
@@ -309,7 +309,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/In
 <br/>Asset identifier.<br/><br/>`string startIndex`
 <br/>The index defining the beginning of the window.<br/><br/>`string endIndex`
 <br/>The index defining the end of the window.<br/><br/>`integer count`
-<br/>The number of events to return. Read characteristics of the stream determine how the events are constructed.<br/><br/>
+<br/>The number of data points to return. Read characteristics of the stream determine how the data points are constructed.<br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of stream reference names in the format of `stream={streamReferenceName}`. Multiple stream references can be requested by joining with &amp; in the format of stream={streamReferenceName1}&stream={streamReferenceName2}. By default, all data calls return data for all stream references.<br/><br/>
 
@@ -387,11 +387,11 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data
 <br/>Tenant identifier.<br/><br/>`string namespaceId`
 <br/>Namespace identifier.<br/><br/>`string assetId`
 <br/>Asset identifier.<br/><br/>`string startIndex`
-<br/>Index bounding the beginning of the series of events to return.<br/><br/>`string endIndex`
-<br/>Index bounding the end of the series of events to return.<br/><br/>
+<br/>Index bounding the beginning of the series of data points to return.<br/><br/>`string endIndex`
+<br/>Index bounding the end of the series of data points to return.<br/><br/>
 `[optional] array stream`
 <br/>Optional parameter consisting of stream reference names in the format of `stream={streamReferenceName}`. Multiple stream references can be requested by joining with &amp; in the format of stream={streamReferenceName1}&stream={streamReferenceName2}. By default, all data calls return data for all stream references.<br/><br/>`[optional] any boundaryType`
-<br/>Optional SdsBoundaryType specifies handling of events at or near the start and end indexes.<br/><br/>`[optional] any startBoundaryType`
+<br/>Optional SdsBoundaryType specifies handling of data points at or near the start and end indexes.<br/><br/>`[optional] any startBoundaryType`
 <br/>Optional SdsBoundaryType specifies the first value in the result in relation to the start index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>`[optional] any endBoundaryType`
 <br/>Optional SdsBoundaryType specifies the last value in the result in relation to the end index. If startBoundaryType is specified, endBoundaryType must be specified.<br/><br/>
 

@@ -331,7 +331,7 @@ GET /api/v1/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Data/In
 ```json
 {
   "Results": {
-    "StreamReferenceWithdata pointsName": [
+    "StreamReferenceWithEventsName": [
       {
         "Timestamp": "2019-01-02T00:00:05Z",
         "Temp": 5.045,
